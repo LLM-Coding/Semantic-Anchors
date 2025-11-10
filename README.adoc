@@ -1,0 +1,808 @@
+= Semantic Anchors for LLMs
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+:experimental:
+
+== Introduction to Semantic Anchors
+
+Semantic anchors are well-defined terms, methodologies, or frameworks that serve as reference points in communication with Large Language Models (LLMs). They act as shared vocabulary that triggers specific, contextually rich knowledge domains within the LLM's training data.
+
+=== Why Semantic Anchors Matter
+
+When working with LLMs like Claude, using semantic anchors provides several advantages:
+
+* *Precision*: Anchors reduce ambiguity by referencing established bodies of knowledge
+* *Efficiency*: A single anchor term can activate complex conceptual frameworks without lengthy explanations
+* *Consistency*: Well-known anchors ensure the LLM interprets concepts as intended by the broader community
+* *Context Compression*: Anchors allow you to convey rich context with minimal tokens
+
+=== How to Use Semantic Anchors Effectively
+
+. *Be Specific*: Use the full, precise name of methodologies (e.g., "TDD, London School" rather than just "mocking")
+. *Combine Anchors*: Reference multiple anchors to triangulate your meaning
+. *Verify Understanding*: Ask the LLM to explain its interpretation when precision is critical
+. *Update Over Time*: As new methodologies emerge, incorporate them into your anchor vocabulary
+
+== Semantic Anchor Catalog
+
+Below is a curated list of semantic anchors useful for software development, architecture, and requirements engineering. Each anchor includes related concepts and practices.
+
+=== TDD, London School
+
+[%collapsible]
+====
+*Also known as*: Mockist TDD, Outside-In TDD
+
+*Core Concepts*:
+
+* *Mock-heavy testing*: Heavy use of test doubles (mocks, stubs) to isolate units
+* *Outside-in development*: Start from the outermost layers (UI, API) and work inward
+* *Interaction-based testing*: Focus on verifying interactions between objects
+* *Behavior verification*: Test how objects collaborate rather than state
+* *Interface discovery*: Use tests to discover and define interfaces
+* *Walking skeleton*: Build end-to-end functionality early, then fill in details
+
+*Key Proponents*: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
+
+*When to Use*:
+
+* Complex systems with many collaborating objects
+* When designing APIs and interfaces
+* Distributed systems where integration is costly
+====
+
+=== TDD, Chicago School
+
+[%collapsible]
+====
+*Also known as*: Classicist TDD, Detroit School
+
+*Core Concepts*:
+
+* *State-based testing*: Verify the state of objects after operations
+* *Minimal mocking*: Use real objects whenever possible; mock only external dependencies
+* *Inside-out development*: Start with core domain logic and build outward
+* *Simplicity focus*: Emergent design through refactoring
+* *Red-Green-Refactor*: The fundamental TDD cycle
+* *YAGNI*: You Aren't Gonna Need It - avoid premature abstraction
+
+*Key Proponents*: Kent Beck, Martin Fowler
+
+*When to Use*:
+
+* Domain-driven design projects
+* When business logic is central
+* Smaller, cohesive modules
+====
+
+=== Problem Space NVC
+
+[%collapsible]
+====
+*Full Name*: Problem Space in Nonviolent Communication
+
+*Core Concepts*:
+
+* *Observations*: Concrete, objective facts without evaluation
+* *Feelings*: Emotions arising from observations
+* *Needs*: Universal human needs underlying feelings
+* *Requests*: Specific, actionable requests (not demands)
+* *Empathic connection*: Understanding before problem-solving
+* *Separating observation from interpretation*: Avoiding judgment
+* *Needs-based conflict resolution*: Finding solutions that meet everyone's needs
+
+*Key Proponent*: Marshall Rosenberg
+
+*Application in Software Development*:
+
+* Requirements elicitation that uncovers real user needs
+* Stakeholder communication and conflict resolution
+* User story formulation focused on needs
+* Retrospectives and team communication
+====
+
+=== Mental Model nach Naur
+
+[%collapsible]
+====
+*Full Name*: Programming as Theory Building (Mental Model) according to Peter Naur
+
+*Core Concepts*:
+
+* *Theory building*: Programming is creating a mental model, not just writing code
+* *Theory of the program*: Deep understanding of why the program works and how it relates to the problem domain
+* *Knowledge in people*: The real program exists in developers' minds, not in the code
+* *Theory decay*: When original developers leave, the theory is lost
+* *Documentation limitations*: Written documentation cannot fully capture the theory
+* *Maintenance as theory*: Effective maintenance requires possessing the theory
+* *Communication is key*: Theory must be shared through collaboration and conversation
+* *Ramp-up time*: New team members need time to build the theory
+* *Code as artifact*: Code is merely a representation of the underlying theory
+
+*Key Proponent*: Peter Naur (Turing Award winner, 1978)
+
+*Original Work*: "Programming as Theory Building" (1985)
+
+*Application in Software Development*:
+
+* Understanding why knowledge transfer is challenging
+* Emphasizing pair programming and mob programming
+* Justifying time for onboarding and code walkthroughs
+* Explaining technical debt accumulation when teams change
+* Supporting documentation practices that capture "why" not just "what"
+* Advocating for team stability and continuity
+
+*Contrast with Other Views*:
+
+* Programming as text production → Focus on code output
+* Programming as problem solving → Focus on algorithms
+* Programming as theory building → Focus on understanding
+====
+
+=== EARS-Requirements
+
+[%collapsible]
+====
+*Full Name*: Easy Approach to Requirements Syntax
+
+*Core Concepts*:
+
+* *Ubiquitous requirements*: "The <system> shall <requirement>"
+* *Event-driven requirements*: "WHEN <trigger> the <system> shall <requirement>"
+* *Unwanted behavior*: "IF <condition>, THEN the <system> shall <requirement>"
+* *State-driven requirements*: "WHILE <state>, the <system> shall <requirement>"
+* *Optional features*: "WHERE <feature is included>, the <system> shall <requirement>"
+* *Structured syntax*: Consistent templates for clarity
+* *Testability*: Requirements written to be verifiable
+
+*Key Proponent*: Alistair Mavin (Rolls-Royce)
+
+*When to Use*:
+
+* Safety-critical systems
+* Regulated industries (aerospace, automotive, medical)
+* When requirements traceability is essential
+* Large, distributed teams
+====
+
+=== arc42
+
+[%collapsible]
+====
+*Full Name*: arc42 Architecture Documentation Template
+
+*Core Concepts*:
+
+* *12 standardized sections*: From introduction to glossary
+* *Section 1*: Introduction and Goals
+* *Section 2*: Constraints
+* *Section 3*: Context and Scope
+* *Section 4*: Solution Strategy
+* *Section 5*: Building Block View
+* *Section 6*: Runtime View
+* *Section 7*: Deployment View
+* *Section 8*: Crosscutting Concepts
+* *Section 9*: Architecture Decisions
+* *Section 10*: Quality Requirements
+* *Section 11*: Risks and Technical Debt
+* *Section 12*: Glossary
+* *Pragmatic documentation*: Document only what's necessary
+* *Multiple formats*: AsciiDoc, Markdown, Confluence, etc.
+
+*Key Proponents*: Gernot Starke, Peter Hruschka
+
+*When to Use*:
+
+* Medium to large software projects
+* When stakeholder communication is critical
+* Long-lived systems requiring maintainability
+====
+
+=== ADR nach Nygard
+
+[%collapsible]
+====
+*Full Name*: Architecture Decision Records according to Michael Nygard
+
+*Core Concepts*:
+
+* *Lightweight documentation*: Short, focused records
+* *Standard structure*:
+** Title
+** Status (proposed, accepted, deprecated, superseded)
+** Context (forces at play)
+** Decision (what was chosen)
+** Consequences (both positive and negative)
+* *Immutability*: ADRs are never deleted, only superseded
+* *Version control*: ADRs stored with code
+* *Decision archaeology*: Understanding why past decisions were made
+* *Evolutionary architecture*: Supporting architecture that changes over time
+
+*Key Proponent*: Michael Nygard
+
+*When to Use*:
+
+* All software projects (low overhead, high value)
+* Distributed teams needing shared understanding
+* When onboarding new team members
+* Complex systems with evolving architecture
+====
+
+=== Pugh-Matrix
+
+[%collapsible]
+====
+*Full Name*: Pugh Decision Matrix (also Pugh Controlled Convergence)
+
+*Core Concepts*:
+
+* *Baseline comparison*: Compare alternatives against a reference solution
+* *Criteria weighting*: Assign importance to evaluation criteria
+* *Relative scoring*: Better (+), Same (S), Worse (-) than baseline
+* *Structured evaluation*: Systematic comparison across multiple dimensions
+* *Iterative refinement*: Multiple rounds to converge on best solution
+* *Team decision-making*: Facilitates group consensus
+* *Hybrid solutions*: Combine strengths of different alternatives
+
+*Key Proponent*: Stuart Pugh
+
+*When to Use*:
+
+* Multiple viable alternatives exist
+* Decision criteria are known but trade-offs are unclear
+* Team needs to reach consensus
+* Architecture or technology selection decisions
+====
+
+=== C4-Diagrams
+
+[%collapsible]
+====
+*Full Name*: C4 Model for Software Architecture Diagrams
+
+*Core Concepts*:
+
+* *Four levels of abstraction*:
+** *Level 1 - Context*: System in its environment (users, external systems)
+** *Level 2 - Container*: Applications and data stores that make up the system
+** *Level 3 - Component*: Components within containers
+** *Level 4 - Code*: Class diagrams, entity relationships (optional)
+* *Zoom in/out*: Progressive disclosure of detail
+* *Simple notation*: Boxes and arrows, minimal notation overhead
+* *Audience-appropriate*: Different diagrams for different stakeholders
+* *Supplementary diagrams*: Deployment, dynamic views, etc.
+
+*Key Proponent*: Simon Brown
+
+*When to Use*:
+
+* Communicating architecture to diverse stakeholders
+* Onboarding new team members
+* Architecture documentation and review
+* Replacing or supplementing UML
+====
+
+=== Docs-as-Code nach Ralf D. Müller
+
+[%collapsible]
+====
+*Full Name*: Docs-as-Code Approach according to Ralf D. Müller
+
+*Core Concepts*:
+
+* *Plain text formats*: AsciiDoc, Markdown
+* *Version control*: Documentation in Git alongside code
+* *Automated toolchains*: Build pipelines for documentation
+* *Single source of truth*: Generate multiple output formats from one source
+* *Diagrams as code*: PlantUML, Mermaid, Graphviz, Kroki
+* *Continuous documentation*: Updated with every commit
+* *Developer-friendly*: Use same tools and workflows as for code
+* *Review process*: Pull requests for documentation changes
+* *Modular documentation*: Includes and composition
+
+*Key Proponent*: Ralf D. Müller (docToolchain creator)
+
+*Technical Stack*:
+
+* AsciiDoc/Asciidoctor
+* docToolchain
+* Gradle-based automation
+* Kroki for diagram rendering
+* Arc42 template integration
+
+*When to Use*:
+
+* Technical documentation for software projects
+* When documentation needs to stay synchronized with code
+* Distributed teams collaborating on documentation
+* Projects requiring multiple output formats (HTML, PDF, etc.)
+====
+
+=== Domain-Driven Design nach Evans
+
+[%collapsible]
+====
+*Full Name*: Domain-Driven Design according to Eric Evans
+
+*Core Concepts*:
+
+* *Ubiquitous Language*: Shared vocabulary between developers and domain experts
+* *Bounded Context*: Explicit boundaries where a model is defined and applicable
+* *Aggregates*: Cluster of domain objects treated as a single unit
+* *Entities*: Objects defined by identity, not attributes
+* *Value Objects*: Immutable objects defined by their attributes
+* *Repositories*: Abstraction for object persistence and retrieval
+* *Domain Events*: Significant occurrences in the domain
+* *Strategic Design*: Context mapping, anti-corruption layers
+* *Tactical Design*: Building blocks (entities, value objects, services)
+* *Model-Driven Design*: Code that expresses the domain model
+
+*Key Proponent*: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
+
+*When to Use*:
+
+* Complex business domains with intricate rules
+* Long-lived systems requiring deep domain understanding
+* When business and technical teams need close collaboration
+* Systems where the domain logic is the core value
+====
+
+=== Hexagonal Architecture (Ports & Adapters)
+
+[%collapsible]
+====
+*Also known as*: Ports and Adapters, Onion Architecture (variant)
+
+*Core Concepts*:
+
+* *Hexagonal structure*: Core domain at the center, isolated from external concerns
+* *Ports*: Interfaces defining how the application communicates
+* *Adapters*: Implementations that connect to external systems
+* *Dependency inversion*: Dependencies point inward toward the domain
+* *Technology independence*: Core logic doesn't depend on frameworks or infrastructure
+* *Primary/Driving adapters*: User interfaces, APIs (inbound)
+* *Secondary/Driven adapters*: Databases, message queues (outbound)
+* *Testability*: Easy to test core logic in isolation
+* *Symmetry*: All external interactions are treated uniformly
+
+*Key Proponent*: Alistair Cockburn (2005)
+
+*When to Use*:
+
+* Applications requiring high testability
+* Systems that need to support multiple interfaces (web, CLI, API)
+* When you want to defer infrastructure decisions
+* Microservices with clear domain boundaries
+====
+
+=== Clean Architecture
+
+[%collapsible]
+====
+*Full Name*: Clean Architecture according to Robert C. Martin
+
+*Core Concepts*:
+
+* *The Dependency Rule*: Dependencies only point inward
+* *Concentric circles*: Entities → Use Cases → Interface Adapters → Frameworks & Drivers
+* *Independent of frameworks*: Architecture doesn't depend on libraries
+* *Testable*: Business rules testable without UI, database, or external elements
+* *Independent of UI*: UI can change without changing business rules
+* *Independent of database*: Business rules not bound to database
+* *Independent of external agencies*: Business rules don't know about outside world
+* *Screaming Architecture*: Architecture reveals the intent of the system
+* *SOLID principles*: Foundation of the architecture
+
+*Key Proponent*: Robert C. Martin ("Uncle Bob")
+
+*When to Use*:
+
+* Enterprise applications with complex business logic
+* Systems requiring long-term maintainability
+* When team size and turnover are high
+* Projects where business rules must be protected from technology changes
+====
+
+=== User Story Mapping
+
+[%collapsible]
+====
+*Full Name*: User Story Mapping according to Jeff Patton
+
+*Core Concepts*:
+
+* *Narrative flow*: Horizontal arrangement of user activities
+* *User activities*: High-level tasks users perform
+* *User tasks*: Steps within activities
+* *Walking skeleton*: Minimal end-to-end functionality first
+* *Release planning*: Horizontal slices for releases
+* *Prioritization by value*: Vertical ordering by importance
+* *Shared understanding*: Collaborative mapping builds team alignment
+* *Big picture view*: See the whole journey, not just backlog items
+* *Opportunity for conversation*: Stories as placeholders for discussion
+
+*Key Proponent*: Jeff Patton ("User Story Mapping", 2014)
+
+*When to Use*:
+
+* Planning new products or major features
+* When backlog feels overwhelming or fragmented
+* Release planning for incremental delivery
+* Onboarding team members to product vision
+====
+
+=== Impact Mapping
+
+[%collapsible]
+====
+*Full Name*: Impact Mapping according to Gojko Adzic
+
+*Core Concepts*:
+
+* *Four levels*: Goal → Actors → Impacts → Deliverables
+* *Goal*: Business objective (Why?)
+* *Actors*: Who can produce or prevent desired impact? (Who?)
+* *Impacts*: How can actors' behavior change? (How?)
+* *Deliverables*: What can we build? (What?)
+* *Visual mapping*: Mind-map style collaborative diagram
+* *Assumption testing*: Make assumptions explicit
+* *Scope management*: Prevent scope creep by linking to goals
+* *Roadmap alternative*: Goal-oriented rather than feature-oriented
+
+*Key Proponent*: Gojko Adzic ("Impact Mapping", 2012)
+
+*When to Use*:
+
+* Strategic planning for products or projects
+* When stakeholders disagree on priorities
+* Aligning delivery with business outcomes
+* Avoiding building features that don't serve business goals
+====
+
+=== Jobs To Be Done (JTBD)
+
+[%collapsible]
+====
+*Full Name*: Jobs To Be Done Framework (Christensen interpretation)
+
+*Core Concepts*:
+
+* *Job definition*: Progress people want to make in a particular context
+* *Functional job*: Practical task to accomplish
+* *Emotional job*: How people want to feel
+* *Social job*: How people want to be perceived
+* *Hire and fire*: Customers "hire" products to do a job, "fire" when inadequate
+* *Context matters*: Jobs exist in specific circumstances
+* *Competition redefined*: Anything solving the same job is competition
+* *Innovation opportunities*: Unmet jobs or poorly served jobs
+* *Job stories*: Alternative to user stories focusing on context and motivation
+
+*Key Proponents*: Clayton Christensen, Alan Klement, Bob Moesta
+
+*When to Use*:
+
+* Product discovery and innovation
+* Understanding why customers choose solutions
+* Identifying true competition
+* Writing more meaningful user stories
+* Market segmentation based on jobs, not demographics
+====
+
+=== Cynefin Framework
+
+[%collapsible]
+====
+*Full Name*: Cynefin Framework according to Dave Snowden
+
+*Core Concepts*:
+
+* *Five domains*:
+** *Clear* (formerly "Simple"): Best practices apply, sense-categorize-respond
+** *Complicated*: Good practices exist, sense-analyze-respond
+** *Complex*: Emergent practices, probe-sense-respond
+** *Chaotic*: Novel practices needed, act-sense-respond
+** *Confused* (center): Don't know which domain you're in
+* *Domain transitions*: How situations move between domains
+* *Safe-to-fail probes*: Experiments in complex domain
+* *Complacency risk*: Moving from clear to chaotic
+* *Decision-making context*: Different domains require different approaches
+* *Facilitation tool*: Helps teams discuss and categorize challenges
+
+*Key Proponent*: Dave Snowden (1999)
+
+*When to Use*:
+
+* Understanding what type of problem you're facing
+* Choosing appropriate decision-making approaches
+* Facilitating team discussions about complexity
+* Strategic planning in uncertain environments
+====
+
+=== Wardley Mapping
+
+[%collapsible]
+====
+*Core Concepts*:
+
+* *Value chain*: Map components from user needs down
+* *Evolution axis*: Genesis → Custom → Product → Commodity
+* *Movement*: Components naturally evolve over time
+* *Situational awareness*: Understanding the landscape before deciding
+* *Gameplay patterns*: Common strategic moves
+* *Climatic patterns*: Forces that affect all players
+* *Doctrine*: Universal principles of good strategy
+* *Inertia*: Resistance to change in organizations
+* *Strategic planning*: Visual approach to strategy
+* *Build-Buy-Partner decisions*: Based on evolution stage
+
+*Key Proponent*: Simon Wardley
+
+*When to Use*:
+
+* Strategic technology planning
+* Build vs. buy decisions
+* Understanding competitive landscape
+* Communicating strategy visually
+* Identifying opportunities for disruption
+====
+
+=== Property-Based Testing
+
+[%collapsible]
+====
+*Also known as*: Generative Testing, QuickCheck-style Testing
+
+*Core Concepts*:
+
+* *Properties*: Invariants that should always hold
+* *Generators*: Automatic test data creation
+* *Shrinking*: Minimizing failing test cases to simplest form
+* *Universal quantification*: Testing "for all inputs"
+* *Specification testing*: Testing high-level properties, not examples
+* *Edge case discovery*: Finds cases you didn't think of
+* *Complementary to example-based*: Works alongside traditional unit tests
+* *Stateful testing*: Testing sequences of operations
+* *Model-based testing*: Compare implementation against simpler model
+
+*Key Tools*: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
+
+*When to Use*:
+
+* Testing pure functions and algorithms
+* Validating business rules and invariants
+* Testing parsers and serializers
+* Finding edge cases in complex logic
+* Complementing example-based TDD
+====
+
+=== Testing Pyramid
+
+[%collapsible]
+====
+*Full Name*: Testing Pyramid according to Mike Cohn
+
+*Core Concepts*:
+
+* *Three layers*:
+** *Unit tests* (base): Many fast, isolated tests
+** *Integration tests* (middle): Moderate number, test component interaction
+** *End-to-end tests* (top): Few, test complete user journeys
+* *Proportional distribution*: More unit tests, fewer E2E tests
+* *Cost and speed*: Unit tests cheap and fast, E2E tests expensive and slow
+* *Feedback loops*: Faster feedback from lower levels
+* *Anti-pattern: Ice cream cone*: Too many E2E tests, too few unit tests
+* *Test at the right level*: Don't test through UI what can be tested in isolation
+* *Confidence gradient*: Balance confidence with execution speed
+
+*Key Proponent*: Mike Cohn ("Succeeding with Agile", 2009)
+
+*When to Use*:
+
+* Planning test strategy for projects
+* Balancing test types in CI/CD pipelines
+* Evaluating existing test suites
+* Guiding team testing practices
+====
+
+=== Diátaxis Framework
+
+[%collapsible]
+====
+*Full Name*: Diátaxis Documentation Framework according to Daniele Procida
+
+*Core Concepts*:
+
+* *Four documentation types*:
+** *Tutorials*: Learning-oriented, lessons for beginners
+** *How-to guides*: Task-oriented, directions for specific goals
+** *Reference*: Information-oriented, technical descriptions
+** *Explanation*: Understanding-oriented, conceptual discussions
+* *Two dimensions*:
+** Practical vs. Theoretical
+** Acquisition (learning) vs. Application (working)
+* *Separation of concerns*: Each type serves a distinct purpose
+* *User needs*: Different users need different documentation at different times
+* *Quality criteria*: Each type has specific quality indicators
+* *Systematic approach*: Framework for organizing any documentation
+
+*Key Proponent*: Daniele Procida
+
+*When to Use*:
+
+* Organizing technical documentation
+* Improving existing documentation
+* Planning documentation structure
+* Evaluating documentation quality
+* Complementing Docs-as-Code approaches
+====
+
+== Testing and Contributing Semantic Anchors
+
+=== Testing a Semantic Anchor
+
+Before adding a new semantic anchor to your catalog, it's valuable to test whether the LLM recognizes it and what concepts it associates with the term. This helps you:
+
+* Verify that the anchor is well-established in the LLM's training data
+* Understand how the LLM interprets the concept
+* Identify gaps or misconceptions in the LLM's understanding
+* Decide whether the anchor needs additional context or clarification
+
+==== The Testing Prompt
+
+Use the following prompt pattern to test a semantic anchor:
+
+[source]
+----
+What concepts do you associate with '<semantic anchor>'?
+----
+
+Or in German:
+
+[source]
+----
+Welche Konzepte verbindest Du mit '<semantischer Anker>'?
+----
+
+==== Evaluating the Response
+
+When the LLM responds, evaluate the following:
+
+1. *Recognition*: Does the LLM recognize the term at all?
+2. *Accuracy*: Are the associated concepts correct and relevant?
+3. *Depth*: Does the LLM show deep understanding or just surface knowledge?
+4. *Specificity*: Does the LLM distinguish this concept from similar ones?
+5. *Practical application*: Does the LLM understand when and how to use it?
+
+==== Example Test Session
+
+[source]
+----
+Human: What concepts do you associate with 'Pugh-Matrix'?
+
+Claude: I associate the Pugh-Matrix with:
+- Baseline comparison methodology
+- Weighted decision criteria
+- Relative scoring (better/same/worse)
+- Team-based evaluation
+- Iterative refinement process
+[...]
+----
+
+Based on the response, you can determine:
+
+* ✅ *Good anchor*: LLM shows strong understanding → Add to catalog
+* ⚠️ *Partial recognition*: LLM knows it but lacks depth → Add with extra context
+* ❌ *Unknown*: LLM doesn't recognize it → May not be a good semantic anchor yet
+
+=== Contributing New Anchors via Pull Request
+
+Once you've tested a semantic anchor and confirmed it's valuable, you can contribute it to your catalog using a Git workflow.
+
+==== Step 1: Prepare Your Branch
+
+Start from the main branch and create a feature branch for your addition:
+
+[source,bash]
+----
+# Make sure main is up to date
+git checkout main
+git pull origin main
+
+# Create a feature branch
+git checkout -b feature/add-semantic-anchor-xyz
+----
+
+IMPORTANT: Always start feature branches from `main`, not from other feature branches.
+
+==== Step 2: Add Your Semantic Anchor
+
+Edit the `semantic-anchors-for-llms.adoc` file and add a new section following the established pattern:
+
+[source,asciidoc]
+----
+=== Your New Anchor Name
+
+[%collapsible]
+====
+*Full Name*: Complete name or expansion
+
+*Core Concepts*:
+
+* Key concept 1
+* Key concept 2
+* ...
+
+*Key Proponent*: Name(s) of key figures
+
+*When to Use*:
+
+* Use case 1
+* Use case 2
+====
+----
+
+==== Step 3: Commit Your Changes
+
+[source,bash]
+----
+# Stage your changes
+git add semantic-anchors-for-llms.adoc
+
+# Commit with a descriptive message
+git commit -m "Add semantic anchor: Your Anchor Name"
+
+# Consider adding co-authorship if Claude helped
+git commit --amend --no-edit --trailer "Co-authored-by: Claude <claude@anthropic.com>"
+----
+
+NOTE: Decide whether to credit Claude as co-author based on the level of contribution.
+
+==== Step 4: Push and Create Pull Request
+
+[source,bash]
+----
+# Push your branch
+git push origin feature/add-semantic-anchor-xyz
+
+# Create a PR via GitHub/GitLab UI or CLI
+gh pr create --title "Add semantic anchor: Your Anchor Name" \
+             --body "Adds semantic anchor for XYZ methodology. 
+             
+Tested with LLM and confirmed good recognition."
+----
+
+==== Step 5: Review and Merge
+
+* Have the PR reviewed by team members
+* Ensure the anchor fits the catalog structure
+* Check for duplicate or overlapping anchors
+* Merge to main once approved
+
+==== Working with Forks
+
+If you're contributing to a forked repository:
+
+1. *Check fork status*: Ensure your fork is synchronized with upstream
++
+[source,bash]
+----
+git remote add upstream <original-repo-url>
+git fetch upstream
+git checkout main
+git merge upstream/main
+----
+
+2. *Create branch*: Always branch from the updated main
+3. *Create PR*: Submit PR to the upstream repository
+
+== Conclusion
+
+Semantic anchors create a shared language between you and LLMs, enabling more precise and efficient communication. By referencing established methodologies, frameworks, and practices, you can quickly activate relevant knowledge domains and ensure consistent interpretation of concepts.
+
+As your work evolves, continue to identify and catalog new semantic anchors that emerge in your field. This living vocabulary becomes a powerful tool for effective collaboration with AI assistants.
+
+---
+
+_This document itself serves as a semantic anchor catalog, providing you with quick reference terminology for software development conversations._
