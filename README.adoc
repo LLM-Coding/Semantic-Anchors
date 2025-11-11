@@ -731,7 +731,7 @@ Add a new section following this pattern:
 ====
 ----
 
-TIP: You can use your LLM to help generate a properly formatted entry. Ask it to analyze the semantic anchor and produce an entry following the established pattern in this document
+TIP: You can use your LLM to help generate a properly formatted entry. Ask it to analyze the semantic anchor and produce an entry following the established pattern in this document.
 
 == Conclusion
 
