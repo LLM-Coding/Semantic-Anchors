@@ -662,6 +662,64 @@ Below is a curated list of semantic anchors useful for software development, arc
 * Complementing Docs-as-Code approaches
 ====
 
+=== Conventional Commits
+
+[%collapsible]
+====
+*Core Concepts*:
+* A specification for adding human and machine readable meaning to commit messages
+* determining a semantic version bump (based on the types of commits landed)
+* Communicating the nature of changes to teammates, the public, and other stakeholders
+* *Schema*: <type>[!][(optional scope)]: <description> + optional body/footer
+* *Common Types*:
+** *feat:* - introduce new feature to the codebase (-> Semver Minor)
+** *fix:* - patches a bug in your codebase (-> SemVer Patch)
+** *docs:* - documentation improvements to the codebase
+** *chore:* - codebase/repository housekeeping changes
+** *style:* - formatting changes that do not affect the meaning of the code
+** *refactor:* - implementation changes that do not affect the meaning of the code
+** *!* - BREAKING CHANGE (-> SemVer Major)
+* *BREAKING CHANGE:* introduces a breaking API change
+
+*Key Proponents*: Benjamin E. Coe, James J. Womack, Steve Mao
+
+*When to Use*:
+
+* everything-as-code paradigm targetted
+* team-/community-communication
+* repository quality improvements
+
+====
+
+=== Semantic Versioning (SemVer)
+
+[%collapsible]
+====
+*Full Name*: Semantic Versioning Specification
+
+*Core Concepts*:
+
+* *Version format*: MAJOR.MINOR.PATCH (e.g., 2.4.7)
+** *MAJOR*: Incompatible API changes (breaking changes)
+** *MINOR*: Backward-compatible functionality additions
+** *PATCH*: Backward-compatible bug fixes
+** *Pre-release versions*: Append hyphen and identifiers (e.g., 1.0.0-alpha.1)
+* *Build metadata*: Append plus sign and identifiers (e.g., 1.0.0+20241111)
+* *Version precedence*: Clear rules for version comparison
+* *Initial development*: 0.y.z for initial development (API unstable)
+* *Public API declaration*: Once public API declared, version dependencies matter
+
+*Key Proponent*: Tom Preston-Werner
+
+*When to Use*:
+
+* Libraries and APIs consumed by other software
+* Software with defined public interfaces
+* Projects requiring dependency management
+* Communication of change impact to users/consumers
+
+====
+
 == Testing and Contributing Semantic Anchors
 
 === Testing a Semantic Anchor
