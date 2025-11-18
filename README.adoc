@@ -152,6 +152,63 @@ The catalog is organized into the following categories:
 * Guiding team testing practices
 ====
 
+[[mutation-testing]]
+==== Mutation Testing
+
+[%collapsible]
+====
+*Also known as*: Mutation Analysis, Fault-Based Testing
+
+*Core Concepts*:
+
+* *Test quality assessment*: Evaluate how effective tests are at detecting bugs
+* *Code mutations*: Deliberately introduce small, syntactic changes (mutants) into source code
+* *Mutation operators*: Rules for creating mutants (e.g., change `>` to `>=`, flip boolean, remove statement)
+* *Killed mutants*: Mutations caught by failing tests (good)
+* *Survived mutants*: Mutations not detected by tests (indicates test weakness)
+* *Equivalent mutants*: Mutations that don't change program behavior (false positives)
+* *Mutation score*: Percentage of killed mutants: `(killed / (total - equivalent)) × 100%`
+* *First-order mutations*: Single atomic change per mutant
+* *Higher-order mutations*: Multiple changes combined
+* *Weak mutation*: Test only needs to create different internal state
+* *Strong mutation*: Test must produce different final output
+* *Test adequacy criterion*: "Are tests good enough?" not just "Is coverage high enough?"
+
+*Key Proponents*: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
+
+*Key Tools*:
+
+* PITest (Java)
+* Stryker (JavaScript/TypeScript, C#, Scala)
+* Mutmut (Python)
+* Infection (PHP)
+* Mull (C/C++)
+
+*When to Use*:
+
+* Evaluating test suite quality beyond coverage metrics
+* Identifying gaps in test assertions
+* Critical systems requiring high test confidence
+* Complementing code coverage as a quality metric
+* Refactoring legacy code with existing tests
+* Teaching effective testing practices
+* Continuous improvement of test effectiveness
+
+*Practical Challenges*:
+
+* *Computational cost*: N mutations × M tests = expensive
+* *Equivalent mutant problem*: Hard to automatically detect functionally identical mutants
+* *Time investment*: Can be slow on large codebases
+* *Mitigation strategies*: Selective mutation, mutation sampling, incremental analysis
+
+*Relationship to Other Practices*:
+
+* *Code coverage*: Mutation testing reveals that high coverage ≠ good tests
+* *TDD*: Strong TDD often produces high mutation scores naturally
+* *Property-based testing*: Orthogonal but complementary approaches
+* *Fault injection*: Similar concept applied to production systems
+====
+
 [[architecture-design]]
 === Architecture & Design
 
