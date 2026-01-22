@@ -1,6 +1,6 @@
 = Semantic Anchors for LLMs
 :toc: left
-:toclevels: 3
+:toclevels: 1
 :sectnums:
 :icons: font
 :experimental:
@@ -8,6 +8,8 @@
 == Introduction to Semantic Anchors
 
 Semantic anchors are well-defined terms, methodologies, or frameworks that serve as reference points in communication with Large Language Models (LLMs). They act as shared vocabulary that triggers specific, contextually rich knowledge domains within the LLM's training data.
+
+image::https://api.star-history.com/svg?repos=LLM-Coding/Semantic-Anchors&type=date&legend=top-left)](https://www.star-history.com/#LLM-Coding/Semantic-Anchors&type=date&legend=top-left[]
 
 === Why Semantic Anchors Matter
 
