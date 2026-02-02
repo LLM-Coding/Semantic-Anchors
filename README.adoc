@@ -909,6 +909,73 @@ The catalog is organized into the following categories:
 
 ====
 
+[[todotxt-flavoured-markdown]]
+==== todo.txt-flavoured Markdown
+
+[%collapsible]
+====
+*Full Name*: todo.txt-flavoured Markdown Task Lists
+
+*Also known as*: Enhanced Markdown Tasks, Markdown with todo.txt conventions
+
+*Core Concepts*:
+
+* *Markdown task lists*: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
+* *Priority markers*: Uses todo.txt priority notation `(A)`, `(B)`, `(C)` where `(A)` is highest priority
+* *Project tags*: Prefixed with `+` to group related tasks (e.g., `+website`, `+semantic-anchors`)
+* *Context tags*: Prefixed with `@` to indicate location/tool/context (e.g., `@computer`, `@home`, `@research`)
+* *Key-value metadata*: Structured data pairs like `due:YYYY-MM-DD`, `priority:high`, or custom fields
+* *Date tracking*: Creation dates and completion dates in ISO format (YYYY-MM-DD)
+* *Human readability*: Plain text format that remains readable without special tools
+* *Tool-agnostic*: Can be processed by both markdown renderers and todo.txt tools
+* *Searchable and filterable*: Easy to grep/search by tags, priorities, or metadata
+
+*Pattern Structure*:
+
+[source,markdown]
+----
+- [ ] (Priority) Task description +project @context key:value
+- [x] YYYY-MM-DD (Priority) Completed task +project
+----
+
+*Example Usage*:
+
+[source,markdown]
+----
+- [ ] (A) Review PR for +website @computer due:2024-02-03
+- [x] 2024-02-01 (B) Update documentation +docToolchain
+- [ ] (C) Research new feature +semantic-anchors @research
+- [ ] Call team meeting @phone +project-planning due:2024-02-05
+- [x] 2024-01-30 Fix bug in authentication +backend @computer
+----
+
+*Key Proponents*: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
+
+*Original References*:
+
+* GitHub-flavoured Markdown task lists
+* todo.txt format specification by Gina Trapani
+
+*When to Use*:
+
+* Task management in markdown documentation
+* Project planning and tracking in README files
+* GitHub issues and pull request descriptions requiring structured task lists
+* Personal productivity systems using plain text
+* Documentation that combines narrative with actionable tasks
+* When you need both human readability and programmatic parsing
+* Team collaboration where tasks need clear priorities and contexts
+* Generating consistent task list formats with LLMs
+
+*Benefits*:
+
+* Leverages two well-established, widely recognized standards
+* Renders nicely in GitHub, GitLab, and other markdown viewers
+* Remains fully functional in plain text editors
+* Enables rich metadata without sacrificing readability
+* Facilitates both manual and automated task tracking
+====
+
 == Testing and Contributing Semantic Anchors
 
 === Testing a Semantic Anchor
