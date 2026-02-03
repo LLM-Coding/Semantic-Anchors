@@ -976,6 +976,55 @@ The catalog is organized into the following categories:
 * Facilitates both manual and automated task tracking
 ====
 
+[[sota]]
+==== SOTA (State-of-the-Art)
+
+[%collapsible]
+====
+*Full Name*: State-of-the-Art
+
+*Core Concepts*:
+
+* *Latest approaches*: Focus on the most current, cutting-edge methods and techniques
+* *Research-grounded*: Reference current research papers, benchmarks, and empirical results
+* *Comparative analysis*: Compare new approaches with existing or previous methods
+* *Performance-focused*: Emphasize benchmark-leading and best-performing solutions
+* *Up-to-date information*: Provide current, grounded information rather than outdated practices
+* *Evidence-based*: Support claims with recent studies, benchmarks, and real-world implementations
+* *Contextual awareness*: Consider the specific domain and timeframe for "state-of-the-art"
+
+*Usage Patterns*:
+
+* "Learn SOTA for [topic]" - triggers research and comprehensive information gathering
+* "What's SOTA for [topic]?" - requests current best practices and approaches
+* "Give me the SOTA approach for [problem]" - asks for cutting-edge solutions
+
+*Example Usage*:
+
+* "Learn SOTA for RAG implementations"
+* "What's SOTA for code generation in 2024?"
+* "Give me the SOTA approach for semantic search"
+* "What's the SOTA in transformer architectures?"
+
+*Key Proponent*: Widely used in ML/AI research community; suggested for LLM prompting by Pete Hodgson
+
+*When to Use*:
+
+* Researching current best practices in a technical domain
+* Comparing different approaches to solve a problem
+* Staying updated with rapidly evolving fields (AI/ML, web technologies)
+* Making technology decisions based on current benchmarks
+* Learning about cutting-edge implementations
+* Avoiding outdated or deprecated approaches
+
+*Why It Works*:
+
+* Heavily represented in ML/AI papers, benchmarks, and technical discussions
+* Consistent meaning across contexts: "best performing" and "most current"
+* Concise trigger for comprehensive research behavior
+* Activates research-oriented response patterns in LLMs
+====
+
 == Testing and Contributing Semantic Anchors
 
 === Testing a Semantic Anchor
