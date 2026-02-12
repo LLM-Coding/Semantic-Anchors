@@ -292,6 +292,45 @@ The catalog is organized into the following categories:
 * Complex systems with evolving architecture
 ====
 
+[[madr]]
+==== MADR
+
+[%collapsible]
+====
+*Full Name*: Markdown Any Decision Records
+
+*Core Concepts*:
+
+* *Structured template*: Well-defined format with specific sections
+* *Standard fields*:
+** Title (short noun phrase)
+** Status (proposed, accepted, rejected, deprecated, superseded)
+** Context and Problem Statement
+** Decision Drivers (forces influencing the decision)
+** Considered Options (alternatives evaluated)
+** Decision Outcome (chosen option with justification)
+** Pros and Cons of the Options (trade-off analysis)
+** Links (related decisions, references)
+* *Markdown format*: Uses standard Markdown for wide compatibility
+* *Clear structure*: More detailed than basic ADRs, includes explicit alternatives
+* *Trade-off documentation*: Explicitly captures pros/cons of each option
+* *Version control*: Stored with code, immutable like other ADRs
+* *Lightweight yet comprehensive*: Balances completeness with maintainability
+
+*Key Proponents*: Oliver Kopp, Olaf Zimmermann (and MADR community)
+
+*Reference*: https://adr.github.io/madr/
+
+*When to Use*:
+
+* When you need more structure than basic ADRs
+* Projects requiring explicit documentation of alternatives
+* Teams that need to justify decisions with detailed trade-offs
+* Organizations using Markdown-based documentation workflows
+* When LLM assistance is needed to generate consistent decision records
+* Complementing arc42 Section 9 (Architecture Decisions)
+====
+
 [[c4-diagrams]]
 ==== C4-Diagrams
 
