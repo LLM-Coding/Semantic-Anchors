@@ -38,6 +38,49 @@ For most established semantic anchors in software development, the major LLM pro
 . *Verify Understanding*: Ask the LLM to explain its interpretation when precision is critical
 . *Update Over Time*: As new methodologies emerge, incorporate them into your anchor vocabulary
 
+[[what-qualifies-as-a-semantic-anchor]]
+=== What Qualifies as a Semantic Anchor
+
+A term qualifies as a semantic anchor when it activates a rich, well-defined conceptual framework in the LLM's training data. The key differentiator is *definition depth* – not whether the anchor is about domain knowledge or interaction patterns.
+
+A good semantic anchor is:
+
+* *Precise*: It references a specific, established body of knowledge or methodology with clear boundaries
+* *Rich*: It activates multiple interconnected concepts, not just a single instruction or directive
+* *Consistent*: Different users invoking it will get similar conceptual activation across contexts
+* *Attributable*: It can be traced to key proponents, publications, established practices, or documented standards
+
+==== The Spectrum of Semantic Anchors
+
+Semantic anchors exist on a spectrum from domain-heavy to interaction-heavy:
+
+[source]
+----
+Domain-heavy ◄──────────────────────► Interaction-heavy
+   arc42          Pyramid Principle        Socratic Method
+   SOLID          Rubber Duck Debugging    BLUF
+   DDD            Five Whys                Chain of Thought
+----
+
+The distinction isn't a strict category but rather a matter of emphasis. Most anchors have *both* dimensions:
+
+* *Pyramid Principle*: Domain knowledge about structured communication + behavior change in how output is structured
+* *TDD, London School*: Domain knowledge about testing + behavior change in how code is written
+* *Socratic Method*: Interaction pattern for dialogue + domain knowledge from philosophical tradition
+
+The quality bar is the same across this spectrum – all anchors must be well-defined, rich, and activatable.
+
+==== Counter-Examples
+
+Well-known terms that are *not* semantic anchors because they lack definition depth:
+
+* *"TLDR"*: Underspecified, no defined structure or methodology, vague instruction to "be short"
+* *"ELI5"*: Vague target level, no pedagogical framework, no consistent interpretation
+* *"Keep it short"*: Pure instruction, no conceptual depth or established methodology
+* *"Make it simple"*: Ambiguous directive without reference to specific simplification frameworks
+
+These terms may be useful in conversation, but they don't activate rich conceptual frameworks the way true semantic anchors do.
+
 == Semantic Anchor Catalog
 
 Below is a curated list of semantic anchors useful for software development, architecture, and requirements engineering. Each anchor includes related concepts and practices.
@@ -53,6 +96,7 @@ The catalog is organized into the following categories:
 * <<decision-making-strategy,Decision Making & Strategy>>
 * <<development-practices,Development Practices>>
 * <<statistical-methods-process-monitoring,Statistical Methods & Process Monitoring>>
+* <<interaction-reasoning-patterns,Interaction & Reasoning Patterns>>
 
 [[testing-quality-practices]]
 === Testing & Quality Practices
@@ -1378,6 +1422,336 @@ The catalog is organized into the following categories:
 * Quality assurance in Six Sigma / DMAIC Control Phase
 ====
 
+[[interaction-reasoning-patterns]]
+=== Interaction & Reasoning Patterns
+
+This category contains semantic anchors that primarily guide *how* an LLM collaborates, reasons, or communicates – while maintaining the same quality bar as domain-focused anchors. These anchors reference well-established methodologies, communication standards, or reasoning techniques with rich conceptual frameworks.
+
+NOTE: Many anchors have both domain and interaction dimensions. The anchors in this section emphasize interaction patterns but still activate substantial conceptual depth from their source domains (philosophy, cognitive science, military communication, etc.).
+
+[[socratic-method]]
+==== Socratic Method
+
+[%collapsible]
+====
+*Full Name*: Socratic Method (also Socratic Dialogue, Elenchus)
+
+*Core Concepts*:
+
+* *Guided Discovery*: Lead learners to insights through questions rather than direct instruction
+* *Elenchus*: Cross-examination technique to expose contradictions in beliefs
+* *Maieutics*: "Midwifery of ideas" – helping others give birth to knowledge they already possess
+* *Aporia*: State of productive confusion that motivates deeper inquiry
+* *Question Hierarchy*: Progress from clarifying questions to probing assumptions to exploring implications
+* *Dialectic Method*: Structured dialogue to arrive at truth through reasoned argument
+* *Non-assertive Teaching*: Teacher claims ignorance, guides through questions
+* *Assumption Surfacing*: Make implicit beliefs explicit through systematic questioning
+* *Logical Consistency*: Test ideas for internal coherence and contradictions
+
+*Key Proponent*: Socrates (via Plato's dialogues, ~400 BCE)
+
+*Historical Context*: 2400+ years of philosophical tradition, foundational to Western philosophy and critical thinking education
+
+*When to Use*:
+
+* Teaching complex concepts where understanding must be constructed, not transmitted
+* Helping someone work through a problem without giving direct answers
+* Uncovering hidden assumptions in arguments or designs
+* Exploring the implications of a decision or belief
+* Encouraging deeper thinking about a topic
+* Code review or design review where understanding, not compliance, is the goal
+
+*Related Concepts*:
+
+* Cognitive apprenticeship
+* Constructivist learning theory
+* Critical thinking pedagogy
+====
+
+[[bluf]]
+==== BLUF (Bottom Line Up Front)
+
+[%collapsible]
+====
+*Full Name*: BLUF (Bottom Line Up Front)
+
+*Also known as*: Direct Answer Format, Conclusion-First Communication
+
+*Core Concepts*:
+
+* *Conclusion First*: State the main point, decision, or recommendation immediately
+* *Inverted Pyramid*: Most important information first, supporting details follow
+* *Action Orientation*: Lead with what needs to happen or what was decided
+* *Busy Reader Optimization*: Enable time-pressed readers to get key information instantly
+* *Supporting Evidence Follows*: Detailed rationale, data, and background come after the conclusion
+* *Scannable Structure*: Clear hierarchy enables readers to stop at their needed depth
+* *Clarity Over Suspense*: No narrative buildup or delayed conclusions
+* *One Sentence First*: Ideally, the BLUF itself is a single, clear sentence
+
+*Key Proponents*: US Military (Army writing standards), adopted broadly in business and government
+
+*Historical Context*: Standardized in military communication where rapid decision-making is critical; now standard in business writing (McKinsey, consulting, executive communication)
+
+*When to Use*:
+
+* Executive summaries and briefings
+* Status reports to leadership
+* Email to busy stakeholders
+* Incident reports requiring immediate action
+* Any high-stakes communication where the reader needs the conclusion first
+* Technical documentation for time-constrained readers
+
+*Relationship to Other Anchors*:
+
+* Related to <<pyramid-principle,Pyramid Principle>> but more narrowly focused on conclusion-first structure
+* Complements MECE by providing the organizational principle for grouped information
+* Contrasts with narrative or exploratory writing styles
+
+*Counter-example*: Academic papers (which build to conclusions) or storytelling (which uses suspense)
+====
+
+[[rubber-duck-debugging]]
+==== Rubber Duck Debugging
+
+[%collapsible]
+====
+*Full Name*: Rubber Duck Debugging
+
+*Core Concepts*:
+
+* *Explain to Understand*: Articulating a problem aloud surfaces gaps in understanding
+* *Step-by-Step Verbalization*: Force yourself to go through code/logic line by line
+* *Assumption Surfacing*: Speaking aloud exposes implicit assumptions that may be wrong
+* *No Expertise Required*: The "listener" (rubber duck, colleague, LLM) need not be an expert
+* *Slowing Down*: The act of explaining forces a slower, more deliberate thought process
+* *External Cognition*: Verbalizing creates an external representation that aids debugging
+* *Self-Directed Learning*: Often the explainer solves the problem before finishing the explanation
+* *Teaching to Learn*: Related to the Feynman Technique and learning-by-teaching principle
+
+*Key Origin*: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), referencing earlier programmer folklore
+
+*Historical Context*: Decades-old practice in programming culture, formalized and named in influential software engineering literature
+
+*When to Use*:
+
+* Debugging stubborn problems where you're stuck
+* Code review where explaining to a colleague reveals issues
+* Learning new concepts by teaching them to someone (or something) else
+* Validating understanding of complex systems or algorithms
+* When rubber-ducking to an LLM, explicitly adopting this frame to trigger step-by-step explanation
+
+*Related Concepts*:
+
+* Pair programming (where explaining is continuous)
+* <<feynman-technique,Feynman Technique>> (learning by simple explanation)
+* <<socratic-method,Socratic Method>> (when the duck asks questions back)
+====
+
+[[chain-of-thought]]
+==== Chain of Thought (CoT)
+
+[%collapsible]
+====
+*Full Name*: Chain of Thought Prompting
+
+*Core Concepts*:
+
+* *Step-by-Step Reasoning*: Explicitly show intermediate reasoning steps before reaching a conclusion
+* *Reasoning Transparency*: Make the thought process visible, not just the final answer
+* *Intermediate Representations*: Break complex problems into smaller, manageable steps
+* *Error Reduction*: Exposing reasoning allows detection of logical errors mid-process
+* *Complex Task Decomposition*: Handle multi-step problems that cannot be solved in one jump
+* *Zero-Shot CoT*: Simple prompt like "Let's think step by step" to trigger CoT behavior
+* *Few-Shot CoT*: Provide examples with reasoning chains to guide the model
+* *Self-Consistency*: Generate multiple reasoning paths and select most consistent answer
+
+*Key Proponents*: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+
+*Historical Context*: Breakthrough in LLM prompting research, significantly improved performance on reasoning tasks (math, logic, common sense)
+
+*When to Use*:
+
+* Complex reasoning problems (multi-step math, logic puzzles)
+* When you need to verify the reasoning process, not just the answer
+* Debugging incorrect LLM outputs by seeing where reasoning went wrong
+* Teaching or explaining complex topics where steps matter
+* Problems requiring planning or strategy
+* Any task where intermediate steps provide value
+
+*Related Research*:
+
+* Tree of Thoughts (ToT): Extension allowing branching and backtracking
+* Self-Consistency: Sample multiple reasoning paths
+* Least-to-Most Prompting: Build up from simple to complex
+
+*Example Prompt Pattern*:
+
+----
+Problem: [Complex question]
+Let's solve this step by step:
+1. [First step]
+2. [Second step]
+...
+Therefore: [Conclusion]
+----
+====
+
+[[devils-advocate]]
+==== Devil's Advocate
+
+[%collapsible]
+====
+*Full Name*: Devil's Advocate (Latin: *Advocatus Diaboli*)
+
+*Core Concepts*:
+
+* *Systematic Counter-Argumentation*: Present opposing viewpoints even if not personally held
+* *Assumption Challenging*: Question premises and surface hidden assumptions
+* *Stress-Testing Ideas*: Identify weaknesses before they become problems
+* *Steelmanning*: Present the *strongest* version of the opposing argument, not a strawman
+* *Intellectual Honesty*: Separate idea evaluation from ego or political concerns
+* *Pre-Mortem Thinking*: Imagine failure scenarios to prevent them
+* *Dialectical Reasoning*: Thesis + Antithesis → Synthesis
+* *Risk Identification*: Surface potential problems proactively
+
+*Key Origin*: Catholic Church canonization process (Promotor Fidei role, formalized 1587), secularized in critical thinking and decision-making
+
+*Historical Context*: 400+ years as formalized practice in the Church, adopted widely in law, philosophy, business strategy, and red teaming
+
+*When to Use*:
+
+* Critical design or architecture decisions where failure is costly
+* Security threat modeling (red teaming)
+* Evaluating business strategies or proposals
+* Pre-mortems before launching significant initiatives
+* Code review where you want to challenge assumptions
+* Risk assessment and contingency planning
+* Any high-stakes decision where being wrong is expensive
+
+*Related Concepts*:
+
+* Red teaming (security context)
+* Pre-mortem analysis
+* Dialectical reasoning
+* Critical thinking frameworks
+* Steelmanning (vs. strawmanning)
+
+*Example Prompt Pattern*:
+
+----
+I propose [idea/design/decision].
+Play devil's advocate: What are the strongest arguments against this approach?
+----
+====
+
+[[five-whys]]
+==== Five Whys (Ohno)
+
+[%collapsible]
+====
+*Full Name*: Five Whys Root Cause Analysis
+
+*Core Concepts*:
+
+* *Iterative Causal Analysis*: Ask "Why?" repeatedly (typically ~5 times) to drill down to root causes
+* *Root Cause vs. Symptom*: Distinguish between surface symptoms and underlying causes
+* *Causal Chain*: Each answer becomes the subject of the next "Why?" question
+* *Actionable Root Cause*: Continue until you reach a cause that can be acted upon
+* *Simplicity*: No complex tools or statistical analysis required
+* *Team-Based Investigation*: Collaborative exploration of causal relationships
+* *Avoiding Blame*: Focus on process failures, not individual fault
+* *Countermeasure Identification*: Once root cause is found, design interventions
+
+*Key Proponent*: Taiichi Ohno (Toyota Production System, 1950s)
+
+*Historical Context*: Core tool in Lean Manufacturing and Toyota Production System (TPS), foundational to continuous improvement (Kaizen)
+
+*When to Use*:
+
+* Incident post-mortems in software/DevOps
+* Debugging when surface fixes don't resolve the issue
+* Process improvement initiatives
+* Understanding recurring problems
+* Quality defect analysis
+* Any situation where symptoms are clear but causes are not
+
+*Related Concepts*:
+
+* Kaizen (continuous improvement)
+* Root Cause Analysis (RCA)
+* Fishbone Diagram (Ishikawa) – complementary tool
+* A3 Problem Solving (Toyota)
+* DevOps post-mortem culture
+
+*Pitfall to Avoid*:
+
+* Stopping too early at a symptom rather than root cause
+* Pursuing a single causal chain when multiple factors contribute (use Fishbone Diagram for complex causality)
+* Blame-focused questioning rather than system-focused
+
+*Example Application*:
+
+----
+Problem: Website is down
+Why? → Database connection failed
+Why? → Connection pool exhausted
+Why? → Long-running queries not timing out
+Why? → No query timeout configured
+Why? → Default configuration was never reviewed for production
+Root Cause: Configuration review process missing
+Countermeasure: Establish pre-production configuration checklist
+----
+====
+
+[[feynman-technique]]
+==== Feynman Technique
+
+[%collapsible]
+====
+*Full Name*: Feynman Technique (also Feynman Learning Method)
+
+*Core Concepts*:
+
+* *Explain Simply*: Teach the concept in simple language as if to a beginner (traditionally "explain to a 12-year-old")
+* *Identify Gaps*: When you struggle to explain, you've found gaps in your understanding
+* *Return to Source Material*: Go back and re-learn the parts you couldn't explain clearly
+* *Simplify and Use Analogies*: Refine explanation using plain language and concrete examples
+* *Iterative Refinement*: Repeat the cycle until you can explain clearly and simply
+* *No Jargon Hiding*: Inability to avoid jargon signals lack of true understanding
+* *Active Learning*: Transform passive reading into active teaching
+* *Metacognition*: Become aware of what you don't know
+
+*Key Attribution*: Richard Feynman (Nobel Prize-winning physicist, 1965), famous for making complex physics accessible
+
+*Historical Context*: Feynman was renowned for his teaching ability and his belief that deep understanding meant being able to explain simply. The "technique" is a formalization of his learning approach.
+
+*When to Use*:
+
+* Learning new technical concepts or frameworks
+* Validating your understanding before using knowledge in practice
+* Preparing to teach or present a topic
+* Debugging conceptual confusion
+* Code review where you explain your design choices simply
+* Documentation writing (if you can't explain it simply, you don't understand it)
+
+*Four Steps (Canonical Form)*:
+
+1. *Choose a concept*: Pick the topic you want to understand
+2. *Teach it to a child*: Write an explanation in simple terms
+3. *Identify gaps and review*: Where you struggle, study more
+4. *Simplify and analogize*: Refine your explanation, use examples
+
+*Related Concepts*:
+
+* <<rubber-duck-debugging,Rubber Duck Debugging>> (explaining to understand)
+* Learning by teaching
+* Active recall
+* Elaborative interrogation
+* Plain language movement
+
+*Quote*: "If you can't explain it simply, you don't understand it well enough." (Often attributed to Einstein, but embodies Feynman's philosophy)
+====
+
 == Testing and Contributing Semantic Anchors
 
 === Testing a Semantic Anchor
@@ -1437,6 +1811,23 @@ Based on the response, you can determine:
 * ✅ *Good anchor*: LLM shows strong understanding → Add to catalog
 * ⚠️ *Partial recognition*: LLM knows it but lacks depth → Add with extra context
 * ❌ *Unknown*: LLM doesn't recognize it → May not be a good semantic anchor yet
+
+==== Evaluating Anchor Quality
+
+Beyond testing whether the LLM recognizes a term, evaluate whether it qualifies as a semantic anchor using the criteria from <<what-qualifies-as-a-semantic-anchor>>:
+
+* *Is it Precise?* Does it reference a specific, well-defined methodology or framework, rather than a vague instruction?
+* *Is it Rich?* Does it activate multiple interconnected concepts, not just a single directive?
+* *Is it Consistent?* Will different users and contexts get similar conceptual activation?
+* *Is it Attributable?* Can it be traced to key proponents, publications, or established practice?
+
+*Counter-examples to avoid*:
+
+* "TLDR" – lacks defined structure or methodology
+* "ELI5" – vague pedagogical target, no framework
+* "Keep it short/simple" – pure instruction, no depth
+
+If a term fails these criteria, it may be a useful prompt pattern but not a semantic anchor. Save semantic anchors for terms that activate rich, well-established conceptual frameworks.
 
 === Contributing New Anchors
 
