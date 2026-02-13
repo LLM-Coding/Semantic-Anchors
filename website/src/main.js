@@ -5,6 +5,7 @@ import { renderHeader } from './components/header.js'
 import { renderMain } from './components/main-content.js'
 import { renderFooter } from './components/footer.js'
 import { initTreemap, updateTreemapByRole, updateTreemapBySearch } from './components/treemap.js'
+import { createModal, showAnchorDetails } from './components/anchor-modal.js'
 
 const APP_VERSION = '0.2.0'
 
@@ -25,8 +26,19 @@ function initApp() {
   bindThemeToggle()
   bindLanguageToggle()
 
+  // Initialize anchor modal
+  createModal()
+  bindAnchorSelection()
+
   // Initialize treemap visualization
   initTreemapVisualization()
+}
+
+function bindAnchorSelection() {
+  document.addEventListener('anchor-selected', (event) => {
+    const { anchorId } = event.detail
+    showAnchorDetails(anchorId)
+  })
 }
 
 async function initTreemapVisualization() {
