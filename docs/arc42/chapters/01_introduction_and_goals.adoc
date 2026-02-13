@@ -1,0 +1,112 @@
+[[section-introduction-and-goals]]
+== Einführung und Ziele
+
+=== Aufgabenstellung
+
+Das Semantic Anchors Repository ist ein kuratierter Katalog von semantischen Ankern - etablierten Begriffen, Methodologien und Frameworks, die als Referenzpunkte in der Kommunikation mit Large Language Models (LLMs) dienen.
+
+**Das Projekt benötigt:**
+
+* **Moderne Website**: Interaktive, zweisprachige (EN/DE) Website mit Dark/Light Mode
+* **Visualisierung**: Treemap-basierte Darstellung der Kategorien nach MECE-Prinzip
+* **Skalierbare Struktur**: Aufteilung des monolithischen README.adoc in modulare Files
+* **Contribution Workflow**: Automatisierte Validierung und Erstellung neuer Anker via GitHub Actions
+
+**Kern-Features:**
+
+* Interaktive Treemap-Visualisierung der Kategorien
+* Filterung nach Rollen (Software Developer, Architect, Product Owner, etc.)
+* Volltextsuche über alle Anker
+* Detailansicht mit AsciiDoc-Rendering
+* Responsive Design (Mobile, Tablet, Desktop)
+* Automatisierter Contribution-Workflow via GitHub Issues
+
+=== Qualitätsziele
+
+[cols="1,2,1,5", options="header"]
+|===
+|Priorität |Qualitätsziel |Kategorie |Motivation
+
+|1
+|**Usability**
+|ISO 25010
+|Benutzer sollen Anker schnell finden können (max. 3 Klicks). Intuitive Navigation und Filterung sind kritisch für Akzeptanz.
+
+|2
+|**Performance**
+|ISO 25010
+|Page Load < 2s auf 3G, Treemap-Rendering < 500ms. Langsame Seiten reduzieren Nutzung drastisch.
+
+|3
+|**Maintainability**
+|ISO 25010
+|Modulare Struktur ermöglicht einfaches Hinzufügen neuer Anker ohne Regression. Skalierung auf 200+ Anker ohne Performance-Verlust.
+
+|4
+|**Accessibility**
+|WCAG 2.1 AA
+|Keyboard-Navigation, Screen-Reader-Support, ausreichende Kontraste. Inklusivität ist wichtig für diverse Nutzergruppe.
+
+|5
+|**Portability**
+|ISO 25010
+|Deployment auf GitHub Pages, aber leicht migrierbar zu anderen Plattformen (Netlify, Vercel).
+|===
+
+=== Stakeholder
+
+[cols="1,2,3", options="header"]
+|===
+|Rolle |Erwartungshaltung |Anmerkungen
+
+|**Software Developer**
+|Findet schnell relevante Testing-, Design- und Development-Practices
+|Primäre Nutzergruppe, ca. 40% der Besucher
+
+|**Software Architect**
+|Referenziert Architekturmuster und Entscheidungs-Frameworks
+|Braucht tiefe technische Details, Links zu Proponenten
+
+|**Product Owner / Business Analyst**
+|Nutzt Requirements-Engineering-Anker (User Story Mapping, JTBD)
+|Weniger technisch, braucht verständliche Sprache
+
+|**Technical Writer**
+|Wendet Documentation-Frameworks an (Docs-as-Code, Diátaxis)
+|Interesse an Beitrag neuer Anker aus Doc-Domain
+
+|**Contributor**
+|Möchte einfach neue Anker vorschlagen können
+|Nicht-technische Barriere senken, klarer Workflow
+
+|**Maintainer (Ralf D. Müller)**
+|Minimaler Maintenance-Aufwand, hohe Code-Qualität
+|Automatisierung ist kritisch
+
+|**GitHub Copilot / LLMs**
+|Benötigt strukturierte, maschinenlesbare Daten
+|Metadata in standardisiertem Format (JSON/YAML)
+|===
+
+=== Geschäftsziele
+
+[cols="1,3,2", options="header"]
+|===
+|ID |Geschäftsziel |Erfolgskennzahl
+
+|G-01
+|**Erhöhung der Sichtbarkeit**: Semantic Anchors als Standard-Referenz für LLM-Kommunikation etablieren
+|Star-Count auf GitHub > 500 in 6 Monaten
+
+|G-02
+|**Community-Wachstum**: Mehr Contributions aus verschiedenen Domänen (UX, Education, etc.)
+|+50% Issues/PRs innerhalb 3 Monate nach Launch
+
+|G-03
+|**Internationale Reichweite**: Deutschsprachige Nutzer ansprechen
+|30% DE Traffic nach 6 Monaten
+
+|G-04
+|**Wissensverbreitung**: LLM-Nutzer lernen effektivere Kommunikations-Patterns
+|Durchschnittliche Session-Dauer > 3 Minuten
+|===

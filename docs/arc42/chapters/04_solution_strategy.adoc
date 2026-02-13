@@ -1,0 +1,261 @@
+[[section-solution-strategy]]
+== Lösungsstrategie
+
+=== Strategische Entscheidungen
+
+[cols="2,3,3", options="header"]
+|===
+|Entscheidung |Begründung |Auswirkung
+
+|**Static Site mit Vite**
+|Keine serverseitige Logik nötig. GitHub Pages Constraint. Maximale Performance und Einfachheit.
+|✅ Schnelle Ladezeiten +
+✅ Einfaches Deployment +
+✅ Keine Server-Kosten +
+❌ Keine serverseitige Suche
+
+|**AsciiDoc-First**
+|Bestehendes Content-Format. Docs-as-Code Prinzip. Reichhaltigere Formatting-Optionen als Markdown.
+|✅ Kontinuität +
+✅ Bessere Struktur +
+✅ Includes und Attributes +
+❌ Weniger verbreitet als MD
+
+|**Ein File pro Anker**
+|Minimale Merge-Konflikte. Klare Git-History. Skaliert auf 200+ Anker.
+|✅ Parallele Contributions +
+✅ Granulare History +
+✅ Einfaches Refactoring +
+❌ Mehr Files zu verwalten
+
+|**Apache ECharts für Treemap**
+|Native Treemap-Support. Einfache API. Built-in Theming. Open Source (Apache 2.0).
+|✅ Schnelle Implementation +
+✅ Professionelle Visualisierung +
+✅ Responsive +
+❌ ~100KB Bundle-Size
+
+|**Client-Side Rendering**
+|GitHub Pages ist statisch. Alle Daten als JSON. Browser rendert mit JavaScript.
+|✅ Einfaches Deployment +
+✅ Schnelle Interaktivität +
+❌ SEO benötigt Workarounds +
+❌ JS Required
+
+|**AsciiDoc Attributes für Metadata**
+|Single Source of Truth. Metadata und Content im selben File. Keine Sync-Probleme.
+|✅ Einfache Contribution +
+✅ Konsistenz garantiert +
+❌ Custom Parser nötig
+|===
+
+=== Technologie-Stack
+
+**Frontend:**
+```
+Browser (Modern Evergreen)
+    ↓
+Vite (Build Tool & Dev Server)
+    ↓
+Vanilla JavaScript / Alpine.js (3KB)
+    ↓
+Apache ECharts (Treemap)
+    ↓
+asciidoctor.js (AsciiDoc → HTML)
+    ↓
+Tailwind CSS (Styling)
+```
+
+**Build-Pipeline:**
+```
+AsciiDoc Files
+    ↓
+Node.js Build Script (Metadata Extraction)
+    ↓
+JSON Generation (anchors.json, categories.json, roles.json)
+    ↓
+Vite Build (Bundle JS/CSS, Minify)
+    ↓
+Static Assets (dist/)
+    ↓
+GitHub Actions (Deploy to GitHub Pages)
+```
+
+**Development:**
+```
+Local: Vite Dev Server (HMR, Fast Refresh)
+CI/CD: GitHub Actions
+Hosting: GitHub Pages
+Domain: github.io (oder Custom Domain)
+```
+
+=== Qualitätsstrategien
+
+[cols="2,3,3", options="header"]
+|===
+|Qualitätsziel |Strategie |Umsetzung
+
+|**Performance**
+|Minimaler JavaScript-Overhead, Lazy Loading, Code-Splitting
+|Vite Tree-Shaking, ECharts on-demand loading, Image optimization
+
+|**Usability**
+|User-Centered Design, Mobile-First, Accessibility
+|Responsive Treemap, Keyboard-Navigation, ARIA-Labels, High Contrast
+
+|**Maintainability**
+|Modular Code, Clear Separation of Concerns, Documentation
+|Component-basierte Struktur, JSDoc, arc42, ADRs
+
+|**Portability**
+|Standard Web Technologies, keine Vendor-Lock-ins
+|Vanilla JS (kein Framework-Lock-in), Standard HTML/CSS/JS
+
+|**Testability**
+|Automated Tests, Gherkin Acceptance Criteria
+|Vitest (Unit), Playwright (E2E), Lighthouse CI (Performance)
+|===
+
+=== Lösungsansatz für Hauptszenarien
+
+==== UC-01: Anker nach Rolle filtern
+
+**Problem:** Benutzer sieht zu viele irrelevante Anker.
+
+**Lösung:**
+1. Metadata (`roles`) ist in JSON verfügbar
+2. Filter-UI (Multi-Select Dropdown)
+3. Client-Side Filtering: `anchors.filter(a => selectedRoles.some(r => a.roles.includes(r)))`
+4. Treemap wird mit gefilterten Daten neu generiert
+5. localStorage persistiert Filter-Auswahl
+
+==== UC-02: Treemap-Visualisierung
+
+**Problem:** Nutzer verliert Überblick bei 60+ Ankern.
+
+**Lösung:**
+1. Kategorien werden als Treemap visualisiert (Apache ECharts)
+2. Größe = Anzahl Anker pro Kategorie
+3. Farbe = Kategorie-Typ (aus Metadata)
+4. Interaktiv: Hover (Tooltip), Click (Navigation)
+5. Responsive: Anpassung an Viewport-Größe
+
+==== UC-03: Suche
+
+**Problem:** Nutzer kennt Anker-Namen nicht genau.
+
+**Lösung:**
+1. Build-Time: Suchindex generieren (Tokens aus Name, Proponents, Tags)
+2. Runtime: Client-Side Search mit Debounce (300ms)
+3. Relevanz-Score: Name Match (10 Punkte) > Proponents (5) > Tags (2)
+4. Ergebnisse sortiert nach Score
+5. Highlighting des Suchbegriffs
+
+==== UC-04: AsciiDoc-Rendering
+
+**Problem:** AsciiDoc muss im Browser dargestellt werden.
+
+**Lösung:**
+1. asciidoctor.js im Bundle
+2. Bei Navigation zu Anker: Fetch `.adoc` File
+3. asciidoctor.convert() → HTML
+4. Inject HTML in DOM
+5. Syntax-Highlighting via highlight.js (optional)
+
+==== UC-05: Internationalisierung (i18n)
+
+**Problem:** Deutsche und englische Nutzer.
+
+**Lösung:**
+1. JSON-Dateien für Übersetzungen (`en.json`, `de.json`)
+2. Language Switcher in UI
+3. localStorage speichert Sprachpräferenz
+4. Bei Sprachwechsel: Alle UI-Texte ersetzen
+5. `<html lang="...">` Attribut aktualisieren
+6. **Wichtig:** Nur UI übersetzt, nicht Anker-Content
+
+==== UC-06: Dark/Light Mode
+
+**Problem:** Lesbarkeit in verschiedenen Umgebungen.
+
+**Lösung:**
+1. CSS Variables für Theme-Farben
+2. Theme Toggle Button
+3. Erkennung von `prefers-color-scheme` (Browser)
+4. localStorage für Präferenz
+5. Sofortige Anwendung ohne Flackern (inline `<script>`)
+6. ECharts Theme-Switching (`chart.dispose()` + `echarts.init(..., theme)`)
+
+=== Deployment-Strategie
+
+**Automatisches Deployment:**
+
+```mermaid
+graph LR
+    A[Push to main] --> B[GitHub Actions Trigger]
+    B --> C[Build Script: Extract Metadata]
+    C --> D[Vite Build]
+    D --> E[Generate dist/]
+    E --> F[Deploy to gh-pages Branch]
+    F --> G[GitHub Pages serves dist/]
+```
+
+**Environments:**
+
+* **Development**: Lokaler Vite Dev Server (`npm run dev`)
+* **Preview**: PR-basierte Preview-Deployments (optional, via Netlify/Vercel)
+* **Production**: GitHub Pages (`https://llm-coding.github.io/Semantic-Anchors/`)
+
+=== Architektur-Patterns
+
+[cols="2,3,2", options="header"]
+|===
+|Pattern |Anwendung |Vorteil
+
+|**JAMstack**
+|JavaScript, APIs (JSON), Markup (Static HTML)
+|Performance, Security, Scalability
+
+|**Static Site Generation**
+|Build-Time Rendering, Pre-generated HTML
+|Fast Loading, SEO-friendly
+
+|**Component-Based Architecture**
+|Wiederverwendbare UI-Komponenten (Treemap, Filter, Search)
+|Maintainability, Testability
+
+|**Docs-as-Code**
+|AsciiDoc in Git, Versionskontrolle, PRs
+|Collaboration, History, Automation
+
+|**Progressive Enhancement**
+|Grundfunktion ohne JS, enhanced mit JS
+|Accessibility, Robustheit
+|===
+
+=== Risikominimierung
+
+[cols="2,2,3", options="header"]
+|===
+|Risiko |Wahrscheinlichkeit |Mitigation
+
+|**Bundle-Size zu groß**
+|Mittel
+|Tree-Shaking, Code-Splitting, ECharts on-demand, CDN-Fallback
+
+|**AsciiDoc-Parser Overhead**
+|Niedrig
+|Caching von gerenderten Ankern, Lazy Loading
+
+|**SEO-Probleme (Client-Side)**
+|Mittel
+|Pre-rendering via GitHub Actions, Meta-Tags, Sitemap.xml
+
+|**Browser-Kompatibilität**
+|Niedrig
+|Polyfills nur bei Bedarf, Feature Detection, Transpilation
+
+|**Skalierung >200 Anker**
+|Niedrig
+|Pagination, Virtual Scrolling, Search Index Optimization
+|===

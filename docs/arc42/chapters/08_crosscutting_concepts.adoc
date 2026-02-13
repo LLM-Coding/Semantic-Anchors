@@ -1,0 +1,270 @@
+[[section-concepts]]
+== Querschnittliche Konzepte
+
+=== Domain Model
+
+Siehe Kapitel 5 (Bausteinsicht) - Datenmodell mit Anchor, Category, Role, Proponent.
+
+=== User Experience (UX)
+
+**Design-Prinzipien:**
+
+* **Mobile-First**: Design startet bei 320px Breite
+* **Progressive Disclosure**: Collapsible Sections, Lazy Loading
+* **Consistency**: Einheitliche Interaktionsmuster
+* **Feedback**: Sofortiges visuelles Feedback bei Aktionen
+
+**Interaction Patterns:**
+
+* **Hover**: Tooltips in Treemap
+* **Click**: Navigation zu Details
+* **Keyboard**: Tab-Navigation, Enter für Aktivierung, Escape für Schließen
+* **Touch**: Tap-friendly Buttons (min. 44x44px)
+
+=== Internationalisierung (i18n)
+
+**Unterstützte Sprachen:** EN (Primary), DE (Secondary)
+
+**Was wird übersetzt:**
+
+* UI-Elemente (Navigation, Buttons, Labels, Tooltips)
+* Kategorie-Namen
+* Rollen-Namen
+* Fehlermeldungen
+
+**Was wird NICHT übersetzt:**
+
+* Anker-Content (Core Concepts, Proponents, etc.)
+* AsciiDoc-Content selbst
+
+**Technische Umsetzung:**
+
+```javascript
+// i18n/en.json
+{
+  "nav.home": "Home",
+  "nav.categories": "Categories",
+  "filter.byRole": "Filter by Role",
+  "search.placeholder": "Search semantic anchors..."
+}
+
+// i18n/de.json
+{
+  "nav.home": "Startseite",
+  "nav.categories": "Kategorien",
+  "filter.byRole": "Nach Rolle filtern",
+  "search.placeholder": "Semantische Anker durchsuchen..."
+}
+```
+
+**Language Detection:**
+
+1. localStorage Preference
+2. URL Parameter `?lang=de`
+3. `navigator.language`
+4. Fallback: EN
+
+=== Security
+
+**Threat Model:**
+
+* **XSS**: AsciiDoc-Content ist trusted (aus eigenem Repository)
+* **CSRF**: Nicht relevant (keine State-Changing Operations)
+* **Injection**: Keine User-Input in Backend
+
+**Mitigations:**
+
+* Content Security Policy (CSP)
+* Subresource Integrity (SRI) für CDN-Libraries
+* HTTPS Only
+* No Cookies (nur localStorage für Preferences)
+
+**CSP Header (via GitHub Pages):**
+
+```
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self' cdn.jsdelivr.net;
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+```
+
+=== Performance
+
+**Metriken (Lighthouse):**
+
+* First Contentful Paint (FCP): < 1.5s
+* Largest Contentful Paint (LCP): < 2.5s
+* Time to Interactive (TTI): < 3.5s
+* Cumulative Layout Shift (CLS): < 0.1
+
+**Optimierungen:**
+
+* **Code-Splitting**: Lazy Load Treemap, AsciiDoc Renderer
+* **Tree-Shaking**: Nur benötigte ECharts-Module
+* **Image Optimization**: WebP, Responsive Images
+* **Font Optimization**: Subset Fonts, font-display: swap
+* **Critical CSS**: Inline Above-the-Fold CSS
+
+=== Fehlerbehandlung
+
+**Error Boundaries:**
+
+* API Fetch Errors → Retry mit Exponential Backoff
+* AsciiDoc Render Errors → Fallback zu Plain Text
+* Treemap Render Errors → Fallback zu Liste
+
+**User-Facing Errors:**
+
+```javascript
+class ErrorHandler {
+  handle(error) {
+    console.error(error);
+
+    const message = this.getUserMessage(error);
+    this.showNotification(message, 'error');
+
+    if (error.fatal) {
+      this.showErrorPage();
+    }
+  }
+
+  getUserMessage(error) {
+    const messages = {
+      'NetworkError': 'Could not load data. Please check your connection.',
+      'ParseError': 'Content could not be rendered.',
+      'NotFoundError': 'Anchor not found.'
+    };
+
+    return messages[error.type] || 'An error occurred. Please try again.';
+  }
+}
+```
+
+=== Logging & Monitoring
+
+**Client-Side Logging:**
+
+```javascript
+const logger = {
+  info: (msg, data) => console.log(`[INFO] ${msg}`, data),
+  warn: (msg, data) => console.warn(`[WARN] ${msg}`, data),
+  error: (msg, error) => {
+    console.error(`[ERROR] ${msg}`, error);
+    // Optional: Send to Sentry
+  }
+};
+```
+
+**Performance Monitoring:**
+
+* Web Vitals API
+* Navigation Timing API
+* Optional: Plausible Analytics (DSGVO-konform)
+
+=== Testability
+
+**Test-Pyramide:**
+
+* **Unit Tests**: Utils, State Manager, Search Engine (Vitest)
+* **Component Tests**: Treemap, Filter, Search Bar (Vitest + @testing-library)
+* **E2E Tests**: User Flows (Playwright)
+* **Accessibility Tests**: axe-core, Lighthouse CI
+
+**Test-Strategie:**
+
+* Unit Tests für Business Logic (100% Coverage)
+* Component Tests für UI Components (Critical Paths)
+* E2E Tests für User Journeys (Happy Paths + Edge Cases)
+* Lighthouse CI für Performance Regression
+
+=== Build & Configuration Management
+
+**Environment Variables:**
+
+```bash
+# .env.development
+VITE_API_BASE_URL=/data
+VITE_ENABLE_ANALYTICS=false
+
+# .env.production
+VITE_API_BASE_URL=https://llm-coding.github.io/Semantic-Anchors/data
+VITE_ENABLE_ANALYTICS=true
+```
+
+**Build Modes:**
+
+* **Development**: HMR, Source Maps, No Minification
+* **Production**: Minified, Tree-Shaken, Optimized Assets
+
+**Configuration Files:**
+
+* `vite.config.js`: Build Configuration
+* `tsconfig.json`: TypeScript Config (optional)
+* `package.json`: Dependencies, Scripts
+
+=== Accessibility (A11y)
+
+**WCAG 2.1 Level AA Compliance:**
+
+* **Keyboard Navigation**: Tab, Enter, Escape, Arrow Keys
+* **Screen Reader**: ARIA Labels, Semantic HTML, Focus Management
+* **Contrast**: Mindestens 4.5:1 für Text, 3:1 für große Texte
+* **Responsive Text**: Zoombar bis 200% ohne Funktionsverlust
+* **Focus Indicators**: Sichtbare Fokus-Rahmen
+
+**ARIA-Labels:**
+
+```html
+<button aria-label="Filter by role" class="filter-button">
+  <svg aria-hidden="true">...</svg>
+</button>
+
+<div role="region" aria-label="Treemap visualization of categories">
+  <canvas id="treemap"></canvas>
+</div>
+```
+
+**Skip Links:**
+
+```html
+<a href="#main-content" class="skip-link">Skip to main content</a>
+```
+
+=== Documentation
+
+**Developer Documentation:**
+
+* arc42 Architekturdokumentation (dieses Dokument)
+* ADRs für wichtige Entscheidungen
+* README.md mit Setup-Anleitung
+* JSDoc für JavaScript-Funktionen
+
+**User Documentation:**
+
+* Inline Help-Texte
+* Tooltips
+* Optional: User Guide auf Website
+
+=== Versionierung
+
+**Semantic Versioning:**
+
+* MAJOR: Breaking Changes (z.B. neue Datenstruktur)
+* MINOR: New Features (z.B. neue Visualisierung)
+* PATCH: Bugfixes
+
+**Changelog:**
+
+* Automatisch generiert aus Conventional Commits
+* Format: Keep a Changelog
+
+=== Deployment-Strategie
+
+Siehe Kapitel 7 (Verteilungssicht).
+
+**Zero-Downtime Deployment:**
+
+* GitHub Pages ersetzt Dateien atomar
+* Alte Version bleibt erreichbar bis neue vollständig deployed
+* No Breaking Changes in APIs (nur additive Änderungen)

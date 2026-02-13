@@ -1,0 +1,182 @@
+[[section-system-scope-and-context]]
+== Kontextabgrenzung
+
+=== Fachlicher Kontext
+
+[plantuml, business-context, svg]
+----
+@startuml
+!include <C4/C4_Context>
+
+Person(user, "Benutzer", "Software Developer, Architect, Product Owner, etc.")
+Person(contributor, "Contributor", "Schlägt neue Semantic Anchors vor")
+Person(maintainer, "Maintainer", "Ralf D. Müller - verwaltet Repository")
+
+System(website, "Semantic Anchors Website", "Interaktive Website zur Darstellung und Suche von Semantic Anchors")
+
+System_Ext(github, "GitHub", "Repository hosting, Issues, Pull Requests")
+System_Ext(ghpages, "GitHub Pages", "Static Website Hosting")
+System_Ext(copilot, "GitHub Copilot API", "Validierung neuer Anchor-Vorschläge")
+System_Ext(browser, "Web Browser", "Chrome, Firefox, Safari, Edge")
+
+Rel(user, website, "Browst, filtert, sucht", "HTTPS")
+Rel(contributor, github, "Erstellt Issue für neuen Anchor", "HTTPS")
+Rel(maintainer, github, "Verwaltet Repository, merged PRs", "HTTPS")
+
+Rel(website, ghpages, "Deployed auf", "")
+Rel(github, copilot, "Validiert Anchor-Vorschlag", "GitHub Actions")
+Rel(github, ghpages, "Deployed via Actions", "CI/CD")
+Rel(user, browser, "Verwendet", "")
+Rel(browser, website, "Rendert", "")
+
+@enduml
+----
+
+**Externe Schnittstellen:**
+
+[cols="1,2,3,2", options="header"]
+|===
+|Schnittstelle |Typ |Beschreibung |Protokoll/Format
+
+|**Benutzer → Website**
+|Eingabe
+|Nutzer browst Website, filtert nach Rolle, sucht Anker
+|HTTPS, HTML/CSS/JS
+
+|**Website → Browser**
+|Ausgabe
+|Rendert Treemap, Anker-Details, Navigation
+|HTML, JSON, AsciiDoc (gerendert)
+
+|**Contributor → GitHub**
+|Eingabe
+|Erstellt Issue mit Anchor-Vorschlag
+|GitHub UI, Issue Template
+
+|**GitHub Actions → Copilot API**
+|Verarbeitung
+|Validiert ob Begriff ein Semantic Anchor ist
+|REST API, JSON
+
+|**GitHub → GitHub Pages**
+|Deployment
+|Automatischer Build und Deploy bei Push
+|GitHub Actions Workflow
+
+|**Maintainer → GitHub**
+|Verwaltung
+|Merged PRs, assigned Issues, verwaltet Labels
+|Git, GitHub UI
+|===
+
+=== Technischer Kontext
+
+[plantuml, technical-context, svg]
+----
+@startuml
+!include <C4/C4_Container>
+
+Person(user, "Benutzer")
+
+Container(spa, "Single Page Application", "Vite, Vanilla JS/Alpine.js", "Statische Website mit Client-Side Routing")
+Container(treemap, "Treemap Component", "Apache ECharts", "Interaktive Visualisierung")
+Container(asciidoc, "AsciiDoc Renderer", "asciidoctor.js", "Rendert .adoc zu HTML")
+Container(i18n, "i18n Module", "JSON-based", "EN/DE Übersetzungen")
+
+ContainerDb(static, "Static Files", "JSON, AsciiDoc", "Anker, Kategorien, Rollen, Metadata")
+
+System_Ext(cdn, "CDN (optional)", "jsDelivr, unpkg", "ECharts, Fonts")
+System_Ext(ghpages, "GitHub Pages", "Static Hosting")
+
+Rel(user, spa, "Verwendet", "HTTPS")
+Rel(spa, treemap, "Verwendet für Visualisierung", "JavaScript")
+Rel(spa, asciidoc, "Rendert Content", "JavaScript")
+Rel(spa, i18n, "Übersetzt UI", "JSON")
+Rel(spa, static, "Lädt Daten", "fetch API")
+Rel(spa, cdn, "Lädt Libraries", "HTTPS (optional)")
+Rel(ghpages, spa, "Hostet", "")
+
+@enduml
+----
+
+**Technische Schnittstellen:**
+
+[cols="2,2,3,2", options="header"]
+|===
+|Komponente |Technologie |Zweck |Datenformat
+
+|**Static Files**
+|JSON, AsciiDoc
+|Anker-Content, Metadata, Kategorien, Rollen
+|`.json`, `.adoc`
+
+|**SPA**
+|Vite, Vanilla JS
+|Main Application, Routing, State Management
+|JavaScript Modules
+
+|**Treemap Component**
+|Apache ECharts
+|Kategorien-Visualisierung
+|JavaScript Object (ECharts Config)
+
+|**AsciiDoc Renderer**
+|asciidoctor.js
+|Konvertiert .adoc → HTML
+|AsciiDoc → HTML
+
+|**i18n Module**
+|Custom JSON-based
+|UI-Übersetzungen EN/DE
+|JSON Key-Value
+
+|**Theme Manager**
+|CSS Variables
+|Dark/Light Mode Switching
+|CSS Custom Properties
+
+|**Search Index**
+|Client-Side JSON
+|Volltext-Suche
+|Tokenized JSON
+|===
+
+=== Datenfluss
+
+**Build-Time:**
+
+```
+AsciiDoc Files (.adoc)
+    ↓
+Build Script (Node.js)
+    ↓ (extrahiert Metadata)
+JSON Files (anchors.json, categories.json, roles.json)
+    ↓
+Vite Build
+    ↓ (bundelt JS/CSS)
+Static Assets (dist/)
+    ↓
+GitHub Pages
+```
+
+**Runtime:**
+
+```
+User Request (HTTPS)
+    ↓
+GitHub Pages (HTML/JS/CSS)
+    ↓
+Browser lädt SPA
+    ↓
+SPA lädt JSON-Daten (fetch)
+    ↓
+Treemap rendert Visualisierung
+    ↓
+User interagiert (Filter, Search, Click)
+    ↓
+SPA lädt AsciiDoc-File
+    ↓
+asciidoctor.js rendert zu HTML
+    ↓
+Browser zeigt Anker-Details
+```

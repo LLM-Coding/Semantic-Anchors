@@ -1,0 +1,173 @@
+[[section-runtime-view]]
+== Laufzeitsicht
+
+=== Szenario 1: Initiales Laden der Website
+
+[plantuml, runtime-initial-load, svg]
+----
+@startum
+actor User
+participant Browser
+participant "GitHub Pages" as GHP
+participant "SPA" as App
+participant "API Client" as API
+database "Static JSON" as JSON
+
+User -> Browser: Öffnet URL
+Browser -> GHP: GET /index.html
+GHP --> Browser: HTML + JS Bundle
+Browser -> App: Initialisiert App
+App -> API: loadInitialData()
+API -> JSON: GET /data/categories.json
+JSON --> API: Categories
+API -> JSON: GET /data/roles.json
+JSON --> API: Roles
+API -> JSON: GET /data/anchors.json
+JSON --> API: Anchors (Metadata only)
+API --> App: Daten geladen
+App -> App: Rendert Treemap
+App --> User: Zeigt Homepage mit Treemap
+@enduml
+----
+
+**Zeitbudget:** < 2 Sekunden auf 3G
+
+=== Szenario 2: Anker nach Rolle filtern
+
+[plantuml, runtime-filter, svg]
+----
+@startuml
+actor User
+participant "Role Filter UI" as Filter
+participant "State Manager" as State
+participant "Treemap Component" as Treemap
+participant "LocalStorage" as LS
+
+User -> Filter: Wählt "Software Developer"
+Filter -> State: updateFilters({roles: ['software-developer']})
+State -> State: Filtert Anchors
+State -> Treemap: update(filteredAnchors)
+Treemap -> Treemap: Generiert neue Treemap-Daten
+Treemap --> User: Zeigt gefilterte Treemap
+State -> LS: Speichert Filter
+LS --> State: Gespeichert
+@enduml
+----
+
+**Zeitbudget:** < 100ms
+
+=== Szenario 3: Suche durchführen
+
+[plantuml, runtime-search, svg]
+----
+@startuml
+actor User
+participant "Search Bar" as Search
+participant "Search Engine" as Engine
+participant "Results View" as Results
+
+User -> Search: Tippt "TDD"
+Search -> Search: Debounce (300ms)
+Search -> Engine: search("TDD")
+Engine -> Engine: Tokenisierung
+Engine -> Engine: Matching mit Score
+Engine -> Engine: Sortierung nach Relevanz
+Engine --> Search: [Results mit Scores]
+Search -> Results: display(results)
+Results --> User: Zeigt Suchergebnisse
+@enduml
+----
+
+**Zeitbudget:** < 300ms nach letztem Keystroke
+
+=== Szenario 4: Anker-Details anzeigen
+
+[plantuml, runtime-anchor-details, svg]
+----
+@startuml
+actor User
+participant "Treemap/Search" as UI
+participant Router
+participant "Anchor View" as View
+participant "AsciiDoc Renderer" as Renderer
+participant "GitHub Pages" as GHP
+
+User -> UI: Klickt auf "TDD, London School"
+UI -> Router: navigate('/anchor/tdd-london-school')
+Router -> View: render(anchorId)
+View -> Renderer: render('docs/anchors/tdd-london-school.adoc')
+Renderer -> GHP: GET /docs/anchors/tdd-london-school.adoc
+GHP --> Renderer: AsciiDoc Content
+Renderer -> Renderer: asciidoctor.convert()
+Renderer --> View: HTML
+View -> View: Inject HTML + Metadata
+View --> User: Zeigt Anker-Details
+@enduml
+----
+
+**Zeitbudget:** < 500ms
+
+=== Szenario 5: Theme wechseln
+
+[plantuml, runtime-theme-switch, svg]
+----
+@startuml
+actor User
+participant "Theme Toggle" as Toggle
+participant "Theme Manager" as Manager
+participant "Treemap" as Chart
+participant LocalStorage as LS
+
+User -> Toggle: Klick auf Theme Button
+Toggle -> Manager: switchTheme()
+Manager -> Manager: currentTheme = (current === 'light') ? 'dark' : 'light'
+Manager -> Manager: document.body.className = currentTheme
+Manager -> Chart: updateTheme(currentTheme)
+Chart -> Chart: Dispose old chart
+Chart -> Chart: Init with new theme
+Chart --> User: Treemap mit neuem Theme
+Manager -> LS: Save theme preference
+LS --> Manager: Gespeichert
+@enduml
+----
+
+**Zeitbudget:** < 100ms (kein Flackern)
+
+=== Szenario 6: Neuen Anker via GitHub vorschlagen
+
+[plantuml, runtime-contribution, svg]
+----
+@startuml
+actor Contributor
+participant Website
+participant GitHub
+participant "GitHub Actions" as GHA
+participant "Copilot API" as Copilot
+participant Maintainer
+
+Contributor -> Website: Klickt "Suggest New Anchor"
+Website -> GitHub: Redirect zu Issue Template
+Contributor -> GitHub: Füllt Template aus\n(Anchor Name: "SOTA")
+Contributor -> GitHub: Submit Issue
+GitHub -> GHA: Trigger Workflow\n(on: issues opened)
+GHA -> GHA: Extract anchor name from issue
+GHA -> Copilot: Validate "SOTA" as semantic anchor
+Copilot --> GHA: Response: "Valid" + Reasoning
+GHA -> GitHub: Post comment ✅ + Add label "validated"
+GitHub --> Contributor: Notification
+GitHub --> Maintainer: Notification
+Maintainer -> GitHub: Reviews Issue
+Maintainer -> GitHub: Assigns to Copilot
+GitHub -> GHA: Trigger "Generate Anchor" Workflow
+GHA -> Copilot: Generate AsciiDoc entry
+Copilot --> GHA: Generated .adoc content
+GHA -> GitHub: Create PR with new file
+GitHub --> Maintainer: PR notification
+Maintainer -> GitHub: Reviews and Merges PR
+GitHub -> GHA: Trigger Deploy Workflow
+GHA -> GHA: Build & Deploy
+GHA --> Website: Updated with new Anchor
+@enduml
+----
+
+**Zeitbudget:** Validation < 30 Sekunden, PR Generation < 2 Minuten

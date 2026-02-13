@@ -1,0 +1,213 @@
+[[section-deployment-view]]
+== Verteilungssicht
+
+=== Infrastruktur Ebene 1
+
+[plantuml, deployment-overview, svg]
+----
+@startuml
+node "Developer Workstation" {
+    [Git Repository\n(Local Clone)]
+    [Vite Dev Server\n:5173]
+}
+
+node "GitHub" {
+    [Repository\nmain branch]
+    [GitHub Actions\nRunners]
+    [gh-pages branch]
+}
+
+cloud "GitHub Pages" {
+    [Static Website\n*.github.io]
+}
+
+cloud "CDN (optional)" {
+    [jsDelivr]
+    [unpkg]
+}
+
+actor Developer
+actor "End User" as User
+
+Developer --> [Git Repository\n(Local Clone)]: Push
+[Git Repository\n(Local Clone)] --> [Repository\nmain branch]: git push
+[Repository\nmain branch] --> [GitHub Actions\nRunners]: Triggers Workflow
+[GitHub Actions\nRunners] --> [gh-pages branch]: Deploys
+[gh-pages branch] --> [Static Website\n*.github.io]: Serves
+User --> [Static Website\n*.github.io]: HTTPS
+[Static Website\n*.github.io] ..> [jsDelivr]: Loads Libraries
+[Static Website\n*.github.io] ..> [unpkg]: Fallback
+
+@enduml
+----
+
+=== Deployment-Umgebungen
+
+[cols="1,2,2,2", options="header"]
+|===
+|Umgebung |Zweck |URL |Deployment-Methode
+
+|**Development**
+|Lokale Entwicklung
+|http://localhost:5173
+|`npm run dev` (Vite Dev Server)
+
+|**Preview (optional)**
+|PR-Previews
+|`https://deploy-preview-{PR}.netlify.app`
+|Netlify PR Previews (optional)
+
+|**Production**
+|Live Website
+|`https://llm-coding.github.io/Semantic-Anchors/`
+|GitHub Actions → gh-pages Branch
+|===
+
+=== GitHub Actions Workflows
+
+==== Deploy Workflow (.github/workflows/deploy.yml)
+
+**Trigger:** Push to `main` branch
+
+**Steps:**
+1. Checkout Repository
+2. Setup Node.js
+3. Install Dependencies (`npm ci`)
+4. Extract Metadata (`npm run extract-metadata`)
+5. Validate Anchors (`npm run validate`)
+6. Generate JSON (`npm run generate-json`)
+7. Build Website (`npm run build`)
+8. Deploy to gh-pages (`gh-pages -d website/dist`)
+
+**Beispiel:**
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run build:all
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./website/dist
+```
+
+==== Validate Anchor Workflow (.github/workflows/validate-anchor.yml)
+
+**Trigger:** Issue mit Label "new-anchor"
+
+**Steps:**
+1. Extract Anchor Name aus Issue Body
+2. Call GitHub Copilot API
+3. Post Comment mit Validierung
+4. Add Label "validated" oder "needs-clarification"
+
+=== Technische Infrastruktur
+
+[cols="2,2,2,2", options="header"]
+|===
+|Komponente |Technologie |Hosting |Verfügbarkeit
+
+|**Website**
+|Static HTML/CSS/JS
+|GitHub Pages
+|99.9% (GitHub SLA)
+
+|**Source Code**
+|Git Repository
+|GitHub.com
+|99.95%
+
+|**CI/CD**
+|GitHub Actions
+|GitHub Infrastructure
+|99.95%
+
+|**CDN (optional)**
+|jsDelivr
+|Cloudflare
+|99.99%
+|===
+
+=== Netzwerk-Architektur
+
+```
+End User
+    ↓ HTTPS
+GitHub Pages (CDN)
+    ↓
+Static Files (HTML, JS, CSS, JSON, .adoc)
+    ↓
+Browser Client-Side Rendering
+    ↓ HTTPS (fetch)
+Static JSON APIs
+    ↓
+AsciiDoc Files
+```
+
+**Protokolle:**
+* HTTPS (TLS 1.2+)
+* HTTP/2 (GitHub Pages Support)
+
+=== Skalierung & Performance
+
+**Horizontal Scaling:**
+* GitHub Pages nutzt CDN (Fastly)
+* Automatische geografische Verteilung
+* Caching auf Edge-Servern
+
+**Caching-Strategie:**
+* Static Assets: `Cache-Control: max-age=31536000` (1 Jahr)
+* HTML: `Cache-Control: max-age=3600` (1 Stunde)
+* JSON: `Cache-Control: max-age=3600`
+* Service Worker (optional): Offline-First Caching
+
+**Performance-Optimierungen:**
+* Gzip/Brotli Compression (automatisch via GitHub Pages)
+* Asset Fingerprinting (Vite)
+* Code-Splitting
+* Lazy Loading von AsciiDoc-Files
+
+=== Disaster Recovery
+
+**Backup:**
+* Source Code: GitHub (automatisches Backup)
+* Deployed Site: Kann jederzeit aus main neu gebaut werden
+
+**Recovery Time Objective (RTO):** < 10 Minuten
+**Recovery Point Objective (RPO):** Letzter Commit
+
+**Wiederherstellung:**
+1. Fix im Source Code
+2. Push to main
+3. Automatisches Deployment via GitHub Actions
+4. Website ist aktualisiert
+
+=== Monitoring & Logging
+
+**Verfügbarkeit:**
+* GitHub Pages Status: https://www.githubstatus.com/
+* Uptime Monitor (optional): UptimeRobot, Ping
+
+**Performance:**
+* Lighthouse CI in GitHub Actions
+* Web Vitals Tracking (optional, privacy-first)
+
+**Fehler-Tracking:**
+* Browser Console Errors
+* Sentry.io (optional)
+
+**Analytics (optional):**
+* Plausible Analytics (DSGVO-konform)
+* Kein Google Analytics (Privacy-First)

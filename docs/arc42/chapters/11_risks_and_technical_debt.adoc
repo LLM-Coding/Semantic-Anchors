@@ -1,0 +1,215 @@
+[[section-technical-risks]]
+== Risiken und technische Schulden
+
+=== Risiken
+
+[cols="1,2,1,1,3,2", options="header"]
+|===
+|ID |Risiko |Wahrsch. |Impact |Beschreibung |Mitigation
+
+|**R-01**
+|Bundle-Size zu groß
+|Mittel
+|Mittel
+|ECharts + asciidoctor.js könnten Bundle > 500KB machen, langsamer Load auf Mobile
+|Tree-Shaking, Code-Splitting, CDN für ECharts, Lazy Loading
+
+|**R-02**
+|SEO-Probleme (Client-Side Rendering)
+|Mittel
+|Niedrig
+|Google könnte dynamisch geladenen Content nicht indexieren
+|Pre-Rendering via GitHub Actions, Static Sitemap, Meta-Tags
+
+|**R-03**
+|Browser-Inkompatibilität
+|Niedrig
+|Mittel
+|Ältere Browser könnten ECharts/moderne JS nicht unterstützen
+|Transpilation via Vite, Feature Detection, Polyfills nur bei Bedarf
+
+|**R-04**
+|Skalierung >200 Anker
+|Niedrig
+|Hoch
+|Treemap könnte bei sehr vielen Ankern unleserlich werden
+|Pagination, Collapsible Categories, Zoom-Feature in ECharts
+
+|**R-05**
+|GitHub Pages Downtime
+|Sehr niedrig
+|Hoch
+|GitHub Pages nicht erreichbar → Website offline
+|Mirror auf Netlify (optional), Status-Seite, RTO < 24h
+
+|**R-06**
+|AsciiDoc-Parser Overhead
+|Niedrig
+|Niedrig
+|asciidoctor.js könnte bei vielen Ankern langsam sein
+|Lazy Loading, Caching von gerendertem HTML, Service Worker
+
+|**R-07**
+|Contribution Barriere zu hoch
+|Mittel
+|Hoch
+|Contributors finden GitHub Issue-Workflow zu komplex
+|Klare Anleitung, Video-Tutorial, Einfache Templates
+
+|**R-08**
+|Copilot API Kosten
+|Niedrig
+|Mittel
+|GitHub Copilot API könnte kostenpflichtig werden oder Rate-Limits haben
+|Fallback: Manuelle Validation, Community-Review
+
+|**R-09**
+|Merge-Konflikte trotz File-Split
+|Niedrig
+|Niedrig
+|Parallele Edits in Category-Include-Files
+|Automatische Include-Generierung aus Metadata
+
+|**R-10**
+|Fehlende Analytics-Insights
+|Mittel
+|Niedrig
+|Ohne Analytics keine Daten über Nutzerverhalten
+|Privacy-First Analytics (Plausible), oder manuelle User Feedback
+|===
+
+=== Technische Schulden
+
+==== Bekannte Tech Debt Items
+
+[cols="1,2,1,3,2", options="header"]
+|===
+|ID |Beschreibung |Priorität |Auswirkung |Maßnahme
+
+|**TD-01**
+|Keine TypeScript
+|Niedrig
+|Runtime-Fehler möglich, schlechtere IDE-Unterstützung
+|Migration zu TypeScript in v2.0
+
+|**TD-02**
+|Kein Testing in MVP
+|Hoch
+|Regressions nicht automatisch erkennbar
+|Tests schrittweise nachziehen: Unit → Component → E2E
+
+|**TD-03**
+|Inline Styles in Prototyp
+|Mittel
+|Wartbarkeit leidet
+|Refactoring zu CSS Modules oder Tailwind
+
+|**TD-04**
+|Hardc coded i18n-Strings
+|Mittel
+|Schwer zu übersetzen, fehleranfällig
+|Migration zu i18n-JSON-Files
+
+|**TD-05**
+|Keine Service Worker
+|Niedrig
+|Keine Offline-Funktionalität
+|Service Worker für Caching in v2.0
+
+|**TD-06**
+|Manuelle Include-Listen
+|Mittel
+|Category/Role-Files müssen manuell gepflegt werden
+|Automatische Generierung aus Metadata
+|===
+
+==== Tech Debt Strategie
+
+**Priorisierung:**
+
+1. **Kritisch**: Behindert Entwicklung oder gefährdet Stabilität → Sofort fixen
+2. **Hoch**: Beeinträchtigt Qualität oder Wartbarkeit signifikant → In nächstem Sprint
+3. **Mittel**: Verbesserungswürdig, aber nicht dringend → Backlog
+4. **Niedrig**: Nice-to-Have → Opportunistisch wenn Zeit
+
+**Maßnahmen:**
+
+* **Boy Scout Rule**: "Leave code better than you found it"
+* **Refactoring Sprints**: Alle 3 Monate 1 Sprint für Tech Debt
+* **20% Time**: 20% der Entwicklungszeit für Tech Debt-Reduktion
+
+=== Risiko-Bewertungsmatrix
+
+```
+Impact
+  ↑
+Hoch │         R-04    │  R-05, R-07
+     │                 │
+Mittel│  R-01, R-02, R-08│  R-03
+     │                 │
+Niedrig│ R-06, R-09, R-10│
+  ───────────────────────────→
+     Niedrig   Mittel   Hoch
+              Wahrscheinlichkeit
+```
+
+**Fokus:** R-04 (Skalierung), R-07 (Contribution Barriere)
+
+=== Monitoring der Risiken
+
+**Regelmäßige Reviews:**
+
+* **Monatlich**: Tech Debt Review Meeting
+* **Quarterly**: Risiko-Assessment aktualisieren
+* **Bei jedem Release**: Quality Metrics prüfen
+
+**Metriken:**
+
+* Bundle Size Trend (automatisch via CI)
+* Page Load Time Trend (Lighthouse CI)
+* Contribution Rate (GitHub Stats)
+* Issue Resolution Time
+
+=== Notfall-Pläne
+
+==== R-05: GitHub Pages Downtime
+
+**Symptom:** Website nicht erreichbar
+
+**Sofortmaßnahmen:**
+
+1. GitHub Status prüfen (https://www.githubstatus.com/)
+2. Wenn GitHub-Problem: Warten (RTO < 24h)
+3. Wenn Repository-Problem: Rollback auf letzten funktionierenden Commit
+4. Kommunikation über Twitter/Mastodon
+
+**Langfristig:**
+
+* Mirror auf Netlify einrichten
+* DNS-Failover konfigurieren
+
+==== R-07: Zu wenig Contributions
+
+**Symptom:** < 1 neuer Anker pro Monat
+
+**Maßnahmen:**
+
+1. Community-Survey: Was sind die Barrieren?
+2. Video-Tutorial erstellen
+3. "Good First Issue" Labels
+4. Gamification (Contributor-Badges)
+
+=== Lessons Learned (für Retrospektiven)
+
+**Nach MVP-Launch:**
+
+* Was hat gut funktioniert?
+* Welche Annahmen waren falsch?
+* Welche Risiken sind eingetreten?
+* Welche neuen Risiken sind aufgetreten?
+
+**Kontinuierliche Verbesserung:**
+
+* Tech Debt Backlog pflegen
+* Neue Risiken dokumentieren
+* Mitigations evaluieren

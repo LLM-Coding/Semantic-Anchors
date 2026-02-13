@@ -1,0 +1,110 @@
+[[section-architecture-constraints]]
+== Randbedingungen
+
+=== Technische Randbedingungen
+
+[cols="1,3,2", options="header"]
+|===
+|Constraint |Beschreibung |Begründung
+
+|**TC-01: AsciiDoc als Content-Format**
+|Alle Inhalte müssen in AsciiDoc (.adoc) geschrieben sein
+|Bestehendes Repository basiert auf AsciiDoc. Docs-as-Code-Prinzip. Migration zu Markdown nicht akzeptabel.
+
+|**TC-02: GitHub Pages Hosting**
+|Website muss auf GitHub Pages lauffähig sein
+|Kostenlos, einfach, direkt im Repository integriert
+
+|**TC-03: Statische Website**
+|Keine serverseitige Logik, keine Datenbank, rein statisch
+|GitHub Pages unterstützt nur statische Seiten. Serverless ist möglich, aber nicht nötig.
+
+|**TC-04: Browser-Kompatibilität**
+|Unterstützung für moderne Browser (Chrome, Firefox, Safari, Edge) der letzten 2 Jahre
+|Keine Legacy-Browser (IE11). Verwendung moderner Web-APIs erlaubt.
+
+|**TC-05: Open Source Lizenz**
+|Alle verwendeten Libraries müssen Apache 2.0, MIT oder kompatible Lizenzen haben
+|Projekt ist Apache 2.0. Keine GPL, keine Commercial Libraries (z.B. Highcharts).
+
+|**TC-06: Versionskontrolle mit Git**
+|Gesamte Website und Content unter Git-Versionskontrolle
+|Bestehendes Repository, kein CMS
+|===
+
+=== Organisatorische Randbedingungen
+
+[cols="1,3,2", options="header"]
+|===
+|Constraint |Beschreibung |Begründung
+
+|**OC-01: Ein-Personen-Projekt**
+|Primär ein Maintainer (Ralf D. Müller)
+|Automatisierung kritisch, minimaler manueller Aufwand
+
+|**OC-02: Community-getrieben**
+|Beiträge von externen Contributors willkommen
+|Issue-Templates und GitHub Actions für einfache Contribution
+
+|**OC-03: Keine laufenden Kosten**
+|Hosting, CI/CD und Tools müssen kostenlos sein
+|GitHub Free Plan, GitHub Pages, GitHub Actions (Free Tier)
+
+|**OC-04: Kein Deployment-Team**
+|Deployment muss vollständig automatisiert sein (CI/CD)
+|Push auf main → automatisches Deployment
+
+|**OC-05: Zeitbudget**
+|Entwicklung und Wartung nebenberuflich
+|Einfache Architektur, keine Über-Engineering
+|===
+
+=== Konventionen
+
+[cols="1,3,2", options="header"]
+|===
+|Constraint |Beschreibung |Begründung
+
+|**CON-01: Conventional Commits**
+|Commit-Messages nach Conventional Commits Standard
+|Automatisches Changelog, Semantic Versioning
+
+|**CON-02: Semantic Versioning**
+|Website-Versionen nach SemVer (MAJOR.MINOR.PATCH)
+|Klare Kommunikation über Breaking Changes
+
+|**CON-03: MECE-Kategorien**
+|Kategorien müssen MECE-konform sein (Mutually Exclusive, Collectively Exhaustive)
+|Vermeidung von Überlappungen und Lücken
+
+|**CON-04: Gherkin für Acceptance Criteria**
+|Akzeptanzkriterien in Given-When-Then Format (Deutsch)
+|Klare, testbare Anforderungen
+
+|**CON-05: ADR-Format nach Nygard**
+|Architekturentscheidungen mit Status, Context, Decision, Consequences + Pugh-Matrix
+|Nachvollziehbare Entscheidungsdokumentation
+|===
+
+=== Rechtliche und Datenschutz-Randbedingungen
+
+[cols="1,3,2", options="header"]
+|===
+|Constraint |Beschreibung |Begründung
+
+|**LC-01: DSGVO-Konformität**
+|Keine personenbezogenen Daten ohne Einwilligung sammeln
+|Europäisches Recht. Kein Tracking ohne Consent.
+
+|**LC-02: Kein Analytics ohne Consent**
+|Analytics nur mit expliziter Nutzer-Einwilligung oder privacy-first (z.B. Plausible)
+|DSGVO, ePrivacy-Richtlinie
+
+|**LC-03: Impressum und Datenschutzerklärung**
+|Impressum und Datenschutzerklärung müssen vorhanden sein
+|Rechtliche Anforderung für deutschsprachige Nutzer
+
+|**LC-04: Apache 2.0 Lizenz**
+|Gesamtes Projekt unter Apache 2.0
+|Bestehende Lizenz des Repositories
+|===

@@ -1,0 +1,142 @@
+[[section-glossary]]
+== Glossar
+
+[cols="2,5", options="header"]
+|===
+|Begriff |Definition
+
+|**ADR**
+|Architecture Decision Record - Dokumentation einer Architekturentscheidung im Nygard-Format (Status, Context, Decision, Consequences)
+
+|**Alpine.js**
+|Minimales JavaScript-Framework (3kB) für einfache Interaktivität, alternative zu React/Vue
+
+|**Anchor (Semantic Anchor)**
+|Etablierter Begriff, Methodologie oder Framework, der als Referenzpunkt in der LLM-Kommunikation dient (z.B. "TDD, London School", "SOLID Principles")
+
+|**Apache ECharts**
+|Open-Source Visualisierungs-Library (Apache 2.0) für interaktive Charts, inkl. Treemap
+
+|**arc42**
+|Standardisiertes Template für Software-Architekturdokumentation mit 12 Kapiteln
+
+|**AsciiDoc**
+|Markup-Sprache für technische Dokumentation, reichhaltiger als Markdown, verwendet in diesem Projekt für alle Content-Files
+
+|**asciidoctor.js**
+|JavaScript-Implementation des AsciiDoc-Prozessors, rendert .adoc zu HTML im Browser
+
+|**Category**
+|Gruppierung von Semantic Anchors (z.B. "Testing & Quality Practices", "Architecture & Design")
+
+|**CDN**
+|Content Delivery Network - geografisch verteilte Server für schnellere Auslieferung von Static Assets
+
+|**Client-Side Rendering**
+|Rendering von HTML im Browser via JavaScript, im Gegensatz zu Server-Side Rendering
+
+|**Collapsible Section**
+|In AsciiDoc: `[%collapsible]` Block, der initial collapsed ist und per Click expanded wird
+
+|**Conventional Commits**
+|Standard für Commit-Messages: `type(scope): description` (z.B. `feat: Add SOTA anchor`)
+
+|**CSP**
+|Content Security Policy - HTTP-Header zur Verhinderung von XSS-Angriffen
+
+|**Deep-Linking**
+|Direkte URL zu spezifischem Content (z.B. `/anchor/tdd-london-school`)
+
+|**Docs-as-Code**
+|Ansatz, Dokumentation wie Code zu behandeln: Versionskontrolle, Review-Prozess, Automation
+
+|**DSGVO**
+|Datenschutz-Grundverordnung - EU-Verordnung zum Datenschutz
+
+|**Gherkin**
+|Format für Akzeptanzkriterien: Given-When-Then Syntax
+
+|**GitHub Actions**
+|CI/CD-Platform von GitHub für automatisierte Workflows (Build, Test, Deploy)
+
+|**GitHub Copilot API**
+|API für programmatischen Zugriff auf GitHub Copilot zur Code-Generierung und Validation
+
+|**GitHub Pages**
+|Static Website Hosting von GitHub, kostenlos für Public Repositories
+
+|**HMR**
+|Hot Module Replacement - Vite-Feature für Live-Reload ohne Full Page Refresh
+
+|**i18n**
+|Internationalization - Mehrsprachigkeit (hier: EN/DE)
+
+|**Include**
+|AsciiDoc-Direktive zum Einbinden anderer .adoc-Files: `include::file.adoc[]`
+
+|**JAMstack**
+|JavaScript, APIs, Markup - Architektur-Pattern für moderne Web-Apps
+
+|**Lighthouse**
+|Google Tool für Performance-, Accessibility- und SEO-Audits
+
+|**LLM**
+|Large Language Model - KI-Modell wie GPT-4, Claude, Gemini
+
+|**localStorage**
+|Browser-API zum Speichern von Key-Value-Paaren clientseitig
+
+|**MECE**
+|Mutually Exclusive, Collectively Exhaustive - Prinzip für überschneidungsfreie, vollständige Kategorisierung
+
+|**Metadata**
+|Daten über Daten - hier: categories, roles, proponents, tags eines Anchors
+
+|**MVP**
+|Minimum Viable Product - erste funktionsfähige Version mit Kern-Features
+
+|**Pugh-Matrix**
+|Entscheidungsmatrix zum Vergleich von Alternativen gegen eine Baseline
+
+|**PlantUML**
+|Tool zur Erzeugung von UML-Diagrammen aus Textbeschreibungen
+
+|**Progressive Enhancement**
+|Design-Prinzip: Basis-Funktionalität ohne JavaScript, Enhancement mit JavaScript
+
+|**Proponent**
+|Schlüsselfigur oder Autor einer Methodik (z.B. "Kent Beck" für TDD)
+
+|**Role**
+|Berufliche Rolle eines Nutzers (z.B. "Software Developer", "Architect"), bestimmt relevante Anchors
+
+|**Semantic Versioning (SemVer)**
+|Versionierungs-Schema: MAJOR.MINOR.PATCH
+
+|**Service Worker**
+|JavaScript im Browser für Offline-Funktionalität und Caching
+
+|**SPA**
+|Single Page Application - Web-App, die als eine HTML-Seite lädt und dynamisch aktualisiert
+
+|**SSG**
+|Static Site Generator - Tool zum Generieren statischer HTML-Sites aus Content-Files
+
+|**Tailwind CSS**
+|Utility-First CSS-Framework für schnelles Styling
+
+|**Tree-Shaking**
+|Build-Optimierung: Entfernung von ungenutztem Code aus Bundle
+
+|**Treemap**
+|Hierarchische Visualisierung als verschachtelte Rechtecke, Größe = Wert
+
+|**Vite**
+|Moderner Build-Tool und Dev-Server für Frontend-Projekte, sehr schnell durch native ES Modules
+
+|**WCAG**
+|Web Content Accessibility Guidelines - Standard für barrierefreie Webinhalte
+
+|**Workflow (GitHub Actions)**
+|YAML-Datei definiert automatisierte Prozesse (Build, Test, Deploy)
+|===

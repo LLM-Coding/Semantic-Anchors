@@ -1,0 +1,374 @@
+[[section-quality-scenarios]]
+== Qualitätsanforderungen
+
+=== Qualitätsbaum
+
+```
+Qualität
+├── Usability (Prio 1)
+│   ├── Findability: Anker in max. 3 Klicks finden
+│   ├── Learnability: Neue User verstehen UI in < 2 Min
+│   └── Efficiency: Filter/Search < 300ms Response
+│
+├── Performance (Prio 2)
+│   ├── Load Time: < 2s on 3G
+│   ├── Time to Interactive: < 3.5s
+│   └── Treemap Rendering: < 500ms
+│
+├── Maintainability (Prio 3)
+│   ├── Modularity: Neue Anker hinzufügen in < 10 Min
+│   ├── Testability: 80% Code Coverage
+│   └── Analyzability: arc42 + ADRs aktuell
+│
+├── Accessibility (Prio 4)
+│   ├── WCAG 2.1 AA Compliance
+│   ├── Keyboard Navigation: Alle Funktionen erreichbar
+│   └── Screen Reader: 100% Compatibility
+│
+└── Portability (Prio 5)
+    ├── Browser Support: Chrome, Firefox, Safari, Edge (last 2 years)
+    └── Deployment: < 30 Min auf neue Plattform migrierbar
+```
+
+=== Qualitätsszenarien
+
+==== Usability
+
+**QS-U1: Schnelles Finden eines Ankers**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|Software Developer sucht Anker "TDD, London School"
+
+|Stimulus
+|Öffnet Website zum ersten Mal
+
+|Artefakt
+|Semantic Anchors Website
+
+|Umgebung
+|Desktop Browser, normale Internetverbindung
+
+|Antwort
+|1. Nutzt Suchbox, tippt "TDD" +
+2. Sieht Ergebnisse in < 300ms +
+3. Klickt auf "TDD, London School" +
+4. Sieht Details
+
+|Metrik
+|≤ 3 Klicks, ≤ 30 Sekunden Gesamtzeit
+|===
+
+**QS-U2: Intuitive Filterung**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|Architect möchte nur für seine Rolle relevante Anker sehen
+
+|Stimulus
+|Klickt auf "Filter by Role"
+
+|Artefakt
+|Role Filter Component
+
+|Umgebung
+|Tablet, normale Nutzung
+
+|Antwort
+|1. Dropdown öffnet mit allen Rollen +
+2. Wählt "Architect" +
+3. Treemap aktualisiert sich < 100ms +
+4. Zeigt nur relevante Anker
+
+|Metrik
+|Keine Erklärung nötig, selbsterklärend
+|===
+
+==== Performance
+
+**QS-P1: Schnelle Initial Load**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|User öffnet Website auf mobiler 3G-Verbindung
+
+|Stimulus
+|Navigiert zu Homepage-URL
+
+|Artefakt
+|Gesamte Website
+
+|Umgebung
+|3G-Verbindung (Regular 3G: 780 Kbps)
+
+|Antwort
+|1. HTML lädt in < 500ms +
+2. Critical CSS inline +
+3. Treemap lädt lazy in < 2s total +
+4. Seite ist interaktiv
+
+|Metrik
+|Time to Interactive < 2s
+|===
+
+**QS-P2: Responsive Treemap**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|User ändert Filter mit 60 Ankern
+
+|Stimulus
+|Wählt 2 zusätzliche Rollen
+
+|Artefakt
+|Treemap Component
+
+|Umgebung
+|Desktop, normale Hardware
+
+|Antwort
+|1. Filter-State aktualisiert +
+2. Treemap-Daten neu berechnet +
+3. ECharts rendert +
+4. Neue Treemap sichtbar
+
+|Metrik
+|< 500ms vom Klick bis neue Treemap
+|===
+
+==== Maintainability
+
+**QS-M1: Neuen Anker hinzufügen**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|Maintainer fügt neuen Anker "SOTA" hinzu
+
+|Stimulus
+|Erhält validierten Vorschlag aus GitHub Issue
+
+|Artefakt
+|Repository, Build Pipeline
+
+|Umgebung
+|GitHub, lokale Entwicklung
+
+|Antwort
+|1. Erstellt `docs/anchors/sota.adoc` nach Template +
+2. Fügt Metadata-Attributes hinzu +
+3. Committed und pusht +
+4. GitHub Actions baut und deployed automatisch
+
+|Metrik
+|< 10 Minuten Gesamtzeit, kein manuelles JSON-Editing
+|===
+
+**QS-M2: Breaking Change vermeiden**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|Datenmodell muss erweitert werden (neues Feld `difficulty`)
+
+|Stimulus
+|Feature-Request für Anker-Schwierigkeitsgrad
+
+|Artefakt
+|JSON Schema, Build Pipeline
+
+|Umgebung
+|Laufende Website
+
+|Antwort
+|1. Feld als optional hinzufügen +
+2. Alte Anker ohne Feld bleiben valid +
+3. Website rendert mit/ohne Feld +
+4. Kein Breaking Change
+
+|Metrik
+|Backwards-Compatible, keine Downtime
+|===
+
+==== Accessibility
+
+**QS-A1: Keyboard-Navigation**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|User mit Motorik-Einschränkung nutzt nur Tastatur
+
+|Stimulus
+|Navigiert Website mit Tab, Enter, Escape
+
+|Artefakt
+|Gesamte UI
+
+|Umgebung
+|Desktop, Tastatur-Only
+
+|Antwort
+|1. Tab springt zu jedem interaktiven Element +
+2. Fokus ist visuell sichtbar +
+3. Enter aktiviert Buttons/Links +
+4. Escape schließt Dialoge +
+5. Alle Funktionen erreichbar
+
+|Metrik
+|100% Tastatur-Zugänglichkeit, WCAG 2.1 AA
+|===
+
+**QS-A2: Screen Reader Unterstützung**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|Blinde Person nutzt Screen Reader (NVDA, JAWS)
+
+|Stimulus
+|Navigiert zu Treemap
+
+|Artefakt
+|Treemap Component
+
+|Umgebung
+|Windows, NVDA Screen Reader
+
+|Antwort
+|1. Screen Reader liest "Treemap visualization of categories" +
+2. Kategorien haben ARIA-Labels mit Namen und Anzahl +
+3. Navigation zu Details ist verständlich angekündigt
+
+|Metrik
+|Alle Informationen für Screen Reader zugänglich
+|===
+
+==== Portability
+
+**QS-PORT1: Migration zu anderer Plattform**
+
+[cols="1,3", options="header"]
+|===
+|Feld |Wert
+
+|Szenario
+|GitHub Pages wird kostenpflichtig, Migration zu Netlify nötig
+
+|Stimulus
+|Entscheidung zur Platform-Migration
+
+|Artefakt
+|Build Pipeline, Deployment Config
+
+|Umgebung
+|Entwickler-Workstation
+
+|Antwort
+|1. `dist/` Folder ist platform-agnostic +
+2. Netlify Config erstellen (`netlify.toml`) +
+3. GitHub Actions Workflow anpassen +
+4. Deploy funktioniert identisch
+
+|Metrik
+|< 30 Minuten für Migration, keine Code-Änderungen
+|===
+
+=== Qualitäts-Metriken
+
+[cols="2,2,1,2", options="header"]
+|===
+|Qualitätsziel |Metrik |Zielwert |Messmethode
+
+|**Usability**
+|System Usability Scale (SUS)
+|> 75
+|User Survey (optional)
+
+|**Performance - Load**
+|Lighthouse Performance Score
+|> 90
+|Lighthouse CI
+
+|**Performance - Treemap**
+|Rendering Time
+|< 500ms
+|Performance.measure()
+
+|**Maintainability**
+|Code Coverage
+|> 80%
+|Vitest Coverage Report
+
+|**Accessibility**
+|axe-core Violations
+|0 Critical, 0 Serious
+|axe DevTools, Lighthouse
+
+|**Accessibility**
+|WCAG 2.1 AA Compliance
+|100%
+|Manual Testing, axe-core
+
+|**Portability**
+|Browser Compatibility
+|Chrome, FF, Safari, Edge (last 2y)
+|BrowserStack, Manual Testing
+
+|**SEO**
+|Lighthouse SEO Score
+|> 90
+|Lighthouse CI
+|===
+
+=== Continuous Quality Monitoring
+
+**GitHub Actions Checks:**
+
+```yaml
+- name: Lighthouse CI
+  run: lhci autorun
+
+- name: axe Accessibility Tests
+  run: npm run test:a11y
+
+- name: Unit Tests with Coverage
+  run: npm run test:coverage
+
+- name: E2E Tests
+  run: npm run test:e2e
+```
+
+**Quality Gates:**
+
+* Lighthouse Performance: > 90
+* Lighthouse Accessibility: 100
+* Unit Test Coverage: > 80%
+* E2E Tests: All passing
+* Bundle Size: < 500KB
+
+**Automated Checks on PR:**
+
+* Lighthouse CI läuft auf Preview Deploy
+* axe-core scannt alle Seiten
+* Performance Budget Check (Bundle Size)

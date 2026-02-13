@@ -1,0 +1,177 @@
+[[section-design-decisions]]
+== Architekturentscheidungen
+
+Dieses Kapitel referenziert die detaillierten Architecture Decision Records (ADRs) aus dem `specs/adrs/` Verzeichnis.
+
+=== Übersicht der Entscheidungen
+
+[cols="1,2,2,1", options="header"]
+|===
+|ADR |Entscheidung |Begründung |Status
+
+|link:../../specs/adrs/adr-001-static-site-generator.adoc[ADR-001]
+|**Vite** als Static Site Generator
+|Maximale Flexibilität für Custom-Visualisierung, beste Performance, kein Framework-Lock-in
+|Accepted
+
+|link:../../specs/adrs/adr-002-metadata-storage.adoc[ADR-002]
+|**AsciiDoc Attributes** für Metadata
+|Single Source of Truth, einfache Contribution, keine Sync-Probleme
+|Accepted
+
+|link:../../specs/adrs/adr-003-treemap-library.adoc[ADR-003]
+|**Apache ECharts** für Treemap
+|Native Treemap-Unterstützung, exzellente DX, Built-in Theming, Open Source
+|Accepted
+
+|link:../../specs/adrs/adr-004-one-file-per-anchor.adoc[ADR-004]
+|**Ein File pro Anchor** + Includes
+|Minimale Merge-Konflikte, klare Git-History, skaliert perfekt
+|Accepted
+|===
+
+=== ADR-001: Vite als Static Site Generator
+
+**Alternative Optionen:** Astro, Docusaurus, VitePress, Antora
+
+**Pugh-Matrix Ergebnis:**
+
+* Vite: **+88 Punkte**
+* Astro: 0 (Baseline)
+* Docusaurus: -9
+* VitePress: +11
+* Antora: -69
+
+**Kern-Argumente:**
+
+* ✅ Volle Kontrolle über AsciiDoc-Rendering
+* ✅ Maximale Performance durch minimalen Overhead
+* ✅ Keine unnötigen Abstraktionen
+* ❌ Mehr Custom-Code nötig (aber akzeptabel)
+
+**Details:** link:../../specs/adrs/adr-001-static-site-generator.adoc[ADR-001]
+
+=== ADR-002: AsciiDoc Attributes für Metadata
+
+**Alternative Optionen:** Separate YAML, Zentrale YAML, Frontmatter, JSON Comment
+
+**Pugh-Matrix Ergebnis:**
+
+* AsciiDoc Attributes: **+51 Punkte**
+* Separate YAML: 0 (Baseline)
+* Zentrale YAML: -30
+* Frontmatter: +25
+* JSON Comment: -41
+
+**Kern-Argumente:**
+
+* ✅ Single Source of Truth (1 File pro Anker)
+* ✅ Keine Sync-Probleme zwischen Metadata und Content
+* ✅ AsciiDoc-nativ
+* ❌ AsciiDoc-Parser nötig (aber vorhanden)
+
+**Beispiel:**
+
+```asciidoc
+= TDD, London School
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:related: tdd-chicago-school
+:proponents: Steve Freeman, Nat Pryce
+```
+
+**Details:** link:../../specs/adrs/adr-002-metadata-storage.adoc[ADR-002]
+
+=== ADR-003: Apache ECharts für Treemap
+
+**Alternative Optionen:** D3.js Custom, Plotly.js, Highcharts, Chart.js
+
+**Pugh-Matrix Ergebnis:**
+
+* Apache ECharts: **+77 Punkte**
+* D3.js: 0 (Baseline)
+* Plotly.js: +48
+* Highcharts: +12
+* Chart.js: +29
+
+**Kern-Argumente:**
+
+* ✅ Native Treemap-Unterstützung (keine Custom-Implementation)
+* ✅ Einfache API, schnelle Entwicklung
+* ✅ Built-in Dark/Light Theming
+* ✅ Apache 2.0 Lizenz (kostenlos)
+* ❌ Bundle-Size ~100KB (akzeptabel mit Tree-Shaking)
+
+**Code-Beispiel:**
+
+```javascript
+const chart = echarts.init(el, 'dark');
+chart.setOption({
+  series: [{
+    type: 'treemap',
+    data: categoriesData
+  }]
+});
+```
+
+**Details:** link:../../specs/adrs/adr-003-treemap-library.adoc[ADR-003]
+
+=== ADR-004: Ein File pro Anchor
+
+**Alternative Optionen:** 1 File/Category, Monolith, Hybrid (komplex), Database
+
+**Pugh-Matrix Ergebnis:**
+
+* 1 File/Anchor + Includes: **+105 Punkte**
+* 1 File/Category: 0 (Baseline)
+* Monolith: -92
+* Hybrid (komplex): +60
+* Database: +38
+
+**Kern-Argumente:**
+
+* ✅ Minimale Merge-Konflikte (jeder arbeitet an eigenem File)
+* ✅ Klare Git-History (`git log docs/anchors/tdd-london.adoc`)
+* ✅ Skaliert perfekt (100, 200, 500 Anker kein Problem)
+* ✅ Flexibles Mapping via AsciiDoc-Includes
+* ❌ Mehr Files (aber gut strukturiert)
+
+**Struktur:**
+
+```
+docs/
+├── anchors/
+│   ├── tdd-london-school.adoc    (einzelne Anker)
+│   ├── solid-principles.adoc
+│   └── ...
+├── categories/
+│   ├── testing-quality.adoc      (Includes von anchors/)
+│   └── ...
+└── roles/
+    ├── software-developer.adoc   (Includes von anchors/)
+    └── ...
+```
+
+**Details:** link:../../specs/adrs/adr-004-one-file-per-anchor.adoc[ADR-004]
+
+=== Zukünftige Entscheidungen
+
+**Offene Punkte:**
+
+* **ADR-005**: Suchindex-Implementierung (Client-Side vs. Build-Time)
+* **ADR-006**: Analytics-Lösung (Plausible vs. Simple Analytics vs. Keine)
+* **ADR-007**: Service Worker für Offline-Support (Ja/Nein)
+* **ADR-008**: Testing-Framework für E2E (Playwright vs. Cypress)
+
+=== Entscheidungsprozess
+
+Alle ADRs folgen dem **Nygard-Format**:
+
+1. **Status**: Proposed, Accepted, Deprecated, Superseded
+2. **Context**: Problemstellung und Anforderungen
+3. **Decision**: Gewählte Lösung
+4. **Consequences**: Positive und negative Auswirkungen
+
+Zusätzlich: **Pugh-Matrix** für objektiven Vergleich von Alternativen.
+
+**Template:** link:../../specs/adrs/_template.adoc[ADR Template]

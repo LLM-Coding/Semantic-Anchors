@@ -1,0 +1,30 @@
+= Architecture Documentation: Semantic Anchors Website
+:toc: left
+:toclevels: 3
+:icons: font
+:sectanchors:
+
+// Einbindung der arc42-Kapitel
+include::chapters/01_introduction_and_goals.adoc[]
+
+include::chapters/02_constraints.adoc[]
+
+include::chapters/03_context_and_scope.adoc[]
+
+include::chapters/04_solution_strategy.adoc[]
+
+include::chapters/05_building_block_view.adoc[]
+
+include::chapters/06_runtime_view.adoc[]
+
+include::chapters/07_deployment_view.adoc[]
+
+include::chapters/08_crosscutting_concepts.adoc[]
+
+include::chapters/09_architecture_decisions.adoc[]
+
+include::chapters/10_quality_requirements.adoc[]
+
+include::chapters/11_risks_and_technical_debt.adoc[]
+
+include::chapters/12_glossary.adoc[]

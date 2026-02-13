@@ -1,0 +1,545 @@
+[[section-building-block-view]]
+== Bausteinsicht
+
+=== Ebene 1: System-Übersicht (Whitebox)
+
+[plantuml, system-overview, svg]
+----
+@startuml
+!include <C4/C4_Container>
+
+Container(website, "Semantic Anchors Website", "Vite SPA", "Statische Website")
+
+Container(data, "Static Data", "JSON, AsciiDoc", "Anker, Kategorien, Metadata")
+
+Container(build, "Build Pipeline", "Node.js, GitHub Actions", "Generiert JSON, deployed zu GitHub Pages")
+
+System_Ext(github, "GitHub Repository", "Source Code, Issues, PRs")
+System_Ext(ghpages, "GitHub Pages", "Hosting")
+
+Rel(build, data, "Generiert", "Node.js Scripts")
+Rel(build, website, "Baut", "Vite")
+Rel(website, data, "Lädt", "fetch API")
+Rel(build, ghpages, "Deployed zu", "GitHub Actions")
+Rel(github, build, "Triggert", "Push Event")
+
+@enduml
+----
+
+**Enthaltene Bausteine:**
+
+[cols="2,3,3", options="header"]
+|===
+|Baustein |Verantwortung |Schnittstelle
+
+|**Semantic Anchors Website**
+|Präsentation, Interaktion, Navigation
+|Browser (HTML/CSS/JS)
+
+|**Static Data**
+|Speicherung von Anker-Content und Metadata
+|JSON Files, AsciiDoc Files
+
+|**Build Pipeline**
+|Transformation, Validierung, Deployment
+|GitHub Actions, Node.js Scripts
+|===
+
+=== Ebene 2: Website (Whitebox)
+
+[plantuml, website-components, svg]
+----
+@startuml
+package "Semantic Anchors Website" {
+    [App] as app
+    [Router] as router
+    [State Manager] as state
+
+    package "UI Components" {
+        [Treemap Visualizer] as treemap
+        [Role Filter] as rolefilter
+        [Search Bar] as search
+        [Anchor Details View] as anchorview
+        [Language Switcher] as lang
+        [Theme Toggle] as theme
+    }
+
+    package "Data Layer" {
+        [API Client] as api
+        [AsciiDoc Renderer] as asciidoc
+        [i18n Module] as i18n
+    }
+
+    package "Utilities" {
+        [LocalStorage Manager] as storage
+        [URL Manager] as url
+        [Analytics (optional)] as analytics
+    }
+}
+
+[Static JSON Files] as json
+[AsciiDoc Files] as adoc
+
+app --> router
+app --> state
+router --> treemap
+router --> anchorview
+state --> rolefilter
+state --> search
+
+treemap --> api
+rolefilter --> api
+search --> api
+anchorview --> asciidoc
+
+api --> json
+asciidoc --> adoc
+
+lang --> i18n
+theme --> storage
+rolefilter --> storage
+url --> router
+
+@enduml
+----
+
+**Komponenten-Beschreibung:**
+
+==== App (Main Application)
+
+**Verantwortung:**
+* Initialisierung der Anwendung
+* Setup von Router, State Manager
+* Lädt initiale Daten (categories.json, roles.json)
+
+**Schnittstellen:**
+* Input: Browser Load Event
+* Output: Initialisierte Komponenten
+
+**Implementierung:**
+```javascript
+// src/main.js
+import { Router } from './router';
+import { StateManager } from './state';
+import { ApiClient } from './api';
+
+class App {
+  async init() {
+    this.api = new ApiClient();
+    this.state = new StateManager();
+    this.router = new Router(this.state);
+
+    await this.loadInitialData();
+    this.router.start();
+  }
+
+  async loadInitialData() {
+    const [categories, roles, anchors] = await Promise.all([
+      this.api.getCategories(),
+      this.api.getRoles(),
+      this.api.getAnchors()
+    ]);
+
+    this.state.set({ categories, roles, anchors });
+  }
+}
+```
+
+==== Router
+
+**Verantwortung:**
+* URL-basierte Navigation
+* Deep-Linking Support
+* History Management
+
+**Schnittstellen:**
+* Input: URL Changes, Navigation Events
+* Output: Component Rendering
+
+**Routes:**
+* `/` → Home (Treemap)
+* `/anchor/:id` → Anchor Details
+* `/category/:id` → Category View
+* `/role/:id` → Role View
+* `/search?q=...` → Search Results
+
+==== State Manager
+
+**Verantwortung:**
+* Zentrale State-Verwaltung
+* Reaktive Updates
+* Filter- und Search-State
+
+**State-Struktur:**
+```javascript
+{
+  anchors: Anchor[],
+  categories: Category[],
+  roles: Role[],
+  filters: {
+    selectedRoles: string[],
+    selectedCategories: string[]
+  },
+  search: {
+    query: string,
+    results: Anchor[]
+  },
+  ui: {
+    language: 'en' | 'de',
+    theme: 'light' | 'dark'
+  }
+}
+```
+
+==== Treemap Visualizer
+
+**Verantwortung:**
+* Rendert Kategorien als Treemap
+* Interaktive Tooltips
+* Click-Navigation
+
+**Technologie:** Apache ECharts
+
+**Implementierung:**
+```javascript
+// src/components/Treemap.js
+import * as echarts from 'echarts/core';
+import { TreemapChart } from 'echarts/charts';
+import { CanvasRenderer } from 'echarts/renderers';
+
+echarts.use([TreemapChart, CanvasRenderer]);
+
+export class Treemap {
+  constructor(elementId, data) {
+    this.chart = echarts.init(document.getElementById(elementId));
+    this.setData(data);
+  }
+
+  setData(data) {
+    const option = {
+      series: [{
+        type: 'treemap',
+        data: this.transformData(data)
+      }]
+    };
+    this.chart.setOption(option);
+  }
+
+  transformData(categories) {
+    return categories.map(cat => ({
+      name: cat.name,
+      value: cat.anchorCount,
+      children: cat.anchors.map(anchor => ({
+        name: anchor.name,
+        value: 1,
+        anchorId: anchor.id
+      }))
+    }));
+  }
+}
+```
+
+==== Role Filter
+
+**Verantwortung:**
+* Multi-Select Dropdown für Rollen
+* Filter-Anwendung auf Anker-Liste
+* Persistierung in localStorage
+
+**UI:**
+```html
+<div class="role-filter">
+  <label>Filter by Role:</label>
+  <select multiple>
+    <option value="software-developer">Software Developer</option>
+    <option value="architect">Architect</option>
+    <!-- ... -->
+  </select>
+  <button class="clear-filter">Clear</button>
+</div>
+```
+
+==== Search Bar
+
+**Verantwortung:**
+* Echtzeit-Suche mit Debounce
+* Relevanz-Scoring
+* Ergebnis-Highlighting
+
+**Implementierung:**
+```javascript
+export class SearchBar {
+  constructor(anchors) {
+    this.anchors = anchors;
+    this.index = this.buildIndex(anchors);
+  }
+
+  search(query, debounce = 300) {
+    clearTimeout(this.timeout);
+
+    this.timeout = setTimeout(() => {
+      const results = this.index
+        .search(query)
+        .sort((a, b) => b.score - a.score);
+
+      this.onResults(results);
+    }, debounce);
+  }
+
+  buildIndex(anchors) {
+    // Tokenize names, proponents, tags
+    return anchors.map(anchor => ({
+      ...anchor,
+      tokens: this.tokenize(anchor)
+    }));
+  }
+}
+```
+
+==== Anchor Details View
+
+**Verantwortung:**
+* Anzeige eines einzelnen Ankers
+* AsciiDoc-Rendering
+* Related Anchors Navigation
+
+**Komponenten:**
+* Header (Name, Full Name)
+* Metadata (Proponents, Categories, Roles)
+* Content (Core Concepts, When to Use)
+* Related Anchors (Links)
+
+==== AsciiDoc Renderer
+
+**Verantwortung:**
+* Konvertiert .adoc → HTML
+* Syntax-Highlighting
+* Caching
+
+**Implementierung:**
+```javascript
+import Asciidoctor from 'asciidoctor';
+
+export class AsciiDocRenderer {
+  constructor() {
+    this.asciidoctor = Asciidoctor();
+    this.cache = new Map();
+  }
+
+  async render(filePath) {
+    if (this.cache.has(filePath)) {
+      return this.cache.get(filePath);
+    }
+
+    const response = await fetch(filePath);
+    const content = await response.text();
+
+    const html = this.asciidoctor.convert(content, {
+      safe: 'safe',
+      attributes: {
+        'source-highlighter': 'highlight.js'
+      }
+    });
+
+    this.cache.set(filePath, html);
+    return html;
+  }
+}
+```
+
+==== API Client
+
+**Verantwortung:**
+* Lädt JSON-Daten
+* Error Handling
+* Caching
+
+**Endpunkte:**
+* `GET /data/anchors.json`
+* `GET /data/categories.json`
+* `GET /data/roles.json`
+* `GET /data/metadata.json`
+* `GET /docs/anchors/{id}.adoc`
+
+==== i18n Module
+
+**Verantwortung:**
+* Lädt Übersetzungen (en.json, de.json)
+* Übersetzt UI-Texte
+* Sprach-Wechsel
+
+**Implementierung:**
+```javascript
+export class I18n {
+  constructor(lang = 'en') {
+    this.lang = lang;
+    this.translations = {};
+  }
+
+  async load(lang) {
+    this.lang = lang;
+    this.translations = await fetch(`/i18n/${lang}.json`).then(r => r.json());
+  }
+
+  t(key) {
+    return this.translations[key] || key;
+  }
+}
+```
+
+==== LocalStorage Manager
+
+**Verantwortung:**
+* Persistierung von User-Präferenzen
+* Theme, Language, Filter
+
+**Keys:**
+* `semantic-anchors:theme` → 'light' | 'dark'
+* `semantic-anchors:lang` → 'en' | 'de'
+* `semantic-anchors:filters` → JSON
+
+==== URL Manager
+
+**Verantwortung:**
+* Deep-Linking
+* Query-Parameter für Filter/Search
+* History API
+
+**URL-Struktur:**
+* `/` → Home
+* `/?role=software-developer,architect` → Gefiltert
+* `/?q=TDD` → Suchergebnisse
+* `/anchor/tdd-london-school` → Anker-Details
+
+=== Ebene 3: Build Pipeline (Whitebox)
+
+[plantuml, build-pipeline, svg]
+----
+@startuml
+package "Build Pipeline" {
+    [Extract Metadata Script] as extract
+    [Validate Anchors Script] as validate
+    [Generate JSON Script] as generate
+    [Vite Build] as vite
+    [Deploy Script] as deploy
+}
+
+[AsciiDoc Files] as adoc
+[JSON Files] as json
+[dist/ folder] as dist
+[GitHub Pages] as ghpages
+
+adoc --> extract
+extract --> validate
+validate --> generate
+generate --> json
+json --> vite
+vite --> dist
+dist --> deploy
+deploy --> ghpages
+
+@enduml
+----
+
+**Scripts:**
+
+==== Extract Metadata Script
+
+**Funktion:** Liest alle .adoc Files, extrahiert Attributes
+
+**Input:** `docs/anchors/*.adoc`
+
+**Output:** `anchors.yml` (temporär)
+
+**Technologie:** Node.js, @asciidoctor/core
+
+==== Validate Anchors Script
+
+**Funktion:** Prüft ob required Attributes vorhanden sind
+
+**Validierungen:**
+* `id`, `name`, `categories`, `roles` sind Pflicht
+* `categories` existieren in categories.yml
+* `roles` existieren in roles.yml
+* Keine Duplikate
+
+==== Generate JSON Script
+
+**Funktion:** Generiert JSON-Files für Website
+
+**Output:**
+* `website/public/data/anchors.json`
+* `website/public/data/categories.json`
+* `website/public/data/roles.json`
+* `website/public/data/metadata.json`
+
+==== Vite Build
+
+**Funktion:** Bundelt JS/CSS, Minifiziert, Optimiert
+
+**Output:** `website/dist/`
+
+**Features:**
+* Tree-Shaking
+* Code-Splitting
+* Asset Optimization
+
+==== Deploy Script
+
+**Funktion:** Pushed dist/ zu gh-pages Branch
+
+**Technologie:** GitHub Actions, gh-pages npm package
+
+=== Datenmodell
+
+[plantuml, data-model, svg]
+----
+@startuml
+class Anchor {
+  +id: string
+  +name: string
+  +fullName: string
+  +categories: string[]
+  +roles: string[]
+  +proponents: Proponent[]
+  +coreConcepts: string[]
+  +whenToUse: string[]
+  +relatedAnchors: string[]
+  +tags: string[]
+  +filePath: string
+}
+
+class Category {
+  +id: string
+  +name: string
+  +nameDE: string
+  +description: string
+  +anchorCount: number
+  +anchors: string[]
+  +color: string
+}
+
+class Role {
+  +id: string
+  +name: string
+  +nameDE: string
+  +description: string
+  +anchorCount: number
+  +anchors: string[]
+  +icon: string
+}
+
+class Proponent {
+  +name: string
+  +publication: string
+  +year: number
+  +url: string
+}
+
+Anchor "1" -- "*" Category : categorized by
+Anchor "1" -- "*" Role : relevant for
+Anchor "1" *-- "*" Proponent : has
+Anchor "*" -- "*" Anchor : related to
+
+@enduml
+----
