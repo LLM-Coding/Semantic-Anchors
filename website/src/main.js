@@ -147,6 +147,12 @@ async function initCardGridVisualization() {
     // Bind role filter
     const roleFilter = document.getElementById('role-filter')
     if (roleFilter && data.roles) {
+      // Clear existing options (except the first "All Roles" option)
+      while (roleFilter.options.length > 1) {
+        roleFilter.remove(1)
+      }
+
+      // Add role options
       data.roles.forEach(role => {
         const option = document.createElement('option')
         option.value = role.id
@@ -154,7 +160,11 @@ async function initCardGridVisualization() {
         roleFilter.appendChild(option)
       })
 
-      roleFilter.addEventListener('change', (e) => {
+      // Remove existing listener and add new one
+      const newRoleFilter = roleFilter.cloneNode(true)
+      roleFilter.parentNode.replaceChild(newRoleFilter, roleFilter)
+
+      newRoleFilter.addEventListener('change', (e) => {
         const searchQuery = document.getElementById('search-input')?.value || ''
         applyCardFilters(e.target.value, searchQuery)
       })
@@ -163,7 +173,11 @@ async function initCardGridVisualization() {
     // Bind search input
     const searchInput = document.getElementById('search-input')
     if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
+      // Remove existing listener and add new one
+      const newSearchInput = searchInput.cloneNode(true)
+      searchInput.parentNode.replaceChild(newSearchInput, searchInput)
+
+      newSearchInput.addEventListener('input', (e) => {
         const roleId = document.getElementById('role-filter')?.value || ''
         applyCardFilters(roleId, e.target.value)
       })

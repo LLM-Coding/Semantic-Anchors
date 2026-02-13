@@ -145,6 +145,10 @@ function renderAnchorCard(anchor, categoryColor) {
   `
 }
 
+// Store handler references to prevent duplicate listeners
+let clickHandler = null
+let keydownHandler = null
+
 /**
  * Initialize card grid event handlers
  */
@@ -152,8 +156,16 @@ export function initCardGrid() {
   const container = document.getElementById('main-content')
   if (!container) return
 
+  // Remove existing listeners if any
+  if (clickHandler) {
+    container.removeEventListener('click', clickHandler)
+  }
+  if (keydownHandler) {
+    container.removeEventListener('keydown', keydownHandler)
+  }
+
   // Click handler using event delegation
-  container.addEventListener('click', (e) => {
+  clickHandler = (e) => {
     const card = e.target.closest('.anchor-card')
     if (card) {
       const anchorId = card.dataset.anchor
@@ -162,10 +174,11 @@ export function initCardGrid() {
       })
       document.dispatchEvent(event)
     }
-  })
+  }
+  container.addEventListener('click', clickHandler)
 
   // Keyboard handler (Enter/Space on focused card)
-  container.addEventListener('keydown', (e) => {
+  keydownHandler = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       const card = e.target.closest('.anchor-card')
       if (card) {
@@ -177,7 +190,8 @@ export function initCardGrid() {
         document.dispatchEvent(event)
       }
     }
-  })
+  }
+  container.addEventListener('keydown', keydownHandler)
 }
 
 /**
