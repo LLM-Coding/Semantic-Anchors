@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: C4-Modell für Software-Architektur-Diagramme
+Vollständiger Name:: C4-Modell für Software-Architektur-Diagramme
 
 *Kernkonzepte*:
 
@@ -18,7 +18,7 @@
 * *Publikumsgerecht*: Verschiedene Diagramme für verschiedene Stakeholder
 * *Ergänzende Diagramme*: Deployment, dynamische Ansichten, etc.
 
-*Schlüsselvertreter*: Simon Brown
+Schlüsselvertreter:: Simon Brown
 
 *Wann zu verwenden*:
 

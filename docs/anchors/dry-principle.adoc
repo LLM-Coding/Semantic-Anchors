@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Don't Repeat Yourself Principle
+Full Name:: Don't Repeat Yourself Principle
 
 *Core Concepts*:
 
@@ -16,7 +16,7 @@
 * *Normalized data*: Apply DRY to data structures and schemas
 * *Configuration management*: Centralize configuration and avoid scattered settings
 
-*Key Proponent*: Andy Hunt and Dave Thomas ("The Pragmatic Programmer", 1999)
+Key Proponent:: Andy Hunt and Dave Thomas ("The Pragmatic Programmer", 1999)
 
 *When to Use*:
 
@@ -25,5 +25,5 @@
 * Creating maintainable systems where changes are frequent
 * Establishing coding standards and best practices
 
-*Related Concepts*: SPOT, SSOT, WET (Write Everything Twice - deliberate exception to DRY)
+Related Concepts:: SPOT, SSOT, WET (Write Everything Twice - deliberate exception to DRY)
 ====

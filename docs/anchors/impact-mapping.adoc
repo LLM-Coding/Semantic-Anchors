@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Impact Mapping according to Gojko Adzic
+Full Name:: Impact Mapping according to Gojko Adzic
 
 *Core Concepts*:
 
@@ -18,7 +18,7 @@
 * *Scope management*: Prevent scope creep by linking to goals
 * *Roadmap alternative*: Goal-oriented rather than feature-oriented
 
-*Key Proponent*: Gojko Adzic ("Impact Mapping", 2012)
+Key Proponent:: Gojko Adzic ("Impact Mapping", 2012)
 
 *When to Use*:
 

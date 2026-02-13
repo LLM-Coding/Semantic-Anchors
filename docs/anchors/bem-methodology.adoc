@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Block Element Modifier (BEM) (S)CSS Methodology
+Full Name:: Block Element Modifier (BEM) (S)CSS Methodology
 
 *Core Concepts*:
 
@@ -27,7 +27,7 @@
 * Element: `.search-form__input`, `.search-form__button`
 * Modifier: `.search-form--compact`, `.search-form__button--disabled`
 
-*Key Proponents*: Yandex development team
+Key Proponents:: Yandex development team
 
 *When to Use*:
 

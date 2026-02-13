@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Rubber Duck Debugging
+Full Name:: Rubber Duck Debugging
 
 *Core Concepts*:
 
@@ -17,9 +17,9 @@
 * *Self-Directed Learning*: Often the explainer solves the problem before finishing the explanation
 * *Teaching to Learn*: Related to the Feynman Technique and learning-by-teaching principle
 
-*Key Origin*: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), referencing earlier programmer folklore
+Key Origin:: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), referencing earlier programmer folklore
 
-*Historical Context*: Decades-old practice in programming culture, formalized and named in influential software engineering literature
+Historical Context:: Decades-old practice in programming culture, formalized and named in influential software engineering literature
 
 *When to Use*:
 

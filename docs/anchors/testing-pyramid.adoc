@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Testing Pyramid according to Mike Cohn
+Full Name:: Testing Pyramid according to Mike Cohn
 
 *Core Concepts*:
 
@@ -19,7 +19,7 @@
 * *Test at the right level*: Don't test through UI what can be tested in isolation
 * *Confidence gradient*: Balance confidence with execution speed
 
-*Key Proponent*: Mike Cohn ("Succeeding with Agile", 2009)
+Key Proponent:: Mike Cohn ("Succeeding with Agile", 2009)
 
 *When to Use*:
 

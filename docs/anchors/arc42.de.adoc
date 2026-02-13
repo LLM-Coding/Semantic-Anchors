@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: arc42 Architekturdokumentations-Template
+Vollständiger Name:: arc42 Architekturdokumentations-Template
 
 *Kernkonzepte*:
 
@@ -25,7 +25,7 @@
 * *Pragmatische Dokumentation*: Nur das Notwendige dokumentieren
 * *Mehrere Formate*: AsciiDoc, Markdown, Confluence, etc.
 
-*Schlüsselvertreter*: Gernot Starke, Peter Hruschka
+Schlüsselvertreter:: Gernot Starke, Peter Hruschka
 
 *Wann zu verwenden*:
 

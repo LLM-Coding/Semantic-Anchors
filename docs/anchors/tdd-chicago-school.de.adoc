@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Auch bekannt als*: Klassisches TDD, Detroit School
+Auch bekannt als:: Klassisches TDD, Detroit School
 
 *Kernkonzepte*:
 
@@ -16,7 +16,7 @@
 * *Red-Green-Refactor*: Der fundamentale TDD-Zyklus
 * *YAGNI*: You Aren't Gonna Need It - vorzeitige Abstraktion vermeiden
 
-*Schlüsselvertreter*: Kent Beck, Martin Fowler
+Schlüsselvertreter:: Kent Beck, Martin Fowler
 
 *Wann zu verwenden*:
 

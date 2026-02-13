@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Clean Architecture according to Robert C. Martin
+Full Name:: Clean Architecture according to Robert C. Martin
 
 *Core Concepts*:
 
@@ -18,7 +18,7 @@
 * *Screaming Architecture*: Architecture reveals the intent of the system
 * *SOLID principles*: Foundation of the architecture
 
-*Key Proponent*: Robert C. Martin ("Uncle Bob")
+Key Proponent:: Robert C. Martin ("Uncle Bob")
 
 *When to Use*:
 

@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Single Source of Truth
+Vollständiger Name:: Single Source of Truth
 
 *Kernkonzepte*:
 
@@ -34,7 +34,7 @@
 * Erstellung von Audit-Trails und Sicherstellung von Compliance
 * Auflösung von Konflikten zwischen mehreren Datenquellen
 
-*Unterschied zu SPOT*: SSOT betont die autoritative, vertrauenswürdige Natur einer Datenquelle und wird auf Architektur-/Organisationsebene verwendet, während SPOT sich auf das Implementierungsmuster fokussiert
+Unterschied zu SPOT:: SSOT betont die autoritative, vertrauenswürdige Natur einer Datenquelle und wird auf Architektur-/Organisationsebene verwendet, während SPOT sich auf das Implementierungsmuster fokussiert
 
-*Verwandte Konzepte*: DRY, SPOT, Event Sourcing, Data Lakes, Master Data Management
+Verwandte Konzepte:: DRY, SPOT, Event Sourcing, Data Lakes, Master Data Management
 ====

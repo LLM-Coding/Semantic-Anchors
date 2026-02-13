@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Domain-Driven Design nach Eric Evans
+Vollständiger Name:: Domain-Driven Design nach Eric Evans
 
 *Kernkonzepte*:
 
@@ -19,7 +19,7 @@
 * *Taktisches Design*: Bausteine (Entities, Value Objects, Services)
 * *Model-Driven Design*: Code, der das Domänenmodell ausdrückt
 
-*Schlüsselvertreter*: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
+Schlüsselvertreter:: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
 
 *Wann zu verwenden*:
 

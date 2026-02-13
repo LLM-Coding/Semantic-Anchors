@@ -4,9 +4,9 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Shewhart-Regelkarte
+Vollständiger Name:: Shewhart-Regelkarte
 
-*Auch bekannt als*: Prozesskontrollkarte, SPC-Karte
+Auch bekannt als:: Prozesskontrollkarte, SPC-Karte
 
 *Kernkonzepte*:
 
@@ -25,9 +25,9 @@
 * *Unter Kontrolle vs. Außer Kontrolle*: Kernentscheidung basierend auf Regeln (Nelson, Western Electric)
 * *Normalverteilungsannahme*: Kontrollgrenzen basieren auf normalverteilten Daten
 
-*Schlüsselvertreter*: Walter A. Shewhart (1920er, Bell Labs / Western Electric)
+Schlüsselvertreter:: Walter A. Shewhart (1920er, Bell Labs / Western Electric)
 
-*Schlüsselwerk*: "Economic Control of Quality of Manufactured Product" (1931)
+Schlüsselwerk:: "Economic Control of Quality of Manufactured Product" (1931)
 
 *Beziehung zu anderen Ankern*:
 

@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Feynman-Technik (auch Feynman-Lernmethode)
+Vollständiger Name:: Feynman-Technik (auch Feynman-Lernmethode)
 
 *Kernkonzepte*:
 
@@ -17,9 +17,9 @@
 * *Aktives Lernen*: Passives Lesen in aktives Lehren transformieren
 * *Metakognition*: Sich bewusst werden, was Sie nicht wissen
 
-*Schlüsselzuordnung*: Richard Feynman (Nobelpreisträger für Physik, 1965), berühmt dafür, komplexe Physik zugänglich zu machen
+Schlüsselzuordnung:: Richard Feynman (Nobelpreisträger für Physik, 1965), berühmt dafür, komplexe Physik zugänglich zu machen
 
-*Historischer Kontext*: Feynman war für seine Lehrfähigkeit und seinen Glauben bekannt, dass tiefes Verständnis bedeutet, einfach erklären zu können. Die "Technik" ist eine Formalisierung seines Lernansatzes.
+Historischer Kontext:: Feynman war für seine Lehrfähigkeit und seinen Glauben bekannt, dass tiefes Verständnis bedeutet, einfach erklären zu können. Die "Technik" ist eine Formalisierung seines Lernansatzes.
 
 *Wann zu verwenden*:
 
@@ -37,5 +37,5 @@
 3. *Lücken identifizieren und überprüfen*: Wo Sie Schwierigkeiten haben, mehr studieren
 4. *Vereinfachen und analogisieren*: Ihre Erklärung verfeinern, Beispiele verwenden
 
-*Verwandte Konzepte*: Rubber Duck Debugging, Socratic Method, ELI5 (Explain Like I'm 5)
+Verwandte Konzepte:: Rubber Duck Debugging, Socratic Method, ELI5 (Explain Like I'm 5)
 ====

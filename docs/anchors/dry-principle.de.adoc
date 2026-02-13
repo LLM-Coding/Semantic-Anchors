@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Don't Repeat Yourself-Prinzip (Wiederhole dich nicht)
+Vollständiger Name:: Don't Repeat Yourself-Prinzip (Wiederhole dich nicht)
 
 *Kernkonzepte*:
 
@@ -16,7 +16,7 @@
 * *Normalisierte Daten*: DRY auf Datenstrukturen und Schemata anwenden
 * *Konfigurationsmanagement*: Konfiguration zentralisieren und verstreute Einstellungen vermeiden
 
-*Schlüsselvertreter*: Andy Hunt und Dave Thomas ("The Pragmatic Programmer", 1999)
+Schlüsselvertreter:: Andy Hunt und Dave Thomas ("The Pragmatic Programmer", 1999)
 
 *Wann zu verwenden*:
 
@@ -25,5 +25,5 @@
 * Erstellen wartbarer Systeme, bei denen Änderungen häufig sind
 * Etablieren von Coding-Standards und Best Practices
 
-*Verwandte Konzepte*: SPOT, SSOT, WET (Write Everything Twice - bewusste Ausnahme von DRY)
+Verwandte Konzepte:: SPOT, SSOT, WET (Write Everything Twice - bewusste Ausnahme von DRY)
 ====

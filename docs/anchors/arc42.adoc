@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Full Name*: arc42 Architecture Documentation Template
+Full Name:: arc42 Architecture Documentation Template
 
 *Core Concepts*:
 
@@ -25,7 +25,7 @@
 * *Pragmatic documentation*: Document only what's necessary
 * *Multiple formats*: AsciiDoc, Markdown, Confluence, etc.
 
-*Key Proponents*: Gernot Starke, Peter Hruschka
+Key Proponents:: Gernot Starke, Peter Hruschka
 
 *When to Use*:
 

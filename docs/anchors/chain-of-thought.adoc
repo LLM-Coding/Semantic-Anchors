@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Chain of Thought Prompting
+Full Name:: Chain of Thought Prompting
 
 *Core Concepts*:
 
@@ -18,9 +18,9 @@
 * *Few-Shot CoT*: Provide examples with reasoning chains to guide the model
 * *Self-Consistency*: Generate multiple reasoning paths and select most consistent answer
 
-*Key Proponents*: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+Key Proponents:: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 
-*Historical Context*: Breakthrough in LLM prompting research, significantly improved performance on reasoning tasks (math, logic, common sense)
+Historical Context:: Breakthrough in LLM prompting research, significantly improved performance on reasoning tasks (math, logic, common sense)
 
 *When to Use*:
 

@@ -47,6 +47,24 @@ export function initRouter() {
  */
 function handleRoute() {
   const path = getCurrentRoute()
+
+  // Check for anchor route (#/anchor/:id)
+  if (path.startsWith('/anchor/')) {
+    const anchorId = path.replace('/anchor/', '')
+    // Navigate to home first
+    const homeHandler = routes.get('/')
+    if (homeHandler) {
+      currentRoute = '/'
+      homeHandler()
+    }
+    // Then open the anchor modal
+    // Import dynamically to avoid circular dependency
+    import('../components/anchor-modal.js').then(({ showAnchorDetails }) => {
+      showAnchorDetails(anchorId)
+    })
+    return
+  }
+
   const handler = routes.get(path)
 
   if (handler) {

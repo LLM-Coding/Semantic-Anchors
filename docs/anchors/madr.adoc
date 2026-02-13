@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Markdown Any Decision Records
+Full Name:: Markdown Any Decision Records
 
 *Core Concepts*:
 
@@ -25,9 +25,9 @@
 * *Version control*: Stored with code, immutable like other ADRs
 * *Lightweight yet comprehensive*: Balances completeness with maintainability
 
-*Key Proponents*: Oliver Kopp, Olaf Zimmermann (and MADR community)
+Key Proponents:: Oliver Kopp, Olaf Zimmermann (and MADR community)
 
-*Reference*: https://adr.github.io/madr/
+Reference:: https://adr.github.io/madr/
 
 *When to Use*:
 

@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Rubber Duck Debugging
+Vollständiger Name:: Rubber Duck Debugging
 
 *Kernkonzepte*:
 
@@ -17,9 +17,9 @@
 * *Selbstgesteuertes Lernen*: Oft löst der Erklärende das Problem, bevor er die Erklärung beendet
 * *Durch Lehren lernen*: Verwandt mit der Feynman-Technik und dem Lern-durch-Lehren-Prinzip
 
-*Schlüsselursprung*: "The Pragmatic Programmer" von Andrew Hunt und David Thomas (1999), unter Bezugnahme auf ältere Programmiererfolklore
+Schlüsselursprung:: "The Pragmatic Programmer" von Andrew Hunt und David Thomas (1999), unter Bezugnahme auf ältere Programmiererfolklore
 
-*Historischer Kontext*: Jahrzehntealte Praxis in der Programmierkultur, formalisiert und benannt in einflussreicher Software-Engineering-Literatur
+Historischer Kontext:: Jahrzehntealte Praxis in der Programmierkultur, formalisiert und benannt in einflussreicher Software-Engineering-Literatur
 
 *Wann zu verwenden*:
 

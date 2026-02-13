@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: MECE (Mutually Exclusive, Collectively Exhaustive)
+Full Name:: MECE (Mutually Exclusive, Collectively Exhaustive)
 
 *Core Concepts*:
 
@@ -17,7 +17,7 @@
 * *Hierarchical application*: Can be applied recursively at multiple levels
 * *Validation approach*: Check both dimensions independently (exclusivity and exhaustiveness)
 
-*Key Proponent*: Barbara Minto (McKinsey & Company, late 1960s)
+Key Proponent:: Barbara Minto (McKinsey & Company, late 1960s)
 
 *When to Use*:
 

@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Markdown Any Decision Records
+Vollständiger Name:: Markdown Any Decision Records
 
 *Kernkonzepte*:
 
@@ -25,9 +25,9 @@
 * *Versionskontrolle*: Mit Code gespeichert, unveränderlich wie andere ADRs
 * *Leichtgewichtig und dennoch umfassend*: Balanciert Vollständigkeit mit Wartbarkeit
 
-*Schlüsselvertreter*: Oliver Kopp, Olaf Zimmermann (und MADR-Community)
+Schlüsselvertreter:: Oliver Kopp, Olaf Zimmermann (und MADR-Community)
 
-*Referenz*: https://adr.github.io/madr/
+Referenz:: https://adr.github.io/madr/
 
 *Wann zu verwenden*:
 

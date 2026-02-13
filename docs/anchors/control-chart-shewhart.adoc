@@ -4,9 +4,9 @@
 
 [%collapsible]
 ====
-*Full Name*: Shewhart Control Chart
+Full Name:: Shewhart Control Chart
 
-*Also known as*: Process Control Chart, SPC Chart
+Also known as:: Process Control Chart, SPC Chart
 
 *Core Concepts*:
 
@@ -25,9 +25,9 @@
 * *In-Control vs. Out-of-Control*: Core decision based on rules (Nelson, Western Electric)
 * *Normal distribution assumption*: Control limits are based on normally distributed data
 
-*Key Proponent*: Walter A. Shewhart (1920s, Bell Labs / Western Electric)
+Key Proponent:: Walter A. Shewhart (1920s, Bell Labs / Western Electric)
 
-*Key Work*: "Economic Control of Quality of Manufactured Product" (1931)
+Key Work:: "Economic Control of Quality of Manufactured Product" (1931)
 
 *Relationship to Other Anchors*:
 

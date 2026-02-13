@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Docs-as-Code Approach according to Ralf D. Müller
+Full Name:: Docs-as-Code Approach according to Ralf D. Müller
 
 *Core Concepts*:
 
@@ -18,7 +18,7 @@
 * *Review process*: Pull requests for documentation changes
 * *Modular documentation*: Includes and composition
 
-*Key Proponent*: Ralf D. Müller (docToolchain creator)
+Key Proponent:: Ralf D. Müller (docToolchain creator)
 
 *Technical Stack*:
 

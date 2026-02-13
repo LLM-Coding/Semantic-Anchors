@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Five Whys Root Cause Analysis
+Full Name:: Five Whys Root Cause Analysis
 
 *Core Concepts*:
 
@@ -17,9 +17,9 @@
 * *Avoiding Blame*: Focus on process failures, not individual fault
 * *Countermeasure Identification*: Once root cause is found, design interventions
 
-*Key Proponent*: Taiichi Ohno (Toyota Production System, 1950s)
+Key Proponent:: Taiichi Ohno (Toyota Production System, 1950s)
 
-*Historical Context*: Core tool in Lean Manufacturing and Toyota Production System (TPS), foundational to continuous improvement (Kaizen)
+Historical Context:: Core tool in Lean Manufacturing and Toyota Production System (TPS), foundational to continuous improvement (Kaizen)
 
 *When to Use*:
 

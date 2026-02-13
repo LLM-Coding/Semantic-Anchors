@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Diátaxis Documentation Framework according to Daniele Procida
+Full Name:: Diátaxis Documentation Framework according to Daniele Procida
 
 *Core Concepts*:
 
@@ -21,7 +21,7 @@
 * *Quality criteria*: Each type has specific quality indicators
 * *Systematic approach*: Framework for organizing any documentation
 
-*Key Proponent*: Daniele Procida
+Key Proponent:: Daniele Procida
 
 *When to Use*:
 

@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Jobs To Be Done Framework (Christensen interpretation)
+Full Name:: Jobs To Be Done Framework (Christensen interpretation)
 
 *Core Concepts*:
 
@@ -19,7 +19,7 @@
 * *Innovation opportunities*: Unmet jobs or poorly served jobs
 * *Job stories*: Alternative to user stories focusing on context and motivation
 
-*Key Proponents*: Clayton Christensen, Alan Klement, Bob Moesta
+Key Proponents:: Clayton Christensen, Alan Klement, Bob Moesta
 
 *When to Use*:
 

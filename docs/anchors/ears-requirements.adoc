@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Easy Approach to Requirements Syntax
+Full Name:: Easy Approach to Requirements Syntax
 
 *Core Concepts*:
 
@@ -16,7 +16,7 @@
 * *Structured syntax*: Consistent templates for clarity
 * *Testability*: Requirements written to be verifiable
 
-*Key Proponent*: Alistair Mavin (Rolls-Royce)
+Key Proponent:: Alistair Mavin (Rolls-Royce)
 
 *When to Use*:
 

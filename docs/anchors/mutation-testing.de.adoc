@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Auch bekannt als*: Mutationsanalyse, Fehlerbasiertes Testen
+Auch bekannt als:: Mutationsanalyse, Fehlerbasiertes Testen
 
 *Kernkonzepte*:
 
@@ -22,7 +22,7 @@
 * *Starke Mutation*: Test muss unterschiedliche finale Ausgabe erzeugen
 * *Testadäquatheitskriterium*: "Sind die Tests gut genug?" nicht nur "Ist die Abdeckung hoch genug?"
 
-*Schlüsselvertreter*: Richard Lipton (theoretische Grundlage, 1971), Richard DeMillo, Timothy Budd
+Schlüsselvertreter:: Richard Lipton (theoretische Grundlage, 1971), Richard DeMillo, Timothy Budd
 
 *Wichtige Werkzeuge*:
 

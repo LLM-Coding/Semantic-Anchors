@@ -82,6 +82,11 @@ export function closeModal() {
     modal.classList.add('hidden')
     modal.classList.remove('flex')
     document.body.style.overflow = ''
+
+    // Reset URL to home if we're on an anchor route
+    if (window.location.hash.startsWith('#/anchor/')) {
+      window.location.hash = '#/'
+    }
   }
 }
 

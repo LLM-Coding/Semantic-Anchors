@@ -5,9 +5,9 @@
 
 [%collapsible]
 ====
-*Full Name*: todo.txt-flavoured Markdown Task Lists
+Full Name:: todo.txt-flavoured Markdown Task Lists
 
-*Also known as*: Enhanced Markdown Tasks, Markdown with todo.txt conventions
+Also known as:: Enhanced Markdown Tasks, Markdown with todo.txt conventions
 
 *Core Concepts*:
 
@@ -40,7 +40,7 @@
 - [x] 2024-01-30 Fix bug in authentication +backend @computer
 ----
 
-*Key Proponents*: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
+Key Proponents:: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
 
 *Original References*:
 

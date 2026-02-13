@@ -7,9 +7,9 @@
 
 [%collapsible]
 ====
-*Full Name*: IEC 61508 Safety Integrity Levels
+Full Name:: IEC 61508 Safety Integrity Levels
 
-*Also known as*: Functional Safety Levels, SIL Classification
+Also known as:: Functional Safety Levels, SIL Classification
 
 *Core Concepts*:
 
@@ -28,7 +28,7 @@
 * *Systematic failures*: Focus on preventing design and specification errors
 * *Random hardware failures*: Statistical analysis and fault tolerance
 
-*Key Standard*: IEC 61508 "Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems" (first edition 1998, second edition 2010)
+Key Standard:: IEC 61508 "Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems" (first edition 1998, second edition 2010)
 
 *Related Standards*:
 

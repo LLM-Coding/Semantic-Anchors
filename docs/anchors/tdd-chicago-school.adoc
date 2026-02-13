@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Also known as*: Classicist TDD, Detroit School
+Also known as:: Classicist TDD, Detroit School
 
 *Core Concepts*:
 
@@ -16,7 +16,7 @@
 * *Red-Green-Refactor*: The fundamental TDD cycle
 * *YAGNI*: You Aren't Gonna Need It - avoid premature abstraction
 
-*Key Proponents*: Kent Beck, Martin Fowler
+Key Proponents:: Kent Beck, Martin Fowler
 
 *When to Use*:
 

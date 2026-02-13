@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Nelson Rules (Tests for Special Causes)
+Full Name:: Nelson Rules (Tests for Special Causes)
 
 *Core Concepts*:
 
@@ -21,7 +21,7 @@
 * *Zones A/B/C*: Dividing the Control Chart into 6 zones (each 1σ wide)
 * *False Positive Trade-off*: More active rules = higher sensitivity, but more false alarms
 
-*Key Proponent*: Lloyd S. Nelson (1984, Journal of Quality Technology)
+Key Proponent:: Lloyd S. Nelson (1984, Journal of Quality Technology)
 
 *Relationship to Other Anchors*:
 

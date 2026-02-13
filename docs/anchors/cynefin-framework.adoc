@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Cynefin Framework according to Dave Snowden
+Full Name:: Cynefin Framework according to Dave Snowden
 
 *Core Concepts*:
 
@@ -20,7 +20,7 @@
 * *Decision-making context*: Different domains require different approaches
 * *Facilitation tool*: Helps teams discuss and categorize challenges
 
-*Key Proponent*: Dave Snowden (1999)
+Key Proponent:: Dave Snowden (1999)
 
 *When to Use*:
 

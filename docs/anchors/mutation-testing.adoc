@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Also known as*: Mutation Analysis, Fault-Based Testing
+Also known as:: Mutation Analysis, Fault-Based Testing
 
 *Core Concepts*:
 
@@ -22,7 +22,7 @@
 * *Strong mutation*: Test must produce different final output
 * *Test adequacy criterion*: "Are tests good enough?" not just "Is coverage high enough?"
 
-*Key Proponents*: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
+Key Proponents:: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
 
 *Key Tools*:
 

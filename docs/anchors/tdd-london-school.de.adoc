@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Auch bekannt als*: Mockist TDD, Outside-In TDD
+Auch bekannt als:: Mockist TDD, Outside-In TDD
 
 *Kernkonzepte*:
 
@@ -16,7 +16,7 @@
 * *Interface Discovery*: Tests nutzen, um Interfaces zu entdecken und zu definieren
 * *Walking Skeleton*: End-to-End-Funktionalität früh aufbauen, dann Details ausfüllen
 
-*Schlüsselvertreter*: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
+Schlüsselvertreter:: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
 
 *Wann zu verwenden*:
 

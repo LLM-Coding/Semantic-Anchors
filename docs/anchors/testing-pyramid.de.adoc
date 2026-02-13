@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Testing Pyramid nach Mike Cohn
+Vollständiger Name:: Testing Pyramid nach Mike Cohn
 
 *Kernkonzepte*:
 
@@ -19,7 +19,7 @@
 * *Auf der richtigen Ebene testen*: Nicht durch UI testen, was isoliert getestet werden kann
 * *Vertrauensgradient*: Balance zwischen Vertrauen und Ausführungsgeschwindigkeit
 
-*Schlüsselvertreter*: Mike Cohn ("Succeeding with Agile", 2009)
+Schlüsselvertreter:: Mike Cohn ("Succeeding with Agile", 2009)
 
 *Wann zu verwenden*:
 

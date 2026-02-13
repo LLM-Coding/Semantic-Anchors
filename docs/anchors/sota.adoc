@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: State-of-the-Art
+Full Name:: State-of-the-Art
 
 *Core Concepts*:
 
@@ -29,7 +29,7 @@
 * "Give me the SOTA approach for semantic search"
 * "What's the SOTA in transformer architectures?"
 
-*Key Proponent*: Widely used in ML/AI research community
+Key Proponent:: Widely used in ML/AI research community
 
 *When to Use*:
 

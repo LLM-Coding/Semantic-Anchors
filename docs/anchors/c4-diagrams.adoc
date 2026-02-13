@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: C4 Model for Software Architecture Diagrams
+Full Name:: C4 Model for Software Architecture Diagrams
 
 *Core Concepts*:
 
@@ -18,7 +18,7 @@
 * *Audience-appropriate*: Different diagrams for different stakeholders
 * *Supplementary diagrams*: Deployment, dynamic views, etc.
 
-*Key Proponent*: Simon Brown
+Key Proponent:: Simon Brown
 
 *When to Use*:
 

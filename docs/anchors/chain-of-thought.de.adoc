@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Chain of Thought Prompting (Gedankenketten-Prompting)
+Vollständiger Name:: Chain of Thought Prompting (Gedankenketten-Prompting)
 
 *Kernkonzepte*:
 
@@ -18,9 +18,9 @@
 * *Few-Shot CoT*: Beispiele mit Argumentationsketten bereitstellen, um das Modell zu leiten
 * *Selbstkonsistenz*: Mehrere Argumentationspfade generieren und konsistenteste Antwort wählen
 
-*Schlüsselvertreter*: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+Schlüsselvertreter:: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 
-*Historischer Kontext*: Durchbruch in der LLM-Prompting-Forschung, deutlich verbesserte Leistung bei Argumentationsaufgaben (Mathematik, Logik, gesunder Menschenverstand)
+Historischer Kontext:: Durchbruch in der LLM-Prompting-Forschung, deutlich verbesserte Leistung bei Argumentationsaufgaben (Mathematik, Logik, gesunder Menschenverstand)
 
 *Wann zu verwenden*:
 

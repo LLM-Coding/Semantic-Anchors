@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Semantic Versioning Specification
+Full Name:: Semantic Versioning Specification
 
 *Core Concepts*:
 
@@ -18,7 +18,7 @@
 * *Initial development*: 0.y.z for initial development (API unstable)
 * *Public API declaration*: Once public API declared, version dependencies matter
 
-*Key Proponent*: Tom Preston-Werner
+Key Proponent:: Tom Preston-Werner
 
 *When to Use*:
 

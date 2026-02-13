@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Single Point of Truth
+Full Name:: Single Point of Truth
 
 *Core Concepts*:
 
@@ -24,7 +24,7 @@
 * State management in applications
 * API design where data flows from a single endpoint
 
-*Difference from SSOT*: SPOT emphasizes the implementation detail of where data lives, while SSOT emphasizes the authoritative, trusted nature of that data source
+Difference from SSOT:: SPOT emphasizes the implementation detail of where data lives, while SSOT emphasizes the authoritative, trusted nature of that data source
 
-*Related Concepts*: DRY, SSOT, Normalized databases, Master data management
+Related Concepts:: DRY, SSOT, Normalized databases, Master data management
 ====

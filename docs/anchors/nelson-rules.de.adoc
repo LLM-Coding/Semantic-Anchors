@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Nelson Rules (Tests for Special Causes)
+Vollständiger Name:: Nelson Rules (Tests for Special Causes)
 
 *Kernkonzepte*:
 
@@ -21,7 +21,7 @@
 * *Zonen A/B/C*: Aufteilung der Regelkarte in 6 Zonen (jeweils 1σ breit)
 * *Falsch-Positiv-Abwägung*: Mehr aktive Regeln = höhere Sensitivität, aber mehr Fehlalarme
 
-*Schlüsselvertreter*: Lloyd S. Nelson (1984, Journal of Quality Technology)
+Schlüsselvertreter:: Lloyd S. Nelson (1984, Journal of Quality Technology)
 
 *Beziehung zu anderen Ankern*:
 

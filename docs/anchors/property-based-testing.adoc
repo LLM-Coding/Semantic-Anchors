@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Also known as*: Generative Testing, QuickCheck-style Testing
+Also known as:: Generative Testing, QuickCheck-style Testing
 
 *Core Concepts*:
 
@@ -18,7 +18,7 @@
 * *Stateful testing*: Testing sequences of operations
 * *Model-based testing*: Compare implementation against simpler model
 
-*Key Tools*: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
+Key Tools:: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
 
 *When to Use*:
 

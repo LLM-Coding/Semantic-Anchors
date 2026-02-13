@@ -20,7 +20,7 @@
 ** *!* - BREAKING CHANGE (-> SemVer Major)
 * *BREAKING CHANGE:* introduces a breaking API change
 
-*Key Proponents*: Benjamin E. Coe, James J. Womack, Steve Mao
+Key Proponents:: Benjamin E. Coe, James J. Womack, Steve Mao
 
 *When to Use*:
 

@@ -20,7 +20,7 @@
 ** *!* - BREAKING CHANGE (-> SemVer Major)
 * *BREAKING CHANGE:* führt eine Breaking API-Änderung ein
 
-*Schlüsselvertreter*: Benjamin E. Coe, James J. Womack, Steve Mao
+Schlüsselvertreter:: Benjamin E. Coe, James J. Womack, Steve Mao
 
 *Wann zu verwenden*:
 

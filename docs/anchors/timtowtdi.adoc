@@ -4,9 +4,9 @@
 
 [%collapsible]
 ====
-*Full Name*: There Is More Than One Way To Do It
+Full Name:: There Is More Than One Way To Do It
 
-*Also known as*: Tim Toady
+Also known as:: Tim Toady
 
 *Core Concepts*:
 
@@ -19,7 +19,7 @@
 * *Pragmatism over purity*: Practical results matter more than theoretical elegance
 * *Collaborative decision-making*: When working with others, discuss approach rather than assume
 
-*Key Proponent*: Larry Wall (Perl programming language)
+Key Proponent:: Larry Wall (Perl programming language)
 
 *Contrast*:
 

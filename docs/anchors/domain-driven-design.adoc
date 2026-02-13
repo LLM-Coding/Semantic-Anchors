@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Domain-Driven Design according to Eric Evans
+Full Name:: Domain-Driven Design according to Eric Evans
 
 *Core Concepts*:
 
@@ -19,7 +19,7 @@
 * *Tactical Design*: Building blocks (entities, value objects, services)
 * *Model-Driven Design*: Code that expresses the domain model
 
-*Key Proponent*: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
+Key Proponent:: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
 
 *When to Use*:
 

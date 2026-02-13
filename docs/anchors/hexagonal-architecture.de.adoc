@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Auch bekannt als*: Ports and Adapters, Onion Architecture (Variante)
+Auch bekannt als:: Ports and Adapters, Onion Architecture (Variante)
 
 *Kernkonzepte*:
 
@@ -18,7 +18,7 @@
 * *Testbarkeit*: Einfaches Testen der Kernlogik isoliert
 * *Symmetrie*: Alle externen Interaktionen werden einheitlich behandelt
 
-*Schlüsselvertreter*: Alistair Cockburn (2005)
+Schlüsselvertreter:: Alistair Cockburn (2005)
 
 *Wann zu verwenden*:
 

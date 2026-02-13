@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: MECE (Mutually Exclusive, Collectively Exhaustive - Sich gegenseitig ausschließend, gemeinsam erschöpfend)
+Vollständiger Name:: MECE (Mutually Exclusive, Collectively Exhaustive - Sich gegenseitig ausschließend, gemeinsam erschöpfend)
 
 *Kernkonzepte*:
 
@@ -17,7 +17,7 @@
 * *Hierarchische Anwendung*: Kann rekursiv auf mehreren Ebenen angewendet werden
 * *Validierungsansatz*: Beide Dimensionen unabhängig prüfen (Ausschließlichkeit und Vollständigkeit)
 
-*Schlüsselvertreterin*: Barbara Minto (McKinsey & Company, späte 1960er)
+Schlüsselvertreterin:: Barbara Minto (McKinsey & Company, späte 1960er)
 
 *Wann zu verwenden*:
 

@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Programming as Theory Building (Mental Model) according to Peter Naur
+Full Name:: Programming as Theory Building (Mental Model) according to Peter Naur
 
 *Core Concepts*:
 
@@ -18,9 +18,9 @@
 * *Ramp-up time*: New team members need time to build the theory
 * *Code as artifact*: Code is merely a representation of the underlying theory
 
-*Key Proponent*: Peter Naur (Turing Award winner, 1978)
+Key Proponent:: Peter Naur (Turing Award winner, 1978)
 
-*Original Work*: "Programming as Theory Building" (1985)
+Original Work:: "Programming as Theory Building" (1985)
 
 *Application in Software Development*:
 

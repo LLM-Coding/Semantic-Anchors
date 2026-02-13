@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: SOLID Object-Oriented Design Principles
+Vollständiger Name:: SOLID Object-Oriented Design Principles
 
 *Kernkonzepte*:
 
@@ -14,7 +14,7 @@
 * *Interface Segregation Principle (ISP)*: Clients sollten nicht gezwungen werden, von Schnittstellen abzuhängen, die sie nicht nutzen
 * *Dependency Inversion Principle (DIP)*: Von Abstraktionen abhängen, nicht von konkreten Implementierungen
 
-*Schlüsselvertreter*: Robert C. Martin ("Uncle Bob")
+Schlüsselvertreter:: Robert C. Martin ("Uncle Bob")
 
 *Wann zu verwenden*:
 

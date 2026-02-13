@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Full Name*: Architecture Decision Records according to Michael Nygard
+Full Name:: Architecture Decision Records according to Michael Nygard
 
 *Core Concepts*:
 
@@ -20,7 +20,7 @@
 * *Decision archaeology*: Understanding why past decisions were made
 * *Evolutionary architecture*: Supporting architecture that changes over time
 
-*Key Proponent*: Michael Nygard
+Key Proponent:: Michael Nygard
 
 *When to Use*:
 

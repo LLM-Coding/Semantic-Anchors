@@ -4,7 +4,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Clean Architecture nach Robert C. Martin
+Vollständiger Name:: Clean Architecture nach Robert C. Martin
 
 *Kernkonzepte*:
 
@@ -18,7 +18,7 @@
 * *Screaming Architecture*: Architektur offenbart die Absicht des Systems
 * *SOLID-Prinzipien*: Grundlage der Architektur
 
-*Schlüsselvertreter*: Robert C. Martin ("Uncle Bob")
+Schlüsselvertreter:: Robert C. Martin ("Uncle Bob")
 
 *Wann zu verwenden*:
 

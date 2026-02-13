@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Statistical Process Control
+Vollständiger Name:: Statistical Process Control
 
 *Kernkonzepte*:
 
@@ -20,7 +20,7 @@
 * *Kontinuierliche Verbesserung*: SPC als Grundlage für fortlaufende Prozessverbesserung
 * *DMAIC Control Phase*: SPC-Werkzeuge sichern Verbesserungen innerhalb von Six Sigma
 
-*Schlüsselvertreter*: Walter A. Shewhart (Gründer), W. Edwards Deming (Verbreitung), Western Electric Company
+Schlüsselvertreter:: Walter A. Shewhart (Gründer), W. Edwards Deming (Verbreitung), Western Electric Company
 
 *Beziehung zu anderen Ankern*:
 
