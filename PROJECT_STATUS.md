@@ -15,11 +15,11 @@
 
 | Document | Status | Location |
 |----------|--------|----------|
-| PRD | ✅ Complete | `PRD.md` |
-| Use Cases | ✅ Complete | `specs/01_use_cases.adoc` |
-| API Specification | ✅ Complete | `specs/02_api_specification.adoc` |
-| Acceptance Criteria | ✅ Complete | `specs/03_acceptance_criteria.adoc` |
-| ADRs | ✅ Complete | `specs/adrs/` |
+| PRD | ✅ Complete | `docs/PRD.md` |
+| Use Cases | ✅ Complete | `docs/specs/01_use_cases.adoc` |
+| API Specification | ✅ Complete | `docs/specs/02_api_specification.adoc` |
+| Acceptance Criteria | ✅ Complete | `docs/specs/03_acceptance_criteria.adoc` |
+| ADRs | ✅ Complete | `docs/specs/adrs/` |
 | arc42 Architecture | ✅ Complete | `docs/arc42/` |
 | CLAUDE.md | ✅ Complete | `CLAUDE.md` |
 
@@ -82,10 +82,10 @@ All decisions are documented with Pugh matrices:
 
 | Decision | Winner | Score | ADR |
 |----------|--------|-------|-----|
-| Static Site Generator | Vite | +88 | [ADR-001](specs/adrs/adr-001-static-site-generator.adoc) |
-| Metadata Storage | AsciiDoc Attributes | +51 | [ADR-002](specs/adrs/adr-002-metadata-storage.adoc) |
-| Treemap Library | Apache ECharts | +77 | [ADR-003](specs/adrs/adr-003-treemap-library.adoc) |
-| File Structure | One File per Anchor | +105 | [ADR-004](specs/adrs/adr-004-one-file-per-anchor.adoc) |
+| Static Site Generator | Vite | +88 | [ADR-001](docs/specs/adrs/adr-001-static-site-generator.adoc) |
+| Metadata Storage | AsciiDoc Attributes | +51 | [ADR-002](docs/specs/adrs/adr-002-metadata-storage.adoc) |
+| Treemap Library | Apache ECharts | +77 | [ADR-003](docs/specs/adrs/adr-003-treemap-library.adoc) |
+| File Structure | One File per Anchor | +105 | [ADR-004](docs/specs/adrs/adr-004-one-file-per-anchor.adoc) |
 
 ## 📈 Success Criteria
 

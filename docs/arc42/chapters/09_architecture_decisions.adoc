@@ -9,22 +9,22 @@ Dieses Kapitel referenziert die detaillierten Architecture Decision Records (ADR
 |===
 |ADR |Entscheidung |Begründung |Status
 
-|link:../../specs/adrs/adr-001-static-site-generator.adoc[ADR-001]
+|link:../specs/adrs/adr-001-static-site-generator.adoc[ADR-001]
 |**Vite** als Static Site Generator
 |Maximale Flexibilität für Custom-Visualisierung, beste Performance, kein Framework-Lock-in
 |Accepted
 
-|link:../../specs/adrs/adr-002-metadata-storage.adoc[ADR-002]
+|link:../specs/adrs/adr-002-metadata-storage.adoc[ADR-002]
 |**AsciiDoc Attributes** für Metadata
 |Single Source of Truth, einfache Contribution, keine Sync-Probleme
 |Accepted
 
-|link:../../specs/adrs/adr-003-treemap-library.adoc[ADR-003]
+|link:../specs/adrs/adr-003-treemap-library.adoc[ADR-003]
 |**Apache ECharts** für Treemap
 |Native Treemap-Unterstützung, exzellente DX, Built-in Theming, Open Source
 |Accepted
 
-|link:../../specs/adrs/adr-004-one-file-per-anchor.adoc[ADR-004]
+|link:../specs/adrs/adr-004-one-file-per-anchor.adoc[ADR-004]
 |**Ein File pro Anchor** + Includes
 |Minimale Merge-Konflikte, klare Git-History, skaliert perfekt
 |Accepted
@@ -49,7 +49,7 @@ Dieses Kapitel referenziert die detaillierten Architecture Decision Records (ADR
 * ✅ Keine unnötigen Abstraktionen
 * ❌ Mehr Custom-Code nötig (aber akzeptabel)
 
-**Details:** link:../../specs/adrs/adr-001-static-site-generator.adoc[ADR-001]
+**Details:** link:../specs/adrs/adr-001-static-site-generator.adoc[ADR-001]
 
 === ADR-002: AsciiDoc Attributes für Metadata
 
@@ -80,7 +80,7 @@ Dieses Kapitel referenziert die detaillierten Architecture Decision Records (ADR
 :proponents: Steve Freeman, Nat Pryce
 ```
 
-**Details:** link:../../specs/adrs/adr-002-metadata-storage.adoc[ADR-002]
+**Details:** link:../specs/adrs/adr-002-metadata-storage.adoc[ADR-002]
 
 === ADR-003: Apache ECharts für Treemap
 
@@ -114,7 +114,7 @@ chart.setOption({
 });
 ```
 
-**Details:** link:../../specs/adrs/adr-003-treemap-library.adoc[ADR-003]
+**Details:** link:../specs/adrs/adr-003-treemap-library.adoc[ADR-003]
 
 === ADR-004: Ein File pro Anchor
 
@@ -152,7 +152,7 @@ docs/
     └── ...
 ```
 
-**Details:** link:../../specs/adrs/adr-004-one-file-per-anchor.adoc[ADR-004]
+**Details:** link:../specs/adrs/adr-004-one-file-per-anchor.adoc[ADR-004]
 
 === Zukünftige Entscheidungen
 
@@ -174,4 +174,4 @@ Alle ADRs folgen dem **Nygard-Format**:
 
 Zusätzlich: **Pugh-Matrix** für objektiven Vergleich von Alternativen.
 
-**Template:** link:../../specs/adrs/_template.adoc[ADR Template]
+**Template:** link:../specs/adrs/_template.adoc[ADR Template]
