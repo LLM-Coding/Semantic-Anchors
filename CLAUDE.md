@@ -27,6 +27,45 @@ This repository is a curated catalog of **semantic anchors** - well-defined term
 - Issues are tracked in upstream repository: https://github.com/LLM-Coding/Semantic-Anchors/issues
 - Reference issues in commits: `feat: implement X (#42)`
 
+### Git Worktrees for Parallel Team Development
+
+**When using agent teams, use Git Worktrees to enable true parallel development:**
+
+**Setup:**
+```bash
+# Create worktree directory
+mkdir -p ~/projects/Semantic-Anchors-worktrees
+
+# Create worktree for each feature branch
+git worktree add ../Semantic-Anchors-worktrees/feature-<name> -b feature/<name>
+```
+
+**Directory Structure:**
+```
+~/projects/
+├── Semantic-Anchors/              # Main worktree (main branch)
+└── Semantic-Anchors-worktrees/    # Feature branch worktrees
+    ├── feature-mece-analysis/     # Teammate 1
+    ├── feature-role-mapping/      # Teammate 2
+    ├── feature-split-readme/      # Teammate 3
+    └── feature-metadata-script/   # Teammate 4
+```
+
+**Team Workflow:**
+1. Create worktrees for each feature branch
+2. Spawn teammates with `working_directory` parameter pointing to their worktree
+3. Each teammate works independently in their directory
+4. Teammates commit and push to their feature branches
+5. Create PRs from feature branches to main
+6. After merge, cleanup: `git worktree remove <path>`
+
+**Advantages:**
+- No branch switching conflicts
+- True parallel development
+- Each teammate has isolated workspace
+- Shared Git history (.git directory)
+- Clean separation of concerns
+
 ## Project Documentation
 
 All project documentation is located in the `docs/` directory:
