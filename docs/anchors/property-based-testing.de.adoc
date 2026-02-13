@@ -4,27 +4,27 @@
 
 [%collapsible]
 ====
-*Auch bekannt als*: Generative Testing, QuickCheck-style Testing
+*Auch bekannt als*: Generatives Testen, QuickCheck-artiges Testen
 
 *Kernkonzepte*:
 
-* *Properties*: Invariants that should always hold
-* *Generators*: Automatic test data creation
-* *Shrinking*: Minimizing failing test cases to simplest form
-* *Universal quantification*: Testing "for all inputs"
-* *Specification testing*: Testing high-level properties, not examples
-* *Edge case discovery*: Finds cases you didn't think of
-* *Complementary to example-based*: Works alongside traditional unit tests
-* *Stateful testing*: Testing sequences of operations
-* *Model-based testing*: Compare implementation against simpler model
+* *Properties (Eigenschaften)*: Invarianten, die immer gelten sollten
+* *Generatoren*: Automatische Testdatenerzeugung
+* *Shrinking (Vereinfachung)*: Minimierung fehlschlagender Testfälle zur einfachsten Form
+* *Universelle Quantifizierung*: Testen "für alle Eingaben"
+* *Spezifikationstesten*: Testen von High-Level-Eigenschaften, nicht Beispielen
+* *Edge-Case-Entdeckung*: Findet Fälle, an die man nicht gedacht hat
+* *Komplementär zu beispielbasiert*: Funktioniert neben traditionellen Unit-Tests
+* *Zustandsbehaftetes Testen*: Testen von Operationssequenzen
+* *Modellbasiertes Testen*: Implementierung gegen einfacheres Modell vergleichen
 
-*Key Tools*: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
+*Wichtige Werkzeuge*: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
 
 *Wann zu verwenden*:
 
-* Testing pure functions and algorithms
-* Validating business rules and invariants
-* Testing parsers and serializers
-* Finding edge cases in complex logic
-* Complementing example-based TDD
+* Testen reiner Funktionen und Algorithmen
+* Validierung von Geschäftsregeln und Invarianten
+* Testen von Parsern und Serialisierern
+* Finden von Edge Cases in komplexer Logik
+* Ergänzung zu beispielbasiertem TDD
 ====

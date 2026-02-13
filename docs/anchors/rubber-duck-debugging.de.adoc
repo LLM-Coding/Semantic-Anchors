@@ -8,30 +8,30 @@
 
 *Kernkonzepte*:
 
-* *Explain to Understand*: Articulating a problem aloud surfaces gaps in understanding
-* *Step-by-Step Verbalization*: Force yourself to go through code/logic line by line
-* *Assumption Surfacing*: Speaking aloud exposes implicit assumptions that may be wrong
-* *No Expertise Required*: The "listener" (rubber duck, colleague, LLM) need not be an expert
-* *Slowing Down*: The act of explaining forces a slower, more deliberate thought process
-* *External Cognition*: Verbalizing creates an external representation that aids debugging
-* *Self-Directed Learning*: Often the explainer solves the problem before finishing the explanation
-* *Teaching to Learn*: Related to the Feynman Technique and learning-by-teaching principle
+* *Erklären zum Verstehen*: Lautes Artikulieren eines Problems macht Verständnislücken sichtbar
+* *Schrittweise Verbalisierung*: Zwingt dazu, Code/Logik Zeile für Zeile durchzugehen
+* *Annahmen sichtbar machen*: Lautes Sprechen legt implizite Annahmen offen, die falsch sein könnten
+* *Keine Expertise erforderlich*: Der "Zuhörer" (Gummiente, Kollege, LLM) muss kein Experte sein
+* *Verlangsamung*: Der Akt des Erklärens erzwingt einen langsameren, überlegteren Denkprozess
+* *Externe Kognition*: Verbalisierung schafft eine externe Darstellung, die beim Debuggen hilft
+* *Selbstgesteuertes Lernen*: Oft löst der Erklärende das Problem, bevor er die Erklärung beendet
+* *Durch Lehren lernen*: Verwandt mit der Feynman-Technik und dem Lern-durch-Lehren-Prinzip
 
-*Key Origin*: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), referencing earlier programmer folklore
+*Schlüsselursprung*: "The Pragmatic Programmer" von Andrew Hunt und David Thomas (1999), unter Bezugnahme auf ältere Programmiererfolklore
 
-*Historischer Kontext*: Decades-old practice in programming culture, formalized and named in influential software engineering literature
+*Historischer Kontext*: Jahrzehntealte Praxis in der Programmierkultur, formalisiert und benannt in einflussreicher Software-Engineering-Literatur
 
 *Wann zu verwenden*:
 
-* Debugging stubborn problems where you're stuck
-* Code review where explaining to a colleague reveals issues
-* Learning new concepts by teaching them to someone (or something) else
-* Validating understanding of complex systems or algorithms
-* When rubber-ducking to an LLM, explicitly adopting this frame to trigger step-by-step explanation
+* Debugging hartnäckiger Probleme, bei denen man feststeckt
+* Code-Review, bei dem das Erklären gegenüber einem Kollegen Probleme aufdeckt
+* Lernen neuer Konzepte durch Lehren an jemanden (oder etwas) anderes
+* Validierung des Verständnisses komplexer Systeme oder Algorithmen
+* Beim Rubber-Ducking mit einem LLM, explizite Adoption dieses Rahmens, um schrittweise Erklärung auszulösen
 
 *Verwandte Konzepte*:
 
-* Pair programming (where explaining is continuous)
-* <<feynman-technique,Feynman Technique>> (learning by simple explanation)
-* <<socratic-method,Socratic Method>> (when the duck asks questions back)
+* Pair Programming (wo Erklären kontinuierlich ist)
+* <<feynman-technique,Feynman-Technik>> (Lernen durch einfache Erklärung)
+* <<socratic-method,Sokratische Methode>> (wenn die Ente zurückfragt)
 ====

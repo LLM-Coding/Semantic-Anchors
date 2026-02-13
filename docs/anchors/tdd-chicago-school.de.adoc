@@ -5,22 +5,22 @@
 
 [%collapsible]
 ====
-*Auch bekannt als*: Classicist TDD, Detroit School
+*Auch bekannt als*: Klassisches TDD, Detroit School
 
 *Kernkonzepte*:
 
-* *State-based testing*: Verify the state of objects after operations
-* *Minimal mocking*: Use real objects whenever possible; mock only external dependencies
-* *Inside-out development*: Start with core domain logic and build outward
-* *Simplicity focus*: Emergent design through refactoring
-* *Red-Green-Refactor*: The fundamental TDD cycle
-* *YAGNI*: You Aren't Gonna Need It - avoid premature abstraction
+* *Zustandsbasiertes Testen*: Zustand von Objekten nach Operationen überprüfen
+* *Minimales Mocking*: Echte Objekte verwenden, wann immer möglich; nur externe Abhängigkeiten mocken
+* *Inside-Out-Entwicklung*: Mit Kern-Domänenlogik beginnen und nach außen bauen
+* *Einfachheitsfokus*: Emergentes Design durch Refactoring
+* *Red-Green-Refactor*: Der fundamentale TDD-Zyklus
+* *YAGNI*: You Aren't Gonna Need It - vorzeitige Abstraktion vermeiden
 
 *Schlüsselvertreter*: Kent Beck, Martin Fowler
 
 *Wann zu verwenden*:
 
-* Domain-driven design projects
-* When business logic is central
-* Smaller, cohesive modules
+* Domain-Driven-Design-Projekte
+* Wenn Geschäftslogik zentral ist
+* Kleinere, kohäsive Module
 ====

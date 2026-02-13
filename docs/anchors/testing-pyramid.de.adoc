@@ -4,27 +4,27 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Testing Pyramid according to Mike Cohn
+*Vollständiger Name*: Testing Pyramid nach Mike Cohn
 
 *Kernkonzepte*:
 
-* *Three layers*:
-** *Unit tests* (base): Many fast, isolated tests
-** *Integration tests* (middle): Moderate number, test component interaction
-** *End-to-end tests* (top): Few, test complete user journeys
-* *Proportional distribution*: More unit tests, fewer E2E tests
-* *Cost and speed*: Unit tests cheap and fast, E2E tests expensive and slow
-* *Feedback loops*: Faster feedback from lower levels
-* *Anti-pattern: Ice cream cone*: Too many E2E tests, too few unit tests
-* *Test at the right level*: Don't test through UI what can be tested in isolation
-* *Confidence gradient*: Balance confidence with execution speed
+* *Drei Schichten*:
+** *Unit-Tests* (Basis): Viele schnelle, isolierte Tests
+** *Integrationstests* (Mitte): Moderate Anzahl, testen Komponenteninteraktion
+** *End-to-End-Tests* (Spitze): Wenige, testen komplette User Journeys
+* *Proportionale Verteilung*: Mehr Unit-Tests, weniger E2E-Tests
+* *Kosten und Geschwindigkeit*: Unit-Tests günstig und schnell, E2E-Tests teuer und langsam
+* *Feedback-Schleifen*: Schnelleres Feedback von unteren Ebenen
+* *Anti-Pattern: Eistüte*: Zu viele E2E-Tests, zu wenige Unit-Tests
+* *Auf der richtigen Ebene testen*: Nicht durch UI testen, was isoliert getestet werden kann
+* *Vertrauensgradient*: Balance zwischen Vertrauen und Ausführungsgeschwindigkeit
 
 *Schlüsselvertreter*: Mike Cohn ("Succeeding with Agile", 2009)
 
 *Wann zu verwenden*:
 
-* Planning test strategy for projects
-* Balancing test types in CI/CD pipelines
-* Evaluating existing test suites
-* Guiding team testing practices
+* Planung der Teststrategie für Projekte
+* Ausbalancierung von Testtypen in CI/CD-Pipelines
+* Bewertung bestehender Testsuiten
+* Anleitung von Team-Testpraktiken
 ====

@@ -5,26 +5,26 @@
 
 [%collapsible]
 ====
-*Auch bekannt als*: Mutation Analysis, Fault-Based Testing
+*Auch bekannt als*: Mutationsanalyse, Fehlerbasiertes Testen
 
 *Kernkonzepte*:
 
-* *Test quality assessment*: Evaluate how effective tests are at detecting bugs
-* *Code mutations*: Deliberately introduce small, syntactic changes (mutants) into source code
-* *Mutation operators*: Rules for creating mutants (e.g., change `>` to `>=`, flip boolean, remove statement)
-* *Killed mutants*: Mutations caught by failing tests (good)
-* *Survived mutants*: Mutations not detected by tests (indicates test weakness)
-* *Equivalent mutants*: Mutations that don't change program behavior (false positives)
-* *Mutation score*: Percentage of killed mutants: `(killed / (total - equivalent)) × 100%`
-* *First-order mutations*: Single atomic change per mutant
-* *Higher-order mutations*: Multiple changes combined
-* *Weak mutation*: Test only needs to create different internal state
-* *Strong mutation*: Test must produce different final output
-* *Test adequacy criterion*: "Are tests good enough?" not just "Is coverage high enough?"
+* *Testqualitätsbewertung*: Bewertung, wie effektiv Tests Fehler erkennen
+* *Code-Mutationen*: Absichtliches Einführen kleiner, syntaktischer Änderungen (Mutanten) in Quellcode
+* *Mutationsoperatoren*: Regeln zur Erstellung von Mutanten (z.B. `>` zu `>=` ändern, Boolean umkehren, Anweisung entfernen)
+* *Getötete Mutanten*: Mutationen, die durch fehlschlagende Tests erkannt wurden (gut)
+* *Überlebende Mutanten*: Mutationen, die von Tests nicht erkannt wurden (zeigt Testschwäche an)
+* *Äquivalente Mutanten*: Mutationen, die das Programmverhalten nicht ändern (Falsch-Positive)
+* *Mutations-Score*: Prozentsatz getöteter Mutanten: `(getötet / (gesamt - äquivalent)) × 100%`
+* *Mutationen erster Ordnung*: Einzelne atomare Änderung pro Mutant
+* *Mutationen höherer Ordnung*: Mehrere kombinierte Änderungen
+* *Schwache Mutation*: Test muss nur unterschiedlichen internen Zustand erzeugen
+* *Starke Mutation*: Test muss unterschiedliche finale Ausgabe erzeugen
+* *Testadäquatheitskriterium*: "Sind die Tests gut genug?" nicht nur "Ist die Abdeckung hoch genug?"
 
-*Schlüsselvertreter*: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
+*Schlüsselvertreter*: Richard Lipton (theoretische Grundlage, 1971), Richard DeMillo, Timothy Budd
 
-*Key Tools*:
+*Wichtige Werkzeuge*:
 
 * PITest (Java)
 * Stryker (JavaScript/TypeScript, C#, Scala)
@@ -34,25 +34,25 @@
 
 *Wann zu verwenden*:
 
-* Evaluating test suite quality beyond coverage metrics
-* Identifying gaps in test assertions
-* Critical systems requiring high test confidence
-* Complementing code coverage as a quality metric
-* Refactoring legacy code with existing tests
-* Teaching effective testing practices
-* Continuous improvement of test effectiveness
+* Bewertung der Testsuit-Qualität über Abdeckungsmetriken hinaus
+* Identifizierung von Lücken in Test-Assertions
+* Kritische Systeme, die hohes Testvertrauen erfordern
+* Ergänzung der Code-Abdeckung als Qualitätsmetrik
+* Refactoring von Legacy-Code mit bestehenden Tests
+* Lehre effektiver Testpraktiken
+* Kontinuierliche Verbesserung der Testeffektivität
 
-*Practical Challenges*:
+*Praktische Herausforderungen*:
 
-* *Computational cost*: N mutations × M tests = expensive
-* *Equivalent mutant problem*: Hard to automatically detect functionally identical mutants
-* *Time investment*: Can be slow on large codebases
-* *Mitigation strategies*: Selective mutation, mutation sampling, incremental analysis
+* *Rechenkosten*: N Mutationen × M Tests = teuer
+* *Äquivalente-Mutanten-Problem*: Schwierig, funktional identische Mutanten automatisch zu erkennen
+* *Zeitinvestition*: Kann bei großen Codebasen langsam sein
+* *Abhilfestrategien*: Selektive Mutation, Mutations-Sampling, inkrementelle Analyse
 
-*Relationship to Other Practices*:
+*Beziehung zu anderen Praktiken*:
 
-* *Code coverage*: Mutation testing reveals that high coverage ≠ good tests
-* *TDD*: Strong TDD often produces high mutation scores naturally
-* *Property-based testing*: Orthogonal but complementary approaches
-* *Fault injection*: Similar concept applied to production systems
+* *Code-Abdeckung*: Mutations-Testing zeigt, dass hohe Abdeckung ≠ gute Tests
+* *TDD*: Starkes TDD erzeugt oft natürlich hohe Mutations-Scores
+* *Property-based Testing*: Orthogonale, aber komplementäre Ansätze
+* *Fault Injection*: Ähnliches Konzept, angewendet auf Produktionssysteme
 ====
