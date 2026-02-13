@@ -1,0 +1,165 @@
+/*
+ * Scoped Asciidoctor styles - only apply within .asciidoc-content
+ * This prevents the Asciidoctor CSS from affecting the rest of the page
+ */
+
+.asciidoc-content {
+  /* Import the base asciidoctor stylesheet content */
+  /* We need to manually scope it to avoid global pollution */
+
+  /* Base typography */
+  background: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: "Noto Serif", "DejaVu Serif", serif;
+  line-height: 1.6;
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  & a {
+    background: none;
+    color: #2156a5;
+    text-decoration: underline;
+    line-height: inherit;
+  }
+
+  & a:hover,
+  & a:focus {
+    color: #1d4b8f;
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-weight: 300;
+    color: #ba3925;
+    text-rendering: optimizeLegibility;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+  }
+
+  & h1 { font-size: 2.125em; }
+  & h2 { font-size: 1.6875em; }
+  & h3 { font-size: 1.375em; }
+  & h4 { font-size: 1.125em; }
+  & h5 { font-size: 1.0625em; }
+  & h6 { font-size: 1em; }
+
+  & p {
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    text-rendering: optimizeLegibility;
+  }
+
+  & code,
+  & kbd,
+  & pre {
+    font-family: "Noto Sans Mono", "Droid Sans Mono", monospace;
+    font-size: 1em;
+  }
+
+  & code {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+    background: #f5f5f5;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+  }
+
+  & pre {
+    color: rgba(0, 0, 0, 0.9);
+    line-height: 1.45;
+    white-space: pre-wrap;
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+  }
+
+  & pre code {
+    background: none;
+    padding: 0;
+  }
+
+  & blockquote {
+    margin: 1.25rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #2156a5;
+    background: #f5f5f5;
+  }
+
+  & ul,
+  & ol {
+    margin: 1.25rem 0;
+    padding-left: 2rem;
+  }
+
+  & li {
+    margin: 0.5rem 0;
+  }
+
+  & table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.25rem 0;
+  }
+
+  & th,
+  & td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  & th {
+    background: #f5f5f5;
+    font-weight: bold;
+  }
+
+  & img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+  & hr {
+    border: solid #dddddf;
+    border-width: 1px 0 0;
+    clear: both;
+    height: 0;
+    margin: 1.25em 0;
+  }
+
+  & .admonitionblock {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    border-left: 4px solid;
+    background: #f5f5f5;
+  }
+
+  & .admonitionblock.note {
+    border-color: #2156a5;
+  }
+
+  & .admonitionblock.tip {
+    border-color: #007f00;
+  }
+
+  & .admonitionblock.warning {
+    border-color: #bf3400;
+  }
+
+  & .admonitionblock.caution {
+    border-color: #bf6900;
+  }
+
+  & .admonitionblock.important {
+    border-color: #bf0000;
+  }
+}

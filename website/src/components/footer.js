@@ -10,6 +10,20 @@ export function renderFooter(version) {
           </p>
           <div class="flex items-center gap-4">
             <a
+              href="https://github.com/LLM-Coding/Semantic-Anchors/stargazers"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+              data-i18n="footer.leaveStar"
+              title="${i18n.t('footer.leaveStar')}"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              ${i18n.t('footer.leaveStar')}
+            </a>
+            <span class="text-gray-300 dark:text-gray-600">|</span>
+            <a
               href="https://github.com/LLM-Coding/Semantic-Anchors"
               target="_blank"
               rel="noopener noreferrer"

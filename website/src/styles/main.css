@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "./asciidoctor.css";
+@import "./asciidoctor-scoped.css";
 
 :root {
   --color-primary: #2563eb;
@@ -153,65 +153,61 @@ body {
 }
 
 /* Asciidoctor Dark Mode Overrides */
-.dark #doc-content {
+.dark .asciidoc-content {
+  background: var(--color-bg);
   color: #f9fafb;
 }
 
-.dark #doc-content h1,
-.dark #doc-content h2,
-.dark #doc-content h3,
-.dark #doc-content h4,
-.dark #doc-content h5,
-.dark #doc-content h6 {
+.dark .asciidoc-content h1,
+.dark .asciidoc-content h2,
+.dark .asciidoc-content h3,
+.dark .asciidoc-content h4,
+.dark .asciidoc-content h5,
+.dark .asciidoc-content h6 {
   color: #f9fafb;
 }
 
-.dark #doc-content a {
+.dark .asciidoc-content a {
   color: #60a5fa;
 }
 
-.dark #doc-content a:hover {
+.dark .asciidoc-content a:hover {
   color: #93c5fd;
 }
 
-.dark #doc-content code {
+.dark .asciidoc-content code {
   color: #f9fafb;
   background: #374151;
 }
 
-.dark #doc-content pre {
+.dark .asciidoc-content pre {
   background: #1f2937;
   color: #f9fafb;
 }
 
-.dark #doc-content blockquote {
+.dark .asciidoc-content blockquote {
   border-left-color: #60a5fa;
   color: #d1d5db;
+  background: #1f2937;
 }
 
-.dark #doc-content table {
+.dark .asciidoc-content table {
   border-color: #374151;
 }
 
-.dark #doc-content th {
+.dark .asciidoc-content th {
   background: #374151;
   color: #f9fafb;
 }
 
-.dark #doc-content td {
+.dark .asciidoc-content td {
   border-color: #374151;
 }
 
-.dark #doc-content .literalblock pre,
-.dark #doc-content .listingblock pre {
+.dark .asciidoc-content .admonitionblock {
   background: #1f2937;
+}
+
+.dark .asciidoc-content hr {
   border-color: #374151;
-}
-
-.dark #doc-content dt {
-  color: #f9fafb;
-}
-
-.dark #doc-content .admonitionblock td.icon {
-  color: #60a5fa;
 }

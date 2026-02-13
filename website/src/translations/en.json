@@ -16,6 +16,7 @@
   "filter.allRoles": "All Roles",
   "footer.tagline": "Semantic Anchors &mdash; Shared vocabulary for LLM communication",
   "footer.github": "GitHub",
+  "footer.leaveStar": "Like Semantic Anchors? Leave a star!",
   "categories.communication-presentation": "Communication & Presentation",
   "categories.design-principles": "Design Principles & Patterns",
   "categories.development-workflow": "Development Workflow",
