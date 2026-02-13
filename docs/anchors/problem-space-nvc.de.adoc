@@ -8,20 +8,20 @@
 
 *Kernkonzepte*:
 
-* *Observations*: Concrete, objective facts without evaluation
-* *Feelings*: Emotions arising from observations
-* *Needs*: Universal human needs underlying feelings
-* *Requests*: Specific, actionable requests (not demands)
-* *Empathic connection*: Understanding before problem-solving
-* *Separating observation from interpretation*: Avoiding judgment
-* *Needs-based conflict resolution*: Finding solutions that meet everyone's needs
+* *Beobachtungen*: Konkrete, objektive Fakten ohne Bewertung
+* *Gefühle*: Emotionen, die aus Beobachtungen entstehen
+* *Bedürfnisse*: Universelle menschliche Bedürfnisse, die Gefühlen zugrunde liegen
+* *Bitten*: Spezifische, umsetzbare Bitten (keine Forderungen)
+* *Empathische Verbindung*: Verstehen vor Problemlösung
+* *Trennung von Beobachtung und Interpretation*: Vermeidung von Urteilen
+* *Bedürfnisbasierte Konfliktlösung*: Lösungen finden, die die Bedürfnisse aller erfüllen
 
 *Schlüsselvertreter*: Marshall Rosenberg
 
-*Application in Software Development*:
+*Anwendung in der Softwareentwicklung*:
 
-* Requirements elicitation that uncovers real user needs
-* Stakeholder communication and conflict resolution
-* User story formulation focused on needs
-* Retrospectives and team communication
+* Requirements-Ermittlung, die echte Nutzerbedürfnisse aufdeckt
+* Stakeholder-Kommunikation und Konfliktlösung
+* User-Story-Formulierung mit Fokus auf Bedürfnisse
+* Retrospektiven und Teamkommunikation
 ====

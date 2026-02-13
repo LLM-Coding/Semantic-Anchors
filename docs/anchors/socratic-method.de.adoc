@@ -4,36 +4,36 @@
 
 [%collapsible]
 ====
-*Vollständiger Name*: Socratic Method (also Socratic Dialogue, Elenchus)
+*Vollständiger Name*: Sokratische Methode (auch Sokratischer Dialog, Elenchos)
 
 *Kernkonzepte*:
 
-* *Guided Discovery*: Lead learners to insights through questions rather than direct instruction
-* *Elenchus*: Cross-examination technique to expose contradictions in beliefs
-* *Maieutics*: "Midwifery of ideas" – helping others give birth to knowledge they already possess
-* *Aporia*: State of productive confusion that motivates deeper inquiry
-* *Question Hierarchy*: Progress from clarifying questions to probing assumptions to exploring implications
-* *Dialectic Method*: Structured dialogue to arrive at truth through reasoned argument
-* *Non-assertive Teaching*: Teacher claims ignorance, guides through questions
-* *Assumption Surfacing*: Make implicit beliefs explicit through systematic questioning
-* *Logical Consistency*: Test ideas for internal coherence and contradictions
+* *Geführte Entdeckung*: Lernende durch Fragen zu Einsichten führen statt direkter Instruktion
+* *Elenchos*: Kreuzverhör-Technik zur Aufdeckung von Widersprüchen in Überzeugungen
+* *Maieutik*: "Hebammenkunst der Ideen" – anderen helfen, Wissen zu gebären, das sie bereits besitzen
+* *Aporie*: Zustand produktiver Verwirrung, der tiefere Untersuchung motiviert
+* *Fragenhierarchie*: Fortschritt von klärenden Fragen über Hinterfragen von Annahmen bis zur Erforschung von Implikationen
+* *Dialektische Methode*: Strukturierter Dialog, um durch begründete Argumentation zur Wahrheit zu gelangen
+* *Nicht-assertive Lehre*: Lehrer gibt Unwissenheit vor, führt durch Fragen
+* *Annahmen sichtbar machen*: Implizite Überzeugungen durch systematisches Befragen explizit machen
+* *Logische Konsistenz*: Ideen auf innere Kohärenz und Widersprüche testen
 
-*Schlüsselvertreter*: Socrates (via Plato's dialogues, ~400 BCE)
+*Schlüsselvertreter*: Sokrates (via Platons Dialoge, ~400 v. Chr.)
 
-*Historischer Kontext*: 2400+ years of philosophical tradition, foundational to Western philosophy and critical thinking education
+*Historischer Kontext*: 2400+ Jahre philosophische Tradition, grundlegend für westliche Philosophie und kritisches Denken in der Bildung
 
 *Wann zu verwenden*:
 
-* Teaching complex concepts where understanding must be constructed, not transmitted
-* Helping someone work through a problem without giving direct answers
-* Uncovering hidden assumptions in arguments or designs
-* Exploring the implications of a decision or belief
-* Encouraging deeper thinking about a topic
-* Code review or design review where understanding, not compliance, is the goal
+* Lehren komplexer Konzepte, wo Verständnis konstruiert, nicht übertragen werden muss
+* Jemandem helfen, ein Problem durchzuarbeiten, ohne direkte Antworten zu geben
+* Aufdecken versteckter Annahmen in Argumenten oder Designs
+* Erforschen der Implikationen einer Entscheidung oder Überzeugung
+* Förderung tieferen Denkens über ein Thema
+* Code-Review oder Design-Review, wo Verständnis, nicht Compliance, das Ziel ist
 
 *Verwandte Konzepte*:
 
-* Cognitive apprenticeship
-* Constructivist learning theory
-* Critical thinking pedagogy
+* Kognitive Lehre (Cognitive Apprenticeship)
+* Konstruktivistische Lerntheorie
+* Kritisches-Denken-Pädagogik
 ====

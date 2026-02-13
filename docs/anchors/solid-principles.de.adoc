@@ -8,18 +8,18 @@
 
 *Kernkonzepte*:
 
-* *Single Responsibility Principle (SRP)*: Each class should have one responsibility
-* *Open/Closed Principle (OCP)*: Entities should be open for extension, closed for modification
-* *Liskov Substitution Principle (LSP)*: Subtypes must be substitutable for their base types
-* *Interface Segregation Principle (ISP)*: Clients should not be forced to depend on interfaces they do not use
-* *Dependency Inversion Principle (DIP)*: Depend on abstractions, not concrete implementations
+* *Single Responsibility Principle (SRP)*: Jede Klasse sollte eine Verantwortlichkeit haben
+* *Open/Closed Principle (OCP)*: Entitäten sollten offen für Erweiterung, geschlossen für Modifikation sein
+* *Liskov Substitution Principle (LSP)*: Subtypen müssen durch ihre Basistypen ersetzbar sein
+* *Interface Segregation Principle (ISP)*: Clients sollten nicht gezwungen werden, von Schnittstellen abzuhängen, die sie nicht nutzen
+* *Dependency Inversion Principle (DIP)*: Von Abstraktionen abhängen, nicht von konkreten Implementierungen
 
 *Schlüsselvertreter*: Robert C. Martin ("Uncle Bob")
 
 *Wann zu verwenden*:
 
-* Designing maintainable and scalable object-oriented systems
-* Refactoring legacy code to improve structure
-* Building systems where flexibility and testability are important
-* Teaching or enforcing good software design practices
+* Entwurf wartbarer und skalierbarer objektorientierter Systeme
+* Refactoring von Legacy-Code zur Verbesserung der Struktur
+* Bau von Systemen, wo Flexibilität und Testbarkeit wichtig sind
+* Lehre oder Durchsetzung guter Software-Design-Praktiken
 ====

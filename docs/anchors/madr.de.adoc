@@ -9,32 +9,32 @@
 
 *Kernkonzepte*:
 
-* *Structured template*: Well-defined format with specific sections
-* *Standard fields*:
-** Title (short noun phrase)
-** Status (proposed, accepted, rejected, deprecated, superseded)
-** Context and Problem Statement
-** Decision Drivers (forces influencing the decision)
-** Considered Options (alternatives evaluated)
-** Decision Outcome (chosen option with justification)
-** Pros and Cons of the Options (trade-off analysis)
-** Links (related decisions, references)
-* *Markdown format*: Uses standard Markdown for wide compatibility
-* *Clear structure*: More detailed than basic ADRs, includes explicit alternatives
-* *Trade-off documentation*: Explicitly captures pros/cons of each option
-* *Version control*: Stored with code, immutable like other ADRs
-* *Lightweight yet comprehensive*: Balances completeness with maintainability
+* *Strukturiertes Template*: Wohldefiniertes Format mit spezifischen Abschnitten
+* *Standardfelder*:
+** Titel (kurze Nominalphrase)
+** Status (vorgeschlagen, akzeptiert, abgelehnt, veraltet, ersetzt)
+** Kontext und Problemstellung
+** Entscheidungstreiber (Kräfte, die die Entscheidung beeinflussen)
+** Betrachtete Optionen (bewertete Alternativen)
+** Entscheidungsergebnis (gewählte Option mit Begründung)
+** Vor- und Nachteile der Optionen (Trade-off-Analyse)
+** Links (verwandte Entscheidungen, Referenzen)
+* *Markdown-Format*: Nutzt Standard-Markdown für breite Kompatibilität
+* *Klare Struktur*: Detaillierter als einfache ADRs, enthält explizite Alternativen
+* *Trade-off-Dokumentation*: Erfasst explizit Vor-/Nachteile jeder Option
+* *Versionskontrolle*: Mit Code gespeichert, unveränderlich wie andere ADRs
+* *Leichtgewichtig und dennoch umfassend*: Balanciert Vollständigkeit mit Wartbarkeit
 
-*Schlüsselvertreter*: Oliver Kopp, Olaf Zimmermann (and MADR community)
+*Schlüsselvertreter*: Oliver Kopp, Olaf Zimmermann (und MADR-Community)
 
-*Reference*: https://adr.github.io/madr/
+*Referenz*: https://adr.github.io/madr/
 
 *Wann zu verwenden*:
 
-* When you need more structure than basic ADRs
-* Projects requiring explicit documentation of alternatives
-* Teams that need to justify decisions with detailed trade-offs
-* Organizations using Markdown-based documentation workflows
-* When LLM assistance is needed to generate consistent decision records
-* Complementing arc42 Section 9 (Architecture Decisions)
+* Wenn mehr Struktur als bei einfachen ADRs benötigt wird
+* Projekte, die explizite Dokumentation von Alternativen erfordern
+* Teams, die Entscheidungen mit detaillierten Trade-offs rechtfertigen müssen
+* Organisationen mit Markdown-basierten Dokumentations-Workflows
+* Wenn LLM-Unterstützung zur Generierung konsistenter Entscheidungsaufzeichnungen benötigt wird
+* Ergänzung zu arc42 Abschnitt 9 (Architekturentscheidungen)
 ====
