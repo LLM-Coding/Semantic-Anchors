@@ -154,3 +154,45 @@ When adding new anchors:
 - **Attribute properly**: Always cite key proponents and publications
 - **Stay objective**: This is a reference catalog, not a persuasive document
 - **Verify before adding**: Test the anchor with an LLM first to confirm it's well-established
+
+## Specification Conventions
+
+When creating specifications for this project, follow these conventions:
+
+### Use Cases (`01_use_cases.adoc`)
+- Use PlantUML Activity Diagrams for each use case
+- Structure each use case with:
+  - **Akteure** (Actors)
+  - **Vorbedingungen** (Preconditions)
+  - **Ablauf** (Flow)
+  - **Nachbedingungen** (Postconditions)
+  - **Fehlerszenarien** (Error scenarios)
+
+### API Specification (`02_api_specification.adoc`)
+- Use OpenAPI-style specification in AsciiDoc format
+- Define data models as JSON schemas with descriptions
+- Group endpoints by API category:
+  - Navigation
+  - Content Access
+  - Manipulation
+  - Meta-Information
+
+### Acceptance Criteria (`03_acceptance_criteria.adoc`)
+- Write in Gherkin format (Given-When-Then)
+- Group by feature/use case
+- **Language**: German
+
+### Component Specifications (e.g., `04_markdown_parser.adoc`)
+- Define scope and limitations (explicitly state what it does NOT do)
+- Document data models (e.g., as Python dataclasses or equivalent)
+- Include acceptance criteria with Gherkin scenarios
+- Provide clear interface definitions
+
+### Architecture Decision Records (ADRs)
+- Follow **ADR according to Nygard** format:
+  - Status (proposed, accepted, deprecated, superseded)
+  - Context (forces at play)
+  - Decision (what was chosen)
+  - Consequences (both positive and negative)
+- Include a **Pugh Matrix** for each decision comparing alternatives
+- Store ADRs in `src/docs/arc42/chapters/09_architecture_decisions.adoc`
