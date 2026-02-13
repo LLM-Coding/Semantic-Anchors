@@ -411,6 +411,34 @@
     "filePath": "docs/anchors/mental-model-according-to-naur.adoc"
   },
   {
+    "id": "morphological-box",
+    "title": "Morphological Box",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "software-architect",
+      "product-owner",
+      "consultant",
+      "software-developer"
+    ],
+    "related": [
+      "mece",
+      "pugh-matrix"
+    ],
+    "proponents": [
+      "Fritz Zwicky"
+    ],
+    "tags": [
+      "innovation",
+      "creativity",
+      "problem-solving",
+      "systematic-design",
+      "combinatorial-analysis"
+    ],
+    "filePath": "docs/anchors/morphological-box.adoc"
+  },
+  {
     "id": "mutation-testing",
     "title": "Mutation Testing",
     "categories": [
