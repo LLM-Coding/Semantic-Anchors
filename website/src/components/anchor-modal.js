@@ -139,6 +139,20 @@ export async function loadAnchorContent(anchorId) {
       details.setAttribute('open', '')
     })
 
+    // Convert internal AsciiDoc cross-reference links to router navigation
+    contentEl.querySelectorAll('a[href^="#"]').forEach(link => {
+      const href = link.getAttribute('href')
+      // Only process simple hash links (cross-references), not hash routes
+      if (href && href.startsWith('#') && !href.startsWith('#/')) {
+        const anchorId = href.substring(1) // Remove the '#'
+        link.addEventListener('click', (e) => {
+          e.preventDefault()
+          // Navigate to the linked anchor
+          window.location.hash = `#/anchor/${anchorId}`
+        })
+      }
+    })
+
   } catch (error) {
     console.error('Error loading anchor content:', error)
     titleEl.textContent = 'Error'
