@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { buildTreemapData, getAnchorsByRole, getCategoryColor } from './data-loader.js'
+import { buildTreemapData, getAnchorsByRole, getAnchorsBySearch, getFilteredAnchors, getCategoryColor } from './data-loader.js'
 
 const mockCategories = [
   {
@@ -15,11 +15,11 @@ const mockCategories = [
 ]
 
 const mockAnchors = [
-  { id: 'tdd-london-school', title: 'TDD, London School', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'] },
-  { id: 'tdd-chicago-school', title: 'TDD, Chicago School', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'] },
-  { id: 'mutation-testing', title: 'Mutation Testing', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'] },
-  { id: 'clean-architecture', title: 'Clean Architecture', categories: ['architecture-design'], roles: ['software-architect', 'software-developer'] },
-  { id: 'hexagonal-architecture', title: 'Hexagonal Architecture', categories: ['architecture-design'], roles: ['software-architect', 'software-developer'] }
+  { id: 'tdd-london-school', title: 'TDD, London School', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'], tags: ['testing', 'tdd', 'mocking'], proponents: ['Steve Freeman', 'Nat Pryce'] },
+  { id: 'tdd-chicago-school', title: 'TDD, Chicago School', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'], tags: ['testing', 'tdd'], proponents: ['Kent Beck'] },
+  { id: 'mutation-testing', title: 'Mutation Testing', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'], tags: ['testing', 'quality'], proponents: [] },
+  { id: 'clean-architecture', title: 'Clean Architecture', categories: ['architecture-design'], roles: ['software-architect', 'software-developer'], tags: ['architecture', 'design'], proponents: ['Robert C. Martin'] },
+  { id: 'hexagonal-architecture', title: 'Hexagonal Architecture', categories: ['architecture-design'], roles: ['software-architect', 'software-developer'], tags: ['architecture', 'ports-and-adapters'], proponents: ['Alistair Cockburn'] }
 ]
 
 const mockRoles = [
@@ -113,5 +113,93 @@ describe('getCategoryColor', () => {
     const color = getCategoryColor(100)
     expect(color).toBeDefined()
     expect(color).toMatch(/^#[0-9a-fA-F]{6}$/)
+  })
+})
+
+describe('getAnchorsBySearch', () => {
+  it('should filter anchors by title', () => {
+    const result = getAnchorsBySearch(mockAnchors, 'London')
+
+    expect(result).toHaveLength(1)
+    expect(result[0].id).toBe('tdd-london-school')
+  })
+
+  it('should filter anchors by id', () => {
+    const result = getAnchorsBySearch(mockAnchors, 'mutation')
+
+    expect(result).toHaveLength(1)
+    expect(result[0].id).toBe('mutation-testing')
+  })
+
+  it('should filter anchors by tags', () => {
+    const result = getAnchorsBySearch(mockAnchors, 'mocking')
+
+    expect(result).toHaveLength(1)
+    expect(result[0].id).toBe('tdd-london-school')
+  })
+
+  it('should filter anchors by proponents', () => {
+    const result = getAnchorsBySearch(mockAnchors, 'Martin')
+
+    expect(result).toHaveLength(1)
+    expect(result[0].id).toBe('clean-architecture')
+  })
+
+  it('should be case-insensitive', () => {
+    const result = getAnchorsBySearch(mockAnchors, 'ARCHITECTURE')
+
+    expect(result).toHaveLength(2)
+  })
+
+  it('should return all anchors for empty query', () => {
+    const result = getAnchorsBySearch(mockAnchors, '')
+
+    expect(result).toHaveLength(5)
+  })
+
+  it('should trim whitespace from query', () => {
+    const result = getAnchorsBySearch(mockAnchors, '  London  ')
+
+    expect(result).toHaveLength(1)
+  })
+
+  it('should return empty array when no matches', () => {
+    const result = getAnchorsBySearch(mockAnchors, 'nonexistent')
+
+    expect(result).toHaveLength(0)
+  })
+})
+
+describe('getFilteredAnchors', () => {
+  it('should apply only role filter when no search query', () => {
+    const result = getFilteredAnchors(mockAnchors, 'qa-engineer', '')
+
+    expect(result).toHaveLength(3)
+    expect(result.every(a => a.roles.includes('qa-engineer'))).toBe(true)
+  })
+
+  it('should apply only search filter when no role', () => {
+    const result = getFilteredAnchors(mockAnchors, '', 'architecture')
+
+    expect(result).toHaveLength(2)
+  })
+
+  it('should apply both filters when both provided', () => {
+    const result = getFilteredAnchors(mockAnchors, 'software-architect', 'clean')
+
+    expect(result).toHaveLength(1)
+    expect(result[0].id).toBe('clean-architecture')
+  })
+
+  it('should return all anchors when no filters', () => {
+    const result = getFilteredAnchors(mockAnchors, '', '')
+
+    expect(result).toHaveLength(5)
+  })
+
+  it('should return empty array when filters match nothing', () => {
+    const result = getFilteredAnchors(mockAnchors, 'qa-engineer', 'architecture')
+
+    expect(result).toHaveLength(0)
   })
 })

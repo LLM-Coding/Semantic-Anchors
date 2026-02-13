@@ -4,7 +4,7 @@ import { initTheme, toggleTheme, currentTheme } from './theme.js'
 import { renderHeader } from './components/header.js'
 import { renderMain } from './components/main-content.js'
 import { renderFooter } from './components/footer.js'
-import { initTreemap, updateTreemapByRole } from './components/treemap.js'
+import { initTreemap, updateTreemapByRole, updateTreemapBySearch } from './components/treemap.js'
 
 const APP_VERSION = '0.2.0'
 
@@ -33,6 +33,7 @@ async function initTreemapVisualization() {
   try {
     const { currentData } = await initTreemap()
 
+    // Bind role filter
     const roleFilter = document.getElementById('role-filter')
     if (roleFilter && currentData.roles) {
       currentData.roles.forEach(role => {
@@ -44,6 +45,14 @@ async function initTreemapVisualization() {
 
       roleFilter.addEventListener('change', (e) => {
         updateTreemapByRole(e.target.value)
+      })
+    }
+
+    // Bind search input
+    const searchInput = document.getElementById('search-input')
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        updateTreemapBySearch(e.target.value)
       })
     }
   } catch (err) {

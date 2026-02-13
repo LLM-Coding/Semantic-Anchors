@@ -1,5 +1,5 @@
 import * as echarts from 'echarts'
-import { buildTreemapData, getAnchorsByRole, fetchData, getCategoryColor } from '../utils/data-loader.js'
+import { buildTreemapData, getAnchorsByRole, getFilteredAnchors, fetchData, getCategoryColor } from '../utils/data-loader.js'
 
 export function getThemeColors(isDark) {
   if (isDark) {
@@ -112,6 +112,7 @@ export function buildTreemapOptions(data, isDark) {
 
 let chartInstance = null
 let currentData = { anchors: [], categories: [], roles: [] }
+let currentFilters = { roleId: '', searchQuery: '' }
 
 function isDarkMode() {
   return document.documentElement.classList.contains('dark')
@@ -182,7 +183,22 @@ export async function initTreemap() {
 
 export function updateTreemapByRole(roleId) {
   if (!currentData.anchors.length) return
-  const filtered = getAnchorsByRole(currentData.anchors, roleId)
+  currentFilters.roleId = roleId
+  applyFilters()
+}
+
+export function updateTreemapBySearch(searchQuery) {
+  if (!currentData.anchors.length) return
+  currentFilters.searchQuery = searchQuery
+  applyFilters()
+}
+
+function applyFilters() {
+  const filtered = getFilteredAnchors(
+    currentData.anchors,
+    currentFilters.roleId,
+    currentFilters.searchQuery
+  )
   renderChart(filtered)
 }
 

@@ -37,6 +37,35 @@ export function getAnchorsByRole(anchors, roleId) {
   return anchors.filter(a => a.roles && a.roles.includes(roleId))
 }
 
+export function getAnchorsBySearch(anchors, query) {
+  if (!query || query.trim() === '') return anchors
+
+  const lowerQuery = query.toLowerCase().trim()
+
+  return anchors.filter(anchor => {
+    const titleMatch = anchor.title.toLowerCase().includes(lowerQuery)
+    const idMatch = anchor.id.toLowerCase().includes(lowerQuery)
+    const tagsMatch = anchor.tags && anchor.tags.some(tag => tag.toLowerCase().includes(lowerQuery))
+    const proponentsMatch = anchor.proponents && anchor.proponents.some(p => p.toLowerCase().includes(lowerQuery))
+
+    return titleMatch || idMatch || tagsMatch || proponentsMatch
+  })
+}
+
+export function getFilteredAnchors(anchors, roleId, searchQuery) {
+  let filtered = anchors
+
+  if (roleId) {
+    filtered = getAnchorsByRole(filtered, roleId)
+  }
+
+  if (searchQuery) {
+    filtered = getAnchorsBySearch(filtered, searchQuery)
+  }
+
+  return filtered
+}
+
 export async function fetchData() {
   const [anchorsRes, categoriesRes, rolesRes] = await Promise.all([
     fetch('./data/anchors.json'),
