@@ -12,7 +12,7 @@ export function renderDocPage(title) {
   return `
     <main class="flex-1">
       <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-        <div id="doc-content" class="prose prose-slate dark:prose-invert max-w-none">
+        <div id="doc-content" class="asciidoc-content">
           <div class="flex items-center justify-center py-12">
             <div class="animate-pulse text-gray-500 dark:text-gray-400">Loading...</div>
           </div>
