@@ -1,53 +1,119 @@
 [
   {
-    "id": "uncategorized",
-    "name": "Uncategorized",
+    "id": "testing-quality",
+    "name": "Testing & Quality Assurance",
+    "anchors": [
+      "mutation-testing",
+      "property-based-testing",
+      "tdd-chicago-school",
+      "tdd-london-school",
+      "testing-pyramid"
+    ]
+  },
+  {
+    "id": "software-architecture",
+    "name": "Software Architecture",
     "anchors": [
       "adr-according-to-nygard",
       "arc42",
-      "bem-methodology",
-      "bluf",
       "c4-diagrams",
-      "chain-of-thought",
       "clean-architecture",
-      "control-chart-shewhart",
-      "conventional-commits",
-      "cynefin-framework",
-      "devils-advocate",
-      "diataxis-framework",
-      "docs-as-code",
       "domain-driven-design",
-      "dry-principle",
-      "ears-requirements",
-      "feynman-technique",
-      "five-whys",
       "hexagonal-architecture",
+      "madr"
+    ]
+  },
+  {
+    "id": "design-principles",
+    "name": "Design Principles",
+    "anchors": [
+      "dry-principle",
+      "solid-principles",
+      "spot-principle",
+      "ssot-principle"
+    ]
+  },
+  {
+    "id": "requirements-engineering",
+    "name": "Requirements Engineering",
+    "anchors": [
+      "ears-requirements",
+      "problem-space-nvc",
+      "user-story-mapping"
+    ]
+  },
+  {
+    "id": "strategic-planning",
+    "name": "Strategic Planning & Decision-Making",
+    "anchors": [
+      "cynefin-framework",
       "impact-mapping",
       "jobs-to-be-done",
-      "madr",
-      "mece",
-      "mental-model-according-to-naur",
-      "mutation-testing",
-      "nelson-rules",
-      "problem-space-nvc",
-      "property-based-testing",
       "pugh-matrix",
-      "pyramid-principle",
-      "rubber-duck-debugging",
+      "wardley-mapping"
+    ]
+  },
+  {
+    "id": "documentation",
+    "name": "Documentation",
+    "anchors": [
+      "diataxis-framework",
+      "docs-as-code"
+    ]
+  },
+  {
+    "id": "communication-presentation",
+    "name": "Communication & Presentation",
+    "anchors": [
+      "bluf",
+      "mece",
+      "pyramid-principle"
+    ]
+  },
+  {
+    "id": "development-workflow",
+    "name": "Development Workflow & Practices",
+    "anchors": [
+      "bem-methodology",
+      "conventional-commits",
+      "mental-model-according-to-naur",
       "semantic-versioning",
-      "socratic-method",
-      "solid-principles",
       "sota",
-      "spc",
-      "spot-principle",
-      "ssot-principle",
-      "tdd-chicago-school",
-      "tdd-london-school",
-      "testing-pyramid",
       "timtowtdi",
-      "todotxt-flavoured-markdown",
-      "user-story-mapping",
-      "wardley-mapping",
+      "todotxt-flavoured-markdown"
+    ]
+  },
+  {
+    "id": "problem-solving",
+    "name": "Problem-Solving & Reasoning",
+    "anchors": [
+      "chain-of-thought",
+      "devils-advocate",
+      "feynman-technique",
+      "five-whys",
+      "rubber-duck-debugging"
+    ]
+  },
+  {
+    "id": "dialogue-interaction",
+    "name": "Dialogue & Interaction Patterns",
+    "anchors": [
+      "socratic-method"
+    ]
+  },
+  {
+    "id": "statistical-methods",
+    "name": "Statistical Methods & Process Monitoring",
+    "anchors": [
+      "control-chart-shewhart",
+      "nelson-rules",
+      "spc"
+    ]
+  },
+  {
+    "id": "meta",
+    "name": "Meta: Understanding Semantic Anchors",
+    "anchors": [
       "what-qualifies-as-a-semantic-anchor"
     ]
   }
