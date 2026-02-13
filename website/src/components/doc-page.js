@@ -1,4 +1,4 @@
-import Asciidoctor from 'asciidoctor'
+import Asciidoctor from '@asciidoctor/core'
 
 const asciidoctor = Asciidoctor()
 
