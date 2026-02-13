@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 public/docs/
+# Documentation files (copied from root during build)
+public/CONTRIBUTING.adoc
+public/docs/about.adoc
