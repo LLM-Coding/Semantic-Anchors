@@ -186,9 +186,9 @@ function generateMetadata(anchors, categories, roles) {
 function main() {
   console.log('🔍 Extracting metadata from anchor files...\n');
 
-  // Read all anchor files
+  // Read all anchor files (excluding language-specific versions like .de.adoc)
   const files = fs.readdirSync(ANCHORS_DIR)
-    .filter(f => f.endsWith('.adoc') && f !== '_template.adoc')
+    .filter(f => f.endsWith('.adoc') && f !== '_template.adoc' && !f.match(/\.\w{2}\.adoc$/))
     .sort();
 
   console.log(`📂 Found ${files.length} anchor files\n`);
