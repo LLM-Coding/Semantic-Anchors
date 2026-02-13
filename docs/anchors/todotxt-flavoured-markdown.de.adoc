@@ -11,15 +11,15 @@
 
 *Kernkonzepte*:
 
-* *Markdown task lists*: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
-* *Priority markers*: Uses todo.txt priority notation `(A)`, `(B)`, `(C)` where `(A)` is highest priority
-* *Project tags*: Prefixed with `+` to group related tasks (e.g., `+website`, `+semantic-anchors`)
-* *Context tags*: Prefixed with `@` to indicate location/tool/context (e.g., `@computer`, `@home`, `@research`)
-* *Key-value metadata*: Structured data pairs like `due:YYYY-MM-DD`, `priority:high`, or custom fields
-* *Date tracking*: Creation dates and completion dates in ISO format (YYYY-MM-DD)
-* *Human readability*: Plain text format that remains readable without special tools
-* *Tool-agnostic*: Can be processed by both markdown renderers and todo.txt tools
-* *Searchable and filterable*: Easy to grep/search by tags, priorities, or metadata
+* *Markdown-Aufgabenlisten*: Standard GitHub-flavoured Markdown-Syntax (`- [ ]` unvollständig, `- [x]` vollständig)
+* *Prioritätsmarkierungen*: Verwendet todo.txt-Prioritätsnotation `(A)`, `(B)`, `(C)`, wobei `(A)` höchste Priorität ist
+* *Projekt-Tags*: Präfix `+` zur Gruppierung verwandter Aufgaben (z.B. `+website`, `+semantic-anchors`)
+* *Kontext-Tags*: Präfix `@` zur Angabe von Ort/Tool/Kontext (z.B. `@computer`, `@home`, `@research`)
+* *Key-Value-Metadaten*: Strukturierte Datenpaare wie `due:YYYY-MM-DD`, `priority:high` oder benutzerdefinierte Felder
+* *Datumsverfolgung*: Erstellungs- und Abschlussdaten im ISO-Format (YYYY-MM-DD)
+* *Menschliche Lesbarkeit*: Klartext-Format, das ohne spezielle Tools lesbar bleibt
+* *Tool-agnostisch*: Kann sowohl von Markdown-Renderern als auch von todo.txt-Tools verarbeitet werden
+* *Durchsuchbar und filterbar*: Einfach durch Tags, Prioritäten oder Metadaten zu grep/suchen
 
 *Pattern Structure*:
 

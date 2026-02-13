@@ -10,21 +10,21 @@
 
 *Kernkonzepte*:
 
-* *Multiple valid approaches*: Acknowledges that problems can be solved in different, equally valid ways
-* *Developer freedom*: Trust developers to choose the right approach for their context
-* *Expressiveness*: Languages and tools should support diverse problem-solving styles
-* *Context-dependent decisions*: The "best" solution depends on constraints, team, and situation
-* *No single canonical form*: Resist dogma — flexibility over prescription
-* *Trade-off awareness*: Different approaches have different trade-offs; none is universally superior
-* *Pragmatism over purity*: Practical results matter more than theoretical elegance
-* *Collaborative decision-making*: When working with others, discuss approach rather than assume
+* *Mehrere valide Ansätze*: Anerkennt, dass Probleme auf unterschiedliche, gleichermaßen valide Weisen gelöst werden können
+* *Entwicklerfreiheit*: Vertrauen, dass Entwickler den richtigen Ansatz für ihren Kontext wählen
+* *Ausdruckskraft*: Sprachen und Tools sollten diverse Problemlösungsstile unterstützen
+* *Kontextabhängige Entscheidungen*: Die "beste" Lösung hängt von Rahmenbedingungen, Team und Situation ab
+* *Keine einzelne kanonische Form*: Widerstand gegen Dogmen — Flexibilität über Vorschrift
+* *Trade-off-Bewusstsein*: Verschiedene Ansätze haben unterschiedliche Trade-offs; keiner ist universell überlegen
+* *Pragmatismus über Reinheit*: Praktische Ergebnisse zählen mehr als theoretische Eleganz
+* *Kollaborative Entscheidungsfindung*: Bei Zusammenarbeit mit anderen den Ansatz diskutieren, statt anzunehmen
 
-*Schlüsselvertreter*: Larry Wall (Perl programming language)
+*Schlüsselvertreter*: Larry Wall (Perl Programmiersprache)
 
-*Contrast*:
+*Kontrast*:
 
-* Python's Zen: "There should be one-- and preferably only one --obvious way to do it" (opposite philosophy)
-* TIMTOWTDI favors flexibility and expressiveness over enforced uniformity
+* Pythons Zen: "There should be one-- and preferably only one --obvious way to do it" (gegensätzliche Philosophie)
+* TIMTOWTDI bevorzugt Flexibilität und Ausdruckskraft gegenüber erzwungener Einheitlichkeit
 
 *Wann zu verwenden*:
 
