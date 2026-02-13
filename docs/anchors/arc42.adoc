@@ -18,7 +18,7 @@
 * *Section 6*: Runtime View
 * *Section 7*: Deployment View
 * *Section 8*: Crosscutting Concepts
-* *Section 9*: Architecture Decisions
+* *Section 9*: Architecture Decisions (ADRs)
 * *Section 10*: Quality Requirements
 * *Section 11*: Risks and Technical Debt
 * *Section 12*: Glossary

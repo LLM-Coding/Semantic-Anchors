@@ -61,6 +61,7 @@
       "devils-advocate",
       "feynman-technique",
       "five-whys",
+      "morphological-box",
       "rubber-duck-debugging"
     ]
   },
@@ -110,6 +111,7 @@
     "id": "testing-quality",
     "name": "Testing & Quality Practices",
     "anchors": [
+      "iec-61508-sil-levels",
       "mutation-testing",
       "property-based-testing",
       "tdd-chicago-school",

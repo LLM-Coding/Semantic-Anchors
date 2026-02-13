@@ -321,6 +321,36 @@
     "filePath": "docs/anchors/hexagonal-architecture.adoc"
   },
   {
+    "id": "iec-61508-sil-levels",
+    "title": "IEC 61508 SIL Levels",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer",
+      "devops-engineer",
+      "consultant"
+    ],
+    "related": [
+      "testing-pyramid",
+      "mutation-testing"
+    ],
+    "proponents": [
+      "International Electrotechnical Commission (IEC)"
+    ],
+    "tags": [
+      "safety",
+      "functional-safety",
+      "SIL",
+      "standards",
+      "certification",
+      "risk-assessment"
+    ],
+    "filePath": "docs/anchors/iec-61508-sil-levels.adoc"
+  },
+  {
     "id": "impact-mapping",
     "title": "Impact Mapping",
     "categories": [
@@ -409,6 +439,34 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/mental-model-according-to-naur.adoc"
+  },
+  {
+    "id": "morphological-box",
+    "title": "Morphological Box",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "software-architect",
+      "product-owner",
+      "consultant",
+      "software-developer"
+    ],
+    "related": [
+      "mece",
+      "pugh-matrix"
+    ],
+    "proponents": [
+      "Fritz Zwicky"
+    ],
+    "tags": [
+      "innovation",
+      "creativity",
+      "problem-solving",
+      "systematic-design",
+      "combinatorial-analysis"
+    ],
+    "filePath": "docs/anchors/morphological-box.adoc"
   },
   {
     "id": "mutation-testing",
