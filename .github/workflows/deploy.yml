@@ -38,6 +38,11 @@ jobs:
           npm ci
           node extract-metadata.js
 
+      - name: Copy anchor files to public directory
+        run: |
+          mkdir -p website/public/docs
+          cp -r docs/anchors website/public/docs/
+
       - name: Build website
         working-directory: ./website
         run: npm run build

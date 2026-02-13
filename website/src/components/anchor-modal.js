@@ -74,8 +74,8 @@ export async function loadAnchorContent(anchorId) {
   const contentEl = modal.querySelector('#modal-content')
 
   try {
-    // Fetch the AsciiDoc file
-    const response = await fetch(`../../docs/anchors/${anchorId}.adoc`)
+    // Fetch the AsciiDoc file (from public/docs/anchors, copied to dist/docs/anchors during build)
+    const response = await fetch(`${import.meta.env.BASE_URL}docs/anchors/${anchorId}.adoc`)
 
     if (!response.ok) {
       throw new Error(`Failed to load anchor: ${response.status}`)
