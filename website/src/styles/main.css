@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "./asciidoctor-scoped.css";
 
+/* Configure Tailwind v4 dark mode to use class strategy */
+@variant dark (.dark &);
+
 :root {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
