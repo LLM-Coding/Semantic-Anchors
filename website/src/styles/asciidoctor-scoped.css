@@ -104,6 +104,46 @@
     margin: 0.5rem 0;
   }
 
+  /* Definition Lists */
+  & dl {
+    margin: 1.25rem 0;
+  }
+
+  & dt {
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: inherit;
+  }
+
+  & dt:first-child {
+    margin-top: 0;
+  }
+
+  & dd {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  & dd:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Nested definition lists (:::) */
+  & dd > dl {
+    margin-top: 0.5rem;
+    margin-left: 0;
+  }
+
+  & dd > dl dt {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  & dd > dl dd {
+    margin-left: 1.5rem;
+  }
+
   & table {
     border-collapse: collapse;
     width: 100%;
