@@ -20,6 +20,9 @@ export function applyTranslations() {
   document.querySelectorAll('[data-i18n-aria]').forEach(el => {
     el.setAttribute('aria-label', i18n.t(el.dataset.i18nAria))
   })
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    el.setAttribute('title', i18n.t(el.dataset.i18nTitle))
+  })
 }
 
 export const i18n = {

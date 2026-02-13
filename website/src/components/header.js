@@ -11,9 +11,9 @@ export function renderHeader() {
             <a href="#/" class="no-underline text-inherit hover:text-[var(--color-primary)] transition-colors" data-i18n="app.title">Semantic Anchors</a>
           </h1>
           <div class="hidden sm:flex items-center gap-4 text-sm">
-            <a href="#/" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/">Catalog</a>
-            <a href="#/about" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/about">About</a>
-            <a href="#/contributing" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/contributing">Contributing</a>
+            <a href="#/" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
+            <a href="#/about" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>
+            <a href="#/contributing" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/contributing" data-i18n="nav.contributing">${i18n.t('nav.contributing')}</a>
           </div>
         </div>
         <div class="flex items-center gap-3">
