@@ -1,0 +1,14 @@
+{
+  "app.title": "Semantic Anchors",
+  "app.description": "Shared vocabulary for LLM communication",
+  "header.langToggle": "DE",
+  "header.themeToggle.dark": "Switch to dark mode",
+  "header.themeToggle.light": "Switch to light mode",
+  "main.heading": "Explore Semantic Anchors",
+  "main.subheading": "A curated catalog of well-defined terms, methodologies, and frameworks for effective LLM communication.",
+  "search.placeholder": "Search anchors...",
+  "filter.allRoles": "All Roles",
+  "treemap.placeholder": "Treemap visualization will be rendered here.",
+  "footer.tagline": "Semantic Anchors &mdash; Shared vocabulary for LLM communication",
+  "footer.github": "GitHub"
+}

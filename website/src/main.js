@@ -1,4 +1,6 @@
 import './styles/main.css'
+import { i18n, applyTranslations } from './i18n.js'
+import { initTheme, toggleTheme, currentTheme } from './theme.js'
 import { renderHeader } from './components/header.js'
 import { renderMain } from './components/main-content.js'
 import { renderFooter } from './components/footer.js'
@@ -7,16 +9,23 @@ import { initTreemap, updateTreemapByRole } from './components/treemap.js'
 const APP_VERSION = '0.2.0'
 
 function initApp() {
-  const app = document.querySelector('#app')
+  i18n.init()
+  initTheme()
 
+  const app = document.querySelector('#app')
   app.innerHTML = `
     ${renderHeader()}
     ${renderMain()}
     ${renderFooter(APP_VERSION)}
   `
 
-  initThemeToggle()
-  initLanguageToggle()
+  // Initialize i18n and theme
+  applyTranslations()
+  updateThemeIcon()
+  bindThemeToggle()
+  bindLanguageToggle()
+
+  // Initialize treemap visualization
   initTreemapVisualization()
 }
 
@@ -42,36 +51,40 @@ async function initTreemapVisualization() {
   }
 }
 
-function initThemeToggle() {
+function bindThemeToggle() {
   const toggle = document.querySelector('#theme-toggle')
   if (!toggle) return
 
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  }
-
   toggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('dark')
-    const isDark = document.documentElement.classList.contains('dark')
-    localStorage.setItem('theme', isDark ? 'dark' : 'light')
+    toggleTheme()
+    updateThemeIcon()
   })
 }
 
-function initLanguageToggle() {
+function updateThemeIcon() {
+  const moonIcon = document.querySelector('#theme-icon-moon')
+  const sunIcon = document.querySelector('#theme-icon-sun')
+  const toggle = document.querySelector('#theme-toggle')
+  if (!moonIcon || !sunIcon || !toggle) return
+
+  const isDark = currentTheme() === 'dark'
+  moonIcon.classList.toggle('hidden', isDark)
+  sunIcon.classList.toggle('hidden', !isDark)
+
+  const ariaKey = isDark ? 'header.themeToggle.light' : 'header.themeToggle.dark'
+  toggle.setAttribute('aria-label', i18n.t(ariaKey))
+  toggle.dataset.i18nAria = ariaKey
+}
+
+function bindLanguageToggle() {
   const toggle = document.querySelector('#lang-toggle')
   if (!toggle) return
 
-  const savedLang = localStorage.getItem('lang') || 'en'
-  document.documentElement.lang = savedLang
-  toggle.textContent = savedLang === 'en' ? 'DE' : 'EN'
-
   toggle.addEventListener('click', () => {
-    const currentLang = document.documentElement.lang
-    const newLang = currentLang === 'en' ? 'de' : 'en'
-    document.documentElement.lang = newLang
-    localStorage.setItem('lang', newLang)
-    toggle.textContent = newLang === 'en' ? 'DE' : 'EN'
+    i18n.toggleLang()
+    toggle.textContent = i18n.currentLang() === 'en' ? 'DE' : 'EN'
+    applyTranslations()
+    updateThemeIcon()
   })
 }
 

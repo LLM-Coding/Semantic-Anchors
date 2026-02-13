@@ -1,0 +1,14 @@
+{
+  "app.title": "Semantic Anchors",
+  "app.description": "Gemeinsames Vokabular für LLM-Kommunikation",
+  "header.langToggle": "EN",
+  "header.themeToggle.dark": "Zum Dunkelmodus wechseln",
+  "header.themeToggle.light": "Zum Hellmodus wechseln",
+  "main.heading": "Semantic Anchors erkunden",
+  "main.subheading": "Ein kuratierter Katalog klar definierter Begriffe, Methoden und Frameworks für effektive LLM-Kommunikation.",
+  "search.placeholder": "Anchors durchsuchen...",
+  "filter.allRoles": "Alle Rollen",
+  "treemap.placeholder": "Treemap-Visualisierung wird hier angezeigt.",
+  "footer.tagline": "Semantic Anchors &mdash; Gemeinsames Vokabular für LLM-Kommunikation",
+  "footer.github": "GitHub"
+}
