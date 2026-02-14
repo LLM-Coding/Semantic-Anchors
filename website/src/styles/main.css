@@ -60,6 +60,11 @@ body {
   font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+.anchor-card,
+.anchor-card * {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
 .category-section {
   @apply mb-12;
 }
