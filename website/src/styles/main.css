@@ -26,7 +26,7 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -47,6 +47,27 @@ body {
 /* Card Grid Styles */
 .card-grid-container {
   @apply max-w-7xl mx-auto px-4 py-8;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+#page-content,
+#main-content,
+.anchor-card,
+.anchor-card-title,
+.anchor-card-meta,
+.anchor-card-proponents,
+.category-heading {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Force sans-serif on all card descendants to override AsciiDoc serif fonts */
+.anchor-card,
+.anchor-card *,
+.card-grid-container,
+.card-grid-container *,
+.anchor-cards-grid,
+.anchor-cards-grid * {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
 .category-section {

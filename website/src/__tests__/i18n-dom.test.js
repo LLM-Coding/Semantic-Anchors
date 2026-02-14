@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { i18n, applyTranslations } from '../i18n.js'
 
 describe('applyTranslations (DOM updates)', () => {
@@ -15,12 +15,12 @@ describe('applyTranslations (DOM updates)', () => {
     expect(document.querySelector('h2').textContent).toBe('Explore Semantic Anchors')
   })
 
-  it('sets innerHTML for elements with data-i18n-html', () => {
-    document.body.innerHTML = '<p data-i18n-html="footer.tagline"></p>'
+  it('sets text content for footer tagline', () => {
+    document.body.innerHTML = '<p data-i18n="footer.tagline"></p>'
     applyTranslations()
-    const html = document.querySelector('p').innerHTML
-    expect(html).toContain('Semantic Anchors')
-    expect(html).toContain('Shared vocabulary for LLM communication')
+    const text = document.querySelector('p').textContent
+    expect(text).toContain('Semantic Anchors')
+    expect(text).toContain('Shared vocabulary for LLM communication')
   })
 
   it('sets placeholder for elements with data-i18n-placeholder', () => {
@@ -47,11 +47,11 @@ describe('applyTranslations (DOM updates)', () => {
     document.body.innerHTML = `
       <h2 data-i18n="main.heading"></h2>
       <input data-i18n-placeholder="search.placeholder" />
-      <p data-i18n-html="footer.tagline"></p>
+      <p data-i18n="footer.tagline"></p>
     `
     applyTranslations()
     expect(document.querySelector('h2').textContent).toBe('Explore Semantic Anchors')
     expect(document.querySelector('input').placeholder).toBe('Search anchors...')
-    expect(document.querySelector('p').innerHTML).toContain('Shared vocabulary')
+    expect(document.querySelector('p').textContent).toContain('Shared vocabulary')
   })
 })

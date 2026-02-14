@@ -11,9 +11,6 @@ export function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     el.textContent = i18n.t(el.dataset.i18n)
   })
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    el.innerHTML = i18n.t(el.dataset.i18nHtml)
-  })
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     el.placeholder = i18n.t(el.dataset.i18nPlaceholder)
   })

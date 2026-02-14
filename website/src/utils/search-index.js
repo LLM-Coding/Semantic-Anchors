@@ -5,43 +5,58 @@
 
 let searchIndex = new Map() // anchorId -> searchable text
 let indexReady = false
+let buildingPromise = null
+
+const BATCH_SIZE = 8
 
 /**
  * Build search index by loading all anchor .adoc files
  */
 export async function buildSearchIndex(anchors) {
+  if (indexReady) return
+  if (buildingPromise) return buildingPromise
+
   console.log('Building search index for', anchors.length, 'anchors...')
 
-  const promises = anchors.map(async (anchor) => {
-    try {
-      const response = await fetch(`${import.meta.env.BASE_URL}docs/anchors/${anchor.id}.adoc`)
-      if (!response.ok) {
-        console.warn(`Failed to load ${anchor.id}.adoc for indexing`)
-        return
-      }
+  buildingPromise = (async () => {
+    for (let i = 0; i < anchors.length; i += BATCH_SIZE) {
+      const batch = anchors.slice(i, i + BATCH_SIZE)
+      const tasks = batch.map(async (anchor) => {
+        try {
+          const response = await fetch(`${import.meta.env.BASE_URL}docs/anchors/${anchor.id}.adoc`)
+          if (!response.ok) {
+            console.warn(`Failed to load ${anchor.id}.adoc for indexing`)
+            return
+          }
 
-      const content = await response.text()
+          const content = await response.text()
+          const searchableText = extractSearchableText(content)
 
-      // Extract searchable text (remove AsciiDoc markup)
-      const searchableText = extractSearchableText(content)
-
-      // Store in index
-      searchIndex.set(anchor.id, {
-        title: anchor.title,
-        content: searchableText,
-        tags: anchor.tags || [],
-        proponents: anchor.proponents || [],
-        roles: anchor.roles || [],
-        categories: anchor.categories || []
+          searchIndex.set(anchor.id, {
+            title: anchor.title,
+            content: searchableText,
+            tags: anchor.tags || [],
+            proponents: anchor.proponents || [],
+            roles: anchor.roles || [],
+            categories: anchor.categories || []
+          })
+        } catch (error) {
+          console.warn(`Error indexing ${anchor.id}:`, error)
+        }
       })
-    } catch (error) {
-      console.warn(`Error indexing ${anchor.id}:`, error)
-    }
-  })
 
-  await Promise.all(promises)
-  indexReady = true
-  console.log('Search index built:', searchIndex.size, 'anchors indexed')
+      await Promise.allSettled(tasks)
+    }
+
+    indexReady = true
+    console.log('Search index built:', searchIndex.size, 'anchors indexed')
+  })()
+
+  try {
+    await buildingPromise
+  } finally {
+    buildingPromise = null
+  }
 }
 
 /**
@@ -153,9 +168,19 @@ export function isIndexReady() {
   return indexReady
 }
 
+export function isIndexBuilding() {
+  return Boolean(buildingPromise)
+}
+
 /**
  * Get indexed content for an anchor (for debugging)
  */
 export function getIndexedContent(anchorId) {
   return searchIndex.get(anchorId)
+}
+
+export function __resetSearchIndexForTests() {
+  searchIndex = new Map()
+  indexReady = false
+  buildingPromise = null
 }

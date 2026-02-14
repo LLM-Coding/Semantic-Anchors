@@ -1,7 +1,22 @@
-import Asciidoctor from '@asciidoctor/core'
 import { i18n } from '../i18n.js'
 
-const asciidoctor = Asciidoctor()
+let asciidoctor = null
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;')
+}
+
+async function getAsciidoctor() {
+  if (asciidoctor) return asciidoctor
+  const module = await import('@asciidoctor/core')
+  asciidoctor = module.default()
+  return asciidoctor
+}
 
 export function createModal() {
   // Check if modal already exists
@@ -119,8 +134,9 @@ export async function loadAnchorContent(anchorId) {
     const adocContent = await response.text()
 
     // Convert AsciiDoc to HTML
-    const htmlContent = asciidoctor.convert(adocContent, {
-      safe: 'safe',
+    const asciidocEngine = await getAsciidoctor()
+    const htmlContent = asciidocEngine.convert(adocContent, {
+      safe: 'secure',
       attributes: {
         showtitle: true,
         sectanchors: true
@@ -132,7 +148,7 @@ export async function loadAnchorContent(anchorId) {
     const title = titleMatch ? titleMatch[1] : anchorId
 
     titleEl.textContent = title
-    contentEl.innerHTML = htmlContent
+    contentEl.innerHTML = String(htmlContent)
 
     // Auto-expand all collapsible sections
     contentEl.querySelectorAll('details').forEach(details => {
@@ -156,12 +172,13 @@ export async function loadAnchorContent(anchorId) {
   } catch (error) {
     console.error('Error loading anchor content:', error)
     titleEl.textContent = 'Error'
+    const message = error instanceof Error ? error.message : String(error)
     contentEl.innerHTML = `
       <div class="text-red-500">
         <p><strong>Failed to load anchor content</strong></p>
-        <p class="text-sm mt-2">${error.message}</p>
+        <p class="text-sm mt-2">${escapeHtml(message)}</p>
         <p class="text-sm mt-4 text-[var(--color-text-secondary)]">
-          Anchor ID: <code>${anchorId}</code>
+          Anchor ID: <code>${escapeHtml(anchorId)}</code>
         </p>
       </div>
     `
@@ -174,7 +191,7 @@ export function showAnchorDetails(anchorId) {
     modal.dataset.currentAnchor = anchorId
   }
   openModal()
-  loadAnchorContent(anchorId)
+  return loadAnchorContent(anchorId)
 }
 
 async function shareAnchor(anchorId, title) {
