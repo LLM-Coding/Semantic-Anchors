@@ -26,7 +26,7 @@
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -47,7 +47,17 @@ body {
 /* Card Grid Styles */
 .card-grid-container {
   @apply max-w-7xl mx-auto px-4 py-8;
-  font-family: var(--font-sans);
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+#page-content,
+#main-content,
+.anchor-card,
+.anchor-card-title,
+.anchor-card-meta,
+.anchor-card-proponents,
+.category-heading {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .category-section {
