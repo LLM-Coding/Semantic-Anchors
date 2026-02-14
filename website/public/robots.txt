@@ -1,0 +1,10 @@
+# robots.txt for Semantic Anchors
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://llm-coding.github.io/Semantic-Anchors/sitemap.xml
+
+# Disallow search bot indexing of specific paths if needed
+# (currently allowing all)

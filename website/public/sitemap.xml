@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/about</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contributing Page -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/contributing</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Anchor: ADR according to Nygard -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/adr-according-to-nygard</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: arc42 Architecture Documentation -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/arc42</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: BEM Methodology -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/bem-methodology</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: BLUF (Bottom Line Up Front) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/bluf</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: C4-Diagrams -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/c4-diagrams</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Chain of Thought (CoT) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/chain-of-thought</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Clean Architecture -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/clean-architecture</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Control Chart (Shewhart) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/control-chart-shewhart</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Conventional Commits -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/conventional-commits</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Cynefin Framework -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/cynefin-framework</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Devil&#8217;s Advocate -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/devils-advocate</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Diátaxis Framework -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/diataxis-framework</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Docs-as-Code according to Ralf D. Müller -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/docs-as-code</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Domain-Driven Design according to Evans -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/domain-driven-design</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: DRY (Don&#8217;t Repeat Yourself) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/dry-principle</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: EARS-Requirements -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/ears-requirements</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Feynman Technique -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/feynman-technique</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Five Whys (Ohno) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/five-whys</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Hexagonal Architecture (Ports &amp; Adapters) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/hexagonal-architecture</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: IEC 61508 SIL Levels -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/iec-61508-sil-levels</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Impact Mapping -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/impact-mapping</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Jobs To Be Done (JTBD) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/jobs-to-be-done</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: MADR -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/madr</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: MECE Principle -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/mece</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Mental Model according to Naur -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/mental-model-according-to-naur</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Morphological Box -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/morphological-box</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Mutation Testing -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/mutation-testing</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Nelson Rules -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/nelson-rules</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Problem Space NVC -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/problem-space-nvc</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Property-Based Testing -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/property-based-testing</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Pugh-Matrix -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/pugh-matrix</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Pyramid Principle according to Barbara Minto -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/pyramid-principle</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Rubber Duck Debugging -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/rubber-duck-debugging</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Semantic Versioning (SemVer) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/semantic-versioning</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Socratic Method -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/socratic-method</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: SOLID Principles -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/solid-principles</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: SOTA (State-of-the-Art) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/sota</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: SPC (Statistical Process Control) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/spc</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: SPOT (Single Point of Truth) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/spot-principle</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: SSOT (Single Source of Truth) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/ssot-principle</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: TDD, Chicago School -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/tdd-chicago-school</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: TDD, London School -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/tdd-london-school</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Testing Pyramid -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/testing-pyramid</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: TIMTOWTDI -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/timtowtdi</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: todo.txt-flavoured Markdown -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/todotxt-flavoured-markdown</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: User Story Mapping -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/user-story-mapping</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Wardley Mapping -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/wardley-mapping</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: The Spectrum of Semantic Anchors -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/#/anchor/what-qualifies-as-a-semantic-anchor</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

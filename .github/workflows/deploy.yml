@@ -32,11 +32,12 @@ jobs:
         working-directory: ./website
         run: npm ci
 
-      - name: Extract metadata from anchor files
+      - name: Extract metadata and generate sitemap
         working-directory: ./scripts
         run: |
           npm ci
           node extract-metadata.js
+          node generate-sitemap.js
 
       - name: Copy documentation files to public directory
         run: |

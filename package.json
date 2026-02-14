@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "extract-metadata": "node scripts/extract-metadata.js"
+    "extract-metadata": "node scripts/extract-metadata.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "build": "npm run extract-metadata && npm run generate-sitemap"
   },
   "keywords": [],
   "author": "",
