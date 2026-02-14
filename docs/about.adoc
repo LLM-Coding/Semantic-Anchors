@@ -76,6 +76,123 @@ Can be *traced to key proponents, publications, or documented standards*.
 
 ❌ "Best practices" (no specific source)
 
+== What is NOT a Semantic Anchor?
+
+Not every well-known term qualifies as a semantic anchor. Understanding what *doesn't* work helps clarify what does.
+
+=== Common Counter-Examples
+
+These terms are frequently used but *lack the depth and definition* required for semantic anchors:
+
+[cols="1,2", options="header"]
+|===
+|❌ Not a Semantic Anchor |Why Not?
+
+|*"TLDR"*
+|Underspecified instruction with no defined structure or methodology. Just means "be brief" without any framework for how.
+
+|*"ELI5"* (Explain Like I'm 5)
+|Vague target level with no pedagogical framework. What does "5-year-old level" mean technically? No consistent interpretation.
+
+|*"Keep it short"*
+|Pure directive with no conceptual depth. It's an instruction, not a methodology.
+
+|*"Best practices"*
+|Too vague and not attributable. Whose best practices? Based on what research or authority?
+
+|*"Modern approach"*
+|Ambiguous and inconsistent. "Modern" means different things to different people and changes over time.
+
+|*"Make it simple"*
+|No reference to specific simplification frameworks (unlike KISS principle or Occam's Razor which *are* semantic anchors).
+|===
+
+=== Comparison: Good vs. Bad
+
+[%collapsible]
+====
+*Example 1: Testing Instructions*
+
+❌ *Bad*: "Write good tests"
+[horizontal]
+Problem:: Vague instruction, no methodology
+Result:: Inconsistent interpretations
+
+✅ *Good*: "Test-Driven Development, London School"
+[horizontal]
+Activates:: Mock-heavy testing, outside-in design, interaction-based verification
+Proponents:: Steve Freeman, Nat Pryce
+Result:: Consistent, rich implementation
+
+---
+
+*Example 2: Communication Style*
+
+❌ *Bad*: "Keep it short"
+[horizontal]
+Problem:: No structure, just a preference
+Result:: Arbitrary length decisions
+
+✅ *Good*: "Pyramid Principle"
+[horizontal]
+Activates:: Start with conclusion, group ideas, logical ordering
+Proponent:: Barbara Minto
+Result:: Structured, repeatable communication pattern
+
+---
+
+*Example 3: Code Quality*
+
+❌ *Bad*: "Best practices"
+[horizontal]
+Problem:: Not attributable, no specific practices
+Result:: Everyone has different "best practices"
+
+✅ *Good*: "SOLID Principles"
+[horizontal]
+Activates:: Five specific design principles (SRP, OCP, LSP, ISP, DIP)
+Proponents:: Robert C. Martin
+Result:: Concrete, testable guidelines
+====
+
+=== The Key Difference
+
+[sidebar]
+****
+*Semantic Anchors* activate **rich, interconnected knowledge domains** from the LLM's training data.
+
+*Simple Instructions* just tell the LLM **what to do**, without providing conceptual framework or methodology.
+****
+
+Think of semantic anchors as *nouns* (methodologies, frameworks, principles) rather than *verbs* (instructions, directives).
+
+=== Testing a Potential Anchor
+
+Before proposing a new semantic anchor, ask an LLM:
+
+[source]
+----
+What concepts do you associate with '<your term>'?
+----
+
+If the response includes:
+
+* ✅ Multiple interconnected concepts
+* ✅ Key proponents or publications
+* ✅ Specific techniques or practices
+* ✅ Clear scope and boundaries
+
+→ It's likely a good semantic anchor!
+
+If the response is:
+
+* ❌ Just a simple definition
+* ❌ No attributed source
+* ❌ Vague or inconsistent interpretations
+* ❌ Just instructions without depth
+
+→ It's probably not a semantic anchor.
+
 == How to Use This Catalog
 
 === Browse by Category
