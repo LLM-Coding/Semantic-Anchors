@@ -26,7 +26,7 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--color-bg);
   color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -47,6 +47,7 @@ body {
 /* Card Grid Styles */
 .card-grid-container {
   @apply max-w-7xl mx-auto px-4 py-8;
+  font-family: var(--font-sans);
 }
 
 .category-section {
