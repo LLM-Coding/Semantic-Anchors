@@ -66,16 +66,32 @@ export function getFilteredAnchors(anchors, roleId, searchQuery) {
   return filtered
 }
 
+let dataPromise = null
+
+async function fetchJson(path) {
+  const response = await fetch(`${import.meta.env.BASE_URL}${path}`)
+  if (!response.ok) {
+    throw new Error(`Failed to load ${path}: ${response.status}`)
+  }
+  return response.json()
+}
+
 export async function fetchData() {
-  const [anchorsRes, categoriesRes, rolesRes] = await Promise.all([
-    fetch('./data/anchors.json'),
-    fetch('./data/categories.json'),
-    fetch('./data/roles.json')
-  ])
+  if (!dataPromise) {
+    dataPromise = Promise.all([
+      fetchJson('data/anchors.json'),
+      fetchJson('data/categories.json'),
+      fetchJson('data/roles.json')
+    ]).then(([anchors, categories, roles]) => ({ anchors, categories, roles }))
+      .catch((error) => {
+        dataPromise = null
+        throw error
+      })
+  }
 
-  const anchors = await anchorsRes.json()
-  const categories = await categoriesRes.json()
-  const roles = await rolesRes.json()
+  return dataPromise
+}
 
-  return { anchors, categories, roles }
+export function __resetDataCacheForTests() {
+  dataPromise = null
 }

@@ -100,13 +100,13 @@ describe('anchor-modal', () => {
       delete global.fetch
     })
 
-    it('should open modal when called', () => {
+    it('should open modal when called', async () => {
       global.fetch.mockResolvedValue({
         ok: true,
         text: async () => '= Test Anchor\n\nTest content'
       })
 
-      showAnchorDetails('test-anchor')
+      await showAnchorDetails('test-anchor')
       const modal = document.getElementById('anchor-modal')
       expect(modal.classList.contains('hidden')).toBe(false)
     })

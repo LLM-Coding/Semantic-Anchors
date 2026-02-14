@@ -1,6 +1,15 @@
 import { i18n } from '../i18n.js'
 import { search as performFullTextSearch, isIndexReady } from '../utils/search-index.js'
 
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;')
+}
+
 /**
  * Category color palette (matching previous categories)
  */
@@ -65,10 +74,10 @@ function renderCategorySection(category, allAnchors) {
   const categoryName = i18n.t(`categories.${category.id}`) || category.name
 
   return `
-    <section class="category-section" data-category="${category.id}">
+    <section class="category-section" data-category="${escapeHtml(category.id)}">
       <h2 class="category-heading">
         <span class="category-icon" style="background-color: ${color}">${icon}</span>
-        <span data-i18n="categories.${category.id}">${categoryName}</span>
+        <span data-i18n="categories.${escapeHtml(category.id)}">${escapeHtml(categoryName)}</span>
       </h2>
 
       <div class="anchor-cards-grid">
@@ -83,44 +92,43 @@ function renderCategorySection(category, allAnchors) {
  */
 function renderAnchorCard(anchor, categoryColor) {
   const rolesCount = anchor.roles ? anchor.roles.length : 0
-  const tagsPreview = anchor.tags ? anchor.tags.slice(0, 3).join(', ') : ''
   const githubEditUrl = `https://github.com/LLM-Coding/Semantic-Anchors/edit/main/docs/anchors/${anchor.id}.adoc`
   const roleText = rolesCount === 1 ? i18n.t('card.roles') : i18n.t('card.rolesPlural')
   const tagsText = i18n.t('card.tags')
   const editTitle = i18n.t('card.edit')
   const copyLinkTitle = i18n.t('card.copyLink')
+  const safeId = escapeHtml(anchor.id)
 
   return `
     <article
       class="anchor-card"
-      data-anchor="${anchor.id}"
-      data-roles="${anchor.roles ? anchor.roles.join(',') : ''}"
-      data-tags="${anchor.tags ? anchor.tags.join(',') : ''}"
+      data-anchor="${safeId}"
+      data-roles="${escapeHtml(anchor.roles ? anchor.roles.join(',') : '')}"
+      data-tags="${escapeHtml(anchor.tags ? anchor.tags.join(',') : '')}"
       tabindex="0"
       role="button"
-      aria-label="${i18n.t('card.openDetails').replace('{title}', anchor.title)}"
+      aria-label="${escapeHtml(i18n.t('card.openDetails').replace('{title}', anchor.title))}"
     >
       <div class="anchor-card-header">
-        <h3 class="anchor-card-title">${anchor.title}</h3>
+        <h3 class="anchor-card-title">${escapeHtml(anchor.title)}</h3>
         <div class="flex gap-1">
           <button
             class="anchor-copy-link-btn"
-            title="${copyLinkTitle}"
-            onclick="event.stopPropagation(); window.copyAnchorLink('${anchor.id}')"
+            title="${escapeHtml(copyLinkTitle)}"
+            data-copy-link="${safeId}"
             data-i18n-title="card.copyLink"
-            aria-label="${copyLinkTitle}"
+            aria-label="${escapeHtml(copyLinkTitle)}"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
             </svg>
           </button>
           <a
-            href="${githubEditUrl}"
+            href="${escapeHtml(githubEditUrl)}"
             target="_blank"
             rel="noopener noreferrer"
             class="anchor-edit-btn"
-            title="${editTitle}"
-            onclick="event.stopPropagation()"
+            title="${escapeHtml(editTitle)}"
             data-i18n-title="card.edit"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,8 +138,8 @@ function renderAnchorCard(anchor, categoryColor) {
         </div>
       </div>
 
-      ${anchor.proponents ? `
-        <p class="anchor-card-proponents">${anchor.proponents.slice(0, 2).join(', ')}</p>
+      ${anchor.proponents && anchor.proponents.length > 0 ? `
+        <p class="anchor-card-proponents">${escapeHtml(anchor.proponents.slice(0, 2).join(', '))}</p>
       ` : ''}
 
       <div class="anchor-card-meta">
@@ -180,6 +188,21 @@ export function initCardGrid() {
 
   // Click handler using event delegation
   clickHandler = (e) => {
+    if (e.target.closest('.anchor-copy-link-btn')) {
+      const button = e.target.closest('.anchor-copy-link-btn')
+      const anchorId = button?.dataset.copyLink
+      if (anchorId) {
+        e.stopPropagation()
+        window.copyAnchorLink(anchorId)
+      }
+      return
+    }
+
+    if (e.target.closest('.anchor-edit-btn')) {
+      e.stopPropagation()
+      return
+    }
+
     const card = e.target.closest('.anchor-card')
     if (card) {
       const anchorId = card.dataset.anchor

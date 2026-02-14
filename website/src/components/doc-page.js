@@ -1,7 +1,13 @@
-import Asciidoctor from '@asciidoctor/core'
 import { i18n } from '../i18n.js'
 
-const asciidoctor = Asciidoctor()
+let asciidoctor = null
+
+async function getAsciidoctor() {
+  if (asciidoctor) return asciidoctor
+  const module = await import('@asciidoctor/core')
+  asciidoctor = module.default()
+  return asciidoctor
+}
 
 /**
  * Render a documentation page from an AsciiDoc file
@@ -34,7 +40,6 @@ export async function loadDocContent(docPath) {
   try {
     // Try language-specific file first (e.g., about.de.adoc for German)
     const currentLang = i18n.currentLang()
-    let finalPath = docPath
     let response
 
     if (currentLang !== 'en') {
@@ -45,9 +50,6 @@ export async function loadDocContent(docPath) {
       // If language-specific file not found, fallback to English
       if (!response.ok) {
         response = await fetch(`${import.meta.env.BASE_URL}${docPath}`)
-        finalPath = docPath
-      } else {
-        finalPath = langPath
       }
     } else {
       response = await fetch(`${import.meta.env.BASE_URL}${docPath}`)
@@ -58,8 +60,9 @@ export async function loadDocContent(docPath) {
     }
 
     const adocContent = await response.text()
-    const htmlContent = asciidoctor.convert(adocContent, {
-      safe: 'safe',
+    const asciidocEngine = await getAsciidoctor()
+    const htmlContent = asciidocEngine.convert(adocContent, {
+      safe: 'secure',
       attributes: {
         'source-highlighter': 'highlight.js',
         'icons': 'font',
@@ -69,7 +72,7 @@ export async function loadDocContent(docPath) {
       }
     })
 
-    contentEl.innerHTML = htmlContent
+    contentEl.innerHTML = String(htmlContent)
 
     // Auto-expand collapsible sections
     contentEl.querySelectorAll('details').forEach(details => {

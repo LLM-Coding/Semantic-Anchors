@@ -6,37 +6,30 @@ import { renderMain } from './components/main-content.js'
 import { renderFooter } from './components/footer.js'
 import { renderCardGrid, initCardGrid, applyCardFilters, updateAnchorCount } from './components/card-grid.js'
 import { fetchData } from './utils/data-loader.js'
-import { createModal, showAnchorDetails } from './components/anchor-modal.js'
-import { buildSearchIndex } from './utils/search-index.js'
+import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
 import { initRouter, addRoute } from './utils/router.js'
 import { renderDocPage, loadDocContent } from './components/doc-page.js'
 
 const APP_VERSION = '0.4.0'
 
-// Global function for copying anchor links
-window.copyAnchorLink = async function(anchorId) {
+window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${window.location.pathname}#/anchor/${anchorId}`
 
   try {
     await navigator.clipboard.writeText(url)
-
-    // Show toast notification
     window.showToast(i18n.t('card.linkCopied'))
   } catch (err) {
     console.error('Failed to copy link:', err)
   }
 }
 
-// Global toast notification function
-window.showToast = function(message) {
-  // Create toast element
+window.showToast = function showToast(message) {
   const toast = document.createElement('div')
   toast.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-fade-in'
   toast.textContent = message
 
   document.body.appendChild(toast)
 
-  // Remove after 2 seconds
   setTimeout(() => {
     toast.classList.add('animate-fade-out')
     setTimeout(() => toast.remove(), 300)
@@ -44,28 +37,70 @@ window.showToast = function(message) {
 }
 
 let appData = null
+let dataLoadingPromise = null
+let searchIndexTriggered = false
+let anchorModalModulePromise = null
+
+function getAnchorModalModule() {
+  if (!anchorModalModulePromise) {
+    anchorModalModulePromise = import('./components/anchor-modal.js')
+  }
+  return anchorModalModulePromise
+}
+
+function ensureDataLoaded() {
+  if (appData) return Promise.resolve(appData)
+
+  if (!dataLoadingPromise) {
+    dataLoadingPromise = fetchData()
+      .then((data) => {
+        appData = data
+        return data
+      })
+      .catch((error) => {
+        dataLoadingPromise = null
+        throw error
+      })
+  }
+
+  return dataLoadingPromise
+}
+
+function triggerSearchIndexBuild() {
+  if (!appData || searchIndexTriggered || isIndexReady() || isIndexBuilding()) return
+
+  searchIndexTriggered = true
+  buildSearchIndex(appData.anchors)
+    .then(() => {
+      const searchInput = document.getElementById('search-input')
+      if (searchInput) {
+        searchInput.placeholder = `${i18n.t('search.placeholder')} (full-text)`
+      }
+    })
+    .catch((err) => {
+      console.warn('Search index build failed:', err)
+      searchIndexTriggered = false
+    })
+}
 
 function initApp() {
   i18n.init()
   initTheme()
+  getAnchorModalModule().then(({ createModal }) => createModal())
 
-  // Initialize anchor modal
-  createModal()
-
-  // Setup routes
   addRoute('/', renderHomePage)
   addRoute('/about', renderAboutPage)
   addRoute('/contributing', renderContributingPage)
 
-  // Load initial app structure
   const app = document.querySelector('#app')
+  if (!app) return
+
   app.innerHTML = `
     ${renderHeader()}
     <div id="page-content"></div>
     ${renderFooter(APP_VERSION)}
   `
 
-  // Initialize i18n and theme
   applyTranslations()
   updateThemeIcon()
   bindThemeToggle()
@@ -73,13 +108,9 @@ function initApp() {
   bindMobileMenu()
   updateActiveNavLink()
 
-  // Initialize router
   initRouter()
 
-  // Load data once for the app
-  fetchData().then(data => {
-    appData = data
-  }).catch(err => {
+  ensureDataLoaded().catch((err) => {
     console.error('Failed to load app data:', err)
   })
 }
@@ -90,20 +121,19 @@ function renderHomePage() {
 
   pageContent.innerHTML = renderMain()
   updateActiveNavLink()
-
-  // Bind anchor selection
   bindAnchorSelection()
 
-  // Initialize card grid
-  if (appData) {
-    initCardGridVisualization()
-  } else {
-    // If data not loaded yet, wait for it
-    fetchData().then(data => {
-      appData = data
+  ensureDataLoaded()
+    .then(() => {
       initCardGridVisualization()
     })
-  }
+    .catch((err) => {
+      console.error('Failed to initialize home page:', err)
+      const container = document.getElementById('main-content')
+      if (container) {
+        container.innerHTML = '<div class="text-red-500 p-8">Failed to load anchors. Please try again later.</div>'
+      }
+    })
 }
 
 function renderAboutPage() {
@@ -126,7 +156,7 @@ function renderContributingPage() {
 
 function updateActiveNavLink() {
   const currentRoute = window.location.hash.slice(1) || '/'
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.nav-link').forEach((link) => {
     const route = link.dataset.route
     if (route === currentRoute) {
       link.classList.add('font-semibold', 'text-[var(--color-text)]')
@@ -139,89 +169,63 @@ function updateActiveNavLink() {
 }
 
 function bindAnchorSelection() {
-  // Remove existing listener if any
   document.removeEventListener('anchor-selected', handleAnchorSelection)
-  // Add listener
   document.addEventListener('anchor-selected', handleAnchorSelection)
 }
 
 function handleAnchorSelection(event) {
   const { anchorId } = event.detail
-  showAnchorDetails(anchorId)
+  getAnchorModalModule().then(({ showAnchorDetails }) => showAnchorDetails(anchorId))
 }
 
-async function initCardGridVisualization() {
-  try {
-    const data = await fetchData()
+function initCardGridVisualization() {
+  if (!appData) return
 
-    // Render card grid
-    const container = document.getElementById('main-content')
-    if (container) {
-      container.innerHTML = renderCardGrid(data.categories, data.anchors)
+  const container = document.getElementById('main-content')
+  if (container) {
+    container.innerHTML = renderCardGrid(appData.categories, appData.anchors)
+  }
+
+  initCardGrid()
+  updateAnchorCount(appData.anchors.length, appData.anchors.length)
+
+  bindRoleFilter()
+  bindSearchInput()
+}
+
+function bindRoleFilter() {
+  const roleFilter = document.getElementById('role-filter')
+  if (!roleFilter || !appData?.roles) return
+
+  while (roleFilter.options.length > 1) {
+    roleFilter.remove(1)
+  }
+
+  appData.roles.forEach((role) => {
+    const option = document.createElement('option')
+    option.value = role.id
+    option.textContent = role.name
+    roleFilter.appendChild(option)
+  })
+
+  roleFilter.onchange = (e) => {
+    const searchQuery = document.getElementById('search-input')?.value || ''
+    applyCardFilters(e.target.value, searchQuery)
+  }
+}
+
+function bindSearchInput() {
+  const searchInput = document.getElementById('search-input')
+  if (!searchInput) return
+
+  searchInput.oninput = (e) => {
+    const query = e.target.value
+    if (query.trim()) {
+      triggerSearchIndexBuild()
     }
 
-    // Initialize card event handlers
-    initCardGrid()
-
-    // Initialize anchor count
-    updateAnchorCount(data.anchors.length, data.anchors.length)
-
-    // Build search index in background
-    buildSearchIndex(data.anchors).then(() => {
-      console.log('✓ Full-text search ready')
-      // Show indicator that search is ready
-      const searchInput = document.getElementById('search-input')
-      if (searchInput) {
-        searchInput.placeholder = i18n.t('search.placeholder') + ' (full-text)'
-      }
-    }).catch(err => {
-      console.warn('Search index build failed:', err)
-    })
-
-    // Bind role filter
-    const roleFilter = document.getElementById('role-filter')
-    if (roleFilter && data.roles) {
-      // Clear existing options (except the first "All Roles" option)
-      while (roleFilter.options.length > 1) {
-        roleFilter.remove(1)
-      }
-
-      // Add role options
-      data.roles.forEach(role => {
-        const option = document.createElement('option')
-        option.value = role.id
-        option.textContent = role.name
-        roleFilter.appendChild(option)
-      })
-
-      // Remove existing listener and add new one
-      const newRoleFilter = roleFilter.cloneNode(true)
-      roleFilter.parentNode.replaceChild(newRoleFilter, roleFilter)
-
-      newRoleFilter.addEventListener('change', (e) => {
-        const searchQuery = document.getElementById('search-input')?.value || ''
-        applyCardFilters(e.target.value, searchQuery)
-      })
-    }
-
-    // Bind search input
-    const searchInput = document.getElementById('search-input')
-    if (searchInput) {
-      // Remove existing listener and add new one
-      const newSearchInput = searchInput.cloneNode(true)
-      searchInput.parentNode.replaceChild(newSearchInput, searchInput)
-
-      newSearchInput.addEventListener('input', (e) => {
-        const roleId = document.getElementById('role-filter')?.value || ''
-        applyCardFilters(roleId, e.target.value)
-      })
-    }
-  } catch (err) {
-    console.error('Failed to initialize card grid:', err)
-    const container = document.getElementById('main-content')
-    if (container) {
-      container.innerHTML = '<div class="text-red-500 p-8">Failed to load anchors. Please try again later.</div>'
-    }
+    const roleId = document.getElementById('role-filter')?.value || ''
+    applyCardFilters(roleId, query)
   }
 }
 
@@ -261,37 +265,26 @@ function bindLanguageToggle() {
     updateThemeIcon()
   })
 
-  // Listen for language changes to reload content
   document.addEventListener('langchange', handleLanguageChange)
 }
 
 function handleLanguageChange() {
   const currentRoute = window.location.hash.slice(1) || '/'
 
-  // Reload documentation pages
   if (currentRoute === '/about') {
     loadDocContent('docs/about.adoc')
   } else if (currentRoute === '/contributing') {
     loadDocContent('CONTRIBUTING.adoc')
   } else if (currentRoute === '/') {
-    // Re-render card grid with updated translations
-    if (appData) {
-      const container = document.getElementById('main-content')
-      if (container) {
-        container.innerHTML = renderCardGrid(appData.categories, appData.anchors)
-        initCardGrid()
-      }
-    }
+    initCardGridVisualization()
   }
 
-  // Reload anchor modal content if it's open
   const modal = document.getElementById('anchor-modal')
   if (modal && !modal.classList.contains('hidden')) {
-    // Get the current anchor ID from the modal title or content
-    // For now, we'll close the modal as we don't have a way to track the current anchor ID
-    // TODO: Track current anchor ID for reload on language change
-    const closeEvent = new Event('click')
-    modal.querySelector('#modal-close')?.dispatchEvent(closeEvent)
+    const currentAnchor = modal.dataset.currentAnchor
+    if (currentAnchor) {
+      getAnchorModalModule().then(({ loadAnchorContent }) => loadAnchorContent(currentAnchor))
+    }
   }
 }
 
@@ -303,20 +296,18 @@ function bindMobileMenu() {
 
   menuToggle.addEventListener('click', () => {
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true'
-    menuToggle.setAttribute('aria-expanded', !isExpanded)
+    menuToggle.setAttribute('aria-expanded', String(!isExpanded))
     mobileMenu.classList.toggle('hidden')
   })
 
-  // Close menu when a link is clicked
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link')
-  mobileNavLinks.forEach(link => {
+  mobileNavLinks.forEach((link) => {
     link.addEventListener('click', () => {
       menuToggle.setAttribute('aria-expanded', 'false')
       mobileMenu.classList.add('hidden')
     })
   })
 
-  // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
       if (!mobileMenu.classList.contains('hidden')) {

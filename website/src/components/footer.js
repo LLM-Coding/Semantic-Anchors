@@ -5,7 +5,7 @@ export function renderFooter(version) {
     <footer class="border-t border-[var(--color-border)] bg-[var(--color-bg)] transition-colors duration-300">
       <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center justify-between gap-2 sm:flex-row">
-          <p class="text-sm text-[var(--color-text-secondary)]" data-i18n-html="footer.tagline">
+          <p class="text-sm text-[var(--color-text-secondary)]" data-i18n="footer.tagline">
             ${i18n.t('footer.tagline')}
           </p>
           <div class="flex items-center gap-4">

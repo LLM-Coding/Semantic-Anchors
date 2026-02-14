@@ -1,5 +1,13 @@
-import { describe, it, expect } from 'vitest'
-import { buildTreemapData, getAnchorsByRole, getAnchorsBySearch, getFilteredAnchors, getCategoryColor } from './data-loader.js'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import {
+  buildTreemapData,
+  getAnchorsByRole,
+  getAnchorsBySearch,
+  getFilteredAnchors,
+  getCategoryColor,
+  fetchData,
+  __resetDataCacheForTests
+} from './data-loader.js'
 
 const mockCategories = [
   {
@@ -201,5 +209,41 @@ describe('getFilteredAnchors', () => {
     const result = getFilteredAnchors(mockAnchors, 'qa-engineer', 'architecture')
 
     expect(result).toHaveLength(0)
+  })
+})
+
+describe('fetchData', () => {
+  beforeEach(() => {
+    __resetDataCacheForTests()
+    global.fetch = vi.fn()
+  })
+
+  afterEach(() => {
+    delete global.fetch
+  })
+
+  it('loads all datasets once and caches the result', async () => {
+    global.fetch
+      .mockResolvedValueOnce({ ok: true, json: async () => mockAnchors })
+      .mockResolvedValueOnce({ ok: true, json: async () => mockCategories })
+      .mockResolvedValueOnce({ ok: true, json: async () => mockRoles })
+
+    const first = await fetchData()
+    const second = await fetchData()
+
+    expect(first).toEqual(second)
+    expect(global.fetch).toHaveBeenCalledTimes(3)
+    expect(global.fetch).toHaveBeenNthCalledWith(1, expect.stringContaining('data/anchors.json'))
+    expect(global.fetch).toHaveBeenNthCalledWith(2, expect.stringContaining('data/categories.json'))
+    expect(global.fetch).toHaveBeenNthCalledWith(3, expect.stringContaining('data/roles.json'))
+  })
+
+  it('throws on non-success responses', async () => {
+    global.fetch
+      .mockResolvedValueOnce({ ok: false, status: 500 })
+      .mockResolvedValueOnce({ ok: true, json: async () => mockCategories })
+      .mockResolvedValueOnce({ ok: true, json: async () => mockRoles })
+
+    await expect(fetchData()).rejects.toThrow('Failed to load data/anchors.json: 500')
   })
 })
