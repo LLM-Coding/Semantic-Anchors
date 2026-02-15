@@ -16,10 +16,10 @@ test.describe('Homepage - Card Grid', () => {
     await expect(page.locator('#lang-toggle')).toBeVisible()
     await expect(page.locator('#lang-toggle')).toHaveText('DE')
 
-    // Check navigation links
-    await expect(page.locator('a[data-route="/"]')).toContainText('Catalog')
-    await expect(page.locator('a[data-route="/about"]')).toContainText('About')
-    await expect(page.locator('a[data-route="/contributing"]')).toContainText('Contributing')
+    // Check navigation links (use .first() to select desktop nav, not mobile)
+    await expect(page.locator('a[data-route="/"]').first()).toContainText('Catalog')
+    await expect(page.locator('a[data-route="/about"]').first()).toContainText('About')
+    await expect(page.locator('a[data-route="/contributing"]').first()).toContainText('Contributing')
   })
 
   test('should display card grid with categories', async ({ page }) => {
@@ -218,12 +218,12 @@ test.describe('Routing - Documentation Pages', () => {
     // URL should update
     expect(page.url()).toContain('#/about')
 
-    // About content should be visible
-    await expect(page.locator('#doc-content')).toBeVisible()
-    await expect(page.locator('h1')).toContainText(/About|What are/)
+    // Wait for AsciiDoc content to load and check h1 in content area (not header)
+    await page.waitForSelector('#doc-content h1', { timeout: 10000 })
+    await expect(page.locator('#doc-content h1')).toContainText(/About|What are/)
 
     // Active nav link should be highlighted
-    const aboutLink = page.locator('a[data-route="/about"]')
+    const aboutLink = page.locator('a[data-route="/about"]').first()
     await expect(aboutLink).toHaveClass(/font-semibold/)
   })
 
@@ -234,12 +234,12 @@ test.describe('Routing - Documentation Pages', () => {
     // URL should update
     expect(page.url()).toContain('#/contributing')
 
-    // Contributing content should be visible
-    await expect(page.locator('#doc-content')).toBeVisible()
-    await expect(page.locator('h1')).toContainText(/Contributing/)
+    // Wait for AsciiDoc content to load and check h1 in content area (not header)
+    await page.waitForSelector('#doc-content h1', { timeout: 10000 })
+    await expect(page.locator('#doc-content h1')).toContainText(/Contributing/)
 
     // Active nav link should be highlighted
-    const contributingLink = page.locator('a[data-route="/contributing"]')
+    const contributingLink = page.locator('a[data-route="/contributing"]').first()
     await expect(contributingLink).toHaveClass(/font-semibold/)
   })
 
@@ -256,8 +256,8 @@ test.describe('Routing - Documentation Pages', () => {
     // Card grid should be visible
     await expect(page.locator('.anchor-card').first()).toBeVisible()
 
-    // Catalog link should be highlighted
-    const catalogLink = page.locator('a[data-route="/"]')
+    // Catalog link should be highlighted (use .first() to select desktop nav)
+    const catalogLink = page.locator('a[data-route="/"]').first()
     await expect(catalogLink).toHaveClass(/font-semibold/)
   })
 
@@ -265,9 +265,9 @@ test.describe('Routing - Documentation Pages', () => {
     // Navigate directly to About
     await page.goto('/#/about')
 
-    // About content should be visible
-    await expect(page.locator('#doc-content')).toBeVisible()
-    await expect(page.locator('h1')).toContainText(/About|What are/)
+    // Wait for AsciiDoc content to load and check h1 in content area (not header)
+    await page.waitForSelector('#doc-content h1', { timeout: 10000 })
+    await expect(page.locator('#doc-content h1')).toContainText(/About|What are/)
   })
 
   test('should handle browser back button', async ({ page }) => {

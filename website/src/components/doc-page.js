@@ -64,6 +64,7 @@ export async function loadDocContent(docPath) {
     const htmlContent = asciidocEngine.convert(adocContent, {
       safe: 'secure',
       attributes: {
+        'showtitle': true,
         'source-highlighter': 'highlight.js',
         'icons': 'font',
         'sectanchors': true,
