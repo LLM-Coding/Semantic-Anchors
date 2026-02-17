@@ -1,0 +1,65 @@
+= Chatham House Rule
+:categories: communication-presentation
+:roles: team-lead, consultant, business-analyst, product-owner
+:proponents: Chatham House (Royal Institute of International Affairs)
+:tags: communication, confidentiality, meetings, open-discussion, trust
+
+[%collapsible]
+====
+Full Name:: Chatham House Rule
+
+*Core Concepts*:
+
+Information Sharing:: Participants are free to use information received, but neither the identity nor the affiliation of the speaker(s) may be revealed
+
+Confidentiality of Source:: "When a meeting, or part thereof, is held under the Chatham House Rule, participants are free to use the information received, but neither the identity nor the affiliation of the speaker(s), nor that of any other participant, may be revealed"
+
+Open Discussion:: Encourages frank and honest dialogue by removing attribution concerns
+
+Trust Building:: Creates psychological safety for participants to express controversial or sensitive views
+
+Knowledge Transfer:: Allows insights to be shared widely while protecting individual sources
+
+Single Rule Format:: Unlike other frameworks, it's a single, clearly defined rule
+
+Attribution Separation:: Distinguishes between "what was said" (shareable) and "who said it" (protected)
+
+Context Independence:: Applies equally to small meetings, large conferences, or online discussions
+
+Key Origin:: Established by Chatham House (Royal Institute of International Affairs) in London, 1927
+
+Historical Context:: Originally created to enable diplomats and government officials to discuss international affairs candidly; now widely adopted across business, academia, and technology sectors
+
+*When to Use*:
+
+* Strategic planning sessions where sensitive business information is discussed
+* Retrospectives where team members need to speak candidly about problems
+* Cross-organizational meetings where participants represent competing interests
+* Executive briefings on sensitive topics
+* Security discussions involving vulnerabilities or incidents
+* Research interviews where anonymity encourages honesty
+* Board meetings discussing confidential matters
+* Community forums where psychological safety is needed
+
+*Common Misunderstandings*:
+
+* ❌ "Everything is off the record" - Information CAN be shared, just not attributed
+* ❌ "Nothing can be quoted" - The content is shareable, but without attribution
+* ❌ "Conversations are confidential" - The rule protects identity, not information
+* ✓ "You can use the insights, just don't say who said them" - Correct understanding
+
+*Related Concepts*:
+
+* Psychological safety in teams
+* Non-disclosure agreements (NDAs) - more restrictive than Chatham House Rule
+* Off-the-record conversations
+* Anonymous feedback systems
+
+*Example Invocation*:
+
+----
+This retrospective will be conducted under the Chatham House Rule.
+You may share the insights we generate, but don't attribute comments
+to specific team members.
+----
+====

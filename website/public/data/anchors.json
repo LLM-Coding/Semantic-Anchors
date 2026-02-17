@@ -109,6 +109,31 @@
     "filePath": "docs/anchors/chain-of-thought.adoc"
   },
   {
+    "id": "chatham-house-rule",
+    "title": "Chatham House Rule",
+    "categories": [
+      "communication-presentation"
+    ],
+    "roles": [
+      "team-lead",
+      "consultant",
+      "business-analyst",
+      "product-owner"
+    ],
+    "related": [],
+    "proponents": [
+      "Chatham House (Royal Institute of International Affairs)"
+    ],
+    "tags": [
+      "communication",
+      "confidentiality",
+      "meetings",
+      "open-discussion",
+      "trust"
+    ],
+    "filePath": "docs/anchors/chatham-house-rule.adoc"
+  },
+  {
     "id": "clean-architecture",
     "title": "Clean Architecture",
     "categories": [
