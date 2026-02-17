@@ -5,6 +5,7 @@
     "anchors": [
       "bluf",
       "chain-of-thought",
+      "chatham-house-rule",
       "domain-driven-design",
       "ears-requirements",
       "impact-mapping",
@@ -22,6 +23,7 @@
     "anchors": [
       "bluf",
       "c4-diagrams",
+      "chatham-house-rule",
       "cynefin-framework",
       "devils-advocate",
       "feynman-technique",
@@ -85,6 +87,7 @@
     "id": "product-owner",
     "name": "Product Owner / Product Manager",
     "anchors": [
+      "chatham-house-rule",
       "cynefin-framework",
       "impact-mapping",
       "jobs-to-be-done",
@@ -182,6 +185,7 @@
       "arc42",
       "bluf",
       "c4-diagrams",
+      "chatham-house-rule",
       "control-chart-shewhart",
       "cynefin-framework",
       "devils-advocate",
