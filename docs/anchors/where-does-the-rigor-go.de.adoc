@@ -1,0 +1,46 @@
+= Where Does the Rigor Go?
+:categories: testing-quality
+:roles: qa-engineer, software-developer, team-lead, software-architect
+:related: testing-pyramid, tdd-london-school, tdd-chicago-school
+:proponents: Alister Scott, Testing community
+:tags: testing, test-strategy, quality, rigor, anti-pattern
+
+[%collapsible]
+====
+Auch bekannt als:: Test-Rigor-Frage, Wo-zu-testen-Frage
+
+*Kernkonzepte*:
+
+Test-Rigor-Platzierung:: Kritische Frage, wo in der Test-Suite die gründlichste Validierung stattfindet
+
+Eistüten-Problem:: Anti-Pattern, bei dem die meiste Test-Rigor in langsamen, spröden E2E-Tests statt in schnellen Unit-Tests steckt
+
+Invertierte Pyramiden-Konsequenzen:: Wenn Test-Rigor an der Spitze (UI/E2E-Ebene) konzentriert ist, ist das Feedback langsam und die Wartung teuer
+
+Strategische Rigor-Verteilung:: Bewusst entscheiden, welche Testebenen den Großteil der Verifikationsverantwortung tragen sollen
+
+Kosten der Rigor-Fehlplatzierung:: Hoher Wartungsaufwand, langsame Feedback-Schleifen und spröde Test-Suites, wenn Rigor in der falschen Ebene liegt
+
+Rigor vs. Coverage Trade-off:: Verstehen, dass Gründlichkeit (Rigor) auf niedrigeren Testebenen zunehmen sollte, nicht auf oberen
+
+Test-Confidence-Engineering:: Bewusst konstruieren, woher das Vertrauen in der Test-Suite kommt
+
+
+Schlüsselvertreter:: Alister Scott und die Software-Testing-Community, die sich mit dem Eistüten-Anti-Pattern befasst
+
+*Wann zu verwenden*:
+
+* Audit bestehender Test-Suites zur Identifikation der Rigor-Konzentration
+* Planung der Teststrategie für neue Projekte
+* Debugging, warum Tests langsam oder spröde sind
+* Coaching von Teams zu Test-Pyramiden-Prinzipien
+* Bewertung der Gesundheit und Effektivität von Test-Suites
+* Entscheidung über Test-Coverage-Strategie über Ebenen hinweg
+* Adressierung des Wartungsaufwands in Test-Suites
+
+*Verwandte Anchors*:
+
+* <<testing-pyramid,Testing Pyramid>>
+* <<tdd-london-school,TDD, London School>>
+* <<tdd-chicago-school,TDD, Chicago School>>
+====
