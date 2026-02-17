@@ -110,7 +110,8 @@
       "spc",
       "tdd-chicago-school",
       "tdd-london-school",
-      "testing-pyramid"
+      "testing-pyramid",
+      "where-does-the-rigor-go"
     ]
   },
   {
@@ -137,7 +138,8 @@
       "ssot-principle",
       "tdd-london-school",
       "timtowtdi",
-      "wardley-mapping"
+      "wardley-mapping",
+      "where-does-the-rigor-go"
     ]
   },
   {
@@ -171,7 +173,8 @@
       "tdd-london-school",
       "testing-pyramid",
       "timtowtdi",
-      "todotxt-flavoured-markdown"
+      "todotxt-flavoured-markdown",
+      "where-does-the-rigor-go"
     ]
   },
   {
@@ -199,7 +202,8 @@
       "testing-pyramid",
       "todotxt-flavoured-markdown",
       "user-story-mapping",
-      "wardley-mapping"
+      "wardley-mapping",
+      "where-does-the-rigor-go"
     ]
   },
   {

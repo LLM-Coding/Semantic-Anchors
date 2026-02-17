@@ -1,0 +1,46 @@
+= Where Does the Rigor Go?
+:categories: testing-quality
+:roles: qa-engineer, software-developer, team-lead, software-architect
+:related: testing-pyramid, tdd-london-school, tdd-chicago-school
+:proponents: Alister Scott, Testing community
+:tags: testing, test-strategy, quality, rigor, anti-pattern
+
+[%collapsible]
+====
+Also known as:: Test Rigor Question, Where to Test Question
+
+*Core Concepts*:
+
+Test rigor placement:: Critical question about where in the test suite the most thorough validation occurs
+
+Ice cream cone problem:: Anti-pattern where most testing rigor is in slow, brittle E2E tests instead of fast unit tests
+
+Inverted pyramid consequences:: When testing rigor is concentrated at the top (UI/E2E layer), feedback is slow and maintenance is expensive
+
+Strategic rigor distribution:: Consciously deciding which test layers should carry the bulk of verification responsibility
+
+Cost of rigor misplacement:: High maintenance burden, slow feedback loops, and brittle test suites when rigor is in wrong layer
+
+Rigor vs coverage tradeoff:: Understanding that thoroughness (rigor) should increase at lower test levels, not upper levels
+
+Test confidence engineering:: Deliberately engineering where confidence comes from in the test suite
+
+
+Key Proponent:: Alister Scott and the software testing community, addressing the Ice Cream Cone anti-pattern
+
+*When to Use*:
+
+* Auditing existing test suites to identify where rigor is concentrated
+* Planning test strategy for new projects
+* Debugging why tests are slow or brittle
+* Coaching teams on test pyramid principles
+* Evaluating test suite health and effectiveness
+* Deciding test coverage strategy across layers
+* Addressing maintenance burden in test suites
+
+*Related Anchors*:
+
+* <<testing-pyramid,Testing Pyramid>>
+* <<tdd-london-school,TDD, London School>>
+* <<tdd-chicago-school,TDD, Chicago School>>
+====

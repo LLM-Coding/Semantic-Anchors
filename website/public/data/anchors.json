@@ -866,5 +866,35 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/what-qualifies-as-a-semantic-anchor.adoc"
+  },
+  {
+    "id": "where-does-the-rigor-go",
+    "title": "Where Does the Rigor Go?",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "qa-engineer",
+      "software-developer",
+      "team-lead",
+      "software-architect"
+    ],
+    "related": [
+      "testing-pyramid",
+      "tdd-london-school",
+      "tdd-chicago-school"
+    ],
+    "proponents": [
+      "Alister Scott",
+      "Testing community"
+    ],
+    "tags": [
+      "testing",
+      "test-strategy",
+      "quality",
+      "rigor",
+      "anti-pattern"
+    ],
+    "filePath": "docs/anchors/where-does-the-rigor-go.adoc"
   }
 ]
