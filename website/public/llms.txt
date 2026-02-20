@@ -86,26 +86,13 @@ Not every well-known term qualifies as a semantic anchor. Understanding what **d
 These terms are frequently used but **lack the depth and definition** required for semantic anchors:
 
 | ❌ Not a Semantic Anchor | Why Not? |
-
-| **"TLDR"** |
-| Underspecified instruction with no defined structure or methodology. Just means "be brief" without any framework for how. |
-
-| **"ELI5"** (Explain Like I'm 5) |
-| Vague target level with no pedagogical framework. What does "5-year-old level" mean technically? No consistent interpretation. |
-
-| **"Keep it short"** |
-| Pure directive with no conceptual depth. It's an instruction, not a methodology. |
-
-| **"Best practices"** |
-| Too vague and not attributable. Whose best practices? Based on what research or authority? |
-
-| **"Modern approach"** |
-| Ambiguous and inconsistent. "Modern" means different things to different people and changes over time. |
-
-| **"Make it simple"** |
-| No reference to specific simplification frameworks (unlike KISS principle or Occam's Razor which **are** semantic anchors). |
-
-### Comparison: Good vs. Bad
+| --- | --- |
+| **"TLDR"** | Underspecified instruction with no defined structure or methodology. Just means "be brief" without any framework for how. |
+| **"ELI5"** (Explain Like I'm 5) | Vague target level with no pedagogical framework. What does "5-year-old level" mean technically? No consistent interpretation. |
+| **"Keep it short"** | Pure directive with no conceptual depth. It's an instruction, not a methodology. |
+| **"Best practices"** | Too vague and not attributable. Whose best practices? Based on what research or authority? |
+| **"Modern approach"** | Ambiguous and inconsistent. "Modern" means different things to different people and changes over time. |
+| **"Make it simple"** | No reference to specific simplification frameworks (unlike KISS principle or Occam's Razor which **are** semantic anchors). |### Comparison: Good vs. Bad
 
 **Example 1: Testing Instructions**
 
@@ -275,7 +262,7 @@ If the LLM provides accurate, detailed information, it's safe to use that anchor
 
 ## Contributing
 
-We welcome proposals for new semantic anchors! See our [Contributing Guide](../CONTRIBUTING.adoc) for details on:
+We welcome proposals for new semantic anchors! See our [Contributing Guide](https://github.com/LLM-Coding/Semantic-Anchors/blob/main/CONTRIBUTING.adoc) for details on:
 
 * How to propose a new anchor
 * Quality criteria and testing methodology
@@ -740,7 +727,8 @@ to specific team members.
 * Communicating the nature of changes to teammates, the public, and other stakeholders
 **Schema**: <type>[!][(optional scope)]: <description> + optional body/footer
 
-**Common Types**: * **feat:** - introduce new feature to the codebase (-> Semver Minor)
+**Common Types**
+* **feat:** - introduce new feature to the codebase (-> Semver Minor)
 * **fix:** - patches a bug in your codebase (-> SemVer Patch)
 * **docs:** - documentation improvements to the codebase
 * **chore:** - codebase/repository housekeeping changes
@@ -807,11 +795,12 @@ to specific team members.
 
 **Core Concepts**:
 
-**Version format**: +
-**MAJOR**: : Incompatible API changes (breaking changes)
-**MINOR**: : Backward-compatible functionality additions
-**PATCH**: : Backward-compatible bug fixes
-**Pre-release versions**: : Append hyphen and identifiers (e.g., 1.0.0-alpha.1)
+**Version format**
+
+- **MAJOR**: Incompatible API changes (breaking changes)
+- **MINOR**: Backward-compatible functionality additions
+- **PATCH**: Backward-compatible bug fixes
+- **Pre-release versions**: Append hyphen and identifiers (e.g., 1.0.0-alpha.1)
 
 **Build metadata**: Append plus sign and identifiers (e.g., 1.0.0+20241111)
 
@@ -1047,13 +1036,15 @@ to specific team members.
 
 **Core Concepts**:
 
-**Four documentation types**: +
-**Tutorials**: : Learning-oriented, lessons for beginners
-**How-to guides**: : Task-oriented, directions for specific goals
-**Reference**: : Information-oriented, technical descriptions
-**Explanation**: : Understanding-oriented, conceptual discussions
+**Four documentation types**
 
-**Two dimensions**: * Practical vs. Theoretical
+- **Tutorials**: Learning-oriented, lessons for beginners
+- **How-to guides**: Task-oriented, directions for specific goals
+- **Reference**: Information-oriented, technical descriptions
+- **Explanation**: Understanding-oriented, conceptual discussions
+
+**Two dimensions**
+* Practical vs. Theoretical
 * Acquisition (learning) vs. Application (working)
 
 **Separation of concerns**: Each type serves a distinct purpose
@@ -1621,7 +1612,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 **Lightweight documentation**: Short, focused records
 
-**Standard structure**: * Title
+**Standard structure**
+* Title
 * Status (proposed, accepted, deprecated, superseded)
 * Context (forces at play)
 * Decision (what was chosen)
@@ -1694,11 +1686,12 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 **Core Concepts**:
 
-**Four levels of abstraction**: +
-**Level 1 - Context**: : System in its environment (users, external systems)
-**Level 2 - Container**: : Applications and data stores that make up the system
-**Level 3 - Component**: : Components within containers
-**Level 4 - Code**: : Class diagrams, entity relationships (optional)
+**Four levels of abstraction**
+
+- **Level 1 - Context**: System in its environment (users, external systems)
+- **Level 2 - Container**: Applications and data stores that make up the system
+- **Level 3 - Component**: Components within containers
+- **Level 4 - Code**: Class diagrams, entity relationships (optional)
 
 **Zoom in/out**: Progressive disclosure of detail
 
@@ -1826,7 +1819,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 **Structured template**: Well-defined format with specific sections
 
-**Standard fields**: * Title (short noun phrase)
+**Standard fields**
+* Title (short noun phrase)
 * Status (proposed, accepted, rejected, deprecated, superseded)
 * Context and Problem Statement
 * Decision Drivers (forces influencing the decision)
@@ -1882,7 +1876,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 **Special Cause Variation**: Assignable, correctable deviation
 
-**Chart Types**: * X-bar Chart: Subgroup means
+**Chart Types**
+* X-bar Chart: Subgroup means
 * R-Chart: Subgroup ranges
 * I-MR Chart: Individual values and moving range
 * p-Chart: Defect proportions
@@ -2014,12 +2009,13 @@ SPC:: Nelson Rules are a tool within Statistical Process Control
 
 **Core Concepts**:
 
-**Five domains**: +
-**Clear (formerly "Simple")**: : Best practices apply, sense-categorize-respond
-**Complicated**: : Good practices exist, sense-analyze-respond
-**Complex**: : Emergent practices, probe-sense-respond
-**Chaotic**: : Novel practices needed, act-sense-respond
-**Confused (center)**: : Don't know which domain you're in
+**Five domains**
+
+- **Clear (formerly "Simple")**: Best practices apply, sense-categorize-respond
+- **Complicated**: Good practices exist, sense-analyze-respond
+- **Complex**: Emergent practices, probe-sense-respond
+- **Chaotic**: Novel practices needed, act-sense-respond
+- **Confused (center)**: Don't know which domain you're in
 
 **Domain transitions**: How situations move between domains
 
@@ -2182,11 +2178,12 @@ SPC:: Nelson Rules are a tool within Statistical Process Control
 
 **Core Concepts**:
 
-**Four Safety Integrity Levels**: +
-**SIL 1 (lowest)**: : 10^-2^ ≤ PFD < 10^-1^ (tolerable risk reduction)
-**SIL 2**: : 10^-3^ ≤ PFD < 10^-2^ (moderate risk reduction)
-**SIL 3**: : 10^-4^ ≤ PFD < 10^-3^ (substantial risk reduction)
-**SIL 4 (highest)**: : 10^-5^ ≤ PFD < 10^-4^ (maximum risk reduction)
+**Four Safety Integrity Levels**
+
+- **SIL 1 (lowest)**: 10^-2^ ≤ PFD < 10^-1^ (tolerable risk reduction)
+- **SIL 2**: 10^-3^ ≤ PFD < 10^-2^ (moderate risk reduction)
+- **SIL 3**: 10^-4^ ≤ PFD < 10^-3^ (substantial risk reduction)
+- **SIL 4 (highest)**: 10^-5^ ≤ PFD < 10^-4^ (maximum risk reduction)
 
 **Risk-based classification**: SIL level determined by hazard analysis and risk assessment
 
@@ -2387,7 +2384,8 @@ SPC:: Nelson Rules are a tool within Statistical Process Control
 
 **Core Concepts**:
 
-**Three layers**: * **Unit tests** (base): Many fast, isolated tests
+**Three layers**
+* **Unit tests** (base): Many fast, isolated tests
 * **Integration tests** (middle): Moderate number, test component interaction
 * **End-to-end tests** (top): Few, test complete user journeys
 

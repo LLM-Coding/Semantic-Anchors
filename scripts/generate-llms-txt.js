@@ -17,6 +17,51 @@ const categories = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'website/public/data/categories.json'), 'utf-8')
 )
 
+// ─── AsciiDoc table converter ────────────────────────────────────────────────
+
+function convertAdocTable(body) {
+  const lines = body.split('\n')
+  const allCells = []
+
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed || !trimmed.startsWith('|')) continue
+    // Split line into cells: |cell1 |cell2 → ['cell1', 'cell2']
+    const parts = trimmed.split(/(?=\|)/).filter(Boolean)
+    for (const part of parts) {
+      if (part.startsWith('|')) allCells.push(part.slice(1).trim())
+    }
+  }
+
+  if (allCells.length === 0) return ''
+
+  // Determine column count from the first line that has cells
+  let colCount = 0
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed || !trimmed.startsWith('|')) continue
+    colCount = trimmed.split(/(?=\|)/).filter(Boolean).length
+    if (colCount > 0) break
+  }
+  if (colCount <= 0) colCount = 2
+
+  // Group cells into rows
+  const rows = []
+  for (let i = 0; i < allCells.length; i += colCount) {
+    rows.push(allCells.slice(i, i + colCount))
+  }
+
+  if (rows.length === 0) return ''
+
+  const out = []
+  out.push('| ' + rows[0].join(' | ') + ' |')
+  out.push('| ' + rows[0].map(() => '---').join(' | ') + ' |')
+  for (const row of rows.slice(1)) {
+    if (row.length > 0) out.push('| ' + row.join(' | ') + ' |')
+  }
+  return out.join('\n')
+}
+
 // ─── AsciiDoc → Markdown converter ──────────────────────────────────────────
 
 function adocToMarkdown(adoc) {
@@ -44,25 +89,35 @@ function adocToMarkdown(adoc) {
   md = md.replace(/^\[%collapsible\]\s*$/gm, '')
   md = md.replace(/^====\s*$/gm, '')
 
-  // Tables |=== → remove delimiters
-  md = md.replace(/^\|===\s*$/gm, '')
+  // Tables: convert full blocks including optional attribute line (handles multi-line cells)
+  md = md.replace(/(?:\[[^\]]*\]\s*\n)?\|===\s*\n([\s\S]*?)\|===\s*/g, (_, body) =>
+    convertAdocTable(body)
+  )
 
-  // Table rows: |cell content → keep, clean up leading pipe
-  md = md.replace(/^\|(.+)$/gm, (_, row) => {
-    const cells = row.split('|').map((c) => c.trim()).filter(Boolean)
-    return '| ' + cells.join(' | ') + ' |'
-  })
-
-  // Remove block attribute lines
+  // Remove remaining block attribute lines
   md = md.replace(/^\[(?:horizontal|sidebar|cols[^\]]*|options[^\]]*|%\w+[^\]]*)\]\s*$/gm, '')
 
+  // AsciiDoc line continuation (+) → remove
+  md = md.replace(/^\+\s*$/gm, '')
+
+  // Nested definition lists: term::: description → - **term**: description
+  md = md.replace(/^([^:\n|#`>]+):::[^\S\n]*(.*)$/gm, (_, term, desc) =>
+    desc.trim() ? `- **${term.trim()}**: ${desc.trim()}` : `- **${term.trim()}**`
+  )
+
   // Definition lists: term:: description → **term**: description
-  md = md.replace(/^([^:\n|#`>]+)::\s*(.*)$/gm, (_, term, desc) =>
+  // Use [^\S\n]* (horizontal whitespace only) to avoid matching across newlines
+  md = md.replace(/^([^:\n|#`>]+)::[^\S\n]*(.*)$/gm, (_, term, desc) =>
     desc.trim() ? `**${term.trim()}**: ${desc.trim()}` : `**${term.trim()}**`
   )
 
-  // Links: link:url[text] → [text](url)
-  md = md.replace(/link:([^\[]+)\[([^\]]*)\]/g, '[$2]($1)')
+  // Links: link:url[text] → [text](url), resolve relative .adoc paths to GitHub URLs
+  md = md.replace(/link:([^\[]+)\[([^\]]*)\]/g, (_, url, text) => {
+    if (/^\.\.\/.*\.adoc$/.test(url)) {
+      url = 'https://github.com/LLM-Coding/Semantic-Anchors/blob/main/' + url.slice(3)
+    }
+    return `[${text}](${url})`
+  })
 
   // Cross-references: <<id,text>> → text, <<id>> → `id`
   md = md.replace(/<<([^,>]+),([^>]+)>>/g, '$2')
