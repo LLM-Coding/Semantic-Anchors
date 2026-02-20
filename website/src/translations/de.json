@@ -18,6 +18,8 @@
   "footer.tagline": "Semantic Anchors - Gemeinsames Vokabular für LLM-Kommunikation",
   "footer.github": "GitHub",
   "footer.leaveStar": "Dir gefallen die semantischen Anker? Hinterlasse einen Stern!",
+  "footer.llmsTxt": "llms.txt",
+  "footer.allAnchors": "Vollständige Referenz",
   "categories.communication-presentation": "Kommunikation & Präsentation",
   "categories.design-principles": "Design-Prinzipien & Muster",
   "categories.development-workflow": "Entwicklungs-Workflow",

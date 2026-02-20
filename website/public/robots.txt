@@ -6,5 +6,8 @@ Allow: /
 # Sitemaps
 Sitemap: https://llm-coding.github.io/Semantic-Anchors/sitemap.xml
 
+# LLM-readable full reference
+llms.txt: https://llm-coding.github.io/Semantic-Anchors/llms.txt
+
 # Disallow search bot indexing of specific paths if needed
 # (currently allowing all)
