@@ -225,6 +225,50 @@ Anchors are tagged with professional roles to help filter relevant content:
 . Team Lead / Engineering Manager
 . Educator / Trainer
 
+== PR Review Policy
+
+=== Review Requirements
+
+All pull requests to `main` require at least one approving review before merging.
+
+=== Sampling Review (~20%)
+
+For active periods with many contributions, maintainers apply a *20% sampling review*:
+
+* At least 1 in 5 PRs receives a thorough, line-by-line review
+* All other PRs receive a high-level review (structure, quality criteria, CI status)
+* AI-generated PRs (GitHub Copilot) always receive human review
+
+=== Automated Checks (Required to Pass)
+
+Every PR must pass all of the following before merge:
+
+* *E2E Tests* — all 28+ Playwright tests green
+* *Lint & Format Check* — ESLint + Prettier (no errors)
+* *Dependency Audit* — `npm audit --audit-level=high` clean
+* *CodeQL* — no high/critical security findings
+* *AsciiDoc Linter* — anchor files conform to format (pre-commit hook)
+
+=== What Reviewers Check
+
+For *new semantic anchors*:
+
+. Quality criteria met (Precise, Rich, Consistent, Attributable)
+. All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`)
+. AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
+. Anchor tested with LLM prompt (see <<testing-anchor,Testing Your Semantic Anchor>>)
+
+For *code changes*:
+
+. No regressions in existing tests
+. No new high/critical security vulnerabilities
+. Follows ESLint/Prettier code style
+
+=== AI-Assisted Reviews
+
+This project uses *CodeRabbit* for automated AI code review on all PRs.
+CodeRabbit reviews are advisory — human maintainer approval is still required.
+
 == Code of Conduct
 
 * Be respectful and constructive in discussions
