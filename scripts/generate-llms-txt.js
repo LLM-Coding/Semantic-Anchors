@@ -13,9 +13,15 @@ const path = require('path')
 
 const ROOT = path.join(__dirname, '..')
 
-const categories = JSON.parse(
-  fs.readFileSync(path.join(ROOT, 'website/public/data/categories.json'), 'utf-8')
-)
+const categoriesPath = path.join(ROOT, 'website/public/data/categories.json')
+let categories
+try {
+  categories = JSON.parse(fs.readFileSync(categoriesPath, 'utf-8'))
+} catch (err) {
+  console.error('❌ Fehler beim Laden von categories.json:', err.message)
+  console.error('   Bitte zuerst `node scripts/extract-metadata.js` ausführen.')
+  process.exit(1)
+}
 
 // ─── AsciiDoc table converter ────────────────────────────────────────────────
 
@@ -199,11 +205,13 @@ function generateLlmsTxt() {
   ]
 
   // Introductory content from about.adoc
-  const aboutAdoc = fs.readFileSync(path.join(ROOT, 'docs/about.adoc'), 'utf-8')
-  lines.push(adocToMarkdown(aboutAdoc))
-  lines.push('')
-  lines.push('---')
-  lines.push('')
+  const aboutPath = path.join(ROOT, 'docs/about.adoc')
+  if (fs.existsSync(aboutPath)) {
+    lines.push(adocToMarkdown(fs.readFileSync(aboutPath, 'utf-8')))
+    lines.push('')
+    lines.push('---')
+    lines.push('')
+  }
 
   // Anchors by category
   for (const category of categories) {

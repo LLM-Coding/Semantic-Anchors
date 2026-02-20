@@ -26,7 +26,21 @@ if (!fs.existsSync(OUTPUT_DIR)) {
  */
 function decodeHtmlEntities(str) {
   if (!str) return str
-  const named = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" }
+  const named = {
+    amp: '&',
+    lt: '<',
+    gt: '>',
+    quot: '"',
+    apos: "'",
+    rsquo: '\u2019',
+    lsquo: '\u2018',
+    rdquo: '\u201d',
+    ldquo: '\u201c',
+    mdash: '\u2014',
+    ndash: '\u2013',
+    nbsp: '\u00a0',
+    hellip: '\u2026',
+  }
   return str.replace(/&#(\d+);|&([a-z]+);/gi, (match, num, name) => {
     if (num) return String.fromCharCode(parseInt(num, 10))
     return named[name] || match
