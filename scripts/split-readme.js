@@ -29,11 +29,11 @@ if (!fs.existsSync(ANCHORS_DIR)) {
 function toKebabCase(title) {
   return title
     .toLowerCase()
-    .replace(/[,\(\)]/g, '') // Remove commas and parentheses
+    .replace(/[,()]/g, '') // Remove commas and parentheses
     .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/[^a-z0-9\-]/g, '') // Remove non-alphanumeric except hyphens
-    .replace(/\-+/g, '-') // Collapse multiple hyphens
-    .replace(/^\-|\-$/g, ''); // Trim leading/trailing hyphens
+    .replace(/[^a-z0-9-]/g, '') // Remove non-alphanumeric except hyphens
+    .replace(/-+/g, '-') // Collapse multiple hyphens
+    .replace(/^-|-$/g, ''); // Trim leading/trailing hyphens
 }
 
 /**
@@ -194,7 +194,7 @@ function loadRoleMappings() {
   try {
     const yamlContent = fs.readFileSync(ROLES_YAML_PATH, 'utf-8');
     return yaml.load(yamlContent);
-  } catch (error) {
+  } catch (_error) {
     console.error('Warning: Could not load roles.yml, proceeding without role mapping');
     return {};
   }

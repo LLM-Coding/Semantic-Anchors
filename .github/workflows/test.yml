@@ -26,13 +26,21 @@ jobs:
         working-directory: ./website
         run: npm ci
 
-      - name: Run ESLint
+      - name: Run ESLint (website)
         working-directory: ./website
         run: npm run lint
 
       - name: Check Prettier formatting
         working-directory: ./website
         run: npm run format:check
+
+      - name: Install scripts dependencies
+        working-directory: ./scripts
+        run: npm ci
+
+      - name: Run ESLint (scripts)
+        working-directory: ./scripts
+        run: npm run lint
 
   e2e-tests:
     name: E2E Tests

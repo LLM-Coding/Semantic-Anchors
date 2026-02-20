@@ -101,7 +101,7 @@ function adocToMarkdown(adoc) {
   md = md.replace(/^\+\s*$/gm, '')
 
   // Links: link:url[text] → [text](url), resolve relative .adoc paths to GitHub URLs
-  md = md.replace(/link:([^\[]+)\[([^\]]*)\]/g, (_, url, text) => {
+  md = md.replace(/link:([^[]+)\[([^\]]*)\]/g, (_, url, text) => {
     if (/^\.\.\/.*\.adoc$/.test(url)) {
       url = 'https://github.com/LLM-Coding/Semantic-Anchors/blob/main/' + url.slice(3)
     }
