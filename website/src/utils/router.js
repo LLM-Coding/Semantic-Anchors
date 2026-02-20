@@ -56,7 +56,7 @@ function handleRoute() {
 
     // Navigate to home first
     const homeHandler = routes.get('/')
-    if (homeHandler) {
+    if (typeof homeHandler === 'function') {
       currentRoute = '/'
       homeHandler()
     }
@@ -70,13 +70,13 @@ function handleRoute() {
 
   const handler = routes.get(path)
 
-  if (handler) {
+  if (typeof handler === 'function') {
     currentRoute = path
     handler()
   } else {
     // Default to home if route not found
     const homeHandler = routes.get('/')
-    if (homeHandler) {
+    if (typeof homeHandler === 'function') {
       currentRoute = '/'
       homeHandler()
     }
