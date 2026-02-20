@@ -92,7 +92,9 @@ These terms are frequently used but **lack the depth and definition** required f
 | **"Keep it short"** | Pure directive with no conceptual depth. It's an instruction, not a methodology. |
 | **"Best practices"** | Too vague and not attributable. Whose best practices? Based on what research or authority? |
 | **"Modern approach"** | Ambiguous and inconsistent. "Modern" means different things to different people and changes over time. |
-| **"Make it simple"** | No reference to specific simplification frameworks (unlike KISS principle or Occam's Razor which **are** semantic anchors). |### Comparison: Good vs. Bad
+| **"Make it simple"** | No reference to specific simplification frameworks (unlike KISS principle or Occam's Razor which **are** semantic anchors). |
+
+### Comparison: Good vs. Bad
 
 **Example 1: Testing Instructions**
 
@@ -1895,7 +1897,7 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 **Nelson Rules**: 8 rules for pattern recognition on Control Charts
 
-SPC:: Control Charts are the central tool of Statistical Process Control
+**SPC**: Control Charts are the central tool of Statistical Process Control
 
 **Six Sigma**: Control Charts are used in the Control phase of DMAIC
 
@@ -1942,7 +1944,7 @@ SPC:: Control Charts are the central tool of Statistical Process Control
 
 **Control Chart (Shewhart)**: Nelson Rules are applied to Control Charts
 
-SPC:: Nelson Rules are a tool within Statistical Process Control
+**SPC**: Nelson Rules are a tool within Statistical Process Control
 
 **Western Electric Rules**: Predecessor; Nelson Rules extend these with Rules 5-8
 
@@ -2395,7 +2397,7 @@ SPC:: Nelson Rules are a tool within Statistical Process Control
 
 **Feedback loops**: Faster feedback from lower levels
 
-Anti-pattern: Ice cream cone:: Too many E2E tests, too few unit tests
+**Anti-pattern: Ice cream cone**: Too many E2E tests, too few unit tests
 
 **Test at the right level**: Don't test through UI what can be tested in isolation
 

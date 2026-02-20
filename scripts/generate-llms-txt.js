@@ -59,7 +59,7 @@ function convertAdocTable(body) {
   for (const row of rows.slice(1)) {
     if (row.length > 0) out.push('| ' + row.join(' | ') + ' |')
   }
-  return out.join('\n')
+  return out.join('\n') + '\n\n'
 }
 
 // ─── AsciiDoc → Markdown converter ──────────────────────────────────────────
@@ -100,17 +100,6 @@ function adocToMarkdown(adoc) {
   // AsciiDoc line continuation (+) → remove
   md = md.replace(/^\+\s*$/gm, '')
 
-  // Nested definition lists: term::: description → - **term**: description
-  md = md.replace(/^([^:\n|#`>]+):::[^\S\n]*(.*)$/gm, (_, term, desc) =>
-    desc.trim() ? `- **${term.trim()}**: ${desc.trim()}` : `- **${term.trim()}**`
-  )
-
-  // Definition lists: term:: description → **term**: description
-  // Use [^\S\n]* (horizontal whitespace only) to avoid matching across newlines
-  md = md.replace(/^([^:\n|#`>]+)::[^\S\n]*(.*)$/gm, (_, term, desc) =>
-    desc.trim() ? `**${term.trim()}**: ${desc.trim()}` : `**${term.trim()}**`
-  )
-
   // Links: link:url[text] → [text](url), resolve relative .adoc paths to GitHub URLs
   md = md.replace(/link:([^\[]+)\[([^\]]*)\]/g, (_, url, text) => {
     if (/^\.\.\/.*\.adoc$/.test(url)) {
@@ -120,8 +109,21 @@ function adocToMarkdown(adoc) {
   })
 
   // Cross-references: <<id,text>> → text, <<id>> → `id`
+  // Must run before def-list conversion so terms like <<spc,SPC>>:: are resolved first
   md = md.replace(/<<([^,>]+),([^>]+)>>/g, '$2')
   md = md.replace(/<<([^>]+)>>/g, '`$1`')
+
+  // Nested definition lists: term::: description → - **term**: description
+  // Non-greedy term match allows colons in term (e.g. "Anti-pattern: X:::")
+  md = md.replace(/^([^\n|#`>]+?):::(?!:)[^\S\n]*(.*)$/gm, (_, term, desc) =>
+    desc.trim() ? `- **${term.trim()}**: ${desc.trim()}` : `- **${term.trim()}**`
+  )
+
+  // Definition lists: term:: description → **term**: description
+  // Non-greedy term match allows colons in term (e.g. "Anti-pattern: Ice cream cone::")
+  md = md.replace(/^([^\n|#`>]+?)::[^\S\n]*(.*)$/gm, (_, term, desc) =>
+    desc.trim() ? `**${term.trim()}**: ${desc.trim()}` : `**${term.trim()}**`
+  )
 
   // Bold: **text** stays, *text* → **text**
   md = md.replace(/(?<![*\w])\*([^*\n]+)\*(?![*\w])/g, '**$1**')
