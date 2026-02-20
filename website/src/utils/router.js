@@ -51,6 +51,9 @@ function handleRoute() {
   // Check for anchor route (#/anchor/:id)
   if (path.startsWith('/anchor/')) {
     const anchorId = path.replace('/anchor/', '')
+    const safeAnchorId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(anchorId) ? anchorId : null
+    if (!safeAnchorId) return
+
     // Navigate to home first
     const homeHandler = routes.get('/')
     if (homeHandler) {
@@ -60,7 +63,7 @@ function handleRoute() {
     // Then open the anchor modal
     // Import dynamically to avoid circular dependency
     import('../components/anchor-modal.js').then(({ showAnchorDetails }) => {
-      showAnchorDetails(anchorId)
+      showAnchorDetails(safeAnchorId)
     })
     return
   }

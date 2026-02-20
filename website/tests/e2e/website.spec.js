@@ -142,7 +142,7 @@ test.describe('Homepage - Card Grid', () => {
     const editBtn = firstCard.locator('.anchor-edit-btn')
 
     await expect(editBtn).toBeVisible()
-    await expect(editBtn).toHaveAttribute('href', /github\.com.*edit/)
+    await expect(editBtn).toHaveAttribute('href', /^https:\/\/github\.com\/.+\/edit\/.+/)
   })
 
   test('should display action links', async ({ page }) => {

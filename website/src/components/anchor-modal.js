@@ -106,21 +106,29 @@ export function closeModal() {
   }
 }
 
+const SAFE_ANCHOR_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+const SAFE_LANG = /^[a-z]{2}$/
+
 export async function loadAnchorContent(anchorId) {
   const modal = document.getElementById('anchor-modal')
   const titleEl = modal.querySelector('#modal-title')
   const contentEl = modal.querySelector('#modal-content')
+
+  if (!SAFE_ANCHOR_ID.test(anchorId)) {
+    contentEl.innerHTML = '<div class="text-red-500">Invalid anchor ID.</div>'
+    return
+  }
 
   try {
     // Try language-specific file first (e.g., tdd-london-school.de.adoc for German)
     const currentLang = i18n.currentLang()
     let response
 
-    if (currentLang !== 'en') {
+    const safeLang = SAFE_LANG.test(currentLang) ? currentLang : 'en'
+
+    if (safeLang !== 'en') {
       // Try fetching language-specific anchor file
-      response = await fetch(
-        `${import.meta.env.BASE_URL}docs/anchors/${anchorId}.${currentLang}.adoc`
-      )
+      response = await fetch(`${import.meta.env.BASE_URL}docs/anchors/${anchorId}.${safeLang}.adoc`)
 
       // If language-specific file not found, fallback to English
       if (!response.ok) {
