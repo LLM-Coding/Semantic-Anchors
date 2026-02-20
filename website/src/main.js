@@ -4,7 +4,12 @@ import { initTheme, toggleTheme, currentTheme } from './theme.js'
 import { renderHeader } from './components/header.js'
 import { renderMain } from './components/main-content.js'
 import { renderFooter } from './components/footer.js'
-import { renderCardGrid, initCardGrid, applyCardFilters, updateAnchorCount } from './components/card-grid.js'
+import {
+  renderCardGrid,
+  initCardGrid,
+  applyCardFilters,
+  updateAnchorCount,
+} from './components/card-grid.js'
 import { fetchData } from './utils/data-loader.js'
 import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
 import { initRouter, addRoute } from './utils/router.js'
@@ -25,7 +30,8 @@ window.copyAnchorLink = async function copyAnchorLink(anchorId) {
 
 window.showToast = function showToast(message) {
   const toast = document.createElement('div')
-  toast.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-fade-in'
+  toast.className =
+    'fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-fade-in'
   toast.textContent = message
 
   document.body.appendChild(toast)
@@ -131,7 +137,8 @@ function renderHomePage() {
       console.error('Failed to initialize home page:', err)
       const container = document.getElementById('main-content')
       if (container) {
-        container.innerHTML = '<div class="text-red-500 p-8">Failed to load anchors. Please try again later.</div>'
+        container.innerHTML =
+          '<div class="text-red-500 p-8">Failed to load anchors. Please try again later.</div>'
       }
     })
 }

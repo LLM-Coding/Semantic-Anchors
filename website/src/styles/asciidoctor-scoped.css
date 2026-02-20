@@ -10,7 +10,7 @@
   /* Base typography */
   background: #fff;
   color: rgba(0, 0, 0, 0.8);
-  font-family: "Noto Serif", "DejaVu Serif", serif;
+  font-family: 'Noto Serif', 'DejaVu Serif', serif;
   line-height: 1.6;
 
   & * {
@@ -35,7 +35,7 @@
   & h4,
   & h5,
   & h6 {
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-family: 'Open Sans', 'DejaVu Sans', sans-serif;
     font-weight: 300;
     color: #ba3925;
     text-rendering: optimizeLegibility;
@@ -44,12 +44,24 @@
     line-height: 1.2;
   }
 
-  & h1 { font-size: 2.125em; }
-  & h2 { font-size: 1.6875em; }
-  & h3 { font-size: 1.375em; }
-  & h4 { font-size: 1.125em; }
-  & h5 { font-size: 1.0625em; }
-  & h6 { font-size: 1em; }
+  & h1 {
+    font-size: 2.125em;
+  }
+  & h2 {
+    font-size: 1.6875em;
+  }
+  & h3 {
+    font-size: 1.375em;
+  }
+  & h4 {
+    font-size: 1.125em;
+  }
+  & h5 {
+    font-size: 1.0625em;
+  }
+  & h6 {
+    font-size: 1em;
+  }
 
   & p {
     line-height: 1.6;
@@ -60,7 +72,7 @@
   & code,
   & kbd,
   & pre {
-    font-family: "Noto Sans Mono", "Droid Sans Mono", monospace;
+    font-family: 'Noto Sans Mono', 'Droid Sans Mono', monospace;
     font-size: 1em;
   }
 

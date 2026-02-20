@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "./asciidoctor-scoped.css";
+@import 'tailwindcss';
+@import './asciidoctor-scoped.css';
 
 /* Configure Tailwind v4 dark mode to use class strategy */
 @variant dark (.dark &);
@@ -26,16 +26,21 @@
 
 body {
   margin: 0;
-  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 *,
 *::before,
 *::after {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 #app {
@@ -47,7 +52,7 @@ body {
 /* Card Grid Styles */
 .card-grid-container {
   @apply max-w-7xl mx-auto px-4 py-8;
-  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 #page-content,
@@ -57,7 +62,7 @@ body {
 .anchor-card-meta,
 .anchor-card-proponents,
 .category-heading {
-  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Force sans-serif on all card descendants to override AsciiDoc serif fonts */
@@ -67,14 +72,14 @@ body {
 .card-grid-container *,
 .anchor-cards-grid,
 .anchor-cards-grid * {
-  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 .category-section {
   @apply mb-12;
 }
 
-.category-section[style*="display: none"] {
+.category-section[style*='display: none'] {
   @apply hidden;
 }
 
@@ -84,7 +89,7 @@ body {
 }
 
 /* Ensure category name is visible in dark mode */
-.category-heading span[data-i18n^="categories."] {
+.category-heading span[data-i18n^='categories.'] {
   @apply text-gray-900 dark:text-gray-100;
 }
 

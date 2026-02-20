@@ -8,6 +8,32 @@ on:
   workflow_dispatch:
 
 jobs:
+  lint:
+    name: Lint & Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./website
+        run: npm ci
+
+      - name: Run ESLint
+        working-directory: ./website
+        run: npm run lint
+
+      - name: Check Prettier formatting
+        working-directory: ./website
+        run: npm run format:check
+
   e2e-tests:
     name: E2E Tests
     runs-on: ubuntu-latest

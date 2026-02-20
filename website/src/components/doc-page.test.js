@@ -17,9 +17,10 @@ describe('doc-page', () => {
   it('falls back to English when localized document is missing', async () => {
     i18n.setLang('de')
 
-    global.fetch
-      .mockResolvedValueOnce({ ok: false, status: 404 })
-      .mockResolvedValueOnce({ ok: true, text: async () => '= About\n\nlink:https://example.com[Example]' })
+    global.fetch.mockResolvedValueOnce({ ok: false, status: 404 }).mockResolvedValueOnce({
+      ok: true,
+      text: async () => '= About\n\nlink:https://example.com[Example]',
+    })
 
     await loadDocContent('docs/about.adoc')
 
@@ -37,6 +38,8 @@ describe('doc-page', () => {
 
     await loadDocContent('docs/about.adoc')
 
-    expect(document.getElementById('doc-content').textContent).toContain('Failed to Load Documentation')
+    expect(document.getElementById('doc-content').textContent).toContain(
+      'Failed to Load Documentation'
+    )
   })
 })

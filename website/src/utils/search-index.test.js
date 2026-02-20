@@ -4,7 +4,7 @@ import {
   search,
   isIndexReady,
   isIndexBuilding,
-  __resetSearchIndexForTests
+  __resetSearchIndexForTests,
 } from './search-index.js'
 
 describe('search-index', () => {
@@ -12,7 +12,7 @@ describe('search-index', () => {
     __resetSearchIndexForTests()
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
-      text: async () => '= Test Anchor\n\nA practical testing method for teams.'
+      text: async () => '= Test Anchor\n\nA practical testing method for teams.',
     })
   })
 
@@ -22,8 +22,18 @@ describe('search-index', () => {
 
   it('builds index and enables full-text search', async () => {
     const anchors = [
-      { id: 'tdd-london-school', title: 'TDD London', tags: ['testing'], proponents: ['Steve Freeman'] },
-      { id: 'clean-architecture', title: 'Clean Architecture', tags: ['architecture'], proponents: ['Robert Martin'] }
+      {
+        id: 'tdd-london-school',
+        title: 'TDD London',
+        tags: ['testing'],
+        proponents: ['Steve Freeman'],
+      },
+      {
+        id: 'clean-architecture',
+        title: 'Clean Architecture',
+        tags: ['architecture'],
+        proponents: ['Robert Martin'],
+      },
     ]
 
     await buildSearchIndex(anchors)

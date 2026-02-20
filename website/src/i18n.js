@@ -8,16 +8,16 @@ const DEFAULT_LANG = 'en'
 let currentLang = DEFAULT_LANG
 
 export function applyTranslations() {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
     el.textContent = i18n.t(el.dataset.i18n)
   })
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
     el.placeholder = i18n.t(el.dataset.i18nPlaceholder)
   })
-  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
     el.setAttribute('aria-label', i18n.t(el.dataset.i18nAria))
   })
-  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+  document.querySelectorAll('[data-i18n-title]').forEach((el) => {
     el.setAttribute('title', i18n.t(el.dataset.i18nTitle))
   })
 }

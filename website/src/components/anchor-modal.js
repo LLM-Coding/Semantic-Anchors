@@ -26,7 +26,8 @@ export function createModal() {
 
   const modal = document.createElement('div')
   modal.id = 'anchor-modal'
-  modal.className = 'fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4'
+  modal.className =
+    'fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4'
   modal.innerHTML = `
     <div class="bg-[var(--color-bg)] rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-[var(--color-border)]">
       <div class="flex items-center justify-between p-6 border-b border-[var(--color-border)]">
@@ -117,7 +118,9 @@ export async function loadAnchorContent(anchorId) {
 
     if (currentLang !== 'en') {
       // Try fetching language-specific anchor file
-      response = await fetch(`${import.meta.env.BASE_URL}docs/anchors/${anchorId}.${currentLang}.adoc`)
+      response = await fetch(
+        `${import.meta.env.BASE_URL}docs/anchors/${anchorId}.${currentLang}.adoc`
+      )
 
       // If language-specific file not found, fallback to English
       if (!response.ok) {
@@ -139,8 +142,8 @@ export async function loadAnchorContent(anchorId) {
       safe: 'secure',
       attributes: {
         showtitle: true,
-        sectanchors: true
-      }
+        sectanchors: true,
+      },
     })
 
     // Extract title from HTML or use anchor ID
@@ -151,12 +154,12 @@ export async function loadAnchorContent(anchorId) {
     contentEl.innerHTML = String(htmlContent)
 
     // Auto-expand all collapsible sections
-    contentEl.querySelectorAll('details').forEach(details => {
+    contentEl.querySelectorAll('details').forEach((details) => {
       details.setAttribute('open', '')
     })
 
     // Convert internal AsciiDoc cross-reference links to router navigation
-    contentEl.querySelectorAll('a[href^="#"]').forEach(link => {
+    contentEl.querySelectorAll('a[href^="#"]').forEach((link) => {
       const href = link.getAttribute('href')
       // Only process simple hash links (cross-references), not hash routes
       if (href && href.startsWith('#') && !href.startsWith('#/')) {
@@ -168,7 +171,6 @@ export async function loadAnchorContent(anchorId) {
         })
       }
     })
-
   } catch (error) {
     console.error('Error loading anchor content:', error)
     titleEl.textContent = 'Error'
@@ -203,7 +205,7 @@ async function shareAnchor(anchorId, title) {
     try {
       await navigator.share({
         title: text,
-        url: url
+        url: url,
       })
       return
     } catch (err) {

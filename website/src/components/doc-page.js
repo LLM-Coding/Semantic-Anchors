@@ -15,7 +15,7 @@ async function getAsciidoctor() {
  * @param {string} title - Page title for header
  * @returns {string} HTML string
  */
-export function renderDocPage(title) {
+export function renderDocPage(_title) {
   return `
     <main class="flex-1">
       <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
@@ -64,24 +64,24 @@ export async function loadDocContent(docPath) {
     const htmlContent = asciidocEngine.convert(adocContent, {
       safe: 'secure',
       attributes: {
-        'showtitle': true,
+        showtitle: true,
         'source-highlighter': 'highlight.js',
-        'icons': 'font',
-        'sectanchors': true,
-        'idprefix': '',
-        'idseparator': '-'
-      }
+        icons: 'font',
+        sectanchors: true,
+        idprefix: '',
+        idseparator: '-',
+      },
     })
 
     contentEl.innerHTML = String(htmlContent)
 
     // Auto-expand collapsible sections
-    contentEl.querySelectorAll('details').forEach(details => {
+    contentEl.querySelectorAll('details').forEach((details) => {
       details.setAttribute('open', '')
     })
 
     // Make external links open in new tab
-    contentEl.querySelectorAll('a[href^="http"]').forEach(link => {
+    contentEl.querySelectorAll('a[href^="http"]').forEach((link) => {
       link.setAttribute('target', '_blank')
       link.setAttribute('rel', 'noopener noreferrer')
     })

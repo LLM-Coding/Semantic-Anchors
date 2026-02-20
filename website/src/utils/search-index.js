@@ -16,7 +16,7 @@ export async function buildSearchIndex(anchors) {
   if (indexReady) return
   if (buildingPromise) return buildingPromise
 
-  console.log('Building search index for', anchors.length, 'anchors...')
+  console.warn('Building search index for', anchors.length, 'anchors...')
 
   buildingPromise = (async () => {
     for (let i = 0; i < anchors.length; i += BATCH_SIZE) {
@@ -38,7 +38,7 @@ export async function buildSearchIndex(anchors) {
             tags: anchor.tags || [],
             proponents: anchor.proponents || [],
             roles: anchor.roles || [],
-            categories: anchor.categories || []
+            categories: anchor.categories || [],
           })
         } catch (error) {
           console.warn(`Error indexing ${anchor.id}:`, error)
@@ -49,7 +49,7 @@ export async function buildSearchIndex(anchors) {
     }
 
     indexReady = true
-    console.log('Search index built:', searchIndex.size, 'anchors indexed')
+    console.warn('Search index built:', searchIndex.size, 'anchors indexed')
   })()
 
   try {
@@ -73,10 +73,10 @@ function extractSearchableText(adocContent) {
   text = text.replace(/^=+\s+/gm, '')
 
   // Remove block delimiters
-  text = text.replace(/^[*_\-=]{4,}$/gm, '')
+  text = text.replace(/^[*_=-]{4,}$/gm, '')
 
   // Remove link syntax but keep text
-  text = text.replace(/link:([^\[]+)\[([^\]]+)\]/g, '$2')
+  text = text.replace(/link:([^[]+)\[([^\]]+)\]/g, '$2')
   text = text.replace(/<<([^,]+),([^>]+)>>/g, '$2')
   text = text.replace(/<<([^>]+)>>/g, '$1')
 
@@ -87,7 +87,7 @@ function extractSearchableText(adocContent) {
   text = text.replace(/`([^`]+)`/g, '$1') // code
 
   // Remove list markers
-  text = text.replace(/^[\*\-]\s+/gm, '')
+  text = text.replace(/^[*-]\s+/gm, '')
   text = text.replace(/^\d+\.\s+/gm, '')
 
   // Remove source blocks
@@ -122,19 +122,19 @@ export function search(query) {
     let score = 0
 
     // Check each search word
-    words.forEach(word => {
+    words.forEach((word) => {
       // Title match (highest weight)
       if (data.title.toLowerCase().includes(word)) {
         score += 10
       }
 
       // Proponents match (high weight)
-      if (data.proponents.some(p => p.toLowerCase().includes(word))) {
+      if (data.proponents.some((p) => p.toLowerCase().includes(word))) {
         score += 5
       }
 
       // Tags match (medium weight)
-      if (data.tags.some(t => t.toLowerCase().includes(word))) {
+      if (data.tags.some((t) => t.toLowerCase().includes(word))) {
         score += 3
       }
 
@@ -145,12 +145,16 @@ export function search(query) {
     })
 
     // Only include if all words matched
-    if (score > 0 && words.every(word =>
-      data.title.toLowerCase().includes(word) ||
-      data.proponents.some(p => p.toLowerCase().includes(word)) ||
-      data.tags.some(t => t.toLowerCase().includes(word)) ||
-      data.content.includes(word)
-    )) {
+    if (
+      score > 0 &&
+      words.every(
+        (word) =>
+          data.title.toLowerCase().includes(word) ||
+          data.proponents.some((p) => p.toLowerCase().includes(word)) ||
+          data.tags.some((t) => t.toLowerCase().includes(word)) ||
+          data.content.includes(word)
+      )
+    ) {
       matches.push({ anchorId, score })
     }
   })
@@ -158,7 +162,7 @@ export function search(query) {
   // Sort by score (highest first)
   matches.sort((a, b) => b.score - a.score)
 
-  return matches.map(m => m.anchorId)
+  return matches.map((m) => m.anchorId)
 }
 
 /**

@@ -9,7 +9,7 @@ describe('anchor-modal', () => {
 
   beforeEach(() => {
     dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
-      url: 'http://localhost'
+      url: 'http://localhost',
     })
     document = dom.window.document
     window = dom.window
@@ -103,7 +103,7 @@ describe('anchor-modal', () => {
     it('should open modal when called', async () => {
       global.fetch.mockResolvedValue({
         ok: true,
-        text: async () => '= Test Anchor\n\nTest content'
+        text: async () => '= Test Anchor\n\nTest content',
       })
 
       await showAnchorDetails('test-anchor')
@@ -114,14 +114,12 @@ describe('anchor-modal', () => {
     it('should fetch anchor content', async () => {
       global.fetch.mockResolvedValue({
         ok: true,
-        text: async () => '= Test Anchor\n\nTest content'
+        text: async () => '= Test Anchor\n\nTest content',
       })
 
       showAnchorDetails('test-anchor')
 
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining('test-anchor.adoc')
-      )
+      expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('test-anchor.adoc'))
     })
 
     it('should handle fetch errors gracefully', async () => {
@@ -142,7 +140,7 @@ describe('anchor-modal', () => {
       global.fetch.mockResolvedValue({
         ok: false,
         status: 404,
-        text: async () => 'Not found'
+        text: async () => 'Not found',
       })
 
       await showAnchorDetails('nonexistent-anchor')

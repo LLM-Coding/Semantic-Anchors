@@ -6,34 +6,87 @@ import {
   getFilteredAnchors,
   getCategoryColor,
   fetchData,
-  __resetDataCacheForTests
+  __resetDataCacheForTests,
 } from './data-loader.js'
 
 const mockCategories = [
   {
     id: 'testing-quality',
     name: 'Testing & Quality',
-    anchors: ['tdd-london-school', 'tdd-chicago-school', 'mutation-testing']
+    anchors: ['tdd-london-school', 'tdd-chicago-school', 'mutation-testing'],
   },
   {
     id: 'architecture-design',
     name: 'Architecture & Design',
-    anchors: ['clean-architecture', 'hexagonal-architecture']
-  }
+    anchors: ['clean-architecture', 'hexagonal-architecture'],
+  },
 ]
 
 const mockAnchors = [
-  { id: 'tdd-london-school', title: 'TDD, London School', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'], tags: ['testing', 'tdd', 'mocking'], proponents: ['Steve Freeman', 'Nat Pryce'] },
-  { id: 'tdd-chicago-school', title: 'TDD, Chicago School', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'], tags: ['testing', 'tdd'], proponents: ['Kent Beck'] },
-  { id: 'mutation-testing', title: 'Mutation Testing', categories: ['testing-quality'], roles: ['software-developer', 'qa-engineer'], tags: ['testing', 'quality'], proponents: [] },
-  { id: 'clean-architecture', title: 'Clean Architecture', categories: ['architecture-design'], roles: ['software-architect', 'software-developer'], tags: ['architecture', 'design'], proponents: ['Robert C. Martin'] },
-  { id: 'hexagonal-architecture', title: 'Hexagonal Architecture', categories: ['architecture-design'], roles: ['software-architect', 'software-developer'], tags: ['architecture', 'ports-and-adapters'], proponents: ['Alistair Cockburn'] }
+  {
+    id: 'tdd-london-school',
+    title: 'TDD, London School',
+    categories: ['testing-quality'],
+    roles: ['software-developer', 'qa-engineer'],
+    tags: ['testing', 'tdd', 'mocking'],
+    proponents: ['Steve Freeman', 'Nat Pryce'],
+  },
+  {
+    id: 'tdd-chicago-school',
+    title: 'TDD, Chicago School',
+    categories: ['testing-quality'],
+    roles: ['software-developer', 'qa-engineer'],
+    tags: ['testing', 'tdd'],
+    proponents: ['Kent Beck'],
+  },
+  {
+    id: 'mutation-testing',
+    title: 'Mutation Testing',
+    categories: ['testing-quality'],
+    roles: ['software-developer', 'qa-engineer'],
+    tags: ['testing', 'quality'],
+    proponents: [],
+  },
+  {
+    id: 'clean-architecture',
+    title: 'Clean Architecture',
+    categories: ['architecture-design'],
+    roles: ['software-architect', 'software-developer'],
+    tags: ['architecture', 'design'],
+    proponents: ['Robert C. Martin'],
+  },
+  {
+    id: 'hexagonal-architecture',
+    title: 'Hexagonal Architecture',
+    categories: ['architecture-design'],
+    roles: ['software-architect', 'software-developer'],
+    tags: ['architecture', 'ports-and-adapters'],
+    proponents: ['Alistair Cockburn'],
+  },
 ]
 
 const mockRoles = [
-  { id: 'software-developer', name: 'Software Developer / Engineer', anchors: ['tdd-london-school', 'tdd-chicago-school', 'mutation-testing', 'clean-architecture', 'hexagonal-architecture'] },
-  { id: 'qa-engineer', name: 'QA Engineer / Tester', anchors: ['tdd-london-school', 'tdd-chicago-school', 'mutation-testing'] },
-  { id: 'software-architect', name: 'Software Architect', anchors: ['clean-architecture', 'hexagonal-architecture'] }
+  {
+    id: 'software-developer',
+    name: 'Software Developer / Engineer',
+    anchors: [
+      'tdd-london-school',
+      'tdd-chicago-school',
+      'mutation-testing',
+      'clean-architecture',
+      'hexagonal-architecture',
+    ],
+  },
+  {
+    id: 'qa-engineer',
+    name: 'QA Engineer / Tester',
+    anchors: ['tdd-london-school', 'tdd-chicago-school', 'mutation-testing'],
+  },
+  {
+    id: 'software-architect',
+    name: 'Software Architect',
+    anchors: ['clean-architecture', 'hexagonal-architecture'],
+  },
 ]
 
 describe('buildTreemapData', () => {
@@ -59,7 +112,7 @@ describe('buildTreemapData', () => {
   it('should include anchor metadata in leaf nodes', () => {
     const result = buildTreemapData(mockCategories, mockAnchors)
 
-    const tddLondon = result[0].children.find(c => c.id === 'tdd-london-school')
+    const tddLondon = result[0].children.find((c) => c.id === 'tdd-london-school')
     expect(tddLondon).toBeDefined()
     expect(tddLondon.name).toBe('TDD, London School')
     expect(tddLondon.roles).toEqual(['software-developer', 'qa-engineer'])
@@ -86,7 +139,7 @@ describe('getAnchorsByRole', () => {
     const result = getAnchorsByRole(mockAnchors, 'qa-engineer')
 
     expect(result).toHaveLength(3)
-    expect(result.every(a => a.roles.includes('qa-engineer'))).toBe(true)
+    expect(result.every((a) => a.roles.includes('qa-engineer'))).toBe(true)
   })
 
   it('should return all anchors when no role specified', () => {
@@ -183,7 +236,7 @@ describe('getFilteredAnchors', () => {
     const result = getFilteredAnchors(mockAnchors, 'qa-engineer', '')
 
     expect(result).toHaveLength(3)
-    expect(result.every(a => a.roles.includes('qa-engineer'))).toBe(true)
+    expect(result.every((a) => a.roles.includes('qa-engineer'))).toBe(true)
   })
 
   it('should apply only search filter when no role', () => {
