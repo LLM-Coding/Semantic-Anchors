@@ -128,9 +128,7 @@ export async function loadAnchorContent(anchorId) {
 
     if (safeLang !== 'en') {
       // Try fetching language-specific anchor file
-      response = await fetch(
-        `${import.meta.env.BASE_URL}docs/anchors/${anchorId}.${safeLang}.adoc`
-      )
+      response = await fetch(`${import.meta.env.BASE_URL}docs/anchors/${anchorId}.${safeLang}.adoc`)
 
       // If language-specific file not found, fallback to English
       if (!response.ok) {
