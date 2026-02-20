@@ -29,5 +29,9 @@
     "@asciidoctor/core": "^3.0.4",
     "@tailwindcss/typography": "^0.5.19",
     "echarts": "^6.0.0"
+  },
+  "overrides": {
+    "minimatch": ">=10.2.1",
+    "cookie": ">=0.7.0"
   }
 }
