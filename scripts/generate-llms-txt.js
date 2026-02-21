@@ -277,7 +277,7 @@ function generateAllAnchorsWebAdoc() {
   const aboutPath = path.join(ROOT, 'docs/about.adoc')
   if (fs.existsSync(aboutPath)) {
     const aboutContent = fs.readFileSync(aboutPath, 'utf-8')
-    lines.push(shiftHeadings(aboutContent, 1))
+    lines.push(shiftHeadings(stripDocAttrs(aboutContent), 1))
     lines.push('')
     lines.push("'''")
     lines.push('')
