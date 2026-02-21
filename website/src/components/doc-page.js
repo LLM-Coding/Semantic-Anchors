@@ -69,7 +69,7 @@ export async function loadDocContent(docPath) {
           </svg>
         </div>
         <h2 class="text-xl font-semibold mb-2">Failed to Load Documentation</h2>
-        <p class="text-gray-600 dark:text-gray-400">Please try again later or visit the <a href="https://github.com/LLM-Coding/Semantic-Anchors" class="text-blue-500 hover:underline" target="_blank">GitHub repository</a>.</p>
+        <p class="text-gray-600 dark:text-gray-400">Please try again later or visit the <a href="https://github.com/LLM-Coding/Semantic-Anchors" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
       </div>
     `
   }
