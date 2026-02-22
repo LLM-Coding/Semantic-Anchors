@@ -7,7 +7,7 @@
 ====
 Auch bekannt als:: Mockist TDD, Outside-In TDD
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Mock-heavy Testing:: Intensive Nutzung von Test Doubles (Mocks, Stubs) zur Isolation von Units
 
@@ -24,7 +24,7 @@ Walking Skeleton:: End-to-End-Funktionalität früh aufbauen, dann Details ausf�
 
 Schlüsselvertreter:: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Komplexe Systeme mit vielen kollaborierenden Objekten
 * Beim Design von APIs und Schnittstellen

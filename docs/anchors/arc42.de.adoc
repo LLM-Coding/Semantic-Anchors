@@ -7,7 +7,7 @@
 ====
 Vollständiger Name:: arc42 Architekturdokumentations-Template
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 12 standardisierte Abschnitte:: Von Einführung bis Glossar
 
@@ -42,7 +42,7 @@ Mehrere Formate:: AsciiDoc, Markdown, Confluence, etc.
 
 Schlüsselvertreter:: Gernot Starke, Peter Hruschka
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Mittlere bis große Softwareprojekte
 * Wenn Stakeholder-Kommunikation kritisch ist

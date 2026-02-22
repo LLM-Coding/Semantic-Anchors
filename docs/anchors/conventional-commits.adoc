@@ -5,7 +5,9 @@
 
 [%collapsible]
 ====
-*Core Concepts*:
+
+== *Core Concepts*:
+
 * A specification for adding human and machine readable meaning to commit messages
 * Determining a semantic version bump (based on the types of commits landed)
 * Communicating the nature of changes to teammates, the public, and other stakeholders
@@ -24,7 +26,7 @@ Common Types::
 
 Key Proponents:: Benjamin E. Coe, James J. Womack, Steve Mao
 
-*When to Use*:
+== *When to Use*:
 
 * everything-as-code paradigm targeted
 * team-/community-communication

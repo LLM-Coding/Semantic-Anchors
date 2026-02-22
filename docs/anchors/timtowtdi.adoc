@@ -8,7 +8,7 @@ Full Name:: There Is More Than One Way To Do It
 
 Also known as:: Tim Toady
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Multiple valid approaches:: Acknowledges that problems can be solved in different, equally valid ways
 
@@ -29,12 +29,12 @@ Collaborative decision-making:: When working with others, discuss approach rathe
 
 Key Proponent:: Larry Wall (Perl programming language)
 
-*Contrast*:
+== *Contrast*:
 
 * Python's Zen: "There should be one-- and preferably only one --obvious way to do it" (opposite philosophy)
 * TIMTOWTDI favors flexibility and expressiveness over enforced uniformity
 
-*When to Use*:
+== *When to Use*:
 
 * Choosing between multiple valid architectural or design approaches
 * Code reviews where different styles achieve the same goal

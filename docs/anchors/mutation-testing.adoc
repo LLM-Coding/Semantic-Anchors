@@ -7,7 +7,7 @@
 ====
 Also known as:: Mutation Analysis, Fault-Based Testing
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Test quality assessment:: Evaluate how effective tests are at detecting bugs
 
@@ -36,7 +36,7 @@ Test adequacy criterion:: "Are tests good enough?" not just "Is coverage high en
 
 Key Proponents:: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
 
-*Key Tools*:
+== *Key Tools*:
 
 * PITest (Java)
 * Stryker (JavaScript/TypeScript, C#, Scala)
@@ -44,7 +44,7 @@ Key Proponents:: Richard Lipton (theoretical foundation, 1971), Richard DeMillo,
 * Infection (PHP)
 * Mull (C/C++)
 
-*When to Use*:
+== *When to Use*:
 
 * Evaluating test suite quality beyond coverage metrics
 * Identifying gaps in test assertions
@@ -54,7 +54,7 @@ Key Proponents:: Richard Lipton (theoretical foundation, 1971), Richard DeMillo,
 * Teaching effective testing practices
 * Continuous improvement of test effectiveness
 
-*Practical Challenges*:
+== *Practical Challenges*:
 
 Computational cost:: N mutations × M tests = expensive
 
@@ -65,7 +65,7 @@ Time investment:: Can be slow on large codebases
 Mitigation strategies:: Selective mutation, mutation sampling, incremental analysis
 
 
-*Relationship to Other Practices*:
+== *Relationship to Other Practices*:
 
 Code coverage:: Mutation testing reveals that high coverage ≠ good tests
 

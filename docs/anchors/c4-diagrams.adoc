@@ -6,7 +6,7 @@
 ====
 Full Name:: C4 Model for Software Architecture Diagrams
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Four levels of abstraction::
 +
@@ -26,7 +26,7 @@ Supplementary diagrams:: Deployment, dynamic views, etc.
 
 Key Proponent:: Simon Brown
 
-*When to Use*:
+== *When to Use*:
 
 * Communicating architecture to diverse stakeholders
 * Onboarding new team members

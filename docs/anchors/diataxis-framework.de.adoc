@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Diátaxis Dokumentations-Framework nach Daniele Procida
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Vier Dokumentationstypen::
 +
@@ -30,7 +30,7 @@ Systematischer Ansatz:: Framework zur Organisation jeglicher Dokumentation
 
 Schlüsselvertreter:: Daniele Procida
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Organisation technischer Dokumentation
 * Verbesserung bestehender Dokumentation

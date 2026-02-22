@@ -6,7 +6,7 @@
 ====
 Full Name:: Rubber Duck Debugging
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Explain to Understand:: Articulating a problem aloud surfaces gaps in understanding
 
@@ -29,7 +29,7 @@ Key Origin:: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), 
 
 Historical Context:: Decades-old practice in programming culture, formalized and named in influential software engineering literature
 
-*When to Use*:
+== *When to Use*:
 
 * Debugging stubborn problems where you're stuck
 * Code review where explaining to a colleague reveals issues
@@ -37,7 +37,7 @@ Historical Context:: Decades-old practice in programming culture, formalized and
 * Validating understanding of complex systems or algorithms
 * When rubber-ducking to an LLM, explicitly adopting this frame to trigger step-by-step explanation
 
-*Related Concepts*:
+== *Related Concepts*:
 
 * Pair programming (where explaining is continuous)
 * <<feynman-technique,Feynman Technique>> (learning by simple explanation)

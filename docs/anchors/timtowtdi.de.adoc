@@ -8,7 +8,7 @@ Vollständiger Name:: There Is More Than One Way To Do It
 
 Auch bekannt als:: Tim Toady
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Mehrere valide Ansätze:: Anerkennt, dass Probleme auf unterschiedliche, gleichermaßen valide Weisen gelöst werden können
 
@@ -29,12 +29,12 @@ Kollaborative Entscheidungsfindung:: Bei Zusammenarbeit mit anderen den Ansatz d
 
 Schlüsselvertreter:: Larry Wall (Perl Programmiersprache)
 
-*Kontrast*:
+== *Kontrast*:
 
 * Pythons Zen: "There should be one-- and preferably only one --obvious way to do it" (gegensätzliche Philosophie)
 * TIMTOWTDI bevorzugt Flexibilität und Ausdruckskraft gegenüber erzwungener Einheitlichkeit
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Choosing between multiple valid architectural or design approaches
 * Code reviews where different styles achieve the same goal

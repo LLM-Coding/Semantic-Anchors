@@ -7,7 +7,7 @@
 ====
 Auch bekannt als:: Klassisches TDD, Detroit School
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Zustandsbasiertes Testen:: Zustand von Objekten nach Operationen überprüfen
 
@@ -24,7 +24,7 @@ YAGNI:: You Aren't Gonna Need It - vorzeitige Abstraktion vermeiden
 
 Schlüsselvertreter:: Kent Beck, Martin Fowler
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Domain-Driven-Design-Projekte
 * Wenn Geschäftslogik zentral ist

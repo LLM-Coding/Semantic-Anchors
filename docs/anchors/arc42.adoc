@@ -7,7 +7,7 @@
 ====
 Full Name:: arc42 Architecture Documentation Template
 
-*Core Concepts*:
+== *Core Concepts*:
 
 12 standardized sections:: From introduction to glossary
 
@@ -41,7 +41,7 @@ Multiple formats:: AsciiDoc, Markdown, Confluence, etc.
 
 Key Proponents:: Gernot Starke, Peter Hruschka
 
-*When to Use*:
+== *When to Use*:
 
 * Medium to large software projects
 * When stakeholder communication is critical

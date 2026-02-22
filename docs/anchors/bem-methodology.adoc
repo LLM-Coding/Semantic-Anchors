@@ -7,7 +7,7 @@
 ====
 Full Name:: Block Element Modifier (BEM) (S)CSS Methodology
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Motivation:: Solve CSS specificity wars, naming conflicts, and stylesheet maintainability issues in large codebases
 
@@ -32,7 +32,7 @@ Mix:: Combining multiple BEM entities on a single DOM node
 File structure:: Often paired with component-based file organization
 
 
-*Naming Examples*:
+== *Naming Examples*:
 
 * Block: `.search-form`
 * Element: `.search-form__input`, `.search-form__button`
@@ -40,7 +40,7 @@ File structure:: Often paired with component-based file organization
 
 Key Proponents:: Yandex development team
 
-*When to Use*:
+== *When to Use*:
 
 * Large-scale web applications with many components
 * Team projects requiring consistent (S)CSS naming conventions

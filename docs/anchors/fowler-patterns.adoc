@@ -11,7 +11,7 @@ Full Name:: Patterns of Enterprise Application Architecture according to Martin 
 
 Also known as:: Fowler patterns, PEAA patterns, Enterprise patterns
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Domain Logic Patterns:: Transaction Script, Domain Model, Table Module, Service Layer
 
@@ -36,7 +36,7 @@ Base Patterns:: Gateway, Mapper, Layer Supertype, Separated Interface, Registry,
 
 Key Proponent:: Martin Fowler ("Patterns of Enterprise Application Architecture", 2002)
 
-*When to Use*:
+== *When to Use*:
 
 * Designing complex enterprise applications with data persistence
 * Building layered architectures with clear separation of concerns
@@ -46,7 +46,7 @@ Key Proponent:: Martin Fowler ("Patterns of Enterprise Application Architecture"
 * Handling concurrency in multi-user enterprise systems
 * Creating maintainable and testable enterprise code
 
-*Related Anchors*:
+== *Related Anchors*:
 
 * <<domain-driven-design,Domain-Driven Design>> - Complements PEAA with domain modeling approach
 * <<hexagonal-architecture,Hexagonal Architecture>> - Architectural style emphasizing ports and adapters

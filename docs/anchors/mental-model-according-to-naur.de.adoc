@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Programming as Theory Building (Mental Model) according to Peter Naur
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Theory Building:: Programmieren ist Erstellen eines mentalen Modells, nicht nur Code schreiben
 
@@ -31,7 +31,7 @@ Schlüsselvertreter:: Peter Naur (Turing Award Gewinner, 1978)
 
 Originalwerk:: "Programming as Theory Building" (1985)
 
-*Anwendung in der Softwareentwicklung*:
+== *Anwendung in der Softwareentwicklung*:
 
 * Verstehen, warum Wissenstransfer herausfordernd ist
 * Betonung von Pair Programming und Mob Programming
@@ -40,7 +40,7 @@ Originalwerk:: "Programming as Theory Building" (1985)
 * Unterstützung von Dokumentationspraktiken, die "Warum" erfassen, nicht nur "Was"
 * Plädoyer für Team-Stabilität und -Kontinuität
 
-*Kontrast zu anderen Sichtweisen*:
+== *Kontrast zu anderen Sichtweisen*:
 
 * Programmieren als Textproduktion → Fokus auf Code-Output
 * Programmieren als Problemlösung → Fokus auf Algorithmen

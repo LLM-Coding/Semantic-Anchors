@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Domain-Driven Design nach Eric Evans
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Ubiquitous Language:: Gemeinsames Vokabular zwischen Entwicklern und Domänenexperten
 
@@ -31,7 +31,7 @@ Model-Driven Design:: Code, der das Domänenmodell ausdrückt
 
 Schlüsselvertreter:: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Komplexe Geschäftsdomänen mit komplizierten Regeln
 * Langlebige Systeme, die tiefes Domänenverständnis erfordern

@@ -8,7 +8,7 @@
 ====
 Full Name:: Chatham House Rule
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Information Sharing:: Participants are free to use information received, but neither the identity nor the affiliation of the speaker(s) may be revealed
 
@@ -30,7 +30,7 @@ Key Origin:: Established by Chatham House (Royal Institute of International Affa
 
 Historical Context:: Originally created to enable diplomats and government officials to discuss international affairs candidly; now widely adopted across business, academia, and technology sectors
 
-*When to Use*:
+== *When to Use*:
 
 * Strategic planning sessions where sensitive business information is discussed
 * Retrospectives where team members need to speak candidly about problems
@@ -41,21 +41,21 @@ Historical Context:: Originally created to enable diplomats and government offic
 * Board meetings discussing confidential matters
 * Community forums where psychological safety is needed
 
-*Common Misunderstandings*:
+== *Common Misunderstandings*:
 
 * ❌ "Everything is off the record" - Information CAN be shared, just not attributed
 * ❌ "Nothing can be quoted" - The content is shareable, but without attribution
 * ❌ "Conversations are confidential" - The rule protects identity, not information
 * ✓ "You can use the insights, just don't say who said them" - Correct understanding
 
-*Related Concepts*:
+== *Related Concepts*:
 
 * Psychological safety in teams
 * Non-disclosure agreements (NDAs) - more restrictive than Chatham House Rule
 * Off-the-record conversations
 * Anonymous feedback systems
 
-*Example Invocation*:
+== *Example Invocation*:
 
 ----
 This retrospective will be conducted under the Chatham House Rule.

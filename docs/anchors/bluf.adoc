@@ -9,7 +9,7 @@ Full Name:: BLUF (Bottom Line Up Front)
 
 Also known as:: Direct Answer Format, Conclusion-First Communication
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Conclusion First:: State the main point, decision, or recommendation immediately
 
@@ -32,7 +32,7 @@ Key Proponents:: US Military (Army writing standards), adopted broadly in busine
 
 Historical Context:: Standardized in military communication where rapid decision-making is critical; now standard in business writing (McKinsey, consulting, executive communication)
 
-*When to Use*:
+== *When to Use*:
 
 * Executive summaries and briefings
 * Status reports to leadership
@@ -41,7 +41,7 @@ Historical Context:: Standardized in military communication where rapid decision
 * Any high-stakes communication where the reader needs the conclusion first
 * Technical documentation for time-constrained readers
 
-*Relationship to Other Anchors*:
+== *Relationship to Other Anchors*:
 
 * Related to <<pyramid-principle,Pyramid Principle>> but more narrowly focused on conclusion-first structure
 * Complements MECE by providing the organizational principle for grouped information

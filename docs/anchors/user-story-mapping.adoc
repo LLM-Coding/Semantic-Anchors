@@ -6,7 +6,7 @@
 ====
 Full Name:: User Story Mapping according to Jeff Patton
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Narrative flow:: Horizontal arrangement of user activities
 
@@ -29,7 +29,7 @@ Opportunity for conversation:: Stories as placeholders for discussion
 
 Key Proponent:: Jeff Patton ("User Story Mapping", 2014)
 
-*When to Use*:
+== *When to Use*:
 
 * Planning new products or major features
 * When backlog feels overwhelming or fragmented

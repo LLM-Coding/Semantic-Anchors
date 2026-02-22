@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Clean Architecture nach Robert C. Martin
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Die Abhängigkeitsregel:: Abhängigkeiten zeigen nur nach innen
 
@@ -29,7 +29,7 @@ SOLID-Prinzipien:: Grundlage der Architektur
 
 Schlüsselvertreter:: Robert C. Martin ("Uncle Bob")
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Unternehmensanwendungen mit komplexer Geschäftslogik
 * Systeme, die langfristige Wartbarkeit erfordern

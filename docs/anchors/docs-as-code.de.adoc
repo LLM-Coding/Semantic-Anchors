@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Docs-as-Code-Ansatz nach Ralf D. Müller
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Plain-Text-Formate:: AsciiDoc, Markdown
 
@@ -29,7 +29,7 @@ Modulare Dokumentation:: Includes und Komposition
 
 Schlüsselvertreter:: Ralf D. Müller (docToolchain-Ersteller)
 
-*Technischer Stack*:
+== *Technischer Stack*:
 
 * AsciiDoc/Asciidoctor
 * docToolchain
@@ -37,7 +37,7 @@ Schlüsselvertreter:: Ralf D. Müller (docToolchain-Ersteller)
 * Kroki für Diagramm-Rendering
 * Arc42-Template-Integration
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Technische Dokumentation für Softwareprojekte
 * Wenn Dokumentation mit Code synchron bleiben muss

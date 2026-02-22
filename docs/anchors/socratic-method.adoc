@@ -6,7 +6,7 @@
 ====
 Full Name:: Socratic Method (also Socratic Dialogue, Elenchus)
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Guided Discovery:: Lead learners to insights through questions rather than direct instruction
 
@@ -31,7 +31,7 @@ Key Proponent:: Socrates (via Plato's dialogues, ~400 BCE)
 
 Historical Context:: 2400+ years of philosophical tradition, foundational to Western philosophy and critical thinking education
 
-*When to Use*:
+== *When to Use*:
 
 * Teaching complex concepts where understanding must be constructed, not transmitted
 * Helping someone work through a problem without giving direct answers
@@ -40,7 +40,7 @@ Historical Context:: 2400+ years of philosophical tradition, foundational to Wes
 * Encouraging deeper thinking about a topic
 * Code review or design review where understanding, not compliance, is the goal
 
-*Related Concepts*:
+== *Related Concepts*:
 
 * Cognitive apprenticeship
 * Constructivist learning theory
