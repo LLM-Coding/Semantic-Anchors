@@ -1,34 +1,34 @@
 = Pugh-Matrix
 :categories: strategic-planning
 :roles: software-architect, team-lead, product-owner
-
 [%collapsible]
 ====
-Vollständiger Name:: Pugh Decision Matrix (also Pugh Controlled Convergence)
+Full Name:: Pugh-Entscheidungsmatrix (auch Pugh Controlled Convergence)
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
-Baseline-Vergleich:: Alternativen gegen eine Referenzlösung vergleichen
-
-Kriteriengewichtung:: Wichtigkeit zu Evaluationskriterien zuweisen
-
-Relative Bewertung:: Besser (+), Gleich (S), Schlechter (-) als Baseline
-
+Matrix-Layout:: Kriterien als ZEILEN, Alternativen als SPALTEN
+Referenz (Baseline):: Eine Alternative wird als Referenz festgelegt — durchgehend mit 0/S bewertet
+Relative Bewertung:: Jede Alternative wird gegen die Referenz bewertet: Besser (+), Gleich (S), Schlechter (−)
+Summenzeilen:: Σ(+), Σ(−), Σ(S) und Nettowert pro Alternative am Ende der Matrix
 Strukturierte Evaluation:: Systematischer Vergleich über mehrere Dimensionen
-
-Iterative Verfeinerung:: Mehrere Runden zur Konvergenz auf beste Lösung
-
-Team-Entscheidungsfindung:: Erleichtert Gruppenkonsens
-
+Team-Entscheidung:: Unterstützt Konsensbildung im Team
 Hybridlösungen:: Stärken verschiedener Alternativen kombinieren
+Iterative Verfeinerung:: Mehrere Runden zur Konvergenz auf die beste Lösung
 
+Hauptvertreter:: Stuart Pugh ("Total Design", 1991)
 
-Schlüsselvertreter:: Stuart Pugh
+== *Varianten* (als Qualifier verwenden für konsistente Ergebnisse):
 
-*Wann zu verwenden*:
+Unweighted 3-Point Pugh Matrix:: Originalform. Default, wenn kein Qualifier angegeben wird.
+Weighted 3-Point Pugh Matrix:: Kriterien tragen Wichtungsgewichte. Standard im Six-Sigma- / QFD-Kontext.
+Weighted 5-Point Pugh Matrix:: Feinere Granularität für eng beieinanderliegende Alternativen.
+Pugh Controlled Convergence:: Iterativer Mehrrunden-Prozess mit Elimination, Hybridbildung und Referenzrotation.
 
-* Mehrere viable Alternativen existieren
-* Entscheidungskriterien sind bekannt, aber Trade-offs sind unklar
-* Team muss Konsens erreichen
+== *Wann einsetzen*:
+
+* Mehrere tragfähige Alternativen existieren
+* Entscheidungskriterien sind bekannt, aber Trade-offs unklar
+* Das Team muss einen Konsens finden
 * Architektur- oder Technologieauswahlentscheidungen
 ====
