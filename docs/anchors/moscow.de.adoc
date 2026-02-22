@@ -11,7 +11,10 @@ Vollständiger Name:: MoSCoW-Priorisierungsmethode
 
 Auch bekannt als:: MoSCoW-Analyse, MoSCoW-Methode
 
-*Kernkonzepte*:
+[discrete]
+== *Kernkonzepte*:
+
+MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 
 Must have:: Nicht verhandelbare Anforderungen, die für die aktuelle Lieferung unerlässlich sind; ohne sie ist die Lösung nicht nutzbar oder nicht sicher
 
@@ -30,7 +33,8 @@ Scope-Kontrolle:: Die explizite Kategorie "Won't have" reduziert Scope Creep, in
 
 Schlüsselvertreter:: Dai Clegg (Dynamic Systems Development Method / DSDM, 1994)
 
-*Wann zu verwenden*:
+[discrete]
+== *Wann zu verwenden*:
 
 * Sprint- und Release-Planung in agilen Teams
 * Bestimmung des Umfangs eines Minimum Viable Product (MVP)
