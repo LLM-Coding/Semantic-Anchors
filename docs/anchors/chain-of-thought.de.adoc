@@ -7,7 +7,7 @@
 ====
 Vollständiger Name:: Chain of Thought Prompting (Gedankenketten-Prompting)
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Schrittweises Denken:: Zwischenschritte des Denkprozesses explizit zeigen, bevor eine Schlussfolgerung erreicht wird
 
@@ -30,7 +30,7 @@ Schlüsselvertreter:: Wei et al. (Google Research, 2022), "Chain-of-Thought Prom
 
 Historischer Kontext:: Durchbruch in der LLM-Prompting-Forschung, deutlich verbesserte Leistung bei Argumentationsaufgaben (Mathematik, Logik, gesunder Menschenverstand)
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Komplexe Argumentationsprobleme (mehrstufige Mathematik, Logikrätsel)
 * Wenn Sie den Argumentationsprozess verifizieren müssen, nicht nur die Antwort
@@ -39,13 +39,13 @@ Historischer Kontext:: Durchbruch in der LLM-Prompting-Forschung, deutlich verbe
 * Probleme, die Planung oder Strategie erfordern
 * Jede Aufgabe, bei der Zwischenschritte Wert bieten
 
-*Verwandte Forschung*:
+== *Verwandte Forschung*:
 
 * Tree of Thoughts (ToT): Erweiterung, die Verzweigung und Backtracking erlaubt
 * Self-Consistency: Mehrere Argumentationspfade samplen
 * Least-to-Most Prompting: Von einfach zu komplex aufbauen
 
-*Beispiel-Prompt-Muster*:
+== *Beispiel-Prompt-Muster*:
 
 ----
 Problem: [Komplexe Frage]

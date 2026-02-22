@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Don't Repeat Yourself-Prinzip (Wiederhole dich nicht)
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Einzelne Repräsentation:: Jedes Stück Wissen sollte eine einzelne, eindeutige Repräsentation haben
 
@@ -25,7 +25,7 @@ Konfigurationsmanagement:: Konfiguration zentralisieren und verstreute Einstellu
 
 Schlüsselvertreter:: Andy Hunt und Dave Thomas ("The Pragmatic Programmer", 1999)
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Refactoring von Codebasen mit wiederholter Logik oder Mustern
 * Entwerfen von APIs und Bibliotheken zur Minimierung von Client-Code-Duplizierung

@@ -7,7 +7,7 @@
 ====
 Vollständiger Name:: Jobs To Be Done Framework (Christensen interpretation)
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Job-Definition:: Fortschritt, den Menschen in einem bestimmten Kontext machen wollen
 
@@ -30,7 +30,7 @@ Job Stories:: Alternative zu User Stories mit Fokus auf Kontext und Motivation
 
 Schlüsselvertreter:: Clayton Christensen, Alan Klement, Bob Moesta
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Product Discovery und Innovation
 * Verstehen, warum Kunden Lösungen wählen

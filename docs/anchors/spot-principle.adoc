@@ -6,7 +6,7 @@
 ====
 Full Name:: Single Point of Truth
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Implementation pattern:: Focuses on where and how data/logic is stored and accessed
 
@@ -23,7 +23,7 @@ Clear ownership:: Explicit responsibility for maintaining each piece of truth
 Code-level practice:: Applied at the code and system design level
 
 
-*When to Use*:
+== *When to Use*:
 
 * Implementing functions and utilities to avoid code duplication
 * Database schema design to eliminate redundant data

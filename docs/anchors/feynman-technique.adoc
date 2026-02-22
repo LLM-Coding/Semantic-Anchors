@@ -6,7 +6,7 @@
 ====
 Full Name:: Feynman Technique (also Feynman Learning Method)
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Explain Simply:: Teach the concept in simple language as if to a beginner (traditionally "explain to a 12-year-old")
 
@@ -29,7 +29,7 @@ Key Attribution:: Richard Feynman (Nobel Prize-winning physicist, 1965), famous 
 
 Historical Context:: Feynman was renowned for his teaching ability and his belief that deep understanding meant being able to explain simply. The "technique" is a formalization of his learning approach.
 
-*When to Use*:
+== *When to Use*:
 
 * Learning new technical concepts or frameworks
 * Validating your understanding before using knowledge in practice
@@ -38,14 +38,14 @@ Historical Context:: Feynman was renowned for his teaching ability and his belie
 * Code review where you explain your design choices simply
 * Documentation writing (if you can't explain it simply, you don't understand it)
 
-*Four Steps (Canonical Form)*:
+== *Four Steps (Canonical Form)*:
 
 . *Choose a concept*: Pick the topic you want to understand
 . *Teach it to a child*: Write an explanation in simple terms
 . *Identify gaps and review*: Where you struggle, study more
 . *Simplify and analogize*: Refine your explanation, use examples
 
-*Related Concepts*:
+== *Related Concepts*:
 
 * <<rubber-duck-debugging,Rubber Duck Debugging>> (explaining to understand)
 * Learning by teaching

@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Nelson Rules (Tests for Special Causes)
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 * *8 Regeln* zur Erkennung nicht-zufälliger Muster in Regelkarten
 Regel 1:: Ein Punkt jenseits von 3σ (Ausreißer)
@@ -34,7 +34,7 @@ Falsch-Positiv-Abwägung:: Mehr aktive Regeln = höhere Sensitivität, aber mehr
 
 Schlüsselvertreter:: Lloyd S. Nelson (1984, Journal of Quality Technology)
 
-*Beziehung zu anderen Ankern*:
+== *Beziehung zu anderen Ankern*:
 
 Control Chart (Shewhart):: Nelson Rules werden auf Regelkarten angewendet
 
@@ -43,7 +43,7 @@ Control Chart (Shewhart):: Nelson Rules werden auf Regelkarten angewendet
 Western Electric Rules:: Vorgänger; Nelson Rules erweitern diese mit Regeln 5-8
 
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Erkennung nicht-zufälliger Muster in Zeitreihendaten
 * Prozessüberwachung in Fertigung, Pharmazie, Gesundheitswesen

@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: SOLID Object-Oriented Design Principles
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Single Responsibility Principle (SRP):: Jede Klasse sollte eine Verantwortlichkeit haben
 
@@ -21,7 +21,7 @@ Dependency Inversion Principle (DIP):: Von Abstraktionen abhängen, nicht von ko
 
 Schlüsselvertreter:: Robert C. Martin ("Uncle Bob")
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Entwurf wartbarer und skalierbarer objektorientierter Systeme
 * Refactoring von Legacy-Code zur Verbesserung der Struktur

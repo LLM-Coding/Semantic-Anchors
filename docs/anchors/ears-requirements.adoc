@@ -6,7 +6,7 @@
 ====
 Full Name:: Easy Approach to Requirements Syntax
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Ubiquitous requirements:: "The <system> shall <requirement>"
 
@@ -25,7 +25,7 @@ Testability:: Requirements written to be verifiable
 
 Key Proponent:: Alistair Mavin (Rolls-Royce)
 
-*When to Use*:
+== *When to Use*:
 
 * Safety-critical systems
 * Regulated industries (aerospace, automotive, medical)

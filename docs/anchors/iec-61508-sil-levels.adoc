@@ -11,7 +11,7 @@ Full Name:: IEC 61508 Safety Integrity Levels
 
 Also known as:: Functional Safety Levels, SIL Classification
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Four Safety Integrity Levels::
 +
@@ -41,14 +41,14 @@ Random hardware failures:: Statistical analysis and fault tolerance
 
 Key Standard:: IEC 61508 "Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems" (first edition 1998, second edition 2010)
 
-*Related Standards*:
+== *Related Standards*:
 
 * IEC 61511 (Process industry)
 * ISO 26262 (Automotive)
 * EN 50128 (Railway)
 * IEC 62304 (Medical devices)
 
-*When to Use*:
+== *When to Use*:
 
 * Developing safety-critical embedded systems
 * Assessing risk in industrial automation and control systems

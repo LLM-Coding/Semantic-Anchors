@@ -9,7 +9,7 @@
 ====
 Also known as:: Alternative Name, Other Name
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Concept 1:: Brief description of concept 1
 
@@ -19,13 +19,13 @@ Concept 3:: Brief description of concept 3
 
 Key Proponents:: Author Name ("Book Title"), Another Author
 
-*When to Use*:
+== *When to Use*:
 
 * Use case 1
 * Use case 2
 * Use case 3
 
-*Related Anchors*:
+== *Related Anchors*:
 
 * <<related-anchor-1,Related Anchor Name>>
 * <<related-anchor-2,Another Related Anchor>>

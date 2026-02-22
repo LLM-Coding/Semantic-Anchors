@@ -6,7 +6,7 @@
 ====
 Full Name:: Devil's Advocate (Latin: *Advocatus Diaboli*)
 
-*Core Concepts*:
+== *Core Concepts*:
 
 Systematic Counter-Argumentation:: Present opposing viewpoints even if not personally held
 
@@ -29,7 +29,7 @@ Key Origin:: Catholic Church canonization process (Promotor Fidei role, formaliz
 
 Historical Context:: 400+ years as formalized practice in the Church, adopted widely in law, philosophy, business strategy, and red teaming
 
-*When to Use*:
+== *When to Use*:
 
 * Critical design or architecture decisions where failure is costly
 * Security threat modeling (red teaming)
@@ -39,7 +39,7 @@ Historical Context:: 400+ years as formalized practice in the Church, adopted wi
 * Risk assessment and contingency planning
 * Any high-stakes decision where being wrong is expensive
 
-*Related Concepts*:
+== *Related Concepts*:
 
 * Red teaming (security context)
 * Pre-mortem analysis
@@ -47,7 +47,7 @@ Historical Context:: 400+ years as formalized practice in the Church, adopted wi
 * Critical thinking frameworks
 * Steelmanning (vs. strawmanning)
 
-*Example Prompt Pattern*:
+== *Example Prompt Pattern*:
 
 ----
 I propose [idea/design/decision].

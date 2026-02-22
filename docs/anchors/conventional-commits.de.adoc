@@ -5,7 +5,9 @@
 
 [%collapsible]
 ====
-*Kernkonzepte*:
+
+== *Kernkonzepte*:
+
 * Eine Spezifikation zum Hinzufügen von menschen- und maschinenlesbarer Bedeutung zu Commit-Nachrichten
 * Bestimmung eines semantischen Versions-Bumps (basierend auf den Arten von gelandeten Commits)
 * Kommunikation der Art von Änderungen an Teamkollegen, die Öffentlichkeit und andere Stakeholder
@@ -24,7 +26,7 @@ Häufige Typen::
 
 Schlüsselvertreter:: Benjamin E. Coe, James J. Womack, Steve Mao
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Everything-as-Code-Paradigma angestrebt
 * Team-/Community-Kommunikation

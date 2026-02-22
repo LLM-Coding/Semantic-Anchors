@@ -7,7 +7,7 @@
 ====
 Vollständiger Name:: Markdown Any Decision Records
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Strukturiertes Template:: Wohldefiniertes Format mit spezifischen Abschnitten
 
@@ -36,7 +36,7 @@ Schlüsselvertreter:: Oliver Kopp, Olaf Zimmermann (und MADR-Community)
 
 Referenz:: https://adr.github.io/madr/
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Wenn mehr Struktur als bei einfachen ADRs benötigt wird
 * Projekte, die explizite Dokumentation von Alternativen erfordern

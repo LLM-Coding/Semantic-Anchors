@@ -7,7 +7,7 @@
 ====
 Also known as:: Classicist TDD, Detroit School
 
-*Core Concepts*:
+== *Core Concepts*:
 
 State-based testing:: Verify the state of objects after operations
 
@@ -24,7 +24,7 @@ YAGNI:: You Aren't Gonna Need It - avoid premature abstraction
 
 Key Proponents:: Kent Beck, Martin Fowler
 
-*When to Use*:
+== *When to Use*:
 
 * Domain-driven design projects
 * When business logic is central

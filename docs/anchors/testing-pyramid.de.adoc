@@ -6,7 +6,7 @@
 ====
 Vollständiger Name:: Testing Pyramid nach Mike Cohn
 
-*Kernkonzepte*:
+== *Kernkonzepte*:
 
 Drei Schichten::
 * *Unit-Tests* (Basis): Viele schnelle, isolierte Tests
@@ -28,7 +28,7 @@ Vertrauensgradient:: Balance zwischen Vertrauen und Ausführungsgeschwindigkeit
 
 Schlüsselvertreter:: Mike Cohn ("Succeeding with Agile", 2009)
 
-*Wann zu verwenden*:
+== *Wann zu verwenden*:
 
 * Planung der Teststrategie für Projekte
 * Ausbalancierung von Testtypen in CI/CD-Pipelines
