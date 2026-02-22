@@ -1,10 +1,12 @@
 = Pugh-Matrix
 :categories: strategic-planning
 :roles: software-architect, team-lead, product-owner
+
 [%collapsible]
 ====
 Full Name:: Pugh-Entscheidungsmatrix (auch Pugh Controlled Convergence)
 
+[discrete]
 == *Kernkonzepte*:
 
 Matrix-Layout:: Kriterien als ZEILEN, Alternativen als SPALTEN
@@ -18,6 +20,7 @@ Iterative Verfeinerung:: Mehrere Runden zur Konvergenz auf die beste Lösung
 
 Hauptvertreter:: Stuart Pugh ("Total Design", 1991)
 
+[discrete]
 == *Varianten* (als Qualifier verwenden für konsistente Ergebnisse):
 
 Unweighted 3-Point Pugh Matrix:: Originalform. Default, wenn kein Qualifier angegeben wird.
@@ -25,6 +28,7 @@ Weighted 3-Point Pugh Matrix:: Kriterien tragen Wichtungsgewichte. Standard im S
 Weighted 5-Point Pugh Matrix:: Feinere Granularität für eng beieinanderliegende Alternativen.
 Pugh Controlled Convergence:: Iterativer Mehrrunden-Prozess mit Elimination, Hybridbildung und Referenzrotation.
 
+[discrete]
 == *Wann einsetzen*:
 
 * Mehrere tragfähige Alternativen existieren
