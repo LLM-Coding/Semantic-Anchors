@@ -1,31 +1,31 @@
 = Pugh-Matrix
 :categories: strategic-planning
 :roles: software-architect, team-lead, product-owner
-
 [%collapsible]
 ====
 Full Name:: Pugh Decision Matrix (also Pugh Controlled Convergence)
 
-*Core Concepts*:
+== *Core Concepts*:
 
-Baseline comparison:: Compare alternatives against a reference solution
-
-Criteria weighting:: Assign importance to evaluation criteria
-
-Relative scoring:: Better (+), Same (S), Worse (-) than baseline
-
+Matrix layout:: Criteria as ROWS, alternatives as COLUMNS
+Reference (baseline):: One alternative is designated as reference — scored entirely as 0/S
+Relative scoring:: Each alternative rated against the reference: Better (+), Same (S), Worse (−)
+Summary rows:: Σ(+), Σ(−), Σ(S), and Net Score per alternative at bottom of matrix
 Structured evaluation:: Systematic comparison across multiple dimensions
-
+Team decision-making:: Facilitates group consensus
+Hybrid solutions:: Combine strengths of different alternatives
 Iterative refinement:: Multiple rounds to converge on best solution
 
-Team decision-making:: Facilitates group consensus
+Key Proponent:: Stuart Pugh ("Total Design", 1991)
 
-Hybrid solutions:: Combine strengths of different alternatives
+== *Variants* (use as qualifier for consistent results):
 
+Unweighted 3-Point Pugh Matrix:: Original form. Default when no qualifier is given.
+Weighted 3-Point Pugh Matrix:: Criteria carry importance weights. Standard in Six Sigma / QFD contexts.
+Weighted 5-Point Pugh Matrix:: Finer granularity for closely ranked alternatives.
+Pugh Controlled Convergence:: Iterative multi-round process with elimination, hybrid creation, and reference rotation.
 
-Key Proponent:: Stuart Pugh
-
-*When to Use*:
+== *When to Use*:
 
 * Multiple viable alternatives exist
 * Decision criteria are known but trade-offs are unclear
