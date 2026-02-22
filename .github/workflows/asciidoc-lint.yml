@@ -29,7 +29,7 @@ jobs:
       - name: Run AsciiDoc Linter
         run: |
           echo "Linting AsciiDoc anchor files..."
-          asciidoc-linter docs/anchors/*.adoc --format console
+          asciidoc-linter docs/anchors/*.adoc --format console --config .asciidoc-linter.yml
 
       - name: Summary
         if: success()
