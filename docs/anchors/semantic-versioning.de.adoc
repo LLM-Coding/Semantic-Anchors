@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Semantic Versioning Specification
 
+[discrete]
 == *Kernkonzepte*:
 
 Versionsformat::
@@ -26,6 +27,7 @@ Public API-Deklaration:: Sobald public API deklariert, sind Versionsabhängigkei
 
 Schlüsselvertreter:: Tom Preston-Werner
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Bibliotheken und APIs, die von anderer Software konsumiert werden

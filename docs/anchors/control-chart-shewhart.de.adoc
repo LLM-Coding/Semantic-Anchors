@@ -8,6 +8,7 @@ Vollständiger Name:: Shewhart-Regelkarte
 
 Auch bekannt als:: Prozesskontrollkarte, SPC-Karte
 
+[discrete]
 == *Kernkonzepte*:
 
 Zeitreihendiagramm:: Messwert über Zeit aufgetragen
@@ -38,6 +39,7 @@ Schlüsselvertreter:: Walter A. Shewhart (1920er, Bell Labs / Western Electric)
 
 Schlüsselwerk:: "Economic Control of Quality of Manufactured Product" (1931)
 
+[discrete]
 == *Beziehung zu anderen Ankern*:
 
 Nelson Rules:: 8 Regeln zur Mustererkennung auf Regelkarten
@@ -47,6 +49,7 @@ Nelson Rules:: 8 Regeln zur Mustererkennung auf Regelkarten
 Six Sigma:: Regelkarten werden in der Kontrollphase von DMAIC verwendet
 
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Prozessüberwachung in Fertigung und Produktion

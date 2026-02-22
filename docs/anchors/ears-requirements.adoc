@@ -6,6 +6,7 @@
 ====
 Full Name:: Easy Approach to Requirements Syntax
 
+[discrete]
 == *Core Concepts*:
 
 Ubiquitous requirements:: "The <system> shall <requirement>"
@@ -25,6 +26,7 @@ Testability:: Requirements written to be verifiable
 
 Key Proponent:: Alistair Mavin (Rolls-Royce)
 
+[discrete]
 == *When to Use*:
 
 * Safety-critical systems

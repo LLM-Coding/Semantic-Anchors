@@ -7,6 +7,7 @@
 ====
 Full Name:: Statistical Process Control
 
+[discrete]
 == *Core Concepts*:
 
 Process monitoring:: Systematic statistical monitoring of running processes
@@ -32,6 +33,7 @@ DMAIC Control Phase:: SPC tools secure improvements within Six Sigma
 
 Key Proponents:: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
 
+[discrete]
 == *Relationship to Other Anchors*:
 
 Control Chart (Shewhart):: Central tool within SPC
@@ -43,6 +45,7 @@ Six Sigma:: Uses SPC particularly in the Control phase
 Testing Pyramid:: Conceptual parallel — different levels of quality assurance
 
 
+[discrete]
 == *When to Use*:
 
 * Monitoring manufacturing and business processes

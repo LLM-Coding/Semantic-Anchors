@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Cynefin Framework nach Dave Snowden
 
+[discrete]
 == *Kernkonzepte*:
 
 Fünf Domänen::
@@ -29,6 +30,7 @@ Facilitierungs-Tool:: Hilft Teams, Herausforderungen zu diskutieren und zu kateg
 
 Schlüsselvertreter:: Dave Snowden (1999)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Verstehen, mit welcher Art von Problem man konfrontiert ist

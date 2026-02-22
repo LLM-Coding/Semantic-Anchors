@@ -6,6 +6,7 @@
 ====
 Full Name:: Diátaxis Documentation Framework according to Daniele Procida
 
+[discrete]
 == *Core Concepts*:
 
 Four documentation types::
@@ -30,6 +31,7 @@ Systematic approach:: Framework for organizing any documentation
 
 Key Proponent:: Daniele Procida
 
+[discrete]
 == *When to Use*:
 
 * Organizing technical documentation

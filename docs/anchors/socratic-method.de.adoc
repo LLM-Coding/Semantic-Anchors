@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Sokratische Methode (auch Sokratischer Dialog, Elenchos)
 
+[discrete]
 == *Kernkonzepte*:
 
 Geführte Entdeckung:: Lernende durch Fragen zu Einsichten führen statt direkter Instruktion
@@ -31,6 +32,7 @@ Schlüsselvertreter:: Sokrates (via Platons Dialoge, ~400 v. Chr.)
 
 Historischer Kontext:: 2400+ Jahre philosophische Tradition, grundlegend für westliche Philosophie und kritisches Denken in der Bildung
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Lehren komplexer Konzepte, wo Verständnis konstruiert, nicht übertragen werden muss
@@ -40,6 +42,7 @@ Historischer Kontext:: 2400+ Jahre philosophische Tradition, grundlegend für we
 * Förderung tieferen Denkens über ein Thema
 * Code-Review oder Design-Review, wo Verständnis, nicht Compliance, das Ziel ist
 
+[discrete]
 == *Verwandte Konzepte*:
 
 * Kognitive Lehre (Cognitive Apprenticeship)

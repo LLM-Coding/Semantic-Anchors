@@ -7,6 +7,7 @@
 ====
 Auch bekannt als:: Mutationsanalyse, Fehlerbasiertes Testen
 
+[discrete]
 == *Kernkonzepte*:
 
 Testqualitätsbewertung:: Bewertung, wie effektiv Tests Fehler erkennen
@@ -36,6 +37,7 @@ Testadäquatheitskriterium:: "Sind die Tests gut genug?" nicht nur "Ist die Abde
 
 Schlüsselvertreter:: Richard Lipton (theoretische Grundlage, 1971), Richard DeMillo, Timothy Budd
 
+[discrete]
 == *Wichtige Werkzeuge*:
 
 * PITest (Java)
@@ -44,6 +46,7 @@ Schlüsselvertreter:: Richard Lipton (theoretische Grundlage, 1971), Richard DeM
 * Infection (PHP)
 * Mull (C/C++)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Bewertung der Testsuit-Qualität über Abdeckungsmetriken hinaus
@@ -54,6 +57,7 @@ Schlüsselvertreter:: Richard Lipton (theoretische Grundlage, 1971), Richard DeM
 * Lehre effektiver Testpraktiken
 * Kontinuierliche Verbesserung der Testeffektivität
 
+[discrete]
 == *Praktische Herausforderungen*:
 
 Rechenkosten:: N Mutationen × M Tests = teuer
@@ -65,6 +69,7 @@ Zeitinvestition:: Kann bei großen Codebasen langsam sein
 Abhilfestrategien:: Selektive Mutation, Mutations-Sampling, inkrementelle Analyse
 
 
+[discrete]
 == *Beziehung zu anderen Praktiken*:
 
 Code-Abdeckung:: Mutations-Testing zeigt, dass hohe Abdeckung ≠ gute Tests

@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Single Point of Truth
 
+[discrete]
 == *Kernkonzepte*:
 
 Implementierungsmuster:: Fokussiert darauf, wo und wie Daten/Logik gespeichert und abgerufen werden
@@ -23,6 +24,7 @@ Klare Verantwortlichkeit:: Explizite Zuständigkeit für die Pflege jedes Wahrhe
 Code-Ebene-Praxis:: Angewendet auf Code- und Systemdesign-Ebene
 
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Implementierung von Funktionen und Utilities zur Vermeidung von Code-Duplikation

@@ -6,6 +6,7 @@
 ====
 Full Name:: Architecture Decision Records according to Michael Nygard
 
+[discrete]
 == *Core Concepts*:
 
 Lightweight documentation:: Short, focused records
@@ -27,6 +28,7 @@ Evolutionary architecture:: Supporting architecture that changes over time
 
 Key Proponent:: Michael Nygard
 
+[discrete]
 == *When to Use*:
 
 * All software projects (low overhead, high value)

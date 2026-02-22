@@ -9,6 +9,7 @@ Full Name:: todo.txt-flavoured Markdown Task Lists
 
 Also known as:: Enhanced Markdown Tasks, Markdown with todo.txt conventions
 
+[discrete]
 == *Core Concepts*:
 
 Markdown task lists:: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
@@ -30,6 +31,7 @@ Tool-agnostic:: Can be processed by both markdown renderers and todo.txt tools
 Searchable and filterable:: Easy to grep/search by tags, priorities, or metadata
 
 
+[discrete]
 == *Pattern Structure*:
 
 [source,markdown]
@@ -38,6 +40,7 @@ Searchable and filterable:: Easy to grep/search by tags, priorities, or metadata
 - [x] YYYY-MM-DD (Priority) Completed task +project
 ----
 
+[discrete]
 == *Example Usage*:
 
 [source,markdown]
@@ -51,11 +54,13 @@ Searchable and filterable:: Easy to grep/search by tags, priorities, or metadata
 
 Key Proponents:: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
 
+[discrete]
 == *Original References*:
 
 * GitHub-flavoured Markdown task lists
 * todo.txt format specification by Gina Trapani
 
+[discrete]
 == *When to Use*:
 
 * Task management in markdown documentation
@@ -67,6 +72,7 @@ Key Proponents:: Combines GitHub-flavoured Markdown task lists with Gina Trapani
 * Team collaboration where tasks need clear priorities and contexts
 * Generating consistent task list formats with LLMs
 
+[discrete]
 == *Benefits*:
 
 * Leverages two well-established, widely recognized standards

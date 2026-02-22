@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Single Source of Truth
 
+[discrete]
 == *Kernkonzepte*:
 
 Konzeptionelles Prinzip:: Fokussiert auf die Etablierung von Vertrauen und Autorität für Daten
@@ -25,6 +26,7 @@ System of Record:: Der primäre Datenspeicher für kritische Geschäftsinformati
 Organisationspraxis:: Angewendet auf Architektur- und Geschäftsprozessebene
 
 
+[discrete]
 == *Hauptanwendungsbereiche*:
 
 * Versionskontrollsysteme (Git als SSOT für Code)
@@ -33,6 +35,7 @@ Organisationspraxis:: Angewendet auf Architektur- und Geschäftsprozessebene
 * Konfigurationsmanagement
 * Master Data Management (MDM)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Entwurf von Datenarchitekturen für Unternehmenssysteme

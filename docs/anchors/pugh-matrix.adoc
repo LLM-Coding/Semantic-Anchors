@@ -5,6 +5,7 @@
 ====
 Full Name:: Pugh Decision Matrix (also Pugh Controlled Convergence)
 
+[discrete]
 == *Core Concepts*:
 
 Matrix layout:: Criteria as ROWS, alternatives as COLUMNS
@@ -18,6 +19,7 @@ Iterative refinement:: Multiple rounds to converge on best solution
 
 Key Proponent:: Stuart Pugh ("Total Design", 1991)
 
+[discrete]
 == *Variants* (use as qualifier for consistent results):
 
 Unweighted 3-Point Pugh Matrix:: Original form. Default when no qualifier is given.
@@ -25,6 +27,7 @@ Weighted 3-Point Pugh Matrix:: Criteria carry importance weights. Standard in Si
 Weighted 5-Point Pugh Matrix:: Finer granularity for closely ranked alternatives.
 Pugh Controlled Convergence:: Iterative multi-round process with elimination, hybrid creation, and reference rotation.
 
+[discrete]
 == *When to Use*:
 
 * Multiple viable alternatives exist

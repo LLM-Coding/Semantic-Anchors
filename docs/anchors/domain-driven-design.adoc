@@ -6,6 +6,7 @@
 ====
 Full Name:: Domain-Driven Design according to Eric Evans
 
+[discrete]
 == *Core Concepts*:
 
 Ubiquitous Language:: Shared vocabulary between developers and domain experts
@@ -31,6 +32,7 @@ Model-Driven Design:: Code that expresses the domain model
 
 Key Proponent:: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
 
+[discrete]
 == *When to Use*:
 
 * Complex business domains with intricate rules

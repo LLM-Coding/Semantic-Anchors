@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Advocatus Diaboli (Anwalt des Teufels)
 
+[discrete]
 == *Kernkonzepte*:
 
 Systematische Gegenargumentation:: Gegensätzliche Standpunkte präsentieren, auch wenn nicht persönlich vertreten
@@ -29,6 +30,7 @@ Schlüsselursprung:: Katholische Kirche Kanonisierungsprozess (Promotor-Fidei-Ro
 
 Historischer Kontext:: 400+ Jahre als formalisierte Praxis in der Kirche, weithin übernommen in Recht, Philosophie, Geschäftsstrategie und Red Teaming
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Kritische Design- oder Architekturentscheidungen, bei denen Fehler kostspielig sind
@@ -39,6 +41,7 @@ Historischer Kontext:: 400+ Jahre als formalisierte Praxis in der Kirche, weithi
 * Risikobewertung und Notfallplanung
 * Jede hochkritische Entscheidung, bei der Fehler teuer sind
 
+[discrete]
 == *Verwandte Konzepte*:
 
 * Red Teaming (Sicherheitskontext)
@@ -47,6 +50,7 @@ Historischer Kontext:: 400+ Jahre als formalisierte Praxis in der Kirche, weithi
 * Kritisches Denken Frameworks
 * Steelmanning (vs. Strawmanning)
 
+[discrete]
 == *Beispiel-Prompt-Muster*:
 
 ----

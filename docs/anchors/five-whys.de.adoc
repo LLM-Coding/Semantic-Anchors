@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Five Whys Ursachenanalyse (Fünf-Warums)
 
+[discrete]
 == *Kernkonzepte*:
 
 Iterative Kausalanalyse:: "Warum?" wiederholt fragen (typischerweise ~5 Mal), um zu Grundursachen vorzudringen
@@ -29,6 +30,7 @@ Schlüsselvertreter:: Taiichi Ohno (Toyota-Produktionssystem, 1950er)
 
 Historischer Kontext:: Kernwerkzeug in Lean Manufacturing und Toyota Production System (TPS), grundlegend für kontinuierliche Verbesserung (Kaizen)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Incident Post-Mortems in Software/DevOps
@@ -38,6 +40,7 @@ Historischer Kontext:: Kernwerkzeug in Lean Manufacturing und Toyota Production 
 * Qualitätsfehleranalyse
 * Jede Situation, wo Symptome klar sind, aber Ursachen nicht
 
+[discrete]
 == *Verwandte Konzepte*:
 
 * Kaizen (kontinuierliche Verbesserung)

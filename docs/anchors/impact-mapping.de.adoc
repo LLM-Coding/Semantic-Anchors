@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Impact Mapping nach Gojko Adzic
 
+[discrete]
 == *Kernkonzepte*:
 
 Vier Ebenen:: Ziel → Akteure → Auswirkungen → Liefergegenstände
@@ -29,6 +30,7 @@ Roadmap-Alternative:: Zielorientiert statt featureorientiert
 
 Schlüsselvertreter:: Gojko Adzic ("Impact Mapping", 2012)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Strategische Planung für Produkte oder Projekte

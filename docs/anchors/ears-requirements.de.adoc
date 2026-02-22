@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Easy Approach to Requirements Syntax (Einfacher Ansatz für Anforderungssyntax)
 
+[discrete]
 == *Kernkonzepte*:
 
 Ubiquitäre Anforderungen:: "Das <System> muss <Anforderung>"
@@ -25,6 +26,7 @@ Testbarkeit:: Anforderungen so geschrieben, dass sie überprüfbar sind
 
 Schlüsselvertreter:: Alistair Mavin (Rolls-Royce)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Sicherheitskritische Systeme

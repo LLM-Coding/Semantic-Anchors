@@ -6,6 +6,7 @@
 ====
 Full Name:: Clean Architecture according to Robert C. Martin
 
+[discrete]
 == *Core Concepts*:
 
 The Dependency Rule:: Dependencies only point inward
@@ -29,6 +30,7 @@ SOLID principles:: Foundation of the architecture
 
 Key Proponent:: Robert C. Martin ("Uncle Bob")
 
+[discrete]
 == *When to Use*:
 
 * Enterprise applications with complex business logic

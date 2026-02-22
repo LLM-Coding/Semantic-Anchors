@@ -6,6 +6,7 @@
 ====
 Full Name:: Testing Pyramid according to Mike Cohn
 
+[discrete]
 == *Core Concepts*:
 
 Three layers::
@@ -28,6 +29,7 @@ Confidence gradient:: Balance confidence with execution speed
 
 Key Proponent:: Mike Cohn ("Succeeding with Agile", 2009)
 
+[discrete]
 == *When to Use*:
 
 * Planning test strategy for projects

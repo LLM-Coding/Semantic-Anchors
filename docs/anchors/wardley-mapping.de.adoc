@@ -5,6 +5,7 @@
 [%collapsible]
 ====
 
+[discrete]
 == *Kernkonzepte*:
 
 Wertkette:: Komponenten von Nutzerbedürfnissen abwärts kartieren
@@ -30,6 +31,7 @@ Build-Buy-Partner-Entscheidungen:: Basierend auf Evolutionsstufe
 
 Schlüsselvertreter:: Simon Wardley
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Strategische Technologieplanung

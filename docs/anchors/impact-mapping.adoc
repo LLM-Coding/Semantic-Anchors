@@ -6,6 +6,7 @@
 ====
 Full Name:: Impact Mapping according to Gojko Adzic
 
+[discrete]
 == *Core Concepts*:
 
 Four levels:: Goal → Actors → Impacts → Deliverables
@@ -29,6 +30,7 @@ Roadmap alternative:: Goal-oriented rather than feature-oriented
 
 Key Proponent:: Gojko Adzic ("Impact Mapping", 2012)
 
+[discrete]
 == *When to Use*:
 
 * Strategic planning for products or projects

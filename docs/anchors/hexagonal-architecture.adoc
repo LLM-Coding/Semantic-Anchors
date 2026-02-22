@@ -6,6 +6,7 @@
 ====
 Also known as:: Ports and Adapters, Onion Architecture (variant)
 
+[discrete]
 == *Core Concepts*:
 
 Hexagonal structure:: Core domain at the center, isolated from external concerns
@@ -29,6 +30,7 @@ Symmetry:: All external interactions are treated uniformly
 
 Key Proponent:: Alistair Cockburn (2005)
 
+[discrete]
 == *When to Use*:
 
 * Applications requiring high testability

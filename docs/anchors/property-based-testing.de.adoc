@@ -6,6 +6,7 @@
 ====
 Auch bekannt als:: Generatives Testen, QuickCheck-artiges Testen
 
+[discrete]
 == *Kernkonzepte*:
 
 Properties (Eigenschaften):: Invarianten, die immer gelten sollten
@@ -29,6 +30,7 @@ Modellbasiertes Testen:: Implementierung gegen einfacheres Modell vergleichen
 
 Wichtige Werkzeuge:: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Testen reiner Funktionen und Algorithmen

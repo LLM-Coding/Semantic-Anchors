@@ -7,6 +7,7 @@
 ====
 Also known as:: Mockist TDD, Outside-In TDD
 
+[discrete]
 == *Core Concepts*:
 
 Mock-heavy testing:: Heavy use of test doubles (mocks, stubs) to isolate units
@@ -24,6 +25,7 @@ Walking skeleton:: Build end-to-end functionality early, then fill in details
 
 Key Proponents:: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
 
+[discrete]
 == *When to Use*:
 
 * Complex systems with many collaborating objects

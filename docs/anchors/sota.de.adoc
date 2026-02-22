@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: State-of-the-Art
 
+[discrete]
 == *Kernkonzepte*:
 
 Neueste Ansätze:: Fokus auf die aktuellsten, modernsten Methoden und Techniken
@@ -23,12 +24,14 @@ Evidenzbasiert:: Untermauerung von Behauptungen mit neuesten Studien, Benchmarks
 Kontextbewusstsein:: Berücksichtigung der spezifischen Domäne und des Zeitrahmens für "State-of-the-Art"
 
 
+[discrete]
 == *Nutzungsmuster*:
 
 * "Lerne SOTA für [Thema]" - löst Recherche und umfassende Informationssammlung aus
 * "Was ist SOTA für [Thema]?" - fragt nach aktuellen Best Practices und Ansätzen
 * "Gib mir den SOTA-Ansatz für [Problem]" - bittet um modernste Lösungen
 
+[discrete]
 == *Beispiele*:
 
 * "Lerne SOTA für RAG-Implementierungen"
@@ -38,6 +41,7 @@ Kontextbewusstsein:: Berücksichtigung der spezifischen Domäne und des Zeitrahm
 
 Schlüsselvertreter:: Weit verbreitet in der ML/AI-Forschungsgemeinschaft
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Recherche aktueller Best Practices in einer technischen Domäne
@@ -47,6 +51,7 @@ Schlüsselvertreter:: Weit verbreitet in der ML/AI-Forschungsgemeinschaft
 * Lernen über modernste Implementierungen
 * Vermeidung veralteter oder deprecated Ansätze
 
+[discrete]
 == *Warum es funktioniert*:
 
 * Stark vertreten in ML/AI-Papers, Benchmarks und technischen Diskussionen

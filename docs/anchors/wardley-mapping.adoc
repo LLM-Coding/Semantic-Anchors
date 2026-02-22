@@ -5,6 +5,7 @@
 [%collapsible]
 ====
 
+[discrete]
 == *Core Concepts*:
 
 Value chain:: Map components from user needs down
@@ -30,6 +31,7 @@ Build-Buy-Partner decisions:: Based on evolution stage
 
 Key Proponent:: Simon Wardley
 
+[discrete]
 == *When to Use*:
 
 * Strategic technology planning

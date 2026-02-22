@@ -6,6 +6,7 @@
 ====
 Auch bekannt als:: Ports and Adapters, Onion Architecture (Variante)
 
+[discrete]
 == *Kernkonzepte*:
 
 Hexagonale Struktur:: Kerndomäne im Zentrum, isoliert von externen Belangen
@@ -29,6 +30,7 @@ Symmetrie:: Alle externen Interaktionen werden einheitlich behandelt
 
 Schlüsselvertreter:: Alistair Cockburn (2005)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Anwendungen, die hohe Testbarkeit erfordern

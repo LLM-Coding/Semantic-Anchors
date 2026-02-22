@@ -6,6 +6,7 @@
 [%collapsible]
 ====
 
+[discrete]
 == *Core Concepts*:
 
 * A specification for adding human and machine readable meaning to commit messages
@@ -26,6 +27,7 @@ Common Types::
 
 Key Proponents:: Benjamin E. Coe, James J. Womack, Steve Mao
 
+[discrete]
 == *When to Use*:
 
 * everything-as-code paradigm targeted

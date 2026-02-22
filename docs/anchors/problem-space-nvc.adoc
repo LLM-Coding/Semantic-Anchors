@@ -6,6 +6,7 @@
 ====
 Full Name:: Problem Space in Nonviolent Communication
 
+[discrete]
 == *Core Concepts*:
 
 Observations:: Concrete, objective facts without evaluation
@@ -25,6 +26,7 @@ Needs-based conflict resolution:: Finding solutions that meet everyone's needs
 
 Key Proponent:: Marshall Rosenberg
 
+[discrete]
 == *Application in Software Development*:
 
 * Requirements elicitation that uncovers real user needs

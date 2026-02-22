@@ -7,6 +7,7 @@
 ====
 Full Name:: Jobs To Be Done Framework (Christensen interpretation)
 
+[discrete]
 == *Core Concepts*:
 
 Job definition:: Progress people want to make in a particular context
@@ -30,6 +31,7 @@ Job stories:: Alternative to user stories focusing on context and motivation
 
 Key Proponents:: Clayton Christensen, Alan Klement, Bob Moesta
 
+[discrete]
 == *When to Use*:
 
 * Product discovery and innovation

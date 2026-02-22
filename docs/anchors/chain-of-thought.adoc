@@ -7,6 +7,7 @@
 ====
 Full Name:: Chain of Thought Prompting
 
+[discrete]
 == *Core Concepts*:
 
 Step-by-Step Reasoning:: Explicitly show intermediate reasoning steps before reaching a conclusion
@@ -30,6 +31,7 @@ Key Proponents:: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting
 
 Historical Context:: Breakthrough in LLM prompting research, significantly improved performance on reasoning tasks (math, logic, common sense)
 
+[discrete]
 == *When to Use*:
 
 * Complex reasoning problems (multi-step math, logic puzzles)
@@ -39,12 +41,14 @@ Historical Context:: Breakthrough in LLM prompting research, significantly impro
 * Problems requiring planning or strategy
 * Any task where intermediate steps provide value
 
+[discrete]
 == *Related Research*:
 
 * Tree of Thoughts (ToT): Extension allowing branching and backtracking
 * Self-Consistency: Sample multiple reasoning paths
 * Least-to-Most Prompting: Build up from simple to complex
 
+[discrete]
 == *Example Prompt Pattern*:
 
 ----
