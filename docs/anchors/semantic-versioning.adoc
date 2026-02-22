@@ -6,6 +6,7 @@
 ====
 Full Name:: Semantic Versioning Specification
 
+[discrete]
 == *Core Concepts*:
 
 Version format::
@@ -26,6 +27,7 @@ Public API declaration:: Once public API declared, version dependencies matter
 
 Key Proponent:: Tom Preston-Werner
 
+[discrete]
 == *When to Use*:
 
 * Libraries and APIs consumed by other software

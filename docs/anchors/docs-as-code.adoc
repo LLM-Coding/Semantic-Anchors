@@ -6,6 +6,7 @@
 ====
 Full Name:: Docs-as-Code Approach according to Ralf D. Müller
 
+[discrete]
 == *Core Concepts*:
 
 Plain text formats:: AsciiDoc, Markdown
@@ -29,6 +30,7 @@ Modular documentation:: Includes and composition
 
 Key Proponent:: Ralf D. Müller (docToolchain creator)
 
+[discrete]
 == *Technical Stack*:
 
 * AsciiDoc/Asciidoctor
@@ -37,6 +39,7 @@ Key Proponent:: Ralf D. Müller (docToolchain creator)
 * Kroki for diagram rendering
 * Arc42 template integration
 
+[discrete]
 == *When to Use*:
 
 * Technical documentation for software projects

@@ -7,6 +7,7 @@
 ====
 Vollständiger Name:: Statistical Process Control
 
+[discrete]
 == *Kernkonzepte*:
 
 Prozessüberwachung:: Systematische statistische Überwachung laufender Prozesse
@@ -32,6 +33,7 @@ DMAIC Control Phase:: SPC-Werkzeuge sichern Verbesserungen innerhalb von Six Sig
 
 Schlüsselvertreter:: Walter A. Shewhart (Gründer), W. Edwards Deming (Verbreitung), Western Electric Company
 
+[discrete]
 == *Beziehung zu anderen Ankern*:
 
 Control Chart (Shewhart):: Zentrales Werkzeug innerhalb von SPC
@@ -43,6 +45,7 @@ Six Sigma:: Nutzt SPC besonders in der Control-Phase
 Testing Pyramid:: Konzeptuelle Parallele — verschiedene Ebenen der Qualitätssicherung
 
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Überwachung von Fertigungs- und Geschäftsprozessen

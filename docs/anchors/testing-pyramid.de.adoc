@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Testing Pyramid nach Mike Cohn
 
+[discrete]
 == *Kernkonzepte*:
 
 Drei Schichten::
@@ -28,6 +29,7 @@ Vertrauensgradient:: Balance zwischen Vertrauen und Ausführungsgeschwindigkeit
 
 Schlüsselvertreter:: Mike Cohn ("Succeeding with Agile", 2009)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Planung der Teststrategie für Projekte

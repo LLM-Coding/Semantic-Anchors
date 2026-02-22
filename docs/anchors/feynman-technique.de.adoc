@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Feynman-Technik (auch Feynman-Lernmethode)
 
+[discrete]
 == *Kernkonzepte*:
 
 Einfach erklären:: Das Konzept in einfacher Sprache lehren, als ob für einen Anfänger (traditionell "einem 12-Jährigen erklären")
@@ -29,6 +30,7 @@ Schlüsselzuordnung:: Richard Feynman (Nobelpreisträger für Physik, 1965), ber
 
 Historischer Kontext:: Feynman war für seine Lehrfähigkeit und seinen Glauben bekannt, dass tiefes Verständnis bedeutet, einfach erklären zu können. Die "Technik" ist eine Formalisierung seines Lernansatzes.
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Lernen neuer technischer Konzepte oder Frameworks
@@ -38,6 +40,7 @@ Historischer Kontext:: Feynman war für seine Lehrfähigkeit und seinen Glauben 
 * Code-Review, bei dem Sie Ihre Designentscheidungen einfach erklären
 * Dokumentationsschreiben (wenn Sie es nicht einfach erklären können, verstehen Sie es nicht)
 
+[discrete]
 == *Vier Schritte (kanonische Form)*:
 
 . *Konzept wählen*: Das Thema auswählen, das Sie verstehen möchten

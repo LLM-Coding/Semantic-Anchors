@@ -7,6 +7,7 @@
 ====
 Vollständiger Name:: Block Element Modifier (BEM) (S)CSS-Methodologie
 
+[discrete]
 == *Kernkonzepte*:
 
 Motivation:: CSS-Spezifitätskriege, Namenskonflikte und Stylesheet-Wartbarkeitsprobleme in großen Codebasen lösen
@@ -32,6 +33,7 @@ Mix:: Kombination mehrerer BEM-Entitäten auf einem einzigen DOM-Knoten
 Dateistruktur:: Oft gepaart mit komponentenbasierter Dateiorganisation
 
 
+[discrete]
 == *Benennungsbeispiele*:
 
 * Block: `.search-form`
@@ -40,6 +42,7 @@ Dateistruktur:: Oft gepaart mit komponentenbasierter Dateiorganisation
 
 Schlüsselvertreter:: Yandex Entwicklungsteam
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Großangelegte Webanwendungen mit vielen Komponenten

@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: MECE (Mutually Exclusive, Collectively Exhaustive - Sich gegenseitig ausschließend, gemeinsam erschöpfend)
 
+[discrete]
 == *Kernkonzepte*:
 
 Sich gegenseitig ausschließend:: Kategorien überschneiden sich nicht - jedes Element gehört zu genau einer Kategorie
@@ -27,6 +28,7 @@ Validierungsansatz:: Beide Dimensionen unabhängig prüfen (Ausschließlichkeit 
 
 Schlüsselvertreterin:: Barbara Minto (McKinsey & Company, späte 1960er)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Problemzerlegung und -analyse
@@ -39,6 +41,7 @@ Schlüsselvertreterin:: Barbara Minto (McKinsey & Company, späte 1960er)
 * Organisation komplexer Informationen
 * Systemdesign und modulare Architektur
 
+[discrete]
 == *Verwandte Konzepte*:
 
 * Grundlage für das Pyramid Principle

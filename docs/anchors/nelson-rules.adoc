@@ -6,6 +6,7 @@
 ====
 Full Name:: Nelson Rules (Tests for Special Causes)
 
+[discrete]
 == *Core Concepts*:
 
 * *8 rules* for detecting non-random patterns in Control Charts
@@ -34,6 +35,7 @@ False Positive Trade-off:: More active rules = higher sensitivity, but more fals
 
 Key Proponent:: Lloyd S. Nelson (1984, Journal of Quality Technology)
 
+[discrete]
 == *Relationship to Other Anchors*:
 
 Control Chart (Shewhart):: Nelson Rules are applied to Control Charts
@@ -43,6 +45,7 @@ Control Chart (Shewhart):: Nelson Rules are applied to Control Charts
 Western Electric Rules:: Predecessor; Nelson Rules extend these with Rules 5-8
 
 
+[discrete]
 == *When to Use*:
 
 * Detecting non-random patterns in time series data

@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Don't Repeat Yourself-Prinzip (Wiederhole dich nicht)
 
+[discrete]
 == *Kernkonzepte*:
 
 Einzelne Repräsentation:: Jedes Stück Wissen sollte eine einzelne, eindeutige Repräsentation haben
@@ -25,6 +26,7 @@ Konfigurationsmanagement:: Konfiguration zentralisieren und verstreute Einstellu
 
 Schlüsselvertreter:: Andy Hunt und Dave Thomas ("The Pragmatic Programmer", 1999)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Refactoring von Codebasen mit wiederholter Logik oder Mustern

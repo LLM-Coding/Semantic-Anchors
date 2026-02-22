@@ -6,6 +6,7 @@
 ====
 Full Name:: Don't Repeat Yourself Principle
 
+[discrete]
 == *Core Concepts*:
 
 Single representation:: Every piece of knowledge should have a single, unambiguous representation
@@ -25,6 +26,7 @@ Configuration management:: Centralize configuration and avoid scattered settings
 
 Key Proponent:: Andy Hunt and Dave Thomas ("The Pragmatic Programmer", 1999)
 
+[discrete]
 == *When to Use*:
 
 * Refactoring codebases with repeated logic or patterns

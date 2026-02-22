@@ -8,6 +8,7 @@ Full Name:: Shewhart Control Chart
 
 Also known as:: Process Control Chart, SPC Chart
 
+[discrete]
 == *Core Concepts*:
 
 Time series diagram:: Measured value plotted over time
@@ -38,6 +39,7 @@ Key Proponent:: Walter A. Shewhart (1920s, Bell Labs / Western Electric)
 
 Key Work:: "Economic Control of Quality of Manufactured Product" (1931)
 
+[discrete]
 == *Relationship to Other Anchors*:
 
 Nelson Rules:: 8 rules for pattern recognition on Control Charts
@@ -47,6 +49,7 @@ Nelson Rules:: 8 rules for pattern recognition on Control Charts
 Six Sigma:: Control Charts are used in the Control phase of DMAIC
 
 
+[discrete]
 == *When to Use*:
 
 * Process monitoring in manufacturing and production

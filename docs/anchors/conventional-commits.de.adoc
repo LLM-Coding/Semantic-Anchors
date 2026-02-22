@@ -6,6 +6,7 @@
 [%collapsible]
 ====
 
+[discrete]
 == *Kernkonzepte*:
 
 * Eine Spezifikation zum Hinzufügen von menschen- und maschinenlesbarer Bedeutung zu Commit-Nachrichten
@@ -26,6 +27,7 @@ Häufige Typen::
 
 Schlüsselvertreter:: Benjamin E. Coe, James J. Womack, Steve Mao
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Everything-as-Code-Paradigma angestrebt

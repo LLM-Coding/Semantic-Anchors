@@ -6,6 +6,7 @@
 ====
 Full Name:: SOLID Object-Oriented Design Principles
 
+[discrete]
 == *Core Concepts*:
 
 Single Responsibility Principle (SRP):: Each class should have one responsibility
@@ -21,6 +22,7 @@ Dependency Inversion Principle (DIP):: Depend on abstractions, not concrete impl
 
 Key Proponent:: Robert C. Martin ("Uncle Bob")
 
+[discrete]
 == *When to Use*:
 
 * Designing maintainable and scalable object-oriented systems

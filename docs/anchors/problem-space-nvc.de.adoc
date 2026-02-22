@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Problem Space in Nonviolent Communication
 
+[discrete]
 == *Kernkonzepte*:
 
 Beobachtungen:: Konkrete, objektive Fakten ohne Bewertung
@@ -25,6 +26,7 @@ Bedürfnisbasierte Konfliktlösung:: Lösungen finden, die die Bedürfnisse alle
 
 Schlüsselvertreter:: Marshall Rosenberg
 
+[discrete]
 == *Anwendung in der Softwareentwicklung*:
 
 * Requirements-Ermittlung, die echte Nutzerbedürfnisse aufdeckt

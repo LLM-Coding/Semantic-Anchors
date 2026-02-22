@@ -7,6 +7,7 @@
 ====
 Vollständiger Name:: Markdown Any Decision Records
 
+[discrete]
 == *Kernkonzepte*:
 
 Strukturiertes Template:: Wohldefiniertes Format mit spezifischen Abschnitten
@@ -36,6 +37,7 @@ Schlüsselvertreter:: Oliver Kopp, Olaf Zimmermann (und MADR-Community)
 
 Referenz:: https://adr.github.io/madr/
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Wenn mehr Struktur als bei einfachen ADRs benötigt wird

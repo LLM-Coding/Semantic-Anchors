@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: C4-Modell für Software-Architektur-Diagramme
 
+[discrete]
 == *Kernkonzepte*:
 
 Vier Abstraktionsebenen::
@@ -26,6 +27,7 @@ Ergänzende Diagramme:: Deployment, dynamische Ansichten, etc.
 
 Schlüsselvertreter:: Simon Brown
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Architekturkommunikation an verschiedene Stakeholder

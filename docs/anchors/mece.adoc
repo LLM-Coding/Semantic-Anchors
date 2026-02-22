@@ -6,6 +6,7 @@
 ====
 Full Name:: MECE (Mutually Exclusive, Collectively Exhaustive)
 
+[discrete]
 == *Core Concepts*:
 
 Mutually Exclusive:: Categories have no overlap - each item belongs to exactly one category
@@ -27,6 +28,7 @@ Validation approach:: Check both dimensions independently (exclusivity and exhau
 
 Key Proponent:: Barbara Minto (McKinsey & Company, late 1960s)
 
+[discrete]
 == *When to Use*:
 
 * Problem decomposition and analysis
@@ -39,6 +41,7 @@ Key Proponent:: Barbara Minto (McKinsey & Company, late 1960s)
 * Organizing complex information
 * System design and modular architecture
 
+[discrete]
 == *Related Concepts*:
 
 * Foundational to the Pyramid Principle

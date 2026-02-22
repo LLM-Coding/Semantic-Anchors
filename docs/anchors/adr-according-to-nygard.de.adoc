@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: Architecture Decision Records nach Michael Nygard
 
+[discrete]
 == *Kernkonzepte*:
 
 Leichtgewichtige Dokumentation:: Kurze, fokussierte Aufzeichnungen
@@ -28,6 +29,7 @@ Evolutionäre Architektur:: Unterstützung von Architektur, die sich im Laufe de
 
 Schlüsselvertreter:: Michael Nygard
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Alle Softwareprojekte (geringer Aufwand, hoher Wert)

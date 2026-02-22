@@ -6,6 +6,7 @@
 ====
 Vollständiger Name:: User Story Mapping according to Jeff Patton
 
+[discrete]
 == *Kernkonzepte*:
 
 Narrativer Fluss:: Horizontale Anordnung von Nutzeraktivitäten
@@ -29,6 +30,7 @@ Gelegenheit für Konversation:: Stories als Platzhalter für Diskussion
 
 Schlüsselvertreter:: Jeff Patton ("User Story Mapping", 2014)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Planung neuer Produkte oder Major Features

@@ -6,6 +6,7 @@
 ====
 Full Name:: Five Whys Root Cause Analysis
 
+[discrete]
 == *Core Concepts*:
 
 Iterative Causal Analysis:: Ask "Why?" repeatedly (typically ~5 times) to drill down to root causes
@@ -29,6 +30,7 @@ Key Proponent:: Taiichi Ohno (Toyota Production System, 1950s)
 
 Historical Context:: Core tool in Lean Manufacturing and Toyota Production System (TPS), foundational to continuous improvement (Kaizen)
 
+[discrete]
 == *When to Use*:
 
 * Incident post-mortems in software/DevOps
@@ -38,6 +40,7 @@ Historical Context:: Core tool in Lean Manufacturing and Toyota Production Syste
 * Quality defect analysis
 * Any situation where symptoms are clear but causes are not
 
+[discrete]
 == *Related Concepts*:
 
 * Kaizen (continuous improvement)
@@ -46,12 +49,14 @@ Historical Context:: Core tool in Lean Manufacturing and Toyota Production Syste
 * A3 Problem Solving (Toyota)
 * DevOps post-mortem culture
 
+[discrete]
 == *Pitfall to Avoid*:
 
 * Stopping too early at a symptom rather than root cause
 * Pursuing a single causal chain when multiple factors contribute (use Fishbone Diagram for complex causality)
 * Blame-focused questioning rather than system-focused
 
+[discrete]
 == *Example Application*:
 
 ----

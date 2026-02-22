@@ -1,0 +1,8 @@
+rules:
+  # WS001 (WhitespaceRule) reports false positives for section titles that are
+  # immediately preceded by [discrete] — an AsciiDoc attribute that must sit
+  # directly before the heading with no blank line in between.  Disabling this
+  # rule avoids those false positives while we wait for the upstream linter to
+  # recognise attribute blocks as valid "blank-line substitutes".
+  WS001:
+    enabled: false

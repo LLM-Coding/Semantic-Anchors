@@ -6,6 +6,7 @@
 ====
 Full Name:: Single Point of Truth
 
+[discrete]
 == *Core Concepts*:
 
 Implementation pattern:: Focuses on where and how data/logic is stored and accessed
@@ -23,6 +24,7 @@ Clear ownership:: Explicit responsibility for maintaining each piece of truth
 Code-level practice:: Applied at the code and system design level
 
 
+[discrete]
 == *When to Use*:
 
 * Implementing functions and utilities to avoid code duplication

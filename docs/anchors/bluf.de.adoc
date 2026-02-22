@@ -9,6 +9,7 @@ Vollständiger Name:: BLUF (Bottom Line Up Front - Das Wichtigste zuerst)
 
 Auch bekannt als:: Direkte Antwortformat, Schlussfolgerung-zuerst-Kommunikation
 
+[discrete]
 == *Kernkonzepte*:
 
 Schlussfolgerung zuerst:: Nennen Sie den Hauptpunkt, die Entscheidung oder Empfehlung sofort
@@ -32,6 +33,7 @@ Schlüsselvertreter:: US-Militär (Army writing standards), weithin in Wirtschaf
 
 Historischer Kontext:: Standardisiert in militärischer Kommunikation, wo schnelle Entscheidungsfindung kritisch ist; jetzt Standard im Business Writing (McKinsey, Consulting, Führungskommunikation)
 
+[discrete]
 == *Wann zu verwenden*:
 
 * Executive Summaries und Briefings
@@ -41,6 +43,7 @@ Historischer Kontext:: Standardisiert in militärischer Kommunikation, wo schnel
 * Jede hochkritische Kommunikation, bei der der Leser die Schlussfolgerung zuerst benötigt
 * Technische Dokumentation für zeitbeschränkte Leser
 
+[discrete]
 == *Beziehung zu anderen Ankern*:
 
 * Verwandt mit dem <<pyramid-principle,Pyramid Principle>>, aber enger auf die Schlussfolgerung-zuerst-Struktur fokussiert

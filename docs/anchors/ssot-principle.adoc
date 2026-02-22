@@ -6,6 +6,7 @@
 ====
 Full Name:: Single Source of Truth
 
+[discrete]
 == *Core Concepts*:
 
 Conceptual principle:: Focuses on establishing trust and authority for data
@@ -25,6 +26,7 @@ System of record:: The primary data store for critical business information
 Organizational practice:: Applied at the architecture and business process level
 
 
+[discrete]
 == *Key Application Areas*:
 
 * Version control systems (Git as SSOT for code)
@@ -33,6 +35,7 @@ Organizational practice:: Applied at the architecture and business process level
 * Configuration management
 * Master data management (MDM)
 
+[discrete]
 == *When to Use*:
 
 * Designing data architecture for enterprise systems

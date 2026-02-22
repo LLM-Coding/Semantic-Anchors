@@ -9,6 +9,7 @@
 ====
 Full Name:: Morphological Analysis / Morphological Box (German: Morphologischer Kasten)
 
+[discrete]
 == *Core Concepts*:
 
 Multi-dimensional decomposition:: Break complex problem into independent parameters/dimensions
@@ -32,6 +33,7 @@ Key Proponent:: Fritz Zwicky (1940s-1960s, California Institute of Technology)
 
 Historical Context:: Developed for aerospace engineering problems (jet engines, spacecraft propulsion), now widely applied in product development, system design, and innovation management.
 
+[discrete]
 == *When to Use*:
 
 * Exploring design alternatives for complex systems
@@ -42,6 +44,7 @@ Historical Context:: Developed for aerospace engineering problems (jet engines, 
 * Requirements engineering for product variants
 * Solution space mapping before evaluation
 
+[discrete]
 == *Example Application*:
 
 ----
@@ -57,6 +60,7 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 → Identify ~20 feasible solutions for evaluation with Pugh Matrix
 ----
 
+[discrete]
 == *Related Concepts*:
 
 * MECE Principle (for parameter independence)
@@ -65,12 +69,14 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Combinatorial design
 * Solution space exploration
 
+[discrete]
 == *Complementary Tools*:
 
 * Use *Morphological Box* to generate alternatives
 * Then apply *Pugh Matrix* to evaluate and select best option
 * Use *MECE* to ensure parameter independence
 
+[discrete]
 == *Pitfalls to Avoid*:
 
 * Parameters that are not independent (violates combinatorial logic)

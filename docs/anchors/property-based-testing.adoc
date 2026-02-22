@@ -6,6 +6,7 @@
 ====
 Also known as:: Generative Testing, QuickCheck-style Testing
 
+[discrete]
 == *Core Concepts*:
 
 Properties:: Invariants that should always hold
@@ -29,6 +30,7 @@ Model-based testing:: Compare implementation against simpler model
 
 Key Tools:: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
 
+[discrete]
 == *When to Use*:
 
 * Testing pure functions and algorithms
