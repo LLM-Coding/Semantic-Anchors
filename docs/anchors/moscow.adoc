@@ -1,0 +1,45 @@
+= MoSCoW
+:categories: requirements-engineering
+:roles: product-owner, business-analyst, team-lead, consultant
+:related: user-story-mapping, impact-mapping
+:proponents: Dai Clegg
+:tags: prioritization, requirements, agile, dsdm
+
+[%collapsible]
+====
+Full Name:: MoSCoW Prioritization Method
+
+Also known as:: MoSCoW Analysis, MoSCoW Method
+
+*Core Concepts*:
+
+Must have:: Non-negotiable requirements essential for the current delivery; without them the solution is unusable or unsafe
+
+Should have:: Important requirements that are not vital; painful to leave out but the solution is still viable without them
+
+Could have:: Desirable but not necessary requirements; included only if time and resources permit
+
+Won't have (this time):: Requirements explicitly agreed to be out of scope for the current iteration; may be reconsidered in future
+
+Timeboxed context:: Prioritization is always relative to a fixed timebox, not permanent
+
+Stakeholder alignment:: Prioritization is a collaborative activity that builds shared understanding
+
+Scope control:: Explicit "Won't have" category reduces scope creep by surfacing deferred items
+
+
+Key Proponent:: Dai Clegg (Dynamic Systems Development Method / DSDM, 1994)
+
+*When to Use*:
+
+* Sprint and release planning in agile teams
+* Scoping a Minimum Viable Product (MVP)
+* Negotiating scope with stakeholders under time or budget constraints
+* Prioritizing a backlog when resources are limited
+* Aligning cross-functional teams on delivery expectations
+
+*Related Anchors*:
+
+* <<user-story-mapping,User Story Mapping>>
+* <<impact-mapping,Impact Mapping>>
+====

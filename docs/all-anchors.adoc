@@ -91,6 +91,8 @@ include::anchors/rubber-duck-debugging.adoc[leveloffset=+2]
 
 include::anchors/ears-requirements.adoc[leveloffset=+2]
 
+include::anchors/moscow.adoc[leveloffset=+2]
+
 include::anchors/problem-space-nvc.adoc[leveloffset=+2]
 
 include::anchors/user-story-mapping.adoc[leveloffset=+2]

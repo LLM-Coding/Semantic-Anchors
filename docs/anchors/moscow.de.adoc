@@ -1,0 +1,45 @@
+= MoSCoW
+:categories: requirements-engineering
+:roles: product-owner, business-analyst, team-lead, consultant
+:related: user-story-mapping, impact-mapping
+:proponents: Dai Clegg
+:tags: prioritization, requirements, agile, dsdm
+
+[%collapsible]
+====
+Vollständiger Name:: MoSCoW-Priorisierungsmethode
+
+Auch bekannt als:: MoSCoW-Analyse, MoSCoW-Methode
+
+*Kernkonzepte*:
+
+Must have:: Nicht verhandelbare Anforderungen, die für die aktuelle Lieferung unerlässlich sind; ohne sie ist die Lösung nicht nutzbar oder nicht sicher
+
+Should have:: Wichtige Anforderungen, die nicht zwingend notwendig sind; ihr Fehlen ist schmerzhaft, aber die Lösung bleibt ohne sie funktionsfähig
+
+Could have:: Wünschenswerte, aber nicht notwendige Anforderungen; werden nur umgesetzt, wenn Zeit und Ressourcen es erlauben
+
+Won't have (diesmal):: Anforderungen, die ausdrücklich als außerhalb des aktuellen Lieferumfangs vereinbart sind; können in zukünftigen Iterationen erneut betrachtet werden
+
+Zeitboxbezug:: Die Priorisierung bezieht sich immer auf eine feste Zeitbox, nicht auf eine dauerhafte Entscheidung
+
+Stakeholder-Ausrichtung:: Priorisierung ist eine kollaborative Aktivität, die ein gemeinsames Verständnis fördert
+
+Scope-Kontrolle:: Die explizite Kategorie "Won't have" reduziert Scope Creep, indem zurückgestellte Anforderungen sichtbar gemacht werden
+
+
+Schlüsselvertreter:: Dai Clegg (Dynamic Systems Development Method / DSDM, 1994)
+
+*Wann zu verwenden*:
+
+* Sprint- und Release-Planung in agilen Teams
+* Bestimmung des Umfangs eines Minimum Viable Product (MVP)
+* Aushandlung des Umfangs mit Stakeholdern bei Zeit- oder Budgetbeschränkungen
+* Priorisierung eines Backlogs bei begrenzten Ressourcen
+* Ausrichtung funktionsübergreifender Teams auf Liefererwartungen
+
+*Verwandte Anker*:
+
+* <<user-story-mapping,User Story Mapping>>
+* <<impact-mapping,Impact Mapping>>
+====
