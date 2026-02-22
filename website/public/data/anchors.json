@@ -202,7 +202,7 @@
   },
   {
     "id": "devils-advocate",
-    "title": "Devil’s Advocate",
+    "title": "Devil\u2019s Advocate",
     "categories": [
       "problem-solving"
     ],
@@ -219,7 +219,7 @@
   },
   {
     "id": "diataxis-framework",
-    "title": "Diátaxis Framework",
+    "title": "Di\u00e1taxis Framework",
     "categories": [
       "documentation"
     ],
@@ -234,7 +234,7 @@
   },
   {
     "id": "docs-as-code",
-    "title": "Docs-as-Code according to Ralf D. Müller",
+    "title": "Docs-as-Code according to Ralf D. M\u00fcller",
     "categories": [
       "documentation"
     ],
@@ -267,7 +267,7 @@
   },
   {
     "id": "dry-principle",
-    "title": "DRY (Don’t Repeat Yourself)",
+    "title": "DRY (Don\u2019t Repeat Yourself)",
     "categories": [
       "design-principles"
     ],
@@ -555,6 +555,33 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/nelson-rules.adoc"
+  },
+  {
+    "id": "moscow",
+    "title": "MoSCoW",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "team-lead",
+      "consultant"
+    ],
+    "related": [
+      "user-story-mapping",
+      "impact-mapping"
+    ],
+    "proponents": [
+      "Dai Clegg"
+    ],
+    "tags": [
+      "prioritization",
+      "requirements",
+      "agile",
+      "dsdm"
+    ],
+    "filePath": "docs/anchors/moscow.adoc"
   },
   {
     "id": "problem-space-nvc",
