@@ -288,6 +288,17 @@ timtowtdi:
     - educator
   rationale: "Flexibility philosophy; developers appreciate multiple solutions, architects evaluate trade-offs, consultants/educators teach pragmatism"
 
+regulated-environment:
+  roles:
+    - software-developer
+    - software-architect
+    - qa-engineer
+    - devops-engineer
+    - team-lead
+    - consultant
+    - business-analyst
+  rationale: "Development context with regulatory constraints; developers implement traceability, architects design audit-ready systems, QA validates, DevOps enforces controlled pipelines, team leads manage compliance, consultants advise on standards, BAs capture regulatory requirements"
+
 # CATEGORY: Statistical Methods & Process Monitoring
 
 spc:
@@ -367,22 +378,22 @@ feynman-technique:
 
 # SUMMARY STATISTICS
 
-# Total anchors mapped: 49
+# Total anchors mapped: 50
 #
 # Roles by frequency:
-#   - software-developer: 24 anchors (49%)
-#   - team-lead: 20 anchors (41%)
-#   - software-architect: 17 anchors (35%)
-#   - consultant: 15 anchors (31%)
-#   - qa-engineer: 13 anchors (27%)
-#   - business-analyst: 12 anchors (24%)
+#   - software-developer: 25 anchors (50%)
+#   - team-lead: 21 anchors (42%)
+#   - software-architect: 18 anchors (36%)
+#   - consultant: 16 anchors (32%)
+#   - qa-engineer: 14 anchors (28%)
+#   - business-analyst: 13 anchors (26%)
+#   - devops-engineer: 10 anchors (20%)
 #   - technical-writer: 9 anchors (18%)
-#   - devops-engineer: 9 anchors (18%)
 #   - product-owner: 8 anchors (16%)
 #   - data-scientist: 7 anchors (14%)
 #   - educator: 7 anchors (14%)
 #   - ux-designer: 5 anchors (10%)
 #
-# Average roles per anchor: 2.6
+# Average roles per anchor: 2.7
 # Min roles per anchor: 1 (Diataxis)
-# Max roles per anchor: 5 (SOLID Principles)
+# Max roles per anchor: 7 (Regulated Environment)

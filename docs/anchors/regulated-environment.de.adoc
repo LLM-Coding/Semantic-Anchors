@@ -1,0 +1,64 @@
+= Reguliertes Umfeld
+:categories: development-workflow
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, team-lead, consultant, business-analyst
+:related: iec-61508-sil-levels, docs-as-code, conventional-commits, semantic-versioning
+:proponents: FDA (21 CFR Part 11), EMA (GMP Annex 11), ISO 9001, IEC 62304, GAMP 5
+:tags: compliance, validation, traceability, audit-trail, change-control, documentation, GxP, FDA, IEC, ISO
+
+[%collapsible]
+====
+Auch bekannt als:: Compliance-Umgebung, Validierte Umgebung, Entwicklung in regulierten Branchen
+
+[discrete]
+== *Kernkonzepte*:
+
+Rückverfolgbarkeit:: Jede Anforderung, Designentscheidung, Implementierung und jeder Test muss lückenlos verknüpft sein; Änderungen vom Ursprung bis zur Bereitstellung nachvollziehbar
+
+Validierung & Verifizierung (V&V):: Formaler Nachweis, dass ein System das tut, wofür es bestimmt ist (Validierung), und korrekt gebaut wurde (Verifizierung)
+
+Audit-Trail:: Unveränderliches, zeitgestempeltes Protokoll, wer was wann und warum geändert hat; unverzichtbar für behördliche Inspektionen
+
+Änderungskontrolle:: Formaler Prozess zur Bewertung, Genehmigung, Umsetzung und Dokumentation jeder Änderung an einem validierten System
+
+Dokumentationspflichten:: Spezifikationen (URS, FS, DS), SOPs, Testprotokolle, Validierungsberichte und Risikobeurteilungen sind Pflichtliefergegenstände
+
+Risikobasierter Ansatz:: Aufwand und Sorgfalt proportional zum Risiko des Systems (z. B. GAMP-5-Kategorien, FMEA)
+
+Umgebungstrennung:: Strikte Trennung von Entwicklungs-, Test-/Qualifizierungs- und Produktionsumgebungen
+
+Reproduzierbarkeit:: Builds, Deployments und Testergebnisse müssen reproduzierbar sein; versionsgebundene Abhängigkeiten und Infrastructure-as-Code
+
+Elektronische Unterschriften & Aufzeichnungen:: Rechtsverbindliche digitale Freigaben von Dokumenten und Daten (z. B. FDA 21 CFR Part 11)
+
+Lieferantenqualifizierung:: Drittanbieter-Komponenten und Lieferanten müssen qualifiziert und auditiert werden
+
+[discrete]
+== *Anwendbare Normen & Rahmenwerke*:
+
+* *FDA 21 CFR Part 11* – Elektronische Aufzeichnungen und Unterschriften (US Pharma/Medizin)
+* *EU GMP Annex 11* – Computergestützte Systeme in der Pharmafertigung
+* *GAMP 5* – Good Automated Manufacturing Practice (risikobasierte Validierungsleitlinie)
+* *ISO 9001* – Qualitätsmanagementsysteme
+* *IEC 62304* – Software-Lebenszyklus für Medizinprodukte
+* *ISO 26262* – Funktionale Sicherheit für Kraftfahrzeugsysteme
+* *SOX (Sarbanes-Oxley)* – Finanzsysteme (IT General Controls)
+* *ISO/IEC 27001* – Informationssicherheits-Managementsysteme
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Softwareentwicklung für Pharma-, Biotech- oder Medizinproduktebranchen
+* Systeme unter Aufsicht von FDA, EMA oder anderen Regulierungsbehörden
+* Jedes Projekt, bei dem eine externe Behördenprüfung erwartet wird
+* Finanzsysteme unterliegen SOX, PCI-DSS oder ähnlichen Vorschriften
+* Sicherheitskritische Systeme in Automobil, Luft- und Raumfahrt oder Industrieautomation
+* Einrichtung von CI/CD-Pipelines, die Validierungsanforderungen erfüllen müssen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<iec-61508-sil-levels,IEC 61508 SIL-Stufen>>
+* <<docs-as-code,Docs-as-Code>>
+* <<conventional-commits,Conventional Commits>>
+* <<semantic-versioning,Semantic Versioning>>
+====
