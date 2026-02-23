@@ -1,0 +1,64 @@
+= Regulated Environment
+:categories: development-workflow
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, team-lead, consultant, business-analyst
+:related: iec-61508-sil-levels, docs-as-code, conventional-commits, semantic-versioning
+:proponents: FDA (21 CFR Part 11), EMA (GMP Annex 11), ISO 9001, IEC 62304, GAMP 5
+:tags: compliance, validation, traceability, audit-trail, change-control, documentation, GxP, FDA, IEC, ISO
+
+[%collapsible]
+====
+Also known as:: Compliance Environment, Validated Environment, Regulated Industry Development
+
+[discrete]
+== *Core Concepts*:
+
+Traceability:: Every requirement, design decision, implementation, and test must be linked end-to-end; changes traceable from origin to deployment
+
+Validation & Verification (V&V):: Formal proof that a system does what it is intended to do (validation) and is built correctly (verification)
+
+Audit Trail:: Immutable, timestamped record of who changed what, when, and why; essential for regulatory inspections
+
+Change Control:: Formal process for evaluating, approving, implementing, and documenting any change to a validated system
+
+Documentation requirements:: Specifications (URS, FS, DS), SOPs, test protocols, validation reports, and risk assessments are mandatory deliverables
+
+Risk-based approach:: Effort and rigor proportional to the risk posed by the system (e.g., GAMP 5 categories, FMEA)
+
+Separation of environments:: Strict segregation of development, testing/qualification, and production environments
+
+Reproducibility:: Builds, deployments, and test results must be reproducible; version-pinned dependencies and infrastructure-as-code
+
+Electronic signatures & records:: Legally binding digital sign-off on documents and data (e.g., FDA 21 CFR Part 11)
+
+Supplier qualification:: Third-party components and vendors must be qualified and audited
+
+[discrete]
+== *Applicable Standards & Frameworks*:
+
+* *FDA 21 CFR Part 11* – Electronic records and signatures (US pharmaceutical/medical)
+* *EU GMP Annex 11* – Computerised systems in pharmaceutical manufacturing
+* *GAMP 5* – Good Automated Manufacturing Practice (risk-based validation guidance)
+* *ISO 9001* – Quality management systems
+* *IEC 62304* – Medical device software lifecycle
+* *ISO 26262* – Functional safety for automotive systems
+* *SOX (Sarbanes-Oxley)* – Financial reporting systems (IT general controls)
+* *ISO/IEC 27001* – Information security management
+
+[discrete]
+== *When to Use*:
+
+* Developing software for pharmaceutical, biotech, or medical device industries
+* Building systems subject to FDA, EMA, or other regulatory body oversight
+* Any project where an audit by an external authority is anticipated
+* Financial systems subject to SOX, PCI-DSS, or similar controls
+* Safety-critical systems in automotive, aerospace, or industrial automation
+* Setting up CI/CD pipelines that must satisfy validation requirements
+
+[discrete]
+== *Related Anchors*:
+
+* <<iec-61508-sil-levels,IEC 61508 SIL Levels>>
+* <<docs-as-code,Docs-as-Code>>
+* <<conventional-commits,Conventional Commits>>
+* <<semantic-versioning,Semantic Versioning>>
+====
