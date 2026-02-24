@@ -102,13 +102,6 @@ clean-architecture:
     - software-developer
   rationale: "Layered architecture pattern; architects design layers, developers enforce dependency rules"
 
-lethal-trifecta:
-  roles:
-    - software-architect
-    - software-developer
-    - team-lead
-  rationale: "Distributed systems anti-pattern; architects recognize and prevent it, developers avoid the coupling types, team leads guide architectural decisions"
-
 # CATEGORY: Design Principles & Patterns
 
 solid-principles:

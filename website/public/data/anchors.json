@@ -441,34 +441,6 @@
     "filePath": "docs/anchors/jobs-to-be-done.adoc"
   },
   {
-    "id": "lethal-trifecta",
-    "title": "Lethal Trifecta",
-    "categories": [
-      "software-architecture"
-    ],
-    "roles": [
-      "software-architect",
-      "software-developer",
-      "team-lead"
-    ],
-    "related": [
-      "hexagonal-architecture",
-      "domain-driven-design",
-      "clean-architecture"
-    ],
-    "proponents": [
-      "Joy Heron"
-    ],
-    "tags": [
-      "microservices",
-      "coupling",
-      "distributed-systems",
-      "anti-pattern",
-      "architecture"
-    ],
-    "filePath": "docs/anchors/lethal-trifecta.adoc"
-  },
-  {
     "id": "madr",
     "title": "MADR",
     "categories": [
