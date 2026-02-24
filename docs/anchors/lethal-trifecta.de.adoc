@@ -1,0 +1,45 @@
+= Lethal Trifecta
+:categories: software-architecture
+:roles: software-architect, software-developer, devops-engineer, consultant, team-lead
+:related: regulated-environment
+:proponents: Joy Heron
+:tags: security, ai-agents, prompt-injection, agentic-ai, mcp
+
+[%collapsible]
+====
+[discrete]
+== *Kernkonzepte*:
+
+Drei Risikodimensionen:: Ein KI-Agent wird zum kritischen Sicherheitsrisiko, wenn er gleichzeitig alle drei der folgenden Eigenschaften kombiniert:
+
+Zugriff auf private Daten:: Der Agent kann sensible, persönliche oder vertrauliche Informationen lesen (Dateien, E-Mails, Quellcode, Zugangsdaten)
+
+Externe Kommunikation:: Der Agent kann Informationen nach außen senden — über Internetzugang, APIs, E-Mail oder andere Kanäle
+
+Umgang mit nicht vertrauenswürdigen Inhalten:: Der Agent verarbeitet Inhalte aus externen oder unkontrollierten Quellen (Webseiten, E-Mails, Dokumente), die Prompt-Injection-Angriffe enthalten können
+
+Kombinatorische Gefahr:: Jede Dimension ist für sich handhabbar; das gleichzeitige Vorhandensein aller drei ermöglicht es Angreifern, private Daten zu exfiltrieren oder unerwünschte Aktionen auszulösen, indem bösartige Anweisungen in nicht vertrauenswürdige Inhalte eingebettet werden
+
+Agents Rule of Two:: Eine aus der Trifecta abgeleitete Heuristik: Eine Funktion/Fähigkeit sollte höchstens zwei der drei Risikodimensionen kombinieren; jede Fähigkeit, die alle drei vereint (z. B. E-Mails lesen und versenden), sollte nicht eingesetzt werden
+
+Wachsende Angriffsfläche:: Jede neue Fähigkeit eines KI-Agenten vergrößert potenziell die Menge preisgegebener privater Daten, fügt Kommunikationskanäle hinzu und schafft neue Quellen nicht vertrauenswürdiger Inhalte — das Trifecta-Risiko wächst mit jeder Erweiterung
+
+Sandboxing als partielle Schutzmaßnahme:: Physische oder betriebssystembasierte Sandbox-Umgebungen begrenzen den Schadensradius, beseitigen die Trifecta jedoch nicht, solange Internetzugang und nicht vertrauenswürdige Inhalte vorhanden bleiben
+
+
+Schlüsselvertreterin:: Joy Heron (INNOQ, „Unsichere KI-Assistenten dürfen nicht zur Normalität werden", Februar 2026)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Bewertung, ob ein KI-Agent oder -Assistent sicher einsetzbar ist
+* Risikoabschätzung beim Hinzufügen einer neuen Fähigkeit zu einem bestehenden KI-Agenten
+* Entwurf sichererer KI-Agenten-Architekturen durch Isolation von Fähigkeiten
+* Überprüfung von MCP-Server-Konfigurationen oder agentischen Tool-Integrationen
+* Entscheidung über die Einführung eines KI-Assistenten-Produkts oder einer Plattform
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<regulated-environment,Reguliertes Umfeld>>
+====
