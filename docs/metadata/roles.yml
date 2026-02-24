@@ -102,15 +102,6 @@ clean-architecture:
     - software-developer
   rationale: "Layered architecture pattern; architects design layers, developers enforce dependency rules"
 
-lethal-trifecta:
-  roles:
-    - software-architect
-    - software-developer
-    - devops-engineer
-    - consultant
-    - team-lead
-  rationale: "AI agent security heuristic; architects design safe agentic systems, developers evaluate capability risk, devops engineers secure deployments, consultants advise on AI adoption, team leads decide on tool adoption"
-
 # CATEGORY: Design Principles & Patterns
 
 solid-principles:

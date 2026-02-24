@@ -441,34 +441,6 @@
     "filePath": "docs/anchors/jobs-to-be-done.adoc"
   },
   {
-    "id": "lethal-trifecta",
-    "title": "Lethal Trifecta",
-    "categories": [
-      "software-architecture"
-    ],
-    "roles": [
-      "software-architect",
-      "software-developer",
-      "devops-engineer",
-      "consultant",
-      "team-lead"
-    ],
-    "related": [
-      "regulated-environment"
-    ],
-    "proponents": [
-      "Joy Heron"
-    ],
-    "tags": [
-      "security",
-      "ai-agents",
-      "prompt-injection",
-      "agentic-ai",
-      "mcp"
-    ],
-    "filePath": "docs/anchors/lethal-trifecta.adoc"
-  },
-  {
     "id": "madr",
     "title": "MADR",
     "categories": [
