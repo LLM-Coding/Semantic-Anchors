@@ -1,0 +1,47 @@
+= Lethal Trifecta
+:categories: software-architecture
+:roles: software-architect, software-developer, team-lead
+:related: hexagonal-architecture, domain-driven-design, clean-architecture
+:proponents: Joy Heron
+:tags: microservices, coupling, distributed-systems, anti-pattern, architecture
+
+[%collapsible]
+====
+Auch bekannt als:: Distributed-Monolith-Anti-Pattern
+
+[discrete]
+== *Kernkonzepte*:
+
+Drei Kopplungstypen:: Das gleichzeitige Auftreten aller drei Typen erzeugt ein besonders fragiles und unwartbares System:
+
+Zeitliche Kopplung:: Services kommunizieren synchron, was Kaskadenausfälle verursacht, wenn ein Service langsam oder nicht erreichbar ist
+
+Verhaltenskopplung:: Services wissen zu viel über die interne Logik der anderen, was eine unabhängige Weiterentwicklung unmöglich macht
+
+Datenkopplung:: Services teilen eine Datenbank oder ein Datenmodell, was unabhängiges Deployment und Skalierung verhindert
+
+Der Verteilte Monolith:: Das Ergebnis der Trifecta — ein System mit der gesamten operativen Komplexität von Microservices, aber ohne deren Unabhängigkeitsvorteile
+
+Anti-Pattern-Charakter:: Jeder Kopplungstyp ist für sich handhabbar; die Gefahr liegt in ihrer Kombination
+
+Kaskadenausfälle:: Synchrone Aufrufe über gemeinsame Daten mit gemeinsamer Logik erzeugen Kettenreaktionen, die ganze Systeme zum Erliegen bringen
+
+
+Schlüsselvertreterin:: Joy Heron (InnoQ)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Bewertung, ob eine Microservice-Architektur tatsächlich ein verteilter Monolith ist
+* Identifikation von Ursachen für Deployment-Engpässe in serviceorientierten Systemen
+* Anleitung zur architektonischen Refaktorierung zum Abbau problematischer Kopplung
+* Überprüfung von Microservice-Dekompositionsstrategien
+* Diagnose, warum ein vermeintlich unabhängiger Service weitreichende Ausfälle verursacht
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<hexagonal-architecture,Hexagonale Architektur>>
+* <<domain-driven-design,Domain-Driven Design>>
+* <<clean-architecture,Clean Architecture>>
+====
