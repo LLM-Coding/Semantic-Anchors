@@ -195,14 +195,24 @@
       "product-owner",
       "software-architect"
     ],
-    "related": [],
-    "proponents": [],
-    "tags": [],
+    "related": [
+      "wardley-mapping"
+    ],
+    "proponents": [
+      "Dave Snowden"
+    ],
+    "tags": [
+      "complexity",
+      "decision-making",
+      "sensemaking",
+      "strategy",
+      "domains"
+    ],
     "filePath": "docs/anchors/cynefin-framework.adoc"
   },
   {
     "id": "devils-advocate",
-    "title": "Devil\u2019s Advocate",
+    "title": "Devil’s Advocate",
     "categories": [
       "problem-solving"
     ],
@@ -219,7 +229,7 @@
   },
   {
     "id": "diataxis-framework",
-    "title": "Di\u00e1taxis Framework",
+    "title": "Diátaxis Framework",
     "categories": [
       "documentation"
     ],
@@ -234,7 +244,7 @@
   },
   {
     "id": "docs-as-code",
-    "title": "Docs-as-Code according to Ralf D. M\u00fcller",
+    "title": "Docs-as-Code according to Ralf D. Müller",
     "categories": [
       "documentation"
     ],
@@ -267,7 +277,7 @@
   },
   {
     "id": "dry-principle",
-    "title": "DRY (Don\u2019t Repeat Yourself)",
+    "title": "DRY (Don’t Repeat Yourself)",
     "categories": [
       "design-principles"
     ],
@@ -522,6 +532,33 @@
     "filePath": "docs/anchors/morphological-box.adoc"
   },
   {
+    "id": "moscow",
+    "title": "MoSCoW",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "team-lead",
+      "consultant"
+    ],
+    "related": [
+      "user-story-mapping",
+      "impact-mapping"
+    ],
+    "proponents": [
+      "Dai Clegg"
+    ],
+    "tags": [
+      "prioritization",
+      "requirements",
+      "agile",
+      "dsdm"
+    ],
+    "filePath": "docs/anchors/moscow.adoc"
+  },
+  {
     "id": "mutation-testing",
     "title": "Mutation Testing",
     "categories": [
@@ -555,33 +592,6 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/nelson-rules.adoc"
-  },
-  {
-    "id": "moscow",
-    "title": "MoSCoW",
-    "categories": [
-      "requirements-engineering"
-    ],
-    "roles": [
-      "product-owner",
-      "business-analyst",
-      "team-lead",
-      "consultant"
-    ],
-    "related": [
-      "user-story-mapping",
-      "impact-mapping"
-    ],
-    "proponents": [
-      "Dai Clegg"
-    ],
-    "tags": [
-      "prioritization",
-      "requirements",
-      "agile",
-      "dsdm"
-    ],
-    "filePath": "docs/anchors/moscow.adoc"
   },
   {
     "id": "problem-space-nvc",
@@ -647,6 +657,48 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/pyramid-principle.adoc"
+  },
+  {
+    "id": "regulated-environment",
+    "title": "Regulated Environment",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer",
+      "devops-engineer",
+      "team-lead",
+      "consultant",
+      "business-analyst"
+    ],
+    "related": [
+      "iec-61508-sil-levels",
+      "docs-as-code",
+      "conventional-commits",
+      "semantic-versioning"
+    ],
+    "proponents": [
+      "FDA (21 CFR Part 11)",
+      "EMA (GMP Annex 11)",
+      "ISO 9001",
+      "IEC 62304",
+      "GAMP 5"
+    ],
+    "tags": [
+      "compliance",
+      "validation",
+      "traceability",
+      "audit-trail",
+      "change-control",
+      "documentation",
+      "GxP",
+      "FDA",
+      "IEC",
+      "ISO"
+    ],
+    "filePath": "docs/anchors/regulated-environment.adoc"
   },
   {
     "id": "rubber-duck-debugging",

@@ -27,6 +27,7 @@
       "bem-methodology",
       "conventional-commits",
       "mental-model-according-to-naur",
+      "regulated-environment",
       "semantic-versioning",
       "sota",
       "timtowtdi",
@@ -72,6 +73,7 @@
     "name": "Requirements Engineering",
     "anchors": [
       "ears-requirements",
+      "moscow",
       "problem-space-nvc",
       "user-story-mapping"
     ]

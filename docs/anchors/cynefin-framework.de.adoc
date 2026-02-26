@@ -1,10 +1,15 @@
 = Cynefin Framework
 :categories: strategic-planning
 :roles: team-lead, consultant, product-owner, software-architect
+:proponents: Dave Snowden
+:related: wardley-mapping
+:tags: complexity, decision-making, sensemaking, strategy, domains
 
 [%collapsible]
 ====
 Vollständiger Name:: Cynefin Framework nach Dave Snowden
+
+Auch bekannt als:: Cynefin Sensemaking-Framework
 
 [discrete]
 == *Kernkonzepte*:
@@ -27,7 +32,6 @@ Entscheidungskontext:: Verschiedene Domänen erfordern verschiedene Ansätze
 
 Facilitierungs-Tool:: Hilft Teams, Herausforderungen zu diskutieren und zu kategorisieren
 
-
 Schlüsselvertreter:: Dave Snowden (1999)
 
 [discrete]
@@ -37,4 +41,9 @@ Schlüsselvertreter:: Dave Snowden (1999)
 * Auswahl geeigneter Entscheidungsansätze
 * Facilitierung von Teamdiskussionen über Komplexität
 * Strategische Planung in unsicheren Umgebungen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<wardley-mapping,Wardley Mapping>>
 ====
