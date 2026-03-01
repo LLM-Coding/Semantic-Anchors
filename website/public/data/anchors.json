@@ -369,6 +369,38 @@
     "filePath": "docs/anchors/fowler-patterns.adoc"
   },
   {
+    "id": "gom",
+    "title": "GoM",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "business-analyst",
+      "consultant",
+      "team-lead"
+    ],
+    "related": [
+      "arc42",
+      "c4-diagrams",
+      "morphological-box"
+    ],
+    "proponents": [
+      "Jörg Becker",
+      "Michael Rosemann",
+      "Rolf Schütte"
+    ],
+    "tags": [
+      "modeling",
+      "enterprise-architecture",
+      "business-process",
+      "bpm",
+      "principles",
+      "quality"
+    ],
+    "filePath": "docs/anchors/gom.adoc"
+  },
+  {
     "id": "hexagonal-architecture",
     "title": "Hexagonal Architecture (Ports & Adapters)",
     "categories": [

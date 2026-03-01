@@ -82,6 +82,14 @@ madr:
     - team-lead
   rationale: "Structured ADR format; architects/developers document decisions, team leads approve"
 
+gom:
+  roles:
+    - software-architect
+    - business-analyst
+    - consultant
+    - team-lead
+  rationale: "Modeling quality principles; architects define modeling standards, BAs create process models, consultants audit quality, team leads enforce conventions"
+
 c4-diagrams:
   roles:
     - software-architect

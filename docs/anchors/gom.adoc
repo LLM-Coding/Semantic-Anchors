@@ -1,0 +1,48 @@
+= GoM
+:categories: software-architecture
+:roles: software-architect, business-analyst, consultant, team-lead
+:related: arc42, c4-diagrams, morphological-box
+:proponents: Jörg Becker, Michael Rosemann, Rolf Schütte
+:tags: modeling, enterprise-architecture, business-process, bpm, principles, quality
+
+[%collapsible]
+====
+Full Name:: Grundsätze ordnungsmäßiger Modellierung (Principles of Proper Modeling)
+
+Also known as:: GoM Principles, Principles of Well-formed Modeling
+
+[discrete]
+== *Core Concepts*:
+
+Correctness (Richtigkeit):: The model must accurately reflect the reality it represents — both syntactically (follows notation rules) and semantically (describes the real subject matter truthfully)
+
+Relevance (Relevanz):: A model should include only elements that are relevant to the intended purpose; unnecessary details reduce usability
+
+Economic Efficiency (Wirtschaftlichkeit):: The benefit gained from a model must justify the effort and cost of creating and maintaining it
+
+Clarity (Klarheit):: The model must be understandable to its intended audience; layout, notation, and level of detail must support comprehension
+
+Comparability (Vergleichbarkeit):: Models of the same subject should follow consistent conventions so they can be meaningfully compared
+
+Systematic Design (Systematischer Aufbau):: Models should be constructed using a consistent, structured approach to enable reuse and integration across a model landscape
+
+
+Key Proponents:: Jörg Becker, Michael Rosemann, Rolf Schütte ("Grundsätze ordnungsmäßiger Modellierung", WIRTSCHAFTSINFORMATIK, 1995)
+
+[discrete]
+== *When to Use*:
+
+* Evaluating or reviewing the quality of business process models (BPMN, EPC)
+* Establishing modeling standards within an organization or project
+* Enterprise architecture modeling to ensure consistent, reusable model artifacts
+* ERP implementation projects requiring traceable and auditable process documentation
+* Assessing whether a model is fit for its intended purpose
+* Onboarding teams to structured modeling practices
+
+[discrete]
+== *Related Anchors*:
+
+* <<arc42,arc42 Architecture Documentation>>
+* <<c4-diagrams,C4 Diagrams>>
+* <<morphological-box,Morphological Box>>
+====
