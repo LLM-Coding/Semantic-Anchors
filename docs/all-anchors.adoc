@@ -111,6 +111,8 @@ include::anchors/clean-architecture.adoc[leveloffset=+2]
 
 include::anchors/domain-driven-design.adoc[leveloffset=+2]
 
+include::anchors/gom.adoc[leveloffset=+2]
+
 include::anchors/hexagonal-architecture.adoc[leveloffset=+2]
 
 include::anchors/madr.adoc[leveloffset=+2]

@@ -1,0 +1,48 @@
+= GoM
+:categories: software-architecture
+:roles: software-architect, business-analyst, consultant, team-lead
+:related: arc42, c4-diagrams, morphological-box
+:proponents: Jörg Becker, Michael Rosemann, Rolf Schütte
+:tags: modeling, enterprise-architecture, business-process, bpm, principles, quality
+
+[%collapsible]
+====
+Vollständiger Name:: Grundsätze ordnungsmäßiger Modellierung
+
+Auch bekannt als:: GoM-Prinzipien, Grundsätze der Modellierungsqualität
+
+[discrete]
+== *Kernkonzepte*:
+
+Richtigkeit:: Das Modell muss die dargestellte Wirklichkeit korrekt abbilden — syntaktisch (Notationsregeln werden eingehalten) und semantisch (der Sachverhalt wird wahrheitsgemäß beschrieben)
+
+Relevanz:: Ein Modell soll nur Elemente enthalten, die für den beabsichtigten Zweck relevant sind; unnötige Details verringern die Nutzbarkeit
+
+Wirtschaftlichkeit:: Der Nutzen eines Modells muss den Aufwand und die Kosten für seine Erstellung und Pflege rechtfertigen
+
+Klarheit:: Das Modell muss für die Zielgruppe verständlich sein; Layout, Notation und Detaillierungsgrad müssen das Verständnis unterstützen
+
+Vergleichbarkeit:: Modelle desselben Gegenstandsbereichs sollen einheitlichen Konventionen folgen, damit sie sinnvoll verglichen werden können
+
+Systematischer Aufbau:: Modelle sollen nach einem konsistenten, strukturierten Vorgehen erstellt werden, um Wiederverwendung und Integration im Modellgefüge zu ermöglichen
+
+
+Schlüsselvertreter:: Jörg Becker, Michael Rosemann, Rolf Schütte ("Grundsätze ordnungsmäßiger Modellierung", WIRTSCHAFTSINFORMATIK, 1995)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Bewertung oder Review der Qualität von Geschäftsprozessmodellen (BPMN, EPK)
+* Einführung von Modellierungsstandards in einer Organisation oder einem Projekt
+* Enterprise-Architecture-Modellierung zur Sicherstellung konsistenter, wiederverwendbarer Modellartefakte
+* ERP-Implementierungsprojekte, die nachvollziehbare und prüffähige Prozessdokumentation erfordern
+* Prüfung, ob ein Modell dem beabsichtigten Zweck gerecht wird
+* Einarbeitung von Teams in strukturierte Modellierungspraktiken
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<arc42,arc42 Architekturdokumentation>>
+* <<c4-diagrams,C4-Diagramme>>
+* <<morphological-box,Morphologischer Kasten>>
+====
