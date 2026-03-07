@@ -157,6 +157,8 @@ include::anchors/property-based-testing.adoc[leveloffset=+2]
 
 include::anchors/tdd-chicago-school.adoc[leveloffset=+2]
 
+include::anchors/test-double-meszaros.adoc[leveloffset=+2]
+
 include::anchors/tdd-london-school.adoc[leveloffset=+2]
 
 include::anchors/testing-pyramid.adoc[leveloffset=+2]

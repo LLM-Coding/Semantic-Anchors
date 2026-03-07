@@ -14,6 +14,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kent Beck, Martin Fowler
 - **Core:** State-based testing, real objects over mocks, refactoring-focused
 
+### Test Double (Meszaros)
+- **Proponents:** Gerard Meszaros
+- **Core:** Taxonomy of test substitutes — Dummy (unused), Stub (canned responses), Spy (records calls), Mock (verifies interactions), Fake (simplified implementation)
+
 ### Testing Pyramid
 - **Core:** Many unit tests, fewer integration tests, fewest E2E tests
 

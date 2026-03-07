@@ -1,0 +1,47 @@
+= Test Double (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer, educator
+:proponents: Gerard Meszaros
+:related: tdd-london-school, tdd-chicago-school, property-based-testing
+:tags: test-double, mock, stub, spy, fake, dummy, xunit, testing, isolation
+
+[%collapsible]
+====
+Full Name:: Test Double taxonomy according to Gerard Meszaros
+
+Also known as:: xUnit Test Patterns test double taxonomy
+
+[discrete]
+== *Core Concepts*:
+
+Dummy:: Object passed to fill a parameter list but never actually used
+
+Stub:: Provides canned responses to calls made during a test; no verification of interactions
+
+Spy:: Records calls made to it for later assertion; a stub that also captures interaction data
+
+Mock:: Pre-programmed with expectations; verifies that specific interactions occurred (interaction-based verification)
+
+Fake:: Working simplified implementation with shortcuts unsuitable for production (e.g., in-memory database, in-memory repository)
+
+Test Double:: Umbrella term for any object substituted for a real dependency during testing
+
+Vocabulary precision:: Distinguishing what a double IS (taxonomy) from when to use it (TDD school philosophy)
+
+
+Key Proponent:: Gerard Meszaros ("xUnit Test Patterns: Refactoring Test Code", 2007)
+
+[discrete]
+== *When to Use*:
+
+* Communicating precisely about test isolation strategies
+* Choosing the right type of double for a given testing scenario
+* Avoiding vocabulary collisions (e.g., calling a Stub a "mock" triggers wrong reasoning)
+* Teaching or reviewing test code with shared terminology
+
+[discrete]
+== *Related Anchors*:
+
+* <<tdd-london-school,TDD, London School>> - Philosophy of when to use doubles heavily (interaction-based)
+* <<tdd-chicago-school,TDD, Chicago School>> - Philosophy of minimal doubling (state-based)
+====
