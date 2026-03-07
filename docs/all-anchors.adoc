@@ -149,6 +149,8 @@ include::anchors/wardley-mapping.adoc[leveloffset=+2]
 
 == Testing & Quality Practices
 
+include::anchors/bdd-given-when-then.adoc[leveloffset=+2]
+
 include::anchors/iec-61508-sil-levels.adoc[leveloffset=+2]
 
 include::anchors/mutation-testing.adoc[leveloffset=+2]
