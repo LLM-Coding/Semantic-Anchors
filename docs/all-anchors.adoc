@@ -21,6 +21,8 @@ include::anchors/pyramid-principle.adoc[leveloffset=+2]
 
 == Design Principles & Patterns
 
+include::anchors/chain-of-responsibility.adoc[leveloffset=+2]
+
 include::anchors/dry-principle.adoc[leveloffset=+2]
 
 include::anchors/fowler-patterns.adoc[leveloffset=+2]
