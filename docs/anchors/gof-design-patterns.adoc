@@ -1,0 +1,48 @@
+= GoF Design Patterns
+:categories: design-principles
+:roles: software-developer, software-architect, educator
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:related: solid-principles, fowler-patterns, clean-architecture
+:tags: design-patterns, gang-of-four, oop, creational, structural, behavioral
+
+[%collapsible]
+====
+Full Name:: Gang of Four Design Patterns
+
+Also known as:: Design Patterns, Gang of Four Patterns
+
+[discrete]
+== *Core Concepts*:
+
+Creational Patterns:: Abstract Factory, Builder, Factory Method, Prototype, Singleton — object creation mechanisms
+
+Structural Patterns:: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy — object composition and relationships
+
+Behavioral Patterns:: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor — object interaction and responsibility
+
+Pattern language:: Shared vocabulary for communicating recurring design problems and proven solutions
+
+Composition over inheritance:: Favor object composition for flexibility over rigid class hierarchies
+
+Program to an interface:: Depend on abstractions rather than concrete implementations
+
+Design for change:: Identify what varies in your design and encapsulate it
+
+
+Key Proponents:: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides ("Design Patterns: Elements of Reusable Object-Oriented Software", 1994)
+
+[discrete]
+== *When to Use*:
+
+* Object-oriented design requiring proven solutions to recurring problems
+* Communicating design decisions using a shared vocabulary
+* Teaching object-oriented design principles through concrete examples
+* Refactoring code to increase flexibility and reusability
+
+[discrete]
+== *Related Anchors*:
+
+* <<solid-principles,SOLID Principles>> - Design principles that GoF patterns help implement
+* <<fowler-patterns,Fowler Patterns>> - Enterprise application architecture patterns (complementary scope)
+* <<clean-architecture,Clean Architecture>> - Architectural style leveraging GoF principles
+====

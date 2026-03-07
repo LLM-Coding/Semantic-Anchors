@@ -25,6 +25,8 @@ include::anchors/dry-principle.adoc[leveloffset=+2]
 
 include::anchors/fowler-patterns.adoc[leveloffset=+2]
 
+include::anchors/gof-design-patterns.adoc[leveloffset=+2]
+
 include::anchors/solid-principles.adoc[leveloffset=+2]
 
 include::anchors/spot-principle.adoc[leveloffset=+2]

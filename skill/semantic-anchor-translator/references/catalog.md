@@ -73,6 +73,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### SSOT (Single Source of Truth)
 - **Core:** One system is the master for specific data
 
+### GoF Design Patterns
+- **Also known as:** Design Patterns, Gang of Four Patterns
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** 23 patterns in 3 categories (Creational, Structural, Behavioral), pattern language, composition over inheritance, program to an interface
+
 ### Patterns of Enterprise Application Architecture (PEAA)
 - **Proponents:** Martin Fowler
 - **Core:** Repository, Unit of Work, Data Mapper, Active Record, etc.
