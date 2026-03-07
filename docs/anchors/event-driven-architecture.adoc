@@ -1,0 +1,50 @@
+= Event-Driven Architecture
+:categories: software-architecture
+:roles: software-architect, software-developer, devops-engineer
+:proponents: Gregor Hohpe, Bobby Woolf, Martin Fowler
+:related: domain-driven-design, hexagonal-architecture, clean-architecture
+:tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency
+
+[%collapsible]
+====
+Also known as:: EDA, Message-Driven Architecture
+
+[discrete]
+== *Core Concepts*:
+
+Event producers and consumers:: Components communicate by emitting and reacting to events rather than direct calls
+
+Publish-subscribe:: Producers publish events without knowing which consumers will process them
+
+Asynchronous decoupling:: Sender and receiver operate independently in time; no blocking request-response
+
+Message queue:: Intermediary that buffers events between producers and consumers (SQS, RabbitMQ, Kafka)
+
+At-least-once delivery:: Most messaging systems guarantee delivery but may deliver duplicates, requiring idempotent consumers
+
+Eventual consistency:: System state converges over time rather than being immediately consistent after each operation
+
+Event notification:: Lightweight event signals that something happened; consumers decide whether to act
+
+Event-carried state transfer:: Events carry enough data for consumers to process without calling back to the producer
+
+Choreography vs. orchestration:: Events can trigger distributed workflows implicitly (choreography) or via a central coordinator (orchestration)
+
+
+Key Proponents:: Gregor Hohpe, Bobby Woolf ("Enterprise Integration Patterns", 2003), Martin Fowler ("What do you mean by Event-Driven?", 2017)
+
+[discrete]
+== *When to Use*:
+
+* Systems requiring loose coupling between components
+* Workloads with asynchronous processing pipelines
+* Architectures that need independent scaling of producers and consumers
+* Distributed systems where components must evolve independently
+
+[discrete]
+== *Related Anchors*:
+
+* <<domain-driven-design,Domain-Driven Design>> - Domain events are a DDD building block
+* <<hexagonal-architecture,Hexagonal Architecture>> - Message queues as driven adapters
+* <<clean-architecture,Clean Architecture>> - Events cross architectural boundaries via interfaces
+====

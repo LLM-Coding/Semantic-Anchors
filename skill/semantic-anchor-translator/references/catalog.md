@@ -40,6 +40,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Eric Evans
 - **Core:** Ubiquitous language, bounded contexts, aggregates, entities, value objects
 
+### Event-Driven Architecture
+- **Also known as:** EDA, Message-Driven Architecture
+- **Proponents:** Gregor Hohpe, Bobby Woolf, Martin Fowler
+- **Core:** Async decoupling via events, publish-subscribe, event producers/consumers, eventual consistency, idempotency
+
 ### arc42 Architecture Documentation
 - **Proponents:** Gernot Starke, Peter Hruschka
 - **Core:** 12-section template for documenting software architecture
