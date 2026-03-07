@@ -1,0 +1,46 @@
+= Chain of Responsibility
+:categories: design-principles
+:roles: software-developer, software-architect
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:related: gof-design-patterns
+:tags: design-pattern, behavioral, middleware, pipeline, handler-chain, request-processing
+
+[%collapsible]
+====
+Also known as:: Handler Chain, Middleware Pattern
+
+[discrete]
+== *Core Concepts*:
+
+Handler chain:: Request passes along an ordered chain of potential handlers
+
+Process or pass:: Each handler decides to process the request, pass it to the next handler, or both
+
+Decoupled sender and receiver:: Sender doesn't know which handler will process the request
+
+Middleware pattern:: Modern incarnation in web frameworks (Express.js, Django, ASP.NET middleware pipeline)
+
+Dynamic chain composition:: Handlers can be added, removed, or reordered at runtime
+
+Single responsibility:: Each handler focuses on exactly one concern (authentication, logging, validation)
+
+Fallback handling:: Default handler at the end of the chain for unhandled requests
+
+Short-circuit capability:: Handlers can terminate the chain early (e.g., reject unauthorized requests)
+
+
+Key Proponents:: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides ("Design Patterns", 1994)
+
+[discrete]
+== *When to Use*:
+
+* Request processing pipelines (HTTP middleware, bot handler groups)
+* Event handling with multiple potential handlers
+* Validation chains with multiple independent rules
+* Logging, authentication, and authorization layers
+
+[discrete]
+== *Related Anchors*:
+
+* <<gof-design-patterns,GoF Design Patterns>> - Chain of Responsibility is one of 23 GoF behavioral patterns
+====

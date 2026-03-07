@@ -61,6 +61,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Design Principles
 
+### Chain of Responsibility
+- **Also known as:** Handler Chain, Middleware Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Request passes along handler chain, each handler decides process-or-pass, middleware concept, decoupled sender/receiver
+
 ### SOLID Principles
 - **Core:** Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
 
