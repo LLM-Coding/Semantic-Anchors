@@ -1,0 +1,49 @@
+= CQRS (Command Query Responsibility Segregation)
+:categories: software-architecture
+:roles: software-architect, software-developer
+:proponents: Greg Young, Bertrand Meyer, Udi Dahan
+:related: domain-driven-design, hexagonal-architecture, fowler-patterns
+:tags: cqrs, cqs, architecture, commands, queries, read-write-separation
+
+[%collapsible]
+====
+Also known as:: CQS at architectural scale
+
+[discrete]
+== *Core Concepts*:
+
+Command Query Separation (CQS):: Bertrand Meyer's principle — methods either change state (commands) or return data (queries), never both
+
+Commands:: Write operations that change state and return void; represent intent as immutable command objects
+
+Queries:: Read operations that return data with no side effects; safe to retry and cache
+
+Separate read/write models:: Independent data models optimized for their respective purpose
+
+Eventual consistency:: Read model may lag behind write model; acceptable trade-off for scalability
+
+Event-based synchronization:: Domain events propagate changes from write side to read side projections
+
+Independent scalability:: Read and write sides can be scaled, deployed, and optimized independently
+
+Event sourcing optional:: CQRS does not require event sourcing; the patterns are complementary but independent
+
+
+Key Proponents:: Greg Young (coined CQRS), Bertrand Meyer (CQS origin, "Object-Oriented Software Construction", 1988), Udi Dahan
+
+[discrete]
+== *When to Use*:
+
+* Systems with asymmetric read/write workloads
+* Complex domains where read and write models diverge significantly
+* Event-sourced systems requiring materialized views
+* High-performance systems needing independent scaling of reads and writes
+* Collaborative domains with task-based UIs
+
+[discrete]
+== *Related Anchors*:
+
+* <<domain-driven-design,Domain-Driven Design>> - Often combined with CQRS for complex domains
+* <<hexagonal-architecture,Hexagonal Architecture>> - Ports and adapters complement CQRS separation
+* <<fowler-patterns,Fowler Patterns>> - CQRS builds on enterprise application patterns
+====

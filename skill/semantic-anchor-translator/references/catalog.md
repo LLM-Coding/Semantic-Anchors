@@ -44,6 +44,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Gernot Starke, Peter Hruschka
 - **Core:** 12-section template for documenting software architecture
 
+### CQRS (Command Query Responsibility Segregation)
+- **Proponents:** Greg Young, Bertrand Meyer, Udi Dahan
+- **Core:** Separate read/write models, commands return void, queries return data with no side effects, independent scalability
+
 ### C4-Diagrams
 - **Core:** Context, Container, Component, Code — 4 zoom levels
 

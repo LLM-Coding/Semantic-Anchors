@@ -103,6 +103,8 @@ include::anchors/user-story-mapping.adoc[leveloffset=+2]
 
 include::anchors/adr-according-to-nygard.adoc[leveloffset=+2]
 
+include::anchors/cqrs.adoc[leveloffset=+2]
+
 include::anchors/arc42.adoc[leveloffset=+2]
 
 include::anchors/atam.adoc[leveloffset=+2]
