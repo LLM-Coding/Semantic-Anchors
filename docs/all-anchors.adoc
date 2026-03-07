@@ -31,6 +31,8 @@ include::anchors/spot-principle.adoc[leveloffset=+2]
 
 include::anchors/ssot-principle.adoc[leveloffset=+2]
 
+include::anchors/yagni.adoc[leveloffset=+2]
+
 <<<
 
 == Development Workflow
