@@ -14,6 +14,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kent Beck, Martin Fowler
 - **Core:** State-based testing, real objects over mocks, refactoring-focused
 
+### BDD (Behavior-Driven Development)
+- **Also known as:** Specification by Example, Executable Specifications
+- **Proponents:** Dan North
+- **Core:** Given-When-Then scenarios, Gherkin syntax, three amigos, living documentation, outside-in specification
+
 ### Testing Pyramid
 - **Core:** Many unit tests, fewer integration tests, fewest E2E tests
 
