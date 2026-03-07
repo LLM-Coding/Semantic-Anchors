@@ -29,7 +29,7 @@ Ubiquitous language:: Shared vocabulary bridging technical and business stakehol
 Discovery workshops:: Structured conversations to uncover requirements through examples before implementation
 
 
-Key Proponent:: Dan North ("Introducing BDD", 2006), creator of JBehave and Cucumber contributor
+Key Proponent:: Dan North ("Introducing BDD", 2006), creator of JBehave which influenced Cucumber's design (Cucumber created by Aslak Hellesøy, 2008)
 
 [discrete]
 == *When to Use*:
