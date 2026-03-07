@@ -274,6 +274,20 @@ Current categories (subject to MECE analysis in Issue #36):
 4. Commit: `feat: Add <Anchor Name> to <Category> section`
 5. Create PR for review
 
+### ⚠️ AgentSkill Sync Required
+
+When adding new anchors, **also update the AgentSkill catalog**:
+
+```
+skill/semantic-anchor-translator/references/catalog.md
+```
+
+The AgentSkill enables AI agents (Claude Code, Codex, Cursor, etc.) to recognize and suggest semantic anchors. If the catalog is not updated, new anchors won't be discoverable by agents using the skill.
+
+**Checklist for new anchors:**
+- [ ] Add anchor to `docs/anchors/<name>.adoc`
+- [ ] Update `skill/semantic-anchor-translator/references/catalog.md` with the new entry
+
 **Future (Post-Phase 3):**
 1. User creates GitHub Issue via template
 2. GitHub Actions validates with Copilot

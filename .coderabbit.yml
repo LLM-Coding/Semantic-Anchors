@@ -23,6 +23,18 @@ reviews:
         - Zuordenbar: Rückverfolgbar zu Proponenten, Publikationen oder Standards
         Pflichtfelder: :categories:, :roles:, :proponents:
         Format: AsciiDoc mit [%collapsible] Block
+        
+        ⚠️ AgentSkill-Katalog aktualisieren:
+        Wenn ein neuer Anchor hinzugefügt wird, muss auch
+        skill/semantic-anchor-translator/references/catalog.md
+        aktualisiert werden, damit AI-Agenten den neuen Anchor erkennen können.
+
+    - path: "skill/**/*"
+      instructions: |
+        Dies ist ein AgentSkill nach agentskills.io Spezifikation.
+        - SKILL.md: Frontmatter mit name + description erforderlich
+        - references/catalog.md: Muss synchron mit docs/anchors/ bleiben
+        Prüfe: Sind alle Anchors aus docs/anchors/ im Katalog enthalten?
 
     - path: "website/src/**/*.js"
       instructions: |
