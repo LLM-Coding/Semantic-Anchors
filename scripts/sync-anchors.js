@@ -46,9 +46,7 @@ function sync() {
     copied++
   }
 
-  console.log(
-    `[sync-anchors] ${copied} copied, ${skipped} up-to-date (${srcFiles.length} total)`
-  )
+  console.log(`[sync-anchors] ${copied} copied, ${skipped} up-to-date (${srcFiles.length} total)`)
 }
 
 sync()
