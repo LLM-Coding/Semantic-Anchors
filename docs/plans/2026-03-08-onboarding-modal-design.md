@@ -29,7 +29,7 @@ Info icon (i) button next to site title. Calls `showOnboarding()`.
 
 ### 4. i18n Keys
 
-New keys in en.json/de.json: `onboarding.slogan`, `onboarding.text1`-`text4`, `onboarding.cta`, `onboarding.watchVideo`, `onboarding.infoButton`
+New keys in en.json/de.json: `onboarding.slogan1`, `onboarding.slogan2`, `onboarding.text1`-`text4`, `onboarding.cta`, `onboarding.watchVideo`, `onboarding.infoButton`
 
 ### 5. Videos
 

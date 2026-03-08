@@ -7,7 +7,11 @@ const YOUTUBE_VIDEOS = {
 }
 
 export function shouldShowOnboarding() {
-  return localStorage.getItem(STORAGE_KEY) !== 'true'
+  try {
+    return localStorage.getItem(STORAGE_KEY) !== 'true'
+  } catch {
+    return false
+  }
 }
 
 export function createOnboardingModal() {
@@ -25,8 +29,33 @@ export function createOnboardingModal() {
   })
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    if (modal.classList.contains('hidden')) return
+
+    if (e.key === 'Escape') {
       closeOnboarding()
+      return
+    }
+
+    if (e.key === 'Tab') {
+      const focusable = modal.querySelectorAll(
+        'button, [href], input, select, textarea, iframe, [tabindex]:not([tabindex="-1"])'
+      )
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
   })
 
@@ -82,7 +111,8 @@ function buildModalContent() {
       <div class="px-6 pb-4">
         <div class="flex flex-col sm:flex-row gap-6">
           <div class="sm:w-1/2 flex-shrink-0 flex items-center justify-center">
-            <div class="hidden sm:block rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[400px] w-full">
+            ${window.matchMedia('(min-width: 640px)').matches ? `
+            <div class="rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[400px] w-full">
               <iframe
                 src="${embedUrl}"
                 title="${watchVideo}"
@@ -92,17 +122,19 @@ function buildModalContent() {
                 allowfullscreen
               ></iframe>
             </div>
+            ` : `
             <a
               href="${youtubeUrl}"
               target="_blank"
               rel="noopener noreferrer"
-              class="sm:hidden flex items-center gap-2 text-[var(--color-primary)] hover:underline font-medium py-2"
+              class="flex items-center gap-2 text-[var(--color-primary)] hover:underline font-medium py-2"
             >
               <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
               ${watchVideo}
             </a>
+            `}
           </div>
 
           <div class="sm:w-1/2 flex flex-col gap-3 text-[var(--color-text)] text-sm leading-relaxed">
@@ -148,5 +180,9 @@ export function closeOnboarding() {
   modal.classList.add('hidden')
   modal.classList.remove('flex')
   document.body.style.overflow = ''
-  localStorage.setItem(STORAGE_KEY, 'true')
+  try {
+    localStorage.setItem(STORAGE_KEY, 'true')
+  } catch {
+    // localStorage may be blocked (private browsing, security settings)
+  }
 }

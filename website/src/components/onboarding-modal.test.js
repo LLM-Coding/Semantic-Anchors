@@ -8,17 +8,32 @@ import {
 } from './onboarding-modal.js'
 
 describe('onboarding-modal', () => {
+  let originalMatchMedia
+
   beforeEach(() => {
     localStorage.clear()
     i18n.init()
     // Note: innerHTML usage here is in test code only, not production.
     // The test DOM is reset between tests and contains no user input.
     document.body.innerHTML = ''
+    // Mock matchMedia - default to desktop (min-width: 640px matches)
+    originalMatchMedia = window.matchMedia
+    window.matchMedia = (query) => ({
+      matches: query === '(min-width: 640px)',
+      media: query,
+      onchange: null,
+      addListener: () => {},
+      removeListener: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    })
   })
 
   afterEach(() => {
     document.body.innerHTML = ''
     document.body.style.overflow = ''
+    window.matchMedia = originalMatchMedia
   })
 
   describe('shouldShowOnboarding', () => {
@@ -86,13 +101,25 @@ describe('onboarding-modal', () => {
       expect(iframe.src).toContain('youtube.com/embed/cp-qqiHU-MA')
     })
 
-    it('contains the mobile YouTube link', () => {
+    it('contains YouTube link on mobile instead of iframe', () => {
+      window.matchMedia = (query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: () => {},
+        removeListener: () => {},
+        addEventListener: () => {},
+        removeEventListener: () => {},
+        dispatchEvent: () => false,
+      })
       createOnboardingModal()
       showOnboarding()
 
       const link = document.querySelector('#onboarding-modal a[href*="youtube.com/shorts"]')
       expect(link).toBeTruthy()
       expect(link.getAttribute('target')).toBe('_blank')
+      const iframe = document.querySelector('#onboarding-modal iframe')
+      expect(iframe).toBeNull()
     })
   })
 
