@@ -83,10 +83,10 @@ function triggerSearchIndexBuild() {
   searchIndexTriggered = true
   buildSearchIndex(appData.anchors)
     .then(() => {
-      const searchInput = document.getElementById('search-input')
-      if (searchInput) {
-        searchInput.placeholder = `${i18n.t('search.placeholder')} (full-text)`
-      }
+      ;['search-input', 'header-search-input'].forEach((id) => {
+        const el = document.getElementById(id)
+        if (el) el.placeholder = `${i18n.t('search.placeholder')} (full-text)`
+      })
     })
     .catch((err) => {
       console.warn('Search index build failed:', err)
@@ -128,9 +128,14 @@ function initApp() {
     showOnboarding()
   }
 
-  ensureDataLoaded().catch((err) => {
-    console.error('Failed to load app data:', err)
-  })
+  ensureDataLoaded()
+    .then(() => {
+      populateHeaderRoleFilter()
+      bindHeaderSearchInput()
+    })
+    .catch((err) => {
+      console.error('Failed to load app data:', err)
+    })
 }
 
 function renderHomePage() {
@@ -222,7 +227,66 @@ function initCardGridVisualization() {
 }
 
 function bindRoleFilter() {
-  const roleFilter = document.getElementById('role-filter')
+  const roleFilterIds = ['role-filter', 'header-role-filter']
+
+  roleFilterIds.forEach((id) => {
+    const roleFilter = document.getElementById(id)
+    if (!roleFilter || !appData?.roles) return
+
+    while (roleFilter.options.length > 1) {
+      roleFilter.remove(1)
+    }
+
+    appData.roles.forEach((role) => {
+      const option = document.createElement('option')
+      option.value = role.id
+      option.textContent = role.name
+      roleFilter.appendChild(option)
+    })
+
+    roleFilter.onchange = (e) => {
+      // Sync the other dropdown
+      roleFilterIds.forEach((otherId) => {
+        if (otherId !== id) {
+          const other = document.getElementById(otherId)
+          if (other) other.value = e.target.value
+        }
+      })
+      const searchQuery = document.getElementById('header-search-input')?.value
+        || document.getElementById('search-input')?.value || ''
+      applyCardFilters(e.target.value, searchQuery)
+    }
+  })
+}
+
+function bindSearchInput() {
+  const searchInputIds = ['search-input', 'header-search-input']
+
+  searchInputIds.forEach((id) => {
+    const searchInput = document.getElementById(id)
+    if (!searchInput) return
+
+    searchInput.oninput = (e) => {
+      const query = e.target.value
+      // Sync the other search input
+      searchInputIds.forEach((otherId) => {
+        if (otherId !== id) {
+          const other = document.getElementById(otherId)
+          if (other) other.value = query
+        }
+      })
+      if (query.trim()) {
+        triggerSearchIndexBuild()
+      }
+      const roleId = document.getElementById('header-role-filter')?.value
+        || document.getElementById('role-filter')?.value || ''
+      applyCardFilters(roleId, query)
+    }
+  })
+}
+
+function populateHeaderRoleFilter() {
+  const roleFilter = document.getElementById('header-role-filter')
   if (!roleFilter || !appData?.roles) return
 
   while (roleFilter.options.length > 1) {
@@ -237,22 +301,30 @@ function bindRoleFilter() {
   })
 
   roleFilter.onchange = (e) => {
-    const searchQuery = document.getElementById('search-input')?.value || ''
+    // Sync the main content dropdown if it exists
+    const mainFilter = document.getElementById('role-filter')
+    if (mainFilter) mainFilter.value = e.target.value
+
+    const searchQuery = document.getElementById('header-search-input')?.value || ''
     applyCardFilters(e.target.value, searchQuery)
   }
 }
 
-function bindSearchInput() {
-  const searchInput = document.getElementById('search-input')
+function bindHeaderSearchInput() {
+  const searchInput = document.getElementById('header-search-input')
   if (!searchInput) return
 
   searchInput.oninput = (e) => {
     const query = e.target.value
+    // Sync the main content search input if it exists
+    const mainSearch = document.getElementById('search-input')
+    if (mainSearch) mainSearch.value = query
+
     if (query.trim()) {
       triggerSearchIndexBuild()
     }
 
-    const roleId = document.getElementById('role-filter')?.value || ''
+    const roleId = document.getElementById('header-role-filter')?.value || ''
     applyCardFilters(roleId, query)
   }
 }
