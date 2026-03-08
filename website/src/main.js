@@ -252,8 +252,10 @@ function bindRoleFilter() {
           if (other) other.value = e.target.value
         }
       })
-      const searchQuery = document.getElementById('header-search-input')?.value
-        || document.getElementById('search-input')?.value || ''
+      const searchQuery =
+        document.getElementById('header-search-input')?.value ||
+        document.getElementById('search-input')?.value ||
+        ''
       applyCardFilters(e.target.value, searchQuery)
     }
   })
@@ -278,8 +280,10 @@ function bindSearchInput() {
       if (query.trim()) {
         triggerSearchIndexBuild()
       }
-      const roleId = document.getElementById('header-role-filter')?.value
-        || document.getElementById('role-filter')?.value || ''
+      const roleId =
+        document.getElementById('header-role-filter')?.value ||
+        document.getElementById('role-filter')?.value ||
+        ''
       applyCardFilters(roleId, query)
     }
   })

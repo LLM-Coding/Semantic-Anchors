@@ -19,7 +19,8 @@ export function createOnboardingModal() {
 
   const modal = document.createElement('div')
   modal.id = 'onboarding-modal'
-  modal.className = 'fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center p-4'
+  modal.className =
+    'fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center p-4'
   modal.setAttribute('role', 'dialog')
   modal.setAttribute('aria-modal', 'true')
   modal.setAttribute('aria-labelledby', 'onboarding-title')
@@ -78,7 +79,6 @@ function buildModalContent() {
   // All text content is from trusted i18n translation files (not user input).
   // The YouTube video IDs are hardcoded constants above.
   const closeLabel = escapeHtml(i18n.t('modal.close'))
-  const slogan1 = escapeHtml(i18n.t('onboarding.slogan1'))
   const slogan2 = escapeHtml(i18n.t('onboarding.slogan2'))
   const text1 = escapeHtml(i18n.t('onboarding.text1'))
   const text2 = escapeHtml(i18n.t('onboarding.text2'))
@@ -111,7 +111,9 @@ function buildModalContent() {
       <div class="px-6 pb-4">
         <div class="flex flex-col sm:flex-row gap-6">
           <div class="sm:w-1/2 flex-shrink-0 flex items-center justify-center">
-            ${window.matchMedia('(min-width: 640px)').matches ? `
+            ${
+              window.matchMedia('(min-width: 640px)').matches
+                ? `
             <div class="rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[400px] w-full">
               <iframe
                 src="${embedUrl}"
@@ -122,7 +124,8 @@ function buildModalContent() {
                 allowfullscreen
               ></iframe>
             </div>
-            ` : `
+            `
+                : `
             <a
               href="${youtubeUrl}"
               target="_blank"
@@ -134,7 +137,8 @@ function buildModalContent() {
               </svg>
               ${watchVideo}
             </a>
-            `}
+            `
+            }
           </div>
 
           <div class="sm:w-1/2 flex flex-col gap-3 text-[var(--color-text)] text-sm leading-relaxed">
