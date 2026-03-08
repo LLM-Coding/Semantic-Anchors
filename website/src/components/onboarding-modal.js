@@ -72,7 +72,6 @@ function escapeHtml(str) {
 function buildModalContent() {
   const lang = i18n.currentLang()
   const videoId = YOUTUBE_VIDEOS[lang] || YOUTUBE_VIDEOS.en
-  const youtubeUrl = `https://youtube.com/shorts/${videoId}`
   const embedUrl = `https://www.youtube.com/embed/${videoId}`
   const baseUrl = import.meta.env.BASE_URL
 
@@ -111,9 +110,6 @@ function buildModalContent() {
       <div class="px-6 pb-4">
         <div class="flex flex-col sm:flex-row gap-6">
           <div class="sm:w-1/2 flex-shrink-0 flex items-center justify-center">
-            ${
-              window.matchMedia('(min-width: 640px)').matches
-                ? `
             <div class="rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[400px] w-full">
               <iframe
                 src="${embedUrl}"
@@ -124,21 +120,6 @@ function buildModalContent() {
                 allowfullscreen
               ></iframe>
             </div>
-            `
-                : `
-            <a
-              href="${youtubeUrl}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-2 text-[var(--color-primary)] hover:underline font-medium py-2"
-            >
-              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-              ${watchVideo}
-            </a>
-            `
-            }
           </div>
 
           <div class="sm:w-1/2 flex flex-col gap-3 text-[var(--color-text)] text-sm leading-relaxed">
