@@ -1,0 +1,158 @@
+= Changelog
+:toc:
+:toc-placement: preamble
+:toclevels: 2
+
+A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
+
+== 2026-03-09
+
+* *CQRS* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/137[#137]. Thank you!
+* *GoF Design Patterns* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/140[#140]. Thank you!
+* *Test Double (Meszaros)* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/142[#142]. Thank you!
+* *Event-Driven Architecture* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/143[#143]. Thank you!
+* *BDD (Given-When-Then)* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/138[#138], merged via https://github.com/LLM-Coding/Semantic-Anchors/pull/152[#152]. Thank you!
+* *YAGNI* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/139[#139], merged via https://github.com/LLM-Coding/Semantic-Anchors/pull/152[#152]. Thank you!
+
+== 2026-03-06
+
+* *ATAM* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/133[#133]
+* *LASR* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/135[#135]
+
+== 2026-03-04
+
+* *OWASP Top 10* — proposed by https://github.com/Advisior[@Advisior] in https://github.com/LLM-Coding/Semantic-Anchors/issues/130[#130]. Thank you!
+
+== 2026-03-01
+
+* *GoM (Grundsätze ordnungsmäßiger Modellierung)* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/126[#126]
+
+== 2026-02-23
+
+* *Regulated Environment* — proposed by https://github.com/bit-jkraushaar[@bit-jkraushaar] in https://github.com/LLM-Coding/Semantic-Anchors/issues/120[#120]. Thank you!
+
+== 2026-02-22
+
+* *MoSCoW* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/115[#115]
+
+== 2026-02-17
+
+* *Chatham House Rule* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/101[#101]
+
+== 2026-02-16
+
+* *Fowler Patterns (PEAA)* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/99[#99]
+
+== 2026-02-13
+
+* *Morphological Box* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/67[#67]
+* *IEC 61508 SIL Levels* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/67[#67]
+* Split from monolithic README.adoc into individual anchor files (https://github.com/LLM-Coding/Semantic-Anchors/pull/38[#38])
+
+== 2026-02-12
+
+* *Socratic Method* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *BLUF* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *Rubber Duck Debugging* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *Chain of Thought* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *Devil's Advocate* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *Five Whys* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *Feynman Technique* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *MADR* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/29[#29]
+
+== 2026-02-11
+
+* *TIMTOWTDI* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/28[#28]. Thank you!
+
+== 2026-02-07
+
+* *MECE Principle* — proposed by https://github.com/ingo-eichhorst[@ingo-eichhorst] in https://github.com/LLM-Coding/Semantic-Anchors/issues/26[#26]. Thank you!
+
+== 2026-02-05
+
+* *Nelson Rules* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/20[#20]
+* *Control Chart (Shewhart)* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/21[#21]
+* *SPC* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/22[#22]
+
+== 2026-02-03
+
+* *DRY Principle* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
+* *SPOT Principle* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
+* *SSOT Principle* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
+* *SOTA* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/16[#16]
+* *todo.txt-flavoured Markdown* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/14[#14]
+
+== 2026-01-21
+
+* *Pyramid Principle* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/12[#12]
+
+== 2025-11-18
+
+* *Mutation Testing* — contributed by ThomasPeuss. Thank you!
+
+== 2025-11-13
+
+* *BEM Methodology* — contributed by Robert Nimax. Thank you!
+
+== 2025-11-11
+
+* *Conventional Commits* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/4[#4]. Thank you!
+* *Semantic Versioning* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/4[#4]. Thank you!
+* *SOLID Principles* — contributed by https://github.com/bit-jkraushaar[@bit-jkraushaar]. Thank you!
+
+== 2025-11-10 — Initial Catalog
+
+First commit by https://github.com/rdmueller[@rdmueller] with 23 founding anchors:
+
+* *TDD, London School*
+* *TDD, Chicago School*
+* *Problem Space NVC*
+* *Mental Model (Naur)*
+* *EARS Requirements*
+* *arc42*
+* *ADR (Nygard)*
+* *Pugh Matrix*
+* *C4 Diagrams*
+* *Docs-as-Code*
+* *Domain-Driven Design*
+* *Hexagonal Architecture*
+* *Clean Architecture*
+* *User Story Mapping*
+* *Impact Mapping*
+* *Jobs To Be Done*
+* *Cynefin Framework*
+* *Wardley Mapping*
+* *Property-Based Testing*
+* *Testing Pyramid*
+* *Diátaxis Framework*
+* *What Qualifies as a Semantic Anchor*
+
+== Community Contributors
+
+Thank you to everyone who has contributed anchors to the catalog!
+
+[cols="1,3"]
+|===
+| Contributor | Contributions
+
+| https://github.com/rehsack[@rehsack]
+| Conventional Commits, Semantic Versioning, TIMTOWTDI
+
+| https://github.com/bit-jkraushaar[@bit-jkraushaar]
+| SOLID Principles, Regulated Environment
+
+| Robert Nimax
+| BEM Methodology
+
+| ThomasPeuss
+| Mutation Testing
+
+| https://github.com/ingo-eichhorst[@ingo-eichhorst]
+| MECE Principle
+
+| https://github.com/Advisior[@Advisior]
+| OWASP Top 10
+
+| https://github.com/Nantero1[@Nantero1]
+| CQRS, GoF Design Patterns, Test Double (Meszaros), Event-Driven Architecture, BDD, YAGNI
+|===

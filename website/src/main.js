@@ -102,6 +102,7 @@ function initApp() {
   addRoute('/', renderHomePage)
   addRoute('/about', renderAboutPage)
   addRoute('/contributing', renderContributingPage)
+  addRoute('/changelog', renderChangelogPage)
   addRoute('/all-anchors', renderAllAnchorsPage)
 
   const app = document.querySelector('#app')
@@ -176,6 +177,15 @@ function renderContributingPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('CONTRIBUTING.adoc')
+}
+
+function renderChangelogPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/changelog.adoc')
 }
 
 function renderAllAnchorsPage() {
@@ -381,6 +391,8 @@ function handleLanguageChange() {
     loadDocContent('docs/about.adoc')
   } else if (currentRoute === '/contributing') {
     loadDocContent('CONTRIBUTING.adoc')
+  } else if (currentRoute === '/changelog') {
+    loadDocContent('docs/changelog.adoc')
   } else if (currentRoute === '/all-anchors') {
     loadDocContent('docs/all-anchors.adoc')
   } else if (currentRoute === '/') {
