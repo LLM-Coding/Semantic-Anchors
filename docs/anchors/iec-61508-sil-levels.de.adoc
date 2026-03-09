@@ -1,0 +1,63 @@
+= IEC 61508 SIL Levels
+:categories: testing-quality
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant
+:proponents: International Electrotechnical Commission (IEC)
+:related: testing-pyramid, mutation-testing
+:tags: safety, functional-safety, SIL, standards, certification, risk-assessment
+
+[%collapsible]
+====
+Vollständiger Name:: IEC 61508 Safety Integrity Levels
+
+Auch bekannt als:: Funktionale Sicherheitsstufen, SIL-Klassifikation
+
+[discrete]
+== *Kernkonzepte*:
+
+Vier Safety Integrity Levels::
++
+SIL 1 (niedrigste)::: 10^-2^ ≤ PFD < 10^-1^ (tolerierbare Risikominderung)
+SIL 2::: 10^-3^ ≤ PFD < 10^-2^ (moderate Risikominderung)
+SIL 3::: 10^-4^ ≤ PFD < 10^-3^ (erhebliche Risikominderung)
+SIL 4 (höchste)::: 10^-5^ ≤ PFD < 10^-4^ (maximale Risikominderung)
+
+Risikobasierte Klassifikation:: SIL-Stufe wird durch Gefährdungsanalyse und Risikobewertung bestimmt
+
+Sicherheitslebenszyklus:: Systematischer Ansatz vom Konzept bis zur Stilllegung
+
+Hardwareanforderungen:: Architektonische Einschränkungen und systematische Fähigkeit
+
+Softwareanforderungen:: Entwicklungsmethoden, Verifikations- und Validierungstechniken
+
+Probability of Failure on Demand (PFD):: Schlüsselmetrik für die Zuverlässigkeit von Sicherheitsfunktionen
+
+Sicherheitsinstrumentierte Systeme (SIS):: Schutzebenen, die Sicherheitsfunktionen implementieren
+
+Verifikation und Validierung:: Unabhängige Bewertung von Sicherheitsaussagen
+
+Systematische Ausfälle:: Fokus auf Vermeidung von Design- und Spezifikationsfehlern
+
+Zufällige Hardwareausfälle:: Statistische Analyse und Fehlertoleranz
+
+
+Schlüsselstandard:: IEC 61508 "Funktionale Sicherheit sicherheitsbezogener elektrischer/elektronischer/programmierbarer elektronischer Systeme" (erste Ausgabe 1998, zweite Ausgabe 2010)
+
+[discrete]
+== *Verwandte Standards*:
+
+* IEC 61511 (Prozessindustrie)
+* ISO 26262 (Automobil)
+* EN 50128 (Eisenbahn)
+* IEC 62304 (Medizinprodukte)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Entwicklung sicherheitskritischer eingebetteter Systeme
+* Risikobewertung in industrieller Automatisierung und Steuerungssystemen
+* Zertifizierung sicherheitsinstrumentierter Systeme
+* Entwurf von Fail-Safe-Mechanismen und Redundanz
+* Etablierung von Softwareentwicklungsprozessen für Sicherheitsanwendungen
+* Durchführung von HAZOP-Studien (Hazard and Operability)
+* Implementierung funktionaler Sicherheitsmanagementsysteme
+====

@@ -1,0 +1,86 @@
+= Morphological Box
+:categories: problem-solving
+:roles: software-architect, product-owner, consultant, software-developer
+:related: mece, pugh-matrix
+:proponents: Fritz Zwicky
+:tags: innovation, creativity, problem-solving, systematic-design, combinatorial-analysis
+
+[%collapsible]
+====
+Vollständiger Name:: Morphologische Analyse / Morphologischer Kasten
+
+[discrete]
+== *Kernkonzepte*:
+
+Mehrdimensionale Zerlegung:: Komplexes Problem in unabhängige Parameter/Dimensionen zerlegen
+
+Variantenaufzählung:: Mögliche Werte/Optionen für jeden Parameter identifizieren
+
+Matrixkonstruktion:: Parameter und Varianten in Tabellen-/Kastenform organisieren
+
+Kombinatorische Exploration:: Kombinationen von Varianten systematisch untersuchen
+
+Constraint-Filterung:: Nicht realisierbare oder widersprüchliche Kombinationen eliminieren
+
+Entdeckung neuartiger Lösungen:: Nicht offensichtliche Lösungen durch systematische Rekombination finden
+
+Vollständiger Lösungsraum:: Sicherstellen, dass alle Möglichkeiten berücksichtigt werden
+
+Strukturierte Kreativität:: Systematischer Ansatz für Innovation und Ideenfindung
+
+
+Schlüsselvertreter:: Fritz Zwicky (1940er-1960er, California Institute of Technology)
+
+Historischer Kontext:: Entwickelt für Probleme der Luft- und Raumfahrttechnik (Strahltriebwerke, Raumfahrtantriebe), heute weit verbreitet in Produktentwicklung, Systementwurf und Innovationsmanagement.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Erkundung von Designalternativen für komplexe Systeme
+* Analyse von Produktfunktionskombinationen
+* Technologieauswahl mit mehreren Dimensionen
+* Architekturentscheidungen mit unabhängigen Parametern
+* Innovationsworkshops und Ideenfindungssitzungen
+* Requirements Engineering für Produktvarianten
+* Lösungsraumkartierung vor der Bewertung
+
+[discrete]
+== *Beispielanwendung*:
+
+----
+Problem: Entwurf eines Entwickler-Dokumentationssystems
+Parameter:
+├─ Format: Markdown, AsciiDoc, reStructuredText, API-first
+├─ Hosting: GitHub Pages, Netlify, Read the Docs, S3+CloudFront
+├─ Generator: Statisch (Hugo, Jekyll), Dynamisch (Docusaurus), Custom
+└─ Versionierung: Git-basiert, Versionsauswahl, Branch-per-Version
+
+Matrix erzeugt 4 × 4 × 3 × 3 = 144 mögliche Kombinationen
+Filterung nach Constraints (z.B. "AsciiDoc + Hugo schlecht unterstützt")
+→ Identifikation von ~20 realisierbaren Lösungen zur Bewertung mit Pugh-Matrix
+----
+
+[discrete]
+== *Verwandte Konzepte*:
+
+* MECE-Prinzip (für Parameterunabhängigkeit)
+* Pugh-Matrix (zur Bewertung generierter Alternativen)
+* Design of Experiments (DOE)
+* Kombinatorisches Design
+* Lösungsraum-Exploration
+
+[discrete]
+== *Ergänzende Werkzeuge*:
+
+* *Morphological Box* verwenden, um Alternativen zu generieren
+* Dann *Pugh-Matrix* anwenden, um die beste Option zu bewerten und auszuwählen
+* *MECE* verwenden, um Parameterunabhängigkeit sicherzustellen
+
+[discrete]
+== *Zu vermeidende Fallstricke*:
+
+* Parameter, die nicht unabhängig sind (verletzt kombinatorische Logik)
+* Zu viele Parameter, die zu kombinatorischer Explosion führen
+* Aufhören bei der Matrixerstellung, ohne Kombinationen zu erkunden
+* Vergessen, nicht realisierbare Kombinationen herauszufiltern
+====

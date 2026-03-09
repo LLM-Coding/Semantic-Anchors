@@ -1,0 +1,59 @@
+= Myers-Briggs Type Indicator (MBTI)
+:categories: communication-presentation
+:roles: team-lead, consultant, educator, ux-designer, product-owner
+:proponents: Isabel Briggs Myers, Katharine Cook Briggs, Carl Gustav Jung
+:tags: personality types, MBTI, psychological types, communication styles, team dynamics, Jungian psychology
+
+[%collapsible]
+====
+Vollständiger Name:: Myers-Briggs Type Indicator (MBTI)
+
+Auch bekannt als:: MBTI, Myers-Briggs, Angewandte Jungsche Typentheorie, 16 Persönlichkeitstypen
+
+[discrete]
+== *Kernkonzepte*:
+
+Vier Dichotomien:: Das Framework definiert vier Präferenzdimensionen, jede mit zwei Polen:
+* *Extraversion (E) vs. Introversion (I)* — Wohin richtest du deine Energie? Nach außen zu Menschen und Aktivität, oder nach innen zu Ideen und Reflexion?
+* *Sensing (S) vs. Intuition (N)* — Wie nimmst du Informationen auf? Durch konkrete Fakten und gegenwärtige Realität, oder durch Muster und zukünftige Möglichkeiten?
+* *Thinking (T) vs. Feeling (F)* — Wie triffst du Entscheidungen? Basierend auf Logik und objektiver Analyse, oder basierend auf Werten und zwischenmenschlicher Wirkung?
+* *Judging (J) vs. Perceiving (P)* — Wie gehst du mit der Außenwelt um? Mit Struktur und Planung, oder mit Flexibilität und Spontaneität?
+
+16 Persönlichkeitstypen:: Die vier Dichotomien kombinieren sich zu 16 verschiedenen Typenprofilen (z.B. INTJ, ENFP, ISTJ, ESFP), jeweils mit charakteristischen Stärken, blinden Flecken und Kommunikationspräferenzen
+
+Kognitive Funktionen:: Jeder Typ hat einen Stapel von vier kognitiven Funktionen (z.B. dominante Introvertierte Intuition, auxiliäre Extravertierte Fühlen bei INFJs), die beschreiben, wie Informationen verarbeitet und Entscheidungen getroffen werden
+
+Präferenz, nicht Fähigkeit:: Der Typ beschreibt eine natürliche Präferenz, keine Fähigkeit oder feste Eigenschaft — Menschen können und nutzen alle Funktionen, bevorzugen aber einige gegenüber anderen
+
+Typdynamik:: Das Verständnis der Typenmischung eines Teams zeigt wahrscheinliche Reibungsquellen (z.B. S/N-Konflikte zwischen Gesamtbild und Detailfokus) und natürliche Kooperationsmuster
+
+Schlüsselvertreter:: Isabel Briggs Myers und Katharine Cook Briggs, aufbauend auf Carl Gustav Jungs Theorie der psychologischen Typen ("Psychologische Typen", 1921)
+
+Historischer Kontext:: Während des Zweiten Weltkriegs entwickelt, um Frauen beim Einstieg in die industrielle Arbeitswelt bei der Suche nach zu ihrer Persönlichkeit passenden Rollen zu helfen; 1962 offiziell als Instrument veröffentlicht und in organisatorischen und pädagogischen Umgebungen weit verbreitet
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Verständnis von Kommunikationspräferenzen und potenziellen Reibungsquellen innerhalb eines Teams
+* Moderation von Team-Retrospektiven oder Kickoffs, bei denen zwischenmenschliche Dynamiken wichtig sind
+* Coaching von Einzelpersonen zu Führungs- und Kommunikationsstil
+* Karriereentwicklungsgespräche zur Abstimmung von Rollenerwartungen mit persönlichem Arbeitsstil
+* UX-Forschung, um zu berücksichtigen, wie verschiedene Nutzertypen mit einem Produkt interagieren könnten
+* Onboarding-Programme zur Beschleunigung des gegenseitigen Verständnisses unter neuen Teammitgliedern
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* "Mein Typ bedeutet, dass ich X nicht kann" — MBTI beschreibt Präferenzen, nicht Fähigkeiten oder Grenzen
+* "Typen sind lebenslang festgelegt" — Präferenzen können sich mit Erfahrung, Stress oder Kontext verschieben
+* "Ein Typ ist besser als ein anderer" — Alle 16 Typen bringen Wert; das Framework ist beschreibend, nicht bewertend
+* "MBTI ist ein Ausgangspunkt für Selbstreflexion und Dialog" — Korrekte Nutzung ist explorativ, nicht diagnostisch
+
+[discrete]
+== *Einschränkungen und Kritik*:
+
+* Die Test-Retest-Reliabilität ist mäßig — dieselbe Person kann bei erneuter Durchführung einen anderen Typ erhalten
+* Binäre Dichotomien vereinfachen kontinuierliche Merkmalsverteilungen zu stark
+* Nicht empfohlen für Einstellungsentscheidungen oder Personalauswahl mit hohem Einsatz
+* Kritisiert wegen geringer prädiktiver Validität für Arbeitsleistung im Vergleich zu z.B. Big-Five-Persönlichkeitsmerkmalen
+====

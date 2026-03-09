@@ -1,0 +1,46 @@
+= YAGNI (You Aren't Gonna Need It)
+:categories: design-principles
+:roles: software-developer, software-architect, consultant
+:proponents: Ron Jeffries, Kent Beck
+:related: dry-principle, spot-principle, tdd-chicago-school
+:tags: yagni, extreme-programming, simplicity, incremental-design, over-engineering
+
+[%collapsible]
+====
+Vollständiger Name:: You Aren't Gonna Need It
+
+[discrete]
+== *Kernkonzepte*:
+
+Nicht für hypothetische Zukunft bauen:: Funktionalität nur implementieren, wenn sie tatsächlich benötigt wird, nicht wenn man vermutet, dass sie benötigt werden könnte
+
+Spekulative Verallgemeinerung:: Anti-Pattern, Abstraktionen für vorgestellte zukünftige Anforderungen zu bauen, die möglicherweise nie eintreten
+
+Inkrementelles Design:: Design durch tatsächliche Bedürfnisse entstehen lassen; Architektur weiterentwickeln, wenn Anforderungen konkret werden
+
+Kosten des Mitführens:: Ungenutzter Code erhöht den Wartungsaufwand, steigert die Komplexität und erzeugt kognitive Last für das gesamte Team
+
+Toten Code löschen:: Code, der keinem aktuellen Zweck mehr dient, konsequent entfernen
+
+Extreme-Programming-Ursprung:: Zentrale XP-Praxis neben TDD, Refactoring und Continuous Integration
+
+Reversibilität:: Einfache, änderbare Entscheidungen gegenüber voreiligen Festlegungen auf komplexe Lösungen bevorzugen
+
+
+Schlüsselvertreter:: Ron Jeffries (prägte den Begriff), Kent Beck ("Extreme Programming Explained", 1999)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Bekämpfung von Over-Engineering und voreiliger Abstraktion
+* Agile Projekte mit iterativer Lieferung und sich entwickelnden Anforderungen
+* Refactoring von Legacy-Systemen, die mit ungenutzten Features belastet sind
+* Wenn man versucht ist, "Nur-für-den-Fall"-Funktionalität oder Konfigurierbarkeit hinzuzufügen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<dry-principle,DRY>> - Eliminiert Duplizierung vorhandenen Wissens (komplementär, aber verschieden)
+* <<spot-principle,SPOT>> - Single Point of Truth, verwandtes Einfachheitsprinzip
+* <<tdd-chicago-school,TDD, Chicago School>> - YAGNI ist ein Kernprinzip des klassischen TDD
+====

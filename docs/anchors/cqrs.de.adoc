@@ -1,0 +1,49 @@
+= CQRS (Command Query Responsibility Segregation)
+:categories: software-architecture
+:roles: software-architect, software-developer
+:proponents: Greg Young, Bertrand Meyer, Udi Dahan
+:related: domain-driven-design, hexagonal-architecture, fowler-patterns
+:tags: cqrs, cqs, architecture, commands, queries, read-write-separation
+
+[%collapsible]
+====
+Auch bekannt als:: CQS auf Architekturebene
+
+[discrete]
+== *Kernkonzepte*:
+
+Command Query Separation (CQS):: Bertrand Meyers Prinzip — Methoden ändern entweder den Zustand (Commands) oder geben Daten zurück (Queries), niemals beides
+
+Commands:: Schreiboperationen, die den Zustand ändern und void zurückgeben; repräsentieren Absichten als unveränderliche Command-Objekte
+
+Queries:: Leseoperationen, die Daten ohne Seiteneffekte zurückgeben; sicher wiederholbar und cachebar
+
+Getrennte Lese-/Schreibmodelle:: Unabhängige Datenmodelle, die für ihren jeweiligen Zweck optimiert sind
+
+Eventual Consistency:: Das Lesemodell kann hinter dem Schreibmodell zurückbleiben; akzeptabler Kompromiss für Skalierbarkeit
+
+Ereignisbasierte Synchronisation:: Domain Events propagieren Änderungen von der Schreibseite zu Lesemodell-Projektionen
+
+Unabhängige Skalierbarkeit:: Lese- und Schreibseite können unabhängig skaliert, deployt und optimiert werden
+
+Event Sourcing optional:: CQRS erfordert kein Event Sourcing; die Muster sind komplementär, aber unabhängig
+
+
+Schlüsselvertreter:: Greg Young (prägte CQRS), Bertrand Meyer (CQS-Ursprung, "Object-Oriented Software Construction", 1988), Udi Dahan
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Systeme mit asymmetrischer Lese-/Schreiblast
+* Komplexe Domänen, in denen Lese- und Schreibmodelle erheblich voneinander abweichen
+* Event-Sourced-Systeme, die materialisierte Views erfordern
+* Hochperformante Systeme, die unabhängige Skalierung von Lese- und Schreibzugriffen benötigen
+* Kollaborative Domänen mit aufgabenbasierten UIs
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<domain-driven-design,Domain-Driven Design>> - Wird oft mit CQRS für komplexe Domänen kombiniert
+* <<hexagonal-architecture,Hexagonal Architecture>> - Ports und Adapter ergänzen die CQRS-Trennung
+* <<fowler-patterns,Fowler Patterns>> - CQRS baut auf Enterprise-Application-Patterns auf
+====

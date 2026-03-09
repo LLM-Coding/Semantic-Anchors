@@ -1,0 +1,47 @@
+= Test Double (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer, educator
+:proponents: Gerard Meszaros
+:related: tdd-london-school, tdd-chicago-school, property-based-testing
+:tags: test-double, mock, stub, spy, fake, dummy, xunit, testing, isolation
+
+[%collapsible]
+====
+Vollständiger Name:: Test-Double-Taxonomie nach Gerard Meszaros
+
+Auch bekannt als:: xUnit Test Patterns Test-Double-Taxonomie
+
+[discrete]
+== *Kernkonzepte*:
+
+Dummy:: Objekt, das übergeben wird, um eine Parameterliste zu füllen, aber nie tatsächlich verwendet wird
+
+Stub:: Liefert vorgefertigte Antworten auf Aufrufe während eines Tests; keine Verifikation von Interaktionen
+
+Spy:: Zeichnet Aufrufe für spätere Assertions auf; ein Stub, der zusätzlich Interaktionsdaten erfasst
+
+Mock:: Vorprogrammiert mit Erwartungen; verifiziert, dass bestimmte Interaktionen stattgefunden haben (interaktionsbasierte Verifikation)
+
+Fake:: Funktionierende vereinfachte Implementierung mit Abkürzungen, die für Produktion ungeeignet sind (z.B. In-Memory-Datenbank, In-Memory-Repository)
+
+Test Double:: Oberbegriff für jedes Objekt, das während des Testens für eine echte Abhängigkeit eingesetzt wird
+
+Vokabularpräzision:: Unterscheidung zwischen dem, was ein Double IST (Taxonomie) und wann man es einsetzt (TDD-Schulphilosophie)
+
+
+Schlüsselvertreter:: Gerard Meszaros ("xUnit Test Patterns: Refactoring Test Code", 2007)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Präzise Kommunikation über Test-Isolationsstrategien
+* Auswahl des richtigen Double-Typs für ein gegebenes Testszenario
+* Vermeidung von Vokabularkollisionen (z.B. einen Stub "Mock" zu nennen löst falsches Denken aus)
+* Lehre oder Review von Testcode mit gemeinsamer Terminologie
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<tdd-london-school,TDD, London School>> - Philosophie des intensiven Double-Einsatzes (interaktionsbasiert)
+* <<tdd-chicago-school,TDD, Chicago School>> - Philosophie des minimalen Double-Einsatzes (zustandsbasiert)
+====

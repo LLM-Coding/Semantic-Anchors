@@ -1,0 +1,50 @@
+= Event-Driven Architecture
+:categories: software-architecture
+:roles: software-architect, software-developer, devops-engineer
+:proponents: Gregor Hohpe, Bobby Woolf, Martin Fowler
+:related: domain-driven-design, hexagonal-architecture, clean-architecture
+:tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency
+
+[%collapsible]
+====
+Auch bekannt als:: EDA, Message-Driven Architecture
+
+[discrete]
+== *Kernkonzepte*:
+
+Event Producers und Consumers:: Komponenten kommunizieren durch das Aussenden und Reagieren auf Events statt durch direkte Aufrufe
+
+Publish-Subscribe:: Produzenten veröffentlichen Events, ohne zu wissen, welche Konsumenten sie verarbeiten werden
+
+Asynchrone Entkopplung:: Sender und Empfänger arbeiten zeitlich unabhängig; kein blockierendes Request-Response
+
+Message Queue:: Vermittler, der Events zwischen Produzenten und Konsumenten puffert (SQS, RabbitMQ, Kafka)
+
+At-least-once Delivery:: Die meisten Messaging-Systeme garantieren Zustellung, können aber Duplikate liefern, was idempotente Konsumenten erfordert
+
+Eventual Consistency:: Der Systemzustand konvergiert über die Zeit, anstatt nach jeder Operation sofort konsistent zu sein
+
+Event Notification:: Leichtgewichtiges Event-Signal, dass etwas passiert ist; Konsumenten entscheiden, ob sie handeln
+
+Event-Carried State Transfer:: Events tragen genug Daten, damit Konsumenten verarbeiten können, ohne den Produzenten zurückzurufen
+
+Choreographie vs. Orchestrierung:: Events können verteilte Workflows implizit (Choreographie) oder über einen zentralen Koordinator (Orchestrierung) auslösen
+
+
+Schlüsselvertreter:: Gregor Hohpe, Bobby Woolf ("Enterprise Integration Patterns", 2003), Martin Fowler ("What do you mean by Event-Driven?", 2017)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Systeme, die lose Kopplung zwischen Komponenten erfordern
+* Workloads mit asynchronen Verarbeitungspipelines
+* Architekturen, die unabhängige Skalierung von Produzenten und Konsumenten benötigen
+* Verteilte Systeme, in denen Komponenten sich unabhängig weiterentwickeln müssen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<domain-driven-design,Domain-Driven Design>> - Domain Events sind ein DDD-Baustein
+* <<hexagonal-architecture,Hexagonal Architecture>> - Message Queues als Driven Adapters
+* <<clean-architecture,Clean Architecture>> - Events überqueren Architekturgrenzen über Interfaces
+====

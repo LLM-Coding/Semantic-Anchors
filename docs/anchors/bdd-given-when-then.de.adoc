@@ -1,0 +1,48 @@
+= BDD (Behavior-Driven Development)
+:categories: testing-quality
+:roles: software-developer, qa-engineer, business-analyst, product-owner
+:proponents: Dan North
+:related: tdd-london-school, tdd-chicago-school, user-story-mapping
+:tags: bdd, gherkin, cucumber, specification-by-example, three-amigos, given-when-then, living-documentation
+
+[%collapsible]
+====
+Auch bekannt als:: Specification by Example, Executable Specifications
+
+[discrete]
+== *Kernkonzepte*:
+
+Given-When-Then:: Strukturiertes Szenarioformat — Given eine Vorbedingung, When eine Aktion auftritt, Then ein erwartetes Ergebnis eintritt
+
+Specification by Example:: Konkrete Beispiele als ausführbare Spezifikationen, die das Systemverhalten definieren
+
+Three Amigos:: Kollaborative Entdeckungssitzungen zwischen Entwickler, Tester und Fachvertreter
+
+Gherkin-Syntax:: Domänenspezifische Sprache zum Schreiben menschenlesbarer, maschinenausführbarer Szenarien
+
+Living Documentation:: Tests, die als stets aktuelle Systemdokumentation dienen
+
+Outside-in-Spezifikation:: Vom gewünschten Geschäftsverhalten ausgehen, zur Implementierung hinarbeiten
+
+Ubiquitous Language:: Gemeinsames Vokabular, das technische und fachliche Stakeholder in Szenarien verbindet
+
+Discovery Workshops:: Strukturierte Gespräche, um Anforderungen durch Beispiele vor der Implementierung aufzudecken
+
+
+Schlüsselvertreter:: Dan North ("Introducing BDD", 2006), Entwickler von JBehave, das Cucumbers Design beeinflusste (Cucumber erstellt von Aslak Hellesøy, 2008)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Cross-funktionale Teams, die ein gemeinsames Verständnis der Anforderungen benötigen
+* Systeme, in denen Geschäftsregeln komplex sind und klare Dokumentation erfordern
+* Projekte, die ausführbare Akzeptanzkriterien benötigen
+* Überbrückung von Kommunikationslücken zwischen technischen und nicht-technischen Stakeholdern
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<tdd-london-school,TDD, London School>> - Outside-in-Entwicklungsansatz, der BDD ergänzt
+* <<tdd-chicago-school,TDD, Chicago School>> - Entwicklerfokussierte TDD-Praxis
+* <<user-story-mapping,User Story Mapping>> - Anforderungsermittlung, die BDD-Szenarien speist
+====
