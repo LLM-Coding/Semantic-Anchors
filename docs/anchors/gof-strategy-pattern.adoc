@@ -1,0 +1,30 @@
+= GoF-Strategy Pattern
+:categories: design-principles
+:roles: software-developer, software-architect
+:umbrella: gof-design-patterns
+:tier: 1
+:proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+:tags: GoF, design pattern, behavioral, strategy
+
+[%collapsible]
+====
+Full Name:: GoF Strategy Pattern (Behavioral)
+
+[discrete]
+== *Intent*:
+Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+[discrete]
+== *When to Use*:
+* Multiple related classes differ only in behavior
+* You need different variants of an algorithm
+* An algorithm uses data that clients shouldn't know about
+
+[discrete]
+== *Prompt Example*:
+"Refactore diese Klasse nach dem GoF-Strategy Pattern, um die verschiedenen Berechnungsarten austauschbar zu machen."
+
+[discrete]
+== *Related Anchors*:
+* <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+====

@@ -79,6 +79,16 @@ function parseAnchorFile(filePath) {
     filePath: `docs/anchors/${id}.adoc`,
   }
 
+  // Umbrella anchor support
+  const subAnchors = parseList(attributes['sub-anchors'])
+  if (subAnchors.length > 0) anchor.subAnchors = subAnchors
+
+  const umbrellaAttr = attributes.umbrella
+  if (umbrellaAttr) anchor.umbrella = umbrellaAttr.trim()
+
+  const tierAttr = attributes.tier
+  if (tierAttr) anchor.tier = parseInt(tierAttr, 10)
+
   // Validation
   const errors = []
   const warnings = []

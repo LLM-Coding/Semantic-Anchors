@@ -4,6 +4,7 @@
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :related: solid-principles, fowler-patterns, clean-architecture
 :tags: design-patterns, gang-of-four, oop, creational, structural, behavioral
+:sub-anchors: gof-strategy-pattern, gof-observer-pattern, gof-factory-method-pattern, gof-singleton-pattern, gof-adapter-pattern, gof-decorator-pattern, gof-command-pattern, gof-facade-pattern, gof-template-method-pattern, gof-builder-pattern, gof-state-pattern, gof-proxy-pattern, gof-abstract-factory-pattern, gof-composite-pattern, gof-iterator-pattern, gof-mediator-pattern, gof-chain-of-responsibility-pattern, gof-bridge-pattern, gof-prototype-pattern, gof-flyweight-pattern, gof-interpreter-pattern, gof-memento-pattern, gof-visitor-pattern
 
 [%collapsible]
 ====
