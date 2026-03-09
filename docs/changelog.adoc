@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-03-09
 
+* *GoF Design Patterns Umbrella* — 23 GoF patterns as sub-anchors with tier system (12 Tier-1, 7 Tier-2, 4 Tier-3) in https://github.com/LLM-Coding/Semantic-Anchors/pull/159[#159]
+* *SOLID Principles Umbrella* — 5 SOLID principles as sub-anchors (SRP, OCP, LSP, ISP, DIP, all Tier-1) in https://github.com/LLM-Coding/Semantic-Anchors/pull/161[#161]
+* *Myers-Briggs Type Indicator (MBTI)* — contributed by https://github.com/copilot[Copilot] in https://github.com/LLM-Coding/Semantic-Anchors/pull/160[#160]
+* German translations for all 37 previously untranslated anchors in https://github.com/LLM-Coding/Semantic-Anchors/pull/161[#161]
 * *CQRS* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/137[#137]. Thank you!
 * *GoF Design Patterns* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/140[#140]. Thank you!
 * *Test Double (Meszaros)* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/142[#142]. Thank you!
