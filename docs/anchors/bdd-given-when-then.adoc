@@ -1,0 +1,48 @@
+= BDD (Behavior-Driven Development)
+:categories: testing-quality
+:roles: software-developer, qa-engineer, business-analyst, product-owner
+:proponents: Dan North
+:related: tdd-london-school, tdd-chicago-school, user-story-mapping
+:tags: bdd, gherkin, cucumber, specification-by-example, three-amigos, given-when-then, living-documentation
+
+[%collapsible]
+====
+Also known as:: Specification by Example, Executable Specifications
+
+[discrete]
+== *Core Concepts*:
+
+Given-When-Then:: Structured scenario format — Given a precondition, When an action occurs, Then an expected outcome results
+
+Specification by Example:: Concrete examples as executable specifications that define system behavior
+
+Three Amigos:: Collaborative discovery sessions between developer, tester, and business representative
+
+Gherkin syntax:: Domain-specific language for writing human-readable, machine-executable scenarios
+
+Living documentation:: Tests that serve as always-current system documentation
+
+Outside-in specification:: Start from desired business behavior, work inward to implementation
+
+Ubiquitous language:: Shared vocabulary bridging technical and business stakeholders in scenarios
+
+Discovery workshops:: Structured conversations to uncover requirements through examples before implementation
+
+
+Key Proponent:: Dan North ("Introducing BDD", 2006), creator of JBehave which influenced Cucumber's design (Cucumber created by Aslak Hellesøy, 2008)
+
+[discrete]
+== *When to Use*:
+
+* Cross-functional teams needing shared understanding of requirements
+* Systems where business rules are complex and need clear documentation
+* Projects requiring executable acceptance criteria
+* Bridging communication gaps between technical and non-technical stakeholders
+
+[discrete]
+== *Related Anchors*:
+
+* <<tdd-london-school,TDD, London School>> - Outside-in development approach that complements BDD
+* <<tdd-chicago-school,TDD, Chicago School>> - Developer-focused TDD practice
+* <<user-story-mapping,User Story Mapping>> - Requirements discovery that feeds BDD scenarios
+====

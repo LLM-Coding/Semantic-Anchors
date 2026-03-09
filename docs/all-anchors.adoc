@@ -33,6 +33,8 @@ include::anchors/spot-principle.adoc[leveloffset=+2]
 
 include::anchors/ssot-principle.adoc[leveloffset=+2]
 
+include::anchors/yagni.adoc[leveloffset=+2]
+
 <<<
 
 == Development Workflow
@@ -154,6 +156,8 @@ include::anchors/wardley-mapping.adoc[leveloffset=+2]
 <<<
 
 == Testing & Quality Practices
+
+include::anchors/bdd-given-when-then.adoc[leveloffset=+2]
 
 include::anchors/iec-61508-sil-levels.adoc[leveloffset=+2]
 

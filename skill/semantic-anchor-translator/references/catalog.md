@@ -14,6 +14,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kent Beck, Martin Fowler
 - **Core:** State-based testing, real objects over mocks, refactoring-focused
 
+### BDD (Behavior-Driven Development)
+- **Also known as:** Specification by Example, Executable Specifications
+- **Proponents:** Dan North
+- **Core:** Given-When-Then scenarios, Gherkin syntax, three amigos, living documentation, outside-in specification
+
 ### Test Double (Meszaros)
 - **Proponents:** Gerard Meszaros
 - **Core:** Taxonomy of test substitutes — Dummy (unused), Stub (canned responses), Spy (records calls), Mock (verifies interactions), Fake (simplified implementation)
@@ -85,6 +90,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### SSOT (Single Source of Truth)
 - **Core:** One system is the master for specific data
+
+### YAGNI (You Aren't Gonna Need It)
+- **Proponents:** Ron Jeffries, Kent Beck
+- **Core:** Don't build for hypothetical futures, speculative generality anti-pattern, incremental design, delete dead code
 
 ### GoF Design Patterns
 - **Also known as:** Design Patterns, Gang of Four Patterns
