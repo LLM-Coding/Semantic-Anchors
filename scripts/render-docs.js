@@ -64,5 +64,8 @@ renderFile(path.join(ROOT, 'CONTRIBUTING.de.adoc'), path.join(WEB_PUBLIC, 'CONTR
 
 renderFile(path.join(ROOT, 'docs/changelog.adoc'), path.join(WEB_DOCS, 'changelog.html'))
 
+renderFile(path.join(ROOT, 'docs/agentskill.adoc'), path.join(WEB_DOCS, 'agentskill.html'))
+renderFile(path.join(ROOT, 'docs/agentskill.de.adoc'), path.join(WEB_DOCS, 'agentskill.de.html'))
+
 // all-anchors.adoc uses include:: directives — resolved automatically in Node.js
 renderFile(path.join(ROOT, 'docs/all-anchors.adoc'), path.join(WEB_DOCS, 'all-anchors.html'))
