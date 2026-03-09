@@ -1,5 +1,12 @@
 import { test, expect } from '@playwright/test'
 
+// Dismiss onboarding modal before all tests
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('onboarding-seen', 'true')
+  })
+})
+
 test.describe('Homepage - Card Grid', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
@@ -7,7 +14,7 @@ test.describe('Homepage - Card Grid', () => {
 
   test('should load homepage successfully', async ({ page }) => {
     await expect(page).toHaveTitle(/Semantic Anchors/)
-    await expect(page.locator('h1')).toContainText('Semantic Anchors')
+    await expect(page.locator('h2').first()).toContainText('Semantic Anchors')
   })
 
   test('should display header with navigation', async ({ page }) => {
@@ -41,14 +48,18 @@ test.describe('Homepage - Card Grid', () => {
   })
 
   test('should display search and filter controls', async ({ page }) => {
-    await expect(page.locator('#search-input')).toBeVisible()
-    await expect(page.locator('#role-filter')).toBeVisible()
+    // On desktop, search and filter are in the header
+    await expect(page.locator('#header-search-input')).toBeVisible()
+    await expect(page.locator('#header-role-filter')).toBeVisible()
 
-    // Role filter should have options
-    const roleFilter = page.locator('#role-filter')
+    // Role filter should have options (wait for data to load)
+    await page.waitForSelector('.anchor-card', { timeout: 10000 })
+    const roleFilter = page.locator('#header-role-filter')
     const options = roleFilter.locator('option')
-    const count = await options.count()
-    expect(count).toBeGreaterThan(1) // At least "All Roles" + 1 role
+    await expect(async () => {
+      const count = await options.count()
+      expect(count).toBeGreaterThan(1)
+    }).toPass({ timeout: 10000 })
   })
 
   test('should filter cards by role', async ({ page }) => {
@@ -58,8 +69,8 @@ test.describe('Homepage - Card Grid', () => {
     const initialCount = await page.locator('.anchor-card').count()
     expect(initialCount).toBeGreaterThan(0)
 
-    // Select a role
-    await page.selectOption('#role-filter', 'software-developer')
+    // Select a role (use header filter on desktop)
+    await page.selectOption('#header-role-filter', 'software-developer')
 
     // Some cards should still be visible
     const filteredCount = await page.locator('.anchor-card:visible').count()
@@ -69,15 +80,15 @@ test.describe('Homepage - Card Grid', () => {
   test('should filter cards by search query', async ({ page }) => {
     await page.waitForSelector('.anchor-card', { timeout: 10000 })
 
-    // Type in search
-    await page.fill('#search-input', 'TDD')
+    // Type in search (use header search on desktop)
+    await page.fill('#header-search-input', 'TDD')
 
     // Some cards should be visible with TDD
     const visibleCards = await page.locator('.anchor-card:visible').count()
     expect(visibleCards).toBeGreaterThan(0)
 
     // Clear search
-    await page.fill('#search-input', '')
+    await page.fill('#header-search-input', '')
 
     // All cards should be visible again
     const allCards = await page.locator('.anchor-card:visible').count()
@@ -212,8 +223,8 @@ test.describe('Routing - Documentation Pages', () => {
   })
 
   test('should navigate to About page', async ({ page }) => {
-    // Click About link
-    await page.click('a[data-route="/about"]')
+    // Click About link (use first for desktop nav)
+    await page.locator('a[data-route="/about"]').first().click()
 
     // URL should update
     expect(page.url()).toContain('#/about')
@@ -228,8 +239,8 @@ test.describe('Routing - Documentation Pages', () => {
   })
 
   test('should navigate to Contributing page', async ({ page }) => {
-    // Click Contributing link
-    await page.click('a[data-route="/contributing"]')
+    // Click Contributing link (use first for desktop nav)
+    await page.locator('a[data-route="/contributing"]').first().click()
 
     // URL should update
     expect(page.url()).toContain('#/contributing')
@@ -244,11 +255,11 @@ test.describe('Routing - Documentation Pages', () => {
   })
 
   test('should navigate back to Catalog from About', async ({ page }) => {
-    // Go to About
-    await page.click('a[data-route="/about"]')
+    // Go to About (use first for desktop nav)
+    await page.locator('a[data-route="/about"]').first().click()
 
     // Go back to Catalog
-    await page.click('a[data-route="/"]')
+    await page.locator('a[data-route="/"]').first().click()
 
     // URL should be home
     expect(page.url()).toMatch(/#\/$|#$/)
@@ -271,8 +282,8 @@ test.describe('Routing - Documentation Pages', () => {
   })
 
   test('should handle browser back button', async ({ page }) => {
-    // Navigate to About
-    await page.click('a[data-route="/about"]')
+    // Navigate to About (use first for desktop nav)
+    await page.locator('a[data-route="/about"]').first().click()
 
     // Go back
     await page.goBack()
@@ -287,14 +298,14 @@ test.describe('Responsive Design', () => {
     await page.goto('/')
     await page.setViewportSize({ width: 375, height: 667 })
 
-    // Page should still be visible
-    await expect(page.locator('h1')).toBeVisible()
+    // Page should still be visible (heading is h2 in current layout)
+    await expect(page.locator('h2').first()).toBeVisible()
     await page.waitForSelector('.anchor-card', { timeout: 10000 })
     await expect(page.locator('.anchor-card').first()).toBeVisible()
 
-    // Navigation should be hidden on mobile
-    const nav = page.locator('.nav-link').first()
-    const isVisible = await nav.isVisible()
+    // Desktop navigation should be hidden on mobile
+    const desktopNav = page.locator('.hidden.sm\\:flex .nav-link').first()
+    const isVisible = await desktopNav.isVisible()
     expect(isVisible).toBe(false)
   })
 
@@ -302,7 +313,7 @@ test.describe('Responsive Design', () => {
     await page.goto('/')
     await page.setViewportSize({ width: 768, height: 1024 })
 
-    await expect(page.locator('h1')).toBeVisible()
+    await expect(page.locator('h2').first()).toBeVisible()
     await page.waitForSelector('.anchor-card', { timeout: 10000 })
     await expect(page.locator('.anchor-card').first()).toBeVisible()
 
@@ -314,7 +325,7 @@ test.describe('Responsive Design', () => {
     await page.goto('/')
     await page.setViewportSize({ width: 1920, height: 1080 })
 
-    await expect(page.locator('h1')).toBeVisible()
+    await expect(page.locator('h2').first()).toBeVisible()
     await page.waitForSelector('.anchor-card', { timeout: 10000 })
     await expect(page.locator('.anchor-card').first()).toBeVisible()
   })
@@ -354,12 +365,13 @@ test.describe('Accessibility', () => {
   })
 
   test('should have proper heading hierarchy', async ({ page }) => {
-    // Check h1 exists
-    await expect(page.locator('h1')).toBeVisible()
+    // Check page heading exists (h2 in current layout)
+    await expect(page.locator('h2').first()).toBeVisible()
 
-    // Check h2 headings (category headings)
-    const h2s = page.locator('h2')
-    const count = await h2s.count()
+    // Check h3 headings (category headings)
+    await page.waitForSelector('.category-section', { timeout: 10000 })
+    const h3s = page.locator('.category-heading')
+    const count = await h3s.count()
     expect(count).toBeGreaterThan(0)
   })
 })
@@ -393,7 +405,7 @@ test.describe('Performance', () => {
 
   test('should load search index asynchronously', async ({ page }) => {
     await page.waitForSelector('.anchor-card', { timeout: 10000 })
-    const searchInput = page.locator('#search-input')
+    const searchInput = page.locator('#header-search-input')
     await searchInput.fill('tdd')
     await expect(searchInput).toHaveAttribute('placeholder', /full-text/, { timeout: 15000 })
   })
