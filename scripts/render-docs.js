@@ -11,6 +11,7 @@
  *   website/public/docs/about.de.html   (if source exists)
  *   website/public/CONTRIBUTING.html
  *   website/public/CONTRIBUTING.de.html (if source exists)
+ *   website/public/docs/changelog.html
  *   website/public/docs/all-anchors.html
  *
  * Usage: node scripts/render-docs.js
@@ -60,6 +61,8 @@ renderFile(path.join(ROOT, 'docs/about.de.adoc'), path.join(WEB_DOCS, 'about.de.
 
 renderFile(path.join(ROOT, 'CONTRIBUTING.adoc'), path.join(WEB_PUBLIC, 'CONTRIBUTING.html'))
 renderFile(path.join(ROOT, 'CONTRIBUTING.de.adoc'), path.join(WEB_PUBLIC, 'CONTRIBUTING.de.html'))
+
+renderFile(path.join(ROOT, 'docs/changelog.adoc'), path.join(WEB_DOCS, 'changelog.html'))
 
 // all-anchors.adoc uses include:: directives — resolved automatically in Node.js
 renderFile(path.join(ROOT, 'docs/all-anchors.adoc'), path.join(WEB_DOCS, 'all-anchors.html'))
