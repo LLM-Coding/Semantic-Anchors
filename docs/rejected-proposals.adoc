@@ -1,0 +1,56 @@
+= Rejected Proposals
+
+This page lists anchor proposals that were evaluated but did not meet the link:#/about[quality criteria] for semantic anchors. Each entry explains why the proposal was rejected.
+
+Understanding why proposals are rejected helps contributors submit better proposals and avoids re-submission of already evaluated terms.
+
+== Rejection Categories
+
+Structurally unsuitable::
+The term is too vague, has no defined methodology, or is a pure instruction rather than a concept. Fails the link:#/about[Precise] and/or link:#/about[Rich] criteria.
+
+Not in training data::
+A legitimate concept or framework, but not established enough in LLM training data to reliably activate the right knowledge. Fails the link:#/about[Consistent] criterion.
+
+Too niche::
+A real methodology but too specialized for reliable activation across different LLMs and contexts. Fails the link:#/about[Consistent] and/or link:#/about[Rich] criteria.
+
+== Rejected Proposals
+
+[cols="2,2,3", options="header"]
+|===
+| Proposal | Category | Reason
+
+| *TLDR*
+| Structurally unsuitable
+| Underspecified instruction with no defined structure. Just means "be brief" without any framework for how. Not a methodology.
+
+| *ELI5* (Explain Like I'm 5)
+| Structurally unsuitable
+| Vague target level with no pedagogical framework. No consistent interpretation of what "5-year-old level" means technically.
+
+| *MIRRR UX Framework* (https://github.com/LLM-Coding/Semantic-Anchors/issues/150[#150])
+| Not in training data
+| A real UX framework with defined methodology, but not widely enough documented for LLMs to reliably recognize it and activate the correct concepts.
+
+|===
+
+== How We Evaluate
+
+Every proposal is tested against our four quality criteria:
+
+. *Precise* — Does it reference a specific, established body of knowledge?
+. *Rich* — Does it activate multiple interconnected concepts?
+. *Consistent* — Do different LLMs reliably understand it the same way?
+. *Attributable* — Can it be traced to key proponents or publications?
+
+We test by prompting an LLM with:
+
+[quote]
+____
+What concepts do you associate with '<proposed term>'?
+____
+
+If the response is vague, inconsistent across models, or fails to activate a coherent body of knowledge, the proposal does not qualify.
+
+See link:#/about[About] for the full quality criteria and examples.

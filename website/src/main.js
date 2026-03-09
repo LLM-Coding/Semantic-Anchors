@@ -104,6 +104,7 @@ function initApp() {
   addRoute('/contributing', renderContributingPage)
   addRoute('/changelog', renderChangelogPage)
   addRoute('/agentskill', renderAgentSkillPage)
+  addRoute('/rejected-proposals', renderRejectedProposalsPage)
   addRoute('/all-anchors', renderAllAnchorsPage)
 
   const app = document.querySelector('#app')
@@ -196,6 +197,15 @@ function renderAgentSkillPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/agentskill.adoc')
+}
+
+function renderRejectedProposalsPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/rejected-proposals.adoc')
 }
 
 function renderAllAnchorsPage() {
@@ -405,6 +415,8 @@ function handleLanguageChange() {
     loadDocContent('docs/changelog.adoc')
   } else if (currentRoute === '/agentskill') {
     loadDocContent('docs/agentskill.adoc')
+  } else if (currentRoute === '/rejected-proposals') {
+    loadDocContent('docs/rejected-proposals.adoc')
   } else if (currentRoute === '/all-anchors') {
     loadDocContent('docs/all-anchors.adoc')
   } else if (currentRoute === '/') {

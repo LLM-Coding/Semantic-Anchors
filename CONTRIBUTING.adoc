@@ -45,6 +45,8 @@ The anchor can be *traced to key proponents, publications, or documented standar
 *Bad:* "Best practices" - no specific source or authority
 ====
 
+TIP: Not sure if your proposal qualifies? Check our link:#/rejected-proposals[Rejected Proposals] page to see previously evaluated terms that didn't meet the criteria — and why.
+
 == Testing Your Semantic Anchor
 
 Before proposing, test the anchor with this prompt in an LLM:

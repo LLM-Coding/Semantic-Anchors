@@ -24,6 +24,7 @@
   "footer.leaveStar": "Like Semantic Anchors? Leave a star!",
   "footer.llmsTxt": "llms.txt",
   "footer.allAnchors": "Full Reference",
+  "footer.rejectedProposals": "Rejected Proposals",
   "categories.communication-presentation": "Communication & Presentation",
   "categories.design-principles": "Design Principles & Patterns",
   "categories.development-workflow": "Development Workflow",

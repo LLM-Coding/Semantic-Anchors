@@ -1,0 +1,56 @@
+= Abgelehnte Vorschläge
+
+Diese Seite listet Anker-Vorschläge auf, die bewertet wurden, aber die link:#/about[Qualitätskriterien] für semantische Anker nicht erfüllen. Jeder Eintrag erklärt, warum der Vorschlag abgelehnt wurde.
+
+Das Verständnis der Ablehnungsgründe hilft Mitwirkenden, bessere Vorschläge einzureichen und vermeidet die erneute Einreichung bereits bewerteter Begriffe.
+
+== Ablehnungskategorien
+
+Strukturell ungeeignet::
+Der Begriff ist zu vage, hat keine definierte Methodik oder ist eine reine Anweisung statt eines Konzepts. Erfüllt das link:#/about[Precise]- und/oder link:#/about[Rich]-Kriterium nicht.
+
+Nicht in Trainingsdaten::
+Ein legitimes Konzept oder Framework, aber nicht ausreichend in den LLM-Trainingsdaten etabliert, um zuverlässig das richtige Wissen zu aktivieren. Erfüllt das link:#/about[Consistent]-Kriterium nicht.
+
+Zu spezialisiert::
+Eine echte Methodik, aber zu spezialisiert für zuverlässige Aktivierung über verschiedene LLMs und Kontexte hinweg. Erfüllt das link:#/about[Consistent]- und/oder link:#/about[Rich]-Kriterium nicht.
+
+== Abgelehnte Vorschläge
+
+[cols="2,2,3", options="header"]
+|===
+| Vorschlag | Kategorie | Begründung
+
+| *TLDR*
+| Strukturell ungeeignet
+| Unterspezifizierte Anweisung ohne definierte Struktur. Bedeutet nur "fasse dich kurz" ohne ein Framework dafür. Keine Methodik.
+
+| *ELI5* (Explain Like I'm 5)
+| Strukturell ungeeignet
+| Vages Zielniveau ohne pädagogisches Framework. Keine konsistente Interpretation dessen, was "Niveau eines 5-Jährigen" technisch bedeutet.
+
+| *MIRRR UX Framework* (https://github.com/LLM-Coding/Semantic-Anchors/issues/150[#150])
+| Nicht in Trainingsdaten
+| Ein echtes UX-Framework mit definierter Methodik, aber nicht weit genug dokumentiert, damit LLMs es zuverlässig erkennen und die richtigen Konzepte aktivieren.
+
+|===
+
+== Wie wir bewerten
+
+Jeder Vorschlag wird gegen unsere vier Qualitätskriterien getestet:
+
+. *Precise* — Referenziert er ein spezifisches, etabliertes Wissensgebiet?
+. *Rich* — Aktiviert er mehrere zusammenhängende Konzepte?
+. *Consistent* — Verstehen verschiedene LLMs ihn zuverlässig gleich?
+. *Attributable* — Lässt er sich auf Schlüsselvertreter oder Publikationen zurückführen?
+
+Wir testen, indem wir ein LLM fragen:
+
+[quote]
+____
+Welche Konzepte verbindest du mit '<vorgeschlagener Begriff>'?
+____
+
+Wenn die Antwort vage ist, über Modelle hinweg inkonsistent, oder kein kohärentes Wissensgebiet aktiviert, qualifiziert sich der Vorschlag nicht.
+
+Siehe link:#/about[Über] für die vollständigen Qualitätskriterien und Beispiele.

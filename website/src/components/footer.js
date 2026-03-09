@@ -37,6 +37,12 @@ export function renderFooter(version) {
             >${i18n.t('footer.allAnchors')}</a>
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <a
+              href="#/rejected-proposals"
+              class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
+              data-i18n="footer.rejectedProposals"
+            >${i18n.t('footer.rejectedProposals')}</a>
+            <span class="text-gray-300 dark:text-gray-600">|</span>
+            <a
               href="https://github.com/LLM-Coding/Semantic-Anchors"
               target="_blank"
               rel="noopener noreferrer"
