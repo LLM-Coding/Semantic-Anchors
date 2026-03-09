@@ -1,0 +1,135 @@
+= AgentSkill: Semantic Anchor Translator
+
+The Semantic Anchors project includes an **AgentSkill** that teaches AI coding assistants to recognize and suggest semantic anchors during your work.
+
+== What does it do?
+
+The skill operates in two modes:
+
+=== Recognition Mode (verbose -> anchor)
+
+When you describe a concept in your own words, the AI identifies the matching semantic anchor:
+
+[quote]
+____
+*You:* "I want to categorize things so they don't overlap and cover everything" +
+*AI:* You're describing **MECE Principle** (Mutually Exclusive, Collectively Exhaustive).
+____
+
+=== Guidance Mode (question -> anchors)
+
+When you ask for methodology advice, the AI suggests relevant anchors:
+
+[quote]
+____
+*You:* "How should I document architecture decisions?" +
+*AI:* For architecture decisions: **ADR according to Nygard** or **MADR**. Both provide lightweight templates for capturing context, decision, and consequences.
+____
+
+== Installation
+
+The skill follows the https://agentskills.io[agentskills.io] specification and can be used with any compatible AI coding assistant.
+
+=== Claude Code
+
+Add to your project's `CLAUDE.md`:
+
+[source]
+----
+## Skills
+
+Use the semantic-anchor-translator skill from:
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/semantic-anchor-translator
+----
+
+Or reference the skill's `SKILL.md` directly in your project configuration.
+
+=== GitHub Copilot
+
+Add to `.github/copilot-instructions.md` in your repository:
+
+[source]
+----
+## Semantic Anchors
+
+When the user describes a concept verbosely, identify the precise
+semantic anchor term. When asked for methodology advice, suggest
+relevant anchors from the catalog.
+
+Reference: https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/semantic-anchor-translator/references/catalog.md
+----
+
+=== Cursor
+
+Add to `.cursor/rules` or `.cursorrules` in your project:
+
+[source]
+----
+## Semantic Anchors
+
+Use the semantic-anchor-translator skill to recognize and suggest
+established terminology. Catalog:
+https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/semantic-anchor-translator/references/catalog.md
+----
+
+=== Amazon Kiro
+
+Add to your project's `specs/` directory or include in a spec file:
+
+[source]
+----
+## Semantic Anchors
+
+When the user describes a concept verbosely, identify the precise
+semantic anchor term. When asked for methodology advice, suggest
+relevant anchors from the catalog.
+
+Reference: https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/semantic-anchor-translator/references/catalog.md
+----
+
+=== Other AI Tools
+
+Any AI coding assistant that supports custom instructions or system prompts can use the skill. Point it to the catalog at:
+
+https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/semantic-anchor-translator/SKILL.md
+
+== Catalog Overview
+
+The skill covers **90+ semantic anchors** across these categories:
+
+[cols="1,3"]
+|===
+| Category | Key Anchors
+
+| Testing & Quality
+| TDD Chicago/London, BDD, Testing Pyramid, Mutation Testing, Property-Based Testing, Test Double
+
+| Software Architecture
+| Clean Architecture, Hexagonal, DDD, arc42, C4, ADR, MADR, CQRS, EDA
+
+| Design Principles
+| SOLID (5 sub-principles), GoF Design Patterns (23 sub-patterns), DRY, SPOT, YAGNI
+
+| Problem-Solving
+| Five Whys, Feynman Technique, Rubber Duck Debugging, Devil's Advocate, Cynefin
+
+| Requirements Engineering
+| MoSCoW, EARS, User Story Mapping, JTBD, Impact Mapping
+
+| Communication
+| BLUF, Pyramid Principle, MECE, Chatham House Rule, Socratic Method
+
+| Documentation
+| Diataxis Framework, Docs-as-Code
+
+| Strategic Planning
+| Wardley Mapping, Pugh Matrix
+|===
+
+The full catalog with descriptions, proponents, and core concepts is available at https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/semantic-anchor-translator/references/catalog.md[catalog.md on GitHub].
+
+== Contributing
+
+When you add a new anchor to the catalog, please also update the AgentSkill catalog at `skill/semantic-anchor-translator/references/catalog.md` so AI agents can discover it.
+
+See link:#/contributing[Contributing] for the full contribution workflow.

@@ -103,6 +103,7 @@ function initApp() {
   addRoute('/about', renderAboutPage)
   addRoute('/contributing', renderContributingPage)
   addRoute('/changelog', renderChangelogPage)
+  addRoute('/agentskill', renderAgentSkillPage)
   addRoute('/all-anchors', renderAllAnchorsPage)
 
   const app = document.querySelector('#app')
@@ -186,6 +187,15 @@ function renderChangelogPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/changelog.adoc')
+}
+
+function renderAgentSkillPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/agentskill.adoc')
 }
 
 function renderAllAnchorsPage() {
@@ -393,6 +403,8 @@ function handleLanguageChange() {
     loadDocContent('CONTRIBUTING.adoc')
   } else if (currentRoute === '/changelog') {
     loadDocContent('docs/changelog.adoc')
+  } else if (currentRoute === '/agentskill') {
+    loadDocContent('docs/agentskill.adoc')
   } else if (currentRoute === '/all-anchors') {
     loadDocContent('docs/all-anchors.adoc')
   } else if (currentRoute === '/') {

@@ -9,6 +9,7 @@
   "nav.about": "Über",
   "nav.contributing": "Mitwirken",
   "nav.changelog": "Änderungsprotokoll",
+  "nav.agentskill": "AgentSkill",
   "main.heading": "Semantic Anchors erkunden",
   "main.subheading": "Ein kuratierter Katalog klar definierter Begriffe, Methoden und Frameworks für effektive LLM-Kommunikation.",
   "main.aboutLink": "Über",
