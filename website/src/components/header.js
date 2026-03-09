@@ -10,7 +10,7 @@ export function renderHeader() {
         <div class="hidden sm:flex items-stretch gap-6">
           <!-- Logo left, spanning both rows -->
           <div class="flex items-center">
-            <a href="#/" class="no-underline flex flex-col items-start">
+            <a href="#/" class="no-underline flex flex-col items-center">
               <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" class="max-h-24" />
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
