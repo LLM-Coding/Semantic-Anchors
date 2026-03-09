@@ -12,6 +12,7 @@
       "impact-mapping",
       "jobs-to-be-done",
       "mece",
+      "mirrr-ux-framework",
       "moscow",
       "problem-space-nvc",
       "pyramid-principle",
@@ -102,6 +103,7 @@
       "cynefin-framework",
       "impact-mapping",
       "jobs-to-be-done",
+      "mirrr-ux-framework",
       "morphological-box",
       "moscow",
       "problem-space-nvc",
@@ -182,6 +184,7 @@
       "lasr",
       "madr",
       "mental-model-according-to-naur",
+      "mirrr-ux-framework",
       "morphological-box",
       "mutation-testing",
       "owasp-top-10",
@@ -255,6 +258,7 @@
     "anchors": [
       "bem-methodology",
       "jobs-to-be-done",
+      "mirrr-ux-framework",
       "problem-space-nvc",
       "user-story-mapping"
     ]

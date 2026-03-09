@@ -514,7 +514,7 @@
   },
   {
     "id": "lasr",
-    "title": "LASR by Toth/Zörner",
+    "title": "LASR according to Toth/Zörner",
     "categories": [
       "software-architecture"
     ],
@@ -596,6 +596,33 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/mental-model-according-to-naur.adoc"
+  },
+  {
+    "id": "mirrr-ux-framework",
+    "title": "MIRRR UX Framework",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "ux-designer",
+      "product-owner",
+      "software-developer",
+      "business-analyst"
+    ],
+    "related": [
+      "jobs-to-be-done",
+      "user-story-mapping"
+    ],
+    "proponents": [],
+    "tags": [
+      "ux",
+      "user-experience",
+      "mobile",
+      "design",
+      "engagement",
+      "usability"
+    ],
+    "filePath": "docs/anchors/mirrr-ux-framework.adoc"
   },
   {
     "id": "morphological-box",

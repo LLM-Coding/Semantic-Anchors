@@ -1,0 +1,39 @@
+= MIRRR UX Framework
+:categories: design-principles
+:roles: ux-designer, product-owner, software-developer, business-analyst
+:related: jobs-to-be-done, user-story-mapping
+:proponents:
+:tags: ux, user-experience, mobile, design, engagement, usability
+
+[%collapsible]
+====
+Vollständiger Name:: MIRRR UX Framework — ein Fünf-Dimensionen-Modell zur Bewertung und Gestaltung mobiler Nutzererlebnisse
+
+[discrete]
+== *Kernkonzepte*:
+
+Motion (Bewegung):: Zweckmäßige Animationen und Übergänge lenken die Aufmerksamkeit der Nutzer, kommunizieren Zustandsänderungen und geben Rückmeldung ohne zu überfordern
+
+Interaction (Interaktion):: Intuitive Touch-Targets, Gesten und Bedienelemente, die den mentalen Modellen und physischen Affordanzen der Nutzer entsprechen
+
+Responsive (Reaktionsfähig):: Die Oberfläche passt sich fließend an verschiedene Bildschirmgrößen, Orientierungen und Eingabekontexte an; Systemrückmeldungen erfolgen zeitnah
+
+Readability (Lesbarkeit):: Typografie, Kontrast, Layout und Informationshierarchie sorgen dafür, dass Inhalte unter allen Bedingungen mühelos lesbar sind
+
+Reachability (Erreichbarkeit):: Wichtige Aktionen und Navigation sind komfortabel mit dem Daumen erreichbar; das Layout berücksichtigt natürliche Greifzonen der Hand
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Evaluierung oder Auditing von mobiler und berührungsbasierter UX
+* Gestaltung neuer mobiler oder responsiver Web-Oberflächen
+* Heuristische Bewertungen bestehender mobiler Anwendungen
+* Priorisierung von Usability-Verbesserungen für mobile Kontexte
+* Einarbeitung von Teams in mobile UX-spezifische Einschränkungen und Best Practices
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<jobs-to-be-done,Jobs To Be Done (JTBD)>>
+* <<user-story-mapping,User Story Mapping>>
+====

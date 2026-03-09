@@ -165,6 +165,9 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Semantic Versioning (SemVer)
 - **Core:** MAJOR.MINOR.PATCH — breaking, feature, fix
 
+### MIRRR UX Framework
+- **Core:** Mobile UX evaluation: Motion, Interaction, Responsive, Readability, Reachability
+
 ### BEM Methodology
 - **Proponents:** Yandex
 - **Core:** Block__Element--Modifier CSS naming convention
