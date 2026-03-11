@@ -1,0 +1,42 @@
+= Mikado-Methode
+:categories: development-workflow
+:roles: software-developer, software-architect, team-lead
+:related: tdd-chicago-school, tdd-london-school
+:proponents: Ola Ellnestam, Daniel Brolund
+:tags: refactoring, legacy code, inkrementelle Änderung, Abhängigkeitsgraph, reversible Schritte
+
+[%collapsible]
+====
+Auch bekannt als:: Mikado-Graph-Methode
+
+[discrete]
+== *Kernkonzepte*:
+
+Mikado-Ziel:: Der angestrebte Endzustand des Codes nach dem Refactoring; die Wurzel des Abhängigkeitsgraphen
+
+Voraussetzungsermittlung:: Blockierende Abhängigkeiten aufdecken, indem die Änderung versucht und notiert wird, was dabei bricht
+
+Rückgängig machen und wiederholen:: Nach dem Entdecken einer Voraussetzung den Code auf einen funktionierenden Zustand zurücksetzen, bevor diese angegangen wird
+
+Mikado-Graph:: Ein gerichteter azyklischer Graph, bei dem Knoten Voraussetzungen und Kanten die Abhängigkeiten zwischen ihnen darstellen
+
+Blatt-zuerst-Auflösung:: Zuerst die Blattknoten (ohne weitere Voraussetzungen) auflösen und von dort zurück zum Wurzelziel arbeiten
+
+Kleine reversible Schritte:: Jeder Schritt hinterlässt die Codebasis in einem funktionierenden Zustand und vermeidet das Risiko langer kaputt-Branches
+
+Schlüsselvertreter:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Große Refactorings in Legacy- oder komplexen Codebasen angehen
+* Wenn eine direkte Änderung zu viele Dinge bricht, um sie auf einmal zu beheben
+* Koordination von Refactoring-Arbeiten mehrerer Entwickler auf sichere Weise
+* Inkrementelle Verbesserungen vornehmen, ohne das Team zu blockieren
+
+[discrete]
+== *Verwandte Anchors*:
+
+* <<tdd-chicago-school,TDD, Chicago School>>
+* <<tdd-london-school,TDD, London School>>
+====

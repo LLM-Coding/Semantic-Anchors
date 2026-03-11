@@ -254,6 +254,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Peter Naur
 - **Core:** Programming as theory building — knowledge lives in developers' heads
 
+### Mikado Method
+- **Proponents:** Ola Ellnestam, Daniel Brolund
+- **Core:** Incremental refactoring via prerequisite graph — attempt change, revert on breakage, resolve leaf dependencies first
+
 ### TIMTOWTDI
 - **Core:** There Is More Than One Way To Do It — Perl philosophy
 

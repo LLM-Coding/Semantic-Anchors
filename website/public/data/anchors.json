@@ -1434,6 +1434,34 @@
     "filePath": "docs/anchors/mental-model-according-to-naur.adoc"
   },
   {
+    "id": "mikado-method",
+    "title": "Mikado Method",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "team-lead"
+    ],
+    "related": [
+      "tdd-chicago-school",
+      "tdd-london-school"
+    ],
+    "proponents": [
+      "Ola Ellnestam",
+      "Daniel Brolund"
+    ],
+    "tags": [
+      "refactoring",
+      "legacy code",
+      "incremental change",
+      "dependency graph",
+      "reversible steps"
+    ],
+    "filePath": "docs/anchors/mikado-method.adoc"
+  },
+  {
     "id": "morphological-box",
     "title": "Morphological Box",
     "categories": [
@@ -1738,6 +1766,105 @@
     "filePath": "docs/anchors/socratic-method.adoc"
   },
   {
+    "id": "solid-dip",
+    "title": "SOLID-Dependency Inversion Principle",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [],
+    "proponents": [
+      "Robert C. Martin"
+    ],
+    "tags": [
+      "SOLID",
+      "design principle",
+      "DIP",
+      "dependency inversion"
+    ],
+    "filePath": "docs/anchors/solid-dip.adoc",
+    "umbrella": "solid-principles",
+    "tier": 1
+  },
+  {
+    "id": "solid-isp",
+    "title": "SOLID-Interface Segregation Principle",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [],
+    "proponents": [
+      "Robert C. Martin"
+    ],
+    "tags": [
+      "SOLID",
+      "design principle",
+      "ISP",
+      "interface segregation"
+    ],
+    "filePath": "docs/anchors/solid-isp.adoc",
+    "umbrella": "solid-principles",
+    "tier": 1
+  },
+  {
+    "id": "solid-lsp",
+    "title": "SOLID-Liskov Substitution Principle",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [],
+    "proponents": [
+      "Robert C. Martin",
+      "Barbara Liskov"
+    ],
+    "tags": [
+      "SOLID",
+      "design principle",
+      "LSP",
+      "liskov",
+      "substitution"
+    ],
+    "filePath": "docs/anchors/solid-lsp.adoc",
+    "umbrella": "solid-principles",
+    "tier": 1
+  },
+  {
+    "id": "solid-ocp",
+    "title": "SOLID-Open/Closed Principle",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [],
+    "proponents": [
+      "Robert C. Martin",
+      "Bertrand Meyer"
+    ],
+    "tags": [
+      "SOLID",
+      "design principle",
+      "OCP",
+      "open closed"
+    ],
+    "filePath": "docs/anchors/solid-ocp.adoc",
+    "umbrella": "solid-principles",
+    "tier": 1
+  },
+  {
     "id": "solid-principles",
     "title": "SOLID Principles",
     "categories": [
@@ -1749,10 +1876,51 @@
       "educator",
       "consultant"
     ],
+    "related": [
+      "gof-design-patterns",
+      "clean-architecture"
+    ],
+    "proponents": [
+      "Robert C. Martin"
+    ],
+    "tags": [
+      "design-principles",
+      "oop",
+      "solid",
+      "uncle-bob"
+    ],
+    "filePath": "docs/anchors/solid-principles.adoc",
+    "subAnchors": [
+      "solid-srp",
+      "solid-ocp",
+      "solid-lsp",
+      "solid-isp",
+      "solid-dip"
+    ]
+  },
+  {
+    "id": "solid-srp",
+    "title": "SOLID-Single Responsibility Principle",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
     "related": [],
-    "proponents": [],
-    "tags": [],
-    "filePath": "docs/anchors/solid-principles.adoc"
+    "proponents": [
+      "Robert C. Martin"
+    ],
+    "tags": [
+      "SOLID",
+      "design principle",
+      "SRP",
+      "single responsibility"
+    ],
+    "filePath": "docs/anchors/solid-srp.adoc",
+    "umbrella": "solid-principles",
+    "tier": 1
   },
   {
     "id": "sota",
