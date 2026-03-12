@@ -1,0 +1,49 @@
+= Gutes Deutsch nach Wolf Schneider
+:categories: communication-presentation
+:roles: technical-writer, consultant, educator, business-analyst
+:related: bluf, pyramid-principle
+:proponents: Wolf Schneider
+:tags: writing, german, clarity, style, prose, language
+
+[%collapsible]
+====
+Full Name:: Gutes Deutsch nach Wolf Schneider (Good German according to Wolf Schneider)
+
+Also known as:: Wolf Schneider's Writing Principles, Schneider's Stilregeln
+
+[discrete]
+== *Core Concepts*:
+
+Short Sentences:: Prefer short, direct sentences over long, complex ones — every sentence should express one idea
+
+Active Voice:: Use active constructions; avoid passive voice and impersonal constructions wherever possible
+
+Verbs Over Nouns:: Replace noun phrases (Nominalstil) with verbs — "wir entscheiden" instead of "eine Entscheidung wird getroffen"
+
+Concrete Language:: Use specific, tangible words instead of abstract generalizations; prefer the particular over the general
+
+No Filler Words:: Eliminate weak, redundant, or empty words (Füllwörter) that add no meaning — "eigentlich", "grundsätzlich", "im Grunde genommen"
+
+Plain Words First:: Choose a common, familiar word over a foreign or technical term when both carry the same meaning
+
+Readable Rhythm:: Vary sentence length consciously to create a natural reading rhythm; monotony fatigues readers
+
+Reader Orientation:: Every sentence should serve the reader; never write to impress, only to be understood
+
+Key Proponents:: Wolf Schneider ("Deutsch für Profis", 1982; "Deutsch! Das Handbuch für attraktives Schreiben", 2005)
+
+[discrete]
+== *When to Use*:
+
+* Writing clear, effective German prose for professional or public audiences
+* Reviewing or editing technical documentation, reports, and emails
+* Coaching writers to reduce bureaucratic or academic language
+* Improving internal corporate communication
+* Teaching German writing style and rhetoric
+
+[discrete]
+== *Related Anchors*:
+
+* <<bluf,BLUF (Bottom Line Up Front)>> — complements Schneider's clarity-first approach with a structure that leads with the conclusion
+* <<pyramid-principle,Pyramid Principle according to Barbara Minto>> — a complementary framework for structuring arguments hierarchically
+====

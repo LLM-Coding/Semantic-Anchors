@@ -221,6 +221,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### MECE Principle
 - **Core:** Mutually Exclusive, Collectively Exhaustive — no overlaps, no gaps
 
+### Gutes Deutsch nach Wolf Schneider
+- **Proponents:** Wolf Schneider
+- **Core:** Short sentences, active voice, verbs over nouns (no Nominalstil), concrete language, no filler words — clarity-first principles for German writing
+
 ### Chatham House Rule
 - **Proponents:** Chatham House
 - **Core:** Info can be used but not attributed to speaker/org

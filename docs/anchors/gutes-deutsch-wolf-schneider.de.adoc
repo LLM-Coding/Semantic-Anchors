@@ -1,0 +1,49 @@
+= Gutes Deutsch nach Wolf Schneider
+:categories: communication-presentation
+:roles: technical-writer, consultant, educator, business-analyst
+:related: bluf, pyramid-principle
+:proponents: Wolf Schneider
+:tags: writing, german, clarity, style, prose, language
+
+[%collapsible]
+====
+Vollständiger Name:: Gutes Deutsch nach Wolf Schneider
+
+Auch bekannt als:: Wolf Schneiders Schreibprinzipien, Schneiders Stilregeln
+
+[discrete]
+== *Kernkonzepte*:
+
+Kurze Sätze:: Bevorzuge kurze, direkte Sätze gegenüber langen, komplexen Konstruktionen — jeder Satz sollte einen einzigen Gedanken ausdrücken
+
+Aktiv statt Passiv:: Verwende aktive Konstruktionen; vermeide Passiv und unpersönliche Konstruktionen wo immer möglich
+
+Verben statt Substantive:: Ersetze Substantivierungen (Nominalstil) durch Verben — "wir entscheiden" statt "eine Entscheidung wird getroffen"
+
+Konkrete Sprache:: Verwende spezifische, greifbare Wörter statt abstrakter Verallgemeinerungen; bevorzuge das Besondere gegenüber dem Allgemeinen
+
+Keine Füllwörter:: Eliminiere schwache, redundante oder leere Wörter, die keine Bedeutung hinzufügen — "eigentlich", "grundsätzlich", "im Grunde genommen"
+
+Einfache Wörter zuerst:: Wähle ein geläufiges, vertrautes Wort gegenüber einem Fremd- oder Fachwort, wenn beide dieselbe Bedeutung tragen
+
+Lesbarer Rhythmus:: Variiere die Satzlänge bewusst, um einen natürlichen Leserhythmus zu erzeugen; Monotonie ermüdet den Leser
+
+Leserorientierung:: Jeder Satz soll dem Leser dienen; schreibe nie um zu beeindrucken, sondern nur um verstanden zu werden
+
+Schlüsselvertreter:: Wolf Schneider ("Deutsch für Profis", 1982; "Deutsch! Das Handbuch für attraktives Schreiben", 2005)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Beim Verfassen klarer, wirkungsvoller Prosatexte für professionelle oder öffentliche Zielgruppen
+* Beim Überprüfen oder Redigieren technischer Dokumentationen, Berichte und E-Mails
+* Beim Coaching von Autoren zur Reduktion von bürokratischer oder akademischer Sprache
+* Zur Verbesserung interner Unternehmenskommunikation
+* Beim Unterrichten von deutschem Schreibstil und Rhetorik
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<bluf,BLUF (Bottom Line Up Front)>> — ergänzt Schneiders Klarheitsprinzip mit einer Struktur, die mit der Schlussfolgerung beginnt
+* <<pyramid-principle,Pyramid Principle nach Barbara Minto>> — ein ergänzendes Framework zur hierarchischen Strukturierung von Argumenten
+====

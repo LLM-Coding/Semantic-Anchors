@@ -1299,6 +1299,35 @@
     "filePath": "docs/anchors/gom.adoc"
   },
   {
+    "id": "gutes-deutsch-wolf-schneider",
+    "title": "Gutes Deutsch nach Wolf Schneider",
+    "categories": [
+      "communication-presentation"
+    ],
+    "roles": [
+      "technical-writer",
+      "consultant",
+      "educator",
+      "business-analyst"
+    ],
+    "related": [
+      "bluf",
+      "pyramid-principle"
+    ],
+    "proponents": [
+      "Wolf Schneider"
+    ],
+    "tags": [
+      "writing",
+      "german",
+      "clarity",
+      "style",
+      "prose",
+      "language"
+    ],
+    "filePath": "docs/anchors/gutes-deutsch-wolf-schneider.adoc"
+  },
+  {
     "id": "hexagonal-architecture",
     "title": "Hexagonal Architecture (Ports & Adapters)",
     "categories": [
