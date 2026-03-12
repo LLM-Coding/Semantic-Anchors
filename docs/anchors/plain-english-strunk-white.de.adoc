@@ -1,0 +1,50 @@
+= Plain English nach Strunk & White
+:categories: communication-presentation
+:roles: technical-writer, software-developer, consultant, educator, business-analyst
+:related: gutes-deutsch-wolf-schneider, bluf, pyramid-principle
+:proponents: William Strunk Jr., E.B. White
+:tags: writing, english, clarity, style, prose, language, plain-english
+
+[%collapsible]
+====
+Vollständiger Name:: Plain English nach Strunk & White ("The Elements of Style")
+
+Auch bekannt als:: Strunk & White, The Elements of Style, Plain Style Writing
+
+[discrete]
+== *Kernkonzepte*:
+
+Überflüssige Wörter weglassen:: Jedes Wort in einem Satz muss einen Zweck erfüllen; Wörter, die nur Volumen ohne Bedeutung erzeugen, werden gestrichen — "the fact that" → "that", "owing to the fact that" → "since"
+
+Aktiv statt Passiv:: Aktive Konstruktionen sind direkter, lebendiger und prägnanter als passivische — "Der Hund biss den Mann" nicht "Der Mann wurde vom Hund gebissen"
+
+Konkrete und spezifische Sprache:: Das Besondere und Greifbare dem Vagen und Abstrakten vorziehen; konkrete Details machen Texte lebendig und überzeugend
+
+Mit Substantiven und Verben schreiben:: Starke Substantive und Verben statt Adjektive und Adverbien verwenden; das richtige Substantiv oder Verb macht Attribute überflüssig
+
+Wichtige Wörter ans Satzende:: Die wichtigste Aussage eines Satzes gehört ans Ende — die Position mit der größten Wirkung
+
+Parallele Strukturen verwenden:: Koordinierte Ideen in ähnlicher grammatischer Form ausdrücken; Parallelismus erleichtert das Verständnis und gibt dem Text einen angenehmen Rhythmus
+
+Abschwächende Wörter vermeiden:: Abschwächer wie "ziemlich", "irgendwie", "ein bisschen" entfernen — sie verwässern die Kraft der Aussage
+
+Überarbeiten und umschreiben:: Gutes Schreiben ist Umschreiben; ein erster Entwurf ist ein Ausgangspunkt, kein fertiges Produkt
+
+Schlüsselvertreter:: William Strunk Jr. ("The Elements of Style", 1918); E.B. White (überarbeitete Ausgabe, 1959)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Beim Verfassen technischer Dokumentationen, Berichte, E-Mails und API-Dokumentationen
+* Beim Überprüfen oder Redigieren englischer Prosatexte auf Klarheit und Prägnanz
+* Beim Coaching von Autoren zur Reduktion von wortreicher oder bürokratischer Sprache
+* Bei der Vorbereitung von Kommunikation für ein breites, nicht-spezialisiertes Publikum
+* Überall dort, wo Klarheit und Kürze an erster Stelle stehen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<gutes-deutsch-wolf-schneider,Gutes Deutsch nach Wolf Schneider>> — das deutschsprachige Äquivalent zu klarheitsfokussierten Schreibprinzipien
+* <<bluf,BLUF (Bottom Line Up Front)>> — ergänzt den klaren Schreibstil mit einer Struktur, die mit der Schlussfolgerung beginnt
+* <<pyramid-principle,Pyramid Principle nach Barbara Minto>> — ein ergänzendes Framework zur hierarchischen Strukturierung von Argumenten
+====

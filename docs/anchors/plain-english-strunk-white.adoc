@@ -1,0 +1,50 @@
+= Plain English according to Strunk & White
+:categories: communication-presentation
+:roles: technical-writer, software-developer, consultant, educator, business-analyst
+:related: gutes-deutsch-wolf-schneider, bluf, pyramid-principle
+:proponents: William Strunk Jr., E.B. White
+:tags: writing, english, clarity, style, prose, language, plain-english
+
+[%collapsible]
+====
+Full Name:: Plain English according to Strunk & White ("The Elements of Style")
+
+Also known as:: Strunk & White, The Elements of Style, Plain Style Writing
+
+[discrete]
+== *Core Concepts*:
+
+Omit Needless Words:: Every word in a sentence should serve a purpose; cut words that add bulk without adding meaning — "the fact that" → "that", "owing to the fact that" → "since"
+
+Use Active Voice:: Prefer active constructions over passive; active voice is more direct, vigorous, and concise — "The dog bit the man" not "The man was bitten by the dog"
+
+Use Definite, Specific, Concrete Language:: Prefer the particular and tangible over the vague and abstract; concrete details make writing vivid and persuasive
+
+Write With Nouns and Verbs:: Rely on strong nouns and verbs rather than adjectives and adverbs; the right noun or verb makes modifiers unnecessary
+
+Place the Emphatic Words at the End:: The most important idea in a sentence belongs at its end — the position of greatest emphasis
+
+Use Parallel Form:: Express coordinate ideas in similar grammatical form; parallelism aids comprehension and gives prose a pleasing rhythm
+
+Avoid Qualifiers:: Remove weakening qualifiers like "rather", "very", "little", "pretty" — they dilute the force of the statement
+
+Revise and Rewrite:: Good writing is rewriting; a first draft is a starting point, not a finished product
+
+Key Proponents:: William Strunk Jr. ("The Elements of Style", 1918); E.B. White (revised edition, 1959)
+
+[discrete]
+== *When to Use*:
+
+* Writing technical documentation, reports, emails, and API documentation
+* Reviewing or editing any English prose for clarity and conciseness
+* Coaching writers to reduce verbose or bureaucratic language
+* Preparing communications for broad, non-specialist audiences
+* Any writing where clarity and brevity are paramount
+
+[discrete]
+== *Related Anchors*:
+
+* <<gutes-deutsch-wolf-schneider,Gutes Deutsch nach Wolf Schneider>> — the German-language equivalent of clarity-first writing principles
+* <<bluf,BLUF (Bottom Line Up Front)>> — complements plain style with a structure that leads with the conclusion
+* <<pyramid-principle,Pyramid Principle according to Barbara Minto>> — a complementary framework for structuring arguments hierarchically
+====

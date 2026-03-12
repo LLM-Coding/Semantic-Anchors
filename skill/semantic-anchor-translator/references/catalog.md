@@ -225,6 +225,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Wolf Schneider
 - **Core:** Short sentences, active voice, verbs over nouns (no Nominalstil), concrete language, no filler words — clarity-first principles for German writing
 
+### Plain English according to Strunk & White
+- **Proponents:** William Strunk Jr., E.B. White
+- **Core:** Omit needless words, use active voice, prefer concrete language, write with nouns and verbs — clarity-first principles for English writing ("The Elements of Style")
+
 ### Chatham House Rule
 - **Proponents:** Chatham House
 - **Core:** Info can be used but not attributed to speaker/org

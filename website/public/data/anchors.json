@@ -1645,6 +1645,39 @@
     "filePath": "docs/anchors/owasp-top-10.adoc"
   },
   {
+    "id": "plain-english-strunk-white",
+    "title": "Plain English according to Strunk & White",
+    "categories": [
+      "communication-presentation"
+    ],
+    "roles": [
+      "technical-writer",
+      "software-developer",
+      "consultant",
+      "educator",
+      "business-analyst"
+    ],
+    "related": [
+      "gutes-deutsch-wolf-schneider",
+      "bluf",
+      "pyramid-principle"
+    ],
+    "proponents": [
+      "William Strunk Jr.",
+      "E.B. White"
+    ],
+    "tags": [
+      "writing",
+      "english",
+      "clarity",
+      "style",
+      "prose",
+      "language",
+      "plain-english"
+    ],
+    "filePath": "docs/anchors/plain-english-strunk-white.adoc"
+  },
+  {
     "id": "problem-space-nvc",
     "title": "Problem Space NVC",
     "categories": [
