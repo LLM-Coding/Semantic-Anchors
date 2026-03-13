@@ -1390,6 +1390,34 @@
     "filePath": "docs/anchors/impact-mapping.adoc"
   },
   {
+    "id": "invest",
+    "title": "INVEST",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "team-lead",
+      "software-developer"
+    ],
+    "related": [
+      "user-story-mapping",
+      "moscow"
+    ],
+    "proponents": [
+      "Bill Wake"
+    ],
+    "tags": [
+      "user-stories",
+      "agile",
+      "scrum",
+      "acceptance-criteria",
+      "story-quality"
+    ],
+    "filePath": "docs/anchors/invest.adoc"
+  },
+  {
     "id": "jobs-to-be-done",
     "title": "Jobs To Be Done (JTBD)",
     "categories": [

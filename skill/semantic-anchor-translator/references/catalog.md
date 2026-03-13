@@ -188,6 +188,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Requirements Engineering
 
+### INVEST
+- **Proponents:** Bill Wake
+- **Core:** Independent, Negotiable, Valuable, Estimable, Small, Testable — criteria for well-formed user stories
+
 ### MoSCoW
 - **Proponents:** Dai Clegg
 - **Core:** Must have, Should have, Could have, Won't have

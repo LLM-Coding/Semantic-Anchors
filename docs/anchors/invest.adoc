@@ -1,0 +1,47 @@
+= INVEST
+:categories: requirements-engineering
+:roles: product-owner, business-analyst, team-lead, software-developer
+:related: user-story-mapping, moscow
+:proponents: Bill Wake
+:tags: user-stories, agile, scrum, acceptance-criteria, story-quality
+
+[%collapsible]
+====
+Full Name:: INVEST Criteria for User Stories
+
+Also known as:: INVEST Checklist, INVEST Mnemonic
+
+[discrete]
+== *Core Concepts*:
+
+INVEST = **I**ndependent / **N**egotiable / **V**aluable / **E**stimable / **S**mall / **T**estable
+
+Independent:: Stories should be self-contained and deliverable in any order; avoid dependencies between stories that force a fixed implementation sequence
+
+Negotiable:: Stories are not contracts; the details are open to discussion between team and stakeholders until they enter a sprint
+
+Valuable:: Every story must deliver clear value to the user or business; stories that only serve technical needs should be wrapped in user-visible value
+
+Estimable:: The team must be able to estimate the story's size; if they cannot, the story is too large, too vague, or requires a spike
+
+Small:: Stories should be small enough to complete within a single sprint; large epics must be broken down before entering a sprint
+
+Testable:: Stories require concrete acceptance criteria so developers and testers can verify completion; untestable stories hide ambiguity
+
+
+Key Proponent:: Bill Wake ("INVEST in Good Stories, and SMART Tasks", 2003)
+
+[discrete]
+== *When to Use*:
+
+* Reviewing user stories before sprint planning to assess readiness
+* Splitting epics into smaller, deliverable stories
+* Coaching teams on what constitutes a well-formed user story
+* During backlog refinement to identify stories that need more work
+* As a Definition of Ready checklist for story acceptance into a sprint
+
+*Related Anchors*:
+
+* <<user-story-mapping,User Story Mapping>>
+* <<moscow,MoSCoW>>
+====

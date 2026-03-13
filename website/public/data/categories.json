@@ -106,6 +106,7 @@
     "name": "Requirements Engineering",
     "anchors": [
       "ears-requirements",
+      "invest",
       "moscow",
       "problem-space-nvc",
       "user-story-mapping"
