@@ -1,0 +1,46 @@
+= Definition of Done
+:categories: development-workflow
+:roles: software-developer, qa-engineer, product-owner, team-lead
+:related: bdd-given-when-then, user-story-mapping, moscow
+:proponents: Ken Schwaber, Jeff Sutherland
+:tags: dod, acceptance criteria, scrum, agile, quality gates, done, sprint, increment
+
+[%collapsible]
+====
+Auch bekannt als:: DoD, Done-Kriterien, Akzeptanzkriterien (Teamebene)
+
+[discrete]
+== *Kernkonzepte*:
+
+Gemeinsame Vereinbarung:: Eine formelle, teamweite Checkliste von Qualitätskriterien, die jedes Inkrement erfüllen muss, bevor es als „fertig" gilt
+
+Inkrementelle Qualitätsgates:: Konkrete, überprüfbare Bedingungen — z. B. Code reviewed, Tests bestanden, Dokumentation aktualisiert, keine bekannten Defekte
+
+Transparenz:: Macht die Bedeutung von „fertig" für alle Stakeholder sichtbar und eindeutig und verhindert versteckte technische Schulden
+
+Sprint-DoD vs. Produkt-DoD:: Teams können separate DoD-Listen für Sprint-Inkremente und für auslieferbare Produktinkremente pflegen
+
+Kontinuierliche Verfeinerung:: Die DoD entwickelt sich mit der Teamreife weiter; im Laufe der Zeit werden strengere Gates hinzugefügt
+
+Nicht erledigte Arbeit:: Arbeit, die die DoD nicht erfüllt, gilt nicht als abgeschlossen und kehrt in den Product Backlog zurück
+
+Gemeinsame Verantwortung:: Das gesamte Scrum-Team (Entwickler, Product Owner, Scrum Master) besitzt und respektiert die DoD
+
+
+Schlüsselvertreter:: Ken Schwaber & Jeff Sutherland ("The Scrum Guide", 2020); Mike Cohn ("Succeeding with Agile", 2009)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Einrichtung eines konsistenten Qualitätsstandards in einem Scrum- oder agilen Team
+* Onboarding neuer Teammitglieder, damit sie verstehen, was „fertig" bedeutet
+* Reduzierung von Nacharbeit und späten Defekten durch vorherige Einigung auf Kriterien
+* Abstimmung von Entwicklern, QA und Product Ownern auf die Release-Bereitschaft
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<bdd-given-when-then,BDD (Behavior-Driven Development)>> - Given-When-Then-Szenarien, die Akzeptanzkriterien operationalisieren
+* <<user-story-mapping,User Story Mapping>> - Planungstechnik, die den Umfang identifiziert, den die DoD abdecken muss
+* <<moscow,MoSCoW>> - Priorisierungsmethode, um zu entscheiden, welche DoD-Punkte Must-haves sind
+====

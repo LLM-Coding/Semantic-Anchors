@@ -252,6 +252,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Development Workflow
 
+### Definition of Done
+- **Also known as:** DoD, Done Criteria
+- **Proponents:** Ken Schwaber, Jeff Sutherland
+- **Core:** Team-wide checklist of quality criteria every increment must satisfy; transparency on what "done" means; sprint-level vs. product-level DoD; prevents hidden technical debt
+
 ### Conventional Commits
 - **Proponents:** Benjamin E. Coe, James J. Womack, Steve Mao
 - **Core:** Structured commit messages: type(scope): description
