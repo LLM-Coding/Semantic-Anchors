@@ -524,6 +524,36 @@
     "filePath": "docs/anchors/gherkin.adoc"
   },
   {
+    "id": "github-flow",
+    "title": "GitHub Flow",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "devops-engineer",
+      "team-lead"
+    ],
+    "related": [
+      "conventional-commits",
+      "semantic-versioning"
+    ],
+    "proponents": [
+      "Scott Chacon"
+    ],
+    "tags": [
+      "git",
+      "branching",
+      "pull-request",
+      "continuous-delivery",
+      "workflow",
+      "feature-branch",
+      "code-review",
+      "main-branch"
+    ],
+    "filePath": "docs/anchors/github-flow.adoc"
+  },
+  {
     "id": "gof-abstract-factory-pattern",
     "title": "GoF-Abstract Factory Pattern",
     "categories": [

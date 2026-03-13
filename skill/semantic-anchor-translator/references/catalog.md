@@ -252,6 +252,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Development Workflow
 
+### GitHub Flow
+- **Proponents:** Scott Chacon
+- **Core:** Branch-based workflow — short-lived feature branches, Pull Request reviews, `main` always deployable, merge triggers immediate deployment
+
 ### Conventional Commits
 - **Proponents:** Benjamin E. Coe, James J. Womack, Steve Mao
 - **Core:** Structured commit messages: type(scope): description
