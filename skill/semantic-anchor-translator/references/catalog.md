@@ -188,6 +188,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Requirements Engineering
 
+### PRD
+- **Also known as:** Product Requirements Document, Product Spec, Feature Spec
+- **Proponents:** Marty Cagan, Roman Pichler
+- **Core:** Problem statement, goals & success metrics, user personas, functional & non-functional requirements, scope boundaries, constraints, open questions
+
 ### MoSCoW
 - **Proponents:** Dai Clegg
 - **Core:** Must have, Should have, Could have, Won't have

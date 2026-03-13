@@ -107,6 +107,7 @@
     "anchors": [
       "ears-requirements",
       "moscow",
+      "prd",
       "problem-space-nvc",
       "user-story-mapping"
     ]

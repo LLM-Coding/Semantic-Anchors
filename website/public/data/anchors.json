@@ -1678,6 +1678,37 @@
     "filePath": "docs/anchors/plain-english-strunk-white.adoc"
   },
   {
+    "id": "prd",
+    "title": "PRD",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "software-developer",
+      "team-lead"
+    ],
+    "related": [
+      "moscow",
+      "user-story-mapping",
+      "impact-mapping",
+      "ears-requirements"
+    ],
+    "proponents": [
+      "Marty Cagan",
+      "Roman Pichler"
+    ],
+    "tags": [
+      "product",
+      "requirements",
+      "specification",
+      "planning",
+      "stakeholders"
+    ],
+    "filePath": "docs/anchors/prd.adoc"
+  },
+  {
     "id": "problem-space-nvc",
     "title": "Problem Space NVC",
     "categories": [
