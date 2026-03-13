@@ -303,7 +303,7 @@
   },
   {
     "id": "devils-advocate",
-    "title": "Devil’s Advocate",
+    "title": "Devil\u2019s Advocate",
     "categories": [
       "problem-solving"
     ],
@@ -320,7 +320,7 @@
   },
   {
     "id": "diataxis-framework",
-    "title": "Diátaxis Framework",
+    "title": "Di\u00e1taxis Framework",
     "categories": [
       "documentation"
     ],
@@ -335,7 +335,7 @@
   },
   {
     "id": "docs-as-code",
-    "title": "Docs-as-Code according to Ralf D. Müller",
+    "title": "Docs-as-Code according to Ralf D. M\u00fcller",
     "categories": [
       "documentation"
     ],
@@ -368,7 +368,7 @@
   },
   {
     "id": "dry-principle",
-    "title": "DRY (Don’t Repeat Yourself)",
+    "title": "DRY (Don\u2019t Repeat Yourself)",
     "categories": [
       "design-principles"
     ],
@@ -447,6 +447,34 @@
     "filePath": "docs/anchors/feynman-technique.adoc"
   },
   {
+    "id": "fagan-inspection",
+    "title": "Fagan Inspection",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer",
+      "software-architect",
+      "team-lead"
+    ],
+    "related": [
+      "mutation-testing",
+      "testing-pyramid"
+    ],
+    "proponents": [
+      "Michael Fagan"
+    ],
+    "tags": [
+      "code-review",
+      "inspection",
+      "defect-detection",
+      "formal-review",
+      "static-analysis"
+    ],
+    "filePath": "docs/anchors/fagan-inspection.adoc"
+  },
+  {
     "id": "five-whys",
     "title": "Five Whys (Ohno)",
     "categories": [
@@ -509,7 +537,7 @@
       "tdd-london-school"
     ],
     "proponents": [
-      "Aslak Hellesøy"
+      "Aslak Helles\u00f8y"
     ],
     "tags": [
       "gherkin",
@@ -1284,9 +1312,9 @@
       "morphological-box"
     ],
     "proponents": [
-      "Jörg Becker",
+      "J\u00f6rg Becker",
       "Michael Rosemann",
-      "Rolf Schütte"
+      "Rolf Sch\u00fctte"
     ],
     "tags": [
       "modeling",
@@ -1411,7 +1439,7 @@
   },
   {
     "id": "lasr",
-    "title": "LASR according to Toth/Zörner",
+    "title": "LASR according to Toth/Z\u00f6rner",
     "categories": [
       "software-architecture"
     ],
@@ -1429,7 +1457,7 @@
     ],
     "proponents": [
       "Stefan Toth",
-      "Stefan Zörner"
+      "Stefan Z\u00f6rner"
     ],
     "tags": [
       "architecture-documentation",
@@ -2262,7 +2290,7 @@
   },
   {
     "id": "yagni",
-    "title": "YAGNI (You Aren’t Gonna Need It)",
+    "title": "YAGNI (You Aren\u2019t Gonna Need It)",
     "categories": [
       "design-principles"
     ],

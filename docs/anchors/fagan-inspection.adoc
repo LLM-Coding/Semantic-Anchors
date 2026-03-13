@@ -1,0 +1,43 @@
+= Fagan Inspection
+:categories: testing-quality
+:roles: software-developer, qa-engineer, software-architect, team-lead
+:related: mutation-testing, testing-pyramid
+:proponents: Michael Fagan
+:tags: code-review, inspection, defect-detection, formal-review, static-analysis
+
+[%collapsible]
+====
+Also known as:: Formal Code Inspection, Software Inspection, Fagan's Inspection Method
+
+[discrete]
+== Core Concepts:
+
+Formal inspection process:: A structured, multi-phase review process for software artifacts (requirements, design, code) with defined roles and entry/exit criteria
+
+Roles:: Moderator (facilitates and logs), Author (created the artifact), Inspectors (reviewers), Recorder (documents defects)
+
+Six phases:: Planning → Overview → Preparation → Inspection Meeting → Rework → Follow-up
+
+Entry and exit criteria:: Explicit conditions that must be met before entering and leaving each phase, preventing premature progression
+
+Defect classification:: Defects are categorized by type (missing, wrong, extra) and severity, enabling process improvement through causal analysis
+
+Metrics-driven:: Inspection data (defect rate, inspection rate) are collected and used to improve both the product and the inspection process itself
+
+Key Proponents:: Michael Fagan ("Design and Code Inspections to Reduce Errors in Program Development", IBM Systems Journal, 1976)
+
+[discrete]
+== When to Use:
+
+* Safety-critical or high-assurance software where defect escape is costly
+* Reviewing requirements, architecture, design, or code artifacts early in development
+* Establishing a culture of quality and shared code ownership in teams
+* When you want measurable, process-level quality improvement over time
+* Regulated environments (medical devices, avionics, finance) requiring documented review evidence
+
+[discrete]
+== Related Anchors:
+
+* <<mutation-testing,Mutation Testing>>
+* <<testing-pyramid,Testing Pyramid>>
+====

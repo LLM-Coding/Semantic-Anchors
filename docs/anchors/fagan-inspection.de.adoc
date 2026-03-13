@@ -1,0 +1,43 @@
+= Fagan-Inspektion
+:categories: testing-quality
+:roles: software-developer, qa-engineer, software-architect, team-lead
+:related: mutation-testing, testing-pyramid
+:proponents: Michael Fagan
+:tags: code-review, inspection, defect-detection, formal-review, static-analysis
+
+[%collapsible]
+====
+Auch bekannt als:: Formale Code-Inspektion, Software-Inspektion, Fagan's Inspektionsmethode
+
+[discrete]
+== Kernkonzepte:
+
+Formaler Inspektionsprozess:: Ein strukturierter, mehrphasiger Prüfprozess für Software-Artefakte (Anforderungen, Design, Code) mit definierten Rollen und Ein-/Ausstiegskriterien
+
+Rollen:: Moderator (leitet und protokolliert), Autor (hat das Artefakt erstellt), Inspektoren (Prüfer), Protokollant (dokumentiert Defekte)
+
+Sechs Phasen:: Planung → Übersicht → Vorbereitung → Inspektionssitzung → Nachbearbeitung → Nachverfolgung
+
+Ein- und Ausstiegskriterien:: Explizite Bedingungen, die vor dem Eintritt in und Austritt aus jeder Phase erfüllt sein müssen, um vorzeitiges Voranschreiten zu verhindern
+
+Fehlerklassifikation:: Fehler werden nach Typ (fehlend, falsch, überflüssig) und Schweregrad kategorisiert, um Prozessverbesserungen durch Ursachenanalyse zu ermöglichen
+
+Kennzahlengetrieben:: Inspektionsdaten (Fehlerrate, Inspektionsrate) werden gesammelt und zur Verbesserung sowohl des Produkts als auch des Inspektionsprozesses genutzt
+
+Schlüsselvertreter:: Michael Fagan ("Design and Code Inspections to Reduce Errors in Program Development", IBM Systems Journal, 1976)
+
+[discrete]
+== Wann zu verwenden:
+
+* Sicherheitskritische oder qualitätsintensive Software, bei der das Entweichen von Fehlern kostspielig ist
+* Frühe Überprüfung von Anforderungen, Architektur, Design oder Code-Artefakten
+* Aufbau einer Qualitätskultur und gemeinsamen Code-Verantwortung im Team
+* Wenn messbare, prozessbasierte Qualitätsverbesserung über die Zeit angestrebt wird
+* Regulierte Umgebungen (Medizinprodukte, Luftfahrt, Finanzen), die dokumentierte Prüfnachweise erfordern
+
+[discrete]
+== Verwandte Anker:
+
+* <<mutation-testing,Mutation Testing>>
+* <<testing-pyramid,Testing Pyramid>>
+====

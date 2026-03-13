@@ -38,6 +38,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Property-Based Testing
 - **Core:** Test properties/invariants with generated inputs (QuickCheck, Hypothesis)
 
+### Fagan Inspection
+- **Also known as:** Formal Code Inspection, Software Inspection
+- **Proponents:** Michael Fagan
+- **Core:** Structured six-phase review process (Planning, Overview, Preparation, Inspection Meeting, Rework, Follow-up) with defined roles (Moderator, Author, Inspectors, Recorder), entry/exit criteria, and metrics-driven defect classification
+
 ### IEC 61508 SIL Levels
 - **Proponents:** International Electrotechnical Commission
 - **Core:** Safety integrity levels for safety-critical systems
