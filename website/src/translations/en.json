@@ -10,6 +10,7 @@
   "nav.contributing": "Contributing",
   "nav.changelog": "Changelog",
   "nav.agentskill": "AgentSkill",
+  "nav.workflow": "Workflow",
   "main.heading": "Explore Semantic Anchors",
   "main.subheading": "A curated catalog of well-defined terms, methodologies, and frameworks for effective LLM communication.",
   "main.aboutLink": "About",

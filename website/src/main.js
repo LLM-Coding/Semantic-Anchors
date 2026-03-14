@@ -106,6 +106,7 @@ function initApp() {
   addRoute('/agentskill', renderAgentSkillPage)
   addRoute('/rejected-proposals', renderRejectedProposalsPage)
   addRoute('/all-anchors', renderAllAnchorsPage)
+  addRoute('/workflow', renderWorkflowPage)
 
   const app = document.querySelector('#app')
   if (!app) return
@@ -215,6 +216,15 @@ function renderAllAnchorsPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/all-anchors.adoc')
+}
+
+function renderWorkflowPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/spec-driven-workflow.adoc')
 }
 
 function updateActiveNavLink() {
@@ -419,6 +429,8 @@ function handleLanguageChange() {
     loadDocContent('docs/rejected-proposals.adoc')
   } else if (currentRoute === '/all-anchors') {
     loadDocContent('docs/all-anchors.adoc')
+  } else if (currentRoute === '/workflow') {
+    loadDocContent('docs/spec-driven-workflow.adoc')
   } else if (currentRoute === '/') {
     initCardGridVisualization()
   }
