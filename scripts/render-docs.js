@@ -79,43 +79,12 @@ renderFile(
 // all-anchors.adoc uses include:: directives — resolved automatically in Node.js
 renderFile(path.join(ROOT, 'docs/all-anchors.adoc'), path.join(WEB_DOCS, 'all-anchors.html'))
 
-// Pre-rendered HTML docs (no .adoc source available) — copy with link rewriting
-function copyHtmlDoc(srcPath, destPath) {
-  if (!fs.existsSync(srcPath)) return
-  try {
-    fs.mkdirSync(path.dirname(destPath), { recursive: true })
-    let html = fs.readFileSync(srcPath, 'utf-8')
-    // Extract content from full HTML page (between <div id="content"> and <div id="footer">)
-    const contentStart = html.indexOf('<div id="content">')
-    const contentEnd = html.indexOf('<div id="footer">')
-    if (contentStart !== -1) {
-      const titleMatch = html.match(/<h1>(.*?)<\/h1>/)
-      const title = titleMatch ? titleMatch[1] : ''
-      const content = html.slice(contentStart, contentEnd !== -1 ? contentEnd : undefined).trim()
-      html = `<h1>${title}</h1>\n${content}`
-    }
-    // Convert absolute Semantic Anchors links to relative hash links
-    html = html.replace(
-      /https:\/\/llm-coding\.github\.io\/Semantic-Anchors\/#\/anchor\//g,
-      '#/anchor/'
-    )
-    html = html.replace(/https:\/\/llm-coding\.github\.io\/Semantic-Anchors\//g, '#/')
-    // Fix relative image paths for SPA context (content is injected at root level)
-    html = html.replace(/src="([^"/][^"]*\.(png|jpg|svg|gif))"/g, 'src="docs/$1"')
-    fs.writeFileSync(destPath, html, 'utf-8')
-    console.log(`Copied: ${path.relative(ROOT, destPath)}`)
-  } catch (err) {
-    console.error(`Failed to copy ${path.relative(ROOT, srcPath)}:`, err.message)
-    process.exit(1)
-  }
-}
-
-copyHtmlDoc(
-  path.join(ROOT, 'docs/spec-driven-workflow.html'),
+renderFile(
+  path.join(ROOT, 'docs/spec-driven-workflow.adoc'),
   path.join(WEB_DOCS, 'spec-driven-workflow.html')
 )
-copyHtmlDoc(
-  path.join(ROOT, 'docs/spec-driven-workflow.de.html'),
+renderFile(
+  path.join(ROOT, 'docs/spec-driven-workflow.de.adoc'),
   path.join(WEB_DOCS, 'spec-driven-workflow.de.html')
 )
 
