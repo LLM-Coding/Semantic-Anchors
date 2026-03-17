@@ -275,6 +275,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Development Workflow
 
+### Definition of Done
+- **Also known as:** DoD, Done Criteria
+- **Proponents:** Ken Schwaber, Jeff Sutherland
+- **Core:** Team-wide checklist of quality criteria every increment must satisfy; transparency on what "done" means; sprint-level vs. product-level DoD; prevents hidden technical debt
+
 ### GitHub Flow
 - **Proponents:** Scott Chacon
 - **Core:** Branch-based workflow — short-lived feature branches, Pull Request reviews, `main` always deployable, merge triggers immediate deployment

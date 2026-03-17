@@ -1,0 +1,46 @@
+= Definition of Done
+:categories: development-workflow
+:roles: software-developer, qa-engineer, product-owner, team-lead
+:related: bdd-given-when-then, user-story-mapping, moscow
+:proponents: Ken Schwaber, Jeff Sutherland
+:tags: dod, acceptance criteria, scrum, agile, quality gates, done, sprint, increment
+
+[%collapsible]
+====
+Also known as:: DoD, Done Criteria, Acceptance Criteria (team-level)
+
+[discrete]
+== *Core Concepts*:
+
+Shared agreement:: A formal, team-wide checklist of quality criteria that every increment must satisfy before it is declared "done"
+
+Increment quality gates:: Concrete, verifiable conditions — e.g., code reviewed, tests passing, documentation updated, no known defects
+
+Transparency:: Makes the meaning of "done" visible and unambiguous to all stakeholders, preventing hidden technical debt
+
+Sprint-level vs. product-level DoD:: Teams may maintain separate DoD lists for Sprint increments and for releasable product increments
+
+Continuous refinement:: The DoD evolves as the team matures; stricter gates are added over time
+
+Undone work:: Work that does not meet the DoD is not counted as complete; it returns to the Product Backlog
+
+Shared responsibility:: The entire Scrum team (Developers, Product Owner, Scrum Master) owns and respects the DoD
+
+
+Key Proponents:: Ken Schwaber & Jeff Sutherland ("The Scrum Guide", 2020); Mike Cohn ("Succeeding with Agile", 2009)
+
+[discrete]
+== *When to Use*:
+
+* Establishing a consistent quality standard across a Scrum or agile team
+* Onboarding new team members so they understand what "finished" means
+* Reducing rework and late-cycle defects by agreeing on criteria upfront
+* Aligning developers, QA, and product owners on release readiness
+
+[discrete]
+== *Related Anchors*:
+
+* <<bdd-given-when-then,BDD (Behavior-Driven Development)>> - Given-When-Then scenarios that operationalize acceptance criteria
+* <<user-story-mapping,User Story Mapping>> - Planning technique that identifies the scope Definition of Done must cover
+* <<moscow,MoSCoW>> - Prioritization method used to decide which DoD items are must-haves
+====
