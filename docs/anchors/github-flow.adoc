@@ -1,0 +1,43 @@
+= GitHub Flow
+:categories: development-workflow
+:roles: software-developer, devops-engineer, team-lead
+:related: conventional-commits, semantic-versioning
+:proponents: Scott Chacon
+:tags: git, branching, pull-request, continuous-delivery, workflow, feature-branch, code-review, main-branch
+
+[%collapsible]
+====
+
+[discrete]
+== *Core Concepts*:
+
+* A lightweight, branch-based workflow where `main` is always deployable
+* Feature branches are short-lived, created from `main` for every change
+* Pull Requests are the central collaboration mechanism — used for code review, discussion, and CI validation before merging
+* Merging to `main` triggers immediate deployment (continuous delivery)
+* Branch naming reflects the work: issue number or short descriptive slug
+
+Workflow steps::
+. Create a branch from `main` (named after the issue or feature)
+. Commit changes with descriptive messages
+. Open a Pull Request early for visibility and feedback
+. Discuss, review, and iterate until the PR is approved
+. Merge to `main` — `main` is always in a deployable state
+. Deploy immediately after merge
+
+Key Proponent:: Scott Chacon ("GitHub Flow", 2011)
+
+[discrete]
+== *When to Use*:
+
+* Teams practicing continuous delivery or continuous deployment
+* Projects where `main` must always be production-ready
+* Issue-driven or ticket-driven development workflows
+* Agentic coding workflows where context brevity matters
+
+[discrete]
+== *Related Anchors*:
+
+* <<conventional-commits,Conventional Commits>>
+* <<semantic-versioning,Semantic Versioning (SemVer)>>
+====

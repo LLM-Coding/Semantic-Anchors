@@ -1,5 +1,6 @@
 import { i18n } from '../i18n.js'
 import { fetchAnchorsData } from '../utils/data-loader.js'
+import { getRouteBeforeModal, getScrollBeforeModal } from '../utils/router.js'
 
 let asciidoctor = null
 
@@ -100,9 +101,11 @@ export function closeModal() {
     modal.classList.remove('flex')
     document.body.style.overflow = ''
 
-    // Reset URL to home if we're on an anchor route
+    // Restore URL to the page that was active before the modal opened
+    // Use replaceState to avoid triggering hashchange (which would re-render the page)
     if (window.location.hash.startsWith('#/anchor/')) {
-      window.location.hash = '#/'
+      const returnTo = getRouteBeforeModal() || '/'
+      history.replaceState(null, '', '#' + returnTo)
     }
   }
 }

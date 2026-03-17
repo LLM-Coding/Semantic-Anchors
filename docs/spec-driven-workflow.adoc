@@ -1,0 +1,522 @@
+= The Semantic Anchors Development Workflow
+Ralf D. Müller
+2026-03-14
+:toc:
+:toc-placement: preamble
+
+== Introduction
+
+This document describes how to build production-quality software with AI agents, guided by link:#/[Semantic Anchors].
+
+Semantic Anchors are compact terms that reliably activate rich knowledge domains in LLMs.
+Instead of writing pages of instructions, you reference a concept the model already understands deeply.
+"Use TDD" is shorter than explaining test-driven development.
+"Follow arc42" is shorter than describing 12 architecture sections.
+The prompts stay short, precise, and maintainable.
+
+This workflow was used to build three open source projects, all 100% AI-generated.
+The golden rule: I only prompt, I never touch the code myself.
+Every line of code, every test, every documentation file was written by the AI under my guidance.
+
+* https://github.com/docToolchain/dacli[*dacli*]: A full CLI tool with spec, architecture docs, tests, and user manual. Built by one AI, cross-reviewed by 5 different LLMs.
+* https://github.com/LLM-Coding/Semantic-Anchors[*Semantic Anchors Website*]: 228+ GitHub stars, documentation, and a video series.
+* https://github.com/rdmueller/vibe-coding-risk-radar[*Vibe Coding Risk Radar*]: An interactive web app for assessing AI coding risks.
+
+[NOTE]
+====
+Semantic Anchors marked with ⚓ are highlighted throughout this document.
+Click on any anchor to see its full definition on the Semantic Anchors website.
+====
+
+[IMPORTANT]
+====
+This workflow is designed for greenfield projects built from scratch with AI assistance.
+Adapting it to legacy codebases requires additional considerations (reverse engineering existing architecture, establishing test coverage, incremental migration) that are not yet covered here.
+====
+
+== The Key Principle: Small Steps, High Autonomy
+
+The most common mistake with AI coding is prompting "Build me a CLI tool" and expecting a working result.
+That is like asking a junior developer to build an entire application from a one-sentence briefing.
+The result will be unpredictable at best.
+
+This workflow takes the opposite approach: break the work into small, well-defined steps and let the AI handle each one autonomously.
+Each step produces a concrete artifact that you can review before moving on.
+
+The paradox: the smaller you make each task, the more autonomy you can give the agent.
+A vague "build me X" needs constant supervision.
+A precise "implement issue #42 using TDD, respecting the spec in src/docs/specs/" can run on its own.
+The phases described in this document are designed to produce exactly that kind of precise, self-contained task.
+
+This connects directly to Shannon's theorem.
+Each small step is a short transmission over the noisy channel.
+Short transmissions with error correction (tests, linting, review) are far more reliable than one long, unchecked transmission.
+LLM output is inherently non-deterministic -- the same prompt can produce different code each time.
+TDD and reviews are the error correction that makes this noisy channel usable.
+The agent works in a tight loop: implement, test, commit, check docs.
+You review at the boundaries between phases, not after every line of code.
+
+== Workflow Overview
+
+image::docs/workflow-diagram.png[Workflow Overview,width=800]
+
+== Cross-Cutting Concerns
+
+These principles apply to all phases:
+
+⚓ link:#/anchor/plain-english-strunk-white[*Plain English according to Strunk & White*]:: All documentation uses short sentences, active voice, and no unnecessary words.
+⚓ link:#/anchor/conventional-commits[*Conventional Commits*]:: All commits follow a standardized format for a clean, parseable git history.
+⚓ link:#/anchor/docs-as-code[*Docs-as-Code according to Ralf D. Müller*]:: Documentation lives in the repository as AsciiDoc, built by https://doctoolchain.org[docToolchain].
+Docs-as-Code treats documentation like source code: version-controlled, peer-reviewed, and built automatically.
+*Definition of Done*:: Code passes all tests, feature branch is merged or PR is created, documentation is updated, architecture decisions are recorded.
+
+== Prerequisites
+
+Before starting, set up your project infrastructure:
+
+. Initialize a git repository
+. Install https://doctoolchain.org[docToolchain] and download the ⚓ link:#/anchor/arc42[*arc42*] template
+. Configure your AI coding environment with an `AGENTS.md` (or tool-specific equivalent like `CLAUDE.md`)
+
+.Installing docToolchain (Linux/macOS)
+[source,bash]
+----
+cd <your-project>
+curl -Lo dtcw https://doctoolchain.org/dtcw
+chmod +x dtcw
+./dtcw docker downloadTemplate
+----
+
+See https://doctoolchain.org/docToolchain/v2.0.x/020_tutorial/010_Install.html[the official installation guide] for details and other platforms.
+
+=== AGENTS.md as Project Memory
+
+https://agents.md[`AGENTS.md`] is an open standard for guiding AI coding agents.
+The file lives in your repository root and is read automatically at the start of every session.
+It serves as the project memory: coding conventions, architectural decisions, file structure, and pointers to important documents.
+
+Most AI coding tools support it or have an equivalent (Claude Code uses `CLAUDE.md`, for example).
+
+A minimal `AGENTS.md` for this workflow:
+
+[source,markdown]
+----
+# Project: <your project name>
+
+## Key Documents
+- PRD: src/docs/specs/prd.adoc
+- Specification: src/docs/specs/
+- Architecture: src/docs/arc42/
+- Reviews: src/docs/reviews/
+
+## Conventions
+- Documentation: Plain English according to Strunk & White
+- Testing: TDD (London or Chicago School as appropriate)
+- Commits: Conventional Commits, reference issue number
+- Branches: feature/<issue-description>
+
+## Current State
+- Working on: EPIC #3
+- Next issue: #42
+----
+
+Update this file as the project evolves.
+When starting a new AI session, the agent reads `AGENTS.md` and immediately has the context it needs.
+
+[TIP]
+====
+Start a new AI session for each EPIC or when the conversation becomes sluggish.
+The agent picks up context from `AGENTS.md` and the spec files automatically.
+====
+
+== Phase 1: Requirements Discovery
+
+=== Step 1: Describe Your Vision
+
+Start by explaining your idea to the AI in your own words.
+This is the one place where more is better. Cover:
+
+* *The problem* you want to solve
+* *Who* will use it (target audience)
+* *What* the desired outcome looks like
+* *Constraints*: budget, timeline, tech stack preferences, platform
+* *What it is not*: explicit boundaries help the AI avoid scope creep
+* *Inspiration*: similar tools or approaches you have seen
+
+Cover these aspects in whatever order feels natural.
+The next step will bring structure to your raw ideas.
+
+=== Step 2: Clarify Requirements with the Socratic Method
+
+Prompt the AI to use the ⚓ link:#/anchor/socratic-method[*Socratic Method*] to clarify requirements.
+
+[source]
+----
+Use the Socratic Method to help me clarify requirements for [your project].
+Ask me at most 3 questions at a time. Challenge my assumptions before
+documenting anything.
+----
+
+This activates targeted questioning, assumption challenging, and productive use of not-knowing.
+The constraint "at most 3 questions" prevents question overload.
+
+You can layer additional anchors for structured coverage:
+
+[source]
+----
+Use the Socratic Method combined with MECE to clarify requirements.
+----
+
+⚓ link:#/anchor/mece[*MECE*] (Mutually Exclusive, Collectively Exhaustive) ensures questions cover all areas without overlap.
+
+Continue the dialogue until both you and the AI are satisfied that the requirements are clear.
+
+=== Step 3: Document as PRD
+
+Ask the AI to write a *Product Requirements Document (PRD)* and save it as AsciiDoc.
+A PRD captures the what and why, not the how: problem statement, goals, user personas, success criteria, and scope boundaries.
+
+[source]
+----
+Write a PRD based on our discussion. Save it as src/docs/specs/prd.adoc.
+Follow Plain English guidelines according to Strunk and White.
+----
+
+=== Step 4: Create Detailed Specification
+
+From the PRD, generate a full specification:
+
+[source]
+----
+Create a detailed specification from the PRD. Include:
+- Use Cases
+- Activity Diagrams for all flows (not just the happy path)
+- Acceptance criteria in Gherkin format
+Save as .adoc files in src/docs/specs/.
+----
+
+⚓ link:#/anchor/gherkin[*Gherkin*] (Given/When/Then) provides acceptance criteria that are both human-readable and machine-testable.
+These criteria become the foundation for TDD later.
+
+Activity Diagrams force you to think about error paths, edge cases, and alternative flows early.
+
+== Phase 2: Architecture
+
+=== Step 5: Create arc42 Architecture Documentation
+
+Ask the AI to derive an architecture from the specification:
+
+[source]
+----
+Create an arc42 architecture document based on the specification in src/docs/specs/.
+Save it in src/docs/arc42/.
+Use PlantUML C4 diagrams for architecture visualization.
+----
+
+⚓ link:#/anchor/arc42[*arc42*] provides 12 sections covering everything from context to deployment.
+The AI knows the template structure and fills it appropriately.
+
+⚓ link:#/anchor/c4-diagrams[*C4 Diagrams*] combined with PlantUML provide text-based architecture visualization at four levels: Context, Container, Component, Code.
+The AI can create and modify these diagrams without graphical tools.
+
+==== Architecture Decision Records
+
+Architecture decisions are documented as ⚓ link:#/anchor/adr-according-to-nygard[*ADRs according to Nygard*].
+Each ADR follows the structure: Title, Status, Context, Decision, Consequences.
+
+For each decision, create a ⚓ link:#/anchor/pugh-matrix[*Pugh Matrix*] with a 3-point scale (-1, 0, +1) to evaluate alternatives against quality criteria.
+
+[source]
+----
+Document this architecture decision as an ADR according to Nygard.
+Evaluate alternatives using a Pugh Matrix with a 3-point scale (-1, 0, +1).
+Align criteria with the quality goals defined in the arc42 documentation.
+Create a GitHub issue for discussion before finalizing.
+----
+
+The AI creates each ADR as a GitHub/GitLab issue first.
+You review the issue, comment, or approve it.
+Only after your approval is the ADR incorporated into the arc42 documentation.
+This way, every architectural decision is traceable through the issue history.
+All ADRs must align with the quality goals defined in arc42 Section 1.2.
+
+=== Step 6: Architecture Review (ATAM)
+
+Conduct an architecture review using the ⚓ link:#/anchor/atam[*Architecture Tradeoff Analysis Method (ATAM)*]:
+
+[source]
+----
+Conduct an ATAM review of the architecture in src/docs/arc42/.
+Focus on the quality attributes defined in our quality goals.
+Document the results as a review report in src/docs/reviews/.
+----
+
+ATAM systematically evaluates architecture against quality attribute scenarios.
+This step can be repeated after significant architectural changes.
+
+== Phase 3: Implementation Planning
+
+=== Step 7: Create Backlog
+
+Generate implementation issues from the specification:
+
+[source]
+----
+Create EPICs and User Stories as GitHub issues based on the specification
+in src/docs/specs/. Reference the arc42 documentation for technical context.
+Follow the INVEST criteria for User Stories.
+Use MoSCoW prioritization for the initial backlog order.
+Mark dependencies between issues with labels or cross-references.
+----
+
+⚓ *INVEST* ensures User Stories are Independent, Negotiable, Valuable, Estimable, Small, and Testable.
+
+⚓ link:#/anchor/moscow[*MoSCoW*] (Must have, Should have, Could have, Won't have) provides clear prioritization.
+
+The initial backlog order follows the EPIC sequence.
+The AI should document dependencies between issues (e.g. "blocked by #12") so that the implementation order is clear.
+As the project evolves, groom the backlog regularly to re-prioritize based on new insights.
+
+== Phase 4: Implementation Loop
+
+=== Step 8: Implement Issue by Issue
+
+Create a feature branch for each EPIC or logical group of issues:
+
+[source,bash]
+----
+git checkout -b feature/<epic-or-issue-description>
+----
+
+Then enter the core development loop:
+
+[source]
+----
+Select the next logical issue from the backlog (respect dependencies).
+Analyze it and document your analysis as a comment on the issue.
+Implement it using TDD. Commit when done.
+Check if the spec or architecture docs need updating.
+----
+
+For each issue:
+
+. *Analyze*: The AI examines the issue, reviews related specs and architecture, checks for dependencies on other issues, and posts an analysis comment on the issue
+. *Implement with TDD*: The AI writes tests first, then implementation
+. *Commit*: After the issue is implemented and all tests pass, commit with a reference to the issue number
+. *Check docs*: Ask whether the specification or architecture documentation needs updating based on what was learned during implementation
+
+⚓ *TDD* (Test-Driven Development) comes in two schools:
+
+* ⚓ link:#/anchor/tdd-london-school[*London School*] (mockist): isolate the unit under test, mock dependencies. Good for interaction-heavy code.
+* ⚓ link:#/anchor/tdd-chicago-school[*Chicago School*] (classicist): test behavior through the public API, use real collaborators. Good for state-based logic.
+
+The AI selects the appropriate school based on the code's characteristics.
+
+Each implementation follows the Red-Green-Refactor cycle and respects:
+
+* ⚓ link:#/anchor/dry-principle[*DRY*] (Don't Repeat Yourself)
+* ⚓ link:#/anchor/solid-principles[*SOLID*] principles
+* ⚓ *KISS* (Keep It Simple, Stupid)
+* ⚓ link:#/anchor/domain-driven-design[*Ubiquitous Language*] from Domain-Driven Design: use the same terms in code as in the specification
+
+==== Feedback Loop to Specification
+
+During implementation, you will discover gaps in the specification or architecture.
+This is normal and expected.
+Periodically ask the AI:
+
+[source]
+----
+Based on what we learned during implementation, does the specification
+or architecture documentation need updating?
+----
+
+Update the docs before continuing.
+This keeps the specification a living document rather than a stale artifact.
+The spec is not just a means to generate code -- it remains the authoritative description of the system's behavior, maintained alongside the code for as long as the project lives.
+
+==== Merging
+
+When an EPIC or a logical group of issues is complete, merge the feature branch:
+
+[source,bash]
+----
+git checkout main
+git merge feature/<epic-or-issue-description>
+----
+
+For team projects, use Pull Requests for code review before merging.
+
+== Phase 5: Quality Assurance
+
+=== Step 9: Code Review
+
+Ask the AI to review the codebase:
+
+[source]
+----
+Conduct a code review following the Fagan Inspection method.
+Focus on correctness, maintainability, and adherence to the specification.
+Document findings as a review report in src/docs/reviews/.
+----
+
+*Fagan Inspection* is a structured, systematic review process with defined roles and phases.
+It catches defects that testing alone cannot find.
+
+[TIP]
+====
+Consider using a different AI model or a fresh AI session for reviews.
+An AI reviewing its own code has the same blind spots as a developer reviewing their own work.
+====
+
+=== Step 10: Security Review
+
+[source]
+----
+Conduct a security review based on the OWASP Top 10.
+Document findings and recommendations in src/docs/reviews/.
+Create GitHub issues for any vulnerabilities found.
+----
+
+⚓ link:#/anchor/owasp-top-10[*OWASP Top 10*] covers the most critical web application security risks.
+Even for CLI tools or libraries, the methodology identifies common vulnerability patterns.
+
+=== Step 11: Exploratory Testing
+
+Once the code reaches V1 status, conduct thorough exploratory testing:
+
+[source]
+----
+Execute the tool and test it thoroughly. Focus on edge cases, unexpected
+inputs, and error handling. The goal is to find bugs, not to confirm
+that it works. Create a GitHub issue immediately for each bug you find.
+----
+
+This differs from the TDD tests written during implementation.
+Those tests verify specified behavior.
+Exploratory testing deliberately searches for unspecified behavior and edge cases.
+The AI executes the tool directly and interacts with it as a real user would.
+
+=== Step 12: Bug Fix Loop
+
+Analyze and fix each bug found during exploratory testing.
+After fixing, return to Step 11 and test again.
+Repeat until no more bugs are found.
+
+Each fix follows the same TDD discipline: write a failing test that reproduces the bug, then fix it.
+
+== Adapting This Workflow
+
+This workflow is optimized for greenfield projects with a single developer and AI assistance.
+Some considerations for other contexts:
+
+*Team projects*:: Use Pull Requests instead of direct merges.
+ADR discussions in GitHub issues become more valuable with multiple reviewers.
+Consider assigning different AI models to different review roles.
+*Larger projects*:: Break the work into multiple feature branches per EPIC.
+Run ATAM reviews after each major architectural change, not just once.
+Groom the backlog more frequently as the project grows.
+*Legacy codebases*:: This workflow assumes you start from scratch.
+Adapting it to existing code requires additional steps: reverse engineering the existing architecture into arc42, establishing baseline test coverage, and incremental migration.
+First steps: let the AI generate arc42 documentation from the existing codebase, then add tests for the areas you plan to change.
+*Frontend / HTML applications*:: This workflow works well for backend code, CLIs, and libraries where the compiler and TDD provide strong error correction.
+Frontend applications can be built with the same approach, but consistent UI is harder to verify automatically.
+The error correction layers that make backend development reliable (compiler errors, test failures) have no direct equivalent for visual consistency.
++
+To compensate, start with a design system or component library and test individual components before full-page integration.
+Add visual regression testing with Playwright screenshot comparisons to your CI pipeline.
+This adds significant effort compared to backend projects, but without it the AI tends to produce functional but visually inconsistent results.
+
+== Prompt Cheat Sheet
+
+The essential one-liners for each phase, with the Semantic Anchors they activate:
+
+[cols="1,3,2"]
+|===
+|Phase |Prompt |Anchors
+
+|Requirements
+|`Use the Socratic Method combined with MECE to clarify requirements for [project]. Max 3 questions at a time.`
+|link:#/anchor/socratic-method[Socratic Method], link:#/anchor/mece[MECE]
+
+|PRD
+|`Write a PRD based on our discussion. Save as src/docs/specs/prd.adoc. Follow Strunk & White.`
+|link:#/anchor/plain-english-strunk-white[Strunk & White]
+
+|Specification
+|`Create a detailed spec with Use Cases, Activity Diagrams (all paths), and Gherkin acceptance criteria.`
+|link:#/anchor/gherkin[Gherkin]
+
+|Architecture
+|`Create arc42 docs with PlantUML C4 diagrams based on the spec. Save in src/docs/arc42/.`
+|link:#/anchor/arc42[arc42], link:#/anchor/c4-diagrams[C4 Diagrams]
+
+|ADR
+|`Document as ADR according to Nygard. Evaluate with Pugh Matrix (-1/0/+1). Create GitHub issue first.`
+|link:#/anchor/adr-according-to-nygard[ADR (Nygard)], link:#/anchor/pugh-matrix[Pugh Matrix]
+
+|ATAM
+|`Conduct an ATAM review. Focus on our quality goals. Save report in src/docs/reviews/.`
+|link:#/anchor/atam[ATAM]
+
+|Backlog
+|`Create EPICs and User Stories as GitHub issues. INVEST criteria. MoSCoW prioritization. Mark dependencies.`
+|INVEST, link:#/anchor/moscow[MoSCoW]
+
+|Implementation
+|`Select next issue (respect dependencies). Analyze and comment. Implement with TDD. Commit. Check if docs need updating.`
+|link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago], link:#/anchor/solid-principles[SOLID], link:#/anchor/dry-principle[DRY], link:#/anchor/domain-driven-design[DDD]
+
+|Code Review
+|`Conduct a Fagan Inspection. Focus on correctness and spec adherence. Save report.`
+|Fagan Inspection
+
+|Security
+|`Security review based on OWASP Top 10. Create issues for findings.`
+|link:#/anchor/owasp-top-10[OWASP Top 10]
+
+|Testing
+|`Execute the tool. Find bugs, especially edge cases. Create an issue for each bug immediately.`
+|{empty}--
+|===
+
+Cross-cutting anchors that apply to all phases: link:#/anchor/docs-as-code[Docs-as-Code (Ralf D. Müller)], link:#/anchor/conventional-commits[Conventional Commits], link:#/anchor/plain-english-strunk-white[Plain English / Strunk & White].
+
+== A Note on Tooling
+
+This document describes a plain workflow using standard prompts.
+You will notice that none of the prompts use role-playing patterns like "You are an expert tester" or "Act as a senior architect."
+That is intentional.
+Semantic Anchors activate the right knowledge domain without pretending the model is something it is not.
+"Conduct a Fagan Inspection" is more precise than "You are a world-class code reviewer."
+
+In practice, the workflow benefits greatly from specialized tooling.
+MCP servers like https://github.com/mrsimpson/responsible-vibe-mcp[Responsible Vibe MCP] enforce agentic workflows with phase gates and review checkpoints.
+https://serena.dev[Serena] provides semantic code navigation so the agent can work with symbols and references instead of raw text.
+Skill systems like Superpowers encode reusable process patterns like TDD, debugging, and code review workflows.
+https://github.com/microsoft/playwright-mcp[Playwright MCP] lets the agent control a browser for end-to-end testing and exploratory testing of web applications.
+These tools automate the discipline this document describes manually.
+
+The goal of this document is transparency.
+Every step is visible, every prompt is reproducible, and nothing depends on proprietary tooling.
+Once you understand the process, adopt whatever tools make it easier to follow.
+
+== Conclusion
+
+This workflow demonstrates how Semantic Anchors make AI-assisted development systematic and repeatable.
+Each prompt stays short because the anchor activates the full concept.
+The error correction layers (specification, architecture review, TDD, code review, security review, exploratory testing) stack up to make the noisy LLM channel reliable.
+
+You do not need to be an expert in every methodology listed here.
+The AI knows these concepts.
+Your job is to know which anchor to use when, and to verify the results.
+
+Try it on your next project.
+Start with the Socratic Method for requirements and see where it leads.
+If you discover anchors that work well in your workflow, https://github.com/LLM-Coding/Semantic-Anchors/blob/main/CONTRIBUTING.md[contribute them to the collection].
+
+=== Further Reading
+
+* Birgitta Böckeler, https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html[Exploring Gen AI] (martinfowler.com) -- a critical analysis of spec-driven development tools (Kiro, spec-kit, Tessl) and their trade-offs. Examines where elaborate upfront specifications help and where they create overhead.
+* Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- a requirements-driven methodology combining Rational Unified Process principles with AI tooling. Treats AI as a consistency engine that regenerates code from evolving specifications, with four phases: Inception, Elaboration, Construction, Transition.
+* Ralf D. Müller & Simon Martinelli, https://software-architektur.tv/2026/01/16/folge298.html[Spec-Driven Development] (software-architektur.tv, Episode 298) -- podcast discussion on how specifications and requirements take center stage in AI-assisted development, and why iterative refinement beats perfect upfront specs.

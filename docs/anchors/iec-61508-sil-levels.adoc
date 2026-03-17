@@ -4,6 +4,7 @@
 :proponents: International Electrotechnical Commission (IEC)
 :related: testing-pyramid, mutation-testing
 :tags: safety, functional-safety, SIL, standards, certification, risk-assessment
+:tier: 3
 
 [%collapsible]
 ====

@@ -2,6 +2,7 @@
 :categories: development-workflow
 :roles: software-developer, team-lead, technical-writer
 :proponents: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
+:tier: 3
 
 [%collapsible]
 ====

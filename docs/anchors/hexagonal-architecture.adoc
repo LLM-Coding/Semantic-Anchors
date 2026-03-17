@@ -1,6 +1,7 @@
 = Hexagonal Architecture (Ports & Adapters)
 :categories: software-architecture
 :roles: software-architect, software-developer
+:tier: 3
 
 [%collapsible]
 ====

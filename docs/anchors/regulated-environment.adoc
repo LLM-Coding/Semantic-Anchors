@@ -4,6 +4,7 @@
 :related: iec-61508-sil-levels, docs-as-code, conventional-commits, semantic-versioning
 :proponents: FDA (21 CFR Part 11), EMA (GMP Annex 11), ISO 9001, IEC 62304, GAMP 5
 :tags: compliance, validation, traceability, audit-trail, change-control, documentation, GxP, FDA, IEC, ISO
+:tier: 2
 
 [%collapsible]
 ====

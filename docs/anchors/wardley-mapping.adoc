@@ -1,6 +1,7 @@
 = Wardley Mapping
 :categories: strategic-planning
 :roles: product-owner, software-architect, consultant, team-lead
+:tier: 3
 
 [%collapsible]
 ====

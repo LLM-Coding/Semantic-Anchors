@@ -1,6 +1,7 @@
 = Domain-Driven Design according to Evans
 :categories: software-architecture
 :roles: software-architect, software-developer, business-analyst, team-lead
+:tier: 3
 
 [%collapsible]
 ====

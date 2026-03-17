@@ -11,12 +11,33 @@ body:
         Thank you for proposing a new semantic anchor! Here's the workflow:
 
         1. **You provide a term or concept** that you believe would make a good semantic anchor
-        2. **GitHub Copilot validates** whether it meets the quality criteria (precise, rich, consistent, attributable)
-        3. **If accepted**: Copilot enriches this issue with detailed information (proponents, categories, related concepts)
-        4. **If rejected**: Copilot explains why it doesn't meet the criteria
-        5. **After enrichment**: Copilot is assigned to create the anchor file and submit a PR
+        2. **The review agent validates** whether it meets the quality criteria (see below)
+        3. **If accepted**: The agent enriches this issue with detailed information (proponents, categories, related concepts) and assigns a quality tier
+        4. **If rejected**: The agent explains why it doesn't meet the criteria
+        5. **After enrichment**: The agent creates the anchor file and submits a PR
 
-        **Just provide the term below - Copilot handles the rest!**
+        ### Quality Criteria
+
+        A semantic anchor must be **precise**, **rich**, **consistent**, and **attributable**.
+
+        ### Tier Rating (★)
+
+        The review agent assigns one of three tiers based on how reliably the anchor improves LLM communication:
+
+        - **★★★ Self-standing**: Saying the anchor name alone reliably activates the correct behavior in the LLM. Clear, actionable, deterministic output. Examples: arc42, SOLID, Gherkin, MECE, Chain of Thought.
+        - **★★☆ Needs qualification**: The concept is known but requires a qualifier for reliable results. The anchor documentation must specify the recommended qualified form. Examples: "ADR according to Nygard", "3-point Pugh Matrix".
+        - **★☆☆ Descriptive only**: The term describes a concept but does not give the LLM clear instructions. These are **rejected** unless the proposer can demonstrate a concrete, actionable prompt pattern.
+
+        ### Rejection Criteria
+
+        The review agent **rejects** proposals that are:
+        - Pure philosophy without actionable instructions (e.g., "TIMTOWTDI")
+        - Personality/assessment frameworks without LLM utility (e.g., "MBTI")
+        - Fully covered by an existing anchor (e.g., "Rubber Duck Debugging" ≈ Socratic Method)
+        - Too vague to produce consistent LLM output (e.g., "Keep it simple")
+        - Not an established concept (invented by the proposer)
+
+        **Just provide the term below - the review agent handles the rest!**
 
   - type: input
     id: term

@@ -1,6 +1,7 @@
 = SOTA (State-of-the-Art)
 :categories: development-workflow
 :roles: software-developer, data-scientist, consultant
+:tier: 3
 
 [%collapsible]
 ====

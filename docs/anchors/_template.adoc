@@ -4,6 +4,7 @@
 :related: related-anchor-1, related-anchor-2
 :proponents: Author Name, Another Author
 :tags: tag1, tag2, tag3
+:tier: 3
 
 [%collapsible]
 ====

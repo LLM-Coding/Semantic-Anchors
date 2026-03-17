@@ -1,6 +1,7 @@
 = Five Whys (Ohno)
 :categories: problem-solving
 :roles: software-developer, qa-engineer, devops-engineer, team-lead
+:tier: 3
 
 [%collapsible]
 ====

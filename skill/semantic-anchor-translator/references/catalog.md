@@ -47,6 +47,15 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** International Electrotechnical Commission
 - **Core:** Safety integrity levels for safety-critical systems
 
+### LINDDUN
+- **Also known as:** LINDDUN GO, Privacy Threat Modeling, Privacy STRIDE
+- **Proponents:** Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven)
+- **Core:** Privacy threat modeling framework; acronym for seven threat categories — Linkability, Identifiability, Non-repudiation, Detectability, Disclosure of information, Unawareness, Non-compliance; used for DPIA, Privacy by Design, GDPR compliance
+
+### STRIDE Threat Model
+- **Proponents:** Loren Kohnfelder, Praerit Garg (Microsoft), Adam Shostack
+- **Core:** Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege — structured threat categorization for security design
+
 ## Software Architecture
 
 ### Clean Architecture
@@ -257,6 +266,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Development Workflow
 
+### GitHub Flow
+- **Proponents:** Scott Chacon
+- **Core:** Branch-based workflow — short-lived feature branches, Pull Request reviews, `main` always deployable, merge triggers immediate deployment
+
 ### Conventional Commits
 - **Proponents:** Benjamin E. Coe, James J. Womack, Steve Mao
 - **Core:** Structured commit messages: type(scope): description
@@ -271,6 +284,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Mental Model (Naur)
 - **Proponents:** Peter Naur
 - **Core:** Programming as theory building — knowledge lives in developers' heads
+
+### Mikado Method
+- **Proponents:** Ola Ellnestam, Daniel Brolund
+- **Core:** Incremental refactoring via prerequisite graph — attempt change, revert on breakage, resolve leaf dependencies first
 
 ### TIMTOWTDI
 - **Core:** There Is More Than One Way To Do It — Perl philosophy

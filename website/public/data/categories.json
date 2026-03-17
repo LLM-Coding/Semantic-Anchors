@@ -4,11 +4,11 @@
     "name": "Communication & Presentation",
     "anchors": [
       "bluf",
-      "chatham-house-rule",
       "gutes-deutsch-wolf-schneider",
       "mece",
       "myers-briggs-type-indicator",
       "plain-english-strunk-white",
+      "problem-space-nvc",
       "pyramid-principle"
     ]
   },
@@ -16,7 +16,6 @@
     "id": "design-principles",
     "name": "Design Principles & Patterns",
     "anchors": [
-      "dry-principle",
       "fowler-patterns",
       "gof-abstract-factory-pattern",
       "gof-adapter-pattern",
@@ -48,7 +47,6 @@
       "solid-ocp",
       "solid-principles",
       "solid-srp",
-      "spot-principle",
       "ssot-principle",
       "yagni"
     ]
@@ -60,6 +58,7 @@
       "bem-methodology",
       "conventional-commits",
       "mental-model-according-to-naur",
+      "mikado-method",
       "regulated-environment",
       "semantic-versioning",
       "sota",
@@ -97,8 +96,7 @@
       "devils-advocate",
       "feynman-technique",
       "five-whys",
-      "morphological-box",
-      "rubber-duck-debugging"
+      "morphological-box"
     ]
   },
   {
@@ -157,12 +155,18 @@
       "bdd-given-when-then",
       "gherkin",
       "iec-61508-sil-levels",
+      "linddun",
       "mutation-testing",
       "owasp-top-10",
       "property-based-testing",
       "tdd-chicago-school",
       "tdd-london-school",
+      "test-double-dummy",
+      "test-double-fake",
       "test-double-meszaros",
+      "test-double-mock",
+      "test-double-spy",
+      "test-double-stub",
       "testing-pyramid"
     ]
   }

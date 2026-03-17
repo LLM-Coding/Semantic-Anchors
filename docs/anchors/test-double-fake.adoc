@@ -1,0 +1,38 @@
+= Test Double: Fake (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Gerard Meszaros
+:related: test-double-meszaros, test-double-stub
+:tags: test-double, fake, testing, isolation, in-memory
+:tier: 3
+:parent-anchor: test-double-meszaros
+
+[%collapsible]
+====
+[discrete]
+== *Core Concepts*:
+
+Purpose:: A working but simplified implementation unsuitable for production. Has real behavior, but takes shortcuts.
+
+Behavior:: Actually processes inputs and produces outputs — unlike Stubs which return fixed data. The simplification makes it fast and predictable for tests.
+
+Typical examples:: In-memory database instead of real database, in-memory file system, local email sender that writes to a list instead of sending, simplified authentication that always succeeds.
+
+Distinction from Stub:: A Stub returns canned data. A Fake has *real logic*, just simplified.
+
+Key Proponent:: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+== *When to Use*:
+
+* Tell an LLM: "Create a Fake implementation of this repository using an in-memory store"
+* Integration-style tests without external infrastructure
+* When Stubs are too simplistic and the real implementation is too slow/complex
+* Local development environments needing realistic but fast dependencies
+
+[discrete]
+== *Related Anchors*:
+
+* <<test-double-meszaros,Test Double (Meszaros)>> — umbrella taxonomy
+* <<test-double-stub,Stub>> — simpler alternative with fixed responses
+====

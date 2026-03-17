@@ -1,0 +1,39 @@
+= Test Double: Mock (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Gerard Meszaros
+:related: test-double-meszaros, test-double-spy, test-double-stub, tdd-london-school
+:tags: test-double, mock, testing, isolation, interaction-verification
+:tier: 3
+:parent-anchor: test-double-meszaros
+
+[%collapsible]
+====
+[discrete]
+== *Core Concepts*:
+
+Purpose:: Pre-programmed with expectations about which calls should be made. Verifies that specific interactions occurred — the test fails if the expected interactions don't happen.
+
+Behavior:: Has built-in assertions. If the system under test calls the wrong method, with wrong arguments, or in the wrong order, the Mock fails the test immediately.
+
+Distinction from Stub:: A Stub provides data passively. A Mock actively *verifies behavior*.
+
+Distinction from Spy:: A Spy records calls for *post-hoc* assertion. A Mock enforces expectations *during* execution.
+
+Key Proponent:: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+== *When to Use*:
+
+* Tell an LLM: "Create a Mock test double that verifies these interactions occur"
+* Interaction-based testing (London School TDD)
+* When the *behavior* matters more than the *result*
+* Verifying that a notification was sent, a log was written, or a service was called correctly
+
+[discrete]
+== *Related Anchors*:
+
+* <<test-double-meszaros,Test Double (Meszaros)>> — umbrella taxonomy
+* <<test-double-spy,Spy>> — post-hoc assertion instead of expectations
+* <<tdd-london-school,TDD, London School>> — favors Mocks for outside-in design
+====

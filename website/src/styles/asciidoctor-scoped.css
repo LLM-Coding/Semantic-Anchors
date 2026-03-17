@@ -189,9 +189,81 @@
 
   & .admonitionblock {
     margin: 1.25rem 0;
-    padding: 1rem;
     border-left: 4px solid;
     background: #f5f5f5;
+    border-radius: 0.25rem;
+  }
+
+  & .admonitionblock > table {
+    border-collapse: separate;
+    border: 0;
+    background: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  & .admonitionblock > table td {
+    border: 0;
+  }
+
+  & .admonitionblock > table td.icon {
+    text-align: center;
+    width: 80px;
+    vertical-align: middle;
+  }
+
+  & .admonitionblock > table td.icon i {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: default;
+  }
+
+  & .admonitionblock > table td.icon .icon-note::before {
+    content: '\f05a';
+    font-family: FontAwesome;
+    color: #19407c;
+  }
+
+  & .admonitionblock > table td.icon .icon-tip::before {
+    content: '\f0eb';
+    font-family: FontAwesome;
+    text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8);
+    color: #111;
+  }
+
+  & .admonitionblock > table td.icon .icon-warning::before {
+    content: '\f071';
+    font-family: FontAwesome;
+    color: #bf6900;
+  }
+
+  & .admonitionblock > table td.icon .icon-caution::before {
+    content: '\f06d';
+    font-family: FontAwesome;
+    color: #bf3400;
+  }
+
+  & .admonitionblock > table td.icon .icon-important::before {
+    content: '\f06a';
+    font-family: FontAwesome;
+    color: #bf0000;
+  }
+
+  & .admonitionblock > table td.icon .title {
+    font-weight: bold;
+    font-family: 'Open Sans', 'DejaVu Sans', sans-serif;
+    text-transform: uppercase;
+  }
+
+  & .admonitionblock > table td.content {
+    padding: 1rem 1.25rem;
+    border-left: 1px solid #dddddf;
+    color: rgba(0, 0, 0, 0.6);
+    word-wrap: anywhere;
+  }
+
+  & .admonitionblock > table td.content > :last-child > :last-child {
+    margin-bottom: 0;
   }
 
   & .admonitionblock.note {

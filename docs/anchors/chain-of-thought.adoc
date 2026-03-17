@@ -2,6 +2,7 @@
 :categories: problem-solving
 :roles: software-developer, data-scientist, business-analyst
 :proponents: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+:tier: 3
 
 [%collapsible]
 ====

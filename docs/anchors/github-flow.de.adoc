@@ -1,0 +1,43 @@
+= GitHub Flow
+:categories: development-workflow
+:roles: software-developer, devops-engineer, team-lead
+:related: conventional-commits, semantic-versioning
+:proponents: Scott Chacon
+:tags: git, branching, pull-request, continuous-delivery, workflow, feature-branch, code-review, main-branch
+
+[%collapsible]
+====
+
+[discrete]
+== *Kernkonzepte*:
+
+* Ein schlanker, branch-basierter Workflow, bei dem `main` immer auslieferbar ist
+* Feature-Branches sind kurzlebig und werden für jede Änderung aus `main` erstellt
+* Pull Requests sind der zentrale Kollaborationsmechanismus — für Code-Review, Diskussion und CI-Validierung vor dem Mergen
+* Das Mergen in `main` löst sofortige Auslieferung aus (Continuous Delivery)
+* Branch-Namen spiegeln die Arbeit wider: Issue-Nummer oder kurzer beschreibender Slug
+
+Workflow-Schritte::
+. Branch von `main` erstellen (benannt nach Issue oder Feature)
+. Änderungen mit aussagekräftigen Nachrichten committen
+. Pull Request frühzeitig öffnen für Transparenz und Feedback
+. Diskutieren, reviewen und iterieren bis der PR genehmigt ist
+. In `main` mergen — `main` ist immer auslieferbar
+. Sofort nach dem Merge deployen
+
+Schlüsselvertreter:: Scott Chacon ("GitHub Flow", 2011)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Teams, die Continuous Delivery oder Continuous Deployment praktizieren
+* Projekte, bei denen `main` stets produktionsbereit sein muss
+* Issue-getriebene oder Ticket-getriebene Entwicklungsworkflows
+* Agentische Coding-Workflows, bei denen Kontextkürze wichtig ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<conventional-commits,Conventional Commits>>
+* <<semantic-versioning,Semantic Versioning (SemVer)>>
+====

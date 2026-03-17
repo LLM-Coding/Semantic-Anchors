@@ -1,0 +1,42 @@
+= Mikado Method
+:categories: development-workflow
+:roles: software-developer, software-architect, team-lead
+:related: tdd-chicago-school, tdd-london-school
+:proponents: Ola Ellnestam, Daniel Brolund
+:tags: refactoring, legacy code, incremental change, dependency graph, reversible steps
+
+[%collapsible]
+====
+Also known as:: Mikado Graph Method
+
+[discrete]
+== *Core Concepts*:
+
+Mikado Goal:: The final desired state of the code after refactoring; the root of the dependency graph
+
+Prerequisite discovery:: Reveal blocking dependencies by attempting the change and noting what breaks
+
+Revert and repeat:: After discovering a prerequisite, revert to a working state before addressing it
+
+Mikado Graph:: A directed acyclic graph where nodes are prerequisites and edges show dependencies between them
+
+Leaf-first resolution:: Resolve the leaf nodes (no further prerequisites) first, working back to the root goal
+
+Small reversible steps:: Each step leaves the codebase in a working state, eliminating the risk of long-running broken branches
+
+Key Proponents:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
+
+[discrete]
+== *When to Use*:
+
+* Tackling large refactorings in legacy or complex codebases
+* When a direct change breaks too many things to fix at once
+* Coordinating multi-developer refactoring efforts safely
+* Making incremental improvements without blocking the team
+
+[discrete]
+== *Related Anchors*:
+
+* <<tdd-chicago-school,TDD, Chicago School>>
+* <<tdd-london-school,TDD, London School>>
+====

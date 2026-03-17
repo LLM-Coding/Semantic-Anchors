@@ -1,6 +1,7 @@
 = ADR according to Nygard
 :categories: software-architecture
 :roles: software-architect, software-developer, team-lead
+:tier: 3
 
 [%collapsible]
 ====

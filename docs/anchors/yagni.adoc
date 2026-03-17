@@ -4,6 +4,7 @@
 :proponents: Ron Jeffries, Kent Beck
 :related: dry-principle, spot-principle, tdd-chicago-school
 :tags: yagni, extreme-programming, simplicity, incremental-design, over-engineering
+:tier: 1
 
 [%collapsible]
 ====

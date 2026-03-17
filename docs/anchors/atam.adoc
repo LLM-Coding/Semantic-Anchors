@@ -4,6 +4,7 @@
 :related: arc42, adr-according-to-nygard
 :proponents: Rick Kazman, Mark Klein, Paul Clements
 :tags: architecture evaluation, quality attributes, tradeoffs, utility tree, SEI, risk analysis
+:tier: 3
 
 [%collapsible]
 ====

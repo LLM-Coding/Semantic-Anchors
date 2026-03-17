@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer
 :proponents: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
+:tier: 3
 
 [%collapsible]
 ====

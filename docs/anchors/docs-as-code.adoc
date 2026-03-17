@@ -1,6 +1,7 @@
 = Docs-as-Code according to Ralf D. Müller
 :categories: documentation
 :roles: technical-writer, software-developer, devops-engineer
+:tier: 3
 
 [%collapsible]
 ====
