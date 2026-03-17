@@ -2,7 +2,7 @@
 :categories: design-principles
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
-:tier: 2
+:tier: 3
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, mediator, loose coupling, coordination, hub
 

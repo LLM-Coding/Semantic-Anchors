@@ -4,6 +4,7 @@
 :proponents: Greg Young, Bertrand Meyer, Udi Dahan
 :related: domain-driven-design, hexagonal-architecture, fowler-patterns
 :tags: cqrs, cqs, architecture, commands, queries, read-write-separation
+:tier: 3
 
 [%collapsible]
 ====

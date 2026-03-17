@@ -2,6 +2,7 @@ node_modules/
 *.png
 !website/public/logo.png
 !website/public/icon.png
+!docs/workflow-diagram.png
 .playwright-mcp/
 *:Zone.Identifier
 website/public/CONTRIBUTING.html

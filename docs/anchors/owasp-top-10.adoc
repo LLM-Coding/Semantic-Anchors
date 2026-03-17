@@ -4,6 +4,7 @@
 :related: regulated-environment, iec-61508-sil-levels
 :proponents: OWASP Foundation
 :tags: security, web-security, vulnerabilities, risk, appsec, owasp
+:tier: 3
 
 [%collapsible]
 ====

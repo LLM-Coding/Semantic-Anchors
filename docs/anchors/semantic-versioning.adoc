@@ -1,6 +1,7 @@
 = Semantic Versioning (SemVer)
 :categories: development-workflow
 :roles: software-developer, devops-engineer, product-owner
+:tier: 3
 
 [%collapsible]
 ====

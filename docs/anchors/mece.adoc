@@ -1,6 +1,7 @@
 = MECE Principle
 :categories: communication-presentation
 :roles: business-analyst, consultant, software-architect, data-scientist
+:tier: 3
 
 [%collapsible]
 ====

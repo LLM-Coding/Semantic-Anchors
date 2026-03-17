@@ -1,6 +1,7 @@
 = Pugh-Matrix
 :categories: strategic-planning
 :roles: software-architect, team-lead, product-owner
+:tier: 2
 
 [%collapsible]
 ====

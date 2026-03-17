@@ -1,6 +1,7 @@
 = Testing Pyramid
 :categories: testing-quality
 :roles: software-developer, qa-engineer, team-lead, devops-engineer
+:tier: 3
 
 [%collapsible]
 ====

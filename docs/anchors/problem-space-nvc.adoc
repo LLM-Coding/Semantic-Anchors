@@ -1,36 +1,41 @@
-= Problem Space NVC
-:categories: requirements-engineering
-:roles: business-analyst, product-owner, consultant, ux-designer
+= Nonviolent Communication (Rosenberg)
+:categories: requirements-engineering, communication-presentation
+:roles: business-analyst, product-owner, consultant, ux-designer, team-lead
+:proponents: Marshall Rosenberg
+:tags: nvc, communication, empathy, conflict-resolution, requirements
+:tier: 3
 
 [%collapsible]
 ====
-Full Name:: Problem Space in Nonviolent Communication
+Also known as:: NVC, Problem Space NVC, Gewaltfreie Kommunikation (GFK)
 
 [discrete]
 == *Core Concepts*:
 
-Observations:: Concrete, objective facts without evaluation
+Observations:: Concrete, objective facts without evaluation or judgment. "The deploy failed three times this week" instead of "The deploy always fails."
 
-Feelings:: Emotions arising from observations
+Feelings:: Emotions arising from observations. "I feel frustrated" instead of "This is frustrating."
 
-Needs:: Universal human needs underlying feelings
+Needs:: Universal human needs underlying feelings. Reliability, autonomy, clarity, safety. The real driver behind every request.
 
-Requests:: Specific, actionable requests (not demands)
+Requests:: Specific, actionable asks (not demands). "Could we add a pre-deploy check?" instead of "Fix the deploy process."
 
-Empathic connection:: Understanding before problem-solving
+Four-step process:: Observe → Feel → Need → Request. Each step builds on the previous one.
 
-Separating observation from interpretation:: Avoiding judgment
-
-Needs-based conflict resolution:: Finding solutions that meet everyone's needs
-
-
-Key Proponent:: Marshall Rosenberg
+Key Proponent:: Marshall Rosenberg ("Nonviolent Communication: A Language of Life", 1999)
 
 [discrete]
-== *Application in Software Development*:
+== *When to Use*:
 
-* Requirements elicitation that uncovers real user needs
-* Stakeholder communication and conflict resolution
-* User story formulation focused on needs
-* Retrospectives and team communication
+* Tell an LLM: "Reformulate this complaint using NVC according to Rosenberg"
+* Tell an LLM: "Write this stakeholder email in NVC style — observation, feeling, need, request"
+* Requirements elicitation that uncovers real user needs behind feature requests
+* Conflict resolution in teams and retrospectives
+* Transforming vague complaints into actionable requirements
+
+[discrete]
+== *Related Anchors*:
+
+* <<socratic-method,Socratic Method>> — complementary: NVC for expressing, Socratic for exploring
+* <<bluf,BLUF>> — contrasting style: BLUF is conclusion-first, NVC is empathy-first
 ====

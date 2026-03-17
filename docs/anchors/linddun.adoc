@@ -1,0 +1,49 @@
+= LINDDUN
+:categories: testing-quality
+:roles: software-architect, software-developer, qa-engineer, business-analyst, consultant, devops-engineer
+:related: owasp-top-10, regulated-environment
+:proponents: Kim Wuyts, Riccardo Scandariato, Wouter Joosen
+:tags: privacy, threat-modeling, privacy-engineering, GDPR, data-protection, threat-analysis, privacy-by-design
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: LINDDUN Privacy Threat Modeling Framework
+
+Also known as:: LINDDUN GO, Privacy Threat Modeling, Privacy STRIDE
+
+[discrete]
+== *Core Concepts*:
+
+Linkability:: Attacker can link two items of interest (e.g., data items, messages, or actions) without knowing the identity of the data subject
+
+Identifiability:: Attacker can identify a data subject from a set of data subjects through items of interest
+
+Non-repudiation:: Data subject cannot deny having performed an action or having sent a message; system logs become a liability
+
+Detectability:: Attacker can deduce the existence or absence of a data item or communication, even without access to its content
+
+Disclosure of Information:: Unauthorized exposure of data to a party without the data subject's consent; classical confidentiality breach from a privacy perspective
+
+Unawareness:: Data subjects are not sufficiently informed about the collection, processing, storage, and sharing of their personal data; violates transparency principles
+
+Non-compliance:: System does not comply with privacy legislation, regulations, or organizational privacy policies (e.g., GDPR, CCPA, HIPAA)
+
+Key Proponents:: Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven / DistriNet Research Group, published 2014)
+
+[discrete]
+== *When to Use*:
+
+* Conducting privacy threat modeling during the design or architecture phase
+* Performing privacy impact assessments (PIA) or data protection impact assessments (DPIA)
+* Identifying privacy risks in systems that handle personal data
+* Evaluating compliance with GDPR, CCPA, HIPAA, and other privacy regulations
+* Integrating Privacy by Design into the software development lifecycle
+* Training development teams on privacy engineering concepts
+
+[discrete]
+== *Related Anchors*:
+
+* <<owasp-top-10,OWASP Top 10>>
+* <<regulated-environment,Regulated Environment>>
+====

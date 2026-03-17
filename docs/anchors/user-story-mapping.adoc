@@ -1,6 +1,7 @@
 = User Story Mapping
 :categories: requirements-engineering
 :roles: product-owner, business-analyst, team-lead, ux-designer
+:tier: 3
 
 [%collapsible]
 ====

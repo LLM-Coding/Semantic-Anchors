@@ -1,0 +1,38 @@
+= Test Double: Stub (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Gerard Meszaros
+:related: test-double-meszaros, test-double-spy, test-double-mock
+:tags: test-double, stub, testing, isolation, canned-response
+:tier: 3
+:parent-anchor: test-double-meszaros
+
+[%collapsible]
+====
+[discrete]
+== *Core Concepts*:
+
+Purpose:: Provides predefined (canned) responses to calls made during a test. Does not verify interactions — only supplies data.
+
+Behavior:: Returns fixed values regardless of input. No assertion on whether or how it was called.
+
+Distinction from Mock:: A Stub never fails a test. It only provides data. A Mock has expectations and can fail the test if interactions are wrong.
+
+Key Proponent:: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+== *When to Use*:
+
+* Tell an LLM: "Create a Stub test double that returns this fixed data"
+* Isolating the system under test from external dependencies (database, API)
+* State-based testing (Chicago School TDD)
+* When you care about the *result*, not about *how* it was obtained
+
+[discrete]
+== *Related Anchors*:
+
+* <<test-double-meszaros,Test Double (Meszaros)>> — umbrella taxonomy
+* <<test-double-spy,Spy>> — a Stub that also records calls
+* <<test-double-mock,Mock>> — when you need interaction verification
+* <<tdd-chicago-school,TDD, Chicago School>> — favors Stubs over Mocks
+====

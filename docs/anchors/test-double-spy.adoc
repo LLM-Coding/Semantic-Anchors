@@ -1,0 +1,37 @@
+= Test Double: Spy (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Gerard Meszaros
+:related: test-double-meszaros, test-double-stub, test-double-mock
+:tags: test-double, spy, testing, isolation, call-recording
+:tier: 3
+:parent-anchor: test-double-meszaros
+
+[%collapsible]
+====
+[discrete]
+== *Core Concepts*:
+
+Purpose:: A Stub that also records how it was called — which methods, with what arguments, how many times. Assertions happen *after* the action, not as expectations *before*.
+
+Behavior:: Returns canned responses (like a Stub) and silently records all interactions for later inspection.
+
+Distinction from Mock:: A Spy records and lets *you* assert afterward. A Mock has pre-programmed expectations that fail immediately if violated.
+
+Key Proponent:: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+== *When to Use*:
+
+* Tell an LLM: "Create a Spy test double that records calls for later assertion"
+* When you need to verify interactions but want assertions in the test body, not in setup
+* Auditing what happened during a test without constraining the order of operations
+* When the exact interaction pattern matters but you want flexible assertion
+
+[discrete]
+== *Related Anchors*:
+
+* <<test-double-meszaros,Test Double (Meszaros)>> — umbrella taxonomy
+* <<test-double-stub,Stub>> — Spy without call recording
+* <<test-double-mock,Mock>> — pre-programmed expectations instead of post-hoc assertion
+====

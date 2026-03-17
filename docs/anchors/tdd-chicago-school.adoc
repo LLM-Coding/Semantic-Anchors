@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer
 :proponents: Kent Beck, Martin Fowler
+:tier: 3
 
 [%collapsible]
 ====

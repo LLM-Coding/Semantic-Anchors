@@ -4,6 +4,7 @@
 :proponents: Robert C. Martin
 :related: gof-design-patterns, clean-architecture
 :tags: design-principles, oop, solid, uncle-bob
+:tier: 3
 :sub-anchors: solid-srp, solid-ocp, solid-lsp, solid-isp, solid-dip
 
 [%collapsible]

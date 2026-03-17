@@ -1,51 +1,43 @@
-= Mental Model according to Naur
+= Programming as Theory Building (Naur)
 :categories: development-workflow
 :roles: software-developer, team-lead, educator, consultant
+:related: adr-according-to-nygard, docs-as-code
+:proponents: Peter Naur
+:tier: 2
 
 [%collapsible]
 ====
-Full Name:: Programming as Theory Building (Mental Model) according to Peter Naur
+Also known as:: Mental Model according to Naur
 
 [discrete]
 == *Core Concepts*:
 
-Theory building:: Programming is creating a mental model, not just writing code
+Theory building:: Programming is creating a mental model, not just writing code. The real program exists in developers' minds, not in the code.
 
-Theory of the program:: Deep understanding of why the program works and how it relates to the problem domain
+Document the Why:: Code shows _what_ the system does. The theory captures _why_ it is built this way — the reasoning, trade-offs, and domain understanding behind the design.
 
-Knowledge in people:: The real program exists in developers' minds, not in the code
+Theory decay:: When original developers leave, the theory is lost. Written code alone cannot reconstruct it. This explains why maintenance by new teams is so difficult.
 
-Theory decay:: When original developers leave, the theory is lost
+Complement to ADRs:: ADRs document individual architectural decisions. Theory Building goes deeper: document the overarching understanding of why the system is shaped the way it is.
 
-Documentation limitations:: Written documentation cannot fully capture the theory
-
-Maintenance as theory:: Effective maintenance requires possessing the theory
-
-Communication is key:: Theory must be shared through collaboration and conversation
-
-Ramp-up time:: New team members need time to build the theory
-
-Code as artifact:: Code is merely a representation of the underlying theory
-
+Communication is key:: Theory must be shared through collaboration, conversation, and documentation that captures intent, not just structure.
 
 Key Proponent:: Peter Naur (Turing Award winner, 1978)
 
 Original Work:: "Programming as Theory Building" (1985)
 
 [discrete]
-== *Application in Software Development*:
+== *When to Use*:
 
-* Understanding why knowledge transfer is challenging
-* Emphasizing pair programming and mob programming
-* Justifying time for onboarding and code walkthroughs
+* Tell an LLM: "Document the theory behind this code according to Naur — not what it does, but why it is built this way"
+* Capturing design rationale beyond individual ADRs
+* Onboarding documentation that explains the mental model behind a system
+* Justifying time for knowledge transfer, pair programming, and code walkthroughs
 * Explaining technical debt accumulation when teams change
-* Supporting documentation practices that capture "why" not just "what"
-* Advocating for team stability and continuity
 
 [discrete]
-== *Contrast with Other Views*:
+== *Related Anchors*:
 
-* Programming as text production → Focus on code output
-* Programming as problem solving → Focus on algorithms
-* Programming as theory building → Focus on understanding
+* <<adr-according-to-nygard,ADR according to Nygard>> — complementary: ADRs for individual decisions, Theory Building for overarching understanding
+* <<docs-as-code,Docs-as-Code>> — the practice of maintaining this documentation alongside code
 ====

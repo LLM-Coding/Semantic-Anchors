@@ -4,6 +4,8 @@
 :proponents: Gerard Meszaros
 :related: tdd-london-school, tdd-chicago-school, property-based-testing
 :tags: test-double, mock, stub, spy, fake, dummy, xunit, testing, isolation
+:tier: 3
+:sub-anchors: test-double-dummy, test-double-stub, test-double-spy, test-double-mock, test-double-fake
 
 [%collapsible]
 ====

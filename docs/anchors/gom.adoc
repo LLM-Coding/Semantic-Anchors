@@ -4,6 +4,7 @@
 :related: arc42, c4-diagrams, morphological-box
 :proponents: Jörg Becker, Michael Rosemann, Rolf Schütte
 :tags: modeling, enterprise-architecture, business-process, bpm, principles, quality
+:tier: 2
 
 [%collapsible]
 ====

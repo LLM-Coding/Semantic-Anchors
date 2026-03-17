@@ -78,3 +78,19 @@ renderFile(
 
 // all-anchors.adoc uses include:: directives — resolved automatically in Node.js
 renderFile(path.join(ROOT, 'docs/all-anchors.adoc'), path.join(WEB_DOCS, 'all-anchors.html'))
+
+renderFile(
+  path.join(ROOT, 'docs/spec-driven-workflow.adoc'),
+  path.join(WEB_DOCS, 'spec-driven-workflow.html')
+)
+renderFile(
+  path.join(ROOT, 'docs/spec-driven-workflow.de.adoc'),
+  path.join(WEB_DOCS, 'spec-driven-workflow.de.html')
+)
+
+// Copy assets referenced by workflow docs
+const workflowDiagram = path.join(ROOT, 'docs/workflow-diagram.png')
+if (fs.existsSync(workflowDiagram)) {
+  fs.copyFileSync(workflowDiagram, path.join(WEB_DOCS, 'workflow-diagram.png'))
+  console.log(`Copied: ${path.relative(ROOT, path.join(WEB_DOCS, 'workflow-diagram.png'))}`)
+}

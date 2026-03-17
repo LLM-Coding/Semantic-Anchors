@@ -1,6 +1,7 @@
 = EARS-Requirements
 :categories: requirements-engineering
 :roles: business-analyst, qa-engineer, technical-writer
+:tier: 3
 
 [%collapsible]
 ====

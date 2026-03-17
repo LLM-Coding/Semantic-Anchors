@@ -1,0 +1,51 @@
+= PRD
+:categories: requirements-engineering
+:roles: product-owner, business-analyst, software-developer, team-lead
+:related: moscow, user-story-mapping, impact-mapping, ears-requirements
+:proponents: Marty Cagan, Roman Pichler
+:tags: product, requirements, specification, planning, stakeholders
+
+[%collapsible]
+====
+Vollständiger Name:: Product Requirements Document (Produktanforderungsdokument)
+
+Auch bekannt als:: Product Spec, Feature Spec, Anforderungsspezifikation
+
+[discrete]
+== *Kernkonzepte*:
+
+Problembeschreibung:: Klare Formulierung des zu lösenden Problems und der Zielnutzer
+
+Ziele und Erfolgskennzahlen:: Messbare Ergebnisse, die definieren, was „fertig" bedeutet (KPIs, OKRs)
+
+Nutzerpersonas und Anwendungsfälle:: Wer das Produkt nutzt und was die Nutzer erreichen möchten
+
+Funktionale Anforderungen:: Was das System tun muss — Features, Verhalten und Fähigkeiten
+
+Nicht-funktionale Anforderungen:: Qualitätsattribute — Performance, Sicherheit, Skalierbarkeit, Barrierefreiheit
+
+Scope und Out-of-Scope:: Explizite Grenzen zur Vermeidung von Scope Creep und zur Abstimmung mit Stakeholdern
+
+Einschränkungen und Annahmen:: Technische, geschäftliche, regulatorische oder zeitliche Einschränkungen
+
+Offene Fragen:: Ungelöste Entscheidungen oder Abhängigkeiten, die verfolgt werden müssen
+
+Schlüsselvertreter:: Marty Cagan ("Inspired"), Roman Pichler ("Strategize")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Vor Beginn von Design oder Entwicklung eines neuen Produkts oder eines größeren Features
+* Zur Abstimmung funktionsübergreifender Teams (Engineering, Design, Marketing, Recht)
+* Als gemeinsame Referenz für Scope-Verhandlungen und Abwägungsentscheidungen
+* Wenn Stakeholder-Freigabe oder Compliance-Dokumentation erforderlich ist
+* Als lebendes Dokument, das während des Produktentdeckungsprozesses aktualisiert wird
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<moscow,MoSCoW>>
+* <<user-story-mapping,User Story Mapping>>
+* <<impact-mapping,Impact Mapping>>
+* <<ears-requirements,EARS-Requirements>>
+====

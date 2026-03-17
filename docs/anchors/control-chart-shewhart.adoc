@@ -1,6 +1,8 @@
 = Control Chart (Shewhart)
 :categories: statistical-methods
 :roles: data-scientist, devops-engineer, team-lead
+:tier: 3
+:parent-anchor: spc
 
 [%collapsible]
 ====

@@ -1,6 +1,7 @@
 = Property-Based Testing
 :categories: testing-quality
 :roles: software-developer, qa-engineer
+:tier: 3
 
 [%collapsible]
 ====

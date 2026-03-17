@@ -4,6 +4,7 @@
 :proponents: Martin Fowler
 :related: domain-driven-design, hexagonal-architecture, clean-architecture
 :tags: enterprise, architecture, patterns, design-patterns, orm
+:tier: 3
 
 [%collapsible]
 ====

@@ -38,9 +38,23 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Property-Based Testing
 - **Core:** Test properties/invariants with generated inputs (QuickCheck, Hypothesis)
 
+### Fagan Inspection
+- **Also known as:** Formal Code Inspection, Software Inspection
+- **Proponents:** Michael Fagan
+- **Core:** Structured six-phase review process (Planning, Overview, Preparation, Inspection Meeting, Rework, Follow-up) with defined roles (Moderator, Author, Inspectors, Recorder), entry/exit criteria, and metrics-driven defect classification
+
 ### IEC 61508 SIL Levels
 - **Proponents:** International Electrotechnical Commission
 - **Core:** Safety integrity levels for safety-critical systems
+
+### LINDDUN
+- **Also known as:** LINDDUN GO, Privacy Threat Modeling, Privacy STRIDE
+- **Proponents:** Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven)
+- **Core:** Privacy threat modeling framework; acronym for seven threat categories — Linkability, Identifiability, Non-repudiation, Detectability, Disclosure of information, Unawareness, Non-compliance; used for DPIA, Privacy by Design, GDPR compliance
+
+### STRIDE Threat Model
+- **Proponents:** Loren Kohnfelder, Praerit Garg (Microsoft), Adam Shostack
+- **Core:** Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege — structured threat categorization for security design
 
 ## Software Architecture
 
@@ -192,6 +206,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Bill Wake
 - **Core:** Independent, Negotiable, Valuable, Estimable, Small, Testable — criteria for well-formed user stories
 
+### PRD
+- **Also known as:** Product Requirements Document, Product Spec, Feature Spec
+- **Proponents:** Marty Cagan, Roman Pichler
+- **Core:** Problem statement, goals & success metrics, user personas, functional & non-functional requirements, scope boundaries, constraints, open questions
+
 ### MoSCoW
 - **Proponents:** Dai Clegg
 - **Core:** Must have, Should have, Could have, Won't have
@@ -256,6 +275,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Development Workflow
 
+### GitHub Flow
+- **Proponents:** Scott Chacon
+- **Core:** Branch-based workflow — short-lived feature branches, Pull Request reviews, `main` always deployable, merge triggers immediate deployment
+
 ### Conventional Commits
 - **Proponents:** Benjamin E. Coe, James J. Womack, Steve Mao
 - **Core:** Structured commit messages: type(scope): description
@@ -270,6 +293,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Mental Model (Naur)
 - **Proponents:** Peter Naur
 - **Core:** Programming as theory building — knowledge lives in developers' heads
+
+### Mikado Method
+- **Proponents:** Ola Ellnestam, Daniel Brolund
+- **Core:** Incremental refactoring via prerequisite graph — attempt change, revert on breakage, resolve leaf dependencies first
 
 ### TIMTOWTDI
 - **Core:** There Is More Than One Way To Do It — Perl philosophy

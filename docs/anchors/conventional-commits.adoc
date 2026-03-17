@@ -2,6 +2,7 @@
 :categories: development-workflow
 :roles: software-developer, devops-engineer
 :proponents: Benjamin E. Coe, James J. Womack, Steve Mao
+:tier: 3
 
 [%collapsible]
 ====

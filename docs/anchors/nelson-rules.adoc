@@ -1,6 +1,8 @@
 = Nelson Rules
 :categories: statistical-methods
 :roles: data-scientist, devops-engineer
+:tier: 3
+:parent-anchor: spc
 
 [%collapsible]
 ====

@@ -2,7 +2,7 @@
 :categories: design-principles
 :roles: software-developer, software-architect
 :umbrella: solid-principles
-:tier: 1
+:tier: 3
 :proponents: Robert C. Martin
 :tags: SOLID, design principle, DIP, dependency inversion
 

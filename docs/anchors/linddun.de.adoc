@@ -1,0 +1,49 @@
+= LINDDUN
+:categories: testing-quality
+:roles: software-architect, software-developer, qa-engineer, business-analyst, consultant, devops-engineer
+:related: owasp-top-10, regulated-environment
+:proponents: Kim Wuyts, Riccardo Scandariato, Wouter Joosen
+:tags: privacy, threat-modeling, privacy-engineering, GDPR, data-protection, threat-analysis, privacy-by-design
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: LINDDUN Privacy Threat Modeling Framework
+
+Auch bekannt als:: LINDDUN GO, Privacy Threat Modeling, Privacy STRIDE
+
+[discrete]
+== *Kernkonzepte*:
+
+Linkability (Verknüpfbarkeit):: Angreifer kann zwei interessante Datenpunkte (z. B. Datensätze, Nachrichten oder Aktionen) miteinander verknüpfen, ohne die Identität der betroffenen Person zu kennen
+
+Identifiability (Identifizierbarkeit):: Angreifer kann eine betroffene Person aus einer Menge von Personen anhand vorhandener Daten identifizieren
+
+Non-repudiation (Nichtabstreitbarkeit):: Betroffene Person kann eine durchgeführte Aktion oder gesendete Nachricht nicht abstreiten; Systemlogs werden zur Datenschutzlast
+
+Detectability (Erkennbarkeit):: Angreifer kann das Vorhandensein oder Fehlen eines Datensatzes oder einer Kommunikation ableiten, auch ohne Zugriff auf den Inhalt
+
+Disclosure of Information (Informationsoffenbarung):: Unbefugte Weitergabe von Daten an Dritte ohne Einwilligung der betroffenen Person; klassische Vertraulichkeitsverletzung aus Datenschutzsicht
+
+Unawareness (Mangelndes Bewusstsein):: Betroffene Person wird nicht ausreichend über Erhebung, Verarbeitung, Speicherung und Weitergabe ihrer personenbezogenen Daten informiert; verletzt den Transparenzgrundsatz
+
+Non-compliance (Nichteinhaltung):: System entspricht nicht den Datenschutzgesetzen, Vorschriften oder organisationsinternen Datenschutzrichtlinien (z. B. DSGVO, CCPA, HIPAA)
+
+Schlüsselvertreter:: Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven / DistriNet Research Group, veröffentlicht 2014)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Durchführung von Privacy Threat Modeling in der Design- oder Architekturphase
+* Erstellung von Datenschutz-Folgenabschätzungen (DSFA/DPIA) und Datenschutz-Impact-Analysen
+* Identifikation von Datenschutzrisiken in Systemen, die personenbezogene Daten verarbeiten
+* Bewertung der Compliance mit DSGVO, CCPA, HIPAA und anderen Datenschutzvorschriften
+* Integration von Privacy by Design in den Software-Entwicklungslebenszyklus
+* Schulung von Entwicklungsteams zu Privacy Engineering
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<owasp-top-10,OWASP Top 10>>
+* <<regulated-environment,Reguliertes Umfeld>>
+====

@@ -4,6 +4,7 @@
 :related: arc42, adr-according-to-nygard, c4-diagrams
 :proponents: Stefan Toth, Stefan Zörner
 :tags: architecture-documentation, solution-strategy, interfaces, risks, lightweight, communication
+:tier: 3
 
 [%collapsible]
 ====

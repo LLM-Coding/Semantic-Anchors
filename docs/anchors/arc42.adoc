@@ -2,6 +2,7 @@
 :categories: software-architecture
 :roles: software-architect, technical-writer, team-lead
 :proponents: Gernot Starke, Peter Hruschka
+:tier: 3
 
 [%collapsible]
 ====

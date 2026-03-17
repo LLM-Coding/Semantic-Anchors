@@ -2,7 +2,7 @@
 :categories: design-principles
 :roles: software-developer, software-architect
 :umbrella: solid-principles
-:tier: 1
+:tier: 3
 :proponents: Robert C. Martin, Bertrand Meyer
 :tags: SOLID, design principle, OCP, open closed
 

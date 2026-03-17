@@ -1,0 +1,51 @@
+= PRD
+:categories: requirements-engineering
+:roles: product-owner, business-analyst, software-developer, team-lead
+:related: moscow, user-story-mapping, impact-mapping, ears-requirements
+:proponents: Marty Cagan, Roman Pichler
+:tags: product, requirements, specification, planning, stakeholders
+
+[%collapsible]
+====
+Full Name:: Product Requirements Document
+
+Also known as:: Product Spec, Feature Spec, Requirements Specification
+
+[discrete]
+== *Core Concepts*:
+
+Problem statement:: Clear articulation of the problem to be solved and the target users
+
+Goals and success metrics:: Measurable outcomes that define what "done" looks like (KPIs, OKRs)
+
+User personas and use cases:: Who will use the product and what they are trying to accomplish
+
+Functional requirements:: What the system must do — features, behaviors, and capabilities
+
+Non-functional requirements:: Quality attributes — performance, security, scalability, accessibility
+
+Scope and out-of-scope:: Explicit boundaries to prevent scope creep and align stakeholders
+
+Constraints and assumptions:: Technical, business, regulatory, or timeline constraints
+
+Open questions:: Unresolved decisions or dependencies that must be tracked
+
+Key Proponents:: Marty Cagan ("Inspired"), Roman Pichler ("Strategize")
+
+[discrete]
+== *When to Use*:
+
+* Before starting design or development of a new product or major feature
+* When aligning cross-functional teams (engineering, design, marketing, legal)
+* To provide a shared reference for scope negotiations and tradeoff decisions
+* When stakeholder sign-off or compliance documentation is required
+* As a living document updated throughout the product discovery process
+
+[discrete]
+== *Related Anchors*:
+
+* <<moscow,MoSCoW>>
+* <<user-story-mapping,User Story Mapping>>
+* <<impact-mapping,Impact Mapping>>
+* <<ears-requirements,EARS-Requirements>>
+====

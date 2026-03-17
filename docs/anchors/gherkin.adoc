@@ -4,6 +4,7 @@
 :related: bdd-given-when-then, ears-requirements, tdd-london-school
 :proponents: Aslak Hellesøy
 :tags: gherkin, bdd, cucumber, given-when-then, specification-by-example, dsl, acceptance-testing, living-documentation
+:tier: 3
 
 [%collapsible]
 ====

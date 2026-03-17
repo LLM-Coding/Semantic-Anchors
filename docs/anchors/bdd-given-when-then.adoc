@@ -4,6 +4,7 @@
 :proponents: Dan North
 :related: tdd-london-school, tdd-chicago-school, user-story-mapping
 :tags: bdd, gherkin, cucumber, specification-by-example, three-amigos, given-when-then, living-documentation
+:tier: 3
 
 [%collapsible]
 ====

@@ -1,0 +1,35 @@
+= Test Double: Dummy (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Gerard Meszaros
+:related: test-double-meszaros, test-double-stub
+:tags: test-double, dummy, testing, isolation
+:tier: 3
+:parent-anchor: test-double-meszaros
+
+[%collapsible]
+====
+[discrete]
+== *Core Concepts*:
+
+Purpose:: An object passed to fill a required parameter but never actually used in the test. The simplest form of test double.
+
+Behavior:: Has no behavior. Calls to a Dummy should not occur — if they do, something is wrong with the test setup.
+
+Typical use:: Satisfying constructor or method signatures where the parameter is irrelevant to the test scenario.
+
+Key Proponent:: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+== *When to Use*:
+
+* Tell an LLM: "Create a Dummy test double for this parameter — it should never be called"
+* When a method requires parameters that are irrelevant to the behavior being tested
+* Filling dependency injection containers with unused dependencies
+
+[discrete]
+== *Related Anchors*:
+
+* <<test-double-meszaros,Test Double (Meszaros)>> — umbrella taxonomy
+* <<test-double-stub,Stub>> — when you need canned responses (Dummy provides none)
+====

@@ -1,6 +1,7 @@
 = C4-Diagrams
 :categories: software-architecture
 :roles: software-architect, technical-writer, team-lead, consultant
+:tier: 3
 
 [%collapsible]
 ====

@@ -2,7 +2,7 @@
 :categories: design-principles
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
-:tier: 1
+:tier: 3
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, factory, polymorphism, instantiation
 
