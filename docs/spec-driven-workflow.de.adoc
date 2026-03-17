@@ -534,4 +534,6 @@ Wer Anker entdeckt, die im eigenen Workflow gut funktionieren: https://github.co
 
 === Weiterführende Literatur
 
-* Birgitta Böckeler, https://martinfowler.com/articles/exploring-gen-ai/[Exploring Gen AI] (martinfowler.com) -- eine kritische Analyse von Spec-Driven-Development-Tools (Kiro, spec-kit, Tessl) und deren Trade-offs. Untersucht, wo aufwändige Upfront-Spezifikationen helfen und wo sie Overhead erzeugen.
+* Birgitta Böckeler, https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html[Exploring Gen AI] (martinfowler.com) -- eine kritische Analyse von Spec-Driven-Development-Tools (Kiro, spec-kit, Tessl) und deren Trade-offs. Untersucht, wo aufwändige Upfront-Spezifikationen helfen und wo sie Overhead erzeugen.
+* Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- eine anforderungsgetriebene Methodik, die Rational-Unified-Process-Prinzipien mit KI-Tooling kombiniert. Behandelt KI als Konsistenz-Engine, die Code aus sich entwickelnden Spezifikationen regeneriert, in vier Phasen: Inception, Elaboration, Construction, Transition.
+* Ralf D. Müller & Simon Martinelli, https://software-architektur.tv/2026/01/16/folge298.html[Spec-Driven Development] (software-architektur.tv, Folge 298) -- Podcast-Diskussion darüber, wie Spezifikationen und Anforderungen in den Mittelpunkt KI-gestützter Entwicklung rücken, und warum iterative Verfeinerung besser funktioniert als perfekte Upfront-Specs.

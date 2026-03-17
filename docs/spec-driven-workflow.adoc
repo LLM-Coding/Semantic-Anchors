@@ -517,4 +517,6 @@ If you discover anchors that work well in your workflow, https://github.com/LLM-
 
 === Further Reading
 
-* Birgitta Böckeler, https://martinfowler.com/articles/exploring-gen-ai/[Exploring Gen AI] (martinfowler.com) -- a critical analysis of spec-driven development tools (Kiro, spec-kit, Tessl) and their trade-offs. Examines where elaborate upfront specifications help and where they create overhead.
+* Birgitta Böckeler, https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html[Exploring Gen AI] (martinfowler.com) -- a critical analysis of spec-driven development tools (Kiro, spec-kit, Tessl) and their trade-offs. Examines where elaborate upfront specifications help and where they create overhead.
+* Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- a requirements-driven methodology combining Rational Unified Process principles with AI tooling. Treats AI as a consistency engine that regenerates code from evolving specifications, with four phases: Inception, Elaboration, Construction, Transition.
+* Ralf D. Müller & Simon Martinelli, https://software-architektur.tv/2026/01/16/folge298.html[Spec-Driven Development] (software-architektur.tv, Episode 298) -- podcast discussion on how specifications and requirements take center stage in AI-assisted development, and why iterative refinement beats perfect upfront specs.
