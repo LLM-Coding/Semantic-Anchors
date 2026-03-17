@@ -2121,6 +2121,38 @@
     "tier": 1
   },
   {
+    "id": "stride",
+    "title": "STRIDE Threat Model",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer",
+      "devops-engineer",
+      "consultant",
+      "team-lead"
+    ],
+    "related": [
+      "owasp-top-10",
+      "regulated-environment"
+    ],
+    "proponents": [
+      "Loren Kohnfelder",
+      "Praerit Garg",
+      "Adam Shostack"
+    ],
+    "tags": [
+      "security",
+      "threat-modeling",
+      "appsec",
+      "risk",
+      "threats"
+    ],
+    "filePath": "docs/anchors/stride.adoc"
+  },
+  {
     "id": "swot",
     "title": "SWOT",
     "categories": [
