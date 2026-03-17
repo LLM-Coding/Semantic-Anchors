@@ -57,6 +57,8 @@
     "anchors": [
       "bem-methodology",
       "conventional-commits",
+      "definition-of-done",
+      "github-flow",
       "mental-model-according-to-naur",
       "mikado-method",
       "regulated-environment",
@@ -155,12 +157,14 @@
     "name": "Testing & Quality Practices",
     "anchors": [
       "bdd-given-when-then",
+      "fagan-inspection",
       "gherkin",
       "iec-61508-sil-levels",
       "linddun",
       "mutation-testing",
       "owasp-top-10",
       "property-based-testing",
+      "stride",
       "tdd-chicago-school",
       "tdd-london-school",
       "test-double-dummy",

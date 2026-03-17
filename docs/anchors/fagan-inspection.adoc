@@ -4,6 +4,7 @@
 :related: mutation-testing, testing-pyramid
 :proponents: Michael Fagan
 :tags: code-review, inspection, defect-detection, formal-review, static-analysis
+:tier: 3
 
 [%collapsible]
 ====

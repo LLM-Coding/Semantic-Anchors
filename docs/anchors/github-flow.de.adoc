@@ -4,6 +4,7 @@
 :related: conventional-commits, semantic-versioning
 :proponents: Scott Chacon
 :tags: git, branching, pull-request, continuous-delivery, workflow, feature-branch, code-review, main-branch
+:tier: 3
 
 [%collapsible]
 ====

@@ -11,9 +11,15 @@ include::about.adoc[leveloffset=+1]
 
 include::anchors/bluf.adoc[leveloffset=+2]
 
-include::anchors/chatham-house-rule.adoc[leveloffset=+2]
+include::anchors/gutes-deutsch-wolf-schneider.adoc[leveloffset=+2]
 
 include::anchors/mece.adoc[leveloffset=+2]
+
+include::anchors/myers-briggs-type-indicator.adoc[leveloffset=+2]
+
+include::anchors/plain-english-strunk-white.adoc[leveloffset=+2]
+
+include::anchors/problem-space-nvc.adoc[leveloffset=+2]
 
 include::anchors/pyramid-principle.adoc[leveloffset=+2]
 
@@ -21,15 +27,67 @@ include::anchors/pyramid-principle.adoc[leveloffset=+2]
 
 == Design Principles & Patterns
 
-include::anchors/dry-principle.adoc[leveloffset=+2]
-
 include::anchors/fowler-patterns.adoc[leveloffset=+2]
+
+include::anchors/gof-abstract-factory-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-adapter-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-bridge-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-builder-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-chain-of-responsibility-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-command-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-composite-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-decorator-pattern.adoc[leveloffset=+2]
 
 include::anchors/gof-design-patterns.adoc[leveloffset=+2]
 
+include::anchors/gof-facade-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-factory-method-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-flyweight-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-interpreter-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-iterator-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-mediator-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-memento-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-observer-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-prototype-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-proxy-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-singleton-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-state-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-strategy-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-template-method-pattern.adoc[leveloffset=+2]
+
+include::anchors/gof-visitor-pattern.adoc[leveloffset=+2]
+
+include::anchors/solid-dip.adoc[leveloffset=+2]
+
+include::anchors/solid-isp.adoc[leveloffset=+2]
+
+include::anchors/solid-lsp.adoc[leveloffset=+2]
+
+include::anchors/solid-ocp.adoc[leveloffset=+2]
+
 include::anchors/solid-principles.adoc[leveloffset=+2]
 
-include::anchors/spot-principle.adoc[leveloffset=+2]
+include::anchors/solid-srp.adoc[leveloffset=+2]
 
 include::anchors/ssot-principle.adoc[leveloffset=+2]
 
@@ -43,7 +101,15 @@ include::anchors/bem-methodology.adoc[leveloffset=+2]
 
 include::anchors/conventional-commits.adoc[leveloffset=+2]
 
+include::anchors/definition-of-done.adoc[leveloffset=+2]
+
+include::anchors/github-flow.adoc[leveloffset=+2]
+
 include::anchors/mental-model-according-to-naur.adoc[leveloffset=+2]
+
+include::anchors/mikado-method.adoc[leveloffset=+2]
+
+include::anchors/regulated-environment.adoc[leveloffset=+2]
 
 include::anchors/semantic-versioning.adoc[leveloffset=+2]
 
@@ -87,15 +153,17 @@ include::anchors/five-whys.adoc[leveloffset=+2]
 
 include::anchors/morphological-box.adoc[leveloffset=+2]
 
-include::anchors/rubber-duck-debugging.adoc[leveloffset=+2]
-
 <<<
 
 == Requirements Engineering
 
 include::anchors/ears-requirements.adoc[leveloffset=+2]
 
+include::anchors/invest.adoc[leveloffset=+2]
+
 include::anchors/moscow.adoc[leveloffset=+2]
+
+include::anchors/prd.adoc[leveloffset=+2]
 
 include::anchors/problem-space-nvc.adoc[leveloffset=+2]
 
@@ -107,8 +175,6 @@ include::anchors/user-story-mapping.adoc[leveloffset=+2]
 
 include::anchors/adr-according-to-nygard.adoc[leveloffset=+2]
 
-include::anchors/cqrs.adoc[leveloffset=+2]
-
 include::anchors/arc42.adoc[leveloffset=+2]
 
 include::anchors/atam.adoc[leveloffset=+2]
@@ -116,6 +182,8 @@ include::anchors/atam.adoc[leveloffset=+2]
 include::anchors/c4-diagrams.adoc[leveloffset=+2]
 
 include::anchors/clean-architecture.adoc[leveloffset=+2]
+
+include::anchors/cqrs.adoc[leveloffset=+2]
 
 include::anchors/domain-driven-design.adoc[leveloffset=+2]
 
@@ -151,6 +219,8 @@ include::anchors/jobs-to-be-done.adoc[leveloffset=+2]
 
 include::anchors/pugh-matrix.adoc[leveloffset=+2]
 
+include::anchors/swot.adoc[leveloffset=+2]
+
 include::anchors/wardley-mapping.adoc[leveloffset=+2]
 
 <<<
@@ -159,17 +229,37 @@ include::anchors/wardley-mapping.adoc[leveloffset=+2]
 
 include::anchors/bdd-given-when-then.adoc[leveloffset=+2]
 
+include::anchors/fagan-inspection.adoc[leveloffset=+2]
+
+include::anchors/gherkin.adoc[leveloffset=+2]
+
 include::anchors/iec-61508-sil-levels.adoc[leveloffset=+2]
+
+include::anchors/linddun.adoc[leveloffset=+2]
 
 include::anchors/mutation-testing.adoc[leveloffset=+2]
 
+include::anchors/owasp-top-10.adoc[leveloffset=+2]
+
 include::anchors/property-based-testing.adoc[leveloffset=+2]
+
+include::anchors/stride.adoc[leveloffset=+2]
 
 include::anchors/tdd-chicago-school.adoc[leveloffset=+2]
 
+include::anchors/tdd-london-school.adoc[leveloffset=+2]
+
+include::anchors/test-double-dummy.adoc[leveloffset=+2]
+
+include::anchors/test-double-fake.adoc[leveloffset=+2]
+
 include::anchors/test-double-meszaros.adoc[leveloffset=+2]
 
-include::anchors/tdd-london-school.adoc[leveloffset=+2]
+include::anchors/test-double-mock.adoc[leveloffset=+2]
+
+include::anchors/test-double-spy.adoc[leveloffset=+2]
+
+include::anchors/test-double-stub.adoc[leveloffset=+2]
 
 include::anchors/testing-pyramid.adoc[leveloffset=+2]
 

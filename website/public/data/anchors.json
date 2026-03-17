@@ -320,11 +320,12 @@
       "sprint",
       "increment"
     ],
-    "filePath": "docs/anchors/definition-of-done.adoc"
+    "filePath": "docs/anchors/definition-of-done.adoc",
+    "tier": 3
   },
   {
     "id": "devils-advocate",
-    "title": "Devil\u2019s Advocate",
+    "title": "Devil’s Advocate",
     "categories": [
       "problem-solving"
     ],
@@ -342,7 +343,7 @@
   },
   {
     "id": "diataxis-framework",
-    "title": "Di\u00e1taxis Framework",
+    "title": "Diátaxis Framework",
     "categories": [
       "documentation"
     ],
@@ -358,7 +359,7 @@
   },
   {
     "id": "docs-as-code",
-    "title": "Docs-as-Code according to Ralf D. M\u00fcller",
+    "title": "Docs-as-Code according to Ralf D. Müller",
     "categories": [
       "documentation"
     ],
@@ -442,24 +443,6 @@
     "tier": 3
   },
   {
-    "id": "feynman-technique",
-    "title": "Feynman Technique",
-    "categories": [
-      "problem-solving"
-    ],
-    "roles": [
-      "software-developer",
-      "educator",
-      "consultant",
-      "team-lead"
-    ],
-    "related": [],
-    "proponents": [],
-    "tags": [],
-    "filePath": "docs/anchors/feynman-technique.adoc",
-    "tier": 3
-  },
-  {
     "id": "fagan-inspection",
     "title": "Fagan Inspection",
     "categories": [
@@ -485,7 +468,26 @@
       "formal-review",
       "static-analysis"
     ],
-    "filePath": "docs/anchors/fagan-inspection.adoc"
+    "filePath": "docs/anchors/fagan-inspection.adoc",
+    "tier": 3
+  },
+  {
+    "id": "feynman-technique",
+    "title": "Feynman Technique",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "software-developer",
+      "educator",
+      "consultant",
+      "team-lead"
+    ],
+    "related": [],
+    "proponents": [],
+    "tags": [],
+    "filePath": "docs/anchors/feynman-technique.adoc",
+    "tier": 3
   },
   {
     "id": "five-whys",
@@ -552,7 +554,7 @@
       "tdd-london-school"
     ],
     "proponents": [
-      "Aslak Helles\u00f8y"
+      "Aslak Hellesøy"
     ],
     "tags": [
       "gherkin",
@@ -595,7 +597,8 @@
       "code-review",
       "main-branch"
     ],
-    "filePath": "docs/anchors/github-flow.adoc"
+    "filePath": "docs/anchors/github-flow.adoc",
+    "tier": 3
   },
   {
     "id": "gof-abstract-factory-pattern",
@@ -1359,9 +1362,9 @@
       "morphological-box"
     ],
     "proponents": [
-      "J\u00f6rg Becker",
+      "Jörg Becker",
       "Michael Rosemann",
-      "Rolf Sch\u00fctte"
+      "Rolf Schütte"
     ],
     "tags": [
       "modeling",
@@ -1495,7 +1498,8 @@
       "acceptance-criteria",
       "story-quality"
     ],
-    "filePath": "docs/anchors/invest.adoc"
+    "filePath": "docs/anchors/invest.adoc",
+    "tier": 3
   },
   {
     "id": "jobs-to-be-done",
@@ -1520,7 +1524,7 @@
   },
   {
     "id": "lasr",
-    "title": "LASR according to Toth/Z\u00f6rner",
+    "title": "LASR according to Toth/Zörner",
     "categories": [
       "software-architecture"
     ],
@@ -1538,7 +1542,7 @@
     ],
     "proponents": [
       "Stefan Toth",
-      "Stefan Z\u00f6rner"
+      "Stefan Zörner"
     ],
     "tags": [
       "architecture-documentation",
@@ -1894,7 +1898,8 @@
       "planning",
       "stakeholders"
     ],
-    "filePath": "docs/anchors/prd.adoc"
+    "filePath": "docs/anchors/prd.adoc",
+    "tier": 3
   },
   {
     "id": "problem-space-nvc",
@@ -2300,7 +2305,8 @@
       "risk",
       "threats"
     ],
-    "filePath": "docs/anchors/stride.adoc"
+    "filePath": "docs/anchors/stride.adoc",
+    "tier": 3
   },
   {
     "id": "swot",
@@ -2663,7 +2669,7 @@
   },
   {
     "id": "yagni",
-    "title": "YAGNI (You Aren\u2019t Gonna Need It)",
+    "title": "YAGNI (You Aren’t Gonna Need It)",
     "categories": [
       "design-principles"
     ],

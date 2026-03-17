@@ -4,6 +4,7 @@
 :related: bdd-given-when-then, user-story-mapping, moscow
 :proponents: Ken Schwaber, Jeff Sutherland
 :tags: dod, acceptance criteria, scrum, agile, quality gates, done, sprint, increment
+:tier: 3
 
 [%collapsible]
 ====
