@@ -12,17 +12,21 @@ Also known as:: Mikado Graph Method
 [discrete]
 == *Core Concepts*:
 
-Mikado Goal:: The final desired state of the code after refactoring; the root of the dependency graph
+Mikado Goal:: The clear desired future state of the code after refactoring; the root of the dependency graph and success criterion of the change
 
 Prerequisite discovery:: Reveal blocking dependencies by attempting the change and noting what breaks
 
-Revert and repeat:: After discovering a prerequisite, revert to a working state before addressing it
+Use experiments:: Prefer quick or time-boxed empirical attempts over long upfront analysis
 
-Mikado Graph:: A directed acyclic graph where nodes are prerequisites and edges show dependencies between them
+Always revert:: *IMPORTANT*: After discovering a prerequisite, *always* revert to the last known working state before addressing it
+
+Mikado Graph:: A directed acyclic graph where goals and prerequisites are nodes and arrows show dependencies
 
 Leaf-first resolution:: Resolve the leaf nodes (no further prerequisites) first, working back to the root goal
 
-Small reversible steps:: Each step leaves the codebase in a working state, eliminating the risk of long-running broken branches
+Small reversible steps:: Revert failed experiments immediately; keep or commit only coherent healthy changes
+
+Meaningful commits:: Commit only when the code compiles, tests run, the product is in a good state, and the change makes sense on its own
 
 Key Proponents:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 
@@ -33,6 +37,32 @@ Key Proponents:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 * When a direct change breaks too many things to fix at once
 * Coordinating multi-developer refactoring efforts safely
 * Making incremental improvements without blocking the team
+* Brownfield development with hidden dependencies
+
+[discrete]
+== *Mikado Method Recipe (Canonical Form)*
+
+1. Start here: Draw the Mikado Goal.
+2. Implement the goal or prerequisite naively.
+3. Are there any errors?
+* Examples: compiler errors, failing tests, runtime errors, broken builds.
+* If **Yes**, go to step 4.
+* If **No**, go to step 9.
+4. Come up with immediate solutions to the errors.
+5. Draw the solutions as new prerequisites in the Mikado Graph.
+6. Revert all changes and return to the last known good state.
+7. Select the next prerequisite to work with.
+8. Go to step 2.
+9. Does the change make sense?
+* Examples: understandable, internally consistent, safe to keep, useful on its own.
+* If **Yes**, go to step 10.
+* If **No**, go to step 7.
+10. Commit the change.
+11. Is the Mikado Goal met?
+* If **Yes**, go to step 12.
+* If **No**, go to step 7.
+12. DONE!
+
 
 [discrete]
 == *Related Anchors*:

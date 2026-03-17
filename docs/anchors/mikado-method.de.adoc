@@ -12,17 +12,21 @@ Auch bekannt als:: Mikado-Graph-Methode
 [discrete]
 == *Kernkonzepte*:
 
-Mikado-Ziel:: Der angestrebte Endzustand des Codes nach dem Refactoring; die Wurzel des Abhängigkeitsgraphen
+Mikado-Ziel:: Der klare, angestrebte zukünftige Zustand des Codes nach dem Refactoring; die Wurzel des Abhängigkeitsgraphen und das Erfolgskriterium der Änderung
 
 Voraussetzungsermittlung:: Blockierende Abhängigkeiten aufdecken, indem die Änderung versucht und notiert wird, was dabei bricht
 
-Rückgängig machen und wiederholen:: Nach dem Entdecken einer Voraussetzung den Code auf einen funktionierenden Zustand zurücksetzen, bevor diese angegangen wird
+Experimente nutzen:: Bevorzuge schnelle oder zeitlich begrenzte empirische Versuche gegenüber langen Vorabananalysen
 
-Mikado-Graph:: Ein gerichteter azyklischer Graph, bei dem Knoten Voraussetzungen und Kanten die Abhängigkeiten zwischen ihnen darstellen
+Immer rückgängig machen:: *WICHTIG*: Nach dem Entdecken einer Voraussetzung *immer* zum letzten bekannten funktionierenden Zustand zurückkehren, bevor diese angegangen wird
+
+Mikado-Graph:: Ein gerichteter azyklischer Graph, bei dem Ziele und Voraussetzungen Knoten sind und Pfeile die Abhängigkeiten anzeigen
 
 Blatt-zuerst-Auflösung:: Zuerst die Blattknoten (ohne weitere Voraussetzungen) auflösen und von dort zurück zum Wurzelziel arbeiten
 
-Kleine reversible Schritte:: Jeder Schritt hinterlässt die Codebasis in einem funktionierenden Zustand und vermeidet das Risiko langer kaputt-Branches
+Kleine reversible Schritte:: Mache fehlgeschlagene Experimente sofort rückgängig; behalte oder committe nur zusammenhängende, gesunde Änderungen
+
+Aussagekräftige Commits:: Committe nur, wenn der Code kompiliert, Tests laufen, das Produkt in einem guten Zustand ist und die Änderung für sich genommen sinnvoll ist
 
 Schlüsselvertreter:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 
@@ -33,6 +37,32 @@ Schlüsselvertreter:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 * Wenn eine direkte Änderung zu viele Dinge bricht, um sie auf einmal zu beheben
 * Koordination von Refactoring-Arbeiten mehrerer Entwickler auf sichere Weise
 * Inkrementelle Verbesserungen vornehmen, ohne das Team zu blockieren
+* Brownfield-Entwicklung mit versteckten Abhängigkeiten
+
+[discrete]
+== *Mikado-Methode Rezept (Kanonische Form)*
+
+1. Hier beginnen: Das Mikado-Ziel aufschreiben.
+2. Das Ziel oder die Voraussetzung naiv implementieren.
+3. Treten Fehler auf?
+* Beispiele: Compilerfehler, fehlschlagende Tests, Laufzeitfehler, kaputte Builds.
+* Wenn **Ja**, gehe zu Schritt 4.
+* Wenn **Nein**, gehe zu Schritt 9.
+4. Unmittelbare Lösungen für die Fehler finden.
+5. Die Lösungen als neue Voraussetzungen in den Mikado-Graphen einzeichnen.
+6. Alle Änderungen rückgängig machen und zum letzten bekannten guten Zustand zurückkehren.
+7. Die nächste zu bearbeitende Voraussetzung auswählen.
+8. Gehe zu Schritt 2.
+9. Ist die Änderung sinnvoll?
+* Beispiele: verständlich, intern konsistent, sicher beizubehalten, für sich allein nützlich.
+* Wenn **Ja**, gehe zu Schritt 10.
+* Wenn **Nein**, gehe zu Schritt 7.
+10. Die Änderung committen.
+11. Ist das Mikado-Ziel erreicht?
+* Wenn **Ja**, gehe zu Schritt 12.
+* Wenn **Nein**, gehe zu Schritt 7.
+12. FERTIG!
+
 
 [discrete]
 == *Verwandte Anchors*:
