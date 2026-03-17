@@ -5,7 +5,7 @@
 
 [%collapsible]
 ====
-Vollständiger Name:: Markdown Any Decision Records
+Vollständiger Name:: Markdown Architectural Decision Records
 
 [discrete]
 == *Kernkonzepte*:
