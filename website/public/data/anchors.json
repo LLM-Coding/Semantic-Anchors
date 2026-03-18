@@ -1591,6 +1591,40 @@
     "tier": 3
   },
   {
+    "id": "llm-evaluations",
+    "title": "LLM-Evaluations",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "data-scientist",
+      "software-developer",
+      "qa-engineer",
+      "software-architect"
+    ],
+    "related": [
+      "chain-of-thought",
+      "sota",
+      "mutation-testing"
+    ],
+    "proponents": [
+      "Percy Liang (Stanford HELM)",
+      "EleutherAI (Open LLM Leaderboard)",
+      "LMSYS (Chatbot Arena)"
+    ],
+    "tags": [
+      "llm",
+      "evaluation",
+      "benchmarks",
+      "metrics",
+      "leaderboard",
+      "nlp",
+      "ai"
+    ],
+    "filePath": "docs/anchors/llm-evaluations.adoc",
+    "tier": 3
+  },
+  {
     "id": "madr",
     "title": "MADR",
     "categories": [

@@ -56,6 +56,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Loren Kohnfelder, Praerit Garg (Microsoft), Adam Shostack
 - **Core:** Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege — structured threat categorization for security design
 
+### LLM-Evaluations
+- **Also known as:** LLM Benchmarking, LLM Assessment, Foundation Model Evaluation
+- **Proponents:** Percy Liang (Stanford HELM), EleutherAI (Open LLM Leaderboard), LMSYS (Chatbot Arena)
+- **Core:** Frameworks and metrics for assessing LLM capabilities — benchmark suites (MMLU, HumanEval, BIG-Bench), automatic vs. human evaluation, HELM, Chatbot Arena Elo ratings, red-teaming, contamination detection
+
 ## Software Architecture
 
 ### Clean Architecture

@@ -161,6 +161,7 @@
       "gherkin",
       "iec-61508-sil-levels",
       "linddun",
+      "llm-evaluations",
       "mutation-testing",
       "owasp-top-10",
       "property-based-testing",
