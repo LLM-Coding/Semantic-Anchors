@@ -39,6 +39,7 @@ Key Proponents:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 * Making incremental improvements without blocking the team
 * Brownfield development with hidden dependencies
 
+[[mikado-method-recipe-canonical-form]]
 [discrete]
 == *Mikado Method Recipe (Canonical Form)*
 
@@ -46,8 +47,8 @@ Key Proponents:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 2. Implement the goal or prerequisite naively.
 3. Are there any errors?
 * Examples: compiler errors, failing tests, runtime errors, broken builds.
-* If **Yes**, go to step 4.
-* If **No**, go to step 9.
+* If *Yes*, go to step 4.
+* If *No*, go to step 9.
 4. Come up with immediate solutions to the errors.
 5. Draw the solutions as new prerequisites in the Mikado Graph.
 6. Revert all changes and return to the last known good state.
@@ -55,12 +56,12 @@ Key Proponents:: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
 8. Go to step 2.
 9. Does the change make sense?
 * Examples: understandable, internally consistent, safe to keep, useful on its own.
-* If **Yes**, go to step 10.
-* If **No**, go to step 7.
+* If *Yes*, go to step 10.
+* If *No*, go to step 7.
 10. Commit the change.
 11. Is the Mikado Goal met?
-* If **Yes**, go to step 12.
-* If **No**, go to step 7.
+* If *Yes*, go to step 12.
+* If *No*, go to step 7.
 12. DONE!
 
 
