@@ -69,6 +69,11 @@ function main() {
     const anchorId = extractAnchorId(d.body)
     if (!anchorId) continue
 
+    if (feedback[anchorId]) {
+      console.warn(`Duplicate mapping for "${anchorId}" found: ${d.url}`)
+      continue
+    }
+
     feedback[anchorId] = {
       upvotes: d.upvoteCount,
       comments: d.comments.totalCount,

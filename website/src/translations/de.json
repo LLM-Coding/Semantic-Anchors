@@ -57,5 +57,8 @@
   "onboarding.watchVideo": "Erkl\u00e4rvideo ansehen",
   "onboarding.infoButton": "Was sind Semantic Anchors?",
   "umbrella.subAnchors": "Patterns in dieser Sammlung",
-  "umbrella.notAnAnchor": "(kein semantischer Anker)"
+  "umbrella.notAnAnchor": "(kein semantischer Anker)",
+  "feedback.vote": "Abstimmen",
+  "feedback.discuss": "Diskutieren",
+  "feedback.requiresLogin": "Erfordert GitHub-Login"
 }

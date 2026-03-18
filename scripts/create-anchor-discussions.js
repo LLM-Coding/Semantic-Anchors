@@ -22,7 +22,7 @@ const anchorsPath = path.join(__dirname, '..', 'website', 'public', 'data', 'anc
 const anchors = JSON.parse(fs.readFileSync(anchorsPath, 'utf-8'))
 
 function sleep(ms) {
-  return new Promise((resolve) => global.setTimeout(resolve, ms))
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 function ghGraphql(query) {
@@ -82,6 +82,7 @@ async function main() {
   }
 
   let created = 0
+  let failed = 0
   for (const anchor of toCreate) {
     const title = `⚓ ${anchor.title}`
     const body = [
@@ -110,6 +111,7 @@ async function main() {
       created++
       console.log(`  [${created}/${toCreate.length}] Created: ${title} → ${url}`)
     } catch (err) {
+      failed++
       console.error(`  ✗ Failed: ${title} — ${err.stderr || err.message}`)
     }
 
@@ -120,6 +122,10 @@ async function main() {
   }
 
   console.log(`\nDone. Created ${created} discussions.`)
+  if (failed > 0) {
+    console.error(`Failed to create ${failed} discussions.`)
+    process.exitCode = 1
+  }
 }
 
 main().catch(console.error)
