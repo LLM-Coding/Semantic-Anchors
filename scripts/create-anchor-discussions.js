@@ -22,7 +22,7 @@ const anchorsPath = path.join(__dirname, '..', 'website', 'public', 'data', 'anc
 const anchors = JSON.parse(fs.readFileSync(anchorsPath, 'utf-8'))
 
 function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
+  return new Promise((resolve) => global.setTimeout(resolve, ms))
 }
 
 function ghGraphql(query) {

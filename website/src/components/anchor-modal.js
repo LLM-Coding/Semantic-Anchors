@@ -290,7 +290,7 @@ export async function loadAnchorContent(anchorId) {
           <p class="feedback-hint">Requires GitHub login</p>
         </div>
       `
-      contentEl.innerHTML += feedbackHtml
+      contentEl.insertAdjacentHTML('beforeend', feedbackHtml)
     }
   } catch (error) {
     console.error('Error loading anchor content:', error)
