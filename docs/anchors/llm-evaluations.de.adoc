@@ -1,0 +1,53 @@
+= LLM-Evaluations
+:categories: testing-quality
+:roles: data-scientist, software-developer, qa-engineer, software-architect
+:related: chain-of-thought, sota, mutation-testing
+:proponents: Percy Liang (Stanford HELM), EleutherAI (Open LLM Leaderboard), LMSYS (Chatbot Arena)
+:tags: llm, evaluation, benchmarks, metrics, leaderboard, nlp, ai
+
+[%collapsible]
+====
+Vollständiger Name:: Large Language Model Evaluations (Bewertung großer Sprachmodelle)
+
+Auch bekannt als:: LLM-Benchmarking, LLM-Bewertung, Foundation-Model-Evaluation
+
+[discrete]
+== *Kernkonzepte*:
+
+Benchmark-Suiten:: Standardisierte Datensätze und Aufgaben zum Vergleich von LLM-Fähigkeiten — MMLU (Massive Multitask Language Understanding), HellaSwag, HumanEval, BIG-Bench, GSM8K, TruthfulQA, ARC
+
+Evaluationsmetriken:: Quantitative Maße für Modellqualität — Perplexity, Genauigkeit, BLEU, ROUGE, F1, pass@k (Code-Generierung), Exact Match, Kalibrierung
+
+Automatische vs. menschliche Evaluation:: Automatisierte Bewertung über Metriken oder Referenzausgaben (schnell, skalierbar) vs. menschliches Urteil (differenziert, kostenintensiv); hybride Ansätze wie LLM-as-Judge
+
+HELM (Holistic Evaluation of Language Models):: Stanford-Framework, das Modelle über mehrere Szenarien und Metriken gleichzeitig bewertet, um Kompromisse bei Genauigkeit, Robustheit, Fairness und Effizienz sichtbar zu machen
+
+Chatbot Arena / Elo-Rating:: Präferenzbasierte Evaluation, bei der zwei Modelle auf denselben Prompt antworten und Menschen die bessere Antwort wählen; erzeugt Elo-ähnliche Ranglisten
+
+Open LLM Leaderboard:: Von Hugging Face / EleutherAI gehostetes Ranking von Open-Source-Modellen anhand standardisierter Benchmarks für reproduzierbare Vergleiche
+
+Red-Teaming & Sicherheitsevaluation:: Systematisches adversariales Testen auf schädliche Ausgaben, Jailbreaks und Fehlerszenarien; notwendiger Schritt vor dem Produktionseinsatz
+
+Datenkontamination & Overfitting:: Risiko, dass Trainingsdaten eines Modells die Test-Sets der Benchmarks enthalten und so die scheinbare Leistung aufblähen; Gegenmaßnahmen: zurückgehaltene oder dynamische Benchmarks
+
+Aufgabenspezifische vs. allgemeine Evaluation:: Gezielte Bewertung für einen spezifischen Anwendungsfall (z. B. Code, Zusammenfassung, RAG-Retrieval) vs. breite Fähigkeitsbewertung über diverse Domänen
+
+Schlüsselvertreter:: Percy Liang et al. (Stanford, "Holistic Evaluation of Language Models"), EleutherAI ("Language Model Evaluation Harness"), LMSYS ("Chatbot Arena: Benchmarking LLMs in the Wild")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Auswahl eines Foundation-Modells für eine spezifische Anwendungsdomäne
+* Vergleich feinjustierter Modellversionen während des iterativen Trainings
+* Validierung, dass ein Modell Qualitäts-, Sicherheits- und Fairness-Anforderungen vor dem Deployment erfüllt
+* Reproduzieren oder Hinterfragen veröffentlichter Modell-Leistungsaussagen
+* Erstellen von Regressions-Baselines beim Update eines eingesetzten Modells
+* Kommunikation von Modellstärken und -grenzen an nicht-technische Stakeholder
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<chain-of-thought,Chain of Thought (CoT)>>
+* <<sota,SOTA (State-of-the-Art)>>
+* <<mutation-testing,Mutation Testing>>
+====

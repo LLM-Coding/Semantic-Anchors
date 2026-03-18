@@ -1,0 +1,530 @@
+{
+  "socratic-method": {
+    "upvotes": 2,
+    "comments": 1,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/291",
+    "recentComments": [
+      {
+        "author": "rdmueller",
+        "avatar": "https://avatars.githubusercontent.com/u/1856308?u=2c7443f52b575e8b3aefbc3007aea8b3cccac00f&v=4",
+        "body": "works best for me to clarify requirements",
+        "date": "2026-03-18T12:25:31Z"
+      }
+    ]
+  },
+  "yagni": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/317"
+  },
+  "what-qualifies-as-a-semantic-anchor": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/316"
+  },
+  "wardley-mapping": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/315"
+  },
+  "user-story-mapping": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/314"
+  },
+  "todotxt-flavoured-markdown": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/313"
+  },
+  "timtowtdi": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/312"
+  },
+  "testing-pyramid": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/311"
+  },
+  "test-double-stub": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/310"
+  },
+  "test-double-spy": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/309"
+  },
+  "test-double-mock": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/308"
+  },
+  "test-double-meszaros": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/307"
+  },
+  "test-double-fake": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/306"
+  },
+  "test-double-dummy": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/305"
+  },
+  "tdd-london-school": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/304"
+  },
+  "tdd-chicago-school": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/303"
+  },
+  "swot": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/302"
+  },
+  "stride": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/301"
+  },
+  "ssot-principle": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/300"
+  },
+  "spc": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/299"
+  },
+  "sota": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/298"
+  },
+  "solid-srp": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/297"
+  },
+  "solid-principles": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/296"
+  },
+  "solid-ocp": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/295"
+  },
+  "solid-lsp": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/294"
+  },
+  "solid-isp": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/293"
+  },
+  "solid-dip": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/292"
+  },
+  "semantic-versioning": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/290"
+  },
+  "regulated-environment": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/289"
+  },
+  "pyramid-principle": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/288"
+  },
+  "pugh-matrix": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/287"
+  },
+  "property-based-testing": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/286"
+  },
+  "problem-space-nvc": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/285"
+  },
+  "prd": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/284"
+  },
+  "plain-english-strunk-white": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/283"
+  },
+  "owasp-top-10": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/282"
+  },
+  "nelson-rules": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/281"
+  },
+  "myers-briggs-type-indicator": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/280"
+  },
+  "mutation-testing": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/279"
+  },
+  "gof-adapter-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/278"
+  },
+  "moscow": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/274"
+  },
+  "morphological-box": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/273"
+  },
+  "mikado-method": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/272"
+  },
+  "mental-model-according-to-naur": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/271"
+  },
+  "mece": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/270"
+  },
+  "madr": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/269"
+  },
+  "linddun": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/268"
+  },
+  "lasr": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/267"
+  },
+  "jobs-to-be-done": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/266"
+  },
+  "invest": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/265"
+  },
+  "impact-mapping": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/264"
+  },
+  "iec-61508-sil-levels": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/263"
+  },
+  "hexagonal-architecture": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/262"
+  },
+  "gutes-deutsch-wolf-schneider": {
+    "upvotes": 2,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/261"
+  },
+  "gom": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/260"
+  },
+  "gof-visitor-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/259"
+  },
+  "gof-template-method-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/258"
+  },
+  "gof-strategy-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/257"
+  },
+  "gof-state-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/256"
+  },
+  "gof-singleton-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/255"
+  },
+  "gof-proxy-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/254"
+  },
+  "gof-prototype-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/253"
+  },
+  "gof-observer-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/252"
+  },
+  "gof-memento-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/251"
+  },
+  "gof-mediator-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/250"
+  },
+  "gof-iterator-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/249"
+  },
+  "gof-interpreter-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/248"
+  },
+  "gof-flyweight-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/247"
+  },
+  "gof-factory-method-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/246"
+  },
+  "gof-facade-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/245"
+  },
+  "gof-design-patterns": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/244"
+  },
+  "gof-decorator-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/243"
+  },
+  "gof-composite-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/242"
+  },
+  "gof-command-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/241"
+  },
+  "gof-chain-of-responsibility-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/240"
+  },
+  "gof-builder-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/239"
+  },
+  "gof-bridge-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/238"
+  },
+  "gof-abstract-factory-pattern": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/237"
+  },
+  "github-flow": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/236"
+  },
+  "gherkin": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/235"
+  },
+  "fowler-patterns": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/234"
+  },
+  "five-whys": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/233"
+  },
+  "feynman-technique": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/232"
+  },
+  "fagan-inspection": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/231"
+  },
+  "event-driven-architecture": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/230"
+  },
+  "ears-requirements": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/229"
+  },
+  "domain-driven-design": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/228"
+  },
+  "docs-as-code": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/227"
+  },
+  "diataxis-framework": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/226"
+  },
+  "devils-advocate": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/225"
+  },
+  "definition-of-done": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/224"
+  },
+  "cynefin-framework": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/223"
+  },
+  "cqrs": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/222"
+  },
+  "conventional-commits": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/221"
+  },
+  "control-chart-shewhart": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/220"
+  },
+  "clean-architecture": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/219"
+  },
+  "chain-of-thought": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/218"
+  },
+  "c4-diagrams": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/217"
+  },
+  "bluf": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/216"
+  },
+  "bem-methodology": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/215"
+  },
+  "bdd-given-when-then": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/214"
+  },
+  "atam": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/213"
+  },
+  "arc42": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/212"
+  },
+  "adr-according-to-nygard": {
+    "upvotes": 1,
+    "comments": 0,
+    "url": "https://github.com/LLM-Coding/Semantic-Anchors/discussions/211"
+  }
+}

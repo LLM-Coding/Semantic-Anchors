@@ -1,0 +1,46 @@
+= STRIDE Bedrohungsmodell
+:categories: testing-quality
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, team-lead
+:related: owasp-top-10, regulated-environment
+:proponents: Loren Kohnfelder, Praerit Garg, Adam Shostack
+:tags: security, threat-modeling, appsec, risk, threats
+
+[%collapsible]
+====
+Vollständiger Name:: STRIDE Bedrohungsmodellierungs-Framework
+
+Auch bekannt als:: STRIDE Bedrohungsmodell, Microsoft STRIDE
+
+[discrete]
+== *Kernkonzepte*:
+
+Spoofing (Identitätsvortäuschung):: Vortäuschung einer anderen Identität (Benutzer, Prozess oder System) zum Erlangen unbefugten Zugriffs; Gegenmaßnahme: starke Authentifizierung
+
+Tampering (Manipulation):: Unbefugte Veränderung von Daten während der Übertragung oder Speicherung; Gegenmaßnahme: Integritätskontrollen, digitale Signaturen und Zugriffskontrollen
+
+Repudiation (Abstreitbarkeit):: Abstreiten, eine Aktion durchgeführt zu haben; Gegenmaßnahme: Audit-Logging und Nicht-Abstreitbarkeitsmechanismen
+
+Information Disclosure (Informationsoffenlegung):: Preisgabe vertraulicher Daten an unbefugte Parteien; Gegenmaßnahme: Verschlüsselung, Zugriffskontrolle und Datensparsamkeit
+
+Denial of Service (Dienstverweigerung):: Beeinträchtigung oder Unterbrechung der Verfügbarkeit eines Systems für legitime Nutzer; Gegenmaßnahme: Rate Limiting, Redundanz und Resilienz
+
+Elevation of Privilege (Rechteausweitung):: Erlangen von Berechtigungen über das legitim zugewiesene Maß hinaus; Gegenmaßnahme: Least-Privilege-Prinzip und Autorisierungsprüfungen
+
+Schlüsselvertreter:: Loren Kohnfelder und Praerit Garg (Microsoft, 1999); verbreitet durch Adam Shostack („Threat Modeling: Designing for Security", 2014)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Strukturierte Bedrohungsmodellierung während Software-Design und Architektur-Reviews
+* Identifizierung und Kategorisierung potenzieller Bedrohungen bei Sicherheitsbewertungen
+* Schulung von Entwicklern im sicherheitsorientierten Denken über Systembedrohungen
+* Priorisierung von Sicherheitsmaßnahmen und Gegenmaßnahmen beim Systemdesign
+* Durchführung sicherheitsorientierter Design-Reviews und Red-Team-Übungen
+* Schaffung einer gemeinsamen Sprache für die Diskussion von Sicherheitsbedrohungen im Team
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<owasp-top-10,OWASP Top 10>>
+* <<regulated-environment,Reguliertes Umfeld>>
+====

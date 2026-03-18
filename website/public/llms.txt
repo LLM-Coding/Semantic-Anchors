@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 50 well-defined terms, methodologies, and frameworks
+> 105 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -315,7 +315,8 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 
 ***Also known as***: Direct Answer Format, Conclusion-First Communication
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Conclusion First***: State the main point, decision, or recommendation immediately
 
@@ -337,7 +338,8 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 
 ***Historical Context***: Standardized in military communication where rapid decision-making is critical; now standard in business writing (McKinsey, consulting, executive communication)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Executive summaries and briefings
 * Status reports to leadership
@@ -346,7 +348,8 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 * Any high-stakes communication where the reader needs the conclusion first
 * Technical documentation for time-constrained readers
 
-**Relationship to Other Anchors**:
+[discrete]
+## **Relationship to Other Anchors**:
 
 * Related to Pyramid Principle but more narrowly focused on conclusion-first structure
 * Complements MECE by providing the organizational principle for grouped information
@@ -354,70 +357,54 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 
 ***Counter-example***: Academic papers (which build to conclusions) or storytelling (which uses suspense)
 
-### Chatham House Rule
+### Gutes Deutsch nach Wolf Schneider
 
-***Full Name***: Chatham House Rule
+***Full Name***: Gutes Deutsch nach Wolf Schneider (Good German according to Wolf Schneider)
 
-**Core Concepts**:
+***Also known as***: Wolf Schneider's Writing Principles, Schneider's Stilregeln
 
-***Information Sharing***: Participants are free to use information received, but neither the identity nor the affiliation of the speaker(s) may be revealed
+[discrete]
+## **Core Concepts**:
 
-***Confidentiality of Source***: "When a meeting, or part thereof, is held under the Chatham House Rule, participants are free to use the information received, but neither the identity nor the affiliation of the speaker(s), nor that of any other participant, may be revealed"
+***Short Sentences***: Prefer short, direct sentences over long, complex ones — every sentence should express one idea
 
-***Open Discussion***: Encourages frank and honest dialogue by removing attribution concerns
+***Active Voice***: Use active constructions; avoid passive voice and impersonal constructions wherever possible
 
-***Trust Building***: Creates psychological safety for participants to express controversial or sensitive views
+***Verbs Over Nouns***: Replace noun phrases (Nominalstil) with verbs — "wir entscheiden" instead of "eine Entscheidung wird getroffen"
 
-***Knowledge Transfer***: Allows insights to be shared widely while protecting individual sources
+***Concrete Language***: Use specific, tangible words instead of abstract generalizations; prefer the particular over the general
 
-***Single Rule Format***: Unlike other frameworks, it's a single, clearly defined rule
+***No Filler Words***: Eliminate weak, redundant, or empty words (Füllwörter) that add no meaning — "eigentlich", "grundsätzlich", "im Grunde genommen"
 
-***Attribution Separation***: Distinguishes between "what was said" (shareable) and "who said it" (protected)
+***Plain Words First***: Choose a common, familiar word over a foreign or technical term when both carry the same meaning
 
-***Context Independence***: Applies equally to small meetings, large conferences, or online discussions
+***Readable Rhythm***: Vary sentence length consciously to create a natural reading rhythm; monotony fatigues readers
 
-***Key Origin***: Established by Chatham House (Royal Institute of International Affairs) in London, 1927
+***Reader Orientation***: Every sentence should serve the reader; never write to impress, only to be understood
 
-***Historical Context***: Originally created to enable diplomats and government officials to discuss international affairs candidly; now widely adopted across business, academia, and technology sectors
+***Key Proponents***: Wolf Schneider ("Deutsch für Profis", 1982; "Deutsch! Das Handbuch für attraktives Schreiben", 2005)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
-* Strategic planning sessions where sensitive business information is discussed
-* Retrospectives where team members need to speak candidly about problems
-* Cross-organizational meetings where participants represent competing interests
-* Executive briefings on sensitive topics
-* Security discussions involving vulnerabilities or incidents
-* Research interviews where anonymity encourages honesty
-* Board meetings discussing confidential matters
-* Community forums where psychological safety is needed
+* Writing clear, effective German prose for professional or public audiences
+* Reviewing or editing technical documentation, reports, and emails
+* Coaching writers to reduce bureaucratic or academic language
+* Improving internal corporate communication
+* Teaching German writing style and rhetoric
 
-**Common Misunderstandings**:
+[discrete]
+## **Related Anchors**:
 
-* ❌ "Everything is off the record" - Information CAN be shared, just not attributed
-* ❌ "Nothing can be quoted" - The content is shareable, but without attribution
-* ❌ "Conversations are confidential" - The rule protects identity, not information
-* ✓ "You can use the insights, just don't say who said them" - Correct understanding
-
-**Related Concepts**:
-
-* Psychological safety in teams
-* Non-disclosure agreements (NDAs) - more restrictive than Chatham House Rule
-* Off-the-record conversations
-* Anonymous feedback systems
-
-**Example Invocation**:
-
-```
-This retrospective will be conducted under the Chatham House Rule.
-You may share the insights we generate, but don't attribute comments
-to specific team members.
-```
+* BLUF (Bottom Line Up Front) — complements Schneider's clarity-first approach with a structure that leads with the conclusion
+* Pyramid Principle according to Barbara Minto — a complementary framework for structuring arguments hierarchically
 
 ### MECE Principle
 
 ***Full Name***: MECE (Mutually Exclusive, Collectively Exhaustive)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Mutually Exclusive***: Categories have no overlap - each item belongs to exactly one category
 
@@ -437,7 +424,8 @@ to specific team members.
 
 ***Key Proponent***: Barbara Minto (McKinsey & Company, late 1960s)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Problem decomposition and analysis
 * Software architecture and component design
@@ -449,18 +437,150 @@ to specific team members.
 * Organizing complex information
 * System design and modular architecture
 
-**Related Concepts**:
+[discrete]
+## **Related Concepts**:
 
 * Foundational to the Pyramid Principle
 * Supports Single Responsibility Principle
 * Enables Separation of Concerns
 * Used in logic trees and issue trees
 
+### Myers-Briggs Type Indicator (MBTI)
+
+***Full Name***: Myers-Briggs Type Indicator (MBTI)
+
+***Also known as***: MBTI, Myers-Briggs, Jungian Type Theory Applied, 16 Personality Types
+
+[discrete]
+## **Core Concepts**:
+
+***Four Dichotomies***: The framework defines four preference dimensions, each with two poles:
+* **Extraversion (E) vs. Introversion (I)** — Where do you direct your energy? Outward toward people and activity, or inward toward ideas and reflection?
+* **Sensing (S) vs. Intuition (N)** — How do you take in information? Through concrete facts and present reality, or through patterns and future possibilities?
+* **Thinking (T) vs. Feeling (F)** — How do you make decisions? Based on logic and objective analysis, or based on values and interpersonal impact?
+* **Judging (J) vs. Perceiving (P)** — How do you deal with the outer world? With structure and planning, or with flexibility and spontaneity?
+
+***16 Personality Types***: The four dichotomies combine into 16 distinct type profiles (e.g., INTJ, ENFP, ISTJ, ESFP), each with characteristic strengths, blind spots, and communication preferences
+
+***Cognitive Functions***: Each type has a stack of four cognitive functions (e.g., dominant Introverted Intuition, auxiliary Extraverted Feeling for INFJs) that describe how information is processed and decisions are made
+
+***Preference, Not Ability***: Type describes a natural preference, not a skill or fixed trait — people can and do use all functions, but prefer some over others
+
+***Type Dynamics***: Understanding a team's type mix reveals likely sources of friction (e.g., S/N conflicts over big-picture vs. detail focus) and natural collaboration patterns
+
+***Key Proponents***: Isabel Briggs Myers and Katharine Cook Briggs, building on Carl Gustav Jung's theory of psychological types ("Psychological Types", 1921)
+
+***Historical Context***: Developed during World War II to help women entering the industrial workforce find roles suited to their personality; officially published as an instrument in 1962 and widely adopted in organizational and educational settings
+
+[discrete]
+## **When to Use**:
+
+* Understanding communication preferences and potential friction sources within a team
+* Facilitating team retrospectives or kickoffs where interpersonal dynamics matter
+* Coaching individuals on leadership and communication style
+* Career development discussions to align role expectations with personal working style
+* UX research to consider how different user types might interact with a product
+* Onboarding programs to accelerate mutual understanding among new team members
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "My type means I can't do X" — MBTI describes preferences, not capabilities or limits
+* ❌ "Types are fixed for life" — Preferences can shift with experience, stress, or context
+* ❌ "One type is better than another" — All 16 types bring value; the framework is descriptive, not evaluative
+* ✓ "MBTI is a starting point for self-reflection and dialogue" — Correct use is exploratory, not diagnostic
+
+[discrete]
+## **Limitations and Criticisms**:
+
+* Test-retest reliability is modest — the same person can receive a different type on retaking the assessment
+* Binary dichotomies oversimplify continuous trait distributions
+* Not endorsed for high-stakes hiring or selection decisions
+* Criticized for low predictive validity for job performance compared to, e.g., Big Five personality traits
+
+### Plain English according to Strunk & White
+
+***Full Name***: Plain English according to Strunk & White ("The Elements of Style")
+
+***Also known as***: Strunk & White, The Elements of Style, Plain Style Writing
+
+[discrete]
+## **Core Concepts**:
+
+***Omit Needless Words***: Every word in a sentence should serve a purpose; cut words that add bulk without adding meaning — "the fact that" → "that", "owing to the fact that" → "since"
+
+***Use Active Voice***: Prefer active constructions over passive; active voice is more direct, vigorous, and concise — "The dog bit the man" not "The man was bitten by the dog"
+
+***Use Definite, Specific, Concrete Language***: Prefer the particular and tangible over the vague and abstract; concrete details make writing vivid and persuasive
+
+***Write With Nouns and Verbs***: Rely on strong nouns and verbs rather than adjectives and adverbs; the right noun or verb makes modifiers unnecessary
+
+***Place the Emphatic Words at the End***: The most important idea in a sentence belongs at its end — the position of greatest emphasis
+
+***Use Parallel Form***: Express coordinate ideas in similar grammatical form; parallelism aids comprehension and gives prose a pleasing rhythm
+
+***Avoid Qualifiers***: Remove weakening qualifiers like "rather", "very", "little", "pretty" — they dilute the force of the statement
+
+***Revise and Rewrite***: Good writing is rewriting; a first draft is a starting point, not a finished product
+
+***Key Proponents***: William Strunk Jr. ("The Elements of Style", 1918); E.B. White (revised edition, 1959)
+
+[discrete]
+## **When to Use**:
+
+* Writing technical documentation, reports, emails, and API documentation
+* Reviewing or editing any English prose for clarity and conciseness
+* Coaching writers to reduce verbose or bureaucratic language
+* Preparing communications for broad, non-specialist audiences
+* Any writing where clarity and brevity are paramount
+
+[discrete]
+## **Related Anchors**:
+
+* Gutes Deutsch nach Wolf Schneider — the German-language equivalent of clarity-first writing principles
+* BLUF (Bottom Line Up Front) — complements plain style with a structure that leads with the conclusion
+* Pyramid Principle according to Barbara Minto — a complementary framework for structuring arguments hierarchically
+
+### Nonviolent Communication (Rosenberg)
+
+***Also known as***: NVC, Problem Space NVC, Gewaltfreie Kommunikation (GFK)
+
+[discrete]
+## **Core Concepts**:
+
+***Observations***: Concrete, objective facts without evaluation or judgment. "The deploy failed three times this week" instead of "The deploy always fails."
+
+***Feelings***: Emotions arising from observations. "I feel frustrated" instead of "This is frustrating."
+
+***Needs***: Universal human needs underlying feelings. Reliability, autonomy, clarity, safety. The real driver behind every request.
+
+***Requests***: Specific, actionable asks (not demands). "Could we add a pre-deploy check?" instead of "Fix the deploy process."
+
+***Four-step process***: Observe → Feel → Need → Request. Each step builds on the previous one.
+
+***Key Proponent***: Marshall Rosenberg ("Nonviolent Communication: A Language of Life", 1999)
+
+[discrete]
+## **When to Use**:
+
+* Tell an LLM: "Reformulate this complaint using NVC according to Rosenberg"
+* Tell an LLM: "Write this stakeholder email in NVC style — observation, feeling, need, request"
+* Requirements elicitation that uncovers real user needs behind feature requests
+* Conflict resolution in teams and retrospectives
+* Transforming vague complaints into actionable requirements
+
+[discrete]
+## **Related Anchors**:
+
+* Socratic Method — complementary: NVC for expressing, Socratic for exploring
+* BLUF — contrasting style: BLUF is conclusion-first, NVC is empathy-first
+
 ### Pyramid Principle according to Barbara Minto
 
 ***Full Name***: The Minto Pyramid Principle according to Barbara Minto
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Governing Thought***: Single key message at the top of the pyramid
 
@@ -482,7 +602,8 @@ to specific team members.
 
 ***Key Proponent***: Barbara Minto (McKinsey, "The Minto Pyramid Principle", 1987)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Executive presentations and briefings
 * Written reports and proposals
@@ -496,44 +617,14 @@ to specific team members.
 
 ## Design Principles & Patterns
 
-### DRY (Don't Repeat Yourself)
-
-***Full Name***: Don't Repeat Yourself Principle
-
-**Core Concepts**:
-
-***Single representation***: Every piece of knowledge should have a single, unambiguous representation
-
-***Avoid duplication***: Eliminate duplicate code, logic, and knowledge across the system
-
-***Abstraction***: Extract common patterns into reusable components
-
-***Maintenance efficiency***: Changes require modification in only one place
-
-***Knowledge duplication vs. code duplication***: Focus on avoiding duplicate knowledge, not just duplicate code
-
-***Normalized data***: Apply DRY to data structures and schemas
-
-***Configuration management***: Centralize configuration and avoid scattered settings
-
-***Key Proponent***: Andy Hunt and Dave Thomas ("The Pragmatic Programmer", 1999)
-
-**When to Use**:
-
-* Refactoring codebases with repeated logic or patterns
-* Designing APIs and libraries to minimize client code duplication
-* Creating maintainable systems where changes are frequent
-* Establishing coding standards and best practices
-
-***Related Concepts***: SPOT, SSOT, WET (Write Everything Twice - deliberate exception to DRY)
-
 ### Patterns of Enterprise Application Architecture (PEAA)
 
 ***Full Name***: Patterns of Enterprise Application Architecture according to Martin Fowler
 
 ***Also known as***: Fowler patterns, PEAA patterns, Enterprise patterns
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Domain Logic Patterns***: Transaction Script, Domain Model, Table Module, Service Layer
 
@@ -557,7 +648,8 @@ to specific team members.
 
 ***Key Proponent***: Martin Fowler ("Patterns of Enterprise Application Architecture", 2002)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Designing complex enterprise applications with data persistence
 * Building layered architectures with clear separation of concerns
@@ -567,17 +659,599 @@ to specific team members.
 * Handling concurrency in multi-user enterprise systems
 * Creating maintainable and testable enterprise code
 
-**Related Anchors**:
+[discrete]
+## **Related Anchors**:
 
 * Domain-Driven Design - Complements PEAA with domain modeling approach
 * Hexagonal Architecture - Architectural style emphasizing ports and adapters
 * Clean Architecture - Layered architecture pattern with dependency rules
 
+### GoF-Abstract Factory Pattern
+
+***Full Name***: GoF Abstract Factory Pattern (Creational)
+
+***Also known as***: Kit
+
+[discrete]
+## **Intent**:
+Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+[discrete]
+## **When to Use**:
+* When a system should be independent of how its products are created
+* When a system should be configured with one of multiple families of products
+* When related product objects are designed to be used together and you need to enforce this constraint
+
+[discrete]
+## **Prompt Example**:
+"Erstelle eine Abstract Factory nach GoF, die UI-Komponenten für verschiedene Plattformen (Web, Mobile, Desktop) erzeugt, ohne dass der Client die konkreten Klassen kennen muss."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Adapter Pattern
+
+***Full Name***: GoF Adapter Pattern (Structural)
+
+***Also known as***: Wrapper
+
+[discrete]
+## **Intent**:
+Convert the interface of a class into another interface clients expect.
+
+[discrete]
+## **When to Use**:
+* When you want to use an existing class whose interface doesn't match what you need
+* When you want to create a reusable class that cooperates with unrelated classes
+
+[discrete]
+## **Prompt Example**:
+"Erstelle einen Adapter nach GoF, der die Legacy-API auf unser neues Interface mappt, ohne den bestehenden Code zu ändern."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Bridge Pattern
+
+***Full Name***: GoF Bridge Pattern (Structural)
+
+[discrete]
+## **Intent**:
+Decouple an abstraction from its implementation so that the two can vary independently.
+
+[discrete]
+## **When to Use**:
+* When you want to avoid a permanent binding between an abstraction and its implementation
+* When both the abstractions and their implementations should be extensible by subclassing
+* When changes in the implementation should have no impact on clients
+
+[discrete]
+## **Prompt Example**:
+"Trenne die Rendering-Abstraktion von der plattformspezifischen Implementierung nach dem GoF-Bridge Pattern, damit beide unabhängig erweitert werden können."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Builder Pattern
+
+***Full Name***: GoF Builder Pattern (Creational)
+
+[discrete]
+## **Intent**:
+Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+
+[discrete]
+## **When to Use**:
+* When the algorithm for creating a complex object should be independent of the parts and how they are assembled
+* When the construction process must allow different representations
+
+[discrete]
+## **Prompt Example**:
+"Implementiere einen Builder nach GoF für das QueryObject, mit Fluent API für Filter, Sortierung und Pagination."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Chain of Responsibility Pattern
+
+***Full Name***: GoF Chain of Responsibility Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain.
+
+[discrete]
+## **When to Use**:
+* When more than one object may handle a request, and the handler isn't known a priori
+* When you want to issue a request to one of several objects without specifying the receiver explicitly
+* When the set of objects that can handle a request should be specified dynamically
+
+[discrete]
+## **Prompt Example**:
+"Implementiere eine Middleware-Pipeline nach dem GoF-Chain of Responsibility Pattern, bei der jeder Handler die Anfrage entweder verarbeitet oder an den nächsten weitergibt."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Command Pattern
+
+***Full Name***: GoF Command Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+
+[discrete]
+## **When to Use**:
+* When you want to parameterize objects with an action to perform
+* When you need undo/redo functionality
+* When you need to queue, log, or schedule requests
+
+[discrete]
+## **Prompt Example**:
+"Implementiere ein Undo/Redo-System nach dem GoF-Command Pattern, bei dem jede Benutzeraktion als Command-Objekt gekapselt wird."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Composite Pattern
+
+***Full Name***: GoF Composite Pattern (Structural)
+
+[discrete]
+## **Intent**:
+Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions uniformly.
+
+[discrete]
+## **When to Use**:
+* When you want to represent part-whole hierarchies of objects
+* When you want clients to be able to ignore the difference between compositions of objects and individual objects
+
+[discrete]
+## **Prompt Example**:
+"Modelliere das Dateisystem nach dem GoF-Composite Pattern, sodass Dateien und Ordner einheitlich behandelt werden können."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Decorator Pattern
+
+***Full Name***: GoF Decorator Pattern (Structural)
+
+***Also known as***: Wrapper
+
+[discrete]
+## **Intent**:
+Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing.
+
+[discrete]
+## **When to Use**:
+* To add responsibilities to objects dynamically and transparently
+* When extension by subclassing is impractical
+
+[discrete]
+## **Prompt Example**:
+"Verwende das GoF-Decorator Pattern, um dem Logger dynamisch Formatierung, Timestamp und Filterung hinzuzufügen."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF Design Patterns
+
+***Full Name***: Gang of Four Design Patterns
+
+***Also known as***: Design Patterns, Gang of Four Patterns
+
+[discrete]
+## **Core Concepts**:
+
+***Creational Patterns***: Abstract Factory, Builder, Factory Method, Prototype, Singleton — object creation mechanisms
+
+***Structural Patterns***: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy — object composition and relationships
+
+***Behavioral Patterns***: Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor — object interaction and responsibility
+
+***Pattern language***: Shared vocabulary for communicating recurring design problems and proven solutions
+
+***Composition over inheritance***: Favor object composition for flexibility over rigid class hierarchies
+
+***Program to an interface***: Depend on abstractions rather than concrete implementations
+
+***Design for change***: Identify what varies in your design and encapsulate it
+
+***Key Proponents***: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides ("Design Patterns: Elements of Reusable Object-Oriented Software", 1994)
+
+[discrete]
+## **When to Use**:
+
+* Object-oriented design requiring proven solutions to recurring problems
+* Communicating design decisions using a shared vocabulary
+* Teaching object-oriented design principles through concrete examples
+* Refactoring code to increase flexibility and reusability
+
+[discrete]
+## **Related Anchors**:
+
+* SOLID Principles - Design principles that GoF patterns help implement
+* Fowler Patterns - Enterprise application architecture patterns (complementary scope)
+* Clean Architecture - Architectural style leveraging GoF principles
+
+### GoF-Facade Pattern
+
+***Full Name***: GoF Facade Pattern (Structural)
+
+[discrete]
+## **Intent**:
+Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+
+[discrete]
+## **When to Use**:
+* When you want to provide a simple interface to a complex subsystem
+* When there are many dependencies between clients and implementation classes
+
+[discrete]
+## **Prompt Example**:
+"Erstelle eine Facade nach GoF für das Payment-Subsystem, die Validierung, Autorisierung und Abrechnung hinter einem einfachen Interface kapselt."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Factory Method Pattern
+
+***Full Name***: GoF Factory Method Pattern (Creational)
+
+***Also known as***: Virtual Constructor
+
+[discrete]
+## **Intent**:
+Define an interface for creating an object, but let subclasses decide which class to instantiate.
+
+[discrete]
+## **When to Use**:
+* When a class can't anticipate the class of objects it must create
+* When a class wants its subclasses to specify the objects it creates
+
+[discrete]
+## **Prompt Example**:
+"Extrahiere die Objekterzeugung in eine Factory Method nach GoF, damit neue Typen ohne Änderung des bestehenden Codes hinzugefügt werden können."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Flyweight Pattern
+
+***Full Name***: GoF Flyweight Pattern (Structural)
+
+[discrete]
+## **Intent**:
+Use sharing to support large numbers of fine-grained objects efficiently.
+
+### GoF-Interpreter Pattern
+
+***Full Name***: GoF Interpreter Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
+
+### GoF-Iterator Pattern
+
+***Full Name***: GoF Iterator Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+
+[discrete]
+## **When to Use**:
+* When you need to access an aggregate object's contents without exposing its internal representation
+* When you want to support multiple traversals of aggregate objects
+* When you want to provide a uniform interface for traversing different aggregate structures
+
+[discrete]
+## **Prompt Example**:
+"Implementiere einen Iterator nach GoF für die benutzerdefinierte Baumstruktur, der verschiedene Traversierungsstrategien (Tiefe, Breite) unterstützt."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Mediator Pattern
+
+***Full Name***: GoF Mediator Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly.
+
+[discrete]
+## **When to Use**:
+* When a set of objects communicate in well-defined but complex ways
+* When reusing an object is difficult because it refers to and communicates with many other objects
+* When behavior distributed between several classes should be customizable without excessive subclassing
+
+[discrete]
+## **Prompt Example**:
+"Führe einen Mediator nach GoF ein, der die Kommunikation zwischen den UI-Komponenten (Formular, Liste, Filter) zentral koordiniert und die direkte Kopplung beseitigt."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Memento Pattern
+
+***Full Name***: GoF Memento Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+
+### GoF-Observer Pattern
+
+***Full Name***: GoF Observer Pattern (Behavioral)
+
+***Also known as***: Publish-Subscribe, Event-Listener
+
+[discrete]
+## **Intent**:
+Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+[discrete]
+## **When to Use**:
+* When changes to one object require changing others, and you don't know how many objects need to change
+* When an object should notify others without knowing who they are
+
+[discrete]
+## **Prompt Example**:
+"Implementiere ein Event-System nach dem GoF-Observer Pattern, damit Änderungen am Datenmodell automatisch die UI aktualisieren."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Prototype Pattern
+
+***Full Name***: GoF Prototype Pattern (Creational)
+
+[discrete]
+## **Intent**:
+Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+
+[discrete]
+## **When to Use**:
+* When a system should be independent of how its products are created and represented
+* When classes to instantiate are specified at runtime
+* When you want to avoid building a class hierarchy of factories that parallels the class hierarchy of products
+
+[discrete]
+## **Prompt Example**:
+"Verwende das GoF-Prototype Pattern, um neue Konfigurationsobjekte durch Klonen eines Prototypen zu erzeugen, statt sie jedes Mal von Grund auf zu konstruieren."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Proxy Pattern
+
+***Full Name***: GoF Proxy Pattern (Structural)
+
+[discrete]
+## **Intent**:
+Provide a surrogate or placeholder for another object to control access to it.
+
+[discrete]
+## **When to Use**:
+* When you need a more versatile or sophisticated reference to an object than a simple pointer (remote, virtual, protection, or smart reference proxy)
+
+[discrete]
+## **Prompt Example**:
+"Implementiere einen Caching-Proxy nach GoF für den API-Client, der wiederholte Anfragen aus dem Cache beantwortet."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Singleton Pattern
+
+***Full Name***: GoF Singleton Pattern (Creational)
+
+[discrete]
+## **Intent**:
+Ensure a class only has one instance, and provide a global point of access to it.
+
+[discrete]
+## **When to Use**:
+* When there must be exactly one instance of a class
+* When the sole instance should be extensible by subclassing
+
+[discrete]
+## **Prompt Example**:
+"Stelle sicher, dass der ConfigManager als GoF-Singleton implementiert ist, mit thread-sicherem Lazy Loading."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-State Pattern
+
+***Full Name***: GoF State Pattern (Behavioral)
+
+***Also known as***: Objects for States
+
+[discrete]
+## **Intent**:
+Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+[discrete]
+## **When to Use**:
+* When an object's behavior depends on its state and must change at runtime
+* When operations have large conditional statements that depend on the object's state
+
+[discrete]
+## **Prompt Example**:
+"Ersetze die verschachtelten if/switch-Statements durch das GoF-State Pattern, sodass jeder Zustand sein eigenes Verhalten kapselt."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Strategy Pattern
+
+***Full Name***: GoF Strategy Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+[discrete]
+## **When to Use**:
+* Multiple related classes differ only in behavior
+* You need different variants of an algorithm
+* An algorithm uses data that clients shouldn't know about
+
+[discrete]
+## **Prompt Example**:
+"Refactore diese Klasse nach dem GoF-Strategy Pattern, um die verschiedenen Berechnungsarten austauschbar zu machen."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Template Method Pattern
+
+***Full Name***: GoF Template Method Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Define the skeleton of an algorithm in an operation, deferring some steps to subclasses.
+
+[discrete]
+## **When to Use**:
+* When you want to implement the invariant parts of an algorithm once and leave it to subclasses to implement varying behavior
+* When common behavior among subclasses should be factored and localized in a common class
+
+[discrete]
+## **Prompt Example**:
+"Refactore die Report-Generierung nach dem GoF-Template Method Pattern. Der Algorithmus (Daten laden, transformieren, formatieren) bleibt fix, aber die einzelnen Schritte sind austauschbar."
+
+[discrete]
+## **Related Anchors**:
+* GoF Design Patterns (Umbrella)
+
+### GoF-Visitor Pattern
+
+***Full Name***: GoF Visitor Pattern (Behavioral)
+
+[discrete]
+## **Intent**:
+Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
+
+### SOLID-Dependency Inversion Principle
+
+***Full Name***: SOLID Dependency Inversion Principle (DIP)
+
+[discrete]
+## **Intent**:
+High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details; details should depend on abstractions.
+
+[discrete]
+## **When to Use**:
+* High-level business logic directly instantiates infrastructure classes
+* Changing a database or framework requires modifying business logic
+* Unit testing requires running actual external services
+
+[discrete]
+## **Prompt Example**:
+"Refactore diese Klasse nach dem SOLID-Dependency Inversion Principle, sodass die Abhängigkeiten über Interfaces injiziert werden."
+
+[discrete]
+## **Related Anchors**:
+* SOLID Principles (Umbrella)
+* Hexagonal Architecture - Architectural application of DIP
+
+### SOLID-Interface Segregation Principle
+
+***Full Name***: SOLID Interface Segregation Principle (ISP)
+
+[discrete]
+## **Intent**:
+Clients should not be forced to depend on interfaces they do not use. Prefer many specific interfaces over one general-purpose interface.
+
+[discrete]
+## **When to Use**:
+* Classes implement interface methods they don't need (empty or throwing)
+* Changes to an interface affect clients that don't use the changed methods
+* Fat interfaces with many methods serving different client groups
+
+[discrete]
+## **Prompt Example**:
+"Refactore dieses Interface nach dem SOLID-Interface Segregation Principle in kleinere, clientspezifische Interfaces."
+
+[discrete]
+## **Related Anchors**:
+* SOLID Principles (Umbrella)
+
+### SOLID-Liskov Substitution Principle
+
+***Full Name***: SOLID Liskov Substitution Principle (LSP)
+
+[discrete]
+## **Intent**:
+Subtypes must be substitutable for their base types without altering the correctness of the program. Derived classes must honor the contracts of their base classes.
+
+[discrete]
+## **When to Use**:
+* Subclass overrides break expected behavior of the base class
+* instanceof/type checks appear in client code
+* Inheritance hierarchies violate "is-a" relationships
+
+[discrete]
+## **Prompt Example**:
+"Überprüfe diese Vererbungshierarchie auf Verletzungen des SOLID-Liskov Substitution Principle."
+
+[discrete]
+## **Related Anchors**:
+* SOLID Principles (Umbrella)
+
+### SOLID-Open/Closed Principle
+
+***Full Name***: SOLID Open/Closed Principle (OCP)
+
+[discrete]
+## **Intent**:
+Software entities should be open for extension but closed for modification. Add new behavior by adding new code, not changing existing code.
+
+[discrete]
+## **When to Use**:
+* Adding new features requires modifying existing working code
+* Frequent changes to a module break other parts of the system
+* You need a plugin or strategy-based extension mechanism
+
+[discrete]
+## **Prompt Example**:
+"Refactore diesen Code nach dem SOLID-Open/Closed Principle, sodass neue Varianten ohne Änderung des bestehenden Codes hinzugefügt werden können."
+
+[discrete]
+## **Related Anchors**:
+* SOLID Principles (Umbrella)
+* GoF-Strategy Pattern - Common OCP implementation
+
 ### SOLID Principles
 
 ***Full Name***: SOLID Object-Oriented Design Principles
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Single Responsibility Principle (SRP)***: Each class should have one responsibility
 
@@ -591,50 +1265,42 @@ to specific team members.
 
 ***Key Proponent***: Robert C. Martin ("Uncle Bob")
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Designing maintainable and scalable object-oriented systems
 * Refactoring legacy code to improve structure
 * Building systems where flexibility and testability are important
 * Teaching or enforcing good software design practices
 
-### SPOT (Single Point of Truth)
+### SOLID-Single Responsibility Principle
 
-***Full Name***: Single Point of Truth
+***Full Name***: SOLID Single Responsibility Principle (SRP)
 
-**Core Concepts**:
+[discrete]
+## **Intent**:
+A class should have only one reason to change. Each module or class should be responsible for a single part of the software's functionality.
 
-***Implementation pattern***: Focuses on where and how data/logic is stored and accessed
+[discrete]
+## **When to Use**:
+* A class has multiple unrelated responsibilities
+* Changes to one feature require modifying unrelated code
+* Unit testing requires complex setup due to tangled concerns
 
-***Centralized location***: Each piece of information resides in exactly one place
+[discrete]
+## **Prompt Example**:
+"Refactore diese Klasse nach dem SOLID-Single Responsibility Principle. Trenne die Verantwortlichkeiten in separate Klassen."
 
-***Reference relationships***: Other locations reference the single point rather than duplicate it
-
-***Data consistency***: Eliminates synchronization issues and conflicting data
-
-***Update propagation***: Changes at the single point automatically affect all references
-
-***Clear ownership***: Explicit responsibility for maintaining each piece of truth
-
-***Code-level practice***: Applied at the code and system design level
-
-**When to Use**:
-
-* Implementing functions and utilities to avoid code duplication
-* Database schema design to eliminate redundant data
-* Configuration management across distributed systems
-* State management in applications
-* API design where data flows from a single endpoint
-
-***Difference from SSOT***: SPOT emphasizes the implementation detail of where data lives, while SSOT emphasizes the authoritative, trusted nature of that data source
-
-***Related Concepts***: DRY, SSOT, Normalized databases, Master data management
+[discrete]
+## **Related Anchors**:
+* SOLID Principles (Umbrella)
 
 ### SSOT (Single Source of Truth)
 
 ***Full Name***: Single Source of Truth
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Conceptual principle***: Focuses on establishing trust and authority for data
 
@@ -652,7 +1318,8 @@ to specific team members.
 
 ***Organizational practice***: Applied at the architecture and business process level
 
-**Key Application Areas**:
+[discrete]
+## **Key Application Areas**:
 
 * Version control systems (Git as SSOT for code)
 * Database design and data warehousing
@@ -660,7 +1327,8 @@ to specific team members.
 * Configuration management
 * Master data management (MDM)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Designing data architecture for enterprise systems
 * Establishing documentation standards and knowledge bases
@@ -673,6 +1341,44 @@ to specific team members.
 
 ***Related Concepts***: DRY, SPOT, Event sourcing, Data lakes, Master data management
 
+### YAGNI (You Aren't Gonna Need It)
+
+***Full Name***: You Aren't Gonna Need It
+
+[discrete]
+## **Core Concepts**:
+
+***Don't build for hypothetical futures***: Only implement functionality when it is actually needed, not when you foresee it might be needed
+
+***Speculative generality***: Anti-pattern of building abstractions for imagined future requirements that may never materialize
+
+***Incremental design***: Let design emerge through actual needs; evolve architecture as requirements become concrete
+
+***Cost of carry***: Unused code adds maintenance burden, increases complexity, and creates cognitive load for the entire team
+
+***Delete dead code***: Aggressively remove code that no longer serves a current purpose
+
+***Extreme Programming origin***: Core XP practice alongside TDD, refactoring, and continuous integration
+
+***Reversibility***: Prefer simple, changeable decisions over premature commitments to complex solutions
+
+***Key Proponents***: Ron Jeffries (coined the phrase), Kent Beck ("Extreme Programming Explained", 1999)
+
+[discrete]
+## **When to Use**:
+
+* Fighting over-engineering and premature abstraction
+* Agile projects with iterative delivery and evolving requirements
+* Refactoring legacy systems burdened with unused features
+* When tempted to add "just in case" functionality or configurability
+
+[discrete]
+## **Related Anchors**:
+
+* DRY - Eliminates duplication of existing knowledge (complementary but distinct)
+* SPOT - Single Point of Truth, related simplicity principle
+* TDD, Chicago School - YAGNI is a core principle of classicist TDD
+
 ---
 
 ## Development Workflow
@@ -681,7 +1387,8 @@ to specific team members.
 
 ***Full Name***: Block Element Modifier (BEM) (S)CSS Methodology
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Motivation***: Solve CSS specificity wars, naming conflicts, and stylesheet maintainability issues in large codebases
 
@@ -705,7 +1412,8 @@ to specific team members.
 
 ***File structure***: Often paired with component-based file organization
 
-**Naming Examples**:
+[discrete]
+## **Naming Examples**:
 
 * Block: `.search-form`
 * Element: `.search-form__input`, `.search-form__button`
@@ -713,7 +1421,8 @@ to specific team members.
 
 ***Key Proponents***: Yandex development team
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Large-scale web applications with many components
 * Team projects requiring consistent (S)CSS naming conventions
@@ -723,7 +1432,9 @@ to specific team members.
 
 ### Conventional Commits
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
+
 * A specification for adding human and machine readable meaning to commit messages
 * Determining a semantic version bump (based on the types of commits landed)
 * Communicating the nature of changes to teammates, the public, and other stakeholders
@@ -742,60 +1453,220 @@ to specific team members.
 
 ***Key Proponents***: Benjamin E. Coe, James J. Womack, Steve Mao
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * everything-as-code paradigm targeted
 * team-/community-communication
 * repository quality improvements
 
-### Mental Model according to Naur
+### Definition of Done
 
-***Full Name***: Programming as Theory Building (Mental Model) according to Peter Naur
+***Also known as***: DoD, Done Criteria, Acceptance Criteria (team-level)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
-***Theory building***: Programming is creating a mental model, not just writing code
+***Shared agreement***: A formal, team-wide checklist of quality criteria that every increment must satisfy before it is declared "done"
 
-***Theory of the program***: Deep understanding of why the program works and how it relates to the problem domain
+***Increment quality gates***: Concrete, verifiable conditions — e.g., code reviewed, tests passing, documentation updated, no known defects
 
-***Knowledge in people***: The real program exists in developers' minds, not in the code
+***Transparency***: Makes the meaning of "done" visible and unambiguous to all stakeholders, preventing hidden technical debt
 
-***Theory decay***: When original developers leave, the theory is lost
+***Sprint-level vs. product-level DoD***: Teams may maintain separate DoD lists for Sprint increments and for releasable product increments
 
-***Documentation limitations***: Written documentation cannot fully capture the theory
+***Continuous refinement***: The DoD evolves as the team matures; stricter gates are added over time
 
-***Maintenance as theory***: Effective maintenance requires possessing the theory
+***Undone work***: Work that does not meet the DoD is not counted as complete; it returns to the Product Backlog
 
-***Communication is key***: Theory must be shared through collaboration and conversation
+***Shared responsibility***: The entire Scrum team (Developers, Product Owner, Scrum Master) owns and respects the DoD
 
-***Ramp-up time***: New team members need time to build the theory
+***Key Proponents***: Ken Schwaber & Jeff Sutherland ("The Scrum Guide", 2020); Mike Cohn ("Succeeding with Agile", 2009)
 
-***Code as artifact***: Code is merely a representation of the underlying theory
+[discrete]
+## **When to Use**:
+
+* Establishing a consistent quality standard across a Scrum or agile team
+* Onboarding new team members so they understand what "finished" means
+* Reducing rework and late-cycle defects by agreeing on criteria upfront
+* Aligning developers, QA, and product owners on release readiness
+
+[discrete]
+## **Related Anchors**:
+
+* BDD (Behavior-Driven Development) - Given-When-Then scenarios that operationalize acceptance criteria
+* User Story Mapping - Planning technique that identifies the scope Definition of Done must cover
+* MoSCoW - Prioritization method used to decide which DoD items are must-haves
+
+### GitHub Flow
+
+[discrete]
+## **Core Concepts**:
+
+* A lightweight, branch-based workflow where `main` is always deployable
+* Feature branches are short-lived, created from `main` for every change
+* Pull Requests are the central collaboration mechanism — used for code review, discussion, and CI validation before merging
+* Merging to `main` triggers immediate deployment (continuous delivery)
+* Branch naming reflects the work: issue number or short descriptive slug
+
+***Workflow steps***
+1. Create a branch from `main` (named after the issue or feature)
+1. Commit changes with descriptive messages
+1. Open a Pull Request early for visibility and feedback
+1. Discuss, review, and iterate until the PR is approved
+1. Merge to `main` — `main` is always in a deployable state
+1. Deploy immediately after merge
+
+***Key Proponent***: Scott Chacon ("GitHub Flow", 2011)
+
+[discrete]
+## **When to Use**:
+
+* Teams practicing continuous delivery or continuous deployment
+* Projects where `main` must always be production-ready
+* Issue-driven or ticket-driven development workflows
+* Agentic coding workflows where context brevity matters
+
+[discrete]
+## **Related Anchors**:
+
+* Conventional Commits
+* Semantic Versioning (SemVer)
+
+### Programming as Theory Building (Naur)
+
+***Also known as***: Mental Model according to Naur
+
+[discrete]
+## **Core Concepts**:
+
+***Theory building***: Programming is creating a mental model, not just writing code. The real program exists in developers' minds, not in the code.
+
+***Document the Why***: Code shows _what_ the system does. The theory captures _why_ it is built this way — the reasoning, trade-offs, and domain understanding behind the design.
+
+***Theory decay***: When original developers leave, the theory is lost. Written code alone cannot reconstruct it. This explains why maintenance by new teams is so difficult.
+
+***Complement to ADRs***: ADRs document individual architectural decisions. Theory Building goes deeper: document the overarching understanding of why the system is shaped the way it is.
+
+***Communication is key***: Theory must be shared through collaboration, conversation, and documentation that captures intent, not just structure.
 
 ***Key Proponent***: Peter Naur (Turing Award winner, 1978)
 
 ***Original Work***: "Programming as Theory Building" (1985)
 
-**Application in Software Development**:
+[discrete]
+## **When to Use**:
 
-* Understanding why knowledge transfer is challenging
-* Emphasizing pair programming and mob programming
-* Justifying time for onboarding and code walkthroughs
+* Tell an LLM: "Document the theory behind this code according to Naur — not what it does, but why it is built this way"
+* Capturing design rationale beyond individual ADRs
+* Onboarding documentation that explains the mental model behind a system
+* Justifying time for knowledge transfer, pair programming, and code walkthroughs
 * Explaining technical debt accumulation when teams change
-* Supporting documentation practices that capture "why" not just "what"
-* Advocating for team stability and continuity
 
-**Contrast with Other Views**:
+[discrete]
+## **Related Anchors**:
 
-* Programming as text production → Focus on code output
-* Programming as problem solving → Focus on algorithms
-* Programming as theory building → Focus on understanding
+* ADR according to Nygard — complementary: ADRs for individual decisions, Theory Building for overarching understanding
+* Docs-as-Code — the practice of maintaining this documentation alongside code
+
+### Mikado Method
+
+***Also known as***: Mikado Graph Method
+
+[discrete]
+## **Core Concepts**:
+
+***Mikado Goal***: The final desired state of the code after refactoring; the root of the dependency graph
+
+***Prerequisite discovery***: Reveal blocking dependencies by attempting the change and noting what breaks
+
+***Revert and repeat***: After discovering a prerequisite, revert to a working state before addressing it
+
+***Mikado Graph***: A directed acyclic graph where nodes are prerequisites and edges show dependencies between them
+
+***Leaf-first resolution***: Resolve the leaf nodes (no further prerequisites) first, working back to the root goal
+
+***Small reversible steps***: Each step leaves the codebase in a working state, eliminating the risk of long-running broken branches
+
+***Key Proponents***: Ola Ellnestam, Daniel Brolund ("The Mikado Method", 2012)
+
+[discrete]
+## **When to Use**:
+
+* Tackling large refactorings in legacy or complex codebases
+* When a direct change breaks too many things to fix at once
+* Coordinating multi-developer refactoring efforts safely
+* Making incremental improvements without blocking the team
+
+[discrete]
+## **Related Anchors**:
+
+* TDD, Chicago School
+* TDD, London School
+
+### Regulated Environment
+
+***Also known as***: Compliance Environment, Validated Environment, Regulated Industry Development
+
+[discrete]
+## **Core Concepts**:
+
+***Traceability***: Every requirement, design decision, implementation, and test must be linked end-to-end; changes traceable from origin to deployment
+
+***Validation & Verification (V&V)***: Formal proof that a system does what it is intended to do (validation) and is built correctly (verification)
+
+***Audit Trail***: Immutable, timestamped record of who changed what, when, and why; essential for regulatory inspections
+
+***Change Control***: Formal process for evaluating, approving, implementing, and documenting any change to a validated system
+
+***Documentation requirements***: Specifications (URS, FS, DS), SOPs, test protocols, validation reports, and risk assessments are mandatory deliverables
+
+***Risk-based approach***: Effort and rigor proportional to the risk posed by the system (e.g., GAMP 5 categories, FMEA)
+
+***Separation of environments***: Strict segregation of development, testing/qualification, and production environments
+
+***Reproducibility***: Builds, deployments, and test results must be reproducible; version-pinned dependencies and infrastructure-as-code
+
+***Electronic signatures & records***: Legally binding digital sign-off on documents and data (e.g., FDA 21 CFR Part 11)
+
+***Supplier qualification***: Third-party components and vendors must be qualified and audited
+
+[discrete]
+## **Applicable Standards & Frameworks**:
+
+* **FDA 21 CFR Part 11** – Electronic records and signatures (US pharmaceutical/medical)
+* **EU GMP Annex 11** – Computerised systems in pharmaceutical manufacturing
+* **GAMP 5** – Good Automated Manufacturing Practice (risk-based validation guidance)
+* **ISO 9001** – Quality management systems
+* **IEC 62304** – Medical device software lifecycle
+* **ISO 26262** – Functional safety for automotive systems
+* **SOX (Sarbanes-Oxley)** – Financial reporting systems (IT general controls)
+* **ISO/IEC 27001** – Information security management
+
+[discrete]
+## **When to Use**:
+
+* Developing software for pharmaceutical, biotech, or medical device industries
+* Building systems subject to FDA, EMA, or other regulatory body oversight
+* Any project where an audit by an external authority is anticipated
+* Financial systems subject to SOX, PCI-DSS, or similar controls
+* Safety-critical systems in automotive, aerospace, or industrial automation
+* Setting up CI/CD pipelines that must satisfy validation requirements
+
+[discrete]
+## **Related Anchors**:
+
+* IEC 61508 SIL Levels
+* Docs-as-Code
+* Conventional Commits
+* Semantic Versioning
 
 ### Semantic Versioning (SemVer)
 
 ***Full Name***: Semantic Versioning Specification
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Version format***
 
@@ -814,7 +1685,8 @@ to specific team members.
 
 ***Key Proponent***: Tom Preston-Werner
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Libraries and APIs consumed by other software
 * Software with defined public interfaces
@@ -825,7 +1697,8 @@ to specific team members.
 
 ***Full Name***: State-of-the-Art
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Latest approaches***: Focus on the most current, cutting-edge methods and techniques
 
@@ -841,13 +1714,15 @@ to specific team members.
 
 ***Contextual awareness***: Consider the specific domain and timeframe for "state-of-the-art"
 
-**Usage Patterns**:
+[discrete]
+## **Usage Patterns**:
 
 * "Learn SOTA for [topic]" - triggers research and comprehensive information gathering
 * "What's SOTA for [topic]?" - requests current best practices and approaches
 * "Give me the SOTA approach for [problem]" - asks for cutting-edge solutions
 
-**Example Usage**:
+[discrete]
+## **Example Usage**:
 
 * "Learn SOTA for RAG implementations"
 * "What's SOTA for code generation in 2024?"
@@ -856,7 +1731,8 @@ to specific team members.
 
 ***Key Proponent***: Widely used in ML/AI research community
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Researching current best practices in a technical domain
 * Comparing different approaches to solve a problem
@@ -865,7 +1741,8 @@ to specific team members.
 * Learning about cutting-edge implementations
 * Avoiding outdated or deprecated approaches
 
-**Why It Works**:
+[discrete]
+## **Why It Works**:
 
 * Heavily represented in ML/AI papers, benchmarks, and technical discussions
 * Consistent meaning across contexts: "best performing" and "most current"
@@ -878,7 +1755,8 @@ to specific team members.
 
 ***Also known as***: Tim Toady
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Multiple valid approaches***: Acknowledges that problems can be solved in different, equally valid ways
 
@@ -898,12 +1776,14 @@ to specific team members.
 
 ***Key Proponent***: Larry Wall (Perl programming language)
 
-**Contrast**:
+[discrete]
+## **Contrast**:
 
 * Python's Zen: "There should be one-- and preferably only one --obvious way to do it" (opposite philosophy)
 * TIMTOWTDI favors flexibility and expressiveness over enforced uniformity
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Choosing between multiple valid architectural or design approaches
 * Code reviews where different styles achieve the same goal
@@ -920,7 +1800,8 @@ to specific team members.
 
 ***Also known as***: Enhanced Markdown Tasks, Markdown with todo.txt conventions
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Markdown task lists***: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
 
@@ -940,13 +1821,15 @@ to specific team members.
 
 ***Searchable and filterable***: Easy to grep/search by tags, priorities, or metadata
 
-**Pattern Structure**:
+[discrete]
+## **Pattern Structure**:
 
 ```markdown
 - [ ] (Priority) Task description +project @context key:value
 - [x] YYYY-MM-DD (Priority) Completed task +project
 ```
-**Example Usage**:
+[discrete]
+## **Example Usage**:
 
 ```markdown
 - [ ] (A) Review PR for +website @computer due:2024-02-03
@@ -957,12 +1840,14 @@ to specific team members.
 ```
 ***Key Proponents***: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
 
-**Original References**:
+[discrete]
+## **Original References**:
 
 * GitHub-flavoured Markdown task lists
 * todo.txt format specification by Gina Trapani
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Task management in markdown documentation
 * Project planning and tracking in README files
@@ -973,7 +1858,8 @@ to specific team members.
 * Team collaboration where tasks need clear priorities and contexts
 * Generating consistent task list formats with LLMs
 
-**Benefits**:
+[discrete]
+## **Benefits**:
 
 * Leverages two well-established, widely recognized standards
 * Renders nicely in GitHub, GitLab, and other markdown viewers
@@ -989,7 +1875,8 @@ to specific team members.
 
 ***Full Name***: Socratic Method (also Socratic Dialogue, Elenchus)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Guided Discovery***: Lead learners to insights through questions rather than direct instruction
 
@@ -1013,7 +1900,8 @@ to specific team members.
 
 ***Historical Context***: 2400+ years of philosophical tradition, foundational to Western philosophy and critical thinking education
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Teaching complex concepts where understanding must be constructed, not transmitted
 * Helping someone work through a problem without giving direct answers
@@ -1022,7 +1910,8 @@ to specific team members.
 * Encouraging deeper thinking about a topic
 * Code review or design review where understanding, not compliance, is the goal
 
-**Related Concepts**:
+[discrete]
+## **Related Concepts**:
 
 * Cognitive apprenticeship
 * Constructivist learning theory
@@ -1036,7 +1925,8 @@ to specific team members.
 
 ***Full Name***: Diátaxis Documentation Framework according to Daniele Procida
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Four documentation types***
 
@@ -1059,7 +1949,8 @@ to specific team members.
 
 ***Key Proponent***: Daniele Procida
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Organizing technical documentation
 * Improving existing documentation
@@ -1071,7 +1962,8 @@ to specific team members.
 
 ***Full Name***: Docs-as-Code Approach according to Ralf D. Müller
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Plain text formats***: AsciiDoc, Markdown
 
@@ -1093,7 +1985,8 @@ to specific team members.
 
 ***Key Proponent***: Ralf D. Müller (docToolchain creator)
 
-**Technical Stack**:
+[discrete]
+## **Technical Stack**:
 
 * AsciiDoc/Asciidoctor
 * docToolchain
@@ -1101,7 +1994,8 @@ to specific team members.
 * Kroki for diagram rendering
 * Arc42 template integration
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Technical documentation for software projects
 * When documentation needs to stay synchronized with code
@@ -1183,7 +2077,8 @@ The catalog is organized into the following categories:
 
 ***Full Name***: Chain of Thought Prompting
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Step-by-Step Reasoning***: Explicitly show intermediate reasoning steps before reaching a conclusion
 
@@ -1205,7 +2100,8 @@ The catalog is organized into the following categories:
 
 ***Historical Context***: Breakthrough in LLM prompting research, significantly improved performance on reasoning tasks (math, logic, common sense)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Complex reasoning problems (multi-step math, logic puzzles)
 * When you need to verify the reasoning process, not just the answer
@@ -1214,13 +2110,15 @@ The catalog is organized into the following categories:
 * Problems requiring planning or strategy
 * Any task where intermediate steps provide value
 
-**Related Research**:
+[discrete]
+## **Related Research**:
 
 * Tree of Thoughts (ToT): Extension allowing branching and backtracking
 * Self-Consistency: Sample multiple reasoning paths
 * Least-to-Most Prompting: Build up from simple to complex
 
-**Example Prompt Pattern**:
+[discrete]
+## **Example Prompt Pattern**:
 
 ```
 Problem: [Complex question]
@@ -1235,7 +2133,8 @@ Therefore: [Conclusion]
 
 ***Full Name***: Devil's Advocate (Latin: **Advocatus Diaboli**)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Systematic Counter-Argumentation***: Present opposing viewpoints even if not personally held
 
@@ -1257,7 +2156,8 @@ Therefore: [Conclusion]
 
 ***Historical Context***: 400+ years as formalized practice in the Church, adopted widely in law, philosophy, business strategy, and red teaming
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Critical design or architecture decisions where failure is costly
 * Security threat modeling (red teaming)
@@ -1267,7 +2167,8 @@ Therefore: [Conclusion]
 * Risk assessment and contingency planning
 * Any high-stakes decision where being wrong is expensive
 
-**Related Concepts**:
+[discrete]
+## **Related Concepts**:
 
 * Red teaming (security context)
 * Pre-mortem analysis
@@ -1275,7 +2176,8 @@ Therefore: [Conclusion]
 * Critical thinking frameworks
 * Steelmanning (vs. strawmanning)
 
-**Example Prompt Pattern**:
+[discrete]
+## **Example Prompt Pattern**:
 
 ```
 I propose [idea/design/decision].
@@ -1286,7 +2188,8 @@ Play devil's advocate: What are the strongest arguments against this approach?
 
 ***Full Name***: Feynman Technique (also Feynman Learning Method)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Explain Simply***: Teach the concept in simple language as if to a beginner (traditionally "explain to a 12-year-old")
 
@@ -1308,7 +2211,8 @@ Play devil's advocate: What are the strongest arguments against this approach?
 
 ***Historical Context***: Feynman was renowned for his teaching ability and his belief that deep understanding meant being able to explain simply. The "technique" is a formalization of his learning approach.
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Learning new technical concepts or frameworks
 * Validating your understanding before using knowledge in practice
@@ -1317,14 +2221,16 @@ Play devil's advocate: What are the strongest arguments against this approach?
 * Code review where you explain your design choices simply
 * Documentation writing (if you can't explain it simply, you don't understand it)
 
-**Four Steps (Canonical Form)**:
+[discrete]
+## **Four Steps (Canonical Form)**:
 
 1. **Choose a concept**: Pick the topic you want to understand
 1. **Teach it to a child**: Write an explanation in simple terms
 1. **Identify gaps and review**: Where you struggle, study more
 1. **Simplify and analogize**: Refine your explanation, use examples
 
-**Related Concepts**:
+[discrete]
+## **Related Concepts**:
 
 * Rubber Duck Debugging (explaining to understand)
 * Learning by teaching
@@ -1338,7 +2244,8 @@ Play devil's advocate: What are the strongest arguments against this approach?
 
 ***Full Name***: Five Whys Root Cause Analysis
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Iterative Causal Analysis***: Ask "Why?" repeatedly (typically ~5 times) to drill down to root causes
 
@@ -1360,7 +2267,8 @@ Play devil's advocate: What are the strongest arguments against this approach?
 
 ***Historical Context***: Core tool in Lean Manufacturing and Toyota Production System (TPS), foundational to continuous improvement (Kaizen)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Incident post-mortems in software/DevOps
 * Debugging when surface fixes don't resolve the issue
@@ -1369,7 +2277,8 @@ Play devil's advocate: What are the strongest arguments against this approach?
 * Quality defect analysis
 * Any situation where symptoms are clear but causes are not
 
-**Related Concepts**:
+[discrete]
+## **Related Concepts**:
 
 * Kaizen (continuous improvement)
 * Root Cause Analysis (RCA)
@@ -1377,13 +2286,15 @@ Play devil's advocate: What are the strongest arguments against this approach?
 * A3 Problem Solving (Toyota)
 * DevOps post-mortem culture
 
-**Pitfall to Avoid**:
+[discrete]
+## **Pitfall to Avoid**:
 
 * Stopping too early at a symptom rather than root cause
 * Pursuing a single causal chain when multiple factors contribute (use Fishbone Diagram for complex causality)
 * Blame-focused questioning rather than system-focused
 
-**Example Application**:
+[discrete]
+## **Example Application**:
 
 ```
 Problem: Website is down
@@ -1400,7 +2311,8 @@ Countermeasure: Establish pre-production configuration checklist
 
 ***Full Name***: Morphological Analysis / Morphological Box (German: Morphologischer Kasten)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Multi-dimensional decomposition***: Break complex problem into independent parameters/dimensions
 
@@ -1422,7 +2334,8 @@ Countermeasure: Establish pre-production configuration checklist
 
 ***Historical Context***: Developed for aerospace engineering problems (jet engines, spacecraft propulsion), now widely applied in product development, system design, and innovation management.
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Exploring design alternatives for complex systems
 * Product feature combination analysis
@@ -1432,7 +2345,8 @@ Countermeasure: Establish pre-production configuration checklist
 * Requirements engineering for product variants
 * Solution space mapping before evaluation
 
-**Example Application**:
+[discrete]
+## **Example Application**:
 
 ```
 Problem: Design a developer documentation system
@@ -1446,7 +2360,8 @@ Matrix generates 4 × 4 × 3 × 3 = 144 possible combinations
 Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 → Identify ~20 feasible solutions for evaluation with Pugh Matrix
 ```
-**Related Concepts**:
+[discrete]
+## **Related Concepts**:
 
 * MECE Principle (for parameter independence)
 * Pugh Matrix (for evaluating generated alternatives)
@@ -1454,58 +2369,20 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Combinatorial design
 * Solution space exploration
 
-**Complementary Tools**:
+[discrete]
+## **Complementary Tools**:
 
 * Use **Morphological Box** to generate alternatives
 * Then apply **Pugh Matrix** to evaluate and select best option
 * Use **MECE** to ensure parameter independence
 
-**Pitfalls to Avoid**:
+[discrete]
+## **Pitfalls to Avoid**:
 
 * Parameters that are not independent (violates combinatorial logic)
 * Too many parameters leading to combinatorial explosion
 * Stopping at matrix creation without exploring combinations
 * Forgetting to filter out infeasible combinations
-
-### Rubber Duck Debugging
-
-***Full Name***: Rubber Duck Debugging
-
-**Core Concepts**:
-
-***Explain to Understand***: Articulating a problem aloud surfaces gaps in understanding
-
-***Step-by-Step Verbalization***: Force yourself to go through code/logic line by line
-
-***Assumption Surfacing***: Speaking aloud exposes implicit assumptions that may be wrong
-
-***No Expertise Required***: The "listener" (rubber duck, colleague, LLM) need not be an expert
-
-***Slowing Down***: The act of explaining forces a slower, more deliberate thought process
-
-***External Cognition***: Verbalizing creates an external representation that aids debugging
-
-***Self-Directed Learning***: Often the explainer solves the problem before finishing the explanation
-
-***Teaching to Learn***: Related to the Feynman Technique and learning-by-teaching principle
-
-***Key Origin***: "The Pragmatic Programmer" by Andrew Hunt and David Thomas (1999), referencing earlier programmer folklore
-
-***Historical Context***: Decades-old practice in programming culture, formalized and named in influential software engineering literature
-
-**When to Use**:
-
-* Debugging stubborn problems where you're stuck
-* Code review where explaining to a colleague reveals issues
-* Learning new concepts by teaching them to someone (or something) else
-* Validating understanding of complex systems or algorithms
-* When rubber-ducking to an LLM, explicitly adopting this frame to trigger step-by-step explanation
-
-**Related Concepts**:
-
-* Pair programming (where explaining is continuous)
-* Feynman Technique (learning by simple explanation)
-* Socratic Method (when the duck asks questions back)
 
 ---
 
@@ -1515,7 +2392,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Easy Approach to Requirements Syntax
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Ubiquitous requirements***: "The <system> shall <requirement>"
 
@@ -1533,47 +2411,178 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Alistair Mavin (Rolls-Royce)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Safety-critical systems
 * Regulated industries (aerospace, automotive, medical)
 * When requirements traceability is essential
 * Large, distributed teams
 
-### Problem Space NVC
+### INVEST
 
-***Full Name***: Problem Space in Nonviolent Communication
+***Full Name***: INVEST Criteria for User Stories
 
-**Core Concepts**:
+***Also known as***: INVEST Checklist, INVEST Mnemonic
 
-***Observations***: Concrete, objective facts without evaluation
+[discrete]
+## **Core Concepts**:
 
-***Feelings***: Emotions arising from observations
+INVEST = **I**ndependent / **N**egotiable / **V**aluable / **E**stimable / **S**mall / **T**estable
 
-***Needs***: Universal human needs underlying feelings
+***Independent***: Stories should be self-contained and deliverable in any order; avoid dependencies between stories that force a fixed implementation sequence
 
-***Requests***: Specific, actionable requests (not demands)
+***Negotiable***: Stories are not contracts; the details are open to discussion between team and stakeholders until they enter a sprint
 
-***Empathic connection***: Understanding before problem-solving
+***Valuable***: Every story must deliver clear value to the user or business; stories that only serve technical needs should be wrapped in user-visible value
 
-***Separating observation from interpretation***: Avoiding judgment
+***Estimable***: The team must be able to estimate the story's size; if they cannot, the story is too large, too vague, or requires a spike
 
-***Needs-based conflict resolution***: Finding solutions that meet everyone's needs
+***Small***: Stories should be small enough to complete within a single sprint; large epics must be broken down before entering a sprint
 
-***Key Proponent***: Marshall Rosenberg
+***Testable***: Stories require concrete acceptance criteria so developers and testers can verify completion; untestable stories hide ambiguity
 
-**Application in Software Development**:
+***Key Proponent***: Bill Wake ("INVEST in Good Stories, and SMART Tasks", 2003)
 
-* Requirements elicitation that uncovers real user needs
-* Stakeholder communication and conflict resolution
-* User story formulation focused on needs
-* Retrospectives and team communication
+[discrete]
+## **When to Use**:
+
+* Reviewing user stories before sprint planning to assess readiness
+* Splitting epics into smaller, deliverable stories
+* Coaching teams on what constitutes a well-formed user story
+* During backlog refinement to identify stories that need more work
+* As a Definition of Ready checklist for story acceptance into a sprint
+
+**Related Anchors**:
+
+* User Story Mapping
+* MoSCoW
+
+### MoSCoW
+
+***Full Name***: MoSCoW Prioritization Method
+
+***Also known as***: MoSCoW Analysis, MoSCoW Method
+
+[discrete]
+## **Core Concepts**:
+
+MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
+
+***Must have***: Non-negotiable requirements essential for the current delivery; without them the solution is unusable or unsafe
+
+***Should have***: Important requirements that are not vital; painful to leave out but the solution is still viable without them
+
+***Could have***: Desirable but not necessary requirements; included only if time and resources permit
+
+***Won't have (this time)***: Requirements explicitly agreed to be out of scope for the current iteration; may be reconsidered in future
+
+***Timeboxed context***: Prioritization is always relative to a fixed timebox, not permanent
+
+***Stakeholder alignment***: Prioritization is a collaborative activity that builds shared understanding
+
+***Scope control***: Explicit "Won't have" category reduces scope creep by surfacing deferred items
+
+***Key Proponent***: Dai Clegg (Dynamic Systems Development Method / DSDM, 1994)
+
+[discrete]
+## **When to Use**:
+
+* Sprint and release planning in agile teams
+* Scoping a Minimum Viable Product (MVP)
+* Negotiating scope with stakeholders under time or budget constraints
+* Prioritizing a backlog when resources are limited
+* Aligning cross-functional teams on delivery expectations
+
+**Related Anchors**:
+
+* User Story Mapping
+* Impact Mapping
+
+### PRD
+
+***Full Name***: Product Requirements Document
+
+***Also known as***: Product Spec, Feature Spec, Requirements Specification
+
+[discrete]
+## **Core Concepts**:
+
+***Problem statement***: Clear articulation of the problem to be solved and the target users
+
+***Goals and success metrics***: Measurable outcomes that define what "done" looks like (KPIs, OKRs)
+
+***User personas and use cases***: Who will use the product and what they are trying to accomplish
+
+***Functional requirements***: What the system must do — features, behaviors, and capabilities
+
+***Non-functional requirements***: Quality attributes — performance, security, scalability, accessibility
+
+***Scope and out-of-scope***: Explicit boundaries to prevent scope creep and align stakeholders
+
+***Constraints and assumptions***: Technical, business, regulatory, or timeline constraints
+
+***Open questions***: Unresolved decisions or dependencies that must be tracked
+
+***Key Proponents***: Marty Cagan ("Inspired"), Roman Pichler ("Strategize")
+
+[discrete]
+## **When to Use**:
+
+* Before starting design or development of a new product or major feature
+* When aligning cross-functional teams (engineering, design, marketing, legal)
+* To provide a shared reference for scope negotiations and tradeoff decisions
+* When stakeholder sign-off or compliance documentation is required
+* As a living document updated throughout the product discovery process
+
+[discrete]
+## **Related Anchors**:
+
+* MoSCoW
+* User Story Mapping
+* Impact Mapping
+* EARS-Requirements
+
+### Nonviolent Communication (Rosenberg)
+
+***Also known as***: NVC, Problem Space NVC, Gewaltfreie Kommunikation (GFK)
+
+[discrete]
+## **Core Concepts**:
+
+***Observations***: Concrete, objective facts without evaluation or judgment. "The deploy failed three times this week" instead of "The deploy always fails."
+
+***Feelings***: Emotions arising from observations. "I feel frustrated" instead of "This is frustrating."
+
+***Needs***: Universal human needs underlying feelings. Reliability, autonomy, clarity, safety. The real driver behind every request.
+
+***Requests***: Specific, actionable asks (not demands). "Could we add a pre-deploy check?" instead of "Fix the deploy process."
+
+***Four-step process***: Observe → Feel → Need → Request. Each step builds on the previous one.
+
+***Key Proponent***: Marshall Rosenberg ("Nonviolent Communication: A Language of Life", 1999)
+
+[discrete]
+## **When to Use**:
+
+* Tell an LLM: "Reformulate this complaint using NVC according to Rosenberg"
+* Tell an LLM: "Write this stakeholder email in NVC style — observation, feeling, need, request"
+* Requirements elicitation that uncovers real user needs behind feature requests
+* Conflict resolution in teams and retrospectives
+* Transforming vague complaints into actionable requirements
+
+[discrete]
+## **Related Anchors**:
+
+* Socratic Method — complementary: NVC for expressing, Socratic for exploring
+* BLUF — contrasting style: BLUF is conclusion-first, NVC is empathy-first
 
 ### User Story Mapping
 
 ***Full Name***: User Story Mapping according to Jeff Patton
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Narrative flow***: Horizontal arrangement of user activities
 
@@ -1595,7 +2604,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Jeff Patton ("User Story Mapping", 2014)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Planning new products or major features
 * When backlog feels overwhelming or fragmented
@@ -1610,7 +2620,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Architecture Decision Records according to Michael Nygard
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Lightweight documentation***: Short, focused records
 
@@ -1631,7 +2642,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Michael Nygard
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * All software projects (low overhead, high value)
 * Distributed teams needing shared understanding
@@ -1642,7 +2654,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: arc42 Architecture Documentation Template
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***12 standardized sections***: From introduction to glossary
 
@@ -1676,17 +2689,58 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponents***: Gernot Starke, Peter Hruschka
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Medium to large software projects
 * When stakeholder communication is critical
 * Long-lived systems requiring maintainability
 
+### ATAM
+
+***Full Name***: Architecture Tradeoff Analysis Method
+
+***Also known as***: Architecture Evaluation, ATAM Review
+
+[discrete]
+## **Core Concepts**:
+
+***Utility Tree***: Hierarchical decomposition of system quality goals into concrete, prioritized quality attribute scenarios (e.g., Performance → Response Time → "Search results returned in < 1s under peak load")
+
+***Quality Attribute Scenarios***: Testable, concrete expressions of quality requirements consisting of stimulus, source, environment, artifact, response, and response measure
+
+***Architectural Approaches***: Design decisions and patterns (e.g., caching, replication, layering) used to achieve quality attributes
+
+***Sensitivity Points***: Architectural decisions that significantly affect one specific quality attribute
+
+***Tradeoff Points***: Architectural decisions that affect two or more quality attributes in conflicting ways — the core insight of ATAM
+
+***Risks and Non-risks***: Identified architectural decisions that may (risks) or demonstrably will not (non-risks) lead to future problems
+
+***Nine-step process***: Presentation of ATAM → presentation of business drivers → presentation of architecture → identification of architectural approaches → generation of utility tree → analysis of architectural approaches → brainstorming scenarios → analysis of scenarios → presentation of results
+
+***Key Proponents***: Rick Kazman, Mark Klein, Paul Clements (SEI / Carnegie Mellon University)
+
+[discrete]
+## **When to Use**:
+
+* Evaluating a software architecture before major investment in implementation
+* When multiple stakeholders have conflicting quality requirements (e.g., performance vs. security)
+* During architecture reviews of safety-critical or high-availability systems
+* When making buy-vs.-build decisions or selecting between competing architectural styles
+
+[discrete]
+## **Related Anchors**:
+
+* arc42 Architecture Documentation
+* ADR according to Nygard
+
 ### C4-Diagrams
 
 ***Full Name***: C4 Model for Software Architecture Diagrams
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Four levels of abstraction***
 
@@ -1705,7 +2759,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Simon Brown
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Communicating architecture to diverse stakeholders
 * Onboarding new team members
@@ -1716,7 +2771,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Clean Architecture according to Robert C. Martin
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***The Dependency Rule***: Dependencies only point inward
 
@@ -1738,18 +2794,61 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Robert C. Martin ("Uncle Bob")
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Enterprise applications with complex business logic
 * Systems requiring long-term maintainability
 * When team size and turnover are high
 * Projects where business rules must be protected from technology changes
 
+### CQRS (Command Query Responsibility Segregation)
+
+***Also known as***: CQS at architectural scale
+
+[discrete]
+## **Core Concepts**:
+
+***Command Query Separation (CQS)***: Bertrand Meyer's principle — methods either change state (commands) or return data (queries), never both
+
+***Commands***: Write operations that change state and return void; represent intent as immutable command objects
+
+***Queries***: Read operations that return data with no side effects; safe to retry and cache
+
+***Separate read/write models***: Independent data models optimized for their respective purpose
+
+***Eventual consistency***: Read model may lag behind write model; acceptable trade-off for scalability
+
+***Event-based synchronization***: Domain events propagate changes from write side to read side projections
+
+***Independent scalability***: Read and write sides can be scaled, deployed, and optimized independently
+
+***Event sourcing optional***: CQRS does not require event sourcing; the patterns are complementary but independent
+
+***Key Proponents***: Greg Young (coined CQRS), Bertrand Meyer (CQS origin, "Object-Oriented Software Construction", 1988), Udi Dahan
+
+[discrete]
+## **When to Use**:
+
+* Systems with asymmetric read/write workloads
+* Complex domains where read and write models diverge significantly
+* Event-sourced systems requiring materialized views
+* High-performance systems needing independent scaling of reads and writes
+* Collaborative domains with task-based UIs
+
+[discrete]
+## **Related Anchors**:
+
+* Domain-Driven Design - Often combined with CQRS for complex domains
+* Hexagonal Architecture - Ports and adapters complement CQRS separation
+* Fowler Patterns - CQRS builds on enterprise application patterns
+
 ### Domain-Driven Design according to Evans
 
 ***Full Name***: Domain-Driven Design according to Eric Evans
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Ubiquitous Language***: Shared vocabulary between developers and domain experts
 
@@ -1773,18 +2872,102 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Complex business domains with intricate rules
 * Long-lived systems requiring deep domain understanding
 * When business and technical teams need close collaboration
 * Systems where the domain logic is the core value
 
+### Event-Driven Architecture
+
+***Also known as***: EDA, Message-Driven Architecture
+
+[discrete]
+## **Core Concepts**:
+
+***Event producers and consumers***: Components communicate by emitting and reacting to events rather than direct calls
+
+***Publish-subscribe***: Producers publish events without knowing which consumers will process them
+
+***Asynchronous decoupling***: Sender and receiver operate independently in time; no blocking request-response
+
+***Message queue***: Intermediary that buffers events between producers and consumers (SQS, RabbitMQ, Kafka)
+
+***At-least-once delivery***: Most messaging systems guarantee delivery but may deliver duplicates, requiring idempotent consumers
+
+***Eventual consistency***: System state converges over time rather than being immediately consistent after each operation
+
+***Event notification***: Lightweight event signals that something happened; consumers decide whether to act
+
+***Event-carried state transfer***: Events carry enough data for consumers to process without calling back to the producer
+
+***Choreography vs. orchestration***: Events can trigger distributed workflows implicitly (choreography) or via a central coordinator (orchestration)
+
+***Key Proponents***: Gregor Hohpe, Bobby Woolf ("Enterprise Integration Patterns", 2003), Martin Fowler ("What do you mean by Event-Driven?", 2017)
+
+[discrete]
+## **When to Use**:
+
+* Systems requiring loose coupling between components
+* Workloads with asynchronous processing pipelines
+* Architectures that need independent scaling of producers and consumers
+* Distributed systems where components must evolve independently
+
+[discrete]
+## **Related Anchors**:
+
+* Domain-Driven Design - Domain events are a DDD building block
+* Hexagonal Architecture - Message queues as driven adapters
+* Clean Architecture - Events cross architectural boundaries via interfaces
+
+### GoM
+
+***Full Name***: Grundsätze ordnungsmäßiger Modellierung (Principles of Proper Modeling)
+
+***Also known as***: GoM Principles, Principles of Well-formed Modeling
+
+[discrete]
+## **Core Concepts**:
+
+***Correctness (Richtigkeit)***: The model must accurately reflect the reality it represents — both syntactically (follows notation rules) and semantically (describes the real subject matter truthfully)
+
+***Relevance (Relevanz)***: A model should include only elements that are relevant to the intended purpose; unnecessary details reduce usability
+
+***Economic Efficiency (Wirtschaftlichkeit)***: The benefit gained from a model must justify the effort and cost of creating and maintaining it
+
+***Clarity (Klarheit)***: The model must be understandable to its intended audience; layout, notation, and level of detail must support comprehension
+
+***Comparability (Vergleichbarkeit)***: Models of the same subject should follow consistent conventions so they can be meaningfully compared
+
+***Systematic Design (Systematischer Aufbau)***: Models should be constructed using a consistent, structured approach to enable reuse and integration across a model landscape
+
+***Key Proponents***: Jörg Becker, Michael Rosemann, Rolf Schütte ("Grundsätze ordnungsmäßiger Modellierung", WIRTSCHAFTSINFORMATIK, 1995)
+
+[discrete]
+## **When to Use**:
+
+* Evaluating or reviewing the quality of business process models (BPMN, EPC)
+* Establishing modeling standards within an organization or project
+* Enterprise architecture modeling to ensure consistent, reusable model artifacts
+* ERP implementation projects requiring traceable and auditable process documentation
+* Assessing whether a model is fit for its intended purpose
+* Onboarding teams to structured modeling practices
+
+[discrete]
+## **Related Anchors**:
+
+* arc42 Architecture Documentation
+* C4 Diagrams
+* Morphological Box
+
 ### Hexagonal Architecture (Ports & Adapters)
 
 ***Also known as***: Ports and Adapters, Onion Architecture (variant)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Hexagonal structure***: Core domain at the center, isolated from external concerns
 
@@ -1806,18 +2989,59 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Alistair Cockburn (2005)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Applications requiring high testability
 * Systems that need to support multiple interfaces (web, CLI, API)
 * When you want to defer infrastructure decisions
 * Microservices with clear domain boundaries
 
+### LASR according to Toth/Zörner
+
+***Full Name***: LASR – Lightweight Architecture Documentation by Toth/Zörner
+
+***Also known as***: Lightweight Architecture Communication, LASR Template
+
+[discrete]
+## **Core Concepts**:
+
+***L – Lösungsstrategie (Solution Strategy)***: High-level description of how the solution addresses the most important quality requirements and constraints; the central architectural ideas that shape the system
+
+***A – Architekturüberblick (Architecture Overview)***: Key structural and runtime views showing the main building blocks, their responsibilities, and how they interact at runtime
+
+***S – Schnittstellen (Interfaces)***: Definition of all relevant external interfaces (APIs, protocols, data formats) and important internal interfaces between major components
+
+***R – Risiken (Risks)***: Identification of the most critical technical risks, open questions, and known weaknesses together with proposed mitigation strategies
+
+***Lightweight by design***: LASR intentionally focuses on the four most communication-relevant aspects of an architecture, omitting detail that does not aid stakeholder understanding
+
+***Living document***: Updated alongside the architecture; meant to communicate current state, not archive history
+
+***Key Proponents***: Stefan Toth ("Vorgehensmuster für Softwarearchitektur"), Stefan Zörner ("Softwarearchitekturen dokumentieren und kommunizieren")
+
+[discrete]
+## **When to Use**:
+
+* Communicating architecture to stakeholders who need a concise overview rather than full documentation
+* Agile projects where a lightweight alternative to arc42 is preferred
+* Architecture reviews where the four LASR aspects serve as a structured review checklist
+* Onboarding new team members to an existing system's key design decisions
+* Workshops where teams collaboratively capture the essential architecture decisions
+
+[discrete]
+## **Related Anchors**:
+
+* arc42 Architecture Documentation
+* ADR according to Nygard
+* C4 Diagrams
+
 ### MADR
 
-***Full Name***: Markdown Any Decision Records
+***Full Name***: Markdown Architectural Decision Records
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Structured template***: Well-defined format with specific sections
 
@@ -1845,7 +3069,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Reference***: https://adr.github.io/madr/
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * When you need more structure than basic ADRs
 * Projects requiring explicit documentation of alternatives
@@ -1864,7 +3089,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Also known as***: Process Control Chart, SPC Chart
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Time series diagram***: Measured value plotted over time
 
@@ -1893,7 +3119,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Work***: "Economic Control of Quality of Manufactured Product" (1931)
 
-**Relationship to Other Anchors**:
+[discrete]
+## **Relationship to Other Anchors**:
 
 ***Nelson Rules***: 8 rules for pattern recognition on Control Charts
 
@@ -1901,7 +3128,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Six Sigma***: Control Charts are used in the Control phase of DMAIC
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Process monitoring in manufacturing and production
 * Quality assurance using statistical methods
@@ -1913,7 +3141,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Nelson Rules (Tests for Special Causes)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 * **8 rules** for detecting non-random patterns in Control Charts
 ***Rule 1***: One point beyond 3σ (Outlier)
@@ -1940,7 +3169,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Lloyd S. Nelson (1984, Journal of Quality Technology)
 
-**Relationship to Other Anchors**:
+[discrete]
+## **Relationship to Other Anchors**:
 
 ***Control Chart (Shewhart)***: Nelson Rules are applied to Control Charts
 
@@ -1948,7 +3178,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Western Electric Rules***: Predecessor; Nelson Rules extend these with Rules 5-8
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Detecting non-random patterns in time series data
 * Process monitoring in manufacturing, pharmaceuticals, healthcare
@@ -1959,7 +3190,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Statistical Process Control
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Process monitoring***: Systematic statistical monitoring of running processes
 
@@ -1983,7 +3215,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponents***: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
 
-**Relationship to Other Anchors**:
+[discrete]
+## **Relationship to Other Anchors**:
 
 ***Control Chart (Shewhart)***: Central tool within SPC
 
@@ -1993,7 +3226,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Testing Pyramid***: Conceptual parallel — different levels of quality assurance
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Monitoring manufacturing and business processes
 * Quality management per ISO 9001, IATF 16949, Six Sigma
@@ -2009,7 +3243,10 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Cynefin Framework according to Dave Snowden
 
-**Core Concepts**:
+***Also known as***: Cynefin sensemaking framework
+
+[discrete]
+## **Core Concepts**:
 
 ***Five domains***
 
@@ -2029,20 +3266,27 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Facilitation tool***: Helps teams discuss and categorize challenges
 
-***Key Proponent***: Dave Snowden (1999)
+***Key Proponents***: Dave Snowden (1999)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Understanding what type of problem you're facing
 * Choosing appropriate decision-making approaches
 * Facilitating team discussions about complexity
 * Strategic planning in uncertain environments
 
+[discrete]
+## **Related Anchors**:
+
+* Wardley Mapping
+
 ### Impact Mapping
 
 ***Full Name***: Impact Mapping according to Gojko Adzic
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Four levels***: Goal → Actors → Impacts → Deliverables
 
@@ -2064,7 +3308,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Gojko Adzic ("Impact Mapping", 2012)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Strategic planning for products or projects
 * When stakeholders disagree on priorities
@@ -2075,7 +3320,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Jobs To Be Done Framework (Christensen interpretation)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Job definition***: Progress people want to make in a particular context
 
@@ -2097,7 +3343,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponents***: Clayton Christensen, Alan Klement, Bob Moesta
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Product discovery and innovation
 * Understanding why customers choose solutions
@@ -2109,34 +3356,82 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Full Name***: Pugh Decision Matrix (also Pugh Controlled Convergence)
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
-***Baseline comparison***: Compare alternatives against a reference solution
-
-***Criteria weighting***: Assign importance to evaluation criteria
-
-***Relative scoring***: Better (+), Same (S), Worse (-) than baseline
-
+***Matrix layout***: Criteria as ROWS, alternatives as COLUMNS
+***Reference (baseline)***: One alternative is designated as reference — scored entirely as 0/S
+***Relative scoring***: Each alternative rated against the reference: Better (+), Same (S), Worse (−)
+***Summary rows***: Σ(+), Σ(−), Σ(S), and Net Score per alternative at bottom of matrix
 ***Structured evaluation***: Systematic comparison across multiple dimensions
-
+***Team decision-making***: Facilitates group consensus
+***Hybrid solutions***: Combine strengths of different alternatives
 ***Iterative refinement***: Multiple rounds to converge on best solution
 
-***Team decision-making***: Facilitates group consensus
+***Key Proponent***: Stuart Pugh ("Total Design", 1991)
 
-***Hybrid solutions***: Combine strengths of different alternatives
+[discrete]
+## **Variants** (use as qualifier for consistent results):
 
-***Key Proponent***: Stuart Pugh
+***Unweighted 3-Point Pugh Matrix***: Original form. Default when no qualifier is given.
+***Weighted 3-Point Pugh Matrix***: Criteria carry importance weights. Standard in Six Sigma / QFD contexts.
+***Weighted 5-Point Pugh Matrix***: Finer granularity for closely ranked alternatives.
+***Pugh Controlled Convergence***: Iterative multi-round process with elimination, hybrid creation, and reference rotation.
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Multiple viable alternatives exist
 * Decision criteria are known but trade-offs are unclear
 * Team needs to reach consensus
 * Architecture or technology selection decisions
 
+### SWOT
+
+***Full Name***: SWOT Analysis
+
+***Also known as***: SWOT Matrix, TOWS Analysis
+
+[discrete]
+## **Core Concepts**:
+
+SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
+
+***Strengths***: Internal positive attributes and resources that give the subject an advantage over others
+
+***Weaknesses***: Internal negative attributes or limitations that place the subject at a disadvantage relative to others
+
+***Opportunities***: External factors or trends that the subject could exploit to its advantage
+
+***Threats***: External factors or conditions that could cause problems or jeopardise the subject's success
+
+***Internal vs. External***: Strengths and Weaknesses are internal (within control); Opportunities and Threats are external (environmental)
+
+***Present vs. Future orientation***: Strengths and Weaknesses reflect the current state; Opportunities and Threats look toward future conditions
+
+***TOWS variant***: Systematic derivation of strategies by cross-referencing SWOT quadrants (SO, ST, WO, WT strategies)
+
+***Key Proponent***: Albert Humphrey (Stanford Research Institute, 1960s–1970s)
+
+[discrete]
+## **When to Use**:
+
+* Strategic planning for a product, project, organisation, or technology choice
+* Competitive analysis to understand market positioning
+* Evaluating an architectural or technology decision holistically
+* Team retrospectives to assess current state before planning next steps
+* Business case preparation and stakeholder communication
+
+**Related Anchors**:
+
+* Pugh Matrix
+* Wardley Mapping
+* MoSCoW
+
 ### Wardley Mapping
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Value chain***: Map components from user needs down
 
@@ -2160,7 +3455,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Simon Wardley
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Strategic technology planning
 * Build vs. buy decisions
@@ -2172,13 +3468,130 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ## Testing & Quality Practices
 
+### BDD (Behavior-Driven Development)
+
+***Also known as***: Specification by Example, Executable Specifications
+
+[discrete]
+## **Core Concepts**:
+
+***Given-When-Then***: Structured scenario format — Given a precondition, When an action occurs, Then an expected outcome results
+
+***Specification by Example***: Concrete examples as executable specifications that define system behavior
+
+***Three Amigos***: Collaborative discovery sessions between developer, tester, and business representative
+
+***Gherkin syntax***: Domain-specific language for writing human-readable, machine-executable scenarios
+
+***Living documentation***: Tests that serve as always-current system documentation
+
+***Outside-in specification***: Start from desired business behavior, work inward to implementation
+
+***Ubiquitous language***: Shared vocabulary bridging technical and business stakeholders in scenarios
+
+***Discovery workshops***: Structured conversations to uncover requirements through examples before implementation
+
+***Key Proponent***: Dan North ("Introducing BDD", 2006), creator of JBehave which influenced Cucumber's design (Cucumber created by Aslak Hellesøy, 2008)
+
+[discrete]
+## **When to Use**:
+
+* Cross-functional teams needing shared understanding of requirements
+* Systems where business rules are complex and need clear documentation
+* Projects requiring executable acceptance criteria
+* Bridging communication gaps between technical and non-technical stakeholders
+
+[discrete]
+## **Related Anchors**:
+
+* TDD, London School - Outside-in development approach that complements BDD
+* TDD, Chicago School - Developer-focused TDD practice
+* User Story Mapping - Requirements discovery that feeds BDD scenarios
+
+### Fagan Inspection
+
+***Also known as***: Formal Code Inspection, Software Inspection, Fagan's Inspection Method
+
+[discrete]
+## Core Concepts:
+
+***Formal inspection process***: A structured, multi-phase review process for software artifacts (requirements, design, code) with defined roles and entry/exit criteria
+
+***Roles***: Moderator (facilitates and logs), Author (created the artifact), Inspectors (reviewers), Recorder (documents defects)
+
+***Six phases***: Planning → Overview → Preparation → Inspection Meeting → Rework → Follow-up
+
+***Entry and exit criteria***: Explicit conditions that must be met before entering and leaving each phase, preventing premature progression
+
+***Defect classification***: Defects are categorized by type (missing, wrong, extra) and severity, enabling process improvement through causal analysis
+
+***Metrics-driven***: Inspection data (defect rate, inspection rate) are collected and used to improve both the product and the inspection process itself
+
+***Key Proponents***: Michael Fagan ("Design and Code Inspections to Reduce Errors in Program Development", IBM Systems Journal, 1976)
+
+[discrete]
+## When to Use:
+
+* Safety-critical or high-assurance software where defect escape is costly
+* Reviewing requirements, architecture, design, or code artifacts early in development
+* Establishing a culture of quality and shared code ownership in teams
+* When you want measurable, process-level quality improvement over time
+* Regulated environments (medical devices, avionics, finance) requiring documented review evidence
+
+[discrete]
+## Related Anchors:
+
+* Mutation Testing
+* Testing Pyramid
+
+### Gherkin
+
+***Also known as***: Cucumber DSL, BDD Scenario Language
+
+[discrete]
+## **Core Concepts**:
+
+***Feature***: Top-level description of a software capability, grouping related scenarios that describe expected behavior
+
+***Scenario***: A concrete example of how the system should behave in a specific situation, written as a sequence of steps
+
+***Given-When-Then steps***: Structured step types — Given establishes preconditions, When describes an action, Then asserts the expected outcome; And/But extend any step type
+
+***Background***: A set of steps shared across all scenarios in a feature file, executed before each scenario
+
+***Scenario Outline / Examples***: Parameterized scenario template with a data table, allowing the same behavior to be tested with multiple input sets
+
+***Docstrings and Data Tables***: Inline multi-line strings and tabular data attached to steps for richer input specification
+
+***Natural language support***: Gherkin keywords are translated into 70+ human languages, enabling non-English teams to write scenarios in their native language
+
+***Human-readable and machine-executable***: Scenarios serve as both documentation for stakeholders and executable tests driven by step definitions in the implementation language
+
+***Key Proponent***: Aslak Hellesøy (creator of Cucumber and the Gherkin language, 2008); influenced by Dan North's BDD and JBehave
+
+[discrete]
+## **When to Use**:
+
+* Defining acceptance criteria collaboratively between developers, testers, and business stakeholders
+* Creating living documentation that stays synchronized with the system's behavior
+* Writing automated acceptance tests that non-technical stakeholders can read and verify
+* Projects adopting Behavior-Driven Development (BDD) with tools like Cucumber, SpecFlow, or Behave
+
+[discrete]
+## **Related Anchors**:
+
+* BDD (Behavior-Driven Development) - The practice that Gherkin was designed to support
+* EARS Requirements - Alternative structured natural-language requirements format
+* TDD, London School - Outside-in development that naturally combines with Gherkin-driven acceptance tests
+
 ### IEC 61508 SIL Levels
 
 ***Full Name***: IEC 61508 Safety Integrity Levels
 
 ***Also known as***: Functional Safety Levels, SIL Classification
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Four Safety Integrity Levels***
 
@@ -2207,14 +3620,16 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Standard***: IEC 61508 "Functional Safety of Electrical/Electronic/Programmable Electronic Safety-related Systems" (first edition 1998, second edition 2010)
 
-**Related Standards**:
+[discrete]
+## **Related Standards**:
 
 * IEC 61511 (Process industry)
 * ISO 26262 (Automotive)
 * EN 50128 (Railway)
 * IEC 62304 (Medical devices)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Developing safety-critical embedded systems
 * Assessing risk in industrial automation and control systems
@@ -2224,11 +3639,53 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Conducting hazard and operability (HAZOP) studies
 * Implementing functional safety management systems
 
+### LINDDUN
+
+***Full Name***: LINDDUN Privacy Threat Modeling Framework
+
+***Also known as***: LINDDUN GO, Privacy Threat Modeling, Privacy STRIDE
+
+[discrete]
+## **Core Concepts**:
+
+***Linkability***: Attacker can link two items of interest (e.g., data items, messages, or actions) without knowing the identity of the data subject
+
+***Identifiability***: Attacker can identify a data subject from a set of data subjects through items of interest
+
+***Non-repudiation***: Data subject cannot deny having performed an action or having sent a message; system logs become a liability
+
+***Detectability***: Attacker can deduce the existence or absence of a data item or communication, even without access to its content
+
+***Disclosure of Information***: Unauthorized exposure of data to a party without the data subject's consent; classical confidentiality breach from a privacy perspective
+
+***Unawareness***: Data subjects are not sufficiently informed about the collection, processing, storage, and sharing of their personal data; violates transparency principles
+
+***Non-compliance***: System does not comply with privacy legislation, regulations, or organizational privacy policies (e.g., GDPR, CCPA, HIPAA)
+
+***Key Proponents***: Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven / DistriNet Research Group, published 2014)
+
+[discrete]
+## **When to Use**:
+
+* Conducting privacy threat modeling during the design or architecture phase
+* Performing privacy impact assessments (PIA) or data protection impact assessments (DPIA)
+* Identifying privacy risks in systems that handle personal data
+* Evaluating compliance with GDPR, CCPA, HIPAA, and other privacy regulations
+* Integrating Privacy by Design into the software development lifecycle
+* Training development teams on privacy engineering concepts
+
+[discrete]
+## **Related Anchors**:
+
+* OWASP Top 10
+* Regulated Environment
+
 ### Mutation Testing
 
 ***Also known as***: Mutation Analysis, Fault-Based Testing
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Test quality assessment***: Evaluate how effective tests are at detecting bugs
 
@@ -2256,7 +3713,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponents***: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
 
-**Key Tools**:
+[discrete]
+## **Key Tools**:
 
 * PITest (Java)
 * Stryker (JavaScript/TypeScript, C#, Scala)
@@ -2264,7 +3722,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Infection (PHP)
 * Mull (C/C++)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Evaluating test suite quality beyond coverage metrics
 * Identifying gaps in test assertions
@@ -2274,7 +3733,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Teaching effective testing practices
 * Continuous improvement of test effectiveness
 
-**Practical Challenges**:
+[discrete]
+## **Practical Challenges**:
 
 ***Computational cost***: N mutations × M tests = expensive
 
@@ -2284,7 +3744,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Mitigation strategies***: Selective mutation, mutation sampling, incremental analysis
 
-**Relationship to Other Practices**:
+[discrete]
+## **Relationship to Other Practices**:
 
 ***Code coverage***: Mutation testing reveals that high coverage ≠ good tests
 
@@ -2294,11 +3755,59 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Fault injection***: Similar concept applied to production systems
 
+### OWASP Top 10
+
+***Full Name***: OWASP Top 10 Web Application Security Risks
+
+***Also known as***: OWASP Top Ten, Web Application Security Top 10
+
+[discrete]
+## **Core Concepts**:
+
+***A01 – Broken Access Control***: Failure to enforce restrictions on what authenticated users can do; most prevalent web application risk
+
+***A02 – Cryptographic Failures***: Sensitive data exposed due to weak or absent encryption; previously called "Sensitive Data Exposure"
+
+***A03 – Injection***: Untrusted data sent to an interpreter as part of a command or query (SQL, OS, LDAP injection)
+
+***A04 – Insecure Design***: Missing or ineffective security controls resulting from flawed design and threat modeling
+
+***A05 – Security Misconfiguration***: Insecure default settings, incomplete configurations, open cloud storage, verbose error messages
+
+***A06 – Vulnerable and Outdated Components***: Use of components (libraries, frameworks) with known vulnerabilities
+
+***A07 – Identification and Authentication Failures***: Weaknesses in authentication, session management, and credential handling
+
+***A08 – Software and Data Integrity Failures***: Code and infrastructure that does not protect against integrity violations (e.g., insecure deserialization, CI/CD tampering)
+
+***A09 – Security Logging and Monitoring Failures***: Insufficient logging, detection, and response to breaches
+
+***A10 – Server-Side Request Forgery (SSRF)***: Server fetches remote resources from attacker-controlled URLs without validation
+
+***Key Proponent***: OWASP Foundation (https://owasp.org/Top10/, first published 2003, current edition 2021)
+
+[discrete]
+## **When to Use**:
+
+* Performing security risk assessments on web applications
+* Establishing secure coding guidelines and developer training programs
+* Conducting threat modeling and security design reviews
+* Prioritizing security findings during code reviews and penetration tests
+* Defining acceptance criteria for security requirements
+* Auditing third-party or open-source components for known vulnerabilities
+
+[discrete]
+## **Related Anchors**:
+
+* Regulated Environment
+* IEC 61508 SIL Levels
+
 ### Property-Based Testing
 
 ***Also known as***: Generative Testing, QuickCheck-style Testing
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Properties***: Invariants that should always hold
 
@@ -2320,7 +3829,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Tools***: QuickCheck (Haskell), Hypothesis (Python), fast-check (JavaScript), FsCheck (.NET)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Testing pure functions and algorithms
 * Validating business rules and invariants
@@ -2328,11 +3838,51 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Finding edge cases in complex logic
 * Complementing example-based TDD
 
+### STRIDE Threat Model
+
+***Full Name***: STRIDE Threat Modeling Framework
+
+***Also known as***: STRIDE Threat Model, Microsoft STRIDE
+
+[discrete]
+## **Core Concepts**:
+
+***Spoofing***: Impersonating another user, process, or system to gain unauthorized access; mitigated by strong authentication
+
+***Tampering***: Unauthorized modification of data in transit or at rest; mitigated by integrity controls, digital signatures, and access controls
+
+***Repudiation***: Denying that an action was performed when it actually was; mitigated by audit logging and non-repudiation mechanisms
+
+***Information Disclosure***: Exposing sensitive data to unauthorized parties; mitigated by encryption, access control, and data minimization
+
+***Denial of Service***: Disrupting or degrading availability of a system or service for legitimate users; mitigated by rate limiting, redundancy, and resilience
+
+***Elevation of Privilege***: Gaining capabilities or permissions beyond what is legitimately authorized; mitigated by least-privilege principles and authorization checks
+
+***Key Proponents***: Loren Kohnfelder and Praerit Garg (Microsoft, 1999); popularized by Adam Shostack ("Threat Modeling: Designing for Security", 2014)
+
+[discrete]
+## **When to Use**:
+
+* Performing structured threat modeling during software design and architecture reviews
+* Identifying and categorizing potential threats in security assessments
+* Training developers to think adversarially about system security
+* Prioritizing security controls and mitigations during system design
+* Conducting security design reviews and red-team exercises
+* Establishing a shared vocabulary for discussing security threats across teams
+
+[discrete]
+## **Related Anchors**:
+
+* OWASP Top 10
+* Regulated Environment
+
 ### TDD, Chicago School
 
 ***Also known as***: Classicist TDD, Detroit School
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***State-based testing***: Verify the state of objects after operations
 
@@ -2348,7 +3898,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponents***: Kent Beck, Martin Fowler
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Domain-driven design projects
 * When business logic is central
@@ -2358,7 +3909,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Also known as***: Mockist TDD, Outside-In TDD
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Mock-heavy testing***: Heavy use of test doubles (mocks, stubs) to isolate units
 
@@ -2374,17 +3926,200 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponents***: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Complex systems with many collaborating objects
 * When designing APIs and interfaces
 * Distributed systems where integration is costly
 
+### Test Double: Dummy (Meszaros)
+
+[discrete]
+## **Core Concepts**:
+
+***Purpose***: An object passed to fill a required parameter but never actually used in the test. The simplest form of test double.
+
+***Behavior***: Has no behavior. Calls to a Dummy should not occur — if they do, something is wrong with the test setup.
+
+***Typical use***: Satisfying constructor or method signatures where the parameter is irrelevant to the test scenario.
+
+***Key Proponent***: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+## **When to Use**:
+
+* Tell an LLM: "Create a Dummy test double for this parameter — it should never be called"
+* When a method requires parameters that are irrelevant to the behavior being tested
+* Filling dependency injection containers with unused dependencies
+
+[discrete]
+## **Related Anchors**:
+
+* Test Double (Meszaros) — umbrella taxonomy
+* Stub — when you need canned responses (Dummy provides none)
+
+### Test Double: Fake (Meszaros)
+
+[discrete]
+## **Core Concepts**:
+
+***Purpose***: A working but simplified implementation unsuitable for production. Has real behavior, but takes shortcuts.
+
+***Behavior***: Actually processes inputs and produces outputs — unlike Stubs which return fixed data. The simplification makes it fast and predictable for tests.
+
+***Typical examples***: In-memory database instead of real database, in-memory file system, local email sender that writes to a list instead of sending, simplified authentication that always succeeds.
+
+***Distinction from Stub***: A Stub returns canned data. A Fake has **real logic**, just simplified.
+
+***Key Proponent***: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+## **When to Use**:
+
+* Tell an LLM: "Create a Fake implementation of this repository using an in-memory store"
+* Integration-style tests without external infrastructure
+* When Stubs are too simplistic and the real implementation is too slow/complex
+* Local development environments needing realistic but fast dependencies
+
+[discrete]
+## **Related Anchors**:
+
+* Test Double (Meszaros) — umbrella taxonomy
+* Stub — simpler alternative with fixed responses
+
+### Test Double (Meszaros)
+
+***Full Name***: Test Double taxonomy according to Gerard Meszaros
+
+***Also known as***: xUnit Test Patterns test double taxonomy
+
+[discrete]
+## **Core Concepts**:
+
+***Dummy***: Object passed to fill a parameter list but never actually used
+
+***Stub***: Provides canned responses to calls made during a test; no verification of interactions
+
+***Spy***: Records calls made to it for later assertion; a stub that also captures interaction data
+
+***Mock***: Pre-programmed with expectations; verifies that specific interactions occurred (interaction-based verification)
+
+***Fake***: Working simplified implementation with shortcuts unsuitable for production (e.g., in-memory database, in-memory repository)
+
+***Test Double***: Umbrella term for any object substituted for a real dependency during testing
+
+***Vocabulary precision***: Distinguishing what a double IS (taxonomy) from when to use it (TDD school philosophy)
+
+***Key Proponent***: Gerard Meszaros ("xUnit Test Patterns: Refactoring Test Code", 2007)
+
+[discrete]
+## **When to Use**:
+
+* Communicating precisely about test isolation strategies
+* Choosing the right type of double for a given testing scenario
+* Avoiding vocabulary collisions (e.g., calling a Stub a "mock" triggers wrong reasoning)
+* Teaching or reviewing test code with shared terminology
+
+[discrete]
+## **Related Anchors**:
+
+* TDD, London School - Philosophy of when to use doubles heavily (interaction-based)
+* TDD, Chicago School - Philosophy of minimal doubling (state-based)
+
+### Test Double: Mock (Meszaros)
+
+[discrete]
+## **Core Concepts**:
+
+***Purpose***: Pre-programmed with expectations about which calls should be made. Verifies that specific interactions occurred — the test fails if the expected interactions don't happen.
+
+***Behavior***: Has built-in assertions. If the system under test calls the wrong method, with wrong arguments, or in the wrong order, the Mock fails the test immediately.
+
+***Distinction from Stub***: A Stub provides data passively. A Mock actively **verifies behavior**.
+
+***Distinction from Spy***: A Spy records calls for **post-hoc** assertion. A Mock enforces expectations **during** execution.
+
+***Key Proponent***: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+## **When to Use**:
+
+* Tell an LLM: "Create a Mock test double that verifies these interactions occur"
+* Interaction-based testing (London School TDD)
+* When the **behavior** matters more than the **result**
+* Verifying that a notification was sent, a log was written, or a service was called correctly
+
+[discrete]
+## **Related Anchors**:
+
+* Test Double (Meszaros) — umbrella taxonomy
+* Spy — post-hoc assertion instead of expectations
+* TDD, London School — favors Mocks for outside-in design
+
+### Test Double: Spy (Meszaros)
+
+[discrete]
+## **Core Concepts**:
+
+***Purpose***: A Stub that also records how it was called — which methods, with what arguments, how many times. Assertions happen **after** the action, not as expectations **before**.
+
+***Behavior***: Returns canned responses (like a Stub) and silently records all interactions for later inspection.
+
+***Distinction from Mock***: A Spy records and lets **you** assert afterward. A Mock has pre-programmed expectations that fail immediately if violated.
+
+***Key Proponent***: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+## **When to Use**:
+
+* Tell an LLM: "Create a Spy test double that records calls for later assertion"
+* When you need to verify interactions but want assertions in the test body, not in setup
+* Auditing what happened during a test without constraining the order of operations
+* When the exact interaction pattern matters but you want flexible assertion
+
+[discrete]
+## **Related Anchors**:
+
+* Test Double (Meszaros) — umbrella taxonomy
+* Stub — Spy without call recording
+* Mock — pre-programmed expectations instead of post-hoc assertion
+
+### Test Double: Stub (Meszaros)
+
+[discrete]
+## **Core Concepts**:
+
+***Purpose***: Provides predefined (canned) responses to calls made during a test. Does not verify interactions — only supplies data.
+
+***Behavior***: Returns fixed values regardless of input. No assertion on whether or how it was called.
+
+***Distinction from Mock***: A Stub never fails a test. It only provides data. A Mock has expectations and can fail the test if interactions are wrong.
+
+***Key Proponent***: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+## **When to Use**:
+
+* Tell an LLM: "Create a Stub test double that returns this fixed data"
+* Isolating the system under test from external dependencies (database, API)
+* State-based testing (Chicago School TDD)
+* When you care about the **result**, not about **how** it was obtained
+
+[discrete]
+## **Related Anchors**:
+
+* Test Double (Meszaros) — umbrella taxonomy
+* Spy — a Stub that also records calls
+* Mock — when you need interaction verification
+* TDD, Chicago School — favors Stubs over Mocks
+
 ### Testing Pyramid
 
 ***Full Name***: Testing Pyramid according to Mike Cohn
 
-**Core Concepts**:
+[discrete]
+## **Core Concepts**:
 
 ***Three layers***
 * **Unit tests** (base): Many fast, isolated tests
@@ -2405,7 +4140,8 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 
 ***Key Proponent***: Mike Cohn ("Succeeding with Agile", 2009)
 
-**When to Use**:
+[discrete]
+## **When to Use**:
 
 * Planning test strategy for projects
 * Balancing test types in CI/CD pipelines

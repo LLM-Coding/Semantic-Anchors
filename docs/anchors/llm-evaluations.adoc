@@ -1,0 +1,54 @@
+= LLM-Evaluations
+:categories: testing-quality
+:roles: data-scientist, software-developer, qa-engineer, software-architect
+:related: chain-of-thought, sota, mutation-testing
+:proponents: Percy Liang (Stanford HELM), EleutherAI (Open LLM Leaderboard), LMSYS (Chatbot Arena)
+:tags: llm, evaluation, benchmarks, metrics, leaderboard, nlp, ai
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Large Language Model Evaluations
+
+Also known as:: LLM Benchmarking, LLM Assessment, Foundation Model Evaluation
+
+[discrete]
+== *Core Concepts*:
+
+Benchmark Suites:: Standardized datasets and tasks used to compare LLM capabilities — MMLU (Massive Multitask Language Understanding), HellaSwag, HumanEval, BIG-Bench, GSM8K, TruthfulQA, ARC
+
+Evaluation Metrics:: Quantitative measures of model quality — perplexity, accuracy, BLEU, ROUGE, F1, pass@k (code generation), exact match, calibration
+
+Automatic vs. Human Evaluation:: Automated scoring via metrics or reference outputs (fast, scalable) vs. human judgment (nuanced, expensive); hybrid approaches such as LLM-as-judge
+
+HELM (Holistic Evaluation of Language Models):: Stanford framework evaluating models across multiple scenarios and metrics simultaneously to surface trade-offs across accuracy, robustness, fairness, and efficiency
+
+Chatbot Arena / Elo Rating:: Human preference-based evaluation where two models respond to the same prompt and humans choose the better answer; produces Elo-style rankings
+
+Open LLM Leaderboard:: Hugging Face / EleutherAI hosted ranking of open-source models across standardized benchmarks enabling reproducible comparisons
+
+Red-Teaming & Safety Evaluation:: Systematic adversarial probing for harmful outputs, jailbreaks, and failure modes; a required step before production deployment
+
+Contamination & Overfitting:: Risk that a model's training data includes benchmark test sets, inflating apparent performance; mitigated by held-out or dynamic benchmarks
+
+Task-Specific vs. General Evaluation:: Targeted evaluation for a specific use case (e.g., code, summarization, RAG retrieval) vs. broad capability assessment across diverse domains
+
+Key Proponents:: Percy Liang et al. (Stanford, "Holistic Evaluation of Language Models"), EleutherAI ("Language Model Evaluation Harness"), LMSYS ("Chatbot Arena: Benchmarking LLMs in the Wild")
+
+[discrete]
+== *When to Use*:
+
+* Selecting a foundation model for a specific application domain
+* Comparing fine-tuned model versions during iterative training
+* Validating that a model meets quality, safety, and fairness requirements before deployment
+* Reproducing or challenging published model capability claims
+* Establishing regression baselines when updating a deployed model
+* Communicating model strengths and limitations to non-technical stakeholders
+
+[discrete]
+== *Related Anchors*:
+
+* <<chain-of-thought,Chain of Thought (CoT)>>
+* <<sota,SOTA (State-of-the-Art)>>
+* <<mutation-testing,Mutation Testing>>
+====

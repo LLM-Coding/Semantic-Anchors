@@ -96,8 +96,14 @@ export async function fetchData() {
       fetchJson('data/anchors.json'),
       fetchJson('data/categories.json'),
       fetchJson('data/roles.json'),
+      fetchJson('data/feedback.json').catch(() => ({})),
     ])
-      .then(([anchors, categories, roles]) => ({ anchors, categories, roles }))
+      .then(([anchors, categories, roles, feedback]) => ({
+        anchors,
+        categories,
+        roles,
+        feedback,
+      }))
       .catch((error) => {
         dataPromise = null
         throw error
@@ -105,6 +111,15 @@ export async function fetchData() {
   }
 
   return dataPromise
+}
+
+let cachedFeedback = null
+
+export async function fetchFeedbackData() {
+  if (cachedFeedback) return cachedFeedback
+  const { feedback } = await fetchData()
+  cachedFeedback = feedback
+  return cachedFeedback
 }
 
 let cachedAnchorsOnly = null
@@ -119,4 +134,5 @@ export async function fetchAnchorsData() {
 export function __resetDataCacheForTests() {
   dataPromise = null
   cachedAnchorsOnly = null
+  cachedFeedback = null
 }

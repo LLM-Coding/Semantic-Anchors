@@ -1,5 +1,5 @@
 import { i18n } from '../i18n.js'
-import { fetchAnchorsData } from '../utils/data-loader.js'
+import { fetchAnchorsData, fetchFeedbackData } from '../utils/data-loader.js'
 import { getRouteBeforeModal, getScrollBeforeModal } from '../utils/router.js'
 
 let asciidoctor = null
@@ -50,6 +50,23 @@ export function createModal() {
       <div id="modal-content" class="flex-1 overflow-y-auto p-6 prose prose-slate dark:prose-invert max-w-none asciidoc-content">
         <div class="flex items-center justify-center h-64">
           <div class="text-[var(--color-text-secondary)]">Loading...</div>
+        </div>
+      </div>
+      <div id="modal-feedback-bar" class="modal-feedback-bar hidden">
+        <span class="modal-feedback-cta">${i18n.t('feedback.cta')}</span>
+        <div class="feedback-actions">
+          <a id="modal-vote-btn" href="#" target="_blank" rel="noopener noreferrer" class="feedback-btn feedback-btn-vote">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+            </svg>
+            <span>${i18n.t('feedback.vote')}</span>
+          </a>
+          <a id="modal-discuss-btn" href="#" target="_blank" rel="noopener noreferrer" class="feedback-btn feedback-btn-discuss">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+            </svg>
+            <span>${i18n.t('feedback.discuss')}</span>
+          </a>
         </div>
       </div>
     </div>
@@ -121,14 +138,14 @@ function renderSubAnchorList(subAnchorIds, allAnchors) {
     if (!anchor) return ''
     const tier = anchor.tier || 2
 
-    if (tier === 3) {
-      return `<li class="sub-anchor-item tier-3">
+    if (tier === 1) {
+      return `<li class="sub-anchor-item tier-1">
         <span>${escapeHtml(anchor.title)}</span>
         <span class="text-xs text-gray-400 dark:text-gray-500 ml-2">${i18n.t('umbrella.notAnAnchor')}</span>
       </li>`
     }
 
-    const tierClass = tier === 1 ? 'tier-1' : 'tier-2'
+    const tierClass = `tier-${tier}`
     return `<li class="sub-anchor-item ${tierClass}">
       <a href="#" data-sub-anchor="${escapeHtml(id)}" class="sub-anchor-link">${escapeHtml(anchor.title)}</a>
     </li>`
@@ -266,6 +283,62 @@ export async function loadAnchorContent(anchorId) {
         })
       }
     })
+
+    // Feedback section
+    const feedback = await fetchFeedbackData()
+    const fb = feedback[anchorId]
+    const safeFeedbackUrl =
+      fb &&
+      typeof fb.url === 'string' &&
+      /^https:\/\/github\.com\/LLM-Coding\/Semantic-Anchors\/discussions\/\d+$/.test(fb.url)
+        ? fb.url
+        : null
+    // Update sticky feedback bar
+    const feedbackBar = document.getElementById('modal-feedback-bar')
+    const voteBtn = document.getElementById('modal-vote-btn')
+    const discussBtn = document.getElementById('modal-discuss-btn')
+
+    if (safeFeedbackUrl) {
+      voteBtn.href = safeFeedbackUrl
+      voteBtn.querySelector('span').textContent =
+        `${i18n.t('feedback.vote')}${fb.upvotes > 1 ? ` (${fb.upvotes})` : ''}`
+      discussBtn.href = safeFeedbackUrl
+      discussBtn.querySelector('span').textContent =
+        `${i18n.t('feedback.discuss')}${fb.comments > 0 ? ` (${fb.comments})` : ''}`
+      feedbackBar.classList.remove('hidden')
+
+      // Show recent comments in content area
+      if (fb.recentComments && fb.recentComments.length > 0) {
+        const commentsHtml = `
+          <div class="feedback-section">
+            <h4 class="feedback-heading">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+              </svg>
+              ${i18n.t('feedback.discussionHeading')}
+            </h4>
+            <div class="feedback-comments">
+              ${fb.recentComments
+                .map(
+                  (c) => `
+                <div class="feedback-comment">
+                  <img src="${escapeHtml(c.avatar)}" alt="${escapeHtml(c.author)}" class="feedback-avatar" width="24" height="24" />
+                  <div class="feedback-comment-body">
+                    <span class="feedback-author">${escapeHtml(c.author)}</span>
+                    <p class="feedback-text">${escapeHtml(c.body)}</p>
+                  </div>
+                </div>
+              `
+                )
+                .join('')}
+            </div>
+          </div>
+        `
+        contentEl.insertAdjacentHTML('beforeend', commentsHtml)
+      }
+    } else {
+      feedbackBar.classList.add('hidden')
+    }
   } catch (error) {
     console.error('Error loading anchor content:', error)
     titleEl.textContent = 'Error'

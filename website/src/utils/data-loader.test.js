@@ -280,15 +280,17 @@ describe('fetchData', () => {
       .mockResolvedValueOnce({ ok: true, json: async () => mockAnchors })
       .mockResolvedValueOnce({ ok: true, json: async () => mockCategories })
       .mockResolvedValueOnce({ ok: true, json: async () => mockRoles })
+      .mockResolvedValueOnce({ ok: false, status: 404 }) // feedback.json (optional, may 404)
 
     const first = await fetchData()
     const second = await fetchData()
 
     expect(first).toEqual(second)
-    expect(global.fetch).toHaveBeenCalledTimes(3)
+    expect(global.fetch).toHaveBeenCalledTimes(4)
     expect(global.fetch).toHaveBeenNthCalledWith(1, expect.stringContaining('data/anchors.json'))
     expect(global.fetch).toHaveBeenNthCalledWith(2, expect.stringContaining('data/categories.json'))
     expect(global.fetch).toHaveBeenNthCalledWith(3, expect.stringContaining('data/roles.json'))
+    expect(global.fetch).toHaveBeenNthCalledWith(4, expect.stringContaining('data/feedback.json'))
   })
 
   it('throws on non-success responses', async () => {

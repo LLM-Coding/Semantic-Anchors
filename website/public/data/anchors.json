@@ -13,7 +13,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/adr-according-to-nygard.adoc"
+    "filePath": "docs/anchors/adr-according-to-nygard.adoc",
+    "tier": 3
   },
   {
     "id": "arc42",
@@ -32,7 +33,8 @@
       "Peter Hruschka"
     ],
     "tags": [],
-    "filePath": "docs/anchors/arc42.adoc"
+    "filePath": "docs/anchors/arc42.adoc",
+    "tier": 3
   },
   {
     "id": "atam",
@@ -62,7 +64,8 @@
       "SEI",
       "risk analysis"
     ],
-    "filePath": "docs/anchors/atam.adoc"
+    "filePath": "docs/anchors/atam.adoc",
+    "tier": 3
   },
   {
     "id": "bdd-given-when-then",
@@ -93,7 +96,8 @@
       "given-when-then",
       "living-documentation"
     ],
-    "filePath": "docs/anchors/bdd-given-when-then.adoc"
+    "filePath": "docs/anchors/bdd-given-when-then.adoc",
+    "tier": 3
   },
   {
     "id": "bem-methodology",
@@ -110,7 +114,8 @@
       "Yandex development team"
     ],
     "tags": [],
-    "filePath": "docs/anchors/bem-methodology.adoc"
+    "filePath": "docs/anchors/bem-methodology.adoc",
+    "tier": 3
   },
   {
     "id": "bluf",
@@ -130,7 +135,8 @@
       "adopted broadly in business and government"
     ],
     "tags": [],
-    "filePath": "docs/anchors/bluf.adoc"
+    "filePath": "docs/anchors/bluf.adoc",
+    "tier": 3
   },
   {
     "id": "c4-diagrams",
@@ -147,7 +153,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/c4-diagrams.adoc"
+    "filePath": "docs/anchors/c4-diagrams.adoc",
+    "tier": 3
   },
   {
     "id": "chain-of-thought",
@@ -167,32 +174,8 @@
       "\"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\""
     ],
     "tags": [],
-    "filePath": "docs/anchors/chain-of-thought.adoc"
-  },
-  {
-    "id": "chatham-house-rule",
-    "title": "Chatham House Rule",
-    "categories": [
-      "communication-presentation"
-    ],
-    "roles": [
-      "team-lead",
-      "consultant",
-      "business-analyst",
-      "product-owner"
-    ],
-    "related": [],
-    "proponents": [
-      "Chatham House (Royal Institute of International Affairs)"
-    ],
-    "tags": [
-      "communication",
-      "confidentiality",
-      "meetings",
-      "open-discussion",
-      "trust"
-    ],
-    "filePath": "docs/anchors/chatham-house-rule.adoc"
+    "filePath": "docs/anchors/chain-of-thought.adoc",
+    "tier": 3
   },
   {
     "id": "clean-architecture",
@@ -207,7 +190,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/clean-architecture.adoc"
+    "filePath": "docs/anchors/clean-architecture.adoc",
+    "tier": 3
   },
   {
     "id": "control-chart-shewhart",
@@ -223,7 +207,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/control-chart-shewhart.adoc"
+    "filePath": "docs/anchors/control-chart-shewhart.adoc",
+    "tier": 3
   },
   {
     "id": "conventional-commits",
@@ -242,7 +227,8 @@
       "Steve Mao"
     ],
     "tags": [],
-    "filePath": "docs/anchors/conventional-commits.adoc"
+    "filePath": "docs/anchors/conventional-commits.adoc",
+    "tier": 3
   },
   {
     "id": "cqrs",
@@ -272,7 +258,8 @@
       "queries",
       "read-write-separation"
     ],
-    "filePath": "docs/anchors/cqrs.adoc"
+    "filePath": "docs/anchors/cqrs.adoc",
+    "tier": 3
   },
   {
     "id": "cynefin-framework",
@@ -299,7 +286,42 @@
       "strategy",
       "domains"
     ],
-    "filePath": "docs/anchors/cynefin-framework.adoc"
+    "filePath": "docs/anchors/cynefin-framework.adoc",
+    "tier": 3
+  },
+  {
+    "id": "definition-of-done",
+    "title": "Definition of Done",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer",
+      "product-owner",
+      "team-lead"
+    ],
+    "related": [
+      "bdd-given-when-then",
+      "user-story-mapping",
+      "moscow"
+    ],
+    "proponents": [
+      "Ken Schwaber",
+      "Jeff Sutherland"
+    ],
+    "tags": [
+      "dod",
+      "acceptance criteria",
+      "scrum",
+      "agile",
+      "quality gates",
+      "done",
+      "sprint",
+      "increment"
+    ],
+    "filePath": "docs/anchors/definition-of-done.adoc",
+    "tier": 3
   },
   {
     "id": "devils-advocate",
@@ -316,7 +338,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/devils-advocate.adoc"
+    "filePath": "docs/anchors/devils-advocate.adoc",
+    "tier": 3
   },
   {
     "id": "diataxis-framework",
@@ -331,7 +354,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/diataxis-framework.adoc"
+    "filePath": "docs/anchors/diataxis-framework.adoc",
+    "tier": 3
   },
   {
     "id": "docs-as-code",
@@ -347,7 +371,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/docs-as-code.adoc"
+    "filePath": "docs/anchors/docs-as-code.adoc",
+    "tier": 3
   },
   {
     "id": "domain-driven-design",
@@ -364,22 +389,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/domain-driven-design.adoc"
-  },
-  {
-    "id": "dry-principle",
-    "title": "DRY (Don’t Repeat Yourself)",
-    "categories": [
-      "design-principles"
-    ],
-    "roles": [
-      "software-developer",
-      "software-architect"
-    ],
-    "related": [],
-    "proponents": [],
-    "tags": [],
-    "filePath": "docs/anchors/dry-principle.adoc"
+    "filePath": "docs/anchors/domain-driven-design.adoc",
+    "tier": 3
   },
   {
     "id": "ears-requirements",
@@ -395,7 +406,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/ears-requirements.adoc"
+    "filePath": "docs/anchors/ears-requirements.adoc",
+    "tier": 3
   },
   {
     "id": "event-driven-architecture",
@@ -427,7 +439,37 @@
       "decoupling",
       "eventual-consistency"
     ],
-    "filePath": "docs/anchors/event-driven-architecture.adoc"
+    "filePath": "docs/anchors/event-driven-architecture.adoc",
+    "tier": 3
+  },
+  {
+    "id": "fagan-inspection",
+    "title": "Fagan Inspection",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer",
+      "software-architect",
+      "team-lead"
+    ],
+    "related": [
+      "mutation-testing",
+      "testing-pyramid"
+    ],
+    "proponents": [
+      "Michael Fagan"
+    ],
+    "tags": [
+      "code-review",
+      "inspection",
+      "defect-detection",
+      "formal-review",
+      "static-analysis"
+    ],
+    "filePath": "docs/anchors/fagan-inspection.adoc",
+    "tier": 3
   },
   {
     "id": "feynman-technique",
@@ -444,7 +486,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/feynman-technique.adoc"
+    "filePath": "docs/anchors/feynman-technique.adoc",
+    "tier": 3
   },
   {
     "id": "five-whys",
@@ -461,7 +504,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/five-whys.adoc"
+    "filePath": "docs/anchors/five-whys.adoc",
+    "tier": 3
   },
   {
     "id": "fowler-patterns",
@@ -489,7 +533,8 @@
       "design-patterns",
       "orm"
     ],
-    "filePath": "docs/anchors/fowler-patterns.adoc"
+    "filePath": "docs/anchors/fowler-patterns.adoc",
+    "tier": 3
   },
   {
     "id": "gherkin",
@@ -521,7 +566,39 @@
       "acceptance-testing",
       "living-documentation"
     ],
-    "filePath": "docs/anchors/gherkin.adoc"
+    "filePath": "docs/anchors/gherkin.adoc",
+    "tier": 3
+  },
+  {
+    "id": "github-flow",
+    "title": "GitHub Flow",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "devops-engineer",
+      "team-lead"
+    ],
+    "related": [
+      "conventional-commits",
+      "semantic-versioning"
+    ],
+    "proponents": [
+      "Scott Chacon"
+    ],
+    "tags": [
+      "git",
+      "branching",
+      "pull-request",
+      "continuous-delivery",
+      "workflow",
+      "feature-branch",
+      "code-review",
+      "main-branch"
+    ],
+    "filePath": "docs/anchors/github-flow.adoc",
+    "tier": 3
   },
   {
     "id": "gof-abstract-factory-pattern",
@@ -550,7 +627,7 @@
     ],
     "filePath": "docs/anchors/gof-abstract-factory-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 2
+    "tier": 3
   },
   {
     "id": "gof-adapter-pattern",
@@ -580,7 +657,7 @@
     ],
     "filePath": "docs/anchors/gof-adapter-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-bridge-pattern",
@@ -610,7 +687,7 @@
     ],
     "filePath": "docs/anchors/gof-bridge-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 2
+    "tier": 3
   },
   {
     "id": "gof-builder-pattern",
@@ -640,7 +717,7 @@
     ],
     "filePath": "docs/anchors/gof-builder-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-chain-of-responsibility-pattern",
@@ -670,7 +747,7 @@
     ],
     "filePath": "docs/anchors/gof-chain-of-responsibility-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 2
+    "tier": 3
   },
   {
     "id": "gof-command-pattern",
@@ -701,7 +778,7 @@
     ],
     "filePath": "docs/anchors/gof-command-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-composite-pattern",
@@ -731,7 +808,7 @@
     ],
     "filePath": "docs/anchors/gof-composite-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 2
+    "tier": 3
   },
   {
     "id": "gof-decorator-pattern",
@@ -761,7 +838,7 @@
     ],
     "filePath": "docs/anchors/gof-decorator-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-design-patterns",
@@ -818,7 +895,8 @@
       "gof-interpreter-pattern",
       "gof-memento-pattern",
       "gof-visitor-pattern"
-    ]
+    ],
+    "tier": 3
   },
   {
     "id": "gof-facade-pattern",
@@ -848,7 +926,7 @@
     ],
     "filePath": "docs/anchors/gof-facade-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-factory-method-pattern",
@@ -877,7 +955,7 @@
     ],
     "filePath": "docs/anchors/gof-factory-method-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-flyweight-pattern",
@@ -966,7 +1044,7 @@
     ],
     "filePath": "docs/anchors/gof-iterator-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 2
+    "tier": 3
   },
   {
     "id": "gof-mediator-pattern",
@@ -996,7 +1074,7 @@
     ],
     "filePath": "docs/anchors/gof-mediator-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 2
+    "tier": 3
   },
   {
     "id": "gof-memento-pattern",
@@ -1057,7 +1135,7 @@
     ],
     "filePath": "docs/anchors/gof-observer-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-prototype-pattern",
@@ -1087,7 +1165,7 @@
     ],
     "filePath": "docs/anchors/gof-prototype-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 2
+    "tier": 3
   },
   {
     "id": "gof-proxy-pattern",
@@ -1118,7 +1196,7 @@
     ],
     "filePath": "docs/anchors/gof-proxy-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-singleton-pattern",
@@ -1147,7 +1225,7 @@
     ],
     "filePath": "docs/anchors/gof-singleton-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-state-pattern",
@@ -1177,7 +1255,7 @@
     ],
     "filePath": "docs/anchors/gof-state-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-strategy-pattern",
@@ -1204,7 +1282,7 @@
     ],
     "filePath": "docs/anchors/gof-strategy-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-template-method-pattern",
@@ -1234,7 +1312,7 @@
     ],
     "filePath": "docs/anchors/gof-template-method-pattern.adoc",
     "umbrella": "gof-design-patterns",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "gof-visitor-pattern",
@@ -1296,7 +1374,8 @@
       "principles",
       "quality"
     ],
-    "filePath": "docs/anchors/gom.adoc"
+    "filePath": "docs/anchors/gom.adoc",
+    "tier": 2
   },
   {
     "id": "gutes-deutsch-wolf-schneider",
@@ -1325,7 +1404,8 @@
       "prose",
       "language"
     ],
-    "filePath": "docs/anchors/gutes-deutsch-wolf-schneider.adoc"
+    "filePath": "docs/anchors/gutes-deutsch-wolf-schneider.adoc",
+    "tier": 3
   },
   {
     "id": "hexagonal-architecture",
@@ -1340,7 +1420,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/hexagonal-architecture.adoc"
+    "filePath": "docs/anchors/hexagonal-architecture.adoc",
+    "tier": 3
   },
   {
     "id": "iec-61508-sil-levels",
@@ -1370,7 +1451,8 @@
       "certification",
       "risk-assessment"
     ],
-    "filePath": "docs/anchors/iec-61508-sil-levels.adoc"
+    "filePath": "docs/anchors/iec-61508-sil-levels.adoc",
+    "tier": 3
   },
   {
     "id": "impact-mapping",
@@ -1387,7 +1469,37 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/impact-mapping.adoc"
+    "filePath": "docs/anchors/impact-mapping.adoc",
+    "tier": 3
+  },
+  {
+    "id": "invest",
+    "title": "INVEST",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "team-lead",
+      "software-developer"
+    ],
+    "related": [
+      "user-story-mapping",
+      "moscow"
+    ],
+    "proponents": [
+      "Bill Wake"
+    ],
+    "tags": [
+      "user-stories",
+      "agile",
+      "scrum",
+      "acceptance-criteria",
+      "story-quality"
+    ],
+    "filePath": "docs/anchors/invest.adoc",
+    "tier": 3
   },
   {
     "id": "jobs-to-be-done",
@@ -1407,7 +1519,8 @@
       "Bob Moesta"
     ],
     "tags": [],
-    "filePath": "docs/anchors/jobs-to-be-done.adoc"
+    "filePath": "docs/anchors/jobs-to-be-done.adoc",
+    "tier": 3
   },
   {
     "id": "lasr",
@@ -1439,7 +1552,77 @@
       "lightweight",
       "communication"
     ],
-    "filePath": "docs/anchors/lasr.adoc"
+    "filePath": "docs/anchors/lasr.adoc",
+    "tier": 3
+  },
+  {
+    "id": "linddun",
+    "title": "LINDDUN",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer",
+      "qa-engineer",
+      "business-analyst",
+      "consultant",
+      "devops-engineer"
+    ],
+    "related": [
+      "owasp-top-10",
+      "regulated-environment"
+    ],
+    "proponents": [
+      "Kim Wuyts",
+      "Riccardo Scandariato",
+      "Wouter Joosen"
+    ],
+    "tags": [
+      "privacy",
+      "threat-modeling",
+      "privacy-engineering",
+      "GDPR",
+      "data-protection",
+      "threat-analysis",
+      "privacy-by-design"
+    ],
+    "filePath": "docs/anchors/linddun.adoc",
+    "tier": 3
+  },
+  {
+    "id": "llm-evaluations",
+    "title": "LLM-Evaluations",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "data-scientist",
+      "software-developer",
+      "qa-engineer",
+      "software-architect"
+    ],
+    "related": [
+      "chain-of-thought",
+      "sota",
+      "mutation-testing"
+    ],
+    "proponents": [
+      "Percy Liang (Stanford HELM)",
+      "EleutherAI (Open LLM Leaderboard)",
+      "LMSYS (Chatbot Arena)"
+    ],
+    "tags": [
+      "llm",
+      "evaluation",
+      "benchmarks",
+      "metrics",
+      "leaderboard",
+      "nlp",
+      "ai"
+    ],
+    "filePath": "docs/anchors/llm-evaluations.adoc",
+    "tier": 3
   },
   {
     "id": "madr",
@@ -1458,7 +1641,8 @@
       "Olaf Zimmermann (and MADR community)"
     ],
     "tags": [],
-    "filePath": "docs/anchors/madr.adoc"
+    "filePath": "docs/anchors/madr.adoc",
+    "tier": 3
   },
   {
     "id": "mece",
@@ -1475,11 +1659,12 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/mece.adoc"
+    "filePath": "docs/anchors/mece.adoc",
+    "tier": 3
   },
   {
     "id": "mental-model-according-to-naur",
-    "title": "Mental Model according to Naur",
+    "title": "Programming as Theory Building (Naur)",
     "categories": [
       "development-workflow"
     ],
@@ -1489,10 +1674,16 @@
       "educator",
       "consultant"
     ],
-    "related": [],
-    "proponents": [],
+    "related": [
+      "adr-according-to-nygard",
+      "docs-as-code"
+    ],
+    "proponents": [
+      "Peter Naur"
+    ],
     "tags": [],
-    "filePath": "docs/anchors/mental-model-according-to-naur.adoc"
+    "filePath": "docs/anchors/mental-model-according-to-naur.adoc",
+    "tier": 2
   },
   {
     "id": "mikado-method",
@@ -1548,7 +1739,8 @@
       "systematic-design",
       "combinatorial-analysis"
     ],
-    "filePath": "docs/anchors/morphological-box.adoc"
+    "filePath": "docs/anchors/morphological-box.adoc",
+    "tier": 3
   },
   {
     "id": "moscow",
@@ -1575,7 +1767,8 @@
       "agile",
       "dsdm"
     ],
-    "filePath": "docs/anchors/moscow.adoc"
+    "filePath": "docs/anchors/moscow.adoc",
+    "tier": 3
   },
   {
     "id": "mutation-testing",
@@ -1595,7 +1788,8 @@
       "Timothy Budd"
     ],
     "tags": [],
-    "filePath": "docs/anchors/mutation-testing.adoc"
+    "filePath": "docs/anchors/mutation-testing.adoc",
+    "tier": 3
   },
   {
     "id": "myers-briggs-type-indicator",
@@ -1624,7 +1818,8 @@
       "team dynamics",
       "Jungian psychology"
     ],
-    "filePath": "docs/anchors/myers-briggs-type-indicator.adoc"
+    "filePath": "docs/anchors/myers-briggs-type-indicator.adoc",
+    "tier": 1
   },
   {
     "id": "nelson-rules",
@@ -1639,7 +1834,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/nelson-rules.adoc"
+    "filePath": "docs/anchors/nelson-rules.adoc",
+    "tier": 3
   },
   {
     "id": "owasp-top-10",
@@ -1670,7 +1866,8 @@
       "appsec",
       "owasp"
     ],
-    "filePath": "docs/anchors/owasp-top-10.adoc"
+    "filePath": "docs/anchors/owasp-top-10.adoc",
+    "tier": 3
   },
   {
     "id": "plain-english-strunk-white",
@@ -1703,24 +1900,68 @@
       "language",
       "plain-english"
     ],
-    "filePath": "docs/anchors/plain-english-strunk-white.adoc"
+    "filePath": "docs/anchors/plain-english-strunk-white.adoc",
+    "tier": 3
+  },
+  {
+    "id": "prd",
+    "title": "PRD",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "software-developer",
+      "team-lead"
+    ],
+    "related": [
+      "moscow",
+      "user-story-mapping",
+      "impact-mapping",
+      "ears-requirements"
+    ],
+    "proponents": [
+      "Marty Cagan",
+      "Roman Pichler"
+    ],
+    "tags": [
+      "product",
+      "requirements",
+      "specification",
+      "planning",
+      "stakeholders"
+    ],
+    "filePath": "docs/anchors/prd.adoc",
+    "tier": 3
   },
   {
     "id": "problem-space-nvc",
-    "title": "Problem Space NVC",
+    "title": "Nonviolent Communication (Rosenberg)",
     "categories": [
-      "requirements-engineering"
+      "requirements-engineering",
+      "communication-presentation"
     ],
     "roles": [
       "business-analyst",
       "product-owner",
       "consultant",
-      "ux-designer"
+      "ux-designer",
+      "team-lead"
     ],
     "related": [],
-    "proponents": [],
-    "tags": [],
-    "filePath": "docs/anchors/problem-space-nvc.adoc"
+    "proponents": [
+      "Marshall Rosenberg"
+    ],
+    "tags": [
+      "nvc",
+      "communication",
+      "empathy",
+      "conflict-resolution",
+      "requirements"
+    ],
+    "filePath": "docs/anchors/problem-space-nvc.adoc",
+    "tier": 3
   },
   {
     "id": "property-based-testing",
@@ -1735,7 +1976,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/property-based-testing.adoc"
+    "filePath": "docs/anchors/property-based-testing.adoc",
+    "tier": 3
   },
   {
     "id": "pugh-matrix",
@@ -1751,7 +1993,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/pugh-matrix.adoc"
+    "filePath": "docs/anchors/pugh-matrix.adoc",
+    "tier": 2
   },
   {
     "id": "pyramid-principle",
@@ -1768,7 +2011,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/pyramid-principle.adoc"
+    "filePath": "docs/anchors/pyramid-principle.adoc",
+    "tier": 3
   },
   {
     "id": "regulated-environment",
@@ -1810,22 +2054,8 @@
       "IEC",
       "ISO"
     ],
-    "filePath": "docs/anchors/regulated-environment.adoc"
-  },
-  {
-    "id": "rubber-duck-debugging",
-    "title": "Rubber Duck Debugging",
-    "categories": [
-      "problem-solving"
-    ],
-    "roles": [
-      "software-developer",
-      "qa-engineer"
-    ],
-    "related": [],
-    "proponents": [],
-    "tags": [],
-    "filePath": "docs/anchors/rubber-duck-debugging.adoc"
+    "filePath": "docs/anchors/regulated-environment.adoc",
+    "tier": 2
   },
   {
     "id": "semantic-versioning",
@@ -1841,7 +2071,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/semantic-versioning.adoc"
+    "filePath": "docs/anchors/semantic-versioning.adoc",
+    "tier": 3
   },
   {
     "id": "socratic-method",
@@ -1857,7 +2088,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/socratic-method.adoc"
+    "filePath": "docs/anchors/socratic-method.adoc",
+    "tier": 3
   },
   {
     "id": "solid-dip",
@@ -1881,7 +2113,7 @@
     ],
     "filePath": "docs/anchors/solid-dip.adoc",
     "umbrella": "solid-principles",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "solid-isp",
@@ -1905,7 +2137,7 @@
     ],
     "filePath": "docs/anchors/solid-isp.adoc",
     "umbrella": "solid-principles",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "solid-lsp",
@@ -1931,7 +2163,7 @@
     ],
     "filePath": "docs/anchors/solid-lsp.adoc",
     "umbrella": "solid-principles",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "solid-ocp",
@@ -1956,7 +2188,7 @@
     ],
     "filePath": "docs/anchors/solid-ocp.adoc",
     "umbrella": "solid-principles",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "solid-principles",
@@ -1990,7 +2222,8 @@
       "solid-lsp",
       "solid-isp",
       "solid-dip"
-    ]
+    ],
+    "tier": 3
   },
   {
     "id": "solid-srp",
@@ -2014,7 +2247,7 @@
     ],
     "filePath": "docs/anchors/solid-srp.adoc",
     "umbrella": "solid-principles",
-    "tier": 1
+    "tier": 3
   },
   {
     "id": "sota",
@@ -2030,7 +2263,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/sota.adoc"
+    "filePath": "docs/anchors/sota.adoc",
+    "tier": 3
   },
   {
     "id": "spc",
@@ -2051,22 +2285,12 @@
       "Western Electric Company"
     ],
     "tags": [],
-    "filePath": "docs/anchors/spc.adoc"
-  },
-  {
-    "id": "spot-principle",
-    "title": "SPOT (Single Point of Truth)",
-    "categories": [
-      "design-principles"
+    "filePath": "docs/anchors/spc.adoc",
+    "subAnchors": [
+      "control-chart-shewhart",
+      "nelson-rules"
     ],
-    "roles": [
-      "software-developer",
-      "software-architect"
-    ],
-    "related": [],
-    "proponents": [],
-    "tags": [],
-    "filePath": "docs/anchors/spot-principle.adoc"
+    "tier": 3
   },
   {
     "id": "ssot-principle",
@@ -2082,7 +2306,41 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/ssot-principle.adoc"
+    "filePath": "docs/anchors/ssot-principle.adoc",
+    "tier": 1
+  },
+  {
+    "id": "stride",
+    "title": "STRIDE Threat Model",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer",
+      "devops-engineer",
+      "consultant",
+      "team-lead"
+    ],
+    "related": [
+      "owasp-top-10",
+      "regulated-environment"
+    ],
+    "proponents": [
+      "Loren Kohnfelder",
+      "Praerit Garg",
+      "Adam Shostack"
+    ],
+    "tags": [
+      "security",
+      "threat-modeling",
+      "appsec",
+      "risk",
+      "threats"
+    ],
+    "filePath": "docs/anchors/stride.adoc",
+    "tier": 3
   },
   {
     "id": "swot",
@@ -2115,7 +2373,8 @@
       "threats",
       "business-analysis"
     ],
-    "filePath": "docs/anchors/swot.adoc"
+    "filePath": "docs/anchors/swot.adoc",
+    "tier": 3
   },
   {
     "id": "tdd-chicago-school",
@@ -2133,7 +2392,8 @@
       "Martin Fowler"
     ],
     "tags": [],
-    "filePath": "docs/anchors/tdd-chicago-school.adoc"
+    "filePath": "docs/anchors/tdd-chicago-school.adoc",
+    "tier": 3
   },
   {
     "id": "tdd-london-school",
@@ -2153,7 +2413,61 @@
       "Guided by Tests\")"
     ],
     "tags": [],
-    "filePath": "docs/anchors/tdd-london-school.adoc"
+    "filePath": "docs/anchors/tdd-london-school.adoc",
+    "tier": 3
+  },
+  {
+    "id": "test-double-dummy",
+    "title": "Test Double: Dummy (Meszaros)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer"
+    ],
+    "related": [
+      "test-double-meszaros",
+      "test-double-stub"
+    ],
+    "proponents": [
+      "Gerard Meszaros"
+    ],
+    "tags": [
+      "test-double",
+      "dummy",
+      "testing",
+      "isolation"
+    ],
+    "filePath": "docs/anchors/test-double-dummy.adoc",
+    "tier": 3
+  },
+  {
+    "id": "test-double-fake",
+    "title": "Test Double: Fake (Meszaros)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer"
+    ],
+    "related": [
+      "test-double-meszaros",
+      "test-double-stub"
+    ],
+    "proponents": [
+      "Gerard Meszaros"
+    ],
+    "tags": [
+      "test-double",
+      "fake",
+      "testing",
+      "isolation",
+      "in-memory"
+    ],
+    "filePath": "docs/anchors/test-double-fake.adoc",
+    "tier": 3
   },
   {
     "id": "test-double-meszaros",
@@ -2185,7 +2499,100 @@
       "testing",
       "isolation"
     ],
-    "filePath": "docs/anchors/test-double-meszaros.adoc"
+    "filePath": "docs/anchors/test-double-meszaros.adoc",
+    "subAnchors": [
+      "test-double-dummy",
+      "test-double-stub",
+      "test-double-spy",
+      "test-double-mock",
+      "test-double-fake"
+    ],
+    "tier": 3
+  },
+  {
+    "id": "test-double-mock",
+    "title": "Test Double: Mock (Meszaros)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer"
+    ],
+    "related": [
+      "test-double-meszaros",
+      "test-double-spy",
+      "test-double-stub",
+      "tdd-london-school"
+    ],
+    "proponents": [
+      "Gerard Meszaros"
+    ],
+    "tags": [
+      "test-double",
+      "mock",
+      "testing",
+      "isolation",
+      "interaction-verification"
+    ],
+    "filePath": "docs/anchors/test-double-mock.adoc",
+    "tier": 3
+  },
+  {
+    "id": "test-double-spy",
+    "title": "Test Double: Spy (Meszaros)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer"
+    ],
+    "related": [
+      "test-double-meszaros",
+      "test-double-stub",
+      "test-double-mock"
+    ],
+    "proponents": [
+      "Gerard Meszaros"
+    ],
+    "tags": [
+      "test-double",
+      "spy",
+      "testing",
+      "isolation",
+      "call-recording"
+    ],
+    "filePath": "docs/anchors/test-double-spy.adoc",
+    "tier": 3
+  },
+  {
+    "id": "test-double-stub",
+    "title": "Test Double: Stub (Meszaros)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer"
+    ],
+    "related": [
+      "test-double-meszaros",
+      "test-double-spy",
+      "test-double-mock"
+    ],
+    "proponents": [
+      "Gerard Meszaros"
+    ],
+    "tags": [
+      "test-double",
+      "stub",
+      "testing",
+      "isolation",
+      "canned-response"
+    ],
+    "filePath": "docs/anchors/test-double-stub.adoc",
+    "tier": 3
   },
   {
     "id": "testing-pyramid",
@@ -2202,7 +2609,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/testing-pyramid.adoc"
+    "filePath": "docs/anchors/testing-pyramid.adoc",
+    "tier": 3
   },
   {
     "id": "timtowtdi",
@@ -2219,7 +2627,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/timtowtdi.adoc"
+    "filePath": "docs/anchors/timtowtdi.adoc",
+    "tier": 1
   },
   {
     "id": "todotxt-flavoured-markdown",
@@ -2237,7 +2646,8 @@
       "Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format"
     ],
     "tags": [],
-    "filePath": "docs/anchors/todotxt-flavoured-markdown.adoc"
+    "filePath": "docs/anchors/todotxt-flavoured-markdown.adoc",
+    "tier": 3
   },
   {
     "id": "user-story-mapping",
@@ -2254,7 +2664,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/user-story-mapping.adoc"
+    "filePath": "docs/anchors/user-story-mapping.adoc",
+    "tier": 3
   },
   {
     "id": "wardley-mapping",
@@ -2271,7 +2682,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/wardley-mapping.adoc"
+    "filePath": "docs/anchors/wardley-mapping.adoc",
+    "tier": 3
   },
   {
     "id": "what-qualifies-as-a-semantic-anchor",
@@ -2286,7 +2698,8 @@
     "related": [],
     "proponents": [],
     "tags": [],
-    "filePath": "docs/anchors/what-qualifies-as-a-semantic-anchor.adoc"
+    "filePath": "docs/anchors/what-qualifies-as-a-semantic-anchor.adoc",
+    "tier": 3
   },
   {
     "id": "yagni",
@@ -2315,6 +2728,7 @@
       "incremental-design",
       "over-engineering"
     ],
-    "filePath": "docs/anchors/yagni.adoc"
+    "filePath": "docs/anchors/yagni.adoc",
+    "tier": 1
   }
 ]

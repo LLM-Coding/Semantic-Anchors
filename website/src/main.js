@@ -9,6 +9,7 @@ import {
   initCardGrid,
   applyCardFilters,
   updateAnchorCount,
+  setFeedbackData,
 } from './components/card-grid.js'
 import { fetchData } from './utils/data-loader.js'
 import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
@@ -66,6 +67,7 @@ function ensureDataLoaded() {
     dataLoadingPromise = fetchData()
       .then((data) => {
         appData = data
+        setFeedbackData(data.feedback)
         return data
       })
       .catch((error) => {

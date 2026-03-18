@@ -38,9 +38,28 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Property-Based Testing
 - **Core:** Test properties/invariants with generated inputs (QuickCheck, Hypothesis)
 
+### Fagan Inspection
+- **Also known as:** Formal Code Inspection, Software Inspection
+- **Proponents:** Michael Fagan
+- **Core:** Structured six-phase review process (Planning, Overview, Preparation, Inspection Meeting, Rework, Follow-up) with defined roles (Moderator, Author, Inspectors, Recorder), entry/exit criteria, and metrics-driven defect classification
+
 ### IEC 61508 SIL Levels
 - **Proponents:** International Electrotechnical Commission
 - **Core:** Safety integrity levels for safety-critical systems
+
+### LINDDUN
+- **Also known as:** LINDDUN GO, Privacy Threat Modeling, Privacy STRIDE
+- **Proponents:** Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven)
+- **Core:** Privacy threat modeling framework; acronym for seven threat categories — Linkability, Identifiability, Non-repudiation, Detectability, Disclosure of information, Unawareness, Non-compliance; used for DPIA, Privacy by Design, GDPR compliance
+
+### STRIDE Threat Model
+- **Proponents:** Loren Kohnfelder, Praerit Garg (Microsoft), Adam Shostack
+- **Core:** Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege — structured threat categorization for security design
+
+### LLM-Evaluations
+- **Also known as:** LLM Benchmarking, LLM Assessment, Foundation Model Evaluation
+- **Proponents:** Percy Liang (Stanford HELM), EleutherAI (Open LLM Leaderboard), LMSYS (Chatbot Arena)
+- **Core:** Frameworks and metrics for assessing LLM capabilities — benchmark suites (MMLU, HumanEval, BIG-Bench), automatic vs. human evaluation, HELM, Chatbot Arena Elo ratings, red-teaming, contamination detection
 
 ## Software Architecture
 
@@ -188,6 +207,15 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Requirements Engineering
 
+### INVEST
+- **Proponents:** Bill Wake
+- **Core:** Independent, Negotiable, Valuable, Estimable, Small, Testable — criteria for well-formed user stories
+
+### PRD
+- **Also known as:** Product Requirements Document, Product Spec, Feature Spec
+- **Proponents:** Marty Cagan, Roman Pichler
+- **Core:** Problem statement, goals & success metrics, user personas, functional & non-functional requirements, scope boundaries, constraints, open questions
+
 ### MoSCoW
 - **Proponents:** Dai Clegg
 - **Core:** Must have, Should have, Could have, Won't have
@@ -251,6 +279,15 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Docs in version control, CI/CD, same workflow as code
 
 ## Development Workflow
+
+### Definition of Done
+- **Also known as:** DoD, Done Criteria
+- **Proponents:** Ken Schwaber, Jeff Sutherland
+- **Core:** Team-wide checklist of quality criteria every increment must satisfy; transparency on what "done" means; sprint-level vs. product-level DoD; prevents hidden technical debt
+
+### GitHub Flow
+- **Proponents:** Scott Chacon
+- **Core:** Branch-based workflow — short-lived feature branches, Pull Request reviews, `main` always deployable, merge triggers immediate deployment
 
 ### Conventional Commits
 - **Proponents:** Benjamin E. Coe, James J. Womack, Steve Mao

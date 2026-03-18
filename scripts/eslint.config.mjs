@@ -10,6 +10,10 @@ const nodeGlobals = {
   process: 'readonly',
   console: 'readonly',
   Buffer: 'readonly',
+  setTimeout: 'readonly',
+  setInterval: 'readonly',
+  clearTimeout: 'readonly',
+  clearInterval: 'readonly',
 }
 
 export default [

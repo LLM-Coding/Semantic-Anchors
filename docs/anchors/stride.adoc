@@ -1,0 +1,47 @@
+= STRIDE Threat Model
+:categories: testing-quality
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, team-lead
+:related: owasp-top-10, regulated-environment
+:proponents: Loren Kohnfelder, Praerit Garg, Adam Shostack
+:tags: security, threat-modeling, appsec, risk, threats
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: STRIDE Threat Modeling Framework
+
+Also known as:: STRIDE Threat Model, Microsoft STRIDE
+
+[discrete]
+== *Core Concepts*:
+
+Spoofing:: Impersonating another user, process, or system to gain unauthorized access; mitigated by strong authentication
+
+Tampering:: Unauthorized modification of data in transit or at rest; mitigated by integrity controls, digital signatures, and access controls
+
+Repudiation:: Denying that an action was performed when it actually was; mitigated by audit logging and non-repudiation mechanisms
+
+Information Disclosure:: Exposing sensitive data to unauthorized parties; mitigated by encryption, access control, and data minimization
+
+Denial of Service:: Disrupting or degrading availability of a system or service for legitimate users; mitigated by rate limiting, redundancy, and resilience
+
+Elevation of Privilege:: Gaining capabilities or permissions beyond what is legitimately authorized; mitigated by least-privilege principles and authorization checks
+
+Key Proponents:: Loren Kohnfelder and Praerit Garg (Microsoft, 1999); popularized by Adam Shostack ("Threat Modeling: Designing for Security", 2014)
+
+[discrete]
+== *When to Use*:
+
+* Performing structured threat modeling during software design and architecture reviews
+* Identifying and categorizing potential threats in security assessments
+* Training developers to think adversarially about system security
+* Prioritizing security controls and mitigations during system design
+* Conducting security design reviews and red-team exercises
+* Establishing a shared vocabulary for discussing security threats across teams
+
+[discrete]
+== *Related Anchors*:
+
+* <<owasp-top-10,OWASP Top 10>>
+* <<regulated-environment,Regulated Environment>>
+====
