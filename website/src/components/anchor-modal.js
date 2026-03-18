@@ -121,14 +121,14 @@ function renderSubAnchorList(subAnchorIds, allAnchors) {
     if (!anchor) return ''
     const tier = anchor.tier || 2
 
-    if (tier === 3) {
-      return `<li class="sub-anchor-item tier-3">
+    if (tier === 1) {
+      return `<li class="sub-anchor-item tier-1">
         <span>${escapeHtml(anchor.title)}</span>
         <span class="text-xs text-gray-400 dark:text-gray-500 ml-2">${i18n.t('umbrella.notAnAnchor')}</span>
       </li>`
     }
 
-    const tierClass = tier === 1 ? 'tier-1' : 'tier-2'
+    const tierClass = `tier-${tier}`
     return `<li class="sub-anchor-item ${tierClass}">
       <a href="#" data-sub-anchor="${escapeHtml(id)}" class="sub-anchor-link">${escapeHtml(anchor.title)}</a>
     </li>`

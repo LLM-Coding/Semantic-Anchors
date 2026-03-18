@@ -169,9 +169,9 @@ describe('anchor-modal', () => {
           title: 'Umbrella Anchor',
           subAnchors: ['sub-one', 'sub-two', 'sub-three'],
         },
-        { id: 'sub-one', title: 'Sub One', tier: 1 },
+        { id: 'sub-one', title: 'Sub One', tier: 3 },
         { id: 'sub-two', title: 'Sub Two', tier: 2 },
-        { id: 'sub-three', title: 'Sub Three', tier: 3 },
+        { id: 'sub-three', title: 'Sub Three', tier: 1 },
       ])
     })
 
