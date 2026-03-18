@@ -52,6 +52,23 @@ export function createModal() {
           <div class="text-[var(--color-text-secondary)]">Loading...</div>
         </div>
       </div>
+      <div id="modal-feedback-bar" class="modal-feedback-bar hidden">
+        <span class="modal-feedback-cta">${i18n.t('feedback.cta')}</span>
+        <div class="feedback-actions">
+          <a id="modal-vote-btn" href="#" target="_blank" rel="noopener noreferrer" class="feedback-btn feedback-btn-vote">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+            </svg>
+            <span>${i18n.t('feedback.vote')}</span>
+          </a>
+          <a id="modal-discuss-btn" href="#" target="_blank" rel="noopener noreferrer" class="feedback-btn feedback-btn-discuss">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+            </svg>
+            <span>${i18n.t('feedback.discuss')}</span>
+          </a>
+        </div>
+      </div>
     </div>
   `
 
@@ -276,49 +293,45 @@ export async function loadAnchorContent(anchorId) {
       /^https:\/\/github\.com\/LLM-Coding\/Semantic-Anchors\/discussions\/\d+$/.test(fb.url)
         ? fb.url
         : null
+    // Update sticky feedback bar
+    const feedbackBar = document.getElementById('modal-feedback-bar')
+    const voteBtn = document.getElementById('modal-vote-btn')
+    const discussBtn = document.getElementById('modal-discuss-btn')
+
     if (safeFeedbackUrl) {
-      const commentsHtml =
-        fb.recentComments && fb.recentComments.length > 0
-          ? `
-          <div class="feedback-comments">
-            ${fb.recentComments
-              .map(
-                (c) => `
-              <div class="feedback-comment">
-                <img src="${escapeHtml(c.avatar)}" alt="${escapeHtml(c.author)}" class="feedback-avatar" width="24" height="24" />
-                <div class="feedback-comment-body">
-                  <span class="feedback-author">${escapeHtml(c.author)}</span>
-                  <p class="feedback-text">${escapeHtml(c.body)}</p>
+      voteBtn.href = safeFeedbackUrl
+      voteBtn.querySelector('span').textContent =
+        `${i18n.t('feedback.vote')}${fb.upvotes > 1 ? ` (${fb.upvotes})` : ''}`
+      discussBtn.href = safeFeedbackUrl
+      discussBtn.querySelector('span').textContent =
+        `${i18n.t('feedback.discuss')}${fb.comments > 0 ? ` (${fb.comments})` : ''}`
+      feedbackBar.classList.remove('hidden')
+
+      // Show recent comments in content area
+      if (fb.recentComments && fb.recentComments.length > 0) {
+        const commentsHtml = `
+          <div class="feedback-section">
+            <div class="feedback-comments">
+              ${fb.recentComments
+                .map(
+                  (c) => `
+                <div class="feedback-comment">
+                  <img src="${escapeHtml(c.avatar)}" alt="${escapeHtml(c.author)}" class="feedback-avatar" width="24" height="24" />
+                  <div class="feedback-comment-body">
+                    <span class="feedback-author">${escapeHtml(c.author)}</span>
+                    <p class="feedback-text">${escapeHtml(c.body)}</p>
+                  </div>
                 </div>
-              </div>
-            `
-              )
-              .join('')}
+              `
+                )
+                .join('')}
+            </div>
           </div>
         `
-          : ''
-
-      const feedbackHtml = `
-        <div class="feedback-section">
-          ${commentsHtml}
-          <div class="feedback-actions">
-            <a href="${escapeHtml(safeFeedbackUrl)}" target="_blank" rel="noopener noreferrer" class="feedback-btn feedback-btn-vote">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
-              </svg>
-              <span>${i18n.t('feedback.vote')}${fb.upvotes > 1 ? ` (${fb.upvotes})` : ''}</span>
-            </a>
-            <a href="${escapeHtml(safeFeedbackUrl)}" target="_blank" rel="noopener noreferrer" class="feedback-btn feedback-btn-discuss">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
-              </svg>
-              <span>${i18n.t('feedback.discuss')}${fb.comments > 0 ? ` (${fb.comments})` : ''}</span>
-            </a>
-          </div>
-          <p class="feedback-hint">${i18n.t('feedback.requiresLogin')}</p>
-        </div>
-      `
-      contentEl.insertAdjacentHTML('beforeend', feedbackHtml)
+        contentEl.insertAdjacentHTML('beforeend', commentsHtml)
+      }
+    } else {
+      feedbackBar.classList.add('hidden')
     }
   } catch (error) {
     console.error('Error loading anchor content:', error)

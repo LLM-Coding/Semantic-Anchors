@@ -60,5 +60,6 @@
   "umbrella.notAnAnchor": "(kein semantischer Anker)",
   "feedback.vote": "Abstimmen",
   "feedback.discuss": "Diskutieren",
+  "feedback.cta": "Ist dieser Anker hilfreich?",
   "feedback.requiresLogin": "Erfordert GitHub-Login"
 }

@@ -171,14 +171,24 @@ body {
   @apply hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors;
 }
 
-/* Feedback section in anchor modal */
+/* Sticky feedback bar in anchor modal */
+.modal-feedback-bar {
+  @apply flex items-center justify-between gap-4 px-6 py-3;
+  @apply border-t border-[var(--color-border)];
+  @apply bg-[var(--color-bg)];
+}
+
+.modal-feedback-cta {
+  @apply text-sm text-[var(--color-text-secondary)] hidden sm:block;
+}
+
+/* Feedback section in anchor modal (comments area) */
 .feedback-section {
   @apply mt-8 pt-6 border-t border-gray-200 dark:border-gray-700;
-  @apply text-center;
 }
 
 .feedback-actions {
-  @apply flex justify-center gap-3;
+  @apply flex gap-3;
 }
 
 .feedback-btn {
