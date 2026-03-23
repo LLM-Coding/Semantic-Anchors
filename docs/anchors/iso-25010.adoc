@@ -1,0 +1,56 @@
+= ISO/IEC 25010
+:categories: software-architecture
+:roles: software-architect, qa-engineer, product-owner, business-analyst, team-lead
+:related: atam, arc42, adr-according-to-nygard
+:proponents: ISO/IEC JTC 1/SC 7
+:tags: quality model, software quality, quality attributes, product quality, quality in use, assessment, ISO, IEC
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: ISO/IEC 25010 — Systems and Software Quality Requirements and Evaluation (SQuaRE) — Product Quality Model
+
+Also known as:: SQuaRE Quality Model, Software Product Quality Model, ISO 25010
+
+[discrete]
+== *Core Concepts*:
+
+Product Quality Model:: Eight top-level quality characteristics that describe the quality of a software product: Functional Suitability, Performance Efficiency, Compatibility, Usability, Reliability, Security, Maintainability, and Portability
+
+Functional Suitability:: The degree to which the product provides functions that meet stated and implied needs — sub-characteristics: Functional Completeness, Functional Correctness, Functional Appropriateness
+
+Performance Efficiency:: How the product achieves its functions relative to the amount of resources used — sub-characteristics: Time Behaviour, Resource Utilisation, Capacity
+
+Compatibility:: The ability to exchange information with other products — sub-characteristics: Co-existence, Interoperability
+
+Usability:: The degree to which a product can be used to achieve goals effectively, efficiently, and satisfactorily — sub-characteristics: Appropriateness Recognisability, Learnability, Operability, User Error Protection, User Interface Aesthetics, Accessibility
+
+Reliability:: The ability of the product to perform its functions under stated conditions for a specified period — sub-characteristics: Maturity, Availability, Fault Tolerance, Recoverability
+
+Security:: The degree to which the product protects information and data from unauthorized access — sub-characteristics: Confidentiality, Integrity, Non-repudiation, Accountability, Authenticity
+
+Maintainability:: The effectiveness and efficiency with which the product can be modified — sub-characteristics: Modularity, Reusability, Analysability, Modifiability, Testability
+
+Portability:: The ability of the product to be transferred from one environment to another — sub-characteristics: Adaptability, Installability, Replaceability
+
+Quality in Use Model:: Five characteristics that describe quality from the user's perspective: Effectiveness, Efficiency, Satisfaction, Freedom from Risk, Context Coverage
+
+Key Proponents:: ISO/IEC JTC 1/SC 7 (replaces ISO/IEC 9126)
+
+[discrete]
+== *When to Use*:
+
+* Conducting structured software quality assessments or architecture reviews
+* Communicating quality requirements to diverse stakeholders using a shared vocabulary
+* Defining and prioritizing non-functional requirements at the start of a project
+* Documenting architecture quality goals in arc42 or similar frameworks (e.g., section 10 "Quality Requirements")
+* Evaluating competing architectural approaches using quality attribute scenarios (combined with ATAM)
+* Creating a quality tree or quality scenarios for an architecture documentation
+
+[discrete]
+== *Related Anchors*:
+
+* <<atam,ATAM>>
+* <<arc42,arc42 Architecture Documentation>>
+* <<adr-according-to-nygard,ADR according to Nygard>>
+====

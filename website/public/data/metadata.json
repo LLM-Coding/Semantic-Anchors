@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-18T09:45:19.699Z",
+  "generatedAt": "2026-03-23T13:51:09.826Z",
   "version": "1.0.0",
   "counts": {
-    "anchors": 105,
+    "anchors": 106,
     "categories": 12,
     "roles": 12
   },
   "statistics": {
-    "averageRolesPerAnchor": "3.09",
+    "averageRolesPerAnchor": "3.10",
     "averageCategoriesPerAnchor": "1.01",
-    "anchorsWithTags": 65,
-    "anchorsWithRelated": 36
+    "anchorsWithTags": 66,
+    "anchorsWithRelated": 37
   }
 }

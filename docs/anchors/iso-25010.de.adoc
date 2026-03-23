@@ -1,0 +1,55 @@
+= ISO/IEC 25010
+:categories: software-architecture
+:roles: software-architect, qa-engineer, product-owner, business-analyst, team-lead
+:related: atam, arc42, adr-according-to-nygard
+:proponents: ISO/IEC JTC 1/SC 7
+:tags: quality model, software quality, quality attributes, product quality, quality in use, assessment, ISO, IEC
+
+[%collapsible]
+====
+Vollständiger Name:: ISO/IEC 25010 — Systems and Software Quality Requirements and Evaluation (SQuaRE) — Product Quality Model
+
+Auch bekannt als:: SQuaRE-Qualitätsmodell, Software-Produktqualitätsmodell, ISO 25010
+
+[discrete]
+== *Kernkonzepte*:
+
+Produktqualitätsmodell:: Acht übergeordnete Qualitätsmerkmale zur Beschreibung der Qualität eines Softwareprodukts: Funktionale Eignung, Leistungseffizienz, Kompatibilität, Benutzbarkeit, Zuverlässigkeit, Sicherheit, Wartbarkeit und Übertragbarkeit
+
+Funktionale Eignung:: Das Ausmaß, in dem das Produkt Funktionen bereitstellt, die angegebene und implizite Anforderungen erfüllen — Teilmerkmale: Funktionale Vollständigkeit, Funktionale Korrektheit, Funktionale Angemessenheit
+
+Leistungseffizienz:: Wie das Produkt seine Funktionen im Verhältnis zu den eingesetzten Ressourcen erfüllt — Teilmerkmale: Zeitverhalten, Ressourcennutzung, Kapazität
+
+Kompatibilität:: Die Fähigkeit, Informationen mit anderen Produkten auszutauschen — Teilmerkmale: Koexistenz, Interoperabilität
+
+Benutzbarkeit:: Der Grad, in dem ein Produkt genutzt werden kann, um Ziele effektiv, effizient und zufriedenstellend zu erreichen — Teilmerkmale: Erkennbarkeit der Eignung, Erlernbarkeit, Bedienbarkeit, Schutz vor Benutzerfehlern, Ästhetik der Benutzerschnittstelle, Barrierefreiheit
+
+Zuverlässigkeit:: Die Fähigkeit des Produkts, seine Funktionen unter festgelegten Bedingungen über einen bestimmten Zeitraum zu erfüllen — Teilmerkmale: Reife, Verfügbarkeit, Fehlertoleranz, Wiederherstellbarkeit
+
+Sicherheit:: Der Grad, in dem das Produkt Informationen und Daten vor unbefugtem Zugriff schützt — Teilmerkmale: Vertraulichkeit, Integrität, Nichtabstreitbarkeit, Rechenschaftspflicht, Authentizität
+
+Wartbarkeit:: Effektivität und Effizienz, mit der das Produkt verändert werden kann — Teilmerkmale: Modularität, Wiederverwendbarkeit, Analysierbarkeit, Änderbarkeit, Prüfbarkeit
+
+Übertragbarkeit:: Die Fähigkeit des Produkts, von einer Umgebung in eine andere übertragen zu werden — Teilmerkmale: Anpassbarkeit, Installierbarkeit, Austauschbarkeit
+
+Gebrauchsqualitätsmodell:: Fünf Merkmale, die Qualität aus der Perspektive des Benutzers beschreiben: Effektivität, Effizienz, Zufriedenheit, Risikofreiheit, Kontextabdeckung
+
+Schlüsselvertreter:: ISO/IEC JTC 1/SC 7 (ersetzt ISO/IEC 9126)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Strukturierte Software-Qualitätsbewertungen oder Architekturreviews durchführen
+* Qualitätsanforderungen gegenüber verschiedenen Stakeholdern mit einem gemeinsamen Vokabular kommunizieren
+* Nichtfunktionale Anforderungen zu Beginn eines Projekts definieren und priorisieren
+* Architekturqualitätsziele in arc42 oder ähnlichen Frameworks dokumentieren (z.B. Abschnitt 10 „Qualitätsanforderungen")
+* Konkurrierende Architekturansätze mithilfe von Qualitätsattribut-Szenarien bewerten (kombiniert mit ATAM)
+* Qualitätsbaum oder Qualitätsszenarien für eine Architekturdokumentation erstellen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<atam,ATAM>>
+* <<arc42,arc42 Architekturdokumentation>>
+* <<adr-according-to-nygard,ADR nach Nygard>>
+====

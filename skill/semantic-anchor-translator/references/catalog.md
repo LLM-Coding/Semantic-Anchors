@@ -101,6 +101,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Jörg Becker, Michael Rosemann
 - **Core:** Principles for creating understandable, consistent models
 
+### ISO/IEC 25010
+- **Also known as:** SQuaRE Quality Model, Software Product Quality Model, ISO 25010
+- **Proponents:** ISO/IEC JTC 1/SC 7
+- **Core:** Product quality model with 8 characteristics (Functional Suitability, Performance Efficiency, Compatibility, Usability, Reliability, Security, Maintainability, Portability) plus Quality in Use model (Effectiveness, Efficiency, Satisfaction, Freedom from Risk, Context Coverage); used for structured software quality assessments, architecture reviews, and defining non-functional requirements
+
 ## Design Principles
 
 ### SOLID Principles
