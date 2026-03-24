@@ -214,15 +214,23 @@ def run_question(question_data, call_fn, label, context="", verbose=False):
     }
 
 
-def run_pilot(models, dry_run=False, verbose=False):
+def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False):
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
+    if "ollama" in models:
+        print(f"Ollama model: {ollama_model}")
+        print(f"No-think: {no_think}")
     print(f"Dry run: {dry_run}")
     print()
 
     all_results = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        "config": {
+            "models": models,
+            "ollama_model": ollama_model if "ollama" in models else None,
+            "no_think": no_think if "ollama" in models else None,
+        },
         "models": {},
     }
 
@@ -349,4 +357,4 @@ if __name__ == "__main__":
     parser.add_argument("--verbose", action="store_true",
                         help="Print raw responses for debugging")
     args = parser.parse_args()
-    run_pilot(args.model, args.dry_run, args.verbose)
+    run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think)
