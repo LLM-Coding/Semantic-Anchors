@@ -37,7 +37,7 @@
 </head>
 <body>
 <h1>Semantic Anchor Evaluation Report</h1>
-<p class="subtitle">Multiple-choice recognition test across 5 LLMs — 73 questions, 61 anchors</p>
+<p class="subtitle">Multiple-choice recognition test across 3 LLMs — 73 questions, 61 anchors</p>
 
 <div class="legend">
   <div class="legend-item"><div class="legend-dot" style="background:#dcfce7"></div> &ge;80%</div>
@@ -49,8 +49,8 @@
 <div class="summary-grid">
   <div class="summary-card">
     <div class="model-name">Claude Sonnet</div>
-    <div class="score" style="color: #22c55e">95%</div>
-    <div class="detail">73 questions · pilot-20260324-165214.json</div>
+    <div class="score" style="color: #22c55e">100%</div>
+    <div class="detail">73 questions · pilot-20260324-170530.json</div>
   </div>
   <div class="summary-card">
     <div class="model-name">GPT-4o</div>
@@ -62,16 +62,6 @@
     <div class="score" style="color: #22c55e">96%</div>
     <div class="detail">73 questions · pilot-20260324-171539.json</div>
   </div>
-  <div class="summary-card">
-    <div class="model-name">Claude Sonnet (CLI)</div>
-    <div class="score" style="color: #22c55e">100%</div>
-    <div class="detail">17 questions · pilot-20260324-131452.json</div>
-  </div>
-  <div class="summary-card">
-    <div class="model-name">Ollama (local)</div>
-    <div class="score" style="color: #eab308">63%</div>
-    <div class="detail">17 questions · pilot-20260324-123126.json</div>
-  </div>
 </div>
 
 <h2>Heatmap: Anchor × Model</h2>
@@ -81,102 +71,93 @@
   <th style='text-align:center'>Claude Sonnet</th>
   <th style='text-align:center'>GPT-4o</th>
   <th style='text-align:center'>Mistral Large</th>
-  <th style='text-align:center'>Claude Sonnet (CLI)</th>
-  <th style='text-align:center'>Ollama (local)</th>
 </tr></thead>
 <tbody>
-<tr class="anchor-group"><td>adr-according-to-nygard</td><td class="score-cell" style="background:#fef9c3">50%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>arc42</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">61%</td></tr>
-<tr><td class="question-label">application-anchor</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td></tr>
-<tr><td class="question-label">application-paraphrase</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td></tr>
-<tr><td class="question-label">consistency-language</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fee2e2">0%</td></tr>
-<tr><td class="question-label">consistency-variant-1</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td></tr>
-<tr><td class="question-label">consistency-variant-2</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
-<tr><td class="question-label">consistency-variant-3</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">50%</td></tr>
-<tr><td class="question-label">recognition</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">50%</td></tr>
-<tr class="anchor-group"><td>atam</td><td class="score-cell" style="background:#fee2e2">0%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>bdd-given-when-then</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>bem-methodology</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>bluf</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>c4-diagrams</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>chain-of-thought</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>clean-architecture</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>control-chart-shewhart</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">50%</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>conventional-commits</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>cqrs</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>cynefin-framework</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>definition-of-done</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>devils-advocate</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>diataxis-framework</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>docs-as-code</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
-<tr class="anchor-group"><td>domain-driven-design</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>ears-requirements</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>event-driven-architecture</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>fagan-inspection</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>feynman-technique</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>five-whys</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>fowler-patterns</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>gherkin</td><td class="score-cell" style="background:#fee2e2">0%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>github-flow</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>gutes-deutsch-wolf-schneider</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>hexagonal-architecture</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>iec-61508-sil-levels</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>impact-mapping</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>invest</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>iso-25010</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>jobs-to-be-done</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>lasr</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#fee2e2">25%</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>linddun</td><td class="score-cell" style="background:#fee2e2">25%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>llm-evaluations</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>madr</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>mece</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
-<tr class="anchor-group"><td>morphological-box</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>moscow</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>mutation-testing</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>nelson-rules</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>owasp-top-10</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>plain-english-strunk-white</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>prd</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#fee2e2">0%</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>problem-space-nvc</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>property-based-testing</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>pyramid-principle</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>semantic-versioning</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>socratic-method</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>sota</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>spc</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>stride</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>swot</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>tdd-chicago-school</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>tdd-london-school</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">86%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">50%</td></tr>
-<tr><td class="question-label">application-anchor</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
-<tr><td class="question-label">application-paraphrase</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
-<tr><td class="question-label">consistency-language</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fee2e2">0%</td></tr>
-<tr><td class="question-label">consistency-variant-1</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fee2e2">25%</td></tr>
-<tr><td class="question-label">consistency-variant-2</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fee2e2">25%</td></tr>
-<tr><td class="question-label">consistency-variant-3</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fee2e2">25%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fee2e2">25%</td></tr>
-<tr><td class="question-label">recognition</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td></tr>
-<tr class="anchor-group"><td>testing-pyramid</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>timtowtdi</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
-<tr class="anchor-group"><td>todotxt-flavoured-markdown</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">50%</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>user-story-mapping</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr class="anchor-group"><td>wardley-mapping</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="color:#cbd5e1">—</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
+<tr class="anchor-group"><td>adr-according-to-nygard</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td></tr>
+<tr class="anchor-group"><td>arc42</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">application-anchor</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">application-paraphrase</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-language</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-variant-1</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-variant-2</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-variant-3</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">recognition</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>atam</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>bdd-given-when-then</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>bem-methodology</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>bluf</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>c4-diagrams</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>chain-of-thought</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>clean-architecture</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>control-chart-shewhart</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">50%</td></tr>
+<tr class="anchor-group"><td>conventional-commits</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>cqrs</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>cynefin-framework</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>definition-of-done</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>devils-advocate</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>diataxis-framework</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>docs-as-code</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>domain-driven-design</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>ears-requirements</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td></tr>
+<tr class="anchor-group"><td>event-driven-architecture</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>fagan-inspection</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>feynman-technique</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>five-whys</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>fowler-patterns</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>gherkin</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>github-flow</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>gutes-deutsch-wolf-schneider</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>hexagonal-architecture</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>iec-61508-sil-levels</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>impact-mapping</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>invest</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>iso-25010</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>jobs-to-be-done</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>lasr</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#fee2e2">25%</td></tr>
+<tr class="anchor-group"><td>linddun</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>llm-evaluations</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>madr</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>mece</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>morphological-box</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>moscow</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>mutation-testing</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>nelson-rules</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>owasp-top-10</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>plain-english-strunk-white</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>prd</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#fee2e2">0%</td></tr>
+<tr class="anchor-group"><td>problem-space-nvc</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>property-based-testing</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>pyramid-principle</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>semantic-versioning</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>socratic-method</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>sota</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>spc</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>stride</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>swot</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>tdd-chicago-school</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>tdd-london-school</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">86%</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">application-anchor</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">application-paraphrase</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-language</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-variant-1</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-variant-2</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">consistency-variant-3</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fee2e2">25%</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr><td class="question-label">recognition</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>testing-pyramid</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>timtowtdi</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>todotxt-flavoured-markdown</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#fef9c3">50%</td></tr>
+<tr class="anchor-group"><td>user-story-mapping</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
+<tr class="anchor-group"><td>wardley-mapping</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td><td class="score-cell" style="background:#dcfce7">✓</td></tr>
 </tbody></table>
 <h2>Control Questions</h2>
 <table class="controls">
-<thead><tr><th>Control</th><th style='text-align:center'>Claude Sonnet</th><th style='text-align:center'>GPT-4o</th><th style='text-align:center'>Mistral Large</th><th style='text-align:center'>Claude Sonnet (CLI)</th><th style='text-align:center'>Ollama (local)</th></tr></thead>
+<thead><tr><th>Control</th><th style='text-align:center'>Claude Sonnet</th><th style='text-align:center'>GPT-4o</th><th style='text-align:center'>Mistral Large</th></tr></thead>
 <tbody>
-<tr><td>negative-control</td><td class="score-cell" style="background:#dcfce7">100%</td><td class="score-cell" style="background:#dcfce7">100%</td><td class="score-cell" style="background:#fef9c3">75%</td><td class="score-cell" style="background:#dcfce7">100%</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
-<tr><td>sanity-check</td><td class="score-cell" style="background:#dcfce7">0%</td><td class="score-cell" style="background:#dcfce7">0%</td><td class="score-cell" style="background:#dcfce7">0%</td><td class="score-cell" style="background:#dcfce7">0%</td><td class="score-cell" style="color:#cbd5e1">—</td></tr>
+<tr><td>negative-control</td><td class="score-cell" style="background:#dcfce7">100%</td><td class="score-cell" style="background:#dcfce7">100%</td><td class="score-cell" style="background:#fef9c3">75%</td></tr>
+<tr><td>sanity-check</td><td class="score-cell" style="background:#dcfce7">0%</td><td class="score-cell" style="background:#dcfce7">0%</td><td class="score-cell" style="background:#dcfce7">0%</td></tr>
 </tbody></table>
 <h2>Failures Detail</h2>
-<h3>Claude Sonnet: 5 failures</h3>
-<div class="fail-list">
-<div class="fail-item"><span>adr-according-to-nygard/recognition</span><span style="color:#eab308;font-weight:600">50%</span></div>
-<div class="fail-item"><span>atam/recognition</span><span style="color:#ef4444;font-weight:600">0%</span></div>
-<div class="fail-item"><span>gherkin/recognition</span><span style="color:#ef4444;font-weight:600">0%</span></div>
-<div class="fail-item"><span>linddun/recognition</span><span style="color:#ef4444;font-weight:600">25%</span></div>
-<div class="fail-item"><span>owasp-top-10/recognition</span><span style="color:#eab308;font-weight:600">75%</span></div>
-</div>
+<h3>Claude Sonnet: no failures</h3>
 <h3>GPT-4o: 5 failures</h3>
 <div class="fail-list">
 <div class="fail-item"><span>lasr/recognition</span><span style="color:#eab308;font-weight:600">75%</span></div>
@@ -194,26 +175,11 @@
 <div class="fail-item"><span>prd/recognition</span><span style="color:#ef4444;font-weight:600">0%</span></div>
 <div class="fail-item"><span>todotxt-flavoured-markdown/recognition</span><span style="color:#eab308;font-weight:600">50%</span></div>
 </div>
-<h3>Claude Sonnet (CLI): no failures</h3>
-<h3>Ollama (local): 11 failures</h3>
-<div class="fail-list">
-<div class="fail-item"><span>arc42/application-anchor</span><span style="color:#eab308;font-weight:600">75%</span></div>
-<div class="fail-item"><span>arc42/application-paraphrase</span><span style="color:#eab308;font-weight:600">75%</span></div>
-<div class="fail-item"><span>arc42/consistency-language</span><span style="color:#ef4444;font-weight:600">0%</span></div>
-<div class="fail-item"><span>arc42/consistency-variant-1</span><span style="color:#eab308;font-weight:600">75%</span></div>
-<div class="fail-item"><span>arc42/consistency-variant-3</span><span style="color:#eab308;font-weight:600">50%</span></div>
-<div class="fail-item"><span>arc42/recognition</span><span style="color:#eab308;font-weight:600">50%</span></div>
-<div class="fail-item"><span>tdd-london-school/consistency-language</span><span style="color:#ef4444;font-weight:600">0%</span></div>
-<div class="fail-item"><span>tdd-london-school/consistency-variant-1</span><span style="color:#ef4444;font-weight:600">25%</span></div>
-<div class="fail-item"><span>tdd-london-school/consistency-variant-2</span><span style="color:#ef4444;font-weight:600">25%</span></div>
-<div class="fail-item"><span>tdd-london-school/consistency-variant-3</span><span style="color:#ef4444;font-weight:600">25%</span></div>
-<div class="fail-item"><span>tdd-london-school/recognition</span><span style="color:#eab308;font-weight:600">75%</span></div>
-</div>
 
 <div class="meta">
 <h3>Run Metadata</h3>
 <dl>
-<dt>Claude Sonnet:</dt><dd>pilot-20260324-165214.json · 10m 30s · 2026-03-24T16:52:14</dd><br><dt>GPT-4o:</dt><dd>pilot-20260324-171546.json · 6m 32s · 2026-03-24T17:15:46</dd><br><dt>Mistral Large:</dt><dd>pilot-20260324-171539.json · 5m 6s · 2026-03-24T17:15:39</dd><br><dt>Claude Sonnet (CLI):</dt><dd>pilot-20260324-131452.json · 7m 36s · 2026-03-24T13:14:52</dd><br><dt>Ollama (local):</dt><dd>pilot-20260324-123126.json · 0m 0s · 2026-03-24T11:31:26</dd><br>
+<dt>Claude Sonnet:</dt><dd>pilot-20260324-170530.json · 10m 41s · 2026-03-24T17:05:30</dd><br><dt>GPT-4o:</dt><dd>pilot-20260324-171546.json · 6m 32s · 2026-03-24T17:15:46</dd><br><dt>Mistral Large:</dt><dd>pilot-20260324-171539.json · 5m 6s · 2026-03-24T17:15:39</dd><br>
 </dl>
 <p style="margin-top:0.75rem">Generated by <code>evaluations/generate-report.py</code> · Position bias mitigation: 4 permutations per question · Scoring: deterministic MC (no LLM judge)</p>
 </div>

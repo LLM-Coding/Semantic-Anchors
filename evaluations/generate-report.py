@@ -35,12 +35,12 @@ CONTROL_ANCHORS = {"sanity-check", "negative-control"}
 
 
 def load_best_results():
-    """Load the best (most questions) result per model."""
+    """Load the latest result with the most questions per model."""
     results = {}
     for f in sorted(RESULTS_DIR.glob("pilot-*.json")):
         d = json.load(open(f, encoding="utf-8"))
         for m, r in d["models"].items():
-            if m not in results or len(r) > len(results[m]["data"]):
+            if m not in results or len(r) >= len(results[m]["data"]):
                 results[m] = {
                     "data": r,
                     "file": f.name,
