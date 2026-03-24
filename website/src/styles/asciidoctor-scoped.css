@@ -105,10 +105,16 @@
     background: #f5f5f5;
   }
 
-  & ul,
+  & ul {
+    margin: 1.25rem 0;
+    padding-left: 2rem;
+    list-style-type: disc;
+  }
+
   & ol {
     margin: 1.25rem 0;
     padding-left: 2rem;
+    list-style-type: decimal;
   }
 
   & li {
