@@ -6,16 +6,13 @@ questions:
 
       '
     options:
-      A: A comprehensive framework for assessing software reliability and safety integrity
-        levels in critical systems; defines four distinct SIL classifications; primarily
-        used in regulated environments like automotive and aerospace industries
-      B: Failure to enforce restrictions on what authenticated users can do; most
-        prevalent web application risk; sensitive data exposed due to weak or absent
-        encryption; previously called "sensitive data exposure"
-      C: An industry standard methodology for evaluating cybersecurity maturity across
-        organizational processes; establishes five progressive capability levels;
-        widely adopted for compliance auditing in financial and healthcare sectors
-      D: A systematic approach to documenting software architecture patterns and anti-patterns;
-        catalogs the ten most common design flaws; serves as a reference guide for
-        enterprise application development teams
-    correct: B
+      A: A regularly updated list of the ten most critical web application security
+        risks, covering threats like injection, broken access control, and
+        cryptographic failures
+      B: A comprehensive framework for assessing software reliability and safety
+        integrity levels in critical systems with four distinct SIL classifications
+      C: An industry standard methodology for evaluating cybersecurity maturity
+        across organizational processes with five progressive capability levels
+      D: A systematic approach to privacy threat modeling that identifies linkability,
+        identifiability, and disclosure risks in software systems
+    correct: A

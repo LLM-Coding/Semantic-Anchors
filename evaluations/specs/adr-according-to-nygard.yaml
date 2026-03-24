@@ -6,8 +6,12 @@ questions:
 
       '
     options:
-      A: Comprehensive documentation with detailed rationale and implementation steps
-      B: Short, focused records; standard structure
-      C: Lightweight decision tracking focused on reversible architectural choices
-      D: Collaborative review process emphasizing stakeholder consensus and approval
+      A: Comprehensive architecture documentation with twelve standardized sections
+        covering context, building blocks, runtime, and deployment views
+      B: Lightweight records that capture a single architecture decision with its
+        context, decision, status, and consequences in a short, focused format
+      C: Collaborative review process where stakeholders evaluate architecture tradeoffs
+        through scenario-based analysis and quality attribute workshops
+      D: Visual modeling technique that represents software architecture at four
+        levels of abstraction from system context down to code
     correct: B

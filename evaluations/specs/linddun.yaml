@@ -6,16 +6,14 @@ questions:
 
       '
     options:
-      A: A systematic methodology for threat modeling that identifies security vulnerabilities
-        in software systems by analyzing data flow diagrams and potential attack vectors
-        across system boundaries
-      B: Attacker can link two items of interest (e.g., data items, messages, or actions)
-        without knowing the identity of the data subject; attacker can identify a
-        data subject from a set of data subjects through items of interest
-      C: A privacy-by-design framework that ensures compliance with data protection
-        regulations by implementing technical and organizational measures to minimize
-        personal data collection and processing
-      D: A security assessment technique that evaluates the confidentiality, integrity,
-        and availability of sensitive data through structured analysis of authentication,
-        authorization, and access control mechanisms
+      A: A security threat modeling framework that categorizes threats into Spoofing,
+        Tampering, Repudiation, Information Disclosure, Denial of Service, and
+        Elevation of Privilege
+      B: A privacy threat modeling framework that systematically identifies threats
+        like Linkability, Identifiability, Non-repudiation, Detectability, Disclosure
+        of information, Unawareness, and Non-compliance
+      C: A data protection compliance checklist for ensuring GDPR conformity through
+        technical and organizational measures
+      D: A risk assessment methodology that evaluates security controls against
+        a catalog of known vulnerabilities and attack patterns
     correct: B

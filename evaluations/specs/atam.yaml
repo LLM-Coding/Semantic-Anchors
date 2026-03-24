@@ -7,20 +7,12 @@ questions:
       '
     options:
       A: Systematic documentation framework for software architecture decisions using
-        standardized templates that capture context, decision drivers, considered
-        options, and consequences to maintain architectural knowledge and rationale
-        throughout the system lifecycle
-      B: Hierarchical decomposition of system quality goals into concrete, prioritized
-        quality attribute scenarios (e.g., Performance → Response Time → "Search results
-        returned in < 1s under peak load"); testable, concrete expressions of quality
-        requirements consisting of stimulus, source, environment, artifact, response,
-        and response measure
-      C: Iterative risk-driven methodology for evaluating software architectures through
-        stakeholder workshops that identify architectural risks, sensitivity points,
-        and tradeoffs using scenario-based analysis and expert judgment to assess
-        fitness for purpose
-      D: Comprehensive template-based approach for documenting software architecture
-        across twelve standardized sections including stakeholder requirements, building
-        block views, runtime scenarios, deployment perspectives, and architectural
-        decisions with consistent notation and structure
+        standardized templates that capture context, decision drivers, and consequences
+      B: Iterative risk-driven methodology for evaluating software architectures through
+        stakeholder workshops that identify risks, sensitivity points, and tradeoffs
+        using scenario-based analysis
+      C: Comprehensive template-based approach for documenting software architecture
+        across twelve standardized sections from context to deployment
+      D: Structured code review process with defined roles and phases that inspects
+        software artifacts against checklists and specifications
     correct: B

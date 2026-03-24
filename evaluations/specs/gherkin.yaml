@@ -6,16 +6,12 @@ questions:
 
       '
     options:
-      A: A structured template for writing requirements using the Given-When-Then
-        format to specify preconditions, actions, and expected outcomes in behavior-driven
-        development
-      B: Top-level description of a software capability, grouping related scenarios
-        that describe expected behavior; a concrete example of how the system should
-        behave in a specific situation, written as a sequence of steps
-      C: A software testing methodology that emphasizes writing failing tests first,
-        then implementing the minimum code necessary to make those tests pass before
-        refactoring
-      D: A requirements specification technique that uses a standardized syntax to
-        capture functional and non-functional system requirements in natural language
-        with clear structure
-    correct: B
+      A: A domain-specific language for writing human-readable executable specifications
+        using Given/When/Then keywords in behavior-driven development
+      B: A software testing methodology that emphasizes writing failing tests first,
+        then implementing the minimum code to make them pass
+      C: A requirements elicitation technique using targeted questions to uncover
+        assumptions and clarify stakeholder needs
+      D: A structured format for documenting acceptance criteria using natural language
+        templates with numbered steps and expected outcomes
+    correct: A
