@@ -150,35 +150,28 @@ def call_openai(prompt, model="gpt-4o-mini"):
 def make_ollama_caller(ollama_model, no_think=False):
     """Create an Ollama caller for a specific model."""
     def call_ollama(prompt, model=ollama_model):
-        try:
-            import openai
-        except ImportError:
-            print("openai package required: pip install openai")
-            sys.exit(1)
+        import urllib.request
 
-        client = openai.OpenAI(
-            base_url="http://localhost:11434/v1",
-            api_key="ollama",
-        )
-        messages = [{"role": "user", "content": prompt}]
-
-        # Disable thinking via system prompt for reasoning models (qwen3 etc.)
+        body = {
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "stream": False,
+            "options": {"temperature": 0},
+        }
         if no_think:
-            messages.insert(0, {
-                "role": "system",
-                "content": "Do not use <think> tags. Answer directly and concisely."
-            })
+            body["think"] = False
 
-        # With thinking: need 2048 tokens for <think> block.
-        # Without: 128 tokens should be enough for a short answer.
-        max_tok = 128 if no_think else 2048
-        response = client.chat.completions.create(
-            model=model,
-            max_tokens=max_tok,
-            temperature=0,
-            messages=messages,
+        data = json.dumps(body).encode("utf-8")
+        req = urllib.request.Request(
+            "http://localhost:11434/api/chat",
+            data=data,
+            headers={"Content-Type": "application/json"},
         )
-        return response.choices[0].message.content or "", f"ollama/{model}"
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            result = json.loads(resp.read())
+
+        content = result.get("message", {}).get("content", "")
+        return content, f"ollama/{model}"
     return call_ollama
 
 
