@@ -14,6 +14,7 @@ Usage:
 """
 
 import argparse
+from html import escape as h
 import json
 from collections import defaultdict
 from pathlib import Path
@@ -191,7 +192,7 @@ def generate_html(results, output_path):
             scores = [anchor_questions[l].get(m) for l in labels if anchor_questions[l].get(m) is not None]
             anchor_scores[m] = sum(scores) / len(scores) if scores else None
 
-        html += f'<tr class="anchor-group"><td>{anchor_id}</td>'
+        html += f'<tr class="anchor-group"><td>{h(anchor_id)}</td>'
         for m in model_names:
             s = anchor_scores.get(m)
             if s is not None:
@@ -206,7 +207,7 @@ def generate_html(results, output_path):
         if len(labels) > 1:
             for label in labels:
                 short = label.split("/", 1)[1] if "/" in label else label
-                html += f'<tr><td class="question-label">{short}</td>'
+                html += f'<tr><td class="question-label">{h(short)}</td>'
                 for m in model_names:
                     s = anchor_questions[label].get(m)
                     if s is not None:
@@ -249,7 +250,7 @@ def generate_html(results, output_path):
         else:
             html += f'<h3>{MODEL_DISPLAY.get(m, m)}: {len(fails)} failures</h3>\n<div class="fail-list">\n'
             for label, score in sorted(fails):
-                html += f'<div class="fail-item"><span>{label}</span><span style="color:{score_color(score)};font-weight:600">{score:.0%}</span></div>\n'
+                html += f'<div class="fail-item"><span>{h(label)}</span><span style="color:{score_color(score)};font-weight:600">{score:.0%}</span></div>\n'
             html += "</div>\n"
 
     # Metadata

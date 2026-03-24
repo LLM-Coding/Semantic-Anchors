@@ -8,7 +8,8 @@ questions:
     options:
       A: Version control system that automatically tracks semantic changes in code
         structure and meaning across different branches
-      B: 'Version format; : incompatible api changes (breaking changes)'
+      B: A versioning scheme using MAJOR.MINOR.PATCH where MAJOR signals breaking
+        changes, MINOR signals new features, and PATCH signals bug fixes
       C: Development methodology that prioritizes meaningful variable and function
         naming conventions to improve code readability
       D: Documentation standard that requires detailed explanations of API functionality
