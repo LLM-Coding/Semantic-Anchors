@@ -348,12 +348,25 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
             print(f"Unknown model: {model_name}")
             continue
 
-        print(f"=== {model_name.upper()} ===")
+        # Count total questions for progress display
+        total_q = 0
+        for spec in specs:
+            questions = spec.get("questions", {})
+            if "recognition" in questions: total_q += 1
+            if "application" in questions: total_q += 2  # anchor + paraphrase
+            if "consistency" in questions:
+                cons = questions["consistency"]
+                total_q += len(cons.get("variants", []))
+                if cons.get("language_variant"): total_q += 1
+
+        print(f"=== {model_name.upper()} ({total_q} questions) ===")
         model_results = []
         all_results["models"][model_name] = model_results
+        current_q = [0]
 
         def append_and_save(r):
             model_results.append(r)
+            current_q[0] += 1
             if not dry_run:
                 save_results(all_results, out_file)
 
@@ -369,7 +382,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
                     print(f"\n[DRY RUN] {anchor} / recognition:")
                     print(prompt)
                 else:
-                    print(f"  {anchor} / recognition...", end=" ", flush=True)
+                    print(f"  [{current_q[0]+1}/{total_q}] {anchor} / recognition...", end=" ", flush=True)
                     result = run_question(q, call_fn, f"{anchor}/recognition", verbose=verbose)
                     print(f"{result['score']:.0%}")
                     append_and_save(result)
@@ -392,12 +405,12 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
                     print(f"\n[DRY RUN] {anchor} / application (anchor):")
                     print(prompt)
                 else:
-                    print(f"  {anchor} / application (anchor)...", end=" ", flush=True)
+                    print(f"  [{current_q[0]+1}/{total_q}] {anchor} / application (anchor)...", end=" ", flush=True)
                     result_a = run_question(anchor_q, call_fn, f"{anchor}/application-anchor", verbose=verbose)
                     print(f"{result_a['score']:.0%}")
                     append_and_save(result_a)
 
-                    print(f"  {anchor} / application (paraphrase)...", end=" ", flush=True)
+                    print(f"  [{current_q[0]+1}/{total_q}] {anchor} / application (paraphrase)...", end=" ", flush=True)
                     result_p = run_question(para_q, call_fn, f"{anchor}/application-paraphrase", verbose=verbose)
                     print(f"{result_p['score']:.0%}")
                     append_and_save(result_p)
@@ -422,7 +435,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
                         print(f"\n[DRY RUN] {anchor} / consistency ({variant_label}):")
                         print(prompt)
                     else:
-                        print(f"  {anchor} / consistency ({variant_label})...", end=" ", flush=True)
+                        print(f"  [{current_q[0]+1}/{total_q}] {anchor} / consistency ({variant_label})...", end=" ", flush=True)
                         result = run_question(variant_q, call_fn, f"{anchor}/consistency-{variant_label}", verbose=verbose)
                         print(f"{result['score']:.0%}")
                         append_and_save(result)
