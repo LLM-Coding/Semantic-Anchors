@@ -170,7 +170,7 @@ def make_ollama_caller(ollama_model):
     return call_ollama
 
 
-def run_question(question_data, call_fn, label, context=""):
+def run_question(question_data, call_fn, label, context="", verbose=False):
     """Run a single question 4x with randomized positions. Returns results."""
     question_text = question_data["question"]
     if context:
@@ -179,13 +179,16 @@ def run_question(question_data, call_fn, label, context=""):
     original_correct = question_data["correct"]
 
     results = []
-    for perm in POSITION_PERMUTATIONS:
+    for i, perm in enumerate(POSITION_PERMUTATIONS):
         prompt = build_prompt(question_text, options, perm)
         expected = correct_letter_for_permutation(original_correct, perm)
 
         response_text, model_id = call_fn(prompt)
         answer = parse_response(response_text)
         correct = answer == expected
+
+        if verbose and i == 0:  # show first permutation only
+            print(f"\n    [RAW] expected={expected} parsed={answer} response={repr(response_text[:200])}")
 
         results.append({
             "permutation": [LETTERS[p] for p in perm],
@@ -204,7 +207,7 @@ def run_question(question_data, call_fn, label, context=""):
     }
 
 
-def run_pilot(models, dry_run=False):
+def run_pilot(models, dry_run=False, verbose=False):
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
@@ -247,7 +250,7 @@ def run_pilot(models, dry_run=False):
                     print(prompt)
                 else:
                     print(f"  {anchor} / recognition...", end=" ", flush=True)
-                    result = run_question(q, call_fn, f"{anchor}/recognition")
+                    result = run_question(q, call_fn, f"{anchor}/recognition", verbose=verbose)
                     print(f"{result['score']:.0%}")
                     model_results.append(result)
 
@@ -270,12 +273,12 @@ def run_pilot(models, dry_run=False):
                     print(prompt)
                 else:
                     print(f"  {anchor} / application (anchor)...", end=" ", flush=True)
-                    result_a = run_question(anchor_q, call_fn, f"{anchor}/application-anchor")
+                    result_a = run_question(anchor_q, call_fn, f"{anchor}/application-anchor", verbose=verbose)
                     print(f"{result_a['score']:.0%}")
                     model_results.append(result_a)
 
                     print(f"  {anchor} / application (paraphrase)...", end=" ", flush=True)
-                    result_p = run_question(para_q, call_fn, f"{anchor}/application-paraphrase")
+                    result_p = run_question(para_q, call_fn, f"{anchor}/application-paraphrase", verbose=verbose)
                     print(f"{result_p['score']:.0%}")
                     model_results.append(result_p)
 
@@ -300,7 +303,7 @@ def run_pilot(models, dry_run=False):
                         print(prompt)
                     else:
                         print(f"  {anchor} / consistency ({variant_label})...", end=" ", flush=True)
-                        result = run_question(variant_q, call_fn, f"{anchor}/consistency-{variant_label}")
+                        result = run_question(variant_q, call_fn, f"{anchor}/consistency-{variant_label}", verbose=verbose)
                         print(f"{result['score']:.0%}")
                         model_results.append(result)
 
@@ -334,5 +337,7 @@ if __name__ == "__main__":
                         help="Ollama model name (default: qwen3:4b)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show prompts without sending")
+    parser.add_argument("--verbose", action="store_true",
+                        help="Print raw responses for debugging")
     args = parser.parse_args()
-    run_pilot(args.model, args.dry_run)
+    run_pilot(args.model, args.dry_run, args.verbose)
