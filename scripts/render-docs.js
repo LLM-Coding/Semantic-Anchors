@@ -93,6 +93,13 @@ renderFile(
   path.join(WEB_DOCS, 'spec-driven-workflow.de.html')
 )
 
+// Copy evaluation report (self-contained HTML)
+const evalReport = path.join(ROOT, 'evaluations/report.html')
+if (fs.existsSync(evalReport)) {
+  fs.copyFileSync(evalReport, path.join(WEB_PUBLIC, 'evaluation-report.html'))
+  console.log(`Copied: ${path.relative(ROOT, path.join(WEB_PUBLIC, 'evaluation-report.html'))}`)
+}
+
 // Copy assets referenced by workflow docs
 const workflowDiagram = path.join(ROOT, 'docs/workflow-diagram.png')
 if (fs.existsSync(workflowDiagram)) {

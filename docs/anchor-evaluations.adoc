@@ -12,6 +12,8 @@ We do not know whether this holds equally across models.
 A semantic anchor that works perfectly in Claude may activate a different or shallow framework in GPT, Gemini, or an open-source model.
 Without systematic evaluation, our catalog is a collection of untested assumptions.
 
+link:../evaluation-report.html[**View the latest evaluation results →**]
+
 This document describes how to build evaluations that answer three questions:
 
 . Does a given LLM *recognize* a semantic anchor?
