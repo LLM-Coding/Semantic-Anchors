@@ -35,7 +35,8 @@ python3 evaluations/pilot.py --model openai
 # Ollama (requires local server + model)
 ollama serve &                               # start server if not running
 ollama pull qwen3:4b                         # pull model (once)
-python3 evaluations/pilot.py --model ollama
+python3 evaluations/pilot.py --model ollama  # uses qwen3:4b by default
+python3 evaluations/pilot.py --model ollama --ollama-model mistral  # other model
 
 # Multiple models at once
 python3 evaluations/pilot.py --model claude-cli claude-haiku openai
@@ -68,7 +69,7 @@ python3 evaluations/pilot.py --dry-run
 
 |`ollama`
 |Local model (via Ollama)
-|Requires Ollama server running on `localhost:11434`. Default model: `llama3.1`, changeable in code.
+|Requires Ollama server on `localhost:11434`. Default: `qwen3:4b`, override with `--ollama-model`.
 |===
 
 == Directory Structure

@@ -133,25 +133,27 @@ def call_openai(prompt, model="gpt-4o-mini"):
     return response.choices[0].message.content.strip(), model
 
 
-def call_ollama(prompt, model="llama3.1"):
-    """Send prompt to local Ollama via OpenAI-compatible API."""
-    try:
-        import openai
-    except ImportError:
-        print("openai package required: pip install openai")
-        sys.exit(1)
+def make_ollama_caller(ollama_model):
+    """Create an Ollama caller for a specific model."""
+    def call_ollama(prompt, model=ollama_model):
+        try:
+            import openai
+        except ImportError:
+            print("openai package required: pip install openai")
+            sys.exit(1)
 
-    client = openai.OpenAI(
-        base_url="http://localhost:11434/v1",
-        api_key="ollama",
-    )
-    response = client.chat.completions.create(
-        model=model,
-        max_tokens=10,
-        temperature=0,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return response.choices[0].message.content, model
+        client = openai.OpenAI(
+            base_url="http://localhost:11434/v1",
+            api_key="ollama",
+        )
+        response = client.chat.completions.create(
+            model=model,
+            max_tokens=10,
+            temperature=0,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return response.choices[0].message.content, f"ollama/{model}"
+    return call_ollama
 
 
 def run_question(question_data, call_fn, label, context=""):
@@ -210,7 +212,7 @@ def run_pilot(models, dry_run=False):
         elif model_name == "openai":
             call_fn = call_openai
         elif model_name == "ollama":
-            call_fn = call_ollama
+            call_fn = make_ollama_caller(args.ollama_model)
         else:
             print(f"Unknown model: {model_name}")
             continue
@@ -314,6 +316,8 @@ if __name__ == "__main__":
     parser.add_argument("--model", nargs="+", default=["claude-cli"],
                         choices=["claude", "claude-cli", "claude-haiku", "openai", "ollama"],
                         help="Models to evaluate (default: claude)")
+    parser.add_argument("--ollama-model", default="qwen3:4b",
+                        help="Ollama model name (default: qwen3:4b)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show prompts without sending")
     args = parser.parse_args()
