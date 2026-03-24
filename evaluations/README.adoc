@@ -1,0 +1,157 @@
+= Semantic Anchor Evaluations
+:toc:
+
+== Overview
+
+Multiple-choice evaluation framework for testing whether semantic anchors work across different LLMs.
+See the link:../docs/anchor-evaluations.adoc[full concept document] for background and methodology.
+
+== Quick Start
+
+=== Prerequisites
+
+* Python 3.10+
+* `pyyaml` package: `pip install pyyaml`
+* At least one of:
+** Claude Code CLI (authenticated)
+** OpenAI API key (`OPENAI_API_KEY` environment variable)
+** Ollama running locally
+
+=== Running the Pilot
+
+[source,bash]
+----
+cd website
+
+# Claude Sonnet (default, via CLI)
+python3 evaluations/pilot.py
+
+# Claude Haiku
+python3 evaluations/pilot.py --model claude-haiku
+
+# GPT-4o-mini (requires OPENAI_API_KEY)
+python3 evaluations/pilot.py --model openai
+
+# Ollama (requires local server + model)
+ollama serve &                               # start server if not running
+ollama pull qwen3:4b                         # pull model (once)
+python3 evaluations/pilot.py --model ollama
+
+# Multiple models at once
+python3 evaluations/pilot.py --model claude-cli claude-haiku openai
+
+# Dry run (show prompts without sending)
+python3 evaluations/pilot.py --dry-run
+----
+
+=== Available Models
+
+[cols="1,1,2"]
+|===
+|Flag |Model |Notes
+
+|`claude-cli`
+|Claude Sonnet (via CLI)
+|Default. Requires `claude` CLI authenticated.
+
+|`claude-haiku`
+|Claude Haiku (via CLI)
+|Smallest Claude model. Good lower-bound test.
+
+|`openai`
+|GPT-4o-mini (via API)
+|Requires `OPENAI_API_KEY`.
+
+|`claude`
+|Claude Sonnet (via API)
+|Requires `ANTHROPIC_API_KEY`. Alternative to CLI.
+
+|`ollama`
+|Local model (via Ollama)
+|Requires Ollama server running on `localhost:11434`. Default model: `llama3.1`, changeable in code.
+|===
+
+== Directory Structure
+
+[source]
+----
+evaluations/
+├── README.adoc          # This file
+├── pilot.py             # Evaluation runner script
+├── specs/               # Question specs (YAML)
+│   ├── arc42.yaml
+│   ├── docs-as-code.yaml
+│   ├── mece.yaml
+│   ├── tdd-london-school.yaml
+│   └── timtowtdi.yaml
+└── results/             # Raw results (JSON, timestamped)
+    └── pilot-*.json
+----
+
+== Question Spec Format
+
+Each anchor has a YAML file with multiple-choice questions:
+
+[source,yaml]
+----
+anchor: tdd-london-school
+tier: 3
+
+questions:
+  recognition:           # Level 1: Does the model identify the anchor?
+    question: |
+      Which of the following best describes "TDD, London School"?
+    options:
+      A: ...             # Distractor (e.g., Chicago School description)
+      B: ...             # Correct answer
+      C: ...             # Distractor (e.g., BDD description)
+      D: ...             # Distractor
+    correct: B
+
+  application:           # Level 2: Does it change behavior?
+    scenario: |
+      You are reviewing a PR. ...
+    anchor_prompt: "using TDD, London School principles"
+    paraphrase_prompt: "Write isolated tests for the service layer"
+    options: ...
+    correct: B
+
+  consistency:           # Level 4: Same answer across aliases/languages?
+    variants:
+      - 'Question with canonical name'
+      - 'Question with alias'
+    language_variant: 'Frage auf Deutsch'
+    options: ...
+    correct: B
+----
+
+== Scoring
+
+* Each question runs *4 times* with randomized option order (position bias mitigation)
+* Score = percentage of correct answers across the 4 runs
+* Response parsing: extracts first capital letter A–D from response
+* Results saved as timestamped JSON in `results/`
+
+== Pilot Results (2026-03-24)
+
+[cols="1,1,1,1"]
+|===
+|Model |Average |Best |Worst
+
+|Claude Sonnet 4.6
+|100%
+|all 100%
+|—
+
+|Claude Haiku 4.5
+|100%
+|all 100%
+|—
+
+|GPT-4o-mini
+|81%
+|Recognition: arc42, MECE, TIMTOWTDI (100%)
+|TDD London School Recognition (25%)
+|===
+
+Key finding: *Position bias is real.* GPT-4o-mini recognizes "TDD, London School" only 25% of the time -- it picks the correct answer only when it happens to be in a favorable position.
