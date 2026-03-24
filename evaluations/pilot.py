@@ -156,22 +156,27 @@ def make_ollama_caller(ollama_model, no_think=False):
             print("openai package required: pip install openai")
             sys.exit(1)
 
-        actual_prompt = prompt
-        if no_think:
-            actual_prompt = "/no_think\n" + prompt
-
         client = openai.OpenAI(
             base_url="http://localhost:11434/v1",
             api_key="ollama",
         )
+        messages = [{"role": "user", "content": prompt}]
+
+        # Disable thinking via system prompt for reasoning models (qwen3 etc.)
+        if no_think:
+            messages.insert(0, {
+                "role": "system",
+                "content": "Do not use <think> tags. Answer directly and concisely."
+            })
+
         # With thinking: need 2048 tokens for <think> block.
-        # Without: 10 tokens is enough for a single letter.
-        max_tok = 50 if no_think else 2048
+        # Without: 128 tokens should be enough for a short answer.
+        max_tok = 128 if no_think else 2048
         response = client.chat.completions.create(
             model=model,
             max_tokens=max_tok,
             temperature=0,
-            messages=[{"role": "user", "content": actual_prompt}],
+            messages=messages,
         )
         return response.choices[0].message.content or "", f"ollama/{model}"
     return call_ollama
