@@ -24,7 +24,7 @@ questions:
       and architecture diagrams, but feels uncertain about key concepts like cache
       coherency protocols and distributed consensus mechanisms.
     anchor_prompt: using Feynman Technique
-    paraphrase_prompt: to validate and deepen her understanding before implementation
+    paraphrase_prompt: to identify and fill knowledge gaps about the caching system
     options:
       A: Create detailed technical diagrams mapping all system components and their
         interactions, then review them with the architecture team to ensure accuracy.
