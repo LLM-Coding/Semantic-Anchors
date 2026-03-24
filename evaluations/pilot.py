@@ -147,7 +147,7 @@ def call_openai(prompt, model="gpt-4o-mini"):
     return response.choices[0].message.content.strip(), model
 
 
-def make_ollama_caller(ollama_model):
+def make_ollama_caller(ollama_model, no_think=False):
     """Create an Ollama caller for a specific model."""
     def call_ollama(prompt, model=ollama_model):
         try:
@@ -156,17 +156,22 @@ def make_ollama_caller(ollama_model):
             print("openai package required: pip install openai")
             sys.exit(1)
 
+        actual_prompt = prompt
+        if no_think:
+            actual_prompt = "/no_think\n" + prompt
+
         client = openai.OpenAI(
             base_url="http://localhost:11434/v1",
             api_key="ollama",
         )
-        # Reasoning models (qwen3, DeepSeek R1) need enough tokens for
-        # <think>...</think> before the actual answer.
+        # With thinking: need 2048 tokens for <think> block.
+        # Without: 10 tokens is enough for a single letter.
+        max_tok = 50 if no_think else 2048
         response = client.chat.completions.create(
             model=model,
-            max_tokens=2048,
+            max_tokens=max_tok,
             temperature=0,
-            messages=[{"role": "user", "content": prompt}],
+            messages=[{"role": "user", "content": actual_prompt}],
         )
         return response.choices[0].message.content or "", f"ollama/{model}"
     return call_ollama
@@ -231,7 +236,7 @@ def run_pilot(models, dry_run=False, verbose=False):
         elif model_name == "openai":
             call_fn = call_openai
         elif model_name == "ollama":
-            call_fn = make_ollama_caller(args.ollama_model)
+            call_fn = make_ollama_caller(args.ollama_model, no_think=args.no_think)
         else:
             print(f"Unknown model: {model_name}")
             continue
@@ -337,6 +342,8 @@ if __name__ == "__main__":
                         help="Models to evaluate (default: claude)")
     parser.add_argument("--ollama-model", default="qwen3:4b",
                         help="Ollama model name (default: qwen3:4b)")
+    parser.add_argument("--no-think", action="store_true",
+                        help="Disable reasoning/thinking for Ollama models (faster, fewer tokens)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show prompts without sending")
     parser.add_argument("--verbose", action="store_true",
