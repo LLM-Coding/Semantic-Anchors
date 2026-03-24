@@ -66,8 +66,15 @@ def correct_letter_for_permutation(original_correct, permutation):
 
 
 def parse_response(text):
-    """Extract the first capital letter A-D from the response."""
-    for char in text.strip():
+    """Extract the first capital letter A-D from the response.
+    Strips <think>...</think> blocks (used by reasoning models like qwen3)."""
+    import re
+    # Remove thinking blocks (qwen3, DeepSeek R1, etc.)
+    cleaned = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
+    # If nothing left after stripping, fall back to original
+    if not cleaned:
+        cleaned = text.strip()
+    for char in cleaned:
         if char in "ABCD":
             return char
     return None
