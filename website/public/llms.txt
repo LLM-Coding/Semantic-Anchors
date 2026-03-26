@@ -4496,8 +4496,10 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 
 # Semantic Contracts
 
-Semantic Contracts compose existing anchors into project-specific conventions.
-Add them to your AGENTS.md or CLAUDE.md to define what your team means when using these terms.
+Semantic Contracts define what a term means in your project — either by
+composing established anchors or by providing custom definitions that only
+exist within your team.
+Add them to your AGENTS.md or CLAUDE.md.
 Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts
 
 ## Specification

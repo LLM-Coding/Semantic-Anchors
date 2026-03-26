@@ -250,10 +250,14 @@ function generateLlmsTxt() {
       lines.push('# Semantic Contracts')
       lines.push('')
       lines.push(
-        'Semantic Contracts compose existing anchors into project-specific conventions.'
+        'Semantic Contracts define what a term means in your project — either by'
       )
       lines.push(
-        'Add them to your AGENTS.md or CLAUDE.md to define what your team means when using these terms.'
+        'composing established anchors or by providing custom definitions that only'
+      )
+      lines.push('exist within your team.')
+      lines.push(
+        'Add them to your AGENTS.md or CLAUDE.md.'
       )
       lines.push(
         'Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts'
