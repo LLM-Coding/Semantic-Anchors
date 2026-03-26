@@ -240,6 +240,46 @@ function generateLlmsTxt() {
     lines.push('')
   }
 
+  // ─── Append Semantic Contracts ──────────────────────────────────────────────
+
+  const contractsPath = path.join(ROOT, 'website/public/data/contracts.json')
+  try {
+    const contracts = JSON.parse(fs.readFileSync(contractsPath, 'utf-8'))
+    if (contracts.length > 0) {
+      lines.push('')
+      lines.push('# Semantic Contracts')
+      lines.push('')
+      lines.push(
+        'Semantic Contracts compose existing anchors into project-specific conventions.'
+      )
+      lines.push(
+        'Add them to your AGENTS.md or CLAUDE.md to define what your team means when using these terms.'
+      )
+      lines.push(
+        'Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts'
+      )
+      lines.push('')
+
+      for (const contract of contracts) {
+        lines.push(`## ${contract.title}`)
+        lines.push('')
+        lines.push(contract.template)
+        lines.push('')
+        if (contract.anchors && contract.anchors.length > 0) {
+          lines.push(`*Referenced anchors: ${contract.anchors.join(', ')}*`)
+          lines.push('')
+        }
+      }
+
+      lines.push('---')
+      console.warn(
+        `  Including ${contracts.length} Semantic Contracts in llms.txt`
+      )
+    }
+  } catch {
+    // contracts.json not found — skip
+  }
+
   const output = lines.join('\n')
   fs.writeFileSync(path.join(ROOT, 'website/public/llms.txt'), output, 'utf-8')
   const kb = Math.round(Buffer.byteLength(output, 'utf-8') / 1024)
