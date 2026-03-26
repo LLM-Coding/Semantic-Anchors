@@ -53,5 +53,27 @@
     "template": "All documentation uses:\n- Plain English according to Strunk & White (or Gutes Deutsch nach Wolf Schneider for German)\n- Docs-as-Code with AsciiDoc\n- Diataxis for document types",
     "templateDe": "Alle Dokumentation verwendet:\n- Gutes Deutsch nach Wolf Schneider (oder Plain English nach Strunk & White für Englisch)\n- Docs-as-Code mit AsciiDoc\n- Diataxis für Dokumenttypen",
     "category": "documentation"
+  },
+  {
+    "id": "concise-response",
+    "title": "Concise Response (TLDR)",
+    "titleDe": "Knappe Antwort (TLDR)",
+    "description": "How responses should be structured for brevity",
+    "descriptionDe": "Wie Antworten für Kürze strukturiert sein sollen",
+    "anchors": ["bluf", "plain-english-strunk-white"],
+    "template": "Responses lead with the conclusion first (BLUF). Keep to essential points. No filler, no preamble. Use short sentences, active voice, and no unnecessary words (Strunk & White).",
+    "templateDe": "Antworten beginnen mit der Schlussfolgerung (BLUF). Nur das Wesentliche. Kein Fülltext, keine Einleitung. Kurze Sätze, aktive Sprache, keine überflüssigen Wörter (Wolf Schneider).",
+    "category": "communication"
+  },
+  {
+    "id": "simple-explanation",
+    "title": "Simple Explanation (ELI5)",
+    "titleDe": "Einfache Erklärung (ELI5)",
+    "description": "How to explain complex concepts simply",
+    "descriptionDe": "Wie man komplexe Konzepte einfach erklärt",
+    "anchors": ["feynman-technique"],
+    "template": "Explain complex concepts using simple language and everyday analogies. When the explanation feels hard to write, that reveals gaps in understanding — study those areas first (Feynman Technique).",
+    "templateDe": "Komplexe Konzepte mit einfacher Sprache und Alltagsanalogien erklären. Wenn die Erklärung schwerfällt, zeigt das Wissenslücken — diese zuerst vertiefen (Feynman-Technik).",
+    "category": "communication"
   }
 ]

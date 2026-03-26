@@ -43,8 +43,11 @@ export function renderContractsPage() {
         <h1 class="text-3xl font-bold text-[var(--color-text)] mb-2" data-i18n="contracts.title">
           ${i18n.t('contracts.title')}
         </h1>
-        <p class="text-[var(--color-text-secondary)] mb-6" data-i18n="contracts.subtitle">
-          ${i18n.t('contracts.subtitle')}
+        <p class="text-[var(--color-text-secondary)] mb-4" data-i18n="contracts.explanation">
+          ${i18n.t('contracts.explanation')}
+        </p>
+        <p class="text-sm text-[var(--color-text-secondary)] mb-6">
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7438137401019105281/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline" data-i18n="contracts.linkedinLink">${i18n.t('contracts.linkedinLink')}</a>
         </p>
 
         <div class="flex items-center gap-4 mb-6">
@@ -71,7 +74,7 @@ export function renderContractsPage() {
         </div>
       </div>
 
-      <div id="contracts-grid" class="grid gap-4">
+      <div id="contracts-grid" class="grid gap-4 md:grid-cols-2">
       </div>
     </div>
   `
