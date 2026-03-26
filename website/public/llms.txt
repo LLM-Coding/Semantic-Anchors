@@ -4492,3 +4492,114 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * Guiding team testing practices
 
 ---
+
+
+# Semantic Contracts
+
+Semantic Contracts define what a term means in your project — either by
+composing established anchors or by providing custom definitions that only
+exist within your team.
+Add them to your AGENTS.md or CLAUDE.md.
+Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts
+
+## Specification
+
+When we talk about a "specification" or "spec", we mean:
+- Use Cases with Activity Diagrams (all paths, not just the happy path)
+- Acceptance criteria in Gherkin format (Given/When/Then)
+
+*Referenced anchors: gherkin, bdd-given-when-then*
+
+## Requirements Discovery
+
+Clarify requirements using the Socratic Method:
+- Ask at most 3 questions at a time, challenge assumptions
+- Use MECE to ensure questions cover all areas without overlap
+- Keep asking until you fully understand the requirements
+- Document as a PRD (problem, goals, personas, success criteria, scope)
+
+*Referenced anchors: socratic-method, mece, prd*
+
+## Architecture Documentation
+
+Architecture documentation follows arc42 with all 12 sections.
+- C4 diagrams (PlantUML) for visualization at four abstraction levels
+- Every architecture decision documented as an ADR according to Nygard (Context, Decision, Status, Consequences)
+- Each ADR includes a Pugh Matrix with 3-point scale (-1, 0, +1) evaluating alternatives against quality goals
+
+*Referenced anchors: arc42, c4-diagrams, adr-according-to-nygard, pugh-matrix*
+
+## Layer Boundaries
+
+At every layer boundary:
+- Expose only well-defined DTOs and contracts — never domain entities
+- Use explicit mapping at every seam
+- Apply Anti-Corruption Layers when integrating external systems
+- Dependency direction points inward (DIP)
+
+*Referenced anchors: clean-architecture, hexagonal-architecture, domain-driven-design, solid-dip, solid-isp*
+
+## Backlog Management
+
+Create EPICs and User Stories as GitHub issues from the specification.
+- User Stories follow INVEST criteria (Independent, Negotiable, Valuable, Estimable, Small, Testable)
+- Prioritize with MoSCoW (Must/Should/Could/Won't)
+- Mark dependencies between issues
+- Groom the backlog regularly as the project evolves
+
+*Referenced anchors: invest, moscow*
+
+## Implement Next
+
+For each issue:
+- Create a feature branch for the EPIC
+- Select next issue from backlog (respect dependencies)
+- Analyze and document analysis as a comment on the issue
+- Implement using TDD (London or Chicago School as appropriate)
+- Commit with Conventional Commits, reference issue number
+- Check if spec or architecture docs need updating
+- When EPIC is complete, create a Pull Request
+
+*Referenced anchors: tdd-london-school, tdd-chicago-school, definition-of-done, conventional-commits*
+
+## Code Quality
+
+Our code follows:
+- SOLID principles
+- DRY, KISS
+- Ubiquitous Language from Domain-Driven Design (same terms in code as in the specification)
+
+*Referenced anchors: solid-principles, dry-principle, kiss-principle, domain-driven-design*
+
+## Quality Review
+
+Quality assurance follows three layers:
+- Code review using Fagan Inspection (structured, systematic, with defined phases)
+- Security review based on OWASP Top 10
+- Architecture review using ATAM (scenario-based tradeoff analysis against quality goals)
+- Use a different AI model or fresh session for reviews to avoid blind spots
+
+*Referenced anchors: fagan-inspection, owasp-top-10, atam*
+
+## Docs-as-Code
+
+Documentation follows Docs-as-Code according to Ralf D. Müller:
+- AsciiDoc as format, PlantUML for inline diagrams, built by docToolchain
+- Version-controlled, peer-reviewed, and built automatically
+- Plain English according to Strunk & White (or Gutes Deutsch nach Wolf Schneider)
+
+*Referenced anchors: docs-as-code, plain-english-strunk-white, gutes-deutsch-wolf-schneider*
+
+## Concise Response (TLDR)
+
+Responses lead with the conclusion first (BLUF). Keep to essential points. No filler, no preamble. Use short sentences, active voice, and no unnecessary words (Strunk & White).
+
+*Referenced anchors: bluf, plain-english-strunk-white*
+
+## Simple Explanation (ELI5)
+
+Explain complex concepts using simple language and everyday analogies. When the explanation feels hard to write, that reveals gaps in understanding — study those areas first (Feynman Technique).
+
+*Referenced anchors: feynman-technique*
+
+---
