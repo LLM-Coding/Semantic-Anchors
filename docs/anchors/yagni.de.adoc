@@ -2,7 +2,7 @@
 :categories: design-principles
 :roles: software-developer, software-architect, consultant
 :proponents: Ron Jeffries, Kent Beck
-:related: dry-principle, spot-principle, tdd-chicago-school
+:related: dry-principle, spot-principle, tdd-chicago-school, kiss-principle
 :tags: yagni, extreme-programming, simplicity, incremental-design, over-engineering
 
 [%collapsible]
@@ -43,4 +43,5 @@ Schlüsselvertreter:: Ron Jeffries (prägte den Begriff), Kent Beck ("Extreme Pr
 * <<dry-principle,DRY>> - Eliminiert Duplizierung vorhandenen Wissens (komplementär, aber verschieden)
 * <<spot-principle,SPOT>> - Single Point of Truth, verwandtes Einfachheitsprinzip
 * <<tdd-chicago-school,TDD, Chicago School>> - YAGNI ist ein Kernprinzip des klassischen TDD
+* <<kiss-principle,KISS Principle>> - Systeme so einfach wie möglich halten (komplementäres Einfachheitsprinzip)
 ====

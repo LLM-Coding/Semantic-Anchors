@@ -1,0 +1,47 @@
+= KISS Principle
+:categories: design-principles
+:roles: software-developer, software-architect, consultant, educator
+:proponents: Kelly Johnson, Robert C. Martin
+:related: yagni, dry-principle, solid-principles
+:tags: kiss, simplicity, design-principles, over-engineering, readability
+:tier: 1
+
+[%collapsible]
+====
+Full Name:: Keep It Simple, Stupid (also: Keep It Super Simple)
+
+Also known as:: KISS, Keep It Simple
+
+[discrete]
+== *Core Concepts*:
+
+Simplicity as a design goal:: Systems work best when kept simple; complexity should be avoided whenever possible
+
+Avoid over-engineering:: Don't add complexity, abstraction, or features beyond what the current problem requires
+
+Readability over cleverness:: Code that is easy to read and understand is preferred over sophisticated but opaque solutions
+
+Simplest working solution first:: Implement the most straightforward approach that satisfies the requirements, then refine if needed
+
+Cognitive load reduction:: Simpler designs reduce the mental effort required to understand, maintain, and extend a system
+
+Progressive enhancement:: Start simple; add complexity only when justified by concrete requirements (pairs with YAGNI)
+
+Key Proponents:: Kelly Johnson (Lockheed Skunk Works, 1960s), Robert C. Martin ("Clean Code", 2008)
+
+[discrete]
+== *When to Use*:
+
+* When facing the choice between a simple and a complex solution
+* Reviewing code for maintainability and readability
+* Designing APIs, interfaces, or data models
+* Onboarding new team members to an unfamiliar codebase
+* Refactoring code that has grown unnecessarily complicated
+
+[discrete]
+== *Related Anchors*:
+
+* <<yagni,YAGNI>> - Don't implement what you don't need yet (complementary simplicity principle)
+* <<dry-principle,DRY>> - Eliminate redundancy to keep codebases simple and consistent
+* <<solid-principles,SOLID Principles>> - Structured guidelines that reinforce clean, simple designs
+====

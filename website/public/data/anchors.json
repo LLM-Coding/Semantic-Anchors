@@ -1588,6 +1588,37 @@
     "tier": 3
   },
   {
+    "id": "kiss-principle",
+    "title": "KISS Principle",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "yagni",
+      "dry-principle",
+      "solid-principles"
+    ],
+    "proponents": [
+      "Kelly Johnson",
+      "Robert C. Martin"
+    ],
+    "tags": [
+      "kiss",
+      "simplicity",
+      "design-principles",
+      "over-engineering",
+      "readability"
+    ],
+    "filePath": "docs/anchors/kiss-principle.adoc",
+    "tier": 1
+  },
+  {
     "id": "lasr",
     "title": "LASR according to Toth/Zörner",
     "categories": [
@@ -2845,7 +2876,8 @@
     "related": [
       "dry-principle",
       "spot-principle",
-      "tdd-chicago-school"
+      "tdd-chicago-school",
+      "kiss-principle"
     ],
     "proponents": [
       "Ron Jeffries",

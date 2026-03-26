@@ -41,6 +41,7 @@
       "gof-strategy-pattern",
       "gof-template-method-pattern",
       "gof-visitor-pattern",
+      "kiss-principle",
       "solid-dip",
       "solid-isp",
       "solid-lsp",

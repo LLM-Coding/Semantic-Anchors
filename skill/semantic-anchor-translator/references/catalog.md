@@ -144,6 +144,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### DRY (Don't Repeat Yourself)
 - **Core:** Every piece of knowledge has single, unambiguous representation
 
+### KISS (Keep It Simple, Stupid / Keep It Super Simple)
+- **Also known as:** KISS Principle, Keep It Simple
+- **Proponents:** Kelly Johnson, Robert C. Martin
+- **Core:** Simplicity as design goal, avoid over-engineering, readability over cleverness, simplest working solution first, reduce cognitive load
+
 ### SPOT (Single Point of Truth)
 - **Core:** One authoritative source for each piece of data/logic
 

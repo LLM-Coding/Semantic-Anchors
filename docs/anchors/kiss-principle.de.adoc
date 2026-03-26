@@ -1,0 +1,46 @@
+= KISS Principle
+:categories: design-principles
+:roles: software-developer, software-architect, consultant, educator
+:proponents: Kelly Johnson, Robert C. Martin
+:related: yagni, dry-principle, solid-principles
+:tags: kiss, simplicity, design-principles, over-engineering, readability
+
+[%collapsible]
+====
+Vollständiger Name:: Keep It Simple, Stupid (auch: Keep It Super Simple)
+
+Auch bekannt als:: KISS, Keep It Simple
+
+[discrete]
+== *Kernkonzepte*:
+
+Einfachheit als Designziel:: Systeme funktionieren am besten, wenn sie einfach gehalten werden; Komplexität sollte möglichst vermieden werden
+
+Over-Engineering vermeiden:: Keine Komplexität, Abstraktionen oder Funktionen hinzufügen, die über das aktuelle Problem hinausgehen
+
+Lesbarkeit statt Cleverness:: Code, der leicht zu lesen und zu verstehen ist, wird gegenüber ausgefeilten, aber undurchsichtigen Lösungen bevorzugt
+
+Einfachste funktionierende Lösung zuerst:: Den geradlinigsten Ansatz implementieren, der die Anforderungen erfüllt, dann bei Bedarf verfeinern
+
+Reduktion der kognitiven Last:: Einfachere Designs reduzieren den mentalen Aufwand, der erforderlich ist, um ein System zu verstehen, zu pflegen und zu erweitern
+
+Progressive Verbesserung:: Einfach beginnen; Komplexität nur hinzufügen, wenn sie durch konkrete Anforderungen gerechtfertigt ist (ergänzt YAGNI)
+
+Schlüsselvertreter:: Kelly Johnson (Lockheed Skunk Works, 1960er), Robert C. Martin ("Clean Code", 2008)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Bei der Wahl zwischen einer einfachen und einer komplexen Lösung
+* Beim Überprüfen von Code auf Wartbarkeit und Lesbarkeit
+* Beim Entwerfen von APIs, Schnittstellen oder Datenmodellen
+* Beim Einarbeiten neuer Teammitglieder in eine unbekannte Codebasis
+* Beim Refactoring von Code, der unnötig komplex geworden ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<yagni,YAGNI>> - Nicht implementieren, was noch nicht benötigt wird (komplementäres Einfachheitsprinzip)
+* <<dry-principle,DRY>> - Redundanz eliminieren, um Codebasen einfach und konsistent zu halten
+* <<solid-principles,SOLID Principles>> - Strukturierte Richtlinien, die saubere, einfache Designs fördern
+====
