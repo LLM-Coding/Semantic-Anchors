@@ -1,0 +1,50 @@
+= P.A.R.A. Method
+:categories: documentation
+:roles: software-developer, team-lead, technical-writer, educator
+:related: diataxis-framework, todotxt-flavoured-markdown
+:proponents: Tiago Forte
+:tags: knowledge-management, personal-productivity, note-taking, organization, second-brain
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: P.A.R.A. Method (Projects, Areas, Resources, Archive)
+
+Also known as:: PARA Framework, Second Brain Organization System
+
+[discrete]
+== *Core Concepts*:
+
+Projects:: Short-term efforts with a specific goal and deadline (e.g., "Launch website", "Write article")
+
+Areas:: Long-term responsibilities with a standard to maintain over time (e.g., "Health", "Finances", "Team Management")
+
+Resources:: Topics of ongoing interest or future relevance without a current action (e.g., "Machine Learning", "Design Patterns")
+
+Archive:: Inactive items from the other three categories — completed projects, dropped areas, or obsolete resources
+
+Actionability principle:: Items are organized by how actionable they are, not by topic or type
+
+Tool-agnostic:: Applicable to any note-taking or file management system (Notion, Obsidian, Roam Research, plain folders)
+
+Single source of truth:: Each piece of information belongs in exactly one of the four categories
+
+Key Proponent:: Tiago Forte ("Building a Second Brain")
+
+[discrete]
+== *When to Use*:
+
+* Organizing notes, documents, or files across tools
+* Managing knowledge work with multiple concurrent projects
+* Setting up a "Second Brain" personal knowledge management system
+* Reducing time spent searching for information
+* Separating actionable work from reference material
+* Onboarding teams to a shared information architecture
+* Structuring documentation repositories or wikis
+
+[discrete]
+== *Related Anchors*:
+
+* <<diataxis-framework,Diátaxis Framework>>
+* <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
+====

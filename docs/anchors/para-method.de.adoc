@@ -1,0 +1,50 @@
+= P.A.R.A. Method
+:categories: documentation
+:roles: software-developer, team-lead, technical-writer, educator
+:related: diataxis-framework, todotxt-flavoured-markdown
+:proponents: Tiago Forte
+:tags: knowledge-management, personal-productivity, note-taking, organization, second-brain
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: P.A.R.A. Method (Projects, Areas, Resources, Archive)
+
+Auch bekannt als:: PARA-Framework, Second Brain Organisationssystem
+
+[discrete]
+== *Kernkonzepte*:
+
+Projekte (Projects):: Kurzfristige Vorhaben mit einem konkreten Ziel und einem Abgabetermin (z.B. „Website launchen", „Artikel schreiben")
+
+Bereiche (Areas):: Langfristige Verantwortungsbereiche mit einem kontinuierlich aufrechtzuerhaltenden Standard (z.B. „Gesundheit", „Finanzen", „Team-Management")
+
+Ressourcen (Resources):: Themen von anhaltendem Interesse oder zukünftiger Relevanz ohne aktuellen Handlungsbedarf (z.B. „Machine Learning", „Design Patterns")
+
+Archiv (Archive):: Inaktive Einträge aus den drei anderen Kategorien — abgeschlossene Projekte, aufgegebene Bereiche oder veraltete Ressourcen
+
+Aktionsprinzip:: Informationen werden nach ihrer Handlungsrelevanz (Actionability) organisiert, nicht nach Thema oder Typ
+
+Werkzeug-agnostisch:: Anwendbar auf jedes Notiz- oder Dateiverwaltungssystem (Notion, Obsidian, Roam Research, einfache Ordnerstrukturen)
+
+Single Source of Truth:: Jede Information gehört genau einer der vier Kategorien an
+
+Schlüsselvertreter:: Tiago Forte („Building a Second Brain")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Organisieren von Notizen, Dokumenten oder Dateien systemübergreifend
+* Verwaltung von Wissensarbeit mit mehreren parallelen Projekten
+* Aufbau eines „Second Brain" – Systems für persönliches Wissensmanagement
+* Reduzierung der Suchzeit nach Informationen
+* Trennung von aktionsfähiger Arbeit und Referenzmaterial
+* Einführung von Teams in eine gemeinsame Informationsarchitektur
+* Strukturierung von Dokumentations-Repositories oder Wikis
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<diataxis-framework,Diátaxis Framework>>
+* <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
+====

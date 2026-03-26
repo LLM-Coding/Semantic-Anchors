@@ -276,6 +276,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Documentation
 
+### P.A.R.A. Method
+- **Also known as:** PARA Framework, Second Brain Organization System
+- **Proponents:** Tiago Forte
+- **Core:** Organize all information into four categories by actionability — Projects (specific goal + deadline), Areas (ongoing responsibilities), Resources (reference topics), Archive (inactive items)
+
 ### Diátaxis Framework
 - **Core:** 4 quadrants: Tutorials, How-to guides, Explanations, Reference
 
