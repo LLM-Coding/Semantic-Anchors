@@ -356,3 +356,8 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### SWOT
 - **Proponents:** Albert Humphrey
 - **Core:** Strengths, Weaknesses, Opportunities, Threats — internal vs. external strategic analysis
+
+### PERT (Program Evaluation and Review Technique)
+- **Also known as:** Three-Point Estimation, PERT Network Analysis
+- **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
+- **Core:** Stochastic project scheduling using three-point estimates per activity (Optimistic, Most Likely, Pessimistic); weighted average formula E = (O + 4M + P) / 6; standard deviation σ = (P − O) / 6; critical path analysis; probabilistic milestone confidence intervals

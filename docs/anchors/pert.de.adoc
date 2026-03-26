@@ -1,0 +1,49 @@
+= PERT
+:categories: strategic-planning
+:roles: product-owner, business-analyst, team-lead, consultant, educator
+:related: moscow, user-story-mapping, impact-mapping
+:proponents: D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
+:tags: pert, project-planning, estimation, schedule, uncertainty, three-point-estimation, critical-path, network-diagram
+
+[%collapsible]
+====
+Vollständiger Name:: Program Evaluation and Review Technique (Programmbewertungs- und Überprüfungstechnik)
+
+Auch bekannt als:: Drei-Punkte-Schätzung, PERT-Netzplananalyse
+
+[discrete]
+== *Kernkonzepte*:
+
+Drei-Punkte-Schätzung:: Jede Aktivität benötigt drei Dauerschätzungen: Optimistisch (O) — bester Fall, wenn alles reibungslos läuft; Wahrscheinlichst (M) — realistisch erwartete Dauer; Pessimistisch (P) — schlimmster Fall bei auftretenden Problemen
+
+PERT-Formel:: Gewichteter Mittelwert: *E = (O + 4M + P) / 6* — die wahrscheinlichste Schätzung wird viermal stärker gewichtet als die Extremwerte
+
+Standardabweichung:: *σ = (P − O) / 6* — quantifiziert die Terminunsicherheit je Aktivität; wird zur Berechnung von Konfidenzintervallen für den Projektabschlusstermin verwendet
+
+Netzplan:: Aktivitäten werden als Knoten oder Pfeile in einem gerichteten azyklischen Graphen dargestellt; Abhängigkeiten zwischen Aktivitäten werden explizit modelliert
+
+Kritischer Pfad:: Der längste Pfad durch das Netzwerk bestimmt die minimale Projektdauer; jede Verzögerung auf dem kritischen Pfad verzögert das gesamte Projekt
+
+Puffer / Schlupf:: Zeit, um die eine Aktivität verzögert werden kann, ohne den Projektendtermin zu beeinflussen; Aktivitäten auf dem kritischen Pfad haben keinen Puffer
+
+Probabilistische Terminplanung:: Im Gegensatz zur CPM (die Einzelpunktschätzungen verwendet) behandelt PERT Dauern als Zufallsvariablen und ermöglicht statistische Konfidenzintervalle für Meilensteine
+
+Ursprung:: 1958 von D.G. Malcolm, J.H. Roseboom, C.E. Clark und W. Fazar bei Booz Allen Hamilton für das Polaris-U-Boot-Raketenprogramm der US Navy entwickelt
+
+Schlüsselvertreter:: D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar („Application of a Technique for Research and Development Program Evaluation", 1959)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Aufwands- und Terminschätzung für Projekte mit erheblicher Unsicherheit
+* Planung von F&E-, Softwareentwicklungs- oder anderen neuartigen Vorhaben, bei denen Dauern schwer vorherzusagen sind
+* Kommunikation von Terminrisiken und Konfidenzwerten gegenüber Stakeholdern
+* Identifikation des kritischen Pfads zur gezielten Risikobewältigung und Ressourcenzuteilung
+* Ergänzung von Story Points oder T-Shirt-Größen um eine probabilistische Zeitdimension
+
+*Verwandte Anker*:
+
+* <<moscow,MoSCoW>>
+* <<user-story-mapping,User Story Mapping>>
+* <<impact-mapping,Impact Mapping>>
+====
