@@ -1,0 +1,51 @@
+= PERT
+:categories: strategic-planning
+:roles: product-owner, business-analyst, team-lead, consultant, educator
+:related: moscow, user-story-mapping, impact-mapping
+:proponents: D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
+:tags: pert, project-planning, estimation, schedule, uncertainty, three-point-estimation, critical-path, network-diagram
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Program Evaluation and Review Technique
+
+Also known as:: Three-Point Estimation, PERT Network Analysis
+
+[discrete]
+== *Core Concepts*:
+
+Three-Time Estimation:: Each activity requires three duration estimates: Optimistic (O) — best case if everything goes well; Most Likely (M) — realistic expected duration; Pessimistic (P) — worst case if problems arise
+
+PERT Formula:: Weighted average: *E = (O + 4M + P) / 6* — weights the most likely estimate four times more than the extreme estimates
+
+Standard Deviation:: *σ = (P − O) / 6* — quantifies schedule uncertainty per activity; used to calculate confidence intervals for the project completion date
+
+Network Diagram:: Activities are represented as nodes or arrows in a directed acyclic graph; dependencies between activities are modelled explicitly
+
+Critical Path:: The longest path through the network determines the minimum project duration; any delay on the critical path delays the whole project
+
+Float / Slack:: Time an activity can be delayed without affecting the project end date; activities on the critical path have zero float
+
+Probabilistic Scheduling:: Unlike CPM (which uses single-point estimates), PERT treats duration as a random variable, enabling statistical confidence ranges for milestones
+
+Origin:: Developed in 1958 by D.G. Malcolm, J.H. Roseboom, C.E. Clark, and W. Fazar at Booz Allen Hamilton for the US Navy's Polaris submarine missile programme
+
+Key Proponents:: D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar ("Application of a Technique for Research and Development Program Evaluation", 1959)
+
+[discrete]
+== *When to Use*:
+
+* Estimating effort and schedule for projects with significant uncertainty
+* Planning R&D, software development, or any novel work where duration is hard to predict
+* Communicating schedule risk and confidence levels to stakeholders
+* Identifying the critical path to focus risk management and resource allocation
+* Complementing Story Points or T-shirt sizing with a probabilistic time dimension
+
+[discrete]
+== *Related Anchors*:
+
+* <<moscow,MoSCoW>>
+* <<user-story-mapping,User Story Mapping>>
+* <<impact-mapping,Impact Mapping>>
+====

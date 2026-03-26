@@ -1904,6 +1904,43 @@
     "tier": 3
   },
   {
+    "id": "pert",
+    "title": "PERT",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "team-lead",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "moscow",
+      "user-story-mapping",
+      "impact-mapping"
+    ],
+    "proponents": [
+      "D.G. Malcolm",
+      "J.H. Roseboom",
+      "C.E. Clark",
+      "W. Fazar"
+    ],
+    "tags": [
+      "pert",
+      "project-planning",
+      "estimation",
+      "schedule",
+      "uncertainty",
+      "three-point-estimation",
+      "critical-path",
+      "network-diagram"
+    ],
+    "filePath": "docs/anchors/pert.adoc",
+    "tier": 2
+  },
+  {
     "id": "plain-english-strunk-white",
     "title": "Plain English according to Strunk & White",
     "categories": [
