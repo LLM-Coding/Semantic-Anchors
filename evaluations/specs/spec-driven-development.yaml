@@ -1,0 +1,18 @@
+anchor: spec-driven-development
+tier: 3
+
+questions:
+  recognition:
+    question: 'Which of the following best describes "Spec-Driven Development"?
+
+      '
+    options:
+      A: An approach where software is defined, constrained, and validated through
+        explicit specifications, with specs as the source of truth rather than code
+      B: A testing methodology that generates test cases automatically from formal
+        mathematical specifications of expected behavior
+      C: A documentation practice that requires detailed technical specifications
+        to be written and approved before any implementation begins
+      D: A deployment strategy that uses infrastructure specifications to provision
+        and configure environments automatically
+    correct: A

@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-03-26T13:51:30.649016+00:00",
+  "config": {
+    "models": [
+      "mistral"
+    ],
+    "claude_model": null,
+    "openai_model": null,
+    "mistral_model": "mistral-small-2603",
+    "deepseek_model": null,
+    "ollama_model": null,
+    "ollama_url": null,
+    "no_think": null,
+    "temperature": 0.0
+  },
+  "models": {
+    "mistral": [
+      {
+        "label": "grasp/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "grasp/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "grasp/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "pert/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "pert/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "pert/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "vertical-slice-architecture/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "vertical-slice-architecture/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "vertical-slice-architecture/application-paraphrase",
+        "score": 1.0
+      }
+    ]
+  },
+  "duration_seconds": 49.5
+}

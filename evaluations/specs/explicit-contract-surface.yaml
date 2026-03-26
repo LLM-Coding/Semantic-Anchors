@@ -1,0 +1,18 @@
+anchor: explicit-contract-surface
+tier: 3
+
+questions:
+  recognition:
+    question: 'Which of the following best describes "Explicit Contract Surface"?
+
+      '
+    options:
+      A: A legal framework for defining service-level agreements between microservices
+        with automated compliance monitoring and penalty enforcement
+      B: The practice of exposing only well-defined DTOs and contracts at layer
+        boundaries, never domain entities, with explicit mapping at every seam
+      C: A UI design pattern that makes all system constraints and validation rules
+        visible to users through progressive disclosure and inline feedback
+      D: A versioning strategy that maintains backward compatibility by exposing
+        multiple API versions simultaneously through content negotiation
+    correct: B

@@ -1,0 +1,46 @@
+anchor: vertical-slice-architecture
+tier: 3
+questions:
+  recognition:
+    question: 'Which of the following best describes "Vertical Slice Architecture
+      (VSA)"?
+
+      '
+    options:
+      A: Code is organized into distinct horizontal layers (presentation, business,
+        data) with clear separation of concerns and dependencies flowing downward
+        through each technical layer
+      B: Each feature is organized as an end-to-end slice spanning all layers (request,
+        validation, domain logic, persistence, API); code for a feature lives together
+        regardless of technical layer
+      C: The application core is isolated from external dependencies through ports
+        and adapters, with business logic at the center surrounded by interface adapters
+        that connect to external systems
+      D: Commands and queries are separated into distinct models and handlers, with
+        write operations handled differently from read operations to optimize for
+        different access patterns and scalability requirements
+    correct: B
+  application:
+    scenario: Your team is building an e-commerce platform with features like user
+      registration, product catalog, shopping cart, order processing, and payment
+      handling. Currently, the codebase is organized into traditional layers (Controllers,
+      Services, Repositories) but developers are experiencing frequent merge conflicts
+      and find it difficult to work on features independently. Changes to one feature
+      often require modifications across multiple layers, slowing down development.
+    anchor_prompt: using Vertical Slice Architecture (VSA)
+    paraphrase_prompt: How should you reorganize the codebase to enable independent
+      feature development and reduce cross-feature coupling?
+    options:
+      A: Create separate microservices for each feature (UserService, ProductService,
+        CartService, etc.) with their own databases and API gateways to ensure complete
+        isolation between features.
+      B: Organize code by feature slices where each feature (Registration, Catalog,
+        Cart, Orders, Payments) contains its own request handlers, validation, business
+        logic, and data access in a single vertical slice.
+      C: Implement a strict layered architecture with clear interfaces between Controller,
+        Service, and Repository layers, using dependency injection to manage cross-layer
+        dependencies more effectively.
+      D: Apply Domain-Driven Design by creating bounded contexts for each business
+        domain and organizing code into aggregate roots with separate application
+        services for each domain.
+    correct: B
