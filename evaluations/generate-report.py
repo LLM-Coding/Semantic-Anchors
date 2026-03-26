@@ -19,7 +19,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-RESULTS_DIR = Path(__file__).parent / "results"
+RESULTS_DIR = Path(__file__).parent / "summaries"
 SPECS_DIR = Path(__file__).parent / "specs"
 
 # Fallback display names (used when config doesn't have exact model ID)

@@ -312,19 +312,15 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
     print()
 
     ts = datetime.now().strftime("%Y%m%d-%H%M%S")
-    # Include model names in filename to prevent race conditions on parallel runs
-    model_suffix = "_".join(models)
+    # Include exact model IDs in filename to prevent race conditions
+    model_ids = []
     for m in models:
-        if m == "openai":
-            model_suffix = model_suffix.replace("openai", openai_model)
-        elif m == "mistral":
-            model_suffix = model_suffix.replace("mistral", mistral_model)
-        elif m == "deepseek":
-            model_suffix = model_suffix.replace("deepseek", deepseek_model)
-        elif m == "ollama":
-            model_suffix = model_suffix.replace("ollama", f"ollama-{ollama_model}")
-    # Sanitize for filename
-    model_suffix = model_suffix.replace(":", "-").replace("/", "-")
+        if m == "openai": model_ids.append(openai_model)
+        elif m == "mistral": model_ids.append(mistral_model)
+        elif m == "deepseek": model_ids.append(deepseek_model)
+        elif m == "ollama": model_ids.append(f"ollama-{ollama_model}")
+        else: model_ids.append(m)
+    model_suffix = "_".join(model_ids).replace(":", "-").replace("/", "-")
     out_file = RESULTS_DIR / f"pilot-{ts}_{model_suffix}.json"
 
     all_results = {
@@ -461,6 +457,18 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
     if not dry_run:
         save_results(all_results, out_file)
         print(f"\nResults saved to {out_file}")
+
+        # Also save a stripped summary (scores only, no raw responses)
+        summary_dir = RESULTS_DIR.parent / "summaries"
+        summary_dir.mkdir(parents=True, exist_ok=True)
+        summary = json.loads(json.dumps(all_results))  # deep copy
+        for m_results in summary.get("models", {}).values():
+            for r in m_results:
+                r.pop("results", None)
+        summary_file = summary_dir / out_file.name
+        with open(summary_file, "w", encoding="utf-8") as fh:
+            json.dump(summary, fh, indent=2, ensure_ascii=False)
+        print(f"Summary saved to {summary_file}")
 
         # Summary
         print("\n=== SUMMARY ===")

@@ -1,0 +1,792 @@
+{
+  "timestamp": "2026-03-24T19:06:00.394684+00:00",
+  "config": {
+    "models": [
+      "mistral"
+    ],
+    "openai_model": null,
+    "mistral_model": "mistral-large-2512",
+    "deepseek_model": null,
+    "ollama_model": null,
+    "ollama_url": null,
+    "no_think": null,
+    "temperature": 0.0
+  },
+  "models": {
+    "mistral": [
+      {
+        "label": "adr-according-to-nygard/recognition",
+        "score": 0.75
+      },
+      {
+        "label": "adr-according-to-nygard/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "adr-according-to-nygard/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "arc42/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "arc42/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "arc42/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "arc42/consistency-variant-1",
+        "score": 1.0
+      },
+      {
+        "label": "arc42/consistency-variant-2",
+        "score": 1.0
+      },
+      {
+        "label": "arc42/consistency-variant-3",
+        "score": 1.0
+      },
+      {
+        "label": "arc42/consistency-language",
+        "score": 1.0
+      },
+      {
+        "label": "atam/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "atam/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "atam/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "bdd-given-when-then/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "bdd-given-when-then/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "bdd-given-when-then/application-paraphrase",
+        "score": 0.5
+      },
+      {
+        "label": "bem-methodology/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "bem-methodology/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "bem-methodology/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "bluf/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "bluf/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "bluf/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "c4-diagrams/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "c4-diagrams/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "c4-diagrams/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "chain-of-thought/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "chain-of-thought/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "chain-of-thought/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "clean-architecture/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "clean-architecture/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "clean-architecture/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "control-chart-shewhart/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "control-chart-shewhart/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "control-chart-shewhart/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "conventional-commits/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "conventional-commits/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "conventional-commits/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "cqrs/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "cqrs/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "cqrs/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "cynefin-framework/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "cynefin-framework/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "cynefin-framework/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "definition-of-done/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "definition-of-done/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "definition-of-done/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "devils-advocate/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "devils-advocate/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "devils-advocate/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "diataxis-framework/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "diataxis-framework/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "diataxis-framework/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "docs-as-code/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "docs-as-code/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "docs-as-code/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "domain-driven-design/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "domain-driven-design/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "domain-driven-design/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "ears-requirements/recognition",
+        "score": 0.75
+      },
+      {
+        "label": "ears-requirements/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "ears-requirements/application-paraphrase",
+        "score": 0.75
+      },
+      {
+        "label": "event-driven-architecture/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "event-driven-architecture/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "event-driven-architecture/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "fagan-inspection/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "fagan-inspection/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "fagan-inspection/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "feynman-technique/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "feynman-technique/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "feynman-technique/application-paraphrase",
+        "score": 0.75
+      },
+      {
+        "label": "five-whys/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "five-whys/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "five-whys/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "fowler-patterns/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "fowler-patterns/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "fowler-patterns/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "gherkin/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "gherkin/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "gherkin/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "github-flow/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "github-flow/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "github-flow/application-paraphrase",
+        "score": 0.75
+      },
+      {
+        "label": "gutes-deutsch-wolf-schneider/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "gutes-deutsch-wolf-schneider/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "gutes-deutsch-wolf-schneider/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "hexagonal-architecture/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "hexagonal-architecture/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "hexagonal-architecture/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "iec-61508-sil-levels/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "iec-61508-sil-levels/application-anchor",
+        "score": 0.5
+      },
+      {
+        "label": "iec-61508-sil-levels/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "impact-mapping/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "impact-mapping/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "impact-mapping/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "invest/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "invest/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "invest/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "iso-25010/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "iso-25010/application-anchor",
+        "score": 0.75
+      },
+      {
+        "label": "iso-25010/application-paraphrase",
+        "score": 0.75
+      },
+      {
+        "label": "jobs-to-be-done/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "jobs-to-be-done/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "jobs-to-be-done/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "lasr/recognition",
+        "score": 0.25
+      },
+      {
+        "label": "lasr/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "lasr/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "linddun/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "linddun/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "linddun/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "llm-evaluations/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "llm-evaluations/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "llm-evaluations/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "madr/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "madr/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "madr/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "mece/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "mece/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "mece/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "morphological-box/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "morphological-box/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "morphological-box/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "moscow/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "moscow/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "moscow/application-paraphrase",
+        "score": 0.25
+      },
+      {
+        "label": "mutation-testing/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "mutation-testing/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "mutation-testing/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "negative-control/recognition",
+        "score": 0.75
+      },
+      {
+        "label": "nelson-rules/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "nelson-rules/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "nelson-rules/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "owasp-top-10/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "owasp-top-10/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "owasp-top-10/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "plain-english-strunk-white/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "plain-english-strunk-white/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "plain-english-strunk-white/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "prd/recognition",
+        "score": 0.0
+      },
+      {
+        "label": "prd/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "prd/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "problem-space-nvc/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "problem-space-nvc/application-anchor",
+        "score": 0.75
+      },
+      {
+        "label": "problem-space-nvc/application-paraphrase",
+        "score": 0.75
+      },
+      {
+        "label": "property-based-testing/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "property-based-testing/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "property-based-testing/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "pyramid-principle/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "pyramid-principle/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "pyramid-principle/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "sanity-check/recognition",
+        "score": 0.0
+      },
+      {
+        "label": "semantic-versioning/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "semantic-versioning/application-anchor",
+        "score": 0.5
+      },
+      {
+        "label": "semantic-versioning/application-paraphrase",
+        "score": 0.75
+      },
+      {
+        "label": "socratic-method/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "socratic-method/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "socratic-method/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "sota/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "sota/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "sota/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "spc/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "spc/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "spc/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "stride/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "stride/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "stride/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "swot/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "swot/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "swot/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-chicago-school/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-chicago-school/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-chicago-school/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-london-school/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-london-school/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-london-school/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-1",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-2",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-london-school/consistency-variant-3",
+        "score": 1.0
+      },
+      {
+        "label": "tdd-london-school/consistency-language",
+        "score": 1.0
+      },
+      {
+        "label": "testing-pyramid/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "testing-pyramid/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "testing-pyramid/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "timtowtdi/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "timtowtdi/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "timtowtdi/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "todotxt-flavoured-markdown/recognition",
+        "score": 0.5
+      },
+      {
+        "label": "todotxt-flavoured-markdown/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "todotxt-flavoured-markdown/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "user-story-mapping/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "user-story-mapping/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "user-story-mapping/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "wardley-mapping/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "wardley-mapping/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "wardley-mapping/application-paraphrase",
+        "score": 1.0
+      }
+    ]
+  },
+  "duration_seconds": 1018.4
+}
