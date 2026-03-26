@@ -131,6 +131,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Robert C. Martin
 - **Core:** Depend on abstractions, not concrete implementations
 
+### GRASP
+- **Also known as:** General Responsibility Assignment Software Patterns, Responsibility-Driven Design Guidelines
+- **Proponents:** Craig Larman
+- **Core:** 9 patterns for OO responsibility assignment — Information Expert, Creator, Controller, Low Coupling, High Cohesion, Polymorphism, Pure Fabrication, Indirection, Protected Variations
+
 ### DRY (Don't Repeat Yourself)
 - **Core:** Every piece of knowledge has single, unambiguous representation
 

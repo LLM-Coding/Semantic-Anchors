@@ -1378,6 +1378,37 @@
     "tier": 2
   },
   {
+    "id": "grasp",
+    "title": "GRASP",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "solid-principles",
+      "gof-design-patterns",
+      "clean-architecture",
+      "domain-driven-design"
+    ],
+    "proponents": [
+      "Craig Larman"
+    ],
+    "tags": [
+      "grasp",
+      "oop",
+      "responsibility-assignment",
+      "object-oriented-design",
+      "patterns"
+    ],
+    "filePath": "docs/anchors/grasp.adoc",
+    "tier": 3
+  },
+  {
     "id": "gutes-deutsch-wolf-schneider",
     "title": "Gutes Deutsch nach Wolf Schneider",
     "categories": [

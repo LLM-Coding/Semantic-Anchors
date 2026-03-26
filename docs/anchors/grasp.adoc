@@ -1,0 +1,54 @@
+= GRASP
+:categories: design-principles
+:roles: software-developer, software-architect, educator, consultant
+:related: solid-principles, gof-design-patterns, clean-architecture, domain-driven-design
+:proponents: Craig Larman
+:tags: grasp, oop, responsibility-assignment, object-oriented-design, patterns
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: General Responsibility Assignment Software Patterns (or Principles)
+
+Also known as:: GRASP Patterns, Responsibility-Driven Design Guidelines
+
+[discrete]
+== *Core Concepts*:
+
+Information Expert:: Assign responsibility to the class that has the information needed to fulfill it
+
+Creator:: Assign responsibility for creating an object to the class that aggregates, contains, or closely uses it
+
+Controller:: Assign responsibility for handling system events to a non-UI class representing the overall system or a use case
+
+Low Coupling:: Assign responsibilities to minimize dependencies between classes, increasing reuse and reducing change impact
+
+High Cohesion:: Assign responsibilities so that classes remain focused, understandable, and manageable
+
+Polymorphism:: Use polymorphic operations to handle variations in type-based behavior instead of conditionals
+
+Pure Fabrication:: Assign a set of responsibilities to an artificial class not representing a domain concept, to achieve low coupling and high cohesion
+
+Indirection:: Assign responsibility to an intermediate object to mediate between other components, reducing direct coupling
+
+Protected Variations:: Identify points of predicted variation and assign responsibilities to create a stable interface around them
+
+
+Key Proponents:: Craig Larman ("Applying UML and Patterns", 3rd ed., 2004)
+
+[discrete]
+== *When to Use*:
+
+* Designing object-oriented systems and deciding where to assign responsibilities
+* Improving cohesion and reducing coupling in existing codebases
+* Guiding refactoring decisions by evaluating current responsibility assignments
+* Teaching foundational object-oriented design principles
+
+[discrete]
+== *Related Anchors*:
+
+* <<solid-principles,SOLID Principles>> - Complementary OO design principles for maintainable systems
+* <<gof-design-patterns,GoF Design Patterns>> - Patterns that often embody GRASP principles
+* <<clean-architecture,Clean Architecture>> - Architectural style that leverages GRASP-based thinking
+* <<domain-driven-design,Domain-Driven Design>> - Uses responsibility assignment in the domain model
+====
