@@ -493,7 +493,7 @@ Semantic Anchors activate the right knowledge domain without pretending the mode
 
 In practice, the workflow benefits greatly from specialized tooling.
 MCP servers like https://github.com/mrsimpson/responsible-vibe-mcp[Responsible Vibe MCP] enforce agentic workflows with phase gates and review checkpoints.
-https://serena.dev[Serena] provides semantic code navigation so the agent can work with symbols and references instead of raw text.
+https://oraios.github.io/serena/[Serena] provides semantic code navigation so the agent can work with symbols and references instead of raw text.
 Skill systems like Superpowers encode reusable process patterns like TDD, debugging, and code review workflows.
 https://github.com/microsoft/playwright-mcp[Playwright MCP] lets the agent control a browser for end-to-end testing and exploratory testing of web applications.
 These tools automate the discipline this document describes manually.
