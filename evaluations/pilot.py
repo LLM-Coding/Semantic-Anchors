@@ -295,9 +295,11 @@ def save_results(all_results, out_file):
 def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False,
               ollama_url="http://localhost:11434", openai_model="gpt-4o-mini",
               mistral_model="mistral-large-latest", deepseek_model="deepseek-chat",
-              claude_model="claude-sonnet-4-20250514"):
+              claude_model="claude-sonnet-4-20250514", anchor_filter=None):
     start_time = time.time()
     specs = load_specs()
+    if anchor_filter:
+        specs = [s for s in specs if s["anchor"] in anchor_filter]
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
     print(f"Temperature: {TEMPERATURE}")
@@ -522,6 +524,8 @@ if __name__ == "__main__":
                         help="Sampling temperature (default: 0.0). Note: claude-cli/claude-haiku ignore this.")
     parser.add_argument("--no-think", action="store_true",
                         help="Disable reasoning/thinking for Ollama models (faster, fewer tokens)")
+    parser.add_argument("--anchor", nargs="+",
+                        help="Only evaluate specific anchors (e.g., --anchor pert grasp)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show prompts without sending")
     parser.add_argument("--verbose", action="store_true",
@@ -530,4 +534,4 @@ if __name__ == "__main__":
     set_temperature(args.temperature)
     run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think,
               args.ollama_url, args.openai_model, args.mistral_model, args.deepseek_model,
-              args.claude_model)
+              args.claude_model, args.anchor)
