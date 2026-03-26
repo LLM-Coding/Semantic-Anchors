@@ -86,6 +86,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Greg Young, Bertrand Meyer, Udi Dahan
 - **Core:** Separate read/write models, commands return void, queries return data with no side effects, independent scalability
 
+### Vertical Slice Architecture (VSA)
+- **Also known as:** VSA, Feature Slices
+- **Proponents:** Jimmy Bogard
+- **Core:** Organize features as end-to-end slices spanning request, validation, domain logic, persistence, and API; avoids horizontal layering; feature cohesion over technical layers; naturally pairs with CQRS
+
 ### C4-Diagrams
 - **Core:** Context, Container, Component, Code — 4 zoom levels
 

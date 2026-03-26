@@ -2739,6 +2739,34 @@
     "tier": 3
   },
   {
+    "id": "vertical-slice-architecture",
+    "title": "Vertical Slice Architecture (VSA)",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer"
+    ],
+    "related": [
+      "clean-architecture",
+      "hexagonal-architecture",
+      "cqrs"
+    ],
+    "proponents": [
+      "Jimmy Bogard"
+    ],
+    "tags": [
+      "feature slices",
+      "vertical slices",
+      "VSA",
+      "feature cohesion",
+      "CQRS"
+    ],
+    "filePath": "docs/anchors/vertical-slice-architecture.adoc",
+    "tier": 3
+  },
+  {
     "id": "wardley-mapping",
     "title": "Wardley Mapping",
     "categories": [

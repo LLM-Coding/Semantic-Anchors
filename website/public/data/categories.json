@@ -129,7 +129,8 @@
       "hexagonal-architecture",
       "iso-25010",
       "lasr",
-      "madr"
+      "madr",
+      "vertical-slice-architecture"
     ]
   },
   {

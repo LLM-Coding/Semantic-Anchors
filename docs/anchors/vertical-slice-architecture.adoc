@@ -1,0 +1,49 @@
+= Vertical Slice Architecture (VSA)
+:categories: software-architecture
+:roles: software-architect, software-developer
+:related: clean-architecture, hexagonal-architecture, cqrs
+:proponents: Jimmy Bogard
+:tags: feature slices, vertical slices, VSA, feature cohesion, CQRS
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: VSA, Feature Slices
+
+[discrete]
+== *Core Concepts*:
+
+Vertical slices:: Each feature is organized as an end-to-end slice spanning all layers (request, validation, domain logic, persistence, API)
+
+Feature cohesion:: Code for a feature lives together regardless of technical layer
+
+No horizontal layers:: Avoids traditional layered architecture (controllers, services, repositories) as primary organizing principle
+
+CQRS alignment:: Naturally pairs with Command/Query separation per slice
+
+Thin shared layer:: Minimal shared infrastructure; each slice owns its behavior
+
+Screaming intent:: Folder/namespace structure reflects features, not technical concerns
+
+Independent evolution:: Slices can evolve independently with minimal cross-cutting changes
+
+Reduced coupling:: Changes to one feature rarely affect other features
+
+
+Key Proponents:: Jimmy Bogard
+
+[discrete]
+== *When to Use*:
+
+* Applications with many distinct business features
+* When feature teams own end-to-end delivery
+* To reduce merge conflicts in large teams
+* When traditional layered architecture creates too much coupling across features
+
+[discrete]
+== *Related Anchors*:
+
+* <<clean-architecture,Clean Architecture>>
+* <<hexagonal-architecture,Hexagonal Architecture (Ports & Adapters)>>
+* <<cqrs,CQRS>>
+====
