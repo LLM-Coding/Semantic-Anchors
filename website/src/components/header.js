@@ -37,12 +37,12 @@ export function renderHeader() {
                 <a href="#/" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
                 <a href="#/contracts" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/contracts" data-i18n="nav.contracts">${i18n.t('nav.contracts')}</a>
                 <a href="#/workflow" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/workflow" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
-                <div class="relative group">
-                  <button class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors flex items-center gap-1" data-i18n="nav.more">
+                <div class="relative" id="more-menu-container">
+                  <button id="more-menu-toggle" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors flex items-center gap-1" data-i18n="nav.more">
                     ${i18n.t('nav.more')}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                   </button>
-                  <div class="absolute left-0 top-full mt-1 hidden group-hover:block bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg shadow-lg py-2 min-w-[160px] z-50">
+                  <div id="more-menu-dropdown" class="absolute left-0 top-full mt-1 hidden bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg shadow-lg py-2 min-w-[160px] z-50">
                     <a href="#/about" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>
                     <a href="#/agentskill" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/agentskill" data-i18n="nav.agentskill">${i18n.t('nav.agentskill')}</a>
                     <a href="#/contributing" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contributing" data-i18n="nav.contributing">${i18n.t('nav.contributing')}</a>

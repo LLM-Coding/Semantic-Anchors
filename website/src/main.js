@@ -127,6 +127,7 @@ function initApp() {
   bindThemeToggle()
   bindLanguageToggle()
   bindMobileMenu()
+  bindMoreMenu()
   bindOnboardingButton()
   updateActiveNavLink()
 
@@ -473,6 +474,31 @@ function handleLanguageChange() {
 function bindOnboardingButton() {
   document.querySelectorAll('#onboarding-info-btn, #onboarding-info-btn-mobile').forEach((btn) => {
     btn.addEventListener('click', () => showOnboarding())
+  })
+}
+
+function bindMoreMenu() {
+  const toggle = document.getElementById('more-menu-toggle')
+  const dropdown = document.getElementById('more-menu-dropdown')
+  if (!toggle || !dropdown) return
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation()
+    dropdown.classList.toggle('hidden')
+  })
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#more-menu-container')) {
+      dropdown.classList.add('hidden')
+    }
+  })
+
+  // Close on nav link click
+  dropdown.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      dropdown.classList.add('hidden')
+    })
   })
 }
 
