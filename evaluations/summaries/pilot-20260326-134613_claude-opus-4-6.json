@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-03-26T13:46:13.763059+00:00",
+  "config": {
+    "models": [
+      "claude"
+    ],
+    "claude_model": "claude-opus-4-6",
+    "openai_model": null,
+    "mistral_model": null,
+    "deepseek_model": null,
+    "ollama_model": null,
+    "ollama_url": null,
+    "no_think": null,
+    "temperature": 0.0
+  },
+  "models": {
+    "claude": [
+      {
+        "label": "grasp/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "grasp/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "grasp/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "pert/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "pert/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "pert/application-paraphrase",
+        "score": 1.0
+      },
+      {
+        "label": "vertical-slice-architecture/recognition",
+        "score": 1.0
+      },
+      {
+        "label": "vertical-slice-architecture/application-anchor",
+        "score": 1.0
+      },
+      {
+        "label": "vertical-slice-architecture/application-paraphrase",
+        "score": 1.0
+      }
+    ]
+  },
+  "duration_seconds": 109.5
+}

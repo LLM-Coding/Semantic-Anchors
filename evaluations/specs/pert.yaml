@@ -1,0 +1,36 @@
+anchor: pert
+tier: 2
+questions:
+  recognition:
+    question: 'Which of the following best describes "PERT"?
+
+      '
+    options:
+      A: An iterative requirements prioritization framework that categorizes features
+        into must-have, should-have, could-have, and won't-have buckets
+      B: A stochastic project scheduling method using three-point estimation (optimistic,
+        most likely, pessimistic) to calculate expected duration and variance for
+        activities in a network diagram
+      C: A process improvement methodology that uses statistical control charts to
+        monitor and reduce variation in manufacturing and software delivery processes
+      D: A stakeholder mapping technique that visualizes the impact and influence
+        of different actors to prioritize engagement strategies
+    correct: B
+  application:
+    scenario: Your team is planning a critical software release with several interdependent
+      features. The database migration task has estimates of 2 days (optimistic),
+      5 days (most likely), and 14 days (pessimistic). The API development task estimates
+      are 3 days (optimistic), 7 days (most likely), and 11 days (pessimistic).
+    anchor_prompt: using PERT
+    paraphrase_prompt: What should be the expected duration estimates for these two
+      tasks when accounting for uncertainty in a probabilistic scheduling approach?
+    options:
+      A: 'Database migration: 7 days, API development: 7 days (using simple averages
+        of the three estimates)'
+      B: 'Database migration: 6 days, API development: 7 days (using weighted average
+        formula with most likely estimate weighted 4x)'
+      C: 'Database migration: 5 days, API development: 7 days (using the most likely
+        estimates as the expected values)'
+      D: 'Database migration: 8 days, API development: 8.5 days (using average of
+        optimistic and pessimistic estimates plus buffer)'
+    correct: B

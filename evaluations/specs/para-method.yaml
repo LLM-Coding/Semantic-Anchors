@@ -1,0 +1,18 @@
+anchor: para-method
+tier: 3
+
+questions:
+  recognition:
+    question: 'Which of the following best describes the "P.A.R.A. Method"?
+
+      '
+    options:
+      A: A software architecture pattern that separates concerns into Presentation,
+        Application, Repository, and Adapter layers
+      B: A knowledge organization framework that categorizes information into Projects,
+        Areas, Resources, and Archive based on actionability
+      C: A prioritization technique that evaluates items by their Probability,
+        Applicability, Risk, and Achievability scores
+      D: A documentation standard that structures technical content into Purpose,
+        Audience, Requirements, and Appendix sections
+    correct: B

@@ -1,0 +1,54 @@
+= GRASP
+:categories: design-principles
+:roles: software-developer, software-architect, educator, consultant
+:related: solid-principles, gof-design-patterns, clean-architecture, domain-driven-design
+:proponents: Craig Larman
+:tags: grasp, oop, responsibility-assignment, object-oriented-design, patterns
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: General Responsibility Assignment Software Patterns (oder Principles)
+
+Auch bekannt als:: GRASP-Muster, Richtlinien für verantwortungsgetriebenes Design
+
+[discrete]
+== *Kernkonzepte*:
+
+Information Expert:: Weise die Verantwortung der Klasse zu, die die benötigten Informationen besitzt
+
+Creator:: Weise die Verantwortung für die Erzeugung eines Objekts der Klasse zu, die es aggregiert, enthält oder eng damit zusammenarbeitet
+
+Controller:: Weise die Verantwortung für die Behandlung von Systemereignissen einer Nicht-UI-Klasse zu, die das Gesamtsystem oder einen Anwendungsfall repräsentiert
+
+Low Coupling (Geringe Kopplung):: Weise Verantwortlichkeiten so zu, dass Abhängigkeiten zwischen Klassen minimiert werden, um Wiederverwendung zu steigern und Änderungsauswirkungen zu reduzieren
+
+High Cohesion (Hohe Kohäsion):: Weise Verantwortlichkeiten so zu, dass Klassen fokussiert, verständlich und überschaubar bleiben
+
+Polymorphismus:: Nutze polymorphe Operationen, um typbasierte Verhaltensvarianten zu behandeln, anstatt Bedingungsanweisungen zu verwenden
+
+Pure Fabrication:: Weise einer künstlichen Klasse, die kein Domänenkonzept repräsentiert, Verantwortlichkeiten zu, um geringe Kopplung und hohe Kohäsion zu erreichen
+
+Indirektion:: Weise einem Zwischenobjekt die Verantwortung zu, zwischen anderen Komponenten zu vermitteln, um direkte Kopplung zu reduzieren
+
+Protected Variations (Geschützte Variationen):: Identifiziere vorhergesagte Variationspunkte und weise Verantwortlichkeiten zu, um eine stabile Schnittstelle darum herum zu schaffen
+
+
+Schlüsselvertreter:: Craig Larman ("Applying UML and Patterns", 3. Aufl., 2004)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Entwurf objektorientierter Systeme und Entscheidung über die Zuweisung von Verantwortlichkeiten
+* Verbesserung von Kohäsion und Reduzierung von Kopplung in bestehenden Codebasen
+* Führung von Refactoring-Entscheidungen durch Bewertung aktueller Verantwortlichkeitszuweisungen
+* Vermittlung grundlegender objektorientierter Entwurfsprinzipien
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<solid-principles,SOLID Principles>> - Ergänzende OO-Entwurfsprinzipien für wartbare Systeme
+* <<gof-design-patterns,GoF Design Patterns>> - Muster, die häufig GRASP-Prinzipien verkörpern
+* <<clean-architecture,Clean Architecture>> - Architekturstil, der GRASP-basiertes Denken nutzt
+* <<domain-driven-design,Domain-Driven Design>> - Nutzt Verantwortlichkeitszuweisung im Domänenmodell
+====

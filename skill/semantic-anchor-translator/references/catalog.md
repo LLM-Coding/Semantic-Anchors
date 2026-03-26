@@ -86,6 +86,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Greg Young, Bertrand Meyer, Udi Dahan
 - **Core:** Separate read/write models, commands return void, queries return data with no side effects, independent scalability
 
+### Vertical Slice Architecture (VSA)
+- **Also known as:** VSA, Feature Slices
+- **Proponents:** Jimmy Bogard
+- **Core:** Organize features as end-to-end slices spanning request, validation, domain logic, persistence, and API; avoids horizontal layering; feature cohesion over technical layers; naturally pairs with CQRS
+
 ### C4-Diagrams
 - **Core:** Context, Container, Component, Code — 4 zoom levels
 
@@ -130,6 +135,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 #### SOLID-DIP (Dependency Inversion Principle)
 - **Proponents:** Robert C. Martin
 - **Core:** Depend on abstractions, not concrete implementations
+
+### GRASP
+- **Also known as:** General Responsibility Assignment Software Patterns, Responsibility-Driven Design Guidelines
+- **Proponents:** Craig Larman
+- **Core:** 9 patterns for OO responsibility assignment — Information Expert, Creator, Controller, Low Coupling, High Cohesion, Polymorphism, Pure Fabrication, Indirection, Protected Variations
 
 ### DRY (Don't Repeat Yourself)
 - **Core:** Every piece of knowledge has single, unambiguous representation
@@ -356,3 +366,8 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### SWOT
 - **Proponents:** Albert Humphrey
 - **Core:** Strengths, Weaknesses, Opportunities, Threats — internal vs. external strategic analysis
+
+### PERT (Program Evaluation and Review Technique)
+- **Also known as:** Three-Point Estimation, PERT Network Analysis
+- **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
+- **Core:** Stochastic project scheduling using three-point estimates per activity (Optimistic, Most Likely, Pessimistic); weighted average formula E = (O + 4M + P) / 6; standard deviation σ = (P − O) / 6; critical path analysis; probabilistic milestone confidence intervals

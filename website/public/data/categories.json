@@ -130,7 +130,8 @@
       "hexagonal-architecture",
       "iso-25010",
       "lasr",
-      "madr"
+      "madr",
+      "vertical-slice-architecture"
     ]
   },
   {
@@ -149,6 +150,7 @@
       "cynefin-framework",
       "impact-mapping",
       "jobs-to-be-done",
+      "pert",
       "pugh-matrix",
       "swot",
       "wardley-mapping"

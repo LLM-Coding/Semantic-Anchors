@@ -1,0 +1,48 @@
+= Vertical Slice Architecture (VSA)
+:categories: software-architecture
+:roles: software-architect, software-developer
+:related: clean-architecture, hexagonal-architecture, cqrs
+:proponents: Jimmy Bogard
+:tags: feature slices, vertical slices, VSA, feature cohesion, CQRS
+
+[%collapsible]
+====
+Auch bekannt als:: VSA, Feature Slices
+
+[discrete]
+== *Kernkonzepte*:
+
+Vertikale Schnitte:: Jedes Feature ist als End-to-End-Schnitt organisiert, der alle Schichten umfasst (Request, Validierung, Domänenlogik, Persistenz, API)
+
+Feature-Kohäsion:: Code für ein Feature liegt unabhängig von der technischen Schicht zusammen
+
+Keine horizontalen Schichten:: Vermeidet traditionelle geschichtete Architektur (Controller, Services, Repositories) als primäres Organisationsprinzip
+
+CQRS-Ausrichtung:: Passt natürlich zur Command/Query-Trennung pro Schnitt
+
+Dünne gemeinsame Schicht:: Minimale gemeinsame Infrastruktur; jeder Schnitt besitzt sein eigenes Verhalten
+
+Sprechende Absicht:: Ordner-/Namespace-Struktur spiegelt Features wider, keine technischen Belange
+
+Unabhängige Weiterentwicklung:: Jeder Schnitt kann unabhängig mit minimalen übergreifenden Änderungen weiterentwickelt werden
+
+Reduzierte Kopplung:: Änderungen an einem Feature beeinflussen selten andere Features
+
+
+Schlüsselvertreter:: Jimmy Bogard
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Anwendungen mit vielen verschiedenen Geschäftsfeatures
+* Wenn Feature-Teams die End-to-End-Lieferung verantworten
+* Um Merge-Konflikte in großen Teams zu reduzieren
+* Wenn traditionelle Schichtenarchitektur zu viel Kopplung zwischen Features erzeugt
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<clean-architecture,Clean Architecture>>
+* <<hexagonal-architecture,Hexagonal Architecture (Ports & Adapters)>>
+* <<cqrs,CQRS>>
+====

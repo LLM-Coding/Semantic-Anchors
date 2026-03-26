@@ -1,0 +1,18 @@
+anchor: kiss-principle
+tier: 1
+
+questions:
+  recognition:
+    question: 'Which of the following best describes the "KISS Principle"?
+
+      '
+    options:
+      A: A design principle favoring simplicity over complexity, avoiding over-engineering
+        and unnecessary features in software design
+      B: A testing methodology that focuses on verifying the simplest possible test
+        cases before progressing to complex integration scenarios
+      C: A refactoring pattern that reduces code complexity by extracting common logic
+        into reusable utility functions and shared libraries
+      D: A project management approach that prioritizes delivering minimal viable
+        features with the shortest possible development cycles
+    correct: A

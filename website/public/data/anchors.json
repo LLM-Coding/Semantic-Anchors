@@ -1378,6 +1378,37 @@
     "tier": 2
   },
   {
+    "id": "grasp",
+    "title": "GRASP",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "solid-principles",
+      "gof-design-patterns",
+      "clean-architecture",
+      "domain-driven-design"
+    ],
+    "proponents": [
+      "Craig Larman"
+    ],
+    "tags": [
+      "grasp",
+      "oop",
+      "responsibility-assignment",
+      "object-oriented-design",
+      "patterns"
+    ],
+    "filePath": "docs/anchors/grasp.adoc",
+    "tier": 3
+  },
+  {
     "id": "gutes-deutsch-wolf-schneider",
     "title": "Gutes Deutsch nach Wolf Schneider",
     "categories": [
@@ -1933,6 +1964,43 @@
     ],
     "filePath": "docs/anchors/owasp-top-10.adoc",
     "tier": 3
+  },
+  {
+    "id": "pert",
+    "title": "PERT",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "team-lead",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "moscow",
+      "user-story-mapping",
+      "impact-mapping"
+    ],
+    "proponents": [
+      "D.G. Malcolm",
+      "J.H. Roseboom",
+      "C.E. Clark",
+      "W. Fazar"
+    ],
+    "tags": [
+      "pert",
+      "project-planning",
+      "estimation",
+      "schedule",
+      "uncertainty",
+      "three-point-estimation",
+      "critical-path",
+      "network-diagram"
+    ],
+    "filePath": "docs/anchors/pert.adoc",
+    "tier": 2
   },
   {
     "id": "plain-english-strunk-white",
@@ -2730,6 +2798,34 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/user-story-mapping.adoc",
+    "tier": 3
+  },
+  {
+    "id": "vertical-slice-architecture",
+    "title": "Vertical Slice Architecture (VSA)",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer"
+    ],
+    "related": [
+      "clean-architecture",
+      "hexagonal-architecture",
+      "cqrs"
+    ],
+    "proponents": [
+      "Jimmy Bogard"
+    ],
+    "tags": [
+      "feature slices",
+      "vertical slices",
+      "VSA",
+      "feature cohesion",
+      "CQRS"
+    ],
+    "filePath": "docs/anchors/vertical-slice-architecture.adoc",
     "tier": 3
   },
   {

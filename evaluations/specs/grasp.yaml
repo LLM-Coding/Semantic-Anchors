@@ -1,0 +1,39 @@
+anchor: grasp
+tier: 3
+questions:
+  recognition:
+    question: 'Which of the following best describes "GRASP"?
+
+      '
+    options:
+      A: Ensure that a class has only one reason to change by separating concerns
+        and maintaining high cohesion within modules while minimizing dependencies
+        between them
+      B: Assign responsibility to the class that has the information needed to fulfill
+        it; assign responsibility for creating an object to the class that aggregates,
+        contains, or closely uses it
+      C: Define a family of algorithms, encapsulate each one, and make them interchangeable
+        so that the algorithm can vary independently from clients that use it
+      D: Depend on abstractions rather than concretions by inverting the direction
+        of dependencies so that high-level modules do not depend on low-level modules
+    correct: B
+  application:
+    scenario: You're designing an e-commerce system where customers can place orders
+      containing multiple items. The system needs to calculate the total cost of an
+      order, including item prices, taxes, and shipping fees. Currently, the OrderController
+      class is handling all calculations, validation, and persistence logic.
+    anchor_prompt: using GRASP
+    paraphrase_prompt: How should you restructure the responsibility assignments to
+      create a more maintainable and cohesive design?
+    options:
+      A: Keep all calculation logic in OrderController but extract tax and shipping
+        calculations into separate static utility classes to reduce the controller's
+        size
+      B: Move cost calculation to the Order class (which contains the items), create
+        a TaxCalculator service for tax logic, and let OrderItem handle its own price
+        calculations
+      C: Create a single OrderProcessor class that handles all order-related operations
+        including calculations, validation, and persistence to centralize order logic
+      D: Move all calculation logic to the database using stored procedures and have
+        the OrderController only handle data retrieval and UI coordination
+    correct: B
