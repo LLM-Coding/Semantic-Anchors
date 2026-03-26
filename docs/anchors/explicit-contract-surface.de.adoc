@@ -1,0 +1,50 @@
+= Explicit Contract Surface
+:categories: software-architecture
+:roles: software-architect, software-developer
+:related: clean-architecture, hexagonal-architecture, domain-driven-design, solid-dip, solid-isp
+:proponents: Eric Evans, Robert C. Martin, Martin Fowler
+:tags: api-design, dto, anti-corruption-layer, contract-first, layer-isolation
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Contract-First Design, Explizite API-Oberfläche, DTO-Muster
+
+[discrete]
+== *Kernkonzepte*:
+
+Explizite API-Verträge:: Nur wohldefinierte DTOs, View Models oder Request/Response-Typen überschreiten Schichtgrenzen — niemals rohe Domänenobjekte
+
+Keine Domain-Entity-Lecks:: Domänenobjekte sind interne Implementierungsdetails und dürfen nie in äußere Schichten (Controller, Clients, Persistenz) gelangen
+
+Explizites Mapping:: Jede Schicht mappt ihre eigene Repräsentation; Mapper sind ein bewusster Trennpunkt, kein Nachgedanke
+
+Stabile öffentliche Schnittstelle:: Die Contract Surface ändert sich unabhängig von der internen Domänenentwicklung und schützt Konsumenten vor Refactoring-Änderungen
+
+Anti-Corruption Layer (ACL):: Adaptercode, der zwischen dem Modell eines externen Systems und dem internen Domänenmodell übersetzt und verhindert, dass fremde Konzepte den Kern verunreinigen
+
+Contract-Versionierung:: Explizite Verträge ermöglichen rückwärtskompatible Weiterentwicklung über versionierte Endpunkte oder Schema-Änderungen ohne Eingriff in die Domänenlogik
+
+Abhängigkeitsinversion an Grenzen:: Äußere Schichten hängen von veröffentlichten Verträgen ab, nicht von konkreten Domänentypen; ermöglicht unabhängige Bereitstellung und Tests
+
+
+Schlüsselvertreter:: Eric Evans ("Domain-Driven Design", 2003 — Anti-Corruption Layer, Bounded Context), Robert C. Martin ("Clean Architecture", 2017 — Interface Adapters), Martin Fowler ("Patterns of Enterprise Application Architecture", 2002 — Data Transfer Object)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Microservices oder verteilte Systeme, bei denen API-Stabilität über Teams hinweg entscheidend ist
+* Anwendungen, die Clean Architecture oder Hexagonale Architektur befolgen
+* Systeme mit einem umfangreichen Domänenmodell, das keine Persistenz- oder Framework-Aspekte preisgeben darf
+* Integration mit Legacy-Systemen oder Drittanbieter-APIs (ACL an der Grenze einsetzen)
+* Jede Codebasis, in der Controller oder Clients direkt von JPA-Entities, ORM-Modellen oder Aggregate Roots abhängen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<clean-architecture,Clean Architecture>> - Interface Adapters hält Domänentypen intern
+* <<hexagonal-architecture,Hexagonale Architektur (Ports & Adapters)>> - Ports definieren explizite Verträge an jeder Grenze
+* <<domain-driven-design,Domain-Driven Design>> - Anti-Corruption Layer und Bounded Context erzwingen explizite Übersetzungen
+* <<solid-dip,SOLID: Dependency Inversion Principle>> - Abhängigkeit von Abstraktionen (Verträgen), nicht von konkreten Domänentypen
+* <<solid-isp,SOLID: Interface Segregation Principle>> - Schmale, rollenspezifische Verträge reduzieren unbeabsichtigte Kopplung
+====

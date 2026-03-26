@@ -78,6 +78,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Gregor Hohpe, Bobby Woolf, Martin Fowler
 - **Core:** Async decoupling via events, publish-subscribe, event producers/consumers, eventual consistency, idempotency
 
+### Explicit Contract Surface
+- **Also known as:** Contract-First Design, Explicit API Surface, DTO Pattern
+- **Proponents:** Eric Evans, Robert C. Martin, Martin Fowler
+- **Core:** Expose only well-defined DTOs/contracts across layer boundaries, never domain entities; explicit mapping at every seam; Anti-Corruption Layer for external integrations; stable public interface decoupled from internal domain evolution
+
 ### arc42 Architecture Documentation
 - **Proponents:** Gernot Starke, Peter Hruschka
 - **Core:** 12-section template for documenting software architecture

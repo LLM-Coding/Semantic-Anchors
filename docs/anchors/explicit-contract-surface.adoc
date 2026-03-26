@@ -1,0 +1,50 @@
+= Explicit Contract Surface
+:categories: software-architecture
+:roles: software-architect, software-developer
+:related: clean-architecture, hexagonal-architecture, domain-driven-design, solid-dip, solid-isp
+:proponents: Eric Evans, Robert C. Martin, Martin Fowler
+:tags: api-design, dto, anti-corruption-layer, contract-first, layer-isolation
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Contract-First Design, Explicit API Surface, DTO Pattern
+
+[discrete]
+== *Core Concepts*:
+
+Explicit API contracts:: Only well-defined DTOs, view models, or request/response types cross layer boundaries — never raw domain entities
+
+No domain entity leakage:: Domain objects are internal implementation details and must never escape to outer layers (controllers, clients, persistence)
+
+Explicit mapping:: Each layer maps its own representation; mappers are an intentional seam, not an afterthought
+
+Stable public interface:: The contract surface changes independently of internal domain evolution, shielding consumers from refactoring churn
+
+Anti-Corruption Layer (ACL):: Adapter code that translates between an external system's model and the internal domain model, preventing foreign concepts from polluting the core
+
+Contract versioning:: Explicit contracts enable backward-compatible evolution via versioned endpoints or schema changes without touching domain logic
+
+Dependency inversion at boundaries:: Outer layers depend on published contracts, not on concrete domain types; enables independent deployment and testing
+
+
+Key Proponents:: Eric Evans ("Domain-Driven Design", 2003 — Anti-Corruption Layer, Bounded Context), Robert C. Martin ("Clean Architecture", 2017 — Interface Adapters ring), Martin Fowler ("Patterns of Enterprise Application Architecture", 2002 — Data Transfer Object)
+
+[discrete]
+== *When to Use*:
+
+* Microservices or distributed systems where API stability across teams is critical
+* Applications following Clean Architecture or Hexagonal Architecture
+* Systems with a rich domain model that must not leak persistence or framework concerns
+* Integrating with legacy systems or third-party APIs (apply ACL at the boundary)
+* Any codebase where controllers or clients depend directly on JPA entities, ORM models, or aggregate roots
+
+[discrete]
+== *Related Anchors*:
+
+* <<clean-architecture,Clean Architecture>> - Interface Adapters ring keeps domain types internal
+* <<hexagonal-architecture,Hexagonal Architecture (Ports & Adapters)>> - Ports define explicit contracts at every boundary
+* <<domain-driven-design,Domain-Driven Design>> - Anti-Corruption Layer and Bounded Context enforce explicit translations
+* <<solid-dip,SOLID: Dependency Inversion Principle>> - Depend on abstractions (contracts), not concretions (domain types)
+* <<solid-isp,SOLID: Interface Segregation Principle>> - Narrow, role-specific contracts reduce unintended coupling
+====

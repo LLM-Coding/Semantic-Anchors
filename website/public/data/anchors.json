@@ -443,6 +443,38 @@
     "tier": 3
   },
   {
+    "id": "explicit-contract-surface",
+    "title": "Explicit Contract Surface",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer"
+    ],
+    "related": [
+      "clean-architecture",
+      "hexagonal-architecture",
+      "domain-driven-design",
+      "solid-dip",
+      "solid-isp"
+    ],
+    "proponents": [
+      "Eric Evans",
+      "Robert C. Martin",
+      "Martin Fowler"
+    ],
+    "tags": [
+      "api-design",
+      "dto",
+      "anti-corruption-layer",
+      "contract-first",
+      "layer-isolation"
+    ],
+    "filePath": "docs/anchors/explicit-contract-surface.adoc",
+    "tier": 3
+  },
+  {
     "id": "fagan-inspection",
     "title": "Fagan Inspection",
     "categories": [
