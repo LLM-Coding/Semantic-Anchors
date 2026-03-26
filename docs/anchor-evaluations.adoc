@@ -407,44 +407,62 @@ For Claude, this means Sonnet 4.6 (not Opus).
 For GPT and Gemini, the mid-tier variants are not yet clearly established, so we test the current flagship (GPT-5, Gemini 2.5 Pro) and add smaller variants when they become available.
 A follow-up round with the cheapest variants (Haiku, GPT-5 mini, Gemini Flash) would reveal the lower boundary of anchor activation.
 
+IMPORTANT: Always record the *exact model identifier with date suffix* (e.g., `mistral-large-2512`, not `mistral-large-latest`).
+Model aliases like `-latest` can change without notice.
+
 *Commercial models (API cost per call):*
 
-[cols="1,2"]
+[cols="2,1,2"]
 |===
-|Model |Rationale
+|Model |API ID |Rationale
 
 |Claude Sonnet 4.6
+|`claude-sonnet-4-20250514`
 |Our primary development model. Serves as the baseline.
 
-|GPT-5
-|Largest market share, OpenAI ecosystem.
+|GPT-4o / GPT-5
+|`gpt-4o` / `gpt-5`
+|OpenAI ecosystem. GPT-4o as mid-tier, GPT-5 as flagship.
+
+|Mistral Large 3
+|`mistral-large-2512`
+|European flagship. Already tested (96%).
+
+|Mistral Medium 3.1
+|`mistral-medium-2508`
+|European mid-tier. Frontier-class multimodal.
+
+|Mistral Small 4
+|`mistral-small-2603`
+|European small model. Hybrid reasoning+coding (March 2026).
+
+|Devstral 2
+|`devstral-2512`
+|Code-specialized model. Tests whether SE-focused training improves anchor recognition.
 
 |Gemini 2.5 Pro
+|TBD
 |Google, different training approach.
 |===
 
-*Open-weight models (available as open-source):*
+*Open-weight models (run locally via Ollama):*
 
-[cols="1,2,1"]
+[cols="2,1,2"]
 |===
-|Model |Rationale |Local?
+|Model |Local? |Rationale
 
 |Llama 4 Maverick
-|Largest open-weight model. Shows whether anchors work without proprietary training -- relevant for self-hosted setups.
 |Yes (Ollama)
-
-|Mistral Large
-|European model with a different training focus. Interesting because the anchor catalog is heavily influenced by English-language software engineering literature.
-|No (too large, use La Plateforme API)
+|Largest open-weight model. Shows whether anchors work without proprietary training.
 
 |DeepSeek V3
-|Chinese model. Tests whether anchors work across cultural and training-data boundaries.
 |Yes (Ollama)
-|===
+|Chinese model. Tests whether anchors work across cultural and training-data boundaries.
 
-Llama and DeepSeek can run locally (e.g., via Ollama) at no API cost.
-Mistral Large requires the Mistral API -- it is open-weight but too large for local inference.
-This means 4 models have API costs (Claude, GPT, Gemini, Mistral) and 2 run locally for free.
+|Ministral 3 8B
+|Yes (Ollama)
+|Mistral's tiny model. Lower boundary test.
+|===
 
 === Effort Estimate
 
