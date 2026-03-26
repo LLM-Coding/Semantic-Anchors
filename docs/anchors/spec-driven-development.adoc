@@ -1,0 +1,53 @@
+= Spec-Driven Development
+:categories: requirements-engineering, development-workflow
+:roles: software-developer, software-architect, qa-engineer, business-analyst, team-lead
+:related: bdd-given-when-then, tdd-london-school, domain-driven-design, ears-requirements, property-based-testing
+:proponents: Swagger/OpenAPI Initiative, Apiary, Thoughtworks
+:tags: specification, contract, api-first, design-by-contract, formal-specification, verification, traceability
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Specification-First Development, API-First Development, Contract-First Design, Design-by-Contract
+
+[discrete]
+== *Core Concepts*:
+
+Formalized intent:: Domain concepts, boundaries, invariants, and behaviors are written as structured specifications before and during implementation
+
+Specification as source of truth:: Specs — not code — define the authoritative description of system behavior; code is a realization of the spec
+
+Separation of concerns:: Domain, application, and contract layers are defined independently of implementation details
+
+Traceable capabilities:: Every feature is expressed as a discrete capability with explicit inputs, outputs, and business rules
+
+Deterministic execution:: Implementation follows specs without introducing implicit behavior or undocumented assumptions
+
+Continuous verification:: Tests validate conformance to specs, not just incidental code correctness
+
+Contract-first APIs:: External interfaces (REST, GraphQL, events) are fully specified before any code is written
+
+Living specifications:: Specs evolve alongside the system and remain the primary reference for understanding and change
+
+
+Key Proponents:: SmartBear / Swagger team (OpenAPI Specification), Bertrand Meyer ("Design by Contract" in Eiffel), Apiary (API Blueprint)
+
+[discrete]
+== *When to Use*:
+
+* Building APIs or services consumed by multiple clients or teams
+* Cross-team or cross-organization integration where interface stability is critical
+* Regulated environments requiring traceable requirements and verifiable behavior
+* Complex domains where implicit behavior and assumptions lead to bugs
+* Projects needing shared understanding between developers, testers, and business stakeholders before implementation begins
+* Distributed or microservice systems where contract clarity reduces integration risk
+
+[discrete]
+== *Related Anchors*:
+
+* <<bdd-given-when-then,BDD (Behavior-Driven Development)>> - Executable specifications expressed as Given-When-Then scenarios
+* <<tdd-london-school,TDD, London School>> - Outside-in test-driven design that surfaces interfaces and contracts early
+* <<domain-driven-design,Domain-Driven Design>> - Models domain concepts as the foundation for specifications
+* <<ears-requirements,EARS-Requirements>> - Structured natural-language templates for unambiguous requirements
+* <<property-based-testing,Property-Based Testing>> - Validates invariants stated in specifications with generated inputs
+====

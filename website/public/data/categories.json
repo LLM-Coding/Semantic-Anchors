@@ -64,6 +64,7 @@
       "regulated-environment",
       "semantic-versioning",
       "sota",
+      "spec-driven-development",
       "timtowtdi",
       "todotxt-flavoured-markdown"
     ]
@@ -110,6 +111,7 @@
       "moscow",
       "prd",
       "problem-space-nvc",
+      "spec-driven-development",
       "user-story-mapping"
     ]
   },

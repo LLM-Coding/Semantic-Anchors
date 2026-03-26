@@ -1,0 +1,53 @@
+= Spec-Driven Development
+:categories: requirements-engineering, development-workflow
+:roles: software-developer, software-architect, qa-engineer, business-analyst, team-lead
+:related: bdd-given-when-then, tdd-london-school, domain-driven-design, ears-requirements, property-based-testing
+:proponents: Swagger/OpenAPI Initiative, Apiary, Thoughtworks
+:tags: specification, contract, api-first, design-by-contract, formal-specification, verification, traceability
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Specification-First Development, API-First Development, Contract-First Design, Design-by-Contract
+
+[discrete]
+== *Kernkonzepte*:
+
+Formalisierte Absicht:: Domänenkonzepte, Grenzen, Invarianten und Verhalten werden als strukturierte Spezifikationen vor und während der Implementierung festgehalten
+
+Spezifikation als Quelle der Wahrheit:: Spezifikationen — nicht Code — definieren die maßgebliche Beschreibung des Systemverhaltens; Code ist eine Realisierung der Spezifikation
+
+Trennung von Belangen:: Domäne, Anwendung und Vertragsschichten werden unabhängig von Implementierungsdetails definiert
+
+Nachverfolgbare Fähigkeiten:: Jedes Feature wird als eigenständige Fähigkeit mit expliziten Eingaben, Ausgaben und Geschäftsregeln ausgedrückt
+
+Deterministische Ausführung:: Die Implementierung folgt den Spezifikationen ohne implizites Verhalten oder undokumentierte Annahmen einzuführen
+
+Kontinuierliche Verifikation:: Tests validieren die Konformität mit Spezifikationen, nicht nur die zufällige Code-Korrektheit
+
+Contract-First APIs:: Externe Schnittstellen (REST, GraphQL, Events) werden vollständig spezifiziert, bevor Code geschrieben wird
+
+Lebende Spezifikationen:: Spezifikationen entwickeln sich zusammen mit dem System weiter und bleiben die primäre Referenz für Verständnis und Änderungen
+
+
+Schlüsselvertreter:: SmartBear / Swagger-Team (OpenAPI Specification), Bertrand Meyer ("Design by Contract" in Eiffel), Apiary (API Blueprint)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Beim Aufbau von APIs oder Diensten, die von mehreren Clients oder Teams genutzt werden
+* Teamübergreifende oder organisationsübergreifende Integration, bei der Schnittstellenstabilität entscheidend ist
+* Regulierte Umgebungen, die nachverfolgbare Anforderungen und verifizierbares Verhalten erfordern
+* Komplexe Domänen, in denen implizites Verhalten und Annahmen zu Fehlern führen
+* Projekte, die ein gemeinsames Verständnis zwischen Entwicklern, Testern und Fachstakeholdern vor Beginn der Implementierung benötigen
+* Verteilte oder Microservice-Systeme, bei denen Vertragsklarheit das Integrationsrisiko reduziert
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<bdd-given-when-then,BDD (Behavior-Driven Development)>> - Ausführbare Spezifikationen als Given-When-Then-Szenarien
+* <<tdd-london-school,TDD, London School>> - Outside-in testgetriebenes Design, das Schnittstellen und Verträge frühzeitig aufdeckt
+* <<domain-driven-design,Domain-Driven Design>> - Modelliert Domänenkonzepte als Grundlage für Spezifikationen
+* <<ears-requirements,EARS-Requirements>> - Strukturierte natürlichsprachliche Vorlagen für eindeutige Anforderungen
+* <<property-based-testing,Property-Based Testing>> - Validiert in Spezifikationen angegebene Invarianten mit generierten Eingaben
+====

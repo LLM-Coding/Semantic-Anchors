@@ -2327,6 +2327,44 @@
     "tier": 3
   },
   {
+    "id": "spec-driven-development",
+    "title": "Spec-Driven Development",
+    "categories": [
+      "requirements-engineering",
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer",
+      "business-analyst",
+      "team-lead"
+    ],
+    "related": [
+      "bdd-given-when-then",
+      "tdd-london-school",
+      "domain-driven-design",
+      "ears-requirements",
+      "property-based-testing"
+    ],
+    "proponents": [
+      "Swagger/OpenAPI Initiative",
+      "Apiary",
+      "Thoughtworks"
+    ],
+    "tags": [
+      "specification",
+      "contract",
+      "api-first",
+      "design-by-contract",
+      "formal-specification",
+      "verification",
+      "traceability"
+    ],
+    "filePath": "docs/anchors/spec-driven-development.adoc",
+    "tier": 3
+  },
+  {
     "id": "ssot-principle",
     "title": "SSOT (Single Source of Truth)",
     "categories": [

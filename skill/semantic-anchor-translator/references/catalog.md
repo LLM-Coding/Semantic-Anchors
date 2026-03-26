@@ -241,6 +241,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Problem Space NVC
 - **Core:** Needs-Value-Constraints framework for problem definition
 
+### Spec-Driven Development
+- **Also known as:** Specification-First Development, API-First Development, Contract-First Design, Design-by-Contract
+- **Proponents:** SmartBear / Swagger team (OpenAPI Specification), Bertrand Meyer (Design by Contract), Apiary
+- **Core:** Software defined, constrained, and validated through explicit specifications before and during implementation; formalized intent, separation of concerns, traceable capabilities, deterministic execution, continuous verification against specs
+
 ## Communication & Presentation
 
 ### BLUF (Bottom Line Up Front)
