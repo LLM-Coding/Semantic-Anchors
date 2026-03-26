@@ -35,6 +35,8 @@ MODEL_DISPLAY_FALLBACK = {
 
 def get_model_display(backend, config):
     """Get exact model display name from config."""
+    if backend == "claude" and config.get("claude_model"):
+        return config["claude_model"]
     if backend == "openai" and config.get("openai_model"):
         return config["openai_model"]
     if backend == "mistral" and config.get("mistral_model"):

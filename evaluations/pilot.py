@@ -99,22 +99,24 @@ def set_temperature(t):
     TEMPERATURE = t
 
 
-def call_claude_api(prompt, model="claude-sonnet-4-20250514"):
-    """Send prompt to Claude via Anthropic API."""
-    try:
-        import anthropic
-    except ImportError:
-        print("anthropic package required: pip install anthropic")
-        sys.exit(1)
+def make_claude_api_caller(claude_model):
+    """Create a Claude API caller for a specific model."""
+    def call_claude_api(prompt, model=claude_model):
+        try:
+            import anthropic
+        except ImportError:
+            print("anthropic package required: pip install anthropic")
+            sys.exit(1)
 
-    client = anthropic.Anthropic()
-    response = client.messages.create(
-        model=model,
-        max_tokens=10,
-        temperature=TEMPERATURE,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return response.content[0].text, model
+        client = anthropic.Anthropic()
+        response = client.messages.create(
+            model=model,
+            max_tokens=10,
+            temperature=TEMPERATURE,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return response.content[0].text, model
+    return call_claude_api
 
 
 def call_claude_cli(prompt, model="claude-cli"):
@@ -292,12 +294,15 @@ def save_results(all_results, out_file):
 
 def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_think=False,
               ollama_url="http://localhost:11434", openai_model="gpt-4o-mini",
-              mistral_model="mistral-large-latest", deepseek_model="deepseek-chat"):
+              mistral_model="mistral-large-latest", deepseek_model="deepseek-chat",
+              claude_model="claude-sonnet-4-20250514"):
     start_time = time.time()
     specs = load_specs()
     print(f"Loaded {len(specs)} anchor specs")
     print(f"Models: {', '.join(models)}")
     print(f"Temperature: {TEMPERATURE}")
+    if "claude" in models:
+        print(f"Claude model: {claude_model}")
     if "openai" in models:
         print(f"OpenAI model: {openai_model}")
     if "mistral" in models:
@@ -315,7 +320,8 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
     # Include exact model IDs in filename to prevent race conditions
     model_ids = []
     for m in models:
-        if m == "openai": model_ids.append(openai_model)
+        if m == "claude": model_ids.append(claude_model)
+        elif m == "openai": model_ids.append(openai_model)
         elif m == "mistral": model_ids.append(mistral_model)
         elif m == "deepseek": model_ids.append(deepseek_model)
         elif m == "ollama": model_ids.append(f"ollama-{ollama_model}")
@@ -327,6 +333,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "config": {
             "models": models,
+            "claude_model": claude_model if "claude" in models else None,
             "openai_model": openai_model if "openai" in models else None,
             "mistral_model": mistral_model if "mistral" in models else None,
             "deepseek_model": deepseek_model if "deepseek" in models else None,
@@ -340,7 +347,7 @@ def run_pilot(models, dry_run=False, verbose=False, ollama_model="qwen3:4b", no_
 
     for model_name in models:
         if model_name == "claude":
-            call_fn = call_claude_api
+            call_fn = make_claude_api_caller(claude_model)
         elif model_name == "claude-cli":
             call_fn = call_claude_cli
         elif model_name == "claude-haiku":
@@ -499,8 +506,10 @@ if __name__ == "__main__":
     parser.add_argument("--model", nargs="+", default=["claude-cli"],
                         choices=["claude", "claude-cli", "claude-haiku", "openai", "mistral", "deepseek", "ollama"],
                         help="Models to evaluate (default: claude-cli)")
+    parser.add_argument("--claude-model", default="claude-sonnet-4-20250514",
+                        help="Claude model name (default: claude-sonnet-4-20250514)")
     parser.add_argument("--openai-model", default="gpt-4o-mini",
-                        help="OpenAI model name (default: gpt-4o-mini). Try: gpt-5, gpt-5-mini, gpt-4o")
+                        help="OpenAI model name (default: gpt-4o-mini). Try: gpt-5.4-2026-03-05, gpt-4o")
     parser.add_argument("--mistral-model", default="mistral-large-latest",
                         help="Mistral model name (default: mistral-large-latest)")
     parser.add_argument("--deepseek-model", default="deepseek-chat",
@@ -520,4 +529,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
     set_temperature(args.temperature)
     run_pilot(args.model, args.dry_run, args.verbose, args.ollama_model, args.no_think,
-              args.ollama_url, args.openai_model, args.mistral_model, args.deepseek_model)
+              args.ollama_url, args.openai_model, args.mistral_model, args.deepseek_model,
+              args.claude_model)
