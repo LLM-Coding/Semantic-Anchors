@@ -1,0 +1,54 @@
+= GTD — Getting Things Done
+:categories: development-workflow
+:roles: software-developer, team-lead, product-owner, educator
+:related: para-method, todotxt-flavoured-markdown, definition-of-done
+:proponents: David Allen
+:tags: personal-productivity, task-management, organization, stress-free, inbox-zero
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Getting Things Done (GTD)
+
+Auch bekannt als:: GTD, GTD nach David Allen, GTD-Methodik
+
+[discrete]
+== *Kernkonzepte*:
+
+Erfassen (Capture):: Alles, was die Aufmerksamkeit beansprucht – Aufgaben, Ideen, Verpflichtungen – wird in vertrauenswürdige externe „Eingangsboxen" gesammelt, damit nichts im Kopf gehalten werden muss
+
+Klären (Clarify):: Jeden erfassten Eintrag verarbeiten: Ist er umsetzbar? Wenn ja, die nächste konkrete Handlung definieren. Wenn nein, löschen, zurückstellen oder als Referenz ablegen
+
+Organisieren (Organize):: Geklärte Einträge in die richtigen Listen einordnen – Nächste Aktionen, Projekte, Warte-auf, Irgendwann/Vielleicht, Kalender – damit sie zum richtigen Zeitpunkt abrufbar sind
+
+Überprüfen (Reflect):: Das System regelmäßig überprüfen (Wöchentliches Review), um es aktuell, vollständig und vertrauenswürdig zu halten
+
+Handeln (Engage):: Entscheiden, welche Aktionen basierend auf Kontext, verfügbarer Zeit, Energie und Priorität ausgeführt werden
+
+Zwei-Minuten-Regel:: Wenn eine Aktion weniger als zwei Minuten dauert, sofort erledigen statt verschieben
+
+Projektliste:: Jedes gewünschte Ergebnis, das mehr als eine Handlungsschritt erfordert, ist ein „Projekt" mit mindestens einer nächsten Aktion
+
+Kontexte:: Nächste Aktionen werden nach Kontext getaggt (z.B. @computer, @telefon, @besorgungen), um Aufgaben effizient zu bündeln
+
+Vertrauenswürdiges System:: Alle Verpflichtungen werden extern gespeichert, damit der Geist frei ist, sich auf das Handeln zu konzentrieren statt auf das Erinnern
+
+Schlüsselvertreter:: David Allen („Getting Things Done: The Art of Stress-Free Productivity")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Verwaltung einer hohen Anzahl von Aufgaben, Projekten und Verpflichtungen in Beruf und Privatleben
+* Reduzierung mentaler Belastung und Stress durch offene Schleifen (unerledigte Verpflichtungen)
+* Aufbau eines zuverlässigen persönlichen Produktivitäts- und Aufgabenmanagementsystems
+* Verbesserung der Konzentration durch Klärung konkreter nächster Aktionen anstelle vager To-do-Einträge
+* Einführung von Teams oder Einzelpersonen in strukturiertes Workflow-Management
+* Kombination mit Notizsystemen wie P.A.R.A. oder todo.txt
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<para-method,P.A.R.A. Method>>
+* <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
+* <<definition-of-done,Definition of Done>>
+====

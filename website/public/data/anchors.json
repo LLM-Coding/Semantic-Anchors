@@ -1409,6 +1409,36 @@
     "tier": 3
   },
   {
+    "id": "gtd",
+    "title": "GTD — Getting Things Done",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "team-lead",
+      "product-owner",
+      "educator"
+    ],
+    "related": [
+      "para-method",
+      "todotxt-flavoured-markdown",
+      "definition-of-done"
+    ],
+    "proponents": [
+      "David Allen"
+    ],
+    "tags": [
+      "personal-productivity",
+      "task-management",
+      "organization",
+      "stress-free",
+      "inbox-zero"
+    ],
+    "filePath": "docs/anchors/gtd.adoc",
+    "tier": 3
+  },
+  {
     "id": "gutes-deutsch-wolf-schneider",
     "title": "Gutes Deutsch nach Wolf Schneider",
     "categories": [

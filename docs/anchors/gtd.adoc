@@ -1,0 +1,54 @@
+= GTD — Getting Things Done
+:categories: development-workflow
+:roles: software-developer, team-lead, product-owner, educator
+:related: para-method, todotxt-flavoured-markdown, definition-of-done
+:proponents: David Allen
+:tags: personal-productivity, task-management, organization, stress-free, inbox-zero
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Getting Things Done (GTD)
+
+Also known as:: GTD, GTD by David Allen, GTD Methodology
+
+[discrete]
+== *Core Concepts*:
+
+Capture:: Collect everything that has your attention — tasks, ideas, commitments — into trusted external "inboxes" so nothing is held in your head
+
+Clarify:: Process each captured item: Is it actionable? If yes, define the next physical action. If no, trash it, incubate it, or file it as reference
+
+Organize:: Place clarified items into the right lists — Next Actions, Projects, Waiting For, Someday/Maybe, Calendar — so they are retrievable at the right moment
+
+Reflect:: Review your system regularly (Weekly Review) to keep it current, complete, and trusted
+
+Engage:: Choose which actions to take based on context, time available, energy, and priority
+
+Two-Minute Rule:: If an action takes less than two minutes, do it immediately rather than deferring it
+
+Projects List:: Any desired outcome requiring more than one action step is a "project" tracked on a dedicated list with at least one next action
+
+Contexts:: Next actions are tagged by context (e.g., @computer, @phone, @errands) to batch work efficiently
+
+Trusted System:: All commitments are stored externally so the mind is free to focus on doing rather than remembering
+
+Key Proponent:: David Allen ("Getting Things Done: The Art of Stress-Free Productivity")
+
+[discrete]
+== *When to Use*:
+
+* Managing a high volume of tasks, projects, and commitments across work and personal life
+* Reducing mental load and anxiety caused by open loops (unfinished commitments)
+* Setting up a reliable personal productivity and task management system
+* Improving focus by clarifying next actions rather than vague to-do items
+* Onboarding teams or individuals to structured workflow management
+* Combining with note-taking systems such as P.A.R.A. or todo.txt
+
+[discrete]
+== *Related Anchors*:
+
+* <<para-method,P.A.R.A. Method>>
+* <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
+* <<definition-of-done,Definition of Done>>
+====

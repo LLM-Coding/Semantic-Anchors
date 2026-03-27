@@ -305,6 +305,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Development Workflow
 
+### GTD — Getting Things Done
+- **Also known as:** GTD, GTD by David Allen, Getting Things Done Methodology
+- **Proponents:** David Allen
+- **Core:** Five-step workflow — Capture (collect all open loops into trusted inboxes), Clarify (define next physical action or discard), Organize (sort into Next Actions/Projects/Waiting For/Someday/Calendar lists), Reflect (weekly review), Engage (act based on context/time/energy); Two-Minute Rule; context tagging (@computer, @phone); trusted external system frees mental RAM
+
 ### Definition of Done
 - **Also known as:** DoD, Done Criteria
 - **Proponents:** Ken Schwaber, Jeff Sutherland
