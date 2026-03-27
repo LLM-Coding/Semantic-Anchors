@@ -1,0 +1,42 @@
+anchor: gtd
+tier: 3
+questions:
+  recognition:
+    question: 'Which of the following best describes "GTD — Getting Things Done"?
+
+      '
+    options:
+      A: Organize information into four categories — Projects, Areas, Resources, and
+        Archive — to create a comprehensive knowledge management system that connects
+        actionable items with relevant reference materials and long-term goals
+      B: 'Collect everything that has your attention — tasks, ideas, commitments —
+        into trusted external "inboxes" so nothing is held in your head; process each
+        captured item: is it actionable? if yes, define the next physical action.
+        if no, trash it, incubate it, or file it as reference'
+      C: Break down complex tasks into smaller, time-boxed iterations with daily standups
+        and retrospectives to ensure continuous delivery of value while maintaining
+        team velocity and stakeholder alignment throughout the development process
+      D: Establish clear, measurable criteria that must be met before any work item
+        can be considered complete, including code review, testing, documentation,
+        and deployment requirements to ensure consistent quality standards
+    correct: B
+  application:
+    scenario: Sarah is a senior developer juggling multiple code reviews, bug fixes,
+      feature development, and team meetings. She feels overwhelmed because tasks
+      keep slipping through the cracks, and she's constantly worried about forgetting
+      important commitments. She needs a systematic approach to manage her workload
+      without mental stress.
+    anchor_prompt: using GTD — Getting Things Done
+    paraphrase_prompt: What systematic approach should Sarah implement to capture,
+      organize, and manage her various work commitments while reducing mental overhead?
+    options:
+      A: Create a single prioritized to-do list and work through items from top to
+        bottom, updating priorities daily based on urgency and importance.
+      B: Capture all tasks and commitments into trusted external inboxes, then clarify
+        each item by defining specific next actions and organizing them by context
+        (@computer, @meeting, etc.) for efficient execution.
+      C: Use time-blocking to schedule all work in advance, dedicating specific calendar
+        slots for different types of tasks like coding, reviews, and meetings.
+      D: Implement a Kanban board with columns for backlog, in-progress, and done,
+        limiting work-in-progress to maintain focus on current tasks.
+    correct: B

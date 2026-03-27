@@ -1,6 +1,5 @@
 anchor: kiss-principle
 tier: 1
-
 questions:
   recognition:
     question: 'Which of the following best describes the "KISS Principle"?
@@ -16,3 +15,23 @@ questions:
       D: A project management approach that prioritizes delivering minimal viable
         features with the shortest possible development cycles
     correct: A
+  application:
+    scenario: Your team is building a user authentication system for a web application.
+      You're deciding between implementing a simple username/password login with basic
+      session management versus creating a sophisticated multi-factor authentication
+      system with OAuth integration, biometric support, and advanced session analytics.
+      The current requirements only specify that users need to log in securely to
+      access their personal dashboards.
+    anchor_prompt: using KISS Principle
+    paraphrase_prompt: Which approach best balances meeting current requirements while
+      maintaining system maintainability and development efficiency?
+    options:
+      A: Implement the sophisticated multi-factor system immediately to future-proof
+        the application and demonstrate technical expertise to stakeholders.
+      B: Start with username/password authentication and basic session management,
+        then add complexity only when specific security requirements emerge.
+      C: Research and implement the most popular authentication framework used by
+        industry leaders, regardless of current complexity needs.
+      D: Build a custom hybrid solution that combines elements of both approaches
+        to provide maximum flexibility for unknown future requirements.
+    correct: B

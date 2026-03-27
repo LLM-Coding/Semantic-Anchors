@@ -1,18 +1,44 @@
 anchor: para-method
 tier: 3
-
 questions:
   recognition:
-    question: 'Which of the following best describes the "P.A.R.A. Method"?
+    question: 'Which of the following best describes "P.A.R.A. Method"?
 
       '
     options:
-      A: A software architecture pattern that separates concerns into Presentation,
-        Application, Repository, and Adapter layers
-      B: A knowledge organization framework that categorizes information into Projects,
-        Areas, Resources, and Archive based on actionability
-      C: A prioritization technique that evaluates items by their Probability,
-        Applicability, Risk, and Achievability scores
-      D: A documentation standard that structures technical content into Purpose,
-        Audience, Requirements, and Appendix sections
+      A: 'A documentation framework that categorizes content into four types: tutorials
+        for learning, how-to guides for problem-solving, technical reference for information,
+        and explanations for understanding'
+      B: Short-term efforts with a specific goal and deadline (e.g., "Launch website",
+        "Write article"); long-term responsibilities with a standard to maintain over
+        time (e.g., "health", "finances", "team management")
+      C: A software architecture pattern that separates applications into Presentation
+        layer for user interface, Application layer for business logic, Repository
+        layer for data access, and API layer for external communication
+      D: A task management syntax that uses plain text formatting with priority markers
+        (A), (B), (C), creation dates, completion dates, project tags, and context
+        labels for organizing todo items
+    correct: B
+  application:
+    scenario: You're a senior developer who has accumulated hundreds of notes, code
+      snippets, documentation links, and project files across multiple tools over
+      the past year. Your team is starting three new microservices projects this quarter,
+      you're responsible for maintaining the CI/CD pipeline, and you're also researching
+      GraphQL and Kubernetes for potential future adoption.
+    anchor_prompt: using P.A.R.A. Method
+    paraphrase_prompt: to organize all your information based on how immediately actionable
+      each item is for your current work
+    options:
+      A: Create folders by technology (JavaScript, Python, Docker) and file type (notes,
+        code, docs), then organize current work and research materials within each
+        technology folder based on relevance.
+      B: 'Create four main folders: active microservices work with deadlines, ongoing
+        CI/CD maintenance responsibilities, GraphQL/Kubernetes research materials,
+        and completed or abandoned items from previous quarters.'
+      C: Organize by urgency levels (urgent, important, someday, never) and move items
+        between folders as priorities shift, keeping all active work in the urgent
+        folder regardless of type.
+      D: Group by source and recency (meeting notes, web articles, code repos) with
+        subfolders for this month, last month, and older items, ensuring easy chronological
+        access to information.
     correct: B
