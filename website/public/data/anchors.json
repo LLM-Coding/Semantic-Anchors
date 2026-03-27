@@ -1966,6 +1966,35 @@
     "tier": 3
   },
   {
+    "id": "para-method",
+    "title": "P.A.R.A. Method",
+    "categories": [
+      "knowledge-management"
+    ],
+    "roles": [
+      "software-developer",
+      "team-lead",
+      "technical-writer",
+      "educator"
+    ],
+    "related": [
+      "diataxis-framework",
+      "todotxt-flavoured-markdown"
+    ],
+    "proponents": [
+      "Tiago Forte"
+    ],
+    "tags": [
+      "knowledge-management",
+      "personal-productivity",
+      "note-taking",
+      "organization",
+      "second-brain"
+    ],
+    "filePath": "docs/anchors/para-method.adoc",
+    "tier": 3
+  },
+  {
     "id": "pert",
     "title": "PERT",
     "categories": [
@@ -2128,35 +2157,6 @@
     "tags": [],
     "filePath": "docs/anchors/pugh-matrix.adoc",
     "tier": 2
-  },
-  {
-    "id": "para-method",
-    "title": "P.A.R.A. Method",
-    "categories": [
-      "documentation"
-    ],
-    "roles": [
-      "software-developer",
-      "team-lead",
-      "technical-writer",
-      "educator"
-    ],
-    "related": [
-      "diataxis-framework",
-      "todotxt-flavoured-markdown"
-    ],
-    "proponents": [
-      "Tiago Forte"
-    ],
-    "tags": [
-      "knowledge-management",
-      "personal-productivity",
-      "note-taking",
-      "organization",
-      "second-brain"
-    ],
-    "filePath": "docs/anchors/para-method.adoc",
-    "tier": 3
   },
   {
     "id": "pyramid-principle",
@@ -2796,7 +2796,7 @@
     "id": "todotxt-flavoured-markdown",
     "title": "todo.txt-flavoured Markdown",
     "categories": [
-      "development-workflow"
+      "knowledge-management"
     ],
     "roles": [
       "software-developer",

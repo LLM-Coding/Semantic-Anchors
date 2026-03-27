@@ -41,6 +41,7 @@
       "gof-strategy-pattern",
       "gof-template-method-pattern",
       "gof-visitor-pattern",
+      "grasp",
       "kiss-principle",
       "solid-dip",
       "solid-isp",
@@ -65,8 +66,7 @@
       "regulated-environment",
       "semantic-versioning",
       "sota",
-      "timtowtdi",
-      "todotxt-flavoured-markdown"
+      "timtowtdi"
     ]
   },
   {
@@ -82,6 +82,14 @@
     "anchors": [
       "diataxis-framework",
       "docs-as-code"
+    ]
+  },
+  {
+    "id": "knowledge-management",
+    "name": "Knowledge Management",
+    "anchors": [
+      "para-method",
+      "todotxt-flavoured-markdown"
     ]
   },
   {
