@@ -249,19 +249,11 @@ function generateLlmsTxt() {
       lines.push('')
       lines.push('# Semantic Contracts')
       lines.push('')
-      lines.push(
-        'Semantic Contracts define what a term means in your project — either by'
-      )
-      lines.push(
-        'composing established anchors or by providing custom definitions that only'
-      )
+      lines.push('Semantic Contracts define what a term means in your project — either by')
+      lines.push('composing established anchors or by providing custom definitions that only')
       lines.push('exist within your team.')
-      lines.push(
-        'Add them to your AGENTS.md or CLAUDE.md.'
-      )
-      lines.push(
-        'Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts'
-      )
+      lines.push('Add them to your AGENTS.md or CLAUDE.md.')
+      lines.push('Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts')
       lines.push('')
 
       for (const contract of contracts) {
@@ -276,9 +268,7 @@ function generateLlmsTxt() {
       }
 
       lines.push('---')
-      console.warn(
-        `  Including ${contracts.length} Semantic Contracts in llms.txt`
-      )
+      console.warn(`  Including ${contracts.length} Semantic Contracts in llms.txt`)
     }
   } catch {
     // contracts.json not found — skip
