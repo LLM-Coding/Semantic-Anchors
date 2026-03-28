@@ -53,7 +53,7 @@ Keep these out of the startup file unless the user explicitly wants them always 
 - `Five Whys`
 - `Morphological Box`
 - `Chatham House Rule`
-- `Pugh-Matrix`
+- `Pugh Matrix`
 - `Wardley Mapping`
 
 ## Category Guide
@@ -181,7 +181,7 @@ Ask: Which strategic lens should guide product or architecture recommendations w
 | `Cynefin Framework` | Match the decision approach to whether the domain is clear, complicated, complex, or chaotic. |
 | `Impact Mapping` | Connect a goal to actors, impacts, and deliverables through a simple cause chain. |
 | `Jobs To Be Done (JTBD)` | Focus on the underlying user job rather than only requested features. |
-| `Pugh-Matrix` | Compare options against weighted criteria relative to a baseline. |
+| `Pugh Matrix` | Compare options against weighted criteria relative to a baseline. |
 | `Wardley Mapping` | Map user needs, components, and evolution stage to guide strategic choices. |
 
 ### Testing & Quality Practices

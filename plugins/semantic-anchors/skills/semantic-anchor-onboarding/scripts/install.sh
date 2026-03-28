@@ -77,6 +77,12 @@ if [ ! -f "$SOURCE_FILE" ]; then
   exit 1
 fi
 
+if grep -qE '\{\{[A-Z0-9_]+\}\}' "$SOURCE_FILE"; then
+  echo "ERROR: Source file contains unresolved template placeholders ({{...}})." >&2
+  echo "Copy the template and replace all placeholders before running the installer." >&2
+  exit 1
+fi
+
 if [ "$SCOPE" != "project" ] && [ "$SCOPE" != "home" ]; then
   echo "--scope must be project or home" >&2
   exit 1
@@ -235,31 +241,29 @@ else:
 hooks = settings.setdefault("hooks", {})
 session_start = hooks.setdefault("SessionStart", [])
 
-existing_index = None
+new_hook = {"type": "command", "command": command}
+
+entry_idx = None
+hook_idx = None
 for i, entry in enumerate(session_start):
     if not isinstance(entry, dict):
         continue
-    for hook in entry.get("hooks", []):
-        if isinstance(hook, dict) and "semantic-anchor" in hook.get("command", ""):
-            existing_index = i
+    for j, hook in enumerate(entry.get("hooks", [])):
+        if isinstance(hook, dict) and "semantic-anchor-onboarding" in hook.get("command", ""):
+            entry_idx, hook_idx = i, j
             break
-    if existing_index is not None:
+    if entry_idx is not None:
         break
 
-new_entry = {
-    "matcher": "startup|resume",
-    "hooks": [
-        {
-            "type": "command",
-            "command": command,
-        }
-    ],
-}
-
-if existing_index is not None:
-    session_start[existing_index] = new_entry
+if entry_idx is not None:
+    session_start[entry_idx]["hooks"][hook_idx] = new_hook
 else:
-    session_start.append(new_entry)
+    session_start.append(
+        {
+            "matcher": "startup|resume",
+            "hooks": [new_hook],
+        }
+    )
 
 with open(settings_path, "w", encoding="utf-8") as handle:
     json.dump(settings, handle, indent=2)

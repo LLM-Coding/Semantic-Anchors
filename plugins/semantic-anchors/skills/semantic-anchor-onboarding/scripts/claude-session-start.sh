@@ -24,6 +24,7 @@ end = sys.argv[3]
 content = path.read_text(encoding="utf-8")
 lines = content.splitlines()
 capturing = False
+found_end = False
 captured = []
 
 for line in lines:
@@ -31,10 +32,15 @@ for line in lines:
         capturing = True
         continue
     if end in line:
+        found_end = True
         capturing = False
         break
     if capturing:
         captured.append(line)
+
+if capturing and not found_end:
+    # Start marker found but end marker missing — broken state, bail out
+    raise SystemExit(0)
 
 block = "\n".join(captured).strip()
 if not block:
