@@ -85,7 +85,9 @@ message = (
     "Semantic anchors are not configured for this workspace. "
     "On your next response, ask one short onboarding question: "
     "whether the user wants to onboard semantic anchors now for this project "
-    "or for their home directory. If they agree, use the semantic-anchor-onboarding skill."
+    "or for their home directory. If they agree and the semantic-anchor-onboarding "
+    "skill is available, use it; otherwise guide them to the installation instructions "
+    "in the repository README."
 )
 
 payload = {

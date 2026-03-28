@@ -15,8 +15,8 @@ case "$PLUGIN_SKILLS_DIR" in
 esac
 
 if [ ! -d "$SOURCE_DIR" ]; then
-  echo "ERROR: source directory does not exist: $SOURCE_DIR" >&2
-  exit 1
+  echo "WARN: source directory does not exist: $SOURCE_DIR (sync skipped)" >&2
+  exit 0
 fi
 
 mkdir -p "$PLUGIN_SKILLS_DIR"
