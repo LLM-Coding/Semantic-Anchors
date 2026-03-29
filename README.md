@@ -34,6 +34,68 @@ Semantic anchors are **well-defined terms, methodologies, or frameworks** that a
 - **Consistency** - Ensure LLMs interpret concepts as the community intends
 - **Context Compression** - Convey rich context concisely
 
+## 🤖 Installation for Coding Agents
+
+For the widest compatibility, install anchors into a project-level `AGENTS.md` first, then add agent-specific mirrors only where the official docs say they help.
+
+### Portable Baseline (Recommended)
+
+Use the bundled installer to inject a managed anchor block into the best available project instruction file. If none exists yet, it creates `AGENTS.md`.
+
+First, copy the template and fill in your chosen anchors:
+
+```bash
+cp skill/semantic-anchor-onboarding/assets/templates/anchor-block.md my-anchors.md
+# Edit my-anchors.md — replace {{PRIMARY_ANCHOR_*}} / {{PRIMARY_EXPLAINER_*}} placeholders
+```
+
+Then run the installer:
+
+```bash
+./skill/semantic-anchor-onboarding/scripts/install.sh \
+  --source my-anchors.md \
+  --target-dir . \
+  --scope project
+```
+
+### [Codex](https://openai.com/codex/)
+Codex supports `AGENTS.md` for repository instructions.
+- Keep shared semantic anchors in `AGENTS.md`.
+- Use this as the canonical file when you want the same anchors to work across multiple agents.
+
+### [Claude Code](https://docs.anthropic.com/en/docs/claude-code/memory)
+Claude Code uses `CLAUDE.md` for project memory and also supports hooks.
+- **Static Context:** Mirror the same anchor block into `CLAUDE.md` if Claude Code is a target.
+- **Optional Hook:** If you want Claude to re-inject the managed block at session start, run:
+  ```bash
+  ./skill/semantic-anchor-onboarding/scripts/install.sh \
+    --source my-anchors.md \
+    --target-dir . \
+    --scope project \
+    --claude-hook
+  ```
+
+### [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+Current Gemini CLI docs center on `GEMINI.md` and configurable context file names.
+- **Native Gemini Context:** Mirror your selected anchors into `GEMINI.md`.
+- **Shared Cross-Agent Context:** Set Gemini's `context.fileName` to `AGENTS.md` if you want one portable project file.
+- Current Gemini CLI docs no longer describe `.gemini/skills/` or `gemini skills link` as the primary path for always-on instructions.
+
+### [Cursor](https://docs.cursor.com/en/context/rules)
+Cursor supports `AGENTS.md` and project rules in `.cursor/rules/*.mdc`.
+- Use `AGENTS.md` for shared, repo-wide semantic anchors.
+- Use `.cursor/rules/*.mdc` only when you need path-scoped or feature-scoped behavior inside Cursor itself.
+
+### [GitHub Copilot](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions)
+Copilot supports repository instruction files, and its coding agent can also consume `AGENTS.md`.
+- Create or update `.github/copilot-instructions.md` when you want the same anchors to influence Copilot chat and review flows.
+- Keep `AGENTS.md` as the shared baseline if other coding agents are also in use.
+
+### [Windsurf](https://docs.windsurf.com/windsurf/cascade/memories)
+Windsurf supports `AGENTS.md` alongside Windsurf Rules.
+- Use `AGENTS.md` for portable project context shared with other agents.
+- Use Windsurf Rules only when you need editor-specific or scoped behavior.
+
 ## 📚 Content Structure
 
 The catalog is organized as:
