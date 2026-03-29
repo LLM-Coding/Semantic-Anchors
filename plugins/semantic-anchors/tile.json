@@ -1,0 +1,13 @@
+{
+  "name": "semantic-anchors",
+  "version": "0.1.0",
+  "summary": "Semantic anchor skills for translating established methodologies, prompting first-run Claude onboarding, and installing persistent coding-agent context.",
+  "skills": {
+    "semantic-anchor-translator": {
+      "path": "skills/semantic-anchor-translator/SKILL.md"
+    },
+    "semantic-anchor-onboarding": {
+      "path": "skills/semantic-anchor-onboarding/SKILL.md"
+    }
+  }
+}

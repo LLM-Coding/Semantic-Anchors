@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semantic Anchor Onboarding"
+  short_description: "Install anchors into coding agents"
+  default_prompt: "Use $semantic-anchor-onboarding to install semantic anchors into this project (preferred). Use home scope only for agents that support native user-level memory."
