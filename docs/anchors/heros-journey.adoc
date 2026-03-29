@@ -1,0 +1,55 @@
+= Hero's Journey
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+:related: three-act-structure, story-circle-dan-harmon, freytags-pyramid
+:proponents: Joseph Campbell ("The Hero with a Thousand Faces"), Christopher Vogler ("The Writer's Journey")
+:tags: storytelling, monomyth, mythology, campbell, vogler, transformation, archetype, narrative, hero, call-to-adventure
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Monomyth, Campbell's Monomyth, The Writer's Journey (Vogler adaptation)
+
+[discrete]
+== *Core Concepts*:
+
+Ordinary World:: The hero's familiar environment before the adventure begins; establishes baseline and stakes
+
+Call to Adventure:: The inciting event that invites or compels the hero to leave the ordinary world
+
+Refusal of the Call:: Hero's initial hesitation or reluctance, adding realism and raising stakes
+
+Meeting the Mentor:: The hero encounters a guide who provides wisdom, tools, or confidence
+
+Crossing the Threshold:: Hero commits and enters the Special World of the adventure — point of no return
+
+Tests, Allies, and Enemies:: Hero navigates the unfamiliar world, building relationships and facing obstacles
+
+Ordeal / Innermost Cave:: The central crisis — a death-and-rebirth experience that transforms the hero
+
+Reward (Seizing the Sword):: Hero survives the ordeal and claims a reward (knowledge, object, resolution)
+
+The Road Back:: Hero begins the return, often pursued by consequences of the ordeal
+
+Resurrection:: Final climactic test where hero is transformed — applying lessons from the journey
+
+Return with the Elixir:: Hero returns to the ordinary world changed, bringing something of value back
+
+Key Proponents:: Joseph Campbell ("The Hero with a Thousand Faces", 1949), Christopher Vogler ("The Writer's Journey", 1992)
+
+[discrete]
+== *When to Use*:
+
+* Structuring transformation stories — character arcs where the protagonist changes fundamentally
+* Identifying whether a narrative has mythic resonance and universal appeal
+* Guiding LLMs to write archetypal stories or analyse existing myths and films
+* Deepening character development by mapping each stage to internal transformation
+* Marketing narratives positioning the customer as the hero
+
+[discrete]
+== *Related Anchors*:
+
+* <<three-act-structure,Three-Act Structure>>
+* <<story-circle-dan-harmon,Story Circle (Dan Harmon)>>
+* <<freytags-pyramid,Freytag's Pyramid>>
+====

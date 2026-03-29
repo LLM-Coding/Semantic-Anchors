@@ -381,3 +381,40 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Three-Point Estimation, PERT Network Analysis
 - **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
 - **Core:** Stochastic project scheduling using three-point estimates per activity (Optimistic, Most Likely, Pessimistic); weighted average formula E = (O + 4M + P) / 6; standard deviation σ = (P − O) / 6; critical path analysis; probabilistic milestone confidence intervals
+
+## Creative Writing & Storytelling
+
+### Three-Act Structure
+- **Also known as:** Setup-Confrontation-Resolution, Beginning-Middle-End, Aristotelian Three-Act Structure
+- **Proponents:** Aristotle, Syd Field, Robert McKee, Blake Snyder
+- **Core:** Setup (introduce world + inciting incident, ~25%) → Confrontation (escalating obstacles + midpoint reversal + all-is-lost, ~50%) → Resolution (climax + denouement, ~25%); the foundational Western narrative scaffold
+
+### Hero's Journey
+- **Also known as:** Monomyth, Campbell's Monomyth, The Writer's Journey (Vogler)
+- **Proponents:** Joseph Campbell, Christopher Vogler
+- **Core:** 12-stage transformation arc: Ordinary World → Call to Adventure → Refusal → Mentor → Threshold → Tests → Ordeal → Reward → Road Back → Resurrection → Return with Elixir; universal mythic structure underlying most Western stories
+
+### Save the Cat! (15-Beat Sheet)
+- **Also known as:** Blake Snyder Beat Sheet, BS2
+- **Proponents:** Blake Snyder
+- **Core:** 15 precisely-timed beats for commercial screenplays: Opening Image → Theme Stated → Set-Up → Catalyst (p.12) → Debate → Break into Two (p.25) → B Story → Fun & Games → Midpoint (p.55) → Bad Guys Close In → All Is Lost (p.75) → Dark Night → Break into Three (p.85) → Finale → Final Image; audience-tested pacing formula
+
+### Fichtean Curve
+- **Also known as:** Rising Action Structure, Crisis-Driven Structure
+- **Proponents:** John Gardner, Janet Burroway
+- **Core:** Constant crisis — story begins in medias res, no traditional Act 1; a series of escalating mini-crises with no lulls; retrospective exposition woven in; climax followed by brief falling action; favoured for short fiction and fast-paced genre writing
+
+### Freytag's Pyramid
+- **Also known as:** Five-Act Structure, Dramatic Arc, Dramatic Pyramid
+- **Proponents:** Gustav Freytag, John Yorke
+- **Core:** Five acts: Exposition → Rising Action → Climax (midpoint) → Falling Action → Dénouement; models classical tragedy with hamartia (protagonist's fatal flaw); the structural ancestor of most dramatic analysis
+
+### Story Circle (Dan Harmon)
+- **Also known as:** Harmon Story Circle, Channel 101 Narrative Structure
+- **Proponents:** Dan Harmon
+- **Core:** 8-step circle derived from Campbell: You → Need → Go → Search → Find → Take → Return → Change; designed for episodic TV at any scale; the engine is the want-vs-need gap driving character transformation
+
+### Kishōtenketsu
+- **Also known as:** 起承転結, Four-Act Eastern Structure, Ki-Shō-Ten-Ketsu
+- **Proponents:** Classical Chinese and Japanese narrative tradition, Tzvetan Todorov
+- **Core:** Ki (introduce) → Shō (develop) → Ten (twist/recontextualise) → Ketsu (reconcile); no protagonist-antagonist conflict required; tension arises from juxtaposition and revelation; used in manga, haiku, and Nintendo game design

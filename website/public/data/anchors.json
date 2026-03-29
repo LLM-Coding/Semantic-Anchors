@@ -490,6 +490,40 @@
     "tier": 3
   },
   {
+    "id": "fichtean-curve",
+    "title": "Fichtean Curve",
+    "categories": [
+      "creative-writing"
+    ],
+    "roles": [
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "three-act-structure",
+      "freytags-pyramid",
+      "save-the-cat"
+    ],
+    "proponents": [
+      "John Gardner (\"The Art of Fiction\")",
+      "Janet Burroway (\"Writing Fiction\")"
+    ],
+    "tags": [
+      "storytelling",
+      "narrative",
+      "crisis",
+      "rising-action",
+      "pacing",
+      "tension",
+      "fichtean",
+      "short-story",
+      "constant-conflict"
+    ],
+    "filePath": "docs/anchors/fichtean-curve.adoc",
+    "tier": 3
+  },
+  {
     "id": "five-whys",
     "title": "Five Whys (Ohno)",
     "categories": [
@@ -534,6 +568,45 @@
       "orm"
     ],
     "filePath": "docs/anchors/fowler-patterns.adoc",
+    "tier": 3
+  },
+  {
+    "id": "freytags-pyramid",
+    "title": "Freytag’s Pyramid",
+    "categories": [
+      "creative-writing"
+    ],
+    "roles": [
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "three-act-structure",
+      "heros-journey",
+      "fichtean-curve",
+      "save-the-cat"
+    ],
+    "proponents": [
+      "Gustav Freytag (\"Die Technik des Dramas\"",
+      "1863)",
+      "John Yorke (\"Into the Woods\")"
+    ],
+    "tags": [
+      "storytelling",
+      "drama",
+      "five-act",
+      "pyramid",
+      "freytag",
+      "exposition",
+      "rising-action",
+      "climax",
+      "falling-action",
+      "denouement",
+      "tragedy",
+      "classical"
+    ],
+    "filePath": "docs/anchors/freytags-pyramid.adoc",
     "tier": 3
   },
   {
@@ -1469,6 +1542,41 @@
     "tier": 3
   },
   {
+    "id": "heros-journey",
+    "title": "Hero’s Journey",
+    "categories": [
+      "creative-writing"
+    ],
+    "roles": [
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "three-act-structure",
+      "story-circle-dan-harmon",
+      "freytags-pyramid"
+    ],
+    "proponents": [
+      "Joseph Campbell (\"The Hero with a Thousand Faces\")",
+      "Christopher Vogler (\"The Writer's Journey\")"
+    ],
+    "tags": [
+      "storytelling",
+      "monomyth",
+      "mythology",
+      "campbell",
+      "vogler",
+      "transformation",
+      "archetype",
+      "narrative",
+      "hero",
+      "call-to-adventure"
+    ],
+    "filePath": "docs/anchors/heros-journey.adoc",
+    "tier": 3
+  },
+  {
     "id": "hexagonal-architecture",
     "title": "Hexagonal Architecture (Ports & Adapters)",
     "categories": [
@@ -1615,6 +1723,43 @@
     ],
     "tags": [],
     "filePath": "docs/anchors/jobs-to-be-done.adoc",
+    "tier": 3
+  },
+  {
+    "id": "kishotenketsu",
+    "title": "Kishōtenketsu",
+    "categories": [
+      "creative-writing"
+    ],
+    "roles": [
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "three-act-structure",
+      "story-circle-dan-harmon",
+      "heros-journey"
+    ],
+    "proponents": [
+      "Traditional Chinese and Japanese narrative tradition",
+      "Tzvetan Todorov"
+    ],
+    "tags": [
+      "storytelling",
+      "narrative",
+      "four-act",
+      "japanese",
+      "chinese",
+      "ki-sho-ten-ketsu",
+      "twist",
+      "non-conflict",
+      "eastern",
+      "manga",
+      "haiku",
+      "recontextualisation"
+    ],
+    "filePath": "docs/anchors/kishotenketsu.adoc",
     "tier": 3
   },
   {
@@ -2250,6 +2395,40 @@
     "tier": 2
   },
   {
+    "id": "save-the-cat",
+    "title": "Save the Cat! (15-Beat Sheet)",
+    "categories": [
+      "creative-writing"
+    ],
+    "roles": [
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "three-act-structure",
+      "freytags-pyramid",
+      "fichtean-curve"
+    ],
+    "proponents": [
+      "Blake Snyder (\"Save the Cat! The Last Book on Screenwriting You'll Ever Need\")"
+    ],
+    "tags": [
+      "storytelling",
+      "screenplay",
+      "beats",
+      "blake-snyder",
+      "commercial",
+      "plot",
+      "structure",
+      "save-the-cat",
+      "beat-sheet",
+      "genre"
+    ],
+    "filePath": "docs/anchors/save-the-cat.adoc",
+    "tier": 3
+  },
+  {
     "id": "semantic-versioning",
     "title": "Semantic Versioning (SemVer)",
     "categories": [
@@ -2500,6 +2679,40 @@
     "tags": [],
     "filePath": "docs/anchors/ssot-principle.adoc",
     "tier": 1
+  },
+  {
+    "id": "story-circle-dan-harmon",
+    "title": "Story Circle (Dan Harmon)",
+    "categories": [
+      "creative-writing"
+    ],
+    "roles": [
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "heros-journey",
+      "three-act-structure",
+      "kishotenketsu"
+    ],
+    "proponents": [
+      "Dan Harmon (Community, Rick and Morty)"
+    ],
+    "tags": [
+      "storytelling",
+      "narrative",
+      "circle",
+      "harmon",
+      "campbell",
+      "eight-steps",
+      "transformation",
+      "want-need",
+      "television",
+      "episodic"
+    ],
+    "filePath": "docs/anchors/story-circle-dan-harmon.adoc",
+    "tier": 3
   },
   {
     "id": "stride",
@@ -2802,6 +3015,44 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/testing-pyramid.adoc",
+    "tier": 3
+  },
+  {
+    "id": "three-act-structure",
+    "title": "Three-Act Structure",
+    "categories": [
+      "creative-writing"
+    ],
+    "roles": [
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "heros-journey",
+      "freytags-pyramid",
+      "save-the-cat",
+      "fichtean-curve",
+      "story-circle-dan-harmon"
+    ],
+    "proponents": [
+      "Aristotle (\"Poetics\")",
+      "Syd Field (\"Screenplay\")",
+      "Robert McKee (\"Story\")"
+    ],
+    "tags": [
+      "storytelling",
+      "narrative",
+      "screenplay",
+      "plot",
+      "structure",
+      "fiction",
+      "three-acts",
+      "setup",
+      "confrontation",
+      "resolution"
+    ],
+    "filePath": "docs/anchors/three-act-structure.adoc",
     "tier": 3
   },
   {

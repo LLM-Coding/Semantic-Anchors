@@ -1,0 +1,36 @@
+= Freytag's Pyramid
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+
+[%collapsible]
+====
+Vollständiger Name:: Freytagsche Pyramide (auch: Fünf-Akt-Struktur, Dramatischer Bogen, Dramatische Pyramide)
+
+[discrete]
+== *Kernkonzepte*:
+
+Exposition (Einführung):: Legt Schauplatz, Protagonist und Status quo fest; führt den auslösenden Konflikt ein
+
+Aufsteigende Handlung:: Eine Reihe von Komplikationen und Konflikten bauen Spannung auf; Protagonist verfolgt Ziel, während antagonistische Kraft Widerstand leistet; Einsätze eskalieren
+
+Höhepunkt:: Der Wendepunkt maximaler Spannung; die entscheidende Konfrontation oder Enthüllung, die das Ergebnis bestimmt
+
+Fallende Handlung:: Konsequenzen des Höhepunkts entfalten sich; lose Enden beginnen sich zu klären; Spannung löst sich
+
+Dénouement (Auflösung / Katastrophe):: Abschließendes Gleichgewicht — entweder eine Wiederherstellung (Komödie) oder ein tragischer Zusammenbruch (Tragödie); lose Enden werden gebunden
+
+Dramatische Ironie:: Das Publikum weiß möglicherweise mehr als der Protagonist, wodurch die Spannung steigt — ein Kennzeichen des klassischen Fünf-Akt-Dramas
+
+Hamartia:: Der tragische Fehler des Protagonisten, der die tragische Entwicklung antreibt — zentral für Freytagsoriginale Analyse von Shakespeares Tragödien
+
+Schlüsselvertreter:: Gustav Freytag ("Die Technik des Dramas", 1863); John Yorke ("In die Wälder", 2013) — moderne Erweiterung, die Freytag mit der Neurowissenschaft des Erzählens verknüpft
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Analyse klassischer Theaterstücke, Tragödien und Hochliteratur
+* Vermittlung des universellen Bogens dramatischer Spannung an Schüler oder LLMs
+* Diagnose, ob der Höhepunkt einer Geschichte am richtigen Punkt positioniert ist
+* Schreiben von Tragödien oder dramatischer Belletristik, bei der der Fehler des Protagonisten den Zusammenbruch antreibt
+* Verstehen, warum Akt 2 / aufsteigende Handlung sich träge anfühlt — er muss eskalierender Komplikationen, keine Füllmaterialien enthalten
+====

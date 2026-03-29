@@ -1,0 +1,47 @@
+= Fichtean Curve
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+:related: three-act-structure, freytags-pyramid, save-the-cat
+:proponents: John Gardner ("The Art of Fiction"), Janet Burroway ("Writing Fiction")
+:tags: storytelling, narrative, crisis, rising-action, pacing, tension, fichtean, short-story, constant-conflict
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Rising Action Structure, Crisis-Driven Structure
+
+[discrete]
+== *Core Concepts*:
+
+In medias res opening:: Story begins in the middle of action — no leisurely setup; the protagonist is already in crisis
+
+Rising crises:: A series of escalating mini-crises (not a single inciting incident) each raising stakes higher than the last; no breathing room between them
+
+No traditional Act 1:: Background and character development are woven into the action retrospectively rather than front-loaded
+
+Relentless escalation:: Each crisis forces the protagonist to make a consequential choice that inevitably leads to the next, larger crisis
+
+Climax:: The final, highest-stakes crisis where the central conflict is resolved
+
+Falling action (brief):: Short denouement after the climax; the curve descends steeply
+
+Retrospective exposition:: Backstory is delivered only as needed to understand the next crisis — never as separate scenes
+
+Key Proponents:: Named after German philosopher Johann Gottlieb Fichte; popularised in craft books by John Gardner and Janet Burroway
+
+[discrete]
+== *When to Use*:
+
+* Short stories and novellas where pace is paramount
+* Any narrative that must grip immediately and sustain tension throughout
+* Genre fiction (thriller, horror, action) requiring constant momentum
+* Instructing LLMs to write with "constant crisis" and "rapid pacing" constraints
+* Diagnosing why a story feels slow — the Fichtean Curve demands crises, not lulls
+
+[discrete]
+== *Related Anchors*:
+
+* <<three-act-structure,Three-Act Structure>>
+* <<freytags-pyramid,Freytag's Pyramid>>
+* <<save-the-cat,Save the Cat! (15-Beat Sheet)>>
+====

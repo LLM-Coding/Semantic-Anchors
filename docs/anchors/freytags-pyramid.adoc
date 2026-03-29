@@ -1,0 +1,48 @@
+= Freytag's Pyramid
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+:related: three-act-structure, heros-journey, fichtean-curve, save-the-cat
+:proponents: Gustav Freytag ("Die Technik des Dramas", 1863), John Yorke ("Into the Woods")
+:tags: storytelling, drama, five-act, pyramid, freytag, exposition, rising-action, climax, falling-action, denouement, tragedy, classical
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Five-Act Structure, Dramatic Arc, Dramatic Pyramid, Yorke's Five-Act Structure
+
+[discrete]
+== *Core Concepts*:
+
+Exposition (Introduction):: Establishes the setting, protagonist, and status quo; introduces the inciting conflict
+
+Rising Action:: A series of complications and conflicts build tension; protagonist pursues goal while antagonist force resists; stakes escalate
+
+Climax:: The turning point of maximum tension; the decisive confrontation or revelation that determines the outcome
+
+Falling Action:: Consequences of the climax unfold; loose ends begin to resolve; tension releases
+
+Dénouement (Resolution / Catastrophe):: Final equilibrium — either a restoration (comedy) or a tragic collapse (tragedy); loose ends are tied
+
+Dramatic irony:: The audience may know more than the protagonist, heightening tension — a hallmark of classical five-act drama
+
+Hamartia:: The protagonist's fatal flaw that drives the tragic trajectory — central to Freytag's original analysis of Shakespeare's tragedies
+
+Key Proponents:: Gustav Freytag ("Die Technik des Dramas", 1863); John Yorke ("Into the Woods", 2013) — modern expansion linking Freytag to neuroscience of narrative
+
+[discrete]
+== *When to Use*:
+
+* Analysing classical plays, tragedies, and literary fiction
+* Teaching the universal arc of dramatic tension to students or LLMs
+* Diagnosing whether a story's climax is properly positioned at the midpoint
+* Writing tragedy or dramatic fiction where the protagonist's flaw drives the collapse
+* Understanding why Act 2 / Rising Action sags — it must contain escalating complications, not filler
+
+[discrete]
+== *Related Anchors*:
+
+* <<three-act-structure,Three-Act Structure>>
+* <<heros-journey,Hero's Journey (Monomyth)>>
+* <<fichtean-curve,Fichtean Curve>>
+* <<save-the-cat,Save the Cat! (15-Beat Sheet)>>
+====

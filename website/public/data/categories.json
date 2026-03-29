@@ -13,6 +13,19 @@
     ]
   },
   {
+    "id": "creative-writing",
+    "name": "Creative Writing",
+    "anchors": [
+      "fichtean-curve",
+      "freytags-pyramid",
+      "heros-journey",
+      "kishotenketsu",
+      "save-the-cat",
+      "story-circle-dan-harmon",
+      "three-act-structure"
+    ]
+  },
+  {
     "id": "design-principles",
     "name": "Design Principles & Patterns",
     "anchors": [

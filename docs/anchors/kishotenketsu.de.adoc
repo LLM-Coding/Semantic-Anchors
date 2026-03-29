@@ -1,0 +1,36 @@
+= Kishōtenketsu
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+
+[%collapsible]
+====
+Vollständiger Name:: Kishōtenketsu (起承転結); Vier-Akt-Oststruktur
+
+[discrete]
+== *Kernkonzepte*:
+
+Ki (起) – Einführung:: Charaktere, Schauplatz und Situation einführen ohne Konflikt; Status quo mit Neugier etablieren
+
+Shō (承) – Entwicklung:: Das Eingeführte fortführen und vertiefen; Welt ausbauen, Details hinzufügen, Engagement des Lesers aufbauen; kein Konflikt erforderlich
+
+Ten (転) – Wendung:: Ein überraschendes, unerwartetes Element einführen, das alles bisher Etablierte in neuem Licht erscheinen lässt; die „Wendung" ist kein Bösewicht oder Konflikt — sie ist eine enthüllende Perspektivverschiebung oder ein neues Element, das die Bedeutung verändert
+
+Ketsu (結) – Versöhnung:: Einführung, Entwicklung und Wendung zu einer harmonischen Auflösung zusammenführen; das neue Element aus dem Ten wird integriert und erzeugt Einsicht, Schönheit oder Bedeutung
+
+Keine Konfliktanforderung:: Anders als die westliche Drei-Akt-Struktur erfordert Kishōtenketsu keinen Protagonist-Antagonist-Konflikt; Spannung entsteht durch Gegenüberstellung und Rekon­textualisierung, nicht durch Opposition
+
+Gegenüberstellung als Motor:: Das strukturelle Herz ist das Ten — das unerwartete Element, das den Leser dazu bringt, Ki und Shō mit neuen Augen zu lesen
+
+Einfluss auf Game Design:: Nintendo-Spielregisseur Koichi Hayashida hat Kishōtenketsu als Designphilosophie hinter der Super-Mario-Level-Struktur genannt
+
+Schlüsselvertreter:: Klassische chinesische (qǐ chéng zhuǎn hé) und japanische (ki shō ten ketsu) Dicht- und Erzähltradition; moderne Analyse durch Tzvetan Todorov und Narratologen, die nicht-westliche Erzählformen untersuchen
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Schreiben von Kurzprosa, Manga oder Poesie, bei denen überraschende Rekontextualisierung den Konflikt ersetzt
+* Gestalten nicht-konfrontativer Erzählungen (Alltagsleben, meditativ, philosophisch)
+* Anleitung von LLMs zum Schreiben ohne Bösewicht — Strukturen, die auf Einsicht statt Opposition aufgebaut sind
+* Game-Level-Design, Rätseldesign oder UX-Abläufe, bei denen jeder Schritt den vorherigen rekontextualisiert
+* Durchbrechen westlicher Erzählvoraussetzungen, wenn konfliktbasierte Struktur erzwungen wirkt
+====

@@ -1,0 +1,48 @@
+= Three-Act Structure
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+:related: heros-journey, freytags-pyramid, save-the-cat, fichtean-curve, story-circle-dan-harmon
+:proponents: Aristotle ("Poetics"), Syd Field ("Screenplay"), Robert McKee ("Story")
+:tags: storytelling, narrative, screenplay, plot, structure, fiction, three-acts, setup, confrontation, resolution
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Setup-Confrontation-Resolution, Beginning-Middle-End, Aristotelian Three-Act Structure
+
+[discrete]
+== *Core Concepts*:
+
+Act 1 – Setup:: Introduce protagonist, world, and status quo; ends with an Inciting Incident that propels the protagonist into the main conflict (~25% of story)
+
+Act 2 – Confrontation:: Protagonist pursues goal while obstacles escalate; contains Midpoint Reversal and All-Is-Lost moment; longest act (~50% of story)
+
+Act 3 – Resolution:: Climax where protagonist faces the central conflict at maximum stakes, followed by denouement restoring a new equilibrium (~25% of story)
+
+Inciting Incident:: The triggering event that disrupts the protagonist's ordinary world and sets the story in motion
+
+Midpoint Reversal:: The structural centre of Act 2 where the protagonist shifts from reactive to proactive stance
+
+All Is Lost / Dark Night:: The low point immediately before the final push, where all seems hopeless
+
+Climax:: The decisive confrontation between protagonist and antagonist force resolving the central conflict
+
+Key Proponents:: Aristotle ("Poetics"), Syd Field ("Screenplay"), Robert McKee ("Story"), Blake Snyder ("Save the Cat!")
+
+[discrete]
+== *When to Use*:
+
+* Structuring any narrative-driven content (fiction, screenplays, marketing copy, presentations)
+* Checking whether a story has a balanced beginning, middle, and end
+* Diagnosing pacing problems — too much setup, sagging middle, rushed ending
+* Guiding LLMs to write or critique stories with classical dramatic structure
+
+[discrete]
+== *Related Anchors*:
+
+* <<heros-journey,Hero's Journey (Monomyth)>>
+* <<freytags-pyramid,Freytag's Pyramid>>
+* <<save-the-cat,Save the Cat! (15-Beat Sheet)>>
+* <<fichtean-curve,Fichtean Curve>>
+* <<story-circle-dan-harmon,Story Circle (Dan Harmon)>>
+====

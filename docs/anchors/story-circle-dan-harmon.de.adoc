@@ -1,0 +1,42 @@
+= Story Circle (Dan Harmon)
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+
+[%collapsible]
+====
+Vollständiger Name:: Harmon Story Circle (auch: Dan Harmons Geschichtskreis, Channel-101-Erzählstruktur)
+
+[discrete]
+== *Kernkonzepte*:
+
+Du (Protagonist etablieren):: Beginne mit einem Charakter in seiner Komfortzone — der gewöhnlichen Welt; das Publikum muss sich mit ihm identifizieren können
+
+Bedürfnis (Was der Charakter will oder braucht):: Der Protagonist begehrt etwas; dieses Verlangen treibt alle nachfolgenden Handlungen an
+
+Gehen (Unbekannte Situation betreten):: Protagonist überquert in eine unbekannte Situation auf der Suche nach dem Bedürfnis; das Abenteuer beginnt
+
+Suchen (An die neue Situation anpassen):: Protagonist muss navigieren und sich an die neue Welt anpassen — der Hauptteil der Geschichte
+
+Finden (Bekommen, was sie wollten):: Protagonist erreicht, was gesucht wurde (das „Wollen"), aber dies ist selten die eigentliche Erfüllung
+
+Nehmen (Den Preis zahlen):: Die Kosten des Erhaltens dessen, was gewollt wurde; ein Opfer wird gebracht — der Preis des Wachstums
+
+Zurückkehren (In die vertraute Situation zurückkehren):: Protagonist trägt ihre hart erkämpfte Veränderung zurück in die vertraute Welt
+
+Veränderung (Die Veränderung anwenden):: Der Protagonist (und die Welt) ist transformiert; das „Brauchen" ist endlich erfüllt, auch wenn das „Wollen" anders war
+
+Der Kreis als Schleife:: Anders als lineare Strukturen impliziert der Kreis, dass Geschichten zyklisch sind — Transformation stellt das Gleichgewicht auf einem höheren Niveau wieder her
+
+Komprimierung für das Fernsehen:: Entwickelt, um in jeder Größenordnung zu funktionieren: eine Folge, eine Staffel, ein Film; jeder Akt ist ~12,5% der Geschichte
+
+Schlüsselvertreter:: Dan Harmon (Schöpfer von Community und Rick and Morty); angepasst von Joseph Campbells Monomythos
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Schreiben oder Analysieren episodischer TV-Serien, bei denen jede Folge einen Mini-Bogen braucht
+* Identifizierung der „Wollen vs. Brauchen"-Lücke — der Motor charaktergetriebener Geschichten
+* Anleitung von LLMs zum Schreiben von Geschichten mit klaren Transformationsbögen in jeder Größenordnung
+* Vermittlung von Campbells Monomythos in einem komprimierten, umsetzbaren Acht-Schritte-Format
+* Diagnose von Geschichten, bei denen der Protagonist sich nicht verändert — der Kreis erfordert Transformation
+====

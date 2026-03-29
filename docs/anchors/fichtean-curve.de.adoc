@@ -1,0 +1,36 @@
+= Fichtean Curve
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+
+[%collapsible]
+====
+Vollständiger Name:: Fichtesche Kurve (auch: Aufsteigende Aktionsstruktur, Krisengetriebene Struktur)
+
+[discrete]
+== *Kernkonzepte*:
+
+In-medias-res-Eröffnung:: Die Geschichte beginnt mitten in der Handlung — kein gemächliches Setup; der Protagonist befindet sich bereits in der Krise
+
+Aufsteigende Krisen:: Eine Reihe eskalierender Mini-Krisen (kein einzelnes auslösendes Ereignis), die jeweils höhere Einsätze als die vorherige setzen; keine Atempause zwischen ihnen
+
+Kein traditioneller Akt 1:: Hintergründe und Charakterentwicklung werden rückwirkend in die Handlung eingewoben, statt vorher präsentiert zu werden
+
+Unerbittliche Eskalation:: Jede Krise zwingt den Protagonisten zu einer folgenreichen Entscheidung, die unweigerlich zur nächsten, größeren Krise führt
+
+Höhepunkt:: Die letzte, höchste Krise, bei der der zentrale Konflikt gelöst wird
+
+Fallende Handlung (kurz):: Kurzes Denouement nach dem Höhepunkt; die Kurve fällt steil ab
+
+Retrospektive Exposition:: Hintergründe werden nur so weit geliefert, wie zum Verständnis der nächsten Krise nötig — niemals als separate Szenen
+
+Schlüsselvertreter:: Benannt nach dem deutschen Philosophen Johann Gottlieb Fichte; in Schreibhandbüchern von John Gardner und Janet Burroway verbreitet
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Kurzgeschichten und Novellen, bei denen das Tempo entscheidend ist
+* Jede Erzählung, die sofort fesseln und die Spannung aufrechterhalten muss
+* Genrebelletristik (Thriller, Horror, Action), die konstanten Schwung erfordert
+* Anleitung von LLMs zum Schreiben mit den Einschränkungen „ständige Krise" und „schnelles Tempo"
+* Diagnose, warum eine Geschichte sich träge anfühlt — die Fichtesche Kurve fordert Krisen, keine Pausen
+====

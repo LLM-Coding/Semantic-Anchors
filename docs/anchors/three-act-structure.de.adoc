@@ -1,0 +1,35 @@
+= Three-Act Structure
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+
+[%collapsible]
+====
+Vollständiger Name:: Drei-Akt-Struktur (auch: Setup-Konfrontation-Auflösung, Aristotelische Drei-Akt-Struktur)
+
+[discrete]
+== *Kernkonzepte*:
+
+Akt 1 – Setup:: Einführung von Protagonist, Welt und Status quo; endet mit dem Auslösenden Ereignis, das den Protagonisten in den Hauptkonflikt treibt (~25% der Geschichte)
+
+Akt 2 – Konfrontation:: Protagonist verfolgt sein Ziel, während Hindernisse eskalieren; enthält Wendepunkt in der Mitte und den „Alles verloren"-Moment; längster Akt (~50% der Geschichte)
+
+Akt 3 – Auflösung:: Höhepunkt, an dem der Protagonist dem zentralen Konflikt mit maximalen Einsätzen begegnet, gefolgt von einem Schlussakkord, der ein neues Gleichgewicht herstellt (~25% der Geschichte)
+
+Auslösendes Ereignis:: Das auslösende Ereignis, das die gewohnte Welt des Protagonisten stört und die Geschichte in Gang setzt
+
+Wendepunkt in der Mitte:: Die strukturelle Mitte von Akt 2, an der der Protagonist von einer reaktiven zu einer proaktiven Haltung wechselt
+
+Alles verloren / Dunkle Nacht:: Der Tiefpunkt unmittelbar vor dem letzten Ansturm, an dem alles hoffnungslos erscheint
+
+Höhepunkt:: Die entscheidende Konfrontation zwischen Protagonist und antagonistischer Kraft, die den zentralen Konflikt löst
+
+Schlüsselvertreter:: Aristoteles ("Poetik"), Syd Field ("Drehbuchschreiben"), Robert McKee ("Story"), Blake Snyder ("Save the Cat!")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Strukturierung narrativer Inhalte (Belletristik, Drehbücher, Marketingtexte, Präsentationen)
+* Prüfen, ob eine Geschichte einen ausgewogenen Anfang, eine Mitte und ein Ende hat
+* Diagnose von Tempoentwicklungsproblemen — zu viel Setup, schwache Mitte, überstürztes Ende
+* Anleitung von LLMs zum Schreiben oder Beurteilen von Geschichten mit klassischer dramatischer Struktur
+====

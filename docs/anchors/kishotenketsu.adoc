@@ -1,0 +1,47 @@
+= Kishōtenketsu
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+:related: three-act-structure, story-circle-dan-harmon, heros-journey
+:proponents: Traditional Chinese and Japanese narrative tradition; Tzvetan Todorov (structural analysis)
+:tags: storytelling, narrative, four-act, japanese, chinese, ki-sho-ten-ketsu, twist, non-conflict, eastern, manga, haiku, recontextualisation
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Four-Act Eastern Structure, 起承転結 (Ki-Shō-Ten-Ketsu), Kishōtenketsu
+
+[discrete]
+== *Core Concepts*:
+
+Ki (起) – Introduction:: Introduce the characters, setting, and situation without conflict; establish the status quo with curiosity
+
+Shō (承) – Development:: Continue and expand on what was introduced; deepen the world, add detail, build the reader's engagement; no conflict required
+
+Ten (転) – Twist:: Introduce a surprising, unexpected element that recontextualises everything established so far; the "twist" is not a villain or conflict — it is a revelatory shift in perspective or a new element that changes meaning
+
+Ketsu (結) – Reconciliation:: Synthesise the introduction, development, and twist into a harmonious resolution; the new element from Ten is integrated, producing insight, beauty, or meaning
+
+No conflict requirement:: Unlike Western three-act structure, Kishōtenketsu does not require protagonist-antagonist conflict; tension arises from juxtaposition and recontextualisation, not opposition
+
+Juxtaposition as engine:: The structural heart is the Ten — the unexpected element that makes the reader re-read the Ki and Shō with new eyes
+
+Influence on game design:: Nintendo game director Koichi Hayashida has cited Kishōtenketsu as the design philosophy behind Super Mario level structure
+
+Key Proponents:: Classical Chinese (qǐ chéng zhuǎn hé) and Japanese (ki shō ten ketsu) poetic and narrative tradition; modern analysis by Tzvetan Todorov and narratologists studying non-Western story forms
+
+[discrete]
+== *When to Use*:
+
+* Writing short fiction, manga, or poetry where surprise recontextualisation replaces conflict
+* Crafting non-confrontational narratives (slice-of-life, meditative, philosophical)
+* Instructing LLMs to write with "no villain" — structures built on insight rather than opposition
+* Game level design, puzzle design, or UX flows where each step recontextualises the previous
+* Breaking Western narrative assumptions when conflict-based structure feels forced
+
+[discrete]
+== *Related Anchors*:
+
+* <<three-act-structure,Three-Act Structure>>
+* <<story-circle-dan-harmon,Story Circle (Dan Harmon)>>
+* <<heros-journey,Hero's Journey (Monomyth)>>
+====

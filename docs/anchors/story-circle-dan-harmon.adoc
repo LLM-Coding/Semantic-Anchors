@@ -1,0 +1,53 @@
+= Story Circle (Dan Harmon)
+:categories: creative-writing
+:roles: technical-writer, educator, consultant
+:related: heros-journey, three-act-structure, kishotenketsu
+:proponents: Dan Harmon (Community, Rick and Morty)
+:tags: storytelling, narrative, circle, harmon, campbell, eight-steps, transformation, want-need, television, episodic
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Harmon Story Circle, Dan Harmon's Story Circle, Channel 101 Narrative Structure
+
+[discrete]
+== *Core Concepts*:
+
+You (Establish a protagonist):: Begin with a character in their zone of comfort — the ordinary world; the audience must identify with them
+
+Need (Something the character wants or needs):: The protagonist desires something; this desire drives all subsequent action
+
+Go (Enter an unfamiliar situation):: Protagonist crosses into an unfamiliar situation in pursuit of the need; the adventure begins
+
+Search (Adapt to the new situation):: Protagonist must navigate and adapt to the new world — the main body of the story
+
+Find (Get what they wanted):: Protagonist achieves what they were seeking (the "want"), but this is rarely the real satisfaction
+
+Take (Pay the price):: The cost of getting what was wanted; a sacrifice is made — the price of growth
+
+Return (Return to the familiar situation):: Protagonist carries their hard-won change back to the familiar world
+
+Change (Apply the change):: The protagonist (and world) is transformed; the "need" is finally met, even if the "want" was different
+
+The Circle as loop:: Unlike linear structures, the circle implies that stories are cyclical — transformation restores balance at a higher level
+
+Compression for television:: Designed to work at any scale: one episode, one season, one film; each act is ~12.5% of the story
+
+Key Proponents:: Dan Harmon (creator of Community and Rick and Morty); adapted from Joseph Campbell's Monomyth
+
+[discrete]
+== *When to Use*:
+
+* Writing or analysing episodic TV where each episode needs a mini-arc
+* Identifying the "want vs. need" gap — the engine of character-driven stories
+* Instructing LLMs to write stories with clear transformation arcs at any scale
+* Teaching Campbell's Monomyth in a compressed, actionable eight-step format
+* Diagnosing stories where the protagonist doesn't change — the circle requires transformation
+
+[discrete]
+== *Related Anchors*:
+
+* <<heros-journey,Hero's Journey (Monomyth)>>
+* <<three-act-structure,Three-Act Structure>>
+* <<kishotenketsu,Kishōtenketsu>>
+====
