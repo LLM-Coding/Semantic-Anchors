@@ -1,0 +1,52 @@
+= CRC-Cards
+:categories: design-principles
+:roles: software-developer, software-architect, educator, consultant
+:related: grasp, gof-design-patterns, domain-driven-design
+:proponents: Ward Cunningham, Kent Beck
+:tags: crc-cards, oop, object-oriented-design, brainstorming, collaborative-design, class-responsibility-collaboration
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Class-Responsibility-Collaboration Cards
+
+Also known as:: CRC Cards, CRC Card Method, Class-Responsibility-Collaborator Cards
+
+[discrete]
+== *Core Concepts*:
+
+Class:: The name of the class or object being modeled — one index card per class
+
+Responsibilities:: What the class knows (data it holds) and what it does (behavior it provides) — listed on the left side of the card
+
+Collaborators:: Other classes this class depends on to fulfill its responsibilities — listed on the right side of the card
+
+Index cards as design medium:: Deliberately low-tech: physical cards keep design discussions lightweight, encourage discarding and rethinking, and prevent over-engineering
+
+Role-playing scenarios:: Team members physically hold cards and walk through scenarios, simulating message passing between objects to validate design
+
+Collaborative brainstorming:: Encourages cross-functional participation; everyone can contribute without needing deep technical background
+
+Finding classes:: Start with nouns in the problem description; candidate classes are discovered, not prescribed
+
+Iterative refinement:: Cards are cheap to discard — designs are evolved through multiple rounds of role-playing and critique
+
+
+Key Proponents:: Ward Cunningham, Kent Beck ("A Laboratory For Teaching Object-Oriented Thinking", OOPSLA 1989)
+
+[discrete]
+== *When to Use*:
+
+* Early OO design phases — discovering classes, responsibilities, and relationships before writing code
+* Collaborative design sessions where multiple stakeholders or developers shape the domain model
+* Teaching object-oriented thinking by making abstract concepts tangible and interactive
+* Validating design with LLMs by describing cards and role-playing request flows
+* Lightweight architecture exploration before committing to a UML tool or full model
+
+[discrete]
+== *Related Anchors*:
+
+* <<grasp,GRASP>> - Patterns for assigning responsibilities to classes in OO design
+* <<gof-design-patterns,GoF Design Patterns>> - Design patterns that can emerge from CRC-Card sessions
+* <<domain-driven-design,Domain-Driven Design>> - CRC Cards support ubiquitous language and entity discovery
+====

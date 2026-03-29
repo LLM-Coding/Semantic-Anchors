@@ -262,6 +262,38 @@
     "tier": 3
   },
   {
+    "id": "crc-cards",
+    "title": "CRC-Cards",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "grasp",
+      "gof-design-patterns",
+      "domain-driven-design"
+    ],
+    "proponents": [
+      "Ward Cunningham",
+      "Kent Beck"
+    ],
+    "tags": [
+      "crc-cards",
+      "oop",
+      "object-oriented-design",
+      "brainstorming",
+      "collaborative-design",
+      "class-responsibility-collaboration"
+    ],
+    "filePath": "docs/anchors/crc-cards.adoc",
+    "tier": 3
+  },
+  {
     "id": "cynefin-framework",
     "title": "Cynefin Framework",
     "categories": [
@@ -325,7 +357,7 @@
   },
   {
     "id": "devils-advocate",
-    "title": "Devil’s Advocate",
+    "title": "Devil\u2019s Advocate",
     "categories": [
       "problem-solving"
     ],
@@ -343,7 +375,7 @@
   },
   {
     "id": "diataxis-framework",
-    "title": "Diátaxis Framework",
+    "title": "Di\u00e1taxis Framework",
     "categories": [
       "documentation"
     ],
@@ -359,7 +391,7 @@
   },
   {
     "id": "docs-as-code",
-    "title": "Docs-as-Code according to Ralf D. Müller",
+    "title": "Docs-as-Code according to Ralf D. M\u00fcller",
     "categories": [
       "documentation"
     ],
@@ -627,7 +659,7 @@
       "tdd-london-school"
     ],
     "proponents": [
-      "Aslak Hellesøy"
+      "Aslak Helles\u00f8y"
     ],
     "tags": [
       "gherkin",
@@ -1435,9 +1467,9 @@
       "morphological-box"
     ],
     "proponents": [
-      "Jörg Becker",
+      "J\u00f6rg Becker",
       "Michael Rosemann",
-      "Rolf Schütte"
+      "Rolf Sch\u00fctte"
     ],
     "tags": [
       "modeling",
@@ -1483,7 +1515,7 @@
   },
   {
     "id": "gtd",
-    "title": "GTD — Getting Things Done",
+    "title": "GTD \u2014 Getting Things Done",
     "categories": [
       "knowledge-management"
     ],
@@ -1795,7 +1827,7 @@
   },
   {
     "id": "lasr",
-    "title": "LASR according to Toth/Zörner",
+    "title": "LASR according to Toth/Z\u00f6rner",
     "categories": [
       "software-architecture"
     ],
@@ -1813,7 +1845,7 @@
     ],
     "proponents": [
       "Stefan Toth",
-      "Stefan Zörner"
+      "Stefan Z\u00f6rner"
     ],
     "tags": [
       "architecture-documentation",
@@ -3174,7 +3206,7 @@
   },
   {
     "id": "yagni",
-    "title": "YAGNI (You Aren’t Gonna Need It)",
+    "title": "YAGNI (You Aren\u2019t Gonna Need It)",
     "categories": [
       "design-principles"
     ],

@@ -141,6 +141,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Craig Larman
 - **Core:** 9 patterns for OO responsibility assignment — Information Expert, Creator, Controller, Low Coupling, High Cohesion, Polymorphism, Pure Fabrication, Indirection, Protected Variations
 
+### CRC-Cards
+- **Also known as:** CRC Cards, Class-Responsibility-Collaboration Cards
+- **Proponents:** Ward Cunningham, Kent Beck
+- **Core:** Index cards for collaborative OO design — each card has Class name, Responsibilities (what it knows/does), and Collaborators (other classes it depends on); role-playing scenarios validate design; deliberately low-tech to encourage iterative thinking
+
 ### DRY (Don't Repeat Yourself)
 - **Core:** Every piece of knowledge has single, unambiguous representation
 
