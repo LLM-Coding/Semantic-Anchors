@@ -1,0 +1,52 @@
+= CRC-Cards
+:categories: design-principles
+:roles: software-developer, software-architect, educator, consultant
+:related: grasp, gof-design-patterns, domain-driven-design
+:proponents: Ward Cunningham, Kent Beck
+:tags: crc-cards, oop, object-oriented-design, brainstorming, collaborative-design, class-responsibility-collaboration
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Class-Responsibility-Collaboration Cards
+
+Auch bekannt als:: CRC-Karten, CRC-Card-Methode, Class-Responsibility-Collaborator Cards
+
+[discrete]
+== *Kernkonzepte*:
+
+Klasse:: Der Name der Klasse oder des Objekts, das modelliert wird — eine Karteikarte pro Klasse
+
+Verantwortlichkeiten:: Was die Klasse weiß (Daten, die sie hält) und was sie tut (Verhalten, das sie bereitstellt) — auf der linken Seite der Karte aufgelistet
+
+Kollaborateure:: Andere Klassen, von denen diese Klasse abhängt, um ihre Verantwortlichkeiten zu erfüllen — auf der rechten Seite der Karte aufgelistet
+
+Karteikarten als Entwurfsmedium:: Bewusst Low-Tech: Physische Karten halten Design-Diskussionen leichtgewichtig, ermutigen zum Verwerfen und Neudenken und verhindern Over-Engineering
+
+Rollenspiel-Szenarien:: Teammitglieder halten physisch Karten und durchlaufen Szenarien, simulieren den Nachrichtenaustausch zwischen Objekten zur Validierung des Entwurfs
+
+Kollaboratives Brainstorming:: Fördert die Beteiligung verschiedener Fachbereiche; jeder kann beitragen, ohne tiefen technischen Hintergrund zu benötigen
+
+Klassen finden:: Beginne mit Substantiven in der Problembeschreibung; Kandidatenklassen werden entdeckt, nicht vorgeschrieben
+
+Iterative Verfeinerung:: Karten sind günstig zu verwerfen — Entwürfe werden durch mehrere Runden von Rollenspiel und Kritik weiterentwickelt
+
+
+Schlüsselvertreter:: Ward Cunningham, Kent Beck ("A Laboratory For Teaching Object-Oriented Thinking", OOPSLA 1989)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Frühe OO-Entwurfsphasen — Entdecken von Klassen, Verantwortlichkeiten und Beziehungen vor dem Codieren
+* Kollaborative Design-Sessions, bei denen mehrere Stakeholder oder Entwickler das Domänenmodell gestalten
+* Vermittlung objektorientierter Denkweise durch greifbare und interaktive Konzepte
+* Validierung von Entwürfen mit LLMs durch Beschreibung von Karten und Durchspielen von Abläufen
+* Leichtgewichtige Architekturerkundung vor dem Einsatz eines UML-Tools oder vollständigen Modells
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<grasp,GRASP>> - Muster zur Zuweisung von Verantwortlichkeiten an Klassen im OO-Entwurf
+* <<gof-design-patterns,GoF Design Patterns>> - Entwurfsmuster, die aus CRC-Card-Sessions entstehen können
+* <<domain-driven-design,Domain-Driven Design>> - CRC-Cards unterstützen Ubiquitous Language und Entity-Entdeckung
+====
