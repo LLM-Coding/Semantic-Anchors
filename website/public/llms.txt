@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 112 well-defined terms, methodologies, and frameworks
+> 122 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -615,7 +615,359 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 
 ---
 
+## Creative Writing
+
+### Fichtean Curve
+
+***Also known as***: Rising Action Structure, Crisis-Driven Structure
+
+[discrete]
+## **Core Concepts**:
+
+***In medias res opening***: Story begins in the middle of action — no leisurely setup; the protagonist is already in crisis
+
+***Rising crises***: A series of escalating mini-crises (not a single inciting incident) each raising stakes higher than the last; no breathing room between them
+
+***No traditional Act 1***: Background and character development are woven into the action retrospectively rather than front-loaded
+
+***Relentless escalation***: Each crisis forces the protagonist to make a consequential choice that inevitably leads to the next, larger crisis
+
+***Climax***: The final, highest-stakes crisis where the central conflict is resolved
+
+***Falling action (brief)***: Short denouement after the climax; the curve descends steeply
+
+***Retrospective exposition***: Backstory is delivered only as needed to understand the next crisis — never as separate scenes
+
+***Key Proponents***: Named after German philosopher Johann Gottlieb Fichte; popularised in craft books by John Gardner and Janet Burroway
+
+[discrete]
+## **When to Use**:
+
+* Short stories and novellas where pace is paramount
+* Any narrative that must grip immediately and sustain tension throughout
+* Genre fiction (thriller, horror, action) requiring constant momentum
+* Instructing LLMs to write with "constant crisis" and "rapid pacing" constraints
+* Diagnosing why a story feels slow — the Fichtean Curve demands crises, not lulls
+
+[discrete]
+## **Related Anchors**:
+
+* Three-Act Structure
+* Freytag's Pyramid
+* Save the Cat! (15-Beat Sheet)
+
+### Freytag's Pyramid
+
+***Also known as***: Five-Act Structure, Dramatic Arc, Dramatic Pyramid, Yorke's Five-Act Structure
+
+[discrete]
+## **Core Concepts**:
+
+***Exposition (Introduction)***: Establishes the setting, protagonist, and status quo; introduces the inciting conflict
+
+***Rising Action***: A series of complications and conflicts build tension; protagonist pursues goal while antagonist force resists; stakes escalate
+
+***Climax***: The turning point of maximum tension; the decisive confrontation or revelation that determines the outcome
+
+***Falling Action***: Consequences of the climax unfold; loose ends begin to resolve; tension releases
+
+***Dénouement (Resolution / Catastrophe)***: Final equilibrium — either a restoration (comedy) or a tragic collapse (tragedy); loose ends are tied
+
+***Dramatic irony***: The audience may know more than the protagonist, heightening tension — a hallmark of classical five-act drama
+
+***Hamartia***: The protagonist's fatal flaw that drives the tragic trajectory — central to Freytag's original analysis of Shakespeare's tragedies
+
+***Key Proponents***: Gustav Freytag ("Die Technik des Dramas", 1863); John Yorke ("Into the Woods", 2013) — modern expansion linking Freytag to neuroscience of narrative
+
+[discrete]
+## **When to Use**:
+
+* Analysing classical plays, tragedies, and literary fiction
+* Teaching the universal arc of dramatic tension to students or LLMs
+* Diagnosing whether a story's climax is properly positioned at the midpoint
+* Writing tragedy or dramatic fiction where the protagonist's flaw drives the collapse
+* Understanding why Act 2 / Rising Action sags — it must contain escalating complications, not filler
+
+[discrete]
+## **Related Anchors**:
+
+* Three-Act Structure
+* Hero's Journey (Monomyth)
+* Fichtean Curve
+* Save the Cat! (15-Beat Sheet)
+
+### Hero's Journey
+
+***Also known as***: Monomyth, Campbell's Monomyth, The Writer's Journey (Vogler adaptation)
+
+[discrete]
+## **Core Concepts**:
+
+***Ordinary World***: The hero's familiar environment before the adventure begins; establishes baseline and stakes
+
+***Call to Adventure***: The inciting event that invites or compels the hero to leave the ordinary world
+
+***Refusal of the Call***: Hero's initial hesitation or reluctance, adding realism and raising stakes
+
+***Meeting the Mentor***: The hero encounters a guide who provides wisdom, tools, or confidence
+
+***Crossing the Threshold***: Hero commits and enters the Special World of the adventure — point of no return
+
+***Tests, Allies, and Enemies***: Hero navigates the unfamiliar world, building relationships and facing obstacles
+
+***Ordeal / Innermost Cave***: The central crisis — a death-and-rebirth experience that transforms the hero
+
+***Reward (Seizing the Sword)***: Hero survives the ordeal and claims a reward (knowledge, object, resolution)
+
+***The Road Back***: Hero begins the return, often pursued by consequences of the ordeal
+
+***Resurrection***: Final climactic test where hero is transformed — applying lessons from the journey
+
+***Return with the Elixir***: Hero returns to the ordinary world changed, bringing something of value back
+
+***Key Proponents***: Joseph Campbell ("The Hero with a Thousand Faces", 1949), Christopher Vogler ("The Writer's Journey", 1992)
+
+[discrete]
+## **When to Use**:
+
+* Structuring transformation stories — character arcs where the protagonist changes fundamentally
+* Identifying whether a narrative has mythic resonance and universal appeal
+* Guiding LLMs to write archetypal stories or analyse existing myths and films
+* Deepening character development by mapping each stage to internal transformation
+* Marketing narratives positioning the customer as the hero
+
+[discrete]
+## **Related Anchors**:
+
+* Three-Act Structure
+* Story Circle (Dan Harmon)
+* Freytag's Pyramid
+
+### Kishōtenketsu
+
+***Also known as***: Four-Act Eastern Structure, 起承転結 (Ki-Shō-Ten-Ketsu), Kishōtenketsu
+
+[discrete]
+## **Core Concepts**:
+
+***Ki (起) – Introduction***: Introduce the characters, setting, and situation without conflict; establish the status quo with curiosity
+
+***Shō (承) – Development***: Continue and expand on what was introduced; deepen the world, add detail, build the reader's engagement; no conflict required
+
+***Ten (転) – Twist***: Introduce a surprising, unexpected element that recontextualises everything established so far; the "twist" is not a villain or conflict — it is a revelatory shift in perspective or a new element that changes meaning
+
+***Ketsu (結) – Reconciliation***: Synthesise the introduction, development, and twist into a harmonious resolution; the new element from Ten is integrated, producing insight, beauty, or meaning
+
+***No conflict requirement***: Unlike Western three-act structure, Kishōtenketsu does not require protagonist-antagonist conflict; tension arises from juxtaposition and recontextualisation, not opposition
+
+***Juxtaposition as engine***: The structural heart is the Ten — the unexpected element that makes the reader re-read the Ki and Shō with new eyes
+
+***Influence on game design***: Nintendo game director Koichi Hayashida has cited Kishōtenketsu as the design philosophy behind Super Mario level structure
+
+***Key Proponents***: Classical Chinese (qǐ chéng zhuǎn hé) and Japanese (ki shō ten ketsu) poetic and narrative tradition; modern analysis by Tzvetan Todorov and narratologists studying non-Western story forms
+
+[discrete]
+## **When to Use**:
+
+* Writing short fiction, manga, or poetry where surprise recontextualisation replaces conflict
+* Crafting non-confrontational narratives (slice-of-life, meditative, philosophical)
+* Instructing LLMs to write with "no villain" — structures built on insight rather than opposition
+* Game level design, puzzle design, or UX flows where each step recontextualises the previous
+* Breaking Western narrative assumptions when conflict-based structure feels forced
+
+[discrete]
+## **Related Anchors**:
+
+* Three-Act Structure
+* Story Circle (Dan Harmon)
+* Hero's Journey (Monomyth)
+
+### Save the Cat! (15-Beat Sheet)
+
+***Also known as***: Blake Snyder Beat Sheet, BS2, 15-Beat Sheet
+
+[discrete]
+## **Core Concepts**:
+
+***Opening Image***: A single scene (p. 1) establishing the tone, mood, and "before" snapshot of the protagonist's world
+
+***Theme Stated***: By page 5 someone (not the hero) articulates the film's thematic argument — the lesson the hero must learn
+
+***Set-Up (pp. 1–10)***: Introduce hero in their ordinary world; plant every character and element that will pay off later
+
+***Catalyst (p. 12)***: The inciting incident — life-changing event that kicks the story into gear
+
+***Debate (pp. 12–25)***: Hero hesitates; internal or external conflict about whether to take the leap
+
+***Break into Two (p. 25)***: Hero makes a choice and enters the upside-down world of Act 2 — the new status quo begins
+
+***B Story (p. 30)***: A secondary story (often a love story or mentor relationship) carrying the theme
+
+***Fun and Games (pp. 30–55)***: The "promise of the premise" — deliver what the audience came for; poster scenes
+
+***Midpoint (p. 55)***: A false victory or false defeat that raises stakes; hero goes from reactive to proactive
+
+***Bad Guys Close In (pp. 55–75)***: External pressure increases while internal doubts resurface
+
+***All Is Lost (p. 75)***: The worst moment — something is lost (or someone dies); the "whiff of death"
+
+***Dark Night of the Soul (pp. 75–85)***: Hero wallows in despair; the last moment of hesitation before transformation
+
+***Break into Three (p. 85)***: Inspiration strikes — the A story and B story merge; hero finds the solution
+
+***Finale (pp. 85–110)***: Execute the new plan; world is stormed, changed, and reset at a higher level
+
+***Final Image (p. 110)***: Mirror of the Opening Image — the world has changed; prove the theme was mastered
+
+***Key Proponents***: Blake Snyder ("Save the Cat!", 2005)
+
+[discrete]
+## **When to Use**:
+
+* Writing commercially viable screenplays or genre fiction with audience-tested pacing
+* Auditing a story beat-by-beat for structural gaps or pacing problems
+* Instructing LLMs to generate story outlines aligned with Hollywood conventions
+* Teaching story structure with precise page/percentage targets
+* Developing the "logline" (one-sentence pitch) that encapsulates the premise
+
+[discrete]
+## **Related Anchors**:
+
+* Three-Act Structure
+* Freytag's Pyramid
+* Fichtean Curve
+
+### Story Circle (Dan Harmon)
+
+***Also known as***: Harmon Story Circle, Dan Harmon's Story Circle, Channel 101 Narrative Structure
+
+[discrete]
+## **Core Concepts**:
+
+***You (Establish a protagonist)***: Begin with a character in their zone of comfort — the ordinary world; the audience must identify with them
+
+***Need (Something the character wants or needs)***: The protagonist desires something; this desire drives all subsequent action
+
+***Go (Enter an unfamiliar situation)***: Protagonist crosses into an unfamiliar situation in pursuit of the need; the adventure begins
+
+***Search (Adapt to the new situation)***: Protagonist must navigate and adapt to the new world — the main body of the story
+
+***Find (Get what they wanted)***: Protagonist achieves what they were seeking (the "want"), but this is rarely the real satisfaction
+
+***Take (Pay the price)***: The cost of getting what was wanted; a sacrifice is made — the price of growth
+
+***Return (Return to the familiar situation)***: Protagonist carries their hard-won change back to the familiar world
+
+***Change (Apply the change)***: The protagonist (and world) is transformed; the "need" is finally met, even if the "want" was different
+
+***The Circle as loop***: Unlike linear structures, the circle implies that stories are cyclical — transformation restores balance at a higher level
+
+***Compression for television***: Designed to work at any scale: one episode, one season, one film; each act is ~12.5% of the story
+
+***Key Proponents***: Dan Harmon (creator of Community and Rick and Morty); adapted from Joseph Campbell's Monomyth
+
+[discrete]
+## **When to Use**:
+
+* Writing or analysing episodic TV where each episode needs a mini-arc
+* Identifying the "want vs. need" gap — the engine of character-driven stories
+* Instructing LLMs to write stories with clear transformation arcs at any scale
+* Teaching Campbell's Monomyth in a compressed, actionable eight-step format
+* Diagnosing stories where the protagonist doesn't change — the circle requires transformation
+
+[discrete]
+## **Related Anchors**:
+
+* Hero's Journey (Monomyth)
+* Three-Act Structure
+* Kishōtenketsu
+
+### Three-Act Structure
+
+***Also known as***: Setup-Confrontation-Resolution, Beginning-Middle-End, Aristotelian Three-Act Structure
+
+[discrete]
+## **Core Concepts**:
+
+***Act 1 – Setup***: Introduce protagonist, world, and status quo; ends with an Inciting Incident that propels the protagonist into the main conflict (~25% of story)
+
+***Act 2 – Confrontation***: Protagonist pursues goal while obstacles escalate; contains Midpoint Reversal and All-Is-Lost moment; longest act (~50% of story)
+
+***Act 3 – Resolution***: Climax where protagonist faces the central conflict at maximum stakes, followed by denouement restoring a new equilibrium (~25% of story)
+
+***Inciting Incident***: The triggering event that disrupts the protagonist's ordinary world and sets the story in motion
+
+***Midpoint Reversal***: The structural centre of Act 2 where the protagonist shifts from reactive to proactive stance
+
+***All Is Lost / Dark Night***: The low point immediately before the final push, where all seems hopeless
+
+***Climax***: The decisive confrontation between protagonist and antagonist force resolving the central conflict
+
+***Key Proponents***: Aristotle ("Poetics"), Syd Field ("Screenplay"), Robert McKee ("Story"), Blake Snyder ("Save the Cat!")
+
+[discrete]
+## **When to Use**:
+
+* Structuring any narrative-driven content (fiction, screenplays, marketing copy, presentations)
+* Checking whether a story has a balanced beginning, middle, and end
+* Diagnosing pacing problems — too much setup, sagging middle, rushed ending
+* Guiding LLMs to write or critique stories with classical dramatic structure
+
+[discrete]
+## **Related Anchors**:
+
+* Hero's Journey (Monomyth)
+* Freytag's Pyramid
+* Save the Cat! (15-Beat Sheet)
+* Fichtean Curve
+* Story Circle (Dan Harmon)
+
+---
+
 ## Design Principles & Patterns
+
+### CRC-Cards
+
+***Full Name***: Class-Responsibility-Collaboration Cards
+
+***Also known as***: CRC Cards, CRC Card Method, Class-Responsibility-Collaborator Cards
+
+[discrete]
+## **Core Concepts**:
+
+***Class***: The name of the class or object being modeled — one index card per class
+
+***Responsibilities***: What the class knows (data it holds) and what it does (behavior it provides) — listed on the left side of the card
+
+***Collaborators***: Other classes this class depends on to fulfill its responsibilities — listed on the right side of the card
+
+***Index cards as design medium***: Deliberately low-tech: physical cards keep design discussions lightweight, encourage discarding and rethinking, and prevent over-engineering
+
+***Role-playing scenarios***: Team members physically hold cards and walk through scenarios, simulating message passing between objects to validate design
+
+***Collaborative brainstorming***: Encourages cross-functional participation; everyone can contribute without needing deep technical background
+
+***Finding classes***: Start with nouns in the problem description; candidate classes are discovered, not prescribed
+
+***Iterative refinement***: Cards are cheap to discard — designs are evolved through multiple rounds of role-playing and critique
+
+***Key Proponents***: Ward Cunningham, Kent Beck ("A Laboratory For Teaching Object-Oriented Thinking", OOPSLA 1989)
+
+[discrete]
+## **When to Use**:
+
+* Early OO design phases — discovering classes, responsibilities, and relationships before writing code
+* Collaborative design sessions where multiple stakeholders or developers shape the domain model
+* Teaching object-oriented thinking by making abstract concepts tangible and interactive
+* Validating design with LLMs by describing cards and role-playing request flows
+* Lightweight architecture exploration before committing to a UML tool or full model
+
+[discrete]
+## **Related Anchors**:
+
+* GRASP - Patterns for assigning responsibilities to classes in OO design
+* GoF Design Patterns - Design patterns that can emerge from CRC-Card sessions
+* Domain-Driven Design - CRC Cards support ubiquitous language and entity discovery
 
 ### Patterns of Enterprise Application Architecture (PEAA)
 
@@ -1918,79 +2270,6 @@ A class should have only one reason to change. Each module or class should be re
 * Architecture Decision Records (ADRs): documenting why one approach was chosen over other valid alternatives
 * KonsenT-based decisions: finding solutions with no objections rather than forcing one "right" way
 
-### todo.txt-flavoured Markdown
-
-***Full Name***: todo.txt-flavoured Markdown Task Lists
-
-***Also known as***: Enhanced Markdown Tasks, Markdown with todo.txt conventions
-
-[discrete]
-## **Core Concepts**:
-
-***Markdown task lists***: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
-
-***Priority markers***: Uses todo.txt priority notation `(A)`, `(B)`, `(C)` where `(A)` is highest priority
-
-***Project tags***: Prefixed with `+` to group related tasks (e.g., `+website`, `+semantic-anchors`)
-
-***Context tags***: Prefixed with `@` to indicate location/tool/context (e.g., `@computer`, `@home`, `@research`)
-
-***Key-value metadata***: Structured data pairs like `due:YYYY-MM-DD`, `priority:high`, or custom fields
-
-***Date tracking***: Creation dates and completion dates in ISO format (YYYY-MM-DD)
-
-***Human readability***: Plain text format that remains readable without special tools
-
-***Tool-agnostic***: Can be processed by both markdown renderers and todo.txt tools
-
-***Searchable and filterable***: Easy to grep/search by tags, priorities, or metadata
-
-[discrete]
-## **Pattern Structure**:
-
-```markdown
-- [ ] (Priority) Task description +project @context key:value
-- [x] YYYY-MM-DD (Priority) Completed task +project
-```
-[discrete]
-## **Example Usage**:
-
-```markdown
-- [ ] (A) Review PR for +website @computer due:2024-02-03
-- [x] 2024-02-01 (B) Update documentation +docToolchain
-- [ ] (C) Research new feature +semantic-anchors @research
-- [ ] Call team meeting @phone +project-planning due:2024-02-05
-- [x] 2024-01-30 Fix bug in authentication +backend @computer
-```
-***Key Proponents***: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
-
-[discrete]
-## **Original References**:
-
-* GitHub-flavoured Markdown task lists
-* todo.txt format specification by Gina Trapani
-
-[discrete]
-## **When to Use**:
-
-* Task management in markdown documentation
-* Project planning and tracking in README files
-* GitHub issues and pull request descriptions requiring structured task lists
-* Personal productivity systems using plain text
-* Documentation that combines narrative with actionable tasks
-* When you need both human readability and programmatic parsing
-* Team collaboration where tasks need clear priorities and contexts
-* Generating consistent task list formats with LLMs
-
-[discrete]
-## **Benefits**:
-
-* Leverages two well-established, widely recognized standards
-* Renders nicely in GitHub, GitLab, and other markdown viewers
-* Remains fully functional in plain text editors
-* Enables rich metadata without sacrificing readability
-* Facilitates both manual and automated task tracking
-
 ---
 
 ## Dialogue Interaction
@@ -2126,6 +2405,96 @@ A class should have only one reason to change. Each module or class should be re
 * Distributed teams collaborating on documentation
 * Projects requiring multiple output formats (HTML, PDF, etc.)
 
+---
+
+## Knowledge Management
+
+### GTD — Getting Things Done
+
+***Full Name***: Getting Things Done (GTD)
+
+***Also known as***: GTD, GTD by David Allen, GTD Methodology
+
+[discrete]
+## **Core Concepts**:
+
+***Capture***: Collect everything that has your attention — tasks, ideas, commitments — into trusted external "inboxes" so nothing is held in your head
+
+***Clarify***: Process each captured item: Is it actionable? If yes, define the next physical action. If no, trash it, incubate it, or file it as reference
+
+***Organize***: Place clarified items into the right lists — Next Actions, Projects, Waiting For, Someday/Maybe, Calendar — so they are retrievable at the right moment
+
+***Reflect***: Review your system regularly (Weekly Review) to keep it current, complete, and trusted
+
+***Engage***: Choose which actions to take based on context, time available, energy, and priority
+
+***Two-Minute Rule***: If an action takes less than two minutes, do it immediately rather than deferring it
+
+***Projects List***: Any desired outcome requiring more than one action step is a "project" tracked on a dedicated list with at least one next action
+
+***Contexts***: Next actions are tagged by context (e.g., @computer, @phone, @errands) to batch work efficiently
+
+***Trusted System***: All commitments are stored externally so the mind is free to focus on doing rather than remembering
+
+***Key Proponent***: David Allen ("Getting Things Done: The Art of Stress-Free Productivity")
+
+[discrete]
+## **When to Use**:
+
+* Managing a high volume of tasks, projects, and commitments across work and personal life
+* Reducing mental load and anxiety caused by open loops (unfinished commitments)
+* Setting up a reliable personal productivity and task management system
+* Improving focus by clarifying next actions rather than vague to-do items
+* Onboarding teams or individuals to structured workflow management
+* Combining with note-taking systems such as P.A.R.A. or todo.txt
+
+[discrete]
+## **Related Anchors**:
+
+* P.A.R.A. Method
+* todo.txt-flavoured Markdown
+* Definition of Done
+
+### Hemingway Bridge
+
+***Full Name***: Hemingway Bridge
+
+***Also known as***: Stop Mid-Sentence Technique, Re-entry Point Strategy
+
+[discrete]
+## **Core Concepts**:
+
+***Stop Before You Are Finished***: End each work session deliberately before reaching a natural stopping point, while you still know exactly what comes next — preserving momentum for the next session
+
+***Re-entry Point***: Leave a clear "bridge" to the next session: an unfinished sentence, a comment, a TODO note, or a short summary of the next steps so you can re-engage immediately without warm-up
+
+***Creative Energy Management***: Avoid depleting all creative or cognitive energy in one session; stopping when energy is still high makes it easier to start again
+
+***Reduce Blank-Page Anxiety***: By never fully stopping, you eliminate the paralysing "blank page" moment at the start of the next session
+
+***Momentum Preservation***: The psychological state of "knowing what comes next" is transferred across time boundaries, keeping flow intact across interruptions
+
+***Session Notes***: A brief note written at the end of a session ("next: implement X, blocked by Y") acts as an explicit Hemingway Bridge — a ready-made launchpad
+
+***Key Proponent***: Ernest Hemingway (interviewed in George Plimpton (ed.), "The Paris Review Interviews"; practical elaboration by Steven Pressfield and others in the context of creative work)
+
+[discrete]
+## **When to Use**:
+
+* Ending a coding, writing, or design session mid-task to ensure smooth re-entry next time
+* Managing long-horizon creative or analytical projects across multiple sessions
+* Combating procrastination and "blank page" paralysis at the start of work
+* Pair programming or team handovers — leaving an explicit next-action note in comments or a ticket
+* Daily work planning: close the day by writing tomorrow's first action
+* Any knowledge work where cognitive warm-up cost is high
+
+[discrete]
+## **Related Anchors**:
+
+* GTD — Getting Things Done
+* P.A.R.A. Method
+* todo.txt-flavoured Markdown
+
 ### P.A.R.A. Method
 
 ***Full Name***: P.A.R.A. Method (Projects, Areas, Resources, Archive)
@@ -2167,6 +2536,79 @@ A class should have only one reason to change. Each module or class should be re
 
 * Diátaxis Framework
 * todo.txt-flavoured Markdown
+
+### todo.txt-flavoured Markdown
+
+***Full Name***: todo.txt-flavoured Markdown Task Lists
+
+***Also known as***: Enhanced Markdown Tasks, Markdown with todo.txt conventions
+
+[discrete]
+## **Core Concepts**:
+
+***Markdown task lists***: Standard GitHub-flavoured markdown syntax (`- [ ]` uncompleted, `- [x]` completed)
+
+***Priority markers***: Uses todo.txt priority notation `(A)`, `(B)`, `(C)` where `(A)` is highest priority
+
+***Project tags***: Prefixed with `+` to group related tasks (e.g., `+website`, `+semantic-anchors`)
+
+***Context tags***: Prefixed with `@` to indicate location/tool/context (e.g., `@computer`, `@home`, `@research`)
+
+***Key-value metadata***: Structured data pairs like `due:YYYY-MM-DD`, `priority:high`, or custom fields
+
+***Date tracking***: Creation dates and completion dates in ISO format (YYYY-MM-DD)
+
+***Human readability***: Plain text format that remains readable without special tools
+
+***Tool-agnostic***: Can be processed by both markdown renderers and todo.txt tools
+
+***Searchable and filterable***: Easy to grep/search by tags, priorities, or metadata
+
+[discrete]
+## **Pattern Structure**:
+
+```markdown
+- [ ] (Priority) Task description +project @context key:value
+- [x] YYYY-MM-DD (Priority) Completed task +project
+```
+[discrete]
+## **Example Usage**:
+
+```markdown
+- [ ] (A) Review PR for +website @computer due:2024-02-03
+- [x] 2024-02-01 (B) Update documentation +docToolchain
+- [ ] (C) Research new feature +semantic-anchors @research
+- [ ] Call team meeting @phone +project-planning due:2024-02-05
+- [x] 2024-01-30 Fix bug in authentication +backend @computer
+```
+***Key Proponents***: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
+
+[discrete]
+## **Original References**:
+
+* GitHub-flavoured Markdown task lists
+* todo.txt format specification by Gina Trapani
+
+[discrete]
+## **When to Use**:
+
+* Task management in markdown documentation
+* Project planning and tracking in README files
+* GitHub issues and pull request descriptions requiring structured task lists
+* Personal productivity systems using plain text
+* Documentation that combines narrative with actionable tasks
+* When you need both human readability and programmatic parsing
+* Team collaboration where tasks need clear priorities and contexts
+* Generating consistent task list formats with LLMs
+
+[discrete]
+## **Benefits**:
+
+* Leverages two well-established, widely recognized standards
+* Renders nicely in GitHub, GitLab, and other markdown viewers
+* Remains fully functional in plain text editors
+* Enables rich metadata without sacrificing readability
+* Facilitates both manual and automated task tracking
 
 ---
 
@@ -4601,5 +5043,21 @@ Responses lead with the conclusion first (BLUF). Keep to essential points. No fi
 Explain complex concepts using simple language and everyday analogies. When the explanation feels hard to write, that reveals gaps in understanding — study those areas first (Feynman Technique).
 
 *Referenced anchors: feynman-technique*
+
+## Writing Style
+
+Writing follows Gutes Deutsch nach Wolf Schneider (or Plain English according to Strunk & White).
+
+Additionally:
+- Technical terms stay in English (LLM, Prompt, Token, Spec, etc.)
+- Address the reader directly, use first person sparingly but deliberately
+- Use analogies to human thinking to explain technical concepts
+- One thought per paragraph (5-8 sentences is fine)
+- Section headings are statements, not topic announcements
+- First sentence says what the paragraph is about
+- Show code and prompts, don't just claim things work
+- Conclusions make a clear statement — never end with 'it remains exciting'
+
+*Referenced anchors: gutes-deutsch-wolf-schneider, plain-english-strunk-white*
 
 ---

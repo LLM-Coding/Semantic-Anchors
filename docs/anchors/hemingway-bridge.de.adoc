@@ -1,0 +1,45 @@
+= Hemingway Bridge
+:categories: knowledge-management
+:roles: software-developer, technical-writer, educator, consultant
+:proponents: Tiago Forte, Ernest Hemingway
+
+[%collapsible]
+====
+Vollständiger Name:: Hemingway Bridge
+
+Auch bekannt als:: Mitten-im-Satz-Stopp-Technik, Wiedereinstiegspunkt-Strategie
+
+[discrete]
+== *Kernkonzepte*:
+
+Vor dem Abschluss aufhören:: Beende jede Arbeitssession bewusst, bevor du einen natürlichen Haltepunkt erreichst — solange du noch genau weißt, was als Nächstes kommt. So bleibt der Schwung für die nächste Session erhalten.
+
+Wiedereinstiegspunkt:: Hinterlasse eine klare „Brücke" zur nächsten Session: ein unvollendeter Satz, ein Kommentar, eine TODO-Notiz oder eine kurze Zusammenfassung der nächsten Schritte, damit du sofort wieder einsteigen kannst.
+
+Management kreativer Energie:: Vermeide es, alle kreative oder kognitive Energie in einer einzigen Session zu verbrauchen; wenn du aufhörst, während die Energie noch hoch ist, fällt der Neustart leichter.
+
+Leere-Seite-Angst reduzieren:: Da du nie vollständig aufhörst, eliminierst du den lähmenden „leere-Seite"-Moment zu Beginn der nächsten Session.
+
+Momentum erhalten:: Der psychologische Zustand des „Wissens, was als Nächstes kommt" wird über Zeitgrenzen hinweg übertragen und hält den Flow trotz Unterbrechungen aufrecht.
+
+Sessionnotizen:: Eine kurze Notiz am Ende einer Session („als Nächstes: X implementieren, blockiert durch Y") ist eine explizite Hemingway Bridge — ein fertiger Startpunkt.
+
+Schlüsselvertreter:: Ernest Hemingway (Interview in George Plimpton (Hrsg.), „The Paris Review Interviews"; praktische Ausführung von Steven Pressfield u. a. im Kontext kreativer Arbeit)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Eine Programmier-, Schreib- oder Designsession mitten in einer Aufgabe beenden, um einen reibungslosen Wiedereinstieg sicherzustellen
+* Langfristige kreative oder analytische Projekte über mehrere Sessions hinweg managen
+* Prokrastination und „leere-Seite"-Lähmung zu Beginn der Arbeit bekämpfen
+* Pair Programming oder Team-Übergaben — einen expliziten Nächste-Aktion-Hinweis in Kommentaren oder einem Ticket hinterlassen
+* Tagesplanung: Den Tag damit abschließen, die erste Aufgabe des nächsten Tages zu notieren
+* Jede Wissensarbeit, bei der der kognitive Aufwärmaufwand hoch ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<gtd,GTD — Getting Things Done>>
+* <<para-method,P.A.R.A. Method>>
+* <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
+====

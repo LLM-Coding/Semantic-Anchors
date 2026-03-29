@@ -29,6 +29,7 @@
     "id": "design-principles",
     "name": "Design Principles & Patterns",
     "anchors": [
+      "crc-cards",
       "fowler-patterns",
       "gof-abstract-factory-pattern",
       "gof-adapter-pattern",
@@ -102,6 +103,7 @@
     "name": "Knowledge Management",
     "anchors": [
       "gtd",
+      "hemingway-bridge",
       "para-method",
       "todotxt-flavoured-markdown"
     ]

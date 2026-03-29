@@ -1,0 +1,48 @@
+= Hemingway Bridge
+:categories: knowledge-management
+:roles: software-developer, technical-writer, educator, consultant
+:related: gtd, para-method
+:proponents: Tiago Forte, Ernest Hemingway
+:tags: productivity, session-management, creative-flow, re-entry, momentum, writer-block
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Hemingway Bridge
+
+Also known as:: Stop Mid-Sentence Technique, Re-entry Point Strategy
+
+[discrete]
+== *Core Concepts*:
+
+Stop Before You Are Finished:: End each work session deliberately before reaching a natural stopping point, while you still know exactly what comes next — preserving momentum for the next session
+
+Re-entry Point:: Leave a clear "bridge" to the next session: an unfinished sentence, a comment, a TODO note, or a short summary of the next steps so you can re-engage immediately without warm-up
+
+Creative Energy Management:: Avoid depleting all creative or cognitive energy in one session; stopping when energy is still high makes it easier to start again
+
+Reduce Blank-Page Anxiety:: By never fully stopping, you eliminate the paralysing "blank page" moment at the start of the next session
+
+Momentum Preservation:: The psychological state of "knowing what comes next" is transferred across time boundaries, keeping flow intact across interruptions
+
+Session Notes:: A brief note written at the end of a session ("next: implement X, blocked by Y") acts as an explicit Hemingway Bridge — a ready-made launchpad
+
+Key Proponent:: Ernest Hemingway (interviewed in George Plimpton (ed.), "The Paris Review Interviews"; practical elaboration by Steven Pressfield and others in the context of creative work)
+
+[discrete]
+== *When to Use*:
+
+* Ending a coding, writing, or design session mid-task to ensure smooth re-entry next time
+* Managing long-horizon creative or analytical projects across multiple sessions
+* Combating procrastination and "blank page" paralysis at the start of work
+* Pair programming or team handovers — leaving an explicit next-action note in comments or a ticket
+* Daily work planning: close the day by writing tomorrow's first action
+* Any knowledge work where cognitive warm-up cost is high
+
+[discrete]
+== *Related Anchors*:
+
+* <<gtd,GTD — Getting Things Done>>
+* <<para-method,P.A.R.A. Method>>
+* <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
+====

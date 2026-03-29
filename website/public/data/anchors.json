@@ -357,7 +357,7 @@
   },
   {
     "id": "devils-advocate",
-    "title": "Devil\u2019s Advocate",
+    "title": "Devil’s Advocate",
     "categories": [
       "problem-solving"
     ],
@@ -375,7 +375,7 @@
   },
   {
     "id": "diataxis-framework",
-    "title": "Di\u00e1taxis Framework",
+    "title": "Diátaxis Framework",
     "categories": [
       "documentation"
     ],
@@ -391,7 +391,7 @@
   },
   {
     "id": "docs-as-code",
-    "title": "Docs-as-Code according to Ralf D. M\u00fcller",
+    "title": "Docs-as-Code according to Ralf D. Müller",
     "categories": [
       "documentation"
     ],
@@ -659,7 +659,7 @@
       "tdd-london-school"
     ],
     "proponents": [
-      "Aslak Helles\u00f8y"
+      "Aslak Hellesøy"
     ],
     "tags": [
       "gherkin",
@@ -1467,9 +1467,9 @@
       "morphological-box"
     ],
     "proponents": [
-      "J\u00f6rg Becker",
+      "Jörg Becker",
       "Michael Rosemann",
-      "Rolf Sch\u00fctte"
+      "Rolf Schütte"
     ],
     "tags": [
       "modeling",
@@ -1515,7 +1515,7 @@
   },
   {
     "id": "gtd",
-    "title": "GTD \u2014 Getting Things Done",
+    "title": "GTD — Getting Things Done",
     "categories": [
       "knowledge-management"
     ],
@@ -1571,6 +1571,37 @@
       "language"
     ],
     "filePath": "docs/anchors/gutes-deutsch-wolf-schneider.adoc",
+    "tier": 3
+  },
+  {
+    "id": "hemingway-bridge",
+    "title": "Hemingway Bridge",
+    "categories": [
+      "knowledge-management"
+    ],
+    "roles": [
+      "software-developer",
+      "technical-writer",
+      "educator",
+      "consultant"
+    ],
+    "related": [
+      "gtd",
+      "para-method"
+    ],
+    "proponents": [
+      "Tiago Forte",
+      "Ernest Hemingway"
+    ],
+    "tags": [
+      "productivity",
+      "session-management",
+      "creative-flow",
+      "re-entry",
+      "momentum",
+      "writer-block"
+    ],
+    "filePath": "docs/anchors/hemingway-bridge.adoc",
     "tier": 3
   },
   {
@@ -1774,8 +1805,7 @@
       "heros-journey"
     ],
     "proponents": [
-      "Traditional Chinese and Japanese narrative tradition",
-      "Tzvetan Todorov"
+      "Traditional Chinese and Japanese narrative tradition; Tzvetan Todorov (structural analysis)"
     ],
     "tags": [
       "storytelling",
@@ -1827,7 +1857,7 @@
   },
   {
     "id": "lasr",
-    "title": "LASR according to Toth/Z\u00f6rner",
+    "title": "LASR according to Toth/Zörner",
     "categories": [
       "software-architecture"
     ],
@@ -1845,7 +1875,7 @@
     ],
     "proponents": [
       "Stefan Toth",
-      "Stefan Z\u00f6rner"
+      "Stefan Zörner"
     ],
     "tags": [
       "architecture-documentation",
@@ -2729,7 +2759,8 @@
       "kishotenketsu"
     ],
     "proponents": [
-      "Dan Harmon (Community, Rick and Morty)"
+      "Dan Harmon (Community",
+      "Rick and Morty)"
     ],
     "tags": [
       "storytelling",
@@ -3206,7 +3237,7 @@
   },
   {
     "id": "yagni",
-    "title": "YAGNI (You Aren\u2019t Gonna Need It)",
+    "title": "YAGNI (You Aren’t Gonna Need It)",
     "categories": [
       "design-principles"
     ],

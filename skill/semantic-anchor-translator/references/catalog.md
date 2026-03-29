@@ -356,6 +356,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### todo.txt-flavoured Markdown
 - **Core:** GitHub task lists + todo.txt priorities/contexts/projects
 
+### Hemingway Bridge
+- **Also known as:** Stop Mid-Sentence Technique, Re-entry Point Strategy
+- **Proponents:** Tiago Forte (coined the term), inspired by Ernest Hemingway
+- **Core:** End each work session before a natural stopping point while you still know what comes next; leave an explicit re-entry note (unfinished sentence, comment, TODO) to eliminate "blank page" paralysis, preserve momentum, and manage creative energy across sessions
+
 ## Statistical Methods
 
 ### SPC (Statistical Process Control)

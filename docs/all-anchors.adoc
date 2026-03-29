@@ -25,7 +25,27 @@ include::anchors/pyramid-principle.adoc[leveloffset=+2]
 
 <<<
 
+== Creative Writing
+
+include::anchors/fichtean-curve.adoc[leveloffset=+2]
+
+include::anchors/freytags-pyramid.adoc[leveloffset=+2]
+
+include::anchors/heros-journey.adoc[leveloffset=+2]
+
+include::anchors/kishotenketsu.adoc[leveloffset=+2]
+
+include::anchors/save-the-cat.adoc[leveloffset=+2]
+
+include::anchors/story-circle-dan-harmon.adoc[leveloffset=+2]
+
+include::anchors/three-act-structure.adoc[leveloffset=+2]
+
+<<<
+
 == Design Principles & Patterns
+
+include::anchors/crc-cards.adoc[leveloffset=+2]
 
 include::anchors/fowler-patterns.adoc[leveloffset=+2]
 
@@ -121,8 +141,6 @@ include::anchors/sota.adoc[leveloffset=+2]
 
 include::anchors/timtowtdi.adoc[leveloffset=+2]
 
-include::anchors/todotxt-flavoured-markdown.adoc[leveloffset=+2]
-
 <<<
 
 == Dialogue Interaction
@@ -137,7 +155,17 @@ include::anchors/diataxis-framework.adoc[leveloffset=+2]
 
 include::anchors/docs-as-code.adoc[leveloffset=+2]
 
+<<<
+
+== Knowledge Management
+
+include::anchors/gtd.adoc[leveloffset=+2]
+
+include::anchors/hemingway-bridge.adoc[leveloffset=+2]
+
 include::anchors/para-method.adoc[leveloffset=+2]
+
+include::anchors/todotxt-flavoured-markdown.adoc[leveloffset=+2]
 
 <<<
 
