@@ -328,6 +328,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Benjamin E. Coe, James J. Womack, Steve Mao
 - **Core:** Structured commit messages: type(scope): description
 
+### Effective Go
+- **Proponents:** The Go Authors
+- **Core:** Official guide to idiomatic Go — gofmt formatting, short package names, defer for cleanup, goroutines and channels for concurrency ("share memory by communicating"), implicit interface satisfaction, error-as-value pattern, blank identifier, embedding over inheritance
+
 ### Semantic Versioning (SemVer)
 - **Core:** MAJOR.MINOR.PATCH — breaking, feature, fix
 

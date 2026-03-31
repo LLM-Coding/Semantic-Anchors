@@ -442,6 +442,30 @@
     "tier": 3
   },
   {
+    "id": "effective-go",
+    "title": "Effective Go",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [],
+    "proponents": [
+      "The Go Authors"
+    ],
+    "tags": [
+      "go",
+      "golang",
+      "best-practices",
+      "idiomatic",
+      "style-guide"
+    ],
+    "filePath": "docs/anchors/effective-go.adoc",
+    "tier": 3
+  },
+  {
     "id": "event-driven-architecture",
     "title": "Event-Driven Architecture",
     "categories": [

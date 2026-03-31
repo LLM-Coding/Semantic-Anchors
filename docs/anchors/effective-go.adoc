@@ -1,0 +1,45 @@
+= Effective Go
+:categories: development-workflow
+:roles: software-developer, software-architect
+:proponents: The Go Authors
+:tags: go, golang, best-practices, idiomatic, style-guide
+:tier: 3
+
+[%collapsible]
+====
+
+[discrete]
+== *Core Concepts*:
+
+Formatting (gofmt):: Code is auto-formatted; style debates are eliminated by tooling
+
+Package names:: Short, lowercase, no underscores; package name is part of the qualified identifier
+
+Named return values:: Return values can be named and used as documentation
+
+Defer:: Deferred function calls run in LIFO order when the surrounding function returns; used for cleanup (close, unlock)
+
+Goroutines:: Lightweight concurrently executing functions; "Don't communicate by sharing memory; share memory by communicating"
+
+Channels:: Typed conduits for goroutine communication; first-class synchronization primitive
+
+Interfaces:: Implicit satisfaction — a type implements an interface simply by implementing its methods; enables duck typing
+
+Error handling:: Errors are values; idiomatic pattern is `if err != nil` at each call site; no exceptions
+
+Blank identifier (_):: Discard unwanted values from multi-value returns without compiler error
+
+Embedding:: Composition over inheritance; types can embed other types to gain their methods
+
+Key Proponent:: The Go Authors (https://go.dev/doc/effective_go)
+
+[discrete]
+== *When to Use*:
+
+* Onboarding new Go developers to idiomatic Go style
+* Code review discussions about Go conventions
+* Establishing team-wide Go coding standards
+* Explaining Go idioms that differ from other languages (e.g. error handling, interfaces)
+* Prompting an LLM to produce idiomatic, production-quality Go code
+
+====
