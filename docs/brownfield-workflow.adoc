@@ -1,0 +1,171 @@
+= Adapting the Workflow to Brownfield Projects
+Ralf D. Müller
+2026-03-31
+:toc:
+:toc-placement: preamble
+
+== Introduction
+
+You have mastered the link:spec-driven-workflow.adoc[greenfield workflow].
+Now you want to apply it to an existing codebase.
+
+The core principles remain the same: small steps, high autonomy, error correction loops.
+But brownfield projects add a challenge that greenfield projects do not have: *the system already exists*.
+You cannot start with a blank slate.
+You must understand what is there before you change it.
+
+This document describes how to onboard an existing codebase into the spec-driven workflow.
+The key insight comes from Simon Martinelli's https://unifiedprocess.ai/[AI Unified Process]: *you do not need to specify the entire system*.
+You work one bounded context at a time.
+Spec coverage grows incrementally, feature by feature.
+
+== The Brownfield Paradox
+
+In greenfield projects, you write the spec first and the code follows.
+In brownfield projects, the code already exists -- but the spec often does not.
+The system *is* the specification, except nobody can read it.
+
+The temptation is to reverse-engineer the entire system into documentation before changing anything.
+Do not do that.
+That is Big Upfront Documentation, and it fails for the same reasons as Big Upfront Design.
+
+Instead: specify only the bounded context you are about to change, and only as much as you need to change it safely.
+
+== Phase 0: Scope a Bounded Context
+
+Before touching code, identify the area you want to change.
+
+A bounded context is a coherent slice of the system with clear boundaries.
+It might be a module, a service, a feature area, or a screen.
+The boundaries should be small enough that you can understand the context in a single session.
+
+Use ⚓ link:#/anchor/domain-driven-design[Domain-Driven Design] to identify the context boundary.
+The AI can help: point it at the code and ask it to identify bounded contexts and their interfaces.
+
+.Prompt
+----
+Analyze the codebase in src/. Identify bounded contexts using Domain-Driven Design.
+For each context, list: name, responsibility, key entities, interfaces to other contexts.
+Present as a table.
+----
+
+Pick one bounded context to start with.
+Choose one that is small, well-isolated, and has a change request pending.
+
+== Phase 0.5: Reverse-Engineer the Safety Net
+
+Before changing anything, you need two things: understanding and tests.
+
+=== Extract Existing Behavior as Use Cases
+
+Let the AI read the code in your bounded context and extract what the system currently does.
+The output is a set of use cases that describe the *existing* behavior -- not what you want to build, but what is already there.
+
+.Prompt
+----
+Read the code in [bounded context path]. Extract the existing behavior as Use Cases.
+For each Use Case: ID, Trigger, Actors, Preconditions, Main Flow, Alternative Flows, Postconditions.
+Save as docs/specs/use-cases-[context-name].adoc.
+----
+
+Review the extracted use cases against the running system.
+The AI may miss implicit behavior or misinterpret code.
+This is the one step where domain knowledge is irreplaceable.
+
+=== Establish Baseline Tests
+
+Write tests that verify the existing behavior.
+These tests are your safety net: if a change breaks something, the tests will catch it.
+
+.Prompt
+----
+Based on the Use Cases in docs/specs/use-cases-[context-name].adoc, write tests that verify the current behavior.
+Use TDD, London School. Each test references its Use Case ID for traceability.
+Do not change any production code. Only add tests.
+----
+
+Run the tests.
+Every test must pass against the current code.
+If a test fails, the extracted use case was wrong -- fix the use case, then fix the test.
+
+[IMPORTANT]
+====
+Do not skip baseline tests.
+Without them, you cannot distinguish between "my change broke something" and "it was already broken."
+This is the closed loop that makes brownfield changes safe.
+====
+
+== Phase 1-12: The Standard Workflow
+
+Once you have use cases and baseline tests for your bounded context, the standard workflow applies.
+
+* *New features* get new use cases, new acceptance criteria, and new tests -- exactly as in greenfield.
+* *Bug fixes* start by identifying which use case is violated, then follow the TDD bug fix loop (Step 12).
+* *Refactoring* is protected by the baseline tests. If the tests stay green, the refactoring is safe.
+
+The only difference: your arc42 documentation may start incomplete.
+That is fine.
+Fill in the architecture sections as you learn about the system.
+After a few bounded contexts, the architecture documentation will cover the parts that matter.
+
+== Incremental Expansion
+
+After your first bounded context is covered, pick the next one.
+Each context you onboard adds to the system's spec coverage.
+
+Over time, a pattern emerges:
+
+[cols="1,3"]
+|===
+|Iteration |Coverage
+
+|First context
+|One feature area has use cases, tests, and architecture docs.
+
+|3-5 contexts
+|The core of the system is documented. Cross-cutting concerns become visible.
+
+|10+ contexts
+|Most changes happen in areas with existing specs. New work feels like greenfield.
+|===
+
+You do not need 100% coverage.
+The goal is to cover the areas that change most frequently.
+Stable code that nobody touches does not need specs.
+
+== Prompt Cheat Sheet: Brownfield
+
+[cols="1,3,2"]
+|===
+|Phase |Prompt |Anchors
+
+|Scope
+|`Analyze the codebase in [path]. Identify bounded contexts using DDD. List name, responsibility, entities, interfaces.`
+|link:#/anchor/domain-driven-design[DDD]
+
+|Reverse-Engineer
+|`Read the code in [path]. Extract existing behavior as Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions.`
+|{empty}--
+
+|Baseline Tests
+|`Write tests for the Use Cases in [spec file]. Each test references its Use Case ID. Do not change production code.`
+|link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago]
+
+|Continue
+|Follow link:spec-driven-workflow.adoc[the standard workflow] from Step 3 (PRD) or Step 8 (Implementation), depending on whether you are adding new features or fixing bugs.
+|{empty}--
+|===
+
+== When Not to Use This Approach
+
+This workflow assumes you want to *evolve* the existing system.
+If you are planning a full rewrite, use the greenfield workflow instead.
+
+It also assumes the existing code is runnable.
+If the system cannot be built or started, you have a different problem -- fix that first.
+
+== Further Reading
+
+* Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- the bounded-context approach to spec-driven development in existing systems.
+* Eric Evans, https://www.domainlanguage.com/ddd/[Domain-Driven Design] -- the foundational work on bounded contexts and strategic design.
+* Michael Feathers, _Working Effectively with Legacy Code_ -- techniques for establishing test coverage in systems without tests.

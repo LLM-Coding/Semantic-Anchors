@@ -6,8 +6,8 @@
     "description": "What we mean when we say 'spec'",
     "descriptionDe": "Was wir meinen, wenn wir 'Spec' sagen",
     "anchors": ["gherkin", "bdd-given-when-then"],
-    "template": "When we talk about a \"specification\" or \"spec\", we mean:\n- Use Cases with Activity Diagrams (all paths, not just the happy path)\n- Acceptance criteria in Gherkin format (Given/When/Then)",
-    "templateDe": "Wenn wir von einer \"Spezifikation\" oder \"Spec\" sprechen, meinen wir:\n- Use Cases mit Activity Diagrams (alle Pfade, nicht nur der Happy Path)\n- Akzeptanzkriterien im Gherkin-Format (Given/When/Then)",
+    "template": "When we talk about a \"specification\" or \"spec\", we mean:\n- Use Cases with Trigger, Main Flow, Alternative Flows, and Postconditions\n- Activity Diagrams for all flows (not just the happy path)\n- Acceptance criteria in Gherkin format (Given/When/Then)",
+    "templateDe": "Wenn wir von einer \"Spezifikation\" oder \"Spec\" sprechen, meinen wir:\n- Use Cases mit Trigger, Hauptablauf, Alternativabläufe und Nachbedingungen\n- Activity Diagrams für alle Abläufe (nicht nur der Happy Path)\n- Akzeptanzkriterien im Gherkin-Format (Given/When/Then)",
     "category": "requirements"
   },
   {
@@ -61,8 +61,8 @@
     "description": "The implementation loop for each issue",
     "descriptionDe": "Der Implementierungs-Loop für jedes Issue",
     "anchors": ["tdd-london-school", "tdd-chicago-school", "definition-of-done", "conventional-commits"],
-    "template": "For each issue:\n- Create a feature branch for the EPIC\n- Select next issue from backlog (respect dependencies)\n- Analyze and document analysis as a comment on the issue\n- Implement using TDD (London or Chicago School as appropriate)\n- Commit with Conventional Commits, reference issue number\n- Check if spec or architecture docs need updating\n- When EPIC is complete, create a Pull Request",
-    "templateDe": "Für jedes Issue:\n- Feature-Branch für das EPIC erstellen\n- Nächstes Issue aus dem Backlog wählen (Abhängigkeiten beachten)\n- Analysieren und Analyse als Kommentar am Issue dokumentieren\n- Mit TDD implementieren (London oder Chicago School je nach Kontext)\n- Mit Conventional Commits committen, Issue-Nummer referenzieren\n- Prüfen ob Spec oder Architektur-Docs aktualisiert werden müssen\n- Wenn EPIC fertig, Pull Request erstellen",
+    "template": "For each issue:\n- Create a feature branch for the EPIC\n- Select next issue from backlog (respect dependencies)\n- Analyze and document analysis as a comment on the issue\n- Implement using TDD (London or Chicago School as appropriate)\n- Each test references its Use Case ID for traceability\n- Commit with Conventional Commits, reference issue number\n- Check if spec or architecture docs need updating\n- When EPIC is complete, create a Pull Request",
+    "templateDe": "Für jedes Issue:\n- Feature-Branch für das EPIC erstellen\n- Nächstes Issue aus dem Backlog wählen (Abhängigkeiten beachten)\n- Analysieren und Analyse als Kommentar am Issue dokumentieren\n- Mit TDD implementieren (London oder Chicago School je nach Kontext)\n- Jeder Test referenziert seine Use-Case-ID für Rückverfolgbarkeit\n- Mit Conventional Commits committen, Issue-Nummer referenzieren\n- Prüfen ob Spec oder Architektur-Docs aktualisiert werden müssen\n- Wenn EPIC fertig, Pull Request erstellen",
     "category": "development"
   },
   {

@@ -31,7 +31,7 @@ Click on any anchor to see its full definition on the Semantic Anchors website.
 [IMPORTANT]
 ====
 This workflow is designed for greenfield projects built from scratch with AI assistance.
-Adapting it to legacy codebases requires additional considerations (reverse engineering existing architecture, establishing test coverage, incremental migration) that are not yet covered here.
+For existing codebases, see link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects].
 ====
 
 == The Key Principle: Small Steps, High Autonomy
@@ -210,11 +210,23 @@ From the PRD, generate a full specification:
 [source]
 ----
 Create a detailed specification from the PRD. Include:
-- Use Cases
+- Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions)
 - Activity Diagrams for all flows (not just the happy path)
 - Acceptance criteria in Gherkin format
 Save as .adoc files in src/docs/specs/.
 ----
+
+Each Use Case must define four elements:
+
+* *Trigger*: The specific event that starts the use case ("User clicks Submit", "System receives webhook").
+Without a trigger, neither the AI nor a tester knows when the use case begins.
+* *Main Flow*: The numbered steps of the happy path, each describing observable system behavior.
+* *Alternative Flows*: Named branches (A1, A2, ...) for error handling, validation failures, and edge cases.
+* *Postconditions*: The guaranteed system state after successful completion.
+Postconditions are what your tests assert.
+
+This structure follows Alistair Cockburn's Use Case format, which LLMs recognize reliably.
+The more precise the use case, the less the AI has to guess during implementation.
 
 ⚓ link:#/anchor/gherkin[*Gherkin*] (Given/When/Then) provides acceptance criteria that are both human-readable and machine-testable.
 These criteria become the foundation for TDD later.
@@ -308,14 +320,15 @@ As the project evolves, groom the backlog regularly to re-prioritize based on ne
 Create a feature branch for this EPIC.
 Select the next logical issue from the backlog (respect dependencies).
 Analyze it and document your analysis as a comment on the issue.
-Implement it using TDD (choose London or Chicago School as appropriate). Commit when done.
+Implement it using TDD (choose London or Chicago School as appropriate).
+Each test references its Use Case ID for traceability. Commit when done.
 Check if the spec or architecture docs need updating.
 ----
 
 For each issue:
 
 . *Analyze*: The AI examines the issue, reviews related specs and architecture, checks for dependencies on other issues, and posts an analysis comment on the issue
-. *Implement with TDD*: The AI writes tests first, then implementation
+. *Implement with TDD*: The AI writes tests first, then implementation. Each test references the Use Case ID it verifies (e.g. `UC-01`). The AI chooses the appropriate mechanism for the language -- annotations in Java, comments in JavaScript, docstrings in Python. This creates traceability from tests back to specifications without additional tooling.
 . *Commit*: After the issue is implemented and all tests pass, commit with a reference to the issue number
 . *Check docs*: Ask whether the specification or architecture documentation needs updating based on what was learned during implementation
 
@@ -418,8 +431,7 @@ Consider assigning different AI models to different review roles.
 Run ATAM reviews after each major architectural change, not just once.
 Groom the backlog more frequently as the project grows.
 *Legacy codebases*:: This workflow assumes you start from scratch.
-Adapting it to existing code requires additional steps: reverse engineering the existing architecture into arc42, establishing baseline test coverage, and incremental migration.
-First steps: let the AI generate arc42 documentation from the existing codebase, then add tests for the areas you plan to change.
+See link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects] for a dedicated guide covering reverse engineering, baseline test coverage, and incremental migration using bounded contexts.
 *Frontend / HTML applications*:: This workflow works well for backend code, CLIs, and libraries where the compiler and TDD provide strong error correction.
 Frontend applications can be built with the same approach, but consistent UI is harder to verify automatically.
 The error correction layers that make backend development reliable (compiler errors, test failures) have no direct equivalent for visual consistency.
@@ -445,7 +457,7 @@ The essential one-liners for each phase, with the Semantic Anchors they activate
 |link:#/anchor/plain-english-strunk-white[Strunk & White]
 
 |Specification
-|`Create a detailed spec with Use Cases, Activity Diagrams (all paths), and Gherkin acceptance criteria.`
+|`Create a detailed spec with Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions), Activity Diagrams (all paths), and Gherkin acceptance criteria.`
 |link:#/anchor/gherkin[Gherkin]
 
 |Architecture
@@ -465,7 +477,7 @@ The essential one-liners for each phase, with the Semantic Anchors they activate
 |INVEST, link:#/anchor/moscow[MoSCoW]
 
 |Implementation
-|`Select next issue (respect dependencies). Analyze and comment. Implement with TDD. Commit. Check if docs need updating.`
+|`Select next issue (respect dependencies). Analyze and comment. Implement with TDD. Each test references its Use Case ID. Commit. Check if docs need updating.`
 |link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago], link:#/anchor/solid-principles[SOLID], link:#/anchor/dry-principle[DRY], link:#/anchor/domain-driven-design[DDD]
 
 |Code Review
@@ -515,6 +527,9 @@ Your job is to know which anchor to use when, and to verify the results.
 Try it on your next project.
 Start with the Socratic Method for requirements and see where it leads.
 If you discover anchors that work well in your workflow, https://github.com/LLM-Coding/Semantic-Anchors/blob/main/CONTRIBUTING.md[contribute them to the collection].
+
+Once you are comfortable with this greenfield workflow, you can adapt it to existing codebases.
+See link:brownfield-workflow.adoc[Adapting the Workflow to Brownfield Projects] for a step-by-step guide.
 
 === Further Reading
 

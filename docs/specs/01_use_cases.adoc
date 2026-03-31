@@ -16,6 +16,9 @@ Dieses Dokument beschreibt die Use Cases für die Semantic Anchors Website.
 * Website ist geladen
 * Anker-Daten sind verfügbar
 
+=== Trigger
+Benutzer klickt auf den Rollen-Filter in der Navigation.
+
 === Ablauf
 
 [plantuml]
@@ -58,6 +61,9 @@ stop
 === Vorbedingungen
 * Website ist geladen
 * Anker-Metadata ist verfügbar
+
+=== Trigger
+Benutzer öffnet die Website oder navigiert zur Startseite.
 
 === Ablauf
 
@@ -109,6 +115,9 @@ stop
 * Website ist geladen
 * Anker-Index ist verfügbar
 
+=== Trigger
+Benutzer gibt einen Suchbegriff in das Suchfeld ein.
+
 === Ablauf
 
 [plantuml]
@@ -155,6 +164,9 @@ stop
 
 === Vorbedingungen
 * Anker existiert im System
+
+=== Trigger
+Benutzer klickt auf eine Anker-Karte in der Übersicht, ein Suchergebnis oder einen Deep-Link.
 
 === Ablauf
 
@@ -205,6 +217,9 @@ stop
 === Vorbedingungen
 * Website ist geladen
 
+=== Trigger
+Benutzer klickt auf den Language Switcher in der Navigation.
+
 === Ablauf
 
 [plantuml]
@@ -247,6 +262,9 @@ stop
 
 === Vorbedingungen
 * Website ist geladen
+
+=== Trigger
+Benutzer klickt auf den Theme Toggle Button, oder die Website wird erstmalig geladen (automatische Theme-Erkennung).
 
 === Ablauf
 
@@ -291,6 +309,9 @@ stop
 === Vorbedingungen
 * Contributor hat GitHub-Account
 * Contributor kennt den Begriff, den er vorschlagen möchte
+
+=== Trigger
+Contributor klickt auf "Suggest New Anchor" / "Propose New Anchor" auf der Website.
 
 === Ablauf
 
@@ -358,6 +379,9 @@ stop
 * Issue wurde mit Label "new-anchor" erstellt
 * GitHub Copilot API Key ist konfiguriert
 
+=== Trigger
+GitHub Issue wird mit Label "new-anchor" erstellt oder gelabelt.
+
 === Ablauf
 
 [plantuml]
@@ -412,6 +436,9 @@ stop
 * Benutzer betrachtet Anker-Details
 * Anker hat Related Anchors definiert
 
+=== Trigger
+Benutzer klickt auf einen Related-Anchor-Link in der Anker-Detailansicht.
+
 === Ablauf
 
 [plantuml]
@@ -456,6 +483,9 @@ stop
 
 === Vorbedingungen
 * Benutzer hat URL zu spezifischem Anker
+
+=== Trigger
+Benutzer öffnet eine URL mit Anker-ID (z.B. `/anchor/tdd-london-school` oder `/#tdd-london-school`).
 
 === Ablauf
 
