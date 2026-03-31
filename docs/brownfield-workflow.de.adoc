@@ -1,0 +1,170 @@
+= Workflow-Anpassung für Brownfield-Projekte
+Ralf D. Müller
+2026-03-31
+:toc:
+:toc-placement: preamble
+
+== Einleitung
+
+Du hast den link:#/workflow[Greenfield-Workflow] gemeistert.
+Jetzt willst du ihn auf eine bestehende Codebasis anwenden.
+
+Die Grundprinzipien bleiben gleich: kleine Schritte, hohe Autonomie, Fehlerkorrektur-Schleifen.
+Aber Brownfield-Projekte bringen eine Herausforderung, die Greenfield-Projekte nicht haben: *das System existiert bereits*.
+Man kann nicht bei null anfangen.
+Man muss verstehen, was da ist, bevor man etwas ändert.
+
+Dieses Dokument beschreibt, wie man eine bestehende Codebasis in den Spec-Driven-Workflow überführt.
+Die zentrale Erkenntnis stammt aus Simon Martinellis https://unifiedprocess.ai/[AI Unified Process]: *Man muss nicht das gesamte System spezifizieren*.
+Man arbeitet einen Bounded Context nach dem anderen.
+Die Spec-Abdeckung wächst inkrementell, Feature für Feature.
+
+== Das Brownfield-Paradox
+
+Bei Greenfield-Projekten schreibt man zuerst die Spec, dann folgt der Code.
+Bei Brownfield-Projekten existiert der Code bereits -- aber die Spec oft nicht.
+Das System *ist* die Spezifikation, nur kann sie niemand lesen.
+
+Die Versuchung ist groß, das gesamte System vor jeder Änderung in Dokumentation zu überführen.
+Das ist Big Upfront Documentation, und es scheitert aus denselben Gründen wie Big Upfront Design.
+
+Stattdessen: Nur den Bounded Context spezifizieren, den man gerade ändern will, und auch nur so viel, wie für eine sichere Änderung nötig ist.
+
+== Phase 0: Bounded Context eingrenzen
+
+Vor jeder Code-Änderung den Bereich identifizieren, der geändert werden soll.
+
+Ein Bounded Context ist ein zusammenhängender Ausschnitt des Systems mit klaren Grenzen.
+Das kann ein Modul sein, ein Service, ein Feature-Bereich oder ein Bildschirm.
+Die Grenzen sollten klein genug sein, dass man den Kontext in einer einzigen Session verstehen kann.
+
+⚓ link:#/anchor/domain-driven-design[Domain-Driven Design] nutzen, um die Kontextgrenzen zu identifizieren.
+Die KI kann dabei helfen: auf den Code zeigen und nach Bounded Contexts und deren Schnittstellen fragen.
+
+.Prompt
+----
+Analyze the codebase in src/. Identify bounded contexts using Domain-Driven Design.
+For each context, list: name, responsibility, key entities, interfaces to other contexts.
+Present as a table.
+----
+
+Einen Bounded Context zum Starten auswählen.
+Einen wählen, der klein, gut isoliert ist und eine anstehende Änderungsanforderung hat.
+
+== Phase 0.5: Sicherheitsnetz aufbauen
+
+Vor jeder Änderung braucht man zwei Dinge: Verständnis und Tests.
+
+=== Bestehendes Verhalten als Use Cases extrahieren
+
+Die KI den Code im Bounded Context lesen lassen und extrahieren, was das System aktuell tut.
+Das Ergebnis sind Use Cases, die das *bestehende* Verhalten beschreiben -- nicht was man bauen will, sondern was bereits da ist.
+
+.Prompt
+----
+Read the code in [bounded context path]. Extract the existing behavior as Use Cases.
+For each Use Case: ID, Trigger, Actors, Preconditions, Main Flow, Alternative Flows, Postconditions, Business Rules.
+Save as docs/specs/use-cases-[context-name].adoc.
+----
+
+Die extrahierten Use Cases gegen das laufende System prüfen.
+Die KI kann implizites Verhalten übersehen oder Code falsch interpretieren.
+Das ist der eine Schritt, bei dem Domänenwissen unersetzlich ist.
+
+=== Basis-Tests aufbauen
+
+Tests schreiben, die das bestehende Verhalten verifizieren.
+Diese Tests sind das Sicherheitsnetz: Wenn eine Änderung etwas kaputt macht, fangen die Tests es ab.
+
+.Prompt
+----
+Based on the Use Cases in docs/specs/use-cases-[context-name].adoc, write tests that verify the current behavior.
+Use TDD, London School. Each test references its Use Case ID for traceability.
+Do not change any production code. Only add tests.
+----
+
+Tests ausführen.
+Jeder Test muss gegen den aktuellen Code bestehen.
+Wenn ein Test fehlschlägt, war der extrahierte Use Case falsch -- Use Case korrigieren, dann Test korrigieren.
+
+[IMPORTANT]
+====
+Basis-Tests nicht überspringen.
+Ohne sie kann man nicht unterscheiden zwischen "meine Änderung hat etwas kaputt gemacht" und "es war schon vorher kaputt".
+Das ist die geschlossene Schleife, die Brownfield-Änderungen sicher macht.
+====
+
+== Phase 1-12: Der Standard-Workflow
+
+Sobald Use Cases und Basis-Tests für den Bounded Context vorhanden sind, greift der normale Workflow.
+
+* *Neue Features* bekommen neue Use Cases, neue Akzeptanzkriterien und neue Tests -- genau wie bei Greenfield.
+* *Bug Fixes* beginnen damit, den verletzten Use Case zu identifizieren, dann folgt der TDD-Bug-Fix-Loop (Schritt 12).
+* *Refactoring* ist durch die Basis-Tests abgesichert. Solange die Tests grün bleiben, ist das Refactoring sicher.
+
+Der einzige Unterschied: Die arc42-Dokumentation ist vielleicht anfangs unvollständig.
+Das ist in Ordnung.
+Die Architektur-Abschnitte ausfüllen, während man das System kennenlernt.
+Nach ein paar Bounded Contexts deckt die Architekturdokumentation die relevanten Teile ab.
+
+== Inkrementelle Erweiterung
+
+Nach dem ersten Bounded Context den nächsten auswählen.
+Jeder eingeführte Kontext erweitert die Spec-Abdeckung des Systems.
+
+Mit der Zeit ergibt sich ein Muster:
+
+[cols="1,3"]
+|===
+|Iteration |Abdeckung
+
+|Erster Kontext
+|Ein Feature-Bereich hat Use Cases, Tests und Architekturdokumentation.
+
+|3-5 Kontexte
+|Der Kern des Systems ist dokumentiert. Querschnittsthemen werden sichtbar.
+
+|10+ Kontexte
+|Die meisten Änderungen passieren in Bereichen mit bestehenden Specs. Neue Arbeit fühlt sich an wie Greenfield.
+|===
+
+100% Abdeckung ist nicht nötig.
+Das Ziel ist, die Bereiche abzudecken, die sich am häufigsten ändern.
+Stabiler Code, den niemand anfasst, braucht keine Specs.
+
+== Prompt Cheat Sheet: Brownfield
+
+[cols="1,3,2"]
+|===
+|Phase |Prompt |Anker
+
+|Scope
+|`Analyze the codebase in [path]. Identify bounded contexts using DDD. List name, responsibility, entities, interfaces.`
+|link:#/anchor/domain-driven-design[DDD]
+
+|Reverse-Engineering
+|`Read the code in [path]. Extract existing behavior as Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules.`
+|{empty}--
+
+|Basis-Tests
+|`Write tests for the Use Cases in [spec file]. Each test references its Use Case ID. Do not change production code.`
+|link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago]
+
+|Weiter
+|Ab hier dem link:#/workflow[Standard-Workflow] ab Schritt 3 (PRD) oder Schritt 8 (Implementierung) folgen, je nachdem ob neue Features oder Bugs bearbeitet werden.
+|{empty}--
+|===
+
+== Wann dieser Ansatz nicht passt
+
+Dieser Workflow setzt voraus, dass man das bestehende System *weiterentwickeln* will.
+Wer einen kompletten Neubau plant, nimmt stattdessen den Greenfield-Workflow.
+
+Er setzt auch voraus, dass der bestehende Code lauffähig ist.
+Wenn das System nicht gebaut oder gestartet werden kann, liegt ein anderes Problem vor -- das zuerst lösen.
+
+== Weiterführende Literatur
+
+* Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- der Bounded-Context-Ansatz für Spec-Driven Development in bestehenden Systemen.
+* Eric Evans, https://www.domainlanguage.com/ddd/[Domain-Driven Design] -- das grundlegende Werk zu Bounded Contexts und strategischem Design.
+* Michael Feathers, _Working Effectively with Legacy Code_ -- Techniken zum Aufbau von Testabdeckung in Systemen ohne Tests.

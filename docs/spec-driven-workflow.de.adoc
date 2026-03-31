@@ -33,7 +33,7 @@ Ein Klick auf einen Anker führt zur vollständigen Definition auf der Semantic 
 [IMPORTANT]
 ====
 Dieser Workflow ist für Greenfield-Projekte konzipiert, die von Grund auf mit KI-Unterstützung gebaut werden.
-Die Anpassung an Legacy-Codebasen erfordert zusätzliche Überlegungen (Reverse Engineering der bestehenden Architektur, Aufbau von Testabdeckung, inkrementelle Migration), die hier noch nicht behandelt werden.
+Für bestehende Codebasen siehe link:#/brownfield[Workflow-Anpassung für Brownfield-Projekte].
 ====
 
 == Das Grundprinzip: Kleine Schritte, hohe Autonomie
@@ -220,11 +220,26 @@ Aus dem PRD eine vollständige Spezifikation generieren:
 [source]
 ----
 Create a detailed specification from the PRD. Include:
-- Use Cases
+- Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules)
 - Activity Diagrams for all flows (not just the happy path)
 - Acceptance criteria in Gherkin format
 Save as .adoc files in src/docs/specs/.
 ----
+
+Jeder Use Case muss fünf Elemente definieren:
+
+* *Trigger*: Das spezifische Ereignis, das den Use Case auslöst ("Benutzer klickt auf Absenden", "System empfängt Webhook").
+Ohne Trigger weiß weder die KI noch ein Tester, wann der Use Case beginnt.
+* *Hauptablauf (Main Flow)*: Die nummerierten Schritte des Happy Path, jeder beschreibt beobachtbares Systemverhalten.
+* *Alternativabläufe (Alternative Flows)*: Benannte Verzweigungen (A1, A2, ...) für Fehlerbehandlung, Validierungsfehler und Randfälle.
+* *Nachbedingungen (Postconditions)*: Der garantierte Systemzustand nach erfolgreicher Ausführung.
+Nachbedingungen sind das, was die Tests prüfen.
+* *Geschäftsregeln (Business Rules)*: Nummerierte Regeln (BR-001, BR-002, ...) für Validierungslogik, Berechnungen oder Domäneninvarianten.
+Geschäftsregeln machen implizites Wissen explizit.
+Ohne sie erfindet die KI eigene Validierungslogik -- oder lässt sie komplett weg.
+
+Diese Struktur folgt dem Use-Case-Format von Alistair Cockburn, das LLMs zuverlässig erkennen.
+Je präziser der Use Case, desto weniger muss die KI bei der Implementierung raten.
 
 ⚓ link:#/anchor/gherkin[*Gherkin*] (Given/When/Then) liefert Akzeptanzkriterien, die sowohl für Menschen lesbar als auch maschinell testbar sind.
 Diese Kriterien werden später die Grundlage für TDD.
@@ -318,14 +333,15 @@ Mit wachsendem Projekt das Backlog regelmäßig groomen und nach neuen Erkenntni
 Create a feature branch for this EPIC.
 Select the next logical issue from the backlog (respect dependencies).
 Analyze it and document your analysis as a comment on the issue.
-Implement it using TDD (choose London or Chicago School as appropriate). Commit when done.
+Implement it using TDD (choose London or Chicago School as appropriate).
+Each test references its Use Case ID for traceability. Commit when done.
 Check if the spec or architecture docs need updating.
 ----
 
 Für jedes Issue:
 
 . *Analysieren*: Die KI untersucht das Issue, prüft zugehörige Specs und Architektur, checkt Abhängigkeiten zu anderen Issues und postet eine Analyse als Kommentar
-. *Mit TDD implementieren*: Die KI schreibt zuerst Tests, dann die Implementierung
+. *Mit TDD implementieren*: Die KI schreibt zuerst Tests, dann die Implementierung. Jeder Test referenziert die Use-Case-ID, die er verifiziert (z.B. `UC-01`). Die KI wählt den passenden Mechanismus für die Sprache -- Annotationen in Java, Kommentare in JavaScript, Docstrings in Python. Das schafft Rückverfolgbarkeit von Tests zu Spezifikationen ohne zusätzliches Tooling.
 . *Committen*: Nach Implementierung und grünen Tests committen mit Referenz auf die Issue-Nummer
 . *Docs prüfen*: Fragen, ob Spezifikation oder Architekturdokumentation basierend auf den Erkenntnissen aktualisiert werden muss
 
@@ -433,8 +449,7 @@ Das Backlog häufiger groomen, je größer das Projekt wird.
 
 *Legacy-Codebasen*::
 Dieser Workflow geht von einem Neustart aus.
-Die Anpassung an bestehenden Code erfordert zusätzliche Schritte: Reverse Engineering der bestehenden Architektur in arc42, Aufbau einer Basis-Testabdeckung und inkrementelle Migration.
-Erste Schritte: die KI arc42-Dokumentation aus der bestehenden Codebasis generieren lassen, dann Tests für die Bereiche hinzufügen, die geändert werden sollen.
+Siehe link:#/brownfield[Workflow-Anpassung für Brownfield-Projekte] für eine Anleitung zu Reverse Engineering, Basis-Testabdeckung und inkrementeller Migration mit Bounded Contexts.
 
 *Frontend / HTML-Anwendungen*::
 Dieser Workflow funktioniert gut für Backend-Code, CLIs und Bibliotheken, wo Compiler und TDD starke Fehlerkorrektur bieten.
@@ -462,7 +477,7 @@ Die wichtigsten Einzeiler pro Phase mit den Semantic Anchors, die sie aktivieren
 |link:#/anchor/plain-english-strunk-white[Strunk & White]
 
 |Spezifikation
-|`Create a detailed spec with Use Cases, Activity Diagrams (all paths), and Gherkin acceptance criteria.`
+|`Create a detailed spec with Use Cases (Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules), Activity Diagrams (all paths), and Gherkin acceptance criteria.`
 |link:#/anchor/gherkin[Gherkin]
 
 |Architektur
@@ -482,7 +497,7 @@ Die wichtigsten Einzeiler pro Phase mit den Semantic Anchors, die sie aktivieren
 |INVEST, link:#/anchor/moscow[MoSCoW]
 
 |Implementierung
-|`Select next issue (respect dependencies). Analyze and comment. Implement with TDD. Commit. Check if docs need updating.`
+|`Select next issue (respect dependencies). Analyze and comment. Implement with TDD. Each test references its Use Case ID. Commit. Check if docs need updating.`
 |link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago], link:#/anchor/solid-principles[SOLID], link:#/anchor/dry-principle[DRY], link:#/anchor/domain-driven-design[DDD]
 
 |Code Review
@@ -532,6 +547,9 @@ Die eigene Aufgabe ist es zu wissen, welchen Anker man wann einsetzt, und die Er
 Beim nächsten Projekt ausprobieren.
 Mit der Sokratischen Methode für die Anforderungen starten und sehen, wohin es führt.
 Wer Anker entdeckt, die im eigenen Workflow gut funktionieren: https://github.com/LLM-Coding/Semantic-Anchors/blob/main/CONTRIBUTING.md[zur Sammlung beitragen].
+
+Wer mit diesem Greenfield-Workflow vertraut ist, kann ihn auf bestehende Codebasen anpassen.
+Siehe link:#/brownfield[Workflow-Anpassung für Brownfield-Projekte] für eine Schritt-für-Schritt-Anleitung.
 
 === Weiterführende Literatur
 

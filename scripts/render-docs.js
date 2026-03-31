@@ -88,6 +88,10 @@ renderFile(
   path.join(ROOT, 'docs/brownfield-workflow.adoc'),
   path.join(WEB_DOCS, 'brownfield-workflow.html')
 )
+renderFile(
+  path.join(ROOT, 'docs/brownfield-workflow.de.adoc'),
+  path.join(WEB_DOCS, 'brownfield-workflow.de.html')
+)
 
 renderFile(
   path.join(ROOT, 'docs/anchor-evaluations.adoc'),
