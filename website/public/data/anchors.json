@@ -451,7 +451,10 @@
       "software-developer",
       "software-architect"
     ],
-    "related": [],
+    "related": [
+      "clean-code",
+      "conventional-commits"
+    ],
     "proponents": [
       "The Go Authors"
     ],

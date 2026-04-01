@@ -127,6 +127,8 @@ include::anchors/conventional-commits.adoc[leveloffset=+2]
 
 include::anchors/definition-of-done.adoc[leveloffset=+2]
 
+include::anchors/effective-go.adoc[leveloffset=+2]
+
 include::anchors/github-flow.adoc[leveloffset=+2]
 
 include::anchors/mental-model-according-to-naur.adoc[leveloffset=+2]

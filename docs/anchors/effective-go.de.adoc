@@ -1,0 +1,46 @@
+= Effective Go
+:categories: development-workflow
+:roles: software-developer, software-architect
+:related: clean-code, conventional-commits
+:proponents: The Go Authors
+:tags: go, golang, best-practices, idiomatic, style-guide
+:tier: 3
+
+[%collapsible]
+====
+
+[discrete]
+== *Kernkonzepte*:
+
+Formatierung (gofmt):: Code wird automatisch formatiert; Stildiskussionen werden durch Tooling eliminiert
+
+Paketnamen:: Kurz, kleingeschrieben, keine Unterstriche; der Paketname ist Teil des qualifizierten Bezeichners
+
+Benannte Rückgabewerte:: Rückgabewerte können benannt und als Dokumentation verwendet werden
+
+Defer:: Verzögerte Funktionsaufrufe werden in LIFO-Reihenfolge ausgeführt, wenn die umgebende Funktion zurückkehrt; verwendet für Aufräumarbeiten (close, unlock)
+
+Goroutinen:: Leichtgewichtige, nebenläufig ausgeführte Funktionen; „Kommuniziere nicht durch gemeinsamen Speicher; teile Speicher durch Kommunikation"
+
+Channels:: Typisierte Kanäle für Goroutinen-Kommunikation; erstklassiges Synchronisierungsprimitiv
+
+Interfaces:: Implizite Erfüllung — ein Typ implementiert ein Interface, indem er einfach dessen Methoden implementiert; ermöglicht Duck Typing
+
+Fehlerbehandlung:: Fehler sind Werte; idiomatisches Muster ist `if err != nil` an jeder Aufrufstelle; keine Exceptions
+
+Blank Identifier (_):: Ungewollte Werte aus Multi-Value-Returns verwerfen, ohne Compilerfehler
+
+Embedding:: Komposition statt Vererbung; Typen können andere Typen einbetten, um deren Methoden zu erhalten
+
+Schlüsselvertreter:: The Go Authors (https://go.dev/doc/effective_go)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Einarbeitung neuer Go-Entwickler in idiomatischen Go-Stil
+* Code-Review-Diskussionen über Go-Konventionen
+* Etablierung teamweiter Go-Codierungsstandards
+* Erklärung von Go-Idiomen, die sich von anderen Sprachen unterscheiden (z.B. Fehlerbehandlung, Interfaces)
+* LLM-Prompting für idiomatischen, produktionsreifen Go-Code
+
+====
