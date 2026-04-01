@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 122 well-defined terms, methodologies, and frameworks
+> 123 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -1934,6 +1934,42 @@ A class should have only one reason to change. Each module or class should be re
 * BDD (Behavior-Driven Development) - Given-When-Then scenarios that operationalize acceptance criteria
 * User Story Mapping - Planning technique that identifies the scope Definition of Done must cover
 * MoSCoW - Prioritization method used to decide which DoD items are must-haves
+
+### Effective Go
+
+[discrete]
+## **Core Concepts**:
+
+***Formatting (gofmt)***: Code is auto-formatted; style debates are eliminated by tooling
+
+***Package names***: Short, lowercase, no underscores; package name is part of the qualified identifier
+
+***Named return values***: Return values can be named and used as documentation
+
+***Defer***: Deferred function calls run in LIFO order when the surrounding function returns; used for cleanup (close, unlock)
+
+***Goroutines***: Lightweight concurrently executing functions; "Don't communicate by sharing memory; share memory by communicating"
+
+***Channels***: Typed conduits for goroutine communication; first-class synchronization primitive
+
+***Interfaces***: Implicit satisfaction — a type implements an interface simply by implementing its methods; enables duck typing
+
+***Error handling***: Errors are values; idiomatic pattern is `if err != nil` at each call site; no exceptions
+
+***Blank identifier (_)***: Discard unwanted values from multi-value returns without compiler error
+
+***Embedding***: Composition over inheritance; types can embed other types to gain their methods
+
+***Key Proponent***: The Go Authors (https://go.dev/doc/effective_go)
+
+[discrete]
+## **When to Use**:
+
+* Onboarding new Go developers to idiomatic Go style
+* Code review discussions about Go conventions
+* Establishing team-wide Go coding standards
+* Explaining Go idioms that differ from other languages (e.g. error handling, interfaces)
+* Prompting an LLM to produce idiomatic, production-quality Go code
 
 ### GitHub Flow
 
@@ -4947,7 +4983,8 @@ Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts
 ## Specification
 
 When we talk about a "specification" or "spec", we mean:
-- Use Cases with Activity Diagrams (all paths, not just the happy path)
+- Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions, and Business Rules (BR-IDs)
+- Activity Diagrams for all flows (not just the happy path)
 - Acceptance criteria in Gherkin format (Given/When/Then)
 
 *Referenced anchors: gherkin, bdd-given-when-then*
@@ -4998,6 +5035,7 @@ For each issue:
 - Select next issue from backlog (respect dependencies)
 - Analyze and document analysis as a comment on the issue
 - Implement using TDD (London or Chicago School as appropriate)
+- Each test references its Use Case ID for traceability
 - Commit with Conventional Commits, reference issue number
 - Check if spec or architecture docs need updating
 - When EPIC is complete, create a Pull Request
