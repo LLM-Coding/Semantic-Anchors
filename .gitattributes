@@ -1,0 +1,3 @@
+# Mark plugin skill copies as generated so GitHub does not count them
+# toward language statistics or include them in diffs by default.
+plugins/semantic-anchors/skills/** linguist-generated=true
