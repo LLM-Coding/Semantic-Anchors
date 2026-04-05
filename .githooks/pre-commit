@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+# Pre-commit hook: sync skill/ -> plugins/semantic-anchors/skills/
+#
+# Overwrites the plugin skills directory from the canonical skill/ source so
+# the two never diverge in a commit.
+#
+# Works on Unix/macOS and Windows (Git Bash / Git for Windows).
+# No dependencies beyond sh and the standard Git installation.
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+# Run the sync (rm -rf + cp -R each skill directory)
+sh "$REPO_ROOT/scripts/sync-claude-plugin.sh"
+
+# Stage the result so the overwritten files are included in this commit
+git -C "$REPO_ROOT" add -- plugins/semantic-anchors/skills/

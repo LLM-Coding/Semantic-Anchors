@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "semantic-anchors",
+  "description": "Semantic anchor skills for LLM and coding-agent onboarding, including a first-start Claude onboarding prompt",
+  "owner": {
+    "name": "LLM Coding",
+    "url": "https://github.com/LLM-Coding"
+  },
+  "plugins": [
+    {
+      "name": "semantic-anchors",
+      "description": "Semantic anchor skills for translating established methodologies, prompting first-run Claude onboarding, and installing persistent coding-agent context.",
+      "version": "0.1.0",
+      "author": {
+        "name": "LLM Coding",
+        "url": "https://github.com/LLM-Coding"
+      },
+      "source": "./plugins/semantic-anchors",
+      "category": "productivity",
+      "homepage": "https://github.com/LLM-Coding/Semantic-Anchors"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Semantic anchor onboarding prompt",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/prompt-onboarding.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
