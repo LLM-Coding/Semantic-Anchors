@@ -1,0 +1,12 @@
+{
+  "name": "semantic-anchors",
+  "version": "0.1.0",
+  "description": "Semantic anchor skills for translating terminology, prompting first-run Claude onboarding, and installing persistent anchor context into coding agents.",
+  "author": {
+    "name": "LLM Coding",
+    "url": "https://github.com/LLM-Coding"
+  },
+  "repository": "https://github.com/LLM-Coding/Semantic-Anchors",
+  "keywords": ["semantic-anchors", "prompting", "llm", "codex", "claude-code", "gemini"],
+  "skills": "./skills/"
+}

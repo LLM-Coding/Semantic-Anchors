@@ -8,6 +8,16 @@ This repository is a curated catalog of **semantic anchors** - well-defined term
 
 **Current Status:** The repository is undergoing a major redesign to become an interactive, bilingual website with treemap visualization, role-based filtering, and automated contribution workflow.
 
+## First-Time Setup
+
+After cloning, activate the shared Git hooks with one command (works on Unix/macOS and Windows Git Bash):
+
+```bash
+git config core.hooksPath .githooks
+```
+
+This installs the pre-commit hook that automatically syncs `skill/` into `plugins/semantic-anchors/skills/` on every commit. No other tools are required.
+
 ## Git Workflow & Fork Setup
 
 **Development takes place in the fork until PRD implementation is complete.**
