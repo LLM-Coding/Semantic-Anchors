@@ -1,6 +1,6 @@
 ---
 name: semantic-anchor-translator
-description: Bi-directional translator between verbose descriptions and established terminology (semantic anchors). Use when (1) user describes a concept verbosely and you want to identify the precise term, or (2) user asks for methodology/approach and you want to suggest relevant anchors. Covers 50+ terms across testing, architecture, design principles, problem-solving, requirements, documentation, and strategic planning.
+description: Bi-directional translator between verbose descriptions and established terminology (semantic anchors). Use when (1) user describes a concept verbosely and you want to identify the precise term, or (2) user asks for methodology/approach and you want to suggest relevant anchors. Covers 120+ terms across testing, architecture, design principles, problem-solving, requirements, documentation, communication, development workflow, statistical methods, strategic planning, and creative writing.
 metadata:
   author: LLM-Coding
   version: "1.0"
@@ -59,11 +59,14 @@ Browse online: https://llm-coding.github.io/Semantic-Anchors/
 
 | Category | Key Anchors |
 |----------|-------------|
-| Testing | TDD Chicago/London, Testing Pyramid, Mutation Testing, Property-Based Testing |
-| Architecture | Clean Architecture, Hexagonal, DDD, arc42, C4, ADR, MADR |
-| Design | SOLID, DRY, SPOT, SSOT, Fowler Patterns |
-| Problem-Solving | Five Whys, Feynman Technique, Rubber Duck, Devil's Advocate |
-| Requirements | MoSCoW, EARS, User Story Mapping, JTBD, Impact Mapping |
-| Communication | BLUF, Pyramid Principle, MECE, Chatham House Rule |
-| Strategic | Cynefin, Wardley Mapping, Pugh Matrix |
-| Documentation | Diátaxis, Docs-as-Code |
+| Testing & Quality | TDD Chicago/London, BDD, Gherkin, Test Double (Meszaros + 5 subtypes), Testing Pyramid, Mutation Testing, Property-Based Testing, Fagan Inspection, STRIDE, LINDDUN, LLM-Evaluations |
+| Software Architecture | Clean Architecture, Hexagonal, DDD, EDA, CQRS, VSA, arc42, C4, ADR, MADR, ATAM, LASR, ISO 25010, OWASP Top 10 |
+| Design Principles | SOLID (+ 5 individual), GRASP, CRC-Cards, GoF Patterns (23 patterns), Fowler PEAA, DRY, KISS, SPOT, SSOT, YAGNI |
+| Problem-Solving | Five Whys, Feynman Technique, Rubber Duck, Devil's Advocate, Morphological Box, Chain of Thought, Cynefin |
+| Requirements | INVEST, PRD, MoSCoW, EARS, User Story Mapping, JTBD, Impact Mapping, Problem Space NVC |
+| Communication | BLUF, Pyramid Principle, MECE, Gutes Deutsch, Plain English, Chatham House Rule, Socratic Method, MBTI |
+| Documentation | P.A.R.A., Diátaxis, Docs-as-Code |
+| Development Workflow | GTD, Definition of Done, GitHub Flow, Conventional Commits, Effective Go, SemVer, BEM, Mikado Method, Hemingway Bridge |
+| Statistical Methods | SPC, Control Chart, Nelson Rules |
+| Strategic Planning | Wardley Mapping, Pugh Matrix, SWOT, PERT |
+| Creative Writing | Three-Act Structure, Hero's Journey, Save the Cat!, Fichtean Curve, Freytag's Pyramid, Story Circle, Kishōtenketsu |

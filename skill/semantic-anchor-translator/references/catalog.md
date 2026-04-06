@@ -28,6 +28,26 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Gerard Meszaros
 - **Core:** Taxonomy of test substitutes — Dummy (unused), Stub (canned responses), Spy (records calls), Mock (verifies interactions), Fake (simplified implementation)
 
+#### Test Double: Dummy (Meszaros)
+- **Proponents:** Gerard Meszaros
+- **Core:** Object passed to fill a required parameter but never actually used; simplest test double; if a Dummy is called, the test setup is wrong
+
+#### Test Double: Stub (Meszaros)
+- **Proponents:** Gerard Meszaros
+- **Core:** Provides predefined (canned) responses to calls during a test; does not verify interactions; only supplies data; favored in Chicago School TDD
+
+#### Test Double: Spy (Meszaros)
+- **Proponents:** Gerard Meszaros
+- **Core:** A Stub that also records how it was called (methods, arguments, count); assertions happen after the action, not as pre-programmed expectations
+
+#### Test Double: Mock (Meszaros)
+- **Proponents:** Gerard Meszaros
+- **Core:** Pre-programmed with expectations about which calls should be made; actively verifies behavior during execution; favored in London School TDD
+
+#### Test Double: Fake (Meszaros)
+- **Proponents:** Gerard Meszaros
+- **Core:** Working but simplified implementation unsuitable for production; has real logic (unlike Stubs); examples: in-memory database, local email sender
+
 ### Testing Pyramid
 - **Core:** Many unit tests, fewer integration tests, fewest E2E tests
 
