@@ -28,25 +28,25 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Gerard Meszaros
 - **Core:** Taxonomy of test substitutes — Dummy (unused), Stub (canned responses), Spy (records calls), Mock (verifies interactions), Fake (simplified implementation)
 
-#### Test Double: Dummy (Meszaros)
+### Test Double Dummy
 - **Proponents:** Gerard Meszaros
-- **Core:** Object passed to fill a required parameter but never actually used; simplest test double; if a Dummy is called, the test setup is wrong
+- **Core:** Placeholder passed to fill required parameters but never actually used in the test; has no behavior
 
-#### Test Double: Stub (Meszaros)
+### Test Double Stub
 - **Proponents:** Gerard Meszaros
-- **Core:** Provides predefined (canned) responses to calls during a test; does not verify interactions; only supplies data; favored in Chicago School TDD
+- **Core:** Returns predefined (canned) responses to calls; does not verify interactions, only supplies data
 
-#### Test Double: Spy (Meszaros)
+### Test Double Spy
 - **Proponents:** Gerard Meszaros
-- **Core:** A Stub that also records how it was called (methods, arguments, count); assertions happen after the action, not as pre-programmed expectations
+- **Core:** Stub that also records how it was called; assertions happen after the action, not as pre-programmed expectations
 
-#### Test Double: Mock (Meszaros)
+### Test Double Mock
 - **Proponents:** Gerard Meszaros
-- **Core:** Pre-programmed with expectations about which calls should be made; actively verifies behavior during execution; favored in London School TDD
+- **Core:** Pre-programmed with expectations about which calls should be made; verifies interactions and fails immediately if expectations are violated
 
-#### Test Double: Fake (Meszaros)
+### Test Double Fake
 - **Proponents:** Gerard Meszaros
-- **Core:** Working but simplified implementation unsuitable for production; has real logic (unlike Stubs); examples: in-memory database, local email sender
+- **Core:** Working but simplified implementation unsuitable for production; has real behavior (e.g. in-memory database) but takes shortcuts
 
 ### Testing Pyramid
 - **Core:** Many unit tests, fewer integration tests, fewest E2E tests
@@ -151,23 +151,28 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### SOLID Principles
 - **Core:** Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
 
-#### SOLID-SRP (Single Responsibility Principle)
+### SOLID-SRP
+- **Also known as:** Single Responsibility Principle
 - **Proponents:** Robert C. Martin
 - **Core:** Each class should have only one reason to change
 
-#### SOLID-OCP (Open/Closed Principle)
+### SOLID-OCP
+- **Also known as:** Open/Closed Principle
 - **Proponents:** Robert C. Martin, Bertrand Meyer
 - **Core:** Open for extension, closed for modification
 
-#### SOLID-LSP (Liskov Substitution Principle)
+### SOLID-LSP
+- **Also known as:** Liskov Substitution Principle
 - **Proponents:** Robert C. Martin, Barbara Liskov
 - **Core:** Subtypes must be substitutable for their base types
 
-#### SOLID-ISP (Interface Segregation Principle)
+### SOLID-ISP
+- **Also known as:** Interface Segregation Principle
 - **Proponents:** Robert C. Martin
 - **Core:** Don't force clients to depend on unused interfaces
 
-#### SOLID-DIP (Dependency Inversion Principle)
+### SOLID-DIP
+- **Also known as:** Dependency Inversion Principle
 - **Proponents:** Robert C. Martin
 - **Core:** Depend on abstractions, not concrete implementations
 
@@ -204,34 +209,103 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 - **Core:** 23 patterns in 3 categories (Creational, Structural, Behavioral), pattern language, composition over inheritance, program to an interface
 
-#### Creational Patterns
-- **GoF-Abstract Factory** — Families of related objects without specifying concrete classes
-- **GoF-Builder** — Construct complex objects step by step
-- **GoF-Factory Method** — Let subclasses decide which class to instantiate
-- **GoF-Prototype** — Clone existing objects
-- **GoF-Singleton** — Ensure single instance with global access
+### GoF-Abstract Factory Pattern
+- **Also known as:** Kit
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Create families of related objects without specifying concrete classes (Creational)
 
-#### Structural Patterns
-- **GoF-Adapter** — Convert interface to one clients expect
-- **GoF-Bridge** — Separate abstraction from implementation
-- **GoF-Composite** — Compose objects into tree structures
-- **GoF-Decorator** — Add responsibilities dynamically
-- **GoF-Facade** — Simplified interface to a subsystem
-- **GoF-Flyweight** — Share fine-grained objects efficiently (not a semantic anchor)
-- **GoF-Proxy** — Surrogate controlling access to another object
+### GoF-Builder Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Separate construction of a complex object from its representation; same process can create different representations (Creational)
 
-#### Behavioral Patterns
-- **GoF-Chain of Responsibility** — Pass requests along a chain of handlers
-- **GoF-Command** — Encapsulate requests as objects
-- **GoF-Interpreter** — Grammar and interpreter for a language (not a semantic anchor)
-- **GoF-Iterator** — Sequential access without exposing structure
-- **GoF-Mediator** — Centralize complex communications
-- **GoF-Memento** — Capture and restore object state (not a semantic anchor)
-- **GoF-Observer** — Notify dependents of state changes
-- **GoF-State** — Alter behavior when internal state changes
-- **GoF-Strategy** — Interchangeable algorithm families
-- **GoF-Template Method** — Define skeleton, let subclasses fill in steps
-- **GoF-Visitor** — Operations on elements without changing their classes (not a semantic anchor)
+### GoF-Factory Method Pattern
+- **Also known as:** Virtual Constructor
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Define an interface for creating an object, but let subclasses decide which class to instantiate (Creational)
+
+### GoF-Prototype Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Create new objects by copying a prototypical instance (Creational)
+
+### GoF-Singleton Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Ensure a class has only one instance with a global access point (Creational)
+
+### GoF-Adapter Pattern
+- **Also known as:** Wrapper
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Convert an interface into another interface clients expect; makes incompatible interfaces work together (Structural)
+
+### GoF-Bridge Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Decouple an abstraction from its implementation so both can vary independently (Structural)
+
+### GoF-Composite Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Compose objects into tree structures to represent part-whole hierarchies; treat individual objects and compositions uniformly (Structural)
+
+### GoF-Decorator Pattern
+- **Also known as:** Wrapper
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Attach additional responsibilities to an object dynamically; flexible alternative to subclassing (Structural)
+
+### GoF-Facade Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Provide a unified interface to a set of interfaces in a subsystem; defines a higher-level interface (Structural)
+
+### GoF-Flyweight Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Use sharing to support large numbers of fine-grained objects efficiently (Structural)
+
+### GoF-Proxy Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Provide a surrogate or placeholder for another object to control access to it (Structural)
+
+### GoF-Chain of Responsibility Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Pass requests along a chain of handlers; each handler decides to process or forward (Behavioral)
+
+### GoF-Command Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Encapsulate a request as an object, enabling parameterization, queuing, logging, and undoable operations (Behavioral)
+
+### GoF-Interpreter Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Define a representation for a language's grammar and an interpreter to process sentences (Behavioral)
+
+### GoF-Iterator Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Provide a way to access elements of an aggregate object sequentially without exposing its underlying representation (Behavioral)
+
+### GoF-Mediator Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Define an object that encapsulates how a set of objects interact; promotes loose coupling (Behavioral)
+
+### GoF-Memento Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Capture and externalize an object's internal state so it can be restored later, without violating encapsulation (Behavioral)
+
+### GoF-Observer Pattern
+- **Also known as:** Publish-Subscribe, Event-Listener
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Define a one-to-many dependency so that when one object changes state, all dependents are notified (Behavioral)
+
+### GoF-State Pattern
+- **Also known as:** Objects for States
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Allow an object to alter its behavior when its internal state changes; the object will appear to change its class (Behavioral)
+
+### GoF-Strategy Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Define a family of algorithms, encapsulate each one, and make them interchangeable (Behavioral)
+
+### GoF-Template Method Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Define the skeleton of an algorithm in an operation, deferring some steps to subclasses (Behavioral)
+
+### GoF-Visitor Pattern
+- **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+- **Core:** Represent an operation to be performed on elements of an object structure without changing their classes (Behavioral)
 
 ### Patterns of Enterprise Application Architecture (PEAA)
 - **Proponents:** Martin Fowler
@@ -245,7 +319,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### Feynman Technique
 - **Proponents:** Richard Feynman
-- **Core:** Explain concept simply, identify gaps, refine understanding
+- **Core:** Explain concepts simply, identify gaps, refine understanding
 
 ### Rubber Duck Debugging
 - **Core:** Explain code line-by-line to find bugs

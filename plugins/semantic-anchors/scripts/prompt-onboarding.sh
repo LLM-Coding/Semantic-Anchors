@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 # Claude SessionStart hook that prompts for semantic-anchor onboarding
 # when no managed anchor block is present yet.
 
-set -euo pipefail
+set -eu
 
 command -v python3 >/dev/null 2>&1 || { echo "Error: python3 is required but not found" >&2; exit 1; }
 
