@@ -78,7 +78,7 @@ Short transmissions with error correction are far more reliable than one long, u
 
 == Workflow Overview
 
-image::docs/workflow-diagram.png[Workflow Overview,width=800]
+image::workflow-diagram.svg[Workflow Overview,width=1100]
 
 == Cross-Cutting Concerns
 
