@@ -110,8 +110,8 @@ if (fs.existsSync(evalReport)) {
 }
 
 // Copy assets referenced by workflow docs
-const workflowDiagram = path.join(ROOT, 'docs/workflow-diagram.png')
+const workflowDiagram = path.join(ROOT, 'docs/workflow-diagram.svg')
 if (fs.existsSync(workflowDiagram)) {
-  fs.copyFileSync(workflowDiagram, path.join(WEB_DOCS, 'workflow-diagram.png'))
-  console.log(`Copied: ${path.relative(ROOT, path.join(WEB_DOCS, 'workflow-diagram.png'))}`)
+  fs.copyFileSync(workflowDiagram, path.join(WEB_DOCS, 'workflow-diagram.svg'))
+  console.log(`Copied: ${path.relative(ROOT, path.join(WEB_DOCS, 'workflow-diagram.svg'))}`)
 }
