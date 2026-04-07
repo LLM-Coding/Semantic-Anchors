@@ -80,7 +80,7 @@ Kurze Übertragungen mit Fehlerkorrektur sind weit zuverlässiger als eine lange
 
 == Workflow-Übersicht
 
-image::workflow-diagram.svg[Workflow-Übersicht,width=1100]
+image::docs/workflow-diagram.svg[Workflow-Übersicht,width=1100]
 
 == Querschnittsthemen
 
