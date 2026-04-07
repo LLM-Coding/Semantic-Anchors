@@ -1,0 +1,53 @@
+= Kohäsionskriterien
+:categories: design-principles
+:roles: software-architect, software-developer, consultant, educator
+:related: grasp, solid-srp, clean-architecture, vertical-slice-architecture
+:proponents: Larry Constantine, Edward Yourdon
+:tags: cohesion, coupling, module design, structured design, code quality
+:tier: 2
+
+[%collapsible]
+====
+Vollständiger Name:: Kohäsionskriterien (Constantine & Yourdon)
+
+Auch bekannt als:: Kohäsionsstufen, Kohäsionsskala, Modulkohäsionstypen
+
+[discrete]
+== *Kernkonzepte*:
+
+Sieben Stufen der Kohäsion, geordnet von schlecht (1) bis ideal (7):
+
+Zufällige Kohäsion (1):: Elemente sind willkürlich gruppiert, ohne sinnvollen Zusammenhang. Typisches Zeichen: Utility-Klassen oder Sammelmodule.
+
+Logische Kohäsion (2):: Elemente führen ähnliche Aktivitäten aus, die über ein Steuerflag ausgewählt werden. Beispiel: eine Funktion für alle I/O-Operationen (lesen, schreiben, drucken), gesteuert durch einen Parameter.
+
+Temporale Kohäsion (3):: Elemente sind gruppiert, weil sie zur gleichen Zeit ausgeführt werden. Beispiel: Initialisierungsroutinen beim Programmstart.
+
+Prozedurale Kohäsion (4):: Elemente sind gruppiert, weil sie einer bestimmten Ausführungsreihenfolge folgen. Beispiel: eine Funktion, die Eingaben validiert, dann eine Datei öffnet, dann ein Log schreibt.
+
+Kommunikative Kohäsion (5):: Elemente arbeiten auf denselben Daten, führen aber unterschiedliche Operationen aus. Beispiel: ein Modul, das einen Kundendatensatz sowohl validiert als auch formatiert.
+
+Sequentielle Kohäsion (6):: Die Ausgabe eines Elements dient als Eingabe des nächsten, eine Pipeline bildend. Beispiel: parsen -> validieren -> transformieren.
+
+Funktionale Kohäsion (7):: Jedes Element trägt zu genau einer wohldefinierten Aufgabe bei. Das Ideal. Beispiel: `berechneVersandkosten()` tut genau eine Sache.
+
+
+Hauptvertreter:: Larry Constantine und Edward Yourdon ("Structured Design", 1979). Weiterentwickelt von Meilir Page-Jones ("The Practical Guide to Structured Systems Design", 1988).
+
+[discrete]
+== *Wann verwenden*:
+
+* Bewertung der Modulqualität bei Code Reviews oder Refactoring
+* Entscheidung, ob eine Klasse oder ein Modul aufgeteilt werden sollte
+* Argumentation für Refactoring mit konkreten Kriterien statt Bauchgefühl
+* Lehre im Softwaredesign: die Skala macht abstrakte Qualität greifbar
+* Bewertung von Architekturentscheidungen zu Modulgrenzen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<grasp,GRASP>> - "High Cohesion" ist eines der neun GRASP-Patterns
+* <<solid-srp,SOLID SRP>> - Single Responsibility Principle zielt auf funktionale Kohäsion
+* <<clean-architecture,Clean Architecture>> - Organisiert Code nach kohäsiven Geschäftsregeln
+* <<vertical-slice-architecture,Vertical Slice Architecture>> - Gruppiert nach Feature-Kohäsion statt technischer Schicht
+====

@@ -1,0 +1,53 @@
+= Cohesion Criteria
+:categories: design-principles
+:roles: software-architect, software-developer, consultant, educator
+:related: grasp, solid-srp, clean-architecture, vertical-slice-architecture
+:proponents: Larry Constantine, Edward Yourdon
+:tags: cohesion, coupling, module design, structured design, code quality
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Cohesion Criteria (Constantine & Yourdon)
+
+Also known as:: Levels of Cohesion, Cohesion Scale, Module Cohesion Types
+
+[discrete]
+== *Core Concepts*:
+
+Seven levels of cohesion, ranked from worst (1) to best (7):
+
+Coincidental Cohesion (1):: Elements are grouped arbitrarily with no meaningful relationship. Typical sign: utility classes or grab-bag modules.
+
+Logical Cohesion (2):: Elements perform similar activities selected by a control flag. Example: a function handling all I/O (read, write, print) chosen by a parameter.
+
+Temporal Cohesion (3):: Elements are grouped because they execute at the same time. Example: startup initialization routines bundled together.
+
+Procedural Cohesion (4):: Elements are grouped because they follow a specific execution sequence. Example: a function that validates input, then opens a file, then writes a log.
+
+Communicational Cohesion (5):: Elements operate on the same data but perform different operations. Example: a module that both validates and formats a customer record.
+
+Sequential Cohesion (6):: The output of one element serves as input to the next, forming a pipeline. Example: parse -> validate -> transform.
+
+Functional Cohesion (7):: Every element contributes to a single, well-defined task. The ideal. Example: `calculateShippingCost()` does exactly one thing.
+
+
+Key Proponents:: Larry Constantine and Edward Yourdon ("Structured Design", 1979). Further developed by Meilir Page-Jones ("The Practical Guide to Structured Systems Design", 1988).
+
+[discrete]
+== *When to Use*:
+
+* Evaluating module quality during code reviews or refactoring
+* Deciding whether to split a class or module that feels too large
+* Arguing for refactoring with concrete criteria instead of gut feeling
+* Teaching software design: the scale makes abstract quality tangible
+* Assessing architecture decisions around module boundaries
+
+[discrete]
+== *Related Anchors*:
+
+* <<grasp,GRASP>> - "High Cohesion" is one of the nine GRASP patterns
+* <<solid-srp,SOLID SRP>> - Single Responsibility Principle targets functional cohesion
+* <<clean-architecture,Clean Architecture>> - Organizes code by cohesive business rules
+* <<vertical-slice-architecture,Vertical Slice Architecture>> - Groups by feature cohesion rather than technical layer
+====

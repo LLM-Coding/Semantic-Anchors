@@ -181,6 +181,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Craig Larman
 - **Core:** 9 patterns for OO responsibility assignment — Information Expert, Creator, Controller, Low Coupling, High Cohesion, Polymorphism, Pure Fabrication, Indirection, Protected Variations
 
+### Cohesion Criteria (Constantine & Yourdon)
+- **Also known as:** Levels of Cohesion, Cohesion Scale, Module Cohesion Types
+- **Proponents:** Larry Constantine, Edward Yourdon
+- **Core:** 7 levels of module cohesion from worst to best — Coincidental (arbitrary grouping), Logical (similar activities via flag), Temporal (same time), Procedural (execution sequence), Communicational (same data), Sequential (pipeline), Functional (single task, ideal)
+
 ### CRC-Cards
 - **Also known as:** CRC Cards, Class-Responsibility-Collaboration Cards
 - **Proponents:** Ward Cunningham, Kent Beck
