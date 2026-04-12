@@ -81,6 +81,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Percy Liang (Stanford HELM), EleutherAI (Open LLM Leaderboard), LMSYS (Chatbot Arena)
 - **Core:** Frameworks and metrics for assessing LLM capabilities — benchmark suites (MMLU, HumanEval, BIG-Bench), automatic vs. human evaluation, HELM, Chatbot Arena Elo ratings, red-teaming, contamination detection
 
+### Red/Green TDD
+- **Also known as:** Red-Green-Refactor, Classical TDD Cycle, Test-First Development
+- **Proponents:** Kent Beck
+- **Core:** Classical TDD cycle — write failing test first (red), minimal code to pass (green), then refactor; watch it fail for the right reason; one failing test at a time; test names describe behavior, not method signatures; counters the default LLM habit of writing tests after the implementation
+
 ## Software Architecture
 
 ### Clean Architecture
@@ -145,6 +150,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** OWASP Top Ten, Open Worldwide Application Security Project Top 10
 - **Proponents:** OWASP Foundation
 - **Core:** Consensus ranking of the ten most critical web-application security risks (Broken Access Control, Cryptographic Failures, Injection, Insecure Design, Security Misconfiguration, Vulnerable Components, Authentication Failures, Data Integrity Failures, Logging Failures, SSRF); used as a baseline checklist for secure code review, threat modeling, and compliance
+
+### Walking Skeleton
+- **Also known as:** Skeleton Architecture, End-to-End Thin Implementation
+- **Proponents:** Alistair Cockburn
+- **Core:** Minimal end-to-end implementation touching every architectural layer (UI → logic → persistence → deployment) that is production-capable from day one; validates integration and structure before any significant feature work; grown iteratively rather than thrown away like a prototype
+
+### Tracer Bullet
+- **Also known as:** Tracer Bullet Development, Tracer Code
+- **Proponents:** Andy Hunt, David Thomas
+- **Core:** Lightweight end-to-end slice that validates architectural direction on real infrastructure; unlike a spike, tracer code is kept and refined into the final system; enables rapid directional correction via the "aim-fire-adjust" loop; primary goal is architecture validation, not feature delivery
 
 ## Design Principles
 
@@ -396,6 +411,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** William Strunk Jr., E.B. White
 - **Core:** Omit needless words, use active voice, prefer concrete language, write with nouns and verbs — clarity-first principles for English writing ("The Elements of Style")
 
+### 4MAT
+- **Also known as:** 4MAT System of Instruction, McCarthy's 4MAT, 4MAT Learning Cycle
+- **Proponents:** Bernice McCarthy
+- **Core:** Four-quadrant learning cycle structuring explanations and presentations — Why (motivation, relevance), What (facts, concepts), How (practical application, examples), What If (extension, transfer); order matters to serve all four learner types (Innovative/Analytic/Common Sense/Dynamic) instead of only analytic learners
+
 ### Chatham House Rule
 - **Proponents:** Chatham House
 - **Core:** Info can be used but not attributed to speaker/org
@@ -479,6 +499,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Tiago Forte (coined the term), inspired by Ernest Hemingway
 - **Core:** End each work session before a natural stopping point while you still know what comes next; leave an explicit re-entry note (unfinished sentence, comment, TODO) to eliminate "blank page" paralysis, preserve momentum, and manage creative energy across sessions
 
+### Thin Vertical Slice
+- **Also known as:** Vertical Slicing, End-to-End Slice
+- **Proponents:** Alistair Cockburn, Mike Cohn
+- **Core:** Delivery technique where each increment implements one small feature end-to-end through every technical layer (UI → logic → persistence → integration); keeps the system shippable after each slice; distinct from Vertical Slice Architecture (structural pattern vs. delivery technique); surfaces integration issues early and often
+
+### Spike Solution
+- **Also known as:** Spike, Technical Spike, Research Spike
+- **Proponents:** Kent Beck
+- **Core:** Time-boxed, disposable experiment written to answer one specific technical question before committing to an approach; output is a decision, not a deliverable; deliberately rough quality — no tests, no review, no polish; time-boxing is mandatory or the spike becomes speculative development
+
 ## Statistical Methods
 
 ### SPC (Statistical Process Control)
@@ -509,6 +539,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Three-Point Estimation, PERT Network Analysis
 - **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
 - **Core:** Stochastic project scheduling using three-point estimates per activity (Optimistic, Most Likely, Pessimistic); weighted average formula E = (O + 4M + P) / 6; standard deviation σ = (P − O) / 6; critical path analysis; probabilistic milestone confidence intervals
+
+### Minimum Viable Product (MVP)
+- **Also known as:** MVP, Lean Startup MVP
+- **Proponents:** Eric Ries, Frank Robinson
+- **Core:** Smallest product that tests a single falsifiable hypothesis about user needs with the least effort; the defining output is *validated learning*, not a feature set or revenue; first turn of the build-measure-learn loop; distinct from a "small v1" — an MVP would be embarrassing to ship in production because its job is learning, not market entry; gives evidence for pivot-or-persevere decisions
 
 ## Creative Writing & Storytelling
 

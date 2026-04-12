@@ -1,0 +1,49 @@
+= Thin Vertical Slice
+:categories: development-workflow
+:roles: software-developer, product-owner, team-lead
+:related: walking-skeleton, tracer-bullet, vertical-slice-architecture, user-story-mapping
+:proponents: Alistair Cockburn, Mike Cohn
+:tags: delivery, incremental, end-to-end, iteration, value-slicing
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Vertical Slicing, End-to-End Slice
+
+[discrete]
+== *Core Concepts*:
+
+One feature, all layers:: Each increment implements a single small feature end-to-end through every technical layer (UI → logic → persistence → integration) in one piece of work.
+
+Releasable after every slice:: The goal of slicing is to keep the system shippable after each increment. "Done" means users can use it, not that one layer is finished.
+
+Cross-cutting, not horizontal:: Horizontal slicing ("finish the DB layer, then the API, then the UI") delays delivery and hides integration problems. Vertical slicing inverts that.
+
+Small but complete:: A thin slice is small in scope but complete in depth. Removing any layer breaks the feature; shortening any layer is fine.
+
+Avoid integration surprises:: Because every slice touches every layer, integration issues surface early and often, not as a terrifying end-of-project merge.
+
+Value per slice:: Each slice should produce a user-observable change. "Refactor the user service" is not a vertical slice; "user can change their email" is.
+
+Distinct from Vertical Slice Architecture:: VSA is a *structural pattern* for organizing code; thin vertical slicing is a *delivery technique* for organizing work. They are complementary but independent — you can slice thinly with or without VSA.
+
+
+Key Proponents:: Alistair Cockburn ("Agile Software Development", 2001); Mike Cohn ("User Stories Applied", 2004)
+
+[discrete]
+== *When to Use*:
+
+* Breaking down user stories or epics into deliverable increments
+* Avoiding big-bang integrations at the end of a sprint or project
+* When the team needs early, frequent user feedback on actual working software
+* Reducing risk on long-running feature work by shipping usable subsets
+* Any agile delivery context where "done" should mean "shipped"
+
+[discrete]
+== *Related Anchors*:
+
+* <<walking-skeleton,Walking Skeleton>> - The first thin slice in a greenfield system; architecture validation
+* <<tracer-bullet,Tracer Bullet>> - Exploratory end-to-end slice for direction validation
+* <<vertical-slice-architecture,Vertical Slice Architecture>> - Structural pattern that organizes code to match sliced delivery
+* <<user-story-mapping,User Story Mapping>> - Technique for identifying which slices to cut first
+====

@@ -1,5 +1,35 @@
 [
   {
+    "id": "4mat",
+    "title": "4MAT",
+    "categories": [
+      "communication-presentation"
+    ],
+    "roles": [
+      "educator",
+      "consultant",
+      "technical-writer",
+      "team-lead"
+    ],
+    "related": [
+      "pyramid-principle",
+      "feynman-technique",
+      "diataxis-framework"
+    ],
+    "proponents": [
+      "Bernice McCarthy"
+    ],
+    "tags": [
+      "learning-cycle",
+      "didactics",
+      "presentation",
+      "teaching",
+      "communication"
+    ],
+    "filePath": "docs/anchors/4mat.adoc",
+    "tier": 3
+  },
+  {
     "id": "adr-according-to-nygard",
     "title": "ADR according to Nygard",
     "categories": [
@@ -192,6 +222,38 @@
     "tags": [],
     "filePath": "docs/anchors/clean-architecture.adoc",
     "tier": 3
+  },
+  {
+    "id": "cohesion-criteria",
+    "title": "Cohesion Criteria",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "grasp",
+      "solid-srp",
+      "clean-architecture",
+      "vertical-slice-architecture"
+    ],
+    "proponents": [
+      "Larry Constantine",
+      "Edward Yourdon"
+    ],
+    "tags": [
+      "cohesion",
+      "coupling",
+      "module design",
+      "structured design",
+      "code quality"
+    ],
+    "filePath": "docs/anchors/cohesion-criteria.adoc",
+    "tier": 2
   },
   {
     "id": "control-chart-shewhart",
@@ -2152,6 +2214,37 @@
     "tier": 3
   },
   {
+    "id": "mvp",
+    "title": "Minimum Viable Product (MVP)",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "product-owner",
+      "team-lead",
+      "consultant"
+    ],
+    "related": [
+      "jobs-to-be-done",
+      "impact-mapping",
+      "user-story-mapping",
+      "walking-skeleton"
+    ],
+    "proponents": [
+      "Eric Ries",
+      "Frank Robinson"
+    ],
+    "tags": [
+      "lean-startup",
+      "validated-learning",
+      "hypothesis-testing",
+      "product",
+      "mvp"
+    ],
+    "filePath": "docs/anchors/mvp.adoc",
+    "tier": 3
+  },
+  {
     "id": "myers-briggs-type-indicator",
     "title": "Myers-Briggs Type Indicator (MBTI)",
     "categories": [
@@ -2438,6 +2531,35 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/pyramid-principle.adoc",
+    "tier": 3
+  },
+  {
+    "id": "red-green-tdd",
+    "title": "Red/Green TDD",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer",
+      "educator"
+    ],
+    "related": [
+      "tdd-chicago-school",
+      "tdd-london-school",
+      "bdd-given-when-then"
+    ],
+    "proponents": [
+      "Kent Beck"
+    ],
+    "tags": [
+      "tdd",
+      "testing",
+      "red-green-refactor",
+      "test-first",
+      "classical"
+    ],
+    "filePath": "docs/anchors/red-green-tdd.adoc",
     "tier": 3
   },
   {
@@ -2750,6 +2872,36 @@
       "control-chart-shewhart",
       "nelson-rules"
     ],
+    "tier": 3
+  },
+  {
+    "id": "spike-solution",
+    "title": "Spike Solution",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "team-lead"
+    ],
+    "related": [
+      "tracer-bullet",
+      "walking-skeleton",
+      "pugh-matrix"
+    ],
+    "proponents": [
+      "Kent Beck"
+    ],
+    "tags": [
+      "xp",
+      "experiment",
+      "research",
+      "time-boxed",
+      "risk-reduction",
+      "throwaway"
+    ],
+    "filePath": "docs/anchors/spike-solution.adoc",
     "tier": 3
   },
   {
@@ -3108,6 +3260,37 @@
     "tier": 3
   },
   {
+    "id": "thin-vertical-slice",
+    "title": "Thin Vertical Slice",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "product-owner",
+      "team-lead"
+    ],
+    "related": [
+      "walking-skeleton",
+      "tracer-bullet",
+      "vertical-slice-architecture",
+      "user-story-mapping"
+    ],
+    "proponents": [
+      "Alistair Cockburn",
+      "Mike Cohn"
+    ],
+    "tags": [
+      "delivery",
+      "incremental",
+      "end-to-end",
+      "iteration",
+      "value-slicing"
+    ],
+    "filePath": "docs/anchors/thin-vertical-slice.adoc",
+    "tier": 3
+  },
+  {
     "id": "three-act-structure",
     "title": "Three-Act Structure",
     "categories": [
@@ -3183,6 +3366,35 @@
     "tier": 3
   },
   {
+    "id": "tracer-bullet",
+    "title": "Tracer Bullet",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer"
+    ],
+    "related": [
+      "walking-skeleton",
+      "spike-solution",
+      "thin-vertical-slice"
+    ],
+    "proponents": [
+      "Andy Hunt",
+      "David Thomas"
+    ],
+    "tags": [
+      "architecture",
+      "validation",
+      "end-to-end",
+      "iterative",
+      "direction-finding"
+    ],
+    "filePath": "docs/anchors/tracer-bullet.adoc",
+    "tier": 3
+  },
+  {
     "id": "user-story-mapping",
     "title": "User Story Mapping",
     "categories": [
@@ -3226,6 +3438,36 @@
       "CQRS"
     ],
     "filePath": "docs/anchors/vertical-slice-architecture.adoc",
+    "tier": 3
+  },
+  {
+    "id": "walking-skeleton",
+    "title": "Walking Skeleton",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer",
+      "team-lead"
+    ],
+    "related": [
+      "tracer-bullet",
+      "thin-vertical-slice",
+      "clean-architecture",
+      "hexagonal-architecture"
+    ],
+    "proponents": [
+      "Alistair Cockburn"
+    ],
+    "tags": [
+      "architecture",
+      "inception",
+      "end-to-end",
+      "deployment",
+      "risk-reduction"
+    ],
+    "filePath": "docs/anchors/walking-skeleton.adoc",
     "tier": 3
   },
   {

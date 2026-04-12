@@ -1,0 +1,50 @@
+= Red/Green TDD
+:categories: testing-quality
+:roles: software-developer, qa-engineer, educator
+:related: tdd-chicago-school, tdd-london-school, bdd-given-when-then
+:proponents: Kent Beck
+:tags: tdd, testing, red-green-refactor, test-first, classical
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Red-Green-Refactor, Classical TDD Cycle, Test-First Development
+
+[discrete]
+== *Core Concepts*:
+
+Red phase:: Write a failing test *first*, before any production code. The test must actually run and fail for the right reason — compilation errors don't count as red.
+
+Green phase:: Write the *minimum* production code required to make the failing test pass. Resist the urge to add functionality the test does not demand.
+
+Refactor phase:: With tests passing, improve the design — rename, extract, deduplicate — confident the test suite will catch regressions.
+
+Small steps:: Each cycle is deliberately small (seconds to minutes), not hours. Large leaps break the feedback loop.
+
+Watch it fail:: Verifying that the test actually fails *before* implementation catches tautological tests and typos in the test itself.
+
+Test names describe behavior:: Not method names. "Returns empty list when no users exist" tells you what the code does; "test getUsers" does not.
+
+Minimum to pass:: Fake it ('return 42'), hardcode, or copy-paste — whatever makes the test pass fastest. Generalization happens in the refactor phase via triangulation.
+
+One test at a time:: Only one failing test in the suite at any moment. Never add a second failing test before the first is green.
+
+
+Key Proponents:: Kent Beck ("Test-Driven Development: By Example", 2002); popularized for LLM coding agents by Simon Willison
+
+[discrete]
+== *When to Use*:
+
+* Instructing LLM coding agents that default to implementing features first and writing tests afterwards
+* New production code where requirements can be expressed as concrete examples
+* Bug fixes — write a failing test that reproduces the bug, then fix
+* Refactoring legacy code that lacks test coverage (start by characterizing behavior)
+* Teaching disciplined incremental development
+
+[discrete]
+== *Related Anchors*:
+
+* <<tdd-chicago-school,TDD Chicago School>> - State-based classical TDD focused on real objects over mocks
+* <<tdd-london-school,TDD London School>> - Mock-heavy, interaction-based, outside-in variant
+* <<bdd-given-when-then,BDD Given-When-Then>> - Behavior-driven complement for higher-level acceptance tests
+====

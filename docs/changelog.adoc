@@ -2,6 +2,18 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-04-12
+
+*New anchors:*
+
+* *Red/Green TDD* — Kent Beck's classical TDD cycle (proposed by https://github.com/petehodgson-tribe[@petehodgson-tribe] in https://github.com/LLM-Coding/Semantic-Anchors/issues/412[#412])
+* *4MAT* — Bernice McCarthy's learning cycle: why → what → how → what if (proposed by https://github.com/rweisleder[@rweisleder] in https://github.com/LLM-Coding/Semantic-Anchors/issues/413[#413])
+* *Walking Skeleton* — Alistair Cockburn's end-to-end production-capable skeleton (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/420[#420])
+* *Tracer Bullet* — Hunt & Thomas's exploratory end-to-end slice (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/421[#421])
+* *Thin Vertical Slice* — Cockburn & Cohn's end-to-end delivery technique (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/422[#422])
+* *Spike Solution* — Kent Beck's time-boxed XP research technique (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/423[#423])
+* *Minimum Viable Product (MVP)* — Eric Ries's lean-startup hypothesis validation (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/424[#424])
+
 == 2026-04-07
 
 *New anchors* (proposed by Gernot Starke):

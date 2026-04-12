@@ -1,0 +1,48 @@
+= Spike Solution
+:categories: development-workflow
+:roles: software-developer, software-architect, team-lead
+:related: tracer-bullet, walking-skeleton, pugh-matrix
+:proponents: Kent Beck
+:tags: xp, experiment, research, time-boxed, risk-reduction, throwaway
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Spike, Technical Spike, Research Spike
+
+[discrete]
+== *Core Concepts*:
+
+Time-boxed:: A spike has an explicit, non-negotiable deadline (hours or days, not weeks). When time runs out, the spike ends — even if the answer is incomplete. An unbounded spike has become speculative development.
+
+Single question:: A spike answers *one* specific technical question: "Can library X handle our throughput?", "Will the auth provider accept these claims?", "Is Approach A or B faster?". Multiple questions mean multiple spikes.
+
+Disposable:: The code is throwaway. It lives in a branch (or scratch repo), gets studied, and gets deleted. Reusing spike code in production defeats the purpose — spike quality is deliberately rough.
+
+Output is a decision, not a deliverable:: The point of a spike is to reduce uncertainty so a decision can be made. Common outputs: a short writeup, a benchmark number, a "yes/no" answer, an ADR. Never a pull request to main.
+
+Reduces estimation risk:: Spikes are commonly used when a story cannot be estimated because of unknown unknowns. After the spike, the team can estimate with confidence.
+
+Low ceremony, high focus:: No code review, no test coverage, no polish. The constraint is "learn the answer as fast as possible", which is the opposite of production code.
+
+Explicit in the backlog:: "Spike: investigate X" is a legitimate work item. Teams should track spikes as first-class, not hide them inside regular stories.
+
+
+Key Proponents:: Kent Beck ("Extreme Programming Explained", 1999, 2nd ed. 2004); Ron Jeffries popularized the term in early XP writings
+
+[discrete]
+== *When to Use*:
+
+* Estimating a story is impossible because of unknown technical risk
+* Choosing between two approaches requires empirical evidence rather than debate
+* A new library, framework, or API is being evaluated
+* Performance, scalability, or integration assumptions need verification before commitment
+* LLM prompting: "spike the approach" cleanly signals *explore, don't build*
+
+[discrete]
+== *Related Anchors*:
+
+* <<tracer-bullet,Tracer Bullet>> - Also exploratory, but tracer bullets are kept and iterated on, not discarded
+* <<walking-skeleton,Walking Skeleton>> - Production-capable end-to-end scaffolding; the opposite of a spike on the throwaway axis
+* <<pugh-matrix,Pugh Matrix>> - Decision-support technique a spike often feeds into
+====

@@ -1,0 +1,50 @@
+= 4MAT
+:categories: communication-presentation
+:roles: educator, consultant, technical-writer, team-lead
+:related: pyramid-principle, feynman-technique, diataxis-framework
+:proponents: Bernice McCarthy
+:tags: learning-cycle, didactics, presentation, teaching, communication
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: 4MAT System of Instruction
+
+Also known as:: 4MAT Learning Cycle, McCarthy's 4MAT
+
+[discrete]
+== *Core Concepts*:
+
+Why:: Establish *relevance and motivation* first. Why should the audience care? Connect the topic to their experience, problems, or goals before introducing new information.
+
+What:: Present the *facts, concepts, and structure*. The core content — definitions, models, theory, how the pieces fit together.
+
+How:: Show *practical application*. Demonstrate usage, walk through examples, let the audience try it hands-on. Translate theory into skill.
+
+What If:: Explore *extension, variation, and transfer*. What happens at the edges? How does this apply to new situations? Encourage creative application and critical questioning.
+
+Four-quadrant cycle:: The order matters — why before what prevents "so what?" disengagement; how before what-if prevents premature abstraction.
+
+Left-right brain modes:: Each quadrant alternates between reflective observation and active experimentation, engaging different cognitive styles in one flow.
+
+Four learner types:: Innovative (Why), Analytic (What), Common Sense (How), Dynamic (What If) — every presentation serves all four instead of only the "analytic learner" that default lecture formats assume.
+
+
+Key Proponents:: Bernice McCarthy ("The 4MAT System: Teaching to Learning Styles with Right/Left Mode Techniques", 1980; "About Learning", 1996)
+
+[discrete]
+== *When to Use*:
+
+* Structuring training sessions, workshops, or technical presentations
+* Writing tutorials, explainers, or onboarding documentation
+* Designing conference talks that engage both practitioners and theorists
+* Planning educational content across the motivation-to-mastery arc
+* LLM prompting for instructional material: "Explain X using the 4MAT cycle"
+
+[discrete]
+== *Related Anchors*:
+
+* <<pyramid-principle,Pyramid Principle>> - Top-down structure for written communication; complements 4MAT which is experience-first
+* <<feynman-technique,Feynman Technique>> - Self-directed learning; 4MAT is teacher-directed instructional design
+* <<diataxis-framework,Diátaxis Framework>> - Documentation types (tutorial/how-to/reference/explanation) map loosely to 4MAT quadrants
+====

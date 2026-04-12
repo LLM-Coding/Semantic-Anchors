@@ -1,0 +1,49 @@
+= Walking Skeleton
+:categories: software-architecture
+:roles: software-architect, software-developer, team-lead
+:related: tracer-bullet, thin-vertical-slice, clean-architecture, hexagonal-architecture
+:proponents: Alistair Cockburn
+:tags: architecture, inception, end-to-end, deployment, risk-reduction
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Skeleton Architecture, End-to-End Thin Implementation
+
+[discrete]
+== *Core Concepts*:
+
+End-to-end from day one:: A minimal implementation that touches every architectural layer — UI, application logic, domain, persistence, deployment pipeline — before any significant feature work begins.
+
+Production-capable:: Unlike a throwaway prototype, the walking skeleton is *real code* that can be shipped to production. It passes through CI/CD, runs on target infrastructure, and forms the foundation for subsequent features.
+
+Minimal functionality, maximum structure:: A single trivial user journey (one button, one form, one record) is enough. The value is in proving the *structure*, not the feature set.
+
+Early risk reduction:: Integration risks (does the DB driver work in prod? does auth talk to the identity provider? does the deploy pipeline reach the target?) surface on day one instead of week twelve.
+
+Walking = working:: "Walking" is the defining verb — the skeleton must move through its full lifecycle (build, deploy, serve a request, return a response, log an event), not just compile.
+
+Foundation for iteration:: Once the skeleton walks, adding real features becomes additive work on a known-good structure. No "big bang" integration later.
+
+Not a prototype:: A prototype is discarded; a walking skeleton is grown. The distinction matters — prototype code tempts shortcuts that don't belong in production.
+
+
+Key Proponents:: Alistair Cockburn ("Agile Software Development", 2001); the term originates in his collaboration with Ralph Hodgson
+
+[discrete]
+== *When to Use*:
+
+* Starting a new system where integration between layers carries architectural risk
+* Greenfield projects with unfamiliar tech stacks or deployment targets
+* Validating CI/CD, infrastructure, and cross-team contracts before scaling development
+* Distributed systems where the "it works on my machine" gap is dangerous
+* Any project where the first production deploy should happen *early*, not *late*
+
+[discrete]
+== *Related Anchors*:
+
+* <<tracer-bullet,Tracer Bullet>> - Also end-to-end, but exploratory and direction-validating rather than production-capable
+* <<thin-vertical-slice,Thin Vertical Slice>> - Delivery technique for subsequent features on top of the skeleton
+* <<clean-architecture,Clean Architecture>> - A common structural target the skeleton can instantiate from day one
+* <<hexagonal-architecture,Hexagonal Architecture>> - Ports/adapters structure the skeleton naturally exposes
+====

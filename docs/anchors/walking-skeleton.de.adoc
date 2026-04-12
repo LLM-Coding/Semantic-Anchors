@@ -1,0 +1,49 @@
+= Walking Skeleton
+:categories: software-architecture
+:roles: software-architect, software-developer, team-lead
+:related: tracer-bullet, thin-vertical-slice, clean-architecture, hexagonal-architecture
+:proponents: Alistair Cockburn
+:tags: architecture, inception, end-to-end, deployment, risk-reduction
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Skelett-Architektur, End-to-End Dünne Implementierung
+
+[discrete]
+== *Kernkonzepte*:
+
+End-to-End vom ersten Tag:: Eine minimale Implementierung, die jede Architekturschicht berührt — UI, Anwendungslogik, Domäne, Persistenz, Deployment-Pipeline — bevor signifikante Feature-Arbeit beginnt.
+
+Produktionsreif:: Anders als ein Wegwerf-Prototyp ist das Walking Skeleton *echter Code*, der in Produktion geliefert werden kann. Er durchläuft CI/CD, läuft auf Zielinfrastruktur und bildet die Grundlage für nachfolgende Features.
+
+Minimale Funktionalität, maximale Struktur:: Eine einzige triviale Benutzerreise (ein Button, ein Formular, ein Datensatz) reicht. Der Wert liegt darin, die *Struktur* zu beweisen, nicht die Featureanzahl.
+
+Frühe Risikoreduktion:: Integrationsrisiken (funktioniert der DB-Treiber in Produktion? Spricht Auth mit dem Identity Provider? Erreicht die Deploy-Pipeline das Ziel?) tauchen am ersten Tag auf statt in Woche zwölf.
+
+Walking = funktionierend:: "Walking" ist das definierende Verb — das Skelett muss seinen gesamten Lebenszyklus durchlaufen (Build, Deploy, Request bedienen, Response liefern, Event loggen), nicht nur kompilieren.
+
+Fundament für Iteration:: Sobald das Skelett läuft, wird das Hinzufügen echter Features zu additiver Arbeit auf einer bekannten Struktur. Kein "Big Bang"-Integrationsschritt später.
+
+Kein Prototyp:: Ein Prototyp wird verworfen; ein Walking Skeleton wird gezüchtet. Die Unterscheidung zählt — Prototyp-Code verleitet zu Shortcuts, die in Produktion nichts verloren haben.
+
+
+Schlüsselvertreter:: Alistair Cockburn ("Agile Software Development", 2001); der Begriff stammt aus seiner Zusammenarbeit mit Ralph Hodgson
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Start eines neuen Systems, bei dem Integration zwischen Schichten architektonisches Risiko birgt
+* Greenfield-Projekte mit unbekannten Tech-Stacks oder Deployment-Zielen
+* Validierung von CI/CD, Infrastruktur und teamübergreifenden Verträgen vor dem Skalieren der Entwicklung
+* Verteilte Systeme, bei denen die "Funktioniert auf meiner Maschine"-Lücke gefährlich ist
+* Jedes Projekt, bei dem der erste Produktions-Deploy *früh* statt *spät* stattfinden sollte
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<tracer-bullet,Tracer Bullet>> - Ebenfalls end-to-end, aber explorativ und richtungsvalidierend statt produktionsreif
+* <<thin-vertical-slice,Thin Vertical Slice>> - Liefertechnik für nachfolgende Features auf dem Skelett
+* <<clean-architecture,Clean Architecture>> - Ein häufiges Strukturziel, das das Skelett vom ersten Tag an instanziieren kann
+* <<hexagonal-architecture,Hexagonal Architecture>> - Ports/Adapter-Struktur, die das Skelett natürlich freilegt
+====

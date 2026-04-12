@@ -1,0 +1,50 @@
+= 4MAT
+:categories: communication-presentation
+:roles: educator, consultant, technical-writer, team-lead
+:related: pyramid-principle, feynman-technique, diataxis-framework
+:proponents: Bernice McCarthy
+:tags: learning-cycle, didactics, presentation, teaching, communication
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: 4MAT System of Instruction
+
+Auch bekannt als:: 4MAT Lernzyklus, McCarthys 4MAT
+
+[discrete]
+== *Kernkonzepte*:
+
+Warum:: Etabliere zuerst *Relevanz und Motivation*. Warum sollte sich das Publikum dafür interessieren? Verbinde das Thema mit seinen Erfahrungen, Problemen oder Zielen, bevor neue Informationen eingeführt werden.
+
+Was:: Präsentiere *Fakten, Konzepte und Struktur*. Der inhaltliche Kern — Definitionen, Modelle, Theorie, wie die Teile zusammenpassen.
+
+Wie:: Zeige *praktische Anwendung*. Demonstriere die Nutzung, gehe Beispiele durch, lass das Publikum selbst ausprobieren. Übersetze Theorie in Fertigkeit.
+
+Was wäre wenn:: Erkunde *Erweiterung, Variation und Transfer*. Was passiert an den Rändern? Wie lässt sich das auf neue Situationen übertragen? Ermutige kreative Anwendung und kritisches Hinterfragen.
+
+Vier-Quadranten-Zyklus:: Die Reihenfolge ist wichtig — Warum vor Was verhindert "Na und?"-Desinteresse; Wie vor Was-wäre-wenn verhindert verfrühte Abstraktion.
+
+Links-rechts-Hirn-Modi:: Jeder Quadrant wechselt zwischen reflektierender Beobachtung und aktivem Experimentieren und engagiert so verschiedene kognitive Stile in einem Fluss.
+
+Vier Lernertypen:: Innovativ (Warum), Analytisch (Was), Pragmatisch (Wie), Dynamisch (Was wäre wenn) — jede Präsentation bedient alle vier, statt nur den "analytischen Lerner" anzusprechen, den klassische Vortragsformate voraussetzen.
+
+
+Schlüsselvertreter:: Bernice McCarthy ("The 4MAT System: Teaching to Learning Styles with Right/Left Mode Techniques", 1980; "About Learning", 1996)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Strukturierung von Trainings, Workshops oder technischen Präsentationen
+* Verfassen von Tutorials, Erklärungen oder Onboarding-Dokumentation
+* Design von Konferenzvorträgen, die sowohl Praktiker als auch Theoretiker ansprechen
+* Planung von Bildungsinhalten entlang des Motivations-zu-Meisterschaft-Bogens
+* LLM-Prompting für Lehrmaterialien: "Erkläre X nach dem 4MAT-Zyklus"
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<pyramid-principle,Pyramid Principle>> - Top-down-Struktur für schriftliche Kommunikation; ergänzt 4MAT, das erfahrungsorientiert beginnt
+* <<feynman-technique,Feynman Technique>> - Selbstgesteuertes Lernen; 4MAT ist lehrergesteuertes Instruktionsdesign
+* <<diataxis-framework,Diátaxis Framework>> - Dokumentationstypen (Tutorial/How-to/Reference/Explanation) entsprechen grob den 4MAT-Quadranten
+====

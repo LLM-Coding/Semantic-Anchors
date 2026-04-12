@@ -9,6 +9,8 @@ include::about.adoc[leveloffset=+1]
 
 == Communication & Presentation
 
+include::anchors/4mat.adoc[leveloffset=+2]
+
 include::anchors/bluf.adoc[leveloffset=+2]
 
 include::anchors/gutes-deutsch-wolf-schneider.adoc[leveloffset=+2]
@@ -44,6 +46,8 @@ include::anchors/three-act-structure.adoc[leveloffset=+2]
 <<<
 
 == Design Principles & Patterns
+
+include::anchors/cohesion-criteria.adoc[leveloffset=+2]
 
 include::anchors/crc-cards.adoc[leveloffset=+2]
 
@@ -141,6 +145,10 @@ include::anchors/semantic-versioning.adoc[leveloffset=+2]
 
 include::anchors/sota.adoc[leveloffset=+2]
 
+include::anchors/spike-solution.adoc[leveloffset=+2]
+
+include::anchors/thin-vertical-slice.adoc[leveloffset=+2]
+
 include::anchors/timtowtdi.adoc[leveloffset=+2]
 
 <<<
@@ -235,7 +243,11 @@ include::anchors/lasr.adoc[leveloffset=+2]
 
 include::anchors/madr.adoc[leveloffset=+2]
 
+include::anchors/tracer-bullet.adoc[leveloffset=+2]
+
 include::anchors/vertical-slice-architecture.adoc[leveloffset=+2]
+
+include::anchors/walking-skeleton.adoc[leveloffset=+2]
 
 <<<
 
@@ -256,6 +268,8 @@ include::anchors/cynefin-framework.adoc[leveloffset=+2]
 include::anchors/impact-mapping.adoc[leveloffset=+2]
 
 include::anchors/jobs-to-be-done.adoc[leveloffset=+2]
+
+include::anchors/mvp.adoc[leveloffset=+2]
 
 include::anchors/pert.adoc[leveloffset=+2]
 
@@ -286,6 +300,8 @@ include::anchors/mutation-testing.adoc[leveloffset=+2]
 include::anchors/owasp-top-10.adoc[leveloffset=+2]
 
 include::anchors/property-based-testing.adoc[leveloffset=+2]
+
+include::anchors/red-green-tdd.adoc[leveloffset=+2]
 
 include::anchors/stride.adoc[leveloffset=+2]
 

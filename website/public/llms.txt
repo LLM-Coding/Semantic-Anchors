@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 123 well-defined terms, methodologies, and frameworks
+> 131 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -308,6 +308,47 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 ---
 
 ## Communication & Presentation
+
+### 4MAT
+
+***Full Name***: 4MAT System of Instruction
+
+***Also known as***: 4MAT Learning Cycle, McCarthy's 4MAT
+
+[discrete]
+## **Core Concepts**:
+
+***Why***: Establish **relevance and motivation** first. Why should the audience care? Connect the topic to their experience, problems, or goals before introducing new information.
+
+***What***: Present the **facts, concepts, and structure**. The core content — definitions, models, theory, how the pieces fit together.
+
+***How***: Show **practical application**. Demonstrate usage, walk through examples, let the audience try it hands-on. Translate theory into skill.
+
+***What If***: Explore **extension, variation, and transfer**. What happens at the edges? How does this apply to new situations? Encourage creative application and critical questioning.
+
+***Four-quadrant cycle***: The order matters — why before what prevents "so what?" disengagement; how before what-if prevents premature abstraction.
+
+***Left-right brain modes***: Each quadrant alternates between reflective observation and active experimentation, engaging different cognitive styles in one flow.
+
+***Four learner types***: Innovative (Why), Analytic (What), Common Sense (How), Dynamic (What If) — every presentation serves all four instead of only the "analytic learner" that default lecture formats assume.
+
+***Key Proponents***: Bernice McCarthy ("The 4MAT System: Teaching to Learning Styles with Right/Left Mode Techniques", 1980; "About Learning", 1996)
+
+[discrete]
+## **When to Use**:
+
+* Structuring training sessions, workshops, or technical presentations
+* Writing tutorials, explainers, or onboarding documentation
+* Designing conference talks that engage both practitioners and theorists
+* Planning educational content across the motivation-to-mastery arc
+* LLM prompting for instructional material: "Explain X using the 4MAT cycle"
+
+[discrete]
+## **Related Anchors**:
+
+* Pyramid Principle - Top-down structure for written communication; complements 4MAT which is experience-first
+* Feynman Technique - Self-directed learning; 4MAT is teacher-directed instructional design
+* Diátaxis Framework - Documentation types (tutorial/how-to/reference/explanation) map loosely to 4MAT quadrants
 
 ### BLUF (Bottom Line Up Front)
 
@@ -925,6 +966,50 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 ---
 
 ## Design Principles & Patterns
+
+### Cohesion Criteria
+
+***Full Name***: Cohesion Criteria (Constantine & Yourdon)
+
+***Also known as***: Levels of Cohesion, Cohesion Scale, Module Cohesion Types
+
+[discrete]
+## **Core Concepts**:
+
+Seven levels of cohesion, ranked from worst (1) to best (7):
+
+***Coincidental Cohesion (1)***: Elements are grouped arbitrarily with no meaningful relationship. Typical sign: utility classes or grab-bag modules.
+
+***Logical Cohesion (2)***: Elements perform similar activities selected by a control flag. Example: a function handling all I/O (read, write, print) chosen by a parameter.
+
+***Temporal Cohesion (3)***: Elements are grouped because they execute at the same time. Example: startup initialization routines bundled together.
+
+***Procedural Cohesion (4)***: Elements are grouped because they follow a specific execution sequence. Example: a function that validates input, then opens a file, then writes a log.
+
+***Communicational Cohesion (5)***: Elements operate on the same data but perform different operations. Example: a module that both validates and formats a customer record.
+
+***Sequential Cohesion (6)***: The output of one element serves as input to the next, forming a pipeline. Example: parse -> validate -> transform.
+
+***Functional Cohesion (7)***: Every element contributes to a single, well-defined task. The ideal. Example: `calculateShippingCost()` does exactly one thing.
+
+***Key Proponents***: Larry Constantine and Edward Yourdon ("Structured Design", 1979). Further developed by Meilir Page-Jones ("The Practical Guide to Structured Systems Design", 1988).
+
+[discrete]
+## **When to Use**:
+
+* Evaluating module quality during code reviews or refactoring
+* Deciding whether to split a class or module that feels too large
+* Arguing for refactoring with concrete criteria instead of gut feeling
+* Teaching software design: the scale makes abstract quality tangible
+* Assessing architecture decisions around module boundaries
+
+[discrete]
+## **Related Anchors**:
+
+* GRASP - "High Cohesion" is one of the nine GRASP patterns
+* SOLID SRP - Single Responsibility Principle targets functional cohesion
+* Clean Architecture - Organizes code by cohesive business rules
+* Vertical Slice Architecture - Groups by feature cohesion rather than technical layer
 
 ### CRC-Cards
 
@@ -2260,6 +2345,85 @@ A class should have only one reason to change. Each module or class should be re
 * Consistent meaning across contexts: "best performing" and "most current"
 * Concise trigger for comprehensive research behavior
 * Activates research-oriented response patterns in LLMs
+
+### Spike Solution
+
+***Also known as***: Spike, Technical Spike, Research Spike
+
+[discrete]
+## **Core Concepts**:
+
+***Time-boxed***: A spike has an explicit, non-negotiable deadline (hours or days, not weeks). When time runs out, the spike ends — even if the answer is incomplete. An unbounded spike has become speculative development.
+
+***Single question***: A spike answers **one** specific technical question: "Can library X handle our throughput?", "Will the auth provider accept these claims?", "Is Approach A or B faster?". Multiple questions mean multiple spikes.
+
+***Disposable***: The code is throwaway. It lives in a branch (or scratch repo), gets studied, and gets deleted. Reusing spike code in production defeats the purpose — spike quality is deliberately rough.
+
+***Output is a decision, not a deliverable***: The point of a spike is to reduce uncertainty so a decision can be made. Common outputs: a short writeup, a benchmark number, a "yes/no" answer, an ADR. Never a pull request to main.
+
+***Reduces estimation risk***: Spikes are commonly used when a story cannot be estimated because of unknown unknowns. After the spike, the team can estimate with confidence.
+
+***Low ceremony, high focus***: No code review, no test coverage, no polish. The constraint is "learn the answer as fast as possible", which is the opposite of production code.
+
+***Explicit in the backlog***: "Spike: investigate X" is a legitimate work item. Teams should track spikes as first-class, not hide them inside regular stories.
+
+***Key Proponents***: Kent Beck ("Extreme Programming Explained", 1999, 2nd ed. 2004); Ron Jeffries popularized the term in early XP writings
+
+[discrete]
+## **When to Use**:
+
+* Estimating a story is impossible because of unknown technical risk
+* Choosing between two approaches requires empirical evidence rather than debate
+* A new library, framework, or API is being evaluated
+* Performance, scalability, or integration assumptions need verification before commitment
+* LLM prompting: "spike the approach" cleanly signals **explore, don't build**
+
+[discrete]
+## **Related Anchors**:
+
+* Tracer Bullet - Also exploratory, but tracer bullets are kept and iterated on, not discarded
+* Walking Skeleton - Production-capable end-to-end scaffolding; the opposite of a spike on the throwaway axis
+* Pugh Matrix - Decision-support technique a spike often feeds into
+
+### Thin Vertical Slice
+
+***Also known as***: Vertical Slicing, End-to-End Slice
+
+[discrete]
+## **Core Concepts**:
+
+***One feature, all layers***: Each increment implements a single small feature end-to-end through every technical layer (UI → logic → persistence → integration) in one piece of work.
+
+***Releasable after every slice***: The goal of slicing is to keep the system shippable after each increment. "Done" means users can use it, not that one layer is finished.
+
+***Cross-cutting, not horizontal***: Horizontal slicing ("finish the DB layer, then the API, then the UI") delays delivery and hides integration problems. Vertical slicing inverts that.
+
+***Small but complete***: A thin slice is small in scope but complete in depth. Removing any layer breaks the feature; shortening any layer is fine.
+
+***Avoid integration surprises***: Because every slice touches every layer, integration issues surface early and often, not as a terrifying end-of-project merge.
+
+***Value per slice***: Each slice should produce a user-observable change. "Refactor the user service" is not a vertical slice; "user can change their email" is.
+
+***Distinct from Vertical Slice Architecture***: VSA is a **structural pattern** for organizing code; thin vertical slicing is a **delivery technique** for organizing work. They are complementary but independent — you can slice thinly with or without VSA.
+
+***Key Proponents***: Alistair Cockburn ("Agile Software Development", 2001); Mike Cohn ("User Stories Applied", 2004)
+
+[discrete]
+## **When to Use**:
+
+* Breaking down user stories or epics into deliverable increments
+* Avoiding big-bang integrations at the end of a sprint or project
+* When the team needs early, frequent user feedback on actual working software
+* Reducing risk on long-running feature work by shipping usable subsets
+* Any agile delivery context where "done" should mean "shipped"
+
+[discrete]
+## **Related Anchors**:
+
+* Walking Skeleton - The first thin slice in a greenfield system; architecture validation
+* Tracer Bullet - Exploratory end-to-end slice for direction validation
+* Vertical Slice Architecture - Structural pattern that organizes code to match sliced delivery
+* User Story Mapping - Technique for identifying which slices to cut first
 
 ### TIMTOWTDI
 
@@ -3771,6 +3935,45 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * When LLM assistance is needed to generate consistent decision records
 * Complementing arc42 Section 9 (Architecture Decisions)
 
+### Tracer Bullet
+
+***Also known as***: Tracer Bullet Development, Tracer Code
+
+[discrete]
+## **Core Concepts**:
+
+***End-to-end but lightweight***: Build a thin slice that touches all the pieces of the final system — in realtime, on real infrastructure — to see whether your architectural direction lands where you aimed.
+
+***Real ammo, not blanks***: Unlike a spike or prototype, tracer bullet code is **kept and refined**. It becomes part of the final system, not throwaway. The distinction: you iterate on it rather than rewrite it.
+
+***Immediate feedback on integration***: You learn quickly whether your chosen tech stack, service boundaries, and data flow **actually work together**, not just whether each piece works in isolation.
+
+***Aim, fire, adjust***: The metaphor is a tracer round in a machine gun — you see where the shot lands in real time and adjust your aim for the next burst. Tracer bullets enable rapid directional correction.
+
+***Not feature-complete***: The first tracer is deliberately incomplete. One feature, end-to-end, good enough to validate the **shape** of the solution without committing to full functionality.
+
+***Architecture validation over feature delivery***: The primary goal is answering "will this architecture work?", not "is this feature done?".
+
+***Iterative refinement***: Subsequent tracers refine the aim — adjusting interfaces, choosing different libraries, or repositioning service boundaries based on what the first shot revealed.
+
+***Key Proponents***: Andrew Hunt and David Thomas ("The Pragmatic Programmer", 1999; 20th Anniversary Edition 2019)
+
+[discrete]
+## **When to Use**:
+
+* Unfamiliar technology stacks where integration risk is unknown
+* Complex system boundaries (microservices, event-driven architectures) where interaction patterns are hard to predict
+* Exploratory projects where requirements are still being discovered
+* When architectural commitments need to be validated before scaling the team
+* Projects where early user or stakeholder feedback on the **shape** of the solution is more valuable than a polished prototype
+
+[discrete]
+## **Related Anchors**:
+
+* Walking Skeleton - Similar end-to-end approach, but production-capable from day one rather than exploratory
+* Spike Solution - Also exploratory, but spikes are throwaway and answer a single question
+* Thin Vertical Slice - Delivery technique that shares the end-to-end philosophy at the feature level
+
 ### Vertical Slice Architecture (VSA)
 
 ***Also known as***: VSA, Feature Slices
@@ -3810,6 +4013,46 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Clean Architecture
 * Hexagonal Architecture (Ports & Adapters)
 * CQRS
+
+### Walking Skeleton
+
+***Also known as***: Skeleton Architecture, End-to-End Thin Implementation
+
+[discrete]
+## **Core Concepts**:
+
+***End-to-end from day one***: A minimal implementation that touches every architectural layer — UI, application logic, domain, persistence, deployment pipeline — before any significant feature work begins.
+
+***Production-capable***: Unlike a throwaway prototype, the walking skeleton is **real code** that can be shipped to production. It passes through CI/CD, runs on target infrastructure, and forms the foundation for subsequent features.
+
+***Minimal functionality, maximum structure***: A single trivial user journey (one button, one form, one record) is enough. The value is in proving the **structure**, not the feature set.
+
+***Early risk reduction***: Integration risks (does the DB driver work in prod? does auth talk to the identity provider? does the deploy pipeline reach the target?) surface on day one instead of week twelve.
+
+***Walking = working***: "Walking" is the defining verb — the skeleton must move through its full lifecycle (build, deploy, serve a request, return a response, log an event), not just compile.
+
+***Foundation for iteration***: Once the skeleton walks, adding real features becomes additive work on a known-good structure. No "big bang" integration later.
+
+***Not a prototype***: A prototype is discarded; a walking skeleton is grown. The distinction matters — prototype code tempts shortcuts that don't belong in production.
+
+***Key Proponents***: Alistair Cockburn ("Agile Software Development", 2001); the term originates in his collaboration with Ralph Hodgson
+
+[discrete]
+## **When to Use**:
+
+* Starting a new system where integration between layers carries architectural risk
+* Greenfield projects with unfamiliar tech stacks or deployment targets
+* Validating CI/CD, infrastructure, and cross-team contracts before scaling development
+* Distributed systems where the "it works on my machine" gap is dangerous
+* Any project where the first production deploy should happen **early**, not **late**
+
+[discrete]
+## **Related Anchors**:
+
+* Tracer Bullet - Also end-to-end, but exploratory and direction-validating rather than production-capable
+* Thin Vertical Slice - Delivery technique for subsequent features on top of the skeleton
+* Clean Architecture - A common structural target the skeleton can instantiate from day one
+* Hexagonal Architecture - Ports/adapters structure the skeleton naturally exposes
 
 ---
 
@@ -4083,6 +4326,50 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Identifying true competition
 * Writing more meaningful user stories
 * Market segmentation based on jobs, not demographics
+
+### Minimum Viable Product (MVP)
+
+***Full Name***: Minimum Viable Product
+
+***Also known as***: MVP, Lean Startup MVP
+
+[discrete]
+## **Core Concepts**:
+
+***Smallest thing that tests a hypothesis***: An MVP is the minimum product that allows a team to learn whether a specific hypothesis about user needs is valid — with the least amount of effort.
+
+***Validated learning is the output***: The defining output is not a feature set, not revenue, not users — it is **learning**. "Did we learn whether our hypothesis is true?" is the only success criterion.
+
+***One hypothesis at a time***: An MVP targets a single, falsifiable hypothesis ("users will pay for X", "users need feature Y more than feature Z"). Bundling hypotheses into one MVP makes the learning ambiguous.
+
+***Minimum means minimum***: If a hand-drawn mockup, a landing page, or a concierge service can test the hypothesis, that **is** the MVP. Code is often not required. The "P" stands for product, but the product can be an illusion.
+
+***Build-measure-learn loop***: The MVP is the first turn of a tight feedback cycle: build a minimal thing, measure how real users respond, learn from the data, then decide whether to pivot or persevere.
+
+***Not a small v1***: A common misuse is calling the first release of a polished product "the MVP". A real MVP would be embarrassing to ship in production — its job is learning, not market entry.
+
+***Pivot or persevere***: The MVP gives you the evidence to choose: continue in the same direction (persevere) or change course based on what you learned (pivot).
+
+***Distinct from Walking Skeleton***: A Walking Skeleton validates **architecture**; an MVP validates **market demand**. You can have one without the other.
+
+***Key Proponents***: Eric Ries ("The Lean Startup", 2011); Frank Robinson coined the term in 2001
+
+[discrete]
+## **When to Use**:
+
+* Validating whether a new product or feature solves a real user problem before investing in full development
+* Testing pricing, positioning, or target-segment hypotheses with minimal risk
+* Early-stage startups with limited runway who cannot afford to build the wrong thing
+* Internal product experimentation where feature ideas need evidence before prioritization
+* LLM prompting: "design an MVP for X" signals **test the hypothesis, don't ship a complete product**
+
+[discrete]
+## **Related Anchors**:
+
+* Jobs to be Done - Framework for articulating the user need an MVP is trying to validate
+* Impact Mapping - Technique for aligning MVP scope with business outcomes
+* User Story Mapping - Visual tool for identifying the minimum set of stories for an MVP
+* Walking Skeleton - Architectural counterpart; validates structure rather than market demand
 
 ### PERT
 
@@ -4658,6 +4945,47 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * Testing parsers and serializers
 * Finding edge cases in complex logic
 * Complementing example-based TDD
+
+### Red/Green TDD
+
+***Also known as***: Red-Green-Refactor, Classical TDD Cycle, Test-First Development
+
+[discrete]
+## **Core Concepts**:
+
+***Red phase***: Write a failing test **first**, before any production code. The test must actually run and fail for the right reason — compilation errors don't count as red.
+
+***Green phase***: Write the **minimum** production code required to make the failing test pass. Resist the urge to add functionality the test does not demand.
+
+***Refactor phase***: With tests passing, improve the design — rename, extract, deduplicate — confident the test suite will catch regressions.
+
+***Small steps***: Each cycle is deliberately small (seconds to minutes), not hours. Large leaps break the feedback loop.
+
+***Watch it fail***: Verifying that the test actually fails **before** implementation catches tautological tests and typos in the test itself.
+
+***Test names describe behavior***: Not method names. "Returns empty list when no users exist" tells you what the code does; "test getUsers" does not.
+
+***Minimum to pass***: Fake it ('return 42'), hardcode, or copy-paste — whatever makes the test pass fastest. Generalization happens in the refactor phase via triangulation.
+
+***One test at a time***: Only one failing test in the suite at any moment. Never add a second failing test before the first is green.
+
+***Key Proponents***: Kent Beck ("Test-Driven Development: By Example", 2002); popularized for LLM coding agents by Simon Willison
+
+[discrete]
+## **When to Use**:
+
+* Instructing LLM coding agents that default to implementing features first and writing tests afterwards
+* New production code where requirements can be expressed as concrete examples
+* Bug fixes — write a failing test that reproduces the bug, then fix
+* Refactoring legacy code that lacks test coverage (start by characterizing behavior)
+* Teaching disciplined incremental development
+
+[discrete]
+## **Related Anchors**:
+
+* TDD Chicago School - State-based classical TDD focused on real objects over mocks
+* TDD London School - Mock-heavy, interaction-based, outside-in variant
+* BDD Given-When-Then - Behavior-driven complement for higher-level acceptance tests
 
 ### STRIDE Threat Model
 

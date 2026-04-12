@@ -1,0 +1,48 @@
+= Spike Solution
+:categories: development-workflow
+:roles: software-developer, software-architect, team-lead
+:related: tracer-bullet, walking-skeleton, pugh-matrix
+:proponents: Kent Beck
+:tags: xp, experiment, research, time-boxed, risk-reduction, throwaway
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Spike, Technischer Spike, Research-Spike
+
+[discrete]
+== *Kernkonzepte*:
+
+Zeitlich begrenzt:: Ein Spike hat eine explizite, nicht verhandelbare Deadline (Stunden oder Tage, nicht Wochen). Wenn die Zeit abläuft, endet der Spike — auch wenn die Antwort unvollständig ist. Ein unbegrenzter Spike ist zu spekulativer Entwicklung geworden.
+
+Einzelne Frage:: Ein Spike beantwortet *eine* spezifische technische Frage: "Kann Library X unseren Durchsatz?", "Akzeptiert der Auth-Provider diese Claims?", "Ist Ansatz A oder B schneller?". Mehrere Fragen bedeuten mehrere Spikes.
+
+Wegwerfbar:: Der Code ist Wegwerfware. Er lebt in einem Branch (oder Scratch-Repo), wird studiert und dann gelöscht. Spike-Code in Produktion zu übernehmen verfehlt den Zweck — Spike-Qualität ist absichtlich roh.
+
+Ergebnis ist eine Entscheidung, kein Produkt:: Der Sinn eines Spikes ist Unsicherheit zu reduzieren, damit eine Entscheidung getroffen werden kann. Übliche Ergebnisse: kurzer Bericht, Benchmark-Zahl, "Ja/Nein"-Antwort, ein ADR. Niemals ein Pull Request nach main.
+
+Reduziert Schätzrisiko:: Spikes werden oft eingesetzt, wenn eine Story wegen unbekannter Unbekannter nicht schätzbar ist. Nach dem Spike kann das Team mit Vertrauen schätzen.
+
+Wenig Zeremonie, hoher Fokus:: Kein Code-Review, keine Testabdeckung, kein Feinschliff. Die Beschränkung ist "finde die Antwort so schnell wie möglich" — das Gegenteil von Produktionscode.
+
+Explizit im Backlog:: "Spike: untersuche X" ist ein legitimer Arbeitspunkt. Teams sollten Spikes als Erstklass-Items tracken, nicht in regulären Stories verstecken.
+
+
+Schlüsselvertreter:: Kent Beck ("Extreme Programming Explained", 1999, 2. Aufl. 2004); Ron Jeffries popularisierte den Begriff in frühen XP-Schriften
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Eine Story zu schätzen ist wegen unbekannter technischer Risiken unmöglich
+* Die Wahl zwischen zwei Ansätzen erfordert empirische Evidenz statt Diskussion
+* Eine neue Library, ein Framework oder eine API wird evaluiert
+* Performance-, Skalierungs- oder Integrationsannahmen müssen vor Commitment verifiziert werden
+* LLM-Prompting: "Spike den Ansatz" signalisiert sauber *erkunden, nicht bauen*
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<tracer-bullet,Tracer Bullet>> - Ebenfalls explorativ, aber Tracer Bullets werden behalten und iteriert, nicht verworfen
+* <<walking-skeleton,Walking Skeleton>> - Produktionsreifes End-to-End-Gerüst; das Gegenteil eines Spikes auf der Wegwerf-Achse
+* <<pugh-matrix,Pugh Matrix>> - Entscheidungstechnik, in die ein Spike oft einfließt
+====

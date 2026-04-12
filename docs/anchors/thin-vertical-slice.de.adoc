@@ -1,0 +1,49 @@
+= Thin Vertical Slice
+:categories: development-workflow
+:roles: software-developer, product-owner, team-lead
+:related: walking-skeleton, tracer-bullet, vertical-slice-architecture, user-story-mapping
+:proponents: Alistair Cockburn, Mike Cohn
+:tags: delivery, incremental, end-to-end, iteration, value-slicing
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Vertikales Slicing, End-to-End-Scheibe
+
+[discrete]
+== *Kernkonzepte*:
+
+Ein Feature, alle Schichten:: Jedes Inkrement implementiert ein einzelnes kleines Feature end-to-end durch jede technische Schicht (UI → Logik → Persistenz → Integration) in einem Arbeitspaket.
+
+Nach jeder Scheibe auslieferbar:: Das Ziel des Slicings ist, das System nach jedem Inkrement lieferbar zu halten. "Fertig" bedeutet, Benutzer können es nutzen, nicht dass eine Schicht abgeschlossen ist.
+
+Schneidet quer, nicht horizontal:: Horizontales Slicing ("erst die DB-Schicht fertig, dann API, dann UI") verzögert Lieferung und versteckt Integrationsprobleme. Vertikales Slicing kehrt das um.
+
+Klein, aber komplett:: Eine dünne Scheibe ist klein im Umfang, aber vollständig in der Tiefe. Jede Schicht weglassen bricht das Feature; jede Schicht verkürzen ist okay.
+
+Integrationsüberraschungen vermeiden:: Weil jede Scheibe jede Schicht berührt, tauchen Integrationsprobleme früh und oft auf, nicht als gefürchteter End-of-Project-Merge.
+
+Wert pro Scheibe:: Jede Scheibe sollte eine für Benutzer beobachtbare Änderung erzeugen. "User Service refactoren" ist keine vertikale Scheibe; "Benutzer kann E-Mail ändern" schon.
+
+Abgrenzung zu Vertical Slice Architecture:: VSA ist ein *Strukturmuster* für die Organisation von Code; Thin Vertical Slicing ist eine *Liefertechnik* für die Organisation von Arbeit. Sie ergänzen sich, sind aber unabhängig — du kannst dünn slicen mit oder ohne VSA.
+
+
+Schlüsselvertreter:: Alistair Cockburn ("Agile Software Development", 2001); Mike Cohn ("User Stories Applied", 2004)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Zerlegung von User Stories oder Epics in lieferbare Inkremente
+* Vermeidung von Big-Bang-Integrationen am Ende eines Sprints oder Projekts
+* Wenn das Team frühes, häufiges Benutzer-Feedback auf tatsächlich laufender Software braucht
+* Risikoreduktion bei langlaufender Feature-Arbeit durch Auslieferung nutzbarer Teilmengen
+* Jeder agile Lieferkontext, in dem "fertig" "ausgeliefert" bedeuten soll
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<walking-skeleton,Walking Skeleton>> - Die erste dünne Scheibe in einem Greenfield-System; Architekturvalidierung
+* <<tracer-bullet,Tracer Bullet>> - Explorative End-to-End-Scheibe zur Richtungsvalidierung
+* <<vertical-slice-architecture,Vertical Slice Architecture>> - Strukturmuster, das Code zur geschnittenen Lieferung passend organisiert
+* <<user-story-mapping,User Story Mapping>> - Technik zur Identifikation, welche Scheiben zuerst geschnitten werden
+====

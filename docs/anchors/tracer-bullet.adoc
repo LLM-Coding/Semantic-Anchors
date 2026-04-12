@@ -1,0 +1,48 @@
+= Tracer Bullet
+:categories: software-architecture
+:roles: software-architect, software-developer
+:related: walking-skeleton, spike-solution, thin-vertical-slice
+:proponents: Andy Hunt, David Thomas
+:tags: architecture, validation, end-to-end, iterative, direction-finding
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Tracer Bullet Development, Tracer Code
+
+[discrete]
+== *Core Concepts*:
+
+End-to-end but lightweight:: Build a thin slice that touches all the pieces of the final system — in realtime, on real infrastructure — to see whether your architectural direction lands where you aimed.
+
+Real ammo, not blanks:: Unlike a spike or prototype, tracer bullet code is *kept and refined*. It becomes part of the final system, not throwaway. The distinction: you iterate on it rather than rewrite it.
+
+Immediate feedback on integration:: You learn quickly whether your chosen tech stack, service boundaries, and data flow *actually work together*, not just whether each piece works in isolation.
+
+Aim, fire, adjust:: The metaphor is a tracer round in a machine gun — you see where the shot lands in real time and adjust your aim for the next burst. Tracer bullets enable rapid directional correction.
+
+Not feature-complete:: The first tracer is deliberately incomplete. One feature, end-to-end, good enough to validate the *shape* of the solution without committing to full functionality.
+
+Architecture validation over feature delivery:: The primary goal is answering "will this architecture work?", not "is this feature done?".
+
+Iterative refinement:: Subsequent tracers refine the aim — adjusting interfaces, choosing different libraries, or repositioning service boundaries based on what the first shot revealed.
+
+
+Key Proponents:: Andrew Hunt and David Thomas ("The Pragmatic Programmer", 1999; 20th Anniversary Edition 2019)
+
+[discrete]
+== *When to Use*:
+
+* Unfamiliar technology stacks where integration risk is unknown
+* Complex system boundaries (microservices, event-driven architectures) where interaction patterns are hard to predict
+* Exploratory projects where requirements are still being discovered
+* When architectural commitments need to be validated before scaling the team
+* Projects where early user or stakeholder feedback on the *shape* of the solution is more valuable than a polished prototype
+
+[discrete]
+== *Related Anchors*:
+
+* <<walking-skeleton,Walking Skeleton>> - Similar end-to-end approach, but production-capable from day one rather than exploratory
+* <<spike-solution,Spike Solution>> - Also exploratory, but spikes are throwaway and answer a single question
+* <<thin-vertical-slice,Thin Vertical Slice>> - Delivery technique that shares the end-to-end philosophy at the feature level
+====

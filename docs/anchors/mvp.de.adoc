@@ -1,0 +1,53 @@
+= Minimum Viable Product (MVP)
+:categories: strategic-planning
+:roles: product-owner, team-lead, consultant
+:related: jobs-to-be-done, impact-mapping, user-story-mapping, walking-skeleton
+:proponents: Eric Ries, Frank Robinson
+:tags: lean-startup, validated-learning, hypothesis-testing, product, mvp
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Minimum Viable Product
+
+Auch bekannt als:: MVP, Lean-Startup MVP
+
+[discrete]
+== *Kernkonzepte*:
+
+Das Kleinste, das eine Hypothese testet:: Ein MVP ist das minimale Produkt, das einem Team erlaubt zu lernen, ob eine spezifische Hypothese über Benutzerbedürfnisse valide ist — mit dem geringstmöglichen Aufwand.
+
+Validiertes Lernen ist das Ergebnis:: Das definierende Ergebnis ist kein Feature-Set, kein Umsatz, keine Benutzer — es ist *Lernen*. "Haben wir gelernt, ob unsere Hypothese stimmt?" ist das einzige Erfolgskriterium.
+
+Eine Hypothese nach der anderen:: Ein MVP zielt auf eine einzige, falsifizierbare Hypothese ("Benutzer zahlen für X", "Benutzer brauchen Feature Y mehr als Feature Z"). Mehrere Hypothesen zu bündeln macht das Lernen uneindeutig.
+
+Minimum heißt Minimum:: Wenn ein handgezeichnetes Mockup, eine Landing Page oder ein Concierge-Service die Hypothese testen kann, *ist* das das MVP. Code ist oft nicht erforderlich. Das "P" steht für Produkt, aber das Produkt kann eine Illusion sein.
+
+Build-Measure-Learn-Zyklus:: Das MVP ist die erste Runde eines engen Feedback-Zyklus: baue etwas Minimales, miss die Reaktion echter Benutzer, lerne aus den Daten, entscheide dann über Pivot oder Persevere.
+
+Keine kleine v1:: Ein häufiger Missbrauch ist, das erste Release eines polierten Produkts "MVP" zu nennen. Ein echtes MVP wäre in Produktion peinlich — sein Job ist Lernen, nicht Markteintritt.
+
+Pivot oder Persevere:: Das MVP liefert die Evidenz zur Wahl: in gleicher Richtung weitermachen (Persevere) oder aufgrund des Gelernten den Kurs ändern (Pivot).
+
+Abgrenzung zum Walking Skeleton:: Ein Walking Skeleton validiert *Architektur*; ein MVP validiert *Marktnachfrage*. Man kann eines ohne das andere haben.
+
+
+Schlüsselvertreter:: Eric Ries ("The Lean Startup", 2011); Frank Robinson prägte den Begriff 2001
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Validierung, ob ein neues Produkt oder Feature ein echtes Benutzerproblem löst, bevor in vollständige Entwicklung investiert wird
+* Test von Preisgestaltung, Positionierung oder Zielsegment-Hypothesen mit minimalem Risiko
+* Frühphasige Startups mit begrenztem Runway, die sich nicht leisten können, das Falsche zu bauen
+* Interne Produktexperimente, bei denen Feature-Ideen Evidenz vor der Priorisierung brauchen
+* LLM-Prompting: "Entwirf ein MVP für X" signalisiert *teste die Hypothese, liefere kein komplettes Produkt*
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<jobs-to-be-done,Jobs to be Done>> - Framework zur Artikulation des Benutzerbedürfnisses, das ein MVP validieren soll
+* <<impact-mapping,Impact Mapping>> - Technik zur Ausrichtung des MVP-Umfangs auf Geschäftsziele
+* <<user-story-mapping,User Story Mapping>> - Visuelles Werkzeug zur Identifikation des minimalen Story-Sets für ein MVP
+* <<walking-skeleton,Walking Skeleton>> - Architektonisches Gegenstück; validiert Struktur statt Marktnachfrage
+====

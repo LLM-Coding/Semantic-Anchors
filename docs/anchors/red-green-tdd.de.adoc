@@ -1,0 +1,50 @@
+= Red/Green TDD
+:categories: testing-quality
+:roles: software-developer, qa-engineer, educator
+:related: tdd-chicago-school, tdd-london-school, bdd-given-when-then
+:proponents: Kent Beck
+:tags: tdd, testing, red-green-refactor, test-first, classical
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Red-Green-Refactor, Klassischer TDD-Zyklus, Test-First-Entwicklung
+
+[discrete]
+== *Kernkonzepte*:
+
+Red-Phase:: Schreibe *zuerst* einen fehlschlagenden Test, bevor irgendwelcher Produktionscode existiert. Der Test muss tatsächlich laufen und aus dem richtigen Grund scheitern — Kompilierfehler zählen nicht als rot.
+
+Green-Phase:: Schreibe das *Minimum* an Produktionscode, das den fehlgeschlagenen Test grün macht. Widerstehe dem Drang, Funktionalität hinzuzufügen, die der Test nicht verlangt.
+
+Refactor-Phase:: Mit grünen Tests verbessere das Design — umbenennen, extrahieren, Duplikate entfernen — im Vertrauen darauf, dass die Testsuite Regressionen fängt.
+
+Kleine Schritte:: Jeder Zyklus ist bewusst klein (Sekunden bis Minuten), nicht Stunden. Große Sprünge zerstören die Feedback-Schleife.
+
+Scheitern beobachten:: Zu verifizieren, dass der Test tatsächlich *vor* der Implementierung fehlschlägt, fängt tautologische Tests und Tippfehler im Test selbst.
+
+Testnamen beschreiben Verhalten:: Nicht Methodennamen. "Gibt leere Liste zurück, wenn keine Benutzer existieren" sagt, was der Code tut; "test getUsers" nicht.
+
+Minimum zum Bestehen:: "Fake it" (return 42), hardcoden, kopieren — was auch immer den Test am schnellsten grün macht. Verallgemeinerung passiert in der Refactor-Phase durch Triangulation.
+
+Ein Test nach dem anderen:: Zu jedem Zeitpunkt nur ein fehlschlagender Test in der Suite. Niemals einen zweiten fehlschlagenden Test hinzufügen, bevor der erste grün ist.
+
+
+Schlüsselvertreter:: Kent Beck ("Test-Driven Development: By Example", 2002); für LLM-Coding-Agents popularisiert durch Simon Willison
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Instruktion von LLM-Coding-Agents, die standardmäßig Features zuerst implementieren und Tests hinterher schreiben
+* Neuer Produktionscode, bei dem Anforderungen als konkrete Beispiele ausgedrückt werden können
+* Bugfixes — schreibe einen fehlschlagenden Test, der den Bug reproduziert, dann behebe ihn
+* Refactoring von Legacy-Code ohne Testabdeckung (beginne mit Charakterisierungstests)
+* Vermittlung disziplinierter inkrementeller Entwicklung
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<tdd-chicago-school,TDD Chicago School>> - Zustandsbasiertes klassisches TDD, das echte Objekte statt Mocks bevorzugt
+* <<tdd-london-school,TDD London School>> - Mock-lastige, interaktionsbasierte, outside-in Variante
+* <<bdd-given-when-then,BDD Given-When-Then>> - Verhaltensgetriebene Ergänzung für höhergelegene Akzeptanztests
+====

@@ -1,0 +1,53 @@
+= Minimum Viable Product (MVP)
+:categories: strategic-planning
+:roles: product-owner, team-lead, consultant
+:related: jobs-to-be-done, impact-mapping, user-story-mapping, walking-skeleton
+:proponents: Eric Ries, Frank Robinson
+:tags: lean-startup, validated-learning, hypothesis-testing, product, mvp
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Minimum Viable Product
+
+Also known as:: MVP, Lean Startup MVP
+
+[discrete]
+== *Core Concepts*:
+
+Smallest thing that tests a hypothesis:: An MVP is the minimum product that allows a team to learn whether a specific hypothesis about user needs is valid — with the least amount of effort.
+
+Validated learning is the output:: The defining output is not a feature set, not revenue, not users — it is *learning*. "Did we learn whether our hypothesis is true?" is the only success criterion.
+
+One hypothesis at a time:: An MVP targets a single, falsifiable hypothesis ("users will pay for X", "users need feature Y more than feature Z"). Bundling hypotheses into one MVP makes the learning ambiguous.
+
+Minimum means minimum:: If a hand-drawn mockup, a landing page, or a concierge service can test the hypothesis, that *is* the MVP. Code is often not required. The "P" stands for product, but the product can be an illusion.
+
+Build-measure-learn loop:: The MVP is the first turn of a tight feedback cycle: build a minimal thing, measure how real users respond, learn from the data, then decide whether to pivot or persevere.
+
+Not a small v1:: A common misuse is calling the first release of a polished product "the MVP". A real MVP would be embarrassing to ship in production — its job is learning, not market entry.
+
+Pivot or persevere:: The MVP gives you the evidence to choose: continue in the same direction (persevere) or change course based on what you learned (pivot).
+
+Distinct from Walking Skeleton:: A Walking Skeleton validates *architecture*; an MVP validates *market demand*. You can have one without the other.
+
+
+Key Proponents:: Eric Ries ("The Lean Startup", 2011); Frank Robinson coined the term in 2001
+
+[discrete]
+== *When to Use*:
+
+* Validating whether a new product or feature solves a real user problem before investing in full development
+* Testing pricing, positioning, or target-segment hypotheses with minimal risk
+* Early-stage startups with limited runway who cannot afford to build the wrong thing
+* Internal product experimentation where feature ideas need evidence before prioritization
+* LLM prompting: "design an MVP for X" signals *test the hypothesis, don't ship a complete product*
+
+[discrete]
+== *Related Anchors*:
+
+* <<jobs-to-be-done,Jobs to be Done>> - Framework for articulating the user need an MVP is trying to validate
+* <<impact-mapping,Impact Mapping>> - Technique for aligning MVP scope with business outcomes
+* <<user-story-mapping,User Story Mapping>> - Visual tool for identifying the minimum set of stories for an MVP
+* <<walking-skeleton,Walking Skeleton>> - Architectural counterpart; validates structure rather than market demand
+====

@@ -1,0 +1,48 @@
+= Tracer Bullet
+:categories: software-architecture
+:roles: software-architect, software-developer
+:related: walking-skeleton, spike-solution, thin-vertical-slice
+:proponents: Andy Hunt, David Thomas
+:tags: architecture, validation, end-to-end, iterative, direction-finding
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Tracer-Bullet-Entwicklung, Tracer Code
+
+[discrete]
+== *Kernkonzepte*:
+
+End-to-End, aber leichtgewichtig:: Baue eine dünne Scheibe, die alle Teile des endgültigen Systems berührt — in Echtzeit, auf echter Infrastruktur — um zu sehen, ob deine architektonische Richtung dort landet, wo du gezielt hast.
+
+Echte Munition, keine Platzpatronen:: Anders als bei Spike oder Prototyp wird Tracer-Bullet-Code *behalten und verfeinert*. Er wird Teil des endgültigen Systems, nicht Wegwerfware. Der Unterschied: Du iterierst darauf, statt ihn neu zu schreiben.
+
+Sofortiges Integrations-Feedback:: Du lernst schnell, ob dein gewählter Tech-Stack, Service-Grenzen und Datenfluss *tatsächlich zusammenarbeiten*, nicht nur ob jedes Teil isoliert funktioniert.
+
+Zielen, schießen, korrigieren:: Die Metapher ist eine Leuchtspurkugel aus einem Maschinengewehr — du siehst in Echtzeit, wo der Schuss landet, und passt dein Ziel für die nächste Salve an. Tracer Bullets ermöglichen schnelle richtungsweisende Korrektur.
+
+Nicht featurevollständig:: Der erste Tracer ist absichtlich unvollständig. Ein Feature, end-to-end, gut genug, um die *Form* der Lösung zu validieren, ohne sich auf volle Funktionalität festzulegen.
+
+Architekturvalidierung vor Feature-Lieferung:: Das primäre Ziel ist die Beantwortung von "Wird diese Architektur funktionieren?", nicht "Ist dieses Feature fertig?".
+
+Iterative Verfeinerung:: Nachfolgende Tracer justieren das Ziel — Interfaces anpassen, andere Bibliotheken wählen oder Servicegrenzen verschieben auf Basis dessen, was der erste Schuss offenbart hat.
+
+
+Schlüsselvertreter:: Andrew Hunt und David Thomas ("The Pragmatic Programmer", 1999; 20. Jubiläumsausgabe 2019)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Unbekannte Technologie-Stacks, bei denen Integrationsrisiko unklar ist
+* Komplexe Systemgrenzen (Microservices, event-getriebene Architekturen) mit schwer vorhersagbaren Interaktionsmustern
+* Explorative Projekte, in denen Anforderungen noch entdeckt werden
+* Wenn architektonische Entscheidungen validiert werden müssen, bevor das Team skaliert wird
+* Projekte, in denen frühes Benutzer- oder Stakeholder-Feedback zur *Form* der Lösung wertvoller ist als ein polierter Prototyp
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<walking-skeleton,Walking Skeleton>> - Ähnlicher End-to-End-Ansatz, aber produktionsreif vom ersten Tag an, statt explorativ
+* <<spike-solution,Spike Solution>> - Ebenfalls explorativ, aber Spikes sind Wegwerf und beantworten eine einzelne Frage
+* <<thin-vertical-slice,Thin Vertical Slice>> - Liefertechnik, die die End-to-End-Philosophie auf Feature-Ebene teilt
+====

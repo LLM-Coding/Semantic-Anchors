@@ -3,6 +3,7 @@
     "id": "communication-presentation",
     "name": "Communication & Presentation",
     "anchors": [
+      "4mat",
       "bluf",
       "gutes-deutsch-wolf-schneider",
       "mece",
@@ -29,6 +30,7 @@
     "id": "design-principles",
     "name": "Design Principles & Patterns",
     "anchors": [
+      "cohesion-criteria",
       "crc-cards",
       "fowler-patterns",
       "gof-abstract-factory-pattern",
@@ -81,6 +83,8 @@
       "regulated-environment",
       "semantic-versioning",
       "sota",
+      "spike-solution",
+      "thin-vertical-slice",
       "timtowtdi"
     ]
   },
@@ -156,7 +160,9 @@
       "iso-25010",
       "lasr",
       "madr",
-      "vertical-slice-architecture"
+      "tracer-bullet",
+      "vertical-slice-architecture",
+      "walking-skeleton"
     ]
   },
   {
@@ -175,6 +181,7 @@
       "cynefin-framework",
       "impact-mapping",
       "jobs-to-be-done",
+      "mvp",
       "pert",
       "pugh-matrix",
       "swot",
@@ -194,6 +201,7 @@
       "mutation-testing",
       "owasp-top-10",
       "property-based-testing",
+      "red-green-tdd",
       "stride",
       "tdd-chicago-school",
       "tdd-london-school",
