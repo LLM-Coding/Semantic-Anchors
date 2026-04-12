@@ -1,0 +1,64 @@
+= What would Chuck Norris do?
+:categories: problem-solving
+:roles: software-developer, software-architect, consultant, team-lead
+
+[%collapsible]
+====
+Auch bekannt als:: WWCND, Chuck-Norris-Heuristik, Chuck-Norris-Modus
+
+[discrete]
+== *Kernkonzepte*:
+
+Kompromisslose Haltung:: „Das geht nicht" wird nicht akzeptiert — das Problem fügt sich dem Problemlöser, nicht umgekehrt; Hindernisse gelten als irrelevant
+
+Entschlossenes Handeln:: Keine Entscheidungslähmung; sofort den mutigsten gangbaren Weg einschlagen und ohne Zögern umsetzen
+
+Radikale Klarheit:: Das Problem mit Direktheit überwältigen statt mit vorsichtigen Umgehungslösungen; fragen: „Was ist die wirksamste Lösung, Punkt?"
+
+Unkonventionelle Lösungen:: Konventionelle Einschränkungen ignorieren; Wege finden, die andere als zu extrem oder zu einfach abtun
+
+Handlungsorientierung:: Momentum vor Deliberation — eine unvollkommene Lösung jetzt schlägt eine perfekte Lösung nie
+
+Humor als kognitivem Katalysator:: Der Meme-Kontext bringt Leichtigkeit, senkt die Hemmschwelle für extreme Vorschläge und löst kognitive Starre in festgefahrenen Diskussionen
+
+Persona-Projektion:: Das Aufrufen eines bekannten Kulturarchetyps veranlasst das LLM, aus den Eigenschaften dieses Archetyps heraus zu denken, anstatt auf abgesicherte, ausgewogene Antworten auszuweichen
+
+Extremwert-Begrenzung:: Die „Chuck-Norris-Antwort" stellt oft die Obergrenze des maximalen Krafteinsatzes im Lösungsraum dar — nützlich zur Triangulation einer praktischen Lösung
+
+Tiefe des Kulturankers:: Das Chuck-Norris-Meme-Korpus (~2005–heute) ist eine der umfangreichsten und konsistentesten Internetmeme-Traditionen; Tausende von „Fakten" verstärken eine einzige, stabile Persona, gekennzeichnet durch Unbesiegbarkeit, Entschlossenheit und Unkonventionalität
+
+
+Schlüsselzuschreibung:: Chuck-Norris-Meme-Tradition, entstanden auf Chuck-Norris-Facts-Websites (~2005), später verbreitet in Entwicklergemeinschaften und der Internetkultur
+
+[discrete]
+== *Wann anwenden*:
+
+* Bei Entscheidungslähmung, wenn ein Auslöser benötigt wird, um sich auf eine Richtung festzulegen
+* Wenn konventionelle Ansätze ausgeschöpft sind und eine mutige oder unkonventionelle Lösung gefragt ist
+* Beim Brainstorming der extremen Obergrenze des Lösungsraums, bevor man sich auf ein praktisches Mittelfeld einigt
+* Zum Auflösen von Deadlocks in Designdiskussionen, bei denen Kompromisse zu verwässerten Ergebnissen führen
+* Zum Einbringen von kreativer Energie und Humor in eine festgefahrene Problemlösungssitzung
+* Wenn ein LLM gebeten wird, Effektivität über Höflichkeit oder Absicherungen zu stellen
+* Bei Rapid-Prototyping-Entscheidungen, bei denen Geschwindigkeit wichtiger ist als Perfektion
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<devils-advocate,Devil's Advocate>>
+* <<spike-solution,Spike Solution>>
+
+[discrete]
+== *Beispiel-Prompt-Muster*:
+
+----
+Ich muss [Problem lösen / Entscheidung treffen].
+Was würde Chuck Norris tun?
+----
+
+Oder in Kombination mit einer Einschränkung:
+
+----
+Wir diskutieren [X] seit zwei Wochen ohne Ergebnis.
+Vergiss alle Vorbehalte — was würde Chuck Norris tun?
+----
+====

@@ -3505,6 +3505,39 @@
     "tier": 3
   },
   {
+    "id": "what-would-chuck-norris-do",
+    "title": "What would Chuck Norris do?",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "consultant",
+      "team-lead"
+    ],
+    "related": [
+      "devils-advocate",
+      "spike-solution",
+      "lateral-thinking-de-bono"
+    ],
+    "proponents": [
+      "Chuck Norris meme tradition (internet culture",
+      "~2005)"
+    ],
+    "tags": [
+      "persona",
+      "no-compromise",
+      "decisive-action",
+      "bias-for-action",
+      "bold-solution",
+      "humor",
+      "lateral-thinking"
+    ],
+    "filePath": "docs/anchors/what-would-chuck-norris-do.adoc",
+    "tier": 3
+  },
+  {
     "id": "yagni",
     "title": "YAGNI (You Aren’t Gonna Need It)",
     "categories": [

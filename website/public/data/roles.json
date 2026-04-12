@@ -77,6 +77,7 @@
       "timtowtdi",
       "wardley-mapping",
       "what-qualifies-as-a-semantic-anchor",
+      "what-would-chuck-norris-do",
       "yagni"
     ]
   },
@@ -287,6 +288,7 @@
       "vertical-slice-architecture",
       "walking-skeleton",
       "wardley-mapping",
+      "what-would-chuck-norris-do",
       "yagni"
     ]
   },
@@ -385,6 +387,7 @@
       "tracer-bullet",
       "vertical-slice-architecture",
       "walking-skeleton",
+      "what-would-chuck-norris-do",
       "yagni"
     ]
   },
@@ -438,7 +441,8 @@
       "todotxt-flavoured-markdown",
       "user-story-mapping",
       "walking-skeleton",
-      "wardley-mapping"
+      "wardley-mapping",
+      "what-would-chuck-norris-do"
     ]
   },
   {

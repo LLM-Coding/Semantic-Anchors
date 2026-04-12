@@ -347,6 +347,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Devil's Advocate
 - **Core:** Argue against proposal to stress-test it
 
+### What would Chuck Norris do?
+- **Also known as:** WWCND, Chuck Norris Heuristic
+- **Core:** Invoke the Chuck Norris persona to force a no-compromise, maximally decisive solution; bias for bold action over analysis paralysis; humor lowers cognitive rigidity; useful for bounding the extreme upper end of the solution space
+
 ### Morphological Box
 - **Proponents:** Fritz Zwicky
 - **Core:** Matrix of parameters × options to explore solution space

@@ -1,0 +1,70 @@
+= What would Chuck Norris do?
+:categories: problem-solving
+:roles: software-developer, software-architect, consultant, team-lead
+:related: devils-advocate, spike-solution, lateral-thinking-de-bono
+:proponents: Chuck Norris meme tradition (internet culture, ~2005)
+:tags: persona, no-compromise, decisive-action, bias-for-action, bold-solution, humor, lateral-thinking
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: WWCND, Chuck Norris Heuristic, Chuck Norris Mode
+
+[discrete]
+== *Core Concepts*:
+
+No-Compromise Mindset:: Refuse to accept "it can't be done" — the problem yields to the solver, not the other way around; obstacles are treated as irrelevant
+
+Decisive Action:: Skip analysis paralysis; commit to the boldest viable path and execute immediately without second-guessing
+
+Brute-Force Clarity:: Overwhelm the problem with directness rather than cautious workarounds; ask "what is the most effective solution, full stop?"
+
+Unconventional Solutions:: Disregard conventional limitations; find paths others dismiss as too extreme or too simple
+
+Bias for Action:: Momentum over deliberation — an imperfect solution now beats a perfect solution never
+
+Humor as Cognitive Catalyst:: The meme context brings levity, lowers the cost of extreme suggestions, and loosens cognitive rigidity in stuck discussions
+
+Persona Projection:: Invoking a widely-known cultural archetype primes the LLM to reason from that archetype's characteristics rather than defaulting to hedged, balanced responses
+
+Extreme-Case Bounding:: The "Chuck Norris answer" often represents the maximum-force upper bound of the solution space, useful for triangulating a practical solution
+
+Cultural Anchor Depth:: The Chuck Norris meme corpus (~2005–present) is one of the largest and most consistent internet meme traditions; thousands of "facts" reinforce a single, stable persona characterized by invincibility, decisiveness, and unconventionality
+
+
+Key Attribution:: Chuck Norris meme tradition, originating from Chuck Norris Facts websites (~2005), later spreading to developer communities and internet culture broadly
+
+Historical Context:: The Chuck Norris meme emerged in online forums around 2005, reaching mainstream internet culture rapidly. The "facts" (e.g., "Chuck Norris doesn't do push-ups, he pushes the Earth down") form a consistent corpus that LLMs have been trained on extensively, making WWCND a reliable persona trigger for decisive, no-compromise reasoning.
+
+[discrete]
+== *When to Use*:
+
+* When stuck in analysis paralysis and need a forcing function to commit to a direction
+* When conventional approaches have been exhausted and a bold or unconventional solution is needed
+* Brainstorming the extreme upper bound of the solution space before settling on a practical middle ground
+* Breaking deadlocks in design discussions where compromise is producing a watered-down result
+* Injecting creative energy and humor into a stalled problem-solving session
+* Asking an LLM to prioritize effectiveness over politeness or hedging
+* Rapid prototyping decisions where speed beats perfection
+
+[discrete]
+== *Related Anchors*:
+
+* <<devils-advocate,Devil's Advocate>>
+* <<spike-solution,Spike Solution>>
+
+[discrete]
+== *Example Prompt Pattern*:
+
+----
+I need to [solve problem / make decision].
+What would Chuck Norris do?
+----
+
+Or combined with a constraint:
+
+----
+We've been debating [X] for two weeks and can't decide.
+Forget all the caveats — what would Chuck Norris do?
+----
+====
