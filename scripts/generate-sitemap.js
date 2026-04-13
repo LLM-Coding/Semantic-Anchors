@@ -41,6 +41,15 @@ const PAGES = [
 const anchorsData = JSON.parse(fs.readFileSync(ANCHORS_DATA, 'utf-8'))
 const today = new Date().toISOString().split('T')[0]
 
+/**
+ * Render one <url> entry for sitemap.xml.
+ * @param {string} loc - Fully-qualified URL of the page.
+ * @param {string} lastmod - ISO date string (YYYY-MM-DD).
+ * @param {string} changefreq - Sitemap changefreq value (weekly, monthly, ...).
+ * @param {string} priority - Sitemap priority value ("0.0"–"1.0").
+ * @param {string} [comment] - Optional XML comment placed above the entry.
+ * @returns {string} One <url>...</url> block with a trailing blank line.
+ */
 function urlEntry(loc, lastmod, changefreq, priority, comment) {
   return `  ${comment ? `<!-- ${comment} -->\n  ` : ''}<url>
     <loc>${loc}</loc>

@@ -96,6 +96,12 @@ const ROUTES = [
   },
 ]
 
+/**
+ * Read the Vite-built HTML shell (website/dist/index.html).
+ * Exits with an error if the shell is missing — indicates that the caller
+ * forgot to run `vite build` before this post-build step.
+ * @returns {string} Raw HTML contents of the shell.
+ */
 function readShell() {
   if (!fs.existsSync(SHELL)) {
     console.error(`ERROR: ${SHELL} does not exist. Run 'vite build' first.`)
@@ -104,6 +110,13 @@ function readShell() {
   return fs.readFileSync(SHELL, 'utf-8')
 }
 
+/**
+ * Escape a string for safe insertion into an HTML attribute or text node.
+ * Converts &, <, >, ", and ' to their HTML entity equivalents. Used for
+ * route titles and descriptions that end up inside <title> and meta tags.
+ * @param {string} str - Input string to escape.
+ * @returns {string} HTML-safe string.
+ */
 function escapeHtml(str) {
   return String(str).replace(
     /[&<>"']/g,
@@ -134,6 +147,17 @@ function buildAppMarkup(fragmentHtml) {
   `
 }
 
+/**
+ * Pre-render a single route to website/dist/<route>/index.html.
+ * Reads the AsciiDoc fragment produced by scripts/render-docs.js, injects
+ * it into a copy of the Vite shell, and updates the <title>, meta
+ * description, and canonical URL to match the route. If the fragment is
+ * missing, logs a warning and returns false without writing anything.
+ * @param {string} shell - Raw HTML of the Vite build shell.
+ * @param {{path: string, fragment: string, title: string, description: string}} route
+ *   Route descriptor from the ROUTES list.
+ * @returns {boolean} true when a file was written, false when skipped.
+ */
 function prerenderRoute(shell, route) {
   const fragmentPath = path.join(DIST, route.fragment)
   if (!fs.existsSync(fragmentPath)) {
@@ -173,6 +197,10 @@ function prerenderRoute(shell, route) {
   return true
 }
 
+/**
+ * Entry point: read the shell once, then pre-render every route in ROUTES.
+ * Logs a summary of how many routes were written vs skipped.
+ */
 function main() {
   const shell = readShell()
   let written = 0
