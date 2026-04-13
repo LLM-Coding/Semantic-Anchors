@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "url": ["https://raifdmueller.github.io/Semantic-Anchors/"],
+      "url": ["https://llm-coding.github.io/Semantic-Anchors/"],
       "numberOfRuns": 3,
       "settings": {
         "preset": "desktop"
