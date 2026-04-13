@@ -151,18 +151,21 @@ function buildAppMarkup(fragmentHtml) {
  * Pre-render a single route to website/dist/<route>/index.html.
  * Reads the AsciiDoc fragment produced by scripts/render-docs.js, injects
  * it into a copy of the Vite shell, and updates the <title>, meta
- * description, and canonical URL to match the route. If the fragment is
- * missing, logs a warning and returns false without writing anything.
+ * description, and canonical URL to match the route. Throws if the
+ * fragment is missing so the build fails fast instead of shipping an
+ * incomplete set of pre-rendered pages.
  * @param {string} shell - Raw HTML of the Vite build shell.
  * @param {{path: string, fragment: string, title: string, description: string}} route
  *   Route descriptor from the ROUTES list.
- * @returns {boolean} true when a file was written, false when skipped.
+ * @throws {Error} When the configured fragment file does not exist.
  */
 function prerenderRoute(shell, route) {
   const fragmentPath = path.join(DIST, route.fragment)
   if (!fs.existsSync(fragmentPath)) {
-    console.warn(`  skip ${route.path}: fragment not found at ${route.fragment}`)
-    return false
+    throw new Error(
+      `Missing fragment for ${route.path}: ${route.fragment} (expected at ${fragmentPath}). ` +
+        `Make sure scripts/render-docs.js runs before prerender-routes.js and writes the fragment to website/public/docs/.`
+    )
   }
   const fragment = fs.readFileSync(fragmentPath, 'utf-8')
 
@@ -194,23 +197,20 @@ function prerenderRoute(shell, route) {
   const outFile = path.join(outDir, 'index.html')
   fs.mkdirSync(outDir, { recursive: true })
   fs.writeFileSync(outFile, html, 'utf-8')
-  return true
 }
 
 /**
  * Entry point: read the shell once, then pre-render every route in ROUTES.
- * Logs a summary of how many routes were written vs skipped.
+ * Throws (via prerenderRoute) if any fragment is missing, so the build
+ * fails non-zero instead of shipping an incomplete set of static pages.
  */
 function main() {
   const shell = readShell()
-  let written = 0
   for (const route of ROUTES) {
-    if (prerenderRoute(shell, route)) {
-      console.log(`  ✓ pre-rendered ${route.path}`)
-      written += 1
-    }
+    prerenderRoute(shell, route)
+    console.log(`  ✓ pre-rendered ${route.path}`)
   }
-  console.log(`\n✓ Pre-rendered ${written}/${ROUTES.length} routes to dist/<route>/index.html`)
+  console.log(`\n✓ Pre-rendered ${ROUTES.length} routes to dist/<route>/index.html`)
 }
 
 main()

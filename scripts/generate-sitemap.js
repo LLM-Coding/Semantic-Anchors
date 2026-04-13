@@ -22,14 +22,24 @@ const OUTPUT_FILE = path.join(__dirname, '..', 'website', 'public', 'sitemap.xml
 const BASE_URL = 'https://llm-coding.github.io/Semantic-Anchors'
 
 // Static pages served by the SPA router. Keep in sync with
-// website/src/utils/router.js -> ROUTE_TITLES.
+// website/src/utils/router.js -> ROUTE_TITLES AND with the ROUTES list in
+// scripts/prerender-routes.js.
+//
+// Only routes that can be pre-rendered to static HTML are listed here —
+// otherwise the sitemap would advertise URLs that return an empty SPA
+// shell to non-JS crawlers and claude.ai fetchers.
+//
+// Excluded on purpose:
+// - /contracts     — interactive JS page (localStorage, client-side data
+//                    fetching); no static content worth serving
+// - /anchor/:id    — rendered per entry via the anchor loop below
+//
 // priority: 1.0 homepage, 0.8 top-level content, 0.7 contributing/meta, 0.6 anchors
 const PAGES = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
   { path: '/workflow', priority: '0.8', changefreq: 'monthly' },
   { path: '/brownfield', priority: '0.8', changefreq: 'monthly' },
-  { path: '/contracts', priority: '0.8', changefreq: 'monthly' },
   { path: '/evaluations', priority: '0.8', changefreq: 'monthly' },
   { path: '/all-anchors', priority: '0.8', changefreq: 'weekly' },
   { path: '/agentskill', priority: '0.7', changefreq: 'monthly' },

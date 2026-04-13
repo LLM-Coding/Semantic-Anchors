@@ -29,13 +29,6 @@
   </url>
 
   <url>
-    <loc>https://llm-coding.github.io/Semantic-Anchors/contracts</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/evaluations</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
