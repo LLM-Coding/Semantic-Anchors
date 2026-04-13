@@ -92,8 +92,7 @@ const ROUTES = [
     path: '/evaluations',
     fragment: 'docs/anchor-evaluations.html',
     title: 'Evaluations — Semantic Anchors',
-    description:
-      'Multiple-choice evaluations of semantic anchor recognition across 10 LLMs.',
+    description: 'Multiple-choice evaluations of semantic anchor recognition across 10 LLMs.',
   },
 ]
 
@@ -106,13 +105,17 @@ function readShell() {
 }
 
 function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, (c) => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;',
-  })[c])
+  return String(str).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      })[c]
+  )
 }
 
 /**
