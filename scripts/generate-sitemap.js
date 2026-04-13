@@ -3,69 +3,82 @@
 /**
  * generate-sitemap.js
  *
- * Generates sitemap.xml for the Semantic Anchors website
+ * Generates sitemap.xml for the Semantic Anchors website.
+ *
+ * Produces clean (non-hash) URLs that match the History API router in
+ * website/src/utils/router.js. Hash-based URLs (#/about) are not crawlable
+ * by search engines — every hash URL looks like the homepage to a crawler,
+ * and claude.ai / LLM fetchers cannot reach them either.
+ *
+ * Keep the PAGES list in sync with router.js `ROUTE_TITLES` when adding
+ * new routes.
  */
 
 const fs = require('fs')
 const path = require('path')
 
-// Paths
 const ANCHORS_DATA = path.join(__dirname, '..', 'website', 'public', 'data', 'anchors.json')
 const OUTPUT_FILE = path.join(__dirname, '..', 'website', 'public', 'sitemap.xml')
 const BASE_URL = 'https://llm-coding.github.io/Semantic-Anchors'
 
-// Read anchors data
-const anchorsData = JSON.parse(fs.readFileSync(ANCHORS_DATA, 'utf-8'))
+// Static pages served by the SPA router. Keep in sync with
+// website/src/utils/router.js -> ROUTE_TITLES.
+// priority: 1.0 homepage, 0.8 top-level content, 0.7 contributing/meta, 0.6 anchors
+const PAGES = [
+  { path: '/', priority: '1.0', changefreq: 'weekly' },
+  { path: '/about', priority: '0.8', changefreq: 'monthly' },
+  { path: '/workflow', priority: '0.8', changefreq: 'monthly' },
+  { path: '/brownfield', priority: '0.8', changefreq: 'monthly' },
+  { path: '/contracts', priority: '0.8', changefreq: 'monthly' },
+  { path: '/evaluations', priority: '0.8', changefreq: 'monthly' },
+  { path: '/all-anchors', priority: '0.8', changefreq: 'weekly' },
+  { path: '/agentskill', priority: '0.7', changefreq: 'monthly' },
+  { path: '/changelog', priority: '0.7', changefreq: 'weekly' },
+  { path: '/contributing', priority: '0.7', changefreq: 'monthly' },
+  { path: '/rejected-proposals', priority: '0.5', changefreq: 'monthly' },
+]
 
-// Generate sitemap
+const anchorsData = JSON.parse(fs.readFileSync(ANCHORS_DATA, 'utf-8'))
 const today = new Date().toISOString().split('T')[0]
+
+function urlEntry(loc, lastmod, changefreq, priority, comment) {
+  return `  ${comment ? `<!-- ${comment} -->\n  ` : ''}<url>
+    <loc>${loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>
+
+`
+}
 
 let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
-  <url>
-    <loc>${BASE_URL}/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- About Page -->
-  <url>
-    <loc>${BASE_URL}/#/about</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contributing Page -->
-  <url>
-    <loc>${BASE_URL}/#/contributing</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 `
 
-// Add all anchors
+// Static pages
+for (const page of PAGES) {
+  const loc = page.path === '/' ? `${BASE_URL}/` : `${BASE_URL}${page.path}`
+  sitemap += urlEntry(loc, today, page.changefreq, page.priority)
+}
+
+// Individual anchor pages
 anchorsData.forEach((anchor) => {
-  sitemap += `  <!-- Anchor: ${anchor.title} -->
-  <url>
-    <loc>${BASE_URL}/#/anchor/${anchor.id}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-`
+  sitemap += urlEntry(
+    `${BASE_URL}/anchor/${anchor.id}`,
+    today,
+    'monthly',
+    '0.6',
+    `Anchor: ${anchor.title}`
+  )
 })
 
 sitemap += `</urlset>
 `
 
-// Write sitemap
 fs.writeFileSync(OUTPUT_FILE, sitemap, 'utf-8')
 
 console.log(`✓ Sitemap generated: ${OUTPUT_FILE}`)
-console.log(`✓ Total URLs: ${anchorsData.length + 3} (3 pages + ${anchorsData.length} anchors)`)
+console.log(
+  `✓ Total URLs: ${PAGES.length + anchorsData.length} (${PAGES.length} pages + ${anchorsData.length} anchors)`
+)
