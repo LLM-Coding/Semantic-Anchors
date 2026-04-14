@@ -126,7 +126,6 @@ function hydrateShell(app) {
     <div id="page-content"></div>
     ${renderFooter(APP_VERSION)}
   `
-  // eslint-disable-next-line no-unsanitized/property -- trusted template strings
   app.innerHTML = shellHtml
 }
 
