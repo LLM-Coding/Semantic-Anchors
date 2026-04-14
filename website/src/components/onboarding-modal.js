@@ -101,7 +101,7 @@ function buildModalContent() {
       </div>
 
       <div class="text-center px-6 pb-4">
-        <img src="${baseUrl}logo.png" alt="Semantic Anchors" class="h-24 mx-auto mb-3" />
+        <img src="${baseUrl}logo.png" alt="Semantic Anchors" width="218" height="96" class="h-24 w-auto mx-auto mb-3" />
         <h2 id="onboarding-title" class="text-lg font-medium text-[var(--color-text-secondary)]">
           ${slogan2}
         </h2>

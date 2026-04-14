@@ -112,17 +112,17 @@ function renderAnchorCard(anchor, categoryColor) {
   const safeId = escapeHtml(anchor.id)
 
   return `
-    <article
+    <div
       class="anchor-card${umbrellaClass}"
       data-anchor="${safeId}"
       data-roles="${escapeHtml(anchor.roles ? anchor.roles.join(',') : '')}"
       data-tags="${escapeHtml(anchor.tags ? anchor.tags.join(',') : '')}"
       tabindex="0"
       role="button"
-      aria-label="${escapeHtml(i18n.t('card.openDetails').replace('{title}', anchor.title))}"
+      aria-labelledby="anchor-card-title-${safeId}"
     >
       <div class="anchor-card-header">
-        <h3 class="anchor-card-title">${escapeHtml(anchor.title)}</h3>
+        <h3 id="anchor-card-title-${safeId}" class="anchor-card-title">${escapeHtml(anchor.title)}</h3>
         <div class="flex gap-1">
           <button
             class="anchor-copy-link-btn"
@@ -215,7 +215,7 @@ function renderAnchorCard(anchor, categoryColor) {
       </div>
 
       <div class="anchor-card-indicator" style="background-color: ${categoryColor}"></div>
-    </article>
+    </div>
   `
 }
 
