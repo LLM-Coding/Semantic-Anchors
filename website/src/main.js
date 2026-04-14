@@ -97,6 +97,38 @@ function triggerSearchIndexBuild() {
     })
 }
 
+/**
+ * Hydrate the #app element on boot.
+ *
+ * The production build ships website/index.html with a static skeleton
+ * inside #app: a #shell-header placeholder, a real #page-content div, and
+ * a #shell-footer placeholder. Reserving those boxes at first paint
+ * eliminates the empty-→-populated layout shift that used to dominate CLS
+ * on the homepage (see #432).
+ *
+ * If the skeleton is present, replace just the header + footer placeholders
+ * in place — #page-content remains untouched so the route handlers can
+ * populate it normally.
+ *
+ * If the skeleton is absent (dev server / non-prerendered load) we still
+ * need the shell, so fall back to the previous full rewrite of #app.
+ */
+function hydrateShell(app) {
+  const shellHeader = document.getElementById('shell-header')
+  const shellFooter = document.getElementById('shell-footer')
+  if (shellHeader && shellFooter) {
+    shellHeader.outerHTML = renderHeader()
+    shellFooter.outerHTML = renderFooter(APP_VERSION)
+    return
+  }
+  const shellHtml = `
+    ${renderHeader()}
+    <div id="page-content"></div>
+    ${renderFooter(APP_VERSION)}
+  `
+  app.innerHTML = shellHtml
+}
+
 function initApp() {
   i18n.init()
   initTheme()
@@ -117,11 +149,7 @@ function initApp() {
   const app = document.querySelector('#app')
   if (!app) return
 
-  app.innerHTML = `
-    ${renderHeader()}
-    <div id="page-content"></div>
-    ${renderFooter(APP_VERSION)}
-  `
+  hydrateShell(app)
 
   applyTranslations()
   updateThemeIcon()

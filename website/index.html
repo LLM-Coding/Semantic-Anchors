@@ -67,7 +67,20 @@
     </script>
   </head>
   <body>
-    <div id="app"></div>
+    <!--
+      Skeleton shell: reserves viewport-height layout space so first paint
+      already has the expected header/content/footer footprint. Without this
+      the SPA boot caused CLS ~0.975 (empty #app → populated #app). main.js
+      detects the skeleton via #shell-header / #shell-footer and replaces the
+      header + footer in place, leaving #page-content untouched. See #432.
+    -->
+    <div id="app">
+      <div id="shell-root" class="flex flex-col" style="min-height: 100vh;">
+        <div id="shell-header" class="border-b border-[var(--color-border)]" style="min-height: 10.5rem;" aria-hidden="true"></div>
+        <div id="page-content" class="flex-1" style="min-height: calc(100vh - 16.5rem);"></div>
+        <div id="shell-footer" class="border-t border-[var(--color-border)]" style="min-height: 6rem;" aria-hidden="true"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

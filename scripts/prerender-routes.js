@@ -132,18 +132,16 @@ function escapeHtml(str) {
 }
 
 /**
- * Build the pre-populated markup that goes inside <div id="app">.
- * Mirrors the layout produced at runtime by renderHeader() + renderDocPage()
- * + renderFooter() in website/src/main.js, but statically — so crawlers see
- * real content in the initial HTML response.
+ * Wrap the doc fragment in the structure that website/src/components/doc-page.js
+ * produces at runtime: a centered article container with a #doc-content div.
+ * The content is injected into the shell's #page-content div so crawlers and
+ * non-JS fetchers see real content in the initial HTML response.
  */
-function buildAppMarkup(fragmentHtml) {
+function buildDocContentMarkup(fragmentHtml) {
   return `
-    <main class="flex-1">
-      <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-        <div id="doc-content" class="asciidoc-content">${fragmentHtml}</div>
-      </article>
-    </main>
+    <article class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      <div id="doc-content" class="asciidoc-content">${fragmentHtml}</div>
+    </article>
   `
 }
 
@@ -187,11 +185,19 @@ function prerenderRoute(shell, route) {
     `<link rel="canonical" href="${canonicalUrl}" />`
   )
 
-  // Inject pre-rendered content into #app
-  html = html.replace(
-    /<div\s+id="app"\s*>\s*<\/div>/,
-    `<div id="app">${buildAppMarkup(fragment)}</div>`
-  )
+  // Inject pre-rendered content into the static shell's #page-content div.
+  // The shell (set up in website/index.html and preserved through vite build)
+  // contains:
+  //   <div id="page-content" ... style="..."></div>
+  // We match that empty div by id and fill it with the doc content so crawlers
+  // receive real HTML while JS users still get the SPA hydration on top.
+  const pageContentRegex = /(<div\s+id="page-content"[^>]*>)\s*(<\/div>)/
+  if (!pageContentRegex.test(html)) {
+    throw new Error(
+      `Shell #page-content div not found in dist/index.html. Did website/index.html lose the skeleton structure?`
+    )
+  }
+  html = html.replace(pageContentRegex, `$1${buildDocContentMarkup(fragment)}$2`)
 
   const outDir = path.join(DIST, route.path)
   const outFile = path.join(outDir, 'index.html')
