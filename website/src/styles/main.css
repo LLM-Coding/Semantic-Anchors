@@ -65,6 +65,13 @@ body {
   font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Reserve viewport height so the browser doesn't shift layout when the
+   card grid / doc content loads asynchronously. This is the single biggest
+   lever for Cumulative Layout Shift on the homepage (Lighthouse weight 25). */
+#page-content {
+  min-height: calc(100vh - 12rem);
+}
+
 /* Force sans-serif on all card descendants to override AsciiDoc serif fonts */
 .anchor-card,
 .anchor-card *,
@@ -164,6 +171,10 @@ body {
   @apply flex items-center gap-1;
   @apply px-2 py-1 rounded;
   @apply bg-gray-100 dark:bg-gray-700;
+  /* Explicit text color for WCAG AA contrast on the badge background.
+     Default .anchor-card-meta text (gray-500/400) only reaches ~3.9:1 / ~3.1:1,
+     below the 4.5:1 threshold for normal text. */
+  @apply text-gray-700 dark:text-gray-200;
 }
 
 .feedback-badge {

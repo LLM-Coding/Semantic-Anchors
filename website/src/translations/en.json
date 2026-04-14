@@ -2,6 +2,7 @@
   "app.title": "Semantic Anchors",
   "app.description": "Shared vocabulary for LLM communication",
   "header.langToggle": "DE",
+  "header.langToggleAria": "DE — switch to German",
   "header.slogan": "One word, and the AI gets the rest.",
   "header.themeToggle.dark": "Switch to dark mode",
   "header.themeToggle.light": "Switch to light mode",

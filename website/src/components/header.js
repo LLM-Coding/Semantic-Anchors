@@ -11,7 +11,7 @@ export function renderHeader() {
           <!-- Logo left, spanning both rows -->
           <div class="flex items-center">
             <a href="#/" class="no-underline flex flex-col items-center">
-              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" class="max-h-24" />
+              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="218" height="96" class="max-h-24 w-auto" />
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
             <button
@@ -54,7 +54,8 @@ export function renderHeader() {
                 <button
                   id="lang-toggle"
                   class="rounded-md px-2 py-1 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors"
-                  aria-label="Toggle language"
+                  aria-label="${i18n.t('header.langToggleAria')}"
+                  data-i18n-aria="header.langToggleAria"
                 >${langLabel}</button>
                 <button
                   id="theme-toggle"
@@ -82,6 +83,8 @@ export function renderHeader() {
               />
               <select
                 id="header-role-filter"
+                aria-label="${i18n.t('filter.allRoles')}"
+                data-i18n-aria="filter.allRoles"
                 class="rounded-lg border-2 border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2 text-base text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)] transition-colors duration-300"
               >
                 <option value="" data-i18n="filter.allRoles">${i18n.t('filter.allRoles')}</option>
@@ -97,7 +100,7 @@ export function renderHeader() {
         <div class="sm:hidden">
           <div class="flex flex-col items-center">
             <a href="#/" class="no-underline flex flex-col items-center">
-              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" class="max-h-16" />
+              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="145" height="64" class="max-h-16 w-auto" />
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight text-center" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
             <div class="flex items-center gap-3 mt-2">
@@ -117,7 +120,8 @@ export function renderHeader() {
               <button
                 id="lang-toggle-mobile"
                 class="rounded-md px-2 py-1 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors"
-                aria-label="Toggle language"
+                aria-label="${i18n.t('header.langToggleAria')}"
+                data-i18n-aria="header.langToggleAria"
               >${langLabel}</button>
               <button
                 id="theme-toggle-mobile"

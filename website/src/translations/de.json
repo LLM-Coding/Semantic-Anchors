@@ -2,6 +2,7 @@
   "app.title": "Semantic Anchors",
   "app.description": "Gemeinsames Vokabular für LLM-Kommunikation",
   "header.langToggle": "EN",
+  "header.langToggleAria": "EN — zu Englisch wechseln",
   "header.slogan": "Ein Wort, und die KI versteht den Rest.",
   "header.themeToggle.dark": "Zum Dunkelmodus wechseln",
   "header.themeToggle.light": "Zum Hellmodus wechseln",
