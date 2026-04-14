@@ -120,7 +120,8 @@ export function renderHeader() {
               <button
                 id="lang-toggle-mobile"
                 class="rounded-md px-2 py-1 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors"
-                aria-label="Toggle language"
+                aria-label="${i18n.t('header.langToggleAria')}"
+                data-i18n-aria="header.langToggleAria"
               >${langLabel}</button>
               <button
                 id="theme-toggle-mobile"

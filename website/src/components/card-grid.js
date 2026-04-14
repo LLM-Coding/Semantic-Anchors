@@ -90,16 +90,21 @@ function renderCategorySection(category, allAnchors) {
       </h2>
 
       <div class="anchor-cards-grid">
-        ${categoryAnchors.map((anchor) => renderAnchorCard(anchor, color)).join('')}
+        ${categoryAnchors.map((anchor) => renderAnchorCard(anchor, color, category.id)).join('')}
       </div>
     </section>
   `
 }
 
 /**
- * Render a single anchor card
+ * Render a single anchor card.
+ *
+ * The optional `categoryId` argument is used to namespace the heading id
+ * used by `aria-labelledby`, since the same anchor may appear in multiple
+ * category sections (anchors can belong to more than one category) and
+ * the DOM must not contain duplicate ids.
  */
-function renderAnchorCard(anchor, categoryColor) {
+function renderAnchorCard(anchor, categoryColor, categoryId) {
   const isUmbrella = anchor.subAnchors && anchor.subAnchors.length > 0
   const umbrellaClass = isUmbrella ? ' anchor-card-umbrella' : ''
   const rolesCount = anchor.roles ? anchor.roles.length : 0
@@ -110,6 +115,8 @@ function renderAnchorCard(anchor, categoryColor) {
   const editTitle = i18n.t('card.edit')
   const copyLinkTitle = i18n.t('card.copyLink')
   const safeId = escapeHtml(anchor.id)
+  const safeCategoryId = escapeHtml(categoryId || 'uncat')
+  const cardTitleId = `anchor-card-title-${safeCategoryId}-${safeId}`
 
   return `
     <div
@@ -119,10 +126,10 @@ function renderAnchorCard(anchor, categoryColor) {
       data-tags="${escapeHtml(anchor.tags ? anchor.tags.join(',') : '')}"
       tabindex="0"
       role="button"
-      aria-labelledby="anchor-card-title-${safeId}"
+      aria-labelledby="${cardTitleId}"
     >
       <div class="anchor-card-header">
-        <h3 id="anchor-card-title-${safeId}" class="anchor-card-title">${escapeHtml(anchor.title)}</h3>
+        <h3 id="${cardTitleId}" class="anchor-card-title">${escapeHtml(anchor.title)}</h3>
         <div class="flex gap-1">
           <button
             class="anchor-copy-link-btn"
