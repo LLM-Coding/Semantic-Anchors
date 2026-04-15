@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-04-15
+
+*New anchors* (proposed by Ralf D. Müller in https://github.com/LLM-Coding/Semantic-Anchors/issues/436[#436]):
+
+* *Lehman's Software Classification* — Meir M. Lehman's S-/P-/E-type taxonomy and Laws of Software Evolution
+
 == 2026-04-12
 
 *New anchors:*

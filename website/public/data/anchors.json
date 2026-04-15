@@ -1978,6 +1978,37 @@
     "tier": 3
   },
   {
+    "id": "lehmans-classification",
+    "title": "Lehman’s Software Classification",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "requirements-engineer",
+      "team-lead",
+      "educator"
+    ],
+    "related": [
+      "arc42",
+      "cohesion-criteria"
+    ],
+    "proponents": [
+      "Meir M. Lehman"
+    ],
+    "tags": [
+      "classification",
+      "software-evolution",
+      "requirements",
+      "maintenance",
+      "s-type",
+      "p-type",
+      "e-type"
+    ],
+    "filePath": "docs/anchors/lehmans-classification.adoc",
+    "tier": 2
+  },
+  {
     "id": "linddun",
     "title": "LINDDUN",
     "categories": [

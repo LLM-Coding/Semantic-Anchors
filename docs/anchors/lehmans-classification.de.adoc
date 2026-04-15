@@ -1,0 +1,48 @@
+= Lehmans Software-Klassifikation
+:categories: software-architecture
+:roles: software-architect, requirements-engineer, team-lead, educator
+:related: arc42, cohesion-criteria
+:proponents: Meir M. Lehman
+:tags: klassifikation, software-evolution, requirements, wartung, s-type, p-type, e-type
+
+[%collapsible]
+====
+Vollständiger Name:: Lehmans Software-Klassifikation (S-/P-/E-Type) und Gesetze der Software-Evolution
+
+Auch bekannt als:: SPE-Klassifikation, Lehmans SPE-Taxonomie
+
+[discrete]
+== *Kernkonzepte*:
+
+Drei Software-Typen, klassifiziert nach ihrer Beziehung zur realen Welt:
+
+S-Type (Specification)::
+Software, deren Problem vollständig und formal spezifizierbar ist. Korrektheit ist gegen die Spezifikation beweisbar. Die Welt außerhalb des Programms ist für seine Gültigkeit irrelevant. Beispiel: ein Sortieralgorithmus, ein Compiler für eine formal definierte Sprache.
+
+P-Type (Problem)::
+Software, die ein reales Problem löst, das nicht vollständig spezifiziert, sondern nur approximiert werden kann. Die Spezifikation ist ein Modell des realen Problems; die Lösung muss gegen das echte Problem validiert werden, nicht nur gegen die Spec. Beispiel: ein Schachprogramm, ein Wettervorhersagesystem.
+
+E-Type (Embedded)::
+Software, die Teil der realen Welt wird und diese durch ihren Einsatz verändert. Dieser Einsatz verändert wiederum die Umgebung und damit die Anforderungen — es entsteht eine Rückkopplungsschleife. Die meiste Business- und Organisationssoftware ist E-Type. Ein "korrektes" E-Type-System wird mit der Zeit inkorrekt, selbst wenn sich in ihm nichts ändert.
+
+Gesetze der Software-Evolution::
+Lehman leitete acht Gesetze aus der Beobachtung von E-Type-Systemen ab, darunter *Continuing Change* (E-Type-Systeme müssen kontinuierlich angepasst werden, sonst werden sie zunehmend unbefriedigend), *Increasing Complexity* (Komplexität wächst, sofern nicht aktiv reduziert), *Self-Regulation*, *Conservation of Organisational Stability*, *Conservation of Familiarity*, *Continuing Growth*, *Declining Quality* und *Feedback System*.
+
+Schlüsselvertreter:: Meir M. Lehman ("Programs, life cycles, and laws of software evolution", Proceedings of the IEEE, 1980); später mit Laszlo Belady weiterentwickelt ("Program Evolution: Processes of Software Change", 1985).
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Um zu erklären, warum "fertige" Business-Software laufende Investitionen braucht
+* Entscheidung, wie viel Aufwand in formale Spezifikation vs. Validierung mit Nutzern fließen soll
+* Rahmen für Requirements-Diskussionen — E-Type bedeutet, dass Anforderungen ihrer Natur nach weiter wandern, nicht weil etwas schiefgelaufen ist
+* Argumentation, warum TDD und formale Beweise sauber auf S-Type passen, aber bei E-Type subtiler sind
+* Wartungsbudgets schätzen und gegenüber Stakeholdern rechtfertigen
+* Architektur-Trade-offs: E-Type-Systeme brauchen Änderungsfreundlichkeit vor allem anderen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<arc42,arc42>> - Dokumentationstemplate, gut geeignet für evolvierende E-Type-Systeme
+* <<cohesion-criteria,Kohäsionskriterien>> - Hohe Kohäsion senkt die Kosten kontinuierlicher Änderungen in E-Type-Systemen
+====
