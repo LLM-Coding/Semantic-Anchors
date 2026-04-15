@@ -1,0 +1,49 @@
+= Lehman's Software Classification
+:categories: software-architecture
+:roles: software-architect, requirements-engineer, team-lead, educator
+:related: arc42, cohesion-criteria
+:proponents: Meir M. Lehman
+:tags: classification, software-evolution, requirements, maintenance, s-type, p-type, e-type
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Lehman's Classification of Software (S-/P-/E-type) and Laws of Software Evolution
+
+Also known as:: SPE Classification, Lehman's SPE Taxonomy
+
+[discrete]
+== *Core Concepts*:
+
+Three software types, classified by their relationship to the real world:
+
+S-type (Specification)::
+Software whose problem can be fully and formally specified. Correctness is provable against the specification. The world outside the program is irrelevant to its validity. Example: a sorting algorithm, a compiler for a formally defined language.
+
+P-type (Problem)::
+Software that addresses a real-world problem which cannot be fully specified, only approximated. The specification is a model of the real problem; the solution must be validated against the actual problem, not just the spec. Example: a chess-playing program, a weather forecasting system.
+
+E-type (Embedded)::
+Software that becomes part of the real world and changes it through its use. This use in turn changes the environment and thereby the requirements — creating a feedback loop. Most business and organizational software is E-type. A "correct" E-type system drifts out of correctness over time even if nothing in it changes.
+
+Laws of Software Evolution::
+Lehman derived eight laws from observing E-type systems, including *Continuing Change* (E-type systems must be continually adapted or become progressively less satisfactory), *Increasing Complexity* (complexity increases unless work is done to reduce it), *Self-Regulation*, *Conservation of Organisational Stability*, *Conservation of Familiarity*, *Continuing Growth*, *Declining Quality*, and *Feedback System*.
+
+Key Proponents:: Meir M. Lehman ("Programs, life cycles, and laws of software evolution", Proceedings of the IEEE, 1980); later developed with Laszlo Belady ("Program Evolution: Processes of Software Change", 1985).
+
+[discrete]
+== *When to Use*:
+
+* Explaining why "finished" business software still needs ongoing investment
+* Deciding how much effort to spend on formal specification vs. validation with users
+* Framing requirements discussions — E-type means requirements will keep changing by nature, not by failure
+* Reasoning about why TDD and formal proofs map cleanly onto S-type but are subtler for E-type
+* Estimating maintenance budgets and justifying them to stakeholders
+* Architectural trade-offs: E-type systems need change-friendliness above all
+
+[discrete]
+== *Related Anchors*:
+
+* <<arc42,arc42>> - Documentation template well suited for evolving E-type systems
+* <<cohesion-criteria,Cohesion Criteria>> - High cohesion reduces the cost of continuing change in E-type systems
+====

@@ -146,6 +146,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Stefan Toth, Stefan Zörner
 - **Core:** Lightweight architecture description framework — describe a system through four lenses: Layers (structural decomposition), Aspects (cross-cutting concerns), Solution Strategy (key technology and design choices), Rationale (documented reasoning behind decisions); pairs naturally with arc42 and ADRs
 
+### Lehman's Software Classification
+- **Also known as:** SPE Classification, Lehman's SPE Taxonomy
+- **Proponents:** Meir M. Lehman
+- **Core:** Three software types by relationship to reality — S-type (formally specifiable, provable), P-type (real problem, only approximable, validate against reality), E-type (embedded in the world, changes the world through use, requirements drift by nature); basis for Lehman's Laws of Software Evolution (Continuing Change, Increasing Complexity, etc.) which explain why E-type systems require ongoing maintenance
+
 ### OWASP Top 10
 - **Also known as:** OWASP Top Ten, Open Worldwide Application Security Project Top 10
 - **Proponents:** OWASP Foundation

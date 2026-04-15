@@ -134,6 +134,7 @@
       "heros-journey",
       "kishotenketsu",
       "kiss-principle",
+      "lehmans-classification",
       "mental-model-according-to-naur",
       "myers-briggs-type-indicator",
       "para-method",
@@ -213,6 +214,13 @@
     ]
   },
   {
+    "id": "requirements-engineer",
+    "name": "Requirements Engineer",
+    "anchors": [
+      "lehmans-classification"
+    ]
+  },
+  {
     "id": "software-architect",
     "name": "Software Architect",
     "anchors": [
@@ -262,6 +270,7 @@
       "iso-25010",
       "kiss-principle",
       "lasr",
+      "lehmans-classification",
       "linddun",
       "llm-evaluations",
       "madr",
@@ -414,6 +423,7 @@
       "invest",
       "iso-25010",
       "lasr",
+      "lehmans-classification",
       "madr",
       "mental-model-according-to-naur",
       "mikado-method",
