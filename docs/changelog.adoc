@@ -2,6 +2,14 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-04-20
+
+*New anchors:*
+
+* *Single Level of Abstraction Principle (SLAP)* — Kent Beck's Composed Method, codified as a Clean Code function-design rule by Robert C. Martin (proposed by https://github.com/eirikbell[@eirikbell] in https://github.com/LLM-Coding/Semantic-Anchors/issues/440[#440])
+* *Occam's Razor* — William of Ockham's parsimony principle applied to explanations, debugging and architecture rationale (proposed by https://github.com/danielschmeiss[@danielschmeiss] in https://github.com/LLM-Coding/Semantic-Anchors/issues/439[#439])
+* *Code Smells* — Kent Beck / Martin Fowler / Robert C. Martin catalogue of surface indications pointing to deeper design problems (proposed by https://github.com/ma7tz[@ma7tz] in https://github.com/LLM-Coding/Semantic-Anchors/issues/435[#435])
+
 == 2026-04-15
 
 *New anchors* (proposed by Ralf D. Müller in https://github.com/LLM-Coding/Semantic-Anchors/issues/436[#436]):
