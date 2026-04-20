@@ -1,0 +1,50 @@
+= Single Level of Abstraction Principle (SLAP)
+:categories: design-principles
+:roles: software-developer, software-architect, educator
+:related: cohesion-criteria, kiss-principle, solid-srp, clean-architecture
+:proponents: Kent Beck, Robert C. Martin
+:tags: clean-code, abstraktion, funktionsdesign, lesbarkeit, composed-method
+:tier: 2
+
+[%collapsible]
+====
+Vollständiger Name:: Single Level of Abstraction Principle
+
+Auch bekannt als:: SLAP, SLA-Prinzip, ein Abstraktionsniveau pro Funktion
+
+[discrete]
+== *Kernkonzepte*:
+
+Grundregel::
+Alle Anweisungen innerhalb einer Funktion (oder eines Blocks) sollen auf dem gleichen Abstraktionsniveau liegen. High-Level-Orchestrierung und Low-Level-Mechanik gehören nicht in denselben Rumpf.
+
+Warum es funktioniert::
+Wer eine Funktion überfliegt, möchte sich darauf verlassen können, dass sie *eine* Frage auf *einer* Auflösung beantwortet. Gemischte Ebenen zwingen den Leser auf jeder Zeile zum Kontextwechsel zwischen "was macht dieser Schritt" und "wie genau wird das gemacht" — genau das erzeugt das "ich muss das dreimal lesen"-Gefühl.
+
+Anwendung von SLAP::
+* Wenn eine Funktion Ebenen mischt, ziehe die Low-Level-Details in gut benannte Hilfsfunktionen, deren Namen *die nächste Detailstufe ausdrücken*.
+* Die Top-Level-Funktion wird zur lesbaren Zusammenfassung — fast einem Inhaltsverzeichnis — der Arbeit.
+* Das ist das *Composed Method*-Pattern (Kent Beck, _Smalltalk Best Practice Patterns_, 1996): baue Funktionen aus Aufrufen anderer Methoden auf derselben konzeptuellen Ebene auf.
+
+Bezug zu Clean Code::
+Robert C. Martin hat SLAP in _Clean Code_ (2008) als eine der Regeln für Funktionsdesign formalisiert, neben "Funktionen sollen klein sein", "Nur eine Sache tun", und "Sprechende Namen verwenden". SLAP ist das ordnende Prinzip, das "kleine Funktionen" lesbar statt fragmentiert macht.
+
+Schlüsselvertreter:: Kent Beck (_Smalltalk Best Practice Patterns_, 1996 — "Composed Method"), Robert C. Martin (_Clean Code_, 2008).
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Refactoring einer zu langen Funktion — SLAP sagt dir *wie* du sie zerlegst, nicht nur *dass* du es solltest
+* Code Review: natürlicher Smell-Detektor für Funktionen, die Orchestrierung mit Mechanik mischen
+* Junior-Entwickler eine konkrete, prüfbare Regel beibringen, die zu lesbarem Code führt
+* Top-down ein neues Verfahren entwerfen: die High-Level-Schritte als Aufrufe noch-nicht-existierender Hilfsfunktionen schreiben, dann füllen
+* Intent von Legacy-Code rekonstruieren — Orchestrierung herausziehen, dann wird das Design sichtbar
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<cohesion-criteria,Kohäsionskriterien>> - SLAP erzeugt funktionale Kohäsion, indem es eine Funktion auf einen konzeptuellen Schritt fokussiert
+* <<kiss-principle,KISS-Prinzip>> - SLAP ist eine konkrete Technik, Funktionen einfach zu halten
+* <<solid-srp,SOLID SRP>> - SRP macht auf Klassenebene, was SLAP auf Funktionsebene macht
+* <<clean-architecture,Clean Architecture>> - Geschichtete Abstraktion auf Architekturebene spiegelt SLAP auf Codeebene
+====

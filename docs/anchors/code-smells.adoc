@@ -1,0 +1,56 @@
+= Code Smells
+:categories: design-principles
+:roles: software-developer, software-architect, educator, team-lead
+:related: fowler-patterns, cohesion-criteria, solid-principles, solid-srp, kiss-principle
+:proponents: Kent Beck, Martin Fowler, Robert C. Martin
+:tags: refactoring, code-quality, clean-code, maintainability, smells
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Code Smells
+
+Also known as:: Bad Smells in Code, Refactoring Smells
+
+[discrete]
+== *Core Concepts*:
+
+What a smell is::
+A *surface indication* in the code that usually points to a deeper design problem. Smells are heuristic: they are quick to spot, do not prove a defect exists, and are evaluated in context. A smell tells you *where to look*, not *what to do*.
+
+Fowler's catalogue::
+Martin Fowler's _Refactoring_ (1999, 2nd ed. 2018, with the original smell chapter co-authored by Kent Beck) is the canonical catalogue. Each smell is paired with a refactoring that typically resolves it. Common groupings of Fowler's 20+ smells:
++
+* *Bloaters* — structures that grow too large: Long Method, Large Class, Long Parameter List, Primitive Obsession, Data Clumps.
+* *Object-Orientation Abusers* — incomplete or inverted use of OO: Switch Statements, Refused Bequest, Alternative Classes with Different Interfaces, Temporary Field.
+* *Change Preventers* — structures that multiply the cost of change: Divergent Change (one class changes for many reasons), Shotgun Surgery (one change touches many classes), Parallel Inheritance Hierarchies.
+* *Dispensables* — code that earns its keep poorly: Comments (as compensation), Duplicate Code, Lazy Class, Data Class, Dead Code, Speculative Generality.
+* *Couplers* — excessive or inappropriate coupling: Feature Envy, Inappropriate Intimacy, Message Chains, Middle Man.
+
+Martin's extensions::
+Robert C. Martin's _Clean Code_ (2008), Appendix A "Smells and Heuristics", extends Fowler's catalogue with additional smells organised by concern — Comments, Environment, Functions, General, Java, Names, Tests — about 65 heuristics in total. These are complementary refinements, not a replacement for Fowler's set.
+
+Terminology origin::
+Kent Beck coined the term "code smell" in the 1990s; Fowler wrote the book that made it the standard vocabulary. "It just feels wrong" became expressible and teachable.
+
+Key Proponents:: Kent Beck (coined the term), Martin Fowler (_Refactoring_, 1999, 2nd ed. 2018 — canonical catalogue), Robert C. Martin (_Clean Code_, 2008, Appendix A — extended enumeration).
+
+[discrete]
+== *When to Use*:
+
+* Code review: a shared vocabulary for "this feels wrong" that turns taste into checkable signals
+* Refactoring planning: each smell maps to known refactorings, so a smell is an actionable handle
+* Teaching: junior developers learn faster from a named smell + named fix than from abstract design lectures
+* Technical-debt inventory: enumerate smells to quantify and prioritise cleanup work
+* LLM prompting: asking the model to "identify code smells" activates a richer inspection than "find problems"
+* Self-review before PR: a mental pass over the smell list catches issues a reader would otherwise flag
+
+[discrete]
+== *Related Anchors*:
+
+* <<fowler-patterns,Patterns of Enterprise Application Architecture>> - Same author; Fowler's broader design-pattern vocabulary
+* <<cohesion-criteria,Cohesion Criteria>> - Many smells (Feature Envy, Divergent Change, Large Class) are low-cohesion symptoms
+* <<solid-principles,SOLID Principles>> - SOLID violations manifest as identifiable smells; smell→principle is a useful diagnostic direction
+* <<solid-srp,SOLID SRP>> - Divergent Change is almost always an SRP violation
+* <<kiss-principle,KISS Principle>> - Speculative Generality and Comments-as-compensation are KISS failures
+====
