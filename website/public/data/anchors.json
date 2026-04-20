@@ -224,6 +224,40 @@
     "tier": 3
   },
   {
+    "id": "code-smells",
+    "title": "Code Smells",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "educator",
+      "team-lead"
+    ],
+    "related": [
+      "fowler-patterns",
+      "cohesion-criteria",
+      "solid-principles",
+      "solid-srp",
+      "kiss-principle"
+    ],
+    "proponents": [
+      "Kent Beck",
+      "Martin Fowler",
+      "Robert C. Martin"
+    ],
+    "tags": [
+      "refactoring",
+      "code-quality",
+      "clean-code",
+      "maintainability",
+      "smells"
+    ],
+    "filePath": "docs/anchors/code-smells.adoc",
+    "tier": 2
+  },
+  {
     "id": "cohesion-criteria",
     "title": "Cohesion Criteria",
     "categories": [
@@ -2322,6 +2356,38 @@
     "tier": 3
   },
   {
+    "id": "occams-razor",
+    "title": "Occam’s Razor",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "kiss-principle",
+      "yagni",
+      "five-whys",
+      "mece",
+      "devils-advocate"
+    ],
+    "proponents": [
+      "William of Ockham"
+    ],
+    "tags": [
+      "heuristic",
+      "parsimony",
+      "epistemology",
+      "simplicity",
+      "hypothesis-selection"
+    ],
+    "filePath": "docs/anchors/occams-razor.adoc",
+    "tier": 2
+  },
+  {
     "id": "owasp-top-10",
     "title": "OWASP Top 10",
     "categories": [
@@ -2686,6 +2752,37 @@
     "tags": [],
     "filePath": "docs/anchors/semantic-versioning.adoc",
     "tier": 3
+  },
+  {
+    "id": "single-level-of-abstraction-principle",
+    "title": "Single Level of Abstraction Principle (SLAP)",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "educator"
+    ],
+    "related": [
+      "cohesion-criteria",
+      "kiss-principle",
+      "solid-srp",
+      "clean-architecture"
+    ],
+    "proponents": [
+      "Kent Beck",
+      "Robert C. Martin"
+    ],
+    "tags": [
+      "clean-code",
+      "abstraction",
+      "function-design",
+      "readability",
+      "composed-method"
+    ],
+    "filePath": "docs/anchors/single-level-of-abstraction-principle.adoc",
+    "tier": 2
   },
   {
     "id": "socratic-method",

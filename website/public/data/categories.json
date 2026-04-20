@@ -30,6 +30,7 @@
     "id": "design-principles",
     "name": "Design Principles & Patterns",
     "anchors": [
+      "code-smells",
       "cohesion-criteria",
       "crc-cards",
       "fowler-patterns",
@@ -59,6 +60,7 @@
       "gof-visitor-pattern",
       "grasp",
       "kiss-principle",
+      "single-level-of-abstraction-principle",
       "solid-dip",
       "solid-isp",
       "solid-lsp",
@@ -128,7 +130,8 @@
       "devils-advocate",
       "feynman-technique",
       "five-whys",
-      "morphological-box"
+      "morphological-box",
+      "occams-razor"
     ]
   },
   {
