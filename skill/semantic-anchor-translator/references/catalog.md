@@ -234,6 +234,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kent Beck, Robert C. Martin
 - **Core:** All statements inside a function should live at one abstraction level; mixing orchestration with mechanics is the main driver of unreadable code; refactor by extracting low-level details into named helpers so the outer function reads like a table of contents; formal expression of Beck's Composed Method pattern, codified as a Clean Code function-design rule by Martin
 
+### Code Smells
+- **Also known as:** Bad Smells in Code, Refactoring Smells
+- **Proponents:** Kent Beck (coined term), Martin Fowler, Robert C. Martin
+- **Core:** Surface indications in code that usually point to deeper design problems; Fowler's *Refactoring* (1999) catalogue groups ~20 smells into Bloaters (Long Method, Large Class, Primitive Obsession), OO Abusers (Switch Statements, Refused Bequest), Change Preventers (Divergent Change, Shotgun Surgery), Dispensables (Duplicate Code, Dead Code, Speculative Generality), Couplers (Feature Envy, Message Chains); Martin's *Clean Code* Appendix A extends with ~65 heuristics across Comments, Functions, Names, Tests; each smell pairs with a canonical refactoring — a smell tells you *where to look*, not *what to do*
+
 ### GoF Design Patterns
 - **Also known as:** Design Patterns, Gang of Four Patterns
 - **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
