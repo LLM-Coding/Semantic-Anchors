@@ -1,0 +1,50 @@
+= Single Level of Abstraction Principle (SLAP)
+:categories: design-principles
+:roles: software-developer, software-architect, educator
+:related: cohesion-criteria, kiss-principle, solid-srp, clean-architecture
+:proponents: Kent Beck, Robert C. Martin
+:tags: clean-code, abstraction, function-design, readability, composed-method
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Single Level of Abstraction Principle
+
+Also known as:: SLAP, SLA Principle, One Level of Abstraction Per Function
+
+[discrete]
+== *Core Concepts*:
+
+Core rule::
+All statements within a single function (or block) should operate at the same level of abstraction. High-level orchestration and low-level mechanics do not belong in the same body.
+
+Why it works::
+A reader scanning a function can trust it to answer *one* question at *one* resolution. Mixing levels forces the reader to context-switch between "what is this step doing" and "how exactly is it being done" on every line, which is the primary driver of the "I have to read this three times" feeling.
+
+Applying SLAP::
+* When you notice a function mixing levels, extract the low-level details into well-named helper functions whose names *express the next level of detail*.
+* The top-level function becomes a readable summary — almost a table of contents — of the work.
+* This is the *Composed Method* pattern (Kent Beck, _Smalltalk Best Practice Patterns_, 1996): build functions from calls to other methods at the same conceptual level.
+
+Relation to Clean Code::
+Robert C. Martin formalised SLAP as one of the function-design rules in _Clean Code_ (2008), alongside "Functions should be small", "Do one thing", and "Use descriptive names". SLAP is the organising principle that makes "small functions" readable rather than just fragmented.
+
+Key Proponents:: Kent Beck (_Smalltalk Best Practice Patterns_, 1996 — "Composed Method"), Robert C. Martin (_Clean Code_, 2008).
+
+[discrete]
+== *When to Use*:
+
+* Refactoring a long function that "does too much" — SLAP tells you *how* to split it, not just that you should
+* Code review: a natural smell-detector for functions that mix orchestration with mechanics
+* Teaching junior developers a concrete, checkable rule that produces readable code
+* Designing a new algorithm top-down: write the high-level steps as calls to not-yet-existing helpers, then fill them in
+* Reconstructing the intent of legacy code — lift the orchestration out and the design becomes visible
+
+[discrete]
+== *Related Anchors*:
+
+* <<cohesion-criteria,Cohesion Criteria>> - SLAP produces functional cohesion by keeping a function focused on one conceptual step
+* <<kiss-principle,KISS Principle>> - SLAP is one concrete technique for keeping functions simple
+* <<solid-srp,SOLID SRP>> - SRP applies at the class level what SLAP applies at the function level
+* <<clean-architecture,Clean Architecture>> - Layered abstraction at the architectural scale mirrors SLAP at the code scale
+====

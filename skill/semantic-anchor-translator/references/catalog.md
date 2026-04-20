@@ -229,6 +229,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Ron Jeffries, Kent Beck
 - **Core:** Don't build for hypothetical futures, speculative generality anti-pattern, incremental design, delete dead code
 
+### Single Level of Abstraction Principle (SLAP)
+- **Also known as:** SLAP, One Level of Abstraction Per Function
+- **Proponents:** Kent Beck, Robert C. Martin
+- **Core:** All statements inside a function should live at one abstraction level; mixing orchestration with mechanics is the main driver of unreadable code; refactor by extracting low-level details into named helpers so the outer function reads like a table of contents; formal expression of Beck's Composed Method pattern, codified as a Clean Code function-design rule by Martin
+
 ### GoF Design Patterns
 - **Also known as:** Design Patterns, Gang of Four Patterns
 - **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
