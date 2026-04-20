@@ -357,6 +357,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Devil's Advocate
 - **Core:** Argue against proposal to stress-test it
 
+### Occam's Razor
+- **Also known as:** Law of Parsimony, Lex Parsimoniae, Ockham's Razor
+- **Proponents:** William of Ockham
+- **Core:** Among competing hypotheses that explain the same observations equally well, prefer the one requiring the fewest assumptions; applies to *explanations* (debugging, diagnosis, architecture rationale), distinct from KISS which applies to *solutions*; a selection prior under uncertainty, not a proof of truth; Einstein's corollary "as simple as possible, but no simpler" warns against under-fitting
+
 ### Morphological Box
 - **Proponents:** Fritz Zwicky
 - **Core:** Matrix of parameters × options to explore solution space

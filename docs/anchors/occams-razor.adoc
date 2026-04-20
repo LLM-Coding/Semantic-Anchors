@@ -1,0 +1,55 @@
+= Occam's Razor
+:categories: problem-solving
+:roles: software-architect, software-developer, consultant, educator
+:related: kiss-principle, yagni, five-whys, mece, devils-advocate
+:proponents: William of Ockham
+:tags: heuristic, parsimony, epistemology, simplicity, hypothesis-selection
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Occam's Razor (also spelled Ockham's Razor)
+
+Also known as:: Law of Parsimony, Principle of Parsimony, _Lex Parsimoniae_, "Entities should not be multiplied beyond necessity"
+
+[discrete]
+== *Core Concepts*:
+
+Core rule::
+Among competing hypotheses that explain the same observations equally well, prefer the one that requires the fewest assumptions. The razor *shaves off* unnecessary entities, causes, or mechanisms.
+
+What it is *not*::
+* Not a rule to be brief or terse — that is a stylistic choice, not an epistemic one.
+* Not a proof that the simpler answer is *true* — only a guide to which hypothesis to prefer, investigate first, or commit to under uncertainty.
+* Not a licence for KISS-style solution simplification — Occam operates at the level of *explanations*, KISS at the level of *solutions*. They overlap but are not the same razor.
+
+How it is used::
+* As a *selection filter* under uncertainty — when two stories fit the data, start with the one that assumes less.
+* As a *debugging heuristic* — before assuming a bug requires a race condition plus caching layer plus stale DNS, check whether a single off-by-one explains everything.
+* In *architecture decisions* — a design that needs three new components to justify itself is evidentially weaker than one that reuses existing pieces.
+* In *diagnostic reasoning* — prefer explanations grounded in the system's known mechanics over ones that require novel failure modes.
+
+Limits and counters::
+The razor is a *prior*, not a verdict. Reality is frequently non-parsimonious, and "simpler" is relative to a chosen ontology. Einstein's corollary — "_as simple as possible, but no simpler_" — warns against under-fitting. Pair Occam with evidence, not as a substitute for it.
+
+Key Proponents:: William of Ockham (c. 1287–1347, _Summa Logicae_, _Quodlibetal Questions_); the principle predates Ockham in Aristotle and Scotus but carries his name due to his repeated methodological use of it. Modernised by Bertrand Russell and formalised as minimum-description-length / Bayesian simplicity priors in 20th-century philosophy of science.
+
+[discrete]
+== *When to Use*:
+
+* Debugging: triage competing theories of a bug before instrumenting for all of them
+* Architecture review: challenge proposals that introduce new components to explain observed requirements
+* Root-cause analysis: pair with Five Whys to avoid stopping at an elaborate but unjustified explanation
+* Incident response: the outage likely has *one* cause matching the data, not a conspiracy
+* Requirements clarification: pick the interpretation that requires fewest hidden assumptions about the user
+* LLM prompting: ask the model to prefer the explanation with the fewest moving parts when diagnosing
+
+[discrete]
+== *Related Anchors*:
+
+* <<kiss-principle,KISS Principle>> - Sibling razor applied to *solutions* rather than *explanations*
+* <<yagni,YAGNI>> - Applies parsimony to future requirements: don't build what you can't justify
+* <<five-whys,Five Whys>> - Occam helps pick which "why" to pursue when the chain forks
+* <<mece,MECE Principle>> - Both disciplines of hypothesis hygiene; MECE ensures coverage, Occam ranks by parsimony
+* <<devils-advocate,Devil's Advocate>> - Devil's Advocate stress-tests the hypothesis Occam has selected
+====

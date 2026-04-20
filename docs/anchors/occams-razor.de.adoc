@@ -1,0 +1,55 @@
+= Occams Rasiermesser
+:categories: problem-solving
+:roles: software-architect, software-developer, consultant, educator
+:related: kiss-principle, yagni, five-whys, mece, devils-advocate
+:proponents: William of Ockham
+:tags: heuristik, sparsamkeit, epistemologie, einfachheit, hypothesenauswahl
+:tier: 2
+
+[%collapsible]
+====
+Vollständiger Name:: Occams Rasiermesser (auch Ockhams Rasiermesser)
+
+Auch bekannt als:: Sparsamkeitsprinzip, Prinzip der Parsimonie, _Lex Parsimoniae_, "Entitäten sind nicht über das Notwendige hinaus zu vermehren"
+
+[discrete]
+== *Kernkonzepte*:
+
+Grundregel::
+Unter konkurrierenden Hypothesen, die dieselben Beobachtungen gleich gut erklären, bevorzuge diejenige mit den wenigsten Annahmen. Das Rasiermesser *schneidet* unnötige Entitäten, Ursachen oder Mechanismen weg.
+
+Was es *nicht* ist::
+* Keine Regel, sich kurzzufassen — das wäre stilistisch, nicht erkenntnistheoretisch.
+* Kein Beweis, dass die einfachere Antwort *wahr* ist — nur eine Präferenzregel, welche Hypothese zuerst zu untersuchen oder unter Unsicherheit anzunehmen ist.
+* Keine Lizenz für KISS-artige Lösungsvereinfachung — Occam arbeitet auf der Ebene der *Erklärungen*, KISS auf der Ebene der *Lösungen*. Sie überlappen, sind aber nicht dasselbe Rasiermesser.
+
+Wie es angewendet wird::
+* Als *Auswahlfilter* unter Unsicherheit — wenn zwei Geschichten zu den Daten passen, beginne mit der, die weniger annimmt.
+* Als *Debugging-Heuristik* — bevor du annimmst, dass ein Bug eine Race Condition plus Caching-Schicht plus veralteten DNS braucht, prüfe, ob ein einzelner Off-by-One alles erklärt.
+* Bei *Architekturentscheidungen* — ein Entwurf, der drei neue Komponenten zu seiner Rechtfertigung braucht, steht evidenziell schwächer da als einer, der Bestehendes wiederverwendet.
+* Im *diagnostischen Denken* — bevorzuge Erklärungen, die auf den bekannten Mechanismen des Systems basieren, gegenüber solchen, die neue Fehlermodi voraussetzen.
+
+Grenzen und Gegenargumente::
+Das Rasiermesser ist ein *Prior*, kein Urteil. Die Realität ist häufig nicht sparsam, und "einfacher" ist relativ zur gewählten Ontologie. Einsteins Korollar — "_so einfach wie möglich, aber nicht einfacher_" — warnt vor Underfitting. Paare Occam mit Evidenz, nicht als Ersatz für sie.
+
+Schlüsselvertreter:: Wilhelm von Ockham (ca. 1287–1347, _Summa Logicae_, _Quodlibeta_); das Prinzip ist älter (Aristoteles, Duns Scotus), trägt aber Ockhams Namen wegen seines konsequenten methodischen Einsatzes. Modernisiert durch Bertrand Russell und in der Wissenschaftsphilosophie des 20. Jh. als Minimum-Description-Length / Bayesianische Simplicity-Priors formalisiert.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Debugging: konkurrierende Theorien für einen Bug triagieren, bevor du für alle instrumentierst
+* Architektur-Review: Vorschläge hinterfragen, die neue Komponenten einführen, um beobachtete Anforderungen zu erklären
+* Root-Cause-Analyse: kombiniert mit Five Whys verhindert Stehenbleiben bei elaborierten, aber unbegründeten Erklärungen
+* Incident Response: der Ausfall hat wahrscheinlich *eine* Ursache, die zu den Daten passt, keine Verschwörung
+* Requirements-Klärung: wähle die Interpretation, die die wenigsten versteckten Annahmen über den Nutzer macht
+* LLM-Prompting: bitte das Modell, bei der Diagnose die Erklärung mit den wenigsten beweglichen Teilen zu bevorzugen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<kiss-principle,KISS-Prinzip>> - Verwandtes Rasiermesser, angewandt auf *Lösungen* statt *Erklärungen*
+* <<yagni,YAGNI>> - Überträgt Parsimonie auf zukünftige Anforderungen: baue nicht, was du nicht rechtfertigen kannst
+* <<five-whys,Five Whys>> - Occam hilft zu wählen, welchem "Warum" zu folgen ist, wenn die Kette sich verzweigt
+* <<mece,MECE-Prinzip>> - Beide sind Hygienewerkzeuge für Hypothesen; MECE sichert Abdeckung, Occam bewertet nach Sparsamkeit
+* <<devils-advocate,Devil's Advocate>> - Devil's Advocate stresst die von Occam gewählte Hypothese
+====
