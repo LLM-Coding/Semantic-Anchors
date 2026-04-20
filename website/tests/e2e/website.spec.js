@@ -277,13 +277,25 @@ test.describe('Routing - Documentation Pages', () => {
     await expect(anchorsLink).toHaveClass(/font-semibold/)
   })
 
-  test.skip('should handle direct URL to About page', async ({ page }) => {
-    // Skip: direct URL routing requires 404.html fallback (only works on GitHub Pages)
-    await page.goto('/about')
+  test('should handle direct URL to About page', async ({ page }) => {
+    await page.goto('/Semantic-Anchors/about')
 
     // Wait for AsciiDoc content to load and check h1 in content area (not header)
     await page.waitForSelector('#doc-content h1', { timeout: 10000 })
     await expect(page.locator('#doc-content h1')).toContainText(/About|What are/)
+  })
+
+  test('should render doc page when visited via trailing-slash URL', async ({ page }) => {
+    // GitHub Pages 301-redirects /workflow → /workflow/ when workflow/index.html
+    // is served as a directory index. The SPA must handle the trailing-slash
+    // form or it falls through to the home handler.
+    await page.goto('/Semantic-Anchors/workflow/')
+
+    await page.waitForSelector('#doc-content h1', { timeout: 10000 })
+    await expect(page.locator('#doc-content h1')).toContainText(/Workflow/i)
+
+    // Card grid (home-only content) must not be rendered on top
+    await expect(page.locator('.anchor-card')).toHaveCount(0)
   })
 
   test('should handle browser back button', async ({ page }) => {
