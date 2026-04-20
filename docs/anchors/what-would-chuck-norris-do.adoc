@@ -1,0 +1,56 @@
+= What Would Chuck Norris Do? (WWCND)
+:categories: problem-solving
+:roles: software-developer, software-architect, team-lead, consultant
+:related: devils-advocate, kiss-principle, yagni, occams-razor
+:proponents: Ian Spector, Chuck Norris
+:tags: decisiveness, commitment, action-bias, disposition, meme-anchor
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: What Would Chuck Norris Do?
+
+Also known as:: WWCND, Chuck Norris framing, "What would Chuck do?"
+
+[discrete]
+== *Core Concepts*:
+
+What the anchor activates::
+A *disposition*, not a methodology: commit to the most direct, effective solution; refuse hedging; refuse premature optimisation; refuse ceremony that does not buy risk reduction. The activation is driven by the Chuck Norris facts meme corpus (circa 2005–) and its well-established software subcorpus ("Chuck Norris doesn't write unit tests — the code is too afraid to fail"), both of which are densely present in modern LLM training data.
+
+Scope note::
+WWCND is a *Tier 3, qualified* anchor. It is not self-standing in the way that GoF Patterns or DDD are. Used bare it produces humour with signal; used with a short qualifier — "WWCND: commit to the most direct solution" — it behaves reliably across scenarios. It activates one disposition, not an interconnected body of engineering knowledge.
+
+How it differs from neighbours::
+* *Devil's Advocate* activates contrary-argument generation — a rhetorical operation against a stated position. WWCND activates direct-commitment problem-solving. Complementary, not substitutable, in the same way KISS and YAGNI coexist.
+* *KISS* constrains the shape of a *solution* toward simplicity. WWCND constrains the *stance* toward commitment under uncertainty. A WWCND recommendation can still be a complex solution if that is the most direct one.
+* *Rambo* and other action-hero framings produce convergent recommendations but different vocabulary: military metaphors ("fortify the perimeter") rather than software-native framing ("Microservices migrate to Chuck Norris, not the other way around").
+
+Why it works::
+The Chuck Norris humour format is built on *absurd competence* — the subject overcomes constraints that would stop anyone else. Applied to software problems, that frame consistently steers the model toward action-biased, commitment-first answers and away from multi-option hedging. Cross-model testing (see below) shows the activation is stable enough to treat as an anchor rather than a stylistic quirk.
+
+Empirical validation::
+Validated by Cornelius Schumacher (Protocol v3, April 2026) across Claude Sonnet 4.6, Gemini 3.1 Pro, and GPT-5.3 Codex: 19 prompts × N=2 = 114 manually scored responses. Key results: WWCND exceeds a "be direct, don't hedge" control condition on engagement (12/12 scenario-model pairs) and insight quality (12/12); three independent models converged on the same primary recommendation in all four test scenarios (12/12 agreement); five architectural patterns (Strangler Fig, modular monolith / packwerk, team expertise, regression-for-specific-bug, CI gate) appeared unprompted across all three models. Full report: https://github.com/cornelius/what-would-chuck-norris-do
+
+Known limitation::
+GPT-5.3 Codex activates the decisiveness signal but *not* the character voice — it treats all persona anchors with a uniform pragmatic style. Expect diminished distinctiveness on Codex-class models. The recommendation content is consistent; the framing is muted.
+
+Key Proponents:: Ian Spector, _The Truth About Chuck Norris_ (Gotham Books, 2007); Ian Spector and Chuck Norris, _The Official Chuck Norris Fact Book_ (Thomas Nelson, 2009) — co-authored with Norris. Empirical catalog validation: Cornelius Schumacher, Protocol v3 (April 2026).
+
+[discrete]
+== *When to Use*:
+
+* Breaking decision paralysis — teams stuck in a prolonged trade-off debate where any reasonable commitment is better than continued deliberation
+* Counter-balancing excessive hedging — when a previous answer is multi-optioned to the point of uselessness, apply WWCND to collapse to a recommendation
+* Architecture or technology picks where the differences are marginal and the cost of not deciding exceeds the cost of a suboptimal pick
+* Pairing with Devil's Advocate — WWCND commits, Devil's Advocate then stress-tests the commitment. Together they avoid both paralysis and overcommitment.
+* Avoid in situations that require calibrated judgment between genuinely different outcomes — the anchor's commitment bias can underweight nuance
+
+[discrete]
+== *Related Anchors*:
+
+* <<devils-advocate,Devil's Advocate>> - Complementary partner: WWCND commits, Devil's Advocate challenges
+* <<kiss-principle,KISS Principle>> - Sibling in the simplification family, applied to *solutions* rather than *stance*
+* <<yagni,YAGNI>> - Both resist ceremony and speculative complexity
+* <<occams-razor,Occam's Razor>> - Occam selects the most parsimonious *explanation*; WWCND commits to the most direct *response*
+====

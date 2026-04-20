@@ -1,0 +1,56 @@
+= What Would Chuck Norris Do? (WWCND)
+:categories: problem-solving
+:roles: software-developer, software-architect, team-lead, consultant
+:related: devils-advocate, kiss-principle, yagni, occams-razor
+:proponents: Ian Spector, Chuck Norris
+:tags: entschlossenheit, commitment, handlungsorientierung, disposition, meme-anker
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: What Would Chuck Norris Do?
+
+Auch bekannt als:: WWCND, Chuck-Norris-Framing, "Was würde Chuck tun?"
+
+[discrete]
+== *Kernkonzepte*:
+
+Was der Anker aktiviert::
+Eine *Disposition*, keine Methodologie: commite dich auf die direkteste, wirksamste Lösung; verweigere Hedging; verweigere Premature Optimization; verweigere Zeremonie, die keine Risikoreduktion einkauft. Die Aktivierung wird vom Chuck-Norris-Facts-Meme-Korpus (ab ca. 2005) und dessen etabliertem Software-Subcorpus getragen ("Chuck Norris doesn't write unit tests — the code is too afraid to fail"), die beide dicht in den Trainingsdaten moderner LLMs vertreten sind.
+
+Scope-Hinweis::
+WWCND ist ein *Tier-3-Anker, qualifiziert*. Er ist nicht selbsttragend wie GoF Patterns oder DDD. Bar verwendet produziert er Humor mit Signal; mit kurzem Qualifier — "WWCND: commite dich auf die direkteste Lösung" — verhält er sich szenarienübergreifend zuverlässig. Er aktiviert eine Disposition, keinen vernetzten Engineering-Wissensbestand.
+
+Abgrenzung zu Nachbarn::
+* *Devil's Advocate* aktiviert Gegenargumentation — eine rhetorische Operation gegen eine gesetzte Position. WWCND aktiviert direktes Commitment zur Problemlösung. Komplementär, nicht austauschbar, wie KISS und YAGNI nebeneinander existieren.
+* *KISS* beschränkt die Form einer *Lösung* Richtung Einfachheit. WWCND beschränkt die *Haltung* Richtung Commitment unter Unsicherheit. Eine WWCND-Empfehlung kann eine komplexe Lösung sein, wenn sie die direkteste ist.
+* *Rambo* und andere Actionheld-Framings produzieren konvergente Empfehlungen, aber anderes Vokabular: militärische Metaphern ("fortify the perimeter") statt software-nativer Formulierungen ("Microservices migrate to Chuck Norris, not the other way around").
+
+Warum es funktioniert::
+Das Chuck-Norris-Humorformat baut auf *absurder Kompetenz* auf — das Subjekt überwindet Zwänge, die alle anderen stoppen würden. Auf Softwareprobleme angewandt steuert dieser Frame das Modell konsistent Richtung handlungsorientierter, commitment-erster Antworten und weg vom Multi-Option-Hedging. Cross-Model-Tests (siehe unten) zeigen, dass die Aktivierung stabil genug ist, um sie als Anker statt als Stilmarotte zu behandeln.
+
+Empirische Validierung::
+Von Cornelius Schumacher validiert (Protokoll v3, April 2026) über Claude Sonnet 4.6, Gemini 3.1 Pro und GPT-5.3 Codex: 19 Prompts × N=2 = 114 manuell gescorte Antworten. Kernergebnisse: WWCND schlägt eine "Be direct, don't hedge"-Kontrollbedingung auf Engagement (12/12 Szenario-Modell-Paare) und Insight Quality (12/12); drei unabhängige Modelle konvergierten auf dieselbe primäre Empfehlung in allen vier Testszenarien (12/12 Übereinstimmung); fünf Architekturpatterns (Strangler Fig, modularer Monolith / packwerk, Team-Expertise, spezifischer Regression-Test, CI-Gate) tauchten ungepromptet in allen drei Modellen auf. Vollständiger Bericht: https://github.com/cornelius/what-would-chuck-norris-do
+
+Bekannte Einschränkung::
+GPT-5.3 Codex aktiviert das Entschlossenheits-Signal, aber *nicht* die Charakterstimme — Codex behandelt alle Persona-Anker mit einem uniformen, pragmatischen Stil. Auf Codex-Modellen ist die Distinktivität gedämpft. Der Empfehlungsinhalt bleibt konsistent; das Framing wird flacher.
+
+Schlüsselvertreter:: Ian Spector, _The Truth About Chuck Norris_ (Gotham Books, 2007); Ian Spector und Chuck Norris, _The Official Chuck Norris Fact Book_ (Thomas Nelson, 2009) — Co-Autor Norris. Empirische Katalog-Validierung: Cornelius Schumacher, Protokoll v3 (April 2026).
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Entscheidungsparalyse durchbrechen — Teams, die in langen Trade-off-Debatten feststecken und wo jedes vernünftige Commitment besser ist als weitere Diskussion
+* Übermäßiges Hedging ausgleichen — wenn eine vorherige Antwort so multi-optional ist, dass sie unbrauchbar wird, kollabiere mit WWCND auf eine Empfehlung
+* Architektur- oder Technologieentscheidungen, bei denen die Unterschiede marginal sind und die Kosten des Nicht-Entscheidens die Kosten einer suboptimalen Wahl übersteigen
+* Kombination mit Devil's Advocate — WWCND commitet, Devil's Advocate stresst dann das Commitment. Zusammen vermeiden sie Paralyse und Overcommitment.
+* Vermeide in Situationen, die kalibriertes Urteil zwischen echt verschiedenen Outcomes erfordern — die Commitment-Schlagseite kann Nuancen untergewichten
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<devils-advocate,Devil's Advocate>> - Komplementärer Partner: WWCND commitet, Devil's Advocate fordert heraus
+* <<kiss-principle,KISS-Prinzip>> - Geschwister in der Vereinfachungsfamilie, angewandt auf *Lösungen* statt *Haltung*
+* <<yagni,YAGNI>> - Beide verweigern Zeremonie und spekulative Komplexität
+* <<occams-razor,Occams Rasiermesser>> - Occam wählt die sparsamste *Erklärung*; WWCND commitet auf die direkteste *Antwort*
+====

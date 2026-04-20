@@ -367,6 +367,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** William of Ockham
 - **Core:** Among competing hypotheses that explain the same observations equally well, prefer the one requiring the fewest assumptions; applies to *explanations* (debugging, diagnosis, architecture rationale), distinct from KISS which applies to *solutions*; a selection prior under uncertainty, not a proof of truth; Einstein's corollary "as simple as possible, but no simpler" warns against under-fitting
 
+### What Would Chuck Norris Do? (WWCND)
+- **Also known as:** WWCND, Chuck Norris framing
+- **Proponents:** Ian Spector, Chuck Norris (co-author of *The Official Chuck Norris Fact Book*, 2009); empirical catalog validation by Cornelius Schumacher (Protocol v3, 2026)
+- **Core:** Tier 3 qualified anchor — activates a *disposition* (commit to the most direct, effective solution; refuse hedging, premature optimisation, and unnecessary ceremony), not a methodology; driven by the Chuck Norris meme corpus and its software subcorpus ("Chuck Norris doesn't write unit tests — the code is too afraid to fail"); empirically validated across three models (Claude, Gemini, Codex) with 12/12 recommendation convergence and engagement > "be direct, don't hedge" control; complements Devil's Advocate (commit then challenge); best used with a short qualifier ("WWCND: commit to the most direct solution") and not for situations requiring calibrated judgment between genuinely different outcomes
+
 ### Morphological Box
 - **Proponents:** Fritz Zwicky
 - **Core:** Matrix of parameters × options to explore solution space
