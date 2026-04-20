@@ -136,7 +136,15 @@ export function initRouter() {
  * Handle route change
  */
 function handleRoute() {
-  const path = getCurrentRoute()
+  let path = getCurrentRoute()
+
+  // Normalize trailing slash: GitHub Pages 301-redirects /workflow to /workflow/
+  // when workflow/index.html is served as a directory index. Without this,
+  // routes.get('/workflow/') misses the '/workflow' key and falls through to
+  // the home handler.
+  if (path.length > 1 && path.endsWith('/')) {
+    path = path.slice(0, -1)
+  }
 
   // Check for anchor route (/anchor/:id)
   if (path.startsWith('/anchor/')) {
