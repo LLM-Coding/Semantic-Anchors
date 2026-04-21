@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 131 well-defined terms, methodologies, and frameworks
+> 136 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -967,6 +967,54 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 
 ## Design Principles & Patterns
 
+### Code Smells
+
+***Full Name***: Code Smells
+
+***Also known as***: Bad Smells in Code, Refactoring Smells
+
+[discrete]
+## **Core Concepts**:
+
+***What a smell is***
+A **surface indication** in the code that usually points to a deeper design problem. Smells are heuristic: they are quick to spot, do not prove a defect exists, and are evaluated in context. A smell tells you **where to look**, not **what to do**.
+
+***Fowler's catalogue***
+Martin Fowler's _Refactoring_ (1999, 2nd ed. 2018, with the original smell chapter co-authored by Kent Beck) is the canonical catalogue. Each smell is paired with a refactoring that typically resolves it. Common groupings of Fowler's 20+ smells:
+
+* **Bloaters** — structures that grow too large: Long Method, Large Class, Long Parameter List, Primitive Obsession, Data Clumps.
+* **Object-Orientation Abusers** — incomplete or inverted use of OO: Switch Statements, Refused Bequest, Alternative Classes with Different Interfaces, Temporary Field.
+* **Change Preventers** — structures that multiply the cost of change: Divergent Change (one class changes for many reasons), Shotgun Surgery (one change touches many classes), Parallel Inheritance Hierarchies.
+* **Dispensables** — code that earns its keep poorly: Comments (as compensation), Duplicate Code, Lazy Class, Data Class, Dead Code, Speculative Generality.
+* **Couplers** — excessive or inappropriate coupling: Feature Envy, Inappropriate Intimacy, Message Chains, Middle Man.
+
+***Martin's extensions***
+Robert C. Martin's _Clean Code_ (2008), Appendix A "Smells and Heuristics", extends Fowler's catalogue with additional smells organised by concern — Comments, Environment, Functions, General, Java, Names, Tests — about 65 heuristics in total. These are complementary refinements, not a replacement for Fowler's set.
+
+***Terminology origin***
+Kent Beck coined the term "code smell" in the 1990s; Fowler wrote the book that made it the standard vocabulary. "It just feels wrong" became expressible and teachable.
+
+***Key Proponents***: Kent Beck (coined the term), Martin Fowler (_Refactoring_, 1999, 2nd ed. 2018 — canonical catalogue), Robert C. Martin (_Clean Code_, 2008, Appendix A — extended enumeration).
+
+[discrete]
+## **When to Use**:
+
+* Code review: a shared vocabulary for "this feels wrong" that turns taste into checkable signals
+* Refactoring planning: each smell maps to known refactorings, so a smell is an actionable handle
+* Teaching: junior developers learn faster from a named smell + named fix than from abstract design lectures
+* Technical-debt inventory: enumerate smells to quantify and prioritise cleanup work
+* LLM prompting: asking the model to "identify code smells" activates a richer inspection than "find problems"
+* Self-review before PR: a mental pass over the smell list catches issues a reader would otherwise flag
+
+[discrete]
+## **Related Anchors**:
+
+* Patterns of Enterprise Application Architecture - Same author; Fowler's broader design-pattern vocabulary
+* Cohesion Criteria - Many smells (Feature Envy, Divergent Change, Large Class) are low-cohesion symptoms
+* SOLID Principles - SOLID violations manifest as identifiable smells; smell→principle is a useful diagnostic direction
+* SOLID SRP - Divergent Change is almost always an SRP violation
+* KISS Principle - Speculative Generality and Comments-as-compensation are KISS failures
+
 ### Cohesion Criteria
 
 ***Full Name***: Cohesion Criteria (Constantine & Yourdon)
@@ -1676,6 +1724,48 @@ Represent an operation to be performed on the elements of an object structure. V
 * YAGNI - Don't implement what you don't need yet (complementary simplicity principle)
 * DRY - Eliminate redundancy to keep codebases simple and consistent
 * SOLID Principles - Structured guidelines that reinforce clean, simple designs
+
+### Single Level of Abstraction Principle (SLAP)
+
+***Full Name***: Single Level of Abstraction Principle
+
+***Also known as***: SLAP, SLA Principle, One Level of Abstraction Per Function
+
+[discrete]
+## **Core Concepts**:
+
+***Core rule***
+All statements within a single function (or block) should operate at the same level of abstraction. High-level orchestration and low-level mechanics do not belong in the same body.
+
+***Why it works***
+A reader scanning a function can trust it to answer **one** question at **one** resolution. Mixing levels forces the reader to context-switch between "what is this step doing" and "how exactly is it being done" on every line, which is the primary driver of the "I have to read this three times" feeling.
+
+***Applying SLAP***
+* When you notice a function mixing levels, extract the low-level details into well-named helper functions whose names **express the next level of detail**.
+* The top-level function becomes a readable summary — almost a table of contents — of the work.
+* This is the **Composed Method** pattern (Kent Beck, _Smalltalk Best Practice Patterns_, 1996): build functions from calls to other methods at the same conceptual level.
+
+***Relation to Clean Code***
+Robert C. Martin formalised SLAP as one of the function-design rules in _Clean Code_ (2008), alongside "Functions should be small", "Do one thing", and "Use descriptive names". SLAP is the organising principle that makes "small functions" readable rather than just fragmented.
+
+***Key Proponents***: Kent Beck (_Smalltalk Best Practice Patterns_, 1996 — "Composed Method"), Robert C. Martin (_Clean Code_, 2008).
+
+[discrete]
+## **When to Use**:
+
+* Refactoring a long function that "does too much" — SLAP tells you **how** to split it, not just that you should
+* Code review: a natural smell-detector for functions that mix orchestration with mechanics
+* Teaching junior developers a concrete, checkable rule that produces readable code
+* Designing a new algorithm top-down: write the high-level steps as calls to not-yet-existing helpers, then fill them in
+* Reconstructing the intent of legacy code — lift the orchestration out and the design becomes visible
+
+[discrete]
+## **Related Anchors**:
+
+* Cohesion Criteria - SLAP produces functional cohesion by keeping a function focused on one conceptual step
+* KISS Principle - SLAP is one concrete technique for keeping functions simple
+* SOLID SRP - SRP applies at the class level what SLAP applies at the function level
+* Clean Architecture - Layered abstraction at the architectural scale mirrors SLAP at the code scale
 
 ### SOLID-Dependency Inversion Principle
 
@@ -3192,6 +3282,101 @@ Filter by constraints (e.g., "AsciiDoc + Hugo not well-supported")
 * Stopping at matrix creation without exploring combinations
 * Forgetting to filter out infeasible combinations
 
+### Occam's Razor
+
+***Full Name***: Occam's Razor (also spelled Ockham's Razor)
+
+***Also known as***: Law of Parsimony, Principle of Parsimony, _Lex Parsimoniae_, "Entities should not be multiplied beyond necessity"
+
+[discrete]
+## **Core Concepts**:
+
+***Core rule***
+Among competing hypotheses that explain the same observations equally well, prefer the one that requires the fewest assumptions. The razor **shaves off** unnecessary entities, causes, or mechanisms.
+
+**What it is *not***
+* Not a rule to be brief or terse — that is a stylistic choice, not an epistemic one.
+* Not a proof that the simpler answer is **true** — only a guide to which hypothesis to prefer, investigate first, or commit to under uncertainty.
+* Not a licence for KISS-style solution simplification — Occam operates at the level of **explanations**, KISS at the level of **solutions**. They overlap but are not the same razor.
+
+***How it is used***
+* As a **selection filter** under uncertainty — when two stories fit the data, start with the one that assumes less.
+* As a **debugging heuristic** — before assuming a bug requires a race condition plus caching layer plus stale DNS, check whether a single off-by-one explains everything.
+* In **architecture decisions** — a design that needs three new components to justify itself is evidentially weaker than one that reuses existing pieces.
+* In **diagnostic reasoning** — prefer explanations grounded in the system's known mechanics over ones that require novel failure modes.
+
+***Limits and counters***
+The razor is a **prior**, not a verdict. Reality is frequently non-parsimonious, and "simpler" is relative to a chosen ontology. Einstein's corollary — "_as simple as possible, but no simpler_" — warns against under-fitting. Pair Occam with evidence, not as a substitute for it.
+
+***Key Proponents***: William of Ockham (c. 1287–1347, _Summa Logicae_, _Quodlibetal Questions_); the principle predates Ockham in Aristotle and Scotus but carries his name due to his repeated methodological use of it. Modernised by Bertrand Russell and formalised as minimum-description-length / Bayesian simplicity priors in 20th-century philosophy of science.
+
+[discrete]
+## **When to Use**:
+
+* Debugging: triage competing theories of a bug before instrumenting for all of them
+* Architecture review: challenge proposals that introduce new components to explain observed requirements
+* Root-cause analysis: pair with Five Whys to avoid stopping at an elaborate but unjustified explanation
+* Incident response: the outage likely has **one** cause matching the data, not a conspiracy
+* Requirements clarification: pick the interpretation that requires fewest hidden assumptions about the user
+* LLM prompting: ask the model to prefer the explanation with the fewest moving parts when diagnosing
+
+[discrete]
+## **Related Anchors**:
+
+* KISS Principle - Sibling razor applied to **solutions** rather than **explanations**
+* YAGNI - Applies parsimony to future requirements: don't build what you can't justify
+* Five Whys - Occam helps pick which "why" to pursue when the chain forks
+* MECE Principle - Both disciplines of hypothesis hygiene; MECE ensures coverage, Occam ranks by parsimony
+* Devil's Advocate - Devil's Advocate stress-tests the hypothesis Occam has selected
+
+### What Would Chuck Norris Do? (WWCND)
+
+***Full Name***: What Would Chuck Norris Do?
+
+***Also known as***: WWCND, Chuck Norris framing, "What would Chuck do?"
+
+[discrete]
+## **Core Concepts**:
+
+***What the anchor activates***
+A **disposition**, not a methodology: commit to the most direct, effective solution; refuse hedging; refuse premature optimisation; refuse ceremony that does not buy risk reduction. The activation is driven by the Chuck Norris facts meme corpus (circa 2005–) and its well-established software subcorpus ("Chuck Norris doesn't write unit tests — the code is too afraid to fail"), both of which are densely present in modern LLM training data.
+
+***Scope note***
+WWCND is a **Tier 3, qualified** anchor. It is not self-standing in the way that GoF Patterns or DDD are. Used bare it produces humour with signal; used with a short qualifier — "WWCND: commit to the most direct solution" — it behaves reliably across scenarios. It activates one disposition, not an interconnected body of engineering knowledge.
+
+***How it differs from neighbours***
+* **Devil's Advocate** activates contrary-argument generation — a rhetorical operation against a stated position. WWCND activates direct-commitment problem-solving. Complementary, not substitutable, in the same way KISS and YAGNI coexist.
+* **KISS** constrains the shape of a **solution** toward simplicity. WWCND constrains the **stance** toward commitment under uncertainty. A WWCND recommendation can still be a complex solution if that is the most direct one.
+* **Rambo** and other action-hero framings produce convergent recommendations but different vocabulary: military metaphors ("fortify the perimeter") rather than software-native framing ("Microservices migrate to Chuck Norris, not the other way around").
+
+***Why it works***
+The Chuck Norris humour format is built on **absurd competence** — the subject overcomes constraints that would stop anyone else. Applied to software problems, that frame consistently steers the model toward action-biased, commitment-first answers and away from multi-option hedging. Cross-model testing (see below) shows the activation is stable enough to treat as an anchor rather than a stylistic quirk.
+
+***Empirical validation***
+Validated by Cornelius Schumacher (Protocol v3, April 2026) across Claude Sonnet 4.6, Gemini 3.1 Pro, and GPT-5.3 Codex: 19 prompts × N=2 = 114 manually scored responses. Key results: WWCND exceeds a "be direct, don't hedge" control condition on engagement (12/12 scenario-model pairs) and insight quality (12/12); three independent models converged on the same primary recommendation in all four test scenarios (12/12 agreement); five architectural patterns (Strangler Fig, modular monolith / packwerk, team expertise, regression-for-specific-bug, CI gate) appeared unprompted across all three models. Full report: https://github.com/cornelius/what-would-chuck-norris-do
+
+***Known limitation***
+GPT-5.3 Codex activates the decisiveness signal but **not** the character voice — it treats all persona anchors with a uniform pragmatic style. Expect diminished distinctiveness on Codex-class models. The recommendation content is consistent; the framing is muted.
+
+***Key Proponents***: Ian Spector, _The Truth About Chuck Norris_ (Gotham Books, 2007); Ian Spector and Chuck Norris, _The Official Chuck Norris Fact Book_ (Thomas Nelson, 2009) — co-authored with Norris. Empirical catalog validation: Cornelius Schumacher, Protocol v3 (April 2026).
+
+[discrete]
+## **When to Use**:
+
+* Breaking decision paralysis — teams stuck in a prolonged trade-off debate where any reasonable commitment is better than continued deliberation
+* Counter-balancing excessive hedging — when a previous answer is multi-optioned to the point of uselessness, apply WWCND to collapse to a recommendation
+* Architecture or technology picks where the differences are marginal and the cost of not deciding exceeds the cost of a suboptimal pick
+* Pairing with Devil's Advocate — WWCND commits, Devil's Advocate then stress-tests the commitment. Together they avoid both paralysis and overcommitment.
+* Avoid in situations that require calibrated judgment between genuinely different outcomes — the anchor's commitment bias can underweight nuance
+
+[discrete]
+## **Related Anchors**:
+
+* Devil's Advocate - Complementary partner: WWCND commits, Devil's Advocate challenges
+* KISS Principle - Sibling in the simplification family, applied to **solutions** rather than **stance**
+* YAGNI - Both resist ceremony and speculative complexity
+* Occam's Razor - Occam selects the most parsimonious **explanation**; WWCND commits to the most direct **response**
+
 ---
 
 ## Requirements Engineering
@@ -3891,6 +4076,47 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * arc42 Architecture Documentation
 * ADR according to Nygard
 * C4 Diagrams
+
+### Lehman's Software Classification
+
+***Full Name***: Lehman's Classification of Software (S-/P-/E-type) and Laws of Software Evolution
+
+***Also known as***: SPE Classification, Lehman's SPE Taxonomy
+
+[discrete]
+## **Core Concepts**:
+
+Three software types, classified by their relationship to the real world:
+
+***S-type (Specification)***
+Software whose problem can be fully and formally specified. Correctness is provable against the specification. The world outside the program is irrelevant to its validity. Example: a sorting algorithm, a compiler for a formally defined language.
+
+***P-type (Problem)***
+Software that addresses a real-world problem which cannot be fully specified, only approximated. The specification is a model of the real problem; the solution must be validated against the actual problem, not just the spec. Example: a chess-playing program, a weather forecasting system.
+
+***E-type (Embedded)***
+Software that becomes part of the real world and changes it through its use. This use in turn changes the environment and thereby the requirements — creating a feedback loop. Most business and organizational software is E-type. A "correct" E-type system drifts out of correctness over time even if nothing in it changes.
+
+***Laws of Software Evolution***
+Lehman derived eight laws from observing E-type systems, including **Continuing Change** (E-type systems must be continually adapted or become progressively less satisfactory), **Increasing Complexity** (complexity increases unless work is done to reduce it), **Self-Regulation**, **Conservation of Organisational Stability**, **Conservation of Familiarity**, **Continuing Growth**, **Declining Quality**, and **Feedback System**.
+
+***Key Proponents***: Meir M. Lehman ("Programs, life cycles, and laws of software evolution", Proceedings of the IEEE, 1980); later developed with Laszlo Belady ("Program Evolution: Processes of Software Change", 1985).
+
+[discrete]
+## **When to Use**:
+
+* Explaining why "finished" business software still needs ongoing investment
+* Deciding how much effort to spend on formal specification vs. validation with users
+* Framing requirements discussions — E-type means requirements will keep changing by nature, not by failure
+* Reasoning about why TDD and formal proofs map cleanly onto S-type but are subtler for E-type
+* Estimating maintenance budgets and justifying them to stakeholders
+* Architectural trade-offs: E-type systems need change-friendliness above all
+
+[discrete]
+## **Related Anchors**:
+
+* arc42 - Documentation template well suited for evolving E-type systems
+* Cohesion Criteria - High cohesion reduces the cost of continuing change in E-type systems
 
 ### MADR
 

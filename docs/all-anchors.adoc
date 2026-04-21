@@ -47,6 +47,8 @@ include::anchors/three-act-structure.adoc[leveloffset=+2]
 
 == Design Principles & Patterns
 
+include::anchors/code-smells.adoc[leveloffset=+2]
+
 include::anchors/cohesion-criteria.adoc[leveloffset=+2]
 
 include::anchors/crc-cards.adoc[leveloffset=+2]
@@ -104,6 +106,8 @@ include::anchors/gof-visitor-pattern.adoc[leveloffset=+2]
 include::anchors/grasp.adoc[leveloffset=+2]
 
 include::anchors/kiss-principle.adoc[leveloffset=+2]
+
+include::anchors/single-level-of-abstraction-principle.adoc[leveloffset=+2]
 
 include::anchors/solid-dip.adoc[leveloffset=+2]
 
@@ -197,6 +201,10 @@ include::anchors/five-whys.adoc[leveloffset=+2]
 
 include::anchors/morphological-box.adoc[leveloffset=+2]
 
+include::anchors/occams-razor.adoc[leveloffset=+2]
+
+include::anchors/what-would-chuck-norris-do.adoc[leveloffset=+2]
+
 <<<
 
 == Requirements Engineering
@@ -240,6 +248,8 @@ include::anchors/hexagonal-architecture.adoc[leveloffset=+2]
 include::anchors/iso-25010.adoc[leveloffset=+2]
 
 include::anchors/lasr.adoc[leveloffset=+2]
+
+include::anchors/lehmans-classification.adoc[leveloffset=+2]
 
 include::anchors/madr.adoc[leveloffset=+2]
 
