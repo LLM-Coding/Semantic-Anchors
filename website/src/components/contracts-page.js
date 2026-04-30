@@ -181,35 +181,25 @@ export function initContractsPage(contracts) {
     }
   })
 
-  // Download button
-  const downloadBtn = document.getElementById('contracts-download')
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', () => downloadContracts(contracts))
+  // Replace buttons via clone to remove stale listeners from previous init
+  function rebindButton(id, handler) {
+    const old = document.getElementById(id)
+    if (!old) return
+    const fresh = old.cloneNode(true)
+    old.replaceWith(fresh)
+    fresh.addEventListener('click', handler)
   }
 
-  // Copy to clipboard button
-  const copyBtn = document.getElementById('contracts-copy')
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => copyContracts(contracts))
-  }
-
-  // Select all
-  const selectAllBtn = document.getElementById('contracts-select-all')
-  if (selectAllBtn) {
-    selectAllBtn.addEventListener('click', () => {
-      setSelectedContracts(contracts.map((c) => c.id))
-      initContractsPage(contracts)
-    })
-  }
-
-  // Deselect all
-  const deselectAllBtn = document.getElementById('contracts-deselect-all')
-  if (deselectAllBtn) {
-    deselectAllBtn.addEventListener('click', () => {
-      setSelectedContracts([])
-      initContractsPage(contracts)
-    })
-  }
+  rebindButton('contracts-download', () => downloadContracts(contracts))
+  rebindButton('contracts-copy', () => copyContracts(contracts))
+  rebindButton('contracts-select-all', () => {
+    setSelectedContracts(contracts.map((c) => c.id))
+    initContractsPage(contracts)
+  })
+  rebindButton('contracts-deselect-all', () => {
+    setSelectedContracts([])
+    initContractsPage(contracts)
+  })
 
   updateUI(contracts)
 }
