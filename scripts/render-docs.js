@@ -102,6 +102,9 @@ renderFile(
   path.join(WEB_DOCS, 'spec-driven-workflow.de.html')
 )
 
+// Render contracts page from JSON
+require('./render-contracts.js')
+
 // Copy evaluation report (self-contained HTML)
 const evalReport = path.join(ROOT, 'evaluations/report.html')
 if (fs.existsSync(evalReport)) {

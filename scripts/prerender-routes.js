@@ -59,6 +59,13 @@ const ROUTES = [
       'Applying semantic anchors to brownfield codebases using a bounded-context approach.',
   },
   {
+    path: '/contracts',
+    fragment: 'docs/contracts.html',
+    title: 'Semantic Contracts — Semantic Anchors',
+    description:
+      'Semantic Contracts define what terms mean in your project — composing established anchors or custom definitions for your AGENTS.md or CLAUDE.md.',
+  },
+  {
     path: '/changelog',
     fragment: 'docs/changelog.html',
     title: 'Changelog — Semantic Anchors',
@@ -168,7 +175,7 @@ function prerenderRoute(shell, route) {
     fs.mkdirSync(outDir, { recursive: true })
     fs.writeFileSync(
       outFile,
-      `<!doctype html><meta charset="utf-8"><link rel="canonical" href="https://llm-coding.github.io/Semantic-Anchors${route.redirectTo}"><meta http-equiv="refresh" content="0;url=${route.redirectTo}"><script>location.replace('${route.redirectTo}')</script>`,
+      `<!doctype html><meta charset="utf-8"><link rel="canonical" href="https://llm-coding.github.io/Semantic-Anchors${route.redirectTo}"><meta http-equiv="refresh" content="0;url=/Semantic-Anchors${route.redirectTo}"><script>location.replace('/Semantic-Anchors${route.redirectTo}')</script>`,
       'utf-8'
     )
     return
