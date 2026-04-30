@@ -6,7 +6,7 @@ Ralf D. Müller
 
 == Introduction
 
-You have mastered the link:#/workflow[greenfield workflow].
+You have mastered the link:#/spec-driven-development[greenfield workflow].
 Now you want to apply it to an existing codebase.
 
 The core principles remain the same: small steps, high autonomy, error correction loops.
@@ -152,7 +152,7 @@ Stable code that nobody touches does not need specs.
 |link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago]
 
 |Continue
-|Follow link:#/workflow[the standard workflow] from Step 3 (PRD) or Step 8 (Implementation), depending on whether you are adding new features or fixing bugs.
+|Follow link:#/spec-driven-development[the standard workflow] from Step 3 (PRD) or Step 8 (Implementation), depending on whether you are adding new features or fixing bugs.
 |{empty}--
 |===
 

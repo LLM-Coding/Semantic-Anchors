@@ -16,7 +16,7 @@ const ROUTE_TITLES = {
   '/': 'Semantic Anchors — Shared Vocabulary for LLM Communication',
   '/about': 'About — Semantic Anchors',
   '/contracts': 'Semantic Contracts — Semantic Anchors',
-  '/workflow': 'Development Workflow — Semantic Anchors',
+  '/spec-driven-development': 'Spec-Driven Development with Semantic Anchors',
   '/brownfield': 'Brownfield Workflow — Semantic Anchors',
   '/evaluations': 'Evaluations — Semantic Anchors',
   '/contributing': 'Contributing — Semantic Anchors',
@@ -55,9 +55,12 @@ export function addRoute(path, handler) {
 /**
  * Navigate to a specific route
  * @param {string} path - Route path
+ * @param {object} [options]
+ * @param {boolean} [options.replace=false] - Replace current history entry instead of pushing
  */
-export function navigate(path) {
-  history.pushState(null, '', buildPath(path))
+export function navigate(path, { replace = false } = {}) {
+  const method = replace ? 'replaceState' : 'pushState'
+  history[method](null, '', buildPath(path))
   handleRoute()
 }
 
@@ -138,10 +141,9 @@ export function initRouter() {
 function handleRoute() {
   let path = getCurrentRoute()
 
-  // Normalize trailing slash: GitHub Pages 301-redirects /workflow to /workflow/
-  // when workflow/index.html is served as a directory index. Without this,
-  // routes.get('/workflow/') misses the '/workflow' key and falls through to
-  // the home handler.
+  // Normalize trailing slash: GitHub Pages 301-redirects routes like
+  // /spec-driven-development to /spec-driven-development/ when served as a
+  // directory index. Without this, the trailing slash misses the route key.
   if (path.length > 1 && path.endsWith('/')) {
     path = path.slice(0, -1)
   }

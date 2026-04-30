@@ -286,13 +286,13 @@ test.describe('Routing - Documentation Pages', () => {
   })
 
   test('should render doc page when visited via trailing-slash URL', async ({ page }) => {
-    // GitHub Pages 301-redirects /workflow → /workflow/ when workflow/index.html
-    // is served as a directory index. The SPA must handle the trailing-slash
+    // GitHub Pages 301-redirects /spec-driven-development → /spec-driven-development/
+    // when served as a directory index. The SPA must handle the trailing-slash
     // form or it falls through to the home handler.
-    await page.goto('/Semantic-Anchors/workflow/')
+    await page.goto('/Semantic-Anchors/spec-driven-development/')
 
     await page.waitForSelector('#doc-content h1', { timeout: 10000 })
-    await expect(page.locator('#doc-content h1')).toContainText(/Workflow/i)
+    await expect(page.locator('#doc-content h1')).toContainText(/Spec-Driven Development/i)
 
     // Card grid (home-only content) must not be rendered on top
     await expect(page.locator('.anchor-card')).toHaveCount(0)

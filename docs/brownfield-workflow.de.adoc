@@ -6,7 +6,7 @@ Ralf D. Müller
 
 == Einleitung
 
-Du hast den link:#/workflow[Greenfield-Workflow] gemeistert.
+Du hast den link:#/spec-driven-development[Greenfield-Workflow] gemeistert.
 Jetzt willst du ihn auf eine bestehende Codebasis anwenden.
 
 Die Grundprinzipien bleiben gleich: kleine Schritte, hohe Autonomie, Fehlerkorrektur-Schleifen.
@@ -151,7 +151,7 @@ Stabiler Code, den niemand anfasst, braucht keine Specs.
 |link:#/anchor/tdd-london-school[TDD London] / link:#/anchor/tdd-chicago-school[Chicago]
 
 |Weiter
-|Ab hier dem link:#/workflow[Standard-Workflow] ab Schritt 3 (PRD) oder Schritt 8 (Implementierung) folgen, je nachdem ob neue Features oder Bugs bearbeitet werden.
+|Ab hier dem link:#/spec-driven-development[Standard-Workflow] ab Schritt 3 (PRD) oder Schritt 8 (Implementierung) folgen, je nachdem ob neue Features oder Bugs bearbeitet werden.
 |{empty}--
 |===
 

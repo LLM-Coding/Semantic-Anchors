@@ -36,7 +36,7 @@ export function renderHeader() {
               <div class="flex items-center gap-6 text-2xl">
                 <a href="#/" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
                 <a href="#/contracts" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/contracts" data-i18n="nav.contracts">${i18n.t('nav.contracts')}</a>
-                <a href="#/workflow" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/workflow" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
+                <a href="#/spec-driven-development" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/spec-driven-development" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
                 <div class="relative" id="more-menu-container">
                   <button id="more-menu-toggle" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors flex items-center gap-1" data-i18n="nav.more">
                     ${i18n.t('nav.more')}
@@ -155,7 +155,7 @@ export function renderHeader() {
           <div class="flex flex-col gap-2">
             <a href="#/" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
             <a href="#/contracts" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contracts" data-i18n="nav.contracts">${i18n.t('nav.contracts')}</a>
-            <a href="#/workflow" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/workflow" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
+            <a href="#/spec-driven-development" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/spec-driven-development" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
             <a href="#/about" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>
             <a href="#/agentskill" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/agentskill" data-i18n="nav.agentskill">${i18n.t('nav.agentskill')}</a>
             <a href="#/contributing" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contributing" data-i18n="nav.contributing">${i18n.t('nav.contributing')}</a>

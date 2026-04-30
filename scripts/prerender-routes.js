@@ -42,10 +42,14 @@ const ROUTES = [
   },
   {
     path: '/workflow',
+    redirectTo: '/spec-driven-development',
+  },
+  {
+    path: '/spec-driven-development',
     fragment: 'docs/spec-driven-workflow.html',
-    title: 'Development Workflow — Semantic Anchors',
+    title: 'Spec-Driven Development with Semantic Anchors',
     description:
-      'The Semantic Anchors spec-driven development workflow — from requirements to specification to implementation, powered by semantic anchors.',
+      'Spec-driven development workflow — from requirements to specification to implementation, powered by semantic anchors.',
   },
   {
     path: '/brownfield',
@@ -158,6 +162,18 @@ function buildDocContentMarkup(fragmentHtml) {
  * @throws {Error} When the configured fragment file does not exist.
  */
 function prerenderRoute(shell, route) {
+  if (route.redirectTo) {
+    const outDir = path.join(DIST, route.path)
+    const outFile = path.join(outDir, 'index.html')
+    fs.mkdirSync(outDir, { recursive: true })
+    fs.writeFileSync(
+      outFile,
+      `<!doctype html><meta charset="utf-8"><link rel="canonical" href="https://llm-coding.github.io/Semantic-Anchors${route.redirectTo}"><meta http-equiv="refresh" content="0;url=${route.redirectTo}"><script>location.replace('${route.redirectTo}')</script>`,
+      'utf-8'
+    )
+    return
+  }
+
   const fragmentPath = path.join(DIST, route.fragment)
   if (!fs.existsSync(fragmentPath)) {
     throw new Error(

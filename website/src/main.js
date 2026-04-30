@@ -13,7 +13,12 @@ import {
 } from './components/card-grid.js'
 import { fetchData, fetchContractsData } from './utils/data-loader.js'
 import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
-import { initRouter, addRoute, getCurrentRoute as getCurrentRouteSync } from './utils/router.js'
+import {
+  initRouter,
+  addRoute,
+  navigate,
+  getCurrentRoute as getCurrentRouteSync,
+} from './utils/router.js'
 import { renderDocPage, loadDocContent } from './components/doc-page.js'
 import {
   createOnboardingModal,
@@ -141,7 +146,8 @@ function initApp() {
   addRoute('/agentskill', renderAgentSkillPage)
   addRoute('/rejected-proposals', renderRejectedProposalsPage)
   addRoute('/all-anchors', renderAllAnchorsPage)
-  addRoute('/workflow', renderWorkflowPage)
+  addRoute('/spec-driven-development', renderWorkflowPage)
+  addRoute('/workflow', () => navigate('/spec-driven-development', { replace: true }))
   addRoute('/brownfield', renderBrownfieldPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
@@ -494,7 +500,7 @@ function handleLanguageChange() {
     loadDocContent('docs/rejected-proposals.adoc')
   } else if (currentRoute === '/all-anchors') {
     loadDocContent('docs/all-anchors.adoc')
-  } else if (currentRoute === '/workflow') {
+  } else if (currentRoute === '/spec-driven-development') {
     loadDocContent('docs/spec-driven-workflow.adoc')
   } else if (currentRoute === '/brownfield') {
     loadDocContent('docs/brownfield-workflow.adoc')

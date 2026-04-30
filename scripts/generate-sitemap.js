@@ -38,7 +38,7 @@ const BASE_URL = 'https://llm-coding.github.io/Semantic-Anchors'
 const PAGES = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
-  { path: '/workflow', priority: '0.8', changefreq: 'monthly' },
+  { path: '/spec-driven-development', priority: '0.8', changefreq: 'monthly' },
   { path: '/brownfield', priority: '0.8', changefreq: 'monthly' },
   { path: '/evaluations', priority: '0.8', changefreq: 'monthly' },
   { path: '/all-anchors', priority: '0.8', changefreq: 'weekly' },
