@@ -43,6 +43,7 @@ Use ⚓ link:#/anchor/domain-driven-design[Domain-Driven Design] to identify the
 The AI can help: point it at the code and ask it to identify bounded contexts and their interfaces.
 
 .Prompt
+[source,txt]
 ----
 Analyze the codebase in src/. Identify bounded contexts using Domain-Driven Design.
 For each context, list: name, responsibility, key entities, interfaces to other contexts.
@@ -52,41 +53,74 @@ Present as a table.
 Pick one bounded context to start with.
 Choose one that is small, well-isolated, and has a change request pending.
 
-== Phase 0.5: Reverse-Engineer the Safety Net
+== Phase 0.5: Socratic Code Theory Recovery
 
-Before changing anything, you need two things: understanding and tests.
+Before changing anything, you need to recover the "theory" of the bounded context -- what https://pages.cs.wisc.edu/~remzi/Naur.pdf[Peter Naur] called the mental model that lives in the heads of the original developers. In a brownfield project, this model is not documented. The code is the only source.
 
-=== Extract Existing Behavior as Use Cases
+This phase uses *Socratic Code Theory Recovery*: a two-phase workflow that builds understanding through recursive question refinement before producing documentation.
 
-Let the AI read the code in your bounded context and extract what the system currently does.
-The output is a set of use cases that describe the *existing* behavior -- not what you want to build, but what is already there.
+=== Phase 1: Build the Question Tree
 
-.Prompt
+Start with five high-level questions about the bounded context and decompose them recursively. Use Semantic Anchors as decomposition guides: *arc42* for architecture, *Cockburn Use Cases* for specification, *ISO 25010* for quality, *Nygard ADRs* for decisions.
+
+.Starting Questions (adapt to your bounded context)
+[source,txt]
 ----
-Read the code in [bounded context path]. Extract the existing behavior as Use Cases.
-For each Use Case: ID, Trigger, Actors, Preconditions, Main Flow, Alternative Flows, Postconditions, Business Rules.
-Save as docs/specs/use-cases-[context-name].adoc.
+1. What problem does this bounded context solve and for whom?
+2. What is the specification of this bounded context?
+3. What is the architecture of this bounded context?
+4. What quality goals drive the design?
+5. What risks and technical debt exist?
 ----
 
-Review the extracted use cases against the running system.
-The AI may miss implicit behavior or misinterpret code.
-This is the one step where domain knowledge is irreplaceable.
+Each leaf in the tree is either `[ANSWERED]` (with code evidence: file, function, line) or `[OPEN]` (with Category and Ask role).
+
+The output is two files:
+
+* `QUESTION_TREE.adoc` -- the full reasoning trace
+* `OPEN_QUESTIONS.adoc` -- the handoff document, grouped by role (Product Owner, Architect, Developer, Domain Expert, Operations)
+
+=== Between Phases: Team Answers the Open Questions
+
+Route the Open Questions to the people who can answer them. In a controlled experiment with a 13,000-line Go codebase, *11 targeted questions* were sufficient to close the gap between reverse-engineered documentation and the original. The questions are precise because the recursive decomposition ensures they are specific, not vague.
+
+Typical questions the LLM cannot answer from code:
+
+[cols="2,3",options="header"]
+|===
+| Category | Example
+
+| Business Context | Why was this built? What alternatives existed?
+| Design Rationale | Why JSONC instead of YAML? Why this library?
+| Quality Goals | Which quality goal has priority? What are the thresholds?
+| Stakeholder Context | Who uses this? What is their skill level?
+| Future Direction | What is planned but not yet implemented?
+|===
+
+=== Phase 2: Synthesize Documentation
+
+The LLM synthesizes the answered questions plus the code evidence from Phase 1 into documentation following the spec-driven workflow:
+
+* *PRD* from Q-1 branch answers
+* *Specification* (Cockburn Use Cases, CLI spec, data models, Gherkin acceptance criteria) from Q-2 branch
+* *arc42* with all 12 chapters from Q-3 branch
+* *Nygard ADRs* with Pugh Matrix from Q-3.9 branch
+
+Every claim references a Question ID and marks team-provided information with `(team answer)`. This dual traceability (code evidence + team input) is the key difference from a simple reverse-engineering prompt.
 
 === Establish Baseline Tests
 
-Write tests that verify the existing behavior.
-These tests are your safety net: if a change breaks something, the tests will catch it.
+From the synthesized Use Cases, write tests that verify the existing behavior. These tests are your safety net.
 
 .Prompt
+[source,txt]
 ----
 Based on the Use Cases in docs/specs/use-cases-[context-name].adoc, write tests that verify the current behavior.
 Use TDD, London School. Each test references its Use Case ID for traceability.
 Do not change any production code. Only add tests.
 ----
 
-Run the tests.
-Every test must pass against the current code.
-If a test fails, the extracted use case was wrong -- fix the use case, then fix the test.
+Run the tests. Every test must pass against the current code. If a test fails, the extracted use case was wrong -- fix the use case, then fix the test.
 
 [IMPORTANT]
 ====
@@ -94,6 +128,24 @@ Do not skip baseline tests.
 Without them, you cannot distinguish between "my change broke something" and "it was already broken."
 This is the closed loop that makes brownfield changes safe.
 ====
+
+=== What the LLM Can and Cannot Recover
+
+A controlled experiment (deleting documentation from a greenfield project and regenerating it from code) showed:
+
+*Derivable from code:* Functional requirements (21 vs. 7 in the original), acceptance criteria (69 vs. 40), building block views, glossary (31 terms vs. 2 placeholders), security mechanisms, crosscutting concepts.
+
+*NOT derivable from code:* Business context, design rationale (ADR "why"), quality goal *priorities*, stakeholder concerns, aspirational features, performance budgets, tutorials, review results.
+
+Semantic Anchors serve a dual purpose in this workflow: *prompt compression* (a 69-line prompt produced 3,850 lines of correctly structured documentation) and *decomposition heuristics* ("arc42" generates 12 MECE sub-questions without additional instructions).
+
+=== Spec Drift and Reconciliation
+
+Even in well-documented projects, the specification drifts from the code. The implementation LLM adds security hardening, validation rules, and edge cases that were never in the original specification. This is not a discipline problem -- it is a structural property of the workflow.
+
+The fix: periodic *spec reconciliation*. Run the reverse-engineering prompt against current code and diff against the existing spec. The diff reveals new requirements (in code, not in spec), changed behavior (diverged), and dead spec (documented but removed).
+
+Three natural trigger points: before a release, after a security review, before onboarding.
 
 == Phase 1-12: The Standard Workflow
 
@@ -143,9 +195,17 @@ Stable code that nobody touches does not need specs.
 |`Analyze the codebase in [path]. Identify bounded contexts using DDD. List name, responsibility, entities, interfaces.`
 |link:#/anchor/domain-driven-design[DDD]
 
-|Reverse-Engineer
-|`Read the code in [path]. Extract existing behavior as Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions.`
+|Theory Recovery (Phase 1)
+|`You have access to [bounded context path]. No documentation exists. Build a Question Tree by recursively refining 5 questions: Problem/Users, Specification, Architecture, Quality Goals, Risks. Each leaf: [ANSWERED] with code evidence or [OPEN] with Category and Ask role.`
+|link:#/anchor/arc42[arc42], link:#/anchor/cockburn-use-cases[Cockburn], link:#/anchor/iso-25010[ISO 25010], link:#/anchor/nygard-adrs[Nygard ADR]
+
+|Team Answers
+|Route OPEN_QUESTIONS.adoc to the team by Ask role. Typically 10-15 questions.
 |{empty}--
+
+|Theory Recovery (Phase 2)
+|`Synthesize documentation from the Question Tree and team answers. Every claim references a Q-ID. Mark team input with (team answer).`
+|link:#/spec-driven-development[Spec-Driven Workflow]
 
 |Baseline Tests
 |`Write tests for the Use Cases in [spec file]. Each test references its Use Case ID. Do not change production code.`
@@ -153,6 +213,10 @@ Stable code that nobody touches does not need specs.
 
 |Continue
 |Follow link:#/spec-driven-development[the standard workflow] from Step 3 (PRD) or Step 8 (Implementation), depending on whether you are adding new features or fixing bugs.
+|{empty}--
+
+|Reconciliation
+|`Compare existing spec in [path] against current code. Report: NEW (in code, not in spec), CHANGED (diverged), DEAD (in spec, not in code). Do not modify existing files.`
 |{empty}--
 |===
 
@@ -169,3 +233,6 @@ If the system cannot be built or started, you have a different problem -- fix th
 * Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- the bounded-context approach to spec-driven development in existing systems.
 * Eric Evans, https://www.domainlanguage.com/ddd/[Domain-Driven Design] -- the foundational work on bounded contexts and strategic design.
 * Michael Feathers, _Working Effectively with Legacy Code_ -- techniques for establishing test coverage in systems without tests.
+* Peter Naur, "Programming as Theory Building" (1985) -- argues that programming is about building a mental model ("theory") that cannot be fully captured in documentation. Socratic Code Theory Recovery tests this claim in the context of LLM-generated code.
+* https://github.com/rdmueller/personalAssistant/blob/main/resources/brownfield-experiment-report.adoc[Brownfield Experiment Report] -- controlled experiment: delete documentation from a greenfield project, regenerate from code, compare. Full methodology and findings.
+* https://github.com/rdmueller/personalAssistant/blob/main/resources/brownfield-fair-comparison.adoc[Fair Comparison Report] -- three approaches (Direct, Socratic, Two-Phase) with identical team answers. Measures the structural value of the Question Tree.
