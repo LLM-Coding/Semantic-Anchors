@@ -575,6 +575,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Noriaki Kano (1984, *Hinshitsu* journal)
 - **Core:** Two-dimensional quality model — features classified as Must-be (basic, absence dissatisfies), Performance (linear), Attractive (delighter, exceeds expectation), Indifferent or Reverse; surveyed via paired functional/dysfunctional questions ("How would you feel if X were present? / absent?"); categories decay over time (Delighter → Performer → Must-be); complements MoSCoW for backlog prioritisation
 
+### Kotter's 8-Step Change Model
+- **Also known as:** Kotter's 8 Steps for Leading Change, Kotter's Change Process
+- **Proponents:** John P. Kotter (HBR 1995 *"Leading Change: Why Transformation Efforts Fail"*; book *Leading Change*, 1996)
+- **Core:** Eight sequential steps for organisational transformation — (1) establish urgency, (2) form a guiding coalition, (3) develop vision and strategy, (4) communicate the vision, (5) empower broad-based action / remove obstacles, (6) generate short-term wins, (7) consolidate gains and produce more change, (8) anchor changes in culture; the model is the inversion of the eight common errors Kotter identified in failed transformations; widely used in M&A, digital transformation, and agile rollouts; later complemented by *Accelerate* (2014) with a dual operating system of hierarchy plus network
+
 ### PERT (Program Evaluation and Review Technique)
 - **Also known as:** Three-Point Estimation, PERT Network Analysis
 - **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar

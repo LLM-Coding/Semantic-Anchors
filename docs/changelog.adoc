@@ -7,6 +7,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 *New anchors:*
 
 * *Kano Model* — Noriaki Kano's two-dimensional quality model classifying features as Must-be, Performance, Attractive, Indifferent or Reverse, surveyed via paired functional/dysfunctional questions; pairs naturally with MoSCoW for backlog prioritisation (proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/459[#459])
+* *Kotter's 8-Step Change Model* — John P. Kotter's classic transformation framework from *Leading Change* (HBR 1995, book 1996): urgency, guiding coalition, vision, communication, empowerment, short-term wins, consolidation, anchor in culture; the model is the inversion of the eight common errors that kill transformations (proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/460[#460])
 
 == 2026-05-07
 
