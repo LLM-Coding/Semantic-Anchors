@@ -83,6 +83,24 @@ export function renderFooter(version) {
               />
               <span class="text-xs text-[var(--color-text-secondary)]">HMZE <span class="opacity-60">(DE)</span></span>
             </a>
+            <span class="text-gray-300 dark:text-gray-600">|</span>
+            <a
+              href="https://rabauer.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+              title="${i18n.t('footer.rabauerAlt')}"
+            >
+              <img
+                src="${import.meta.env.BASE_URL}rabauer-logo.png"
+                alt="rabauer.dev"
+                width="24"
+                height="24"
+                class="h-6 w-auto"
+                loading="lazy"
+              />
+              <span class="text-xs text-[var(--color-text-secondary)]">rabauer.dev <span class="opacity-60">(EN)</span></span>
+            </a>
           </div>
         </div>
       </div>
