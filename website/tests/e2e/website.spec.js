@@ -14,7 +14,7 @@ test.describe('Homepage - Card Grid', () => {
 
   test('should load homepage successfully', async ({ page }) => {
     await expect(page).toHaveTitle(/Semantic Anchors/)
-    await expect(page.locator('h2').first()).toContainText('Semantic Anchors')
+    await expect(page.locator('main h1').first()).toContainText(/No download|Nichts installieren/)
   })
 
   test('should display header with navigation', async ({ page }) => {

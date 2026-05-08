@@ -79,6 +79,7 @@ function buildModalContent() {
   // The YouTube video IDs are hardcoded constants above.
   const closeLabel = escapeHtml(i18n.t('modal.close'))
   const slogan2 = escapeHtml(i18n.t('onboarding.slogan2'))
+  const text0 = escapeHtml(i18n.t('onboarding.text0'))
   const text1 = escapeHtml(i18n.t('onboarding.text1'))
   const text2 = escapeHtml(i18n.t('onboarding.text2'))
   const text3 = escapeHtml(i18n.t('onboarding.text3'))
@@ -123,6 +124,7 @@ function buildModalContent() {
           </div>
 
           <div class="sm:w-1/2 flex flex-col gap-3 text-[var(--color-text)] text-sm leading-relaxed">
+            <p class="font-semibold border-l-4 border-[var(--color-primary)] pl-3 py-1 bg-[var(--color-bg-secondary)] rounded-r">${text0}</p>
             <p>${text1}</p>
             <p>${text2}</p>
             <p>${text3}</p>
