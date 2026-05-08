@@ -1,6 +1,15 @@
 import { i18n } from '../i18n.js'
 
+const HERO_EXAMPLE_COUNT = 6
+
 export function renderMain() {
+  const exIdx = Math.floor(Math.random() * HERO_EXAMPLE_COUNT) + 1
+  const keyWithout = `hero.example.${exIdx}.without`
+  const keyPrefix = `hero.example.${exIdx}.prefix`
+  const keyAnchor = `hero.example.${exIdx}.anchor`
+  const keySuffix = `hero.example.${exIdx}.suffix`
+  const keyExpansion = `hero.example.${exIdx}.expansion`
+
   return `
     <main class="flex-1">
       <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -20,8 +29,8 @@ export function renderMain() {
               <div class="text-xs uppercase tracking-wide text-[var(--color-text-secondary)] mb-2 font-semibold" data-i18n="hero.withoutLabel">
                 ${i18n.t('hero.withoutLabel')}
               </div>
-              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed font-mono" data-i18n="hero.withoutText">
-                ${i18n.t('hero.withoutText')}
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed font-mono max-h-32 overflow-y-auto pr-2" data-i18n="${keyWithout}">
+                ${i18n.t(keyWithout)}
               </p>
             </div>
             <div class="rounded-lg border-2 border-[var(--color-primary)] bg-[var(--color-bg)] p-4">
@@ -29,12 +38,12 @@ export function renderMain() {
                 ${i18n.t('hero.withAnchorLabel')}
               </div>
               <p class="text-sm text-[var(--color-text)] leading-relaxed font-mono">
-                <span data-i18n="hero.withAnchorTextPrefix">${i18n.t('hero.withAnchorTextPrefix')}</span><strong data-i18n="hero.withAnchorTextAnchor">${i18n.t('hero.withAnchorTextAnchor')}</strong><span data-i18n="hero.withAnchorTextSuffix">${i18n.t('hero.withAnchorTextSuffix')}</span>
+                <span data-i18n="${keyPrefix}">${i18n.t(keyPrefix)}</span><strong data-i18n="${keyAnchor}">${i18n.t(keyAnchor)}</strong><span data-i18n="${keySuffix}">${i18n.t(keySuffix)}</span>
               </p>
             </div>
           </div>
-          <p class="text-sm text-[var(--color-text-secondary)] italic mb-8 max-w-3xl" data-i18n="hero.expansion">
-            ${i18n.t('hero.expansion')}
+          <p class="text-sm text-[var(--color-text-secondary)] italic mb-8 max-w-3xl" data-i18n="${keyExpansion}">
+            ${i18n.t(keyExpansion)}
           </p>
 
           <h2 class="text-lg font-semibold text-[var(--color-text)] mb-3" data-i18n="hero.howToUseTitle">
