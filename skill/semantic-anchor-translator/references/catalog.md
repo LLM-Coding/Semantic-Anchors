@@ -384,6 +384,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Dave Snowden
 - **Core:** Clear, Complicated, Complex, Chaotic, Confused — match approach to domain
 
+### XY Problem
+- **Also known as:** Solution Fixation, Asking the Wrong Question
+- **Proponents:** Mark Jason Dominus (coined the term in comp.lang.perl.misc, 2001), Eric S. Raymond ("How To Ask Questions The Smart Way")
+- **Core:** Communication anti-pattern — asker requests help with attempted solution Y when the real goal X is hidden; resolution by probing for X first ("What are you actually trying to accomplish?"); applies to support, code review, requirements clarification, and LLM dialogues; canonical references at xyproblem.info and Greg's Wiki
+
 ## Requirements Engineering
 
 ### Cockburn Use Cases

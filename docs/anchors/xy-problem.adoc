@@ -1,0 +1,55 @@
+= XY Problem
+:categories: dialogue-interaction, problem-solving
+:roles: software-developer, team-lead, consultant, business-analyst
+:related: socratic-method, bluf, problem-space-nvc
+:proponents: Mark Jason Dominus, Eric S. Raymond
+:tags: communication, troubleshooting, requirements, problem-framing, anti-pattern
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Solution Fixation, Asking the Wrong Question
+
+[discrete]
+== *Core Concepts*:
+
+X is the Real Problem:: The underlying goal the asker actually wants to achieve
+
+Y is the Attempted Solution:: The approach the asker has chosen, often based on an incomplete model of X
+
+The Question Hides X:: The asker phrases their request as "How do I do Y?" — X is never stated, only assumed by the asker
+
+Solution Fixation:: Commitment to Y obscures whether Y solves X at all, and may rule out simpler approaches
+
+Goal-Step Confusion:: Conflating "what I want" with "the steps I think will get me there"
+
+Recognition Heuristic:: Y looks unusual, brittle, or disproportionate to the questioner's apparent expertise — usually a sign that X is hidden
+
+Resolution by Probing:: Ask "What are you actually trying to accomplish?" — surface X, then propose solutions for X (which may or may not include Y)
+
+Asker's Discipline:: State X first, then your attempted Y, then the specific blocker — this lets the helper validate the whole chain
+
+
+Key Proponents:: Mark Jason Dominus (coined the term in a 2001 post to comp.lang.perl.misc), Eric S. Raymond ("How To Ask Questions The Smart Way", 2001 — "describe the goal, not the step")
+
+Historical Context:: Crystallized in Usenet and IRC help culture of the early 2000s; canonical reference at https://xyproblem.info/ and Greg's Wiki (mywiki.wooledge.org/XyProblem); now part of the standard vocabulary on Stack Overflow, Hacker News, and software help channels.
+
+[discrete]
+== *When to Use*:
+
+* As a helper, when a question feels strange, over-specific, or asks for an awkward technical workaround — pause and ask for the underlying goal
+* In LLM dialogues, to break out of solution-fixation when a model keeps trying to make Y work
+* In requirements clarification, when a stakeholder demands a specific feature that looks like a workaround for an unstated need
+* In code review, when a change looks like a hack — check whether the wrong problem is being solved
+* In support tickets and bug reports, to redirect from "this UI doesn't let me do Y" toward "what task X were you doing?"
+* As an asker, to discipline yourself to state the goal before the attempt
+
+[discrete]
+== *Related Anchors*:
+
+* <<socratic-method,Socratic Method>> — questioning to surface the underlying problem
+* <<bluf,BLUF>> — the asker's analogue: lead with the goal, not the step
+* <<problem-space-nvc,Problem Space (NVC)>> — distinguish needs from strategies, the same X/Y move from a Nonviolent Communication frame
+
+Counter-example:: Concrete reproduction steps for a confirmed bug — the steps *are* the problem, not a workaround for it.
+====

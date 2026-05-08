@@ -1,0 +1,55 @@
+= XY Problem
+:categories: dialogue-interaction, problem-solving
+:roles: software-developer, team-lead, consultant, business-analyst
+:related: socratic-method, bluf, problem-space-nvc
+:proponents: Mark Jason Dominus, Eric S. Raymond
+:tags: communication, troubleshooting, requirements, problem-framing, anti-pattern
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Lösungsfixierung, Falsche Frage stellen
+
+[discrete]
+== *Kernkonzepte*:
+
+X ist das eigentliche Problem:: Das zugrunde liegende Ziel, das der Fragende wirklich erreichen will
+
+Y ist der Lösungsversuch:: Der Weg, den der Fragende gewählt hat — oft auf Basis eines unvollständigen Verständnisses von X
+
+Die Frage verbirgt X:: Der Fragende fragt "Wie mache ich Y?" — X wird nie ausgesprochen, sondern stillschweigend vorausgesetzt
+
+Lösungsfixierung:: Die Festlegung auf Y verschleiert, ob Y X überhaupt löst, und schließt einfachere Wege aus
+
+Verwechslung Ziel/Schritt:: "Was ich will" und "die Schritte, die mich dahin bringen" werden vermischt
+
+Erkennungs-Heuristik:: Y wirkt ungewöhnlich, fragil oder unverhältnismäßig zum Können des Fragenden — meist ein Hinweis, dass X verborgen ist
+
+Auflösung durch Nachfragen:: "Was willst du eigentlich erreichen?" — X freilegen, dann eine Lösung für X vorschlagen (Y kann dabei rauskommen, muss aber nicht)
+
+Disziplin des Fragenden:: Erst X nennen, dann den Versuch Y, dann den konkreten Blocker — so kann der Helfer die ganze Kette prüfen
+
+
+Schlüsselvertreter:: Mark Jason Dominus (prägte den Begriff 2001 in comp.lang.perl.misc), Eric S. Raymond ("How To Ask Questions The Smart Way", 2001 — "Beschreibe das Ziel, nicht den Schritt")
+
+Historischer Kontext:: Verfestigt in der Usenet- und IRC-Hilfekultur der frühen 2000er; kanonische Referenz https://xyproblem.info/ und Greg's Wiki (mywiki.wooledge.org/XyProblem); heute Standardvokabular auf Stack Overflow, Hacker News und in Software-Hilfekanälen.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Als Helfer, wenn eine Frage seltsam, überspezifisch oder nach einem umständlichen Workaround klingt — innehalten und nach dem eigentlichen Ziel fragen
+* In LLM-Dialogen, um Lösungsfixierung zu durchbrechen, wenn das Modell hartnäckig Y zum Laufen bringen will
+* In der Anforderungsklärung, wenn ein Stakeholder eine konkrete Funktion fordert, die wie ein Workaround für ein unausgesprochenes Bedürfnis wirkt
+* Im Code-Review, wenn eine Änderung wie ein Hack aussieht — prüfen, ob das falsche Problem gelöst wird
+* In Support-Tickets und Bug-Reports, um von "diese UI lässt mich Y nicht tun" zu "welche Aufgabe X wolltest du erledigen?" umzulenken
+* Als Fragender, um sich zu disziplinieren, das Ziel vor dem Versuch zu nennen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<socratic-method,Socratic Method>> — Fragetechnik, um das zugrunde liegende Problem freizulegen
+* <<bluf,BLUF>> — das Pendant für den Fragenden: zuerst das Ziel, nicht den Schritt
+* <<problem-space-nvc,Problem Space (NVC)>> — Bedürfnisse von Strategien trennen, derselbe X/Y-Schritt aus dem Blickwinkel der Gewaltfreien Kommunikation
+
+Gegenbeispiel:: Konkrete Reproduktionsschritte für einen bestätigten Bug — die Schritte _sind_ das Problem, kein Workaround dafür.
+====
