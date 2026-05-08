@@ -2,6 +2,38 @@
 :toc:
 :toc-placement: preamble
 
+++++
+<figure class="youtube-facade-wrapper">
+  <button
+    type="button"
+    class="youtube-facade"
+    data-video-id="Q_DWMayAQEQ"
+    data-video-title="LLM Coding with Semantic Anchors: From Vibe Coding to a Real Java App with Ralf D. Müller"
+    aria-label="Load and play video: LLM Coding with Semantic Anchors — From Vibe Coding to a Real Java App. YouTube only loads on click."
+  >
+    <img
+      src="https://i.ytimg.com/vi/Q_DWMayAQEQ/maxresdefault.jpg"
+      alt=""
+      loading="lazy"
+    />
+    <span class="youtube-facade-play">
+      <span class="youtube-facade-play-icon">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </span>
+    </span>
+    <span class="youtube-facade-title">
+      <strong>LLM Coding with Semantic Anchors — From Vibe Coding to a Real Java App</strong>
+      <em>YouTube only loads on click (GDPR)</em>
+    </span>
+  </button>
+  <figcaption>
+    Two-hour live coding session with Johannes Rabauer and Ralf D. Müller (May 2026)
+  </figcaption>
+</figure>
+++++
+
 == What are Semantic Anchors?
 
 *Semantic anchors* are well-defined terms, methodologies, and frameworks that serve as reference points when communicating with Large Language Models (LLMs). They act as shared vocabulary that triggers specific, contextually rich knowledge domains within an LLM's training data.
