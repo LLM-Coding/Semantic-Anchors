@@ -32,6 +32,35 @@
     Ralf D. Müller erklärt Semantic Anchors im HMZE-Podcast (April 2026)
   </figcaption>
 </figure>
+<figure class="youtube-facade-wrapper">
+  <button
+    type="button"
+    class="youtube-facade"
+    data-video-id="Q_DWMayAQEQ"
+    data-video-title="LLM Coding with Semantic Anchors: From Vibe Coding to a Real Java App with Ralf D. Müller"
+    aria-label="Video laden und abspielen: LLM Coding with Semantic Anchors — From Vibe Coding to a Real Java App. Erst beim Klick wird YouTube geladen."
+  >
+    <img
+      src="https://i.ytimg.com/vi/Q_DWMayAQEQ/maxresdefault.jpg"
+      alt=""
+      loading="lazy"
+    />
+    <span class="youtube-facade-play">
+      <span class="youtube-facade-play-icon">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </span>
+    </span>
+    <span class="youtube-facade-title">
+      <strong>LLM Coding with Semantic Anchors — From Vibe Coding to a Real Java App</strong>
+      <em>Englischsprachig · Erst beim Klick wird YouTube geladen (DSGVO)</em>
+    </span>
+  </button>
+  <figcaption>
+    Zweistündiges Live-Coding mit Johannes Rabauer und Ralf D. Müller (Mai 2026)
+  </figcaption>
+</figure>
 ++++
 
 == Was sind Semantic Anchors?

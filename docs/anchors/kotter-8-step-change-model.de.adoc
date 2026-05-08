@@ -1,0 +1,58 @@
+= Kotters 8-Stufen-Modell des Wandels
+:categories: strategic-planning
+:roles: team-lead, consultant, product-owner, business-analyst
+:related: swot, cynefin-framework, wardley-mapping
+:proponents: John P. Kotter
+:tags: change-management, transformation, leadership, organizational-change
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Kotter's 8-Step Change Model, Kotters Change-Prozess
+
+[discrete]
+== *Kernkonzepte*:
+
+Schritt 1 — Dringlichkeit erzeugen:: Bedrohungen und Chancen sichtbar machen, die den Wandel jetzt nötig machen; ohne Dringlichkeit fällt die Organisation in den Status quo zurück
+
+Schritt 2 — Führungskoalition aufbauen:: Eine ausreichend mächtige, cross-funktionale Gruppe zusammenstellen, die Glaubwürdigkeit, Autorität und Energie mitbringt; einzelne Champions scheitern
+
+Schritt 3 — Vision und Strategie entwickeln:: Eine klare, mitreißende Vision des Zielzustands und eine Strategie dorthin formulieren; die Vision muss in fünf Minuten erklärbar sein
+
+Schritt 4 — Vision kommunizieren:: Jeden Kanal nutzen und die Vision unermüdlich wiederholen; Vorleben statt nur Verkünden — Führungsverhalten wiegt schwerer als Memos
+
+Schritt 5 — Hindernisse beseitigen / Befähigung:: Strukturen, fehlausgerichtete Anreize und ängstliches mittleres Management aus dem Weg räumen; Menschen in die Lage versetzen, die Vision umzusetzen
+
+Schritt 6 — Kurzfristige Erfolge erzeugen:: Sichtbare, eindeutige Verbesserungen innerhalb von 6–18 Monaten planen, schaffen und feiern; sie finanzieren Glaubwürdigkeit und entkräften Skeptiker
+
+Schritt 7 — Erfolge konsolidieren, weiteren Wandel anstoßen:: Die Glaubwürdigkeit aus kurzfristigen Erfolgen nutzen, um größere Systeme, Strukturen und Policies anzugehen; nicht zu früh "Sieg" rufen
+
+Schritt 8 — Veränderung in der Kultur verankern:: Aus den neuen Ansätzen "so machen wir das hier" machen, indem sie an Nachfolge, Recruiting, Onboarding und Storytelling gekoppelt werden
+
+Die 8 Fehler:: Das Modell ist die Umkehrung der *acht typischen Fehler*, die Kotter in gescheiterten Transformationen identifiziert hat: Selbstzufriedenheit, keine schlagkräftige Koalition, Vision unterschätzt, zu wenig Kommunikation, Hindernisse ignoriert, keine kurzfristigen Erfolge, vorzeitiger Sieg, Wandel nicht in Kultur verankert
+
+Linear, aber iterativ:: Kotter stellt die Schritte sequentiell dar, weil jeder Schritt auf der Glaubwürdigkeit und Infrastruktur des vorherigen aufbaut; in der Praxis läuft man innerhalb und zwischen Schritten in Schleifen, während der Wandel skaliert
+
+
+Schlüsselvertreter:: John P. Kotter (Harvard Business School), vorgestellt im *Harvard Business Review*-Artikel *"Leading Change: Why Transformation Efforts Fail"* (1995) und ausgebaut im Buch *Leading Change* (1996, Harvard Business Press)
+
+Historischer Kontext:: Einer der meistzitierten Change-Management-Frameworks der Wirtschaftsliteratur; verbreitet in M&A-Integrationen, Digital Transformations, agilen Rollouts und Kulturwandel-Programmen; 2014 ergänzt durch Kotters *Accelerate* (XLR8) mit einem "dualen Betriebssystem" aus Hierarchie plus Netzwerk für kontinuierlichen Wandel
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Planung einer nicht-trivialen organisatorischen Veränderung (Digital Transformation, agiler Rollout, Restrukturierung, M&A-Integration)
+* Diagnose, warum eine festgefahrene Transformation festsitzt — welcher der 8 Fehler greift gerade?
+* Sequenzierung von Kommunikations- und Eingriffsmaßnahmen, damit Quick Wins landen, bevor sich politischer Widerstand formiert
+* Stakeholder-Analyse und Koalitionsbildung vor Start einer Veränderungsinitiative
+* Prüfen, ob eine "abgeschlossene" Veränderung tatsächlich kulturell verankert ist oder nur eine temporäre Policy
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<swot,SWOT>> — strategische Analyse als Input für die Schritte Dringlichkeit und Vision
+* <<cynefin-framework,Cynefin Framework>> — passt den Ansatz (Clear / Complicated / Complex / Chaotic) an die Art des Wandels an
+* <<wardley-mapping,Wardley Mapping>> — visualisiert, wo in der Wertschöpfungskette Veränderung nötig ist, bevor die Vision definiert wird
+
+Gegenbeispiel:: Reines Top-down-Mandat ("ab Montag sind wir agil") — genau Kotters Punkt: ohne Dringlichkeit, Koalition, Vision und kurzfristige Erfolge entsteht Compliance-Theater, kein Wandel.
+====

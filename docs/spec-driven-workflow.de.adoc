@@ -16,13 +16,14 @@ Statt seitenlange Anweisungen zu schreiben, referenziert man ein Konzept, das da
 "Folge link:#/anchor/arc42[arc42]" ist kürzer als 12 Architektur-Abschnitte zu beschreiben.
 Die Prompts bleiben kurz, präzise und wartbar.
 
-Dieser Workflow wurde verwendet, um drei Open-Source-Projekte zu bauen, alle 100% KI-generiert.
+Dieser Workflow wurde verwendet, um vier Open-Source-Projekte zu bauen, alle 100% KI-generiert.
 *Die goldene Regel: Ich prompte nur, ich fasse den Code nie selbst an.*
 Jede Zeile Code, jeder Test, jede Dokumentationsdatei wurde von der KI unter meiner Anleitung geschrieben.
 
 * https://github.com/docToolchain/dacli[*dacli*]: Ein vollständiges CLI-Tool mit Spezifikation, Architekturdokumentation, Tests und Benutzerhandbuch. Von einer KI gebaut, von 5 verschiedenen LLMs gegengelesen.
 * https://github.com/LLM-Coding/Semantic-Anchors[*Semantic Anchors Website*]: 228+ GitHub Stars, Dokumentation und eine Videoserie.
 * https://github.com/LLM-Coding/vibe-coding-risk-radar[*Vibe Coding Risk Radar*]: Eine interaktive Webanwendung zur Bewertung von KI-Coding-Risiken.
+* https://doctoolchain.org/Bausteinsicht/[*Bausteinsicht*]: Bidirektionale Synchronisation zwischen einem strukturierten JSON-Architekturmodell und draw.io-Diagrammen — Architecture-as-Code trifft draw.io.
 
 [NOTE]
 ====

@@ -1,0 +1,58 @@
+= Kotter's 8-Step Change Model
+:categories: strategic-planning
+:roles: team-lead, consultant, product-owner, business-analyst
+:related: swot, cynefin-framework, wardley-mapping
+:proponents: John P. Kotter
+:tags: change-management, transformation, leadership, organizational-change
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Kotter's 8 Steps for Leading Change, Kotter's Change Process
+
+[discrete]
+== *Core Concepts*:
+
+Step 1 — Establish a Sense of Urgency:: Surface the threats and opportunities that make change necessary now; without urgency, the organisation defaults to the status quo
+
+Step 2 — Form a Guiding Coalition:: Assemble a powerful enough cross-functional group with the credibility, authority and energy to lead the effort; lone champions fail
+
+Step 3 — Develop a Vision and Strategy:: Create a clear, compelling vision of the future state and a strategy to reach it; the vision must be simple enough to communicate in five minutes
+
+Step 4 — Communicate the Change Vision:: Use every channel and repeat the vision constantly; walk the talk — leadership behaviour speaks louder than memos
+
+Step 5 — Empower Broad-based Action:: Remove the obstacles that block change — outdated structures, misaligned incentives, fearful middle management; enable people to act on the vision
+
+Step 6 — Generate Short-term Wins:: Plan, create and visibly celebrate quick, unambiguous improvements within 6–18 months; wins fund credibility and silence sceptics
+
+Step 7 — Consolidate Gains and Produce More Change:: Use the credibility from short-term wins to tackle bigger systems, structures and policies; do not declare victory too early
+
+Step 8 — Anchor the Changes in Corporate Culture:: Make the new approaches "the way we do things around here" by tying them to leadership succession, hiring, onboarding and storytelling
+
+The 8 Errors:: The model is the inversion of the *eight common errors* Kotter identified in failed transformations: complacency, no powerful coalition, underestimating vision, undercommunicating, ignoring obstacles, no short-term wins, premature victory, and not anchoring change in culture
+
+Linear but Iterative:: Kotter presents the steps as sequential because each step builds on the credibility and infrastructure of the previous ones, but in practice teams loop within and across steps as the change scales
+
+
+Key Proponent:: John P. Kotter (Harvard Business School), introduced in the 1995 *Harvard Business Review* article *"Leading Change: Why Transformation Efforts Fail"* and expanded in the 1996 book *Leading Change* (Harvard Business Press)
+
+Historical Context:: One of the most cited change management frameworks in business literature; widely used in M&A integrations, digital transformations, agile rollouts and culture change programmes; later complemented by Kotter's 2014 *Accelerate* (XLR8), which adds a "dual operating system" of hierarchy plus network for continuous change
+
+[discrete]
+== *When to Use*:
+
+* Planning a non-trivial organisational change (digital transformation, agile rollout, restructuring, M&A integration)
+* Diagnosing why a stalled transformation is stalled — which of the 8 errors is biting?
+* Sequencing communication and intervention activities so that quick wins land before the political resistance forms
+* Stakeholder analysis and coalition building before kicking off a change initiative
+* Reviewing whether a "completed" change is actually anchored in culture, or just a temporary policy
+
+[discrete]
+== *Related Anchors*:
+
+* <<swot,SWOT>> — strategic analysis to feed the urgency and vision steps
+* <<cynefin-framework,Cynefin Framework>> — choose the right approach (Clear / Complicated / Complex / Chaotic) for the kind of change you face
+* <<wardley-mapping,Wardley Mapping>> — visualise where change is needed in the value chain before defining the vision
+
+Counter-example:: Pure top-down mandate ("from Monday we will be agile") — Kotter's whole point is that without urgency, coalition, vision and short-term wins, the mandate produces compliance theatre, not change.
+====

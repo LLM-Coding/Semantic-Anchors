@@ -14,13 +14,14 @@ Instead of writing pages of instructions, you reference a concept the model alre
 "Follow link:#/anchor/arc42[arc42]" is shorter than describing 12 architecture sections.
 The prompts stay short, precise, and maintainable.
 
-This workflow was used to build three open source projects, all 100% AI-generated.
+This workflow was used to build four open source projects, all 100% AI-generated.
 *The golden rule: I only prompt, I never touch the code myself.*
 Every line of code, every test, every documentation file was written by the AI under my guidance.
 
 * https://github.com/docToolchain/dacli[*dacli*]: A full CLI tool with spec, architecture docs, tests, and user manual. Built by one AI, cross-reviewed by 5 different LLMs.
 * https://github.com/LLM-Coding/Semantic-Anchors[*Semantic Anchors Website*]: 228+ GitHub stars, documentation, and a video series.
 * https://github.com/LLM-Coding/vibe-coding-risk-radar[*Vibe Coding Risk Radar*]: An interactive web app for assessing AI coding risks.
+* https://doctoolchain.org/Bausteinsicht/[*Bausteinsicht*]: Bidirectional synchronization between a structured JSON architecture model and draw.io diagrams — Architecture-as-Code meets draw.io.
 
 [NOTE]
 ====

@@ -384,6 +384,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Dave Snowden
 - **Core:** Clear, Complicated, Complex, Chaotic, Confused — match approach to domain
 
+### XY Problem
+- **Also known as:** Solution Fixation, Asking the Wrong Question
+- **Proponents:** Mark Jason Dominus (coined the term in comp.lang.perl.misc, 2001), Eric S. Raymond ("How To Ask Questions The Smart Way")
+- **Core:** Communication anti-pattern — asker requests help with attempted solution Y when the real goal X is hidden; resolution by probing for X first ("What are you actually trying to accomplish?"); applies to support, code review, requirements clarification, and LLM dialogues; canonical references at xyproblem.info and Greg's Wiki
+
 ## Requirements Engineering
 
 ### Cockburn Use Cases
@@ -564,6 +569,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### SWOT
 - **Proponents:** Albert Humphrey
 - **Core:** Strengths, Weaknesses, Opportunities, Threats — internal vs. external strategic analysis
+
+### Kano Model
+- **Also known as:** Kano Analysis, Kano-Modell, Customer Satisfaction Model
+- **Proponents:** Noriaki Kano (1984, *Hinshitsu* journal)
+- **Core:** Two-dimensional quality model — features classified as Must-be (basic, absence dissatisfies), Performance (linear), Attractive (delighter, exceeds expectation), Indifferent or Reverse; surveyed via paired functional/dysfunctional questions ("How would you feel if X were present? / absent?"); categories decay over time (Delighter → Performer → Must-be); complements MoSCoW for backlog prioritisation
+
+### Kotter's 8-Step Change Model
+- **Also known as:** Kotter's 8 Steps for Leading Change, Kotter's Change Process
+- **Proponents:** John P. Kotter (HBR 1995 *"Leading Change: Why Transformation Efforts Fail"*; book *Leading Change*, 1996)
+- **Core:** Eight sequential steps for organisational transformation — (1) establish urgency, (2) form a guiding coalition, (3) develop vision and strategy, (4) communicate the vision, (5) empower broad-based action / remove obstacles, (6) generate short-term wins, (7) consolidate gains and produce more change, (8) anchor changes in culture; the model is the inversion of the eight common errors Kotter identified in failed transformations; widely used in M&A, digital transformation, and agile rollouts; later complemented by *Accelerate* (2014) with a dual operating system of hierarchy plus network
 
 ### PERT (Program Evaluation and Review Technique)
 - **Also known as:** Three-Point Estimation, PERT Network Analysis

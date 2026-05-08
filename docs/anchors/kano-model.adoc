@@ -1,0 +1,57 @@
+= Kano Model
+:categories: strategic-planning, requirements-engineering
+:roles: product-owner, business-analyst, ux-designer, team-lead
+:related: moscow, jobs-to-be-done, ears-requirements
+:proponents: Noriaki Kano
+:tags: customer-satisfaction, feature-prioritization, product-management, requirements
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Kano Analysis, Kano-Modell, Customer Satisfaction Model
+
+[discrete]
+== *Core Concepts*:
+
+Two-dimensional Quality:: Customer satisfaction is not the simple inverse of dissatisfaction — they are two separate axes (presence/absence of a feature × resulting satisfaction)
+
+Five Feature Categories:: Every feature falls into one of five classes that map differently onto the satisfaction curve
+
+Must-be (Basic, Threshold):: Expected baseline — absence causes strong dissatisfaction, presence is taken for granted and earns no credit (e.g., car has wheels, app does not lose data)
+
+One-dimensional (Performance, Linear):: Satisfaction grows roughly linearly with how well the feature is delivered (e.g., fuel efficiency, response time, battery life)
+
+Attractive (Excitement, Delighter):: Unexpected — absence causes no dissatisfaction, presence delights and differentiates (e.g., a thoughtful onboarding gesture, a surprising shortcut)
+
+Indifferent:: Customer does not care either way — flag for cost reduction
+
+Reverse:: Presence actually causes dissatisfaction for the target segment — flag for removal or segmentation
+
+Functional / Dysfunctional Questionnaire:: For each candidate feature, ask the user two paired questions: "How would you feel if this feature were present?" and "How would you feel if it were absent?". The cross-tab of answers maps the feature to one of the five categories
+
+Time Decay:: Categories migrate over time. Today's *Delighter* becomes tomorrow's *Performer* and eventually a *Must-be* as the market matures (mobile camera, HTTPS, dark mode)
+
+
+Key Proponent:: Noriaki Kano (Tokyo University of Science), originally published in 1984 in the Japanese journal *Hinshitsu* ("Quality")
+
+Historical Context:: Developed in the context of Japanese quality management, alongside Total Quality Management and the Kaizen movement; widely adopted in product management, UX research, and requirements engineering since the late 1990s.
+
+[discrete]
+== *When to Use*:
+
+* Prioritising features in a product backlog beyond raw business value
+* Distinguishing the "non-negotiables" (Must-be) from the "wow features" (Delighter) before estimation
+* User research where you need to understand *why* a feature affects satisfaction, not just whether users like it
+* MVP scoping: ensure all *Must-be* features are covered before investing in *Delighters*
+* Product strategy reviews: spot *Delighters* that have decayed into *Performers* or *Must-be* and update positioning
+* Combining with *MoSCoW Method* — Must-be → Must, Performance → Should, Delighter → Could
+
+[discrete]
+== *Related Anchors*:
+
+* <<moscow,MoSCoW Method>> — complementary prioritisation lens (organisation-driven), often combined with Kano (customer-driven)
+* <<jobs-to-be-done,Jobs To Be Done>> — discovery side: what job is the customer hiring the feature for, before classifying its impact
+* <<ears-requirements,EARS Requirements>> — once a feature is classified as Must-be, EARS gives it the unambiguous wording
+
+Counter-example:: Pure ROI-based ranking — useful but blind to the asymmetry between dissatisfaction (Must-be) and delight (Attractive). Kano corrects that.
+====
