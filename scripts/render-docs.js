@@ -94,6 +94,11 @@ renderFile(
 )
 
 renderFile(
+  path.join(ROOT, 'docs/brownfield-experiment-report.adoc'),
+  path.join(WEB_DOCS, 'brownfield-experiment-report.html')
+)
+
+renderFile(
   path.join(ROOT, 'docs/anchor-evaluations.adoc'),
   path.join(WEB_DOCS, 'anchor-evaluations.html')
 )

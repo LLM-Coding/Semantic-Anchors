@@ -59,6 +59,13 @@ const ROUTES = [
       'Applying semantic anchors to brownfield codebases using a bounded-context approach.',
   },
   {
+    path: '/brownfield-experiment-report',
+    fragment: 'docs/brownfield-experiment-report.html',
+    title: 'Brownfield Experiment 1a Report — Semantic Anchors',
+    description:
+      'Controlled experiment: delete documentation from a greenfield project, regenerate from code, compare. Methodology, findings, and the Brownfield Preparation Checklist.',
+  },
+  {
     path: '/contracts',
     fragment: 'docs/contracts.html',
     title: 'Semantic Contracts — Semantic Anchors',

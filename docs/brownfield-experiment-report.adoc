@@ -1,0 +1,671 @@
+= Brownfield Experiment 1a: Report
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+
+== Experiment Design
+
+=== Background
+
+The Spec-Driven Development workflow (https://llm-coding.github.io/Semantic-Anchors/spec-driven-development) has demonstrated that LLMs can generate maintainable code from specifications. The documentation artifacts produced in this workflow (PRD, Specification, arc42) appear to capture what Peter Naur described as the "theory" of a program <<naur85>> — the mental model that, according to Naur, cannot be fully documented. Whether or not Naur was right about human programmers, the Spec-Driven workflow shows that for LLM-generated code, this theory CAN be externalized in structured documentation.
+
+=== Research Question
+
+The open question is Brownfield. Legacy software typically has no specification, few tests, and insufficient architecture documentation. Can an LLM extract the necessary documentation from legacy code and thus enable further development using the Spec-Driven workflow?
+
+Answering this directly by applying an LLM to real legacy software is difficult: the quality of the generated documentation is hard to assess without a ground truth to compare against. The evaluation itself would be time-consuming and subjective.
+
+=== The Trick
+
+This experiment uses a shortcut. We take an LLM-generated Greenfield project where we can assume that Spec, Tests, and arc42 documentation are of high quality. We transform it into a simulated legacy project by deleting this documentation, then ask an LLM to reconstruct it from the code alone. Because the original Greenfield documentation exists, we can objectively assess the quality of the generated output by comparing the two.
+
+Since we know in advance that not everything can be extracted from code (decisions, rationale, business context), we instruct the LLM to maintain a list of Open Questions. This reveals precisely which information is genuinely missing from the code — and what a Brownfield project would need to provide before an LLM can work on it productively.
+
+Because the experiment is reproducible (same code, same prompt, deterministic comparison), the extraction prompt can be improved step by step.
+
+=== Method
+
+. Take a Greenfield project with complete documentation (PRD, Specification, arc42, ADRs)
+. Create a branch and delete all documentation files and the project's CLAUDE.md
+. In a fresh LLM session (no prior knowledge of the project), provide only the prompt below
+. Let the LLM read the code and generate the full documentation set
+. Compare the generated documentation against the originals
+
+=== Subject Project
+
+*Bausteinsicht* — an architecture-as-code CLI tool that provides bidirectional synchronization between a JSONC architecture model and draw.io diagrams.
+
+* *Language:* Go (~13,000 lines of code)
+* *Tests:* 39 test files with ~400 tests (unit, integration, property-based, benchmarks)
+* *Original documentation:* 47 files, ~13,800 lines (PRD, 8 Use Cases, 5 ADRs, 12 arc42 chapters, tutorials, security review, E2E test plan)
+* *Repository:* https://github.com/docToolchain/Bausteinsicht
+
+The original documentation was not human-written. It was LLM-generated following the Spec-Driven Development workflow from a requirements conversation.
+
+=== Branch Preparation
+
+On branch `brownfield`, the following files were deleted:
+
+* `src/docs/` (all subdirectories: PRD, spec, arc42, security, manual, announcements, E2E reports)
+* `CLAUDE.md` (project conventions, quality goals, package structure)
+
+Kept intact: all source code, tests, test data, Makefile, go.mod, examples, templates, README.
+
+=== Prompt
+
+The prompt uses Semantic Anchors (established methodology terms like "Cockburn", "arc42", "Nygard ADR", "Pugh Matrix") instead of spelling out format definitions. 69 lines total.
+
+[source,markdown]
+----
+# Reverse-Engineer Project Documentation
+
+You have access to a software project's codebase. The project has no
+documentation. Your task is to create the full documentation set from
+the source code.
+
+Write all artifacts into `src/docs/`. All documentation in **English**,
+**AsciiDoc format** (.adoc). Diagrams as **PlantUML** (embedded in
+AsciiDoc). Reference workflow:
+https://llm-coding.github.io/Semantic-Anchors/spec-driven-development
+
+**Important:** Do not use `git log` or `git blame`. Work from the
+current state of the code only.
+
+## Artifacts to produce
+
+Work through these in order. Each artifact builds on the previous one.
+
+### 1. PRD
+
+File: `src/docs/PRD/PRD-001.adoc`
+
+Product Requirements Document with Vision, Problem Statement, Target
+Audience, Functional Requirements (FR-IDs), Non-Functional Requirements
+(NFR-IDs), Future Considerations, and Open Questions. Derive everything
+from code, CLI UX, error messages, test scenarios, and go.mod
+dependencies.
+
+### 2. Specification
+
+| Artifact | File | Format |
+|----------|------|--------|
+| Use Cases | `src/docs/spec/01_use_cases.adoc` | Cockburn format (UC-IDs, Business Rules as BR-IDs). Include PlantUML activity diagram per Use Case covering all flows. |
+| CLI Specification | `src/docs/spec/02_cli_specification.adoc` | Derive from Cobra command definitions, flags, integration tests. |
+| Data Models | `src/docs/spec/03_data_models.adoc` | Domain structs, JSON/JSONC schemas, file formats. Examples from test fixtures. |
+| Acceptance Criteria | `src/docs/spec/04_acceptance_criteria.adoc` | Gherkin (Given/When/Then), referencing UC-IDs. Derive from test names and assertions. |
+| Sync Specification | `src/docs/spec/05_sync_specification.adoc` | If sync logic exists: algorithm, conflict resolution, state management, edge cases. |
+
+### 3. Architecture Documentation
+
+**arc42** with all 12 chapters. Master file: `src/docs/arc42/arc42.adoc`
+
+Chapter files in `src/docs/arc42/chapters/`. Visualization with
+**C4 model** diagrams (Context, Container, Component levels in PlantUML).
+
+Architecture decisions as **Nygard ADRs** in
+`src/docs/arc42/ADRs/ADR-NNN-Title.adoc`. Each ADR includes a
+**Pugh Matrix** (weighted, -1/0/+1 scale) evaluating at least 2-3
+alternatives against quality goals.
+
+### 4. Open Questions List
+
+File: `src/docs/OPEN_QUESTIONS.adoc`
+
+**This is the most important artifact.**
+
+For every piece of information you could NOT determine from the code,
+create an entry:
+
+    === OQ-NNN: <Question>
+
+    Category:: <Business Context | Design Rationale | Quality Goals |
+               Stakeholder Context | Future Direction |
+               Domain Knowledge>
+    Confidence:: <Low | Medium | High>
+    Your Best Guess:: <what you think the answer might be>
+    Why You Can't Be Sure:: <what's missing from the code>
+    What Would Help:: <what information would answer this>
+
+Be thorough. Every assumption you made while writing PRD, Spec, and
+arc42 that you couldn't verify from code alone should appear here.
+
+## How to work
+
+1. Explore codebase structure, read go.mod, main entry point, CLI
+   commands
+2. Read core domain types and interfaces
+3. Read tests and test fixtures — richest source of behavioral
+   specification
+4. Build your mental model, then write artifacts in order
+5. For every statement: "Can I prove this from code, or am I guessing?"
+   If guessing, add an Open Question.
+
+## Quality bar
+
+- Every claim must be traceable to code. If you can't point to the
+  source, it's an Open Question.
+- Prefer "I don't know" over a plausible guess.
+- Completeness matters: if the code does it, the documentation should
+  cover it.
+----
+
+=== Evaluation Method
+
+The generated artifacts in `src/docs/` were compared against the originals from the `main` branch. Comparison was performed per artifact type (PRD, Spec files, arc42 chapters, ADRs) and per information category (functional requirements, design rationale, quality goals, etc.). Assessment is qualitative (good / partial / poor) based on manual review of content, not automated metrics.
+
+== Results at a Glance
+
+[cols="3,2,2,3",options="header"]
+|===
+| Metric | Original | Generated | Assessment
+
+| Total lines of docs | ~13,800 | 3,850 | 28% of original
+| PRD: Functional Requirements | 7 FRs | 21 FRs | Generated more granular
+| PRD: Non-Functional Requirements | 4 NFRs | 13 NFRs | Generated significantly more comprehensive
+| Use Cases | 8 (UC-1..8) | 9 (UC-001..009) | +1 (Validate as separate UC)
+| Acceptance Criteria | 40 Gherkin scenarios | 69 numbered ACs | Generated more testable
+| arc42 chapters | 12 (+ reviews, diagrams) | 12 (text only) | Structurally equivalent
+| ADRs | 5 (incl. rejected) | 6 (all Accepted) | Different topic selection
+| Open Questions | — | 33 questions | New artifact
+| PlantUML diagrams | 8 | 11 | Generated has more
+| Glossary | 2 entries (placeholder) | 31 entries | Generated complete
+|===
+
+== What the LLM did well
+
+=== Technical accuracy
+
+Every claim is traceable to code. The LLM cites function names (`sanitizeID`, `applyRelSwap`, `StripJSONC`), test functions (`TestInitCreatesFiles`), constants (`MaxElementDepth = 50`, `MaxModelFileSize = 10 MiB`), and security codes (`SEC-001`, `SEC-016`). The original references no code.
+
+=== Finer granularity
+
+The original has 7 coarse Functional Requirements. The LLM produced 21 FRs in logical groups (Model, CLI, Sync, Views, Validation, Errors). Acceptance Criteria are 69 instead of 40 and reference test function names, making them directly verifiable against code.
+
+=== Security documentation
+
+The original mentions security only in passing. The LLM extracted 6 SEC codes with enforcement details, documented path traversal validation, and formalized security as an NFR. A positive surprise.
+
+=== Formalized sync specification
+
+The original describes the sync algorithm narratively. The LLM formalized the three-way diff as a truth table (M==S / D==S combinations), systematically listed 12 edge cases, and extracted layout constants (gap=60, min scope=400x300) from code.
+
+=== Complete glossary
+
+The original had only a placeholder (2 example terms). The LLM correctly defined 31 domain terms.
+
+== What the LLM could not reconstruct
+
+=== Business context and vision
+
+The original starts with a clear Problem Statement: "Structurizr and LikeC4 have limitation X, Y, Z." The LLM doesn't know the competitors and cannot derive the strategic positioning. The vision remains generic.
+
+[NOTE]
+====
+*Insight:* Code says WHAT was built, not WHY and not AGAINST WHOM.
+====
+
+=== Design rationale
+
+The LLM wrote 6 ADRs, but with different topics than the original:
+
+[cols="1,1",options="header"]
+|===
+| Original ADR | Generated ADR
+
+| ADR-001: DSL Format (JSONC vs TypeScript vs Custom) | ADR-001: JSONC as DSL (correct, but fewer alternatives)
+| ADR-002: Implementation Language (Go vs Python vs Kotlin) | ADR-002: Cobra CLI Framework (different topic!)
+| ADR-003: Risk Classification (Vibe-Coding Risk Radar) | — missing entirely —
+| ADR-004: Sequence Diagram Export (rejected) | ADR-004: Conflict Policy (different topic!)
+| ADR-005: Auto-Layout Engine | ADR-005: etree XML Library (different topic!)
+| — | ADR-003: Three-Way Diff (new topic)
+| — | ADR-006: Embedded Templates (new topic)
+|===
+
+The LLM can see THAT Go was chosen, but not WHY Python and Kotlin were rejected. The Pugh Matrices in the generated document evaluate plausible but partly different alternatives than those actually evaluated. This aligns with <<garcia24>>: when given ADR context, LLMs can generate reasonable decisions, but reconstructing context from code alone is a harder, unsolved problem.
+
+[NOTE]
+====
+*Insight:* Code is the result of decisions, not the decision itself. ADR context is fundamentally not derivable from code.
+====
+
+=== Quality goals and their prioritization
+
+The original has three prioritized Quality Goals: Learnability (30-min onboarding), IDE Support (JSON Schema), LLM Friendliness. The LLM identified 6 Quality Goals but the prioritization is missing.
+
+[NOTE]
+====
+*Insight:* Tests show what IS tested, not what SHOULD BE tested.
+====
+
+=== Stakeholder context
+
+The original defines three stakeholders (Architect, Developer, LLM Agent) with their concerns. The LLM derives stakeholders from CLI UX, but cannot reconstruct skill levels, expectations, and concerns.
+
+=== Aspirational features
+
+UC-7 "Drill-Down Navigation" (zoom-based navigation on a single draw.io page) is described in the original but not fully implemented in code. The LLM did not mention it — it can only document what exists, not what was planned.
+
+[NOTE]
+====
+*Insight:* Aspirational features (planned but not implemented) vanish completely during reverse engineering.
+====
+
+=== Narrative documents
+
+Four files in the original have no counterpart:
+
+[cols="2,1,3",options="header"]
+|===
+| Missing document | Lines | Why not derivable
+
+| `06_tutorial.adoc` | 266 | Requires didactic preparation
+| `07_template_guide.adoc` | 322 | UX/design knowledge, not in code
+| `07_trust_model.adoc` | 55 | Strategic decision
+| `E2E-Test-Plan.adoc` | 409 | Test design, not test code
+|===
+
+=== Performance metrics
+
+The original documents: Startup <10ms, Sync <100ms, Binary 10-15MB. The LLM found benchmarks but no thresholds — because thresholds are decisions, not code facts.
+
+=== Architecture reviews
+
+The original contains ATAM reviews (808 lines), LASR reviews, and review updates. These are historical artifacts not derivable from code.
+
+== arc42: Chapter-by-Chapter Assessment
+
+[cols="1,3,2,1,5",options="header"]
+|===
+| Ch. | Title | Derivable? | Rating | Detail
+
+| 1 | Introduction and Goals | partial | ⚠️ | Quality Goals found (6 instead of 3), but prioritization missing. Stakeholders derived from CLI UX, but concerns and skill levels missing. Competitor comparison completely gone.
+| 2 | Architecture Constraints | good | ✅ | Generated even better: 15 constraints instead of 5, with Go version, CGO_ENABLED=0, 6 platform targets. More specific and operationally useful.
+| 3 | Context and Scope | partial | ⚠️ | C4 Context diagram correctly generated. But original has detailed communication partner matrix with 6 interfaces — generated only 7 OS-level channels. Abstraction level is wrong. This confirms the "granularity mismatch" finding from <<cabrera26>>.
+| 4 | Solution Strategy | partial | ⚠️ | 5 strategic decisions correctly identified. But design patterns missing. Original explains HOW strategy addresses quality goals — generated stays at WHAT.
+| 5 | Building Block View | good | ✅ | More detailed than original: 8 components with responsibility statements instead of 4 coarse blocks. Level 2 decomposition correct (model: 5, sync: 9, drawio: 5). Consistent with ArchAgent's F1=0.966 for structural recovery <<archagent26>>.
+| 6 | Runtime View | partial | ⚠️ | 5 scenarios with sequence diagrams (original: 4). Bonus: comment preservation and conflict resolution. But: LLM-Driven Modification scenario completely missing — aspirational, not in code.
+| 7 | Deployment View | poor | ❌ | Performance metrics completely missing. No installation instructions. No embedded resources concept. Only generic "static binary, goreleaser" description.
+| 8 | Crosscutting Concepts | mixed | ⚠️ | Security better (6 SEC codes). Test discipline more detailed. But: error handling, logging, version management, and configuration discovery completely missing. The ECSA 2025 study confirms that LLMs "struggle with complex abstractions such as class relationships and fine-grained design patterns" <<ecsa25>>.
+| 9 | Architecture Decisions | different | ⚠️ | 6 ADRs instead of 5, all with Pugh Matrix. But different topics. Code shows WHAT was decided, not WHY.
+| 10 | Quality Requirements | different | ⚠️ | 12 requirements instead of 6, evidence-based. But original has scenarios in stimulus/response format (ISO 25010) — generated has only a table.
+| 11 | Risks and Technical Debt | good | ✅ | 8 risks instead of 4, 6 technical debts. But "Non-Risks" section missing. ATAM review reference missing.
+| 12 | Glossary | very good | ✅✅ | 31 terms fully defined vs. 2 placeholders in original. Clear winner.
+|===
+
+=== Summary
+
+*Well derivable from code (4 chapters):*
+
+* Ch. 2 (Constraints) — technical facts directly from go.mod, Makefile, CI
+* Ch. 5 (Building Block View) — package structure IS the architecture
+* Ch. 11 (Risks) — error handling and edge-case tests reveal risks
+* Ch. 12 (Glossary) — domain terms from struct names and package names
+
+*Partially derivable (6 chapters):*
+
+* Ch. 1 (Goals) — quality goals yes, prioritization and stakeholder concerns no
+* Ch. 3 (Context) — system boundary yes, communication partner details no
+* Ch. 4 (Strategy) — decisions yes, strategy-to-quality-goal mapping no
+* Ch. 6 (Runtime) — implemented scenarios yes, aspirational ones no
+* Ch. 8 (Concepts) — some yes (security, testing), others no (error handling, logging)
+* Ch. 10 (Quality) — requirements yes, scenario format no
+
+*Poorly derivable (2 chapters):*
+
+* Ch. 7 (Deployment) — performance budgets and installation details are decisions
+* Ch. 9 (Decisions/ADRs) — code shows results, not the decision process
+
+== Open Questions: Quality as a Brownfield Checklist
+
+The LLM generated 33 open questions in 8 categories.
+
+[cols="3,1,1",options="header"]
+|===
+| Assessment | Count | Percent
+
+| Valid (genuinely not derivable from code) | 31 | 79%
+| Partially valid (inferable from code but not tested) | 6 | 15%
+| Should be closed (already answered) | 2 | 5%
+|===
+
+*Strengths:*
+
+* Missing documentation correctly identified (schema file, user manual, tutorial, trust model)
+* Design rationale systematically recognized as a gap
+* "What Would Help" provides concrete action items
+
+*Gaps — what should have been asked:*
+
+* No question about open-source sustainability (who maintains this?)
+* No question about the competitive landscape (which tools does this compete with?)
+* No question about test coverage strategy (what is "good enough"?)
+* No question about CI/CD platform support
+* No question about the Node.js exclusion (stated in CLAUDE.md with rationale)
+
+== What Brownfield Projects Need for the Dark Factory
+
+=== Derivable from code (LLM can do this itself)
+
+* Functional requirements (WHAT the system does)
+* Data models and interfaces
+* CLI specification (commands, flags, exit codes)
+* Acceptance criteria (from tests)
+* Crosscutting concepts (error handling, security, atomicity)
+* Glossary (domain terms)
+* Building block view (package structure, dependencies)
+
+=== NOT derivable from code (must be documented)
+
+. *Business context:* Why does this project exist? Against whom? For whom?
+. *Design rationale:* Why was alternative A chosen over B? (ADR context)
+. *Quality goal prioritization:* What is most important and why?
+. *Stakeholder concerns:* Who uses it, what is their skill level, what do they expect?
+. *Aspirational features:* What is planned but not yet implemented?
+. *Performance budgets:* What thresholds apply?
+. *Tutorials and guides:* Didactic preparation requires humans
+. *Review results:* Historical assessments and their consequences
+
+=== The Brownfield Preparation Checklist
+
+Before a legacy project can enter the Dark Factory, it needs at minimum:
+
+. A *Problem Statement* with competitive context (1 page)
+. *ADR context sections* for the top 5 decisions (1 paragraph "why" each)
+. *Prioritized Quality Goals* (top 3 with rationale)
+. *Stakeholder profiles* (who uses it, what they can do, what they expect)
+. A *"Not Implemented Yet" list* (planned features)
+. *Performance budgets* (measurable thresholds)
+
+Everything else the LLM can reconstruct on its own — and in some areas does it better than the original (more FRs, more ACs, better security documentation, complete glossary).
+
+== Where the Generated Documentation is Genuinely Better
+
+The generated docs are not just longer — in five areas they are substantively better. This reveals spec drift: things that were built but never documented.
+
+=== Security: integrated instead of separated
+
+The original relegates security to a separate review document. The generated version integrates security directly into the specification with traceable SEC-IDs (SEC-001 through SEC-018) woven through PRD, CLI spec, and acceptance criteria. A maintainer reading `NFR-005 (Security — path containment)` can immediately find the test (`TestRootCmd_RejectsModelPathTraversal`) and the enforcement code (`root.go:validatePathContainment`).
+
+The original PRD has zero security NFRs. The code has six security mechanisms. That gap is spec drift.
+
+=== Acceptance criteria: test-traceable instead of prose
+
+The original uses Gherkin scenarios with no connection to actual tests. The generated version cites test function names inline: `AC-001-01: ... // test: TestInitCreatesFiles`. An architect can verify each criterion against the test suite. The original is write-only documentation — readable by humans, unverifiable by machines.
+
+=== Sync algorithm: formalized instead of narrative
+
+The original describes the three-way diff in prose across multiple sections. The generated version formalizes it as a truth table (M==S / D==S combinations), lists 12 edge cases in a structured table, and names the exact functions. The truth table is verifiable; the prose is interpretable.
+
+=== Building block view: actionable instead of descriptive
+
+The original uses passive voice and generic descriptions. The generated version uses active, verb-first responsibility statements with explicit contracts: `patch.go | Byte-range patch operations on raw JSONC. PatchSave, PatchInsert. Preserves comments and indentation.`
+
+=== NFRs: actual requirements instead of aspirational
+
+The original has 4 NFRs written before implementation. The generated version found 12 — including security constraints, robustness bounds (10 MiB file limit, depth 50), benchmark mandates, and quality gates (gosec, nilaway, govulncheck) that were implemented but never added to the PRD. These are real requirements that govern the project's CI pipeline.
+
+=== Spec drift is a structural property
+
+All five areas share the same root cause: *the spec was generated from a requirements conversation before implementation, and the code evolved beyond it.* The original documentation was not human-written — it was LLM-generated following the Spec-Driven Development workflow. Yet spec drift happened anyway: during implementation, the LLM added security hardening, validation rules, edge cases, and performance tooling that were never part of the original requirements conversation.
+
+This means spec drift is not a discipline problem. It is a structural property of the workflow: the implementation LLM discovers requirements that the specification LLM could not anticipate. Security constraints emerge from code review. Edge cases emerge from testing. Performance bounds emerge from benchmarks. None of these feed back into the spec automatically. The SDD paper <<sdd26>> defines this as "any divergence between declared system intent and observed system behavior" and identifies it as a core challenge for AI-assisted development.
+
+== Implications for the Dark Factory Workflow
+
+=== Specs need periodic reconciliation
+
+The Dark Factory workflow is spec-first: write PRD, write spec, generate code. But the experiment shows that even in a Greenfield project with rigorous documentation, the spec drifts from the code within weeks.
+
+The fix is a *spec reconciliation step*: periodically run the Brownfield reverse-engineering prompt against the current code and diff the output against the existing spec. The diff reveals:
+
+* *New requirements* implemented but not documented (security NFRs, validation rules)
+* *Changed behavior* that diverged from the original spec
+* *Dead spec* — requirements still documented but no longer in the code
+
+=== When to reconcile
+
+Three natural trigger points:
+
+. *Before a release* — ensure the spec matches what ships
+. *After a security review* — security hardening often adds undocumented constraints
+. *Before onboarding* — new team members (human or LLM) need accurate specs
+
+The reconciliation is cheap: one LLM run, one diff. The cost of NOT doing it is higher: LLM agents working from stale specs produce code that contradicts the actual codebase.
+
+=== The workflow becomes a loop
+
+The original Dark Factory workflow is linear: Spec -> Code -> Ship. With reconciliation it becomes a loop:
+
+----
+Spec (human: WHY) -> Code (LLM) -> Reconcile (LLM: WHAT changed?) -> Update Spec -> ...
+----
+
+The human writes the WHY once and maintains it. The LLM keeps the WHAT synchronized with the code. This division of labor matches what the experiment showed: humans are better at rationale, LLMs are better at completeness.
+
+== Implications for Semantic Anchors
+
+=== Semantic Anchors work as prompt compression
+
+The anchored prompt (69 lines) produced 3,850 lines of documentation with correct Cockburn format, all 12 arc42 chapters, and Pugh Matrices in the ADRs. The terms "Cockburn", "arc42", "Nygard ADR", "Pugh Matrix", "Gherkin", "C4 model" triggered the full knowledge from training data without the prompt spelling out what those formats contain.
+
+This is empirical evidence that Semantic Anchors work. A single well-chosen term activates a complete methodology in the LLM's weights. No definition needed, no examples needed. The anchor IS the definition. A systematic literature review <<slr25>> covering 18 papers on software architecture and LLMs found no prior study examining this compression effect.
+
+=== Semantic Anchors define where human effort belongs
+
+The experiment divides documentation into two categories:
+
+[cols="2,3,2",options="header"]
+|===
+| Category | Example | Human needed?
+
+| *What* the system does | FRs, data models, CLI spec, acceptance criteria | No — LLM derives from code
+| *Why* it was built this way | Business context, ADR rationale, quality goal priorities | Yes — not in code
+|===
+
+In the Spec-Driven Development workflow, human effort should concentrate on the *why*: Problem Statement, ADR context, quality goal prioritization, stakeholder concerns. The LLM handles the *what*: functional specs, data models, acceptance criteria, building block views.
+
+This changes the workflow's cost structure. Writing a PRD is no longer about listing features (the LLM does that better). It's about capturing the competitive context and strategic intent that code cannot express.
+
+=== Connection to Eichhorst's Principle
+
+In Shannon's noisy channel model, the documentation that an LLM cannot derive from code is exactly the channel capacity that must be transmitted. Business context and design rationale are the signal. Code is not a channel for this signal — code is the output, not the decision.
+
+The Brownfield Preparation Checklist (6 items above) defines the minimum information that must travel through the documentation channel before an LLM can work productively on a legacy codebase. Everything below this threshold means the LLM operates with insufficient channel capacity — it will guess at rationale, invent stakeholder concerns, and miss aspirational features. The error rate climbs exactly as Eichhorst's Principle predicts.
+
+== Prompt Improvements After Experiment 1a
+
+Three weaknesses in the prompt identified and fixed (in both prompt variants):
+
+[cols="2,3,4",options="header"]
+|===
+| Problem | Root cause | Prompt change
+
+| UC-7 Drill-Down completely overlooked
+| LLM documents only what is implemented. Aspirational features (traces: TODOs, unused interfaces, partial implementations) are lost.
+| PRD section: "Look for TODOs, commented code, unused interfaces, and partially implemented features. Document them as 'Planned but not implemented'."
+
+| ADR context guessed instead of flagged
+| LLM writes plausible "why" for decisions even though it cannot derive this from code. Wrong rationale is worse than "unknown".
+| ADR section: "Look for clues in code comments and naming patterns. If concrete evidence exists, use it. If not, flag as Open Question."
+
+| Performance budgets ignored
+| LLM found benchmarks but derived no thresholds. Thresholds are decisions, not code facts.
+| Deployment chapter: "Derive performance thresholds from benchmarks if possible. If no pass/fail thresholds, flag as Open Question."
+
+| Open Questions not assignable
+| The generated Open Questions list has no indication of who in the organization can answer each question. Without role assignment, the list sits as a monolith rather than actionable work items.
+| Added `Ask::` field to OQ template with roles: Product Owner, Architect, Developer, Domain Expert, Operations.
+|===
+
+== Improved Prompt (v2)
+
+Based on the three weaknesses identified above, the prompt was revised. Changes are marked with `// NEW` comments. This is the recommended version for future experiments.
+
+[source,markdown]
+----
+# Reverse-Engineer Project Documentation
+
+You have access to a software project's codebase. The project has no
+documentation. Your task is to create the full documentation set from
+the source code.
+
+Write all artifacts into `src/docs/`. All documentation in **English**,
+**AsciiDoc format** (.adoc). Diagrams as **PlantUML** (embedded in
+AsciiDoc). Reference workflow:
+https://llm-coding.github.io/Semantic-Anchors/spec-driven-development
+
+**Important:** Do not use `git log` or `git blame`. Work from the
+current state of the code only.
+
+## Artifacts to produce
+
+Work through these in order. Each artifact builds on the previous one.
+
+### 1. PRD
+
+File: `src/docs/PRD/PRD-001.adoc`
+
+Product Requirements Document with Vision, Problem Statement, Target
+Audience, Functional Requirements (FR-IDs), Non-Functional Requirements
+(NFR-IDs), Future Considerations, and Open Questions. Derive everything
+from code, CLI UX, error messages, test scenarios, and go.mod
+dependencies.
+
+// NEW: aspirational features
+Look for TODOs, commented code, unused interfaces, and partially
+implemented features. Document them as "Planned but not implemented" in
+Future Considerations. These are easy to miss but critical — they
+represent intent that only exists as traces in the code.
+
+### 2. Specification
+
+| Artifact | File | Format |
+|----------|------|--------|
+| Use Cases | `src/docs/spec/01_use_cases.adoc` | Cockburn format (UC-IDs, Business Rules as BR-IDs). Include PlantUML activity diagram per Use Case covering all flows. |
+| CLI Specification | `src/docs/spec/02_cli_specification.adoc` | Derive from Cobra command definitions, flags, integration tests. |
+| Data Models | `src/docs/spec/03_data_models.adoc` | Domain structs, JSON/JSONC schemas, file formats. Examples from test fixtures. |
+| Acceptance Criteria | `src/docs/spec/04_acceptance_criteria.adoc` | Gherkin (Given/When/Then), referencing UC-IDs. Derive from test names and assertions. |
+| Sync Specification | `src/docs/spec/05_sync_specification.adoc` | If sync logic exists: algorithm, conflict resolution, state management, edge cases. |
+
+### 3. Architecture Documentation
+
+**arc42** with all 12 chapters. Master file: `src/docs/arc42/arc42.adoc`
+
+Chapter files in `src/docs/arc42/chapters/`. Visualization with
+**C4 model** diagrams (Context, Container, Component levels in PlantUML).
+
+Architecture decisions as **Nygard ADRs** in
+`src/docs/arc42/ADRs/ADR-NNN-Title.adoc`. Each ADR includes a
+**Pugh Matrix** (weighted, -1/0/+1 scale) evaluating at least 2-3
+alternatives against quality goals.
+
+// NEW: ADR rationale guidance
+For ADRs: you can usually determine WHAT was decided from the code,
+but rarely WHY alternatives were rejected. Look for clues in code
+comments, naming patterns (e.g. `ModelWinsResolver` implies other
+resolvers were considered), and interface designs that hint at
+alternatives. If you find concrete evidence for the rationale, use it.
+If not, flag the reasoning as Open Question rather than guessing a
+plausible rationale. A wrong "why" is worse than an honest "unknown."
+
+// NEW: performance budgets
+For Chapter 7 (Deployment View): derive performance thresholds from
+benchmark tests if possible. If benchmarks exist but define no
+pass/fail thresholds, flag the missing budgets as Open Questions.
+
+### 4. Open Questions List
+
+File: `src/docs/OPEN_QUESTIONS.adoc`
+
+**This is the most important artifact.**
+
+For every piece of information you could NOT determine from the code,
+create an entry:
+
+    === OQ-NNN: <Question>
+
+    Category:: <Business Context | Design Rationale | Quality Goals |
+               Stakeholder Context | Future Direction |
+               Domain Knowledge>
+    // NEW: role assignment
+    Ask:: <Product Owner | Architect | Developer | Domain Expert |
+           Operations>
+    Confidence:: <Low | Medium | High>
+    Your Best Guess:: <what you think the answer might be>
+    Why You Can't Be Sure:: <what's missing from the code>
+    What Would Help:: <what information would answer this>
+
+Be thorough. Every assumption you made while writing PRD, Spec, and
+arc42 that you couldn't verify from code alone should appear here.
+
+## How to work
+
+1. Explore codebase structure, read go.mod, main entry point, CLI
+   commands
+2. Read core domain types and interfaces
+3. Read tests and test fixtures — richest source of behavioral
+   specification
+4. Build your mental model, then write artifacts in order
+5. For every statement: "Can I prove this from code, or am I guessing?"
+   If guessing, add an Open Question.
+
+## Quality bar
+
+- Every claim must be traceable to code. If you can't point to the
+  source, it's an Open Question.
+- Prefer "I don't know" over a plausible guess.
+- Completeness matters: if the code does it, the documentation should
+  cover it.
+----
+
+== Threats to Validity and Future Work
+
+=== No static analysis
+
+ArchAgent <<archagent26>> achieves F1=0.966 by combining static analysis (dependency graphs, call graphs) with LLM synthesis. Our experiment uses a pure LLM approach: the model reads source files sequentially with no pre-computed structural information. A preprocessing step exporting dependency graphs, call graphs, or AST summaries could improve the Building Block View and Runtime View, where the LLM currently misses cross-package relationships.
+
+=== Zero-shot prompting (nuanced)
+
+The largest architecture view study <<cabrera26>> shows that few-shot prompting reduces clarity failures by 9.2%. The user stories paper <<userstories25>> demonstrates that "a single example lets an 8B model match 70B performance." Our prompt provides no examples.
+
+However, the impact varies by artifact type. Strong Semantic Anchors like "arc42", "Cockburn Use Cases", or "Nygard ADR" carry their definition in the LLM's training data — books, conference talks, and thousands of documented examples. A few-shot example for arc42 would be redundant and might even constrain the output by biasing towards the example rather than the anchor's full semantics. The experiment confirms this: all 12 arc42 chapters were generated in the correct structure without examples.
+
+Where few-shot examples would likely help is for *non-standard formats* that have no anchor in the training data: our Open Questions list (OQ-NNN with Category, Confidence, Best Guess fields) and the Reconciliation Report (NEW/CHANGED/DEAD categories) are custom formats. A single example entry would reduce ambiguity about the expected output structure.
+
+=== Git history fully blocked
+
+We block `git log` and `git blame` because commit messages reference specification IDs from the original documentation. However, commit messages also contain design rationale ("chose X because Y", "rejected approach Z due to performance"). The SDD paper <<sdd26>> identifies commit history as a valuable signal channel. A more nuanced approach would allow git history but filter out spec-ID references, preserving the rationale signal while blocking the spec-structure signal.
+
+=== Single-shot, no self-reflection
+
+The ECSA 2025 study <<ecsa25>> uses a Self-Reflection mechanism where the LLM reviews its own output. AgenticAKM <<agenticakm26>> shows that agentic approaches (iterative refinement with tool use) significantly improve ADR quality over simple LLM calls. Our prompt is a single-shot task with no feedback loop. An agentic workflow where the LLM generates, reviews, and refines its documentation could improve quality, particularly for ADRs and Quality Requirements.
+
+=== Single LLM, single run
+
+The referenced papers test multiple LLMs (GPT-4, GPT-3.5, Claude, Gemini, Flan-T5) and find significant quality differences between models. Our experiment uses one model (Claude) in one session. This means our results are specific to Claude's capabilities and may not generalize. A multi-model comparison (same prompt, same codebase, different LLMs) would strengthen the findings. Additionally, a single run provides no statistical significance — repeating the experiment would reveal variance in output quality.
+
+=== Qualitative evaluation only
+
+The papers use formal metrics: F1 scores, precision, recall, BLEU scores. Our evaluation is manual and qualitative ("good / partial / poor"). For a publication, we would need a formal evaluation framework — for example, counting requirement coverage (what percentage of original FRs appear in the generated output) and measuring factual accuracy (what percentage of generated claims are correct).
+
+=== Only one project
+
+Bausteinsicht is a well-structured Go CLI tool with clear package boundaries, comprehensive tests, and a single-binary architecture. Results may differ for projects with less clean architecture, fewer tests, dynamic languages, or distributed systems. The Brownfield Preparation Checklist should be validated against projects of different sizes, languages, and architectural styles.
+
+[bibliography]
+== References
+
+- [[[naur85]]] Peter Naur. "Programming as Theory Building." Microprocessing and Microprogramming, 15(5):253-261, 1985. Argues that programming is not primarily about producing code but about building a "theory" — a mental model of how the problem domain maps to the solution. This theory, Naur claims, cannot be fully captured in documentation and dies when the original developers leave. Our experiment tests this claim in the context of LLM-generated code.
+- [[[cabrera26]]] Cabrera et al. "LLM-based Automated Architecture View Generation: Where Are We Now?" arXiv:2603.21178, March 2026. Largest study (340 repos, 4,137 generated views). Key finding: LLMs "consistently exhibit granularity mismatches, operating at the code level rather than architectural abstractions." 22.6% clarity failure rate, 50% level-of-detail success rate. https://arxiv.org/abs/2603.21178
+- [[[garcia24]]] Dhar, Vaidhyanathan, Varma. "Can LLMs Generate Architectural Design Decisions? -- An Exploratory Empirical study." arXiv:2403.01709, ICSA 2024. Evaluates GPT-4 and GPT-3.5 generating ADR Decision sections given Context. Finds LLMs can generate reasonable decisions but "further research is required to attain human-level generation." Key difference to our work: they provide Context, we reconstruct both from code. https://arxiv.org/abs/2403.01709
+- [[[ecsa25]]] "Automated Software Architecture Design Recovery from Source Code Using LLMs." ECSA 2025, Springer. Evaluates 4 LLMs on class diagrams, design patterns, architectural styles. Finds LLMs "struggle with complex abstractions such as class relationships and fine-grained design patterns." _(URL not verified)_
+- [[[archagent26]]] "ArchAgent: Scalable Legacy Software Architecture Recovery with LLMs." arXiv:2601.13007, January 2026. Agent-based framework combining static analysis with LLM synthesis. Achieves F1=0.966 for structural recovery, outperforming DeepWiki (F1=0.860). Validates that building block views are well-derivable from code. https://arxiv.org/abs/2601.13007
+- [[[slr25]]] "Software Architecture Meets LLMs: A Systematic Literature Review." arXiv:2505.16697, May 2025. Analyzed 18 papers. Identifies "generating source code from architectural design, cloud-native computing, and checking conformance" as underexplored areas. Full arc42 reverse-engineering is not covered by any of the 18 papers. https://arxiv.org/abs/2505.16697
+- [[[sdd26]]] Piskala. "Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants." arXiv:2602.00180, February 2026. Defines spec drift as "any divergence between declared system intent and observed system behavior." Proposes spec-first workflows for AI coding assistants. https://arxiv.org/abs/2602.00180
+- [[[hatahet25]]] Hatahet et al. "Generating Software Architecture Description from Source Code using Reverse Engineering and Large Language Model." arXiv:2511.05165, November 2025. Semi-automated approach for component and state machine diagrams from C++ code. https://arxiv.org/abs/2511.05165
+- [[[userstories25]]] Ouf, Li, Zhang, Guizani. "Reverse Engineering User Stories from Code using Large Language Models." arXiv:2509.19587, September 2025. Achieves F1=0.8 for user story recovery from C++ snippets up to 200 NLOC. Function-level granularity only. https://arxiv.org/abs/2509.19587
+- [[[draft25]]] "DRAFT-ing Architectural Design Decisions using LLMs." arXiv:2504.08207, April 2025. Two-phase approach: offline fine-tuning + online RAG for ADR generation. https://arxiv.org/abs/2504.08207
+- [[[contextmatters26]]] "Context Matters: Evaluating Context Strategies for Automated ADR Generation Using LLMs." arXiv:2604.03826, April 2026. Finds small recency windows (Last-K, 3-5 records) yield near-optimal ADR generation quality. https://arxiv.org/abs/2604.03826
+- [[[agenticakm26]]] "AgenticAKM: Enroute to Agentic Architecture Knowledge Management." arXiv:2602.04445, February 2026. Agentic approach significantly improves ADR quality over simple LLM calls. https://arxiv.org/abs/2602.04445
+- [[[fuchss25]]] Fuchss et al. "Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction." ICSA 2025. F1=0.86 with GPT-4o for linking architecture docs to code. Part of the ARDoCo project at KIT. Complementary to our work: traces existing docs to code, rather than generating docs from code. _(URL not verified)_
