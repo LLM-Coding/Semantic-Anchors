@@ -29,7 +29,8 @@
     </span>
   </button>
   <figcaption>
-    Two-hour live coding session with Johannes Rabauer and Ralf D. Müller (May 2026)
+    Two-hour live coding session with Johannes Rabauer and Ralf D. Müller (May 2026).
+    Read Johannes' <a href="https://rabauer.dev/de/blog/semantic-anchors/" target="_blank" rel="noopener noreferrer">session summary on rabauer.dev</a>.
   </figcaption>
 </figure>
 ++++
