@@ -155,6 +155,22 @@ describe('anchor-modal', () => {
       const content = document.getElementById('modal-content')
       expect(content.innerHTML).toContain('Failed to load')
     })
+
+    it('should not crash when modal element is missing (share-link race, #470)', async () => {
+      const existing = document.getElementById('anchor-modal')
+      if (existing) existing.remove()
+
+      global.fetch.mockResolvedValue({
+        ok: true,
+        text: async () => '= Test Anchor\n\nTest content',
+      })
+
+      await expect(showAnchorDetails('test-anchor')).resolves.not.toThrow()
+
+      const modal = document.getElementById('anchor-modal')
+      expect(modal).not.toBeNull()
+      expect(modal.classList.contains('hidden')).toBe(false)
+    })
   })
 
   describe('umbrella anchors', () => {

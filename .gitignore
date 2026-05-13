@@ -5,6 +5,8 @@ node_modules/
 !website/public/hmze-logo.png
 !docs/workflow-diagram.svg
 .playwright-mcp/
+.venv/
+.linkedin/
 *:Zone.Identifier
 website/public/CONTRIBUTING.html
 website/public/CONTRIBUTING.de.html

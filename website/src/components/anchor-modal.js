@@ -356,10 +356,10 @@ export async function loadAnchorContent(anchorId) {
 }
 
 export function showAnchorDetails(anchorId) {
-  const modal = document.getElementById('anchor-modal')
-  if (modal) {
-    modal.dataset.currentAnchor = anchorId
-  }
+  // Share-link race: handleRoute may invoke us before initApp's createModal()
+  // microtask runs. createModal is idempotent.
+  const modal = document.getElementById('anchor-modal') || createModal()
+  modal.dataset.currentAnchor = anchorId
   openModal()
   return loadAnchorContent(anchorId)
 }
