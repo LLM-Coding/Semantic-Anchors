@@ -389,6 +389,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Mark Jason Dominus (coined the term in comp.lang.perl.misc, 2001), Eric S. Raymond ("How To Ask Questions The Smart Way")
 - **Core:** Communication anti-pattern — asker requests help with attempted solution Y when the real goal X is hidden; resolution by probing for X first ("What are you actually trying to accomplish?"); applies to support, code review, requirements clarification, and LLM dialogues; canonical references at xyproblem.info and Greg's Wiki
 
+### Double Diamond
+- **Also known as:** 4Ds Model, Design Council Double Diamond
+- **Proponents:** UK Design Council (2005; expanded as "Framework for Innovation", 2019)
+- **Core:** Two divergent-convergent cycles — Discover/Define (problem space) and Develop/Deliver (solution space); "design the right thing, then design the thing right"; explicit iteration; widely used in UX, service design, government innovation
+
 ## Requirements Engineering
 
 ### Cockburn Use Cases
@@ -589,6 +594,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** MVP, Lean Startup MVP
 - **Proponents:** Eric Ries, Frank Robinson
 - **Core:** Smallest product that tests a single falsifiable hypothesis about user needs with the least effort; the defining output is *validated learning*, not a feature set or revenue; first turn of the build-measure-learn loop; distinct from a "small v1" — an MVP would be embarrassing to ship in production because its job is learning, not market entry; gives evidence for pivot-or-persevere decisions
+
+### Hoshin Kanri
+- **Also known as:** Policy Deployment, Strategy Deployment, Hoshin Planning
+- **Proponents:** Yoji Akao ("Hoshin Kanri: Policy Deployment for Successful TQM", 1991), Thomas L. Jackson ("Hoshin Kanri for the Lean Enterprise", 2006)
+- **Core:** Lean strategy-deployment discipline — 3-5 year True North breakthrough objectives cascade into annual hoshin via the X-Matrix (long-term strategy × annual objectives × improvement priorities × metrics, with explicit correlations); two-way *catchball* negotiation between levels prevents top-down imposition; monthly *Bowling Chart* reviews drive PDCA on the strategy itself; deliberately restricted to the few vital goals so "business as usual" stays outside the hoshin
+
+### Decisional Balance Sheet
+- **Also known as:** Benjamin Franklin Analysis, Moral Algebra, Pros-and-Cons Sheet
+- **Proponents:** Irving Janis & Leon Mann ("Decision Making: A Psychological Analysis of Conflict, Choice, and Commitment", 1977); Benjamin Franklin (1772 "moral algebra" letter to Joseph Priestley); adapted by Miller & Rollnick ("Motivational Interviewing", 1991)
+- **Core:** Four-cell decision matrix capturing utilitarian gains/losses for self and for significant others, plus self-approval and approval from others; weighted entries surface trade-offs and resolve ambivalence rather than mechanise the choice; simplified two-column pros/cons form is a degenerate case; used in decision coaching and Motivational Interviewing to elicit change-talk; deliberative — weak under time pressure or high uncertainty
 
 ## Creative Writing & Storytelling
 

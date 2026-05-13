@@ -1,0 +1,50 @@
+= Decisional Balance Sheet
+:categories: problem-solving, strategic-planning
+:roles: consultant, team-lead, product-owner, business-analyst
+:related: pugh-matrix, adr-according-to-nygard, moscow
+:proponents: Irving Janis, Leon Mann
+:tags: decision-making, pros-cons, ambivalence, motivational-interviewing
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Benjamin-Franklin-Analyse, Moralische Algebra, Pro-und-Contra-Liste
+
+[discrete]
+== *Kernkonzepte*:
+
+Vier-Zellen-Matrix:: Die volle Janis-&-Mann-Form hat vier Kategorien von Konsequenzen für jede Alternative — *utilitaristische Gewinne/Verluste für sich selbst*, *utilitaristische Gewinne/Verluste für nahestehende Personen*, *Selbst-Zustimmung/Ablehnung* und *Zustimmung/Ablehnung durch andere*. Dehnt "Pro und Contra" über instrumentelle Ergebnisse hinaus auf Identität und sozialen Preis.
+
+Vereinfachte Zwei-Spalten-Form:: Die alltägliche "Pro vs. Contra"-Liste, populär gemacht durch Benjamin Franklin (Brief 1772 an Joseph Priestley). Streng genommen ein Spezialfall der Vier-Zellen-Matrix — nützlich für schnelle Entscheidungen, verlustbehaftet bei komplexen.
+
+Gewichtung:: Jeder Eintrag bekommt ein numerisches Gewicht, das seine Wichtigkeit ausdrückt. Die Entscheidung ist *keine* Stimmenauszählung — die Disziplin ist, Trade-offs explizit zu machen, nicht die Wahl zu mechanisieren.
+
+Ambivalenz auflösen:: Der eigentliche Zweck ist nicht Arithmetik, sondern das Aufdecken von Bedenken, die der/die Entscheider:in noch nicht ausgesprochen hat. Die Contra-Seite einer verlockenden Option zu listen oder die Pro-Seite der verworfenen, bricht das "nur Pros, keine Contras"-Framing auf, das impulsive Entscheidungen treibt.
+
+Decisional Conflict:: Janis & Manns Mutter-Theorie; Entscheidungen mit hohem Einsatz erzeugen Stress, der das Urteil verzerrt. Die Balance Sheet ist eine von mehreren Debiasing-Techniken neben aufmerksamer Informationssuche und Notfallplanung.
+
+Variante in Motivational Interviewing:: Im Prochaska-DiClemente *Stages-of-Change*-Modell und in Miller & Rollnicks *Motivational Interviewing* wird die Balance Sheet eingesetzt, um Change-Talk hervorzulocken: der/die Klient:in *spricht selbst* die Contras des Status quo und die Pros der Veränderung aus — der Weg aus der Ambivalenz heraus statt durch Überredung.
+
+Grenzen:: Das Modell ist *deliberativ*, nicht intuitiv. Es funktioniert schlecht unter Zeitdruck und bei Entscheidungen, die von Unsicherheit dominiert werden (dort passen Pugh Matrix oder szenariobasierte Methoden besser). Es findet auch keine Optionen, die nicht auf der Liste stehen — die Optionsgenerierung muss vorher passieren.
+
+
+Schlüsselvertreter:: Irving Janis & Leon Mann ("Decision Making: A Psychological Analysis of Conflict, Choice, and Commitment", 1977 — das formale Vier-Zellen-Modell). Benjamin Franklin (Brief 1772, "moralische Algebra" — der informelle Pro/Contra-Vorläufer). William R. Miller & Stephen Rollnick ("Motivational Interviewing", 1991) für die klinische Adaption.
+
+Historischer Kontext:: Franklins Pro/Contra-Brief ist eine der frühesten dokumentierten Entscheidungshilfe-Techniken in der westlichen Tradition. Janis & Mann machten daraus in den 1970ern ein Forschungsinstrument; die vereinfachte Zwei-Spalten-Form wurde über Selbsthilfe, Coaching und Motivational Interviewing zum Mainstream. Heute Standard in Entscheidungs-Coaching, Finanzberatung und gesundheitsbezogenen Verhaltensänderungs-Interventionen.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Persönliche oder berufliche Entscheidungen, in denen die Alternativen ungefähr vergleichbar sind und die eigene Klarheit der ausschlaggebende Faktor ist
+* Coaching-Gespräche, in denen der/die Klient:in *in Ambivalenz feststeckt* — die Vier-Zellen-Version fördert Bedenken zutage, die die einfache Pro/Contra-Liste verfehlt
+* Pre-Mortem-Variante: das Vorab-Listen der "Zustimmung/Ablehnung anderer"-Zelle sagt oft politischen Widerstand voraus, den das Team übersehen hat
+* Motivational-Interviewing-Settings — Gesundheitsverhalten, Suchtberatung, Karrierewechsel
+* Entscheidungsdokumentation in Kontexten mit niedriger Formalität, in denen ein voller ADR übertrieben ist, aber "wir haben die Alternativen geprüft" sichtbar bleiben muss
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<pugh-matrix,Pugh Matrix>> — bewertet Alternativen gegen gewichtete Kriterien; ergänzend, wenn Unsicherheit oder technische Trade-offs dominieren statt persönlicher/sozialer Kosten
+* <<adr-according-to-nygard,ADR according to Nygard>> — erfasst Architekturentscheidungen mit Context/Decision/Consequences; die Balance Sheet speist den Consequences-Abschnitt
+* <<moscow,MoSCoW>> — Priorisierung *nach* der Entscheidung; die Balance Sheet hilft zu entscheiden, *ob* die Arbeit überhaupt gemacht werden soll
+====

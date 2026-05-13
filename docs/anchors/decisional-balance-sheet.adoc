@@ -1,0 +1,50 @@
+= Decisional Balance Sheet
+:categories: problem-solving, strategic-planning
+:roles: consultant, team-lead, product-owner, business-analyst
+:related: pugh-matrix, adr-according-to-nygard, moscow
+:proponents: Irving Janis, Leon Mann
+:tags: decision-making, pros-cons, ambivalence, motivational-interviewing
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Benjamin Franklin Analysis, Moral Algebra, Pros-and-Cons Sheet
+
+[discrete]
+== *Core Concepts*:
+
+Four-Cell Matrix:: The full Janis & Mann form has four categories of consequence for each alternative — *utilitarian gains/losses for self*, *utilitarian gains/losses for significant others*, *self-approval/disapproval*, and *approval/disapproval from others*. Stretches "pros and cons" beyond instrumental outcomes into identity and social cost.
+
+Simplified Two-Column Form:: The everyday "pros vs cons" list popularised by Benjamin Franklin (1772 letter to Joseph Priestley). Strictly a degenerate case of the four-cell matrix — useful for quick decisions, lossy for complex ones.
+
+Weighting:: Each entry gets a numeric weight reflecting its importance. The decision is *not* a vote count — the discipline is to make trade-offs explicit, not to mechanise the choice.
+
+Resolving Ambivalence:: The artifact's primary purpose is *not* arithmetic but surfacing concerns the decider has not yet articulated. Listing the cons of a tempting option, or the pros of the rejected one, breaks the "all pros, no cons" framing that drives impulsive decisions.
+
+Decisional Conflict:: Janis & Mann's parent theory; high-stakes decisions produce stress that distorts judgment. The balance sheet is one of several debiasing techniques alongside vigilant information search and contingency planning.
+
+Motivational Interviewing Variant:: In the Prochaska–DiClemente *Stages of Change* model and Miller & Rollnick's *Motivational Interviewing*, the balance sheet is used to elicit change-talk: the client *says* the cons of staying the same and the pros of changing — moving them through ambivalence rather than persuading them.
+
+Limits:: The model is *deliberative*, not intuitive. It works poorly under time pressure and for decisions dominated by uncertainty (where Pugh Matrix or scenario-based methods fit better). It also doesn't surface options that aren't on the list — separate from the option-generation step.
+
+
+Key Proponents:: Irving Janis & Leon Mann ("Decision Making: A Psychological Analysis of Conflict, Choice, and Commitment", 1977 — the formal four-cell model). Benjamin Franklin (1772 letter, "moral algebra" — the informal pros/cons ancestor). William R. Miller & Stephen Rollnick ("Motivational Interviewing", 1991) for the clinical adaptation.
+
+Historical Context:: Franklin's pros/cons letter is one of the earliest documented decision-aid techniques in the Western tradition. Janis & Mann turned it into a research instrument in the 1970s; the simplified two-column form has spread through self-help, coaching, and Motivational Interviewing into mainstream use. Now a staple of decision coaching, financial advisory, and health-behaviour-change interventions.
+
+[discrete]
+== *When to Use*:
+
+* Personal or career decisions where the alternatives are roughly comparable and the deciding factor is the decider's own clarity
+* Coaching conversations where the client is *stuck in ambivalence* — the four-cell version surfaces concerns the simple pros/cons list misses
+* Pre-mortem variant: pre-listing the "approval/disapproval from others" cell often predicts political resistance the team forgot to address
+* Motivational Interviewing settings — health behaviour, addiction recovery, career changes
+* Decision documentation in low-formality contexts where a full ADR is overkill but "we considered the alternatives" must be visible
+
+[discrete]
+== *Related Anchors*:
+
+* <<pugh-matrix,Pugh Matrix>> — scores alternatives against weighted criteria; complement when uncertainty or technical trade-offs dominate over personal/social cost
+* <<adr-according-to-nygard,ADR according to Nygard>> — captures architecture decisions with Context/Decision/Consequences; the balance sheet feeds the Consequences section
+* <<moscow,MoSCoW>> — prioritisation among items chosen *after* the decision is made; the balance sheet helps decide *whether* to do the work at all
+====

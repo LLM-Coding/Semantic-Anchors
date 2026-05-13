@@ -1,0 +1,57 @@
+= Double Diamond
+:categories: problem-solving, requirements-engineering
+:roles: ux-designer, product-owner, business-analyst, consultant
+:related: jobs-to-be-done, problem-space-nvc, xy-problem, mvp
+:proponents: UK Design Council
+:tags: design-thinking, problem-framing, divergent-convergent, ux, innovation
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Double Diamond Design Process Model
+
+Also known as:: 4Ds Model, Design Council Double Diamond
+
+[discrete]
+== *Core Concepts*:
+
+Two Diamonds, Four Phases:: *Discover → Define → Develop → Deliver*. Each diamond is one divergent-convergent cycle. The first diamond explores and frames the *problem*; the second diamond explores and ships the *solution*.
+
+Discover (Divergent, Problem Space):: Broad research — interviews, observation, immersion, data analysis. Goal: widen the understanding of what's actually going on, not jump to causes.
+
+Define (Convergent, Problem Space):: Synthesize findings into a sharp problem statement. The famous slogan: *"Are we solving the right problem?"* — the diamond ends with a problem worth solving, not a list of features.
+
+Develop (Divergent, Solution Space):: Generate many candidate solutions — sketches, prototypes, co-design workshops. Diverge widely before narrowing; resist solution fixation.
+
+Deliver (Convergent, Solution Space):: Test, refine, ship. The chosen concept is iterated until it's production-ready; failed candidates are explicitly killed rather than left lingering.
+
+Design the Right Thing, Then Design the Thing Right:: The canonical summary. The first diamond addresses "right thing" (problem worth solving); the second addresses "thing right" (solution that works).
+
+Divergent Before Convergent:: A hard discipline at every phase. Premature convergence — picking the obvious problem or obvious solution — is the failure mode the model is designed to prevent.
+
+Iteration, Not Waterfall:: The diamonds are not strictly linear. Learnings in Develop frequently send the team back to Discover or Define. The 2019 *Framework for Innovation* update made this explicit.
+
+Mindsets and Principles:: The Design Council pairs the four phases with four principles (Put people first, Communicate visually and inclusively, Collaborate and co-create, Iterate, iterate, iterate) — the diamonds without the mindset is just process theater.
+
+
+Key Proponents:: UK Design Council (originally published 2005; expanded as *Framework for Innovation* in 2019). Built on the divergent-convergent tradition of J.P. Guilford (1956) and Béla H. Bánáthy.
+
+Historical Context:: Developed by the Design Council in 2005 after research into how leading design organizations actually worked. The 2019 update reframed it as a system-level innovation framework, adding the principles, key roles, and explicit iteration arrows. Adopted broadly in UX, service design, government innovation (UK GDS, NHS, Danish Mindlab), and design education.
+
+[discrete]
+== *When to Use*:
+
+* Framing UX or service design projects when the team is at risk of jumping to solutions
+* Innovation workshops and design sprints — the diamonds give a shared visual model for sequencing divergent and convergent work
+* Discovery phases of product development when the problem itself is not yet well understood
+* Teaching design thinking — the model is more concrete than abstract "design thinking" because it names the four moves
+* Communicating *why* a discovery phase is necessary to stakeholders who want to skip straight to delivery
+
+[discrete]
+== *Related Anchors*:
+
+* <<jobs-to-be-done,Jobs to be Done>> — sharpens the *Define* output by reframing customer needs as functional, emotional, and social jobs
+* <<problem-space-nvc,Problem Space (NVC)>> — separates needs from strategies; complements the first-diamond discipline of staying in problem space
+* <<xy-problem,XY Problem>> — anti-pattern that the first diamond is designed to prevent (solving Y before understanding X)
+* <<mvp,MVP>> — the *Deliver* output is often shaped as an MVP to validate the chosen solution against the defined problem
+====

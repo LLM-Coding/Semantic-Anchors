@@ -1,0 +1,54 @@
+= Hoshin Kanri
+:categories: strategic-planning
+:roles: team-lead, consultant, product-owner
+:related: kotter-8-step-change-model, moscow, kano-model
+:proponents: Yoji Akao, Thomas L. Jackson
+:tags: strategy-deployment, lean, alignment, x-matrix, catchball
+:tier: 3
+
+[%collapsible]
+====
+Voller Name:: Hoshin Kanri (方針管理 — "Richtungs-Management")
+
+Auch bekannt als:: Policy Deployment, Strategy Deployment, Hoshin Planning
+
+[discrete]
+== *Kernkonzepte*:
+
+True North:: Die *Durchbruchsziele* der nächsten 3-5 Jahre — sparsam gewählt, damit das ganze Unternehmen in dieselbe Richtung zieht.
+
+Jahres-Hoshin:: Die 1-Jahres-Prioritäten, abgeleitet aus True North. Typisch 3-5 unternehmensweite Ziele; alles andere ist "Business as usual" und gehört nicht ins Hoshin.
+
+X-Matrix:: Einseitiges A3-Artefakt, das vier Schenkel verbindet — *Langzeitstrategie*, *Jahresziele*, *Verbesserungs-Schwerpunkte* und *Kennzahlen/Targets* — plus die verantwortlichen Owner. Wechselwirkungen zwischen den Schenkeln werden mit Symbolen (stark/mittel/schwach) explizit gemacht.
+
+Catchball:: Iterative *bidirektionale* Verhandlung der Ziele zwischen Ebenen. Leadership schlägt Targets vor; Teams antworten mit "was ist möglich und was wird gebraucht"; der Ball wandert hin und her, bis die Commitments realistisch *und* ambitioniert sind. Hier unterscheidet sich Hoshin Kanri vom reinen Top-Down-Cascade.
+
+PDCA für Strategie:: Plan-Do-Check-Act angewandt auf das Jahres-Hoshin selbst — monatliche oder quartalsweise *Check*-Reviews stellen sicher, dass die Strategie auf die Realität reagiert, nicht nur die Taktik.
+
+Cascade und Alignment:: Jede Ebene übersetzt die Ebene darüber in ihre eigene X-Matrix. Vertikales Alignment wird in jedem Schritt geprüft; horizontales Alignment quer über Peer-Teams verhindert lokale Optimierung.
+
+Bowling Chart / Hoshin Review:: Monatliches Status-Board, das Ist gegen Soll für jede KPI vergleicht; Rot/Gelb/Grün erzwingt Gespräche über Gegenmaßnahmen statt Ausreden.
+
+Wenige Wichtige, nicht viele Triviale:: Eine zentrale Disziplin — das Hoshin wird auf die wenigen Ziele beschränkt, die *Durchbruchsdenken* erfordern. Der Großteil der Organisationsarbeit läuft außerhalb des Hoshin-Prozesses weiter.
+
+
+Schlüsselvertreter:: Yoji Akao ("Hoshin Kanri: Policy Deployment for Successful TQM", 1991), Thomas L. Jackson ("Hoshin Kanri for the Lean Enterprise", 2006), Pascal Dennis ("Getting the Right Things Done", 2006)
+
+Historischer Kontext:: Entstand in der japanischen Fertigung in den 1960ern; Bridgestone Tire gilt als erster formalisierter Anwender, nachdem sie den Deming-Preis gewannen. Über Toyota, Komatsu und die TQM-Bewegung verbreitet; in den 1980ern in den Westen übertragen als Teil von Lean. Heute verbreitet in Lean-Unternehmen, Krankenhaussystemen (Virginia Mason) und zunehmend in Scaled-Agile-Kontexten.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Jahres- oder Mehrjahres-Strategieplanung, wenn Alignment über viele Teams das kritische Risiko ist
+* Übersetzung einer Vision oder Mission in messbare, verantwortliche Arbeit
+* Skalierung einer Organisation, in der lokale Optimierung beginnt, globale Ziele zu dominieren
+* Lean-Transformationen — Hoshin Kanri ist das Strategie-Pendant zu Kaizen auf der operativen Ebene
+* Als Alternative zu OKRs, wenn die Organisation explizite Ursache-Wirkungs-Verknüpfungen und stärkere Accountability braucht als quartalsweise selbstgesetzte Ziele bieten
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<kotter-8-step-change-model,Kotter's 8-Step Change Model>> — Rahmenwerk für Großtransformationen; Hoshin Kanri ist die wiederkehrende Disziplin, die eine Kotter-Vision Jahr für Jahr operationalisiert
+* <<moscow,MoSCoW>> — taktische Priorisierung innerhalb der Verbesserungs-Schwerpunkte des Hoshin
+* <<kano-model,Kano Model>> — Feature-Klassifizierung, die oft den kunden-orientierten Schenkel der X-Matrix speist
+====
