@@ -1,0 +1,206 @@
+= Skill: Socratic Code-Theory Recovery
+:toc:
+
+Das Semantic-Anchors-Projekt liefert einen **Claude Code Skill** aus, der den link:#/brownfield[Brownfield-Workflow] als installierbares Artefakt verpackt. Einmal installiert, führt der Skill einen kompatiblen AI-Coding-Assistenten durch die zweiphasige Wiederherstellung der "Theorie" eines Programms (Naur 1985) aus dem Quellcode.
+
+== Was er macht
+
+Stellt Dokumentation aus einem Brownfield-Codebase wieder her, ohne die Lücken zu halluzinieren, die der Code nicht beantworten kann. Der Skill erzwingt eine prüfbare Trennung zwischen *aus Code ableitbaren Fakten* und *offenen Fragen*, die Menschen beantworten müssen.
+
+=== Phase 1 — Question Tree aufbauen
+
+Der Skill weist das LLM an, fünf Fragen zum Bounded Context (Problem/User, Spezifikation, Architektur, Qualitätsziele, Risiken) rekursiv zu zerlegen. Jedes Blatt wird klassifiziert:
+
+* `[ANSWERED]` -- das LLM hat es im Code gefunden, mit `<file>:<line>`-Evidenz
+* `[OPEN]` -- die Antwort steckt nicht im Code; mit Category und der Rolle markiert, die antworten muss (Product Owner, Architect, Developer, Domain Expert, Operations)
+
+Output sind zwei AsciiDoc-Dateien: `QUESTION_TREE.adoc` (vollständige Begründungs-Spur) und `OPEN_QUESTIONS.adoc` (Handoff, nach Rolle gruppiert).
+
+=== Zwischen den Phasen — Team beantwortet die OPEN-Leafs
+
+`OPEN_QUESTIONS.adoc` wird rollenweise an Menschen geleitet. Sie schreiben Antworten direkt in die Datei. Verschobene Fragen bekommen einen expliziten `(deferred)`-Marker, keine Erfindung.
+
+=== Phase 2 — Dokumentation synthetisieren
+
+Der Skill nimmt den beantworteten Baum und erzeugt ein PRD, Cockburn Use Cases, eine arc42-Architekturbeschreibung und Nygard-ADRs mit Pugh-Matrix. Jede Aussage zitiert eine Q-ID; team-gegebene Fakten sind mit `(team answer)` markiert.
+
+== Wann zu verwenden
+
+Den Skill verwenden, wenn:
+
+* Dokumentation fehlt, veraltet ist oder nicht vertrauenswürdig, und eine Änderung ansteht.
+* Du Dokumentation willst, der ein Auditor oder neues Team-Mitglied trauen kann -- jede Aussage führt zurück entweder auf Code oder auf eine benannte Team-Antwort.
+* Du die *offenen Fragen* im System sichtbar machen willst, statt sie mit plausibel klingendem Text zu überschreiben.
+
+**Nicht** verwenden, wenn:
+
+* Du Greenfield-Entwicklung machst -- dafür den link:#/spec-driven-development[Spec-Driven-Workflow].
+* Du das ganze System auf einmal reverse-engineeren willst -- der Skill ist auf einen Bounded Context nach dem anderen ausgelegt.
+* Der Code nicht lauffähig ist -- das zuerst beheben.
+
+== Installation
+
+Der Skill folgt der https://agentskills.io[agentskills.io]-Spezifikation. Verweise aus der Instruction-Datei deines Projekts auf den Skill, je nach AI-Tool:
+
+=== link:https://docs.anthropic.com/en/docs/claude-code/memory[Claude Code]
+
+Skill in `CLAUDE.md` referenzieren:
+
+[source,markdown]
+----
+## Skills
+
+Use the socratic-code-theory-recovery skill from
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-theory-recovery
+when recovering documentation from a brownfield bounded context.
+
+Phase 1 prompt:
+https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/socratic-code-theory-recovery/prompts/phase-1-question-tree.md
+
+Phase 2 prompt:
+https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/socratic-code-theory-recovery/prompts/phase-2-synthesize.md
+----
+
+Alternativ kann `skill/socratic-code-theory-recovery/SKILL.md` ins Skills-Verzeichnis deines Projekts gelegt werden, wenn die Claude-Code-Konfiguration einen eigenen Skills-Pfad nutzt.
+
+=== link:https://openai.com/codex/[Codex]
+
+Codex unterstützt `AGENTS.md` für Repo-Anweisungen:
+
+[source,markdown]
+----
+## Documentation Recovery
+
+When working on a brownfield bounded context without documentation, use
+the Socratic Code-Theory Recovery skill:
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-theory-recovery
+
+The skill enforces a two-phase workflow: build a Question Tree first
+([ANSWERED] with code evidence vs [OPEN] with role), let the team answer
+the OPEN leaves, then synthesize documentation with full Q-ID traceability.
+----
+
+=== link:https://github.com/google-gemini/gemini-cli[Gemini CLI]
+
+In `GEMINI.md` ergänzen:
+
+[source,markdown]
+----
+## Brownfield Documentation Recovery
+
+For recovering documentation from existing code, follow the
+Socratic Code-Theory Recovery workflow:
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-theory-recovery
+
+Build a Question Tree before writing any documentation. Mark each leaf
+[ANSWERED] (with file:line evidence) or [OPEN] (with Category and Ask role).
+Synthesize docs from the answered tree only after the team has filled in
+the OPEN leaves. Cite Q-IDs in every claim.
+----
+
+=== link:https://docs.cursor.com/[Cursor]
+
+In `.cursor/rules` oder `.cursorrules` ergänzen:
+
+[source,markdown]
+----
+## Brownfield Documentation Recovery
+
+When asked to document an existing module without docs, use the
+Socratic Code-Theory Recovery workflow:
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-theory-recovery
+
+Build a Question Tree first. Each leaf must be [ANSWERED] (with code
+evidence) or [OPEN] (with Category and Ask role). Do not write
+documentation until the team has answered the [OPEN] leaves.
+----
+
+=== link:https://docs.github.com/copilot[GitHub Copilot]
+
+In `.github/copilot-instructions.md` ergänzen:
+
+[source,markdown]
+----
+## Brownfield Recovery
+
+For brownfield documentation tasks, follow the Socratic Code-Theory
+Recovery workflow at
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-theory-recovery
+
+Two phases: first a Question Tree separating code-derivable facts from
+open questions routed by role; second, synthesis with Q-ID traceability
+after the team fills the gaps.
+----
+
+=== link:https://kiro.dev/[Amazon Kiro]
+
+Kiro setzt auf Spec-Driven Development auf; dieser Skill ist das Brownfield-Pendant. Im `specs/`-Verzeichnis des Projekts oder in einer Spec-Datei ergänzen:
+
+[source,markdown]
+----
+## Brownfield Documentation Recovery (Spec Onboarding)
+
+When onboarding an existing bounded context that has no spec, use the
+Socratic Code-Theory Recovery skill:
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-theory-recovery
+
+The skill produces a Question Tree that classifies every claim as
+[ANSWERED] (code evidence) or [OPEN] (role-routed). The synthesized
+outputs are compatible with Kiro's spec format: a PRD, Cockburn use
+cases (User Goal level), an arc42 architecture description, and Nygard
+ADRs with Pugh matrices. Use these as the starting point for the
+generated spec.
+----
+
+=== Andere AI-Tools
+
+Jeder Assistent, der einen System-Prompt oder Custom Instructions akzeptiert, kann den Skill nutzen. Verweise auf:
+
+* `SKILL.md` (Übersicht) -- https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/socratic-code-theory-recovery/SKILL.md
+* Phase-1-Prompt -- https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/socratic-code-theory-recovery/prompts/phase-1-question-tree.md
+* Phase-2-Prompt -- https://github.com/LLM-Coding/Semantic-Anchors/blob/main/skill/socratic-code-theory-recovery/prompts/phase-2-synthesize.md
+
+== Was im Skill steckt
+
+[cols="1,3"]
+|===
+| Datei | Funktion
+
+| `SKILL.md`
+| Frontmatter, When-to-use, Zwei-Phasen-Workflow, was das LLM rekonstruieren kann und was nicht, Drift-Handling
+
+| `prompts/phase-1-question-tree.md`
+| Der Copy-paste Phase-1-Prompt plus Post-Prompt-Sanity-Check und Team-Routing-Anweisungen
+
+| `prompts/phase-2-synthesize.md`
+| Der Phase-2-Prompt, der PRD, Cockburn Use Cases, arc42 und Nygard-ADRs erzeugt
+
+| `references/arc42.md`
+| arc42 12 Sektionen als Q3-Zerlegungs-Heuristik
+
+| `references/cockburn-use-cases.md`
+| Fully-Dressed-Felder als Q2-Subfragen; Persona- vs. System-Use-Cases
+
+| `references/iso-25010.md`
+| 8 Qualitätsmerkmale als Q4-Subfragen; Mechanismus-vs-Target-Trennung
+
+| `references/nygard-adrs.md`
+| ADR-Felder als Q3.9-Sub-Tree; was eine Entscheidung architektonisch signifikant macht; Pugh-Matrix-Leitfaden
+
+| `references/output-schema.md`
+| Striktes Format für `QUESTION_TREE.adoc` und `OPEN_QUESTIONS.adoc`; Q-ID-Schema; `[ANSWERED]`/`[OPEN]`-Blockformate; Phase-2-Traceability-Regeln
+
+| `references/examples.md`
+| Worked `[ANSWERED]` und `[OPEN]` Leaves für jeden Hauptast (Q1-Q5)
+|===
+
+== Weiterführende Literatur
+
+* link:#/brownfield[Brownfield Workflow] -- die volle Methodik, die dieser Skill verpackt
+* link:#/brownfield-experiment-report[Brownfield Experiment Report] -- kontrolliertes Experiment hinter der Methodik
+* link:#/brownfield-fair-comparison[Fair Comparison Report] -- drei Recovery-Ansätze mit identischen Team-Antworten
+* Peter Naur, "Programming as Theory Building" (1985) -- https://pages.cs.wisc.edu/~remzi/Naur.pdf
+
+== Siehe auch
+
+* link:#/agentskill[Semantic Anchor Translator Skill] -- erkennt umschriebene Konzeptbeschreibungen und schlägt den etablierten Anchor-Term vor

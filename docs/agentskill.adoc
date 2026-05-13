@@ -133,3 +133,7 @@ The full catalog with descriptions, proponents, and core concepts is available a
 When you add a new anchor to the catalog, please also update the AgentSkill catalog at `skill/semantic-anchor-translator/references/catalog.md` so AI agents can discover it.
 
 See link:#/contributing[Contributing] for the full contribution workflow.
+
+== See also
+
+* link:#/socratic-recovery-skill[Socratic Code-Theory Recovery Skill] -- packages the brownfield documentation-recovery workflow as an installable skill that classifies every claim as code-derivable or open-to-the-team

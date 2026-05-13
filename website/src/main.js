@@ -151,6 +151,7 @@ function initApp() {
   addRoute('/brownfield', renderBrownfieldPage)
   addRoute('/brownfield-experiment-report', renderBrownfieldExperimentReportPage)
   addRoute('/brownfield-fair-comparison', renderBrownfieldFairComparisonPage)
+  addRoute('/socratic-recovery-skill', renderSocraticRecoverySkillPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -295,6 +296,15 @@ function renderBrownfieldFairComparisonPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/brownfield-fair-comparison.adoc')
+}
+
+function renderSocraticRecoverySkillPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/socratic-recovery-skill.adoc')
 }
 
 function renderContractsPageHandler() {

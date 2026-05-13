@@ -133,3 +133,7 @@ Der vollständige Katalog mit Beschreibungen, Vertretern und Kernkonzepten ist u
 Wenn du einen neuen Anker zum Katalog hinzufügst, aktualisiere bitte auch den AgentSkill-Katalog unter `skill/semantic-anchor-translator/references/catalog.md`, damit KI-Agenten ihn finden können.
 
 Siehe link:#/contributing[Mitwirken] für den vollständigen Beitrags-Workflow.
+
+== Siehe auch
+
+* link:#/socratic-recovery-skill[Socratic Code-Theory Recovery Skill] -- verpackt den Brownfield-Dokumentations-Recovery-Workflow als installierbaren Skill, der jede Aussage als aus-Code-ableitbar oder ans-Team-offen klassifiziert
