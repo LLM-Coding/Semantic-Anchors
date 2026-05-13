@@ -51,41 +51,126 @@ Present as a table.
 Einen Bounded Context zum Starten auswählen.
 Einen wählen, der klein, gut isoliert ist und eine anstehende Änderungsanforderung hat.
 
-== Phase 0.5: Sicherheitsnetz aufbauen
+== Phase 0.5: Socratic Code-Theory Recovery
 
-Vor jeder Änderung braucht man zwei Dinge: Verständnis und Tests.
+Vor jeder Änderung muss die "Theorie" des Bounded Context rekonstruiert werden -- das, was https://pages.cs.wisc.edu/~remzi/Naur.pdf[Peter Naur] das mentale Modell nannte, das in den Köpfen der ursprünglichen Entwickler lebt. In einem Brownfield-Projekt ist dieses Modell nicht dokumentiert. Der Code ist die einzige Quelle.
 
-=== Bestehendes Verhalten als Use Cases extrahieren
+Diese Phase nutzt *Socratic Code-Theory Recovery*: einen zweiphasigen Workflow, der Verständnis durch rekursive Frageverfeinerung aufbaut, bevor Dokumentation erzeugt wird.
 
-Die KI den Code im Bounded Context lesen lassen und extrahieren, was das System aktuell tut.
-Das Ergebnis sind Use Cases, die das *bestehende* Verhalten beschreiben -- nicht was man bauen will, sondern was bereits da ist.
+=== Phase 1: Question Tree aufbauen
 
-.Prompt
+Mit fünf Top-Level-Fragen zum Bounded Context starten und sie rekursiv zerlegen. Semantic Anchors als Zerlegungs-Heuristiken einsetzen: *arc42* für Architektur, *Cockburn Use Cases* für Spezifikation, *ISO 25010* für Qualität, *Nygard ADRs* für Entscheidungen.
+
+Jedes Blatt im Baum ist entweder `[ANSWERED]` (mit Code-Evidenz: Datei, Funktion, Zeile) oder `[OPEN]` (mit Category und Ask-Rolle). Der Output sind zwei AsciiDoc-Dateien: `QUESTION_TREE.adoc` (vollständige Begründungs-Spur) und `OPEN_QUESTIONS.adoc` (Handoff-Dokument, nach Rolle gruppiert).
+
+Den Prompt unten 1:1 in eine Session kopieren, die Lesezugriff auf den Bounded Context hat. `[bounded context path]` und die Beispielfragen an die eigene Domäne anpassen; die Blatt-Klassifikation, das Q-ID-Schema und die Output-Dateien nicht verändern.
+
+.Prompt: Phase 1 — Question Tree aufbauen
+[source,txt]
 ----
-Read the code in [bounded context path]. Extract the existing behavior as Use Cases.
-For each Use Case: ID, Trigger, Actors, Preconditions, Main Flow, Alternative Flows, Postconditions, Business Rules.
-Save as docs/specs/use-cases-[context-name].adoc.
+You are performing Socratic Code-Theory Recovery on a brownfield bounded
+context located at [bounded context path]. Phase 1 of two.
+
+Goal: recover the program's theory (Naur, 1985) from source code through
+recursive question refinement, before any documentation is written.
+
+Process:
+
+1. Start with five high-level questions about the bounded context:
+   Q1 What problem does this bounded context solve, and for whom?
+   Q2 What is the specification of this bounded context?
+   Q3 What is the architecture of this bounded context?
+   Q4 What quality goals drive the design?
+   Q5 What risks and technical debt exist?
+
+2. Decompose each question recursively. Use these Semantic Anchors as
+   decomposition guides:
+     - arc42 — 12 sub-questions for architecture (Q3 branch)
+     - Cockburn Use Cases — Primary Actor, Trigger, Main Success Scenario,
+       Extensions, Postconditions for specification (Q2 branch)
+     - ISO/IEC 25010 — 8 quality characteristics for quality goals (Q4 branch)
+     - Nygard ADRs — Context, Decision, Status, Consequences for design
+       rationale (Q3.9 branch)
+   Stop decomposing when a question is precise enough to be answered with a
+   single piece of code evidence or a single fact from a stakeholder.
+
+3. Assign a hierarchical Q-ID to every node (Q1, Q1.2, Q1.2.3, ...) so that
+   later documentation can cite back to it.
+
+4. For each leaf, classify it:
+
+   [ANSWERED]
+     - You found the answer in the code.
+     - Cite the evidence as <file>:<line> or <file>::<function>.
+     - Be exact. No "see X for details."
+
+   [OPEN]
+     - The answer is not derivable from code alone.
+     - Category: business-context | design-rationale | quality-goals |
+                 stakeholder-context | future-direction
+     - Ask role: Product Owner | Architect | Developer | Domain Expert |
+                 Operations
+     - State precisely what cannot be answered, and why.
+
+5. Output two files in AsciiDoc:
+
+   QUESTION_TREE.adoc
+     - Full hierarchical tree with all nodes and Q-IDs
+     - Each leaf marked [ANSWERED] (with evidence) or [OPEN] (with Category
+       and Ask role)
+     - Includes all reasoning, not only the leaves
+
+   OPEN_QUESTIONS.adoc
+     - Only the [OPEN] leaves, copied verbatim from QUESTION_TREE.adoc
+     - Grouped by Ask role (one section per role)
+     - Each question short enough to be answered in 1-3 sentences
+
+Do not write any other documentation in this phase. Phase 2 will synthesize
+the answered tree into PRD, specification, arc42, and ADRs — only after the
+team has filled in the [OPEN] leaves.
 ----
 
-Die extrahierten Use Cases gegen das laufende System prüfen.
-Die KI kann implizites Verhalten übersehen oder Code falsch interpretieren.
-Das ist der eine Schritt, bei dem Domänenwissen unersetzlich ist.
+=== Zwischen den Phasen: Das Team beantwortet die offenen Fragen
+
+Die Open Questions an die Personen weiterleiten, die sie beantworten können. In einem kontrollierten Experiment mit einer 13.000-Zeilen-Go-Codebasis reichten *11 gezielte Fragen* aus, um die Lücke zwischen reverse-engineerter Dokumentation und Original zu schließen. Die Fragen sind präzise, weil die rekursive Zerlegung sie spezifisch macht, nicht vage.
+
+Typische Fragen, die das LLM nicht aus dem Code beantworten kann:
+
+[cols="2,3",options="header"]
+|===
+| Category | Beispiel
+
+| Business Context | Warum wurde das gebaut? Welche Alternativen gab es?
+| Design Rationale | Warum JSONC statt YAML? Warum diese Library?
+| Quality Goals | Welches Qualitätsziel hat Priorität? Welche Schwellwerte?
+| Stakeholder Context | Wer nutzt das? Welches Erfahrungslevel?
+| Future Direction | Was ist geplant, aber noch nicht umgesetzt?
+|===
+
+=== Phase 2: Dokumentation synthetisieren
+
+Das LLM synthetisiert die beantworteten Fragen plus die Code-Evidenz aus Phase 1 zur Dokumentation gemäß dem Spec-Driven-Workflow:
+
+* *PRD* aus den Antworten im Q1-Ast
+* *Spezifikation* (Cockburn Use Cases, CLI-Spec, Datenmodelle, Gherkin-Akzeptanzkriterien) aus dem Q2-Ast
+* *arc42* mit allen 12 Kapiteln aus dem Q3-Ast
+* *Nygard-ADRs* mit Pugh-Matrix aus dem Q3.9-Ast
+
+Jede Aussage referenziert eine Question-ID und markiert teamgegebene Information mit `(team answer)`. Diese doppelte Rückverfolgbarkeit (Code-Evidenz + Team-Input) ist der entscheidende Unterschied zu einem einfachen Reverse-Engineering-Prompt.
 
 === Basis-Tests aufbauen
 
-Tests schreiben, die das bestehende Verhalten verifizieren.
-Diese Tests sind das Sicherheitsnetz: Wenn eine Änderung etwas kaputt macht, fangen die Tests es ab.
+Aus den synthetisierten Use Cases Tests schreiben, die das bestehende Verhalten verifizieren. Diese Tests sind das Sicherheitsnetz.
 
 .Prompt
+[source,txt]
 ----
 Based on the Use Cases in docs/specs/use-cases-[context-name].adoc, write tests that verify the current behavior.
 Use TDD, London School. Each test references its Use Case ID for traceability.
 Do not change any production code. Only add tests.
 ----
 
-Tests ausführen.
-Jeder Test muss gegen den aktuellen Code bestehen.
-Wenn ein Test fehlschlägt, war der extrahierte Use Case falsch -- Use Case korrigieren, dann Test korrigieren.
+Tests ausführen. Jeder Test muss gegen den aktuellen Code bestehen. Wenn ein Test fehlschlägt, war der extrahierte Use Case falsch -- Use Case korrigieren, dann Test korrigieren.
 
 [IMPORTANT]
 ====
@@ -93,6 +178,24 @@ Basis-Tests nicht überspringen.
 Ohne sie kann man nicht unterscheiden zwischen "meine Änderung hat etwas kaputt gemacht" und "es war schon vorher kaputt".
 Das ist die geschlossene Schleife, die Brownfield-Änderungen sicher macht.
 ====
+
+=== Was das LLM rekonstruieren kann -- und was nicht
+
+Ein kontrolliertes Experiment (Dokumentation aus einem Greenfield-Projekt löschen und aus dem Code wieder erzeugen) zeigte:
+
+*Aus dem Code ableitbar:* funktionale Anforderungen (21 vs. 7 im Original), Akzeptanzkriterien (69 vs. 40), Building-Block-Views, Glossar (31 Begriffe vs. 2 Platzhalter), Sicherheitsmechanismen, Crosscutting Concepts.
+
+*NICHT aus dem Code ableitbar:* Business Context, Design Rationale (das ADR-"Warum"), *Priorisierung* von Qualitätszielen, Stakeholder-Belange, geplante Features, Performance-Budgets, Tutorials, Review-Ergebnisse.
+
+Semantic Anchors haben in diesem Workflow eine doppelte Funktion: *Prompt-Kompression* (ein 69-Zeilen-Prompt erzeugte 3.850 Zeilen korrekt strukturierter Dokumentation) und *Zerlegungs-Heuristik* ("arc42" erzeugt 12 MECE-Subfragen ohne weitere Anweisungen).
+
+=== Spec-Drift und Abgleich
+
+Selbst in gut dokumentierten Projekten driftet die Spezifikation vom Code weg. Das Implementierungs-LLM ergänzt Security-Hardening, Validierungsregeln und Edge Cases, die nie in der ursprünglichen Spec standen. Das ist kein Disziplinproblem -- es ist eine strukturelle Eigenschaft des Workflows.
+
+Die Lösung: regelmäßiger *Spec-Reconciliation*. Den Reverse-Engineering-Prompt gegen den aktuellen Code laufen lassen und gegen die bestehende Spec diffen. Der Diff zeigt neue Anforderungen (im Code, nicht in der Spec), verändertes Verhalten (auseinandergedriftet) und tote Spec (dokumentiert, aber entfernt).
+
+Drei natürliche Trigger-Punkte: vor einem Release, nach einem Security-Review, vor einem Onboarding.
 
 == Phase 1-12: Der Standard-Workflow
 
@@ -142,9 +245,17 @@ Stabiler Code, den niemand anfasst, braucht keine Specs.
 |`Analyze the codebase in [path]. Identify bounded contexts using DDD. List name, responsibility, entities, interfaces.`
 |link:#/anchor/domain-driven-design[DDD]
 
-|Reverse-Engineering
-|`Read the code in [path]. Extract existing behavior as Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions, Business Rules.`
+|Theory Recovery (Phase 1)
+|`You have access to [bounded context path]. No documentation exists. Build a Question Tree by recursively refining 5 questions: Problem/Users, Specification, Architecture, Quality Goals, Risks. Each leaf: [ANSWERED] with code evidence or [OPEN] with Category and Ask role.`
+|link:#/anchor/arc42[arc42], link:#/anchor/cockburn-use-cases[Cockburn], link:#/anchor/iso-25010[ISO 25010], link:#/anchor/nygard-adrs[Nygard ADR]
+
+|Team Answers
+|OPEN_QUESTIONS.adoc nach Ask-Rolle ans Team verteilen. Typisch 10-15 Fragen.
 |{empty}--
+
+|Theory Recovery (Phase 2)
+|`Synthesize documentation from the Question Tree and team answers. Every claim references a Q-ID. Mark team input with (team answer).`
+|link:#/spec-driven-development[Spec-Driven Workflow]
 
 |Basis-Tests
 |`Write tests for the Use Cases in [spec file]. Each test references its Use Case ID. Do not change production code.`
@@ -152,6 +263,10 @@ Stabiler Code, den niemand anfasst, braucht keine Specs.
 
 |Weiter
 |Ab hier dem link:#/spec-driven-development[Standard-Workflow] ab Schritt 3 (PRD) oder Schritt 8 (Implementierung) folgen, je nachdem ob neue Features oder Bugs bearbeitet werden.
+|{empty}--
+
+|Reconciliation
+|`Compare existing spec in [path] against current code. Report: NEW (in code, not in spec), CHANGED (diverged), DEAD (in spec, not in code). Do not modify existing files.`
 |{empty}--
 |===
 
@@ -168,3 +283,6 @@ Wenn das System nicht gebaut oder gestartet werden kann, liegt ein anderes Probl
 * Simon Martinelli, https://unifiedprocess.ai/[AI Unified Process] -- der Bounded-Context-Ansatz für Spec-Driven Development in bestehenden Systemen.
 * Eric Evans, https://www.domainlanguage.com/ddd/[Domain-Driven Design] -- das grundlegende Werk zu Bounded Contexts und strategischem Design.
 * Michael Feathers, _Working Effectively with Legacy Code_ -- Techniken zum Aufbau von Testabdeckung in Systemen ohne Tests.
+* Peter Naur, "Programming as Theory Building" (1985) -- argumentiert, dass Programmieren der Aufbau eines mentalen Modells ("Theorie") ist, das sich nicht vollständig in Dokumentation einfangen lässt. Socratic Code-Theory Recovery prüft diese Behauptung im Kontext von LLM-generiertem Code.
+* link:#/brownfield-experiment-report[Brownfield Experiment Report] -- kontrolliertes Experiment: Dokumentation aus einem Greenfield-Projekt löschen, aus Code regenerieren, vergleichen. Vollständige Methodik und Befunde.
+* link:#/brownfield-fair-comparison[Fair Comparison Report] -- drei Ansätze (Direct, Socratic, Two-Phase) mit identischen Team-Antworten. Misst den strukturellen Wert des Question Tree.
