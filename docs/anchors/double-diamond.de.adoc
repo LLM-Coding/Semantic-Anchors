@@ -1,0 +1,57 @@
+= Double Diamond
+:categories: problem-solving, requirements-engineering
+:roles: ux-designer, product-owner, business-analyst, consultant
+:related: jobs-to-be-done, problem-space-nvc, xy-problem, mvp
+:proponents: UK Design Council
+:tags: design-thinking, problem-framing, divergent-convergent, ux, innovation
+:tier: 3
+
+[%collapsible]
+====
+Voller Name:: Double Diamond Design Process Model
+
+Auch bekannt als:: 4Ds-Modell, Design Council Double Diamond
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwei Diamanten, vier Phasen:: *Discover → Define → Develop → Deliver*. Jeder Diamant ist ein Divergent-Konvergent-Zyklus. Der erste Diamant erforscht und rahmt das *Problem*; der zweite Diamant erforscht und liefert die *Lösung*.
+
+Discover (divergent, Problemraum):: Breite Recherche — Interviews, Beobachtung, Immersion, Datenanalyse. Ziel: das Verständnis dessen, was tatsächlich passiert, weit aufmachen, nicht zu Ursachen springen.
+
+Define (konvergent, Problemraum):: Erkenntnisse zu einer scharfen Problemformulierung verdichten. Der berühmte Slogan: *"Lösen wir das richtige Problem?"* — der Diamant endet mit einem lohnenswerten Problem, nicht mit einer Feature-Liste.
+
+Develop (divergent, Lösungsraum):: Viele Kandidaten-Lösungen erzeugen — Skizzen, Prototypen, Co-Design-Workshops. Erst weit auffächern, dann verengen; Lösungs-Fixierung widerstehen.
+
+Deliver (konvergent, Lösungsraum):: Testen, verfeinern, ausliefern. Das gewählte Konzept wird bis zur Produktionsreife iteriert; gescheiterte Kandidaten werden explizit beerdigt statt herumzuliegen.
+
+Das Richtige entwerfen, dann es richtig entwerfen:: Die kanonische Zusammenfassung. Der erste Diamant adressiert "das Richtige" (lohnenswertes Problem); der zweite adressiert "richtig entwerfen" (Lösung, die funktioniert).
+
+Divergent vor konvergent:: Eine harte Disziplin in jeder Phase. Verfrühte Konvergenz — das offensichtliche Problem oder die offensichtliche Lösung wählen — ist der Fehlermodus, den das Modell verhindern soll.
+
+Iteration, kein Wasserfall:: Die Diamanten sind nicht strikt linear. Erkenntnisse im Develop schicken das Team häufig zurück in Discover oder Define. Das 2019er *Framework for Innovation*-Update machte das explizit.
+
+Mindsets und Prinzipien:: Der Design Council ergänzt die vier Phasen mit vier Prinzipien (Put people first, Communicate visually and inclusively, Collaborate and co-create, Iterate, iterate, iterate) — die Diamanten ohne das Mindset sind nur Prozess-Theater.
+
+
+Schlüsselvertreter:: UK Design Council (Ursprung 2005; erweitert als *Framework for Innovation* 2019). Aufbauend auf der Divergent-Konvergent-Tradition von J.P. Guilford (1956) und Béla H. Bánáthy.
+
+Historischer Kontext:: Vom Design Council 2005 entwickelt nach einer Untersuchung, wie führende Design-Organisationen tatsächlich arbeiten. Das 2019er Update reframte es als System-Innovations-Rahmenwerk und ergänzte explizit Prinzipien, Rollen und Iterations-Pfeile. Breit verbreitet in UX, Service Design, Government Innovation (UK GDS, NHS, Danish Mindlab) und Design-Ausbildung.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Rahmung von UX- oder Service-Design-Projekten, wenn das Team Gefahr läuft, zu Lösungen zu springen
+* Innovations-Workshops und Design Sprints — die Diamanten geben ein geteiltes visuelles Modell, um divergente und konvergente Arbeit zu sequenzieren
+* Discovery-Phasen der Produktentwicklung, in denen das Problem selbst noch nicht gut verstanden ist
+* Beim Lehren von Design Thinking — das Modell ist konkreter als abstraktes "Design Thinking", weil es die vier Moves benennt
+* Wenn Stakeholdern, die direkt zur Auslieferung springen wollen, vermittelt werden muss, *warum* eine Discovery-Phase nötig ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<jobs-to-be-done,Jobs to be Done>> — schärft das *Define*-Ergebnis durch Umformulierung von Kundenbedürfnissen als funktionale, emotionale und soziale Jobs
+* <<problem-space-nvc,Problem Space (NVC)>> — trennt Bedürfnisse von Strategien; ergänzt die Disziplin des ersten Diamanten, im Problemraum zu bleiben
+* <<xy-problem,XY Problem>> — Anti-Muster, das der erste Diamant verhindern soll (Y lösen, ohne X verstanden zu haben)
+* <<mvp,MVP>> — das *Deliver*-Ergebnis wird oft als MVP zugeschnitten, um die gewählte Lösung gegen das definierte Problem zu validieren
+====
