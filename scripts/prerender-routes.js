@@ -73,6 +73,13 @@ const ROUTES = [
       'Three approaches (Direct, Socratic, Two-Phase) compared with identical team answers. Measures the structural value of the Question Tree, not the answers.',
   },
   {
+    path: '/socratic-recovery-skill',
+    fragment: 'docs/socratic-recovery-skill.html',
+    title: 'Socratic Code-Theory Recovery Skill — Semantic Anchors',
+    description:
+      'Installable Claude Code Skill that packages the brownfield documentation-recovery workflow. Two-phase Question Tree with [ANSWERED]/[OPEN] leaves, Q-ID traceability. Install on Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Amazon Kiro.',
+  },
+  {
     path: '/contracts',
     fragment: 'docs/contracts.html',
     title: 'Semantic Contracts — Semantic Anchors',

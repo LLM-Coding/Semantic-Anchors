@@ -57,6 +57,11 @@ Vor jeder Änderung muss die "Theorie" des Bounded Context rekonstruiert werden 
 
 Diese Phase nutzt *Socratic Code-Theory Recovery*: einen zweiphasigen Workflow, der Verständnis durch rekursive Frageverfeinerung aufbaut, bevor Dokumentation erzeugt wird.
 
+[TIP]
+====
+Die Prompts dieser Phase sind auch als installierbarer Claude Code Skill verpackt. Installations-Anleitungen für Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI und Amazon Kiro auf der link:#/socratic-recovery-skill[Skill-Seite Socratic Code-Theory Recovery].
+====
+
 === Phase 1: Question Tree aufbauen
 
 Mit fünf Top-Level-Fragen zum Bounded Context starten und sie rekursiv zerlegen. Semantic Anchors als Zerlegungs-Heuristiken einsetzen: *arc42* für Architektur, *Cockburn Use Cases* für Spezifikation, *ISO 25010* für Qualität, *Nygard ADRs* für Entscheidungen.

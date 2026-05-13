@@ -4,6 +4,11 @@ Ralf D. Müller
 :toc:
 :toc-placement: preamble
 
+[NOTE]
+====
+*Working on an existing codebase?* This page describes the greenfield workflow — starting from a blank slate. For brownfield projects (existing code, missing or untrusted documentation), see the link:#/brownfield[Brownfield Workflow] and the installable link:#/socratic-recovery-skill[Socratic Code-Theory Recovery Skill].
+====
+
 == Introduction
 
 This document describes how to build production-quality software with AI agents, guided by link:#/[Semantic Anchors].

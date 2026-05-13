@@ -104,6 +104,15 @@ renderFile(
 )
 
 renderFile(
+  path.join(ROOT, 'docs/socratic-recovery-skill.adoc'),
+  path.join(WEB_DOCS, 'socratic-recovery-skill.html')
+)
+renderFile(
+  path.join(ROOT, 'docs/socratic-recovery-skill.de.adoc'),
+  path.join(WEB_DOCS, 'socratic-recovery-skill.de.html')
+)
+
+renderFile(
   path.join(ROOT, 'docs/anchor-evaluations.adoc'),
   path.join(WEB_DOCS, 'anchor-evaluations.html')
 )

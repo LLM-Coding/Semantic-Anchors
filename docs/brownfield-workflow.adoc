@@ -59,6 +59,11 @@ Before changing anything, you need to recover the "theory" of the bounded contex
 
 This phase uses *Socratic Code-Theory Recovery*: a two-phase workflow that builds understanding through recursive question refinement before producing documentation.
 
+[TIP]
+====
+The prompts in this phase are also packaged as an installable Claude Code Skill. See link:#/socratic-recovery-skill[the Socratic Code-Theory Recovery Skill page] for installation instructions across Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, and Amazon Kiro.
+====
+
 === Phase 1: Build the Question Tree
 
 Start with five high-level questions about the bounded context and decompose them recursively. Use Semantic Anchors as decomposition guides: *arc42* for architecture, *Cockburn Use Cases* for specification, *ISO 25010* for quality, *Nygard ADRs* for decisions.

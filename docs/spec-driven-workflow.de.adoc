@@ -6,6 +6,11 @@
 :toclevels: 3
 :source-highlighter: highlight.js
 
+[NOTE]
+====
+*Bestehender Codebase?* Diese Seite beschreibt den Greenfield-Workflow — Start auf der grünen Wiese. Für Brownfield-Projekte (existierender Code, fehlende oder unzuverlässige Dokumentation) siehe den link:#/brownfield[Brownfield-Workflow] und den installierbaren link:#/socratic-recovery-skill[Socratic Code-Theory Recovery Skill].
+====
+
 == Einleitung
 
 Dieses Dokument beschreibt, wie man mit KI-Agenten produktionsreife Software entwickelt, gesteuert durch link:#/[Semantic Anchors].
