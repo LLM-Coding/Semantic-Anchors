@@ -34,7 +34,6 @@ Install a small, stable set of semantic anchors so coding agents start each sess
 
 5. Add native behavior only where needed.
 - For Claude Code, add `--claude-hook` if the user wants a SessionStart hook that re-injects the selected block at the beginning of each session.
-- The Claude marketplace plugin can also ship a separate first-start `SessionStart` hook that asks whether onboarding should run when no semantic-anchor block exists yet.
 - For Gemini CLI, either rely on the shared file chosen by the installer or mirror the same block into `GEMINI.md` if the team wants native Gemini memory.
 - For GitHub Copilot, mirror the same block into `.github/copilot-instructions.md` only when chat or review workflows also need it.
 - For Cursor, the shared file is usually enough; use `.cursor/rules` only when path-scoped behavior is required.
