@@ -12,6 +12,20 @@ license: MIT
 
 Reverse-engineer a bounded context into documentation without hallucinating the parts the code cannot tell you.
 
+## On invocation
+
+When this skill is invoked:
+
+1. **Check whether the user named a bounded context.** Look at the same message that invoked the skill and at the immediately preceding messages. A valid bounded-context pointer is a path (relative or absolute) to a directory, plus a short human-readable name for what the context is (e.g. `src/auth`, "Authentication"). If both are present, proceed to Phase 1.
+
+2. **If no bounded context is named, ask for it before doing anything else.** Do not start Phase 1 against the current working directory by default — Phase 1 produces files (`QUESTION_TREE.adoc`, `OPEN_QUESTIONS.adoc`) and running it on the wrong directory wastes work. Ask exactly:
+
+   > Which bounded context should I apply Socratic Code-Theory Recovery to? Give me a directory path (the bounded context's code root) and a short human-readable name. If you want the whole current repo treated as one bounded context, say so explicitly.
+
+3. **Once you have the pointer, run Phase 1.** Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md) — substitute `[bounded context path]` with the user's path. Do not change the leaf classification, Q-ID scheme, or output files.
+
+4. **Stop after Phase 1.** Phase 2 must wait for the team to answer the `[OPEN]` leaves in `OPEN_QUESTIONS.adoc`. Tell the user that Phase 1 is complete, where the two output files are, and what the next manual step is — do not proceed to Phase 2 in the same session unless the user explicitly asks.
+
 ## When to use this skill
 
 Use this skill on a brownfield codebase when:
