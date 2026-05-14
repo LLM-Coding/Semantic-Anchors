@@ -209,6 +209,8 @@ include::anchors/what-would-chuck-norris-do.adoc[leveloffset=+2]
 
 == Requirements Engineering
 
+include::anchors/cockburn-use-cases.adoc[leveloffset=+2]
+
 include::anchors/ears-requirements.adoc[leveloffset=+2]
 
 include::anchors/invest.adoc[leveloffset=+2]

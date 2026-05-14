@@ -30,8 +30,6 @@ const BASE_URL = 'https://llm-coding.github.io/Semantic-Anchors'
 // shell to non-JS crawlers and claude.ai fetchers.
 //
 // Excluded on purpose:
-// - /contracts     — interactive JS page (localStorage, client-side data
-//                    fetching); no static content worth serving
 // - /anchor/:id    — rendered per entry via the anchor loop below
 //
 // priority: 1.0 homepage, 0.8 top-level content, 0.7 contributing/meta, 0.6 anchors
@@ -40,6 +38,10 @@ const PAGES = [
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
   { path: '/spec-driven-development', priority: '0.8', changefreq: 'monthly' },
   { path: '/brownfield', priority: '0.8', changefreq: 'monthly' },
+  { path: '/brownfield-experiment-report', priority: '0.7', changefreq: 'monthly' },
+  { path: '/brownfield-fair-comparison', priority: '0.7', changefreq: 'monthly' },
+  { path: '/socratic-recovery-skill', priority: '0.7', changefreq: 'monthly' },
+  { path: '/contracts', priority: '0.7', changefreq: 'monthly' },
   { path: '/evaluations', priority: '0.8', changefreq: 'monthly' },
   { path: '/all-anchors', priority: '0.8', changefreq: 'weekly' },
   { path: '/agentskill', priority: '0.7', changefreq: 'monthly' },

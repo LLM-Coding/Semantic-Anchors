@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 136 well-defined terms, methodologies, and frameworks
+> 137 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -8,6 +8,39 @@
 ---
 
 # About Semantic Anchors
+
+++++
+<figure class="youtube-facade-wrapper">
+  <button
+    type="button"
+    class="youtube-facade"
+    data-video-id="Q_DWMayAQEQ"
+    data-video-title="LLM Coding with Semantic Anchors: From Vibe Coding to a Real Java App with Ralf D. Müller"
+    aria-label="Load and play video: LLM Coding with Semantic Anchors — From Vibe Coding to a Real Java App. YouTube only loads on click."
+  >
+    <img
+      src="https://i.ytimg.com/vi/Q_DWMayAQEQ/maxresdefault.jpg"
+      alt=""
+      loading="lazy"
+    />
+    <span class="youtube-facade-play">
+      <span class="youtube-facade-play-icon">
+        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </span>
+    </span>
+    <span class="youtube-facade-title">
+      <strong>LLM Coding with Semantic Anchors — From Vibe Coding to a Real Java App</strong>
+      <em>YouTube only loads on click (GDPR)</em>
+    </span>
+  </button>
+  <figcaption>
+    Two-hour live coding session with Johannes Rabauer and Ralf D. Müller (May 2026).
+    Read Johannes' <a href="https://rabauer.dev/en/blog/semantic-anchors/" target="_blank" rel="noopener noreferrer">session summary on rabauer.dev</a>.
+  </figcaption>
+</figure>
+++++
 
 ## What are Semantic Anchors?
 
@@ -304,6 +337,23 @@ https://github.com/LLM-Coding/Semantic-Anchors
 ---
 
 Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic-Anchors/)
+
+---
+
+## Documentation
+
+- [About](https://llm-coding.github.io/Semantic-Anchors/about): What semantic anchors are, why they matter for LLM communication, and how the catalog is curated.
+- [Spec-Driven Development](https://llm-coding.github.io/Semantic-Anchors/spec-driven-development): Greenfield workflow — from requirements to specification to implementation, powered by semantic anchors.
+- [Brownfield Workflow](https://llm-coding.github.io/Semantic-Anchors/brownfield): Applying semantic anchors to brownfield codebases using a bounded-context approach with reverse-engineered safety nets.
+- [Brownfield Experiment 1a Report](https://llm-coding.github.io/Semantic-Anchors/brownfield-experiment-report): Controlled experiment: delete documentation from a greenfield project, regenerate from code, compare. Methodology, findings, and the Brownfield Preparation Checklist.
+- [Brownfield Fair Comparison](https://llm-coding.github.io/Semantic-Anchors/brownfield-fair-comparison): Three approaches (Direct, Socratic, Two-Phase) compared with identical team answers. Measures the structural value of the Question Tree, not the answers.
+- [Socratic Code-Theory Recovery Skill](https://llm-coding.github.io/Semantic-Anchors/socratic-recovery-skill): Installable Claude Code Skill that packages the brownfield documentation-recovery workflow as a two-phase Question Tree with Q-ID traceability.
+- [Semantic Contracts](https://llm-coding.github.io/Semantic-Anchors/contracts): Composable contracts that define what terms mean in your project — pick and copy into your AGENTS.md or CLAUDE.md.
+- [AgentSkill](https://llm-coding.github.io/Semantic-Anchors/agentskill): The semantic-anchor-translator AgentSkill — install semantic anchors into Claude Code, Codex, Cursor, and other coding agents.
+- [Evaluations](https://llm-coding.github.io/Semantic-Anchors/evaluations): Multiple-choice evaluations of semantic anchor recognition across 10 LLMs.
+- [Full Reference](https://llm-coding.github.io/Semantic-Anchors/all-anchors): All semantic anchors in one long document — readable offline, linkable, easy to Ctrl-F.
+- [Changelog](https://llm-coding.github.io/Semantic-Anchors/changelog): Chronological record of all semantic anchors added to the catalog.
+- [Contributing](https://llm-coding.github.io/Semantic-Anchors/contributing): How to propose new semantic anchors, quality criteria, and the contribution workflow.
 
 ---
 
@@ -3381,6 +3431,55 @@ GPT-5.3 Codex activates the decisiveness signal but **not** the character voice 
 
 ## Requirements Engineering
 
+### Cockburn Use Cases
+
+***Full Name***: Cockburn Use Cases (Writing Effective Use Cases)
+
+***Also known as***: Fully Dressed Use Cases, Goal-Level Use Cases, Cockburn Format
+
+[discrete]
+## **Core Concepts**:
+
+***Fully Dressed Format***
+A structured textual template for describing system behavior from the actor's perspective. Each use case includes: Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario (numbered steps), Extensions (alternative/failure paths with step references), Postconditions (success guarantee and minimal guarantee), and Technology & Data Variations.
+
+***Goal Levels***
+Three abstraction levels that organise use cases into a hierarchy:
+
+* **Summary** (Kite/Cloud) — business-process-level goals spanning multiple user sessions. Example: "Manage customer lifecycle."
+* **User Goal** (Sea Level) — the sweet spot: one actor, one sitting, one measurable outcome. Example: "Place an order." Most use cases live here.
+* **Subfunction** (Fish/Clam) — steps that support a user goal but are not goals in themselves. Example: "Authenticate user." Extract only when reused across multiple user-goal use cases.
+
+***Scope***
+Defines the system boundary — what is inside the "design scope" and what is an external actor. Cockburn uses icons (a box for the system, a person for actors) to make the boundary visual. Getting scope right prevents use cases from being either too vague (organisational scope) or too detailed (component scope).
+
+***Actor-Goal List***
+The discovery technique: list every actor and every goal they have against the system. This produces a candidate use case list before writing any prose. The goal level test: "Does the actor go home happy if this goal is achieved?" filters out subfunctions masquerading as user goals.
+
+**What Cockburn does **not** prescribe**
+Cockburn's format is deliberately **prose-based and notation-agnostic**. It does not mandate Activity Diagrams, Gherkin, EARS, or any formal syntax. Those are complementary representations that can be layered on top — Activity Diagrams for visual flow, Gherkin for executable acceptance criteria, EARS for structured requirement statements.
+
+***Key Proponents***: Alistair Cockburn (_Writing Effective Use Cases_, Addison-Wesley, 2001). The book remains the canonical reference; Cockburn also contributed to the Agile Manifesto and Crystal methodologies.
+
+[discrete]
+## **When to Use**:
+
+* Discovering what a system needs to do before deciding how to build it — the Actor-Goal List is a fast, structured brainstorm
+* Structuring requirements conversations with stakeholders who think in scenarios, not features
+* Decomposing a large system into manageable behavioural units at the right granularity (goal-level test)
+* Brownfield theory recovery: reconstructing what a system does by writing use cases from observed behaviour
+* Feeding downstream artifacts: each use case becomes a natural unit for Activity Diagrams, Gherkin scenarios, and test plans
+* Complementing arc42: use cases populate Section 6 (Runtime View) and inform Section 3 (Context and Scope)
+
+[discrete]
+## **Related Anchors**:
+
+* Gherkin - Executable acceptance criteria that can be derived from each extension path in a use case
+* BDD Given/When/Then - Formalises the scenario steps that Cockburn describes in prose
+* EARS Requirements - Structured syntax for individual requirement statements; complements Cockburn's scenario-level structure
+* arc42 - Use cases feed Section 6 (Runtime View) and inform Section 3 (Context and Scope)
+* ISO 25010 - Quality goals that use case extensions should address (error handling, performance, security)
+
 ### EARS-Requirements
 
 ***Full Name***: Easy Approach to Requirements Syntax
@@ -5537,11 +5636,14 @@ Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts
 ## Specification
 
 When we talk about a "specification" or "spec", we mean:
-- Use Cases with Trigger, Main Flow, Alternative Flows, Postconditions, and Business Rules (BR-IDs)
+- Persona Use Cases in Cockburn's Fully Dressed format (Primary Actor, Trigger, Main Success Scenario, Extensions, Postconditions) at User Goal level, with Business Rules (BR-IDs)
+- System Use Cases for each technical interface (API endpoint, CLI command, event, file format): input/validation, processing, output/status codes, error responses
 - Activity Diagrams for all flows (not just the happy path)
 - Acceptance criteria in Gherkin format (Given/When/Then)
+- Individual requirements in EARS syntax where applicable (When/While/If/Shall)
+- Supplementary Specifications as needed: Entity Model, State Machines, Interface Contracts, Validation Rules
 
-*Referenced anchors: gherkin, bdd-given-when-then*
+*Referenced anchors: cockburn-use-cases, gherkin, bdd-given-when-then, ears-requirements*
 
 ## Requirements Discovery
 
@@ -5623,6 +5725,18 @@ Documentation follows Docs-as-Code according to Ralf D. Müller:
 - Plain English according to Strunk & White (or Gutes Deutsch nach Wolf Schneider)
 
 *Referenced anchors: docs-as-code, plain-english-strunk-white, gutes-deutsch-wolf-schneider*
+
+## Socratic Code Theory Recovery
+
+Recover a program's "theory" (Naur 1985) from source code through recursive question refinement.
+- Start with 5 high-level questions: Problem/Users, Specification, Architecture, Quality Goals, Risks
+- Decompose each question using Semantic Anchors as guides: arc42 (12 sub-questions), Cockburn Use Cases, ISO 25010, Nygard ADRs
+- Each leaf is either `[ANSWERED]` (with code evidence) or `[OPEN]` (with Category, Ask role, and why unanswerable)
+- The Question Tree is the primary artifact; documentation is synthesized from answered leaves
+- Open Questions are the handoff document: routed by role (Product Owner, Architect, Developer, Domain Expert, Operations)
+- Two-phase workflow: Phase 1 builds the tree, team answers Open Questions, Phase 2 produces documentation with Q-ID traceability
+
+*Referenced anchors: socratic-method, arc42, iso-25010, adr-according-to-nygard, mental-model-according-to-naur*
 
 ## Concise Response (TLDR)
 
