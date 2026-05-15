@@ -520,3 +520,56 @@ body {
   height: 100%;
   border: 0;
 }
+
+/* AsciiDoc section anchors: visible chain icon on hover, like the default
+   Asciidoctor stylesheet. Asciidoctor renders <a class="anchor" href="#id">
+   before each heading when sectanchors:true is set in render-docs.js. */
+.asciidoc-content h1,
+.asciidoc-content h2,
+.asciidoc-content h3,
+.asciidoc-content h4,
+.asciidoc-content h5,
+.asciidoc-content h6 {
+  position: relative;
+  scroll-margin-top: 5rem;
+}
+
+.asciidoc-content h1 > a.anchor,
+.asciidoc-content h2 > a.anchor,
+.asciidoc-content h3 > a.anchor,
+.asciidoc-content h4 > a.anchor,
+.asciidoc-content h5 > a.anchor,
+.asciidoc-content h6 > a.anchor {
+  position: absolute;
+  left: -1.25rem;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 1.25rem;
+  opacity: 0;
+  text-decoration: none;
+  color: var(--color-text-secondary, #6b7280);
+  transition: opacity 0.15s ease-in-out;
+}
+
+.asciidoc-content h1:hover > a.anchor,
+.asciidoc-content h2:hover > a.anchor,
+.asciidoc-content h3:hover > a.anchor,
+.asciidoc-content h4:hover > a.anchor,
+.asciidoc-content h5:hover > a.anchor,
+.asciidoc-content h6:hover > a.anchor,
+.asciidoc-content a.anchor:focus {
+  opacity: 1;
+}
+
+.asciidoc-content a.anchor::before {
+  content: '\00a7'; /* § — same convention as the default Asciidoctor stylesheet */
+  font-size: 0.85em;
+  font-weight: normal;
+}
+
+.asciidoc-content a.anchor:hover {
+  color: var(--color-link, #2563eb);
+  text-decoration: none;
+}

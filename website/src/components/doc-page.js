@@ -64,6 +64,18 @@ export async function loadDocContent(docPath) {
     // Attach click-to-load handlers for any YouTube placeholders in the doc.
     // Keeps us DSGVO-compliant: YouTube is only contacted after user consent.
     hydrateYouTubeFacades(contentEl)
+
+    // Restore deep-link scrolling: if the URL has a hash (e.g. #phase-0-5),
+    // the browser tried to scroll there before the SPA replaced #doc-content
+    // with this newly fetched HTML. Re-scroll to the target now that the
+    // section exists in the DOM.
+    if (window.location.hash) {
+      const id = decodeURIComponent(window.location.hash.slice(1))
+      const target = document.getElementById(id)
+      if (target) {
+        target.scrollIntoView({ behavior: 'auto', block: 'start' })
+      }
+    }
   } catch (error) {
     console.error('Failed to load documentation:', error)
     contentEl.innerHTML = `
