@@ -5659,11 +5659,18 @@ Clarify requirements using the Socratic Method:
 
 Architecture documentation follows arc42 with all 12 sections.
 
-Diagrams are required per section:
-- §3.1 Business context: business-process / value-flow diagram
-- §3.2 Technical context: classical context diagram (PlantUML/Mermaid)
-- §5 Building blocks: C4 Level 1 (System Context), Level 2 (Container), and Level 3 (Component) where decomposition adds clarity
-- §6 Runtime view: sequence or activity diagram per named scenario
+Sections are numbered as in arc42 itself: `1.`, `1.1`, `2.`, … No `§` prefix in the output (the `§` symbol is used in this contract only to reference arc42 sections, not as the prescribed notation).
+
+File formats:
+- arc42, ADRs, PRD, specification documents: AsciiDoc (.adoc), per the Docs-as-Code contract.
+- Use-case files and entity model retain whatever format the AIUP-reverse-engineer skill produces (Markdown today).
+- Question Tree and Open Questions: AsciiDoc (.adoc).
+
+Diagrams are required per section, all as PlantUML:
+- 3.1 Business context: business-process / value-flow diagram (BPMN or annotated sequence).
+- 3.2 Technical context: classical context diagram showing the system as a black box with all external systems and protocols labelled.
+- 5.1 / 5.2 / 5.3 Building blocks: C4 model using the C4-PlantUML standard library (`!include` C4_Context / C4_Container / C4_Component) with the proper stereotypes (`Person`, `System`, `Container`, `Component`, `Rel`). Generic `box`/`rectangle` shapes do not satisfy this requirement.
+- 6 Runtime view: PlantUML sequence diagram per named scenario.
 
 Decisions:
 - Every architecture decision documented as an ADR according to Nygard (Context, Decision, Status, Consequences).
@@ -5747,6 +5754,7 @@ Documentation follows Docs-as-Code according to Ralf D. Müller:
 - AsciiDoc as format, PlantUML for inline diagrams, built by docToolchain
 - Version-controlled, peer-reviewed, and built automatically
 - Plain English according to Strunk & White (or Gutes Deutsch nach Wolf Schneider)
+- Projects following this contract include the `dtcw` wrapper and `docToolchainConfig.groovy` so PlantUML / AsciiDoc actually render.
 
 *Referenced anchors: docs-as-code, plain-english-strunk-white, gutes-deutsch-wolf-schneider*
 
