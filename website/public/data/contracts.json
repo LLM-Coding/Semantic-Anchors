@@ -25,11 +25,22 @@
     "id": "architecture-documentation",
     "title": "Architecture Documentation",
     "titleDe": "Architekturdokumentation",
-    "description": "How we document architecture with ADRs and decision evaluation",
-    "descriptionDe": "Wie wir Architektur mit ADRs und Entscheidungsbewertung dokumentieren",
+    "description": "How we document architecture with diagrams, ADRs, and decision evaluation",
+    "descriptionDe": "Wie wir Architektur mit Diagrammen, ADRs und Entscheidungsbewertung dokumentieren",
     "anchors": ["arc42", "c4-diagrams", "adr-according-to-nygard", "pugh-matrix"],
-    "template": "Architecture documentation follows arc42 with all 12 sections.\n- C4 diagrams (PlantUML) for visualization at four abstraction levels\n- Every architecture decision documented as an ADR according to Nygard (Context, Decision, Status, Consequences)\n- Each ADR includes a Pugh Matrix with 3-point scale (-1, 0, +1) evaluating alternatives against quality goals",
-    "templateDe": "Architekturdokumentation folgt arc42 mit allen 12 Abschnitten.\n- C4-Diagramme (PlantUML) zur Visualisierung auf vier Abstraktionsebenen\n- Jede Architekturentscheidung als ADR nach Nygard dokumentiert (Kontext, Entscheidung, Status, Konsequenzen)\n- Jedes ADR enthält eine Pugh-Matrix mit 3-Punkt-Skala (-1, 0, +1) zur Bewertung von Alternativen gegen Qualitätsziele",
+    "template": "Architecture documentation follows arc42 with all 12 sections.\n\nDiagrams are required per section:\n- §3.1 Business context: business-process / value-flow diagram\n- §3.2 Technical context: classical context diagram (PlantUML/Mermaid)\n- §5 Building blocks: C4 Level 1 (System Context), Level 2 (Container), and Level 3 (Component) where decomposition adds clarity\n- §6 Runtime view: sequence or activity diagram per named scenario\n\nDecisions:\n- Every architecture decision documented as an ADR according to Nygard (Context, Decision, Status, Consequences).\n- Each ADR includes a Pugh Matrix with 3-point scale (-1, 0, +1) evaluating alternatives against quality goals.\n- When the rationale cannot be confirmed by a stakeholder, ADR Status is \"Accepted (inferred)\" and Pugh cells requiring team judgment are marked `?` rather than filled with assumptions.\n\nCrosscutting concepts (§8) are listed in the separate \"Crosscutting Concepts\" contract.",
+    "templateDe": "Architekturdokumentation folgt arc42 mit allen 12 Abschnitten.\n\nDiagramme sind pro Abschnitt verpflichtend:\n- §3.1 Fachlicher Kontext: Geschäftsprozess- / Wertfluss-Diagramm\n- §3.2 Technischer Kontext: klassisches Kontextdiagramm (PlantUML/Mermaid)\n- §5 Bausteinsicht: C4 Level 1 (System Context), Level 2 (Container) und Level 3 (Component), wo Zerlegung Klarheit bringt\n- §6 Laufzeitsicht: Sequenz- oder Aktivitätsdiagramm pro benanntem Szenario\n\nEntscheidungen:\n- Jede Architekturentscheidung als ADR nach Nygard dokumentiert (Kontext, Entscheidung, Status, Konsequenzen).\n- Jedes ADR enthält eine Pugh-Matrix mit 3-Punkt-Skala (-1, 0, +1) zur Bewertung von Alternativen gegen Qualitätsziele.\n- Wenn die Begründung nicht von einem Stakeholder bestätigt werden kann, lautet der ADR-Status \"Accepted (inferred)\", und Pugh-Zellen, die Team-Urteil erfordern, werden mit `?` markiert statt mit Annahmen gefüllt.\n\nQuerschnittliche Konzepte (§8) sind im separaten Contract \"Crosscutting Concepts\" beschrieben.",
+    "category": "architecture"
+  },
+  {
+    "id": "crosscutting-concepts",
+    "title": "Crosscutting Concepts",
+    "titleDe": "Querschnittliche Konzepte",
+    "description": "Baseline §8 concepts every system documents: threat model, security, test, observability, error handling",
+    "descriptionDe": "Basis-§8-Konzepte, die jedes System dokumentiert: Threat Model, Security, Test, Observability, Error Handling",
+    "anchors": ["arc42", "stride", "testing-pyramid"],
+    "template": "arc42 leaves §8 open; we require these five baseline crosscutting concepts in this order:\n\n- §8.1 Threat Model: assets, actors, attack surfaces, prioritized threats (STRIDE or equivalent). Threats receive IDs (T-001…) so §8.2 mitigations can trace to them.\n- §8.2 Security Concept: authentication, authorization, secrets, sandbox boundaries, supply chain, crypto. Every mitigation references the T-IDs it addresses.\n- §8.3 Test Concept: test pyramid, layer-to-coverage mapping, traceability from Use Cases / Business Rules to tests.\n- §8.4 Observability Concept: logs, metrics, traces, and audit trails — what is captured, retention, alerting thresholds.\n- §8.5 Error Handling Concept: failure propagation (retry, circuit breaker, fallback), user-facing communication, recovery after partial failure.\n\nDomain-specific concepts (persistence, i18n, accessibility, configuration, performance) are added as additional §8.x sections only when the system actually has those concerns.",
+    "templateDe": "arc42 lässt §8 offen; wir verlangen diese fünf querschnittlichen Basis-Konzepte in dieser Reihenfolge:\n\n- §8.1 Threat Model: Assets, Akteure, Angriffsflächen, priorisierte Bedrohungen (STRIDE oder Äquivalent). Bedrohungen erhalten IDs (T-001…), damit §8.2-Mitigationen darauf verweisen können.\n- §8.2 Security-Konzept: Authentifizierung, Autorisierung, Secrets, Sandbox-Grenzen, Supply Chain, Kryptografie. Jede Mitigation referenziert die T-IDs, die sie adressiert.\n- §8.3 Test-Konzept: Testpyramide, Mapping Schicht → Coverage, Traceability von Use Cases / Business Rules zu Tests.\n- §8.4 Observability-Konzept: Logs, Metriken, Traces und Audit-Trails — was erfasst wird, Aufbewahrung, Alarmschwellen.\n- §8.5 Fehlerbehandlungs-Konzept: Fehlerausbreitung (Retry, Circuit Breaker, Fallback), Kommunikation zum Nutzer, Wiederherstellung nach Teilausfall.\n\nDomänenspezifische Konzepte (Persistenz, i18n, Barrierefreiheit, Konfiguration, Performance) werden nur als zusätzliche §8.x-Abschnitte aufgenommen, wenn das System diese Belange tatsächlich hat.",
     "category": "architecture"
   },
   {
@@ -38,7 +49,13 @@
     "titleDe": "Schichtgrenzen",
     "description": "How we handle boundaries between layers",
     "descriptionDe": "Wie wir Grenzen zwischen Schichten handhaben",
-    "anchors": ["clean-architecture", "hexagonal-architecture", "domain-driven-design", "solid-dip", "solid-isp"],
+    "anchors": [
+      "clean-architecture",
+      "hexagonal-architecture",
+      "domain-driven-design",
+      "solid-dip",
+      "solid-isp"
+    ],
     "template": "At every layer boundary:\n- Expose only well-defined DTOs and contracts — never domain entities\n- Use explicit mapping at every seam\n- Apply Anti-Corruption Layers when integrating external systems\n- Dependency direction points inward (DIP)",
     "templateDe": "An jeder Schichtgrenze:\n- Nur definierte DTOs und Contracts exponieren — niemals Domain-Entitäten\n- Explizites Mapping an jeder Nahtstelle\n- Anti-Corruption-Layer bei Integration externer Systeme\n- Abhängigkeitsrichtung zeigt nach innen (DIP)",
     "category": "architecture"
@@ -60,7 +77,12 @@
     "titleDe": "Nächstes Feature",
     "description": "The implementation loop for each issue",
     "descriptionDe": "Der Implementierungs-Loop für jedes Issue",
-    "anchors": ["tdd-london-school", "tdd-chicago-school", "definition-of-done", "conventional-commits"],
+    "anchors": [
+      "tdd-london-school",
+      "tdd-chicago-school",
+      "definition-of-done",
+      "conventional-commits"
+    ],
     "template": "For each issue:\n- Create a feature branch for the EPIC\n- Select next issue from backlog (respect dependencies)\n- Analyze and document analysis as a comment on the issue\n- Implement using TDD (London or Chicago School as appropriate)\n- Each test references its Use Case ID for traceability\n- Commit with Conventional Commits, reference issue number\n- Check if spec or architecture docs need updating\n- When EPIC is complete, create a Pull Request",
     "templateDe": "Für jedes Issue:\n- Feature-Branch für das EPIC erstellen\n- Nächstes Issue aus dem Backlog wählen (Abhängigkeiten beachten)\n- Analysieren und Analyse als Kommentar am Issue dokumentieren\n- Mit TDD implementieren (London oder Chicago School je nach Kontext)\n- Jeder Test referenziert seine Use-Case-ID für Rückverfolgbarkeit\n- Mit Conventional Commits committen, Issue-Nummer referenzieren\n- Prüfen ob Spec oder Architektur-Docs aktualisiert werden müssen\n- Wenn EPIC fertig, Pull Request erstellen",
     "category": "development"
@@ -104,7 +126,13 @@
     "titleDe": "Sokratische Code-Theorie-Rekonstruktion",
     "description": "Recover a program's 'theory' from source code through recursive question refinement",
     "descriptionDe": "Die 'Theorie' eines Programms aus dem Quellcode durch rekursive Fragenverfeinerung rekonstruieren",
-    "anchors": ["socratic-method", "arc42", "iso-25010", "adr-according-to-nygard", "mental-model-according-to-naur"],
+    "anchors": [
+      "socratic-method",
+      "arc42",
+      "iso-25010",
+      "adr-according-to-nygard",
+      "mental-model-according-to-naur"
+    ],
     "template": "Recover a program's \"theory\" (Naur 1985) from source code through recursive question refinement.\n- Start with 5 high-level questions: Problem/Users, Specification, Architecture, Quality Goals, Risks\n- Decompose each question using Semantic Anchors as guides: arc42 (12 sub-questions), Cockburn Use Cases, ISO 25010, Nygard ADRs\n- Each leaf is either `[ANSWERED]` (with code evidence) or `[OPEN]` (with Category, Ask role, and why unanswerable)\n- The Question Tree is the primary artifact; documentation is synthesized from answered leaves\n- Open Questions are the handoff document: routed by role (Product Owner, Architect, Developer, Domain Expert, Operations)\n- Two-phase workflow: Phase 1 builds the tree, team answers Open Questions, Phase 2 produces documentation with Q-ID traceability",
     "templateDe": "Die \"Theorie\" eines Programms (Naur 1985) aus dem Quellcode durch rekursive Fragenverfeinerung rekonstruieren.\n- Start mit 5 High-Level-Fragen: Problem/Nutzer, Spezifikation, Architektur, Qualitätsziele, Risiken\n- Jede Frage mit Semantic Anchors als Leitfaden zerlegen: arc42 (12 Unterfragen), Cockburn Use Cases, ISO 25010, Nygard ADRs\n- Jedes Blatt ist entweder `[BEANTWORTET]` (mit Code-Evidenz) oder `[OFFEN]` (mit Kategorie, zuständiger Rolle und Begründung warum nicht beantwortbar)\n- Der Fragenbaum ist das primäre Artefakt; Dokumentation wird aus beantworteten Blättern synthetisiert\n- Offene Fragen sind das Übergabedokument: nach Rolle geroutet (Product Owner, Architekt, Entwickler, Domänenexperte, Operations)\n- Zwei-Phasen-Workflow: Phase 1 baut den Baum, Team beantwortet offene Fragen, Phase 2 erzeugt Dokumentation mit Q-ID-Rückverfolgbarkeit",
     "category": "documentation"

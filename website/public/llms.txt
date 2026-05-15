@@ -5658,11 +5658,35 @@ Clarify requirements using the Socratic Method:
 ## Architecture Documentation
 
 Architecture documentation follows arc42 with all 12 sections.
-- C4 diagrams (PlantUML) for visualization at four abstraction levels
-- Every architecture decision documented as an ADR according to Nygard (Context, Decision, Status, Consequences)
-- Each ADR includes a Pugh Matrix with 3-point scale (-1, 0, +1) evaluating alternatives against quality goals
+
+Diagrams are required per section:
+- §3.1 Business context: business-process / value-flow diagram
+- §3.2 Technical context: classical context diagram (PlantUML/Mermaid)
+- §5 Building blocks: C4 Level 1 (System Context), Level 2 (Container), and Level 3 (Component) where decomposition adds clarity
+- §6 Runtime view: sequence or activity diagram per named scenario
+
+Decisions:
+- Every architecture decision documented as an ADR according to Nygard (Context, Decision, Status, Consequences).
+- Each ADR includes a Pugh Matrix with 3-point scale (-1, 0, +1) evaluating alternatives against quality goals.
+- When the rationale cannot be confirmed by a stakeholder, ADR Status is "Accepted (inferred)" and Pugh cells requiring team judgment are marked `?` rather than filled with assumptions.
+
+Crosscutting concepts (§8) are listed in the separate "Crosscutting Concepts" contract.
 
 *Referenced anchors: arc42, c4-diagrams, adr-according-to-nygard, pugh-matrix*
+
+## Crosscutting Concepts
+
+arc42 leaves §8 open; we require these five baseline crosscutting concepts in this order:
+
+- §8.1 Threat Model: assets, actors, attack surfaces, prioritized threats (STRIDE or equivalent). Threats receive IDs (T-001…) so §8.2 mitigations can trace to them.
+- §8.2 Security Concept: authentication, authorization, secrets, sandbox boundaries, supply chain, crypto. Every mitigation references the T-IDs it addresses.
+- §8.3 Test Concept: test pyramid, layer-to-coverage mapping, traceability from Use Cases / Business Rules to tests.
+- §8.4 Observability Concept: logs, metrics, traces, and audit trails — what is captured, retention, alerting thresholds.
+- §8.5 Error Handling Concept: failure propagation (retry, circuit breaker, fallback), user-facing communication, recovery after partial failure.
+
+Domain-specific concepts (persistence, i18n, accessibility, configuration, performance) are added as additional §8.x sections only when the system actually has those concerns.
+
+*Referenced anchors: arc42, stride, testing-pyramid*
 
 ## Layer Boundaries
 

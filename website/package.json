@@ -7,7 +7,7 @@
     "sync-anchors": "node ../scripts/sync-anchors.js",
     "predev": "node ../scripts/sync-anchors.js",
     "dev": "vite",
-    "prebuild": "node ../scripts/sync-anchors.js && node ../scripts/render-docs.js",
+    "prebuild": "node ../scripts/sync-anchors.js && node ../scripts/render-docs.js && node ../scripts/render-contracts.js",
     "build": "vite build && node ../scripts/prerender-routes.js",
     "preview": "vite preview",
     "test": "vitest run",
