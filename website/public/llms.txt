@@ -5657,41 +5657,29 @@ Clarify requirements using the Socratic Method:
 
 ## Architecture Documentation
 
-Architecture documentation follows arc42 with all 12 sections.
+Architecture documentation follows arc42 — all 12 chapters, numbered as in arc42 (Chapter 3, Chapter 5.1).
 
-Sections are numbered as in arc42 itself: `1.`, `1.1`, `2.`, … No `§` prefix in the output (the `§` symbol is used in this contract only to reference arc42 sections, not as the prescribed notation).
+Format is AsciiDoc, per the Docs-as-Code contract. Reverse-engineered use-case files and the entity model keep whatever format their source skill emits.
 
-File formats:
-- arc42, ADRs, PRD, specification documents: AsciiDoc (.adoc), per the Docs-as-Code contract.
-- Use-case files and entity model retain whatever format the AIUP-reverse-engineer skill produces (Markdown today).
-- Question Tree and Open Questions: AsciiDoc (.adoc).
+Every context, building-block and runtime chapter carries at least one diagram. Diagrams are PlantUML, not Mermaid; building blocks use C4 drawn with the C4-PlantUML library, not generic boxes.
 
-Diagrams are required per section, all as PlantUML:
-- 3.1 Business context: business-process / value-flow diagram (BPMN or annotated sequence).
-- 3.2 Technical context: classical context diagram showing the system as a black box with all external systems and protocols labelled.
-- 5.1 / 5.2 / 5.3 Building blocks: C4 model using the C4-PlantUML standard library (`!include` C4_Context / C4_Container / C4_Component) with the proper stereotypes (`Person`, `System`, `Container`, `Component`, `Rel`). Generic `box`/`rectangle` shapes do not satisfy this requirement.
-- 6 Runtime view: PlantUML sequence diagram per named scenario.
+Decisions are ADRs (Nygard) with a Pugh Matrix. When the rationale is unconfirmed, ADR Status is "Accepted (inferred)" and Pugh cells needing team judgment are marked `?` rather than guessed.
 
-Decisions:
-- Every architecture decision documented as an ADR according to Nygard (Context, Decision, Status, Consequences).
-- Each ADR includes a Pugh Matrix with 3-point scale (-1, 0, +1) evaluating alternatives against quality goals.
-- When the rationale cannot be confirmed by a stakeholder, ADR Status is "Accepted (inferred)" and Pugh cells requiring team judgment are marked `?` rather than filled with assumptions.
-
-Crosscutting concepts (§8) are listed in the separate "Crosscutting Concepts" contract.
+Crosscutting concepts (Chapter 8): see the "Crosscutting Concepts" contract.
 
 *Referenced anchors: arc42, c4-diagrams, adr-according-to-nygard, pugh-matrix*
 
 ## Crosscutting Concepts
 
-arc42 leaves §8 open; we require these five baseline crosscutting concepts in this order:
+arc42 leaves Chapter 8 open. We require five baseline crosscutting concepts, in this order:
 
-- §8.1 Threat Model: assets, actors, attack surfaces, prioritized threats (STRIDE or equivalent). Threats receive IDs (T-001…) so §8.2 mitigations can trace to them.
-- §8.2 Security Concept: authentication, authorization, secrets, sandbox boundaries, supply chain, crypto. Every mitigation references the T-IDs it addresses.
-- §8.3 Test Concept: test pyramid, layer-to-coverage mapping, traceability from Use Cases / Business Rules to tests.
-- §8.4 Observability Concept: logs, metrics, traces, and audit trails — what is captured, retention, alerting thresholds.
-- §8.5 Error Handling Concept: failure propagation (retry, circuit breaker, fallback), user-facing communication, recovery after partial failure.
+- 8.1 Threat Model — STRIDE; threats get IDs (T-001…).
+- 8.2 Security — every mitigation references the T-IDs it closes.
+- 8.3 Test — testing pyramid; tests trace to Use Cases and Business Rules.
+- 8.4 Observability — logs, metrics, traces, audit trails.
+- 8.5 Error Handling — retry, circuit breaker, fallback, recovery.
 
-Domain-specific concepts (persistence, i18n, accessibility, configuration, performance) are added as additional §8.x sections only when the system actually has those concerns.
+Add further Chapter 8.x concepts (persistence, i18n, accessibility, configuration, performance) only when the system actually has that concern.
 
 *Referenced anchors: arc42, stride, testing-pyramid*
 
