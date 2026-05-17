@@ -6263,7 +6263,7 @@ Document the result as a PRD (problem, goals, personas, success criteria, scope)
 
 Architecture documentation follows arc42.
 
-Every context, building-block and runtime chapter carries at least one diagram. Diagrams are PlantUML, not Mermaid; building blocks use C4 with the C4-PlantUML standard library (local include, not the remote URL — Kroki cannot fetch it), not generic boxes.
+Every context, building-block and runtime chapter carries at least one diagram. Diagrams are PlantUML, not Mermaid; building blocks use C4 via PlantUML's bundled C4-PlantUML standard library — the `!include <C4/...>` stdlib form (angle brackets), never the remote `https://` URL and never vendored file copies. Not generic boxes.
 
 Decisions are ADRs (Nygard) with a 3-point Pugh Matrix (-1/0/+1). When the rationale is unconfirmed, ADR Status is "Accepted (inferred)" and Pugh cells needing team judgment are marked `?` rather than guessed.
 
