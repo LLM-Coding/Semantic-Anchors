@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 137 well-defined terms, methodologies, and frameworks
+> 152 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -2660,6 +2660,52 @@ A class should have only one reason to change. Each module or class should be re
 * Constructivist learning theory
 * Critical thinking pedagogy
 
+### XY Problem
+
+***Also known as***: Solution Fixation, Asking the Wrong Question
+
+[discrete]
+## **Core Concepts**:
+
+***X is the Real Problem***: The underlying goal the asker actually wants to achieve
+
+***Y is the Attempted Solution***: The approach the asker has chosen, often based on an incomplete model of X
+
+***The Question Hides X***: The asker phrases their request as "How do I do Y?" — X is never stated, only assumed by the asker
+
+***Solution Fixation***: Commitment to Y obscures whether Y solves X at all, and may rule out simpler approaches
+
+***Goal-Step Confusion***: Conflating "what I want" with "the steps I think will get me there"
+
+***Recognition Heuristic***: Y looks unusual, brittle, or disproportionate to the questioner's apparent expertise — usually a sign that X is hidden
+
+***Resolution by Probing***: Ask "What are you actually trying to accomplish?" — surface X, then propose solutions for X (which may or may not include Y)
+
+***Asker's Discipline***: State X first, then your attempted Y, then the specific blocker — this lets the helper validate the whole chain
+
+***Key Proponents***: Mark Jason Dominus (coined the term in a 2001 post to comp.lang.perl.misc), Eric S. Raymond ("How To Ask Questions The Smart Way", 2001 — "describe the goal, not the step")
+
+***Historical Context***: Crystallized in Usenet and IRC help culture of the early 2000s; canonical reference at https://xyproblem.info/ and Greg's Wiki (mywiki.wooledge.org/XyProblem); now part of the standard vocabulary on Stack Overflow, Hacker News, and software help channels.
+
+[discrete]
+## **When to Use**:
+
+* As a helper, when a question feels strange, over-specific, or asks for an awkward technical workaround — pause and ask for the underlying goal
+* In LLM dialogues, to break out of solution-fixation when a model keeps trying to make Y work
+* In requirements clarification, when a stakeholder demands a specific feature that looks like a workaround for an unstated need
+* In code review, when a change looks like a hack — check whether the wrong problem is being solved
+* In support tickets and bug reports, to redirect from "this UI doesn't let me do Y" toward "what task X were you doing?"
+* As an asker, to discipline yourself to state the goal before the attempt
+
+[discrete]
+## **Related Anchors**:
+
+* Socratic Method — questioning to surface the underlying problem
+* BLUF — the asker's analogue: lead with the goal, not the step
+* Problem Space (NVC) — distinguish needs from strategies, the same X/Y move from a Nonviolent Communication frame
+
+***Counter-example***: Concrete reproduction steps for a confirmed bug — the steps **are** the problem, not a workaround for it.
+
 ---
 
 ## Documentation
@@ -3077,6 +3123,47 @@ Let's solve this step by step:
 Therefore: [Conclusion]
 ```
 
+### Decisional Balance Sheet
+
+***Also known as***: Benjamin Franklin Analysis, Moral Algebra, Pros-and-Cons Sheet
+
+[discrete]
+## **Core Concepts**:
+
+***Four-Cell Matrix***: The full Janis & Mann form has four categories of consequence for each alternative — **utilitarian gains/losses for self**, **utilitarian gains/losses for significant others**, **self-approval/disapproval**, and **approval/disapproval from others**. Stretches "pros and cons" beyond instrumental outcomes into identity and social cost.
+
+***Simplified Two-Column Form***: The everyday "pros vs cons" list popularised by Benjamin Franklin (1772 letter to Joseph Priestley). Strictly a degenerate case of the four-cell matrix — useful for quick decisions, lossy for complex ones.
+
+***Weighting***: Each entry gets a numeric weight reflecting its importance. The decision is **not** a vote count — the discipline is to make trade-offs explicit, not to mechanise the choice.
+
+***Resolving Ambivalence***: The artifact's primary purpose is **not** arithmetic but surfacing concerns the decider has not yet articulated. Listing the cons of a tempting option, or the pros of the rejected one, breaks the "all pros, no cons" framing that drives impulsive decisions.
+
+***Decisional Conflict***: Janis & Mann's parent theory; high-stakes decisions produce stress that distorts judgment. The balance sheet is one of several debiasing techniques alongside vigilant information search and contingency planning.
+
+***Motivational Interviewing Variant***: In the Prochaska–DiClemente **Stages of Change** model and Miller & Rollnick's **Motivational Interviewing**, the balance sheet is used to elicit change-talk: the client **says** the cons of staying the same and the pros of changing — moving them through ambivalence rather than persuading them.
+
+***Limits***: The model is **deliberative**, not intuitive. It works poorly under time pressure and for decisions dominated by uncertainty (where Pugh Matrix or scenario-based methods fit better). It also doesn't surface options that aren't on the list — separate from the option-generation step.
+
+***Key Proponents***: Irving Janis & Leon Mann ("Decision Making: A Psychological Analysis of Conflict, Choice, and Commitment", 1977 — the formal four-cell model). Benjamin Franklin (1772 letter, "moral algebra" — the informal pros/cons ancestor). William R. Miller & Stephen Rollnick ("Motivational Interviewing", 1991) for the clinical adaptation.
+
+***Historical Context***: Franklin's pros/cons letter is one of the earliest documented decision-aid techniques in the Western tradition. Janis & Mann turned it into a research instrument in the 1970s; the simplified two-column form has spread through self-help, coaching, and Motivational Interviewing into mainstream use. Now a staple of decision coaching, financial advisory, and health-behaviour-change interventions.
+
+[discrete]
+## **When to Use**:
+
+* Personal or career decisions where the alternatives are roughly comparable and the deciding factor is the decider's own clarity
+* Coaching conversations where the client is **stuck in ambivalence** — the four-cell version surfaces concerns the simple pros/cons list misses
+* Pre-mortem variant: pre-listing the "approval/disapproval from others" cell often predicts political resistance the team forgot to address
+* Motivational Interviewing settings — health behaviour, addiction recovery, career changes
+* Decision documentation in low-formality contexts where a full ADR is overkill but "we considered the alternatives" must be visible
+
+[discrete]
+## **Related Anchors**:
+
+* Pugh Matrix — scores alternatives against weighted criteria; complement when uncertainty or technical trade-offs dominate over personal/social cost
+* ADR according to Nygard — captures architecture decisions with Context/Decision/Consequences; the balance sheet feeds the Consequences section
+* MoSCoW — prioritisation among items chosen **after** the decision is made; the balance sheet helps decide **whether** to do the work at all
+
 ### Devil's Advocate
 
 ***Full Name***: Devil's Advocate (Latin: **Advocatus Diaboli**)
@@ -3131,6 +3218,54 @@ Therefore: [Conclusion]
 I propose [idea/design/decision].
 Play devil's advocate: What are the strongest arguments against this approach?
 ```
+
+### Double Diamond
+
+***Full Name***: Double Diamond Design Process Model
+
+***Also known as***: 4Ds Model, Design Council Double Diamond
+
+[discrete]
+## **Core Concepts**:
+
+***Two Diamonds, Four Phases***: **Discover → Define → Develop → Deliver**. Each diamond is one divergent-convergent cycle. The first diamond explores and frames the **problem**; the second diamond explores and ships the **solution**.
+
+***Discover (Divergent, Problem Space)***: Broad research — interviews, observation, immersion, data analysis. Goal: widen the understanding of what's actually going on, not jump to causes.
+
+***Define (Convergent, Problem Space)***: Synthesize findings into a sharp problem statement. The famous slogan: **"Are we solving the right problem?"** — the diamond ends with a problem worth solving, not a list of features.
+
+***Develop (Divergent, Solution Space)***: Generate many candidate solutions — sketches, prototypes, co-design workshops. Diverge widely before narrowing; resist solution fixation.
+
+***Deliver (Convergent, Solution Space)***: Test, refine, ship. The chosen concept is iterated until it's production-ready; failed candidates are explicitly killed rather than left lingering.
+
+***Design the Right Thing, Then Design the Thing Right***: The canonical summary. The first diamond addresses "right thing" (problem worth solving); the second addresses "thing right" (solution that works).
+
+***Divergent Before Convergent***: A hard discipline at every phase. Premature convergence — picking the obvious problem or obvious solution — is the failure mode the model is designed to prevent.
+
+***Iteration, Not Waterfall***: The diamonds are not strictly linear. Learnings in Develop frequently send the team back to Discover or Define. The 2019 **Framework for Innovation** update made this explicit.
+
+***Mindsets and Principles***: The Design Council pairs the four phases with four principles (Put people first, Communicate visually and inclusively, Collaborate and co-create, Iterate, iterate, iterate) — the diamonds without the mindset is just process theater.
+
+***Key Proponents***: UK Design Council (originally published 2005; expanded as **Framework for Innovation** in 2019). Built on the divergent-convergent tradition of J.P. Guilford (1956) and Béla H. Bánáthy.
+
+***Historical Context***: Developed by the Design Council in 2005 after research into how leading design organizations actually worked. The 2019 update reframed it as a system-level innovation framework, adding the principles, key roles, and explicit iteration arrows. Adopted broadly in UX, service design, government innovation (UK GDS, NHS, Danish Mindlab), and design education.
+
+[discrete]
+## **When to Use**:
+
+* Framing UX or service design projects when the team is at risk of jumping to solutions
+* Innovation workshops and design sprints — the diamonds give a shared visual model for sequencing divergent and convergent work
+* Discovery phases of product development when the problem itself is not yet well understood
+* Teaching design thinking — the model is more concrete than abstract "design thinking" because it names the four moves
+* Communicating **why** a discovery phase is necessary to stakeholders who want to skip straight to delivery
+
+[discrete]
+## **Related Anchors**:
+
+* Jobs to be Done — sharpens the **Define** output by reframing customer needs as functional, emotional, and social jobs
+* Problem Space (NVC) — separates needs from strategies; complements the first-diamond discipline of staying in problem space
+* XY Problem — anti-pattern that the first diamond is designed to prevent (solving Y before understanding X)
+* MVP — the **Deliver** output is often shaped as an MVP to validate the chosen solution against the defined problem
 
 ### Feynman Technique
 
@@ -3427,6 +3562,52 @@ GPT-5.3 Codex activates the decisiveness signal but **not** the character voice 
 * YAGNI - Both resist ceremony and speculative complexity
 * Occam's Razor - Occam selects the most parsimonious **explanation**; WWCND commits to the most direct **response**
 
+### XY Problem
+
+***Also known as***: Solution Fixation, Asking the Wrong Question
+
+[discrete]
+## **Core Concepts**:
+
+***X is the Real Problem***: The underlying goal the asker actually wants to achieve
+
+***Y is the Attempted Solution***: The approach the asker has chosen, often based on an incomplete model of X
+
+***The Question Hides X***: The asker phrases their request as "How do I do Y?" — X is never stated, only assumed by the asker
+
+***Solution Fixation***: Commitment to Y obscures whether Y solves X at all, and may rule out simpler approaches
+
+***Goal-Step Confusion***: Conflating "what I want" with "the steps I think will get me there"
+
+***Recognition Heuristic***: Y looks unusual, brittle, or disproportionate to the questioner's apparent expertise — usually a sign that X is hidden
+
+***Resolution by Probing***: Ask "What are you actually trying to accomplish?" — surface X, then propose solutions for X (which may or may not include Y)
+
+***Asker's Discipline***: State X first, then your attempted Y, then the specific blocker — this lets the helper validate the whole chain
+
+***Key Proponents***: Mark Jason Dominus (coined the term in a 2001 post to comp.lang.perl.misc), Eric S. Raymond ("How To Ask Questions The Smart Way", 2001 — "describe the goal, not the step")
+
+***Historical Context***: Crystallized in Usenet and IRC help culture of the early 2000s; canonical reference at https://xyproblem.info/ and Greg's Wiki (mywiki.wooledge.org/XyProblem); now part of the standard vocabulary on Stack Overflow, Hacker News, and software help channels.
+
+[discrete]
+## **When to Use**:
+
+* As a helper, when a question feels strange, over-specific, or asks for an awkward technical workaround — pause and ask for the underlying goal
+* In LLM dialogues, to break out of solution-fixation when a model keeps trying to make Y work
+* In requirements clarification, when a stakeholder demands a specific feature that looks like a workaround for an unstated need
+* In code review, when a change looks like a hack — check whether the wrong problem is being solved
+* In support tickets and bug reports, to redirect from "this UI doesn't let me do Y" toward "what task X were you doing?"
+* As an asker, to discipline yourself to state the goal before the attempt
+
+[discrete]
+## **Related Anchors**:
+
+* Socratic Method — questioning to surface the underlying problem
+* BLUF — the asker's analogue: lead with the goal, not the step
+* Problem Space (NVC) — distinguish needs from strategies, the same X/Y move from a Nonviolent Communication frame
+
+***Counter-example***: Concrete reproduction steps for a confirmed bug — the steps **are** the problem, not a workaround for it.
+
 ---
 
 ## Requirements Engineering
@@ -3479,6 +3660,54 @@ Cockburn's format is deliberately **prose-based and notation-agnostic**. It does
 * EARS Requirements - Structured syntax for individual requirement statements; complements Cockburn's scenario-level structure
 * arc42 - Use cases feed Section 6 (Runtime View) and inform Section 3 (Context and Scope)
 * ISO 25010 - Quality goals that use case extensions should address (error handling, performance, security)
+
+### Double Diamond
+
+***Full Name***: Double Diamond Design Process Model
+
+***Also known as***: 4Ds Model, Design Council Double Diamond
+
+[discrete]
+## **Core Concepts**:
+
+***Two Diamonds, Four Phases***: **Discover → Define → Develop → Deliver**. Each diamond is one divergent-convergent cycle. The first diamond explores and frames the **problem**; the second diamond explores and ships the **solution**.
+
+***Discover (Divergent, Problem Space)***: Broad research — interviews, observation, immersion, data analysis. Goal: widen the understanding of what's actually going on, not jump to causes.
+
+***Define (Convergent, Problem Space)***: Synthesize findings into a sharp problem statement. The famous slogan: **"Are we solving the right problem?"** — the diamond ends with a problem worth solving, not a list of features.
+
+***Develop (Divergent, Solution Space)***: Generate many candidate solutions — sketches, prototypes, co-design workshops. Diverge widely before narrowing; resist solution fixation.
+
+***Deliver (Convergent, Solution Space)***: Test, refine, ship. The chosen concept is iterated until it's production-ready; failed candidates are explicitly killed rather than left lingering.
+
+***Design the Right Thing, Then Design the Thing Right***: The canonical summary. The first diamond addresses "right thing" (problem worth solving); the second addresses "thing right" (solution that works).
+
+***Divergent Before Convergent***: A hard discipline at every phase. Premature convergence — picking the obvious problem or obvious solution — is the failure mode the model is designed to prevent.
+
+***Iteration, Not Waterfall***: The diamonds are not strictly linear. Learnings in Develop frequently send the team back to Discover or Define. The 2019 **Framework for Innovation** update made this explicit.
+
+***Mindsets and Principles***: The Design Council pairs the four phases with four principles (Put people first, Communicate visually and inclusively, Collaborate and co-create, Iterate, iterate, iterate) — the diamonds without the mindset is just process theater.
+
+***Key Proponents***: UK Design Council (originally published 2005; expanded as **Framework for Innovation** in 2019). Built on the divergent-convergent tradition of J.P. Guilford (1956) and Béla H. Bánáthy.
+
+***Historical Context***: Developed by the Design Council in 2005 after research into how leading design organizations actually worked. The 2019 update reframed it as a system-level innovation framework, adding the principles, key roles, and explicit iteration arrows. Adopted broadly in UX, service design, government innovation (UK GDS, NHS, Danish Mindlab), and design education.
+
+[discrete]
+## **When to Use**:
+
+* Framing UX or service design projects when the team is at risk of jumping to solutions
+* Innovation workshops and design sprints — the diamonds give a shared visual model for sequencing divergent and convergent work
+* Discovery phases of product development when the problem itself is not yet well understood
+* Teaching design thinking — the model is more concrete than abstract "design thinking" because it names the four moves
+* Communicating **why** a discovery phase is necessary to stakeholders who want to skip straight to delivery
+
+[discrete]
+## **Related Anchors**:
+
+* Jobs to be Done — sharpens the **Define** output by reframing customer needs as functional, emotional, and social jobs
+* Problem Space (NVC) — separates needs from strategies; complements the first-diamond discipline of staying in problem space
+* XY Problem — anti-pattern that the first diamond is designed to prevent (solving Y before understanding X)
+* MVP — the **Deliver** output is often shaped as an MVP to validate the chosen solution against the defined problem
 
 ### EARS-Requirements
 
@@ -3549,6 +3778,54 @@ INVEST = **I**ndependent / **N**egotiable / **V**aluable / **E**stimable / **S**
 
 * User Story Mapping
 * MoSCoW
+
+### Kano Model
+
+***Also known as***: Kano Analysis, Kano-Modell, Customer Satisfaction Model
+
+[discrete]
+## **Core Concepts**:
+
+***Two-dimensional Quality***: Customer satisfaction is not the simple inverse of dissatisfaction — they are two separate axes (presence/absence of a feature × resulting satisfaction)
+
+***Five Feature Categories***: Every feature falls into one of five classes that map differently onto the satisfaction curve
+
+***Must-be (Basic, Threshold)***: Expected baseline — absence causes strong dissatisfaction, presence is taken for granted and earns no credit (e.g., car has wheels, app does not lose data)
+
+***One-dimensional (Performance, Linear)***: Satisfaction grows roughly linearly with how well the feature is delivered (e.g., fuel efficiency, response time, battery life)
+
+***Attractive (Excitement, Delighter)***: Unexpected — absence causes no dissatisfaction, presence delights and differentiates (e.g., a thoughtful onboarding gesture, a surprising shortcut)
+
+***Indifferent***: Customer does not care either way — flag for cost reduction
+
+***Reverse***: Presence actually causes dissatisfaction for the target segment — flag for removal or segmentation
+
+***Functional / Dysfunctional Questionnaire***: For each candidate feature, ask the user two paired questions: "How would you feel if this feature were present?" and "How would you feel if it were absent?". The cross-tab of answers maps the feature to one of the five categories
+
+***Time Decay***: Categories migrate over time. Today's **Delighter** becomes tomorrow's **Performer** and eventually a **Must-be** as the market matures (mobile camera, HTTPS, dark mode)
+
+***Key Proponent***: Noriaki Kano (Tokyo University of Science), originally published in 1984 in the Japanese journal **Hinshitsu** ("Quality")
+
+***Historical Context***: Developed in the context of Japanese quality management, alongside Total Quality Management and the Kaizen movement; widely adopted in product management, UX research, and requirements engineering since the late 1990s.
+
+[discrete]
+## **When to Use**:
+
+* Prioritising features in a product backlog beyond raw business value
+* Distinguishing the "non-negotiables" (Must-be) from the "wow features" (Delighter) before estimation
+* User research where you need to understand **why** a feature affects satisfaction, not just whether users like it
+* MVP scoping: ensure all **Must-be** features are covered before investing in **Delighters**
+* Product strategy reviews: spot **Delighters** that have decayed into **Performers** or **Must-be** and update positioning
+* Combining with **MoSCoW Method** — Must-be → Must, Performance → Should, Delighter → Could
+
+[discrete]
+## **Related Anchors**:
+
+* MoSCoW Method — complementary prioritisation lens (organisation-driven), often combined with Kano (customer-driven)
+* Jobs To Be Done — discovery side: what job is the customer hiring the feature for, before classifying its impact
+* EARS Requirements — once a feature is classified as Must-be, EARS gives it the unambiguous wording
+
+***Counter-example***: Pure ROI-based ranking — useful but blind to the asymmetry between dissatisfaction (Must-be) and delight (Attractive). Kano corrects that.
 
 ### MoSCoW
 
@@ -4581,6 +4858,92 @@ Lehman derived eight laws from observing E-type systems, including **Continuing 
 
 * Wardley Mapping
 
+### Decisional Balance Sheet
+
+***Also known as***: Benjamin Franklin Analysis, Moral Algebra, Pros-and-Cons Sheet
+
+[discrete]
+## **Core Concepts**:
+
+***Four-Cell Matrix***: The full Janis & Mann form has four categories of consequence for each alternative — **utilitarian gains/losses for self**, **utilitarian gains/losses for significant others**, **self-approval/disapproval**, and **approval/disapproval from others**. Stretches "pros and cons" beyond instrumental outcomes into identity and social cost.
+
+***Simplified Two-Column Form***: The everyday "pros vs cons" list popularised by Benjamin Franklin (1772 letter to Joseph Priestley). Strictly a degenerate case of the four-cell matrix — useful for quick decisions, lossy for complex ones.
+
+***Weighting***: Each entry gets a numeric weight reflecting its importance. The decision is **not** a vote count — the discipline is to make trade-offs explicit, not to mechanise the choice.
+
+***Resolving Ambivalence***: The artifact's primary purpose is **not** arithmetic but surfacing concerns the decider has not yet articulated. Listing the cons of a tempting option, or the pros of the rejected one, breaks the "all pros, no cons" framing that drives impulsive decisions.
+
+***Decisional Conflict***: Janis & Mann's parent theory; high-stakes decisions produce stress that distorts judgment. The balance sheet is one of several debiasing techniques alongside vigilant information search and contingency planning.
+
+***Motivational Interviewing Variant***: In the Prochaska–DiClemente **Stages of Change** model and Miller & Rollnick's **Motivational Interviewing**, the balance sheet is used to elicit change-talk: the client **says** the cons of staying the same and the pros of changing — moving them through ambivalence rather than persuading them.
+
+***Limits***: The model is **deliberative**, not intuitive. It works poorly under time pressure and for decisions dominated by uncertainty (where Pugh Matrix or scenario-based methods fit better). It also doesn't surface options that aren't on the list — separate from the option-generation step.
+
+***Key Proponents***: Irving Janis & Leon Mann ("Decision Making: A Psychological Analysis of Conflict, Choice, and Commitment", 1977 — the formal four-cell model). Benjamin Franklin (1772 letter, "moral algebra" — the informal pros/cons ancestor). William R. Miller & Stephen Rollnick ("Motivational Interviewing", 1991) for the clinical adaptation.
+
+***Historical Context***: Franklin's pros/cons letter is one of the earliest documented decision-aid techniques in the Western tradition. Janis & Mann turned it into a research instrument in the 1970s; the simplified two-column form has spread through self-help, coaching, and Motivational Interviewing into mainstream use. Now a staple of decision coaching, financial advisory, and health-behaviour-change interventions.
+
+[discrete]
+## **When to Use**:
+
+* Personal or career decisions where the alternatives are roughly comparable and the deciding factor is the decider's own clarity
+* Coaching conversations where the client is **stuck in ambivalence** — the four-cell version surfaces concerns the simple pros/cons list misses
+* Pre-mortem variant: pre-listing the "approval/disapproval from others" cell often predicts political resistance the team forgot to address
+* Motivational Interviewing settings — health behaviour, addiction recovery, career changes
+* Decision documentation in low-formality contexts where a full ADR is overkill but "we considered the alternatives" must be visible
+
+[discrete]
+## **Related Anchors**:
+
+* Pugh Matrix — scores alternatives against weighted criteria; complement when uncertainty or technical trade-offs dominate over personal/social cost
+* ADR according to Nygard — captures architecture decisions with Context/Decision/Consequences; the balance sheet feeds the Consequences section
+* MoSCoW — prioritisation among items chosen **after** the decision is made; the balance sheet helps decide **whether** to do the work at all
+
+### Hoshin Kanri
+
+***Full Name***: Hoshin Kanri (方針管理 — "direction management")
+
+***Also known as***: Policy Deployment, Strategy Deployment, Hoshin Planning
+
+[discrete]
+## **Core Concepts**:
+
+***True North***: The 3-5 year **breakthrough objectives** that define where the organization must be — chosen sparingly so the whole company can pull in the same direction.
+
+***Annual Hoshin***: The 1-year priorities derived from True North. Typically 3-5 organization-wide goals; everything else is "business as usual" and not on the hoshin.
+
+***X-Matrix***: Single-page A3 artifact that links four legs — **long-term strategy**, **annual objectives**, **improvement priorities**, and **metrics/targets** — plus the accountable owners. Correlations between legs are made explicit with symbols (strong/medium/weak).
+
+***Catchball***: Iterative two-way negotiation of goals between levels. Leadership proposes targets; teams respond with "what's possible and what's needed"; the ball passes back and forth until commitments are realistic **and** ambitious. Distinguishes Hoshin Kanri from top-down cascades.
+
+***PDCA for Strategy***: Plan-Do-Check-Act applied to the annual hoshin itself — monthly or quarterly **check** reviews ensure the strategy adapts to reality, not just the tactics.
+
+***Cascade and Alignment***: Each level translates the level above into its own X-Matrix. Vertical alignment is verified at every step; horizontal alignment is verified across peer teams to prevent local optimization.
+
+***Bowling Chart / Hoshin Review***: Monthly status board comparing actual vs target for each KPI; red/yellow/green status forces conversations about countermeasures rather than excuses.
+
+***Few Vital, Not Many Trivial***: A core discipline — restrict the hoshin to the small number of goals that **require** breakthrough thinking. Most organizational work continues outside the hoshin process.
+
+***Key Proponents***: Yoji Akao ("Hoshin Kanri: Policy Deployment for Successful TQM", 1991), Thomas L. Jackson ("Hoshin Kanri for the Lean Enterprise", 2006), Pascal Dennis ("Getting the Right Things Done", 2006)
+
+***Historical Context***: Emerged in Japanese manufacturing in the 1960s; Bridgestone Tire is widely credited with the first formalized use after winning the Deming Prize. Spread through Toyota, Komatsu, and the broader TQM movement; translated to Western practice in the 1980s as part of Lean. Now widely adopted in Lean enterprises, healthcare systems (Virginia Mason), and increasingly in scaled agile contexts.
+
+[discrete]
+## **When to Use**:
+
+* Annual or multi-year strategic planning when alignment across many teams is the critical risk
+* Translating a vision or mission into measurable, accountable work
+* Scaling an organization where local optimization is starting to dominate over global goals
+* Lean transformations — Hoshin Kanri is the strategy-layer counterpart to Kaizen at the operational layer
+* As an alternative to OKRs when the organization needs explicit cause-and-effect links and stronger accountability than quarterly self-set objectives provide
+
+[discrete]
+## **Related Anchors**:
+
+* Kotter's 8-Step Change Model — large-scale transformation framework; Hoshin Kanri is the recurring discipline that operationalizes a Kotter-style vision year after year
+* MoSCoW — tactical prioritization within the hoshin's improvement priorities
+* Kano Model — feature classification that often feeds the customer-facing leg of the X-Matrix
+
 ### Impact Mapping
 
 ***Full Name***: Impact Mapping according to Gojko Adzic
@@ -4651,6 +5014,103 @@ Lehman derived eight laws from observing E-type systems, including **Continuing 
 * Identifying true competition
 * Writing more meaningful user stories
 * Market segmentation based on jobs, not demographics
+
+### Kano Model
+
+***Also known as***: Kano Analysis, Kano-Modell, Customer Satisfaction Model
+
+[discrete]
+## **Core Concepts**:
+
+***Two-dimensional Quality***: Customer satisfaction is not the simple inverse of dissatisfaction — they are two separate axes (presence/absence of a feature × resulting satisfaction)
+
+***Five Feature Categories***: Every feature falls into one of five classes that map differently onto the satisfaction curve
+
+***Must-be (Basic, Threshold)***: Expected baseline — absence causes strong dissatisfaction, presence is taken for granted and earns no credit (e.g., car has wheels, app does not lose data)
+
+***One-dimensional (Performance, Linear)***: Satisfaction grows roughly linearly with how well the feature is delivered (e.g., fuel efficiency, response time, battery life)
+
+***Attractive (Excitement, Delighter)***: Unexpected — absence causes no dissatisfaction, presence delights and differentiates (e.g., a thoughtful onboarding gesture, a surprising shortcut)
+
+***Indifferent***: Customer does not care either way — flag for cost reduction
+
+***Reverse***: Presence actually causes dissatisfaction for the target segment — flag for removal or segmentation
+
+***Functional / Dysfunctional Questionnaire***: For each candidate feature, ask the user two paired questions: "How would you feel if this feature were present?" and "How would you feel if it were absent?". The cross-tab of answers maps the feature to one of the five categories
+
+***Time Decay***: Categories migrate over time. Today's **Delighter** becomes tomorrow's **Performer** and eventually a **Must-be** as the market matures (mobile camera, HTTPS, dark mode)
+
+***Key Proponent***: Noriaki Kano (Tokyo University of Science), originally published in 1984 in the Japanese journal **Hinshitsu** ("Quality")
+
+***Historical Context***: Developed in the context of Japanese quality management, alongside Total Quality Management and the Kaizen movement; widely adopted in product management, UX research, and requirements engineering since the late 1990s.
+
+[discrete]
+## **When to Use**:
+
+* Prioritising features in a product backlog beyond raw business value
+* Distinguishing the "non-negotiables" (Must-be) from the "wow features" (Delighter) before estimation
+* User research where you need to understand **why** a feature affects satisfaction, not just whether users like it
+* MVP scoping: ensure all **Must-be** features are covered before investing in **Delighters**
+* Product strategy reviews: spot **Delighters** that have decayed into **Performers** or **Must-be** and update positioning
+* Combining with **MoSCoW Method** — Must-be → Must, Performance → Should, Delighter → Could
+
+[discrete]
+## **Related Anchors**:
+
+* MoSCoW Method — complementary prioritisation lens (organisation-driven), often combined with Kano (customer-driven)
+* Jobs To Be Done — discovery side: what job is the customer hiring the feature for, before classifying its impact
+* EARS Requirements — once a feature is classified as Must-be, EARS gives it the unambiguous wording
+
+***Counter-example***: Pure ROI-based ranking — useful but blind to the asymmetry between dissatisfaction (Must-be) and delight (Attractive). Kano corrects that.
+
+### Kotter's 8-Step Change Model
+
+***Also known as***: Kotter's 8 Steps for Leading Change, Kotter's Change Process
+
+[discrete]
+## **Core Concepts**:
+
+***Step 1 — Establish a Sense of Urgency***: Surface the threats and opportunities that make change necessary now; without urgency, the organisation defaults to the status quo
+
+***Step 2 — Form a Guiding Coalition***: Assemble a powerful enough cross-functional group with the credibility, authority and energy to lead the effort; lone champions fail
+
+***Step 3 — Develop a Vision and Strategy***: Create a clear, compelling vision of the future state and a strategy to reach it; the vision must be simple enough to communicate in five minutes
+
+***Step 4 — Communicate the Change Vision***: Use every channel and repeat the vision constantly; walk the talk — leadership behaviour speaks louder than memos
+
+***Step 5 — Empower Broad-based Action***: Remove the obstacles that block change — outdated structures, misaligned incentives, fearful middle management; enable people to act on the vision
+
+***Step 6 — Generate Short-term Wins***: Plan, create and visibly celebrate quick, unambiguous improvements within 6–18 months; wins fund credibility and silence sceptics
+
+***Step 7 — Consolidate Gains and Produce More Change***: Use the credibility from short-term wins to tackle bigger systems, structures and policies; do not declare victory too early
+
+***Step 8 — Anchor the Changes in Corporate Culture***: Make the new approaches "the way we do things around here" by tying them to leadership succession, hiring, onboarding and storytelling
+
+***The 8 Errors***: The model is the inversion of the **eight common errors** Kotter identified in failed transformations: complacency, no powerful coalition, underestimating vision, undercommunicating, ignoring obstacles, no short-term wins, premature victory, and not anchoring change in culture
+
+***Linear but Iterative***: Kotter presents the steps as sequential because each step builds on the credibility and infrastructure of the previous ones, but in practice teams loop within and across steps as the change scales
+
+***Key Proponent***: John P. Kotter (Harvard Business School), introduced in the 1995 **Harvard Business Review** article **"Leading Change: Why Transformation Efforts Fail"** and expanded in the 1996 book **Leading Change** (Harvard Business Press)
+
+***Historical Context***: One of the most cited change management frameworks in business literature; widely used in M&A integrations, digital transformations, agile rollouts and culture change programmes; later complemented by Kotter's 2014 **Accelerate** (XLR8), which adds a "dual operating system" of hierarchy plus network for continuous change
+
+[discrete]
+## **When to Use**:
+
+* Planning a non-trivial organisational change (digital transformation, agile rollout, restructuring, M&A integration)
+* Diagnosing why a stalled transformation is stalled — which of the 8 errors is biting?
+* Sequencing communication and intervention activities so that quick wins land before the political resistance forms
+* Stakeholder analysis and coalition building before kicking off a change initiative
+* Reviewing whether a "completed" change is actually anchored in culture, or just a temporary policy
+
+[discrete]
+## **Related Anchors**:
+
+* SWOT — strategic analysis to feed the urgency and vision steps
+* Cynefin Framework — choose the right approach (Clear / Complicated / Complex / Chaotic) for the kind of change you face
+* Wardley Mapping — visualise where change is needed in the value chain before defining the vision
+
+***Counter-example***: Pure top-down mandate ("from Monday we will be agile") — Kotter's whole point is that without urgency, coalition, vision and short-term wins, the mandate produces compliance theatre, not change.
 
 ### Minimum Viable Product (MVP)
 
@@ -5621,6 +6081,145 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * Balancing test types in CI/CD pipelines
 * Evaluating existing test suites
 * Guiding team testing practices
+
+---
+
+## Workflow
+
+### Workflow: Architecture Documentation
+
+[discrete]
+## **Core Concepts**:
+
+***arc42 template***: 12 sections for comprehensive architecture docs
+
+***Docs-as-Code***: Documentation in the repo, versioned, reviewed, CI-built
+
+***ADR according to Nygard***: Lightweight decision records (Context, Decision, Consequences)
+
+***Pugh Matrix***: 3-point scale (-1, 0, +1) for comparing architecture alternatives
+
+***docToolchain***: Gradle-based toolchain for AsciiDoc pipelines
+
+[discrete]
+## **When to Use**:
+
+* Starting a new project that needs architecture documentation
+* Migrating from Confluence/Wiki to Docs-as-Code
+* When architecture decisions need to be traceable
+
+[discrete]
+## **Combined Prompt**:
+
+Create an arc42 architecture documentation using the Docs-as-Code approach. Include ADRs according to Nygard for all key decisions, each with a 3-point (-1, 0, +1) Pugh Matrix comparing alternatives.
+
+### Workflow: Structured Code Review
+
+[discrete]
+## **Core Concepts**:
+
+***SOLID Principles***: Check for SRP, OCP, LSP, ISP, DIP violations
+
+***Clean Architecture***: Verify dependency direction (inward only)
+
+***Conventional Commits***: Commit messages follow type(scope): description
+
+***Fagan Inspection***: Structured review with defined roles and phases
+
+***OWASP Top 10***: Security checklist for common vulnerabilities
+
+[discrete]
+## **When to Use**:
+
+* Pull request reviews
+* Architecture review sessions
+* Security-focused code audits
+
+[discrete]
+## **Combined Prompt**:
+
+Review this code against SOLID Principles. Check that dependencies follow Clean Architecture rules (inward only). Verify commit messages follow Conventional Commits. Flag any OWASP Top 10 security issues.
+
+### Workflow: Requirements to Specification
+
+[discrete]
+## **Core Concepts**:
+
+***User Story Mapping***: Backbone + walking skeleton for release planning
+
+***INVEST Criteria***: Independent, Negotiable, Valuable, Estimable, Small, Testable
+
+***BDD / Gherkin***: Given-When-Then scenarios as executable specifications
+
+***MoSCoW Prioritization***: Must, Should, Could, Won't for scope decisions
+
+***Definition of Done***: Shared checklist for "really done"
+
+[discrete]
+## **When to Use**:
+
+* Starting a new product or major feature
+* When business and dev teams need shared understanding
+* Transitioning from ad-hoc requirements to structured specs
+
+[discrete]
+## **Combined Prompt**:
+
+Create a User Story Map for this feature. Prioritize stories using MoSCoW. For each Must-have story, verify it meets INVEST criteria and write BDD scenarios in Gherkin (Given-When-Then). Define a clear Definition of Done.
+
+### Workflow: Strategic Architecture Analysis
+
+[discrete]
+## **Core Concepts**:
+
+***Wardley Mapping***: Map value chain + evolution for strategic positioning
+
+***Cynefin Framework***: Categorize situation (Simple, Complicated, Complex, Chaotic)
+
+***Morphological Box***: Explore solution space systematically
+
+***ATAM***: Architecture Tradeoff Analysis Method for quality evaluation
+
+***Five Whys***: Root cause analysis for architecture problems
+
+[discrete]
+## **When to Use**:
+
+* Evaluating build-vs-buy decisions
+* Assessing architecture fitness for changing requirements
+* Strategic technology radar reviews
+
+[discrete]
+## **Combined Prompt**:
+
+Analyze this system using Wardley Mapping to understand component evolution. Categorize each challenge using the Cynefin Framework. For complex decisions, use a Morphological Box to explore alternatives, then evaluate tradeoffs with ATAM.
+
+### Workflow: TDD with Clean Architecture
+
+[discrete]
+## **Core Concepts**:
+
+***TDD, London School***: Outside-in, mock-heavy, interface discovery
+
+***Clean Architecture***: Dependency Rule — inner layers don't know outer layers
+
+***SOLID Principles***: SRP, OCP, LSP, ISP, DIP guide class design
+
+***Hexagonal Architecture***: Ports & Adapters separate domain from infrastructure
+
+***Testing Pyramid***: Many unit tests, fewer integration, fewest E2E
+
+[discrete]
+## **When to Use**:
+
+* Building a new service with complex business logic
+* When testability is a primary architecture driver
+* Refactoring a legacy codebase toward clean boundaries
+
+[discrete]
+## **Combined Prompt**:
+
+Implement this feature using TDD London School with Clean Architecture. Start outside-in: write a failing acceptance test, then drive the implementation through the layers. Apply SOLID principles and keep the domain free of framework dependencies.
 
 ---
 

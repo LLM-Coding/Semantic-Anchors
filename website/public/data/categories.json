@@ -94,7 +94,8 @@
     "id": "dialogue-interaction",
     "name": "Dialogue Interaction",
     "anchors": [
-      "socratic-method"
+      "socratic-method",
+      "xy-problem"
     ]
   },
   {
@@ -127,12 +128,15 @@
     "name": "Problem Solving",
     "anchors": [
       "chain-of-thought",
+      "decisional-balance-sheet",
       "devils-advocate",
+      "double-diamond",
       "feynman-technique",
       "five-whys",
       "morphological-box",
       "occams-razor",
-      "what-would-chuck-norris-do"
+      "what-would-chuck-norris-do",
+      "xy-problem"
     ]
   },
   {
@@ -140,8 +144,10 @@
     "name": "Requirements Engineering",
     "anchors": [
       "cockburn-use-cases",
+      "double-diamond",
       "ears-requirements",
       "invest",
+      "kano-model",
       "moscow",
       "prd",
       "problem-space-nvc",
@@ -185,8 +191,12 @@
     "name": "Strategic Planning",
     "anchors": [
       "cynefin-framework",
+      "decisional-balance-sheet",
+      "hoshin-kanri",
       "impact-mapping",
       "jobs-to-be-done",
+      "kano-model",
+      "kotter-8-step-change-model",
       "mvp",
       "pert",
       "pugh-matrix",
@@ -218,6 +228,17 @@
       "test-double-spy",
       "test-double-stub",
       "testing-pyramid"
+    ]
+  },
+  {
+    "id": "workflow",
+    "name": "Workflow",
+    "anchors": [
+      "workflow-architecture-documentation",
+      "workflow-code-review",
+      "workflow-requirements-to-spec",
+      "workflow-strategic-analysis",
+      "workflow-tdd-clean-architecture"
     ]
   }
 ]

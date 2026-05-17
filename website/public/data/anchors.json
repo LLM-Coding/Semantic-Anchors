@@ -450,6 +450,37 @@
     "tier": 3
   },
   {
+    "id": "decisional-balance-sheet",
+    "title": "Decisional Balance Sheet",
+    "categories": [
+      "problem-solving",
+      "strategic-planning"
+    ],
+    "roles": [
+      "consultant",
+      "team-lead",
+      "product-owner",
+      "business-analyst"
+    ],
+    "related": [
+      "pugh-matrix",
+      "adr-according-to-nygard",
+      "moscow"
+    ],
+    "proponents": [
+      "Irving Janis",
+      "Leon Mann"
+    ],
+    "tags": [
+      "decision-making",
+      "pros-cons",
+      "ambivalence",
+      "motivational-interviewing"
+    ],
+    "filePath": "docs/anchors/decisional-balance-sheet.adoc",
+    "tier": 3
+  },
+  {
     "id": "definition-of-done",
     "title": "Definition of Done",
     "categories": [
@@ -550,6 +581,38 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/domain-driven-design.adoc",
+    "tier": 3
+  },
+  {
+    "id": "double-diamond",
+    "title": "Double Diamond",
+    "categories": [
+      "problem-solving",
+      "requirements-engineering"
+    ],
+    "roles": [
+      "ux-designer",
+      "product-owner",
+      "business-analyst",
+      "consultant"
+    ],
+    "related": [
+      "jobs-to-be-done",
+      "problem-space-nvc",
+      "xy-problem",
+      "mvp"
+    ],
+    "proponents": [
+      "UK Design Council"
+    ],
+    "tags": [
+      "design-thinking",
+      "problem-framing",
+      "divergent-convergent",
+      "ux",
+      "innovation"
+    ],
+    "filePath": "docs/anchors/double-diamond.adoc",
     "tier": 3
   },
   {
@@ -1811,6 +1874,36 @@
     "tier": 3
   },
   {
+    "id": "hoshin-kanri",
+    "title": "Hoshin Kanri",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "team-lead",
+      "consultant",
+      "product-owner"
+    ],
+    "related": [
+      "kotter-8-step-change-model",
+      "moscow",
+      "kano-model"
+    ],
+    "proponents": [
+      "Yoji Akao",
+      "Thomas L. Jackson"
+    ],
+    "tags": [
+      "strategy-deployment",
+      "lean",
+      "alignment",
+      "x-matrix",
+      "catchball"
+    ],
+    "filePath": "docs/anchors/hoshin-kanri.adoc",
+    "tier": 3
+  },
+  {
     "id": "iec-61508-sil-levels",
     "title": "IEC 61508 SIL Levels",
     "categories": [
@@ -1944,6 +2037,36 @@
     "tier": 3
   },
   {
+    "id": "kano-model",
+    "title": "Kano Model",
+    "categories": [
+      "strategic-planning",
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "ux-designer",
+      "team-lead"
+    ],
+    "related": [
+      "moscow",
+      "jobs-to-be-done",
+      "ears-requirements"
+    ],
+    "proponents": [
+      "Noriaki Kano"
+    ],
+    "tags": [
+      "customer-satisfaction",
+      "feature-prioritization",
+      "product-management",
+      "requirements"
+    ],
+    "filePath": "docs/anchors/kano-model.adoc",
+    "tier": 3
+  },
+  {
     "id": "kishotenketsu",
     "title": "Kishōtenketsu",
     "categories": [
@@ -2009,6 +2132,35 @@
     ],
     "filePath": "docs/anchors/kiss-principle.adoc",
     "tier": 1
+  },
+  {
+    "id": "kotter-8-step-change-model",
+    "title": "Kotter’s 8-Step Change Model",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "team-lead",
+      "consultant",
+      "product-owner",
+      "business-analyst"
+    ],
+    "related": [
+      "swot",
+      "cynefin-framework",
+      "wardley-mapping"
+    ],
+    "proponents": [
+      "John P. Kotter"
+    ],
+    "tags": [
+      "change-management",
+      "transformation",
+      "leadership",
+      "organizational-change"
+    ],
+    "filePath": "docs/anchors/kotter-8-step-change-model.adoc",
+    "tier": 3
   },
   {
     "id": "lasr",
@@ -3694,6 +3846,140 @@
       "meme-anchor"
     ],
     "filePath": "docs/anchors/what-would-chuck-norris-do.adoc",
+    "tier": 3
+  },
+  {
+    "id": "workflow-architecture-documentation",
+    "title": "Workflow: Architecture Documentation",
+    "categories": [
+      "workflow"
+    ],
+    "roles": [
+      "software-architect",
+      "technical-writer"
+    ],
+    "related": [],
+    "proponents": [
+      "Ralf D. Müller",
+      "Gernot Starke",
+      "Michael Nygard"
+    ],
+    "tags": [],
+    "filePath": "docs/anchors/workflow-architecture-documentation.adoc",
+    "tier": 3
+  },
+  {
+    "id": "workflow-code-review",
+    "title": "Workflow: Structured Code Review",
+    "categories": [
+      "workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "team-lead",
+      "qa-engineer"
+    ],
+    "related": [],
+    "proponents": [
+      "Michael Fagan",
+      "Robert C. Martin"
+    ],
+    "tags": [],
+    "filePath": "docs/anchors/workflow-code-review.adoc",
+    "tier": 3
+  },
+  {
+    "id": "workflow-requirements-to-spec",
+    "title": "Workflow: Requirements to Specification",
+    "categories": [
+      "workflow"
+    ],
+    "roles": [
+      "business-analyst",
+      "product-owner",
+      "qa-engineer"
+    ],
+    "related": [],
+    "proponents": [
+      "Dan North",
+      "Jeff Patton",
+      "Mike Cohn"
+    ],
+    "tags": [],
+    "filePath": "docs/anchors/workflow-requirements-to-spec.adoc",
+    "tier": 3
+  },
+  {
+    "id": "workflow-strategic-analysis",
+    "title": "Workflow: Strategic Architecture Analysis",
+    "categories": [
+      "workflow"
+    ],
+    "roles": [
+      "software-architect",
+      "consultant",
+      "team-lead"
+    ],
+    "related": [],
+    "proponents": [
+      "Simon Wardley",
+      "Fritz Zwicky",
+      "Dave Snowden"
+    ],
+    "tags": [],
+    "filePath": "docs/anchors/workflow-strategic-analysis.adoc",
+    "tier": 3
+  },
+  {
+    "id": "workflow-tdd-clean-architecture",
+    "title": "Workflow: TDD with Clean Architecture",
+    "categories": [
+      "workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [],
+    "proponents": [
+      "Robert C. Martin",
+      "Steve Freeman",
+      "Nat Pryce"
+    ],
+    "tags": [],
+    "filePath": "docs/anchors/workflow-tdd-clean-architecture.adoc",
+    "tier": 3
+  },
+  {
+    "id": "xy-problem",
+    "title": "XY Problem",
+    "categories": [
+      "dialogue-interaction",
+      "problem-solving"
+    ],
+    "roles": [
+      "software-developer",
+      "team-lead",
+      "consultant",
+      "business-analyst"
+    ],
+    "related": [
+      "socratic-method",
+      "bluf",
+      "problem-space-nvc"
+    ],
+    "proponents": [
+      "Mark Jason Dominus",
+      "Eric S. Raymond"
+    ],
+    "tags": [
+      "communication",
+      "troubleshooting",
+      "requirements",
+      "problem-framing",
+      "anti-pattern"
+    ],
+    "filePath": "docs/anchors/xy-problem.adoc",
     "tier": 3
   },
   {

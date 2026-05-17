@@ -7,7 +7,9 @@
       "bluf",
       "chain-of-thought",
       "cockburn-use-cases",
+      "decisional-balance-sheet",
       "domain-driven-design",
+      "double-diamond",
       "ears-requirements",
       "gherkin",
       "gom",
@@ -16,6 +18,8 @@
       "invest",
       "iso-25010",
       "jobs-to-be-done",
+      "kano-model",
+      "kotter-8-step-change-model",
       "linddun",
       "mece",
       "moscow",
@@ -27,7 +31,9 @@
       "regulated-environment",
       "ssot-principle",
       "swot",
-      "user-story-mapping"
+      "user-story-mapping",
+      "workflow-requirements-to-spec",
+      "xy-problem"
     ]
   },
   {
@@ -40,7 +46,9 @@
       "cohesion-criteria",
       "crc-cards",
       "cynefin-framework",
+      "decisional-balance-sheet",
       "devils-advocate",
+      "double-diamond",
       "feynman-technique",
       "fichtean-curve",
       "freytags-pyramid",
@@ -49,10 +57,12 @@
       "gutes-deutsch-wolf-schneider",
       "hemingway-bridge",
       "heros-journey",
+      "hoshin-kanri",
       "iec-61508-sil-levels",
       "impact-mapping",
       "kishotenketsu",
       "kiss-principle",
+      "kotter-8-step-change-model",
       "lasr",
       "linddun",
       "mece",
@@ -80,6 +90,8 @@
       "wardley-mapping",
       "what-qualifies-as-a-semantic-anchor",
       "what-would-chuck-norris-do",
+      "workflow-strategic-analysis",
+      "xy-problem",
       "yagni"
     ]
   },
@@ -165,13 +177,18 @@
       "bdd-given-when-then",
       "cockburn-use-cases",
       "cynefin-framework",
+      "decisional-balance-sheet",
       "definition-of-done",
+      "double-diamond",
       "gherkin",
       "gtd",
+      "hoshin-kanri",
       "impact-mapping",
       "invest",
       "iso-25010",
       "jobs-to-be-done",
+      "kano-model",
+      "kotter-8-step-change-model",
       "morphological-box",
       "moscow",
       "mvp",
@@ -184,7 +201,8 @@
       "swot",
       "thin-vertical-slice",
       "user-story-mapping",
-      "wardley-mapping"
+      "wardley-mapping",
+      "workflow-requirements-to-spec"
     ]
   },
   {
@@ -217,7 +235,9 @@
       "test-double-mock",
       "test-double-spy",
       "test-double-stub",
-      "testing-pyramid"
+      "testing-pyramid",
+      "workflow-code-review",
+      "workflow-requirements-to-spec"
     ]
   },
   {
@@ -308,6 +328,9 @@
       "walking-skeleton",
       "wardley-mapping",
       "what-would-chuck-norris-do",
+      "workflow-architecture-documentation",
+      "workflow-strategic-analysis",
+      "workflow-tdd-clean-architecture",
       "yagni"
     ]
   },
@@ -411,6 +434,9 @@
       "vertical-slice-architecture",
       "walking-skeleton",
       "what-would-chuck-norris-do",
+      "workflow-code-review",
+      "workflow-tdd-clean-architecture",
+      "xy-problem",
       "yagni"
     ]
   },
@@ -427,6 +453,7 @@
       "code-smells",
       "control-chart-shewhart",
       "cynefin-framework",
+      "decisional-balance-sheet",
       "definition-of-done",
       "devils-advocate",
       "domain-driven-design",
@@ -437,9 +464,12 @@
       "github-flow",
       "gom",
       "gtd",
+      "hoshin-kanri",
       "impact-mapping",
       "invest",
       "iso-25010",
+      "kano-model",
+      "kotter-8-step-change-model",
       "lasr",
       "lehmans-classification",
       "madr",
@@ -467,7 +497,10 @@
       "user-story-mapping",
       "walking-skeleton",
       "wardley-mapping",
-      "what-would-chuck-norris-do"
+      "what-would-chuck-norris-do",
+      "workflow-code-review",
+      "workflow-strategic-analysis",
+      "xy-problem"
     ]
   },
   {
@@ -494,7 +527,8 @@
       "save-the-cat",
       "story-circle-dan-harmon",
       "three-act-structure",
-      "todotxt-flavoured-markdown"
+      "todotxt-flavoured-markdown",
+      "workflow-architecture-documentation"
     ]
   },
   {
@@ -502,7 +536,9 @@
     "name": "UX Designer / Researcher",
     "anchors": [
       "bem-methodology",
+      "double-diamond",
       "jobs-to-be-done",
+      "kano-model",
       "myers-briggs-type-indicator",
       "problem-space-nvc",
       "user-story-mapping"
