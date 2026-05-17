@@ -6379,7 +6379,7 @@ Recover a program's "theory" (Naur 1985) from source code through recursive ques
   - Q4.1-Q4.8: the eight ISO/IEC 25010 characteristics; plus Q4.9: which characteristic has priority
   - Q5.1-Q5.5: technical debt, security risks, operational risks, dependency/supply-chain risks, scaling/performance risks
 
-- Below the fixed second level, decompose freely and code-driven; stop when a leaf is answerable from one piece of code evidence or one stakeholder fact. Third-level depth varies between runs — expected.
+- Below the fixed second level, decompose freely and code-driven; stop when a leaf is small enough to answer from one piece of code evidence, or to pose as one precise stakeholder question. Third-level depth varies between runs — expected.
 
 - Q-IDs are stable: Q3.7 is always Deployment View, in every run, so trees from different runs can be diffed node-by-node.
 

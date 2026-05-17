@@ -164,7 +164,7 @@ Answers affect whether Q3.11 (Risks) flags absent audit logging as debt.
 
 ## Q5 — Risks and Technical Debt
 
-### Q5.1: What test debt exists?
+### Q5.1.TestDebt: What test debt exists?
 
 ```
 [ANSWERED]
@@ -175,7 +175,7 @@ and notification-failure branches are untested. Adding tests is straightforward
 once the team confirms intended behaviour for each branch (see Q2.3.SUC).
 ```
 
-### Q5.1: What technical debt is the team already tracking?
+### Q5.1.TrackedDebt: What technical debt is the team already tracking?
 
 ```
 [OPEN]

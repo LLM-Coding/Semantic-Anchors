@@ -103,11 +103,11 @@ Process:
                 dependency/supply-chain risks, scaling/performance risks
 
 3. Below the fixed second level, decompose freely and code-driven. Stop
-   when a leaf is answerable with a single piece of code evidence or a
-   single fact from a stakeholder. Third-level depth varies between runs
-   — that is expected. Q-IDs are stable: Q3.7 is always the Deployment
-   View, in every run, so trees from different runs can be diffed
-   node-by-node.
+   when a leaf is small enough to answer from a single piece of code
+   evidence, or to pose as a single precise question to a stakeholder.
+   Third-level depth varies between runs — that is expected. Q-IDs are
+   stable: Q3.7 is always the Deployment View, in every run, so trees
+   from different runs can be diffed node-by-node.
 
 4. For each leaf, classify it:
 

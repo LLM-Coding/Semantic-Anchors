@@ -51,9 +51,10 @@ Produce four artifacts:
 
 Rules for traceability:
 - The synthesized documentation must be self-contained. The Question Tree
-  is temporary scaffolding — it is renumbered on every re-run — so Q-IDs
-  must NOT appear in the output. While synthesizing, trace every claim
-  back to a leaf: each claim must come from an [ANSWERED] leaf or an
+  is a temporary intermediate artifact — its fixed second level is stable,
+  but third-level Q-IDs are run-specific and the tree is not shipped — so
+  Q-IDs must NOT appear in the output. While synthesizing, trace every
+  claim back to a leaf: each claim must come from an [ANSWERED] leaf or an
   answered [OPEN] leaf. This tracing is a build-time check, not something
   written into the documents.
 - A claim backed by an [ANSWERED] leaf cites the code evidence from that

@@ -141,7 +141,7 @@ _(write here)_
 
 ## Phase 2 traceability
 
-The synthesized documentation must be self-contained. The Question Tree is temporary scaffolding — it is renumbered on every re-run — so its Q-IDs are NOT carried into the final documents. During Phase 2, every claim is traced back to a leaf as a build-time check; what gets *written* is the durable reference only:
+The synthesized documentation must be self-contained. The Question Tree is a temporary intermediate artifact: its fixed second level (Q1.1–Q5.5) is stable, but third-level Q-IDs are run-specific, and the tree itself is not shipped alongside the docs. So Q-IDs are NOT carried into the final documents. During Phase 2, every claim is traced back to a leaf as a build-time check; what gets *written* is the durable reference only:
 
 ```
 The system uses Hexagonal Architecture [src/app/Ports.java,
