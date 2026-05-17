@@ -50,12 +50,23 @@ Produce four artifacts:
    - Anchor: ADR according to Nygard
 
 Rules for traceability:
-- Every paragraph references the Q-IDs that support it, in square brackets:
-  "The system uses Hexagonal Architecture [Q3.5]."
-- Team-supplied facts get an inline marker: "Sessions expire after 24 hours
-  (team answer, Q3.4.2)."
+- The synthesized documentation must be self-contained. The Question Tree
+  is temporary scaffolding — it is renumbered on every re-run — so Q-IDs
+  must NOT appear in the output. While synthesizing, trace every claim
+  back to a leaf: each claim must come from an [ANSWERED] leaf or an
+  answered [OPEN] leaf. This tracing is a build-time check, not something
+  written into the documents.
+- A claim backed by an [ANSWERED] leaf cites the code evidence from that
+  leaf — the reference to the code, the only durable, canonical artifact:
+  "The system uses Hexagonal Architecture [src/app/Ports.java,
+  src/adapter/JpaOrderRepository.java:30]."
+  Copy the Evidence line verbatim from the leaf; do not invent, shorten,
+  or re-derive file paths. A leaf with no Evidence line is not [ANSWERED]
+  and must not be cited as fact.
+- Team-supplied facts have no code evidence — mark them (team answer):
+  "Sessions expire after 24 hours (team answer)."
 - Deferred questions stay as explicit gaps: "Quality-goal priorities are
-  deferred (Q4.1.deferred) and must be resolved before the next release."
+  deferred and must be resolved before the next release."
 - Do not introduce facts that do not appear in QUESTION_TREE.adoc or
   OPEN_QUESTIONS.adoc. If a Section feels under-specified, leave it
   under-specified — that is signal, not a defect.
