@@ -9,7 +9,7 @@ Stellt Dokumentation aus einem Brownfield-Codebase wieder her, ohne die Lücken 
 
 === Phase 1 — Question Tree aufbauen
 
-Der Skill weist das LLM an, fünf Fragen zum Bounded Context (Problem/User, Spezifikation, Architektur, Qualitätsziele, Risiken) rekursiv zu zerlegen. Jedes Blatt wird klassifiziert:
+Der Skill weist das LLM an, aus fünf Wurzelfragen zum Bounded Context (Problem/User, Spezifikation, Architektur, Qualitätsziele, Risiken) einen Question Tree zu bauen. Ihre zweite Ebene ist fix — jeder Lauf erzeugt dieselben enumerierten Knoten (Q1.1–Q5.5: sechs PRD-Elemente, sechs Spezifikationskategorien, die zwölf arc42-Kapitel, die acht ISO/IEC-25010-Merkmale plus eine Prioritätsfrage, fünf Risikokategorien), sodass Q-IDs stabil sind und Bäume verschiedener Läufe Knoten für Knoten verglichen werden können. Freie, code-getriebene Zerlegung passiert nur unterhalb dieser fixen Ebene. Jedes Blatt wird klassifiziert:
 
 * `[ANSWERED]` -- das LLM hat es im Code gefunden, mit `<file>:<line>`-Evidenz
 * `[OPEN]` -- die Antwort steckt nicht im Code; mit Category und der Rolle markiert, die antworten muss (Product Owner, Architect, Developer, Domain Expert, Operations)
@@ -190,13 +190,13 @@ Jeder Assistent, der einen System-Prompt oder Custom Instructions akzeptiert, ka
 | Der Phase-2-Prompt, der PRD, Cockburn Use Cases, arc42 und Nygard-ADRs erzeugt
 
 | `references/arc42.md`
-| arc42 12 Sektionen als Q3-Zerlegungs-Heuristik
+| arc42 12 Kapitel als die fixen Knoten Q3.1–Q3.12
 
 | `references/cockburn-use-cases.md`
-| Fully-Dressed-Felder als Q2-Subfragen; Persona- vs. System-Use-Cases
+| Fully-Dressed-Felder als Use-Case-Blätter; Persona- vs. System-Use-Cases
 
 | `references/iso-25010.md`
-| 8 Qualitätsmerkmale als Q4-Subfragen; Mechanismus-vs-Target-Trennung
+| 8 Qualitätsmerkmale als die fixen Knoten Q4.1–Q4.8; Mechanismus-vs-Target-Trennung
 
 | `references/nygard-adrs.md`
 | ADR-Felder als Q3.9-Sub-Tree; was eine Entscheidung architektonisch signifikant macht; Pugh-Matrix-Leitfaden

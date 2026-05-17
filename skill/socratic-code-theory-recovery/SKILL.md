@@ -71,19 +71,22 @@ The fix: model the gaps explicitly. Every question about the system is either `[
 
 ### Phase 1: Build the Question Tree
 
-Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md). Adapt the bounded-context path and any domain-specific Q1 examples; do not change the leaf classification, Q-ID scheme, or output files.
+Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md). Adapt the bounded-context path and the Q1-Q5 wording; do not change the fixed second level, the leaf classification, the Q-ID scheme, or the output files.
 
 Outputs:
 
 - `QUESTION_TREE.adoc` — the full hierarchical reasoning trace
 - `OPEN_QUESTIONS.adoc` — only the `[OPEN]` leaves, grouped by Ask role
 
-Decomposition heuristics — use these Semantic Anchors as guides, not as rigid templates:
+The five root questions decompose into a **fixed second level** — the same enumerated node set on every run, so Q-IDs are stable and trees from different runs can be diffed node-by-node. Free, code-driven decomposition applies only *below* the fixed level. The fixed nodes:
 
-- **arc42** — 12 architecture sub-questions (Q3 branch). See [references/arc42.md](references/arc42.md).
-- **Cockburn Use Cases** — specification structure (Q2 branch). See [references/cockburn-use-cases.md](references/cockburn-use-cases.md).
-- **ISO/IEC 25010** — 8 quality characteristics (Q4 branch). See [references/iso-25010.md](references/iso-25010.md).
-- **Nygard ADRs** — design-rationale capture (Q3.9 branch). See [references/nygard-adrs.md](references/nygard-adrs.md).
+- **Q1.1–Q1.6** — product identity, primary users, channels, why-built, success metrics, segment priority.
+- **Q2.1–Q2.6** — actors, use-case catalog, per-interface system specs, data/entity model, acceptance criteria, cross-cutting business rules. See [references/cockburn-use-cases.md](references/cockburn-use-cases.md).
+- **Q3.1–Q3.12** — the twelve arc42 chapters, in arc42 order. See [references/arc42.md](references/arc42.md). Design rationale lives in the Q3.9 chapter — see [references/nygard-adrs.md](references/nygard-adrs.md).
+- **Q4.1–Q4.8** — the eight ISO/IEC 25010 characteristics; **Q4.9** — which characteristic has priority. See [references/iso-25010.md](references/iso-25010.md).
+- **Q5.1–Q5.5** — technical debt, security risks, operational risks, dependency/supply-chain risks, scaling/performance risks.
+
+Every fixed node is emitted even when its only leaf is `[OPEN]` or `[ANSWERED: not applicable]`.
 
 Leaf classification rules and Q-ID scheme: [references/output-schema.md](references/output-schema.md).
 

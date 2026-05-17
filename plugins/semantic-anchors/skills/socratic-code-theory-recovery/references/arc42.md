@@ -1,6 +1,6 @@
 # arc42 — Decomposition Guide for Q3 (Architecture)
 
-arc42 is a 12-section template for documenting software architecture (Gernot Starke, Peter Hruschka). In this skill, the 12 sections serve as decomposition heuristics for the Q3 branch of the Question Tree — each section becomes a sub-question.
+arc42 is a 12-chapter template for documenting software architecture (Gernot Starke, Peter Hruschka). In this skill, the 12 chapters are the **fixed second level** of the Q3 branch — Q3.1 through Q3.12, in arc42 order. Every chapter is emitted as a node on every run, even when its only leaf is `[OPEN]`. Free decomposition happens only *below* these fixed nodes.
 
 ## The 12 sections as Q3 sub-questions
 

@@ -12,42 +12,42 @@ Hierarchical tree, top-down. Each node has a Q-ID, the question, and (for leaves
 
 == Q1: What problem does this bounded context solve, and for whom?
 
-=== Q1.1: Who is the primary user?
+=== Q1.1: Product identity — what is this bounded context?
+[ANSWERED]
+Evidence: src/api/OrderController.java:18, src/service/OrderService.java::create
+An order-placement context: sales staff create customer orders via a REST API.
+
+=== Q1.2: Who are the primary users?
 [ANSWERED]
 Evidence: src/auth/User.java:42 (role enum), src/api/OrderController.java:18 (@PreAuthorize)
 Sales-team users with role MANAGER place orders on behalf of customers.
 
-=== Q1.2: What outcome does the user want?
-[OPEN]
-Category: business-context
-Ask role: Product Owner
-The code shows order creation succeeds when validation passes, but does not
-reveal what success means for the user (revenue? margin? cycle time?). Need
-explicit goal statement.
+(Q1.3-Q1.6 omitted here for brevity — every fixed node is still emitted.)
 
 == Q2: What is the specification of this bounded context?
 
-=== Q2.PUC.PlaceOrder: Persona use case — Place an order
-==== Q2.PUC.PlaceOrder.Actor
+=== Q2.2: Use-case catalog
+==== Q2.2.PUC.PlaceOrder: Persona use case — Place an order
+===== Q2.2.PUC.PlaceOrder.Actor
 [ANSWERED]
 Evidence: src/api/OrderController.java:18-25
 Primary Actor: Sales Manager (role MANAGER)
 
-==== Q2.PUC.PlaceOrder.Trigger
+===== Q2.2.PUC.PlaceOrder.Trigger
 [ANSWERED]
 Evidence: src/api/OrderController.java:18 (POST /orders)
 Sales Manager submits POST /orders with order payload.
 
-==== Q2.PUC.PlaceOrder.MainSuccess
+===== Q2.2.PUC.PlaceOrder.MainSuccess
 [ANSWERED]
 Evidence: src/service/OrderService.java::create (lines 45-92)
-1. System validates payload (Q2.PUC.PlaceOrder.Validation).
+1. System validates payload (Q2.2.PUC.PlaceOrder.Validation).
 2. System reserves inventory via InventoryClient.
 3. System persists Order with status PENDING.
 4. System publishes OrderCreated event.
 5. System returns 201 Created with order id.
 
-==== Q2.PUC.PlaceOrder.Postconditions
+===== Q2.2.PUC.PlaceOrder.Postconditions
 [OPEN]
 Category: business-context
 Ask role: Product Owner, Domain Expert
@@ -55,18 +55,18 @@ Code persists status=PENDING but never transitions it. Is PENDING a final
 state for this bounded context, or is downstream fulfilment expected to
 move it forward? Affects what counts as success.
 
-(...continues for Q3, Q4, Q5...)
+(...continues for the remaining fixed nodes — Q2.x, Q3, Q4, Q5...)
 ```
 
 ### Q-ID scheme
 
-- `Q1`, `Q2`, ... — the five top-level questions
-- `Q1.1`, `Q1.2`, ... — direct decompositions
-- `Q3.5.2` — arbitrary depth
+- `Q1`, `Q2`, ... — the five root questions
+- `Q1.1` ... `Q5.5` — the **fixed second level**: the same enumerated node set on every run (Q1.1–Q1.6, Q2.1–Q2.6, Q3.1–Q3.12, Q4.1–Q4.9, Q5.1–Q5.5). A given Q-ID always means the same node — `Q3.7` is always the Deployment View — so trees from different runs diff node-by-node. Emit every fixed node even when its only leaf is `[OPEN]` or `[ANSWERED: not applicable]`.
+- `Q3.5.2` — arbitrary depth *below* the fixed second level; third-level depth is free, code-driven, and varies between runs.
 - Within named sub-trees, use a stable label between dots so cites are stable across reruns:
-  - `Q2.PUC.PlaceOrder.Trigger` — persona use case PlaceOrder, field Trigger
-  - `Q2.SUC.CreateOrderEndpoint.ErrorResponses` — system use case for the create endpoint, ErrorResponses field
-  - `Q3.9.HexagonalArchitecture.Context` — ADR HexagonalArchitecture, Context field
+  - `Q2.2.PUC.PlaceOrder.Trigger` — persona use case PlaceOrder (under Q2.2, the use-case catalog), field Trigger
+  - `Q2.3.SUC.CreateOrderEndpoint.ErrorResponses` — system use case (under Q2.3, per-interface system specs) for the create endpoint, ErrorResponses field
+  - `Q3.9.HexagonalArchitecture.Context` — ADR HexagonalArchitecture (under Q3.9, the arc42 Architecture Decisions chapter), Context field
 
 ### `[ANSWERED]` block format
 
@@ -113,7 +113,7 @@ reveal what success means for the user (revenue? margin? cycle time?).
 *Your answer:*
 _(write here)_
 
-=== Q2.PUC.PlaceOrder.Postconditions
+=== Q2.2.PUC.PlaceOrder.Postconditions
 Category: business-context
 
 Code persists status=PENDING but never transitions it. Is PENDING a final

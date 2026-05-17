@@ -6369,12 +6369,25 @@ Documentation follows Docs-as-Code according to Ralf D. Müller:
 ## Socratic Code Theory Recovery
 
 Recover a program's "theory" (Naur 1985) from source code through recursive question refinement.
-- Start with 5 high-level questions: Problem/Users, Specification, Architecture, Quality Goals, Risks
-- Decompose each question using Semantic Anchors as guides: arc42 (12 sub-questions), Cockburn Use Cases, ISO 25010, Nygard ADRs
-- Each leaf is either `[ANSWERED]` (with code evidence) or `[OPEN]` (with Category, Ask role, and why unanswerable)
-- The Question Tree is the primary artifact; documentation is synthesized from answered leaves
-- Open Questions are the handoff document: routed by role (Product Owner, Architect, Developer, Domain Expert, Operations)
-- Two-phase workflow: Phase 1 builds the tree, team answers Open Questions, Phase 2 produces documentation with Q-ID traceability
+
+- Start with 5 root questions: Q1 Problem/Users, Q2 Specification, Q3 Architecture, Q4 Quality Goals, Q5 Risks.
+
+- The second level of the tree is FIXED, not free. Every run emits exactly these nodes, in this order, even when a node's only leaf is [OPEN] or [ANSWERED: not applicable]:
+  - Q1.1-Q1.6: product identity, primary users, channels, why-built, success metrics, segment priority
+  - Q2.1-Q2.6: actors, use-case catalog, per-interface system specs, data/entity model, acceptance criteria, cross-cutting business rules
+  - Q3.1-Q3.12: the twelve arc42 chapters, in arc42 order
+  - Q4.1-Q4.8: the eight ISO/IEC 25010 characteristics; plus Q4.9: which characteristic has priority
+  - Q5.1-Q5.5: technical debt, security risks, operational risks, dependency/supply-chain risks, scaling/performance risks
+
+- Below the fixed second level, decompose freely and code-driven; stop when a leaf is answerable from one piece of code evidence or one stakeholder fact. Third-level depth varies between runs — expected.
+
+- Q-IDs are stable: Q3.7 is always Deployment View, in every run, so trees from different runs can be diffed node-by-node.
+
+- Each leaf is [ANSWERED] (with file:line evidence) or [OPEN] (with Category, Ask role, and why it is unanswerable from code).
+
+- Open Questions are the handoff document: always emit one section per role (Product Owner, Architect, Developer, Domain Expert, Operations), even when a section is empty ("No open questions for this role").
+
+- Two-phase workflow: Phase 1 builds the tree; the team answers the Open Questions; Phase 2 synthesizes documentation from the answered tree.
 
 *Referenced anchors: socratic-method, arc42, iso-25010, adr-according-to-nygard, mental-model-according-to-naur*
 
