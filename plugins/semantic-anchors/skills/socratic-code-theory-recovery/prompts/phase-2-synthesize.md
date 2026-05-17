@@ -39,6 +39,13 @@ Produce four artifacts:
 3. docs/arc42/arc42-[context-name].adoc — Architecture
    - All 12 arc42 chapters. Mark chapters with no content as
      "No information from Phase 1" rather than fabricating content.
+   - Chapter 10 (Quality Requirements) is an exception: synthesize it
+     from the [ANSWERED] Q4 quality scenarios plus the Q4.9 ranking. It
+     is never just an [OPEN] pointer. Reuse evidence already in Q3.8 —
+     Security scenarios cite the STRIDE T-IDs, Maintainability scenarios
+     the test concept. Only the goal ranking stays [OPEN]; "No
+     information" is legitimate here only if Q4 produced no answered
+     scenario at all.
    - Source: Q3 branch of QUESTION_TREE.adoc
    - Anchor: arc42 (Starke / Hruschka)
 

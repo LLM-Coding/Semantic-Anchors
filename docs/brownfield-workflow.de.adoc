@@ -124,6 +124,12 @@ Process:
                  Operations
      - State precisely what cannot be answered, and why.
 
+   Quality (the Q4 branch) is not wholly team knowledge. Where the code
+   shows measurable behaviour — a timeout, a truncation limit, a budget,
+   a retry policy, the threats and test concept from Q3.8 — write it as
+   an [ANSWERED] quality scenario with file:line. Never invent a target
+   number. Only the quality-goal ranking (Q4.9) is [OPEN].
+
 5. Output two files in AsciiDoc:
 
    QUESTION_TREE.adoc

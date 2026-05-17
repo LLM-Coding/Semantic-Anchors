@@ -15,7 +15,7 @@ arc42 is a 12-chapter template for documenting software architecture (Gernot Sta
 | Q3.7 | Deployment View | Which hardware/infrastructure runs the system? Deployment topology, environments, mapping building blocks to infrastructure. |
 | Q3.8 | Crosscutting Concepts | Domain models, architecture/design patterns used, persistence, UI, communication, plausibility checks, exception/error handling, logging, security, internationalisation, configurability? |
 | Q3.9 | Architecture Decisions | Why was each significant decision made? Each becomes a Nygard ADR — see [nygard-adrs.md](nygard-adrs.md). |
-| Q3.10 | Quality Requirements | Quality tree, quality scenarios (when/where/who/measurement). Connects to Q4 (ISO 25010). |
+| Q3.10 | Quality Requirements | Quality tree and quality scenarios. Synthesized from the `[ANSWERED]` Q4 scenarios plus the `Q4.9` ranking — never just an `[OPEN]` pointer. The Q4 branch derives the scenarios; see [iso-25010.md](iso-25010.md). |
 | Q3.11 | Risks and Technical Debt | Known technical risks, debt items, and their mitigation status. Overlaps with Q5. |
 | Q3.12 | Glossary | Domain terminology — terms the team uses with project-specific meaning. |
 

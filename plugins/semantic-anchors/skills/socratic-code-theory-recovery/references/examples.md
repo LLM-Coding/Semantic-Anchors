@@ -162,6 +162,19 @@ Mechanisms are visible but the target is not. Specifically:
 Answers affect whether Q3.11 (Risks) flags absent audit logging as debt.
 ```
 
+### Q4.2.scenario: What time-behaviour scenario does the code enforce?
+
+```
+[ANSWERED]
+Evidence: src/integration/InventoryClient.java:34 (Duration.ofSeconds(3)), src/config/HttpClientConfig.java:19
+Performance scenario: when OrderService reserves inventory, the call to
+the Inventory service is bounded by a 3-second timeout; on timeout the
+order fails with 409 Conflict rather than hanging. The 3-second value is
+a literal in the code — a measurable, code-derived target. This is an
+[ANSWERED] quality scenario, not an [OPEN] one: the threshold did not
+have to be invented or asked of the team. It belongs in arc42 Chapter 10.
+```
+
 ## Q5 — Risks and Technical Debt
 
 ### Q5.1.TestDebt: What test debt exists?
