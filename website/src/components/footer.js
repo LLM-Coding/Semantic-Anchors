@@ -81,7 +81,7 @@ export function renderFooter(version) {
                 class="h-6 w-auto"
                 loading="lazy"
               />
-              <span class="text-xs text-[var(--color-text-secondary)]">HMZE <span class="opacity-60">(DE)</span></span>
+              <span class="text-xs text-[var(--color-text-secondary)]">HMZE (DE)</span>
             </a>
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <a
@@ -99,7 +99,7 @@ export function renderFooter(version) {
                 class="h-6 w-auto"
                 loading="lazy"
               />
-              <span class="text-xs text-[var(--color-text-secondary)]">rabauer.dev <span class="opacity-60">(EN)</span></span>
+              <span class="text-xs text-[var(--color-text-secondary)]">rabauer.dev (EN)</span>
             </a>
           </div>
         </div>
