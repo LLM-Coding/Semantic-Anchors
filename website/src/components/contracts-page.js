@@ -109,7 +109,7 @@ function renderContractCard(contract, isSelected) {
       if (line.startsWith('- ')) {
         return `<span class="text-[var(--color-text-secondary)]">• ${esc(line.slice(2))}</span>`
       }
-      return `<span class="font-medium">${esc(line)}</span>`
+      return `<span>${esc(line)}</span>`
     })
     .join('<br>')
 
