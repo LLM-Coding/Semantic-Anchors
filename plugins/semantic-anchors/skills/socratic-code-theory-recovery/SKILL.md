@@ -65,7 +65,7 @@ The fix: model the gaps explicitly. Every question about the system is either `[
                   ┌────────────────────────────────┐
    Phase 2        │  Answered tree ──► Docs         │
                   │  PRD · Cockburn UCs · arc42 ·   │
-                  │  Nygard ADRs (every claim Q-ID) │
+                  │  Nygard ADRs (claims cite code) │
                   └────────────────────────────────┘
 ```
 
@@ -104,7 +104,7 @@ Use [prompts/phase-2-synthesize.md](prompts/phase-2-synthesize.md). The Phase 2 
 - **arc42** with all 12 chapters from the Q3 branch
 - **Nygard ADRs** with Pugh Matrix from the Q3.9 branch
 
-Every claim references a Q-ID. A code-derived claim also carries the `file:line` evidence from its `[ANSWERED]` leaf, copied into the citation so the source is visible without opening the Question Tree. Team-supplied information is marked `(team answer)`. This dual traceability — code evidence plus team input — is the difference from a simple reverse-engineering prompt that fills in gaps silently.
+Code-derived claims cite the `file:line` evidence from their `[ANSWERED]` leaf — a reference to the code, the only durable, canonical artifact. Team-supplied information is marked `(team answer)`. The Question Tree is temporary scaffolding, so its Q-IDs are not written into the final documents; during synthesis every claim is still traced back to a leaf as a build-time check. This dual traceability — code evidence plus team input — is the difference from a simple reverse-engineering prompt that fills in gaps silently.
 
 ## What the LLM can and cannot recover
 

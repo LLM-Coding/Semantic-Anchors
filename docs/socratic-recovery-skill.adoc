@@ -22,7 +22,7 @@ Outputs two AsciiDoc files: `QUESTION_TREE.adoc` (full reasoning trace) and `OPE
 
 === Phase 2 — Synthesize documentation
 
-The skill takes the answered tree and produces a PRD, Cockburn use cases, an arc42 architecture document, and Nygard ADRs with Pugh matrices. Every claim cites a Q-ID; code-derived claims also carry the `file:line` evidence from their `[ANSWERED]` leaf, and team-supplied facts are marked `(team answer)`.
+The skill takes the answered tree and produces a PRD, Cockburn use cases, an arc42 architecture document, and Nygard ADRs with Pugh matrices. Code-derived claims cite the `file:line` evidence from their `[ANSWERED]` leaf, and team-supplied facts are marked `(team answer)`. The Question Tree is temporary scaffolding, so Q-IDs stay out of the final documents.
 
 == When to use it
 
@@ -87,7 +87,8 @@ https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-the
 
 The skill enforces a two-phase workflow: build a Question Tree first
 ([ANSWERED] with code evidence vs [OPEN] with role), let the team answer
-the OPEN leaves, then synthesize documentation with full Q-ID traceability.
+the OPEN leaves, then synthesize self-contained documentation that traces
+every claim to code evidence or a team answer.
 ----
 
 === link:https://github.com/google-gemini/gemini-cli[Gemini CLI]
@@ -105,8 +106,9 @@ https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-the
 Build a Question Tree before writing any documentation. Mark each leaf
 [ANSWERED] (with file:line evidence) or [OPEN] (with Category and Ask role).
 Synthesize docs from the answered tree only after the team has filled in
-the OPEN leaves. Cite a Q-ID in every claim; for code-derived claims,
-also cite the file:line evidence from the ANSWERED leaf.
+the OPEN leaves. The docs must be self-contained: cite file:line evidence
+for code-derived claims, mark team input with (team answer). Q-IDs stay
+out of the output.
 ----
 
 === link:https://docs.cursor.com/[Cursor]
@@ -139,8 +141,9 @@ Recovery workflow at
 https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/socratic-code-theory-recovery
 
 Two phases: first a Question Tree separating code-derivable facts from
-open questions routed by role; second, synthesis with Q-ID traceability
-after the team fills the gaps.
+open questions routed by role; second, synthesis into self-contained
+documentation — code-evidenced or team-answered — after the team fills
+the gaps.
 ----
 
 === link:https://kiro.dev/[Amazon Kiro]

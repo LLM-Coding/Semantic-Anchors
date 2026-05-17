@@ -141,20 +141,19 @@ _(write here)_
 
 ## Phase 2 traceability
 
-After Phase 2, every paragraph in the synthesized documentation cites at least one Q-ID. For a claim backed by an `[ANSWERED]` leaf, the citation also carries the code evidence copied from that leaf, so the reader sees the source location without opening the Question Tree:
+The synthesized documentation must be self-contained. The Question Tree is temporary scaffolding — it is renumbered on every re-run — so its Q-IDs are NOT carried into the final documents. During Phase 2, every claim is traced back to a leaf as a build-time check; what gets *written* is the durable reference only:
 
 ```
-The system uses Hexagonal Architecture [Q3.9.HexagonalArchitecture;
-src/app/Ports.java, src/adapter/JpaOrderRepository.java:30]. Sessions
-expire after 24 hours (team answer, Q3.8.Security.SessionLifetime).
-Quality-goal priorities are deferred (Q4.0.deferred) and must be resolved
+The system uses Hexagonal Architecture [src/app/Ports.java,
+src/adapter/JpaOrderRepository.java:30]. Sessions expire after 24 hours
+(team answer). Quality-goal priorities are deferred and must be resolved
 before the next release.
 ```
 
-The three citation forms are deliberate:
+The three forms are deliberate:
 
-- `[Q-ID; file:line, ...]` — code-derived fact. The `file:line` part is the `Evidence` line of the `[ANSWERED]` leaf, copied verbatim.
-- `(team answer, Q-ID)` — team-supplied fact. No code evidence exists; the Q-ID points to the answered `[OPEN]` leaf.
-- `(Q-ID.deferred)` — an explicit gap, not a fact.
+- `[file:line, ...]` — code-derived fact. Copied verbatim from the `Evidence` line of the `[ANSWERED]` leaf; it points at the code, the only canonical, persistent artifact.
+- `(team answer)` — team-supplied fact. No code evidence exists; the marker tells the reader a human asserted this and it must be re-verified with a human, not derived from code.
+- `deferred` — a known gap, stated explicitly, not a fact.
 
-This is the auditable trace from documentation back to either code evidence or a team answer. Anything without a Q-ID is invention; a code-derived claim without its `file:line` evidence is incomplete.
+This is the auditable trace: a code-derived claim without its `file:line` evidence is incomplete; a fact that is neither code-evidenced nor marked `(team answer)` is invention.

@@ -161,7 +161,7 @@ Das LLM synthetisiert die beantworteten Fragen plus die Code-Evidenz aus Phase 1
 * *arc42* mit allen 12 Kapiteln aus dem Q3-Ast
 * *Nygard-ADRs* mit Pugh-Matrix aus dem Q3.9-Ast
 
-Jede Aussage referenziert eine Question-ID. Eine code-basierte Aussage trägt zusätzlich die `file:line`-Evidenz aus ihrem `[ANSWERED]`-Leaf — in die Zitation kopiert, damit die Quelle sichtbar ist, ohne den Question Tree zu öffnen; teamgegebene Information wird mit `(team answer)` markiert. Diese doppelte Rückverfolgbarkeit (Code-Evidenz + Team-Input) ist der entscheidende Unterschied zu einem einfachen Reverse-Engineering-Prompt.
+Code-basierte Aussagen tragen die `file:line`-Evidenz aus ihrem `[ANSWERED]`-Leaf — eine Referenz auf den Code, das einzige dauerhafte Artefakt; teamgegebene Information wird mit `(team answer)` markiert. Der Question Tree ist temporäres Gerüst, daher landen Q-IDs nicht in den finalen Dokumenten — beim Synthetisieren wird jede Aussage als Build-Time-Prüfung auf ein Leaf zurückgeführt. Diese doppelte Rückverfolgbarkeit (Code-Evidenz + Team-Input) ist der entscheidende Unterschied zu einem einfachen Reverse-Engineering-Prompt.
 
 === Basis-Tests aufbauen
 
@@ -259,7 +259,7 @@ Stabiler Code, den niemand anfasst, braucht keine Specs.
 |{empty}--
 
 |Theory Recovery (Phase 2)
-|`Synthesize documentation from the Question Tree and team answers. Every claim references a Q-ID; for code-derived claims, also cite the file:line evidence from the ANSWERED leaf. Mark team input with (team answer).`
+|`Synthesize self-contained documentation from the Question Tree and team answers. Cite file:line evidence for code-derived claims, mark team input with (team answer), keep deferred questions as explicit gaps. Q-IDs stay out of the output.`
 |link:#/spec-driven-development[Spec-Driven Workflow]
 
 |Basis-Tests
