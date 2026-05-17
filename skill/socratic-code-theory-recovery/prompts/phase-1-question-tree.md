@@ -1,6 +1,6 @@
 # Phase 1 Prompt: Build the Question Tree
 
-Copy the block below into a session that has read access to the bounded context. Replace `[bounded context path]` with the actual path. Adapt the Q1-Q5 examples if your domain has different starting concerns, but do not change the leaf classification, Q-ID scheme, or output files.
+Copy the block below into a session that has read access to the bounded context. Replace `[bounded context path]` with the actual path. Adapt the Q1-Q5 wording if your domain has different starting concerns, but do not change the fixed second level, the leaf classification, the Q-ID scheme, or the output files.
 
 ```
 You are performing Socratic Code-Theory Recovery on a brownfield bounded
@@ -11,26 +11,34 @@ recursive question refinement, before any documentation is written.
 
 Process:
 
-1. Start with five high-level questions about the bounded context:
+1. Start with five root questions about the bounded context:
    Q1 What problem does this bounded context solve, and for whom?
    Q2 What is the specification of this bounded context?
    Q3 What is the architecture of this bounded context?
    Q4 What quality goals drive the design?
    Q5 What risks and technical debt exist?
 
-2. Decompose each question recursively. Use these Semantic Anchors as
-   decomposition guides:
-     - arc42 — 12 sub-questions for architecture (Q3 branch)
-     - Cockburn Use Cases — Primary Actor, Trigger, Main Success Scenario,
-       Extensions, Postconditions for specification (Q2 branch)
-     - ISO/IEC 25010 — 8 quality characteristics for quality goals (Q4 branch)
-     - Nygard ADRs — Context, Decision, Status, Consequences for design
-       rationale (Q3.9 branch)
-   Stop decomposing when a question is precise enough to be answered with a
-   single piece of code evidence or a single fact from a stakeholder.
+2. The second level of the tree is FIXED, not free. Emit exactly these
+   nodes, in this order, even when a node's only leaf is [OPEN] or
+   [ANSWERED: not applicable]:
+     Q1.1-Q1.6  product identity, primary users, channels, why-built,
+                success metrics, segment priority
+     Q2.1-Q2.6  actors, use-case catalog, per-interface system specs,
+                data/entity model, acceptance criteria, cross-cutting
+                business rules
+     Q3.1-Q3.12 the twelve arc42 chapters, in arc42 order
+     Q4.1-Q4.8  the eight ISO/IEC 25010 characteristics;
+     Q4.9       which characteristic has priority
+     Q5.1-Q5.5  technical debt, security risks, operational risks,
+                dependency/supply-chain risks, scaling/performance risks
 
-3. Assign a hierarchical Q-ID to every node (Q1, Q1.2, Q1.2.3, ...) so that
-   later documentation can cite back to it.
+3. Below the fixed second level, decompose freely and code-driven. Stop
+   when a leaf is small enough to answer from a single piece of code
+   evidence, or to pose as a single precise question to a stakeholder.
+   Third-level depth varies between runs
+   — that is expected. Q-IDs are stable: Q3.7 is always the Deployment
+   View, in every run, so trees from different runs can be diffed
+   node-by-node.
 
 4. For each leaf, classify it:
 
@@ -57,7 +65,9 @@ Process:
 
    OPEN_QUESTIONS.adoc
      - Only the [OPEN] leaves, copied verbatim from QUESTION_TREE.adoc
-     - Grouped by Ask role (one section per role)
+     - Always one section per Ask role (Product Owner, Architect,
+       Developer, Domain Expert, Operations) — emit every section even
+       when it is empty ("No open questions for this role")
      - Each question short enough to be answered in 1-3 sentences
 
 Do not write any other documentation in this phase. Phase 2 will synthesize

@@ -9,7 +9,7 @@ Recovers documentation from a brownfield codebase without hallucinating the part
 
 === Phase 1 — Build the Question Tree
 
-The skill prompts the LLM to recursively decompose five questions about a bounded context (Problem/Users, Specification, Architecture, Quality Goals, Risks). Each leaf is classified:
+The skill prompts the LLM to build a Question Tree from five root questions about a bounded context (Problem/Users, Specification, Architecture, Quality Goals, Risks). Their second level is fixed — every run emits the same enumerated nodes (Q1.1–Q5.5: six PRD elements, six specification categories, the twelve arc42 chapters, the eight ISO/IEC 25010 characteristics plus a priority question, five risk categories), so Q-IDs are stable and trees from different runs can be diffed node-by-node. Free, code-driven decomposition happens only below that fixed level. Each leaf is classified:
 
 * `[ANSWERED]` -- the LLM found it in the code, with `<file>:<line>` evidence
 * `[OPEN]` -- the answer is not derivable from code; tagged with a Category and the role that must answer (Product Owner, Architect, Developer, Domain Expert, Operations)
@@ -190,13 +190,13 @@ Any AI assistant that accepts a system prompt or custom instructions can use thi
 | The Phase 2 prompt producing PRD, Cockburn use cases, arc42, and Nygard ADRs
 
 | `references/arc42.md`
-| arc42's 12 sections as Q3 decomposition heuristic
+| arc42's 12 chapters as the fixed Q3.1–Q3.12 nodes
 
 | `references/cockburn-use-cases.md`
-| Fully Dressed fields as Q2 sub-questions; persona vs system use cases
+| Fully Dressed fields as use-case leaves; persona vs system use cases
 
 | `references/iso-25010.md`
-| 8 quality characteristics as Q4 sub-questions; mechanism-vs-target split
+| 8 quality characteristics as the fixed Q4.1–Q4.8 nodes; mechanism-vs-target split
 
 | `references/nygard-adrs.md`
 | ADR fields as Q3.9 sub-tree; what makes a decision architecturally significant; Pugh-matrix guidance

@@ -4,7 +4,7 @@ Concrete examples for each major branch. Use these as templates when phrasing yo
 
 ## Q1 — Problem and Users
 
-### Q1.1: Who is the primary user of this bounded context?
+### Q1.2: Who are the primary users of this bounded context?
 
 ```
 [ANSWERED]
@@ -14,7 +14,7 @@ end customers. Customers themselves never interact with this bounded
 context directly.
 ```
 
-### Q1.3: What problem does placing-orders-on-behalf-of-customers solve?
+### Q1.4: Why was this bounded context built — what problem does placing-orders-on-behalf-of-customers solve?
 
 ```
 [OPEN]
@@ -27,7 +27,7 @@ system that did the same? Affects how Q2 use cases should be structured.
 
 ## Q2 — Specification
 
-### Q2.PUC.PlaceOrder.Trigger
+### Q2.2.PUC.PlaceOrder.Trigger
 
 ```
 [ANSWERED]
@@ -37,7 +37,7 @@ JSON body { customerId, items[], shippingAddress }. Authentication is
 session-based via the existing Auth filter.
 ```
 
-### Q2.PUC.PlaceOrder.Postconditions
+### Q2.2.PUC.PlaceOrder.Postconditions
 
 ```
 [OPEN]
@@ -52,7 +52,7 @@ should mention "order is queued for fulfilment" or "order is created and
 visible to the manager".
 ```
 
-### Q2.SUC.CreateOrderEndpoint.ErrorResponses
+### Q2.3.SUC.CreateOrderEndpoint.ErrorResponses
 
 ```
 [ANSWERED]
@@ -164,7 +164,7 @@ Answers affect whether Q3.11 (Risks) flags absent audit logging as debt.
 
 ## Q5 — Risks and Technical Debt
 
-### Q5.2: What test debt exists?
+### Q5.1.TestDebt: What test debt exists?
 
 ```
 [ANSWERED]
@@ -172,10 +172,10 @@ Evidence: src/service/OrderService.java::create (66 lines, cyclomatic complexity
 OrderService.create has 14 branches; only the happy path plus two
 validation-failure paths have tests. Inventory-failure, persistence-failure,
 and notification-failure branches are untested. Adding tests is straightforward
-once the team confirms intended behaviour for each branch (see Q2.SUC).
+once the team confirms intended behaviour for each branch (see Q2.3.SUC).
 ```
 
-### Q5.4: What technical debt is the team already tracking?
+### Q5.1.TrackedDebt: What technical debt is the team already tracking?
 
 ```
 [OPEN]

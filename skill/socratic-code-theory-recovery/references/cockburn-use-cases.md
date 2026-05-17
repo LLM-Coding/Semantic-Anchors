@@ -1,6 +1,6 @@
 # Cockburn Use Cases — Decomposition Guide for Q2 (Specification)
 
-Alistair Cockburn's *Fully Dressed* use-case format gives the Q2 branch a precise structure. Each user-goal-level use case becomes a sub-tree of Q2; the format's mandatory fields are the leaves.
+Alistair Cockburn's *Fully Dressed* use-case format gives the Q2 branch a precise structure. The Q2 second level is fixed (Q2.1–Q2.6); use cases live *below* it: each user-goal-level persona use case is a sub-tree under **Q2.2** (the use-case catalog), and each system use case a sub-tree under **Q2.3** (per-interface system specs). The format's mandatory fields are the leaves.
 
 ## The fields as Q2 sub-questions
 
@@ -25,14 +25,14 @@ Cockburn distinguishes three goal levels:
 - **User Goal / Sea Level** — one sitting, one user, one outcome ("place an order")
 - **Subfunction / Fish** — smaller actions reused by user-goal use cases ("validate address")
 
-The Q2 branch should contain *one sub-tree per User-Goal-level use case*. Subfunctions appear inline in the Extensions or in Supplementary Specifications. Summary-level flows are usually `[OPEN]` because they describe business processes, not technical flows.
+Q2.2 (the use-case catalog) should contain *one sub-tree per User-Goal-level use case*. Subfunctions appear inline in the Extensions or in Supplementary Specifications. Summary-level flows are usually `[OPEN]` because they describe business processes, not technical flows.
 
 ## System use cases vs persona use cases
 
-Persona use cases describe user-visible behaviour. System use cases describe technical interfaces (API endpoint contracts, CLI argument grammars, event payloads, file formats). Both belong in Q2 but in separate sub-branches:
+Persona use cases describe user-visible behaviour. System use cases describe technical interfaces (API endpoint contracts, CLI argument grammars, event payloads, file formats). They hang off different fixed Q2 nodes:
 
-- `Q2.PUC.*` — persona use cases (user goal level)
-- `Q2.SUC.*` — system use cases (one per technical interface)
+- `Q2.2.PUC.*` — persona use cases (user goal level), under the use-case catalog
+- `Q2.3.SUC.*` — system use cases (one per technical interface), under per-interface system specs
 
 System use cases are *more* code-derivable than persona use cases because the interface contract is the code. Persona use cases require domain knowledge that is often `[OPEN]`.
 
@@ -48,7 +48,7 @@ System use cases are *more* code-derivable than persona use cases because the in
 
 A Q2 leaf is fine-grained enough when it asks about one field of one use case:
 
-- "What is the Main Success Scenario of `Q2.PUC.PlaceOrder`?" → leaf
+- "What is the Main Success Scenario of `Q2.2.PUC.PlaceOrder`?" → leaf
 - "What does the system do when an order is placed?" → still needs decomposition
 
 ## Reference
