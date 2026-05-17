@@ -5651,9 +5651,14 @@ Clarify requirements using the Socratic Method:
 - Ask at most 3 questions at a time, challenge assumptions
 - Use MECE to ensure questions cover all areas without overlap
 - Keep asking until you fully understand the requirements
-- Document as a PRD (problem, goals, personas, success criteria, scope)
 
-*Referenced anchors: socratic-method, mece, prd*
+Frame the scope before writing it down:
+- Impact Mapping connects deliverables to business goals and actors — so you build what moves a goal, not just what was asked.
+- User Story Mapping lays stories along the user's journey and exposes a coherent first slice.
+
+Document the result as a PRD (problem, goals, personas, success criteria, scope).
+
+*Referenced anchors: socratic-method, mece, prd, impact-mapping, user-story-mapping*
 
 ## Architecture Documentation
 
@@ -5699,6 +5704,16 @@ Create EPICs and User Stories as GitHub issues from the specification.
 
 *Referenced anchors: invest, moscow*
 
+## Vertical Slicing
+
+Build the first increment as a walking skeleton: a deployable end-to-end slice that wires every architectural layer together and does almost nothing else.
+
+Grow the system as thin vertical slices — each slice cuts through all layers and delivers one small piece of user value. Slices are tracer bullets: kept and refined, never thrown away.
+
+When a technical unknown blocks a slice, run a spike solution first — a timeboxed, throwaway experiment that removes the risk. Spike code is discarded; only its lesson carries into the slice.
+
+*Referenced anchors: walking-skeleton, tracer-bullet, thin-vertical-slice, spike-solution*
+
 ## Implement Next
 
 For each issue:
@@ -5712,6 +5727,16 @@ For each issue:
 - When EPIC is complete, create a Pull Request
 
 *Referenced anchors: tdd-london-school, tdd-chicago-school, definition-of-done, conventional-commits*
+
+## Refactoring
+
+Refactoring targets are named code smells, not a vague urge to "clean up".
+
+For any refactoring that does not complete in one step, use the Mikado Method: attempt the change, note what breaks, revert, and do the prerequisites first — never leave the build broken while you dig.
+
+Refactoring commits change structure only. Behaviour changes go in separate commits, and the test suite stays green at every commit.
+
+*Referenced anchors: code-smells, mikado-method*
 
 ## Code Quality
 

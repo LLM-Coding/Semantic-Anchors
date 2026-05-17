@@ -16,9 +16,9 @@
     "titleDe": "Anforderungsermittlung",
     "description": "How we clarify requirements before writing specs",
     "descriptionDe": "Wie wir Anforderungen klären, bevor wir Specs schreiben",
-    "anchors": ["socratic-method", "mece", "prd"],
-    "template": "Clarify requirements using the Socratic Method:\n- Ask at most 3 questions at a time, challenge assumptions\n- Use MECE to ensure questions cover all areas without overlap\n- Keep asking until you fully understand the requirements\n- Document as a PRD (problem, goals, personas, success criteria, scope)",
-    "templateDe": "Anforderungen mit der Sokratischen Methode klären:\n- Höchstens 3 Fragen gleichzeitig, Annahmen hinterfragen\n- MECE nutzen, um alle Bereiche überlappungsfrei abzudecken\n- Weiterfragen bis die Anforderungen vollständig verstanden sind\n- Als PRD dokumentieren (Problem, Ziele, Personas, Erfolgskriterien, Scope)",
+    "anchors": ["socratic-method", "mece", "prd", "impact-mapping", "user-story-mapping"],
+    "template": "Clarify requirements using the Socratic Method:\n- Ask at most 3 questions at a time, challenge assumptions\n- Use MECE to ensure questions cover all areas without overlap\n- Keep asking until you fully understand the requirements\n\nFrame the scope before writing it down:\n- Impact Mapping connects deliverables to business goals and actors — so you build what moves a goal, not just what was asked.\n- User Story Mapping lays stories along the user's journey and exposes a coherent first slice.\n\nDocument the result as a PRD (problem, goals, personas, success criteria, scope).",
+    "templateDe": "Anforderungen mit der Sokratischen Methode klären:\n- Höchstens 3 Fragen gleichzeitig, Annahmen hinterfragen\n- MECE nutzen, um alle Bereiche überlappungsfrei abzudecken\n- Weiterfragen bis die Anforderungen vollständig verstanden sind\n\nDen Scope rahmen, bevor er aufgeschrieben wird:\n- Impact Mapping verbindet Lieferobjekte mit Geschäftszielen und Akteuren — damit man baut, was ein Ziel bewegt, nicht nur was gefragt wurde.\n- User Story Mapping ordnet Stories entlang der Nutzerreise an und legt eine sinnvolle erste Scheibe offen.\n\nDas Ergebnis als PRD dokumentieren (Problem, Ziele, Personas, Erfolgskriterien, Scope).",
     "category": "requirements"
   },
   {
@@ -72,6 +72,17 @@
     "category": "development"
   },
   {
+    "id": "vertical-slicing",
+    "title": "Vertical Slicing",
+    "titleDe": "Vertikale Schnitte",
+    "description": "How we build the first increment and grow the system in thin end-to-end slices",
+    "descriptionDe": "Wie wir das erste Inkrement bauen und das System in dünnen End-to-End-Scheiben wachsen lassen",
+    "anchors": ["walking-skeleton", "tracer-bullet", "thin-vertical-slice", "spike-solution"],
+    "template": "Build the first increment as a walking skeleton: a deployable end-to-end slice that wires every architectural layer together and does almost nothing else.\n\nGrow the system as thin vertical slices — each slice cuts through all layers and delivers one small piece of user value. Slices are tracer bullets: kept and refined, never thrown away.\n\nWhen a technical unknown blocks a slice, run a spike solution first — a timeboxed, throwaway experiment that removes the risk. Spike code is discarded; only its lesson carries into the slice.",
+    "templateDe": "Das erste Inkrement als Walking Skeleton bauen: eine deploybare End-to-End-Scheibe, die alle Architekturschichten verbindet und sonst fast nichts tut.\n\nDas System in dünnen vertikalen Scheiben wachsen lassen — jede Scheibe geht durch alle Schichten und liefert ein kleines Stück Nutzerwert. Scheiben sind Tracer Bullets: behalten und verfeinert, nie weggeworfen.\n\nWenn ein technisches Unbekanntes eine Scheibe blockiert, zuerst eine Spike Solution durchführen — ein zeitlich begrenztes Wegwerf-Experiment, das das Risiko beseitigt. Spike-Code wird verworfen; nur seine Erkenntnis fließt in die Scheibe ein.",
+    "category": "development"
+  },
+  {
     "id": "implement-next",
     "title": "Implement Next",
     "titleDe": "Nächstes Feature",
@@ -85,6 +96,17 @@
     ],
     "template": "For each issue:\n- Create a feature branch for the EPIC\n- Select next issue from backlog (respect dependencies)\n- Analyze and document analysis as a comment on the issue\n- Implement using TDD (London or Chicago School as appropriate)\n- Each test references its Use Case ID for traceability\n- Commit with Conventional Commits, reference issue number\n- Check if spec or architecture docs need updating\n- When EPIC is complete, create a Pull Request",
     "templateDe": "Für jedes Issue:\n- Feature-Branch für das EPIC erstellen\n- Nächstes Issue aus dem Backlog wählen (Abhängigkeiten beachten)\n- Analysieren und Analyse als Kommentar am Issue dokumentieren\n- Mit TDD implementieren (London oder Chicago School je nach Kontext)\n- Jeder Test referenziert seine Use-Case-ID für Rückverfolgbarkeit\n- Mit Conventional Commits committen, Issue-Nummer referenzieren\n- Prüfen ob Spec oder Architektur-Docs aktualisiert werden müssen\n- Wenn EPIC fertig, Pull Request erstellen",
+    "category": "development"
+  },
+  {
+    "id": "refactoring",
+    "title": "Refactoring",
+    "titleDe": "Refactoring",
+    "description": "How we identify and execute refactorings safely",
+    "descriptionDe": "Wie wir Refactorings sicher identifizieren und durchführen",
+    "anchors": ["code-smells", "mikado-method"],
+    "template": "Refactoring targets are named code smells, not a vague urge to \"clean up\".\n\nFor any refactoring that does not complete in one step, use the Mikado Method: attempt the change, note what breaks, revert, and do the prerequisites first — never leave the build broken while you dig.\n\nRefactoring commits change structure only. Behaviour changes go in separate commits, and the test suite stays green at every commit.",
+    "templateDe": "Refactoring-Ziele sind benannte Code Smells, kein vager Drang \"aufzuräumen\".\n\nFür jedes Refactoring, das nicht in einem Schritt fertig wird, die Mikado-Methode nutzen: die Änderung versuchen, notieren was bricht, zurücksetzen und zuerst die Voraussetzungen erledigen — den Build nie kaputt lassen, während man gräbt.\n\nRefactoring-Commits ändern nur Struktur. Verhaltensänderungen kommen in separate Commits, und die Testsuite bleibt bei jedem Commit grün.",
     "category": "development"
   },
   {
