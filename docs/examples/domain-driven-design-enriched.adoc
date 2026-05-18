@@ -1,0 +1,78 @@
+= Domain-Driven Design according to Evans
+:categories: software-architecture
+:roles: software-architect, software-developer, business-analyst, team-lead
+:proponents: Eric Evans
+:related: clean-architecture, event-driven-architecture, system-theoretic-semantic-anchors
+:tags: DDD, bounded-context, ubiquitous-language, domain-model, strategic-design, systemic
+:tier: 3
+
+// Systemic & Human Dimensions (see system-theoretic-semantic-anchors)
+// :systemic-dimensions: boundary, emergence
+// :human-dimensions: stakeholder, cognitive, trust
+// :systemic-notes: Bounded Context is one of the cleanest examples of a boundary anchor in software design
+// :human-notes: Ubiquitous Language is fundamentally about cognitive alignment and trust between developers and domain experts
+
+[%collapsible]
+====
+Full Name:: Domain-Driven Design according to Eric Evans
+
+[discrete]
+== *Core Concepts*:
+
+Ubiquitous Language:: Shared vocabulary between developers and domain experts
+
+Bounded Context:: Explicit boundaries where a model is defined and applicable
+
+Aggregates:: Cluster of domain objects treated as a single unit
+
+Entities:: Objects defined by identity, not attributes
+
+Value Objects:: Immutable objects defined by their attributes
+
+Repositories:: Abstraction for object persistence and retrieval
+
+Domain Events:: Significant occurrences in the domain
+
+Strategic Design:: Context mapping, anti-corruption layers
+
+Tactical Design:: Building blocks (entities, value objects, services)
+
+Model-Driven Design:: Code that expresses the domain model
+
+
+Key Proponent:: Eric Evans ("Domain-Driven Design: Tackling Complexity in the Heart of Software", 2003)
+
+[discrete]
+== *When to Use*:
+
+* Complex business domains with intricate rules
+* Long-lived systems requiring deep domain understanding
+* When business and technical teams need close collaboration
+* Systems where the domain logic is the core value
+
+[discrete]
+== *Systemic & Human Dimensions*:
+
+Boundary:: **Bounded Context** is one of the cleanest boundary concepts in software design — it explicitly defines where a model is valid and where it is not. Context Mapping documents relationships between bounded contexts. *This is a direct operationalization of Luhmann's System/Umwelt-Differenz in software.*
+
+Emergence:: **Domain Events** are emergent by nature: they represent *something that happened* in the domain, not something that was commanded. The event storming practice surfaces emergent domain knowledge. *Missing:* no guidance on how to handle unexpected domain events or emergent bounded contexts.
+
+Feedback:: *Not explicitly addressed.* Context mapping implies feedback (anticorruption layer translates between contexts), but there is no documented feedback mechanism to validate whether the domain model still matches reality. The model can drift without detection.
+
+Resilience:: *Not addressed.* DDD assumes the model is correct and stable. No guidance on what happens when a bounded context fails, when the ubiquitous language breaks down, or when the domain evolves faster than the model.
+
+Stakeholder:: **Strong** — Ubiquitous Language explicitly brings domain experts into the design process. The "knowledge crunching" process is collaborative. *Subtle gap:* DDD prioritizes domain experts but may marginalize end-users who are not domain experts (e.g., customers vs. insurance agents in an insurance system).
+
+Cognitive:: **Strong** — Bounded Contexts reduce cognitive load by limiting the scope of any single model. The strategic/tactical distinction provides a mental hierarchy. Ubiquitous Language eliminates translation overhead between business and technical thinking.
+
+Trust:: **Implicit** — The shared model (Ubiquitous Language) is a trust-building mechanism. When developers and domain experts use the same terms with the same meanings, trust grows. *Missing:* what happens when trust breaks down? No guidance on model reconciliation.
+
+Ethical:: *Not addressed.* DDD makes ethical choices: it centers business value, invests heavily in modeling, and assumes long-term commitment. These are valid but not neutral choices. The approach may not fit contexts where speed over depth is ethically preferable (e.g., crisis response systems).
+
+[discrete]
+== *Related Anchors*:
+
+* <<clean-architecture,Clean Architecture>> (complementary architectural style)
+* <<event-driven-architecture,Event-Driven Architecture>> (Domain Events as integration pattern)
+* <<system-theoretic-semantic-anchors,System-Theoretic Semantic Anchors>> (systemic dimensions framework)
+====

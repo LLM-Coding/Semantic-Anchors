@@ -1,0 +1,52 @@
+= Proposed New Role: Systems Thinker / Systemic Consultant
+
+== Proposed Data
+
+[%autowidth]
+|===
+| Attribute | Value
+| Role ID | `systems-thinker`
+| Display Name | Systems Thinker / Systemic Consultant
+| Description | Applies system-theoretic and constructivist methods to analyze and design socio-technical systems. Works across organizational, technical, and human boundaries.
+|===
+
+== Rationale
+
+The current 12 professional roles are heavily weighted toward software engineering and management. While "Consultant / Coach" and "Team Lead / Engineering Manager" partially cover systemic thinking, neither captures the specific expertise required for:
+
+1. **System-theoretic analysis** — applying Luhmann's concepts (operational closure, structural coupling) to system design
+2. **Constructivist epistemology** — understanding that systems construct their own realities (viability vs. truth)
+3. **Systemic intervention** — using circular questioning, neutrality, and perturbation techniques
+4. **Socio-technical design** — designing systems that respect the operational closure of both human and technical subsystems
+
+== Anchors That Would Use This Role
+
+All 5 proposed anchors in this MR would use this role:
+- `luhmann-system-theory`
+- `simon-constructivism`
+- `systemic-consulting`
+- `system-theoretic-semantic-anchors`
+- `semantic-contract`
+
+Additionally, these existing anchors could be tagged with the new role:
+- `cynefin-framework` (complexity analysis is a core systemic skill)
+- `double-diamond` (divergent/convergent thinking aligns with systemic exploration)
+- (others as determined by maintainers)
+
+== Integration
+
+If accepted, the role would be added to:
+
+1. `docs/roles/systems-thinker.adoc` (following the existing role file format)
+2. All proposed anchor `:roles:` metadata would include `systems-thinker`
+3. The website role filter would include this new role
+
+== Comparison with Existing Roles
+
+|===
+| Criterion | Consultant | Team Lead | Systems Thinker (new)
+| Focus | Organizational process | Team management | System-theoretic analysis
+| Core theory | Change management | Leadership theory | Luhmann + Simon + Beratung
+| Method | Coaching, facilitation | Agile, OKRs | Circular questioning, structural coupling
+| Systems knowledge | Practical | Practical | Theoretical + practical
+|===

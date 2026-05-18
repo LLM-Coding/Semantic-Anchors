@@ -1,0 +1,98 @@
+= System-Theoretic Semantic Anchors
+:categories: meta, strategic-planning
+:roles: consultant, software-architect, team-lead, educator, systems-thinker
+:related: luhmann-system-theory, simon-constructivism, systemic-consulting, semantic-contract, cynefin-framework, mece-principle
+:proponents: Niklas Luhmann, Fritz B. Simon, Gregory Bateson
+:tags: systemic-anchors, human-anchors, socio-technical, boundary, emergence, feedback, resilience, stakeholder, cognitive, trust, ethical
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: System-Theoretic Semantic Anchors (Systemic + Human Layers)
+
+Also known as:: Socio-Technical Semantic Anchors, Extended Semantic Anchors Framework
+
+[discrete]
+== *Core Concepts*:
+
+The framework extends technical semantic anchors (Intent, Negative, Verification, Source) with two additional layers — Systemic and Human — forming a complete **tetrad of anchors** for socio-technical system design:
+
+=== Systemic Anchors (Whole-System Behavior)
+
+. *Boundary Anchor* — What is the system boundary? What is explicitly *inside* vs. *outside* scope?
+  *Source:* Luhmann — "Ein System grenzt sich prinzipiell gegen seine Umwelt ab." System/Umwelt-Differenz.
+  *Example:* "This automation controls zone valves but does NOT interact with the water main shutoff."
+
+. *Emergence Anchor* — What unintended behaviors could emerge from component interactions?
+  *Source:* Simon — "Eigenschaften emergent, d.h. nicht durch die schlichte Addition der Eigenschaften ihrer Teile herstellbar."
+  *Example:* "Occupancy sensor + thermostat + window contact might cycle heating on/off rapidly."
+
+. *Feedback Anchor* — What reinforcing or balancing feedback loops exist?
+  *Source:* Simon — Kybernetik 1. Ordnung; triviale vs. nichttriviale Maschinen.
+  *Example:* "Lower temperature → less energy → no change (balancing). But lower temp → space heaters → higher total energy (reinforcing)."
+
+. *Resilience Anchor* — How does the system behave under partial failure?
+  *Source:* Luhmann — Operative Geschlossenheit: "Ein System erhält sich dadurch, dass Operationen aneinander anschließen."
+  *Example:* "If the network goes down, all local automations must still run with last-known states."
+
+=== Human Anchors (Human-in-the-System)
+
+. *Stakeholder Anchor* — Who is affected (directly and indirectly) and what are their needs?
+  *Source:* Simon/Beratung — Allparteilichkeit; "Kein Stakeholder wird übergangen, aber Sicherheit hat Veto-Recht."
+  *Example:* "Temperature automation affects WFH user productivity, partner comfort, and pet well-being."
+
+. *Cognitive Anchor* — What mental load does this place on the human?
+  *Source:* Luhmann — Psychische Systeme: "Gedanken können das eigene System niemals verlassen." Simon — Viabilität.
+  *Example:* "This automation has 7 configurable parameters — exceeds average user's willingness. Defaults must cover 90%."
+
+. *Trust Anchor* — What builds or erodes user trust over time?
+  *Source:* Luhmann — Strukturelle Kopplung: "Erwartungsstrukturen, die das System für bestimmte Irritationen sensibler machen."
+  *Example:* "If 'away mode' falsely triggers while someone is home more than once a month, trust degrades."
+
+. *Ethical Anchor* — What are the ethical implications of this design?
+  *Source:* Simon — Kybernetik 2. Ordnung: "Der Beobachter wird in die Beobachtung einbezogen."
+  *Example:* "Camera-based occupancy detection must not record or transmit image data; local processing only."
+
+=== Semantic Contracts as Agreements Between Layers
+
+Beyond the individual anchors, **semantic contracts** formalize commitments *between* the system layers:
+
+* Human-System Contract: "The system will never make a change that the human cannot manually reverse within 2 actions."
+* System-Environment Contract: "The automation will not activate irrigation if rain is forecast >50% within 6 hours."
+* Layer-to-Layer Contract: "The automation layer guarantees conflicting commands to the same actuator within 5 seconds."
+
+Key Proponents:: Niklas Luhmann (system theory, operational closure, structural coupling), Fritz B. Simon (constructivism, viability, systemic consulting), Gregory Bateson (cybernetics, information theory, "differences that make a difference"), Humberto Maturana (autopoiesis, structural determinism)
+
+[discrete]
+== *When to Use*:
+
+* Designing AI agents that interact with humans (respect operational closure, avoid overloading cognition)
+* Evaluating existing system designs for blind spots in human and systemic dimensions
+* Creating semantic anchors for socio-technical systems where "correct" is not the same as "viable"
+* Writing requirements that go beyond functional correctness to include resilience and trust
+* Auditing automation designs for emergent negative behaviors before deployment
+* Training LLM agents (like coding assistants) to consider systemic and human factors in their reasoning
+
+[discrete]
+== *Relationship to Other Anchors*:
+
+* Extends the original four technical anchors (Intent, Negative, Verification, Source) to a complete tetrad
+* Related to <<mece-principle,MECE Principle>>: the 4+4+4 anchor structure is MECE across layers
+* Complements <<cynefin-framework,Cynefin Framework>>: Systemic anchors map to Complex domain, Human anchors to Complicated domain
+* Provides the theoretical grounding for <<semantic-contract,Semantic Contracts>>
+* Uses <<luhmann-system-theory,Luhmann's System Theory>>, <<simon-constructivism,Simon's Constructivism>>, and <<systemic-consulting,Systemic Consulting>> as its three source pillars
+
+[discrete]
+== *The Tetrad Structure*:
+
+[%autowidth]
+|===
+| Layer | Anchor Type | Focus | Question | Source
+| Technical | Intent / Negative / Verification / Source | Component correctness | Does it work? | Existing catalog
+| Systemic | Boundary / Emergence / Feedback / Resilience | Whole-system behavior | Does it work *for the system*? | Luhmann
+| Human | Stakeholder / Cognitive / Trust / Ethical | Human-in-the-loop | Does it work *for the people*? | Simon + Beratung
+| Contract | Semantic Contracts | Interface between layers | What do we guarantee? | Structural coupling
+|===
+
+Note:: This is a meta-anchor — it describes a framework for *creating* better semantic anchors, not a domain methodology like TDD or Clean Architecture. Use it when the problem involves both technical correctness and human/systemic viability.
+====

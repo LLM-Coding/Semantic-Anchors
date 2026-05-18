@@ -1,0 +1,98 @@
+= System-Theoretische Semantische Anker
+:categories: meta, strategic-planning
+:roles: consultant, software-architect, team-lead, educator, systems-thinker
+:related: luhmann-system-theory, simon-constructivism, systemic-consulting, semantic-contract, cynefin-framework, mece-principle
+:proponents: Niklas Luhmann, Fritz B. Simon, Gregory Bateson
+:tags: systemic-anchors, human-anchors, socio-technical, boundary, emergence, feedback, resilience, stakeholder, cognitive, trust, ethical
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: System-Theoretische Semantische Anker (Systemische + Menschliche Ebenen)
+
+Auch bekannt als:: Sozio-Technische Semantische Anker, Erweitertes Semantische-Anker-Framework
+
+[discrete]
+== *Kernkonzepte*:
+
+Das Framework erweitert technische semantische Anker (Intent, Negativ, Verifikation, Quelle) um zwei weitere Ebenen — Systemisch und Menschlich — und bildet eine vollständige **Tetrade von Ankern** für sozio-technisches Systemdesign:
+
+=== Systemische Anker (Gesamtsystem-Verhalten)
+
+. *Boundary-Anker (Grenze)* — Was ist die Systemgrenze? Was ist explizit *innerhalb* vs. *außerhalb* des Geltungsbereichs?
+  *Quelle:* Luhmann — "Ein System grenzt sich prinzipiell gegen seine Umwelt ab." System/Umwelt-Differenz.
+  *Beispiel:* "Diese Steuerung reguliert Zonenventile, greift aber NICHT in den Hauptwasserhahn ein."
+
+. *Emergenz-Anker* — Welche unbeabsichtigten Verhaltensweisen könnten aus Komponenteninteraktionen entstehen?
+  *Quelle:* Simon — "Eigenschaften emergent, d.h. nicht durch die schlichte Addition der Eigenschaften ihrer Teile herstellbar."
+  *Beispiel:* "Anwesenheitssensor + Thermostat + Fensterkontakt könnten Heizung schnell ein-/ausschalten."
+
+. *Feedback-Anker* — Welche verstärkenden oder ausgleichenden Rückkopplungsschleifen existieren?
+  *Quelle:* Simon — Kybernetik 1. Ordnung; triviale vs. nichttriviale Maschinen.
+  *Beispiel:* "Niedrigere Temperatur → weniger Energie → keine Änderung (ausgleichend). Aber niedrigere Temp. → Heizlüfter → höherer Gesamtverbrauch (verstärkend)."
+
+. *Resilienz-Anker* — Wie verhält sich das System unter teilweisem Ausfall?
+  *Quelle:* Luhmann — Operative Geschlossenheit: "Ein System erhält sich dadurch, dass Operationen aneinander anschließen."
+  *Beispiel:* "Bei Netzwerkausfall laufen alle lokalen Automatisierungen mit den letzten bekannten Zuständen weiter."
+
+=== Menschliche Anker (Mensch-im-System)
+
+. *Stakeholder-Anker* — Wer ist betroffen (direkt und indirekt) und was sind ihre Bedürfnisse?
+  *Quelle:* Simon/Beratung — Allparteilichkeit; "Kein Stakeholder wird übergangen, aber Sicherheit hat Veto-Recht."
+  *Beispiel:* "Temperaturautomatik betrifft Produktivität des Homeoffice-Nutzers, Komfort des Partners und Wohlbefinden des Haustiers."
+
+. *Kognitiver Anker* — Welche mentale Last erzeugt dies für den Menschen?
+  *Quelle:* Luhmann — Psychische Systeme: "Gedanken können das eigene System niemals verlassen." Simon — Viabilität.
+  *Beispiel:* "Diese Automatisierung hat 7 Parameter — das übersteigt die Bereitschaft des Durchschnittsnutzers. Defaults müssen 90% abdecken."
+
+. *Vertrauensanker* — Was baut oder zerstört Nutzervertrauen über Zeit?
+  *Quelle:* Luhmann — Strukturelle Kopplung: "Erwartungsstrukturen, die das System für bestimmte Irritationen sensibler machen."
+  *Beispiel:* "Wenn der 'Abwesenheitsmodus' fälschlich auslöst, während jemand zu Hause ist, sinkt das Vertrauen."
+
+. *Ethischer Anker* — Was sind die ethischen Implikationen dieses Designs?
+  *Quelle:* Simon — Kybernetik 2. Ordnung: "Der Beobachter wird in die Beobachtung einbezogen."
+  *Beispiel:* "Kamerabasierte Anwesenheitserkennung darf keine Bilddaten aufzeichnen oder übertragen; nur lokale Verarbeitung."
+
+=== Semantische Kontrakte als Vereinbarungen zwischen Ebenen
+
+Über die einzelnen Anker hinaus formalisieren **semantische Kontrakte** Verpflichtungen *zwischen* den Systemebenen:
+
+* Mensch-System-Kontrakt: "Das System wird nie eine Änderung vornehmen, die der Mensch nicht in 2 Aktionen rückgängig machen kann."
+* System-Umwelt-Kontrakt: "Die Bewässerung wird nicht aktiviert, wenn >50% Regenwahrscheinlichkeit innerhalb von 6 Stunden besteht."
+* Ebene-zu-Ebene-Kontrakt: "Die Automatisierungsebene garantiert, keine widersprüchlichen Befehle an denselben Aktor innerhalb von 5 Sekunden zu senden."
+
+Schlüsselvertreter:: Niklas Luhmann (Systemtheorie, operative Geschlossenheit, strukturelle Kopplung), Fritz B. Simon (Konstruktivismus, Viabilität, systemische Beratung), Gregory Bateson (Kybernetik, Informationstheorie, "Unterschiede, die Unterschiede machen"), Humberto Maturana (Autopoiesis, Strukturdeterminiertheit)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Design von KI-Agenten, die mit Menschen interagieren (operative Geschlossenheit respektieren, kognitive Überlastung vermeiden)
+* Evaluation bestehender Systemdesigns auf blinde Flecken in menschlichen und systemischen Dimensionen
+* Erstellung semantischer Anker für sozio-technische Systeme, wo "korrekt" nicht dasselbe ist wie "viabel"
+* Anforderungsdefinition jenseits funktionaler Korrektheit, inklusive Resilienz und Vertrauen
+* Audit von Automatisierungsdesigns auf emergente negative Verhaltensweisen vor dem Deployment
+* Training von LLM-Agenten (wie Codierungsassistenten), systemische und menschliche Faktoren in ihrer Argumentation zu berücksichtigen
+
+[discrete]
+== *Verhältnis zu anderen Ankern*:
+
+* Erweitert die ursprünglichen vier technischen Anker (Intent, Negativ, Verifikation, Quelle) zu einer vollständigen Tetrade
+* Verwandt mit <<mece-principle,MECE-Prinzip⟩: die 4+4+4 Anker-Struktur ist MECE über die Ebenen hinweg
+* Ergänzt <<cynefin-framework,Cynefin Framework⟩: Systemische Anker bilden die komplexe Domäne ab, Menschliche Anker die komplizierte Domäne
+* Liefert die theoretische Grundlage für <<semantic-contract,Semantische Kontrakte⟩
+* Verwendet <<luhmann-system-theory,Luhmanns Systemtheorie⟩, <<simon-constructivism,Simons Konstruktivismus⟩ und <<systemic-consulting,Systemische Beratung⟩ als drei Quellsäulen
+
+[discrete]
+== *Die Tetraden-Struktur*:
+
+[%autowidth]
+|===
+| Ebene | Anker-Typ | Fokus | Frage | Quelle
+| Technisch | Intent / Negativ / Verifikation / Quelle | Komponentenkorrektheit | Funktionier es? | Existierender Katalog
+| Systemisch | Grenze / Emergenz / Feedback / Resilienz | Gesamtsystemverhalten | Funktionier es *für das System*? | Luhmann
+| Menschlich | Stakeholder / Kognitiv / Vertrauen / Ethisch | Mensch im System | Funktionier es *für die Menschen*? | Simon + Beratung
+| Kontrakt | Semantische Kontrakte | Schnittstelle zwischen Ebenen | Was garantieren wir? | Strukturelle Kopplung
+|===
+
+Hinweis:: Dies ist ein Meta-Anker — er beschreibt ein Framework zur *Erstellung besserer semantischer Anker*, keine Methodik wie TDD oder Clean Architecture. Verwenden Sie ihn, wenn das Problem sowohl technische Korrektheit als auch menschliche/systemische Viabilität betrifft.
+====

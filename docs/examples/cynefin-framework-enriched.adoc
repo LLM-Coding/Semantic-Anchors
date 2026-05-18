@@ -1,0 +1,76 @@
+= Cynefin Framework
+:categories: strategic-planning
+:roles: team-lead, consultant, product-owner, software-architect
+:proponents: Dave Snowden
+:related: wardley-mapping, system-theoretic-semantic-anchors
+:tags: complexity, decision-making, sensemaking, strategy, domains, systemic
+:tier: 3
+
+// Systemic & Human Dimensions (see system-theoretic-semantic-anchors)
+// :systemic-dimensions: boundary, emergence, feedback, resilience
+// :human-dimensions: stakeholder, cognitive, trust, ethical
+// :systemic-notes: Cynefin distinguishes system contexts by their intrinsic complexity, directly mapping to all four Systemic anchors
+// :human-notes: Cynefin is a facilitation tool that primarily reduces cognitive overload and supports stakeholder alignment
+
+[%collapsible]
+====
+Full Name:: Cynefin Framework according to Dave Snowden
+
+Also known as:: Cynefin sensemaking framework
+
+[discrete]
+== *Core Concepts*:
+
+Five domains::
++
+Clear (formerly "Simple")::: Best practices apply, sense-categorize-respond
+Complicated::: Good practices exist, sense-analyze-respond
+Complex::: Emergent practices, probe-sense-respond
+Chaotic::: Novel practices needed, act-sense-respond
+Confused (center)::: Don't know which domain you're in
+
+Domain transitions:: How situations move between domains
+
+Safe-to-fail probes:: Experiments in complex domain
+
+Complacency risk:: Moving from clear to chaotic
+
+Decision-making context:: Different domains require different approaches
+
+Facilitation tool:: Helps teams discuss and categorize challenges
+
+Key Proponents:: Dave Snowden (1999)
+
+[discrete]
+== *When to Use*:
+
+* Understanding what type of problem you're facing
+* Choosing appropriate decision-making approaches
+* Facilitating team discussions about complexity
+* Strategic planning in uncertain environments
+
+[discrete]
+== *Systemic & Human Dimensions*:
+
+Boundary:: Each Cynefin domain defines a clear boundary of causality — from "best practices apply" (Clear) to "emergent practices needed" (Complex). The boundaries between domains are the most critical decision points.
+
+Emergence:: The Complex domain is explicitly about emergence: patterns become visible only in retrospect. Probe-sense-respond is a methodology for surfacing emergent properties without attempting to predict them.
+
+Feedback:: Each domain encodes a specific feedback strategy: sense, analyze, probe, or act. The "respond" stage closes the loop differently depending on domain context.
+
+Resilience:: Safe-to-fail probes are fundamentally about resilience — testing hypotheses in a way that the system survives failure. Complacency risk (Clear → Chaotic) is a resilience warning.
+
+Stakeholder:: Cynefin is typically used as a facilitation tool — who is in the room when domains are assigned determines the outcome. Different stakeholders may legitimately perceive the same situation in different domains.
+
+Cognitive:: The primary function of Cynefin is cognitive: it reduces the overwhelming complexity of a situation into a small number of tractable categories, enabling action where analysis paralysis would otherwise occur.
+
+Trust:: Trust is implicit in the facilitation context — participants must trust the facilitator and the process enough to honestly assess which domain they are in, particularly when admitting uncertainty (Complex) or crisis (Chaotic).
+
+Ethical:: Safe-to-fail probes carry an ethical dimension: whose "fail" is it? The ethical practitioner ensures probes are safe *for all affected*, not just the system owner.
+
+[discrete]
+== *Related Anchors*:
+
+* <<wardley-mapping,Wardley Mapping>>
+* <<system-theoretic-semantic-anchors,System-Theoretic Semantic Anchors>> (systemic dimensions framework)
+====

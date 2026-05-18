@@ -1,0 +1,86 @@
+= Semantischer Kontrakt (Systemtheoretisch)
+:categories: meta, requirements-engineering
+:roles: consultant, software-architect, product-owner, business-analyst, systems-thinker
+:related: system-theoretic-semantic-anchors, luhmann-system-theory, simon-constructivism, systemic-consulting, mece-principle
+:proponents: Niklas Luhmann, Humberto Maturana, Fritz B. Simon
+:tags: semantic-contracts, structural-coupling, systemic-agreements, cross-system, operational-closure, perturbation
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Semantischer Kontrakt (basierend auf struktureller Kopplung)
+
+Auch bekannt als:: Systemische Vereinbarung, Ebenenkontrakt, Sozio-Technische Schnittstellenspezifikation
+
+[TIP]
+====
+*Begriffshinweis:* Dieses Projekt (Semantic-Anchors) verwendet den Begriff "Semantic Contract" bereits in einem anderen Sinne — als *projektlokale Komposition mehrerer bestehender Anker* (siehe <<rejected-proposals#,Abgelehnte Vorschläge>>). Beispielsweise könnte ein Projekt "Präzise Antwort" als Semantischen Kontrakt definieren, der BLUF + Strunk & White kombiniert.
+
+Dieser Anker beschreibt ein *anderes, komplementäres Konzept*: einen systemtheoretischen Semantischen Kontrakt als *formalisierte strukturelle Kopplung zwischen operationell geschlossenen Systemen*. Beide Konzepte teilen den Namen, dienen aber unterschiedlichen Zwecken:
+
+| Aspekt | Projekt-Kontrakte (bestehend) | Systemische Kontrakte (dieser Anker) |
+|--------|-------------------------------|--------------------------------------|
+| Zweck | Anker zu lokalen Makros komponieren | Schnittstellenvereinbarungen über Systemgrenzen definieren |
+| Basis | Bestehende Anker-Komposition | Luhmanns strukturelle Kopplung |
+| Geltungsbereich | Innerhalb eines Projekts/Teams | Zwischen beliebigen operationell geschlossenen Systemen |
+| Beispiel | "Einfache Erklärung" = Feynman-Technik | "System ändert nie, was Mensch nicht rückgängig machen kann" |
+
+Beide sind gültig; sie adressieren unterschiedliche Bedürfnisse.
+====
+
+[discrete]
+== *Kernkonzepte*:
+
+Definition:: Ein semantischer Kontrakt formalisiert die *Beziehung* zwischen zwei Systemen (technisch, menschlich oder gemischt) im Hinblick darauf, was jedes vom anderen erwarten kann. Anders als ein technischer API-Kontrakt (der Datenformate spezifiziert), spezifiziert ein semantischer Kontrakt *Irritationsmuster* — welche Perturbationen ein System in einem anderen auslösen darf und wie diese zu interpretieren sind.
+
+Basiert auf struktureller Kopplung:: (Luhmann, nach Maturana) — "Strukturelle Kopplung zwischen Systemen und ihrer Umwelt entsteht dann, wenn das jeweilige System Erwartungsstrukturen aufbaut, die es für bestimmte Irritationen sensibler macht." Ein semantischer Kontrakt ist eine formalisierte strukturelle Kopplung.
+
+Respekt vor operationaler Geschlossenheit:: Beide Teilnehmer eines semantischen Kontrakts bleiben operationell geschlossen. Der Kontrakt geht NICHT von direkter Kausalität oder Informationsübertragung aus. Er spezifiziert die *Bedingungen, unter denen ein System Perturbationen anbietet, die das andere System interpretieren kann*.
+
+Drei Typen semantischer Kontrakte:
+
+. *Mensch-System-Kontrakt* — Zwischen einer Person und einem technischen System.
+  *Beispiel:* "Das System wird nie eine Änderung vornehmen, die der Mensch nicht in 2 Aktionen rückgängig machen kann."
+  *Quelle:* Simons Beratung — "Keine Instruktion, sondern Irritation."
+
+. *System-Umwelt-Kontrakt* — Zwischen einem System und seinem Kontext.
+  *Beispiel:* "Die Bewässerungsautomatik wird nicht aktiviert, wenn >50% Regenwahrscheinlichkeit innerhalb von 6 Stunden besteht."
+  *Quelle:* Luhmann — System/Umwelt-Differenz.
+
+. *Ebene-zu-Ebene-Kontrakt* — Zwischen Subsystemen innerhalb eines Systems.
+  *Beispiel:* "Die Automatisierungsebene muss sicherstellen, dass keine widersprüchlichen Befehle an denselben Aktor innerhalb von 5 Sekunden gesendet werden."
+  *Quelle:* Luhmann — Interne Differenzierung.
+
+Schlüsseleigenschaften eines guten semantischen Kontrakts:
+
+* *Negativspezifikation*: Sagt, was NICHT passieren darf, nicht nur, was passieren soll (vgl. Negativer Anker)
+* *Umkehrbarkeitsgarantie*: Jede Änderung muss von der betroffenen Partei umkehrbar sein
+* *Irritationsbegrenzung*: Gibt die Bandbreite akzeptabler Perturbationen an
+* *Beobachtbarkeit*: Verletzungsbedingungen müssen für beide Parteien beobachtbar sein
+* *Zeitliche Grenzen*: Wann beginnt, pausiert oder endet der Kontrakt?
+
+Verhältnis zu Ankern:: Ein semantischer Kontrakt ist die *operative Form* eines Ankers. Während ein Anker definiert, *was* zählt (Grenze, Vertrauen, etc.), definiert ein Kontrakt, *wie* dieses Anliegen zwischen interagierenden Systemen aufrechterhalten wird.
+
+Schlüsselvertreter:: Niklas Luhmann (*Soziale Systeme*, 1984; operative Geschlossenheit + strukturelle Kopplung), Humberto Maturana (biologische Wurzeln der strukturellen Kopplung), Fritz B. Simon (*Einführung in die (System-)Theorie der Beratung*, 2014; Beratungsauftrag als Kontrakt), Gregory Bateson (Metakommunikation — "Kommunikation über Kommunikation")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Definition von Schnittstellen zwischen KI-Agenten und menschlichen Nutzern
+* Spezifikation von Garantien zwischen Microservices in einem sozio-technischen Ökosystem
+* Erstellung von Nutzervereinbarungen jenseits von AGB-Legalese hin zu echter systemischer Kompatibilität
+* Gestaltung von Verträgen zwischen Organisationen in einem vernetzten Geschäftsmodell
+* Spezifikation der Beziehung zwischen einem LLM-basierten Agenten und seinem menschlichen Supervisor
+* Jede Situation, in der zwei Systeme (menschlich oder technisch) interagieren müssen, aber operationell autonom bleiben
+
+[discrete]
+== *Verhältnis zu anderen Ankern*:
+
+* Operationalisiert <<system-theoretic-semantic-anchors,System-Theoretische Semantische Anker⟩ in durchsetzbare Schnittstellenspezifikationen
+* Erweitert das <<mece-principle,MECE-Prinzip⟩ von Kategorien auf Systemschnittstellen
+* Ergänzt ADR (<<adr-according-to-nygard,ADR nach Nygard⟩) um systemische Kopplungsentscheidungen
+* Verwandt mit <<ears-requirements,EARS-Anforderungen⟩ — semantische Kontrakte nutzen dieselbe konditionale Syntax (Ubiquitous, State-Driven, Event-Driven, etc.)
+* Kontrastiert mit Design by Contract (Meyer, Eiffel), das innerhalb eines einzelnen Systems operiert, nicht über operationell geschlossene Systeme hinweg
+
+Historischer Kontext:: Der Begriff "Semantischer Kontrakt" erweitert das Software-Engineering-Konzept "Design by Contract" (Bertrand Meyer, Eiffel) in die sozio-technische Domäne. Während DBC eine gemeinsame Rechenumgebung annimmt, setzen semantische Kontrakte operationale Geschlossenheit voraus — jede Partei hat ihre eigene interne Logik, die nicht direkt inspiziert oder gesteuert werden kann.
+====

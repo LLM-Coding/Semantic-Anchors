@@ -1,0 +1,76 @@
+= Clean Architecture
+:categories: software-architecture
+:roles: software-architect, software-developer
+:proponents: Robert C. Martin
+:related: hexagonal-architecture, domain-driven-design, system-theoretic-semantic-anchors
+:tags: architecture, clean-code, dependency-rule, SOLID, concentric-circles, systemic
+:tier: 3
+
+// Systemic & Human Dimensions (see system-theoretic-semantic-anchors)
+// :systemic-dimensions: boundary, resilience
+// :human-dimensions: stakeholder, cognitive
+// :systemic-notes: Clean Architecture is fundamentally about boundary enforcement and resilience through independence
+// :human-notes: The architecture's primary human value is cognitive — it protects developers from accidental complexity
+
+[%collapsible]
+====
+Full Name:: Clean Architecture according to Robert C. Martin
+
+[discrete]
+== *Core Concepts*:
+
+The Dependency Rule:: Dependencies only point inward
+
+Concentric circles:: Entities → Use Cases → Interface Adapters → Frameworks & Drivers
+
+Independent of frameworks:: Architecture doesn't depend on libraries
+
+Testable:: Business rules testable without UI, database, or external elements
+
+Independent of UI:: UI can change without changing business rules
+
+Independent of database:: Business rules not bound to database
+
+Independent of external agencies:: Business rules don't know about outside world
+
+Screaming Architecture:: Architecture reveals the intent of the system
+
+SOLID principles:: Foundation of the architecture
+
+
+Key Proponent:: Robert C. Martin ("Uncle Bob")
+
+[discrete]
+== *When to Use*:
+
+* Enterprise applications with complex business logic
+* Systems requiring long-term maintainability
+* When team size and turnover are high
+* Projects where business rules must be protected from technology changes
+
+[discrete]
+== *Systemic & Human Dimensions*:
+
+Boundary:: The concentric circles ARE boundary definitions. The Dependency Rule is a boundary enforcement policy. Each layer boundary defines what may and may not cross. *Missing from current description:* guidance on what happens when boundaries are violated at runtime vs. compile time.
+
+Emergence:: *Not addressed by Clean Architecture.* The architecture assumes all significant structure is designed upfront. No guidance on how domain logic emerges from user behavior or how to handle genuinely unpredictable evolution.
+
+Feedback:: *Not addressed.* There is no discussion of how architectural decisions should be validated against real-world use. The architecture is presented as a static structure, not a dynamic system with feedback loops.
+
+Resilience:: **Implicit** — Independence from frameworks, databases, and UI *is* resilience: any external component can fail or be replaced without affecting core business logic. *Missing:* no guidance on partial failure, degraded modes, or self-healing.
+
+Stakeholder:: *Underdeveloped.* The "screaming architecture" concept acknowledges that architecture communicates intent, but *who* the stakeholders are (developers? maintainers? business owners? future teams?) is not explored. The architecture prioritizes the developer's cognitive experience above other stakeholder needs.
+
+Cognitive:: **Strong** — The primary value proposition is cognitive: dependency inversion prevents ripple effects, concentric circles provide a mental model, SOLID reduces confusion. "When team size and turnover are high" explicitly addresses cognitive load.
+
+Trust:: *Not addressed.* There is no discussion of how this architecture builds or erodes trust between teams, between developers and business, or over the system's lifetime. Does strict layering create false confidence?
+
+Ethical:: *Not addressed.* Clean Architecture makes implicit ethical choices (business logic over user experience, independence over integration) without acknowledging them as choices. The "business rules are sacred" stance has real-world ethical implications.
+
+[discrete]
+== *Related Anchors*:
+
+* <<hexagonal-architecture,Hexagonal Architecture>> (Ports & Adapters)
+* <<domain-driven-design,Domain-Driven Design>> (complementary strategic design)
+* <<system-theoretic-semantic-anchors,System-Theoretic Semantic Anchors>> (systemic dimensions framework)
+====

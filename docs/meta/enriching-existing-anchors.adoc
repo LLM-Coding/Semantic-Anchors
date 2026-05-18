@@ -1,0 +1,118 @@
+= Enriching Existing Anchors with Systemic & Human Dimensions
+
+This document proposes how the existing 60+ semantic anchors in this catalog can be systematically enriched with Systemic and Human dimensions based on the <<system-theoretic-semantic-anchors,System-Theoretic Semantic Anchors>> framework.
+
+== Method
+
+Each existing anchor is evaluated against the 8 anchor types (4 Systemic + 4 Human). For each, we determine:
+
+* *Implicit*: The concept is already present in the anchor content but not explicitly tagged
+* *Missing*: The dimension is absent and could add value if documented
+* *N/A*: The dimension does not apply to this anchor
+
+The result is a systemic fingerprint for each anchor and optional enrichment suggestions.
+
+== Mapping: Systemic Dimensions
+
+[%autowidth]
+|===
+| Anchor | Boundary | Emergence | Feedback | Resilience |
+|--------|----------|-----------|----------|------------|
+
+// === Sample Analysis (full catalog in Appendix) ===
+
+| Cynefin Framework | **Implicit** - Domain boundaries | **Implicit** - Complex domain = emergence | **Implicit** - Probe-sense-respond loop | **Missing** - Complacency risk mentions transition, but no explicit resilience |
+| Clean Architecture | **Implicit** - Con-centric circles | **Missing** - No emergence discussion | **Missing** - Only dependency direction, no feedback | **Implicit** - Framework/database independence |
+| Domain-Driven Design | **Implicit** - Bounded Context | **Implicit** - Domain Events | **Missing** - No feedback loops documented | **Missing** - No failure behavior |
+| Feynman Technique | **N/A** | **N/A** | **Implicit** - Iterative refinement | **N/A** |
+| MECE Principle | **Implicit** - Category boundaries | **N/A** | **N/A** | **N/A** |
+| BLUF | **N/A** | **N/A** | **N/A** | **N/A** |
+| TDD, London School | **Missing** - Test boundaries | **Implicit** - Mock discovery | **Implicit** - Red-green-refactor | **Missing** - Brittle test resilience |
+| SOLID Principles | **Missing** - Interface boundaries | **N/A** | **N/A** | **Missing** - Resilience via DIP |
+| arc42 | **Implicit** - Architecture boundaries | **Missing** - No emergence section | **Missing** - No feedback documented | **Implicit** - Cross-cutting concepts |
+|===
+
+== Mapping: Human Dimensions
+
+[%autowidth]
+|===
+| Anchor | Stakeholder | Cognitive | Trust | Ethical |
+|--------|-------------|-----------|-------|---------|
+
+| Cynefin Framework | **Missing** - Who decides the domain? | **Implicit** - Reduces complexity overwhelm | **Missing** - No trust discussion | **Missing** - Safe-to-fail probes imply ethical stance |
+| Clean Architecture | **Missing** - Who maintains this? | **Implicit** - SOLID reduces cognitive load | **Missing** - No trust discussion | **Missing** - No ethical consideration |
+| Domain-Driven Design | **Implicit** - Domain experts explicitly included | **Implicit** - Ubiquitous Language reduces miscommunication | **Implicit** - Shared model builds trust | **Missing** - No ethical dimension |
+| Feynman Technique | **Implicit** - Teacher/learner relationship | **Implicit** - Core purpose: cognitive clarity | **Implicit** - "No jargon hiding" = trust | **Missing** - No ethical dimension |
+| MECE Principle | **N/A** | **Implicit** - Reduces cognitive load via structure | **N/A** | **N/A** |
+| BLUF | **Implicit** - Reader-centric | **Implicit** - Reduces reading time | **Implicit** - Conclusion-first builds trust | **N/A** |
+| TDD, London School | **Missing** - Stakeholder needs not documented | **Implicit** - Tests as documentation | **Implicit** - Tests build trust | **Missing** - What if tests test wrong thing? |
+| SOLID Principles | **Missing** - Developer as sole stakeholder | **Implicit** - Each principle reduces specific confusion | **Missing** - No trust discussion | **N/A** |
+| arc42 | **Implicit** - Multiple reader roles | **Implicit** - Structured sections reduce search time | **Missing** - No trust/verification | **N/A** |
+|===
+
+== Proposed Template Extension
+
+The `_template.adoc` should receive an optional enrichment section:
+
+[source,asciidoc]
+----
+// Optional: Systemic & Human Dimensions (see system-theoretic-semantic-anchors)
+// :systemic-dimensions: boundary, emergence, feedback, resilience
+// :human-dimensions: stakeholder, cognitive, trust, ethical
+// :systemic-notes: How this anchor relates to system-level behavior
+// :human-notes: How this anchor relates to human-in-the-loop concerns
+----
+
+This allows the metadata extraction script (<<scripts/extract-metadata.js>>) to index these dimensions for filtering on the website.
+
+Additionally, existing anchors can add an optional section at the end of their content:
+
+[source,asciidoc]
+----
+[discrete]
+== *Systemic & Human Dimensions*:
+
+Boundary:: How this anchor defines or relates to system boundaries
+Emergence:: Emergent properties or behaviors this anchor addresses
+Feedback:: Feedback loops this anchor creates or relies on
+Resilience:: How this anchor contributes to or depends on system resilience
+Stakeholder:: Who is affected and what are their needs
+Cognitive:: Cognitive load implications for users
+Trust:: How this anchor builds or erodes trust
+Ethical:: Ethical implications or considerations
+----
+
+== Demonstration: 3 Enriched Anchors
+
+See the following files for enriched versions of existing anchors:
+
+* `docs/examples/cynefin-framework-enriched.adoc` — Shows how Cynefin's systemic dimensions can be made explicit
+* `docs/examples/clean-architecture-enriched.adoc` — Shows the largest delta: a purely technical anchor enriched with human/systemic dimensions
+* `docs/examples/domain-driven-design-enriched.adoc` — Shows how DDD's implicit systemic concepts can be documented
+
+== Implementation Strategy
+
+*Phase 2 — not in this MR*:
+
+. Update `_template.adoc` with optional systemic/human metadata attributes
+. Enrich 10 priority anchors (those with highest stakeholder impact)
+. Update metadata extraction script to parse new attributes
+. Add systemic/human dimension filters to the website
+. Community contribution: enrich remaining anchors via individual PRs
+
+=== Priority Anchors for First Wave
+
+. Cynefin Framework — already close, minimal effort
+. Domain-Driven Design — core concepts align naturally
+. Clean Architecture — biggest gap, highest value
+. arc42 — architecture documentation affects all roles
+. TDD, London School — high developer impact
+. SOLID Principles — foundational, touches every codebase
+. EARS Requirements — directly benefits from contract thinking
+. ADR according to Nygard — architectural decisions need systemic context
+. User Story Mapping — stakeholder dimensions are natural
+. Event-Driven Architecture — emergence and feedback are core
+
+== Appendix: Full Catalog Mapping
+
+*Note:* The full mapping of all 60+ anchors is not included here due to size. It would be generated as a machine-readable YAML file (`docs/metadata/systemic-dimensions.yml`) as part of Phase 2 implementation.

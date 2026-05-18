@@ -1,0 +1,86 @@
+= Semantic Contract (System-Theoretic)
+:categories: meta, requirements-engineering
+:roles: consultant, software-architect, product-owner, business-analyst, systems-thinker
+:related: system-theoretic-semantic-anchors, luhmann-system-theory, simon-constructivism, systemic-consulting, mece-principle
+:proponents: Niklas Luhmann, Humberto Maturana, Fritz B. Simon
+:tags: semantic-contracts, structural-coupling, systemic-agreements, cross-system, operational-closure, perturbation
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Semantic Contract (based on Structural Coupling)
+
+Also known as:: Systemic Agreement, Layer Contract, Socio-Technical Interface Specification
+
+[TIP]
+====
+*Terminology note:* This project (Semantic-Anchors) already uses the term "Semantic Contract" in a different sense — as a *project-local composition of multiple existing anchors* (see <<rejected-proposals#,Rejected Proposals>>). For example, a project might define "Concise Response" as a Semantic Contract that composes BLUF + Strunk & White.
+
+This anchor describes a *different, complementary concept*: a system-theoretic Semantic Contract as a *formalized structural coupling between operationally closed systems*. Both concepts share the name but serve different purposes:
+
+| Aspect | Project Contracts (existing) | Systemic Contracts (this anchor) |
+|--------|---------------------------|-------------------------------|
+| Purpose | Compose anchors into local macros | Define interface agreements across system boundaries |
+| Based on | Existing anchor composition | Luhmann's structural coupling |
+| Scope | Within one project/team | Between any operationally closed systems |
+| Example | "Simple Explanation" = Feynman Technique | "System never changes what human cannot reverse" |
+
+Both are valid; they address different needs.
+====
+
+[discrete]
+== *Core Concepts*:
+
+Definition:: A semantic contract formalizes the *relationship* between two systems (technical, human, or mixed) in terms of what each can expect from the other. Unlike a technical API contract (which specifies data formats), a semantic contract specifies *irritation patterns* — what perturbations one system may cause in another and how those are to be interpreted.
+
+Based on Structural Coupling:: (Luhmann, following Maturana) — "Strukturelle Kopplung zwischen Systemen und ihrer Umwelt entsteht dann, wenn das jeweilige System Erwartungsstrukturen aufbaut, die es für bestimmte Irritationen sensibler macht." A semantic contract is a formalized structural coupling.
+
+Operational Closure Respect:: Both participants in a semantic contract remain operationally closed. The contract does NOT assume direct causality or information transfer. It specifies the *conditions under which one system offers perturbations that the other system can interpret*.
+
+Three Types of Semantic Contracts:
+
+. *Human-System Contract* — Between a person and a technical system.
+  *Example:* "The system will never make a change that the human cannot manually reverse within 2 actions."
+  *Source:* Simon's Beratung — "Keine Instruktion, sondern Irritation."
+
+. *System-Environment Contract* — Between a system and its context.
+  *Example:* "Irrigation automation will not activate if rain is forecast >50% within 6 hours."
+  *Source:* Luhmann — System/Umwelt-Differenz.
+
+. *Layer-to-Layer Contract* — Between subsystems within a system.
+  *Example:* "The automation layer must not issue conflicting commands to the same actuator within 5 seconds."
+  *Source:* Luhmann — Interne Differenzierung.
+
+Key Properties of a Good Semantic Contract:
+
+* *Negative Specification*: States what must NOT happen, not just what should happen (cf. Negative Anchor)
+* *Reversibility Guarantee*: Any change must be reversible by the affected party
+* *Irritation Boundedness*: Specifies the range of acceptable perturbations
+* *Observability*: Breach conditions must be observable by both parties
+* *Temporal Boundaries*: When does the contract start, suspend, or terminate?
+
+Relation to Anchors:: A semantic contract is the *operational form* of an anchor. While an anchor defines *what* matters (Boundary, Trust, etc.), a contract defines *how* that concern is maintained between interacting systems.
+
+Key Proponents:: Niklas Luhmann (*Soziale Systeme*, 1984; operational closure + structural coupling), Humberto Maturana (biological roots of structural coupling), Fritz B. Simon (*Einführung in die (System-)Theorie der Beratung*, 2014; consulting mandate as contract), Gregory Bateson (metacommunication — "communication about communication")
+
+[discrete]
+== *When to Use*:
+
+* Defining interfaces between AI agents and human users
+* Specifying guarantees between microservices in a socio-technical ecosystem
+* Creating user agreements that go beyond EULA legalese to genuine systemic compatibility
+* Designing contracts between organizations in a networked business model
+* Specifying the relationship between an LLM-based agent and its human supervisor
+* Any situation where two systems (human or technical) need to interact but remain operationally autonomous
+
+[discrete]
+== *Relationship to Other Anchors*:
+
+* Operationalizes <<system-theoretic-semantic-anchors,System-Theoretic Semantic Anchors>> into enforceable interface specs
+* Extends the concept of <<mece-principle,MECE Principle>> from categories to system interfaces
+* Complements ADR (<<adr-according-to-nygard,ADR according to Nygard>>) by adding systemic coupling decisions
+* Related to <<ears-requirements,EARS Requirements>> — semantic contracts use the same conditional syntax (Ubiquitous, State-Driven, Event-Driven, etc.)
+* Contrasts with Design by Contract (Meyer, Eiffel) which operates within a single system, not across operationally closed systems
+
+Historical Context:: The term "semantic contract" extends the software engineering concept of "Design by Contract" (Bertrand Meyer, Eiffel) into the socio-technical domain. While DBC assumes a shared computational environment, semantic contracts assume operational closure — each party has its own internal logic that cannot be directly inspected or controlled.
+====

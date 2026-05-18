@@ -1,0 +1,151 @@
+= Cross-Reference: Systemic & Human Anchors vs. Luhmann, Simon, and Systemic Consulting
+
+This document provides the full academic cross-reference for the proposed anchor types, mapping each anchor to its theoretical source in Niklas Luhmann's *Einführung in die Systemtheorie* (1991/92), Fritz B. Simon's *Einführung in Systemtheorie und Konstruktivismus* (2006, 8th ed. 2017), and the systemic consulting tradition (Heidelberg School, Simon 2014).
+
+== Cross-Reference Table
+
+[%autowidth]
+|===
+| Anchor | Luhmann (Theory) | Simon (Theory) | Simon (Beratung/Praxis) |
+
+// Systemic Anchors
+| *Boundary* | System/Umwelt-Differenz
+"Es gibt kein System ohne Umwelt."
+(Kap. II) | Teil/Ganzes vs. System/Umwelt-Unterscheidung
+Systeme werden nicht isoliert, sondern in Beziehung betrachtet.
+(Kap. 1, 6.1) | Kontextklärung vor Intervention
+"Die Kontextklärung für Berater ist immer klarer als für Klienten."
+(Kontext als Boundary)
+
+| *Emergence* | Autopoiesis
+Systeme erzeugen ihre eigenen Elemente. Operationen schließen an Operationen an.
+(Kap. II.4) | Emergente Eigenschaften
+"Nicht durch Addition der Eigenschaften ihrer Teile herstellbar."
+(Kap. 1) | Problem als emergentes Muster
+"Zirkuläres Fragen zielt auf die gegenseitige Bedingtheit des Verhaltens."
+(Zirkuläres Fragen)
+
+| *Feedback* | Doppelte Kontingenz
+Soziales als Antwort auf doppelte Kontingenz.
+(Soziale Systeme, Kap. IV) | Triviale vs. nichttriviale Maschinen
+Gleicher Input → unterschiedlicher Output durch inneren Zustand.
+(Kap. 3.1) | Zirkularität statt Linearität
+Lineare Fragen (Ursache-Wirkung) werden durch zirkuläre Fragen (Muster) ersetzt.
+
+| *Resilience* | Operative Geschlossenheit
+"Selbstreferentielle Geschlossenheit ist nur unter ökologischen Bedingungen möglich."
+(Kap. II.3) | Strukturdeterminiertheit
+"Systeme können nicht instruiert, nur irritiert werden."
+(Kap. 3.5) | Problem hat Anpassungsfunktion
+"Welche adaptive Funktion erfüllt der Status Quo?"
+(Positive Konnotation)
+
+// Human Anchors
+| *Stakeholder* | Mensch = Umwelt sozialer Systeme
+Psychische Systeme gehören zur Umwelt, nicht zum sozialen System.
+(Kap. VI) | Relationale Perspektive
+Nicht Objekte, sondern Systeme in Beziehung.
+(Kap. 1) | Allparteilichkeit
+Neutral gegenüber Personen, Problem und Veränderung.
+(Rollenklärung)
+
+| *Cognitive* | Psychische Systeme = Gedanken
+"Die Operationen psychischer Systeme können das eigene System niemals verlassen."
+(Kap. VI) | Viabilität statt Wahrheit
+"Die 'Passung' zwischen Landschaft und Landkarte."
+(Kap. 4.5) | Verflüssigung von Eigenschaften
+Eigenschaften als zeitliche Zustände, nicht als Wesensmerkmale.
+(Zirkuläres Fragen)
+
+| *Trust* | Erwartungsstrukturen + strukturelle Kopplung
+Systeme bauen Erwartungen auf, die sie für bestimmte Irritationen sensitiv machen.
+(Strukturelle Kopplung) | (Implizit: Vertrauen durch Koevolution)
+Strukturelle Kopplung erzeugt "structural drift" — abgestimmte Entwicklung ohne Eingriff.
+(Kap. 5.1) | Neutralität + sicherer Rahmen
+Vertrauen entsteht durch Verlässlichkeit der Unterscheidungen.
+(Neutralitätsprinzip)
+
+| *Ethical* | Beobachtung 2. Ordnung
+Wer beobachtet, trifft eine Unterscheidung — und trägt Verantwortung.
+(Passim) | Kybernetik 2. Ordnung
+"Der Beobachter wird in die Beobachtung einbezogen."
+(Kap. 3.2) | Keine Instruktion, nur Irritation
+Der Berater perturbiert, ohne zu direktionieren.
+(Verzicht auf Experteninstruktion)
+|===
+
+== Source Key
+
+=== Luhmann, Niklas (1991/92)
+
+*Source:* Luhmann, Niklas. *Einführung in die Systemtheorie*. Vorlesung Wintersemester 1991/92, Universität Bielefeld. Herausgegeben von Dirk Baecker. Carl-Auer-Verlag, 8. Auflage 2020.
+
+Structure (abridged):
+- Kap. I: Soziologie und Systemtheorie
+- Kap. II: Allgemeine Systemtheorie
+  - 1. Theorie offener Systeme
+  - 2. System als Differenz (Formanalyse)
+  - 3. Operative Geschlossenheit
+  - 4. Selbstorganisation, Autopoiesis
+  - 5. Strukturelle Kopplung
+- Kap. III: Zeit
+- Kap. IV: Sinn
+- Kap. V: Psychische und soziale Systeme
+- Kap. VI: Kommunikation als selbstbeobachtende Operation
+- Kap. VII: Doppelte Kontingenz, Struktur, Konflikt
+
+Additional key text: Luhmann, *Soziale Systeme: Grundriß einer allgemeinen Theorie* (1984).
+
+=== Simon, Fritz B. (2006)
+
+*Source:* Simon, Fritz B. *Einführung in Systemtheorie und Konstruktivismus*. Carl-Auer-Verlag, 8. Auflage 2017. 120 Seiten.
+
+Structure:
+- Kap. 1: Vom Objekt zum System
+- Kap. 2: Vom Regelkreis zur Selbstorganisation
+  - 2.2: Kybernetik erster Ordnung
+  - 2.4: Das Modell der Autopoiese
+- Kap. 3: Von der "objektiven Erkenntnis" zum "Er-Rechnen einer Realität"
+  - 3.1: Triviale und nichttriviale Maschinen
+  - 3.2: Kybernetik der Kybernetik (2. Ordnung)
+  - 3.4: Operationale Schließung
+  - 3.5: Strukturdeterminiertheit — Perturbation/Irritation vs. Instruktion
+- Kap. 4: Von der Übermittlung von Information zur Kreation von Information
+  - 4.2: Information als "Unterschiede, die Unterschiede machen"
+  - 4.3: Beobachten = Unterscheiden und Bezeichnen
+  - 4.5: Wahrheit vs. Viabilität
+- Kap. 5: Vom deterministischen Wandel zum evolutionären Wandel
+  - 5.1: Strukturelle Kopplung
+  - 5.2: Koevolution
+- Kap. 6: Vom "ganzen" Menschen zur Kommunikation als Element sozialer Systeme
+  - 6.1: Teil/Ganzes vs. System/Umwelt
+  - 6.4: Sinndimensionen (Sozial-, Sach-, Zeitdimension)
+  - 6.5: Interaktion, Organisation, Gesellschaft
+- Kap. 7: Zehn Gebote des systemischen Denkens
+
+=== Simon, Fritz B. — Systemische Beratung (2014)
+
+*Source:* Simon, Fritz B. *Einführung in die (System-)Theorie der Beratung*. Carl-Auer, 2014.
+
+Additional key texts:
+- Simon/Rech-Simon: *Zirkuläres Fragen: Systemische Therapie in Fallbeispielen. Ein Lernbuch* (1999, 9. Aufl. 2012)
+- Simon: *Unterschiede, die Unterschiede machen: Klinische Epistemologie* (1988)
+
+=== Additional References
+
+- Bateson, Gregory: *Steps to an Ecology of Mind* (1972) — "Information is a difference that makes a difference"
+- Maturana, Humberto / Varela, Francisco: *Autopoiesis and Cognition* (1980) — Biological foundations of autopoiesis and structural coupling
+- von Foerster, Heinz: *Observing Systems* (1981) — Second-order cybernetics
+- Spencer-Brown, George: *Laws of Form* (1969) — Form as distinction
+- Watzlawick, Paul / Weakland, John / Fisch, Richard: *Change: Principles of Problem Formation and Problem Resolution* (1974)
+
+== Notes on MECE Compliance
+
+The 4 Systemic + 4 Human anchors are **mutually exclusive**:
+- Systemic anchors concern *system-level properties* (boundaries, emergence, loops, stability)
+- Human anchors concern *human-level properties* (stakeholders, cognition, trust, ethics)
+
+They are **collectively exhaustive** with the Technical anchors:
+- Technical correctness + Systemic viability + Human acceptability = complete coverage
+
+The Semantic Contract is a separate category (interface between layers), not an anchor type per se.
