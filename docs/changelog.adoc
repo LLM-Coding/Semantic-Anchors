@@ -2,6 +2,13 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-05-21
+
+*Contract updates:*
+
+* *Architecture Documentation* — sharpened with cross-section traceability and arc42 chapter-level rules. The contract now directs scaffolding the arc42 "with-help" template via docToolchain `downloadTemplate` instead of restating chapter structure; adds five cross-section traceability rules (quality goal → strategy, context ↔ building blocks, building block → runtime, Chapter 9 ADR index, building-block detail); separates Chapter 11 Risks from Technical Debt with probability/impact/priority columns; wires ADR Consequences to Chapter 11 risk IDs; and clarifies that Chapter 1.2 holds the top 3-5 quality goals while Chapter 10 may elaborate further characteristics (https://github.com/LLM-Coding/Semantic-Anchors/issues/502[#502], https://github.com/LLM-Coding/Semantic-Anchors/issues/503[#503], https://github.com/LLM-Coding/Semantic-Anchors/issues/504[#504], https://github.com/LLM-Coding/Semantic-Anchors/issues/505[#505])
+* *Socratic Code Theory Recovery* — the Q4 quality wording now states the Chapter 1.2-vs-10 relationship: Chapter 1.2 names only the top quality goals, Chapter 10 covers all eight characteristics, each marked as concretising a top goal or as derived (https://github.com/LLM-Coding/Semantic-Anchors/issues/505[#505])
+
 == 2026-05-13
 
 *New anchors:*
