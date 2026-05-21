@@ -1,0 +1,62 @@
+= Simons Konstruktivismus
+:categories: meta, problem-solving
+:roles: consultant, educator, team-lead, systems-thinker
+:related: luhmann-system-theory, systemic-consulting
+:proponents: Fritz B. Simon, Humberto Maturana, Gregory Bateson
+:tags: constructivism, cybernetics, viability, perturbation, structural-determinism, circular-questions
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Simons Einführung in Systemtheorie und Konstruktivismus
+
+Auch bekannt als:: Simons systemische Epistemologie, Klinische Epistemologie
+
+[discrete]
+== *Kernkonzepte*:
+
+Systemisches Denken = Systemtheoretisches Erklären:: "Systemtheorie beschäftigt sich mit der 'Welt der Objekte'; aber sie isoliert sie nicht aus ihren realen Zusammenhängen, sondern setzt sie in Beziehung zueinander." Systemisches Denken ist systemtheoretisches Erklären — nicht nur Beschreiben. (Simon, *Einführung in Systemtheorie und Konstruktivismus*, Vorbemerkung)
+
+Emergente Eigenschaften:: "Systeme sind aus mehreren Teilen zusammengesetzte Einheiten, deren Eigenschaften emergent, d.h. nicht durch die schlichte Addition der Eigenschaften ihrer Teile herstellbar waren." (Kap. 1)
+
+Triviale vs. nichttriviale Maschinen:: Triviale Maschinen sind vorhersagbar (gleicher Input → gleicher Output). Nichttriviale Maschinen hängen vom inneren Zustand ab — sie sind geschichtsabhängig und nicht vollständig vorhersagbar. Soziale Systeme sind nichttriviale Maschinen. (Kap. 3.1)
+
+Kybernetik der Kybernetik (2. Ordnung):: Der Beobachter ist immer Teil des beobachteten Systems. "Die Kybernetik der Kybernetik — der Beobachter wird in die Beobachtung einbezogen." (Kap. 3.2)
+
+Viabilität vs. Wahrheit:: "Wahrheit vs. Viabilität — Die 'Passung' zwischen Landschaft und Landkarte." Wissen ist nicht "wahr" im absoluten Sinne, sondern viabel, wenn es erfolgreiches Operieren in einer gegebenen Umwelt ermöglicht. (Kap. 4.5)
+
+Information als "Unterschiede, die Unterschiede machen":: (Gregory Bateson) Information wird nicht übertragen, sondern vom Empfänger erzeugt. "Unterschiede, die Unterschiede machen." Das Sender-Empfänger-Modell wird durch zirkuläre Kausalität ersetzt. (Kap. 4.1)
+
+Beobachtung = Unterscheiden und Bezeichnen:: Jede Beobachtung zieht eine Unterscheidung und benennt eine Seite. Die andere Seite bleibt unbezeichnet. (Kap. 4.3, nach George Spencer-Brown)
+
+Operationale Schließung:: "Systeme sind operativ geschlossen und können nur nach ihrer eigenen Logik operieren." (Kap. 3.4)
+
+Perturbation vs. Instruktion:: "Systeme können nicht instruiert, nur irritiert (perturbiert) werden." — Ein zentrales Prinzip für jedes Interventionsdesign. (Kap. 3.5)
+
+Strukturelle Kopplung + Koevolution:: Systeme prägen gegenseitig ihre Umwelten über Zeit, was zu koordinierter struktureller Drift ohne direkte Kausalität führt. (Kap. 5.1)
+
+Sinndimensionen (Sozial-, Sach-, Zeitdimension):: Jede Kommunikation (im Luhmannschen Sinne) operiert gleichzeitig in drei Dimensionen: sozial (wer), sachlich (was), zeitlich (wann). (Kap. 6.4, nach Luhmann)
+
+Schlüsselvertreter:: Fritz B. Simon (*Einführung in Systemtheorie und Konstruktivismus*, 2006, 8. Aufl. 2017), Humberto Maturana (Autopoiesis), Gregory Bateson (Kybernetik), Heinz von Foerster (Konstruktivismus), Ernst von Glasersfeld (Radikaler Konstruktivismus)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Schulung von Teams in systemischem Denken für komplexe Problemlösungen
+* Entwurf von Interventionen, wo direkte Steuerung unmöglich ist (Organisationen, Familien, Ökosysteme)
+* Verstehen, warum gleicher Input in menschlichen Systemen zu unterschiedlichen Ergebnissen führt
+* Entwicklung feedback-bewusster Designs für sozio-technische Systeme
+* Unterscheidung zwischen Beschreiben, Erklären und Bewerten in Anforderungsdefinitionen
+* Aufbau von Bewusstsein für Beobachter-Bias in Systemdesign und -analyse
+
+[discrete]
+== *Verhältnis zu anderen Ankern*:
+
+* Pädagogische Brücke zwischen <<luhmann-system-theory,Luhmanns Systemtheorie>> und praktischer Anwendung
+* Theoretische Grundlage für <<systemic-consulting,Systemische Beratung>>-Methoden
+* Liefert die erkenntnistheoretische Basis für das System-Theoretische Semantische Anker Framework (siehe separater Vorschlag)
+* "Zehn Gebote des systemischen Denkens" (Kap. 7) sind ein direkter Vorläufer von Semantischen Kontrakten (siehe separater Vorschlag)
+* Kontrastiert mit rein technischer Systemtheorie (z. B. allgemeine Systemtheorie, Bertalanffy)
+
+Zitat:: "Regeln kann man leichter verändern als Menschen." (Fritz B. Simon)
+====

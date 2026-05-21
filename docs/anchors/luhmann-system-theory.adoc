@@ -1,0 +1,58 @@
+= Luhmann's System Theory
+:categories: meta, problem-solving
+:roles: consultant, software-architect, team-lead, educator, systems-thinker
+:related: simon-constructivism, systemic-consulting
+:proponents: Niklas Luhmann, Dirk Baecker
+:tags: systems-theory, autopoiesis, operational-closure, structural-coupling, system-environment, double-contingency
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Luhmann's Sociological System Theory (Luhmannsche Systemtheorie)
+
+Also known as:: Theory of Autopoietic Social Systems, Functional-Structural Systems Theory
+
+[discrete]
+== *Core Concepts*:
+
+System/Environment Difference:: A system defines itself by drawing a distinction (*Differenz*) between itself and its environment. "Es gibt kein System ohne Umwelt. Hier ist das System, dort die Umwelt. Wer das sagt, unterscheidet zwischen diesen beiden." (Luhmann, *Einführung in die Systemtheorie*, Kap. II)
+
+Operational Closure:: Systems reproduce themselves through their own operations. Social systems operate through communication, psychic systems through thought. No operation crosses the boundary. "Selbstreferentielle Geschlossenheit ist nur in einer Umwelt, ist nur unter ökologischen Bedingungen möglich."
+
+Autopoiesis:: Systems produce and reproduce their own elements. A system exists as long as operations connect to operations. "Ein System erhält sich dadurch, dass Operationen aneinander anschließen."
+
+Structural Coupling:: Systems cannot directly interact, but they can build expectation structures that make them sensitive to specific irritations from their environment. Language couples psychic and social systems.
+
+Double Contingency:: The foundational paradox of social interaction: "I will do what you want if you do what I want" — resolved only through the emergence of social systems. "Das gesamte Soziale kann als Antwort auf das Problem der doppelten Kontingenz gesehen werden." (*Soziale Systeme*, Kap. IV)
+
+Self-Reference / Self-Observation:: Systems observe themselves by distinguishing self-reference from external reference (*Fremdreferenz*). "Beobachten heißt: unterscheiden (-> differenzieren)."
+
+Communication as Operation:: Social systems consist of communication, not of people. Communication is the synthesis of information, utterance, and understanding.
+
+Complexity Reduction:: Systems reduce environmental complexity through selection. "Sinn" (meaning) is the medium through which psychic and social systems process complexity.
+
+Functional Differentiation:: Modern society differentiates into function systems (economy, law, politics, science, religion) each with their own binary code.
+
+Key Proponents:: Niklas Luhmann (*Soziale Systeme*, 1984; *Einführung in die Systemtheorie*, Vorlesung 1991/92, hg. v. Dirk Baecker), Humberto Maturana (autopoiesis, biological roots)
+
+[discrete]
+== *When to Use*:
+
+* Analyzing complex socio-technical systems where boundaries are contested
+* Designing system architectures that respect operational closure of subsystems
+* Understanding why direct control often fails (systems can only be perturbed, not instructed)
+* Modeling emergent behavior in multi-agent or organizational systems
+* Identifying feedback loops and unintended consequences in automation design
+* Distinguishing between the system's perspective and the observer's perspective
+
+[discrete]
+== *Relationship to Other Anchors*:
+
+* Foundation for the System-Theoretic Semantic Anchors framework (see separate proposal)
+* Complements <<cynefin-framework,Cynefin Framework>> (complexity classification) with operational theory
+* Provides the theoretical basis for Semantic Contracts (structural coupling, see separate proposal)
+* Contrasts with simpler input-output models of systems (e.g., early cybernetics)
+* Related to <<feynman-technique,Feynman Technique>> at the meta-level: Luhmann demands understanding systems through their own logic
+
+Historical Context:: Luhmann developed his theory across 30+ books and 500+ articles. The *Einführung in die Systemtheorie* is a transcribed lecture course from 1991/92 and is considered the most accessible entry point. His work fundamentally challenges common-sense notions of communication, causality, and control.
+====

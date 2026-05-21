@@ -1,0 +1,58 @@
+= Systemic Consulting (Heidelberg School)
+:categories: problem-solving, dialogue-interaction
+:roles: consultant, team-lead, educator, systems-thinker
+:related: simon-constructivism, luhmann-system-theory
+:proponents: Fritz B. Simon, Helm Stierlin, Gunthard Weber, Gregory Bateson, Paul Watzlawick
+:tags: systemic-consulting, circular-questions, neutrality, all-partiality, perturbation, intervention, heidelberg-school
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Systemic Consulting according to the Heidelberg School
+
+Also known as:: Systemische Beratung, Systemic Therapy and Consulting, Heidelberg Model
+
+[discrete]
+== *Core Concepts*:
+
+Consulting as Communication:: "Was all diese Beratungsansätze miteinander verbindet: Es sind Formen der Kommunikation." (Simon, *Einführung in die (System-)Theorie der Beratung*, 2014) — The consulting process is analyzed through the lens of communication theory.
+
+All-Partiality (Allparteilichkeit):: The consultant takes no side but is partial to *all* sides simultaneously. "Rollenklärung des Therapeuten sowie Allparteilichkeit und das Prinzip der Neutralität." (Simon/Rech-Simon, *Zirkuläres Fragen*)
+
+Neutrality:: The consultant remains neutral toward persons, toward the problem, and toward change. Not cold distance, but active multiperspectivity.
+
+Circular Questions:: Instead of linear cause-effect questions ("Why did X happen?"), circular questions explore relationships, differences, and feedback loops: "What would Y say about X's behavior?" "What needs to happen for the pattern to change?" "Zirkuläres Fragen zielt darauf, die gegenseitige Bedingtheit des Verhaltens von Menschen zu verdeutlichen."
+
+Context Clarification:: "Die Kontextklärung für Therapeuten ist immer klarer als für Patienten." — Before any intervention, the context must be clarified: who referred, what are the expectations, what is the mandate?
+
+Problem as Emergent Pattern:: Problems arise from relational patterns, not from individual deficiencies. Changing the pattern changes the problem.
+
+No Instruction, Only Irritation:: The consultant cannot dictate changes (systems are operatively closed) but can offer perturbations that the system may or may not integrate.
+
+Reframing / Positive Connotation:: Every behavior that appears dysfunctional is reframed as having a positive function for the system. "Which adaptive function does the status quo serve?"
+
+Hypothesizing:: Before meeting a client, the team generates hypotheses about the system's dynamics. Hypotheses are treated as provisional and falsifiable.
+
+Systemic Interview Structure:: Clarify referral context → define goals → explore attempted solutions → identify resources → hypothesize patterns → offer intervention.
+
+Key Proponents:: Fritz B. Simon (*Einführung in die (System-)Theorie der Beratung*, 2014), Helm Stierlin, Gunthard Weber (Heidelberg School), Paul Watzlawick, Jay Haley, John Weakland (MRI Palo Alto), Mara Selvini Palazzoli (Milan Group)
+
+[discrete]
+== *When to Use*:
+
+* Facilitating organizational change where linear approaches have failed
+* Mediating conflicts between stakeholders with incompatible perspectives
+* Designing human-centered automation that respects user autonomy
+* Coaching teams through complex adaptive challenges
+* Any situation where the interventionist is part of the system (no external vantage point)
+* Evaluating whether a proposed technical solution addresses relational dynamics
+
+[discrete]
+== *Relationship to Other Anchors*:
+
+* Operationalizes <<simon-constructivism,Simon's Constructivism>> into concrete practice
+* Provides the "how" for the System-Theoretic Semantic Anchors framework (especially Stakeholder and Trust anchors, see separate proposal)
+* Direct precursor to Semantic Contracts — the consulting mandate functions as a semantic contract between consultant and client (see separate proposal)
+* Complements <<cynefin-framework,Cynefin Framework>> by providing intervention methods for the Complex domain
+* Contrasts with expert-driven consulting (which assumes instruction is possible)
+====

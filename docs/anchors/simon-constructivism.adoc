@@ -1,0 +1,62 @@
+= Simon's Constructivism
+:categories: meta, problem-solving
+:roles: consultant, educator, team-lead, systems-thinker
+:related: luhmann-system-theory, systemic-consulting
+:proponents: Fritz B. Simon, Humberto Maturana, Gregory Bateson
+:tags: constructivism, cybernetics, viability, perturbation, structural-determinism, circular-questions
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Simon's Introduction to System Theory and Constructivism
+
+Also known as:: Simon's Systemic Epistemology, Clinical Epistemology
+
+[discrete]
+== *Core Concepts*:
+
+Systemic Thinking = System-Theoretic Explanation:: "Systemtheorie beschäftigt sich mit der 'Welt der Objekte'; aber sie isoliert sie nicht aus ihren realen Zusammenhängen, sondern setzt sie in Beziehung zueinander." Systemisches Denken ist systemtheoretisches Erklären — nicht nur Beschreiben. (Simon, *Einführung in Systemtheorie und Konstruktivismus*, Vorbemerkung)
+
+Emergent Properties:: "Systeme sind aus mehreren Teilen zusammengesetzte Einheiten, deren Eigenschaften emergent, d.h. nicht durch die schlichte Addition der Eigenschaften ihrer Teile herstellbar waren." (Kap. 1)
+
+Trivial vs. Non-Trivial Machines:: Trivial machines are predictable (same input → same output). Non-trivial machines depend on internal state — they are history-dependent and not fully predictable. Social systems are non-trivial machines. (Kap. 3.1)
+
+Cybernetics of Cybernetics (2nd Order):: The observer is always part of the observed system. "Die Kybernetik der Kybernetik — der Beobachter wird in die Beobachtung einbezogen." (Kap. 3.2)
+
+Viability vs. Truth:: "Wahrheit vs. Viabilität — Die 'Passung' zwischen Landschaft und Landkarte." Knowledge is not "true" in an absolute sense, but viable if it enables successful operation in a given environment. (Kap. 4.5)
+
+Information as "Differences that Make a Difference":: (Gregory Bateson) Information is not transmitted but created by the receiver. "Unterschiede, die Unterschiede machen." The Sender-Receiver model is replaced by circular causality. (Kap. 4.1)
+
+Beobachtung = Unterscheiden und Bezeichnen:: Every observation draws a distinction and names one side. The other side remains unmarked. (Kap. 4.3, following George Spencer-Brown)
+
+Operational Closure:: "Systeme sind operativ geschlossen und können nur nach ihrer eigenen Logik operieren." (Kap. 3.4)
+
+Perturbation vs. Instruction:: "Systeme können nicht instruiert, nur irritiert (perturbiert) werden." — A crucial principle for any intervention design. (Kap. 3.5)
+
+Structural Coupling + Co-Evolution:: Systems shape each other's environments over time, leading to coordinated structural drift without direct causality. (Kap. 5.1)
+
+Meaning Dimensions (Social, Factual, Temporal):: Every communication (in Luhmann's sense) operates simultaneously in three dimensions: social (who), factual (what), temporal (when). (Kap. 6.4, following Luhmann)
+
+Key Proponents:: Fritz B. Simon (*Einführung in Systemtheorie und Konstruktivismus*, 2006, 8. Aufl. 2017), Humberto Maturana (autopoiesis), Gregory Bateson (cybernetics), Heinz von Foerster (constructivism), Ernst von Glasersfeld (radical constructivism)
+
+[discrete]
+== *When to Use*:
+
+* Training teams in systemic thinking for complex problem-solving
+* Designing interventions where direct control is impossible (organizations, families, ecosystems)
+* Understanding why the same input produces different results in human systems
+* Developing feedback-aware designs for socio-technical systems
+* Distinguishing between explanation, description, and evaluation in requirements
+* Building awareness of observer bias in system design and analysis
+
+[discrete]
+== *Relationship to Other Anchors*:
+
+* Pedagogical bridge between <<luhmann-system-theory,Luhmann's System Theory>> and practical application
+* Theoretical foundation for <<systemic-consulting,Systemic Consulting>> methods
+* Provides the epistemological basis for the System-Theoretic Semantic Anchors framework (see separate proposal)
+* "Ten Commandments of Systemic Thinking" (Kap. 7) are a direct precursor to Semantic Contracts (see separate proposal)
+* Contrasts with purely technical systems theory (e.g., general systems theory, Bertalanffy)
+
+Quote:: "Regeln kann man leichter verändern als Menschen." (Fritz B. Simon)
+====

@@ -1,0 +1,58 @@
+= Systemische Beratung (Heidelberger Schule)
+:categories: problem-solving, dialogue-interaction
+:roles: consultant, team-lead, educator, systems-thinker
+:related: simon-constructivism, luhmann-system-theory
+:proponents: Fritz B. Simon, Helm Stierlin, Gunthard Weber, Gregory Bateson, Paul Watzlawick
+:tags: systemic-consulting, circular-questions, neutrality, all-partiality, perturbation, intervention, heidelberg-school
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Systemische Beratung nach der Heidelberger Schule
+
+Auch bekannt als:: Systemische Therapie und Beratung, Heidelberger Modell
+
+[discrete]
+== *Kernkonzepte*:
+
+Beratung als Kommunikation:: "Was all diese Beratungsansätze miteinander verbindet: Es sind Formen der Kommunikation." (Simon, *Einführung in die (System-)Theorie der Beratung*, 2014) — Der Beratungsprozess wird durch die Linse der Kommunikationstheorie analysiert.
+
+Allparteilichkeit:: Der Berater ergreift keine Partei, ist aber *allen* Seiten gleichzeitig zugewandt. "Rollenklärung des Therapeuten sowie Allparteilichkeit und das Prinzip der Neutralität." (Simon/Rech-Simon, *Zirkuläres Fragen*)
+
+Neutralität:: Der Berater bleibt neutral gegenüber Personen, gegenüber dem Problem und gegenüber Veränderung. Nicht kalte Distanz, sondern aktive Multiperspektivität.
+
+Zirkuläre Fragen:: Statt linearer Ursache-Wirkungs-Fragen ("Warum ist X passiert?") erkunden zirkuläre Fragen Beziehungen, Unterschiede und Feedback-Schleifen: "Was würde Y über Xs Verhalten sagen?" "Was müsste passieren, damit sich das Muster ändert?" "Zirkuläres Fragen zielt darauf, die gegenseitige Bedingtheit des Verhaltens von Menschen zu verdeutlichen."
+
+Kontextklärung:: "Die Kontextklärung für Therapeuten ist immer klarer als für Patienten." — Vor jeder Intervention muss der Kontext geklärt werden: wer hat überwiesen, welche Erwartungen gibt es, was ist der Auftrag?
+
+Problem als emergentes Muster:: Probleme entstehen aus Beziehungsmustern, nicht aus individuellen Defiziten. Das Muster zu ändern, ändert das Problem.
+
+Keine Instruktion, nur Irritation:: Der Berater kann Veränderungen nicht vorschreiben (Systeme sind operativ geschlossen), aber er kann Perturbationen anbieten, die das System integrieren kann oder nicht.
+
+Reframing / Positive Konnotation:: Jedes Verhalten, das dysfunktional erscheint, wird als potenziell funktional für das System umgedeutet. "Welche adaptive Funktion erfüllt der Status Quo?"
+
+Hypothetisieren:: Vor dem Klientenkontakt generiert das Team Hypothesen über die Systemdynamik. Hypothesen werden als vorläufig und falsifizierbar behandelt.
+
+Systemischer Interviewverlauf:: Überweisungskontext klären → Ziele definieren → bisherige Lösungsversuche explorieren → Ressourcen identifizieren → Muster hypothesieren → Intervention anbieten.
+
+Schlüsselvertreter:: Fritz B. Simon (*Einführung in die (System-)Theorie der Beratung*, 2014), Helm Stierlin, Gunthard Weber (Heidelberger Schule), Paul Watzlawick, Jay Haley, John Weakland (MRI Palo Alto), Mara Selvini Palazzoli (Mailänder Gruppe)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Begleitung organisationaler Veränderung, wenn lineare Ansätze gescheitert sind
+* Mediation von Konflikten zwischen Stakeholdern mit inkompatiblen Perspektiven
+* Gestaltung menschenzentrierter Automatisierung, die Nutzerautonomie respektiert
+* Coaching von Teams durch komplexe adaptive Herausforderungen
+* Jede Situation, in der der Interventionist Teil des Systems ist (kein externer Standpunkt)
+* Bewertung, ob eine vorgeschlagene technische Lösung relationale Dynamiken adressiert
+
+[discrete]
+== *Verhältnis zu anderen Ankern*:
+
+* Operationalisiert <<simon-constructivism,Simons Konstruktivismus>> in konkrete Praxis
+* Liefert das "Wie" für das System-Theoretische Semantische Anker Framework (insbesondere Stakeholder- und Vertrauensanker, siehe separater Vorschlag)
+* Direkter Vorläufer von Semantischen Kontrakten — der Beratungsauftrag fungiert als semantischer Kontrakt zwischen Berater und Klient (siehe separater Vorschlag)
+* Ergänzt <<cynefin-framework,Cynefin Framework>> um Interventionsmethoden für die komplexe Domäne
+* Kontrastiert mit expertengesteuerter Beratung (die Instruktion für möglich hält)
+====

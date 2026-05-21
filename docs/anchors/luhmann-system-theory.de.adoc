@@ -1,0 +1,57 @@
+= Luhmanns Systemtheorie
+:categories: meta, problem-solving
+:roles: consultant, software-architect, team-lead, educator, systems-thinker
+:related: simon-constructivism, systemic-consulting
+:proponents: Niklas Luhmann, Dirk Baecker
+:tags: systems-theory, autopoiesis, operational-closure, structural-coupling, system-environment, double-contingency
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Luhmannsche Systemtheorie
+
+Auch bekannt als:: Theorie autopoietischer sozialer Systeme, funktional-strukturelle Systemtheorie
+
+[discrete]
+== *Kernkonzepte*:
+
+System/Umwelt-Differenz:: Ein System definiert sich durch die Unterscheidung (*Differenz*) zwischen sich selbst und seiner Umwelt. "Es gibt kein System ohne Umwelt. Hier ist das System, dort die Umwelt. Wer das sagt, unterscheidet zwischen diesen beiden." (Luhmann, *Einführung in die Systemtheorie*, Kap. II)
+
+Operative Geschlossenheit:: Systeme reproduzieren sich durch ihre eigenen Operationen. Soziale Systeme operieren durch Kommunikation, psychische Systeme durch Gedanken. Keine Operation überschreitet die Grenze. "Selbstreferentielle Geschlossenheit ist nur in einer Umwelt, ist nur unter ökologischen Bedingungen möglich."
+
+Autopoiesis:: Systeme erzeugen und reproduzieren ihre eigenen Elemente. Ein System existiert, solange Operationen an Operationen anschließen. "Ein System erhält sich dadurch, dass Operationen aneinander anschließen."
+
+Strukturelle Kopplung:: Systeme können nicht direkt interagieren, aber sie können Erwartungsstrukturen aufbauen, die sie für bestimmte Irritationen aus ihrer Umwelt sensitiv machen. Sprache koppelt psychische und soziale Systeme.
+
+Doppelte Kontingenz:: Die fundamentale Paradoxie sozialer Interaktion: "Ich tue, was du willst, wenn du tust, was ich will" — aufgelöst nur durch die Emergenz sozialer Systeme. "Das gesamte Soziale kann als Antwort auf das Problem der doppelten Kontingenz gesehen werden." (*Soziale Systeme*, Kap. IV)
+
+Selbstreferenz / Selbstbeobachtung:: Systeme beobachten sich selbst, indem sie Selbstreferenz von Fremdreferenz unterscheiden. "Beobachten heißt: unterscheiden (-> differenzieren)."
+
+Kommunikation als Operation:: Soziale Systeme bestehen aus Kommunikation, nicht aus Menschen. Kommunikation ist die Synthese von Information, Mitteilung und Verstehen.
+
+Komplexitätsreduktion:: Systeme reduzieren Umweltkomplexität durch Selektion. "Sinn" ist das Medium, durch das psychische und soziale Systeme Komplexität verarbeiten.
+
+Funktionale Differenzierung:: Die moderne Gesellschaft differenziert in Funktionssysteme (Wirtschaft, Recht, Politik, Wissenschaft, Religion) mit jeweils eigenem binärem Code.
+
+Schlüsselvertreter:: Niklas Luhmann (*Soziale Systeme*, 1984; *Einführung in die Systemtheorie*, Vorlesung 1991/92, hg. v. Dirk Baecker), Humberto Maturana (Autopoiesis, biologische Wurzeln)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Analyse komplexer sozio-technischer Systeme, in denen Grenzen umstritten sind
+* Entwurf von Systemarchitekturen, die die operative Geschlossenheit von Subsystemen respektieren
+* Verstehen, warum direkte Steuerung oft scheitert (Systeme können nur perturbiert, nicht instruiert werden)
+* Modellierung emergenten Verhaltens in Multi-Agenten- oder Organisationssystemen
+* Identifikation von Feedback-Schleifen und unbeabsichtigten Folgen in Automatisierungsdesigns
+* Unterscheidung zwischen der Perspektive des Systems und der Perspektive des Beobachters
+
+[discrete]
+== *Verhältnis zu anderen Ankern*:
+
+* Fundament für das System-Theoretische Semantische Anker Framework (siehe separater Vorschlag)
+* Ergänzt <<cynefin-framework,Cynefin Framework>> (Komplexitätsklassifikation) um operative Theorie
+* Liefert die theoretische Basis für Semantische Kontrakte (strukturelle Kopplung, siehe separater Vorschlag)
+* Kontrastiert mit einfacheren Input-Output-Modellen von Systemen (z. B. frühe Kybernetik)
+
+Historischer Kontext:: Luhmann entwickelte seine Theorie über 30+ Bücher und 500+ Artikel. Die *Einführung in die Systemtheorie* ist eine transkribierte Vorlesung aus dem WS 1991/92 und gilt als der zugänglichste Einstieg. Sein Werk hinterfragt grundlegend alltägliche Vorstellungen von Kommunikation, Kausalität und Kontrolle.
+====
