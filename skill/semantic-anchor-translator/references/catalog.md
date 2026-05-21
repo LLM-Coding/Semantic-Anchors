@@ -399,6 +399,21 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** UK Design Council (2005; expanded as "Framework for Innovation", 2019)
 - **Core:** Two divergent-convergent cycles — Discover/Define (problem space) and Develop/Deliver (solution space); "design the right thing, then design the thing right"; explicit iteration; widely used in UX, service design, government innovation
 
+### Luhmann's System Theory
+- **Also known as:** Theory of Autopoietic Social Systems, Functional-Structural Systems Theory
+- **Proponents:** Niklas Luhmann, Dirk Baecker
+- **Core:** Sociological systems theory — system/environment difference, operational closure, autopoiesis, structural coupling, double contingency, communication (not people) as the operation of social systems; for analysing complex socio-technical systems where boundaries are contested and direct control fails
+
+### Simon's Constructivism
+- **Also known as:** Simon's Systemic Epistemology, Clinical Epistemology
+- **Proponents:** Fritz B. Simon, Humberto Maturana, Gregory Bateson
+- **Core:** Introduction to systems theory and constructivism — viability vs. truth, trivial vs. non-trivial machines, second-order cybernetics (the observer is part of the observed), information as "differences that make a difference", perturbation instead of instruction
+
+### Systemic Consulting (Heidelberg School)
+- **Also known as:** Systemische Beratung, Heidelberg Model
+- **Proponents:** Fritz B. Simon, Helm Stierlin, Gunthard Weber, Paul Watzlawick
+- **Core:** Heidelberg School of systemic consulting — all-partiality, neutrality, circular questions, context clarification, problems as emergent relational patterns; the consultant cannot instruct a closed system, only offer irritations it may integrate
+
 ## Requirements Engineering
 
 ### Cockburn Use Cases

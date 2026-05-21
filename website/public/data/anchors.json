@@ -2297,6 +2297,39 @@
     "tier": 3
   },
   {
+    "id": "luhmann-system-theory",
+    "title": "Luhmann’s System Theory",
+    "categories": [
+      "meta",
+      "problem-solving"
+    ],
+    "roles": [
+      "consultant",
+      "software-architect",
+      "team-lead",
+      "educator",
+      "systems-thinker"
+    ],
+    "related": [
+      "simon-constructivism",
+      "systemic-consulting"
+    ],
+    "proponents": [
+      "Niklas Luhmann",
+      "Dirk Baecker"
+    ],
+    "tags": [
+      "systems-theory",
+      "autopoiesis",
+      "operational-closure",
+      "structural-coupling",
+      "system-environment",
+      "double-contingency"
+    ],
+    "filePath": "docs/anchors/luhmann-system-theory.adoc",
+    "tier": 3
+  },
+  {
     "id": "madr",
     "title": "MADR",
     "categories": [
@@ -2974,6 +3007,39 @@
     "tier": 3
   },
   {
+    "id": "simon-constructivism",
+    "title": "Simon’s Constructivism",
+    "categories": [
+      "meta",
+      "problem-solving"
+    ],
+    "roles": [
+      "consultant",
+      "educator",
+      "team-lead",
+      "systems-thinker"
+    ],
+    "related": [
+      "luhmann-system-theory",
+      "systemic-consulting"
+    ],
+    "proponents": [
+      "Fritz B. Simon",
+      "Humberto Maturana",
+      "Gregory Bateson"
+    ],
+    "tags": [
+      "constructivism",
+      "cybernetics",
+      "viability",
+      "perturbation",
+      "structural-determinism",
+      "circular-questions"
+    ],
+    "filePath": "docs/anchors/simon-constructivism.adoc",
+    "tier": 3
+  },
+  {
     "id": "single-level-of-abstraction-principle",
     "title": "Single Level of Abstraction Principle (SLAP)",
     "categories": [
@@ -3369,6 +3435,42 @@
       "business-analysis"
     ],
     "filePath": "docs/anchors/swot.adoc",
+    "tier": 3
+  },
+  {
+    "id": "systemic-consulting",
+    "title": "Systemic Consulting (Heidelberg School)",
+    "categories": [
+      "problem-solving",
+      "dialogue-interaction"
+    ],
+    "roles": [
+      "consultant",
+      "team-lead",
+      "educator",
+      "systems-thinker"
+    ],
+    "related": [
+      "simon-constructivism",
+      "luhmann-system-theory"
+    ],
+    "proponents": [
+      "Fritz B. Simon",
+      "Helm Stierlin",
+      "Gunthard Weber",
+      "Gregory Bateson",
+      "Paul Watzlawick"
+    ],
+    "tags": [
+      "systemic-consulting",
+      "circular-questions",
+      "neutrality",
+      "all-partiality",
+      "perturbation",
+      "intervention",
+      "heidelberg-school"
+    ],
+    "filePath": "docs/anchors/systemic-consulting.adoc",
     "tier": 3
   },
   {

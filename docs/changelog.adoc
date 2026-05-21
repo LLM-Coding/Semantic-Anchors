@@ -7,6 +7,9 @@ A chronological record of all semantic anchors added to the catalog. Community c
 *New anchors:*
 
 * *Quality Attribute Scenario* — Bass, Clements & Kazman's six-part scenario format (SEI, *Software Architecture in Practice*) that turns a vague quality goal into a testable statement: Source, Stimulus, Artifact, Environment, Response, Response Measure; the Response Measure is what makes it verifiable. The format underlies arc42 Chapter 10 quality requirements and the leaves of an ATAM utility tree.
+* *Luhmann's System Theory* — Niklas Luhmann's sociological systems theory; autopoiesis, operational closure, structural coupling, double contingency, communication as the operation of social systems; a theory for analysing complex socio-technical systems where boundaries are contested (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
+* *Simon's Constructivism* — Fritz B. Simon's introduction to systems theory and constructivism; viability vs. truth, trivial vs. non-trivial machines, second-order cybernetics, perturbation instead of instruction (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
+* *Systemic Consulting (Heidelberg School)* — the Heidelberg School of systemic consulting after Fritz B. Simon; all-partiality, neutrality, circular questions, context clarification, intervention as irritation rather than instruction (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
 
 *Contract updates:*
 

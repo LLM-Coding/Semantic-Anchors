@@ -95,6 +95,7 @@
     "name": "Dialogue Interaction",
     "anchors": [
       "socratic-method",
+      "systemic-consulting",
       "xy-problem"
     ]
   },
@@ -120,6 +121,8 @@
     "id": "meta",
     "name": "Meta",
     "anchors": [
+      "luhmann-system-theory",
+      "simon-constructivism",
       "what-qualifies-as-a-semantic-anchor"
     ]
   },
@@ -133,8 +136,11 @@
       "double-diamond",
       "feynman-technique",
       "five-whys",
+      "luhmann-system-theory",
       "morphological-box",
       "occams-razor",
+      "simon-constructivism",
+      "systemic-consulting",
       "what-would-chuck-norris-do",
       "xy-problem"
     ]
