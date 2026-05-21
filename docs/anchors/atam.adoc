@@ -1,7 +1,7 @@
 = ATAM
 :categories: software-architecture
 :roles: software-architect, team-lead, product-owner
-:related: arc42, adr-according-to-nygard
+:related: arc42, adr-according-to-nygard, quality-attribute-scenario
 :proponents: Rick Kazman, Mark Klein, Paul Clements
 :tags: architecture evaluation, quality attributes, tradeoffs, utility tree, SEI, risk analysis
 :tier: 3
@@ -44,4 +44,5 @@ Key Proponents:: Rick Kazman, Mark Klein, Paul Clements (SEI / Carnegie Mellon U
 
 * <<arc42,arc42 Architecture Documentation>>
 * <<adr-according-to-nygard,ADR according to Nygard>>
+* <<quality-attribute-scenario,Quality Attribute Scenario>>
 ====

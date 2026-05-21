@@ -141,6 +141,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Rick Kazman, Mark Klein, Paul Clements (SEI/CMU)
 - **Core:** Scenario-driven evaluation of software architectures against quality attributes; elicits stakeholder quality-attribute scenarios, maps them to architectural decisions, identifies sensitivity points, tradeoff points, and risks; produces a documented risk list and tradeoff catalog
 
+### Quality Attribute Scenario
+- **Also known as:** Quality Scenario, Six-Part Scenario
+- **Proponents:** Len Bass, Paul Clements, Rick Kazman (SEI/CMU)
+- **Core:** Six-part template that turns a vague quality goal into a testable statement — Source, Stimulus, Artifact, Environment, Response, Response Measure; the Response Measure (a latency, percentile, throughput, recovery time) is what makes it verifiable; expresses arc42 Chapter 10 quality requirements and the leaves of an ATAM utility tree
+
 ### LASR by Toth/Zörner
 - **Also known as:** Layers–Aspects–Solution Strategy–Rationale
 - **Proponents:** Stefan Toth, Stefan Zörner

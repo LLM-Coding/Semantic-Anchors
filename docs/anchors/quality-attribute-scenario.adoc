@@ -1,0 +1,45 @@
+= Quality Attribute Scenario
+:categories: software-architecture, requirements-engineering
+:roles: software-architect, business-analyst, product-owner, team-lead
+:related: atam, arc42, iso-25010, ears-requirements
+:proponents: Len Bass, Paul Clements, Rick Kazman
+:tags: quality attributes, quality requirements, scenarios, SEI, testable requirements, response measure
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Quality Attribute Scenario
+
+Also known as:: Quality Scenario, Six-Part Scenario
+
+[discrete]
+== *Core Concepts*:
+
+Purpose:: Turn a vague quality goal ("the system must be fast") into a concrete, testable statement. A scenario without a measurable response is a wish, not a requirement.
+
+Six Parts:: Every scenario is specified through six elements: *Source* (the entity generating the stimulus), *Stimulus* (the condition arriving at the system), *Artifact* (the part of the system stimulated), *Environment* (the conditions under which it occurs — normal load, overload, startup, degraded mode), *Response* (the activity that results), *Response Measure* (the response quantified so the requirement is verifiable).
+
+Response Measure:: The decisive part. Without a measure — a latency, a percentile, a throughput, a recovery time — a scenario cannot be tested and is not a requirement.
+
+General vs. Concrete Scenarios:: A general scenario is a reusable template for a quality attribute; a concrete scenario instantiates it for one specific system with literal values.
+
+Relation to Quality Attributes:: Scenarios make ISO/IEC 25010 characteristics operational — each characteristic (performance efficiency, reliability, security...) is expressed as one or more concrete scenarios.
+
+Key Proponents:: Len Bass, Paul Clements, Rick Kazman ("Software Architecture in Practice", SEI / Carnegie Mellon University)
+
+[discrete]
+== *When to Use*:
+
+* Writing arc42 Chapter 10 quality requirements as testable statements rather than adjectives
+* Building an ATAM utility tree, where each leaf is a prioritized concrete scenario
+* Specifying non-functional requirements that QA must later verify
+* Recovering quality requirements from a brownfield codebase — deriving the response measure from a literal threshold, timeout, or budget in the code
+
+[discrete]
+== *Related Anchors*:
+
+* <<atam,ATAM>> — uses quality attribute scenarios as the leaves of its utility tree
+* <<arc42,arc42 Architecture Documentation>> — Chapter 10 quality requirements are expressed as scenarios
+* <<iso-25010,ISO/IEC 25010>> — the quality characteristics that scenarios make concrete
+* <<ears-requirements,EARS Requirements>> — a comparable discipline of making requirements precise and testable
+====

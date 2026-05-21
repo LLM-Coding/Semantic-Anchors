@@ -1,0 +1,45 @@
+= Quality Attribute Scenario
+:categories: software-architecture, requirements-engineering
+:roles: software-architect, business-analyst, product-owner, team-lead
+:related: atam, arc42, iso-25010, ears-requirements
+:proponents: Len Bass, Paul Clements, Rick Kazman
+:tags: quality attributes, quality requirements, scenarios, SEI, testable requirements, response measure
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Quality Attribute Scenario (Qualitätsattribut-Szenario)
+
+Auch bekannt als:: Qualitätsszenario, Sechs-Teile-Szenario
+
+[discrete]
+== *Kernkonzepte*:
+
+Zweck:: Ein vages Qualitätsziel („das System muss schnell sein") in eine konkrete, testbare Aussage überführen. Ein Szenario ohne messbare Reaktion ist ein Wunsch, keine Anforderung.
+
+Sechs Teile:: Jedes Szenario wird über sechs Elemente spezifiziert: *Source* (die auslösende Entität), *Stimulus* (das beim System ankommende Ereignis), *Artifact* (der angesprochene Systemteil), *Environment* (die Bedingungen — Normallast, Überlast, Start, degradierter Betrieb), *Response* (die resultierende Aktivität), *Response Measure* (die Reaktion quantifiziert, sodass die Anforderung prüfbar ist).
+
+Response Measure:: Der entscheidende Teil. Ohne ein Maß — eine Latenz, ein Perzentil, einen Durchsatz, eine Recovery-Zeit — lässt sich ein Szenario nicht testen und ist keine Anforderung.
+
+Allgemeine vs. konkrete Szenarien:: Ein allgemeines Szenario ist eine wiederverwendbare Schablone für ein Qualitätsattribut; ein konkretes Szenario instanziiert sie für ein bestimmtes System mit literalen Werten.
+
+Bezug zu Qualitätsattributen:: Szenarien machen ISO/IEC-25010-Merkmale operationalisierbar — jedes Merkmal (Performance, Zuverlässigkeit, Sicherheit ...) wird als eines oder mehrere konkrete Szenarien ausgedrückt.
+
+Schlüsselvertreter:: Len Bass, Paul Clements, Rick Kazman („Software Architecture in Practice", SEI / Carnegie Mellon University)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* arc42-Kapitel 10 (Qualitätsanforderungen) als testbare Aussagen statt als Adjektive schreiben
+* Aufbau eines ATAM-Utility-Tree, dessen Blätter priorisierte konkrete Szenarien sind
+* Spezifikation nicht-funktionaler Anforderungen, die QA später verifizieren muss
+* Wiederherstellung von Qualitätsanforderungen aus einem Brownfield-Codebase — das Response Measure aus einem literalen Schwellwert, Timeout oder Budget im Code ableiten
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<atam,ATAM>> — nutzt Qualitätsattribut-Szenarien als Blätter seines Utility Tree
+* <<arc42,arc42 Architekturdokumentation>> — Kapitel 10 (Qualitätsanforderungen) wird als Szenarien ausgedrückt
+* <<iso-25010,ISO/IEC 25010>> — die Qualitätsmerkmale, die Szenarien konkretisieren
+* <<ears-requirements,EARS Requirements>> — eine vergleichbare Disziplin, Anforderungen präzise und testbar zu machen
+====

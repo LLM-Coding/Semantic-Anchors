@@ -79,7 +79,8 @@
     ],
     "related": [
       "arc42",
-      "adr-according-to-nygard"
+      "adr-according-to-nygard",
+      "quality-attribute-scenario"
     ],
     "proponents": [
       "Rick Kazman",
@@ -2812,6 +2813,41 @@
     "proponents": [],
     "tags": [],
     "filePath": "docs/anchors/pyramid-principle.adoc",
+    "tier": 3
+  },
+  {
+    "id": "quality-attribute-scenario",
+    "title": "Quality Attribute Scenario",
+    "categories": [
+      "software-architecture",
+      "requirements-engineering"
+    ],
+    "roles": [
+      "software-architect",
+      "business-analyst",
+      "product-owner",
+      "team-lead"
+    ],
+    "related": [
+      "atam",
+      "arc42",
+      "iso-25010",
+      "ears-requirements"
+    ],
+    "proponents": [
+      "Len Bass",
+      "Paul Clements",
+      "Rick Kazman"
+    ],
+    "tags": [
+      "quality attributes",
+      "quality requirements",
+      "scenarios",
+      "SEI",
+      "testable requirements",
+      "response measure"
+    ],
+    "filePath": "docs/anchors/quality-attribute-scenario.adoc",
     "tier": 3
   },
   {

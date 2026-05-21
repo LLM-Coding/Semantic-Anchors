@@ -151,6 +151,7 @@
       "moscow",
       "prd",
       "problem-space-nvc",
+      "quality-attribute-scenario",
       "user-story-mapping"
     ]
   },
@@ -172,6 +173,7 @@
       "lasr",
       "lehmans-classification",
       "madr",
+      "quality-attribute-scenario",
       "tracer-bullet",
       "vertical-slice-architecture",
       "walking-skeleton"
