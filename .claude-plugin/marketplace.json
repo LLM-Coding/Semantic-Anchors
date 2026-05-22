@@ -10,7 +10,7 @@
     {
       "name": "semantic-anchors",
       "description": "Semantic anchor skills for translating established methodologies and installing persistent coding-agent context.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "author": {
         "name": "LLM Coding",
         "url": "https://github.com/LLM-Coding"

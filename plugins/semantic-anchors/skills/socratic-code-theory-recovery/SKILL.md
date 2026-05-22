@@ -3,7 +3,7 @@ name: socratic-code-theory-recovery
 description: Recover the "theory" (Naur 1985) of an existing codebase through recursive question refinement before writing documentation. Use on brownfield projects where the spec is missing — produces a Question Tree separating what is answerable from code (with evidence) from what must be asked of the team (routed by role). Phase 1 builds the tree; team answers the OPEN leaves; Phase 2 synthesizes PRD, Cockburn use cases, arc42 architecture, and Nygard ADRs from the answered tree.
 metadata:
   author: LLM-Coding
-  version: "0.1"
+  version: "0.2"
   source: https://github.com/LLM-Coding/Semantic-Anchors
 license: MIT
 ---
