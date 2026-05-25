@@ -2,98 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/about</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/spec-driven-development</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/brownfield</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/brownfield-experiment-report</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/brownfield-fair-comparison</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/socratic-recovery-skill</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/harness-inventory</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/contracts</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/evaluations</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/all-anchors</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/agentskill</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/changelog</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/contributing</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/rejected-proposals</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -101,7 +108,7 @@
   <!-- Anchor: 4MAT -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/4mat</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -109,7 +116,7 @@
   <!-- Anchor: ADR according to Nygard -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/adr-according-to-nygard</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -117,7 +124,7 @@
   <!-- Anchor: arc42 Architecture Documentation -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/arc42</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -125,7 +132,7 @@
   <!-- Anchor: ATAM -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/atam</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -133,7 +140,7 @@
   <!-- Anchor: BDD (Behavior-Driven Development) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/bdd-given-when-then</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -141,7 +148,7 @@
   <!-- Anchor: BEM Methodology -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/bem-methodology</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -149,7 +156,7 @@
   <!-- Anchor: BLUF (Bottom Line Up Front) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/bluf</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -157,7 +164,7 @@
   <!-- Anchor: C4-Diagrams -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/c4-diagrams</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -165,7 +172,7 @@
   <!-- Anchor: Chain of Thought (CoT) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/chain-of-thought</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -173,7 +180,7 @@
   <!-- Anchor: Clean Architecture -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/clean-architecture</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -181,7 +188,7 @@
   <!-- Anchor: Cockburn Use Cases -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/cockburn-use-cases</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -189,7 +196,7 @@
   <!-- Anchor: Code Smells -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/code-smells</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -197,7 +204,7 @@
   <!-- Anchor: Cohesion Criteria -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/cohesion-criteria</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -205,7 +212,7 @@
   <!-- Anchor: Control Chart (Shewhart) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/control-chart-shewhart</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -213,7 +220,7 @@
   <!-- Anchor: Conventional Commits -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/conventional-commits</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -221,7 +228,7 @@
   <!-- Anchor: CQRS (Command Query Responsibility Segregation) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/cqrs</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -229,7 +236,7 @@
   <!-- Anchor: CRC-Cards -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/crc-cards</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -237,7 +244,7 @@
   <!-- Anchor: Cynefin Framework -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/cynefin-framework</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -245,7 +252,7 @@
   <!-- Anchor: Decisional Balance Sheet -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/decisional-balance-sheet</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -253,7 +260,7 @@
   <!-- Anchor: Definition of Done -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/definition-of-done</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -261,7 +268,7 @@
   <!-- Anchor: Devil’s Advocate -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/devils-advocate</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -269,7 +276,7 @@
   <!-- Anchor: Diátaxis Framework -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/diataxis-framework</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -277,7 +284,7 @@
   <!-- Anchor: Docs-as-Code according to Ralf D. Müller -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/docs-as-code</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -285,7 +292,7 @@
   <!-- Anchor: Domain-Driven Design according to Evans -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/domain-driven-design</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -293,7 +300,7 @@
   <!-- Anchor: Double Diamond -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/double-diamond</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -301,7 +308,7 @@
   <!-- Anchor: EARS-Requirements -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/ears-requirements</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -309,7 +316,7 @@
   <!-- Anchor: Effective Go -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/effective-go</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -317,7 +324,7 @@
   <!-- Anchor: Event-Driven Architecture -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/event-driven-architecture</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -325,7 +332,7 @@
   <!-- Anchor: Fagan Inspection -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/fagan-inspection</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -333,7 +340,7 @@
   <!-- Anchor: Feynman Technique -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/feynman-technique</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -341,7 +348,7 @@
   <!-- Anchor: Fichtean Curve -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/fichtean-curve</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -349,7 +356,7 @@
   <!-- Anchor: Five Whys (Ohno) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/five-whys</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -357,7 +364,7 @@
   <!-- Anchor: Patterns of Enterprise Application Architecture (PEAA) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/fowler-patterns</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -365,7 +372,7 @@
   <!-- Anchor: Freytag’s Pyramid -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/freytags-pyramid</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -373,7 +380,7 @@
   <!-- Anchor: Gherkin -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gherkin</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -381,7 +388,7 @@
   <!-- Anchor: GitHub Flow -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/github-flow</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -389,7 +396,7 @@
   <!-- Anchor: GoF-Abstract Factory Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-abstract-factory-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -397,7 +404,7 @@
   <!-- Anchor: GoF-Adapter Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-adapter-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -405,7 +412,7 @@
   <!-- Anchor: GoF-Bridge Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-bridge-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -413,7 +420,7 @@
   <!-- Anchor: GoF-Builder Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-builder-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -421,7 +428,7 @@
   <!-- Anchor: GoF-Chain of Responsibility Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-chain-of-responsibility-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -429,7 +436,7 @@
   <!-- Anchor: GoF-Command Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-command-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -437,7 +444,7 @@
   <!-- Anchor: GoF-Composite Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-composite-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -445,7 +452,7 @@
   <!-- Anchor: GoF-Decorator Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-decorator-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -453,7 +460,7 @@
   <!-- Anchor: GoF Design Patterns -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-design-patterns</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -461,7 +468,7 @@
   <!-- Anchor: GoF-Facade Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-facade-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -469,7 +476,7 @@
   <!-- Anchor: GoF-Factory Method Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-factory-method-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -477,7 +484,7 @@
   <!-- Anchor: GoF-Flyweight Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-flyweight-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -485,7 +492,7 @@
   <!-- Anchor: GoF-Interpreter Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-interpreter-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -493,7 +500,7 @@
   <!-- Anchor: GoF-Iterator Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-iterator-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -501,7 +508,7 @@
   <!-- Anchor: GoF-Mediator Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-mediator-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -509,7 +516,7 @@
   <!-- Anchor: GoF-Memento Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-memento-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -517,7 +524,7 @@
   <!-- Anchor: GoF-Observer Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-observer-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -525,7 +532,7 @@
   <!-- Anchor: GoF-Prototype Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-prototype-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -533,7 +540,7 @@
   <!-- Anchor: GoF-Proxy Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-proxy-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -541,7 +548,7 @@
   <!-- Anchor: GoF-Singleton Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-singleton-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -549,7 +556,7 @@
   <!-- Anchor: GoF-State Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-state-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -557,7 +564,7 @@
   <!-- Anchor: GoF-Strategy Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-strategy-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -565,7 +572,7 @@
   <!-- Anchor: GoF-Template Method Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-template-method-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -573,7 +580,7 @@
   <!-- Anchor: GoF-Visitor Pattern -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gof-visitor-pattern</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -581,7 +588,7 @@
   <!-- Anchor: GoM -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gom</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -589,7 +596,7 @@
   <!-- Anchor: GRASP -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/grasp</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -597,7 +604,7 @@
   <!-- Anchor: GTD — Getting Things Done -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gtd</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -605,7 +612,7 @@
   <!-- Anchor: Gutes Deutsch nach Wolf Schneider -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gutes-deutsch-wolf-schneider</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -613,7 +620,7 @@
   <!-- Anchor: Hemingway Bridge -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/hemingway-bridge</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -621,7 +628,7 @@
   <!-- Anchor: Hero’s Journey -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/heros-journey</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -629,7 +636,7 @@
   <!-- Anchor: Hexagonal Architecture (Ports & Adapters) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/hexagonal-architecture</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -637,7 +644,7 @@
   <!-- Anchor: Hoshin Kanri -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/hoshin-kanri</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -645,7 +652,7 @@
   <!-- Anchor: IEC 61508 SIL Levels -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/iec-61508-sil-levels</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -653,7 +660,7 @@
   <!-- Anchor: Impact Mapping -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/impact-mapping</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -661,7 +668,7 @@
   <!-- Anchor: INVEST -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/invest</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -669,7 +676,7 @@
   <!-- Anchor: ISO/IEC 25010 -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/iso-25010</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -677,7 +684,7 @@
   <!-- Anchor: Jobs To Be Done (JTBD) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/jobs-to-be-done</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -685,7 +692,7 @@
   <!-- Anchor: Kano Model -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/kano-model</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -693,7 +700,7 @@
   <!-- Anchor: Kishōtenketsu -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/kishotenketsu</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -701,7 +708,7 @@
   <!-- Anchor: KISS Principle -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/kiss-principle</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -709,7 +716,7 @@
   <!-- Anchor: Kotter’s 8-Step Change Model -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/kotter-8-step-change-model</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -717,7 +724,7 @@
   <!-- Anchor: LASR according to Toth/Zörner -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/lasr</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -725,7 +732,7 @@
   <!-- Anchor: Lehman’s Software Classification -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/lehmans-classification</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -733,7 +740,7 @@
   <!-- Anchor: LINDDUN -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/linddun</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -741,7 +748,15 @@
   <!-- Anchor: LLM-Evaluations -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/llm-evaluations</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Luhmann’s System Theory -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/luhmann-system-theory</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -749,7 +764,7 @@
   <!-- Anchor: MADR -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/madr</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -757,7 +772,7 @@
   <!-- Anchor: MECE Principle -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/mece</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -765,7 +780,7 @@
   <!-- Anchor: Programming as Theory Building (Naur) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/mental-model-according-to-naur</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -773,7 +788,7 @@
   <!-- Anchor: Mikado Method -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/mikado-method</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -781,7 +796,7 @@
   <!-- Anchor: Morphological Box -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/morphological-box</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -789,7 +804,7 @@
   <!-- Anchor: MoSCoW -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/moscow</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -797,7 +812,7 @@
   <!-- Anchor: Mutation Testing -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/mutation-testing</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -805,7 +820,7 @@
   <!-- Anchor: Minimum Viable Product (MVP) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/mvp</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -813,7 +828,7 @@
   <!-- Anchor: Myers-Briggs Type Indicator (MBTI) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/myers-briggs-type-indicator</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -821,7 +836,7 @@
   <!-- Anchor: Nelson Rules -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/nelson-rules</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -829,7 +844,7 @@
   <!-- Anchor: Occam’s Razor -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/occams-razor</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -837,7 +852,7 @@
   <!-- Anchor: OWASP Top 10 -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/owasp-top-10</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -845,7 +860,7 @@
   <!-- Anchor: P.A.R.A. Method -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/para-method</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -853,7 +868,7 @@
   <!-- Anchor: PERT -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/pert</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -861,7 +876,7 @@
   <!-- Anchor: Plain English according to Strunk & White -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/plain-english-strunk-white</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -869,7 +884,7 @@
   <!-- Anchor: PRD -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/prd</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -877,7 +892,7 @@
   <!-- Anchor: Nonviolent Communication (Rosenberg) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/problem-space-nvc</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -885,7 +900,7 @@
   <!-- Anchor: Property-Based Testing -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/property-based-testing</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -893,7 +908,7 @@
   <!-- Anchor: Pugh-Matrix -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/pugh-matrix</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -901,7 +916,15 @@
   <!-- Anchor: Pyramid Principle according to Barbara Minto -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/pyramid-principle</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Quality Attribute Scenario -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/quality-attribute-scenario</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -909,7 +932,7 @@
   <!-- Anchor: Red/Green TDD -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/red-green-tdd</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -917,7 +940,7 @@
   <!-- Anchor: Regulated Environment -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/regulated-environment</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -925,7 +948,7 @@
   <!-- Anchor: Save the Cat! (15-Beat Sheet) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/save-the-cat</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -933,7 +956,15 @@
   <!-- Anchor: Semantic Versioning (SemVer) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/semantic-versioning</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Simon’s Constructivism -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/simon-constructivism</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -941,7 +972,7 @@
   <!-- Anchor: Single Level of Abstraction Principle (SLAP) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/single-level-of-abstraction-principle</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -949,7 +980,7 @@
   <!-- Anchor: Socratic Method -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/socratic-method</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -957,7 +988,7 @@
   <!-- Anchor: SOLID-Dependency Inversion Principle -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/solid-dip</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -965,7 +996,7 @@
   <!-- Anchor: SOLID-Interface Segregation Principle -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/solid-isp</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -973,7 +1004,7 @@
   <!-- Anchor: SOLID-Liskov Substitution Principle -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/solid-lsp</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -981,7 +1012,7 @@
   <!-- Anchor: SOLID-Open/Closed Principle -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/solid-ocp</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -989,7 +1020,7 @@
   <!-- Anchor: SOLID Principles -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/solid-principles</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -997,7 +1028,7 @@
   <!-- Anchor: SOLID-Single Responsibility Principle -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/solid-srp</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1005,7 +1036,7 @@
   <!-- Anchor: SOTA (State-of-the-Art) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/sota</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1013,7 +1044,7 @@
   <!-- Anchor: SPC (Statistical Process Control) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/spc</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1021,7 +1052,7 @@
   <!-- Anchor: Spike Solution -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/spike-solution</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1029,7 +1060,7 @@
   <!-- Anchor: SSOT (Single Source of Truth) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/ssot-principle</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1037,7 +1068,7 @@
   <!-- Anchor: Story Circle (Dan Harmon) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/story-circle-dan-harmon</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1045,7 +1076,7 @@
   <!-- Anchor: STRIDE Threat Model -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/stride</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1053,7 +1084,15 @@
   <!-- Anchor: SWOT -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/swot</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Anchor: Systemic Consulting (Heidelberg School) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/systemic-consulting</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1061,7 +1100,7 @@
   <!-- Anchor: TDD, Chicago School -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/tdd-chicago-school</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1069,7 +1108,7 @@
   <!-- Anchor: TDD, London School -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/tdd-london-school</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1077,7 +1116,7 @@
   <!-- Anchor: Test Double: Dummy (Meszaros) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/test-double-dummy</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1085,7 +1124,7 @@
   <!-- Anchor: Test Double: Fake (Meszaros) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/test-double-fake</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1093,7 +1132,7 @@
   <!-- Anchor: Test Double (Meszaros) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/test-double-meszaros</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1101,7 +1140,7 @@
   <!-- Anchor: Test Double: Mock (Meszaros) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/test-double-mock</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1109,7 +1148,7 @@
   <!-- Anchor: Test Double: Spy (Meszaros) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/test-double-spy</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1117,7 +1156,7 @@
   <!-- Anchor: Test Double: Stub (Meszaros) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/test-double-stub</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1125,7 +1164,7 @@
   <!-- Anchor: Testing Pyramid -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/testing-pyramid</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1133,7 +1172,7 @@
   <!-- Anchor: Thin Vertical Slice -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/thin-vertical-slice</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1141,7 +1180,7 @@
   <!-- Anchor: Three-Act Structure -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/three-act-structure</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1149,7 +1188,7 @@
   <!-- Anchor: TIMTOWTDI -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/timtowtdi</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1157,7 +1196,7 @@
   <!-- Anchor: todo.txt-flavoured Markdown -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/todotxt-flavoured-markdown</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1165,7 +1204,7 @@
   <!-- Anchor: Tracer Bullet -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/tracer-bullet</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1173,7 +1212,7 @@
   <!-- Anchor: User Story Mapping -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/user-story-mapping</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1181,7 +1220,7 @@
   <!-- Anchor: Vertical Slice Architecture (VSA) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/vertical-slice-architecture</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1189,7 +1228,7 @@
   <!-- Anchor: Walking Skeleton -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/walking-skeleton</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1197,7 +1236,7 @@
   <!-- Anchor: Wardley Mapping -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/wardley-mapping</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1205,7 +1244,7 @@
   <!-- Anchor: The Spectrum of Semantic Anchors -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/what-qualifies-as-a-semantic-anchor</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1213,7 +1252,7 @@
   <!-- Anchor: What Would Chuck Norris Do? (WWCND) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/what-would-chuck-norris-do</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1221,7 +1260,7 @@
   <!-- Anchor: Workflow: Architecture Documentation -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/workflow-architecture-documentation</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1229,7 +1268,7 @@
   <!-- Anchor: Workflow: Structured Code Review -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/workflow-code-review</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1237,7 +1276,7 @@
   <!-- Anchor: Workflow: Requirements to Specification -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/workflow-requirements-to-spec</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1245,7 +1284,7 @@
   <!-- Anchor: Workflow: Strategic Architecture Analysis -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/workflow-strategic-analysis</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1253,7 +1292,7 @@
   <!-- Anchor: Workflow: TDD with Clean Architecture -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/workflow-tdd-clean-architecture</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1261,7 +1300,7 @@
   <!-- Anchor: XY Problem -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/xy-problem</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1269,7 +1308,7 @@
   <!-- Anchor: YAGNI (You Aren’t Gonna Need It) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/yagni</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

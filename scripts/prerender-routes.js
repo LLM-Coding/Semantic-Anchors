@@ -73,6 +73,13 @@ const ROUTES = [
       'Three approaches (Direct, Socratic, Two-Phase) compared with identical team answers. Measures the structural value of the Question Tree, not the answers.',
   },
   {
+    path: '/harness-inventory',
+    fragment: 'docs/harness-inventory.html',
+    title: 'The Harness Inventory — Semantic Anchors',
+    description:
+      'Layers of error correction for agentic coding. A categorised inventory of harness checks, sorted by how much project work each one requires.',
+  },
+  {
     path: '/socratic-recovery-skill',
     fragment: 'docs/socratic-recovery-skill.html',
     title: 'Socratic Code-Theory Recovery Skill — Semantic Anchors',

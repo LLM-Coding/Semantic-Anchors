@@ -1,0 +1,874 @@
+= The Harness Inventory
+Ralf D. Müller
+2026-05-25
+:toc:
+:toc-placement: preamble
+
+_Layers of Error Correction for Agentic Coding._
+
+== Why This Document Exists
+
+An LLM is a noisy channel in Shannon's sense.
+Two levers improve the transmission: the _signal_ (link:#/spec-driven-development[Semantic Anchors], precise specifications) and _error correction_ (everything that checks the generated code after the fact).
+Ingo Eichhorst made this connection explicit in his JavaLand 2026 keynote.
+This document is the second lever, written out in full.
+
+When you read about "harness engineering" -- a phrase OpenAI's Codex team, Anthropic, and Martin Fowler all use -- this is what they mean.
+A harness is the bundle of layers that catch the LLM's mistakes before they reach your production system.
+
+Most teams build a harness by accident: they have a compiler, they have a few tests, they have a code review.
+That works until it doesn't.
+This document is the systematic alternative -- an inventory of the layers that exist, sorted by category and by how much project work they require to deploy.
+
+== How to Read This Document
+
+Every check layer has six properties:
+
+[cols="1,3", options="header"]
+|===
+| Axis | Values
+
+| What does it check?
+| Syntax, types, function logic, component interplay, business logic, architecture, security, performance, accessibility, data, operations
+
+| How does it check?
+| Static / dynamic / symbolic / empirical / property-based / adversarial / statistical / human / LLM
+
+| When does it run?
+| Pre-commit · Build · CI · Pre-Merge · Staging · Production · Manual
+
+| Closed-loop capable?
+| Can an agent read its output and self-correct? (yes/no)
+
+| Definition location
+| 🟢 extrinsic · 🟡 hybrid · 🔴 project-intrinsic (see below)
+
+| Cost class
+| Free-automatic · CI-seconds · CI-minutes · Human-minutes · Human-hours · External audit
+|===
+
+Closed-loop capability is the most important axis for agentic coding.
+A layer whose error message the agent cannot read (a PDF audit, say) is outside the loop and cannot drive self-correction.
+
+=== The Economic Axis: Definition Location
+
+[cols="1,2,5", options="header"]
+|===
+| Marker | Class | Meaning
+
+| 🟢
+| *Extrinsic*
+| Right and wrong are defined outside the project (language spec, CVE database, WCAG, OWASP, ISO standards). Turn it on, done. High leverage at minimal cost.
+
+| 🟡
+| *Hybrid*
+| Default ruleset is extrinsic; project-specific refinement is useful or necessary. Medium cost.
+
+| 🔴
+| *Intrinsic*
+| Right and wrong must be defined inside the project (write tests, ADRs, schemas, thresholds). High cost per layer.
+|===
+
+*The pragmatic minimum for agentic coding:* turn on every 🟢 layer.
+Skipping a 🟢 layer means you are paying LLM tokens to chase errors a free tool would have caught.
+🔴 layers are the work your project has anyway (tests, specs, architecture).
+🟡 layers usually deliver value at default settings; tailoring comes later.
+
+*Reading order:* inside each category, layers are sorted by definition marker -- 🟢 first, 🔴 last.
+Top-to-bottom reads as "turn this on today" to "needs project work".
+
+== 1. Build and Language Layers
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Compiler
+| 🟢
+| Syntax errors, type errors
+| Build
+| yes
+
+| Type checker (mypy, pyright, TypeScript strict)
+| 🟢
+| Type errors in dynamic languages
+| Pre-commit / CI
+| yes
+
+| Formatter (Prettier, Black, gofmt, dprint)
+| 🟢
+| Style noise — eliminates an entire class of errors by canonicalisation
+| Pre-commit
+| yes
+
+| Import sorter / dead-code detector
+| 🟢
+| Dead imports, unused symbols
+| Pre-commit
+| yes
+
+| Linter (ESLint, Ruff, Checkstyle, golangci-lint)
+| 🟡
+| Code smells, simple bugs, style violations
+| Pre-commit
+| yes
+|===
+
+=== Language Strictness as Error Correction
+
+The compiler's correction power is not a switch but a spectrum.
+Bytecode is almost always syntactically valid.
+A dynamically typed language like JavaScript catches syntax errors but not type errors.
+A statically typed language like Java also catches type errors.
+A language with strict modifiers catches access violations on top.
+
+[cols="2,3,3", options="header"]
+|===
+| Language Level | Correction Power | Example
+
+| Bytecode
+| Minimal
+| JVM Bytecode
+
+| Dynamically typed
+| Syntax
+| JavaScript, Python
+
+| Statically typed
+| Syntax + types
+| Java, TypeScript, Rust
+
+| With modifiers
+| Syntax + types + access
+| `private`, `static`, `final`
+|===
+
+The modifier insight is due to Avraham Poupko.
+Modifiers were invented for human discipline -- to protect API boundaries from sloppy callers.
+The program itself does not care about modifiers.
+But the compiler does.
+And so does the LLM.
+When an agent tries to access a private field, the compiler emits an error.
+The agent reads it and corrects itself.
+A language feature designed for human discipline acts as error correction for machines.
+
+Programming languages with strict modifiers (Rust, Kotlin, F#) are a better choice for agentic coding than permissive ones.
+The channel capacity is higher.
+
+== 2. Testing Layers
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Unit tests
+| 🔴
+| Logic errors in single functions
+| Build / CI
+| yes
+
+| Property-based / fuzz (Hypothesis, jqwik, AFL)
+| 🔴
+| Edge cases, invariant violations, unsafe inputs
+| CI
+| yes
+
+| Mutation testing (Stryker, PIT)
+| 🔴
+| Inadequate test coverage — meta-quality of the test suite
+| Nightly / Pre-Merge
+| yes (machine-readable report)
+
+| Integration tests
+| 🔴
+| Errors in the interplay of components
+| CI
+| yes
+
+| Contract tests (Pact, Spring Cloud Contract)
+| 🔴
+| API breakage between services
+| CI / Pre-Merge
+| yes
+
+| BDD / acceptance tests
+| 🔴
+| Misinterpreted requirements
+| CI
+| yes
+
+| End-to-end / UI (Playwright, Cypress)
+| 🔴
+| UI workflows, browser-specific bugs
+| CI / nightly
+| yes, but flakiness risk
+
+| Snapshot / visual regression
+| 🔴
+| Unintended UI changes
+| CI
+| partial (diff images need human judgement)
+
+| Performance / benchmark (k6, JMH, Lighthouse perf)
+| 🔴
+| Performance regressions
+| Nightly / Pre-Release
+| yes (thresholds as CI gates)
+
+| Smoke tests
+| 🔴
+| Basic functionality after deployment
+| Post-deploy
+| yes
+|===
+
+The entire testing category is 🔴 -- tests define the project-internal "correct".
+That is unavoidable: the cost-heaviest part of the harness is the test layer.
+
+=== Why the Ordering Matters
+
+Property-based tests catch errors that human-written unit tests miss.
+They generate thousands of inputs; the human thinks of three.
+Mutation tests close the gap "the test formally checks something, but does not validate the actual behaviour".
+Both layers are rare in standard repos but pay off especially in agentic development -- they catch error classes where LLMs are empirically weak: edge cases, off-by-one errors, atypical inputs.
+
+== 3. Security
+
+Security has the strongest external knowledge base of any category.
+CVE databases, OWASP, CIS Benchmarks -- a project just uses them.
+That is why most rows here are 🟢 or 🟡.
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Secret scanning (gitleaks, TruffleHog)
+| 🟢
+| Hardcoded credentials, API keys
+| Pre-commit
+| yes
+
+| SCA — Software Composition Analysis (Dependabot, Snyk, OWASP DC, Trivy)
+| 🟢
+| Known vulnerabilities in dependencies (CVE)
+| CI / daily
+| yes
+
+| Container / image scanning (Trivy, Grype, Snyk Container)
+| 🟢
+| Vulnerabilities in base images, OS packages
+| CI
+| yes
+
+| IaC scanning (tflint, Checkov, KICS, tfsec)
+| 🟢
+| Cloud misconfigurations, open S3 buckets, missing encryption
+| CI
+| yes
+
+| Supply chain (SBOM, SLSA, Sigstore, in-toto)
+| 🟢
+| Tampered builds, untrusted dependencies
+| CI / release
+| yes
+
+| Compliance scanning (OPA / Conftest, CIS Benchmarks)
+| 🟢
+| Policy / standard violations (SOC2, ISO 27001, PCI)
+| CI / nightly
+| yes
+
+| License compliance (FOSSA, ScanCode, REUSE)
+| 🟢
+| GPL contamination, missing attribution
+| CI
+| yes
+
+| SAST — Static Application Security Testing (Semgrep, CodeQL, SonarQube, Snyk Code)
+| 🟡
+| SQL injection, XSS, path traversal, insecure crypto, unsafe deserialisation
+| CI
+| yes
+
+| DAST — Dynamic Application Security Testing (OWASP ZAP, Burp Suite Pro)
+| 🟡
+| Runtime vulnerabilities, auth bypass, configuration errors in a production-like setup
+| Staging / nightly
+| partial (findings often as HTML/PDF)
+
+| IAST — Interactive Application Security Testing (Contrast, Seeker)
+| 🟡
+| Runtime vulnerabilities with code-path context
+| Staging
+| partial
+
+| LLM security review (Claude / Codex prompt, dedicated reviewer agent)
+| 🟡
+| Logic vulnerabilities, missing authorisation, race conditions — anything no pattern matcher finds
+| Pre-Merge
+| yes
+
+| Threat modeling (STRIDE, LINDDUN — manual + LLM-assisted)
+| 🔴
+| Design weaknesses before coding starts
+| Design phase
+| not directly — output is a diagram / list the agent reads as a spec
+|===
+
+SAST finds what a pattern matcher can find.
+Logic vulnerabilities, missing authorisation, indirect information leaks are the gap.
+LLM-based security review fills that gap (provided the reviewer agent has context the code-generator agent does not).
+Threat modeling early is cheaper than any correction later.
+
+== 4. Architecture and Design
+
+Almost everything here is 🔴 -- architecture is the most project-specific layer of all.
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Complexity metrics (cyclomatic, cognitive)
+| 🟢
+| Hot spots, hard-to-maintain areas
+| CI
+| yes, but blunt instrument
+
+| API contract lint (Spectral for OpenAPI, GraphQL lint)
+| 🟡
+| Inconsistent APIs, breaking changes
+| CI
+| yes
+
+| Fagan Inspection (structured code-review process)
+| 🔴
+| Defects no tool catches — maintainability, idiom, local consistency
+| Pre-Merge
+| indirect (findings as text, agent-readable)
+
+| Code review (ad-hoc, without Fagan discipline)
+| 🔴
+| Like Fagan, but less systematic
+| Pre-Merge
+| indirect
+
+| ArchUnit / NetArchTest / dependency-cruiser
+| 🔴
+| Layering violations, circular dependencies
+| CI
+| yes
+
+| ADR enforcement (custom linter over ADR markdown)
+| 🔴
+| Violations of documented decisions
+| CI
+| yes
+
+| Spec traceability (Semantic Anchors Q-IDs)
+| 🔴
+| Code without spec anchor, spec without code
+| CI
+| yes
+
+| ATAM — Architecture Tradeoff Analysis Method
+| 🔴
+| Architectural risks and trade-offs against quality goals (scenario-based)
+| Dedicated / major release
+| not directly — output is a report, agent reads it as a spec
+
+| Schema diff (database migration vs. ORM)
+| 🔴
+| Schema drift
+| CI
+| yes
+
+| LLM design review (reviewer agent against architecture spec)
+| 🔴
+| Design weaknesses, missing patterns
+| Pre-Merge
+| yes
+|===
+
+Architecture conformance is the layer where Semantic Anchors give the greatest leverage.
+The anchor names double as test anchors (`@spec:auth-flow`, `@adr:5`).
+If your tests, your documentation, and your code share the same vocabulary, you build a deterministic bridge no plain linter can capture.
+
+*Fagan Inspection* is the structured form of code review (planning, overview, preparation, inspection, rework, follow-up).
+In the Semantic Anchors quality-review stack it is paired with OWASP Top 10 (security review) and ATAM (architecture review).
+For LLM-driven work it is especially useful: the findings are recorded systematically and become readable input for a reviewer agent.
+
+*ATAM* is not a tool layer but a dedicated methodical review.
+Scenarios (use cases plus quality requirements) are played through against the architecture; risks, trade-offs, sensitivities, and non-risks fall out.
+Worth running for architecture decisions with long-term reach, not in every sprint.
+
+== 5. Data and Schema
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| JSON Schema / OpenAPI validation
+| 🟡
+| Malformed requests / responses
+| Runtime / CI
+| yes
+
+| Database migration dry-run (Liquibase, Flyway, Atlas)
+| 🟡
+| Destructive migrations, lock conflicts
+| CI
+| yes
+
+| PII scanner (Macie, Presidio, custom regex)
+| 🟡
+| Accidental logging of personal data
+| CI / Runtime
+| yes
+
+| Config validation (JSON Schema for env vars, dotenv-lint)
+| 🔴
+| Missing or wrongly typed config values
+| Pre-commit / Boot
+| yes
+
+| Data contract (Great Expectations, Soda)
+| 🔴
+| Unexpected data distributions, null spikes
+| Nightly / Runtime
+| yes
+|===
+
+== 6. UX, Accessibility, Internationalisation
+
+Accessibility is the second-strongest 🟢 domain after security.
+WCAG, ARIA, and EN 301 549 are internationally standardised.
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Accessibility automated (axe-core, pa11y, Lighthouse a11y)
+| 🟢
+| Missing ARIA labels, contrast, tab order, language
+| CI
+| yes
+
+| Contrast checker (Stark, Colour Contrast Analyser)
+| 🟢
+| Readability problems
+| Design / Pre-commit
+| partial
+
+| Cross-browser tests (BrowserStack, Sauce Labs)
+| 🟢
+| Browser-specific rendering / JS bugs
+| Nightly
+| yes
+
+| UI prose lint (Vale, LanguageTool)
+| 🟢
+| Inconsistent tone, typos in UI
+| CI
+| yes
+
+| Accessibility manual (screen reader, keyboard-only)
+| 🟡
+| Real a11y problems beyond automatable rules (full WCAG conformance)
+| Pre-release
+| no
+
+| i18n lint (i18next-parser, fbt)
+| 🟡
+| Missing translation keys, hardcoded strings
+| CI
+| yes
+
+| Visual regression (Percy, Chromatic)
+| 🔴
+| Unintended visual changes
+| CI
+| partial
+|===
+
+Automated a11y checks find roughly 30-50% of WCAG problems.
+The rest needs screen-reader tests, keyboard-only navigation, and cognitive walkthroughs.
+For agentic development: the a11y CI gate is the easy duty, the a11y audit per release is the discipline.
+Both belong in the process, or you ship apps no screen-reader user can operate.
+
+== 7. Operations and Runtime
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Distributed tracing (Jaeger, Tempo)
+| 🟢
+| Unexpectedly slow paths, broken spans
+| Production
+| yes
+
+| Canary / progressive delivery (Argo Rollouts, Flagger)
+| 🟡
+| Regressions that passed every other layer
+| Deploy
+| yes (automatic rollback)
+
+| Anomaly detection (Datadog, Prometheus + ML)
+| 🟡
+| Unexpected trends, drift
+| Production
+| partial
+
+| Runtime assertions / invariants
+| 🔴
+| Illegal states at runtime
+| Production
+| yes (stack trace)
+
+| Health checks / liveness / readiness
+| 🔴
+| Unstartable services, deadlocks
+| Post-deploy
+| yes
+
+| Observability gates (SLO regression, error-rate threshold)
+| 🔴
+| Qualitative regression in production
+| Post-deploy
+| yes
+
+| Chaos engineering (Chaos Monkey, Litmus)
+| 🔴
+| Inadequate resilience
+| Staging / Production
+| yes
+
+| Feature flags (LaunchDarkly, Unleash)
+| 🔴
+| Emergency brake for broken features
+| Runtime
+| yes
+|===
+
+== 8. Formal Methods and Symbolic Verification
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Symbolic execution (KLEE, SAGE)
+| 🟢
+| Unreachable paths, all inputs via constraint solving
+| Nightly / dedicated
+| partial
+
+| Type-driven design (Haskell, F\*, Idris)
+| 🟢
+| Wrong programs do not type-check
+| Compile-time
+| yes
+
+| Formal verification (Coq, Lean, Dafny, TLA+)
+| 🔴
+| Provability of critical properties
+| Specification phase
+| yes, but narrow domain
+
+| Model checker (Spin, NuSMV)
+| 🔴
+| Concurrency bugs, race conditions in protocols
+| Dedicated
+| yes
+|===
+
+Overkill for 99% of applications.
+For safety-critical work (avionics, medical, crypto implementations) it is in a class of its own.
+LLM agent plus formal verifier in a loop (Dafny + Claude, TLA+ + coding agent) is one of the most promising fields for the next few years.
+
+== 9. Documentation and Spec (often forgotten)
+
+🟢 is the norm here -- Markdown syntax, AsciiDoc syntax, English grammar, HTTP status codes are all externally defined.
+
+[cols="3,1,4,2,1", options="header"]
+|===
+| Layer | Def | Error Class Caught | Stage | Closed-Loop
+
+| Markdown / AsciiDoc lint (markdownlint, asciidoctor-lint)
+| 🟢
+| Broken syntax
+| Pre-commit
+| yes
+
+| Link checker (lychee)
+| 🟢
+| Dead internal / external links
+| CI
+| yes
+
+| Code-in-docs validation (mdsh, doctest)
+| 🟢
+| Example code in docs that does not run
+| CI
+| yes
+
+| Spell check (cspell, hunspell)
+| 🟢
+| Typos in documentation, code comments
+| Pre-commit
+| yes
+
+| Diagram build (PlantUML, Mermaid, Structurizr)
+| 🟢
+| Diagrams from docs that fail to render
+| CI
+| yes
+
+| Prose lint (Vale, write-good, alex)
+| 🟡
+| Unclear language, bias, tone
+| Pre-commit
+| yes
+
+| Doc-code drift (Semantic Anchors Q-ID audit)
+| 🔴
+| Spec says X, code does Y
+| CI
+| yes
+|===
+
+== Orthogonal Axis: Detection Mode
+
+Cutting across categories 1-9 is the question of _how_ a layer checks.
+Nine modes:
+
+[cols="2,3,4", options="header"]
+|===
+| Mode | Character | Example
+
+| Static
+| Code is read, not executed
+| Linter, SAST, type check
+
+| Dynamic
+| Code is executed, behaviour measured
+| Tests, DAST, benchmark
+
+| Symbolic
+| Code is treated as a formula, a solver decides
+| Formal verification, KLEE
+
+| Empirical
+| Code checked against examples
+| Unit tests, snapshot tests
+
+| Property-based
+| Code checked against invariants, inputs generated
+| Hypothesis, jqwik
+
+| Adversarial
+| Code probed with hostile inputs
+| Fuzzing, pen test, red team
+
+| Statistical
+| Anomalies against a baseline
+| Anomaly detection, coverage drift
+
+| Human review
+| Person reads, judges
+| Code review, a11y audit
+
+| LLM review
+| AI reads, judges (with defined context)
+| Reviewer agent, security agent
+|===
+
+A complete harness covers several modes.
+A harness with only static and empirical layers misses "edge cases" (property-based) and "adversarial attacks" (fuzzing, pen test).
+A harness with only dynamic layers loses build-time safety.
+
+== What the Harness Does Not Catch
+
+The harness corrects errors against explicit rules.
+Where no rule exists, or the rule itself is wrong, the harness cannot help.
+These gaps are not bugs in the harness approach -- they are the limit of Eichhorst's Principle and the point where humans return to the loop.
+Any language-stack recommendation has to name these gaps, or it pretends a coverage that does not exist.
+
+=== Gaps at the Spec Level
+
+[cols="3,3,3", options="header"]
+|===
+| What remains open | Why | Compensation
+
+| Wrong requirement
+| The spec describes the wrong thing; the harness correctly verifies against the wrong spec
+| User research, discovery, probe stage in production
+
+| Missing requirement
+| Nobody thought of the use case
+| Use-case walkthrough with stakeholders, pre-mortems
+
+| Wrong assumption inside a test
+| The BDD test encodes a wrong target; every layer green, product still wrong
+| Test reviews, paired writing of acceptance criteria
+|===
+
+=== Gaps at the Code Level
+
+[cols="3,3,3", options="header"]
+|===
+| What remains open | Why | Compensation
+
+| Logic vulnerabilities (auth bypass, race conditions on rare paths)
+| SAST finds patterns, not logic
+| LLM security review, pen test, threat modeling
+
+| Time bombs (Feb 29, DST, leap seconds, the 2038 problem)
+| Tests run "now", not "in five years"
+| Property-based tests with date generators, manual time-travel tests
+
+| Distributed-system invariants under partial failure
+| Local tests do not see a distributed system
+| Chaos engineering, formal modelling with TLA+
+
+| Performance under production traffic
+| Load tests are approximations
+| Canary deploys with monitoring, synthetic load
+
+| Race conditions on rare paths
+| Tests hit expected paths only
+| Race detector (dynamic), property-based, model checker
+|===
+
+=== Gaps at the UX and Domain Level
+
+[cols="3,3,3", options="header"]
+|===
+| What remains open | Why | Compensation
+
+| Real usability
+| A11y tools check structure, not comprehensibility
+| Cognitive walkthroughs, user testing with real users
+
+| Translation accuracy
+| i18n lint checks completeness, not meaning
+| Native-speaker review per language
+
+| Aesthetic judgement
+| No tool for "looks good"
+| Design review
+|===
+
+=== Gaps at the Strategic Level
+
+[cols="3,3,3", options="header"]
+|===
+| What remains open | Why | Compensation
+
+| Architectural fit for unbuilt features
+| The spec describes today, not the roadmap
+| ADR discussion, architecture reviews with lead engineers
+
+| Strategic direction
+| The right question is not "is it correct?", but "is it the right thing?"
+| Product owner, stakeholder reviews
+
+| The theory of the program (Naur 1985)
+| The harness validates the surface; the theory lives in the developers' heads
+| Pair and mob programming, knowledge-sharing sessions, link:#/socratic-recovery-skill[Socratic Code-Theory Recovery]
+|===
+
+=== Language- and Stack-Specific Gaps
+
+Some layers do not exist in certain languages, or only in a limited form.
+A stack recommendation has to name these gaps explicitly:
+
+* *Dynamically typed languages* (Python, JavaScript, Ruby): no compile-time type guarantee; dynamic code evaluation and dynamic attribute access defeat all static analysis. Type checkers like mypy or TypeScript are add-ons, not guarantees. Gradual typing leaves holes.
+* *Go*: no static race detector — only dynamic, via the test flag `-race`. Concurrency bugs on untested paths stay invisible. Generics limitations produce boilerplate that introduces its own error classes.
+* *Rust*: `unsafe` blocks defeat the borrow checker. Macro expansion can hide bugs. `panic!` paths are often untestable.
+* *Java / Kotlin*: reflection and bytecode manipulation (Spring AOP, compiler plugins) defeat static flow analysis. Generics type erasure loses information at runtime.
+* *C / C++*: memory safety remains, even with better tools (clang-tidy, ASan, UBSan, MSan), a matter of discipline. Undefined behaviour is its own error class no other stack has.
+* *Script languages without strict modes* (PHP, older Perl styles): wider gaps; building a harness here is especially expensive.
+
+These gaps are not flaws in the language but consequences of its trade-off between flexibility and static guarantees.
+Knowing them lets you compensate with extra discipline or other tools.
+A detailed stack-per-language inventory belongs in a separate document (planned), with its own column for "⚫ not coverable — compensate by ...".
+
+== What You Get For Free
+
+When someone asks "where do I start with a harness?", the 🟢 list in one block:
+
+* *Language*: compiler, type checker, formatter, import sorter
+* *Security*: secret scan, SCA, container scan, IaC scan, supply chain, compliance scan, license scan
+* *Architecture*: complexity metrics
+* *UX / a11y*: automated a11y, contrast checker, cross-browser, prose lint
+* *Operations*: distributed tracing
+* *Formal*: symbolic execution, type-driven design (at language level)
+* *Docs*: Markdown lint, link checker, code-in-docs, spell check, diagram build
+
+These ~20 layers are turn-on-and-forget.
+They are the *mandatory minimum* for any serious agentic coding project.
+Most repos have less than a third of them active -- the biggest leverage sits there.
+
+🔴 layers are not waste; they are the project's own investment in correctness.
+They cost more per layer but every project has them anyway (tests, architecture rules).
+The only question is whether they run inside the closed loop or as artefacts on the side.
+
+== Risk-Tiered Dosing
+
+Not every layer in every project.
+The Vibe-Coding Risk Radar (Tier 1-4) handles the dosing:
+
+[cols="2,3,4", options="header"]
+|===
+| Tier | Example | Mandatory Layers
+
+| *Tier 1* — Prototype, internal tool
+| Hackathon demo, landing page
+| All 🟢 + smoke test
+
+| *Tier 2* — Business logic, internal app
+| CRM extension, reporting service
+| + Unit, integration, BDD (🔴)
+
+| *Tier 3* — Customer-facing app, public API
+| E-commerce frontend, public API
+| + Property-based, contract tests, visual regression, performance gate, a11y audit per release
+
+| *Tier 4* — Safety-critical / regulated
+| Fintech core, medical device, avionics
+| + Mutation testing, threat modeling, IAST, formal verification (targeted), external audit
+|===
+
+Read as: all 🟢 layers from Tier 1 onward.
+Each tier adds 🔴 and 🟡 layers whose definition cost is justified by the increased risk.
+
+== What This Document Does Not Cover
+
+Stand of mid-2026.
+Open territory I have not classified to my own satisfaction yet:
+
+* *Compliance versus security tooling overlap* — SOC 2 and ISO 27001 checks overlap with SAST / IaC but also cover organisational aspects no scanner sees.
+* *AI specifics* — prompt-injection tests, RAG evaluation (faithfulness, context recall), model-drift detection are their own layers; relevant only in AI applications and missing from the matrix above.
+* *ML model tests* — data quality, bias, fairness metrics (Aequitas, Fairlearn) as a category in their own right.
+* *Cognitive walkthrough / usability testing* — belongs in "UX / a11y" as a layer but only makes sense with real users; hard to put into an agent loop.
+* *Privacy engineering beyond PII scan* — data-flow analysis, GDPR Article 30 record keeping, differential privacy as a family.
+* *Sustainability / carbon footprint* — build sizes, energy per request (e.g. Cloud Carbon Footprint tool) — increasingly visible in architecture audits.
+
+Each of these deserves its own sub-matrix when the time comes.
+
+== References
+
+* Ingo Eichhorst, _Software is a Noisy Channel_, JavaLand 2026 keynote.
+* Claude Shannon, _A Mathematical Theory of Communication_, 1948.
+* OWASP Top 10 (2026), OWASP ASVS, OWASP DSOMM.
+* WCAG 2.2, EN 301 549.
+* ISO/IEC 25010 quality characteristics.
+* OpenAI Codex Team: _The Agent Is Not the Hard Part — the Harness Is_ (2026).
+* Avraham Poupko: the modifier insight (`private`, `static`, `final` as error correction).
+* Peter Naur, _Programming as Theory Building_, 1985.
+
+== Related Pages
+
+* link:#/spec-driven-development[Spec-Driven Development] — the signal lever of Eichhorst's Principle.
+* link:#/brownfield[Brownfield Workflow] — applying both levers to existing codebases.
+* link:#/socratic-recovery-skill[Socratic Code-Theory Recovery] — recovering the theory of the program when it lives only in developers' heads.

@@ -41,6 +41,7 @@ const PAGES = [
   { path: '/brownfield-experiment-report', priority: '0.7', changefreq: 'monthly' },
   { path: '/brownfield-fair-comparison', priority: '0.7', changefreq: 'monthly' },
   { path: '/socratic-recovery-skill', priority: '0.7', changefreq: 'monthly' },
+  { path: '/harness-inventory', priority: '0.7', changefreq: 'monthly' },
   { path: '/contracts', priority: '0.7', changefreq: 'monthly' },
   { path: '/evaluations', priority: '0.8', changefreq: 'monthly' },
   { path: '/all-anchors', priority: '0.8', changefreq: 'weekly' },

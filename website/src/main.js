@@ -152,6 +152,7 @@ function initApp() {
   addRoute('/brownfield-experiment-report', renderBrownfieldExperimentReportPage)
   addRoute('/brownfield-fair-comparison', renderBrownfieldFairComparisonPage)
   addRoute('/socratic-recovery-skill', renderSocraticRecoverySkillPage)
+  addRoute('/harness-inventory', renderHarnessInventoryPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -305,6 +306,15 @@ function renderSocraticRecoverySkillPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/socratic-recovery-skill.adoc')
+}
+
+function renderHarnessInventoryPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/harness-inventory.adoc')
 }
 
 function renderContractsPageHandler() {
@@ -538,6 +548,8 @@ function handleLanguageChange() {
     loadDocContent('docs/brownfield-experiment-report.adoc')
   } else if (currentRoute === '/brownfield-fair-comparison') {
     loadDocContent('docs/brownfield-fair-comparison.adoc')
+  } else if (currentRoute === '/harness-inventory') {
+    loadDocContent('docs/harness-inventory.adoc')
   } else if (currentRoute === '/') {
     initCardGridVisualization()
   }

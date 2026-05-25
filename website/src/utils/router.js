@@ -21,6 +21,7 @@ const ROUTE_TITLES = {
   '/brownfield-experiment-report': 'Brownfield Experiment 1a Report — Semantic Anchors',
   '/brownfield-fair-comparison': 'Brownfield Fair Comparison — Semantic Anchors',
   '/socratic-recovery-skill': 'Socratic Code-Theory Recovery Skill — Semantic Anchors',
+  '/harness-inventory': 'The Harness Inventory — Semantic Anchors',
   '/evaluations': 'Evaluations — Semantic Anchors',
   '/contributing': 'Contributing — Semantic Anchors',
   '/changelog': 'Changelog — Semantic Anchors',

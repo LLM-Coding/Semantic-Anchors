@@ -107,6 +107,11 @@ renderFile(
   path.join(ROOT, 'docs/socratic-recovery-skill.adoc'),
   path.join(WEB_DOCS, 'socratic-recovery-skill.html')
 )
+
+renderFile(
+  path.join(ROOT, 'docs/harness-inventory.adoc'),
+  path.join(WEB_DOCS, 'harness-inventory.html')
+)
 renderFile(
   path.join(ROOT, 'docs/socratic-recovery-skill.de.adoc'),
   path.join(WEB_DOCS, 'socratic-recovery-skill.de.html')
