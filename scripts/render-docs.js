@@ -37,16 +37,61 @@ const OPTS = {
 }
 
 /**
+ * Extract the AsciiDoc-generated `<div id="toc">...</div>` block from the
+ * rendered HTML. Returns `{ toc, body }` where `toc` is the TOC HTML (or
+ * `null` if the doc has no TOC) and `body` is the HTML with the TOC removed.
+ *
+ * AsciiDoctor outputs the TOC as a single `<div id="toc" class="toc">` (or
+ * `class="toc2"` for `:toc: left`). We depth-count `<div>` open/close tags
+ * so a TOC with arbitrarily nested ULs is removed cleanly.
+ *
+ * Splitting the TOC out at build time lets doc-page.js render it in its own
+ * sticky sidebar slot instead of inline at the top of the body.
+ */
+function extractToc(html) {
+  const startMatch = html.match(/<div[^>]*\sid="toc"[^>]*>/)
+  if (!startMatch) return { toc: null, body: html }
+  const start = startMatch.index
+  let depth = 1
+  let pos = start + startMatch[0].length
+  while (pos < html.length && depth > 0) {
+    const nextOpen = html.indexOf('<div', pos)
+    const nextClose = html.indexOf('</div>', pos)
+    if (nextClose === -1) return { toc: null, body: html }
+    if (nextOpen !== -1 && nextOpen < nextClose) {
+      depth++
+      pos = nextOpen + 4
+    } else {
+      depth--
+      pos = nextClose + 6
+    }
+  }
+  if (depth !== 0) return { toc: null, body: html }
+  return { toc: html.slice(start, pos), body: html.slice(0, start) + html.slice(pos) }
+}
+
+/**
  * Render a single AsciiDoc file to HTML.
  * Uses safe:'safe' so include:: directives are resolved from the filesystem.
+ * If the rendered HTML contains an AsciiDoc TOC, it is extracted into a
+ * sidecar `<basename>.toc.html` file so doc-page.js can render it in its
+ * own sidebar slot.
  */
 function renderFile(srcPath, destPath) {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
-    const html = asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false })
-    fs.writeFileSync(destPath, String(html), 'utf-8')
+    const html = String(asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false }))
+    const { toc, body } = extractToc(html)
+    fs.writeFileSync(destPath, body, 'utf-8')
     console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
+    const tocPath = destPath.replace(/\.html$/, '.toc.html')
+    if (toc) {
+      fs.writeFileSync(tocPath, toc, 'utf-8')
+      console.log(`Rendered: ${path.relative(ROOT, tocPath)}`)
+    } else if (fs.existsSync(tocPath)) {
+      fs.unlinkSync(tocPath)
+    }
   } catch (err) {
     console.error(`Failed to render ${path.relative(ROOT, srcPath)}:`, err.message)
     process.exit(1)
