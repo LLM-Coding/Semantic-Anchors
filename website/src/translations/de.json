@@ -102,6 +102,8 @@
   "categories.strategic-planning": "Strategische Planung & Entscheidungsfindung",
   "categories.testing-quality": "Testing & Qualitätssicherung",
   "card.edit": "Auf GitHub bearbeiten",
+  "card.copyKeyword": "Schlüsselwort in Zwischenablage kopieren",
+  "card.keywordCopied": "Schlüsselwort kopiert!",
   "card.copyLink": "Link zu diesem Anker kopieren",
   "card.linkCopied": "Link kopiert!",
   "card.roles": "Rolle",

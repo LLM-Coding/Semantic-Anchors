@@ -40,6 +40,15 @@ window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   }
 }
 
+window.copyAnchorKeyword = async function copyAnchorKeyword(keyword) {
+  try {
+    await navigator.clipboard.writeText(keyword)
+    window.showToast(i18n.t('card.keywordCopied'))
+  } catch (err) {
+    console.error('Failed to copy keyword:', err)
+  }
+}
+
 window.showToast = function showToast(message) {
   const toast = document.createElement('div')
   toast.className =

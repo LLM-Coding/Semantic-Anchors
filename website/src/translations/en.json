@@ -102,6 +102,8 @@
   "categories.strategic-planning": "Strategic Planning & Decision Making",
   "categories.testing-quality": "Testing & Quality Practices",
   "card.edit": "Edit on GitHub",
+  "card.copyKeyword": "Copy keyword to clipboard",
+  "card.keywordCopied": "Keyword copied!",
   "card.copyLink": "Copy link to this anchor",
   "card.linkCopied": "Link copied!",
   "card.roles": "role",

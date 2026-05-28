@@ -145,7 +145,8 @@ body {
 }
 
 .anchor-edit-btn,
-.anchor-copy-link-btn {
+.anchor-copy-link-btn,
+.anchor-copy-keyword-btn {
   @apply flex-shrink-0 p-1 rounded;
   @apply text-gray-400 hover:text-blue-500;
   @apply hover:bg-gray-100 dark:hover:bg-gray-700;
@@ -154,7 +155,8 @@ body {
 }
 
 .anchor-edit-btn:hover,
-.anchor-copy-link-btn:hover {
+.anchor-copy-link-btn:hover,
+.anchor-copy-keyword-btn:hover {
   @apply scale-110;
 }
 
@@ -277,12 +279,14 @@ body {
 
   /* Make buttons more touch-friendly on mobile */
   .anchor-edit-btn,
-  .anchor-copy-link-btn {
+  .anchor-copy-link-btn,
+  .anchor-copy-keyword-btn {
     @apply p-2;
   }
 
   .anchor-edit-btn svg,
-  .anchor-copy-link-btn svg {
+  .anchor-copy-link-btn svg,
+  .anchor-copy-keyword-btn svg {
     @apply w-5 h-5;
   }
 
