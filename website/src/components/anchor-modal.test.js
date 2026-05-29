@@ -129,6 +129,19 @@ describe('anchor-modal', () => {
       expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('test-anchor.adoc'))
     })
 
+    it('should decode HTML entities in the modal title (regression)', async () => {
+      global.fetch.mockResolvedValue({
+        ok: true,
+        text: async () => '= Plain English according to Strunk & White\n\nBody.',
+      })
+
+      await showAnchorDetails('plain-english-strunk-white')
+
+      const title = document.getElementById('modal-title').textContent
+      expect(title).toBe('Plain English according to Strunk & White')
+      expect(title).not.toContain('&amp;')
+    })
+
     it('should handle fetch errors gracefully', async () => {
       global.fetch.mockRejectedValue(new Error('Network error'))
 
