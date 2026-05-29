@@ -18,6 +18,7 @@ const browserGlobals = {
   setInterval: 'readonly',
   clearInterval: 'readonly',
   HTMLElement: 'readonly',
+  DOMParser: 'readonly',
   Event: 'readonly',
   CustomEvent: 'readonly',
   KeyboardEvent: 'readonly',
