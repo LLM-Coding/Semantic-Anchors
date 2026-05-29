@@ -1,0 +1,58 @@
+= Meaningful Human Control (MHC)
+:categories: strategic-planning
+:roles: software-architect, product-owner, consultant, educator, team-lead, data-scientist, systems-thinker
+:related: regulated-environment, cynefin-framework, luhmann-system-theory, simon-constructivism, systemic-consulting
+:proponents: Article 36, Noel Sharkey, ICRC, UN CCW GGE, IEEE Global Initiative
+:tags: ethics, human-control, autonomy, weapons, ai-governance, accountability, human-rights
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Meaningful Human Control
+
+Also known as:: MHC, Meaningful Human Control over Individual Attacks
+
+[discrete]
+== *Core Concepts*:
+
+Substantive human control:: Humans must retain genuine, substantive control over autonomous systems making high-stakes decisions — not merely formulaic "human-in-the-loop" oversight
+
+Situational awareness:: Human operators require adequate information about the target, context, weapon/system behavior, and foreseeable effects to make informed judgments
+
+Accountability chain:: Those responsible for assessing information and executing actions must be clearly identifiable and accountable for outcomes; accountability cannot be transferred to machines
+
+Sharkey's five levels:: Operational framework for human supervisory control: (L1) human deliberates before attack → (L2) program suggests targets, human chooses → (L3) program selects, human approves → (L4) program acts, human has restricted veto → (L5) fully autonomous without human involvement
+
+Positive human action:: Initiating critical actions (especially use of force) requires affirmative human authorization, not merely passive monitoring
+
+Predictable, reliable, transparent technology:: Autonomous systems must be designed for predictability, graceful degradation, and transparency to enable meaningful control
+
+Timely intervention:: Human operators must retain the capability for timely intervention, override, or abort — not just pre-programmed constraints
+
+Key Proponents:: Article 36 (coined the term, 2013), Noel Sharkey (five-level framework, 2014), ICRC (endorsed MHC as legal/ethical requirement, 2018), UN CCW GGE (Guiding Principles, 2019), IEEE Global Initiative (Ethically Aligned Design, 2019)
+
+[discrete]
+== *When to Use*:
+
+* Designing or evaluating autonomous systems in high-stakes domains (weapons systems, medical AI, autonomous driving, critical infrastructure)
+* Assessing whether human oversight of an AI system is genuinely effective or merely procedural
+* Defining accountability chains for autonomous decision-making
+* Requirements engineering for systems with autonomy in critical functions
+* AI governance and ethics discussions in product management and policy
+* Legal and compliance review of AI systems under emerging regulations (EU AI Act)
+
+[discrete]
+== *When NOT to Use*:
+
+* Low-stakes automation decisions (content recommendations, spam filtering, routine data processing)
+* As a substitute for domain-specific legal requirements (IHL, medical device regulation, data protection law)
+
+[discrete]
+== *Related Anchors*:
+
+* <<regulated-environment,Regulated Environment>>
+* <<cynefin-framework,Cynefin Framework>>
+* <<luhmann-system-theory,Luhmann System Theory>>
+* <<simon-constructivism,Simon Constructivism>>
+* <<systemic-consulting,Systemic Consulting>>
+====
