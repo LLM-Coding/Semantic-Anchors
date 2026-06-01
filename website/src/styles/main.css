@@ -402,6 +402,15 @@ html {
   background: #1f2937;
 }
 
+/* The asciidoctor stylesheet hardcodes the admonition body text to
+   rgba(0,0,0,.6); on the dark admonition background that renders black-on-dark
+   and is unreadable. Override the content text and its light divider for dark
+   mode. (#516) */
+.dark .asciidoc-content .admonitionblock > table td.content {
+  color: var(--color-text);
+  border-left-color: #374151;
+}
+
 .dark .asciidoc-content hr {
   border-color: #374151;
 }
