@@ -1,0 +1,96 @@
+= Meaningful Human Control (MHC)
+:categories: strategic-planning
+:roles: software-architect, product-owner, consultant, educator, team-lead, data-scientist, systems-thinker
+:related: regulated-environment, cynefin-framework, luhmann-system-theory, simon-constructivism, systemic-consulting
+:proponents: Article 36, Noel Sharkey, ICRC, UN CCW GGE, IEEE Global Initiative
+:tags: ethics, human-control, autonomy, weapons, ai-governance, accountability, human-rights
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Meaningful Human Control
+
+Also known as:: MHC, Meaningful Human Control over Individual Attacks
+
+[discrete]
+== *Core Concepts*:
+
+Substantive human control:: Humans must retain genuine, substantive control over autonomous systems making high-stakes decisions — not merely formulaic "human-in-the-loop" oversight
+
+Situational awareness:: Human operators require adequate information about the target, context, weapon/system behavior, and foreseeable effects to make informed judgments
+
+Accountability chain:: Those responsible for assessing information and executing actions must be clearly identifiable and accountable for outcomes; accountability cannot be transferred to machines
+
+Sharkey's five levels:: Operational framework for human supervisory control: (L1) human deliberates before attack → (L2) program suggests targets, human chooses → (L3) program selects, human approves → (L4) program acts, human has restricted veto → (L5) fully autonomous without human involvement
+
+Positive human action:: Initiating critical actions (especially use of force) requires affirmative human authorization, not merely passive monitoring
+
+Predictable, reliable, transparent technology:: Autonomous systems must be designed for predictability, graceful degradation, and transparency to enable meaningful control
+
+Timely intervention:: Human operators must retain the capability for timely intervention, override, or abort — not just pre-programmed constraints
+
+Key Proponents:: Article 36 (coined the term, 2013), Noel Sharkey (five-level framework, 2014), ICRC (endorsed MHC as legal/ethical requirement, 2018), UN CCW GGE (Guiding Principles, 2019), IEEE Global Initiative (Ethically Aligned Design, 2019)
+
+[discrete]
+== *When to Use*:
+
+* Designing or evaluating autonomous systems in high-stakes domains (weapons systems, medical AI, autonomous driving, critical infrastructure)
+* Assessing whether human oversight of an AI system is genuinely effective or merely procedural
+* Defining accountability chains for autonomous decision-making
+* Requirements engineering for systems with autonomy in critical functions
+* AI governance and ethics discussions in product management and policy
+* Legal and compliance review of AI systems under emerging regulations (EU AI Act)
+
+[discrete]
+== *When NOT to Use*:
+
+* Low-stakes automation decisions (content recommendations, spam filtering, routine data processing)
+* As a substitute for domain-specific legal requirements (IHL, medical device regulation, data protection law)
+
+[discrete]
+== *Related Anchors*:
+
+* <<regulated-environment,Regulated Environment>>
+* <<cynefin-framework,Cynefin Framework>>
+* <<luhmann-system-theory,Luhmann System Theory>>
+* <<simon-constructivism,Simon Constructivism>>
+* <<systemic-consulting,Systemic Consulting>>
+
+[discrete]
+== *Quality Criteria Checklist* (Tier-2 Justification)
+
+This anchor is classified as *Tier 2 — Needs qualification*. It is not self-standing; it requires domain context and explicit verification criteria to be meaningfully applied. The following checklist documents the qualification requirements mapped to Issue #540.
+
+. **Acceptance Criteria** (measurable)
+* High-stakes domain identified: yes/no — specify domain (weapons, medical, autonomous driving, critical infrastructure, algorithmic sentencing)
+* Autonomy level classified: yes/no — specify Sharkey level (L1–L5) for each critical function
+* Human operator identified: yes/no — specify role, training level, and decision authority
+* Accountability chain documented: yes/no — specify who decides, who approves, who audits
+* Legal/regulatory framework identified: yes/no — specify applicable law (IHL, EU AI Act, GDPR, etc.)
+
+. **Evidence Types Required**
+* System specification documenting autonomy boundaries and human-machine interaction points
+* Operator training and qualification records
+* Audit trail design demonstrating human accountability at each decision point
+* Risk assessment showing residual risks after human oversight measures
+* Legal review confirming compliance with applicable regulatory framework
+
+. **Minimum Documentation / Artifacts**
+* Human-Machine Interface (HMI) specification with override and abort mechanisms
+* Decision authority matrix (who decides what, under what conditions)
+* Operator situational awareness requirements (information feed, latency, decision time)
+* Graceful degradation protocol for communication loss or system failure
+* Test protocol validating human intervention capability under operational conditions
+
+. **Validation Methods**
+* Simulated scenario testing with time-pressure and information-degradation conditions
+* Red-team evaluation of human-override effectiveness
+* Independent audit of accountability chain completeness
+* Legal review against applicable IHL or regulatory requirements
+* Post-deployment monitoring plan for measuring MHC erosion over time
+
+. **Tier-2 Justification Summary**
+* *Why not Tier 3*: MHC cannot be evaluated without domain-specific context (weapons vs. medical vs. automotive). The same system may satisfy MHC in one domain and fail in another. Sharkey level L3 may be sufficient for cargo ships but not for lethal targeting.
+* *Why not Tier 1*: MHC is a well-established, multi-source concept with clear definition, consistent usage across domains, attributable origin, and rich conceptual activation.
+* *Qualification path*: To apply MHC, the user must answer: "Who controls what, with what information, under what constraints, and who is accountable?" The five criteria above operationalize this question.
+====

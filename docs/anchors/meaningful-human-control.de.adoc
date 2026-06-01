@@ -1,0 +1,58 @@
+= Meaningful Human Control (MHC)
+:categories: strategic-planning
+:roles: software-architect, product-owner, consultant, educator, team-lead, data-scientist, systems-thinker
+:related: regulated-environment, cynefin-framework, luhmann-system-theory, simon-constructivism, systemic-consulting
+:proponents: Article 36, Noel Sharkey, ICRC, UN CCW GGE, IEEE Global Initiative
+:tags: ethik, menschliche-kontrolle, autonomie, waffen, ki-governance, verantwortlichkeit, menschenrechte
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Meaningful Human Control (sinnerhaltende menschliche Kontrolle)
+
+Also known as:: MHC, sinnerhaltende menschliche Kontrolle über einzelne Angriffe
+
+[discrete]
+== *Kernkonzepte*:
+
+Substantielle menschliche Kontrolle:: Menschen müssen echte, substanzielle Kontrolle über autonome Systeme behalten, die folgenreiche Entscheidungen treffen — nicht nur formelhafte "Human-in-the-Loop"-Aufsicht
+
+Situationsbewusstsein:: Menschliche Bediener benötigen ausreichende Informationen über Ziel, Kontext, Systemverhalten und vorhersehbare Auswirkungen, um fundierte Urteile zu fällen
+
+Verantwortungskette:: Die für die Informationsbewertung und Handlungsausführung Verantwortlichen müssen klar identifizierbar und rechenschaftspflichtig sein; Verantwortung kann nicht auf Maschinen übertragen werden
+
+Sharkeys fünf Stufen:: Operativer Rahmen für menschliche überwachende Kontrolle: (S1) Mensch deliberiert vor Angriff → (S2) Programm schlägt Ziele vor, Mensch wählt → (S3) Programm wählt aus, Mensch genehmigt → (S4) Programm handelt, Mensch hat eingeschränktes Veto → (S5) vollautonom ohne menschliches Eingreifen
+
+Positive menschliche Handlung:: Die Einleitung kritischer Aktionen (insbesondere Gewaltanwendung) erfordert eine aktive menschliche Autorisierung, nicht nur passive Überwachung
+
+Vorhersagbare, zuverlässige, transparente Technologie:: Autonome Systeme müssen auf Vorhersagbarkeit, elegante Degradation und Transparenz ausgelegt sein, um sinnvolle Kontrolle zu ermöglichen
+
+Rechtzeitiges Eingreifen:: Menschliche Bediener müssen die Fähigkeit zu rechtzeitigem Eingreifen, Übersteuern oder Abbruch behalten — nicht nur vorprogrammierte Einschränkungen
+
+Key Proponents:: Article 36 (prägte den Begriff, 2013), Noel Sharkey (Fünf-Stufen-Rahmen, 2014), IKRK (befürwortete MHC als rechtliche/ethische Anforderung, 2018), UN CCW GGE (Leitprinzipien, 2019), IEEE Global Initiative (Ethically Aligned Design, 2019)
+
+[discrete]
+== *Verwendung*:
+
+* Entwurf oder Bewertung autonomer Systeme in kritischen Bereichen (Waffensysteme, medizinische KI, autonomes Fahren, kritische Infrastruktur)
+* Prüfung, ob die menschliche Aufsicht über ein KI-System wirklich wirksam oder nur prozessual ist
+* Definition von Verantwortungsketten für autonome Entscheidungsfindung
+* Anforderungsentwicklung für Systeme mit Autonomie in kritischen Funktionen
+* KI-Governance- und Ethikdiskussionen in Produktmanagement und Politik
+* Rechtliche und Compliance-Prüfung von KI-Systemen nach neuen Regulierungen (EU AI Act)
+
+[discrete]
+== *Nicht Verwenden*:
+
+* Bei risikoarmen Automatisierungsentscheidungen (Inhaltsempfehlungen, Spam-Filter, routinemäßige Datenverarbeitung)
+* Als Ersatz für domänenspezifische rechtliche Anforderungen (IHL, Medizinprodukteregulierung, Datenschutzrecht)
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<regulated-environment,Regulierte Umgebung>>
+* <<cynefin-framework,Cynefin-Framework>>
+* <<luhmann-system-theory,Luhmann-Systemtheorie>>
+* <<simon-constructivism,Simon-Konstruktivismus>>
+* <<systemic-consulting,Systemische Beratung>>
+====
