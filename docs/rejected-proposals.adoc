@@ -45,6 +45,11 @@ A real methodology but too specialized for reliable activation across different 
 | Not in training data
 | A real UX framework with defined methodology, but not widely enough documented for LLMs to reliably recognize it and activate the correct concepts.
 
+| *YOLO* (https://github.com/LLM-Coding/Semantic-Anchors/issues/443[#443])
+| Structurally unsuitable
+| Ambiguous and not a methodology: either "You Only Look Once" (a computer-vision model, too narrow) or the "You Only Live Once" motto (a pure sentiment, like TLDR). No consistent activation, no actionable structure. +
+The "rapid exploration / permission to bypass" idea raised in the thread is better expressed by composing existing anchors (link:#/anchor/spike-solution[Spike Solution], link:#/anchor/walking-skeleton[Walking Skeleton], link:#/anchor/mvp[MVP]) within the link:#/anchor/cynefin-framework[Cynefin] Complex/Chaotic domains.
+
 |===
 
 [TIP]

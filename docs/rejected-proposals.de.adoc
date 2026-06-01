@@ -45,6 +45,11 @@ Eine echte Methodik, aber zu spezialisiert für zuverlässige Aktivierung über 
 | Nicht in Trainingsdaten
 | Ein echtes UX-Framework mit definierter Methodik, aber nicht weit genug dokumentiert, damit LLMs es zuverlässig erkennen und die richtigen Konzepte aktivieren.
 
+| *YOLO* (https://github.com/LLM-Coding/Semantic-Anchors/issues/443[#443])
+| Strukturell ungeeignet
+| Mehrdeutig und keine Methodik: entweder „You Only Look Once" (ein Computer-Vision-Modell, zu eng) oder das Motto „You Only Live Once" (reines Sentiment, wie TLDR). Keine konsistente Aktivierung, keine umsetzbare Struktur. +
+Die im Thread genannte Idee „rapid exploration / permission to bypass" lässt sich besser durch Komposition bestehender Anker ausdrücken (link:#/anchor/spike-solution[Spike Solution], link:#/anchor/walking-skeleton[Walking Skeleton], link:#/anchor/mvp[MVP]) innerhalb der Complex-/Chaotic-Domänen des link:#/anchor/cynefin-framework[Cynefin-Frameworks].
+
 |===
 
 [TIP]
