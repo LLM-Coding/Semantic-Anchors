@@ -2350,6 +2350,47 @@
     "tier": 3
   },
   {
+    "id": "meaningful-human-control",
+    "title": "Meaningful Human Control (MHC)",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "software-architect",
+      "product-owner",
+      "consultant",
+      "educator",
+      "team-lead",
+      "data-scientist",
+      "systems-thinker"
+    ],
+    "related": [
+      "regulated-environment",
+      "cynefin-framework",
+      "luhmann-system-theory",
+      "simon-constructivism",
+      "systemic-consulting"
+    ],
+    "proponents": [
+      "Article 36",
+      "Noel Sharkey",
+      "ICRC",
+      "UN CCW GGE",
+      "IEEE Global Initiative"
+    ],
+    "tags": [
+      "ethics",
+      "human-control",
+      "autonomy",
+      "weapons",
+      "ai-governance",
+      "accountability",
+      "human-rights"
+    ],
+    "filePath": "docs/anchors/meaningful-human-control.adoc",
+    "tier": 2
+  },
+  {
     "id": "mece",
     "title": "MECE Principle",
     "categories": [

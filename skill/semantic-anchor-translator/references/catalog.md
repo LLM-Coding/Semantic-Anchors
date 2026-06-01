@@ -625,6 +625,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Irving Janis & Leon Mann ("Decision Making: A Psychological Analysis of Conflict, Choice, and Commitment", 1977); Benjamin Franklin (1772 "moral algebra" letter to Joseph Priestley); adapted by Miller & Rollnick ("Motivational Interviewing", 1991)
 - **Core:** Four-cell decision matrix capturing utilitarian gains/losses for self and for significant others, plus self-approval and approval from others; weighted entries surface trade-offs and resolve ambivalence rather than mechanise the choice; simplified two-column pros/cons form is a degenerate case; used in decision coaching and Motivational Interviewing to elicit change-talk; deliberative — weak under time pressure or high uncertainty
 
+### Meaningful Human Control (MHC)
+- **Also known as:** MHC, Meaningful Human Control over Individual Attacks
+- **Proponents:** Article 36 (coined the term, 2013), Noel Sharkey (five-level framework, 2014), ICRC, UN CCW GGE, IEEE Global Initiative
+- **Core:** Requirement that humans retain genuine, substantive control over autonomous systems making high-stakes decisions — not merely formulaic "human-in-the-loop" oversight; demands situational awareness, an identifiable accountability chain (never transferable to machines), positive human authorization of critical actions, and timely intervention/override; Sharkey's five levels (L1 human deliberates → L5 fully autonomous) classify the degree of autonomy; originates in the autonomous-weapons / international humanitarian law debate but applies to medical AI, autonomous driving, and critical infrastructure; underlies the EU AI Act's human-oversight requirements
+
 ## Creative Writing & Storytelling
 
 ### Three-Act Structure

@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-01
+
+*New anchors:*
+
+* *Meaningful Human Control (MHC)* — the requirement that humans keep genuine, substantive control over autonomous systems making high-stakes decisions, rather than formulaic "human-in-the-loop" oversight; demands situational awareness, an identifiable accountability chain that cannot pass to machines, positive human authorization of critical actions, and timely intervention; Sharkey's five levels (L1 human deliberates → L5 fully autonomous) grade the autonomy; rooted in the autonomous-weapons / international humanitarian law debate (Article 36, 2013) and now underpinning the EU AI Act's human-oversight rules (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/543[#543], issue https://github.com/LLM-Coding/Semantic-Anchors/issues/540[#540])
+
 == 2026-05-22
 
 *New anchors:*
