@@ -60,3 +60,82 @@ describe('umbrella anchors', () => {
     expect(html).toContain('anchor-card-umbrella')
   })
 })
+
+describe('category quick-nav', () => {
+  const categories = [
+    { id: 'testing-quality', name: 'Testing' },
+    { id: 'design-principles', name: 'Design' },
+    { id: 'empty-cat', name: 'Empty' },
+  ]
+  const anchors = [
+    {
+      id: 'a1',
+      title: 'A1',
+      categories: ['testing-quality'],
+      roles: ['r'],
+      tags: [],
+      proponents: [],
+    },
+    {
+      id: 'a2',
+      title: 'A2',
+      categories: ['testing-quality'],
+      roles: ['r'],
+      tags: [],
+      proponents: [],
+    },
+    {
+      id: 'a3',
+      title: 'A3',
+      categories: ['design-principles'],
+      roles: ['r'],
+      tags: [],
+      proponents: [],
+    },
+    {
+      id: 'sub',
+      title: 'Sub',
+      categories: ['design-principles'],
+      roles: ['r'],
+      umbrella: 'a3',
+      tier: 1,
+      tags: [],
+      proponents: [],
+    },
+  ]
+
+  it('renders a quick-nav with a jump link per non-empty category', () => {
+    const html = renderCardGrid(categories, anchors)
+    expect(html).toContain('class="category-nav"')
+    expect(html).toContain('href="#category-testing-quality"')
+    expect(html).toContain('href="#category-design-principles"')
+    // nav label must stay i18n-reactive on language switch
+    expect(html).toContain('data-i18n-aria="nav.categoryJump"')
+  })
+
+  it('omits categories with no non-umbrella anchors from the nav', () => {
+    const html = renderCardGrid(categories, anchors)
+    expect(html).not.toContain('href="#category-empty-cat"')
+  })
+
+  it('shows the non-umbrella anchor count per category in the nav', () => {
+    const html = renderCardGrid(categories, anchors)
+    // testing-quality has 2 anchors; design-principles has 1 (sub is umbrella, excluded)
+    expect(html).toMatch(/category-nav-count[^>]*>2</)
+    expect(html).toMatch(/category-nav-count[^>]*>1</)
+  })
+
+  it('gives each category section a matching id as the jump target', () => {
+    const html = renderCardGrid(categories, anchors)
+    expect(html).toContain('id="category-testing-quality"')
+    expect(html).toContain('id="category-design-principles"')
+  })
+
+  it('labels each icon-only chip with the category name for accessibility', () => {
+    const html = renderCardGrid(categories, anchors)
+    // icon is decorative; the name carries the accessible label (aria-label + title)
+    expect(html).toContain('class="category-nav-icon"')
+    expect(html).toContain('aria-label="categories.testing-quality"')
+    expect(html).toContain('data-i18n-title="categories.testing-quality"')
+  })
+})

@@ -33,16 +33,18 @@ const CATEGORY_COLORS = {
  */
 const CATEGORY_ICONS = {
   'communication-presentation': '💬',
+  'creative-writing': '✍️',
   'design-principles': '🎯',
   'development-workflow': '⚙️',
   'dialogue-interaction': '🤝',
   documentation: '📚',
+  'knowledge-management': '🧠',
   meta: '🔍',
   'problem-solving': '💡',
   'requirements-engineering': '📋',
   'software-architecture': '🏗️',
   'statistical-methods': '📊',
-  'strategic-planning': '🎯',
+  'strategic-planning': '♟️',
   'testing-quality': '🧪',
 }
 
@@ -63,8 +65,69 @@ export function renderCardGrid(categories, anchors) {
 
   return `
     <div class="card-grid-container">
+      ${renderCategoryNav(categories, anchors)}
       ${categories.map((category) => renderCategorySection(category, anchors)).join('')}
     </div>
+  `
+}
+
+/**
+ * Count the anchors that actually render in a category section — i.e. anchors
+ * assigned to the category, excluding umbrella sub-anchors (which are not shown
+ * as standalone cards).
+ */
+function countCategoryAnchors(category, allAnchors) {
+  return allAnchors.filter(
+    (anchor) => anchor.categories && anchor.categories.includes(category.id) && !anchor.umbrella
+  ).length
+}
+
+/**
+ * Render the sticky category quick-nav: one jump link per non-empty category,
+ * shown as a category icon plus a live anchor count. The category name is the
+ * accessible label (title + aria-label) since there is no visible text — the
+ * icon itself is decorative (aria-hidden). Links are plain in-page anchors
+ * (`#category-<id>`) so they work without JavaScript; the count badges are kept
+ * in sync with the active search/role filter by applyCardFilters().
+ */
+function renderCategoryNav(categories, allAnchors) {
+  const items = categories
+    .map((category) => ({ category, count: countCategoryAnchors(category, allAnchors) }))
+    .filter(({ count }) => count > 0)
+
+  if (items.length === 0) return ''
+
+  const links = items
+    .map(({ category, count }) => {
+      const id = escapeHtml(category.id)
+      const name = i18n.t(`categories.${category.id}`) || category.name
+      const icon = CATEGORY_ICONS[category.id] || '📌'
+      return `
+        <li>
+          <a
+            class="category-nav-link"
+            href="#category-${id}"
+            data-category-link="${id}"
+            title="${escapeHtml(name)}"
+            data-i18n-title="categories.${id}"
+            aria-label="${escapeHtml(name)}"
+            data-i18n-aria="categories.${id}"
+          >
+            <span class="category-nav-icon" aria-hidden="true">${icon}</span>
+            <span class="category-nav-count">${count}</span>
+          </a>
+        </li>`
+    })
+    .join('')
+
+  return `
+    <nav
+      class="category-nav"
+      aria-label="${escapeHtml(i18n.t('nav.categoryJump'))}"
+      data-i18n-aria="nav.categoryJump"
+    >
+      <ul class="category-nav-list">${links}</ul>
+    </nav>
   `
 }
 
@@ -83,7 +146,7 @@ function renderCategorySection(category, allAnchors) {
   const categoryName = i18n.t(`categories.${category.id}`) || category.name
 
   return `
-    <section class="category-section" data-category="${escapeHtml(category.id)}">
+    <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">
       <h2 class="category-heading">
         <span class="category-icon" style="background-color: ${color}">${icon}</span>
         <span data-i18n="categories.${escapeHtml(category.id)}">${escapeHtml(categoryName)}</span>
@@ -420,8 +483,34 @@ export function applyCardFilters(roleId, searchQuery) {
     section.style.display = visibleCards.length > 0 ? 'block' : 'none'
   })
 
+  // Keep the quick-nav in sync: hide chips for emptied categories, refresh counts
+  syncCategoryNav()
+
   // Update counter
   updateAnchorCount(visibleCount, cards.length)
+}
+
+/**
+ * Sync the category quick-nav with the currently visible cards: hide the chip
+ * for any category whose section has no visible cards, and update each chip's
+ * count to the number of visible cards in its section.
+ */
+function syncCategoryNav() {
+  document.querySelectorAll('.category-nav-link').forEach((link) => {
+    const id = link.dataset.categoryLink
+    const section = document.getElementById(`category-${id}`)
+    if (!section) return
+
+    const visible = Array.from(section.querySelectorAll('.anchor-card')).filter(
+      (card) => card.style.display !== 'none'
+    ).length
+
+    const item = link.closest('li')
+    if (item) item.style.display = visible > 0 ? '' : 'none'
+
+    const countEl = link.querySelector('.category-nav-count')
+    if (countEl) countEl.textContent = visible
+  })
 }
 
 /**

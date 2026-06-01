@@ -85,10 +85,60 @@ body {
 
 .category-section {
   @apply mb-12;
+  /* Clear the sticky category quick-nav when jumped to via #category-<id> */
+  scroll-margin-top: 3.5rem;
 }
 
 .category-section[style*='display: none'] {
   @apply hidden;
+}
+
+/* Sticky category quick-nav: icon + live-count jump chips above the card grid.
+   A single horizontally scrollable row keeps the sticky bar short. Plain
+   in-page anchors, so it works without JavaScript. The category name is the
+   accessible label (title + aria-label); the icon is decorative. */
+.category-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  /* Hidden on phones (search + role filter cover navigation there, and the
+     sticky strip would eat scarce vertical space); shown from sm upward. */
+  @apply hidden sm:block mb-8 py-2;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.category-nav-list {
+  @apply flex flex-nowrap gap-2 list-none p-0 m-0 overflow-x-auto;
+  scrollbar-width: thin;
+}
+
+.category-nav-link {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full no-underline whitespace-nowrap flex-shrink-0;
+  @apply transition-colors duration-150;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+}
+
+.category-nav-link:hover,
+.category-nav-link:focus-visible {
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+.category-nav-icon {
+  @apply text-base leading-none;
+}
+
+.category-nav-count {
+  @apply text-xs font-semibold px-1.5 rounded-full;
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .category-heading {
