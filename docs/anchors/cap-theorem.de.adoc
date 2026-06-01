@@ -1,0 +1,49 @@
+= CAP Theorem
+:categories: software-architecture
+:roles: software-architect, data-scientist, devops-engineer
+:related: event-driven-architecture, fallacies-of-distributed-computing
+:proponents: Eric Brewer, Seth Gilbert, Nancy Lynch
+:tags: cap, distributed-systems, consistency, availability, partition-tolerance, pacelc
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: CAP-Theorem (Consistency, Availability, Partition tolerance)
+
+Auch bekannt als:: Brewers Theorem
+
+[discrete]
+== *Kernkonzepte*:
+
+Die drei Eigenschaften:: *Consistency* (jeder Read sieht den letzten Write), *Availability* (jede Anfrage erhält eine Nicht-Fehler-Antwort), *Partition tolerance* (das System arbeitet trotz verlorener/verzögerter Nachrichten zwischen Knoten weiter)
+
+Der Trade-off:: Bei einer Netzwerkpartition muss ein verteiltes System zwischen Consistency und Availability wählen — während der Partition geht nicht beides
+
+Partitionen sind nicht optional:: Reale Netze partitionieren, also ist P gesetzt; die eigentliche Designwahl ist CP- vs. AP-Verhalten *während* der Partition
+
+Häufiges Missverständnis:: „2 von 3 wählen" ist eine Vereinfachung; ohne Partition kann ein System gleichzeitig konsistent und verfügbar sein
+
+PACELC-Erweiterung:: Else (keine Partition) Latency gegen Consistency abwägen — bildet das alltägliche Tuning ab, das CAP allein auslässt (Abadi, 2012)
+
+Key Proponents:: Eric Brewer (Vermutung 2000, PODC-Keynote); formal bewiesen von Seth Gilbert & Nancy Lynch (2002); PACELC von Daniel Abadi (2012)
+
+[discrete]
+== *Verwendung*:
+
+* Auswahl/Bewertung eines verteilten Datenspeichers (CP- vs. AP-Verhalten)
+* Konkreter Consistency-/Availability-Trade-off für ein Feature
+* Verhalten bei Netzwerkpartitionen und Failover durchdenken
+* Erklären, warum starke Konsistenz Verfügbarkeit oder Latenz kostet
+
+[discrete]
+== *Nicht verwenden*:
+
+* Für Ein-Knoten-Systeme ohne Replikation (keine Partitionen zu tolerieren)
+* Als plumpe „2 von 3"-Parole — besser die Partitions-Sicht oder PACELC
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<event-driven-architecture,Event-Driven Architecture>> — Eventual Consistency als AP-Designwahl
+* <<fallacies-of-distributed-computing,Fallacies of Distributed Computing>> — die Netzannahmen, die CAP explizit macht
+====

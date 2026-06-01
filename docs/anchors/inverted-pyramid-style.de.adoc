@@ -1,0 +1,50 @@
+= Inverted Pyramid Style
+:categories: communication-presentation
+:roles: technical-writer, product-owner, educator
+:related: bluf, pyramid-principle, diataxis-framework
+:proponents: Journalistic tradition (American wire-service press)
+:tags: inverted-pyramid, journalism, writing, progressive-disclosure, news-style
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Inverted Pyramid Style (Umgekehrte Pyramide)
+
+Auch bekannt als:: News Style, Front-Loading, journalistischer Stil
+
+[discrete]
+== *Kernkonzepte*:
+
+Das Wichtigste zuerst:: Mit dem wesentlichen Wer/Was/Wann/Wo/Warum beginnen, danach unterstützende Details in absteigender Wichtigkeit
+
+Stop-anywhere-Lesbarkeit:: Der Leser kann jederzeit aufhören und hat trotzdem das Wichtigste — spätere Absätze liefern Tiefe, keine Voraussetzungen
+
+Langer, kürzbarer Schwanz:: Anders als eine knappe Zusammenfassung darf der Rumpf einen langen Schwanz aus Zitaten, Hintergrund und Kontext tragen, den eine Redaktion (oder der Leser) von unten kürzen kann, ohne den Kern zu verlieren
+
+Abgrenzung zu BLUF:: BLUF verlangt eine kurze Nachricht mit der Kernaussage zuerst; die umgekehrte Pyramide stellt die Schlussfolgerung nach vorn, erlaubt aber einen ausgedehnten, optionalen Rest
+
+Abgrenzung zum Pyramid Principle:: Mintos Pyramide baut ein vollständiges, MECE-Argument, dem der Leser ganz folgen soll; die umgekehrte Pyramide optimiert für Überfliegen und frühen Ausstieg, nicht für Vollständigkeit
+
+Key Proponents:: Journalistische Konvention, dem amerikanischen Telegrafen-/Agenturjournalismus des späten 19. Jahrhunderts zugeschrieben (Übertragungskosten und Redaktionsdruck); Standard in Journalismus und Technischer Redaktion
+
+[discrete]
+== *Verwendung*:
+
+* News-artige Ankündigungen, Release Notes, Incident-Updates, Changelog-Einträge
+* Texte, die überflogen werden und bei denen viele nach den ersten Zeilen aufhören
+* LLM-generierte Zusammenfassungen, die die Kernaussage nach vorn stellen sollen
+
+[discrete]
+== *Nicht verwenden*:
+
+* Argumente, denen man vollständig folgen muss → Pyramid Principle nutzen
+* Ultrakurze Ein-Nachricht-Kontexte → BLUF nutzen
+* Erzählende oder spannungsgetriebene Texte, bei denen Zurückhalten gewollt ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<bluf,BLUF (Bottom Line Up Front)>> — nach vorn gestellt, aber bewusst kurz
+* <<pyramid-principle,Pyramid Principle>> — vollständige, MECE-Argumentstruktur
+* <<diataxis-framework,Diátaxis Framework>> — die passende Dokumentationsform wählen
+====

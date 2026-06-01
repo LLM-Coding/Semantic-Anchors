@@ -1,0 +1,50 @@
+= Conway's Law
+:categories: software-architecture
+:roles: software-architect, team-lead, product-owner, consultant
+:related: domain-driven-design, cohesion-criteria, vertical-slice-architecture
+:proponents: Melvin E. Conway
+:tags: conways-law, organization, architecture, team-topologies, communication-structure, sociotechnical
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Conway's Law (Gesetz von Conway)
+
+Auch bekannt als:: Mirroring-Hypothese
+
+[discrete]
+== *Kernkonzepte*:
+
+Homomorphe Kraft:: „Organisationen, die Systeme entwerfen, bringen Entwürfe hervor, deren Struktur die Kommunikationsstruktur der Organisation abbildet" — Systemgrenzen spiegeln Teamgrenzen
+
+Kommunikationspfade:: Schnittstellen in der Software entstehen dort, wo zwei Teams sich abstimmen müssen; Kosten und Reibung der teamübergreifenden Kommunikation bestimmen, wo Module getrennt werden
+
+Inverse Conway Maneuver:: Teams gezielt nach der gewünschten Architektur schneiden, statt ein zufälliges Org-Chart das System bestimmen zu lassen
+
+Team Topologies:: Moderne Ausprägung (Skelton & Pais) — stream-aligned, platform, enabling und complicated-subsystem Teams, dimensioniert auf eine bewältigbare kognitive Last
+
+Soziotechnische Sicht:: Architektur ist nicht rein technisch; Organisations- und Systemdesign sind zwei Seiten derselben Entscheidung
+
+Key Proponents:: Melvin E. Conway („How Do Committees Invent?", Datamation 1968); popularisiert durch Fred Brooks („The Mythical Man-Month"); moderne Form bei Matthew Skelton & Manuel Pais („Team Topologies", 2019)
+
+[discrete]
+== *Verwendung*:
+
+* Planung der Teamstruktur für ein neues System oder eine Re-Architektur
+* Diagnose, warum Modulgrenzen ungünstig liegen oder Integration schmerzhaft ist
+* Begründung von Microservice-/Bounded-Context-Schnitten entlang der Teamgrenzen
+* Prüfung, ob das Org-Chart gegen die beabsichtigte Architektur arbeitet
+
+[discrete]
+== *Nicht verwenden*:
+
+* Als deterministische Vorhersage — es ist eine starke Tendenz, kein Naturgesetz
+* Für winzige Ein-Team-Systeme mit nur einem Kommunikationspfad
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<domain-driven-design,Domain-Driven Design>> — Bounded Contexts als teamgerechte Grenzen
+* <<cohesion-criteria,Kohäsionskriterien>> — Modulkohäsion, die Teamgrenzen respektieren sollten
+* <<vertical-slice-architecture,Vertical Slice Architecture>> — Slices, die auf stream-aligned Teams abbilden
+====

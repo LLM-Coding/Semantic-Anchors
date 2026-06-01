@@ -1,0 +1,50 @@
+= First Principles Thinking
+:categories: problem-solving
+:roles: software-architect, consultant, educator, product-owner
+:related: feynman-technique, socratic-method, five-whys
+:proponents: Aristotle, René Descartes
+:tags: first-principles, reasoning, decomposition, problem-solving, assumptions
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: First Principles Thinking (Denken in ersten Prinzipien)
+
+Auch bekannt als:: Reasoning from First Principles, Denken von den Grundlagen her
+
+[discrete]
+== *Kernkonzepte*:
+
+Auf Grundwahrheiten reduzieren:: Ein Problem auf die Basiswahrheiten herunterbrechen, die sich nicht aus etwas Fundamentalerem ableiten lassen, und von dort nach oben argumentieren
+
+Vernunft vs. Analogie:: Gegensatz zum Denken per Analogie („wir machen das so, weil man es so macht") — erste Prinzipien bauen die Antwort von Grund auf neu
+
+Geerbte Annahmen hinterfragen:: Jede „Anforderung" oder „Randbedingung" wird befragt: Naturgesetz oder bloß Konvention/Altlast, die man verwerfen kann?
+
+Synthese von Grund auf:: Nach Identifikation der irreduziblen Elemente diese zu einer Lösung neu kombinieren, unbelastet davon, wie das Problem früher gelöst wurde
+
+Kosten der Methode:: Mächtig, aber teuer — für hochriskante oder festgefahrene Probleme reservieren; für Routineentscheidungen genügt das Denken per Analogie
+
+Key Proponents:: Wurzeln bei Aristoteles (die „erste Ursache"/archē); geschärft durch René Descartes' methodischen Zweifel; popularisiert im modernen Engineering-Diskurs (z.B. Elon Musks Batteriekosten-Beispiel)
+
+[discrete]
+== *Verwendung*:
+
+* Ein Problem wirkt blockiert, weil „man es eben so macht"
+* Erneute Prüfung von Anforderungen, Kostenstrukturen oder Architektur-Randbedingungen
+* Hochriskante Designentscheidungen, bei denen Analogien in die Irre führen
+* Lernenden beibringen, Grundwahrheiten von Konvention zu trennen
+
+[discrete]
+== *Nicht verwenden*:
+
+* Routineentscheidungen, bei denen etablierte Muster genügen — die Methode ist teuer
+* Wenn bewährte Best Practices bereits hart erarbeitete Grundlagen kodieren
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<feynman-technique,Feynman-Technik>> — von Grundlagen her erklären, um Lücken aufzudecken
+* <<socratic-method,Sokratische Methode>> — Annahmen befragen bis zum Fundament
+* <<five-whys,Five Whys>> — vom Symptom zur Grundursache bohren
+====

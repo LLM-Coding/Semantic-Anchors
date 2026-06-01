@@ -33,7 +33,6 @@
       "ssot-principle",
       "swot",
       "user-story-mapping",
-      "workflow-requirements-to-spec",
       "xy-problem"
     ]
   },
@@ -45,6 +44,7 @@
       "bluf",
       "c4-diagrams",
       "cohesion-criteria",
+      "conways-law",
       "crc-cards",
       "cynefin-framework",
       "decisional-balance-sheet",
@@ -52,8 +52,10 @@
       "double-diamond",
       "feynman-technique",
       "fichtean-curve",
+      "first-principles-thinking",
       "freytags-pyramid",
       "gom",
+      "goodharts-law",
       "grasp",
       "gutes-deutsch-wolf-schneider",
       "hemingway-bridge",
@@ -95,7 +97,6 @@
       "wardley-mapping",
       "what-qualifies-as-a-semantic-anchor",
       "what-would-chuck-norris-do",
-      "workflow-strategic-analysis",
       "xy-problem",
       "yagni"
     ]
@@ -104,8 +105,10 @@
     "id": "data-scientist",
     "name": "Data Scientist / Statistician",
     "anchors": [
+      "cap-theorem",
       "chain-of-thought",
       "control-chart-shewhart",
+      "goodharts-law",
       "llm-evaluations",
       "meaningful-human-control",
       "mece",
@@ -119,10 +122,12 @@
     "id": "devops-engineer",
     "name": "DevOps Engineer",
     "anchors": [
+      "cap-theorem",
       "control-chart-shewhart",
       "conventional-commits",
       "docs-as-code",
       "event-driven-architecture",
+      "fallacies-of-distributed-computing",
       "five-whys",
       "github-flow",
       "iec-61508-sil-levels",
@@ -147,6 +152,7 @@
       "diataxis-framework",
       "feynman-technique",
       "fichtean-curve",
+      "first-principles-thinking",
       "freytags-pyramid",
       "gof-design-patterns",
       "grasp",
@@ -154,8 +160,10 @@
       "gutes-deutsch-wolf-schneider",
       "hemingway-bridge",
       "heros-journey",
+      "inverted-pyramid-style",
       "kishotenketsu",
       "kiss-principle",
+      "law-of-demeter",
       "lehmans-classification",
       "luhmann-system-theory",
       "meaningful-human-control",
@@ -186,14 +194,18 @@
       "atam",
       "bdd-given-when-then",
       "cockburn-use-cases",
+      "conways-law",
       "cynefin-framework",
       "decisional-balance-sheet",
       "definition-of-done",
       "double-diamond",
+      "first-principles-thinking",
       "gherkin",
+      "goodharts-law",
       "gtd",
       "hoshin-kanri",
       "impact-mapping",
+      "inverted-pyramid-style",
       "invest",
       "iso-25010",
       "jobs-to-be-done",
@@ -213,8 +225,7 @@
       "swot",
       "thin-vertical-slice",
       "user-story-mapping",
-      "wardley-mapping",
-      "workflow-requirements-to-spec"
+      "wardley-mapping"
     ]
   },
   {
@@ -247,9 +258,7 @@
       "test-double-mock",
       "test-double-spy",
       "test-double-stub",
-      "testing-pyramid",
-      "workflow-code-review",
-      "workflow-requirements-to-spec"
+      "testing-pyramid"
     ]
   },
   {
@@ -267,10 +276,12 @@
       "arc42",
       "atam",
       "c4-diagrams",
+      "cap-theorem",
       "clean-architecture",
       "cockburn-use-cases",
       "code-smells",
       "cohesion-criteria",
+      "conways-law",
       "cqrs",
       "crc-cards",
       "cynefin-framework",
@@ -279,6 +290,8 @@
       "effective-go",
       "event-driven-architecture",
       "fagan-inspection",
+      "fallacies-of-distributed-computing",
+      "first-principles-thinking",
       "fowler-patterns",
       "gof-abstract-factory-pattern",
       "gof-adapter-pattern",
@@ -311,6 +324,7 @@
       "iso-25010",
       "kiss-principle",
       "lasr",
+      "law-of-demeter",
       "lehmans-classification",
       "linddun",
       "llm-evaluations",
@@ -322,6 +336,7 @@
       "morphological-box",
       "occams-razor",
       "owasp-top-10",
+      "postels-law",
       "pugh-matrix",
       "quality-attribute-scenario",
       "regulated-environment",
@@ -343,9 +358,6 @@
       "walking-skeleton",
       "wardley-mapping",
       "what-would-chuck-norris-do",
-      "workflow-architecture-documentation",
-      "workflow-strategic-analysis",
-      "workflow-tdd-clean-architecture",
       "yagni"
     ]
   },
@@ -370,6 +382,7 @@
       "effective-go",
       "event-driven-architecture",
       "fagan-inspection",
+      "fallacies-of-distributed-computing",
       "feynman-technique",
       "five-whys",
       "fowler-patterns",
@@ -407,6 +420,7 @@
       "invest",
       "kiss-principle",
       "lasr",
+      "law-of-demeter",
       "linddun",
       "llm-evaluations",
       "madr",
@@ -418,6 +432,7 @@
       "owasp-top-10",
       "para-method",
       "plain-english-strunk-white",
+      "postels-law",
       "prd",
       "property-based-testing",
       "red-green-tdd",
@@ -449,8 +464,6 @@
       "vertical-slice-architecture",
       "walking-skeleton",
       "what-would-chuck-norris-do",
-      "workflow-code-review",
-      "workflow-tdd-clean-architecture",
       "xy-problem",
       "yagni"
     ]
@@ -477,6 +490,7 @@
       "c4-diagrams",
       "code-smells",
       "control-chart-shewhart",
+      "conways-law",
       "cynefin-framework",
       "decisional-balance-sheet",
       "definition-of-done",
@@ -488,6 +502,7 @@
       "fowler-patterns",
       "github-flow",
       "gom",
+      "goodharts-law",
       "gtd",
       "hoshin-kanri",
       "impact-mapping",
@@ -528,8 +543,6 @@
       "walking-skeleton",
       "wardley-mapping",
       "what-would-chuck-norris-do",
-      "workflow-code-review",
-      "workflow-strategic-analysis",
       "xy-problem"
     ]
   },
@@ -549,6 +562,7 @@
       "gutes-deutsch-wolf-schneider",
       "hemingway-bridge",
       "heros-journey",
+      "inverted-pyramid-style",
       "kishotenketsu",
       "lasr",
       "para-method",
@@ -557,8 +571,7 @@
       "save-the-cat",
       "story-circle-dan-harmon",
       "three-act-structure",
-      "todotxt-flavoured-markdown",
-      "workflow-architecture-documentation"
+      "todotxt-flavoured-markdown"
     ]
   },
   {

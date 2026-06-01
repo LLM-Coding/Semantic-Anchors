@@ -1,0 +1,50 @@
+= Law of Demeter
+:categories: design-principles
+:roles: software-developer, software-architect, educator
+:related: solid-principles, grasp, cohesion-criteria
+:proponents: Ian Holland, Karl Lieberherr
+:tags: law-of-demeter, coupling, encapsulation, oop, principle-of-least-knowledge
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Law of Demeter (LoD)
+
+Also known as:: Principle of Least Knowledge, "Don't talk to strangers"
+
+[discrete]
+== *Core Concepts*:
+
+Only talk to your immediate friends:: A method may call methods on: itself, its parameters, objects it creates, and its direct component objects — but not on objects returned by those calls
+
+Train-wreck calls:: Chains like `a.getB().getC().doSomething()` reach through intermediaries and couple the caller to a deep object graph — the classic LoD violation
+
+Tell, don't ask:: Push behaviour to the object that owns the data instead of pulling data out and operating on it externally
+
+Encapsulation boundary:: LoD limits how much of an object's internal structure leaks to its collaborators, so internal changes don't ripple outward
+
+Pragmatic limits:: It is a heuristic, not an absolute; fluent builders and some data-pipeline/query DSLs chain deliberately and are reasonable exceptions
+
+Key Proponents:: Ian Holland & Karl Lieberherr (Northeastern University, Demeter Project, 1987); popularized by "The Pragmatic Programmer" (Hunt & Thomas)
+
+[discrete]
+== *When to Use*:
+
+* Reviewing code for hidden coupling and fragile call chains
+* Designing object APIs that hide their internal structure
+* Teaching encapsulation and "tell, don't ask"
+* Guiding refactorings away from train-wreck expressions
+
+[discrete]
+== *When NOT to Use*:
+
+* For fluent interfaces / builders where chaining is the intended design
+* For immutable value objects and data-query DSLs where traversal is the point
+
+[discrete]
+== *Related Anchors*:
+
+* <<solid-principles,SOLID Principles>> — complementary coupling/cohesion guidance
+* <<grasp,GRASP>> — Low Coupling and Information Expert overlap with LoD
+* <<cohesion-criteria,Cohesion Criteria>> — the cohesion side of the same design concern
+====

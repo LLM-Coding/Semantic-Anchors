@@ -1,0 +1,50 @@
+= Law of Demeter
+:categories: design-principles
+:roles: software-developer, software-architect, educator
+:related: solid-principles, grasp, cohesion-criteria
+:proponents: Ian Holland, Karl Lieberherr
+:tags: law-of-demeter, coupling, encapsulation, oop, principle-of-least-knowledge
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Law of Demeter (LoD), Gesetz von Demeter
+
+Auch bekannt als:: Principle of Least Knowledge, „Sprich nicht mit Fremden"
+
+[discrete]
+== *Kernkonzepte*:
+
+Sprich nur mit direkten Freunden:: Eine Methode darf Methoden aufrufen auf: sich selbst, ihren Parametern, von ihr erzeugten Objekten und ihren direkten Komponenten — aber nicht auf Objekten, die diese Aufrufe zurückgeben
+
+Train-Wreck-Aufrufe:: Ketten wie `a.getB().getC().doSomething()` greifen durch Zwischenobjekte und koppeln den Aufrufer an einen tiefen Objektgraphen — die klassische LoD-Verletzung
+
+Tell, don't ask:: Verhalten in das Objekt verschieben, das die Daten besitzt, statt Daten herauszuziehen und extern darauf zu operieren
+
+Kapselungsgrenze:: LoD begrenzt, wie viel interne Struktur eines Objekts zu seinen Kollaborateuren durchsickert, damit interne Änderungen nicht nach außen wirken
+
+Pragmatische Grenzen:: Eine Heuristik, kein Absolutum; Fluent Builder und manche Data-Pipeline-/Query-DSLs verketten bewusst und sind sinnvolle Ausnahmen
+
+Key Proponents:: Ian Holland & Karl Lieberherr (Northeastern University, Demeter-Projekt, 1987); popularisiert durch „The Pragmatic Programmer" (Hunt & Thomas)
+
+[discrete]
+== *Verwendung*:
+
+* Code-Review auf versteckte Kopplung und fragile Aufrufketten
+* Entwurf von Objekt-APIs, die ihre interne Struktur verbergen
+* Vermittlung von Kapselung und „tell, don't ask"
+* Refactorings weg von Train-Wreck-Ausdrücken anleiten
+
+[discrete]
+== *Nicht verwenden*:
+
+* Für Fluent Interfaces / Builder, bei denen Verkettung gewollt ist
+* Für immutable Value Objects und Data-Query-DSLs, deren Zweck die Traversierung ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<solid-principles,SOLID Principles>> — ergänzende Kopplungs-/Kohäsions-Leitlinien
+* <<grasp,GRASP>> — Low Coupling und Information Expert überlappen mit LoD
+* <<cohesion-criteria,Kohäsionskriterien>> — die Kohäsions-Seite desselben Designthemas
+====

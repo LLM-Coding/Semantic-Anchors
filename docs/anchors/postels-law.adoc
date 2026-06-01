@@ -1,0 +1,49 @@
+= Postel's Law
+:categories: design-principles
+:roles: software-architect, software-developer
+:related: solid-principles, semantic-versioning, event-driven-architecture
+:proponents: Jon Postel
+:tags: postels-law, robustness-principle, interface-design, validation, interoperability
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Postel's Law / The Robustness Principle
+
+Also known as:: "Be conservative in what you send, be liberal in what you accept"
+
+[discrete]
+== *Core Concepts*:
+
+The principle:: Send strictly conforming output; accept input tolerantly, coping with anything you reasonably can — to maximize interoperability between independently built systems
+
+Conservative output:: Emit only well-formed, specification-compliant messages so peers never have to compensate for your sloppiness
+
+Liberal input:: Tolerate minor deviations and unknown-but-ignorable fields rather than rejecting otherwise-usable messages — supports forward/backward compatibility
+
+Where it shines:: Long-lived network protocols, public APIs, file formats, and event schemas that must evolve while old and new participants coexist
+
+The modern critique:: Excessive tolerance accumulates undefined behaviour and security risk (ambiguous parsing, smuggling); contemporary guidance favours strictness plus explicit versioning. Apply with a documented tolerance boundary, not blanket leniency
+
+Key Proponents:: Jon Postel (RFC 760/761, 1980, in the context of TCP/IP)
+
+[discrete]
+== *When to Use*:
+
+* Designing protocol, API, or event-schema contracts that must evolve
+* Deciding how strictly a parser/validator should reject input
+* Reasoning about forward/backward compatibility and graceful degradation
+
+[discrete]
+== *When NOT to Use*:
+
+* Security-sensitive parsing where ambiguity is dangerous — prefer strict validation
+* Internal interfaces under one team's control, where strictness catches bugs earlier
+
+[discrete]
+== *Related Anchors*:
+
+* <<semantic-versioning,Semantic Versioning>> — the explicit-versioning complement to tolerant inputs
+* <<solid-principles,SOLID Principles>> — interface design and contract stability
+* <<event-driven-architecture,Event-Driven Architecture>> — tolerant readers for evolving event schemas
+====

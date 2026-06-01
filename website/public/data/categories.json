@@ -6,6 +6,7 @@
       "4mat",
       "bluf",
       "gutes-deutsch-wolf-schneider",
+      "inverted-pyramid-style",
       "mece",
       "myers-briggs-type-indicator",
       "plain-english-strunk-white",
@@ -60,6 +61,8 @@
       "gof-visitor-pattern",
       "grasp",
       "kiss-principle",
+      "law-of-demeter",
+      "postels-law",
       "single-level-of-abstraction-principle",
       "solid-dip",
       "solid-isp",
@@ -135,6 +138,7 @@
       "devils-advocate",
       "double-diamond",
       "feynman-technique",
+      "first-principles-thinking",
       "five-whys",
       "luhmann-system-theory",
       "morphological-box",
@@ -169,10 +173,13 @@
       "arc42",
       "atam",
       "c4-diagrams",
+      "cap-theorem",
       "clean-architecture",
+      "conways-law",
       "cqrs",
       "domain-driven-design",
       "event-driven-architecture",
+      "fallacies-of-distributed-computing",
       "gom",
       "hexagonal-architecture",
       "iso-25010",
@@ -200,6 +207,7 @@
     "anchors": [
       "cynefin-framework",
       "decisional-balance-sheet",
+      "goodharts-law",
       "hoshin-kanri",
       "impact-mapping",
       "jobs-to-be-done",
@@ -237,17 +245,6 @@
       "test-double-spy",
       "test-double-stub",
       "testing-pyramid"
-    ]
-  },
-  {
-    "id": "workflow",
-    "name": "Workflow",
-    "anchors": [
-      "workflow-architecture-documentation",
-      "workflow-code-review",
-      "workflow-requirements-to-spec",
-      "workflow-strategic-analysis",
-      "workflow-tdd-clean-architecture"
     ]
   }
 ]

@@ -1,0 +1,49 @@
+= CAP Theorem
+:categories: software-architecture
+:roles: software-architect, data-scientist, devops-engineer
+:related: event-driven-architecture, fallacies-of-distributed-computing
+:proponents: Eric Brewer, Seth Gilbert, Nancy Lynch
+:tags: cap, distributed-systems, consistency, availability, partition-tolerance, pacelc
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: CAP Theorem (Consistency, Availability, Partition tolerance)
+
+Also known as:: Brewer's Theorem
+
+[discrete]
+== *Core Concepts*:
+
+The three properties:: *Consistency* (every read sees the most recent write), *Availability* (every request gets a non-error response), *Partition tolerance* (the system keeps working despite dropped/delayed messages between nodes)
+
+The trade-off:: When a network partition occurs, a distributed system must choose between consistency and availability — it cannot have both during the partition
+
+Partitions are not optional:: Real networks partition, so P is a given; the genuine design choice is CP vs AP behaviour *while partitioned*
+
+Common misreading:: "Pick 2 of 3" is a simplification; outside a partition a system can be both consistent and available
+
+PACELC extension:: Else (no partition), trade Latency against Consistency — captures the everyday tuning that CAP alone omits (Abadi, 2012)
+
+Key Proponents:: Eric Brewer (2000 conjecture, PODC keynote); formally proved by Seth Gilbert & Nancy Lynch (2002); PACELC by Daniel Abadi (2012)
+
+[discrete]
+== *When to Use*:
+
+* Choosing or evaluating a distributed datastore (CP vs AP behaviour)
+* Framing a concrete consistency/availability trade-off for a feature
+* Reasoning about behaviour during network partitions and failover
+* Explaining why strong consistency costs availability or latency
+
+[discrete]
+== *When NOT to Use*:
+
+* For single-node systems with no replication (no partitions to tolerate)
+* As a crude "2 of 3" slogan — prefer the partition-time framing or PACELC
+
+[discrete]
+== *Related Anchors*:
+
+* <<event-driven-architecture,Event-Driven Architecture>> — eventual consistency as an AP design choice
+* <<fallacies-of-distributed-computing,Fallacies of Distributed Computing>> — the network assumptions CAP makes explicit
+====

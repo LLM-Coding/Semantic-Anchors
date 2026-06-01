@@ -1,0 +1,50 @@
+= Goodhart's Law
+:categories: strategic-planning
+:roles: product-owner, team-lead, data-scientist, consultant
+:related: llm-evaluations, decisional-balance-sheet, kano-model
+:proponents: Charles Goodhart, Marilyn Strathern
+:tags: goodharts-law, metrics, kpi, incentives, measurement, gaming
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Goodhart's Law
+
+Also known as:: "When a measure becomes a target, it ceases to be a good measure" (Strathern's formulation)
+
+[discrete]
+== *Core Concepts*:
+
+The core claim:: Once a metric is used as a target and tied to incentives, people optimize the metric rather than the underlying goal, so the metric stops reflecting what it once measured
+
+Proxy vs. goal:: Most metrics are proxies for a goal that is hard to measure directly; pressure on the proxy widens the gap between proxy and goal
+
+Gaming and side effects:: Targets invite gaming, narrow focus, and surrogation — chasing the number while the real objective degrades (e.g. test coverage % vs. actual test quality)
+
+Mitigations:: Use baskets of balanced/counter metrics, keep some measures for learning rather than targets, pair quantitative with qualitative signals, and revisit metrics as behaviour adapts
+
+Relevance to this project:: A direct lens for designing LLM-evaluation criteria and KPIs — guard against optimizing a score instead of the capability it stands for
+
+Key Proponents:: Charles Goodhart (1975, monetary-policy context); pithy general formulation by Marilyn Strathern (1997); related to Campbell's Law
+
+[discrete]
+== *When to Use*:
+
+* Designing KPIs, OKRs, or team performance metrics
+* Reviewing whether a metric is being gamed or has surrogated the goal
+* Defining evaluation criteria for models, quality, or productivity
+* Arguing for balanced/counter metrics instead of a single target
+
+[discrete]
+== *When NOT to Use*:
+
+* As a blanket excuse to avoid measurement altogether — metrics still inform
+* For purely descriptive measures that carry no incentive or target
+
+[discrete]
+== *Related Anchors*:
+
+* <<llm-evaluations,LLM-Evaluations>> — guarding eval criteria against metric-gaming
+* <<decisional-balance-sheet,Decisional Balance Sheet>> — weighing trade-offs beyond a single number
+* <<kano-model,Kano Model>> — qualitative signal alongside quantitative targets
+====

@@ -1,0 +1,48 @@
+= Fallacies of Distributed Computing
+:categories: software-architecture
+:roles: software-architect, software-developer, devops-engineer
+:related: cap-theorem, event-driven-architecture, hexagonal-architecture
+:proponents: L. Peter Deutsch, James Gosling
+:tags: distributed-systems, networking, reliability, latency, fallacies, resilience
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: The Eight Fallacies of Distributed Computing
+
+Also known as:: Deutsch's Fallacies, Fallacies of Networked Computing
+
+[discrete]
+== *Core Concepts*:
+
+The eight false assumptions:: (1) The network is reliable. (2) Latency is zero. (3) Bandwidth is infinite. (4) The network is secure. (5) Topology doesn't change. (6) There is one administrator. (7) Transport cost is zero. (8) The network is homogeneous
+
+Why it matters:: Each assumption is comfortable in local development and false in production; building on them produces systems that fail under real network conditions
+
+As an audit checklist:: Invoke the list to interrogate a distributed design — for each fallacy, ask what happens when the real-world opposite is true (retries, timeouts, backpressure, encryption, service discovery, capacity limits, protocol negotiation)
+
+Mitigation cues:: Reliability → retries/idempotency; latency → batching/locality; security → zero-trust; topology → service discovery; homogeneity → explicit contracts and versioning
+
+Key Proponents:: L. Peter Deutsch (first seven, Sun Microsystems, c. 1994); James Gosling added the eighth ("the network is homogeneous"); early items credited to Bill Joy and Tom Lyon
+
+[discrete]
+== *When to Use*:
+
+* Reviewing or hardening a distributed/microservice design
+* Writing resilience requirements (timeouts, retries, circuit breakers)
+* Onboarding developers moving from monolith to distributed thinking
+* Post-incident analysis of network-related outages
+
+[discrete]
+== *When NOT to Use*:
+
+* For purely in-process, single-machine logic with no network calls
+* As a substitute for measuring your actual network's behaviour
+
+[discrete]
+== *Related Anchors*:
+
+* <<cap-theorem,CAP Theorem>> — the consistency/availability consequence of partitions
+* <<event-driven-architecture,Event-Driven Architecture>> — async patterns that assume unreliable networks
+* <<hexagonal-architecture,Hexagonal Architecture>> — isolating network adapters behind ports
+====

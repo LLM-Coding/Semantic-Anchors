@@ -1,0 +1,50 @@
+= Inverted Pyramid Style
+:categories: communication-presentation
+:roles: technical-writer, product-owner, educator
+:related: bluf, pyramid-principle, diataxis-framework
+:proponents: Journalistic tradition (American wire-service press)
+:tags: inverted-pyramid, journalism, writing, progressive-disclosure, news-style
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Inverted Pyramid Style
+
+Also known as:: News Style, Front-Loading
+
+[discrete]
+== *Core Concepts*:
+
+Most newsworthy first:: Lead with the essential who/what/when/where/why, then present supporting detail in decreasing order of importance
+
+Stop-anywhere readability:: The reader can stop at any point and still have the most important information — later paragraphs add depth, not prerequisites
+
+Long, prunable tail:: Unlike a tight summary, the body may carry a long tail of quotes, background, and context that an editor (or reader) can cut from the bottom without losing the core
+
+Contrast with BLUF:: BLUF demands a short message with the bottom line up front; the Inverted Pyramid front-loads the conclusion but allows an extended, optional remainder
+
+Contrast with the Pyramid Principle:: Minto's Pyramid builds a complete, MECE argument the reader should follow fully; the Inverted Pyramid optimizes for skimming and early exit, not for completeness
+
+Key Proponents:: Journalistic convention attributed to late-19th-century American wire-service reporting (telegraph cost and editing pressure); a standard taught in journalism and technical writing
+
+[discrete]
+== *When to Use*:
+
+* News-style announcements, release notes, incident updates, changelog entries
+* Any text where readers skim and many will stop after the first lines
+* LLM-generated summaries that should front-load the takeaway
+
+[discrete]
+== *When NOT to Use*:
+
+* Arguments that must be followed in full → use the Pyramid Principle
+* Ultra-short, single-message contexts → use BLUF
+* Narrative or suspense-driven writing where withholding is intentional
+
+[discrete]
+== *Related Anchors*:
+
+* <<bluf,BLUF (Bottom Line Up Front)>> — front-loaded but deliberately short
+* <<pyramid-principle,Pyramid Principle>> — complete, MECE argument structure
+* <<diataxis-framework,Diátaxis Framework>> — choosing the right documentation shape
+====

@@ -88,6 +88,21 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Software Architecture
 
+### Conway's Law
+- **Also known as:** The Mirroring Hypothesis
+- **Proponents:** Melvin E. Conway (1968); Skelton & Pais (Team Topologies, 2019)
+- **Core:** Organizations produce designs whose structure copies their communication structure; system boundaries mirror team boundaries; Inverse Conway Maneuver shapes teams to fit the target architecture; sociotechnical view of architecture
+
+### CAP Theorem
+- **Also known as:** Brewer's Theorem
+- **Proponents:** Eric Brewer (2000); Seth Gilbert & Nancy Lynch (2002 proof); PACELC by Daniel Abadi (2012)
+- **Core:** A partitioned distributed system must choose between Consistency and Availability; partitions are a given so the real choice is CP vs AP while partitioned; PACELC adds the latency/consistency trade-off when not partitioned
+
+### Fallacies of Distributed Computing
+- **Also known as:** Deutsch's Fallacies
+- **Proponents:** L. Peter Deutsch & James Gosling (Sun Microsystems)
+- **Core:** Eight false network assumptions (reliable, zero latency, infinite bandwidth, secure, fixed topology, one admin, zero transport cost, homogeneous) used as an audit checklist for distributed designs; each maps to a mitigation (retries, locality, zero-trust, service discovery, versioning)
+
 ### Clean Architecture
 - **Core:** Dependency rule, entities at center, frameworks at edge
 
@@ -172,6 +187,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Lightweight end-to-end slice that validates architectural direction on real infrastructure; unlike a spike, tracer code is kept and refined into the final system; enables rapid directional correction via the "aim-fire-adjust" loop; primary goal is architecture validation, not feature delivery
 
 ## Design Principles
+
+### Law of Demeter
+- **Also known as:** Principle of Least Knowledge, "Don't talk to strangers"
+- **Proponents:** Ian Holland & Karl Lieberherr (Northeastern University, 1987)
+- **Core:** Only call methods on self, parameters, created objects, and direct components — not on objects returned by those calls; avoids train-wreck chains; favours "tell, don't ask"; a coupling heuristic with deliberate exceptions for fluent builders and query DSLs
+
+### Postel's Law
+- **Also known as:** Robustness Principle — "be conservative in what you send, be liberal in what you accept"
+- **Proponents:** Jon Postel (RFC 761, 1980)
+- **Core:** Emit strictly conforming output, accept input tolerantly to maximize interoperability of independently built systems; strong for evolving protocols/APIs/event schemas; modern caveat — excessive tolerance breeds ambiguity and security risk, so pair with strictness and explicit versioning
 
 ### SOLID Principles
 - **Core:** Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
@@ -353,6 +378,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Problem-Solving
 
+### First Principles Thinking
+- **Also known as:** Reasoning from First Principles, Reasoning from Fundamentals
+- **Proponents:** roots in Aristotle and Descartes; popularized in modern engineering discourse
+- **Core:** Decompose a problem to irreducible fundamental truths and reason upward, instead of reasoning by analogy; challenge inherited assumptions/constraints; powerful but costly, reserved for high-stakes or stuck problems
+
 ### Five Whys (Ohno)
 - **Proponents:** Taiichi Ohno (Toyota)
 - **Core:** Ask "why" repeatedly to find root cause
@@ -451,6 +481,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Needs-Value-Constraints framework for problem definition
 
 ## Communication & Presentation
+
+### Inverted Pyramid Style
+- **Also known as:** News Style, Front-Loading
+- **Proponents:** journalistic convention (late-19th-century American wire-service press)
+- **Core:** Lead with the most newsworthy who/what/when/where/why, then detail in decreasing importance so a reader can stop anywhere; allows a long prunable tail; distinct from BLUF (deliberately short) and the Pyramid Principle (complete MECE argument)
 
 ### BLUF (Bottom Line Up Front)
 - **Proponents:** US Military
@@ -582,6 +617,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** 8 rules for detecting non-random patterns in control charts
 
 ## Strategic Planning
+
+### Goodhart's Law
+- **Also known as:** "When a measure becomes a target, it ceases to be a good measure" (Strathern); related to Campbell's Law
+- **Proponents:** Charles Goodhart (1975); Marilyn Strathern (1997 formulation)
+- **Core:** Once a metric becomes an incentivized target, people optimize the proxy rather than the goal and the measure degrades; mitigate with balanced/counter metrics, learning-only measures, and qualitative signals; a direct lens for KPI and LLM-evaluation design
 
 ### Wardley Mapping
 - **Proponents:** Simon Wardley

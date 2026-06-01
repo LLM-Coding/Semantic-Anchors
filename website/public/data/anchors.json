@@ -188,6 +188,37 @@
     "tier": 3
   },
   {
+    "id": "cap-theorem",
+    "title": "CAP Theorem",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "data-scientist",
+      "devops-engineer"
+    ],
+    "related": [
+      "event-driven-architecture",
+      "fallacies-of-distributed-computing"
+    ],
+    "proponents": [
+      "Eric Brewer",
+      "Seth Gilbert",
+      "Nancy Lynch"
+    ],
+    "tags": [
+      "cap",
+      "distributed-systems",
+      "consistency",
+      "availability",
+      "partition-tolerance",
+      "pacelc"
+    ],
+    "filePath": "docs/anchors/cap-theorem.adoc",
+    "tier": 3
+  },
+  {
     "id": "chain-of-thought",
     "title": "Chain of Thought (CoT)",
     "categories": [
@@ -357,6 +388,37 @@
     ],
     "tags": [],
     "filePath": "docs/anchors/conventional-commits.adoc",
+    "tier": 3
+  },
+  {
+    "id": "conways-law",
+    "title": "Conway’s Law",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "team-lead",
+      "product-owner",
+      "consultant"
+    ],
+    "related": [
+      "domain-driven-design",
+      "cohesion-criteria",
+      "vertical-slice-architecture"
+    ],
+    "proponents": [
+      "Melvin E. Conway"
+    ],
+    "tags": [
+      "conways-law",
+      "organization",
+      "architecture",
+      "team-topologies",
+      "communication-structure",
+      "sociotechnical"
+    ],
+    "filePath": "docs/anchors/conways-law.adoc",
     "tier": 3
   },
   {
@@ -723,6 +785,37 @@
     "tier": 3
   },
   {
+    "id": "fallacies-of-distributed-computing",
+    "title": "Fallacies of Distributed Computing",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer",
+      "devops-engineer"
+    ],
+    "related": [
+      "cap-theorem",
+      "event-driven-architecture",
+      "hexagonal-architecture"
+    ],
+    "proponents": [
+      "L. Peter Deutsch",
+      "James Gosling"
+    ],
+    "tags": [
+      "distributed-systems",
+      "networking",
+      "reliability",
+      "latency",
+      "fallacies",
+      "resilience"
+    ],
+    "filePath": "docs/anchors/fallacies-of-distributed-computing.adoc",
+    "tier": 3
+  },
+  {
     "id": "feynman-technique",
     "title": "Feynman Technique",
     "categories": [
@@ -772,6 +865,37 @@
       "constant-conflict"
     ],
     "filePath": "docs/anchors/fichtean-curve.adoc",
+    "tier": 3
+  },
+  {
+    "id": "first-principles-thinking",
+    "title": "First Principles Thinking",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "software-architect",
+      "consultant",
+      "educator",
+      "product-owner"
+    ],
+    "related": [
+      "feynman-technique",
+      "socratic-method",
+      "five-whys"
+    ],
+    "proponents": [
+      "Aristotle",
+      "René Descartes"
+    ],
+    "tags": [
+      "first-principles",
+      "reasoning",
+      "decomposition",
+      "problem-solving",
+      "assumptions"
+    ],
+    "filePath": "docs/anchors/first-principles-thinking.adoc",
     "tier": 3
   },
   {
@@ -1702,6 +1826,38 @@
     "tier": 2
   },
   {
+    "id": "goodharts-law",
+    "title": "Goodhart’s Law",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "product-owner",
+      "team-lead",
+      "data-scientist",
+      "consultant"
+    ],
+    "related": [
+      "llm-evaluations",
+      "decisional-balance-sheet",
+      "kano-model"
+    ],
+    "proponents": [
+      "Charles Goodhart",
+      "Marilyn Strathern"
+    ],
+    "tags": [
+      "goodharts-law",
+      "metrics",
+      "kpi",
+      "incentives",
+      "measurement",
+      "gaming"
+    ],
+    "filePath": "docs/anchors/goodharts-law.adoc",
+    "tier": 3
+  },
+  {
     "id": "grasp",
     "title": "GRASP",
     "categories": [
@@ -1954,6 +2110,35 @@
     "tier": 3
   },
   {
+    "id": "inverted-pyramid-style",
+    "title": "Inverted Pyramid Style",
+    "categories": [
+      "communication-presentation"
+    ],
+    "roles": [
+      "technical-writer",
+      "product-owner",
+      "educator"
+    ],
+    "related": [
+      "bluf",
+      "pyramid-principle",
+      "diataxis-framework"
+    ],
+    "proponents": [
+      "Journalistic tradition (American wire-service press)"
+    ],
+    "tags": [
+      "inverted-pyramid",
+      "journalism",
+      "writing",
+      "progressive-disclosure",
+      "news-style"
+    ],
+    "filePath": "docs/anchors/inverted-pyramid-style.adoc",
+    "tier": 3
+  },
+  {
     "id": "invest",
     "title": "INVEST",
     "categories": [
@@ -2194,6 +2379,36 @@
       "communication"
     ],
     "filePath": "docs/anchors/lasr.adoc",
+    "tier": 3
+  },
+  {
+    "id": "law-of-demeter",
+    "title": "Law of Demeter",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "educator"
+    ],
+    "related": [
+      "solid-principles",
+      "grasp",
+      "cohesion-criteria"
+    ],
+    "proponents": [
+      "Ian Holland",
+      "Karl Lieberherr"
+    ],
+    "tags": [
+      "law-of-demeter",
+      "coupling",
+      "encapsulation",
+      "oop",
+      "principle-of-least-knowledge"
+    ],
+    "filePath": "docs/anchors/law-of-demeter.adoc",
     "tier": 3
   },
   {
@@ -2776,6 +2991,34 @@
       "plain-english"
     ],
     "filePath": "docs/anchors/plain-english-strunk-white.adoc",
+    "tier": 3
+  },
+  {
+    "id": "postels-law",
+    "title": "Postel’s Law",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer"
+    ],
+    "related": [
+      "solid-principles",
+      "semantic-versioning",
+      "event-driven-architecture"
+    ],
+    "proponents": [
+      "Jon Postel"
+    ],
+    "tags": [
+      "postels-law",
+      "robustness-principle",
+      "interface-design",
+      "validation",
+      "interoperability"
+    ],
+    "filePath": "docs/anchors/postels-law.adoc",
     "tier": 3
   },
   {
@@ -4025,108 +4268,6 @@
       "meme-anchor"
     ],
     "filePath": "docs/anchors/what-would-chuck-norris-do.adoc",
-    "tier": 3
-  },
-  {
-    "id": "workflow-architecture-documentation",
-    "title": "Workflow: Architecture Documentation",
-    "categories": [
-      "workflow"
-    ],
-    "roles": [
-      "software-architect",
-      "technical-writer"
-    ],
-    "related": [],
-    "proponents": [
-      "Ralf D. Müller",
-      "Gernot Starke",
-      "Michael Nygard"
-    ],
-    "tags": [],
-    "filePath": "docs/anchors/workflow-architecture-documentation.adoc",
-    "tier": 3
-  },
-  {
-    "id": "workflow-code-review",
-    "title": "Workflow: Structured Code Review",
-    "categories": [
-      "workflow"
-    ],
-    "roles": [
-      "software-developer",
-      "team-lead",
-      "qa-engineer"
-    ],
-    "related": [],
-    "proponents": [
-      "Michael Fagan",
-      "Robert C. Martin"
-    ],
-    "tags": [],
-    "filePath": "docs/anchors/workflow-code-review.adoc",
-    "tier": 3
-  },
-  {
-    "id": "workflow-requirements-to-spec",
-    "title": "Workflow: Requirements to Specification",
-    "categories": [
-      "workflow"
-    ],
-    "roles": [
-      "business-analyst",
-      "product-owner",
-      "qa-engineer"
-    ],
-    "related": [],
-    "proponents": [
-      "Dan North",
-      "Jeff Patton",
-      "Mike Cohn"
-    ],
-    "tags": [],
-    "filePath": "docs/anchors/workflow-requirements-to-spec.adoc",
-    "tier": 3
-  },
-  {
-    "id": "workflow-strategic-analysis",
-    "title": "Workflow: Strategic Architecture Analysis",
-    "categories": [
-      "workflow"
-    ],
-    "roles": [
-      "software-architect",
-      "consultant",
-      "team-lead"
-    ],
-    "related": [],
-    "proponents": [
-      "Simon Wardley",
-      "Fritz Zwicky",
-      "Dave Snowden"
-    ],
-    "tags": [],
-    "filePath": "docs/anchors/workflow-strategic-analysis.adoc",
-    "tier": 3
-  },
-  {
-    "id": "workflow-tdd-clean-architecture",
-    "title": "Workflow: TDD with Clean Architecture",
-    "categories": [
-      "workflow"
-    ],
-    "roles": [
-      "software-developer",
-      "software-architect"
-    ],
-    "related": [],
-    "proponents": [
-      "Robert C. Martin",
-      "Steve Freeman",
-      "Nat Pryce"
-    ],
-    "tags": [],
-    "filePath": "docs/anchors/workflow-tdd-clean-architecture.adoc",
     "tier": 3
   },
   {

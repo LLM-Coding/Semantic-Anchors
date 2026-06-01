@@ -1,0 +1,49 @@
+= Postel's Law
+:categories: design-principles
+:roles: software-architect, software-developer
+:related: solid-principles, semantic-versioning, event-driven-architecture
+:proponents: Jon Postel
+:tags: postels-law, robustness-principle, interface-design, validation, interoperability
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Postel's Law / Robustness Principle (Robustheitsprinzip)
+
+Auch bekannt als:: „Be conservative in what you send, be liberal in what you accept"
+
+[discrete]
+== *Kernkonzepte*:
+
+Das Prinzip:: Strikt konformen Output senden; Input tolerant annehmen und alles Vertretbare verarbeiten — um die Interoperabilität unabhängig gebauter Systeme zu maximieren
+
+Konservativer Output:: Nur wohlgeformte, spezifikationskonforme Nachrichten senden, damit Gegenstellen nie deine Nachlässigkeit ausgleichen müssen
+
+Liberaler Input:: Kleine Abweichungen und unbekannt-aber-ignorierbare Felder tolerieren statt sonst nutzbare Nachrichten abzulehnen — stützt Vorwärts-/Rückwärtskompatibilität
+
+Wo es glänzt:: Langlebige Netzprotokolle, öffentliche APIs, Dateiformate und Event-Schemas, die sich weiterentwickeln müssen, während alte und neue Teilnehmer koexistieren
+
+Die moderne Kritik:: Übermäßige Toleranz häuft undefiniertes Verhalten und Sicherheitsrisiken an (mehrdeutiges Parsing, Smuggling); aktuelle Empfehlung bevorzugt Striktheit plus explizite Versionierung. Mit dokumentierter Toleranzgrenze anwenden, nicht pauschal nachsichtig
+
+Key Proponents:: Jon Postel (RFC 760/761, 1980, im Kontext von TCP/IP)
+
+[discrete]
+== *Verwendung*:
+
+* Entwurf von Protokoll-, API- oder Event-Schema-Contracts, die sich entwickeln müssen
+* Entscheidung, wie strikt ein Parser/Validator Input ablehnen soll
+* Nachdenken über Vorwärts-/Rückwärtskompatibilität und Graceful Degradation
+
+[discrete]
+== *Nicht verwenden*:
+
+* Sicherheitskritisches Parsing, wo Mehrdeutigkeit gefährlich ist — lieber strikte Validierung
+* Interne Schnittstellen unter Kontrolle eines Teams, wo Striktheit Bugs früher fängt
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<semantic-versioning,Semantic Versioning>> — die Explizit-Versionierung als Ergänzung zu toleranten Inputs
+* <<solid-principles,SOLID Principles>> — Schnittstellendesign und Contract-Stabilität
+* <<event-driven-architecture,Event-Driven Architecture>> — tolerante Reader für sich entwickelnde Event-Schemas
+====

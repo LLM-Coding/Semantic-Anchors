@@ -1,0 +1,48 @@
+= Fallacies of Distributed Computing
+:categories: software-architecture
+:roles: software-architect, software-developer, devops-engineer
+:related: cap-theorem, event-driven-architecture, hexagonal-architecture
+:proponents: L. Peter Deutsch, James Gosling
+:tags: distributed-systems, networking, reliability, latency, fallacies, resilience
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Die acht Trugschlüsse des verteilten Rechnens
+
+Auch bekannt als:: Deutsch's Fallacies, Fallacies of Networked Computing
+
+[discrete]
+== *Kernkonzepte*:
+
+Die acht falschen Annahmen:: (1) Das Netzwerk ist zuverlässig. (2) Latenz ist null. (3) Bandbreite ist unendlich. (4) Das Netzwerk ist sicher. (5) Die Topologie ändert sich nicht. (6) Es gibt einen Administrator. (7) Transportkosten sind null. (8) Das Netzwerk ist homogen
+
+Warum es zählt:: Jede Annahme ist in der lokalen Entwicklung bequem und in Produktion falsch; darauf aufgebaute Systeme scheitern unter realen Netzbedingungen
+
+Als Audit-Checkliste:: Die Liste nutzen, um einen verteilten Entwurf zu hinterfragen — pro Fallacy fragen, was passiert, wenn das reale Gegenteil zutrifft (Retries, Timeouts, Backpressure, Verschlüsselung, Service Discovery, Kapazitätsgrenzen, Protokollverhandlung)
+
+Mitigations-Hinweise:: Zuverlässigkeit → Retries/Idempotenz; Latenz → Batching/Lokalität; Sicherheit → Zero-Trust; Topologie → Service Discovery; Homogenität → explizite Contracts und Versionierung
+
+Key Proponents:: L. Peter Deutsch (die ersten sieben, Sun Microsystems, ca. 1994); James Gosling ergänzte den achten („das Netzwerk ist homogen"); frühe Punkte werden Bill Joy und Tom Lyon zugeschrieben
+
+[discrete]
+== *Verwendung*:
+
+* Review oder Härtung eines verteilten/Microservice-Entwurfs
+* Formulieren von Resilienz-Anforderungen (Timeouts, Retries, Circuit Breaker)
+* Onboarding von Entwicklern vom Monolithen zum verteilten Denken
+* Post-Incident-Analyse netzbedingter Ausfälle
+
+[discrete]
+== *Nicht verwenden*:
+
+* Für rein In-Process-Logik auf einer Maschine ohne Netzaufrufe
+* Als Ersatz dafür, das Verhalten des echten Netzes zu messen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<cap-theorem,CAP Theorem>> — die Consistency-/Availability-Folge von Partitionen
+* <<event-driven-architecture,Event-Driven Architecture>> — Async-Muster, die unzuverlässige Netze annehmen
+* <<hexagonal-architecture,Hexagonal Architecture>> — Netz-Adapter hinter Ports isolieren
+====

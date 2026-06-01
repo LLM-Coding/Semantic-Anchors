@@ -1,0 +1,50 @@
+= Goodhart's Law
+:categories: strategic-planning
+:roles: product-owner, team-lead, data-scientist, consultant
+:related: llm-evaluations, decisional-balance-sheet, kano-model
+:proponents: Charles Goodhart, Marilyn Strathern
+:tags: goodharts-law, metrics, kpi, incentives, measurement, gaming
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Goodhart's Law (Gesetz von Goodhart)
+
+Auch bekannt als:: „When a measure becomes a target, it ceases to be a good measure" (Strathern-Formulierung)
+
+[discrete]
+== *Kernkonzepte*:
+
+Die Kernaussage:: Sobald eine Metrik als Ziel genutzt und an Anreize gekoppelt wird, optimieren Menschen die Metrik statt das eigentliche Ziel — die Metrik bildet dann nicht mehr ab, was sie einst maß
+
+Proxy vs. Ziel:: Die meisten Metriken sind Proxys für ein schwer direkt messbares Ziel; Druck auf den Proxy vergrößert die Lücke zwischen Proxy und Ziel
+
+Gaming und Nebenwirkungen:: Ziele laden zu Gaming, Tunnelblick und Surrogation ein — die Zahl jagen, während das eigentliche Ziel verfällt (z.B. Test-Coverage-% vs. echte Testqualität)
+
+Gegenmaßnahmen:: Körbe aus balancierten/Gegen-Metriken, manche Maße zum Lernen statt als Ziel, quantitative mit qualitativen Signalen paaren, Metriken überarbeiten, wenn sich Verhalten anpasst
+
+Relevanz für dieses Projekt:: Eine direkte Linse für den Entwurf von LLM-Evaluationskriterien und KPIs — davor schützen, einen Score zu optimieren statt die dahinterstehende Fähigkeit
+
+Key Proponents:: Charles Goodhart (1975, geldpolitischer Kontext); prägnante allgemeine Formulierung von Marilyn Strathern (1997); verwandt mit Campbell's Law
+
+[discrete]
+== *Verwendung*:
+
+* Entwurf von KPIs, OKRs oder Team-Leistungsmetriken
+* Prüfung, ob eine Metrik gegamed wird oder das Ziel surrogiert hat
+* Definition von Evaluationskriterien für Modelle, Qualität oder Produktivität
+* Argument für balancierte/Gegen-Metriken statt eines einzelnen Ziels
+
+[discrete]
+== *Nicht verwenden*:
+
+* Als pauschale Ausrede, Messung ganz zu vermeiden — Metriken informieren weiterhin
+* Für rein deskriptive Maße ohne Anreiz oder Zielcharakter
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<llm-evaluations,LLM-Evaluations>> — Eval-Kriterien gegen Metrik-Gaming absichern
+* <<decisional-balance-sheet,Decisional Balance Sheet>> — Trade-offs jenseits einer einzelnen Zahl abwägen
+* <<kano-model,Kano Model>> — qualitatives Signal neben quantitativen Zielen
+====

@@ -1,0 +1,50 @@
+= First Principles Thinking
+:categories: problem-solving
+:roles: software-architect, consultant, educator, product-owner
+:related: feynman-technique, socratic-method, five-whys
+:proponents: Aristotle, René Descartes
+:tags: first-principles, reasoning, decomposition, problem-solving, assumptions
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: First Principles Thinking
+
+Also known as:: Reasoning from First Principles, Reasoning from Fundamentals
+
+[discrete]
+== *Core Concepts*:
+
+Reduce to fundamentals:: Break a problem down to the basic truths that cannot be deduced from anything more fundamental, then reason upward from those
+
+Reason vs. analogy:: Contrast with reasoning by analogy ("we do it this way because that's how it's done") — first principles rebuild the answer from the ground up
+
+Challenge inherited assumptions:: Each "requirement" or "constraint" is interrogated: is it a law of nature, or merely convention/legacy that can be discarded?
+
+Ground-up synthesis:: After identifying the irreducible elements, recombine them into a solution unconstrained by how the problem was solved before
+
+Cost of the method:: Powerful but expensive — reserve it for high-stakes or stuck problems; reasoning by analogy is fine for routine decisions
+
+Key Proponents:: Rooted in Aristotle (the "first cause"/archē); sharpened by René Descartes' methodical doubt; popularized in modern engineering discourse (e.g. Elon Musk's cost-of-batteries example)
+
+[discrete]
+== *When to Use*:
+
+* A problem feels blocked because "that's just how it's done"
+* Re-examining requirements, cost structures, or architecture constraints
+* High-stakes design decisions where analogy may mislead
+* Teaching learners to separate fundamental truths from convention
+
+[discrete]
+== *When NOT to Use*:
+
+* Routine decisions where established patterns are good enough — the method is costly
+* When proven best practices already encode hard-won fundamentals
+
+[discrete]
+== *Related Anchors*:
+
+* <<feynman-technique,Feynman Technique>> — explain from fundamentals to expose gaps
+* <<socratic-method,Socratic Method>> — question assumptions to reach bedrock
+* <<five-whys,Five Whys>> — drill from symptom toward a root cause
+====

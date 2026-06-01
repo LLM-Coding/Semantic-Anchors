@@ -1,0 +1,50 @@
+= Conway's Law
+:categories: software-architecture
+:roles: software-architect, team-lead, product-owner, consultant
+:related: domain-driven-design, cohesion-criteria, vertical-slice-architecture
+:proponents: Melvin E. Conway
+:tags: conways-law, organization, architecture, team-topologies, communication-structure, sociotechnical
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Conway's Law
+
+Also known as:: The Mirroring Hypothesis
+
+[discrete]
+== *Core Concepts*:
+
+Homomorphic force:: "Any organization that designs a system will produce a design whose structure is a copy of the organization's communication structure" — system boundaries mirror team boundaries
+
+Communication paths:: Interfaces in the software appear wherever two teams must coordinate; the cost and friction of cross-team communication shapes where modules are split
+
+Inverse Conway Maneuver:: Deliberately structure teams to match the desired architecture, rather than letting an accidental org chart dictate the system
+
+Team Topologies:: Modern operationalization (Skelton & Pais) — stream-aligned, platform, enabling, and complicated-subsystem teams sized for a manageable cognitive load
+
+Sociotechnical view:: Architecture is not purely technical; org design and system design are two sides of the same decision
+
+Key Proponents:: Melvin E. Conway ("How Do Committees Invent?", Datamation 1968); popularized by Fred Brooks ("The Mythical Man-Month"); modern form in Matthew Skelton & Manuel Pais ("Team Topologies", 2019)
+
+[discrete]
+== *When to Use*:
+
+* Planning team structure for a new system or a re-architecture
+* Diagnosing why module boundaries are awkward or why integration is painful
+* Justifying microservice/bounded-context splits along team lines
+* Reviewing whether the org chart is fighting the intended architecture
+
+[discrete]
+== *When NOT to Use*:
+
+* As a deterministic prediction — it is a strong tendency, not a law of physics
+* For tiny single-team systems where there is only one communication path
+
+[discrete]
+== *Related Anchors*:
+
+* <<domain-driven-design,Domain-Driven Design>> — bounded contexts as team-aligned boundaries
+* <<cohesion-criteria,Cohesion Criteria>> — module cohesion that team boundaries should respect
+* <<vertical-slice-architecture,Vertical Slice Architecture>> — slices that map to stream-aligned teams
+====
