@@ -1,0 +1,51 @@
+= Site Reliability Engineering
+:categories: development-workflow
+:roles: devops-engineer, software-architect, team-lead, software-developer
+:related: five-whys, spc, control-chart-shewhart
+:proponents: Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
+:tags: sre, reliability, slo, error-budget, observability, devops, incident-response, toil
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Site Reliability Engineering (SRE)
+
+Also known as:: "Operations as a software problem", Google SRE
+
+[discrete]
+== Core Concepts:
+
+Operations as a software problem:: Apply software engineering to operations work instead of manual administration.
+
+SLI / SLO / SLA:: Service Level Indicators measure behavior; Objectives set internal targets; Agreements are external commitments.
+
+Error budget:: 100% reliability is the wrong target; the allowed unreliability (1 − SLO) is a budget spent on feature velocity and risk.
+
+Embrace risk:: Reliability is balanced against the cost and speed of change, not maximized blindly.
+
+Eliminate toil:: Reduce repetitive, manual, automatable operational work; cap operational load (~50%) to protect engineering time.
+
+Blameless postmortems:: Learn from incidents by analyzing systems and processes rather than assigning blame.
+
+Monitoring & observability:: Measure the four golden signals — latency, traffic, errors, saturation.
+
+Release & capacity engineering:: Automate launches, rollouts, and capacity planning to make change safe and repeatable.
+
+Key Proponents:: Ben Treynor Sloss (coined the term at Google); Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy ("Site Reliability Engineering", O'Reilly 2016, and "The Site Reliability Workbook")
+
+[discrete]
+== When to Use:
+
+* Operating production services where reliability must be measured and managed
+* Defining SLOs and error budgets to balance reliability against feature velocity
+* Establishing on-call, incident response, and blameless postmortem practices
+* Reducing operational toil through automation
+* Distinguishing reliability ownership from generic DevOps culture
+
+[discrete]
+== Related Anchors:
+
+* <<five-whys,Five Whys>>
+* <<spc,Statistical Process Control>>
+* <<control-chart-shewhart,Shewhart Control Chart>>
+====

@@ -1,0 +1,47 @@
+= Site Reliability Engineering
+:categories: development-workflow
+:roles: devops-engineer, software-architect, team-lead, software-developer
+:proponents: Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
+[%collapsible]
+====
+Vollständiger Name:: Site Reliability Engineering (SRE)
+
+Auch bekannt als:: "Betrieb als Softwareproblem", Google SRE
+
+[discrete]
+== *Kernkonzepte*:
+
+Betrieb als Softwareproblem:: Software-Engineering auf Betriebsaufgaben anwenden statt manueller Administration.
+
+SLI / SLO / SLA:: Service Level Indicators messen das Verhalten; Objectives setzen interne Ziele; Agreements sind externe Zusagen.
+
+Fehlerbudget:: 100 % Verfügbarkeit ist das falsche Ziel; die erlaubte Unzuverlässigkeit (1 − SLO) ist ein Budget für Entwicklungsgeschwindigkeit und Risiko.
+
+Risiko akzeptieren:: Zuverlässigkeit wird gegen Kosten und Änderungsgeschwindigkeit abgewogen, nicht blind maximiert.
+
+Toil eliminieren:: Wiederkehrende, manuelle, automatisierbare Betriebsarbeit reduzieren; die Betriebslast begrenzen (~50 %), um Zeit für Engineering zu schützen.
+
+Schuldlose Postmortems:: Aus Vorfällen lernen, indem Systeme und Prozesse analysiert werden, statt Schuld zuzuweisen.
+
+Monitoring & Observability:: Die vier goldenen Signale messen — Latenz, Traffic, Fehler, Sättigung.
+
+Release- & Kapazitäts-Engineering:: Launches, Rollouts und Kapazitätsplanung automatisieren, um Änderungen sicher und wiederholbar zu machen.
+
+Schlüsselvertreter:: Ben Treynor Sloss (prägte den Begriff bei Google); Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy ("Site Reliability Engineering", O'Reilly 2016, und "The Site Reliability Workbook")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Betrieb von Produktivdiensten, deren Zuverlässigkeit gemessen und gesteuert werden muss
+* Definition von SLOs und Fehlerbudgets, um Zuverlässigkeit und Entwicklungsgeschwindigkeit abzuwägen
+* Etablierung von On-Call, Incident Response und schuldlosen Postmortems
+* Reduzierung von betrieblichem Toil durch Automatisierung
+* Abgrenzung der Verantwortung für Zuverlässigkeit von allgemeiner DevOps-Kultur
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<five-whys,Fünf Warum>>
+* <<spc,Statistische Prozesskontrolle>>
+* <<control-chart-shewhart,Shewhart-Regelkarte>>
+====
