@@ -74,6 +74,7 @@ Klicken Sie auf die btn:[Neuen Anker vorschlagen] Schaltfläche auf der https://
 *Alles, was Sie angeben müssen:*
 
 * Der Begriff oder Konzeptname
+* Ein LLM-Aktivierungstestergebnis (Pflichtfeld)
 * (Optional) Warum Sie denken, dass es wertvoll wäre
 
 === Schritt 2: Copilot-Validierung
