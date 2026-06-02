@@ -223,6 +223,29 @@ npm run build
 3. Maintainers create the anchor file and PR
 4. Community reviews the PR
 
+## Issue Title Convention
+
+All issues should follow a consistent `[Type]: <Name>` title format. This makes filtering, searching, and triaging materially easier.
+
+### Recognized Prefixes
+
+| Prefix | Used For | Source |
+|--------|----------|--------|
+| `[Anchor Proposal]:` | New semantic anchor proposals | Issue template |
+| `[Contract Proposal]:` | New semantic contract proposals | Issue template |
+| `[Improve]:` | Improvements to existing anchors | Issue template |
+| `[Bug]:` | Bug reports | Issue template |
+| `[Process Proposal]:` | Changes to project processes | Issue template |
+| `[Feature]:` | Feature requests | Free-form |
+| `EPIC:` | Tracking issues for larger initiatives | Free-form |
+
+### Guidelines
+
+- **Use the issue template** whenever one exists — the prefix is set automatically.
+- **Free-form issues** (no matching template) should manually use one of the recognized prefixes.
+- **Apply going forward only** — do not retro-rename closed issues.
+- **EPICs** use the bare `EPIC:` prefix without brackets, as a sanctioned exception.
+
 ## Code of Conduct
 
 ### Our Pledge

@@ -187,6 +187,52 @@ Anker sind mit beruflichen Rollen getaggt, um relevante Inhalte zu filtern:
 . Team Lead / Engineering Manager
 . Educator / Trainer
 
+== Issue-Titel-Konvention
+
+Alle Issues sollten einem konsistenten `[Typ]: <Name>` Titelformat folgen. Dies macht Filtern, Suchen und Triagieren wesentlich einfacher.
+
+=== Anerkannte Prefixe
+
+[cols="1,2,1"]
+|===
+| Prefix | Verwendet für | Quelle
+
+| `[Anchor Proposal]:`
+| Vorschläge für neue semantische Anker
+| Issue-Template
+
+| `[Contract Proposal]:`
+| Vorschläge für neue semantische Contracts
+| Issue-Template
+
+| `[Improve]:`
+| Verbesserungen an bestehenden Ankern
+| Issue-Template
+
+| `[Bug]:`
+| Fehlermeldungen
+| Issue-Template
+
+| `[Process Proposal]:`
+| Änderungen an Projektprozessen
+| Issue-Template
+
+| `[Feature]:`
+| Feature-Anfragen
+| Frei formuliert
+
+| `EPIC:`
+| Tracking-Issues für größere Initiativen
+| Frei formuliert
+|===
+
+=== Richtlinien
+
+* *Verwenden Sie das Issue-Template*, wann immer eines existiert — das Prefix wird automatisch gesetzt.
+* *Frei formulierte Issues* (kein passendes Template) sollten manuell eines der anerkannten Prefixe verwenden.
+* *Nur zukünftig anwenden* — geschlossene Issues nicht rückwirkend umbenennen.
+* *EPICs* verwenden das bloße `EPIC:` Prefix ohne Klammern als anerkannte Ausnahme.
+
 == Verhaltenskodex
 
 * Seien Sie respektvoll und konstruktiv in Diskussionen

@@ -1,0 +1,53 @@
+name: ⚙️ Process Proposal
+description: Propose a change to project processes or governance
+title: "[Process Proposal]: "
+labels: ["process", "discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Process Change Proposal
+
+        Suggest a change to how the project operates — contribution workflows, review policies, naming conventions, automation, etc.
+
+  - type: input
+    id: title
+    attributes:
+      label: Proposal Title
+      description: A concise name for the process change
+      placeholder: "e.g., \"Make evaluation specs mandatory for new anchors\""
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this process change solve?
+      placeholder: |
+        Currently...
+        This causes...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Change
+      description: What specifically should change?
+      placeholder: |
+        I propose that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact Assessment
+      description: Who is affected and what's the cost of adoption?
+      placeholder: |
+        - Affected parties: ...
+        - Migration effort: ...
+        - Risk: ...
+    validations:
+      required: false

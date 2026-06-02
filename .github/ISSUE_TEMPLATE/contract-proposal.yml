@@ -1,0 +1,56 @@
+name: 📜 Contract Proposal
+description: Propose a new semantic contract for the catalog
+title: "[Contract Proposal]: "
+labels: ["new-contract", "needs-validation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## How This Works
+
+        Propose a new semantic contract — a composition of anchors that defines behavior for a specific workflow or context.
+
+        1. **You provide the contract name and scope**
+        2. **Maintainers validate** whether it meets the contract criteria
+        3. **If accepted**: The contract is implemented and a PR is submitted
+        4. **If rejected**: Maintainers explain why
+
+  - type: input
+    id: term
+    attributes:
+      label: Proposed Contract Name
+      description: The name of the semantic contract you want to propose
+      placeholder: "e.g., \"Architecture Documentation\", \"Code Review\", \"Requirements Discovery\""
+    validations:
+      required: true
+
+  - type: textarea
+    id: anchors
+    attributes:
+      label: Constituent Anchors
+      description: Which existing anchors should this contract compose?
+      placeholder: |
+        - arc42
+        - c4-diagrams
+        - madr
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & Use Case
+      description: When and why would someone activate this contract?
+      placeholder: Describe the workflow or scenario this contract supports
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: The constituent anchors already exist in the catalog
+          required: true
+        - label: This contract addresses a recurring workflow (not a one-off)
+          required: true
