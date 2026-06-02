@@ -368,7 +368,10 @@ function bindAnchorSelection() {
 
 function handleAnchorSelection(event) {
   const { anchorId } = event.detail
-  getAnchorModalModule().then(({ showAnchorDetails }) => showAnchorDetails(anchorId))
+  // Navigate to the anchor route instead of opening the modal directly: the
+  // URL then reflects the open anchor (deep-linkable, Back closes it), and the
+  // router records it as a pageview so we can see which anchors are opened.
+  navigate(`/anchor/${anchorId}`)
 }
 
 function initCardGridVisualization() {
