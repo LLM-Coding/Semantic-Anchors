@@ -65,6 +65,34 @@
       }
     }
     </script>
+
+    <!-- Privacy-friendly, cookieless analytics (GoatCounter). No cookies, no
+         personal data, no IP storage — so no consent banner is required.
+         count.js is self-hosted (first-party) to avoid a third-party script
+         dependency; only the aggregated hit is sent to GoatCounter. Skips
+         localhost automatically. -->
+    <script>
+      // Privacy hardening via GoatCounter's documented config (count.js stays
+      // vendored/unmodified): record only the path — never query strings — and
+      // reduce the referrer to its origin so no full referring URL is sent.
+      window.goatcounter = {
+        path: function () {
+          return location.pathname
+        },
+        referrer: function (r) {
+          try {
+            return r ? new URL(r).origin : ''
+          } catch (e) {
+            return ''
+          }
+        },
+      }
+    </script>
+    <script
+      data-goatcounter="https://semanchors.goatcounter.com/count"
+      async
+      src="%BASE_URL%count.js"
+    ></script>
   </head>
   <body>
     <!--

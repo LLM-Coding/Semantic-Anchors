@@ -363,6 +363,16 @@ View the source, report issues, or contribute:
 
 https://github.com/LLM-Coding/Semantic-Anchors
 
+== Privacy
+
+This site is privacy-friendly by design: no cookies, no advertising, no cross-site tracking.
+
+* *Analytics:* anonymous, aggregated page-view counts via link:https://www.goatcounter.com/[GoatCounter]. It is cookieless, stores no IP addresses, and collects no personal data. The counting script is self-hosted (first-party); only the aggregated hit is sent to GoatCounter.
+* *YouTube:* embedded videos load only after you click play, so YouTube is not contacted until you consent.
+* *Hosting:* the site is served as static files via GitHub Pages.
+
+Because no personal data is collected and no cookies are set, no consent banner is required.
+
 ---
 
 Ready to explore? link:#/[Browse the catalog →]

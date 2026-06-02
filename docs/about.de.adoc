@@ -275,6 +275,16 @@ Sehen Sie sich den Quellcode an, melden Sie Probleme oder tragen Sie bei:
 
 https://github.com/LLM-Coding/Semantic-Anchors
 
+== Datenschutz
+
+Diese Seite ist datenschutzfreundlich gestaltet: keine Cookies, keine Werbung, kein seitenübergreifendes Tracking.
+
+* *Analyse:* anonyme, aggregierte Seitenaufrufe via link:https://www.goatcounter.com/[GoatCounter]. Cookielos, keine Speicherung von IP-Adressen, keine personenbezogenen Daten. Das Zählskript wird selbst gehostet (first-party); an GoatCounter geht nur der aggregierte Treffer.
+* *YouTube:* eingebettete Videos laden erst nach Klick auf Play — YouTube wird also erst mit deiner Einwilligung kontaktiert.
+* *Hosting:* die Seite wird als statische Dateien über GitHub Pages ausgeliefert.
+
+Da keine personenbezogenen Daten erhoben und keine Cookies gesetzt werden, ist kein Cookie-Banner erforderlich.
+
 ---
 
 Bereit zum Erkunden? link:#/[Katalog durchsuchen →]
