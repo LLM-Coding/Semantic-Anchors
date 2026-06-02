@@ -335,17 +335,19 @@ function renderContractsPageHandler() {
 
   // Contracts must load to render the page; anchor titles only power the
   // in-text highlight aliases, so an anchors failure is non-fatal.
-  Promise.allSettled([fetchContractsData(), fetchAnchorsData()]).then(([contractsRes, anchorsRes]) => {
-    if (contractsRes.status !== 'fulfilled') {
-      console.error('Failed to load contracts:', contractsRes.reason)
-      return
+  Promise.allSettled([fetchContractsData(), fetchAnchorsData()]).then(
+    ([contractsRes, anchorsRes]) => {
+      if (contractsRes.status !== 'fulfilled') {
+        console.error('Failed to load contracts:', contractsRes.reason)
+        return
+      }
+      const anchorTitles = {}
+      if (anchorsRes.status === 'fulfilled') {
+        for (const a of anchorsRes.value || []) anchorTitles[a.id] = a.title
+      }
+      initContractsPage(contractsRes.value, anchorTitles)
     }
-    const anchorTitles = {}
-    if (anchorsRes.status === 'fulfilled') {
-      for (const a of anchorsRes.value || []) anchorTitles[a.id] = a.title
-    }
-    initContractsPage(contractsRes.value, anchorTitles)
-  })
+  )
 }
 
 function renderEvaluationsPage() {
