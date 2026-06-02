@@ -3355,6 +3355,43 @@
     "tier": 2
   },
   {
+    "id": "site-reliability-engineering",
+    "title": "Site Reliability Engineering",
+    "categories": [
+      "development-workflow"
+    ],
+    "roles": [
+      "devops-engineer",
+      "software-architect",
+      "team-lead",
+      "software-developer"
+    ],
+    "related": [
+      "five-whys",
+      "spc",
+      "control-chart-shewhart"
+    ],
+    "proponents": [
+      "Ben Treynor Sloss",
+      "Betsy Beyer",
+      "Chris Jones",
+      "Jennifer Petoff",
+      "Niall Richard Murphy"
+    ],
+    "tags": [
+      "sre",
+      "reliability",
+      "slo",
+      "error-budget",
+      "observability",
+      "devops",
+      "incident-response",
+      "toil"
+    ],
+    "filePath": "docs/anchors/site-reliability-engineering.adoc",
+    "tier": 3
+  },
+  {
     "id": "socratic-method",
     "title": "Socratic Method",
     "categories": [

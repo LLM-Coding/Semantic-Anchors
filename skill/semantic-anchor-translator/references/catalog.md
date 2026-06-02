@@ -604,6 +604,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kent Beck
 - **Core:** Time-boxed, disposable experiment written to answer one specific technical question before committing to an approach; output is a decision, not a deliverable; deliberately rough quality — no tests, no review, no polish; time-boxing is mandatory or the spike becomes speculative development
 
+### Site Reliability Engineering (SRE)
+- **Also known as:** Operations as a software problem, Google SRE
+- **Proponents:** Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
+- **Core:** Apply software engineering to operations; SLI/SLO/SLA; error budgets balance reliability vs. feature velocity (100% is the wrong target); eliminate toil with ~50% ops cap; blameless postmortems; four golden signals (latency, traffic, errors, saturation); release & capacity engineering
+
 ## Statistical Methods
 
 ### SPC (Statistical Process Control)
