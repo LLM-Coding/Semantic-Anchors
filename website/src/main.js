@@ -11,7 +11,7 @@ import {
   updateAnchorCount,
   setFeedbackData,
 } from './components/card-grid.js'
-import { fetchData, fetchContractsData } from './utils/data-loader.js'
+import { fetchData, fetchContractsData, fetchAnchorsData } from './utils/data-loader.js'
 import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
 import {
   initRouter,
@@ -333,9 +333,21 @@ function renderContractsPageHandler() {
   pageContent.innerHTML = renderContractsPage()
   updateActiveNavLink()
 
-  fetchContractsData().then((contracts) => {
-    initContractsPage(contracts)
-  })
+  // Contracts must load to render the page; anchor titles only power the
+  // in-text highlight aliases, so an anchors failure is non-fatal.
+  Promise.allSettled([fetchContractsData(), fetchAnchorsData()]).then(
+    ([contractsRes, anchorsRes]) => {
+      if (contractsRes.status !== 'fulfilled') {
+        console.error('Failed to load contracts:', contractsRes.reason)
+        return
+      }
+      const anchorTitles = {}
+      if (anchorsRes.status === 'fulfilled') {
+        for (const a of anchorsRes.value || []) anchorTitles[a.id] = a.title
+      }
+      initContractsPage(contractsRes.value, anchorTitles)
+    }
+  )
 }
 
 function renderEvaluationsPage() {
