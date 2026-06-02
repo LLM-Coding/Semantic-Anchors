@@ -159,6 +159,16 @@ function trackPageview() {
   }
 }
 
+// Close the anchor modal if it is open. Called when a non-anchor route is
+// resolved so the modal doesn't linger over the page after Back/forward or
+// in-app navigation. On a non-anchor route closeModal() does not touch the URL.
+function closeOpenAnchorModal() {
+  const modal = typeof document !== 'undefined' ? document.getElementById('anchor-modal') : null
+  if (modal && !modal.classList.contains('hidden')) {
+    import('../components/anchor-modal.js').then(({ closeModal }) => closeModal())
+  }
+}
+
 function handleRoute() {
   let path = getCurrentRoute()
 
@@ -201,6 +211,10 @@ function handleRoute() {
     })
     return
   }
+
+  // Leaving an anchor route: close any open anchor modal so Back/forward and
+  // in-app navigation don't leave it stranded as an overlay over the page.
+  closeOpenAnchorModal()
 
   const handler = routes.get(path)
 
