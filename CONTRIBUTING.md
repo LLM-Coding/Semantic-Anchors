@@ -73,6 +73,8 @@ Can be traced to key proponents, publications, or documented standards.
 What concepts do you associate with '<your anchor name>'?
 ```
 
+> **Note:** The proposal template includes a required **LLM Activation Test Result** field. Paste your test output there — it front-loads the Precise/Rich/Consistent signal for reviewers.
+
 ### Evaluate the Response
 
 Ask yourself:

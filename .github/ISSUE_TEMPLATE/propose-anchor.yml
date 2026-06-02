@@ -57,6 +57,20 @@ body:
     validations:
       required: false
 
+  - type: textarea
+    id: activation-test
+    attributes:
+      label: LLM Activation Test Result
+      description: |
+        Paste the LLM's response to: "What concepts do you associate with '<your term>'?"
+        This front-loads the Precise/Rich/Consistent signal for reviewers.
+      placeholder: |
+        Model: [e.g., Claude, GPT-4, Gemini]
+        Prompt: "What concepts do you associate with '<term>'?"
+        Response: ...
+    validations:
+      required: true
+
   - type: checkboxes
     id: checklist
     attributes:
