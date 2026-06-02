@@ -1,7 +1,7 @@
 = Site Reliability Engineering
 :categories: development-workflow
 :roles: devops-engineer, software-architect, team-lead, software-developer
-
+:proponents: Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
 [%collapsible]
 ====
 Vollständiger Name:: Site Reliability Engineering (SRE)
