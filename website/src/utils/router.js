@@ -155,7 +155,18 @@ function trackPageview() {
   }
   const gc = typeof window !== 'undefined' ? window.goatcounter : null
   if (gc && typeof gc.count === 'function') {
-    gc.count({ path: window.location.pathname, title: document.title })
+    gc.count({
+      path: window.location.pathname,
+      title: document.title,
+      // Report the referrer only on the initial load (handled by count.js).
+      // document.referrer is fixed for the whole SPA session, so without this
+      // every in-app view would be re-credited to the entry referrer (e.g.
+      // heise), inflating that referrer's page list. A callback returning ''
+      // drops the referrer for client-side navigations.
+      referrer: function () {
+        return ''
+      },
+    })
   }
 }
 
