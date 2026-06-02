@@ -289,12 +289,16 @@ export async function loadAnchorContent(anchorId) {
       details.setAttribute('open', '')
     })
 
-    // Convert internal AsciiDoc cross-reference links to router navigation
-    contentEl.querySelectorAll('a[href^="#"]').forEach((link) => {
+    // Convert internal AsciiDoc cross-reference links to router navigation.
+    // Exclude sub-anchor links (handled above) — they share the href="#" shape
+    // and would otherwise also fire navigate('/anchor/') with an empty id,
+    // which the router treats as a non-anchor route and closes the modal.
+    contentEl.querySelectorAll('a[href^="#"]:not([data-sub-anchor])').forEach((link) => {
       const href = link.getAttribute('href')
-      // Only process simple hash links (cross-references), not hash routes
+      // Only process real cross-references: a non-empty id, not a hash route.
       if (href && href.startsWith('#') && !href.startsWith('#/')) {
         const anchorId = href.substring(1) // Remove the '#'
+        if (!anchorId) return
         link.addEventListener('click', (e) => {
           e.preventDefault()
           // Navigate to the linked anchor
