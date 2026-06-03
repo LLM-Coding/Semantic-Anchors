@@ -1,0 +1,64 @@
+= Integration Operation Segregation Principle (IOSP)
+:categories: design-principles
+:roles: software-developer, software-architect, consultant, educator
+:related: single-level-of-abstraction-principle, solid-principles, solid-srp, cohesion-criteria, grasp, solid-dip, clean-architecture
+:proponents: Ralf Westphal, Stefan Lieser
+:tags: iosp, integration, operation, testbarkeit, flow-design, funktionsdesign, clean-code, funktionale-abhaengigkeit
+:tier: 2
+
+[%collapsible]
+====
+Vollständiger Name:: Integration Operation Segregation Principle
+
+Auch bekannt als:: IOSP, Integrations-Operations-Trennung, N+1-Prinzip
+
+[discrete]
+== *Kernkonzepte*:
+
+Grundregel::
+Funktionen sollen entweder nur Logik enthalten oder nur andere Funktionen aufrufen — niemals beides.
+
+Operation:: Eine Funktion, die Logik enthält, aber keine anderen Funktionen derselben Lösung aufruft. Logik umfasst Transformationen (`x + 2`), Kontrollstrukturen (`if`, `for`, `while`) und API-Aufrufe von Drittanbietern (`Console.WriteLine`, `httpClient.Send()`). Operationen sind die *Blätter* des Funktionsbaums — sie haben keine funktionalen Abhängigkeiten zu anderem Code derselben Codebasis.
+
+Integration:: Eine Funktion, die andere Funktionen aufruft (Operationen oder andere Integrationen), aber *selbst keine Logik enthält*. Ihre einzige Verantwortung ist die Komposition niedrigerer Funktionen zu einem kohärenten Ganzen. Integrationen sind die *Verzweigungen* des Funktionsbaums — sie orchestrieren, sie berechnen nicht.
+
+Hybrid:: Eine Funktion, die gegen IOSP verstößt, indem sie Logik und Funktionsaufrufe mischt. Hybride sind die Hauptursache schlechter Testbarkeit: Die Logik kann nicht isoliert getestet werden, ohne die aufgerufenen Funktionen zu mocken, und die Aufrufstruktur kann nicht verstanden werden, ohne die eingebettete Logik zu lesen.
+
+Warum es funktioniert::
+Ein Leser kann sich bei einer Integration darauf verlassen, dass sie eine *lesbare Zusammenfassung* der Arbeit auf dieser Ebene ist — reine Orchestrierung ohne versteckte Entscheidungen. Eine Operation hingegen enthält nur detaillierte Logik — keine ablenkenden Sprünge zu anderen Teilen der Codebasis. Diese natürliche Durchsetzung des Single Level of Abstraction Principle (SLAP) ist die Kern-Einsicht: IOSP macht SLAP *automatisch* statt wünschenswert.
+
+Beziehung zum DIP (Dependency Inversion Principle)::
+Code, der DIP befolgt, erzeugt oft Hybride: Eine Methode enthält sowohl Domänenlogik *als auch* Aufrufe von Abstraktionen (Interfaces), die Integrationen darstellen. IOSP argumentiert, dass diese zwei Verantwortlichkeiten — Logik und Integration — in verschiedene Funktionen getrennt werden sollten. Das Ergebnis: Operationen hängen nicht mehr von Abstraktionen ab, integrierende Funktionen übernehmen stattdessen die Verschaltung. Dies reduziert die Notwendigkeit von DIP und Dependency Injection erheblich; DIP bleibt nur für echte Fälle alternativer Implementierungen erhalten, nicht für Testbarkeit.
+
+Auswirkungen auf die Testbarkeit::
+Operationen sind trivial unit-testbar — sie haben keine funktionalen Abhängigkeiten, die Mocking erfordern. Integrationen enthalten keine Logik, daher gibt es nichts zu unit-testen; Integrationstests verifizieren die Verschaltung. Dies ist eine grundlegende Verbesserung gegenüber Hybrid-Code, wo jeder Test Mock-Setup für die aufgerufenen Funktionen erfordert.
+
+Codebasis-Struktur::
+Die Befolgung von IOSP erzeugt eine strenge Baumstruktur: Integrationen bilden die oberen Schichten (hohe Abstraktion, keine Logik), Operationen bilden die Blätter (niedrige Abstraktion, gesamte Logik). Es gibt keine funktionalen Abhängigkeiten — nur "leere" Abhängigkeiten von Integrationen zu den von ihnen aufgerufenen Funktionen. Dies macht den Datenfluss sichtbar und den Graphen per Konstruktion azyklisch.
+
+Schlüsselvertreter::
+Ralf Westphal ("Integration Operation Segregation Principle (IOSP)", 2022 — substack; "IOSP 2.0", 2023; "Radical Object-Orientation #06", 2024), Stefan Lieser ("Three Questions about the IOSP", t2informatik Interview, 2025; Clean Code Developer Initiative / CCD Akademie). Beide sind Mitbegründer der Clean Code Developer Initiative (2008).
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Refactoring von Hybrid-Funktionen, die High-Level-Orchestrierung mit Low-Level-Details mischen — IOSP sagt dir *wie* du zerlegen sollst, nicht nur *dass* du es solltest
+* TDD: Code so strukturieren, dass Operationen natürlich als testbare Blätter entstehen, mit Integrationen als trivialer Verschaltung
+* Code Review: eine konkrete, prüfbare Regel — eine Funktion ruft entweder andere Funktionen auf *oder* enthält Logik, niemals beides. Wenn ein Reviewer einen Hybriden entdeckt, ist das ein klarer Befund
+* Clean Code lehren: im Gegensatz zu SRP (über das oft diskutiert wird) ist IOSP *auf einen Blick glasklar* — es gibt keine Interpretationsfrage
+* Reduzierung von DIP/IoC-Komplexität: wenn der einzige Grund für DIP die Testbarkeit ist, eliminiert IOSP diese Notwendigkeit
+* Architektur-Design mit IODA (Integration-Operation-Data-API): IOSP skaliert auf Modulebene und erzeugt abhängigkeitsfreie operationale Module, die von Integrationsmodulen komponiert werden
+* Datenflüsse entwerfen: Integrationen werden zu expliziten "Grabenbaggern" für Daten, die zwischen Operationen fließen
+* .NET-Entwicklung mit IospAnalyzer: automatisierter Roslyn Analyzer erkennt IOSP-Verstöße zur Compilezeit
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<single-level-of-abstraction-principle,Single Level of Abstraction Principle (SLAP)>> - IOSP setzt SLAP natürlich durch: Integrationen sind high-level, Operationen sind low-level
+* <<solid-principles,SOLID Principles>> - IOSP wendet SRP auf Funktionsebene an und reduziert die Notwendigkeit von DIP
+* <<solid-srp,SOLID SRP>> - IOSP ist ein *Spezialfall* von SRP auf Funktionsebene, der die Verantwortung von "was berechnet werden soll" von "wie komponiert werden soll" trennt
+* <<cohesion-criteria,Kohäsionskriterien>> - IOSP erzeugt funktionale Kohäsion, indem es jede Funktion einer einzigen Arbeitsart widmet (entweder Logik oder Komposition)
+* <<grasp,GRASP>> - GRASPs "Hohe Kohäsion" und "Niedrige Kopplung" werden durch IOSP's baumartige Komposition strukturell unterstützt
+* <<solid-dip,SOLID DIP>> - IOSP kann DIP für den Zweck der Testbarkeit ersetzen; DIP bleibt nur für echte alternative Implementierungen erhalten
+* <<clean-architecture,Clean Architecture>> - Geschichtete Abstraktion auf Architekturebene spiegelt IOSP's Trennung auf Funktionsebene wider
+====

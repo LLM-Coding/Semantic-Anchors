@@ -156,6 +156,14 @@ domain-driven-design:
     - team-lead
   rationale: "Domain modeling approach; architects design bounded contexts, developers implement, BAs provide domain expertise, team leads facilitate ubiquitous language"
 
+iosp:
+  roles:
+    - software-developer
+    - software-architect
+    - educator
+    - consultant
+  rationale: "Integration Operation Segregation Principle; developers write testable functions, architects design for separation, educators teach IOSP, consultants coach Clean Code practices"
+
 # CATEGORY: Requirements Engineering
 
 problem-space-nvc:

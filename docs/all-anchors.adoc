@@ -109,6 +109,8 @@ include::anchors/kiss-principle.adoc[leveloffset=+2]
 
 include::anchors/single-level-of-abstraction-principle.adoc[leveloffset=+2]
 
+include::anchors/iosp.adoc[leveloffset=+2]
+
 include::anchors/solid-dip.adoc[leveloffset=+2]
 
 include::anchors/solid-isp.adoc[leveloffset=+2]

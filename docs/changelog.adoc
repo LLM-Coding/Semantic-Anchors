@@ -2,6 +2,16 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-03
+
+*New anchors:*
+
+* *IOSP (Integration Operation Segregation Principle)* — a function shall either contain logic (Operation) or call other functions (Integration), but never both; the formal refinement of SRP at function level; separates integration (coordination/sequencing) from operation (business logic/computation); eliminates mock-heavy tests by avoiding new'ing in functions that contain logic; formally checkable via IospAnalyzer (Roslyn); reduces the need for Dependency Injection (DIP) at the function level (Ralf Westphal, 2022; Stefan Lieser, 2025; proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/556[#556])
+
+*New contracts:*
+
+* *TDD, Hamburg Style* — Ralf Westphal's design-led TDD recipe: close the requirements/logic gap before writing code via the ACD cycle (Analyze → Design → Code), then test at service boundaries with minimal mocking; composes Red-Green-Refactor, London School, Chicago School, and IOSP (proposed by https://github.com/kuerm[@kuerm] in https://github.com/LLM-Coding/Semantic-Anchors/issues/557[#557], follows from https://github.com/LLM-Coding/Semantic-Anchors/issues/458[#458])
+
 == 2026-06-02
 
 *New anchors:*

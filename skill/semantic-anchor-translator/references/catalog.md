@@ -269,6 +269,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kent Beck, Robert C. Martin
 - **Core:** All statements inside a function should live at one abstraction level; mixing orchestration with mechanics is the main driver of unreadable code; refactor by extracting low-level details into named helpers so the outer function reads like a table of contents; formal expression of Beck's Composed Method pattern, codified as a Clean Code function-design rule by Martin
 
+### IOSP (Integration Operation Segregation Principle)
+- **Also known as:** IOSP, Ralf Westphal's IOSP
+- **Proponents:** Ralf Westphal, Stefan Lieser
+- **Core:** A function shall either contain logic (Operation) or call other functions (Integration), but never both; the formal refinement of SRP at function level; separates integration (coordination/sequencing) from operation (business logic/computation); eliminates mock-heavy tests by avoiding new'ing in functions that contain logic; formally checkable via IospAnalyzer (Roslyn); reduces the need for Dependency Injection (DIP) at the function level; narrows the Applicator/Alternator distinction in IODA Architecture
+
 ### Code Smells
 - **Also known as:** Bad Smells in Code, Refactoring Smells
 - **Proponents:** Kent Beck (coined term), Martin Fowler, Robert C. Martin
