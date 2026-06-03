@@ -14,7 +14,7 @@ repos:
         files: \.adoc$
         pass_filenames: true
         args: [--format, console, --config, .asciidoc-linter.yml]
-        stages: [commit]
+        stages: [pre-commit]
 
   # Trailing whitespace
   - repo: https://github.com/pre-commit/pre-commit-hooks
