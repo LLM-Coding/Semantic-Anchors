@@ -6,7 +6,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *Refined contracts:*
 
-* *Explaining and Teaching* — sharpened the teaching loop: names its trigger ("explain / why / how"), reorders to the actual flow (ground yourself → frame the checklist → diagnose → teach one item in 4MAT order → verify → gate), adds a grounding step (learn the current state before teaching, don't teach from stale memory), an over-fire brake (a one-line question gets a one-line answer) and an explicit learner opt-out; generalised away from code-only wording so it applies to any topic
+* *Explaining and Teaching* — reworked from a structured "explain in 4MAT order" loop into a question-driven teaching dialogue: open by having the learner restate what they know, then one small step per turn (ask, or explain a little and check, then stop and wait), quiz with multiple-choice questions whose answer is withheld until the learner commits, and don't advance until they can apply it to a fresh case. The anchors (Socratic Method, 4MAT, Naur, Feynman, Bloom's, Definition of Done) now shape behaviour as attributions rather than named steps, with an explicit "don't announce the method" guard so the scaffold no longer leaks into the output. Also keeps the over-fire brake (a one-line question gets a one-line answer) and learner opt-out
 
 == 2026-06-03
 
