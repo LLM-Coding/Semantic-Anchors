@@ -22,6 +22,8 @@
   "contracts.download": "Download",
   "contracts.copy": "Kopieren",
   "contracts.copied": "Kopiert!",
+  "contracts.copyOne": "Diesen Contract kopieren",
+  "contracts.plainText": "Plain-Text-Version aller Contracts (contracts.txt) →",
   "contracts.selected": "ausgewählt",
   "contracts.selectAll": "Alle auswählen",
   "contracts.deselectAll": "Alle abwählen",

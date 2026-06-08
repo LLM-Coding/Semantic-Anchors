@@ -127,8 +127,11 @@ export function renderContractsPage() {
         <p class="text-[var(--color-text-secondary)] mb-4" data-i18n="contracts.explanation">
           ${i18n.t('contracts.explanation')}
         </p>
-        <p class="text-sm text-[var(--color-text-secondary)] mb-6">
+        <p class="text-sm text-[var(--color-text-secondary)] mb-2">
           <a href="https://www.linkedin.com/feed/update/urn:li:activity:7438137401019105281/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline" data-i18n="contracts.linkedinLink">${i18n.t('contracts.linkedinLink')}</a>
+        </p>
+        <p class="text-sm text-[var(--color-text-secondary)] mb-6">
+          <a href="contracts.txt" class="text-blue-600 dark:text-blue-400 hover:underline" data-i18n="contracts.plainText">${i18n.t('contracts.plainText')}</a>
         </p>
 
         <div class="flex items-center gap-3 mb-6">
@@ -209,7 +212,20 @@ function renderContractCard(contract, isSelected) {
             ${isSelected ? 'checked' : ''}
           />
           <div class="flex-1 min-w-0">
-            <h3 class="text-lg font-semibold text-[var(--color-text)] mb-1">${esc(title)}</h3>
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <h3 class="text-lg font-semibold text-[var(--color-text)]">${esc(title)}</h3>
+              <button
+                type="button"
+                class="contract-copy-btn shrink-0 inline-flex items-center justify-center rounded-md border border-[var(--color-border)] p-1.5 text-[var(--color-text-secondary)] hover:text-blue-600 hover:border-blue-300 dark:hover:text-blue-400 dark:hover:border-blue-700 transition-colors"
+                data-contract-id="${esc(contract.id)}"
+                title="${esc(i18n.t('contracts.copyOne'))}"
+                aria-label="${esc(i18n.t('contracts.copyOne'))}"
+              >
+                <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                </svg>
+              </button>
+            </div>
             <p class="text-sm text-[var(--color-text-secondary)] mb-3">${esc(description)}</p>
             <div class="rounded-md bg-[var(--color-bg-secondary)] p-3 mb-3 text-sm leading-relaxed max-h-64 overflow-y-auto">
               ${templateHtml}
@@ -253,8 +269,19 @@ export function initContractsPage(contracts, anchorTitles) {
     }
   })
 
+  // Per-card copy: copy just this contract, never toggle the card
+  grid.addEventListener('click', (e) => {
+    const copyBtn = e.target.closest('.contract-copy-btn')
+    if (!copyBtn) return
+    e.stopPropagation()
+    const id = copyBtn.dataset.contractId
+    const contract = contracts.find((c) => c.id === id)
+    if (contract) copyOneContract(contract, copyBtn)
+  })
+
   // Card click toggles checkbox
   grid.addEventListener('click', (e) => {
+    if (e.target.closest('.contract-copy-btn')) return
     const card = e.target.closest('.contract-card')
     if (!card || e.target.tagName === 'A' || e.target.tagName === 'INPUT') return
     const checkbox = card.querySelector('.contract-checkbox')
@@ -314,32 +341,36 @@ function updateUI() {
   })
 }
 
+// One contract as paste-ready Markdown: heading + template, no wrapper header
+// or footer — so it drops straight into an AGENTS.md / CLAUDE.md.
+function contractToMarkdown(contract) {
+  const title = getLocalizedField(contract, 'title')
+  const template = getLocalizedField(contract, 'template')
+  return `## ${title}\n\n${template}`
+}
+
 function buildContractsMarkdown(contracts) {
   const selected = getSelectedContracts()
-  const lang = i18n.currentLang() || 'en'
   const filtered = contracts.filter((c) => selected.includes(c.id))
 
   if (filtered.length === 0) return null
 
-  let md = '# Semantic Contracts\n\n'
-  md +=
-    lang === 'de'
-      ? 'Füge dies zu deiner AGENTS.md oder CLAUDE.md hinzu.\n\n'
-      : 'Add this to your AGENTS.md or CLAUDE.md.\n\n'
+  return filtered.map(contractToMarkdown).join('\n\n') + '\n'
+}
 
-  for (const c of filtered) {
-    const title = getLocalizedField(c, 'title')
-    const template = getLocalizedField(c, 'template')
-    md += `## ${title}\n\n${template}\n\n`
+async function copyOneContract(contract, btn) {
+  try {
+    await navigator.clipboard.writeText(contractToMarkdown(contract) + '\n')
+    if (!btn) return
+    const original = btn.innerHTML
+    btn.innerHTML =
+      '<svg class="w-4 h-4 pointer-events-none text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>'
+    setTimeout(() => {
+      btn.innerHTML = original
+    }, 1500)
+  } catch {
+    // clipboard blocked — ignore
   }
-
-  md += '---\n'
-  md +=
-    lang === 'de'
-      ? 'Generiert von https://llm-coding.github.io/Semantic-Anchors/#/contracts\n'
-      : 'Generated from https://llm-coding.github.io/Semantic-Anchors/#/contracts\n'
-
-  return md
 }
 
 function downloadContracts(contracts) {

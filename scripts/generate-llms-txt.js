@@ -337,6 +337,9 @@ function generateLlmsTxt() {
       lines.push('exist within your team.')
       lines.push('Add them to your AGENTS.md or CLAUDE.md.')
       lines.push('Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts')
+      lines.push(
+        'Plain text (all contracts): https://llm-coding.github.io/Semantic-Anchors/contracts.txt'
+      )
       lines.push('')
 
       for (const contract of contracts) {
@@ -361,6 +364,57 @@ function generateLlmsTxt() {
   fs.writeFileSync(path.join(ROOT, 'website/public/llms.txt'), output, 'utf-8')
   const kb = Math.round(Buffer.byteLength(output, 'utf-8') / 1024)
   console.warn(`Generated: website/public/llms.txt (${totalAnchors} anchors, ~${kb} KB)`)
+}
+
+// ─── Generate website/public/contracts.txt (contracts-only, LLM-readable) ────
+
+function generateContractsTxt() {
+  const contractsPath = path.join(ROOT, 'website/public/data/contracts.json')
+  let contracts
+  try {
+    contracts = JSON.parse(fs.readFileSync(contractsPath, 'utf-8'))
+  } catch {
+    console.warn('  contracts.json not found — skipping contracts.txt')
+    return
+  }
+  if (!Array.isArray(contracts) || contracts.length === 0) return
+
+  const lines = [
+    '# Semantic Contracts',
+    '',
+    `> ${contracts.length} composable contracts that define what terms mean in your project —`,
+    '> by composing established Semantic Anchors or by providing custom team definitions.',
+    '> Add them to your AGENTS.md or CLAUDE.md.',
+    '> Source: https://github.com/LLM-Coding/Semantic-Anchors',
+    '> Select & copy: https://llm-coding.github.io/Semantic-Anchors/#/contracts',
+    '',
+    '---',
+    '',
+  ]
+
+  for (const contract of contracts) {
+    lines.push(`## ${contract.title}`)
+    lines.push('')
+    if (contract.description) {
+      lines.push(`_${contract.description}_`)
+      lines.push('')
+    }
+    lines.push(contract.template)
+    lines.push('')
+    if (contract.anchors && contract.anchors.length > 0) {
+      lines.push(`*Referenced anchors: ${contract.anchors.join(', ')}*`)
+      lines.push('')
+    }
+  }
+
+  const output =
+    lines
+      .join('\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trimEnd() + '\n'
+  fs.writeFileSync(path.join(ROOT, 'website/public/contracts.txt'), output, 'utf-8')
+  const kb = Math.round(Buffer.byteLength(output, 'utf-8') / 1024)
+  console.warn(`Generated: website/public/contracts.txt (${contracts.length} contracts, ~${kb} KB)`)
 }
 
 // ─── Generate website/public/docs/all-anchors.adoc (inlined, no includes) ────
@@ -426,3 +480,4 @@ function generateAllAnchorsWebAdoc() {
 generateAllAnchorsAdoc()
 generateAllAnchorsWebAdoc()
 generateLlmsTxt()
+generateContractsTxt()
