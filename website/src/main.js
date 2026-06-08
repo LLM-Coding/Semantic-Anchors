@@ -574,6 +574,8 @@ function handleLanguageChange() {
     loadDocContent('docs/brownfield-fair-comparison.adoc')
   } else if (currentRoute === '/harness-inventory') {
     loadDocContent('docs/harness-inventory.adoc')
+  } else if (currentRoute === '/contracts') {
+    renderContractsPageHandler()
   } else if (currentRoute === '/') {
     initCardGridVisualization()
   }
