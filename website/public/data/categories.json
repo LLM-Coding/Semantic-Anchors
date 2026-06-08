@@ -158,7 +158,6 @@
     "id": "requirements-engineering",
     "name": "Requirements Engineering",
     "anchors": [
-      "cockburn-use-cases",
       "double-diamond",
       "ears-requirements",
       "event-storming",
@@ -168,6 +167,7 @@
       "prd",
       "problem-space-nvc",
       "quality-attribute-scenario",
+      "use-cases",
       "user-story-mapping"
     ]
   },

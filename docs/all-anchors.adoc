@@ -11,9 +11,15 @@ include::about.adoc[leveloffset=+1]
 
 include::anchors/4mat.adoc[leveloffset=+2]
 
+include::anchors/aida-model.adoc[leveloffset=+2]
+
+include::anchors/blooms-taxonomy.adoc[leveloffset=+2]
+
 include::anchors/bluf.adoc[leveloffset=+2]
 
 include::anchors/gutes-deutsch-wolf-schneider.adoc[leveloffset=+2]
+
+include::anchors/inverted-pyramid-style.adoc[leveloffset=+2]
 
 include::anchors/mece.adoc[leveloffset=+2]
 
@@ -52,6 +58,8 @@ include::anchors/code-smells.adoc[leveloffset=+2]
 include::anchors/cohesion-criteria.adoc[leveloffset=+2]
 
 include::anchors/crc-cards.adoc[leveloffset=+2]
+
+include::anchors/dry.adoc[leveloffset=+2]
 
 include::anchors/fowler-patterns.adoc[leveloffset=+2]
 
@@ -105,11 +113,15 @@ include::anchors/gof-visitor-pattern.adoc[leveloffset=+2]
 
 include::anchors/grasp.adoc[leveloffset=+2]
 
+include::anchors/iosp.adoc[leveloffset=+2]
+
 include::anchors/kiss-principle.adoc[leveloffset=+2]
 
-include::anchors/single-level-of-abstraction-principle.adoc[leveloffset=+2]
+include::anchors/law-of-demeter.adoc[leveloffset=+2]
 
-include::anchors/iosp.adoc[leveloffset=+2]
+include::anchors/postels-law.adoc[leveloffset=+2]
+
+include::anchors/single-level-of-abstraction-principle.adoc[leveloffset=+2]
 
 include::anchors/solid-dip.adoc[leveloffset=+2]
 
@@ -149,6 +161,8 @@ include::anchors/regulated-environment.adoc[leveloffset=+2]
 
 include::anchors/semantic-versioning.adoc[leveloffset=+2]
 
+include::anchors/site-reliability-engineering.adoc[leveloffset=+2]
+
 include::anchors/sota.adoc[leveloffset=+2]
 
 include::anchors/spike-solution.adoc[leveloffset=+2]
@@ -162,6 +176,8 @@ include::anchors/timtowtdi.adoc[leveloffset=+2]
 == Dialogue Interaction
 
 include::anchors/socratic-method.adoc[leveloffset=+2]
+
+include::anchors/systemic-consulting.adoc[leveloffset=+2]
 
 include::anchors/xy-problem.adoc[leveloffset=+2]
 
@@ -189,6 +205,10 @@ include::anchors/todotxt-flavoured-markdown.adoc[leveloffset=+2]
 
 == Meta
 
+include::anchors/luhmann-system-theory.adoc[leveloffset=+2]
+
+include::anchors/simon-constructivism.adoc[leveloffset=+2]
+
 include::anchors/what-qualifies-as-a-semantic-anchor.adoc[leveloffset=+2]
 
 <<<
@@ -205,11 +225,19 @@ include::anchors/double-diamond.adoc[leveloffset=+2]
 
 include::anchors/feynman-technique.adoc[leveloffset=+2]
 
+include::anchors/first-principles-thinking.adoc[leveloffset=+2]
+
 include::anchors/five-whys.adoc[leveloffset=+2]
+
+include::anchors/luhmann-system-theory.adoc[leveloffset=+2]
 
 include::anchors/morphological-box.adoc[leveloffset=+2]
 
 include::anchors/occams-razor.adoc[leveloffset=+2]
+
+include::anchors/simon-constructivism.adoc[leveloffset=+2]
+
+include::anchors/systemic-consulting.adoc[leveloffset=+2]
 
 include::anchors/what-would-chuck-norris-do.adoc[leveloffset=+2]
 
@@ -219,11 +247,11 @@ include::anchors/xy-problem.adoc[leveloffset=+2]
 
 == Requirements Engineering
 
-include::anchors/cockburn-use-cases.adoc[leveloffset=+2]
-
 include::anchors/double-diamond.adoc[leveloffset=+2]
 
 include::anchors/ears-requirements.adoc[leveloffset=+2]
+
+include::anchors/event-storming.adoc[leveloffset=+2]
 
 include::anchors/invest.adoc[leveloffset=+2]
 
@@ -234,6 +262,10 @@ include::anchors/moscow.adoc[leveloffset=+2]
 include::anchors/prd.adoc[leveloffset=+2]
 
 include::anchors/problem-space-nvc.adoc[leveloffset=+2]
+
+include::anchors/quality-attribute-scenario.adoc[leveloffset=+2]
+
+include::anchors/use-cases.adoc[leveloffset=+2]
 
 include::anchors/user-story-mapping.adoc[leveloffset=+2]
 
@@ -249,13 +281,21 @@ include::anchors/atam.adoc[leveloffset=+2]
 
 include::anchors/c4-diagrams.adoc[leveloffset=+2]
 
+include::anchors/cap-theorem.adoc[leveloffset=+2]
+
 include::anchors/clean-architecture.adoc[leveloffset=+2]
+
+include::anchors/conways-law.adoc[leveloffset=+2]
 
 include::anchors/cqrs.adoc[leveloffset=+2]
 
 include::anchors/domain-driven-design.adoc[leveloffset=+2]
 
 include::anchors/event-driven-architecture.adoc[leveloffset=+2]
+
+include::anchors/event-storming.adoc[leveloffset=+2]
+
+include::anchors/fallacies-of-distributed-computing.adoc[leveloffset=+2]
 
 include::anchors/gom.adoc[leveloffset=+2]
 
@@ -268,6 +308,8 @@ include::anchors/lasr.adoc[leveloffset=+2]
 include::anchors/lehmans-classification.adoc[leveloffset=+2]
 
 include::anchors/madr.adoc[leveloffset=+2]
+
+include::anchors/quality-attribute-scenario.adoc[leveloffset=+2]
 
 include::anchors/tracer-bullet.adoc[leveloffset=+2]
 
@@ -293,6 +335,8 @@ include::anchors/cynefin-framework.adoc[leveloffset=+2]
 
 include::anchors/decisional-balance-sheet.adoc[leveloffset=+2]
 
+include::anchors/goodharts-law.adoc[leveloffset=+2]
+
 include::anchors/hoshin-kanri.adoc[leveloffset=+2]
 
 include::anchors/impact-mapping.adoc[leveloffset=+2]
@@ -302,6 +346,8 @@ include::anchors/jobs-to-be-done.adoc[leveloffset=+2]
 include::anchors/kano-model.adoc[leveloffset=+2]
 
 include::anchors/kotter-8-step-change-model.adoc[leveloffset=+2]
+
+include::anchors/meaningful-human-control.adoc[leveloffset=+2]
 
 include::anchors/mvp.adoc[leveloffset=+2]
 
@@ -356,19 +402,5 @@ include::anchors/test-double-spy.adoc[leveloffset=+2]
 include::anchors/test-double-stub.adoc[leveloffset=+2]
 
 include::anchors/testing-pyramid.adoc[leveloffset=+2]
-
-<<<
-
-== Workflow
-
-include::anchors/workflow-architecture-documentation.adoc[leveloffset=+2]
-
-include::anchors/workflow-code-review.adoc[leveloffset=+2]
-
-include::anchors/workflow-requirements-to-spec.adoc[leveloffset=+2]
-
-include::anchors/workflow-strategic-analysis.adoc[leveloffset=+2]
-
-include::anchors/workflow-tdd-clean-architecture.adoc[leveloffset=+2]
 
 <<<

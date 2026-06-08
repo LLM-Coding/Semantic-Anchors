@@ -456,10 +456,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Requirements Engineering
 
-### Cockburn Use Cases
-- **Also known as:** Fully Dressed Use Cases, Goal-Level Use Cases
-- **Proponents:** Alistair Cockburn
-- **Core:** Structured textual use case format — Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario, Extensions, Postconditions; three Goal Levels (Summary/Kite, User Goal/Sea Level, Subfunction/Fish); Actor-Goal List as discovery technique; deliberately prose-based and notation-agnostic — does NOT prescribe Activity Diagrams, Gherkin, or EARS, which are complementary representations
+### Use Cases
+- **Also known as:** Use-Case 2.0, Use-Case 3.0, Use-Case Slices, Fully Dressed Use Cases
+- **Proponents:** Ivar Jacobson (inventor, OOPSLA 1987 / OOSE 1992; Use-Case 2.0 2011 with Ian Spence & Kurt Bittner; Use-Case 3.0 2024 with Ian Spence & Keith de Mendonca), Alistair Cockburn (_Writing Effective Use Cases_, 2001 — the writing craft, NOT the inventor), Larry Constantine (essential use cases)
+- **Core:** A use case = all ways of using a system to achieve an actor's goal (successful, challenged, failure paths). Jacobson's *use-case slices* (Use-Case 2.0/3.0) are the unit of incremental, testable delivery that fills an agile backlog and is realised by work items (user stories, features, tasks). Cockburn's structured textual format — Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario, Extensions, Postconditions; three Goal Levels (Summary/Kite, User Goal/Sea Level, Subfunction/Fish); Actor-Goal List as discovery technique; deliberately prose-based and notation-agnostic — does NOT prescribe Activity Diagrams, Gherkin, or EARS, which are complementary representations. Reference: https://www.ivarjacobson.com/files/use-case_3.0_v1.0.pdf
 
 ### Event Storming according to Alberto Brandolini
 - **Also known as:** EventStorming

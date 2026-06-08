@@ -322,38 +322,6 @@
     "tier": 3
   },
   {
-    "id": "cockburn-use-cases",
-    "title": "Cockburn Use Cases",
-    "categories": [
-      "requirements-engineering"
-    ],
-    "roles": [
-      "business-analyst",
-      "software-architect",
-      "product-owner",
-      "software-developer"
-    ],
-    "related": [
-      "gherkin",
-      "bdd-given-when-then",
-      "ears-requirements",
-      "arc42",
-      "iso-25010"
-    ],
-    "proponents": [
-      "Alistair Cockburn"
-    ],
-    "tags": [
-      "use-cases",
-      "requirements",
-      "goal-levels",
-      "fully-dressed",
-      "actor-goal-list"
-    ],
-    "filePath": "docs/anchors/cockburn-use-cases.adoc",
-    "tier": 3
-  },
-  {
     "id": "code-smells",
     "title": "Code Smells",
     "categories": [
@@ -4336,6 +4304,41 @@
       "direction-finding"
     ],
     "filePath": "docs/anchors/tracer-bullet.adoc",
+    "tier": 3
+  },
+  {
+    "id": "use-cases",
+    "title": "Use Cases",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "business-analyst",
+      "software-architect",
+      "product-owner",
+      "software-developer"
+    ],
+    "related": [
+      "gherkin",
+      "bdd-given-when-then",
+      "ears-requirements",
+      "arc42",
+      "iso-25010"
+    ],
+    "proponents": [
+      "Ivar Jacobson",
+      "Alistair Cockburn",
+      "Ian Spence"
+    ],
+    "tags": [
+      "use-cases",
+      "requirements",
+      "use-case-slices",
+      "goal-levels",
+      "fully-dressed",
+      "actor-goal-list"
+    ],
+    "filePath": "docs/anchors/use-cases.adoc",
     "tier": 3
   },
   {

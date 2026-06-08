@@ -6,7 +6,6 @@
       "bdd-given-when-then",
       "bluf",
       "chain-of-thought",
-      "cockburn-use-cases",
       "decisional-balance-sheet",
       "domain-driven-design",
       "double-diamond",
@@ -33,6 +32,7 @@
       "regulated-environment",
       "ssot-principle",
       "swot",
+      "use-cases",
       "user-story-mapping",
       "xy-problem"
     ]
@@ -203,7 +203,6 @@
       "aida-model",
       "atam",
       "bdd-given-when-then",
-      "cockburn-use-cases",
       "conways-law",
       "cynefin-framework",
       "decisional-balance-sheet",
@@ -235,6 +234,7 @@
       "semantic-versioning",
       "swot",
       "thin-vertical-slice",
+      "use-cases",
       "user-story-mapping",
       "wardley-mapping"
     ]
@@ -289,7 +289,6 @@
       "c4-diagrams",
       "cap-theorem",
       "clean-architecture",
-      "cockburn-use-cases",
       "code-smells",
       "cohesion-criteria",
       "conways-law",
@@ -369,6 +368,7 @@
       "tdd-london-school",
       "timtowtdi",
       "tracer-bullet",
+      "use-cases",
       "vertical-slice-architecture",
       "walking-skeleton",
       "wardley-mapping",
@@ -385,7 +385,6 @@
       "bem-methodology",
       "chain-of-thought",
       "clean-architecture",
-      "cockburn-use-cases",
       "code-smells",
       "cohesion-criteria",
       "conventional-commits",
@@ -479,6 +478,7 @@
       "timtowtdi",
       "todotxt-flavoured-markdown",
       "tracer-bullet",
+      "use-cases",
       "vertical-slice-architecture",
       "walking-skeleton",
       "what-would-chuck-norris-do",

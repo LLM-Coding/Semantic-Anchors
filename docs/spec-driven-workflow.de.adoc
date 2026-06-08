@@ -225,7 +225,7 @@ Schritt 4 baut die Spezifikation in Schichten auf: von der Scope-Ermittlung (Act
 
 ==== Schritt 4a: Scope mit der Actor-Goal-Liste ermitteln
 
-Zuerst den Scope mit einer ⚓ link:#/anchor/cockburn-use-cases[*Actor-Goal-Liste*] entdecken:
+Zuerst den Scope mit einer ⚓ link:#/anchor/use-cases[*Actor-Goal-Liste*] entdecken:
 
 [source]
 ----
@@ -257,7 +257,7 @@ Then add for each Use Case:
 Save as .adoc files in src/docs/specs/.
 ----
 
-Jeder Use Case in ⚓ link:#/anchor/cockburn-use-cases[*Cockburns Fully Dressed Format*] definiert:
+Jeder Use Case in ⚓ link:#/anchor/use-cases[*Fully Dressed Format*] definiert:
 
 * *Primary Actor*: Wer den Use Case initiiert und das Ziel hat.
 * *Stakeholders & Interests*: Wer noch am Ergebnis beteiligt ist und was sie davon brauchen.
@@ -556,7 +556,7 @@ Die wichtigsten Einzeiler pro Phase mit den Semantic Anchors, die sie aktivieren
 
 |Persona Use Cases
 |`Create Persona Use Cases in Cockburn's Fully Dressed format (Actor, Trigger, Main Flow, Extensions, Postconditions, Business Rules). Add Activity Diagrams and Gherkin acceptance criteria.`
-|link:#/anchor/cockburn-use-cases[Cockburn], link:#/anchor/gherkin[Gherkin]
+|link:#/anchor/use-cases[Use Cases], link:#/anchor/gherkin[Gherkin]
 
 |System Use Cases
 |`Derive System Use Cases from Persona Use Cases. For each interface: input/validation, processing, output/status codes, error responses. EARS syntax where applicable.`

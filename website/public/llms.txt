@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 152 well-defined terms, methodologies, and frameworks
+> 171 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -334,6 +334,16 @@ View the source, report issues, or contribute:
 
 https://github.com/LLM-Coding/Semantic-Anchors
 
+## Privacy
+
+This site is privacy-friendly by design: no cookies, no advertising, no cross-site tracking.
+
+* **Analytics:** anonymous, aggregated page-view counts via [GoatCounter](https://www.goatcounter.com/). It is cookieless, stores no IP addresses, and collects no personal data. The counting script is self-hosted (first-party); only the aggregated hit is sent to GoatCounter.
+* **YouTube:** embedded videos load only after you click play, so YouTube is not contacted until you consent.
+* **Hosting:** the site is served as static files via GitHub Pages.
+
+Because no personal data is collected and no cookies are set, no consent banner is required.
+
 ---
 
 Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic-Anchors/)
@@ -399,6 +409,105 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 * Pyramid Principle - Top-down structure for written communication; complements 4MAT which is experience-first
 * Feynman Technique - Self-directed learning; 4MAT is teacher-directed instructional design
 * Diátaxis Framework - Documentation types (tutorial/how-to/reference/explanation) map loosely to 4MAT quadrants
+
+### AIDA Model
+
+***Full Name***: Attention, Interest, Desire, Action
+
+***Also known as***: AIDA Funnel, Hierarchy of Effects (AIDA branch); variants: AIDAS (+Satisfaction), AIDCA / AIDCAS (+Conviction), AIDA-R (+Retention)
+
+[discrete]
+## **Core Concepts**:
+
+***Attention***: First **capture awareness** — a headline, hook, or visual that makes the audience stop and notice. Nothing else works until this stage lands.
+
+***Interest***: **Hold engagement** by making the message relevant — speak to the reader's problem, curiosity, or benefit so they keep reading.
+
+***Desire***: **Create wanting** — turn "this is relevant" into "I want this" through benefits, proof, emotion, and addressing objections.
+
+***Action***: **Prompt a single, clear next step** — the call to action (buy, sign up, reply). Without an explicit ask, the funnel leaks at the end.
+
+***A sequential funnel***: The stages are ordered and narrowing — each filters the audience to the next. The model's value is forcing copy to do each job in turn rather than jumping to the ask.
+
+***A hierarchy-of-effects model***: AIDA is the best-known member of a family of step-models describing how persuasion moves a person from unaware to converted; it is a heuristic, not a measured cognitive law.
+
+***Key Proponents***: Commonly attributed to E. St. Elmo Lewis (1898), an American advertising advocate; popularised in 20th-century advertising and sales literature
+
+[discrete]
+## **When to Use**:
+
+* Structuring marketing copy, landing pages, ads, cold emails, or pitch openings
+* Reviewing a draft for a missing stage — most often a weak hook (Attention) or an absent call to action (Action)
+* LLM prompting for persuasive text: "Write this product announcement using the AIDA model"
+* Sequencing a sales conversation from hook to close
+
+[discrete]
+## **When NOT to Use**:
+
+* Informational or reference writing where persuasion is not the goal — use BLUF or the Inverted Pyramid instead
+* As a measured model of buyer psychology — it is a copywriting heuristic, not validated cognitive science
+* Long, relationship-based B2B sales, where multi-touch journeys outgrow a single linear funnel
+
+[discrete]
+## **Related Anchors**:
+
+* Inverted Pyramid Style - News structure front-loads the full story; AIDA deliberately withholds the ask until Desire is built
+* Pyramid Principle - Logical top-down argument for clarity; AIDA is an emotional persuasion sequence for conversion
+* BLUF (Bottom Line Up Front) - Leads with the conclusion; the opposite move to AIDA, which earns the conclusion across four stages
+
+### Bloom's Taxonomy
+
+***Full Name***: Taxonomy of Educational Objectives, Cognitive Domain (Revised 2001)
+
+***Also known as***: Bloom's Revised Taxonomy; Anderson & Krathwohl Taxonomy
+
+[discrete]
+## **Core Concepts**:
+
+***Six cognitive levels***: A hierarchy of **what a learner can do** with knowledge, from lower-order to higher-order — Remember, Understand, Apply, Analyze, Evaluate, Create. Higher levels presuppose the lower ones.
+
+***Remember***: Retrieve facts from memory — recall, recognise, list, name. The floor, not the goal.
+
+***Understand***: Construct meaning — explain in one's own words, summarise, paraphrase, give an example. **Understanding is not yet mastery.**
+
+***Apply***: Use knowledge in a new situation — execute, implement, solve a fresh case. The first level that proves transfer beyond the example taught.
+
+***Analyze***: Break a whole into parts and see how they relate — differentiate, attribute, find the edge cases, trace cause to effect.
+
+***Evaluate***: Judge against criteria — critique, weigh trade-offs, defend a decision.
+
+***Create***: Assemble parts into something new — design, build, generate a working solution.
+
+***Action verbs per level***: Each level has its own measurable verbs, which is what turns a vague aim ("understand recursion") into a testable objective ("**implement** a recursive traversal", "**analyse** why this base case prevents infinite recursion").
+
+***The 2001 revision***: Anderson & Krathwohl turned Bloom's 1956 nouns into verbs and reordered the top two (the original ended Synthesis → Evaluation; the revision ends Evaluate → **Create**). They also added a second axis — the **knowledge dimension** (factual, conceptual, procedural, metacognitive) — yielding a two-dimensional taxonomy table.
+
+***A heuristic, not a law***: The hierarchy is a design aid, not a strict ladder — real tasks mix levels, and Evaluate-vs-Create ordering is debated. Its value is forcing assessment **above** mere recall, not literal sequencing.
+
+***Key Proponents***: Benjamin Bloom et al. ("Taxonomy of Educational Objectives", 1956); Lorin Anderson & David Krathwohl ("A Taxonomy for Learning, Teaching, and Assessing", 2001 revision)
+
+[discrete]
+## **When to Use**:
+
+* Writing learning objectives so they name a verifiable cognitive level, not a vague "know about"
+* Designing assessments and quizzes that target higher-order thinking (Apply, Analyze) instead of recall
+* Defining what "demonstrated understanding" means — set the gate at Apply/Analyze, not Remember
+* Reviewing training material or documentation for whether it only informs or also builds skill
+* LLM prompting: "Write quiz questions at the Apply and Analyze levels of Bloom's Taxonomy"
+
+[discrete]
+## **When NOT to Use**:
+
+* As a rigid linear sequence every lesson must climb in order — it is a design lens, not a script
+* For affective or motor learning — the cognitive taxonomy does not cover attitudes (affective domain) or physical skills (psychomotor domain)
+
+[discrete]
+## **Related Anchors**:
+
+* 4MAT — 4MAT sequences a lesson (Why/What/How/What-If); Bloom grades the cognitive **level** each step targets
+* Feynman Technique — explaining-it-back is a concrete check at the Understand level; Bloom names the levels above it
+* Socratic Method — questioning drives learners up the levels; Bloom labels where they are
+* Diátaxis Framework — documentation types map loosely to cognitive levels (tutorial → Apply, explanation → Understand)
 
 ### BLUF (Bottom Line Up Front)
 
@@ -489,6 +598,48 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 
 * BLUF (Bottom Line Up Front) — complements Schneider's clarity-first approach with a structure that leads with the conclusion
 * Pyramid Principle according to Barbara Minto — a complementary framework for structuring arguments hierarchically
+
+### Inverted Pyramid Style
+
+***Full Name***: Inverted Pyramid Style
+
+***Also known as***: News Style, Front-Loading
+
+[discrete]
+## **Core Concepts**:
+
+***Most newsworthy first***: Lead with the essential who/what/when/where/why, then present supporting detail in decreasing order of importance
+
+***Stop-anywhere readability***: The reader can stop at any point and still have the most important information — later paragraphs add depth, not prerequisites
+
+***Long, prunable tail***: Unlike a tight summary, the body may carry a long tail of quotes, background, and context that an editor (or reader) can cut from the bottom without losing the core
+
+***Contrast with BLUF***: BLUF demands a short message with the bottom line up front; the Inverted Pyramid front-loads the conclusion but allows an extended, optional remainder
+
+***Contrast with the Pyramid Principle***: Minto's Pyramid builds a complete, MECE argument the reader should follow fully; the Inverted Pyramid optimizes for skimming and early exit, not for completeness
+
+***Key Proponents***: Journalistic convention attributed to late-19th-century American wire-service reporting (telegraph cost and editing pressure); a standard taught in journalism and technical writing
+
+[discrete]
+## **When to Use**:
+
+* News-style announcements, release notes, incident updates, changelog entries
+* Any text where readers skim and many will stop after the first lines
+* LLM-generated summaries that should front-load the takeaway
+
+[discrete]
+## **When NOT to Use**:
+
+* Arguments that must be followed in full → use the Pyramid Principle
+* Ultra-short, single-message contexts → use BLUF
+* Narrative or suspense-driven writing where withholding is intentional
+
+[discrete]
+## **Related Anchors**:
+
+* BLUF (Bottom Line Up Front) — front-loaded but deliberately short
+* Pyramid Principle — complete, MECE argument structure
+* Diátaxis Framework — choosing the right documentation shape
 
 ### MECE Principle
 
@@ -1152,6 +1303,49 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 * GoF Design Patterns - Design patterns that can emerge from CRC-Card sessions
 * Domain-Driven Design - CRC Cards support ubiquitous language and entity discovery
 
+### DRY (Don't Repeat Yourself)
+
+***Full Name***: Don't Repeat Yourself
+
+***Also known as***: DRY Principle; antonym: WET ("Write Everything Twice" / "We Enjoy Typing")
+
+[discrete]
+## **Core Concepts**:
+
+***The principle***: "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system." One fact — a business rule, a constant, a schema — lives in exactly one place
+
+***Knowledge, not code***: DRY targets duplicated **knowledge/intent**, not coincidental textual similarity. Two code fragments that look alike but change for different reasons are not a DRY violation; collapsing them couples unrelated concerns
+
+***Single source of truth***: Derive rather than restate — generate docs/config/clients from one authoritative definition so a change propagates instead of being copied
+
+***Rule of Three***: Extract a shared abstraction after the **third** occurrence, not the first (Martin Fowler). Premature de-duplication guesses at an abstraction before the pattern is clear
+
+***The wrong-abstraction caution***: "Duplication is far cheaper than the wrong abstraction" (Sandi Metz). A bad shared abstraction couples callers and is harder to unwind than the duplication it removed — prefer duplication until the right seam is obvious
+
+***Key Proponents***: Andy Hunt & Dave Thomas, **The Pragmatic Programmer** (1999)
+
+[discrete]
+## **When to Use**:
+
+* Consolidating a business rule, constant, or schema that appears in several places
+* Designing a single source of truth (config, types, API contracts) that other artifacts derive from
+* Reviewing code for knowledge duplication that causes change to require edits in many spots
+
+[discrete]
+## **When NOT to Use**:
+
+* Before the Rule of Three — resist abstracting on the first or second occurrence
+* When two similar fragments change for different reasons — coupling them via a shared abstraction is worse than the duplication
+* As dogma over readability: a little duplication can beat a leaky, over-general abstraction
+
+[discrete]
+## **Related Anchors**:
+
+* Single Source of Truth — the data-layer cousin of DRY's knowledge rule
+* Single Level of Abstraction Principle — keeps extracted abstractions coherent
+* KISS Principle — the simplicity counterweight to over-abstraction
+* YAGNI — don't build the abstraction until you actually need it
+
 ### Patterns of Enterprise Application Architecture (PEAA)
 
 ***Full Name***: Patterns of Enterprise Application Architecture according to Martin Fowler
@@ -1736,6 +1930,62 @@ Represent an operation to be performed on the elements of an object structure. V
 * Clean Architecture - Architectural style that leverages GRASP-based thinking
 * Domain-Driven Design - Uses responsibility assignment in the domain model
 
+### Integration Operation Segregation Principle (IOSP)
+
+***Full Name***: Integration Operation Segregation Principle
+
+***Also known as***: IOSP, Integration-Operation Separation, N+1 Principle
+
+[discrete]
+## **Core Concepts**:
+
+***Core rule***
+Functions shall either only contain logic or they shall only call other functions — never both.
+
+***Operation***: A function that contains logic but calls no other functions of the same solution. Logic includes transformations (`x + 2`), control structures (`if`, `for`, `while`), and third-party API calls (`Console.WriteLine`, `httpClient.Send()`). Operations are the **leaves** of the function tree — they have no functional dependencies on other code of the same codebase.
+
+***Integration***: A function that calls other functions (operations or other integrations) but contains **no logic itself**. Its sole responsibility is composing lower-level functions into a coherent whole. Integrations are the **branches** of the function tree — they orchestrate, they do not compute.
+
+***Hybrid***: A function that violates IOSP by mixing both logic and calls to other functions. Hybrids are the primary source of poor testability: the logic cannot be tested in isolation without mocking the called functions, and the calling structure cannot be understood without reading the embedded logic.
+
+***Why it works***
+A reader encountering an integration can trust it to be a **readable summary** of the work at that level — pure orchestration without hidden decisions. An operation, conversely, contains only detailed logic — no distracting jumps to other parts of the codebase. This natural enforcement of the Single Level of Abstraction Principle (SLAP) is the key insight: IOSP makes SLAP **automatic** rather than aspirational.
+
+***How it relates to DIP (Dependency Inversion Principle)***
+Code that follows DIP often creates hybrids: a method both contains domain logic **and** calls abstractions (interfaces) that represent integrations. IOSP argues that these two responsibilities — logic and integration — should be separated into different functions. The result: operations no longer depend on abstractions, integrating functions do the wiring instead. This reduces the need for DIP and Dependency Injection significantly; DIP is retained only for genuine cases of alternative implementations, not for testability.
+
+***Testability implications***
+Operations are trivially unit-testable — they have no functional dependencies that require mocking. Integrations contain no logic, so there is nothing to unit-test; integration tests verify the wiring. This is a categorical improvement over hybrid code, where every test requires mock setup for the called functions.
+
+***Codebase structure***
+Following IOSP produces a strict tree structure: integrations form the upper layers (high abstraction, no logic), operations form the leaves (low abstraction, all logic). There are no functional dependencies — only "empty" dependencies from integrations to the functions they call. This makes the data flow visible and the graph acyclic by construction.
+
+***Key Proponents***
+Ralf Westphal ("Integration Operation Segregation Principle (IOSP)", 2022 — substack; "IOSP 2.0", 2023; "Radical Object-Orientation #06", 2024), Stefan Lieser ("Three Questions about the IOSP", t2informatik interview, 2025; Clean Code Developer Initiative / CCD Akademie). Both are co-founders of the Clean Code Developer Initiative (2008).
+
+[discrete]
+## **When to Use**:
+
+* Refactoring hybrid functions that mix high-level orchestration with low-level details — IOSP tells you **how** to split, not just **that** you should
+* TDD: structuring code so that operations emerge naturally as testable leaves, with integrations as trivial wiring
+* Code review: a concrete, checkable rule — a function either calls other functions **or** contains logic, never both. If a reviewer spots a hybrid, it's a clear finding
+* Teaching clean code: unlike SRP (which is often debated), IOSP is **crystal clear at a glance** — there is no interpretation question
+* Reducing DIP/IoC complexity: if the only reason for DIP is testability, IOSP eliminates that need
+* Architecture design with IODA (Integration-Operation-Data-API): IOSP scales to module level, producing dependency-free operational modules composed by integration modules
+* Designing data flows: integrations become explicit "ditch-diggers" for data to flow between operations
+* .NET development with IospAnalyzer: automated Roslyn Analyzer catches IOSP violations at compile time
+
+[discrete]
+## **Related Anchors**:
+
+* Single Level of Abstraction Principle (SLAP) - IOSP naturally enforces SLAP: integrations are high-level, operations are low-level
+* SOLID Principles - IOSP applies SRP at the function level and can reduce the need for DIP
+* SOLID SRP - IOSP is a **special case** of SRP applied at the function level, separating the responsibility of "what to compute" from "how to compose"
+* Cohesion Criteria - IOSP produces functional cohesion by dedicating each function to a single kind of work (either logic or composition)
+* GRASP - GRASP's "High Cohesion" and "Low Coupling" are structurally supported by IOSP's tree-like composition
+* SOLID DIP - IOSP can replace DIP for the purpose of testability; DIP is retained only for genuine alternative implementations
+* Clean Architecture - Layered abstraction at architecture scale mirrors IOSP's function-level separation
+
 ### KISS Principle
 
 ***Full Name***: Keep It Simple, Stupid (also: Keep It Super Simple)
@@ -1774,6 +2024,89 @@ Represent an operation to be performed on the elements of an object structure. V
 * YAGNI - Don't implement what you don't need yet (complementary simplicity principle)
 * DRY - Eliminate redundancy to keep codebases simple and consistent
 * SOLID Principles - Structured guidelines that reinforce clean, simple designs
+
+### Law of Demeter
+
+***Full Name***: Law of Demeter (LoD)
+
+***Also known as***: Principle of Least Knowledge, "Don't talk to strangers"
+
+[discrete]
+## **Core Concepts**:
+
+***Only talk to your immediate friends***: A method may call methods on: itself, its parameters, objects it creates, and its direct component objects — but not on objects returned by those calls
+
+***Train-wreck calls***: Chains like `a.getB().getC().doSomething()` reach through intermediaries and couple the caller to a deep object graph — the classic LoD violation
+
+***Tell, don't ask***: Push behaviour to the object that owns the data instead of pulling data out and operating on it externally
+
+***Encapsulation boundary***: LoD limits how much of an object's internal structure leaks to its collaborators, so internal changes don't ripple outward
+
+***Pragmatic limits***: It is a heuristic, not an absolute; fluent builders and some data-pipeline/query DSLs chain deliberately and are reasonable exceptions
+
+***Key Proponents***: Ian Holland & Karl Lieberherr (Northeastern University, Demeter Project, 1987); popularized by "The Pragmatic Programmer" (Hunt & Thomas)
+
+[discrete]
+## **When to Use**:
+
+* Reviewing code for hidden coupling and fragile call chains
+* Designing object APIs that hide their internal structure
+* Teaching encapsulation and "tell, don't ask"
+* Guiding refactorings away from train-wreck expressions
+
+[discrete]
+## **When NOT to Use**:
+
+* For fluent interfaces / builders where chaining is the intended design
+* For immutable value objects and data-query DSLs where traversal is the point
+
+[discrete]
+## **Related Anchors**:
+
+* SOLID Principles — complementary coupling/cohesion guidance
+* GRASP — Low Coupling and Information Expert overlap with LoD
+* Cohesion Criteria — the cohesion side of the same design concern
+
+### Postel's Law
+
+***Full Name***: Postel's Law / The Robustness Principle
+
+***Also known as***: "Be conservative in what you send, be liberal in what you accept"
+
+[discrete]
+## **Core Concepts**:
+
+***The principle***: Send strictly conforming output; accept input tolerantly, coping with anything you reasonably can — to maximize interoperability between independently built systems
+
+***Conservative output***: Emit only well-formed, specification-compliant messages so peers never have to compensate for your sloppiness
+
+***Liberal input***: Tolerate minor deviations and unknown-but-ignorable fields rather than rejecting otherwise-usable messages — supports forward/backward compatibility
+
+***Where it shines***: Long-lived network protocols, public APIs, file formats, and event schemas that must evolve while old and new participants coexist
+
+***The modern critique***: Excessive tolerance accumulates undefined behaviour and security risk (ambiguous parsing, smuggling); contemporary guidance favours strictness plus explicit versioning. Apply with a documented tolerance boundary, not blanket leniency
+
+***Key Proponents***: Jon Postel (RFC 760/761, 1980, in the context of TCP/IP)
+
+[discrete]
+## **When to Use**:
+
+* Designing protocol, API, or event-schema contracts that must evolve
+* Deciding how strictly a parser/validator should reject input
+* Reasoning about forward/backward compatibility and graceful degradation
+
+[discrete]
+## **When NOT to Use**:
+
+* Security-sensitive parsing where ambiguity is dangerous — prefer strict validation
+* Internal interfaces under one team's control, where strictness catches bugs earlier
+
+[discrete]
+## **Related Anchors**:
+
+* Semantic Versioning — the explicit-versioning complement to tolerant inputs
+* SOLID Principles — interface design and contract stability
+* Event-Driven Architecture — tolerant readers for evolving event schemas
 
 ### Single Level of Abstraction Principle (SLAP)
 
@@ -2430,6 +2763,49 @@ A class should have only one reason to change. Each module or class should be re
 * Projects requiring dependency management
 * Communication of change impact to users/consumers
 
+### Site Reliability Engineering
+
+***Full Name***: Site Reliability Engineering (SRE)
+
+***Also known as***: "Operations as a software problem", Google SRE
+
+[discrete]
+## Core Concepts:
+
+***Operations as a software problem***: Apply software engineering to operations work instead of manual administration.
+
+***SLI / SLO / SLA***: Service Level Indicators measure behavior; Objectives set internal targets; Agreements are external commitments.
+
+***Error budget***: 100% reliability is the wrong target; the allowed unreliability (1 − SLO) is a budget spent on feature velocity and risk.
+
+***Embrace risk***: Reliability is balanced against the cost and speed of change, not maximized blindly.
+
+***Eliminate toil***: Reduce repetitive, manual, automatable operational work; cap operational load (~50%) to protect engineering time.
+
+***Blameless postmortems***: Learn from incidents by analyzing systems and processes rather than assigning blame.
+
+***Monitoring & observability***: Measure the four golden signals — latency, traffic, errors, saturation.
+
+***Release & capacity engineering***: Automate launches, rollouts, and capacity planning to make change safe and repeatable.
+
+***Key Proponents***: Ben Treynor Sloss (coined the term at Google); Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy ("Site Reliability Engineering", O'Reilly 2016, and "The Site Reliability Workbook")
+
+[discrete]
+## When to Use:
+
+* Operating production services where reliability must be measured and managed
+* Defining SLOs and error budgets to balance reliability against feature velocity
+* Establishing on-call, incident response, and blameless postmortem practices
+* Reducing operational toil through automation
+* Distinguishing reliability ownership from generic DevOps culture
+
+[discrete]
+## Related Anchors:
+
+* Five Whys
+* Statistical Process Control
+* Shewhart Control Chart
+
 ### SOTA (State-of-the-Art)
 
 ***Full Name***: State-of-the-Art
@@ -2659,6 +3035,56 @@ A class should have only one reason to change. Each module or class should be re
 * Cognitive apprenticeship
 * Constructivist learning theory
 * Critical thinking pedagogy
+
+### Systemic Consulting (Heidelberg School)
+
+***Full Name***: Systemic Consulting according to the Heidelberg School
+
+***Also known as***: Systemische Beratung, Systemic Therapy and Consulting, Heidelberg Model
+
+[discrete]
+## **Core Concepts**:
+
+***Consulting as Communication***: "Was all diese Beratungsansätze miteinander verbindet: Es sind Formen der Kommunikation." (Simon, **Einführung in die (System-)Theorie der Beratung**, 2014) — The consulting process is analyzed through the lens of communication theory.
+
+***All-Partiality (Allparteilichkeit)***: The consultant takes no side but is partial to **all** sides simultaneously. "Rollenklärung des Therapeuten sowie Allparteilichkeit und das Prinzip der Neutralität." (Simon/Rech-Simon, **Zirkuläres Fragen**)
+
+***Neutrality***: The consultant remains neutral toward persons, toward the problem, and toward change. Not cold distance, but active multiperspectivity.
+
+***Circular Questions***: Instead of linear cause-effect questions ("Why did X happen?"), circular questions explore relationships, differences, and feedback loops: "What would Y say about X's behavior?" "What needs to happen for the pattern to change?" "Zirkuläres Fragen zielt darauf, die gegenseitige Bedingtheit des Verhaltens von Menschen zu verdeutlichen."
+
+***Context Clarification***: "Die Kontextklärung für Therapeuten ist immer klarer als für Patienten." — Before any intervention, the context must be clarified: who referred, what are the expectations, what is the mandate?
+
+***Problem as Emergent Pattern***: Problems arise from relational patterns, not from individual deficiencies. Changing the pattern changes the problem.
+
+***No Instruction, Only Irritation***: The consultant cannot dictate changes (systems are operatively closed) but can offer perturbations that the system may or may not integrate.
+
+***Reframing / Positive Connotation***: Every behavior that appears dysfunctional is reframed as having a positive function for the system. "Which adaptive function does the status quo serve?"
+
+***Hypothesizing***: Before meeting a client, the team generates hypotheses about the system's dynamics. Hypotheses are treated as provisional and falsifiable.
+
+***Systemic Interview Structure***: Clarify referral context → define goals → explore attempted solutions → identify resources → hypothesize patterns → offer intervention.
+
+***Key Proponents***: Fritz B. Simon (**Einführung in die (System-)Theorie der Beratung**, 2014), Helm Stierlin, Gunthard Weber (Heidelberg School), Paul Watzlawick, Jay Haley, John Weakland (MRI Palo Alto), Mara Selvini Palazzoli (Milan Group)
+
+[discrete]
+## **When to Use**:
+
+* Facilitating organizational change where linear approaches have failed
+* Mediating conflicts between stakeholders with incompatible perspectives
+* Designing human-centered automation that respects user autonomy
+* Coaching teams through complex adaptive challenges
+* Any situation where the interventionist is part of the system (no external vantage point)
+* Evaluating whether a proposed technical solution addresses relational dynamics
+
+[discrete]
+## **Relationship to Other Anchors**:
+
+* Operationalizes Simon's Constructivism into concrete practice
+* Provides the "how" for the System-Theoretic Semantic Anchors framework (especially Stakeholder and Trust anchors, see separate proposal)
+* Direct precursor to Semantic Contracts — the consulting mandate functions as a semantic contract between consultant and client (see separate proposal)
+* Complements Cynefin Framework by providing intervention methods for the Complex domain
+* Contrasts with expert-driven consulting (which assumes instruction is possible)
 
 ### XY Problem
 
@@ -3000,6 +3426,110 @@ A class should have only one reason to change. Each module or class should be re
 
 ## Meta
 
+### Luhmann's System Theory
+
+***Full Name***: Luhmann's Sociological System Theory (Luhmannsche Systemtheorie)
+
+***Also known as***: Theory of Autopoietic Social Systems, Functional-Structural Systems Theory
+
+[discrete]
+## **Core Concepts**:
+
+***System/Environment Difference***: A system defines itself by drawing a distinction (**Differenz**) between itself and its environment. "Es gibt kein System ohne Umwelt. Hier ist das System, dort die Umwelt. Wer das sagt, unterscheidet zwischen diesen beiden." (Luhmann, **Einführung in die Systemtheorie**, Kap. II)
+
+***Operational Closure***: Systems reproduce themselves through their own operations. Social systems operate through communication, psychic systems through thought. No operation crosses the boundary. "Selbstreferentielle Geschlossenheit ist nur in einer Umwelt, ist nur unter ökologischen Bedingungen möglich."
+
+***Autopoiesis***: Systems produce and reproduce their own elements. A system exists as long as operations connect to operations. "Ein System erhält sich dadurch, dass Operationen aneinander anschließen."
+
+***Structural Coupling***: Systems cannot directly interact, but they can build expectation structures that make them sensitive to specific irritations from their environment. Language couples psychic and social systems.
+
+***Double Contingency***: The foundational paradox of social interaction: "I will do what you want if you do what I want" — resolved only through the emergence of social systems. "Das gesamte Soziale kann als Antwort auf das Problem der doppelten Kontingenz gesehen werden." (**Soziale Systeme**, Kap. IV)
+
+***Self-Reference / Self-Observation***: Systems observe themselves by distinguishing self-reference from external reference (**Fremdreferenz**). "Beobachten heißt: unterscheiden (-> differenzieren)."
+
+***Communication as Operation***: Social systems consist of communication, not of people. Communication is the synthesis of information, utterance, and understanding.
+
+***Complexity Reduction***: Systems reduce environmental complexity through selection. "Sinn" (meaning) is the medium through which psychic and social systems process complexity.
+
+***Functional Differentiation***: Modern society differentiates into function systems (economy, law, politics, science, religion) each with their own binary code.
+
+***Key Proponents***: Niklas Luhmann (**Soziale Systeme**, 1984; **Einführung in die Systemtheorie**, Vorlesung 1991/92, hg. v. Dirk Baecker), Humberto Maturana (autopoiesis, biological roots)
+
+[discrete]
+## **When to Use**:
+
+* Analyzing complex socio-technical systems where boundaries are contested
+* Designing system architectures that respect operational closure of subsystems
+* Understanding why direct control often fails (systems can only be perturbed, not instructed)
+* Modeling emergent behavior in multi-agent or organizational systems
+* Identifying feedback loops and unintended consequences in automation design
+* Distinguishing between the system's perspective and the observer's perspective
+
+[discrete]
+## **Relationship to Other Anchors**:
+
+* Foundation for the System-Theoretic Semantic Anchors framework (see separate proposal)
+* Complements Cynefin Framework (complexity classification) with operational theory
+* Provides the theoretical basis for Semantic Contracts (structural coupling, see separate proposal)
+* Contrasts with simpler input-output models of systems (e.g., early cybernetics)
+* Related to Feynman Technique at the meta-level: Luhmann demands understanding systems through their own logic
+
+***Historical Context***: Luhmann developed his theory across 30+ books and 500+ articles. The **Einführung in die Systemtheorie** is a transcribed lecture course from 1991/92 and is considered the most accessible entry point. His work fundamentally challenges common-sense notions of communication, causality, and control.
+
+### Simon's Constructivism
+
+***Full Name***: Simon's Introduction to System Theory and Constructivism
+
+***Also known as***: Simon's Systemic Epistemology, Clinical Epistemology
+
+[discrete]
+## **Core Concepts**:
+
+***Systemic Thinking = System-Theoretic Explanation***: "Systemtheorie beschäftigt sich mit der 'Welt der Objekte'; aber sie isoliert sie nicht aus ihren realen Zusammenhängen, sondern setzt sie in Beziehung zueinander." Systemisches Denken ist systemtheoretisches Erklären — nicht nur Beschreiben. (Simon, **Einführung in Systemtheorie und Konstruktivismus**, Vorbemerkung)
+
+***Emergent Properties***: "Systeme sind aus mehreren Teilen zusammengesetzte Einheiten, deren Eigenschaften emergent, d.h. nicht durch die schlichte Addition der Eigenschaften ihrer Teile herstellbar waren." (Kap. 1)
+
+***Trivial vs. Non-Trivial Machines***: Trivial machines are predictable (same input → same output). Non-trivial machines depend on internal state — they are history-dependent and not fully predictable. Social systems are non-trivial machines. (Kap. 3.1)
+
+***Cybernetics of Cybernetics (2nd Order)***: The observer is always part of the observed system. "Die Kybernetik der Kybernetik — der Beobachter wird in die Beobachtung einbezogen." (Kap. 3.2)
+
+***Viability vs. Truth***: "Wahrheit vs. Viabilität — Die 'Passung' zwischen Landschaft und Landkarte." Knowledge is not "true" in an absolute sense, but viable if it enables successful operation in a given environment. (Kap. 4.5)
+
+***Information as "Differences that Make a Difference"***: (Gregory Bateson) Information is not transmitted but created by the receiver. "Unterschiede, die Unterschiede machen." The Sender-Receiver model is replaced by circular causality. (Kap. 4.1)
+
+***Beobachtung = Unterscheiden und Bezeichnen***: Every observation draws a distinction and names one side. The other side remains unmarked. (Kap. 4.3, following George Spencer-Brown)
+
+***Operational Closure***: "Systeme sind operativ geschlossen und können nur nach ihrer eigenen Logik operieren." (Kap. 3.4)
+
+***Perturbation vs. Instruction***: "Systeme können nicht instruiert, nur irritiert (perturbiert) werden." — A crucial principle for any intervention design. (Kap. 3.5)
+
+***Structural Coupling + Co-Evolution***: Systems shape each other's environments over time, leading to coordinated structural drift without direct causality. (Kap. 5.1)
+
+***Meaning Dimensions (Social, Factual, Temporal)***: Every communication (in Luhmann's sense) operates simultaneously in three dimensions: social (who), factual (what), temporal (when). (Kap. 6.4, following Luhmann)
+
+***Key Proponents***: Fritz B. Simon (**Einführung in Systemtheorie und Konstruktivismus**, 2006, 8. Aufl. 2017), Humberto Maturana (autopoiesis), Gregory Bateson (cybernetics), Heinz von Foerster (constructivism), Ernst von Glasersfeld (radical constructivism)
+
+[discrete]
+## **When to Use**:
+
+* Training teams in systemic thinking for complex problem-solving
+* Designing interventions where direct control is impossible (organizations, families, ecosystems)
+* Understanding why the same input produces different results in human systems
+* Developing feedback-aware designs for socio-technical systems
+* Distinguishing between explanation, description, and evaluation in requirements
+* Building awareness of observer bias in system design and analysis
+
+[discrete]
+## **Relationship to Other Anchors**:
+
+* Pedagogical bridge between Luhmann's System Theory and practical application
+* Theoretical foundation for Systemic Consulting methods
+* Provides the epistemological basis for the System-Theoretic Semantic Anchors framework (see separate proposal)
+* "Ten Commandments of Systemic Thinking" (Kap. 7) are a direct precursor to Semantic Contracts (see separate proposal)
+* Contrasts with purely technical systems theory (e.g., general systems theory, Bertalanffy)
+
+***Quote***: "Regeln kann man leichter verändern als Menschen." (Fritz B. Simon)
+
 ### The Spectrum of Semantic Anchors
 
 ### What Qualifies as a Semantic Anchor
@@ -3323,6 +3853,48 @@ Play devil's advocate: What are the strongest arguments against this approach?
 
 ***Quote***: "If you can't explain it simply, you don't understand it well enough." (Often attributed to Einstein, but embodies Feynman's philosophy)
 
+### First Principles Thinking
+
+***Full Name***: First Principles Thinking
+
+***Also known as***: Reasoning from First Principles, Reasoning from Fundamentals
+
+[discrete]
+## **Core Concepts**:
+
+***Reduce to fundamentals***: Break a problem down to the basic truths that cannot be deduced from anything more fundamental, then reason upward from those
+
+***Reason vs. analogy***: Contrast with reasoning by analogy ("we do it this way because that's how it's done") — first principles rebuild the answer from the ground up
+
+***Challenge inherited assumptions***: Each "requirement" or "constraint" is interrogated: is it a law of nature, or merely convention/legacy that can be discarded?
+
+***Ground-up synthesis***: After identifying the irreducible elements, recombine them into a solution unconstrained by how the problem was solved before
+
+***Cost of the method***: Powerful but expensive — reserve it for high-stakes or stuck problems; reasoning by analogy is fine for routine decisions
+
+***Key Proponents***: Rooted in Aristotle (the "first cause"/archē); sharpened by René Descartes' methodical doubt; popularized in modern engineering discourse (e.g. Elon Musk's cost-of-batteries example)
+
+[discrete]
+## **When to Use**:
+
+* A problem feels blocked because "that's just how it's done"
+* Re-examining requirements, cost structures, or architecture constraints
+* High-stakes design decisions where analogy may mislead
+* Teaching learners to separate fundamental truths from convention
+
+[discrete]
+## **When NOT to Use**:
+
+* Routine decisions where established patterns are good enough — the method is costly
+* When proven best practices already encode hard-won fundamentals
+
+[discrete]
+## **Related Anchors**:
+
+* Feynman Technique — explain from fundamentals to expose gaps
+* Socratic Method — question assumptions to reach bedrock
+* Five Whys — drill from symptom toward a root cause
+
 ### Five Whys (Ohno)
 
 ***Full Name***: Five Whys Root Cause Analysis
@@ -3389,6 +3961,56 @@ Why? → Default configuration was never reviewed for production
 Root Cause: Configuration review process missing
 Countermeasure: Establish pre-production configuration checklist
 ```
+
+### Luhmann's System Theory
+
+***Full Name***: Luhmann's Sociological System Theory (Luhmannsche Systemtheorie)
+
+***Also known as***: Theory of Autopoietic Social Systems, Functional-Structural Systems Theory
+
+[discrete]
+## **Core Concepts**:
+
+***System/Environment Difference***: A system defines itself by drawing a distinction (**Differenz**) between itself and its environment. "Es gibt kein System ohne Umwelt. Hier ist das System, dort die Umwelt. Wer das sagt, unterscheidet zwischen diesen beiden." (Luhmann, **Einführung in die Systemtheorie**, Kap. II)
+
+***Operational Closure***: Systems reproduce themselves through their own operations. Social systems operate through communication, psychic systems through thought. No operation crosses the boundary. "Selbstreferentielle Geschlossenheit ist nur in einer Umwelt, ist nur unter ökologischen Bedingungen möglich."
+
+***Autopoiesis***: Systems produce and reproduce their own elements. A system exists as long as operations connect to operations. "Ein System erhält sich dadurch, dass Operationen aneinander anschließen."
+
+***Structural Coupling***: Systems cannot directly interact, but they can build expectation structures that make them sensitive to specific irritations from their environment. Language couples psychic and social systems.
+
+***Double Contingency***: The foundational paradox of social interaction: "I will do what you want if you do what I want" — resolved only through the emergence of social systems. "Das gesamte Soziale kann als Antwort auf das Problem der doppelten Kontingenz gesehen werden." (**Soziale Systeme**, Kap. IV)
+
+***Self-Reference / Self-Observation***: Systems observe themselves by distinguishing self-reference from external reference (**Fremdreferenz**). "Beobachten heißt: unterscheiden (-> differenzieren)."
+
+***Communication as Operation***: Social systems consist of communication, not of people. Communication is the synthesis of information, utterance, and understanding.
+
+***Complexity Reduction***: Systems reduce environmental complexity through selection. "Sinn" (meaning) is the medium through which psychic and social systems process complexity.
+
+***Functional Differentiation***: Modern society differentiates into function systems (economy, law, politics, science, religion) each with their own binary code.
+
+***Key Proponents***: Niklas Luhmann (**Soziale Systeme**, 1984; **Einführung in die Systemtheorie**, Vorlesung 1991/92, hg. v. Dirk Baecker), Humberto Maturana (autopoiesis, biological roots)
+
+[discrete]
+## **When to Use**:
+
+* Analyzing complex socio-technical systems where boundaries are contested
+* Designing system architectures that respect operational closure of subsystems
+* Understanding why direct control often fails (systems can only be perturbed, not instructed)
+* Modeling emergent behavior in multi-agent or organizational systems
+* Identifying feedback loops and unintended consequences in automation design
+* Distinguishing between the system's perspective and the observer's perspective
+
+[discrete]
+## **Relationship to Other Anchors**:
+
+* Foundation for the System-Theoretic Semantic Anchors framework (see separate proposal)
+* Complements Cynefin Framework (complexity classification) with operational theory
+* Provides the theoretical basis for Semantic Contracts (structural coupling, see separate proposal)
+* Contrasts with simpler input-output models of systems (e.g., early cybernetics)
+* Related to Feynman Technique at the meta-level: Luhmann demands understanding systems through their own logic
+
+***Historical Context***: Luhmann developed his theory across 30+ books and 500+ articles. The **Einführung in die Systemtheorie** is a transcribed lecture course from 1991/92 and is considered the most accessible entry point. His work fundamentally challenges common-sense notions of communication, causality, and control.
 
 ### Morphological Box
 
@@ -3514,6 +4136,110 @@ The razor is a **prior**, not a verdict. Reality is frequently non-parsimonious,
 * MECE Principle - Both disciplines of hypothesis hygiene; MECE ensures coverage, Occam ranks by parsimony
 * Devil's Advocate - Devil's Advocate stress-tests the hypothesis Occam has selected
 
+### Simon's Constructivism
+
+***Full Name***: Simon's Introduction to System Theory and Constructivism
+
+***Also known as***: Simon's Systemic Epistemology, Clinical Epistemology
+
+[discrete]
+## **Core Concepts**:
+
+***Systemic Thinking = System-Theoretic Explanation***: "Systemtheorie beschäftigt sich mit der 'Welt der Objekte'; aber sie isoliert sie nicht aus ihren realen Zusammenhängen, sondern setzt sie in Beziehung zueinander." Systemisches Denken ist systemtheoretisches Erklären — nicht nur Beschreiben. (Simon, **Einführung in Systemtheorie und Konstruktivismus**, Vorbemerkung)
+
+***Emergent Properties***: "Systeme sind aus mehreren Teilen zusammengesetzte Einheiten, deren Eigenschaften emergent, d.h. nicht durch die schlichte Addition der Eigenschaften ihrer Teile herstellbar waren." (Kap. 1)
+
+***Trivial vs. Non-Trivial Machines***: Trivial machines are predictable (same input → same output). Non-trivial machines depend on internal state — they are history-dependent and not fully predictable. Social systems are non-trivial machines. (Kap. 3.1)
+
+***Cybernetics of Cybernetics (2nd Order)***: The observer is always part of the observed system. "Die Kybernetik der Kybernetik — der Beobachter wird in die Beobachtung einbezogen." (Kap. 3.2)
+
+***Viability vs. Truth***: "Wahrheit vs. Viabilität — Die 'Passung' zwischen Landschaft und Landkarte." Knowledge is not "true" in an absolute sense, but viable if it enables successful operation in a given environment. (Kap. 4.5)
+
+***Information as "Differences that Make a Difference"***: (Gregory Bateson) Information is not transmitted but created by the receiver. "Unterschiede, die Unterschiede machen." The Sender-Receiver model is replaced by circular causality. (Kap. 4.1)
+
+***Beobachtung = Unterscheiden und Bezeichnen***: Every observation draws a distinction and names one side. The other side remains unmarked. (Kap. 4.3, following George Spencer-Brown)
+
+***Operational Closure***: "Systeme sind operativ geschlossen und können nur nach ihrer eigenen Logik operieren." (Kap. 3.4)
+
+***Perturbation vs. Instruction***: "Systeme können nicht instruiert, nur irritiert (perturbiert) werden." — A crucial principle for any intervention design. (Kap. 3.5)
+
+***Structural Coupling + Co-Evolution***: Systems shape each other's environments over time, leading to coordinated structural drift without direct causality. (Kap. 5.1)
+
+***Meaning Dimensions (Social, Factual, Temporal)***: Every communication (in Luhmann's sense) operates simultaneously in three dimensions: social (who), factual (what), temporal (when). (Kap. 6.4, following Luhmann)
+
+***Key Proponents***: Fritz B. Simon (**Einführung in Systemtheorie und Konstruktivismus**, 2006, 8. Aufl. 2017), Humberto Maturana (autopoiesis), Gregory Bateson (cybernetics), Heinz von Foerster (constructivism), Ernst von Glasersfeld (radical constructivism)
+
+[discrete]
+## **When to Use**:
+
+* Training teams in systemic thinking for complex problem-solving
+* Designing interventions where direct control is impossible (organizations, families, ecosystems)
+* Understanding why the same input produces different results in human systems
+* Developing feedback-aware designs for socio-technical systems
+* Distinguishing between explanation, description, and evaluation in requirements
+* Building awareness of observer bias in system design and analysis
+
+[discrete]
+## **Relationship to Other Anchors**:
+
+* Pedagogical bridge between Luhmann's System Theory and practical application
+* Theoretical foundation for Systemic Consulting methods
+* Provides the epistemological basis for the System-Theoretic Semantic Anchors framework (see separate proposal)
+* "Ten Commandments of Systemic Thinking" (Kap. 7) are a direct precursor to Semantic Contracts (see separate proposal)
+* Contrasts with purely technical systems theory (e.g., general systems theory, Bertalanffy)
+
+***Quote***: "Regeln kann man leichter verändern als Menschen." (Fritz B. Simon)
+
+### Systemic Consulting (Heidelberg School)
+
+***Full Name***: Systemic Consulting according to the Heidelberg School
+
+***Also known as***: Systemische Beratung, Systemic Therapy and Consulting, Heidelberg Model
+
+[discrete]
+## **Core Concepts**:
+
+***Consulting as Communication***: "Was all diese Beratungsansätze miteinander verbindet: Es sind Formen der Kommunikation." (Simon, **Einführung in die (System-)Theorie der Beratung**, 2014) — The consulting process is analyzed through the lens of communication theory.
+
+***All-Partiality (Allparteilichkeit)***: The consultant takes no side but is partial to **all** sides simultaneously. "Rollenklärung des Therapeuten sowie Allparteilichkeit und das Prinzip der Neutralität." (Simon/Rech-Simon, **Zirkuläres Fragen**)
+
+***Neutrality***: The consultant remains neutral toward persons, toward the problem, and toward change. Not cold distance, but active multiperspectivity.
+
+***Circular Questions***: Instead of linear cause-effect questions ("Why did X happen?"), circular questions explore relationships, differences, and feedback loops: "What would Y say about X's behavior?" "What needs to happen for the pattern to change?" "Zirkuläres Fragen zielt darauf, die gegenseitige Bedingtheit des Verhaltens von Menschen zu verdeutlichen."
+
+***Context Clarification***: "Die Kontextklärung für Therapeuten ist immer klarer als für Patienten." — Before any intervention, the context must be clarified: who referred, what are the expectations, what is the mandate?
+
+***Problem as Emergent Pattern***: Problems arise from relational patterns, not from individual deficiencies. Changing the pattern changes the problem.
+
+***No Instruction, Only Irritation***: The consultant cannot dictate changes (systems are operatively closed) but can offer perturbations that the system may or may not integrate.
+
+***Reframing / Positive Connotation***: Every behavior that appears dysfunctional is reframed as having a positive function for the system. "Which adaptive function does the status quo serve?"
+
+***Hypothesizing***: Before meeting a client, the team generates hypotheses about the system's dynamics. Hypotheses are treated as provisional and falsifiable.
+
+***Systemic Interview Structure***: Clarify referral context → define goals → explore attempted solutions → identify resources → hypothesize patterns → offer intervention.
+
+***Key Proponents***: Fritz B. Simon (**Einführung in die (System-)Theorie der Beratung**, 2014), Helm Stierlin, Gunthard Weber (Heidelberg School), Paul Watzlawick, Jay Haley, John Weakland (MRI Palo Alto), Mara Selvini Palazzoli (Milan Group)
+
+[discrete]
+## **When to Use**:
+
+* Facilitating organizational change where linear approaches have failed
+* Mediating conflicts between stakeholders with incompatible perspectives
+* Designing human-centered automation that respects user autonomy
+* Coaching teams through complex adaptive challenges
+* Any situation where the interventionist is part of the system (no external vantage point)
+* Evaluating whether a proposed technical solution addresses relational dynamics
+
+[discrete]
+## **Relationship to Other Anchors**:
+
+* Operationalizes Simon's Constructivism into concrete practice
+* Provides the "how" for the System-Theoretic Semantic Anchors framework (especially Stakeholder and Trust anchors, see separate proposal)
+* Direct precursor to Semantic Contracts — the consulting mandate functions as a semantic contract between consultant and client (see separate proposal)
+* Complements Cynefin Framework by providing intervention methods for the Complex domain
+* Contrasts with expert-driven consulting (which assumes instruction is possible)
+
 ### What Would Chuck Norris Do? (WWCND)
 
 ***Full Name***: What Would Chuck Norris Do?
@@ -3612,55 +4338,6 @@ GPT-5.3 Codex activates the decisiveness signal but **not** the character voice 
 
 ## Requirements Engineering
 
-### Cockburn Use Cases
-
-***Full Name***: Cockburn Use Cases (Writing Effective Use Cases)
-
-***Also known as***: Fully Dressed Use Cases, Goal-Level Use Cases, Cockburn Format
-
-[discrete]
-## **Core Concepts**:
-
-***Fully Dressed Format***
-A structured textual template for describing system behavior from the actor's perspective. Each use case includes: Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario (numbered steps), Extensions (alternative/failure paths with step references), Postconditions (success guarantee and minimal guarantee), and Technology & Data Variations.
-
-***Goal Levels***
-Three abstraction levels that organise use cases into a hierarchy:
-
-* **Summary** (Kite/Cloud) — business-process-level goals spanning multiple user sessions. Example: "Manage customer lifecycle."
-* **User Goal** (Sea Level) — the sweet spot: one actor, one sitting, one measurable outcome. Example: "Place an order." Most use cases live here.
-* **Subfunction** (Fish/Clam) — steps that support a user goal but are not goals in themselves. Example: "Authenticate user." Extract only when reused across multiple user-goal use cases.
-
-***Scope***
-Defines the system boundary — what is inside the "design scope" and what is an external actor. Cockburn uses icons (a box for the system, a person for actors) to make the boundary visual. Getting scope right prevents use cases from being either too vague (organisational scope) or too detailed (component scope).
-
-***Actor-Goal List***
-The discovery technique: list every actor and every goal they have against the system. This produces a candidate use case list before writing any prose. The goal level test: "Does the actor go home happy if this goal is achieved?" filters out subfunctions masquerading as user goals.
-
-**What Cockburn does **not** prescribe**
-Cockburn's format is deliberately **prose-based and notation-agnostic**. It does not mandate Activity Diagrams, Gherkin, EARS, or any formal syntax. Those are complementary representations that can be layered on top — Activity Diagrams for visual flow, Gherkin for executable acceptance criteria, EARS for structured requirement statements.
-
-***Key Proponents***: Alistair Cockburn (_Writing Effective Use Cases_, Addison-Wesley, 2001). The book remains the canonical reference; Cockburn also contributed to the Agile Manifesto and Crystal methodologies.
-
-[discrete]
-## **When to Use**:
-
-* Discovering what a system needs to do before deciding how to build it — the Actor-Goal List is a fast, structured brainstorm
-* Structuring requirements conversations with stakeholders who think in scenarios, not features
-* Decomposing a large system into manageable behavioural units at the right granularity (goal-level test)
-* Brownfield theory recovery: reconstructing what a system does by writing use cases from observed behaviour
-* Feeding downstream artifacts: each use case becomes a natural unit for Activity Diagrams, Gherkin scenarios, and test plans
-* Complementing arc42: use cases populate Section 6 (Runtime View) and inform Section 3 (Context and Scope)
-
-[discrete]
-## **Related Anchors**:
-
-* Gherkin - Executable acceptance criteria that can be derived from each extension path in a use case
-* BDD Given/When/Then - Formalises the scenario steps that Cockburn describes in prose
-* EARS Requirements - Structured syntax for individual requirement statements; complements Cockburn's scenario-level structure
-* arc42 - Use cases feed Section 6 (Runtime View) and inform Section 3 (Context and Scope)
-* ISO 25010 - Quality goals that use case extensions should address (error handling, performance, security)
-
 ### Double Diamond
 
 ***Full Name***: Double Diamond Design Process Model
@@ -3739,6 +4416,51 @@ Cockburn's format is deliberately **prose-based and notation-agnostic**. It does
 * Regulated industries (aerospace, automotive, medical)
 * When requirements traceability is essential
 * Large, distributed teams
+
+### Event Storming according to Alberto Brandolini
+
+***Full Name***: Event Storming
+
+***Also known as***: EventStorming (Brandolini)
+
+[discrete]
+## **Core Concepts**:
+
+***Domain events on a timeline***: Model the domain as past-tense **domain events** (orange stickies) placed left-to-right on a wide wall, reconstructing how the business actually unfolds over time
+
+***The colour notation***: A fixed sticky vocabulary — orange = Domain Event, blue = Command, yellow = Aggregate, lilac = Policy (reactive "whenever… then…"), green = Read Model, pink = External System, red = Hotspot (conflict, question, assumption)
+
+***Three levels***: **Big Picture** (explore the whole domain with all stakeholders), **Process Modeling** (zoom into one flow: command → event → policy → command), **Design Level** (aggregates, commands and events detailed enough to drive implementation)
+
+***Pivotal events***: Events that mark phase transitions or boundaries — strong candidates for **bounded context** seams
+
+***Hotspots***: Make conflicts, unknowns and assumptions explicit on the wall instead of glossing over them — they become the agenda
+
+***Chaotic exploration → enforced timeline***: Everyone adds events in parallel first (diverge), then the group orders and de-duplicates them into a coherent line (converge)
+
+***Key Proponents***: Alberto Brandolini (first run 2012, "Introducing EventStorming" blog post 2013; Leanpub book, continuously updated)
+
+[discrete]
+## **When to Use**:
+
+* Kicking off a Domain-Driven Design effort — discovering bounded contexts and aggregate boundaries collaboratively
+* Aligning business and engineering on a shared, visual domain model
+* Before deciding on an event-driven or CQRS architecture — discover the events/commands first
+* **Reverse Event Storming** on legacy systems (well suited to an AI agent): extract state transitions → map to Domain Events → cluster into Aggregates → surface Bounded Contexts
+
+[discrete]
+## **When NOT to Use**:
+
+* Trivial CRUD domains with no meaningful process or business rules
+* Solo modeling where the collaborative, cross-role discovery — the whole point — is absent
+
+[discrete]
+## **Related Anchors**:
+
+* Domain-Driven Design — the vocabulary (aggregates, bounded contexts) Event Storming discovers; often the on-ramp to DDD
+* User Story Mapping — activity-centric mapping vs. event-centric discovery
+* CQRS — commands and read models found on the wall feed a later CQRS decision
+* Event-Driven Architecture — the modeling step that precedes deciding how events are routed
 
 ### INVEST
 
@@ -3946,6 +4668,105 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Socratic Method — complementary: NVC for expressing, Socratic for exploring
 * BLUF — contrasting style: BLUF is conclusion-first, NVC is empathy-first
 
+### Quality Attribute Scenario
+
+***Full Name***: Quality Attribute Scenario
+
+***Also known as***: Quality Scenario, Six-Part Scenario
+
+[discrete]
+## **Core Concepts**:
+
+***Purpose***: Turn a vague quality goal ("the system must be fast") into a concrete, testable statement. A scenario without a measurable response is a wish, not a requirement.
+
+***Six Parts***: Every scenario is specified through six elements: **Source** (the entity generating the stimulus), **Stimulus** (the condition arriving at the system), **Artifact** (the part of the system stimulated), **Environment** (the conditions under which it occurs — normal load, overload, startup, degraded mode), **Response** (the activity that results), **Response Measure** (the response quantified so the requirement is verifiable).
+
+***Response Measure***: The decisive part. Without a measure — a latency, a percentile, a throughput, a recovery time — a scenario cannot be tested and is not a requirement.
+
+***General vs. Concrete Scenarios***: A general scenario is a reusable template for a quality attribute; a concrete scenario instantiates it for one specific system with literal values.
+
+***Relation to Quality Attributes***: Scenarios make ISO/IEC 25010 characteristics operational — each characteristic (performance efficiency, reliability, security...) is expressed as one or more concrete scenarios.
+
+***Key Proponents***: Len Bass, Paul Clements, Rick Kazman ("Software Architecture in Practice", SEI / Carnegie Mellon University)
+
+[discrete]
+## **When to Use**:
+
+* Writing arc42 Chapter 10 quality requirements as testable statements rather than adjectives
+* Building an ATAM utility tree, where each leaf is a prioritized concrete scenario
+* Specifying non-functional requirements that QA must later verify
+* Recovering quality requirements from a brownfield codebase — deriving the response measure from a literal threshold, timeout, or budget in the code
+
+[discrete]
+## **Related Anchors**:
+
+* ATAM — uses quality attribute scenarios as the leaves of its utility tree
+* arc42 Architecture Documentation — Chapter 10 quality requirements are expressed as scenarios
+* ISO/IEC 25010 — the quality characteristics that scenarios make concrete
+* EARS Requirements — a comparable discipline of making requirements precise and testable
+
+### Use Cases
+
+***Full Name***: Use Cases (Use-Case 2.0 / Use-Case 3.0)
+
+***Also known as***: Use-Case Driven Development, Use-Case Slices, Fully Dressed Use Cases
+
+[discrete]
+## **Core Concepts**:
+
+***Use Case***
+All the ways of using a system to achieve a goal of a particular actor — including the successful, challenged, and failure paths. A use case is independent of implementation, technology, and platform, and can be described textually or visually.
+
+***Origin and evolution***
+**Ivar Jacobson invented use cases** (OOPSLA 1987; _Object-Oriented Software Engineering_ / OOSE, 1992); they became the behavioural backbone of UML and the Unified Process. **Alistair Cockburn did not invent them** — his _Writing Effective Use Cases_ (Addison-Wesley, 2001) codified how to write them well (goal levels, fully dressed template), and Larry Constantine's _essential use cases_ (mid-1990s) abstract away interface detail to capture pure user intent. Jacobson keeps evolving the technique:
+
+* **Use-Case 2.0** (Jacobson, Ian Spence & Kurt Bittner, 2011) introduced **use-case slices** for agile, incremental delivery, supported by user-story narratives.
+* **Use-Case 3.0** (Jacobson, Spence & Keith de Mendonca, 2024) refreshed it as a ten-principle family of practices, 100% compatible with teams already using user stories.
+
+***Use-Case Slices***
+Jacobson's key scaling concept (Use-Case 2.0/3.0). A slice is one or more paths (stories/scenarios) through a use case that delivers clear, **testable** value. A slice always starts at the beginning of the use case and ends at its end, traverses one or more of its flows, and is complemented by explicit test cases. Slices are the unit of incremental delivery: they populate the backlog, can be prioritised (e.g. MoSCoW), and are realised by smaller **work items** (user stories, features, tasks). Slicing is what lets use cases scale into agile and lean development without forcing a big up-front specification.
+
+***Fully Dressed Format (Cockburn)***
+A structured textual template for describing system behaviour from the actor's perspective. Each use case includes: Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario (numbered steps), Extensions (alternative/failure paths with step references), Postconditions (success guarantee and minimal guarantee), and Technology & Data Variations. What matters is the **accuracy** of the flow of events, not how detailed it is written out.
+
+***Goal Levels (Cockburn)***
+Three abstraction levels that organise use cases into a hierarchy:
+
+* **Summary** (Kite/Cloud) — business-process-level goals spanning multiple user sessions. Example: "Manage customer lifecycle."
+* **User Goal** (Sea Level) — the sweet spot: one actor, one sitting, one measurable outcome. Example: "Place an order." Most use cases live here.
+* **Subfunction** (Fish/Clam) — steps that support a user goal but are not goals in themselves. Example: "Authenticate user." Extract only when reused across multiple user-goal use cases.
+
+***Scope***
+Defines the system boundary — what is inside the "design scope" and what is an external actor. The system-of-interest is drawn as a box; actors (people, organisations, or other systems with behaviour) sit outside it. Getting scope right prevents use cases from being either too vague (organisational scope) or too detailed (component scope).
+
+***Actor-Goal List***
+The discovery technique: list every actor and every goal they have against the system. This produces a candidate use case list before writing any prose. The goal level test: "Does the actor go home happy if this goal is achieved?" filters out subfunctions masquerading as user goals.
+
+**What use cases do **not** prescribe**
+The textual form is deliberately **prose-based and notation-agnostic**. It does not mandate Activity Diagrams, Gherkin, EARS, or any formal syntax. Those are complementary representations that can be layered on top — Activity Diagrams for visual flow, Gherkin for executable acceptance criteria, EARS for structured requirement statements, and user stories as the work items that implement a slice.
+
+***Key Proponents***: **Ivar Jacobson** (inventor; OOPSLA 1987, _OOSE_ 1992), with **Ian Spence**, **Kurt Bittner** and **Keith de Mendonca** (Use-Case 2.0/3.0), and **Alistair Cockburn** (_Writing Effective Use Cases_, Addison-Wesley, 2001). Primary reference: Ivar Jacobson, Ian Spence & Keith de Mendonca, _Use-Case 3.0 — The Guide to Succeeding with Use Cases_ (Ivar Jacobson International, 2024), https://www.ivarjacobson.com/files/use-case_3.0_v1.0.pdf[ivarjacobson.com].
+
+[discrete]
+## **When to Use**:
+
+* Discovering what a system needs to do before deciding how to build it — the Actor-Goal List is a fast, structured brainstorm
+* Slicing a large use case into incrementally deliverable, testable pieces that fill an agile backlog (Use-Case 2.0/3.0)
+* Structuring requirements conversations with stakeholders who think in scenarios, not features
+* Decomposing a large system into manageable behavioural units at the right granularity (goal-level test)
+* Brownfield theory recovery: reconstructing what a system does by writing use cases from observed behaviour
+* Feeding downstream artifacts: each slice becomes a natural unit for user stories, Gherkin scenarios, and test plans
+* Complementing arc42: use cases populate Section 6 (Runtime View) and inform Section 3 (Context and Scope)
+
+[discrete]
+## **Related Anchors**:
+
+* Gherkin - Executable acceptance criteria that can be derived from each extension path in a use case
+* BDD Given/When/Then - Formalises the scenario steps that the use case describes in prose
+* EARS Requirements - Structured syntax for individual requirement statements; complements the scenario-level structure
+* arc42 - Use cases feed Section 6 (Runtime View) and inform Section 3 (Context and Scope)
+* ISO 25010 - Quality goals that use case extensions should address (error handling, performance, security)
+
 ### User Story Mapping
 
 ***Full Name***: User Story Mapping according to Jeff Patton
@@ -4103,6 +4924,7 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 
 * arc42 Architecture Documentation
 * ADR according to Nygard
+* Quality Attribute Scenario
 
 ### C4-Diagrams
 
@@ -4135,6 +4957,47 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Onboarding new team members
 * Architecture documentation and review
 * Replacing or supplementing UML
+
+### CAP Theorem
+
+***Full Name***: CAP Theorem (Consistency, Availability, Partition tolerance)
+
+***Also known as***: Brewer's Theorem
+
+[discrete]
+## **Core Concepts**:
+
+***The three properties***: **Consistency** (every read sees the most recent write), **Availability** (every request gets a non-error response), **Partition tolerance** (the system keeps working despite dropped/delayed messages between nodes)
+
+***The trade-off***: When a network partition occurs, a distributed system must choose between consistency and availability — it cannot have both during the partition
+
+***Partitions are not optional***: Real networks partition, so P is a given; the genuine design choice is CP vs AP behaviour **while partitioned**
+
+***Common misreading***: "Pick 2 of 3" is a simplification; outside a partition a system can be both consistent and available
+
+***PACELC extension***: Else (no partition), trade Latency against Consistency — captures the everyday tuning that CAP alone omits (Abadi, 2012)
+
+***Key Proponents***: Eric Brewer (2000 conjecture, PODC keynote); formally proved by Seth Gilbert & Nancy Lynch (2002); PACELC by Daniel Abadi (2012)
+
+[discrete]
+## **When to Use**:
+
+* Choosing or evaluating a distributed datastore (CP vs AP behaviour)
+* Framing a concrete consistency/availability trade-off for a feature
+* Reasoning about behaviour during network partitions and failover
+* Explaining why strong consistency costs availability or latency
+
+[discrete]
+## **When NOT to Use**:
+
+* For single-node systems with no replication (no partitions to tolerate)
+* As a crude "2 of 3" slogan — prefer the partition-time framing or PACELC
+
+[discrete]
+## **Related Anchors**:
+
+* Event-Driven Architecture — eventual consistency as an AP design choice
+* Fallacies of Distributed Computing — the network assumptions CAP makes explicit
 
 ### Clean Architecture
 
@@ -4170,6 +5033,48 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Systems requiring long-term maintainability
 * When team size and turnover are high
 * Projects where business rules must be protected from technology changes
+
+### Conway's Law
+
+***Full Name***: Conway's Law
+
+***Also known as***: The Mirroring Hypothesis
+
+[discrete]
+## **Core Concepts**:
+
+***Homomorphic force***: "Any organization that designs a system will produce a design whose structure is a copy of the organization's communication structure" — system boundaries mirror team boundaries
+
+***Communication paths***: Interfaces in the software appear wherever two teams must coordinate; the cost and friction of cross-team communication shapes where modules are split
+
+***Inverse Conway Maneuver***: Deliberately structure teams to match the desired architecture, rather than letting an accidental org chart dictate the system
+
+***Team Topologies***: Modern operationalization (Skelton & Pais) — stream-aligned, platform, enabling, and complicated-subsystem teams sized for a manageable cognitive load
+
+***Sociotechnical view***: Architecture is not purely technical; org design and system design are two sides of the same decision
+
+***Key Proponents***: Melvin E. Conway ("How Do Committees Invent?", Datamation 1968); popularized by Fred Brooks ("The Mythical Man-Month"); modern form in Matthew Skelton & Manuel Pais ("Team Topologies", 2019)
+
+[discrete]
+## **When to Use**:
+
+* Planning team structure for a new system or a re-architecture
+* Diagnosing why module boundaries are awkward or why integration is painful
+* Justifying microservice/bounded-context splits along team lines
+* Reviewing whether the org chart is fighting the intended architecture
+
+[discrete]
+## **When NOT to Use**:
+
+* As a deterministic prediction — it is a strong tendency, not a law of physics
+* For tiny single-team systems where there is only one communication path
+
+[discrete]
+## **Related Anchors**:
+
+* Domain-Driven Design — bounded contexts as team-aligned boundaries
+* Cohesion Criteria — module cohesion that team boundaries should respect
+* Vertical Slice Architecture — slices that map to stream-aligned teams
 
 ### CQRS (Command Query Responsibility Segregation)
 
@@ -4290,6 +5195,91 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Domain-Driven Design - Domain events are a DDD building block
 * Hexagonal Architecture - Message queues as driven adapters
 * Clean Architecture - Events cross architectural boundaries via interfaces
+
+### Event Storming according to Alberto Brandolini
+
+***Full Name***: Event Storming
+
+***Also known as***: EventStorming (Brandolini)
+
+[discrete]
+## **Core Concepts**:
+
+***Domain events on a timeline***: Model the domain as past-tense **domain events** (orange stickies) placed left-to-right on a wide wall, reconstructing how the business actually unfolds over time
+
+***The colour notation***: A fixed sticky vocabulary — orange = Domain Event, blue = Command, yellow = Aggregate, lilac = Policy (reactive "whenever… then…"), green = Read Model, pink = External System, red = Hotspot (conflict, question, assumption)
+
+***Three levels***: **Big Picture** (explore the whole domain with all stakeholders), **Process Modeling** (zoom into one flow: command → event → policy → command), **Design Level** (aggregates, commands and events detailed enough to drive implementation)
+
+***Pivotal events***: Events that mark phase transitions or boundaries — strong candidates for **bounded context** seams
+
+***Hotspots***: Make conflicts, unknowns and assumptions explicit on the wall instead of glossing over them — they become the agenda
+
+***Chaotic exploration → enforced timeline***: Everyone adds events in parallel first (diverge), then the group orders and de-duplicates them into a coherent line (converge)
+
+***Key Proponents***: Alberto Brandolini (first run 2012, "Introducing EventStorming" blog post 2013; Leanpub book, continuously updated)
+
+[discrete]
+## **When to Use**:
+
+* Kicking off a Domain-Driven Design effort — discovering bounded contexts and aggregate boundaries collaboratively
+* Aligning business and engineering on a shared, visual domain model
+* Before deciding on an event-driven or CQRS architecture — discover the events/commands first
+* **Reverse Event Storming** on legacy systems (well suited to an AI agent): extract state transitions → map to Domain Events → cluster into Aggregates → surface Bounded Contexts
+
+[discrete]
+## **When NOT to Use**:
+
+* Trivial CRUD domains with no meaningful process or business rules
+* Solo modeling where the collaborative, cross-role discovery — the whole point — is absent
+
+[discrete]
+## **Related Anchors**:
+
+* Domain-Driven Design — the vocabulary (aggregates, bounded contexts) Event Storming discovers; often the on-ramp to DDD
+* User Story Mapping — activity-centric mapping vs. event-centric discovery
+* CQRS — commands and read models found on the wall feed a later CQRS decision
+* Event-Driven Architecture — the modeling step that precedes deciding how events are routed
+
+### Fallacies of Distributed Computing
+
+***Full Name***: The Eight Fallacies of Distributed Computing
+
+***Also known as***: Deutsch's Fallacies, Fallacies of Networked Computing
+
+[discrete]
+## **Core Concepts**:
+
+***The eight false assumptions***: (1) The network is reliable. (2) Latency is zero. (3) Bandwidth is infinite. (4) The network is secure. (5) Topology doesn't change. (6) There is one administrator. (7) Transport cost is zero. (8) The network is homogeneous
+
+***Why it matters***: Each assumption is comfortable in local development and false in production; building on them produces systems that fail under real network conditions
+
+***As an audit checklist***: Invoke the list to interrogate a distributed design — for each fallacy, ask what happens when the real-world opposite is true (retries, timeouts, backpressure, encryption, service discovery, capacity limits, protocol negotiation)
+
+***Mitigation cues***: Reliability → retries/idempotency; latency → batching/locality; security → zero-trust; topology → service discovery; homogeneity → explicit contracts and versioning
+
+***Key Proponents***: L. Peter Deutsch (first seven, Sun Microsystems, c. 1994); James Gosling added the eighth ("the network is homogeneous"); early items credited to Bill Joy and Tom Lyon
+
+[discrete]
+## **When to Use**:
+
+* Reviewing or hardening a distributed/microservice design
+* Writing resilience requirements (timeouts, retries, circuit breakers)
+* Onboarding developers moving from monolith to distributed thinking
+* Post-incident analysis of network-related outages
+
+[discrete]
+## **When NOT to Use**:
+
+* For purely in-process, single-machine logic with no network calls
+* As a substitute for measuring your actual network's behaviour
+
+[discrete]
+## **Related Anchors**:
+
+* CAP Theorem — the consistency/availability consequence of partitions
+* Event-Driven Architecture — async patterns that assume unreliable networks
+* Hexagonal Architecture — isolating network adapters behind ports
 
 ### GoM
 
@@ -4536,6 +5526,43 @@ Lehman derived eight laws from observing E-type systems, including **Continuing 
 * Organizations using Markdown-based documentation workflows
 * When LLM assistance is needed to generate consistent decision records
 * Complementing arc42 Section 9 (Architecture Decisions)
+
+### Quality Attribute Scenario
+
+***Full Name***: Quality Attribute Scenario
+
+***Also known as***: Quality Scenario, Six-Part Scenario
+
+[discrete]
+## **Core Concepts**:
+
+***Purpose***: Turn a vague quality goal ("the system must be fast") into a concrete, testable statement. A scenario without a measurable response is a wish, not a requirement.
+
+***Six Parts***: Every scenario is specified through six elements: **Source** (the entity generating the stimulus), **Stimulus** (the condition arriving at the system), **Artifact** (the part of the system stimulated), **Environment** (the conditions under which it occurs — normal load, overload, startup, degraded mode), **Response** (the activity that results), **Response Measure** (the response quantified so the requirement is verifiable).
+
+***Response Measure***: The decisive part. Without a measure — a latency, a percentile, a throughput, a recovery time — a scenario cannot be tested and is not a requirement.
+
+***General vs. Concrete Scenarios***: A general scenario is a reusable template for a quality attribute; a concrete scenario instantiates it for one specific system with literal values.
+
+***Relation to Quality Attributes***: Scenarios make ISO/IEC 25010 characteristics operational — each characteristic (performance efficiency, reliability, security...) is expressed as one or more concrete scenarios.
+
+***Key Proponents***: Len Bass, Paul Clements, Rick Kazman ("Software Architecture in Practice", SEI / Carnegie Mellon University)
+
+[discrete]
+## **When to Use**:
+
+* Writing arc42 Chapter 10 quality requirements as testable statements rather than adjectives
+* Building an ATAM utility tree, where each leaf is a prioritized concrete scenario
+* Specifying non-functional requirements that QA must later verify
+* Recovering quality requirements from a brownfield codebase — deriving the response measure from a literal threshold, timeout, or budget in the code
+
+[discrete]
+## **Related Anchors**:
+
+* ATAM — uses quality attribute scenarios as the leaves of its utility tree
+* arc42 Architecture Documentation — Chapter 10 quality requirements are expressed as scenarios
+* ISO/IEC 25010 — the quality characteristics that scenarios make concrete
+* EARS Requirements — a comparable discipline of making requirements precise and testable
 
 ### Tracer Bullet
 
@@ -4899,6 +5926,48 @@ Lehman derived eight laws from observing E-type systems, including **Continuing 
 * ADR according to Nygard — captures architecture decisions with Context/Decision/Consequences; the balance sheet feeds the Consequences section
 * MoSCoW — prioritisation among items chosen **after** the decision is made; the balance sheet helps decide **whether** to do the work at all
 
+### Goodhart's Law
+
+***Full Name***: Goodhart's Law
+
+***Also known as***: "When a measure becomes a target, it ceases to be a good measure" (Strathern's formulation)
+
+[discrete]
+## **Core Concepts**:
+
+***The core claim***: Once a metric is used as a target and tied to incentives, people optimize the metric rather than the underlying goal, so the metric stops reflecting what it once measured
+
+***Proxy vs. goal***: Most metrics are proxies for a goal that is hard to measure directly; pressure on the proxy widens the gap between proxy and goal
+
+***Gaming and side effects***: Targets invite gaming, narrow focus, and surrogation — chasing the number while the real objective degrades (e.g. test coverage % vs. actual test quality)
+
+***Mitigations***: Use baskets of balanced/counter metrics, keep some measures for learning rather than targets, pair quantitative with qualitative signals, and revisit metrics as behaviour adapts
+
+***Relevance to this project***: A direct lens for designing LLM-evaluation criteria and KPIs — guard against optimizing a score instead of the capability it stands for
+
+***Key Proponents***: Charles Goodhart (1975, monetary-policy context); pithy general formulation by Marilyn Strathern (1997); related to Campbell's Law
+
+[discrete]
+## **When to Use**:
+
+* Designing KPIs, OKRs, or team performance metrics
+* Reviewing whether a metric is being gamed or has surrogated the goal
+* Defining evaluation criteria for models, quality, or productivity
+* Arguing for balanced/counter metrics instead of a single target
+
+[discrete]
+## **When NOT to Use**:
+
+* As a blanket excuse to avoid measurement altogether — metrics still inform
+* For purely descriptive measures that carry no incentive or target
+
+[discrete]
+## **Related Anchors**:
+
+* LLM-Evaluations — guarding eval criteria against metric-gaming
+* Decisional Balance Sheet — weighing trade-offs beyond a single number
+* Kano Model — qualitative signal alongside quantitative targets
+
 ### Hoshin Kanri
 
 ***Full Name***: Hoshin Kanri (方針管理 — "direction management")
@@ -5111,6 +6180,94 @@ Lehman derived eight laws from observing E-type systems, including **Continuing 
 * Wardley Mapping — visualise where change is needed in the value chain before defining the vision
 
 ***Counter-example***: Pure top-down mandate ("from Monday we will be agile") — Kotter's whole point is that without urgency, coalition, vision and short-term wins, the mandate produces compliance theatre, not change.
+
+### Meaningful Human Control (MHC)
+
+***Full Name***: Meaningful Human Control
+
+***Also known as***: MHC, Meaningful Human Control over Individual Attacks
+
+[discrete]
+## **Core Concepts**:
+
+***Substantive human control***: Humans must retain genuine, substantive control over autonomous systems making high-stakes decisions — not merely formulaic "human-in-the-loop" oversight
+
+***Situational awareness***: Human operators require adequate information about the target, context, weapon/system behavior, and foreseeable effects to make informed judgments
+
+***Accountability chain***: Those responsible for assessing information and executing actions must be clearly identifiable and accountable for outcomes; accountability cannot be transferred to machines
+
+***Sharkey's five levels***: Operational framework for human supervisory control: (L1) human deliberates before attack → (L2) program suggests targets, human chooses → (L3) program selects, human approves → (L4) program acts, human has restricted veto → (L5) fully autonomous without human involvement
+
+***Positive human action***: Initiating critical actions (especially use of force) requires affirmative human authorization, not merely passive monitoring
+
+***Predictable, reliable, transparent technology***: Autonomous systems must be designed for predictability, graceful degradation, and transparency to enable meaningful control
+
+***Timely intervention***: Human operators must retain the capability for timely intervention, override, or abort — not just pre-programmed constraints
+
+***Key Proponents***: Article 36 (coined the term, 2013), Noel Sharkey (five-level framework, 2014), ICRC (endorsed MHC as legal/ethical requirement, 2018), UN CCW GGE (Guiding Principles, 2019), IEEE Global Initiative (Ethically Aligned Design, 2019)
+
+[discrete]
+## **When to Use**:
+
+* Designing or evaluating autonomous systems in high-stakes domains (weapons systems, medical AI, autonomous driving, critical infrastructure)
+* Assessing whether human oversight of an AI system is genuinely effective or merely procedural
+* Defining accountability chains for autonomous decision-making
+* Requirements engineering for systems with autonomy in critical functions
+* AI governance and ethics discussions in product management and policy
+* Legal and compliance review of AI systems under emerging regulations (EU AI Act)
+
+[discrete]
+## **When NOT to Use**:
+
+* Low-stakes automation decisions (content recommendations, spam filtering, routine data processing)
+* As a substitute for domain-specific legal requirements (IHL, medical device regulation, data protection law)
+
+[discrete]
+## **Related Anchors**:
+
+* Regulated Environment
+* Cynefin Framework
+* Luhmann System Theory
+* Simon Constructivism
+* Systemic Consulting
+
+[discrete]
+## **Quality Criteria Checklist** (Tier-2 Justification)
+
+This anchor is classified as **Tier 2 — Needs qualification**. It is not self-standing; it requires domain context and explicit verification criteria to be meaningfully applied. The following checklist documents the qualification requirements mapped to Issue #540.
+
+1. ***Acceptance Criteria*** (measurable)
+* High-stakes domain identified: yes/no — specify domain (weapons, medical, autonomous driving, critical infrastructure, algorithmic sentencing)
+* Autonomy level classified: yes/no — specify Sharkey level (L1–L5) for each critical function
+* Human operator identified: yes/no — specify role, training level, and decision authority
+* Accountability chain documented: yes/no — specify who decides, who approves, who audits
+* Legal/regulatory framework identified: yes/no — specify applicable law (IHL, EU AI Act, GDPR, etc.)
+
+1. ***Evidence Types Required***
+* System specification documenting autonomy boundaries and human-machine interaction points
+* Operator training and qualification records
+* Audit trail design demonstrating human accountability at each decision point
+* Risk assessment showing residual risks after human oversight measures
+* Legal review confirming compliance with applicable regulatory framework
+
+1. ***Minimum Documentation / Artifacts***
+* Human-Machine Interface (HMI) specification with override and abort mechanisms
+* Decision authority matrix (who decides what, under what conditions)
+* Operator situational awareness requirements (information feed, latency, decision time)
+* Graceful degradation protocol for communication loss or system failure
+* Test protocol validating human intervention capability under operational conditions
+
+1. ***Validation Methods***
+* Simulated scenario testing with time-pressure and information-degradation conditions
+* Red-team evaluation of human-override effectiveness
+* Independent audit of accountability chain completeness
+* Legal review against applicable IHL or regulatory requirements
+* Post-deployment monitoring plan for measuring MHC erosion over time
+
+1. ***Tier-2 Justification Summary***
+* **Why not Tier 3**: MHC cannot be evaluated without domain-specific context (weapons vs. medical vs. automotive). The same system may satisfy MHC in one domain and fail in another. Sharkey level L3 may be sufficient for cargo ships but not for lethal targeting.
+* **Why not Tier 1**: MHC is a well-established, multi-source concept with clear definition, consistent usage across domains, attributable origin, and rich conceptual activation.
+* **Qualification path**: To apply MHC, the user must answer: "Who controls what, with what information, under what constraints, and who is accountable?" The five criteria above operationalize this question.
 
 ### Minimum Viable Product (MVP)
 
@@ -6084,145 +7241,6 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 
 ---
 
-## Workflow
-
-### Workflow: Architecture Documentation
-
-[discrete]
-## **Core Concepts**:
-
-***arc42 template***: 12 sections for comprehensive architecture docs
-
-***Docs-as-Code***: Documentation in the repo, versioned, reviewed, CI-built
-
-***ADR according to Nygard***: Lightweight decision records (Context, Decision, Consequences)
-
-***Pugh Matrix***: 3-point scale (-1, 0, +1) for comparing architecture alternatives
-
-***docToolchain***: Gradle-based toolchain for AsciiDoc pipelines
-
-[discrete]
-## **When to Use**:
-
-* Starting a new project that needs architecture documentation
-* Migrating from Confluence/Wiki to Docs-as-Code
-* When architecture decisions need to be traceable
-
-[discrete]
-## **Combined Prompt**:
-
-Create an arc42 architecture documentation using the Docs-as-Code approach. Include ADRs according to Nygard for all key decisions, each with a 3-point (-1, 0, +1) Pugh Matrix comparing alternatives.
-
-### Workflow: Structured Code Review
-
-[discrete]
-## **Core Concepts**:
-
-***SOLID Principles***: Check for SRP, OCP, LSP, ISP, DIP violations
-
-***Clean Architecture***: Verify dependency direction (inward only)
-
-***Conventional Commits***: Commit messages follow type(scope): description
-
-***Fagan Inspection***: Structured review with defined roles and phases
-
-***OWASP Top 10***: Security checklist for common vulnerabilities
-
-[discrete]
-## **When to Use**:
-
-* Pull request reviews
-* Architecture review sessions
-* Security-focused code audits
-
-[discrete]
-## **Combined Prompt**:
-
-Review this code against SOLID Principles. Check that dependencies follow Clean Architecture rules (inward only). Verify commit messages follow Conventional Commits. Flag any OWASP Top 10 security issues.
-
-### Workflow: Requirements to Specification
-
-[discrete]
-## **Core Concepts**:
-
-***User Story Mapping***: Backbone + walking skeleton for release planning
-
-***INVEST Criteria***: Independent, Negotiable, Valuable, Estimable, Small, Testable
-
-***BDD / Gherkin***: Given-When-Then scenarios as executable specifications
-
-***MoSCoW Prioritization***: Must, Should, Could, Won't for scope decisions
-
-***Definition of Done***: Shared checklist for "really done"
-
-[discrete]
-## **When to Use**:
-
-* Starting a new product or major feature
-* When business and dev teams need shared understanding
-* Transitioning from ad-hoc requirements to structured specs
-
-[discrete]
-## **Combined Prompt**:
-
-Create a User Story Map for this feature. Prioritize stories using MoSCoW. For each Must-have story, verify it meets INVEST criteria and write BDD scenarios in Gherkin (Given-When-Then). Define a clear Definition of Done.
-
-### Workflow: Strategic Architecture Analysis
-
-[discrete]
-## **Core Concepts**:
-
-***Wardley Mapping***: Map value chain + evolution for strategic positioning
-
-***Cynefin Framework***: Categorize situation (Simple, Complicated, Complex, Chaotic)
-
-***Morphological Box***: Explore solution space systematically
-
-***ATAM***: Architecture Tradeoff Analysis Method for quality evaluation
-
-***Five Whys***: Root cause analysis for architecture problems
-
-[discrete]
-## **When to Use**:
-
-* Evaluating build-vs-buy decisions
-* Assessing architecture fitness for changing requirements
-* Strategic technology radar reviews
-
-[discrete]
-## **Combined Prompt**:
-
-Analyze this system using Wardley Mapping to understand component evolution. Categorize each challenge using the Cynefin Framework. For complex decisions, use a Morphological Box to explore alternatives, then evaluate tradeoffs with ATAM.
-
-### Workflow: TDD with Clean Architecture
-
-[discrete]
-## **Core Concepts**:
-
-***TDD, London School***: Outside-in, mock-heavy, interface discovery
-
-***Clean Architecture***: Dependency Rule — inner layers don't know outer layers
-
-***SOLID Principles***: SRP, OCP, LSP, ISP, DIP guide class design
-
-***Hexagonal Architecture***: Ports & Adapters separate domain from infrastructure
-
-***Testing Pyramid***: Many unit tests, fewer integration, fewest E2E
-
-[discrete]
-## **When to Use**:
-
-* Building a new service with complex business logic
-* When testability is a primary architecture driver
-* Refactoring a legacy codebase toward clean boundaries
-
-[discrete]
-## **Combined Prompt**:
-
-Implement this feature using TDD London School with Clean Architecture. Start outside-in: write a failing acceptance test, then drive the implementation through the layers. Apply SOLID principles and keep the domain free of framework dependencies.
-
----
-
 
 # Semantic Contracts
 
@@ -6242,7 +7260,7 @@ When we talk about a "specification" or "spec", we mean:
 - Individual requirements in EARS syntax where applicable (When/While/If/Shall)
 - Supplementary Specifications as needed: Entity Model, State Machines, Interface Contracts, Validation Rules
 
-*Referenced anchors: cockburn-use-cases, gherkin, bdd-given-when-then, ears-requirements*
+*Referenced anchors: use-cases, gherkin, bdd-given-when-then, ears-requirements*
 
 ## Requirements Discovery
 
@@ -6261,13 +7279,24 @@ Document the result as a PRD (problem, goals, personas, success criteria, scope)
 
 ## Architecture Documentation
 
-Architecture documentation follows arc42.
+Architecture documentation follows arc42. Scaffold the arc42 "with-help" template into the project's `src/docs/` via docToolchain `downloadTemplate` rather than restating chapter structure here — each chapter's help text is its structural spec, which the process fills and then replaces.
 
 Every context, building-block and runtime chapter carries at least one diagram. Diagrams are PlantUML, not Mermaid; building blocks use C4 via PlantUML's bundled C4-PlantUML standard library — the `!include <C4/...>` stdlib form (angle brackets), never the remote `https://` URL and never vendored file copies. Not generic boxes.
 
-Decisions are ADRs (Nygard) with a 3-point Pugh Matrix (-1/0/+1). When the rationale is unconfirmed, ADR Status is "Accepted (inferred)" and Pugh cells needing team judgment are marked `?` rather than guessed.
+Decisions are ADRs (Nygard) with a 3-point Pugh Matrix (-1/0/+1). When the rationale is unconfirmed, ADR Status is "Accepted (inferred)" and Pugh cells needing team judgment are marked `?` rather than guessed. Each ADR's Consequences name the risks the decision creates, referencing the Chapter 11 risk IDs (R-NNN); a decision that creates a risk not yet in Chapter 11 either adds it there or records the consequence as explicitly accepted without a tracked risk. Conversely, Chapter 8 concepts back-reference the ADR that decided them.
 
-*Referenced anchors: arc42, c4-diagrams, adr-according-to-nygard, pugh-matrix*
+Cross-section traceability — arc42 templates do not enforce these, so the contract does:
+- Every Chapter 1.2 quality goal maps to a named approach in Chapter 4.
+- The external systems in Chapter 3 (context) and the Chapter 5 Level-1 building-block view are the same set — one system boundary in both.
+- Every Chapter 5 building block appears in at least one Chapter 6 runtime scenario; Chapter 6 includes at least one error/recovery scenario, not only the happy path.
+- Chapter 9 carries an in-document ADR index (ADR | Title | Status), even when the ADRs live in a separate register.
+- Each Chapter 5 building block states responsibility, interface, and source location.
+
+Chapter 1.2 lists only the top 3-5 quality goals — the ones that drive architecture decisions. Chapter 10 may elaborate further quality characteristics beyond those top goals; that is correct arc42, not a defect. The Chapter 10 quality tree marks each characteristic as either concretising a Chapter 1.2 top goal or as a derived quality requirement, and each Chapter 10 quality scenario cross-links back to the Chapter 1.2 goal it concretises (or is marked "derived"). Each Chapter 10 scenario is written in the six-part quality attribute scenario form (Source, Stimulus, Artifact, Environment, Response, Response Measure); the Response Measure carries a literal figure, so the requirement is testable rather than an adjective.
+
+Chapter 11 separates Risks from Technical Debt into two subsections. Each Risk carries probability, impact, a derived priority, and a mitigation/action cross-referencing an existing mitigation in Chapter 8 or a quality scenario where one exists; risks are ordered by priority. Each Technical Debt item references the specific Chapter 5 building block it burdens.
+
+*Referenced anchors: arc42, c4-diagrams, adr-according-to-nygard, pugh-matrix, quality-attribute-scenario*
 
 ## Crosscutting Concepts
 
@@ -6344,7 +7373,7 @@ Our code follows:
 - DRY, KISS
 - Ubiquitous Language from Domain-Driven Design (same terms in code as in the specification)
 
-*Referenced anchors: solid-principles, dry-principle, kiss-principle, domain-driven-design*
+*Referenced anchors: solid-principles, dry, kiss-principle, domain-driven-design*
 
 ## Quality Review
 
@@ -6379,13 +7408,13 @@ Recover a program's "theory" (Naur 1985) from source code through recursive ques
   - Q4.1-Q4.8: the eight ISO/IEC 25010 characteristics; plus Q4.9: which characteristic has priority
   - Q5.1-Q5.5: technical debt, security risks, operational risks, dependency/supply-chain risks, scaling/performance risks
 
-- Below the fixed second level, decompose freely and code-driven; stop when a leaf is small enough to answer from one piece of code evidence, or to pose as one precise stakeholder question. Third-level depth varies between runs — expected.
+- Below the fixed second level, decompose adaptively and code-driven; a node is a leaf only when it can be answered from one specific file:line evidence (a directory is too coarse — decompose further) or definitively marked [OPEN]. Depth tracks code density: a small bounded context yields a shallow tree, a large one a deep tree, capped at four levels below a fixed node. Depth varies between runs — expected.
 
 - Q-IDs are stable: Q3.7 is always Deployment View, in every run, so trees from different runs can be diffed node-by-node.
 
 - Each leaf is [ANSWERED] (with file:line evidence) or [OPEN] (with Category, Ask role, and why it is unanswerable from code).
 
-- Quality is not wholly team knowledge. Derive quality scenarios for the Q4 branch and arc42 Chapter 10 from measurable code behaviour — literal thresholds, timeouts, budgets, the threat catalogue and test concept from Q3.8 — as [ANSWERED] with file:line; never invent target numbers. Only the quality-goal ranking (Q4.9) is [OPEN]. arc42 Chapter 10 carries the derivable scenarios, never just an [OPEN] pointer.
+- Quality is not wholly team knowledge. Derive quality scenarios for the Q4 branch and arc42 Chapter 10 from measurable code behaviour — literal thresholds, timeouts, budgets, the threat catalogue and test concept from Q3.8 — as [ANSWERED] with file:line; never invent target numbers. Only the quality-goal ranking (Q4.9) is [OPEN]. arc42 Chapter 10 carries the derivable scenarios, never just an [OPEN] pointer. Chapter 1.2 names only the top 3-5 quality goals; Chapter 10 covers all eight characteristics — mark each Chapter 10 entry as concretising a Chapter 1.2 top goal or as derived.
 
 - Open Questions are the handoff document: always emit one section per role (Product Owner, Architect, Developer, Domain Expert, Operations), even when a section is empty ("No open questions for this role").
 
@@ -6405,6 +7434,25 @@ Explain complex concepts using simple language and everyday analogies. When the 
 
 *Referenced anchors: feynman-technique*
 
+## Explaining and Teaching
+
+Teach until the learner genuinely understands — don't just explain.
+
+Sequence each unit Why → What → How → What-If (4MAT): motivation before detail. Treat the Why as Naur's program theory — the reasoning, trade-offs, and branches not taken behind the design, not merely what the code does; drill recursively into why.
+
+Diagnose first (Socratic Method): have the learner restate their current understanding, then fill the gaps with questions, not answers, adjusting depth on request (ELI5 / ELI-intern). The sharpest check is having them explain it back in plain words (Feynman Technique) — where they stall is the gap.
+
+Keep a running, written checklist of what must be grasped — high level (why it matters, what it impacts) and low level (logic, edge cases, design decisions) — a Definition of Done for understanding.
+
+The loop:
+- After each point, verify by active recall — an open or multiple-choice question, a code walkthrough, the debugger — never "makes sense?".
+- "Understood" means Bloom's Apply/Analyze level (use it on a new case, trace the edge cases), not recall.
+- Don't advance until the current point is demonstrated, and don't end until the whole checklist is.
+
+Scale the ceremony to the size of the question.
+
+*Referenced anchors: 4mat, mental-model-according-to-naur, socratic-method, feynman-technique, blooms-taxonomy, definition-of-done*
+
 ## Writing Style
 
 Writing follows Gutes Deutsch nach Wolf Schneider (or Plain English according to Strunk & White).
@@ -6420,5 +7468,21 @@ Additionally:
 - Conclusions make a clear statement — never end with 'it remains exciting'
 
 *Referenced anchors: gutes-deutsch-wolf-schneider, plain-english-strunk-white*
+
+## TDD, Hamburg Style
+
+Design-led TDD recipe by Ralf Westphal — close the requirements/logic gap before writing code, then test at service boundaries with minimal mocking. Use it when the problem is too complex for pure micro-step Red-Green-Refactor.
+
+- **ACD cycle (Analyze → Design → Code)** precedes the test loop: first model the solution to close the gap between requirements and logic, only then code.
+- **"Right from the start" philosophy** — implement correctly the first time so refactoring is a correction, not routine cleanup.
+- **Service-level testing** — test behind the public API, independent of API technology.
+- **Minimal mocking** — closer to *TDD, Chicago School* than *London School*.
+- **IOSP (Integration Operation Segregation Principle)** — a function is either composition (Integration) or logic (Operation), never both; structural support for simple unit tests.
+- **Deep Work over Small Steps** — accept that some problems can't be sliced into tiny green increments; stay red longer when the design demands it.
+
+Composes: *TDD, London School*, *TDD, Chicago School*, *Red-Green-Refactor*, *IOSP*.
+Sources: https://ralfw.de/hamburg-style-tdd/, https://ralfw.de/tdd-how-it-can-be-done-right/
+
+*Referenced anchors: red-green-tdd, tdd-london-school, tdd-chicago-school, iosp*
 
 ---

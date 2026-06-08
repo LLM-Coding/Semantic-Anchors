@@ -269,7 +269,7 @@ Stable code that nobody touches does not need specs.
 
 |Theory Recovery (Phase 1)
 |`You have access to [bounded context path]. No documentation exists. Build a Question Tree: 5 root questions (Problem/Users, Specification, Architecture, Quality Goals, Risks), each with a FIXED second level (Q1.1-Q5.5: 6 PRD elements, 6 spec categories, 12 arc42 chapters, 8 ISO 25010 characteristics + priority, 5 risk categories); free decomposition only below it. Each leaf: [ANSWERED] with file:line evidence or [OPEN] with Category and Ask role.`
-|link:#/anchor/arc42[arc42], link:#/anchor/cockburn-use-cases[Cockburn], link:#/anchor/iso-25010[ISO 25010], link:#/anchor/nygard-adrs[Nygard ADR]
+|link:#/anchor/arc42[arc42], link:#/anchor/use-cases[Use Cases], link:#/anchor/iso-25010[ISO 25010], link:#/anchor/nygard-adrs[Nygard ADR]
 
 |Team Answers
 |Route OPEN_QUESTIONS.adoc to the team by Ask role. Typically 10-15 questions.

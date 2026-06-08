@@ -1,0 +1,70 @@
+= Use Cases
+:categories: requirements-engineering
+:roles: business-analyst, software-architect, product-owner, software-developer
+:related: gherkin, bdd-given-when-then, ears-requirements, arc42, iso-25010
+:proponents: Ivar Jacobson, Alistair Cockburn, Ian Spence
+:tags: use-cases, requirements, use-case-slices, goal-levels, fully-dressed, actor-goal-list
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Use Cases (Use-Case 2.0 / Use-Case 3.0)
+
+Also known as:: Use-Case Driven Development, Use-Case Slices, Fully Dressed Use Cases
+
+[discrete]
+== *Core Concepts*:
+
+Use Case::
+All the ways of using a system to achieve a goal of a particular actor — including the successful, challenged, and failure paths. A use case is independent of implementation, technology, and platform, and can be described textually or visually.
+
+Origin and evolution::
+*Ivar Jacobson invented use cases* (OOPSLA 1987; _Object-Oriented Software Engineering_ / OOSE, 1992); they became the behavioural backbone of UML and the Unified Process. *Alistair Cockburn did not invent them* — his _Writing Effective Use Cases_ (Addison-Wesley, 2001) codified how to write them well (goal levels, fully dressed template), and Larry Constantine's _essential use cases_ (mid-1990s) abstract away interface detail to capture pure user intent. Jacobson keeps evolving the technique:
++
+* *Use-Case 2.0* (Jacobson, Ian Spence & Kurt Bittner, 2011) introduced *use-case slices* for agile, incremental delivery, supported by user-story narratives.
+* *Use-Case 3.0* (Jacobson, Spence & Keith de Mendonca, 2024) refreshed it as a ten-principle family of practices, 100% compatible with teams already using user stories.
+
+Use-Case Slices::
+Jacobson's key scaling concept (Use-Case 2.0/3.0). A slice is one or more paths (stories/scenarios) through a use case that delivers clear, *testable* value. A slice always starts at the beginning of the use case and ends at its end, traverses one or more of its flows, and is complemented by explicit test cases. Slices are the unit of incremental delivery: they populate the backlog, can be prioritised (e.g. MoSCoW), and are realised by smaller *work items* (user stories, features, tasks). Slicing is what lets use cases scale into agile and lean development without forcing a big up-front specification.
+
+Fully Dressed Format (Cockburn)::
+A structured textual template for describing system behaviour from the actor's perspective. Each use case includes: Primary Actor, Stakeholders & Interests, Preconditions, Trigger, Main Success Scenario (numbered steps), Extensions (alternative/failure paths with step references), Postconditions (success guarantee and minimal guarantee), and Technology & Data Variations. What matters is the *accuracy* of the flow of events, not how detailed it is written out.
+
+Goal Levels (Cockburn)::
+Three abstraction levels that organise use cases into a hierarchy:
++
+* *Summary* (Kite/Cloud) — business-process-level goals spanning multiple user sessions. Example: "Manage customer lifecycle."
+* *User Goal* (Sea Level) — the sweet spot: one actor, one sitting, one measurable outcome. Example: "Place an order." Most use cases live here.
+* *Subfunction* (Fish/Clam) — steps that support a user goal but are not goals in themselves. Example: "Authenticate user." Extract only when reused across multiple user-goal use cases.
+
+Scope::
+Defines the system boundary — what is inside the "design scope" and what is an external actor. The system-of-interest is drawn as a box; actors (people, organisations, or other systems with behaviour) sit outside it. Getting scope right prevents use cases from being either too vague (organisational scope) or too detailed (component scope).
+
+Actor-Goal List::
+The discovery technique: list every actor and every goal they have against the system. This produces a candidate use case list before writing any prose. The goal level test: "Does the actor go home happy if this goal is achieved?" filters out subfunctions masquerading as user goals.
+
+What use cases do *not* prescribe::
+The textual form is deliberately *prose-based and notation-agnostic*. It does not mandate Activity Diagrams, Gherkin, EARS, or any formal syntax. Those are complementary representations that can be layered on top — Activity Diagrams for visual flow, Gherkin for executable acceptance criteria, EARS for structured requirement statements, and user stories as the work items that implement a slice.
+
+Key Proponents:: *Ivar Jacobson* (inventor; OOPSLA 1987, _OOSE_ 1992), with *Ian Spence*, *Kurt Bittner* and *Keith de Mendonca* (Use-Case 2.0/3.0), and *Alistair Cockburn* (_Writing Effective Use Cases_, Addison-Wesley, 2001). Primary reference: Ivar Jacobson, Ian Spence & Keith de Mendonca, _Use-Case 3.0 — The Guide to Succeeding with Use Cases_ (Ivar Jacobson International, 2024), https://www.ivarjacobson.com/files/use-case_3.0_v1.0.pdf[ivarjacobson.com].
+
+[discrete]
+== *When to Use*:
+
+* Discovering what a system needs to do before deciding how to build it — the Actor-Goal List is a fast, structured brainstorm
+* Slicing a large use case into incrementally deliverable, testable pieces that fill an agile backlog (Use-Case 2.0/3.0)
+* Structuring requirements conversations with stakeholders who think in scenarios, not features
+* Decomposing a large system into manageable behavioural units at the right granularity (goal-level test)
+* Brownfield theory recovery: reconstructing what a system does by writing use cases from observed behaviour
+* Feeding downstream artifacts: each slice becomes a natural unit for user stories, Gherkin scenarios, and test plans
+* Complementing arc42: use cases populate Section 6 (Runtime View) and inform Section 3 (Context and Scope)
+
+[discrete]
+== *Related Anchors*:
+
+* <<gherkin,Gherkin>> - Executable acceptance criteria that can be derived from each extension path in a use case
+* <<bdd-given-when-then,BDD Given/When/Then>> - Formalises the scenario steps that the use case describes in prose
+* <<ears-requirements,EARS Requirements>> - Structured syntax for individual requirement statements; complements the scenario-level structure
+* <<arc42,arc42>> - Use cases feed Section 6 (Runtime View) and inform Section 3 (Context and Scope)
+* <<iso-25010,ISO 25010>> - Quality goals that use case extensions should address (error handling, performance, security)
+====
