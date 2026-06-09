@@ -8,14 +8,14 @@ _What a pull request about "use cases" taught us about semantic anchors — with
 
 [NOTE]
 ====
-*The short version.* A semantic anchor works by triggering a concept the model already learned. Its power is therefore proportional to how _densely_ that concept appears in the training data. We tested this directly: naming "Cockburn use cases" reshapes a generic answer into a full fully-dressed use case (the anchor delivers), while naming "Use-Case 3.0" delivers nothing distinct — the model silently falls back to the nearest concept it does know. That is why an anchor's popup describes the _triggered_ definition, not the state of the art, and why weak-prior terms belong in a *contract* (which supplies its own meaning), not an anchor.
+*The short version.* A semantic anchor works by triggering a concept the model already learned. Its power is therefore proportional to how _densely_ that concept appears in the training data. We tested this directly: naming "Cockburn use cases" reshapes a generic answer into a complete fully-dressed use case (the anchor delivers), while naming "Use-Case 3.0" delivers nothing distinct — the model silently falls back to the nearest concept it does know. That is why an anchor's popup describes the _triggered_ definition, not the state of the art, and why weak-prior terms belong in a *contract* (which supplies its own meaning), not an anchor.
 ====
 
 == A Discussion About One Anchor Started It
 
 Simon Martinelli opened a https://github.com/LLM-Coding/Semantic-Anchors/pull/582[pull request] proposing to rename the _Cockburn Use Cases_ anchor to plain _Use Cases_, fix the attribution, and modernise it with Use-Case 2.0 and 3.0.
 
-His facts are correct. Ivar Jacobson invented use cases (OOPSLA 1987, _Object-Oriented Software Engineering_, 1992); Cockburn did not — his _Writing Effective Use Cases_ (2001) codified how to write them well. The technique later grew into Use-Case 2.0 (Jacobson, Spence & Bittner, 2011) and Use-Case 3.0 (Jacobson, Spence & de Mendonca, 2024). As a daily practitioner, Simon added that most teams no longer separate Cockburn from Jacobson, and that the full fully-dressed ceremony is rarely used.
+His facts are correct. Ivar Jacobson invented use cases (OOPSLA 1987, _Object-Oriented Software Engineering_, 1992); Cockburn did not — his _Writing Effective Use Cases_ (2001) codified how to write them well. The technique later grew into Use-Case 2.0 (Jacobson, Spence & Bittner, 2011) and Use-Case 3.0 (Jacobson, Spence & de Mendonca, 2024). As a daily practitioner, Simon added that most teams no longer separate Cockburn from Jacobson, and that the fully-dressed ceremony is rarely used.
 
 When the discussion continued, Simon made a fair challenge: he pasted output from several chatbots to show they clearly _know_ use cases. They do — and that turned out to be beside the point. The question is not whether a model knows the term, but _which_ definition the term triggers and _how far_ that knowledge reaches. The rest of this article answers that question with an experiment, and the answer is what decided the pull request.
 
