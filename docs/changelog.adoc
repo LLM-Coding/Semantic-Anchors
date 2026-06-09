@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-09
+
+*New contracts:*
+
+* *Strategic Architecture Analysis* — a strategic-analysis recipe that combines four lenses with the questions they answer: Wardley Mapping (how each component evolves), the Cynefin Framework (match the response to the domain), a Morphological Box (explore the option space deliberately instead of anchoring on the first design), ATAM (weigh tradeoffs against the quality goals), and the Five Whys (drill to the root cause); for build-vs-buy decisions, architecture-fitness reviews, and strategic technology-radar reviews
+
 == 2026-06-08
 
 *Refined contracts:*

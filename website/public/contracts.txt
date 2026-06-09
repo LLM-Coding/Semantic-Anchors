@@ -1,6 +1,6 @@
 # Semantic Contracts
 
-> 18 composable contracts that define what terms mean in your project —
+> 19 composable contracts that define what terms mean in your project —
 > by composing established Semantic Anchors or by providing custom team definitions.
 > Add them to your AGENTS.md or CLAUDE.md.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
@@ -273,3 +273,21 @@ Composes: *TDD, London School*, *TDD, Chicago School*, *Red-Green-Refactor*, *IO
 Sources: https://ralfw.de/hamburg-style-tdd/, https://ralfw.de/tdd-how-it-can-be-done-right/
 
 *Referenced anchors: red-green-tdd, tdd-london-school, tdd-chicago-school, iosp*
+
+## Strategic Architecture Analysis
+
+_How we analyze architecture strategically — mapping evolution, classifying complexity, exploring the option space, and weighing tradeoffs_
+
+Strategic architecture analysis combines four lenses, each for a different question. Reach for it when evaluating build-vs-buy, assessing architecture fitness for changing requirements, or running a strategic technology-radar review.
+
+Map the value chain with Wardley Mapping to see how each component evolves — what is commodity, what is genesis, and where the strategic differentiation actually sits.
+
+Classify each challenge with the Cynefin Framework — Clear, Complicated, Complex, or Chaotic — so the response fits the domain instead of forcing one playbook onto every problem.
+
+When a decision has a wide solution space, lay the dimensions and their options out in a Morphological Box and combine them deliberately, rather than anchoring on the first design that comes to mind.
+
+Evaluate the shortlisted architectures against the quality goals with ATAM, naming the sensitivity points, the tradeoff points, and the risks each option carries.
+
+When the root cause of a problem stays unclear, drill down with the Five Whys before committing to a direction.
+
+*Referenced anchors: wardley-mapping, cynefin-framework, morphological-box, atam, five-whys*
