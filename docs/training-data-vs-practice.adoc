@@ -79,25 +79,25 @@ Opus substituted Use-Case 2.0 and _told you_. Haiku did the same kind of substit
 
 == How Far the Prior Actually Reaches
 
-The anchor experiment shows leverage tracks density. A second set of probes maps where the density is. We asked five plain questions, each on Haiku 4.5, Sonnet 4.6 and Opus 4.8, with no internet and no custom instructions.
+The anchor experiment shows leverage tracks density. A second set of probes maps where the density is. We asked five plain questions, each on Haiku 4.5, Sonnet 4.6, Opus 4.8 and Fable 5 — Anthropic's newest model, added on its release day — with no internet and no custom instructions.
 
-[cols="2,2,2,2", options="header"]
+[cols="3,2,2,2,2", options="header"]
 |===
-| Probe | Haiku 4.5 | Sonnet 4.6 | Opus 4.8
+| Probe | Haiku 4.5 | Sonnet 4.6 | Opus 4.8 | Fable 5
 
-| Who invented use cases? | Jacobson (high) | Jacobson (high) | Jacobson (high)
-| Associations with "use cases" | Jacobson + Cockburn + UML | Cockburn (+ Larman) | Cockburn > Jacobson/UML
-| "Write a use case" (default) | Cockburn-shaped, no slices | Cockburn fully-dressed, no slices | Cockburn fully-dressed, no slices
-| What is Use-Case 2.0? | low / thin | medium / moderate | high / rich
-| What is Use-Case 3.0? | low / thin, doubts it exists | low / thin, reaching, doubts | low / thin, doubts it exists
+| Who invented use cases? | Jacobson (high) | Jacobson (high) | Jacobson (high) | Jacobson (high)
+| Associations with "use cases" | Jacobson + Cockburn + UML | Cockburn (+ Larman) | Cockburn > Jacobson/UML | Jacobson + Cockburn + UML
+| "Write a use case" (default) | Cockburn-shaped, no slices | Cockburn fully-dressed, no slices | Cockburn fully-dressed, no slices | Cockburn fully-dressed, no slices
+| What is Use-Case 2.0? | low / thin | medium / moderate | high / rich | high / rich (names slices + 6 principles)
+| What is Use-Case 3.0? | low / thin, doubts it exists | low / thin, reaching, doubts | low / thin, doubts it exists | low / thin, hedges, guesses AI-era
 |===
 
-Four findings, each robust across the three models:
+Four findings, each robust across the four models:
 
 . *The inventor is known.* Every model credits Jacobson, with high confidence. The popular misattribution to Cockburn lives in casual human shorthand, not in the model.
 . *The default use case is Cockburn-shaped.* Ask any of them to write a use case and you get fully-dressed structure — never slices, never 2.0/3.0. The dense prior _is_ the Cockburn era.
-. *Use-Case 2.0 degrades with model size.* Opus describes it richly, Sonnet moderately, Haiku barely. The thinner prior survives only in the larger model — though, as framing D showed, even Haiku can _act_ on "slices" when told to. Describing a method and applying its core move are different things.
-. *Use-Case 3.0 is a gap for everyone.* Even the newest frontier models, with the latest cutoffs, are thin and uncertain. Haiku put it plainly: it was _"not even confident enough to know if there's a 2.0 to confuse it with."_ If the strongest, most recent models cannot reach 3.0, older or smaller ones certainly cannot.
+. *Use-Case 2.0 tracks model scale and recency.* Opus describes it richly, Sonnet moderately, Haiku barely — and Fable 5, the newest model, richest of all: it recalls the slices _and_ the six principles by name. The thinner prior survives best in the larger, more recent model — though, as framing D showed, even Haiku can _act_ on "slices" when told to. Describing a method and applying its core move are different things.
+. *Use-Case 3.0 is a gap for everyone.* Even the newest frontier models, with the latest cutoffs, are thin and uncertain. Haiku put it plainly: it was _"not even confident enough to know if there's a 2.0 to confuse it with."_ Fable 5 sharpens the point: released the day we ran the probe, it holds the richest Use-Case 2.0 prior of the four — yet on 3.0 it still hedges and reaches for an unverified "AI-era" evolution. A dense 2.0 prior does not buy a 3.0 one; the two sit at different densities in the data, not at different model strengths. If the strongest, most recent models cannot reach 3.0, older or smaller ones certainly cannot.
 
 The fourth point is the strongest form of the argument. We could not test older model generations — Claude 3.x is no longer reachable through this account — but we did not need to. The gap shows up on the latest models; older ones only widen it.
 
@@ -169,7 +169,7 @@ claude -p "<prompt>" --model <haiku|sonnet|opus> \
     --strict-mcp-config --setting-sources ""
 ----
 
-`--setting-sources ""` drops user/project/local config (including the global `CLAUDE.md` and auto-memory); starting from a neutral directory drops the project `CLAUDE.md`. Verified clean: the model reports "no CLAUDE.md, no memory." All results above are from this clean setup, on Claude Haiku 4.5, Sonnet 4.6 and Opus 4.8.
+`--setting-sources ""` drops user/project/local config (including the global `CLAUDE.md` and auto-memory); starting from a neutral directory drops the project `CLAUDE.md`. Verified clean: the model reports "no CLAUDE.md, no memory." All results above are from this clean setup: the anchor experiment (A–E) on Claude Haiku 4.5 and Opus 4.8, the prior-mapping probes on Claude Haiku 4.5, Sonnet 4.6, Opus 4.8 and Fable 5.
 ====
 
 Thanks to Simon Martinelli, whose pull request — and his insistence on testing the claim against real chatbots — turned a naming discussion into a measurement.

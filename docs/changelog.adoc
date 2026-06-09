@@ -8,6 +8,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 * *Strategic Architecture Analysis* — a strategic-analysis recipe that combines four lenses with the questions they answer: Wardley Mapping (how each component evolves), the Cynefin Framework (match the response to the domain), a Morphological Box (explore the option space deliberately instead of anchoring on the first design), ATAM (weigh tradeoffs against the quality goals), and the Five Whys (drill to the root cause); for build-vs-buy decisions, architecture-fitness reviews, and strategic technology-radar reviews
 
+*Updated article:*
+
+* *An Anchor Delivers Only as Far as the Prior Reaches* — added Fable 5 (Anthropic's newest model, probed on its release day) as a fourth column in the prior-mapping matrix. It holds the richest Use-Case 2.0 prior of the four models yet still hedges on Use-Case 3.0, strengthening the finding that a dense 2.0 prior does not buy a 3.0 one.
+
 == 2026-06-08
 
 *Refined contracts:*
