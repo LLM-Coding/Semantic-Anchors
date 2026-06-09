@@ -1,0 +1,175 @@
+= An Anchor Delivers Only as Far as the Prior Reaches
+Ralf D. Müller
+2026-06-08
+:toc:
+:toc-placement: preamble
+
+_What a pull request about "use cases" taught us about semantic anchors — with an experiment you can rerun yourself._
+
+[NOTE]
+====
+*The short version.* A semantic anchor works by triggering a concept the model already learned. Its power is therefore proportional to how _densely_ that concept appears in the training data. We tested this directly: naming "Cockburn use cases" reshapes a generic answer into a full fully-dressed use case (the anchor delivers), while naming "Use-Case 3.0" delivers nothing distinct — the model silently falls back to the nearest concept it does know. That is why an anchor's popup describes the _triggered_ definition, not the state of the art, and why weak-prior terms belong in a *contract* (which supplies its own meaning), not an anchor.
+====
+
+== A Discussion About One Anchor Started It
+
+Simon Martinelli opened a https://github.com/LLM-Coding/Semantic-Anchors/pull/582[pull request] proposing to rename the _Cockburn Use Cases_ anchor to plain _Use Cases_, fix the attribution, and modernise it with Use-Case 2.0 and 3.0.
+
+His facts are correct. Ivar Jacobson invented use cases (OOPSLA 1987, _Object-Oriented Software Engineering_, 1992); Cockburn did not — his _Writing Effective Use Cases_ (2001) codified how to write them well. The technique later grew into Use-Case 2.0 (Jacobson, Spence & Bittner, 2011) and Use-Case 3.0 (Jacobson, Spence & de Mendonca, 2024). As a daily practitioner, Simon added that most teams no longer separate Cockburn from Jacobson, and that the full fully-dressed ceremony is rarely used.
+
+When the discussion continued, Simon made a fair challenge: he pasted output from several chatbots to show they clearly _know_ use cases. They do — and that turned out to be beside the point. The question is not whether a model knows the term, but _which_ definition the term triggers and _how far_ that knowledge reaches. The rest of this article answers that question with an experiment, and the answer is what decided the pull request.
+
+== A Semantic Anchor Is a Trigger, Not a Definition
+
+A semantic anchor is a term that activates a rich concept already sitting in a model's training data. You do not teach the model when you write "Cockburn Use Cases"; you pull a pre-computed prior off the shelf — goal levels, the fully-dressed template, extensions, stakeholders and interests — with a few words. That is the leverage the catalog sells: a short term stands in for pages of context the model has already absorbed.
+
+The consequence is uncomfortable but unavoidable: an anchor can only be as strong as the training data behind it. If the concept is densely written about, the term fires reliably. If it is recent or niche, the term fires weakly — and, as we will see, the model does not go quiet. It substitutes.
+
+== The Experiment: Does Naming the Anchor Change the Output?
+
+The cleanest test of an anchor is a before/after. Give a model a task that does _not_ contain the anchor word, then give it the same task _with_ the anchor, and compare. We used one task — "specify what an online shop must do when a customer places an order" — under five framings, on a weak model (Claude Haiku 4.5) and a strong one (Claude Opus 4.8). These are single runs per cell; the prompts are at the end so you can rerun them.
+
+[cols="1,3,3", options="header"]
+|===
+| Framing | Opus 4.8 | Haiku 4.5
+
+| *A — no anchor*
+| Generic "the system shall…" requirements with IDs (FR-1, PRE-1). Not a use case.
+| Generic bullet-list requirements. No use-case structure.
+
+| *B — "use cases" (bare term)*
+| Full use-case model: primary and supporting actors, a described diagram, a complete "Place Order" specification.
+| A _basic_ use case only — actors, preconditions, a numbered main flow. No extensions, no guarantees.
+
+| *C — "fully-dressed use cases (Cockburn)"*
+| Full fully-dressed apparatus: Main Success Scenario, sea-level goal, Stakeholders & Interests, Extensions, guarantees.
+| Now the _full_ apparatus too: Primary Actor, Main Success Scenario, Extensions, pre/postconditions.
+
+| *D — "Use-Case 2.0 slices (Jacobson)"*
+| Real use-case slices — incremental, test-backed.
+| Real slices too — "Slice 1: Basic Checkout (MVP)", then further increments.
+
+| *E — "Use-Case 3.0 slices (Jacobson)"*
+| Flags it: _"I'm not aware of an official 'Use-Case 3.0'… I'll treat your request as the slice technique"_ — then delivers *2.0* slices.
+| Prints a confident document headed *"Use-Case 3.0"* whose body is plain *Cockburn*, with *no slices at all*.
+|===
+
+Three things fall out of this.
+
+=== The anchor secures the behaviour, even when the model is weaker
+
+The most useful result is the gap between B and C across the two models. On Opus, the bare word "use cases" already produces the full structure — the prior is strong enough that almost no prompting is needed. On Haiku, the bare word yields only a basic use case, but the explicit anchor "fully-dressed use cases according to Cockburn" lifts it to the same full apparatus the strong model produced for free.
+
+That is the anchor's quiet superpower: it pins the behaviour you want _regardless of which model runs the prompt_. You usually cannot fix the model. Tomorrow the same system might run against a cheaper tier, a local open-weight model, or next year's release. The explicit anchor is insurance — it carries the structure into a weaker prior that would not have produced it on its own. An anchor is not only brevity; it is portability across models.
+
+=== An anchor delivers whenever its words name a concept the model holds
+
+"Use-Case 2.0 slices" produced real slices on _both_ models (framing D), even though the small model could barely _describe_ Use-Case 2.0 when asked about it directly. The version number is not what fires; the operative word "slice" is — vertical slicing is itself a dense concept the model can act on. Recall and execution are different: a model can fail to explain a method yet still apply its core move when that move has a dense name.
+
+=== When the concept is absent, the anchor silently substitutes
+
+Only framing E fails, because "Use-Case 3.0" names nothing the model holds densely. Neither model errored. Opus reached for the nearest concept it _did_ hold and said so:
+
+[quote, Claude Opus 4.8, framing E]
+____
+Ivar Jacobson's published, named technique is *Use-Case 2.0* (Jacobson, Spence & Bittner, 2011) — the one that introduces use-case slices. I'm not aware of an official "Use-Case 3.0" release from Jacobson; I'll treat your request as "apply the use-case slice technique" … and flag this so you can correct me.
+____
+
+Opus substituted Use-Case 2.0 and _told you_. Haiku did the same kind of substitution, but silently and one step further back: in our run it printed a confident document headed *"Use-Case 3.0: Customer Places an Order"* whose body is ordinary Cockburn (Stakeholders & Interests, Preconditions, Main Success Scenario, Extensions) with not a single slice in it. The label said 3.0; the content was 2001. That output is a single run — but it sits on top of the universal knowledge gap shown below, and it is exactly the failure mode a careless anchor user never notices.
+
+== How Far the Prior Actually Reaches
+
+The anchor experiment shows leverage tracks density. A second set of probes maps where the density is. We asked five plain questions, each on Haiku 4.5, Sonnet 4.6 and Opus 4.8, with no internet and no custom instructions.
+
+[cols="2,2,2,2", options="header"]
+|===
+| Probe | Haiku 4.5 | Sonnet 4.6 | Opus 4.8
+
+| Who invented use cases? | Jacobson (high) | Jacobson (high) | Jacobson (high)
+| Associations with "use cases" | Jacobson + Cockburn + UML | Cockburn (+ Larman) | Cockburn > Jacobson/UML
+| "Write a use case" (default) | Cockburn-shaped, no slices | Cockburn fully-dressed, no slices | Cockburn fully-dressed, no slices
+| What is Use-Case 2.0? | low / thin | medium / moderate | high / rich
+| What is Use-Case 3.0? | low / thin, doubts it exists | low / thin, reaching, doubts | low / thin, doubts it exists
+|===
+
+Four findings, each robust across the three models:
+
+. *The inventor is known.* Every model credits Jacobson, with high confidence. The popular misattribution to Cockburn lives in casual human shorthand, not in the model.
+. *The default use case is Cockburn-shaped.* Ask any of them to write a use case and you get fully-dressed structure — never slices, never 2.0/3.0. The dense prior _is_ the Cockburn era.
+. *Use-Case 2.0 degrades with model size.* Opus describes it richly, Sonnet moderately, Haiku barely. The thinner prior survives only in the larger model — though, as framing D showed, even Haiku can _act_ on "slices" when told to. Describing a method and applying its core move are different things.
+. *Use-Case 3.0 is a gap for everyone.* Even the newest frontier models, with the latest cutoffs, are thin and uncertain. Haiku put it plainly: it was _"not even confident enough to know if there's a 2.0 to confuse it with."_ If the strongest, most recent models cannot reach 3.0, older or smaller ones certainly cannot.
+
+The fourth point is the strongest form of the argument. We could not test older model generations — Claude 3.x is no longer reachable through this account — but we did not need to. The gap shows up on the latest models; older ones only widen it.
+
+== Why the Anchor Lags Real Practice
+
+There is a second gap, and Simon named it. A model's knowledge is a snapshot of what people _wrote down_, weighted by how much they wrote. Day-to-day practice is mostly not written down: that teams skip the fully-dressed ceremony, that they treat Cockburn and Jacobson as one thing, that user stories absorbed much of the job. None of that sits in the corpus at volume, so none of it shapes the prior.
+
+The anchor therefore reflects the documented consensus, which peaked in the Cockburn era, while practice walked on without updating the record at the same volume. The anchor faithfully reflects the map. The map was never the territory — it is a record of what got published.
+
+== What This Means for the Catalog
+
+The episode draws a clean line through the whole project, and it decides the pull request.
+
+First, the anchor's popup describes the definition the term _triggers in the LLM_ — not a state-of-the-art summary. Rewriting the _Cockburn Use Cases_ popup around 3.0 and slices would describe a concept the model cannot reliably activate; the text would be correct and the anchor would be broken. So the anchor stays *Cockburn Use Cases*: it is the precise trigger, it matches its own content, and it is what our link:#/contracts[Specification contract] already builds on.
+
+Second, the catalog needs three layers, not one, and the experiment shows why:
+
+[cols="1,3", options="header"]
+|===
+| Layer | What it captures, and why it is safe
+
+| *Anchor*
+| A *dense prior* the model already holds. Safe because naming it reliably triggers the real concept (condition B).
+
+| *Contract*
+| Vocabulary your team agreed on, *supplied in the text*. Safe even when the prior is weak, because the meaning travels with the contract — there is nothing to silently substitute. This is the right home for Use-Case 2.0/3.0 slices, _if_ you use them.
+
+| *Article*
+| Meta-knowledge _about_ a term — attribution, history, the gap between training data and practice. This page is one.
+|===
+
+A weak prior is not a failed anchor; it is a candidate for a contract. A correction or a piece of history is not anchor content; it is an article. And an anchor that lags practice is doing its job — it tells you, precisely, where the documented consensus stopped.
+
+== Run It Yourself
+
+None of this requires trusting our runs. Paste these into any chatbot, ideally with web access turned off, and watch the pattern. The first five map the prior; the last four test the anchor.
+
+[source]
+----
+# Mapping the prior
+1. List the key concepts you associate with "use cases".
+2. Write a use case for a customer placing an order. Use your default format.
+3. Who invented use cases, and who is most associated with writing them well?
+4. What is "Use-Case 2.0"? Who created it, when, and what did it add?
+5. What is "Use-Case 3.0"? List its specific principles.
+
+# Testing the anchor — same task, five framings. Compare the structure.
+A. Specify what an online shop must do when a customer places an order.
+B. Using use cases, specify what an online shop must do when a customer
+   places an order.
+C. Using fully-dressed use cases according to Cockburn, specify what an
+   online shop must do when a customer places an order.
+D. Using Use-Case 2.0 slices according to Jacobson, specify what an online
+   shop must do when a customer places an order.
+E. Using Use-Case 3.0 slices according to Jacobson, specify what an online
+   shop must do when a customer places an order.
+----
+
+Watch for two tells: in prompt 5, whether the model hedges or invents; and across A–E, whether the named anchor actually changes the structure or the model quietly hands you something else.
+
+[TIP]
+====
+*A note on method, for the sceptical.* Our first runs used in-session sub-agents and were contaminated: they inherit the project's own `CLAUDE.md`, which already says "use Cockburn's fully-dressed format," so the result was partly circular — and, tellingly, when simply asked what Use-Case 2.0 is, the contaminated weak model confidently misattributed its authorship to Cockburn — an error that vanished once the project context was removed. A running session freezes that context at start-up, so renaming files mid-session does not help. The clean fix is a *fresh* process with the context switched off:
+
+[source]
+----
+cd /tmp/clean-dir
+claude -p "<prompt>" --model <haiku|sonnet|opus> \
+    --strict-mcp-config --setting-sources ""
+----
+
+`--setting-sources ""` drops user/project/local config (including the global `CLAUDE.md` and auto-memory); starting from a neutral directory drops the project `CLAUDE.md`. Verified clean: the model reports "no CLAUDE.md, no memory." All results above are from this clean setup, on Claude Haiku 4.5, Sonnet 4.6 and Opus 4.8.
+====
+
+Thanks to Simon Martinelli, whose pull request — and his insistence on testing the claim against real chatbots — turned a naming discussion into a measurement.

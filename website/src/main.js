@@ -162,6 +162,7 @@ function initApp() {
   addRoute('/brownfield-fair-comparison', renderBrownfieldFairComparisonPage)
   addRoute('/socratic-recovery-skill', renderSocraticRecoverySkillPage)
   addRoute('/harness-inventory', renderHarnessInventoryPage)
+  addRoute('/training-data-vs-practice', renderTrainingDataPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -324,6 +325,15 @@ function renderHarnessInventoryPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/harness-inventory.adoc')
+}
+
+function renderTrainingDataPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/training-data-vs-practice.adoc')
 }
 
 function renderContractsPageHandler() {

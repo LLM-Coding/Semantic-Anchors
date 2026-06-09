@@ -8,6 +8,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 * *Explaining and Teaching* — reworked from a structured "explain in 4MAT order" loop into a question-driven teaching dialogue: open by having the learner restate what they know, then one small step per turn (ask, or explain a little and check, then stop and wait), quiz with multiple-choice questions whose answer is withheld until the learner commits, and don't advance until they can apply it to a fresh case. The anchors (Socratic Method, 4MAT, Naur, Feynman, Bloom's, Definition of Done) now shape behaviour as attributions rather than named steps, with an explicit "don't announce the method" guard so the scaffold no longer leaks into the output. Also keeps the over-fire brake (a one-line question gets a one-line answer) and learner opt-out
 
+*New article:*
+
+* *An Anchor Delivers Only as Far as the Prior Reaches* — how a semantic anchor's power depends on how densely the concept sits in an LLM's training data, with a reproducible A–E experiment across Claude Haiku 4.5, Sonnet 4.6 and Opus 4.8. Prompted by https://github.com/simasch[@simasch]'s https://github.com/LLM-Coding/Semantic-Anchors/pull/582[#582] on the Cockburn Use Cases anchor.
+
 == 2026-06-03
 
 *New anchors:*

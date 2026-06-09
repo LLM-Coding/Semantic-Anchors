@@ -54,4 +54,9 @@ Key Proponents:: Alistair Cockburn (_Writing Effective Use Cases_, Addison-Wesle
 * <<ears-requirements,EARS Requirements>> - Structured syntax for individual requirement statements; complements Cockburn's scenario-level structure
 * <<arc42,arc42>> - Use cases feed Section 6 (Runtime View) and inform Section 3 (Context and Scope)
 * <<iso-25010,ISO 25010>> - Quality goals that use case extensions should address (error handling, performance, security)
+
+[discrete]
+== *Further Reading*:
+
+* link:#/training-data-vs-practice[Anchors and Training Data] - why this anchor reflects Cockburn's craft rather than Jacobson's later Use-Case 2.0/3.0, and what that reveals about how anchors depend on training data.
 ====

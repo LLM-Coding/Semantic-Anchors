@@ -54,4 +54,9 @@ Schlüsselvertreter:: Alistair Cockburn (_Writing Effective Use Cases_, Addison-
 * <<ears-requirements,EARS Requirements>> - Strukturierte Syntax für einzelne Anforderungsformulierungen; ergänzt Cockburns szenariobasierte Struktur
 * <<arc42,arc42>> - Use Cases füllen Abschnitt 6 (Laufzeitsicht) und informieren Abschnitt 3 (Kontextabgrenzung)
 * <<iso-25010,ISO 25010>> - Qualitätsziele, die Use-Case-Extensions adressieren sollten (Fehlerbehandlung, Performance, Sicherheit)
+
+[discrete]
+== *Weiterführend*:
+
+* link:#/training-data-vs-practice[Anchors and Training Data] - warum dieser Anker Cockburns Handwerk abbildet und nicht Jacobsons spätere Use-Case 2.0/3.0, und was das über die Abhängigkeit von Ankern von den Trainingsdaten verrät.
 ====
