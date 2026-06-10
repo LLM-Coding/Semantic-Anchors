@@ -11,206 +11,330 @@ include::about.adoc[leveloffset=+1]
 
 include::anchors/4mat.adoc[leveloffset=+2]
 
+[[aida-model]]
+include::anchors/aida-model.adoc[leveloffset=+2]
+
+[[blooms-taxonomy]]
+include::anchors/blooms-taxonomy.adoc[leveloffset=+2]
+
+[[bluf]]
 include::anchors/bluf.adoc[leveloffset=+2]
 
+[[gutes-deutsch-wolf-schneider]]
 include::anchors/gutes-deutsch-wolf-schneider.adoc[leveloffset=+2]
 
+[[inverted-pyramid-style]]
+include::anchors/inverted-pyramid-style.adoc[leveloffset=+2]
+
+[[mece]]
 include::anchors/mece.adoc[leveloffset=+2]
 
+[[myers-briggs-type-indicator]]
 include::anchors/myers-briggs-type-indicator.adoc[leveloffset=+2]
 
+[[plain-english-strunk-white]]
 include::anchors/plain-english-strunk-white.adoc[leveloffset=+2]
 
+[[problem-space-nvc]]
 include::anchors/problem-space-nvc.adoc[leveloffset=+2]
 
+[[pyramid-principle]]
 include::anchors/pyramid-principle.adoc[leveloffset=+2]
 
 <<<
 
 == Creative Writing
 
+[[fichtean-curve]]
 include::anchors/fichtean-curve.adoc[leveloffset=+2]
 
+[[freytags-pyramid]]
 include::anchors/freytags-pyramid.adoc[leveloffset=+2]
 
+[[heros-journey]]
 include::anchors/heros-journey.adoc[leveloffset=+2]
 
+[[kishotenketsu]]
 include::anchors/kishotenketsu.adoc[leveloffset=+2]
 
+[[save-the-cat]]
 include::anchors/save-the-cat.adoc[leveloffset=+2]
 
+[[story-circle-dan-harmon]]
 include::anchors/story-circle-dan-harmon.adoc[leveloffset=+2]
 
+[[three-act-structure]]
 include::anchors/three-act-structure.adoc[leveloffset=+2]
 
 <<<
 
 == Design Principles & Patterns
 
+[[code-smells]]
 include::anchors/code-smells.adoc[leveloffset=+2]
 
+[[cohesion-criteria]]
 include::anchors/cohesion-criteria.adoc[leveloffset=+2]
 
+[[crc-cards]]
 include::anchors/crc-cards.adoc[leveloffset=+2]
 
+[[dry]]
+include::anchors/dry.adoc[leveloffset=+2]
+
+[[fowler-patterns]]
 include::anchors/fowler-patterns.adoc[leveloffset=+2]
 
+[[gof-abstract-factory-pattern]]
 include::anchors/gof-abstract-factory-pattern.adoc[leveloffset=+2]
 
+[[gof-adapter-pattern]]
 include::anchors/gof-adapter-pattern.adoc[leveloffset=+2]
 
+[[gof-bridge-pattern]]
 include::anchors/gof-bridge-pattern.adoc[leveloffset=+2]
 
+[[gof-builder-pattern]]
 include::anchors/gof-builder-pattern.adoc[leveloffset=+2]
 
+[[gof-chain-of-responsibility-pattern]]
 include::anchors/gof-chain-of-responsibility-pattern.adoc[leveloffset=+2]
 
+[[gof-command-pattern]]
 include::anchors/gof-command-pattern.adoc[leveloffset=+2]
 
+[[gof-composite-pattern]]
 include::anchors/gof-composite-pattern.adoc[leveloffset=+2]
 
+[[gof-decorator-pattern]]
 include::anchors/gof-decorator-pattern.adoc[leveloffset=+2]
 
+[[gof-design-patterns]]
 include::anchors/gof-design-patterns.adoc[leveloffset=+2]
 
+[[gof-facade-pattern]]
 include::anchors/gof-facade-pattern.adoc[leveloffset=+2]
 
+[[gof-factory-method-pattern]]
 include::anchors/gof-factory-method-pattern.adoc[leveloffset=+2]
 
+[[gof-flyweight-pattern]]
 include::anchors/gof-flyweight-pattern.adoc[leveloffset=+2]
 
+[[gof-interpreter-pattern]]
 include::anchors/gof-interpreter-pattern.adoc[leveloffset=+2]
 
+[[gof-iterator-pattern]]
 include::anchors/gof-iterator-pattern.adoc[leveloffset=+2]
 
+[[gof-mediator-pattern]]
 include::anchors/gof-mediator-pattern.adoc[leveloffset=+2]
 
+[[gof-memento-pattern]]
 include::anchors/gof-memento-pattern.adoc[leveloffset=+2]
 
+[[gof-observer-pattern]]
 include::anchors/gof-observer-pattern.adoc[leveloffset=+2]
 
+[[gof-prototype-pattern]]
 include::anchors/gof-prototype-pattern.adoc[leveloffset=+2]
 
+[[gof-proxy-pattern]]
 include::anchors/gof-proxy-pattern.adoc[leveloffset=+2]
 
+[[gof-singleton-pattern]]
 include::anchors/gof-singleton-pattern.adoc[leveloffset=+2]
 
+[[gof-state-pattern]]
 include::anchors/gof-state-pattern.adoc[leveloffset=+2]
 
+[[gof-strategy-pattern]]
 include::anchors/gof-strategy-pattern.adoc[leveloffset=+2]
 
+[[gof-template-method-pattern]]
 include::anchors/gof-template-method-pattern.adoc[leveloffset=+2]
 
+[[gof-visitor-pattern]]
 include::anchors/gof-visitor-pattern.adoc[leveloffset=+2]
 
+[[grasp]]
 include::anchors/grasp.adoc[leveloffset=+2]
 
-include::anchors/kiss-principle.adoc[leveloffset=+2]
-
-include::anchors/single-level-of-abstraction-principle.adoc[leveloffset=+2]
-
+[[iosp]]
 include::anchors/iosp.adoc[leveloffset=+2]
 
+[[kiss-principle]]
+include::anchors/kiss-principle.adoc[leveloffset=+2]
+
+[[law-of-demeter]]
+include::anchors/law-of-demeter.adoc[leveloffset=+2]
+
+[[postels-law]]
+include::anchors/postels-law.adoc[leveloffset=+2]
+
+[[single-level-of-abstraction-principle]]
+include::anchors/single-level-of-abstraction-principle.adoc[leveloffset=+2]
+
+[[solid-dip]]
 include::anchors/solid-dip.adoc[leveloffset=+2]
 
+[[solid-isp]]
 include::anchors/solid-isp.adoc[leveloffset=+2]
 
+[[solid-lsp]]
 include::anchors/solid-lsp.adoc[leveloffset=+2]
 
+[[solid-ocp]]
 include::anchors/solid-ocp.adoc[leveloffset=+2]
 
+[[solid-principles]]
 include::anchors/solid-principles.adoc[leveloffset=+2]
 
+[[solid-srp]]
 include::anchors/solid-srp.adoc[leveloffset=+2]
 
+[[ssot-principle]]
 include::anchors/ssot-principle.adoc[leveloffset=+2]
 
+[[yagni]]
 include::anchors/yagni.adoc[leveloffset=+2]
 
 <<<
 
 == Development Workflow
 
+[[bem-methodology]]
 include::anchors/bem-methodology.adoc[leveloffset=+2]
 
+[[conventional-commits]]
 include::anchors/conventional-commits.adoc[leveloffset=+2]
 
+[[definition-of-done]]
 include::anchors/definition-of-done.adoc[leveloffset=+2]
 
+[[effective-go]]
 include::anchors/effective-go.adoc[leveloffset=+2]
 
+[[github-flow]]
 include::anchors/github-flow.adoc[leveloffset=+2]
 
+[[mental-model-according-to-naur]]
 include::anchors/mental-model-according-to-naur.adoc[leveloffset=+2]
 
+[[mikado-method]]
 include::anchors/mikado-method.adoc[leveloffset=+2]
 
+[[regulated-environment]]
 include::anchors/regulated-environment.adoc[leveloffset=+2]
 
+[[semantic-versioning]]
 include::anchors/semantic-versioning.adoc[leveloffset=+2]
 
+[[site-reliability-engineering]]
+include::anchors/site-reliability-engineering.adoc[leveloffset=+2]
+
+[[sota]]
 include::anchors/sota.adoc[leveloffset=+2]
 
+[[spike-solution]]
 include::anchors/spike-solution.adoc[leveloffset=+2]
 
+[[thin-vertical-slice]]
 include::anchors/thin-vertical-slice.adoc[leveloffset=+2]
 
+[[timtowtdi]]
 include::anchors/timtowtdi.adoc[leveloffset=+2]
 
 <<<
 
 == Dialogue Interaction
 
+[[socratic-method]]
 include::anchors/socratic-method.adoc[leveloffset=+2]
 
+[[systemic-consulting]]
+include::anchors/systemic-consulting.adoc[leveloffset=+2]
+
+[[xy-problem]]
 include::anchors/xy-problem.adoc[leveloffset=+2]
 
 <<<
 
 == Documentation
 
+[[diataxis-framework]]
 include::anchors/diataxis-framework.adoc[leveloffset=+2]
 
+[[docs-as-code]]
 include::anchors/docs-as-code.adoc[leveloffset=+2]
 
 <<<
 
 == Knowledge Management
 
+[[gtd]]
 include::anchors/gtd.adoc[leveloffset=+2]
 
+[[hemingway-bridge]]
 include::anchors/hemingway-bridge.adoc[leveloffset=+2]
 
+[[para-method]]
 include::anchors/para-method.adoc[leveloffset=+2]
 
+[[todotxt-flavoured-markdown]]
 include::anchors/todotxt-flavoured-markdown.adoc[leveloffset=+2]
 
 <<<
 
 == Meta
 
+[[luhmann-system-theory]]
+include::anchors/luhmann-system-theory.adoc[leveloffset=+2]
+
+[[simon-constructivism]]
+include::anchors/simon-constructivism.adoc[leveloffset=+2]
+
+[[what-qualifies-as-a-semantic-anchor]]
 include::anchors/what-qualifies-as-a-semantic-anchor.adoc[leveloffset=+2]
 
 <<<
 
 == Problem Solving
 
+[[chain-of-thought]]
 include::anchors/chain-of-thought.adoc[leveloffset=+2]
 
+[[decisional-balance-sheet]]
 include::anchors/decisional-balance-sheet.adoc[leveloffset=+2]
 
+[[devils-advocate]]
 include::anchors/devils-advocate.adoc[leveloffset=+2]
 
+[[double-diamond]]
 include::anchors/double-diamond.adoc[leveloffset=+2]
 
+[[feynman-technique]]
 include::anchors/feynman-technique.adoc[leveloffset=+2]
 
+[[first-principles-thinking]]
+include::anchors/first-principles-thinking.adoc[leveloffset=+2]
+
+[[five-whys]]
 include::anchors/five-whys.adoc[leveloffset=+2]
 
+include::anchors/luhmann-system-theory.adoc[leveloffset=+2]
+
+[[morphological-box]]
 include::anchors/morphological-box.adoc[leveloffset=+2]
 
+[[occams-razor]]
 include::anchors/occams-razor.adoc[leveloffset=+2]
 
+include::anchors/simon-constructivism.adoc[leveloffset=+2]
+
+include::anchors/systemic-consulting.adoc[leveloffset=+2]
+
+[[what-would-chuck-norris-do]]
 include::anchors/what-would-chuck-norris-do.adoc[leveloffset=+2]
 
 include::anchors/xy-problem.adoc[leveloffset=+2]
@@ -219,156 +343,224 @@ include::anchors/xy-problem.adoc[leveloffset=+2]
 
 == Requirements Engineering
 
+[[cockburn-use-cases]]
 include::anchors/cockburn-use-cases.adoc[leveloffset=+2]
 
 include::anchors/double-diamond.adoc[leveloffset=+2]
 
+[[ears-requirements]]
 include::anchors/ears-requirements.adoc[leveloffset=+2]
 
+[[event-storming]]
+include::anchors/event-storming.adoc[leveloffset=+2]
+
+[[invest]]
 include::anchors/invest.adoc[leveloffset=+2]
 
+[[kano-model]]
 include::anchors/kano-model.adoc[leveloffset=+2]
 
+[[moscow]]
 include::anchors/moscow.adoc[leveloffset=+2]
 
+[[prd]]
 include::anchors/prd.adoc[leveloffset=+2]
 
 include::anchors/problem-space-nvc.adoc[leveloffset=+2]
 
+[[quality-attribute-scenario]]
+include::anchors/quality-attribute-scenario.adoc[leveloffset=+2]
+
+[[user-story-mapping]]
 include::anchors/user-story-mapping.adoc[leveloffset=+2]
 
 <<<
 
 == Software Architecture
 
+[[adr-according-to-nygard]]
 include::anchors/adr-according-to-nygard.adoc[leveloffset=+2]
 
+[[arc42]]
 include::anchors/arc42.adoc[leveloffset=+2]
 
+[[atam]]
 include::anchors/atam.adoc[leveloffset=+2]
 
+[[c4-diagrams]]
 include::anchors/c4-diagrams.adoc[leveloffset=+2]
 
+[[cap-theorem]]
+include::anchors/cap-theorem.adoc[leveloffset=+2]
+
+[[clean-architecture]]
 include::anchors/clean-architecture.adoc[leveloffset=+2]
 
+[[conways-law]]
+include::anchors/conways-law.adoc[leveloffset=+2]
+
+[[cqrs]]
 include::anchors/cqrs.adoc[leveloffset=+2]
 
+[[domain-driven-design]]
 include::anchors/domain-driven-design.adoc[leveloffset=+2]
 
+[[event-driven-architecture]]
 include::anchors/event-driven-architecture.adoc[leveloffset=+2]
 
+include::anchors/event-storming.adoc[leveloffset=+2]
+
+[[fallacies-of-distributed-computing]]
+include::anchors/fallacies-of-distributed-computing.adoc[leveloffset=+2]
+
+[[gom]]
 include::anchors/gom.adoc[leveloffset=+2]
 
+[[hexagonal-architecture]]
 include::anchors/hexagonal-architecture.adoc[leveloffset=+2]
 
+[[iso-25010]]
 include::anchors/iso-25010.adoc[leveloffset=+2]
 
+[[lasr]]
 include::anchors/lasr.adoc[leveloffset=+2]
 
+[[lehmans-classification]]
 include::anchors/lehmans-classification.adoc[leveloffset=+2]
 
+[[madr]]
 include::anchors/madr.adoc[leveloffset=+2]
 
+include::anchors/quality-attribute-scenario.adoc[leveloffset=+2]
+
+[[tracer-bullet]]
 include::anchors/tracer-bullet.adoc[leveloffset=+2]
 
+[[vertical-slice-architecture]]
 include::anchors/vertical-slice-architecture.adoc[leveloffset=+2]
 
+[[walking-skeleton]]
 include::anchors/walking-skeleton.adoc[leveloffset=+2]
 
 <<<
 
 == Statistical Methods & Process Monitoring
 
+[[control-chart-shewhart]]
 include::anchors/control-chart-shewhart.adoc[leveloffset=+2]
 
+[[nelson-rules]]
 include::anchors/nelson-rules.adoc[leveloffset=+2]
 
+[[spc]]
 include::anchors/spc.adoc[leveloffset=+2]
 
 <<<
 
 == Strategic Planning
 
+[[cynefin-framework]]
 include::anchors/cynefin-framework.adoc[leveloffset=+2]
 
 include::anchors/decisional-balance-sheet.adoc[leveloffset=+2]
 
+[[goodharts-law]]
+include::anchors/goodharts-law.adoc[leveloffset=+2]
+
+[[hoshin-kanri]]
 include::anchors/hoshin-kanri.adoc[leveloffset=+2]
 
+[[impact-mapping]]
 include::anchors/impact-mapping.adoc[leveloffset=+2]
 
+[[jobs-to-be-done]]
 include::anchors/jobs-to-be-done.adoc[leveloffset=+2]
 
 include::anchors/kano-model.adoc[leveloffset=+2]
 
+[[kotter-8-step-change-model]]
 include::anchors/kotter-8-step-change-model.adoc[leveloffset=+2]
 
+[[meaningful-human-control]]
+include::anchors/meaningful-human-control.adoc[leveloffset=+2]
+
+[[mvp]]
 include::anchors/mvp.adoc[leveloffset=+2]
 
+[[pert]]
 include::anchors/pert.adoc[leveloffset=+2]
 
+[[pugh-matrix]]
 include::anchors/pugh-matrix.adoc[leveloffset=+2]
 
+[[swot]]
 include::anchors/swot.adoc[leveloffset=+2]
 
+[[wardley-mapping]]
 include::anchors/wardley-mapping.adoc[leveloffset=+2]
 
 <<<
 
 == Testing & Quality Practices
 
+[[bdd-given-when-then]]
 include::anchors/bdd-given-when-then.adoc[leveloffset=+2]
 
+[[fagan-inspection]]
 include::anchors/fagan-inspection.adoc[leveloffset=+2]
 
+[[gherkin]]
 include::anchors/gherkin.adoc[leveloffset=+2]
 
+[[iec-61508-sil-levels]]
 include::anchors/iec-61508-sil-levels.adoc[leveloffset=+2]
 
+[[linddun]]
 include::anchors/linddun.adoc[leveloffset=+2]
 
+[[llm-evaluations]]
 include::anchors/llm-evaluations.adoc[leveloffset=+2]
 
+[[mutation-testing]]
 include::anchors/mutation-testing.adoc[leveloffset=+2]
 
+[[owasp-top-10]]
 include::anchors/owasp-top-10.adoc[leveloffset=+2]
 
+[[property-based-testing]]
 include::anchors/property-based-testing.adoc[leveloffset=+2]
 
+[[red-green-tdd]]
 include::anchors/red-green-tdd.adoc[leveloffset=+2]
 
+[[stride]]
 include::anchors/stride.adoc[leveloffset=+2]
 
+[[tdd-chicago-school]]
 include::anchors/tdd-chicago-school.adoc[leveloffset=+2]
 
+[[tdd-london-school]]
 include::anchors/tdd-london-school.adoc[leveloffset=+2]
 
+[[test-double-dummy]]
 include::anchors/test-double-dummy.adoc[leveloffset=+2]
 
+[[test-double-fake]]
 include::anchors/test-double-fake.adoc[leveloffset=+2]
 
+[[test-double-meszaros]]
 include::anchors/test-double-meszaros.adoc[leveloffset=+2]
 
+[[test-double-mock]]
 include::anchors/test-double-mock.adoc[leveloffset=+2]
 
+[[test-double-spy]]
 include::anchors/test-double-spy.adoc[leveloffset=+2]
 
+[[test-double-stub]]
 include::anchors/test-double-stub.adoc[leveloffset=+2]
 
+[[testing-pyramid]]
 include::anchors/testing-pyramid.adoc[leveloffset=+2]
-
-<<<
-
-== Workflow
-
-include::anchors/workflow-architecture-documentation.adoc[leveloffset=+2]
-
-include::anchors/workflow-code-review.adoc[leveloffset=+2]
-
-include::anchors/workflow-requirements-to-spec.adoc[leveloffset=+2]
-
-include::anchors/workflow-strategic-analysis.adoc[leveloffset=+2]
-
-include::anchors/workflow-tdd-clean-architecture.adoc[leveloffset=+2]
 
 <<<

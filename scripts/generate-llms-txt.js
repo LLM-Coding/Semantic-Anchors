@@ -159,6 +159,7 @@ function adocToMarkdown(adoc) {
 // ─── Generate docs/all-anchors.adoc ─────────────────────────────────────────
 
 function generateAllAnchorsAdoc() {
+  const anchoredIds = new Set()
   const lines = [
     '= Semantic Anchors — Complete Reference',
     ':toc:',
@@ -177,6 +178,17 @@ function generateAllAnchorsAdoc() {
     for (const anchorId of category.anchors) {
       const filepath = path.join(ROOT, 'docs/anchors', `${anchorId}.adoc`)
       if (fs.existsSync(filepath)) {
+        // Explicit block anchor so each anchor section gets its stable
+        // catalog ID (e.g. #mece) instead of a title-derived one — the
+        // static home catalog links to /all-anchors#<anchor-id> (#595).
+        // AsciiDoc anchors must start with a letter; digit-leading IDs
+        // (4mat) already match their title-derived ID, so skip those.
+        // Multi-category anchors are included once per category — only
+        // the first occurrence gets the ID to avoid duplicate-id warnings.
+        if (/^[a-z]/.test(anchorId) && !anchoredIds.has(anchorId)) {
+          anchoredIds.add(anchorId)
+          lines.push(`[[${anchorId}]]`)
+        }
         lines.push(`include::anchors/${anchorId}.adoc[leveloffset=+2]`)
         lines.push('')
       }
@@ -434,6 +446,7 @@ function stripDocAttrs(content) {
 }
 
 function generateAllAnchorsWebAdoc() {
+  const anchoredIds = new Set()
   const WEB_DOCS = path.join(ROOT, 'website/public/docs')
   fs.mkdirSync(WEB_DOCS, { recursive: true })
 
@@ -461,6 +474,12 @@ function generateAllAnchorsWebAdoc() {
       const filepath = path.join(ROOT, 'docs/anchors', `${anchorId}.adoc`)
       if (fs.existsSync(filepath)) {
         const anchorContent = fs.readFileSync(filepath, 'utf-8')
+        // Same stable per-anchor section ID as in the include-based
+        // docs/all-anchors.adoc (see generateAllAnchorsAdoc).
+        if (/^[a-z]/.test(anchorId) && !anchoredIds.has(anchorId)) {
+          anchoredIds.add(anchorId)
+          lines.push(`[[${anchorId}]]`)
+        }
         lines.push(shiftHeadings(stripDocAttrs(anchorContent), 2))
         lines.push('')
       }
