@@ -103,7 +103,9 @@ for (const dePath of DE_PAGES) {
   sitemap += urlEntry(loc, today, 'monthly', '0.5')
 }
 
-// Individual anchor pages
+// Individual anchor pages (pre-rendered static pages since #597), plus the
+// /de variant where a German translation exists.
+let deAnchorCount = 0
 anchorsData.forEach((anchor) => {
   sitemap += urlEntry(
     `${BASE_URL}/anchor/${anchor.id}`,
@@ -112,6 +114,10 @@ anchorsData.forEach((anchor) => {
     '0.6',
     `Anchor: ${anchor.title}`
   )
+  if (fs.existsSync(path.join(__dirname, '..', 'docs', 'anchors', `${anchor.id}.de.adoc`))) {
+    sitemap += urlEntry(`${BASE_URL}/de/anchor/${anchor.id}`, today, 'monthly', '0.5')
+    deAnchorCount++
+  }
 })
 
 sitemap += `</urlset>
@@ -121,5 +127,5 @@ fs.writeFileSync(OUTPUT_FILE, sitemap, 'utf-8')
 
 console.log(`✓ Sitemap generated: ${OUTPUT_FILE}`)
 console.log(
-  `✓ Total URLs: ${PAGES.length + DE_PAGES.length + anchorsData.length} (${PAGES.length} pages + ${DE_PAGES.length} German variants + ${anchorsData.length} anchors)`
+  `✓ Total URLs: ${PAGES.length + DE_PAGES.length + anchorsData.length + deAnchorCount} (${PAGES.length} pages + ${DE_PAGES.length} German pages + ${anchorsData.length} anchors + ${deAnchorCount} German anchors)`
 )

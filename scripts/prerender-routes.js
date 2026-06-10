@@ -26,6 +26,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const { extractDescription } = require('./generate-jsonld.js')
 
 const DIST = path.join(__dirname, '..', 'website', 'dist')
 const SHELL = path.join(DIST, 'index.html')
@@ -322,7 +323,7 @@ function prerenderRoute(shell, route) {
  * the fragment is missing so the build fails fast instead of shipping an
  * incomplete set of pre-rendered pages.
  */
-function writeRouteVariant(shell, outPath, fragmentRel, headMeta) {
+function writeRouteVariant(shell, outPath, fragmentRel, headMeta, transformFragment) {
   const fragmentPath = path.join(DIST, fragmentRel)
   if (!fs.existsSync(fragmentPath)) {
     throw new Error(
@@ -330,7 +331,8 @@ function writeRouteVariant(shell, outPath, fragmentRel, headMeta) {
         `Make sure scripts/render-docs.js runs before prerender-routes.js and writes the fragment to website/public/docs/.`
     )
   }
-  const fragment = fs.readFileSync(fragmentPath, 'utf-8')
+  let fragment = fs.readFileSync(fragmentPath, 'utf-8')
+  if (transformFragment) fragment = transformFragment(fragment)
 
   let html = applyHead(shell, headMeta)
 
@@ -401,6 +403,15 @@ function buildCatalogMarkup(lang, translations) {
     'rounded-md px-2 py-1 text-sm text-[var(--color-text-secondary)] ' +
     'hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors'
 
+  // Link each anchor to its real pre-rendered page (#597); the German
+  // catalog points at the /de variant where the translation exists.
+  const hasDePage = (id) =>
+    fs.existsSync(path.join(__dirname, '..', 'docs', 'anchors', `${id}.de.adoc`))
+  const anchorHref = (id) =>
+    lang === 'de' && hasDePage(id)
+      ? `/Semantic-Anchors/de/anchor/${id}`
+      : `/Semantic-Anchors/anchor/${id}`
+
   const sections = categories
     .map((category) => {
       const items = (category.anchors || [])
@@ -408,7 +419,7 @@ function buildCatalogMarkup(lang, translations) {
         .filter(Boolean)
         .map(
           (anchor) =>
-            `<li><a href="/Semantic-Anchors/all-anchors#${escapeHtml(anchor.id)}" class="${linkClasses}">${escapeHtml(anchor.title)}</a></li>`
+            `<li><a href="${anchorHref(escapeHtml(anchor.id))}" class="${linkClasses}">${escapeHtml(anchor.title)}</a></li>`
         )
         .join('')
       if (!items) return ''
@@ -427,6 +438,76 @@ function buildCatalogMarkup(lang, translations) {
         <h2 class="text-2xl font-bold mb-3">${escapeHtml(heading)}</h2>${sections}
       </section>
     `
+}
+
+/**
+ * Pre-render every anchor to a real page at /anchor/<id>/ (HTTP 200), plus
+ * a /de/anchor/<id>/ variant where a German translation exists — fixing the
+ * sitemap- and JSON-LD-advertised 404s (#597). With JS the SPA hydrates and
+ * shows the anchor as a modal over the home page, exactly as before.
+ */
+function prerenderAnchorPages(shell) {
+  const anchors = loadWebsiteJson('public/data/anchors.json')
+  let enCount = 0
+  let deCount = 0
+  let skipped = 0
+  for (const anchor of anchors) {
+    const fragment = `docs/anchors/${anchor.id}.html`
+    if (!fs.existsSync(path.join(DIST, fragment))) {
+      console.warn(`  ! skipped /anchor/${anchor.id} — fragment ${fragment} missing`)
+      skipped++
+      continue
+    }
+    const fragmentDe = `docs/anchors/${anchor.id}.de.html`
+    const hasDe = fs.existsSync(path.join(DIST, fragmentDe))
+    const enUrl = `${SITE}/anchor/${anchor.id}`
+    const deUrl = hasDe ? `${SITE}/de/anchor/${anchor.id}` : null
+    const description =
+      extractDescription(`docs/anchors/${anchor.id}.adoc`) ||
+      `${anchor.title} — a semantic anchor: an established term that activates a rich, well-defined concept in any modern LLM.`
+
+    // The anchor body sits in a [%collapsible] block; expand it on the
+    // static page so the content is visible without a click. With JS the
+    // SPA replaces the page with the modal anyway.
+    const expandDetails = (html) => html.replace(/<details>/g, '<details open>')
+
+    writeRouteVariant(
+      shell,
+      `/anchor/${anchor.id}`,
+      fragment,
+      {
+        title: `${anchor.title} — Semantic Anchors`,
+        description,
+        canonicalUrl: enUrl,
+        enUrl,
+        deUrl,
+        lang: 'en',
+      },
+      expandDetails
+    )
+    enCount++
+
+    if (hasDe) {
+      writeRouteVariant(
+        shell,
+        `/de/anchor/${anchor.id}`,
+        fragmentDe,
+        {
+          title: `${anchor.title} — Semantic Anchors`,
+          description: extractDescription(`docs/anchors/${anchor.id}.de.adoc`) || description,
+          canonicalUrl: deUrl,
+          enUrl,
+          deUrl,
+          lang: 'de',
+        },
+        expandDetails
+      )
+      deCount++
+    }
+  }
+  console.log(
+    `  ✓ pre-rendered ${enCount} anchor pages (+ ${deCount} German variants${skipped ? `, ${skipped} skipped` : ''})`
+  )
 }
 
 /**
@@ -496,7 +577,10 @@ function main() {
     console.log(`  ✓ pre-rendered ${route.path}${route.fragmentDe ? ' (+ /de variant)' : ''}`)
   }
   prerenderHome(shell)
-  console.log(`\n✓ Pre-rendered ${ROUTES.length} routes + home to dist/<route>/index.html`)
+  prerenderAnchorPages(shell)
+  console.log(
+    `\n✓ Pre-rendered ${ROUTES.length} routes + home + anchor pages to dist/<route>/index.html`
+  )
 }
 
 main()

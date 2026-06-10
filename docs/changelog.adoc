@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-10
 
+*Real anchor pages (#597):*
+
+* Every `/anchor/<id>` URL was an HTTP 404, served only through the JavaScript SPA fallback — while the sitemap and the DefinedTerm structured data advertised all 161 of them. Each anchor is now a real pre-rendered page (own title, description, canonical URL, content expanded), plus a German `/de/anchor/<id>` variant for the 155 translated anchors, with `hreflang` pairs. The static home catalog now links to these pages directly.
+
 *The website now works without JavaScript (#595):*
 
 * *Static navigation* — the HTML shell shipped empty header/footer placeholders and not a single `<a href>` link, so without JavaScript the site was a dead end for crawlers, LLM fetchers, and no-JS visitors. The shell now carries a real header (logo + nav) and footer with plain clean-URL links; with JavaScript the SPA hydrates on top exactly as before.

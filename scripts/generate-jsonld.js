@@ -165,4 +165,4 @@ function main() {
 
 if (require.main === module) main()
 
-module.exports = { buildDefinedTermSet, buildScriptTag }
+module.exports = { buildDefinedTermSet, buildScriptTag, extractDescription }

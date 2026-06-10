@@ -77,18 +77,18 @@ function extractToc(html) {
  * sidecar `<basename>.toc.html` file so doc-page.js can render it in its
  * own sidebar slot.
  */
-function renderFile(srcPath, destPath) {
+function renderFile(srcPath, destPath, quiet = false) {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
     const html = String(asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false }))
     const { toc, body } = extractToc(html)
     fs.writeFileSync(destPath, body, 'utf-8')
-    console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
+    if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
     const tocPath = destPath.replace(/\.html$/, '.toc.html')
     if (toc) {
       fs.writeFileSync(tocPath, toc, 'utf-8')
-      console.log(`Rendered: ${path.relative(ROOT, tocPath)}`)
+      if (!quiet) console.log(`Rendered: ${path.relative(ROOT, tocPath)}`)
     } else if (fs.existsSync(tocPath)) {
       fs.unlinkSync(tocPath)
     }
@@ -180,6 +180,23 @@ renderFile(
   path.join(ROOT, 'docs/spec-driven-workflow.de.adoc'),
   path.join(WEB_DOCS, 'spec-driven-workflow.de.html')
 )
+
+// Render every anchor (EN + DE) to its own fragment for the pre-rendered
+// /anchor/<id> and /de/anchor/<id> pages (#597). ~315 small documents;
+// logged as a single summary line to keep the build output readable.
+const ANCHORS_SRC = path.join(ROOT, 'docs/anchors')
+const ANCHORS_OUT = path.join(WEB_DOCS, 'anchors')
+let anchorFragments = 0
+for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
+  if (!file.endsWith('.adoc')) continue
+  renderFile(
+    path.join(ANCHORS_SRC, file),
+    path.join(ANCHORS_OUT, file.replace(/\.adoc$/, '.html')),
+    true
+  )
+  anchorFragments++
+}
+console.log(`Rendered: ${anchorFragments} anchor fragments to website/public/docs/anchors/`)
 
 // Render contracts page from JSON
 require('./render-contracts.js')
