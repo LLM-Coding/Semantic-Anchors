@@ -27,7 +27,7 @@ import {
 } from './components/onboarding-modal.js'
 import { renderContractsPage, initContractsPage } from './components/contracts-page.js'
 
-const APP_VERSION = '0.4.0'
+const APP_VERSION = '0.5.0'
 
 window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${import.meta.env.BASE_URL}anchor/${anchorId}`
@@ -560,6 +560,13 @@ function bindLanguageToggle() {
 }
 
 function handleLanguageChange() {
+  // Keep the toggle label correct for programmatic language switches too
+  // (e.g. the router switching to German on a /de/<route> URL).
+  const langLabel = i18n.currentLang() === 'en' ? 'DE' : 'EN'
+  document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach((el) => {
+    el.textContent = langLabel
+  })
+
   const currentRoute = getCurrentRouteSync()
 
   if (currentRoute === '/about') {
