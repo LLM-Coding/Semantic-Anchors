@@ -8,6 +8,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 * *Structured data* — added a standalone `Organization` entity and a `DefinedTermSet` with a `DefinedTerm` for every anchor (name, canonical URL, and a definition where available), generated at build time from `anchors.json`. Lets search engines and retrieval-grounded AI resolve "Semantic Anchors" as a distinct entity and each anchor as a defined term (#579).
 * *Fixed:* the _An Anchor Delivers Only as Far as the Prior Reaches_ article was not pre-rendered and was therefore invisible to search engines and LLM crawlers. It is now pre-rendered like every other doc page.
+* *Landing answer block* — the home page rendered its hero (the "what are Semantic Anchors?" definition) only client-side, so crawlers and LLM fetchers saw an empty shell. The hero copy is now pre-rendered into the static home page, single-sourced from the translations so it never drifts from the live hero (#580).
 
 == 2026-06-09
 

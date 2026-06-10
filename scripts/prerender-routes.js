@@ -264,7 +264,50 @@ function prerenderRoute(shell, route) {
 }
 
 /**
- * Entry point: read the shell once, then pre-render every route in ROUTES.
+ * Pre-render a crawlable "answer block" into the home page (dist/index.html).
+ *
+ * The landing page renders its hero client-side, so crawlers and LLM fetchers
+ * see only the empty skeleton — the worst case for the query "What is Semantic
+ * Anchors?". This fills the empty #page-content with the hero copy (title +
+ * definition + emphasis), single-sourced from the EN translations so it never
+ * drifts from the live hero. On boot the SPA's home route overwrites
+ * #page-content with the full interactive hero + card grid, so users are
+ * unaffected. See issue #580.
+ *
+ * Runs after the ROUTES loop and writes only dist/index.html, so the other
+ * routes (already written from the cached shell) keep their empty-skeleton
+ * assumption.
+ */
+function prerenderHome() {
+  const enPath = path.join(__dirname, '..', 'website', 'src', 'translations', 'en.json')
+  const en = JSON.parse(fs.readFileSync(enPath, 'utf-8'))
+  const title = en['hero.title'] || ''
+  const intro = en['hero.intro'] || ''
+  const emphasis = en['hero.introEmphasis'] || ''
+
+  const block = `
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-3 leading-tight">${escapeHtml(title)}</h1>
+        <p class="mb-2 max-w-3xl">${escapeHtml(intro)}</p>
+        <p class="font-semibold max-w-3xl">${escapeHtml(emphasis)}</p>
+      </section>
+    `
+
+  let html = fs.readFileSync(SHELL, 'utf-8')
+  const pageContentRegex = /(<div\s+id="page-content"[^>]*>)\s*(<\/div>)/
+  if (!pageContentRegex.test(html)) {
+    throw new Error(
+      'Home #page-content div not found (or not empty) in dist/index.html — cannot inject the landing answer block.'
+    )
+  }
+  html = html.replace(pageContentRegex, `$1${block}$2`)
+  fs.writeFileSync(SHELL, html, 'utf-8')
+  console.log('  ✓ pre-rendered / (home answer block)')
+}
+
+/**
+ * Entry point: read the shell once, then pre-render every route in ROUTES,
+ * plus a crawlable answer block on the home page.
  * Throws (via prerenderRoute) if any fragment is missing, so the build
  * fails non-zero instead of shipping an incomplete set of static pages.
  */
@@ -274,7 +317,8 @@ function main() {
     prerenderRoute(shell, route)
     console.log(`  ✓ pre-rendered ${route.path}`)
   }
-  console.log(`\n✓ Pre-rendered ${ROUTES.length} routes to dist/<route>/index.html`)
+  prerenderHome()
+  console.log(`\n✓ Pre-rendered ${ROUTES.length} routes + home to dist/<route>/index.html`)
 }
 
 main()
