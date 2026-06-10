@@ -77,12 +77,23 @@ function extractToc(html) {
  * sidecar `<basename>.toc.html` file so doc-page.js can render it in its
  * own sidebar slot.
  */
+/**
+ * Rewrite legacy hash-router links (href="#/anchor/x", href="#/about", …)
+ * that authors used in the .adoc sources to real clean URLs, so the
+ * pre-rendered pages are navigable without JavaScript and crawlable (#599).
+ * In-page TOC/section links (href="#section-id", no slash) stay untouched.
+ * With JS the router intercepts the clean URLs for SPA navigation.
+ */
+function rewriteLegacyHashLinks(html) {
+  return html.replace(/href="#\//g, 'href="/Semantic-Anchors/')
+}
+
 function renderFile(srcPath, destPath, quiet = false) {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
     const html = String(asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false }))
-    const { toc, body } = extractToc(html)
+    const { toc, body } = extractToc(rewriteLegacyHashLinks(html))
     fs.writeFileSync(destPath, body, 'utf-8')
     if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
     const tocPath = destPath.replace(/\.html$/, '.toc.html')
