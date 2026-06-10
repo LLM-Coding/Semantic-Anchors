@@ -44,7 +44,7 @@ function renderContract(contract) {
   const anchors = contract.anchors
     .map(
       (id) =>
-        `<a href="#/anchor/${escapeHtml(id)}" class="inline-block rounded-full bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 text-xs text-blue-700 dark:text-blue-300">${escapeHtml(id)}</a>`
+        `<a href="/Semantic-Anchors/anchor/${escapeHtml(id)}" class="inline-block rounded-full bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 text-xs text-blue-700 dark:text-blue-300">${escapeHtml(id)}</a>`
     )
     .join(' ')
 
