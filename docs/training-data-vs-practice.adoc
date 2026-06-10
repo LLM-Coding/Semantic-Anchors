@@ -101,6 +101,111 @@ Four findings, each robust across the four models:
 
 The fourth point is the strongest form of the argument. We could not test older model generations — Claude 3.x is no longer reachable through this account — but we did not need to. The gap shows up on the latest models; older ones only widen it.
 
+== Cross-Model Validation
+https://github.com/JensGrote[Jens Grote]
+2026-06-09
+
+_The experiment above tested only Claude tiers. A reproduction of the full A–E battery against GPT-5, GPT-5-mini and Gemini 2.5 Flash confirms the mechanism is model-family-independent — and surfaces a third failure mode the Claude-only test could not reveal._
+
+=== Setup
+
+The same five framings (A–E) and five prior-mapping probes (P1–P5) were run against three non-Claude models, each in a clean session without system prompts or custom instructions:
+
+* **GPT-5** (OpenAI, May 2026)
+* **GPT-5-mini** (OpenAI, May 2026)
+* **Gemini 2.5 Flash** (Google, May 2026)
+
+Raw outputs: `anchor-activation-test-20260609/`.
+
+=== The Cockburn Anchor Fires Universally
+
+In framing C ("fully-dressed use cases according to Cockburn"), every model produces the full apparatus — Primary Actor, Stakeholders & Interests, Main Success Scenario, Extensions, goal level — regardless of vendor or size. The dense prior transcends model families.
+
+=== Three Failure Modes
+
+Where the original experiment found two behaviours in framing E (transparent substitution on Opus; silent substitution on Haiku), the cross-model test surfaces a third.
+
+==== 1. Transparent substitution
+
+The model recognises the gap and says so. GPT-5-mini on probe P5:
+
+[quote, GPT-5-mini, P5]
+____
+I'm not certain which "Use‑Case 3.0" you mean — several different authors and communities have used that label. Could you tell me which source or context you're referring to?
+____
+
+This is the safest failure — you _know_ the anchor did not fire.
+
+==== 2. Silent substitution
+
+The model delivers content under the requested label, but the content belongs to an older concept. Gemini 2.5 Flash on framing E prints a document headed "Use-Case 3.0 slices" whose body is recognisably Use-Case 2.0 slice technique. The label says 3.0; the content is 2.0.
+
+This confirms the original finding — and shows it is not Claude-specific. Gemini does it too.
+
+==== 3. Confabulation
+
+The model invents a confident, internally consistent but _fictitious_ description. This is the hardest failure to detect.
+
+GPT-5 on probe P5 produces "10 principles of Use-Case 3.0": _Outcome‑first, Usage‑centric, Separate need from solution, Slice for flow, Example‑ and test‑driven, Just‑enough just‑in‑time detail, Scalable and fractal, Single shared model, Holistic quality, Visual and collaborative._
+
+Gemini 2.5 Flash goes further — it attributes "10 foundational principles" including _Universally Applicable_, _Focus on the Big Picture_, _Tell the Whole Story_, _Trigger Conversations_, _Prioritize Readability_.
+
+**Neither list matches reality.** The published Use-Case Foundation (Jacobson, 2024) lists _nine_ principles with different wording (https://www.ivarjacobson.com/publications/articles/use-cases-ultimate-guide[IJI guide]). The count is wrong, the names are invented. This is not a denser prior — it is fabrication.
+
+Confabulation is more dangerous than silent substitution because:
+
+* It passes superficial review (numbered principles _look_ authoritative)
+* It creates false confidence
+* It is undetectable without domain knowledge or source verification
+
+=== The Anchor Viability Horizon
+
+These results point forward. An anchor's viability is not permanent — it tracks the density of the training data at training time.
+
+* **Stable anchors** (Cockburn, GoF, SOLID): densely represented, fire reliably across all model families for years to come.
+* **Emerging anchors** (Use-Case 2.0): fire on strong models, degrade on smaller ones. Viability will improve as published corpus grows.
+* **Pre-anchor concepts** (Use-Case 3.0): not yet viable. Too thin in the corpus — they confabulate rather than activate. These belong in *contracts*, not anchors.
+
+As models retrain on newer data, the boundary shifts. A concept that confabulates today may become a reliable anchor in a future generation — but only if the published corpus grows to match. The catalog should periodically re-run this battery to track which concepts have crossed the density threshold.
+
+=== Summary
+
+[cols="1,2,2,2", options="header"]
+|===
+| Framing | GPT-5 | GPT-5-mini | Gemini 2.5 Flash
+
+| *A — no anchor*
+| Generic requirements list.
+| Generic requirements list.
+| Sequential phases. No use-case structure.
+
+| *B — "use cases"*
+| Full use-case model with actors and specification.
+| Use-case structure with actors and flows.
+| Use-case structure, less detailed than C.
+
+| *C — "Cockburn fully-dressed"*
+| Full apparatus: goal level, stakeholders, MSS, extensions, guarantees.
+| Full apparatus.
+| Full apparatus: primary actor, scope, level, stakeholders, MSS, extensions.
+
+| *D — "Use-Case 2.0 slices"*
+| Real slices with acceptance criteria.
+| Real slices, incremental.
+| Real slices, walking skeleton first.
+
+| *E — "Use-Case 3.0 slices"*
+| Slices labelled "3.0" — content is 2.0. *Confabulates on prior probe.*
+| Slices labelled "3.0" — content is 2.0. *Transparent on prior probe.*
+| Slices labelled "3.0" — content is 2.0. *Confabulates on prior probe.*
+|===
+
+=== Implications
+
+. The anchor mechanism is *model-family-independent*. The catalog's value holds across vendors.
+. The three-layer model (anchor / contract / article) is not optional — confabulation makes weak-prior terms actively dangerous as anchors.
+. The catalog needs a *viability test* per anchor: can the term be confabulated? If yes, it is not ready.
+
 == Why the Anchor Lags Real Practice
 
 There is a second gap, and Simon named it. A model's knowledge is a snapshot of what people _wrote down_, weighted by how much they wrote. Day-to-day practice is mostly not written down: that teams skip the fully-dressed ceremony, that they treat Cockburn and Jacobson as one thing, that user stories absorbed much of the job. None of that sits in the corpus at volume, so none of it shapes the prior.
