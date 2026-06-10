@@ -10,7 +10,7 @@ export function renderHeader() {
         <div class="hidden sm:flex items-stretch gap-6">
           <!-- Logo left, spanning both rows -->
           <div class="flex items-center">
-            <a href="#/" class="no-underline flex flex-col items-center">
+            <a href="${import.meta.env.BASE_URL}" class="no-underline flex flex-col items-center">
               <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="218" height="96" class="h-24 w-[218px] max-w-none shrink-0" />
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
@@ -34,21 +34,21 @@ export function renderHeader() {
             <!-- Row 1: Navigation + Language/Theme -->
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-6 text-2xl">
-                <a href="#/" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
-                <a href="#/contracts" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/contracts" data-i18n="nav.contracts">${i18n.t('nav.contracts')}</a>
-                <a href="#/spec-driven-development" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/spec-driven-development" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
+                <a href="${import.meta.env.BASE_URL}" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
+                <a href="${import.meta.env.BASE_URL}contracts" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/contracts" data-i18n="nav.contracts">${i18n.t('nav.contracts')}</a>
+                <a href="${import.meta.env.BASE_URL}spec-driven-development" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors" data-route="/spec-driven-development" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
                 <div class="relative" id="more-menu-container">
                   <button id="more-menu-toggle" class="nav-link text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors flex items-center gap-1" data-i18n="nav.more">
                     ${i18n.t('nav.more')}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                   </button>
                   <div id="more-menu-dropdown" class="absolute left-0 top-full mt-1 hidden bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg shadow-lg py-2 min-w-[160px] z-50">
-                    <a href="#/about" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>
-                    <a href="#/agentskill" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/agentskill" data-i18n="nav.agentskill">${i18n.t('nav.agentskill')}</a>
-                    <a href="#/harness-inventory" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/harness-inventory" data-i18n="nav.harnessInventory">${i18n.t('nav.harnessInventory')}</a>
-                    <a href="#/training-data-vs-practice" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/training-data-vs-practice" data-i18n="nav.trainingData">${i18n.t('nav.trainingData')}</a>
-                    <a href="#/contributing" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contributing" data-i18n="nav.contributing">${i18n.t('nav.contributing')}</a>
-                    <a href="#/changelog" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/changelog" data-i18n="nav.changelog">${i18n.t('nav.changelog')}</a>
+                    <a href="${import.meta.env.BASE_URL}about" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>
+                    <a href="${import.meta.env.BASE_URL}agentskill" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/agentskill" data-i18n="nav.agentskill">${i18n.t('nav.agentskill')}</a>
+                    <a href="${import.meta.env.BASE_URL}harness-inventory" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/harness-inventory" data-i18n="nav.harnessInventory">${i18n.t('nav.harnessInventory')}</a>
+                    <a href="${import.meta.env.BASE_URL}training-data-vs-practice" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/training-data-vs-practice" data-i18n="nav.trainingData">${i18n.t('nav.trainingData')}</a>
+                    <a href="${import.meta.env.BASE_URL}contributing" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contributing" data-i18n="nav.contributing">${i18n.t('nav.contributing')}</a>
+                    <a href="${import.meta.env.BASE_URL}changelog" class="nav-link block px-4 py-2 text-base text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/changelog" data-i18n="nav.changelog">${i18n.t('nav.changelog')}</a>
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export function renderHeader() {
         <!-- Mobile: stacked layout -->
         <div class="sm:hidden">
           <div class="flex flex-col items-center">
-            <a href="#/" class="no-underline flex flex-col items-center">
+            <a href="${import.meta.env.BASE_URL}" class="no-underline flex flex-col items-center">
               <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="145" height="64" class="h-16 w-[145px] max-w-none shrink-0" />
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight text-center" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
@@ -155,15 +155,15 @@ export function renderHeader() {
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden sm:hidden mt-3 pb-2 border-t border-[var(--color-border)] pt-3">
           <div class="flex flex-col gap-2">
-            <a href="#/" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
-            <a href="#/contracts" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contracts" data-i18n="nav.contracts">${i18n.t('nav.contracts')}</a>
-            <a href="#/spec-driven-development" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/spec-driven-development" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
-            <a href="#/about" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>
-            <a href="#/agentskill" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/agentskill" data-i18n="nav.agentskill">${i18n.t('nav.agentskill')}</a>
-            <a href="#/harness-inventory" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/harness-inventory" data-i18n="nav.harnessInventory">${i18n.t('nav.harnessInventory')}</a>
-            <a href="#/training-data-vs-practice" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/training-data-vs-practice" data-i18n="nav.trainingData">${i18n.t('nav.trainingData')}</a>
-            <a href="#/contributing" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contributing" data-i18n="nav.contributing">${i18n.t('nav.contributing')}</a>
-            <a href="#/changelog" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/changelog" data-i18n="nav.changelog">${i18n.t('nav.changelog')}</a>
+            <a href="${import.meta.env.BASE_URL}" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/" data-i18n="nav.catalog">${i18n.t('nav.catalog')}</a>
+            <a href="${import.meta.env.BASE_URL}contracts" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contracts" data-i18n="nav.contracts">${i18n.t('nav.contracts')}</a>
+            <a href="${import.meta.env.BASE_URL}spec-driven-development" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/spec-driven-development" data-i18n="nav.workflow">${i18n.t('nav.workflow')}</a>
+            <a href="${import.meta.env.BASE_URL}about" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/about" data-i18n="nav.about">${i18n.t('nav.about')}</a>
+            <a href="${import.meta.env.BASE_URL}agentskill" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/agentskill" data-i18n="nav.agentskill">${i18n.t('nav.agentskill')}</a>
+            <a href="${import.meta.env.BASE_URL}harness-inventory" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/harness-inventory" data-i18n="nav.harnessInventory">${i18n.t('nav.harnessInventory')}</a>
+            <a href="${import.meta.env.BASE_URL}training-data-vs-practice" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/training-data-vs-practice" data-i18n="nav.trainingData">${i18n.t('nav.trainingData')}</a>
+            <a href="${import.meta.env.BASE_URL}contributing" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/contributing" data-i18n="nav.contributing">${i18n.t('nav.contributing')}</a>
+            <a href="${import.meta.env.BASE_URL}changelog" class="nav-link mobile-nav-link px-3 py-2 rounded-md text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors" data-route="/changelog" data-i18n="nav.changelog">${i18n.t('nav.changelog')}</a>
           </div>
         </div>
       </nav>
