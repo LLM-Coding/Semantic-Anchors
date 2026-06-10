@@ -218,7 +218,18 @@ const SITE = 'https://llm-coding.github.io/Semantic-Anchors'
  *   enUrl: string, deUrl: (string|null), lang: string}} meta
  * @returns {string} Updated HTML.
  */
+/**
+ * Cap a meta description at ~160 characters on a word boundary — Google
+ * truncates around 160, so longer texts would be cut mid-sentence in SERPs.
+ */
+function capDescription(text) {
+  if (text.length <= 160) return text
+  const cut = text.slice(0, 159)
+  return cut.slice(0, Math.max(cut.lastIndexOf(' '), 100)) + '…'
+}
+
 function applyHead(html, { title, description, canonicalUrl, enUrl, deUrl, lang }) {
+  description = capDescription(description)
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
 
   html = html.replace(
@@ -246,8 +257,45 @@ function applyHead(html, { title, description, canonicalUrl, enUrl, deUrl, lang 
     .join('\n')
   html = html.replace(/(<link\s+rel="canonical"[^>]*>)/, `$1\n${alternates}`)
 
+  // Per-page social metadata (#601): without this every pre-rendered page
+  // keeps the shell's home-pointing og:/twitter: values, so shared subpage
+  // links render the generic home preview.
+  html = html.replace(
+    /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/,
+    `<meta property="og:url" content="${canonicalUrl}" />`
+  )
+  html = html.replace(
+    /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/,
+    `<meta property="og:title" content="${escapeHtml(title)}" />`
+  )
+  html = html.replace(
+    /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/,
+    `<meta property="og:description" content="${escapeHtml(description)}" />`
+  )
+  html = html.replace(
+    /<meta\s+name="twitter:url"\s+content="[^"]*"\s*\/?>/,
+    `<meta name="twitter:url" content="${canonicalUrl}" />`
+  )
+  html = html.replace(
+    /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/,
+    `<meta name="twitter:title" content="${escapeHtml(title)}" />`
+  )
+  html = html.replace(
+    /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/,
+    `<meta name="twitter:description" content="${escapeHtml(description)}" />`
+  )
+
   if (lang === 'de') {
     html = html.replace('<html lang="en">', '<html lang="de">')
+    html = html
+      .replace(
+        /<meta\s+property="og:locale"\s+content="[^"]*"\s*\/?>/,
+        '<meta property="og:locale" content="de_DE" />'
+      )
+      .replace(
+        /<meta\s+property="og:locale:alternate"\s+content="[^"]*"\s*\/?>/,
+        '<meta property="og:locale:alternate" content="en_US" />'
+      )
   }
 
   return html
@@ -462,8 +510,12 @@ function prerenderAnchorPages(shell) {
     const hasDe = fs.existsSync(path.join(DIST, fragmentDe))
     const enUrl = `${SITE}/anchor/${anchor.id}`
     const deUrl = hasDe ? `${SITE}/de/anchor/${anchor.id}` : null
+    // Short Core-Concepts extracts ("Dependencies only point inward") get the
+    // anchor title prefixed so the SERP snippet stands on its own (#601).
+    const withTitle = (extracted) =>
+      extracted && extracted.length < 50 ? `${anchor.title} — ${extracted}` : extracted
     const description =
-      extractDescription(`docs/anchors/${anchor.id}.adoc`) ||
+      withTitle(extractDescription(`docs/anchors/${anchor.id}.adoc`)) ||
       `${anchor.title} — a semantic anchor: an established term that activates a rich, well-defined concept in any modern LLM.`
 
     // The anchor body sits in a [%collapsible] block; expand it on the
@@ -494,7 +546,8 @@ function prerenderAnchorPages(shell) {
         fragmentDe,
         {
           title: `${anchor.title} — Semantic Anchors`,
-          description: extractDescription(`docs/anchors/${anchor.id}.de.adoc`) || description,
+          description:
+            withTitle(extractDescription(`docs/anchors/${anchor.id}.de.adoc`)) || description,
           canonicalUrl: deUrl,
           enUrl,
           deUrl,
@@ -530,6 +583,11 @@ function writeHomeVariant(shell, lang) {
       ${buildCatalogMarkup(lang, tr)}
     `
 
+  // Real counts from the data files, so the description can never go stale
+  // again the way the hard-coded "110+" did (#601).
+  const anchorCount = loadWebsiteJson('public/data/anchors.json').length
+  const contractCount = loadWebsiteJson('public/data/contracts.json').length
+
   let html = applyHead(shell, {
     title:
       lang === 'de'
@@ -537,8 +595,8 @@ function writeHomeVariant(shell, lang) {
         : 'Semantic Anchors - Shared Vocabulary for LLM Communication',
     description:
       lang === 'de'
-        ? '110+ semantische Anker und semantische Contracts für präzise LLM-Kommunikation. Kuratierte Methoden, Frameworks und komponierbare Projektkonventionen. Über 10 Modelle evaluiert.'
-        : '110+ semantic anchors and semantic contracts for precise LLM communication. Curated methodologies, frameworks, and composable project conventions. Evaluated across 10 models.',
+        ? `${anchorCount} semantische Anker und ${contractCount} semantische Contracts für präzise LLM-Kommunikation — kuratierte Methoden, Frameworks und Projektkonventionen.`
+        : `${anchorCount} semantic anchors and ${contractCount} semantic contracts for precise LLM communication — curated methodologies, frameworks, and composable project conventions.`,
     canonicalUrl: lang === 'de' ? `${SITE}/de/` : `${SITE}/`,
     enUrl: `${SITE}/`,
     deUrl: `${SITE}/de/`,

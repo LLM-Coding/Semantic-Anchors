@@ -2,6 +2,14 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-11
+
+*Share metadata & descriptions (#601):*
+
+* *Per-page Open Graph / Twitter cards* — every pre-rendered page now carries its own `og:url`, `og:title`, `og:description` and `twitter:*` tags (previously all subpages shipped the home-page values, so sharing an anchor link rendered the generic home preview). German pages get `og:locale=de_DE`.
+* *Accurate home description* — the hard-coded "110+ semantic anchors" claim (real count: 161) is replaced by counts computed from the data files at build time; the static shell texts are now count-free so they cannot go stale.
+* *Normalized snippet lengths* — meta descriptions are capped at ~160 characters on a word boundary; very short anchor extracts get the anchor title prefixed.
+
 == 2026-06-10
 
 *Real anchor pages (#597):*
