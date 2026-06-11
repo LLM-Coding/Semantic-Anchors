@@ -48,4 +48,11 @@ Historischer Kontext:: Kernwerkzeug in Lean Manufacturing und Toyota Production 
 * Fishbone Diagram (Ishikawa) – ergänzendes Werkzeug
 * A3 Problem Solving (Toyota)
 * DevOps Post-Mortem-Kultur
+
+[discrete]
+== *Kritik*:
+
+* Alan J. Card, https://qualitysafety.bmj.com/content/26/8/671["The problem with '5 whys'"] (BMJ Quality & Safety, 2017) — trotz breiter institutioneller Verbreitung kein Wirksamkeitsnachweis; die Technik drängt Untersuchende auf einen einzigen linearen Kausalpfad, und ihre Ergebnisse sind zwischen Teams nicht reproduzierbar
+* John Allspaw, https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/["The Infinite Hows (or, the Dangers of the Five Whys)"] (2014) — "Warum"-Fragen laden in komplexen Systemen zu Schuldzuweisung und Narrativ-Bias ein; er schlägt vor, stattdessen "Wie" nach den Bedingungen zu fragen
+* Der tiefere Einwand: In komplexen Systemen existiert eine einzelne Grundursache oft gar nicht — Vorfälle entstehen aus interagierenden Faktoren, die eine fünfstufige lineare Kette nicht abbilden kann
 ====

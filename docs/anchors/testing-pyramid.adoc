@@ -37,4 +37,11 @@ Key Proponent:: Mike Cohn ("Succeeding with Agile", 2009)
 * Balancing test types in CI/CD pipelines
 * Evaluating existing test suites
 * Guiding team testing practices
+
+[discrete]
+== *Criticism*:
+
+* Kent C. Dodds, https://kentcdodds.com/blog/write-tests["Write tests. Not too many. Mostly integration."] (2019) — proposes the *Testing Trophy*: integration tests give the best confidence per cost, so the pyramid's unit-heavy base optimises for the wrong metric
+* Spotify Engineering, https://engineering.atspotify.com/2018/01/testing-of-microservices/["Testing of Microservices"] (2018) — proposes the *honeycomb* shape for microservices: unit-heavy suites couple tests to implementation details and break under refactoring
+* The layer boundaries blur in modern stacks — fast in-memory "integration" tests undermine the pyramid's core assumption that higher-level tests are necessarily slow and expensive
 ====

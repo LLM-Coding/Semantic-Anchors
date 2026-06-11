@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-11
 
+*Criticism sections, batch 1 (#603):*
+
+* The catalog is a lexicon, not a list of endorsements — and a lexicon marks its contested entries. Following a full triage of all 161 anchors (#603), the ten anchors with the most prominent documented critique now carry a *Criticism* section (EN + DE) citing named, linked sources and the alternatives the discourse proposes: GoF Singleton (Gamma 2009, Hevery 2008), Testing Pyramid (Testing Trophy, Spotify honeycomb), SWOT (Hill & Westbrook 1997), Plain English / Strunk & White (Pullum 2009), Gutes Deutsch / Wolf Schneider (descriptive-linguistics critique), Postel's Law (Allman 2011, RFC 9413), Red/Green TDD ("Is TDD Dead?" debate, Coplien), CAP Theorem (Brewer 2012, Kleppmann 2015), Five Whys (Card 2017, Allspaw 2014), and SOLID (North's CUPID, Ousterhout). The MBTI anchor pioneered this format.
+
 *Share metadata & descriptions (#601):*
 
 * *Per-page Open Graph / Twitter cards* — every pre-rendered page now carries its own `og:url`, `og:title`, `og:description` and `twitter:*` tags (previously all subpages shipped the home-page values, so sharing an anchor link rendered the generic home preview). German pages get `og:locale=de_DE`.

@@ -34,4 +34,11 @@ Key Proponent:: Robert C. Martin ("Uncle Bob")
 * Refactoring legacy code to improve structure
 * Building systems where flexibility and testability are important
 * Teaching or enforcing good software design practices
+
+[discrete]
+== *Criticism*:
+
+* Dan North, https://dannorth.net/cupid-for-joyful-coding/["CUPID — for joyful coding"] (2022; preceded by his 2017 talk "Why Every Single Element of SOLID is Wrong") — the principles are too vague to guide decisions ("responsibility" is undefined) and optimise for a style of OO design that mainstream practice has moved past; he proposes the CUPID properties as an alternative
+* John Ousterhout, https://web.stanford.edu/~ouster/cgi-bin/book.php["A Philosophy of Software Design"] (2018) — SRP-driven decomposition produces many shallow classes whose interfaces add more complexity than their implementations hide; he argues for fewer, deeper modules
+* The principles rest on anecdote and authority rather than empirical evidence — a recurring point in the debate around both critiques
 ====

@@ -47,4 +47,11 @@ Key Proponents:: Kent Beck ("Test-Driven Development: By Example", 2002); popula
 * <<tdd-chicago-school,TDD Chicago School>> - State-based classical TDD focused on real objects over mocks
 * <<tdd-london-school,TDD London School>> - Mock-heavy, interaction-based, outside-in variant
 * <<bdd-given-when-then,BDD Given-When-Then>> - Behavior-driven complement for higher-level acceptance tests
+
+[discrete]
+== *Criticism*:
+
+* David Heinemeier Hansson, https://dhh.dk/2014/tdd-is-dead-long-live-testing.html["TDD is dead. Long live testing."] (2014) — test-first as dogma leads to "test-induced design damage"; the follow-up https://martinfowler.com/articles/is-tdd-dead/["Is TDD Dead?"] conversation series with Kent Beck and Martin Fowler maps the whole debate
+* James O. Coplien, https://web.archive.org/web/20230923190457/https://rbcs-us.com/documents/Why-Most-Unit-Testing-is-Waste.pdf["Why Most Unit Testing is Waste"] (2013) — most low-level unit tests provide little assurance relative to their maintenance cost
+* Empirical results are mixed: replication studies (e.g. Fucci et al., https://arxiv.org/abs/1611.05994["A Dissection of the Test-Driven Development Process"], IEEE TSE 2017) suggest observed benefits stem from working in small iterative steps rather than from writing the test first
 ====
