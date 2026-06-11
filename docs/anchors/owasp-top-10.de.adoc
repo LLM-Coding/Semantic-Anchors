@@ -35,7 +35,7 @@ A09 – Unzureichendes Sicherheits-Logging und -Monitoring:: Mangelnde Protokoll
 A10 – Server-Side Request Forgery (SSRF):: Server ruft externe Ressourcen von angreiferkontrollierten URLs ab, ohne diese zu validieren
 
 
-Schlüsselvertreter:: OWASP Foundation (https://owasp.org/Top10/, erstmals 2003 veröffentlicht, aktuelle Ausgabe 2021)
+Schlüsselvertreter:: OWASP Foundation (https://owasp.org/Top10/, erstmals 2003 veröffentlicht; die Liste oben ist die Ausgabe 2021)
 
 [discrete]
 == *Wann zu verwenden*:
@@ -52,4 +52,11 @@ Schlüsselvertreter:: OWASP Foundation (https://owasp.org/Top10/, erstmals 2003 
 
 * <<regulated-environment,Reguliertes Umfeld>>
 * <<iec-61508-sil-levels,IEC 61508 SIL-Stufen>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die Liste oben ist die Ausgabe *2021*. Die aktuelle Ausgabe ist https://owasp.org/Top10/2025/[OWASP Top 10:2025] (RC November 2025, finalisiert um den Jahreswechsel 2025/26): neu sind *Software Supply Chain Failures* (A03) und *Mishandling of Exceptional Conditions* (A10), SSRF geht in Broken Access Control auf, mehrere Kategorien sind neu gereiht (https://owasp.org/Top10/2025/0x00_2025-Introduction/[Änderungsübersicht])
+* Der Trainingsdaten-Prior eines LLM für „OWASP Top 10" bedient höchstwahrscheinlich die Ausgabe 2021 — sie war über vier Jahre aktuell und dominiert Tutorials, Kurse und Blog-Material; Modelle mit älterem Cutoff mischen womöglich noch 2017 hinein
+* Nenne die Ausgabe im Prompt explizit („OWASP Top 10:2025" vs. „:2021") — nackte Kategorie-IDs sind editionsübergreifend mehrdeutig: A03 heißt 2021 Injection, 2025 aber Software Supply Chain Failures
 ====

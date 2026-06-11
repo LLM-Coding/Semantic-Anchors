@@ -43,4 +43,11 @@ Key Proponent:: The Go Authors (https://go.dev/doc/effective_go)
 * Explaining Go idioms that differ from other languages (e.g. error handling, interfaces)
 * Prompting an LLM to produce idiomatic, production-quality Go code
 
+[discrete]
+== *Current Status*:
+
+* Dated by its own admission — https://go.dev/doc/effective_go[the document] opens with: "This document was written for Go's release in 2009 and is not actively updated. While it remains a good guide for using the core language, it does not cover significant changes to the language (generics), ecosystem (modules), or libraries added since." The Go team has deliberately frozen it (https://go.dev/issue/28782[golang/go #28782], still open)
+* It predates the entire modern toolchain era — modules (2018/19) and generics (Go 1.18, 2022) — so its guidance is *silent* on these topics rather than wrong about the core language
+* Modern complements: the curated https://go.dev/wiki/CodeReviewComments[Go Code Review Comments] (self-described "supplement to Effective Go") and Google's maintained https://google.github.io/styleguide/go/[Go Style series] (Guide, Decisions, Best Practices)
+
 ====

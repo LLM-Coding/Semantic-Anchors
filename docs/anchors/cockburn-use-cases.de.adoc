@@ -59,4 +59,11 @@ Schlüsselvertreter:: Alistair Cockburn (_Writing Effective Use Cases_, Addison-
 == *Weiterführend*:
 
 * link:#/training-data-vs-practice[Anchors and Training Data] - warum dieser Anker Cockburns Handwerk abbildet und nicht Jacobsons spätere Use-Case 2.0/3.0, und was das über die Abhängigkeit von Ankern von den Trainingsdaten verrät.
+
+[discrete]
+== *Aktueller Stand*:
+
+* _Writing Effective Use Cases_ (2001) hat nie eine zweite Auflage bekommen und bleibt der kanonische Handwerkstext — und der dichteste, am zuverlässigsten aktivierte LLM-Prior für das Schreiben von Use Cases
+* Jacobsons Nachfolger existiert und trägt als eigener Anker: https://www.ivarjacobson.com/publications/white-papers/use-case-20-e-book[Use-Case 2.0] (Jacobson, Spence & Bittner, freies Ebook, 2011) passt Use Cases über *Use-Case Slices* an iterative Lieferung an
+* https://www.ivarjacobson.com/publications/books/use-case-30-ebook[Use Case 3.0] (de Mendonca & Jacobson, v1.0, 2024) existiert *tatsächlich* — ist aber zu jung für einen Anker: LLMs halten dafür keinen dichten Prior (siehe _Weiterführend_ oben); wer 3.0-Semantik will, liefert die Definition im Prompt mit. Jacobson und Cockburn haben ihr Handwerk in https://queue.acm.org/detail.cfm?id=3631182["Use Cases are Essential"] (ACM Queue, 2023) neu zusammengeführt
 ====

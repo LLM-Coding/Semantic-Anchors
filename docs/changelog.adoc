@@ -4,6 +4,12 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-11
 
+*Current Status sections, batch 2 (#603):*
+
+* The six anchors whose referent has editions or successors now carry a *Current Status* section (EN + DE) naming what is current, which edition an LLM's training-data prior most plausibly serves, and how to disambiguate in prompts — every claim fetch-verified by research agents: OWASP Top 10 (2025 edition is current; bare category IDs are ambiguous — A03 means Injection in 2021 but Software Supply Chain Failures in 2025), ISO/IEC 25010 (2023 revision: nine characteristics, Safety added; prior serves the withdrawn 2011 model), MADR (4.0.0; prior reproduces the 2.x-era template), Effective Go (deliberately frozen by the Go team since 2009, predates generics and modules), Bloom's Taxonomy (1956 nouns vs 2001 verbs — priors blend both), and Cockburn Use Cases (Use-Case 2.0 is an anchor of its own; the official Use Case 3.0 ebook exists since 2024 but its prior is thin — supply the definition in the prompt).
+* *New contribution convention:* every new anchor proposal now includes a criticism / edition-drift research step; findings land in Criticism / Current Status sections with named, fetch-verified linked sources. Documented in CONTRIBUTING (EN + DE) and the anchor template.
+* Fixed the Wolf Schneider criticism source from batch 1: it now links the concrete Sprachlog post in which Anatol Stefanowitsch calls Schneider the "oberster Sprachnörgler der deutschsprachigen Journaille" (Sprachbrocken 49/2012), instead of a category archive.
+
 *Criticism sections, batch 1 (#603):*
 
 * The catalog is a lexicon, not a list of endorsements — and a lexicon marks its contested entries. Following a full triage of all 161 anchors (#603), the ten anchors with the most prominent documented critique now carry a *Criticism* section (EN + DE) citing named, linked sources and the alternatives the discourse proposes: GoF Singleton (Gamma 2009, Hevery 2008), Testing Pyramid (Testing Trophy, Spotify honeycomb), SWOT (Hill & Westbrook 1997), Plain English / Strunk & White (Pullum 2009), Gutes Deutsch / Wolf Schneider (descriptive-linguistics critique), Postel's Law (Allman 2011, RFC 9413), Red/Green TDD ("Is TDD Dead?" debate, Coplien), CAP Theorem (Brewer 2012, Kleppmann 2015), Five Whys (Card 2017, Allspaw 2014), and SOLID (North's CUPID, Ousterhout). The MBTI anchor pioneered this format.

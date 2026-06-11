@@ -59,4 +59,11 @@ Key Proponents:: Alistair Cockburn (_Writing Effective Use Cases_, Addison-Wesle
 == *Further Reading*:
 
 * link:#/training-data-vs-practice[Anchors and Training Data] - why this anchor reflects Cockburn's craft rather than Jacobson's later Use-Case 2.0/3.0, and what that reveals about how anchors depend on training data.
+
+[discrete]
+== *Current Status*:
+
+* _Writing Effective Use Cases_ (2001) never had a second edition and remains the canonical craft text — and the densest, most reliably activated LLM prior for use-case writing
+* Jacobson's successor exists and works as an anchor of its own: https://www.ivarjacobson.com/publications/white-papers/use-case-20-e-book[Use-Case 2.0] (Jacobson, Spence & Bittner, free ebook, 2011) adapts use cases to iterative delivery via *use-case slices*
+* https://www.ivarjacobson.com/publications/books/use-case-30-ebook[Use Case 3.0] (de Mendonca & Jacobson, v1.0, 2024) *does* exist — but it is too young to be an anchor: LLMs hold no dense prior for it (see _Further Reading_ above), so supply its definition in the prompt if you want 3.0 semantics. Jacobson and Cockburn realigned their craft in https://queue.acm.org/detail.cfm?id=3631182["Use Cases are Essential"] (ACM Queue, 2023)
 ====

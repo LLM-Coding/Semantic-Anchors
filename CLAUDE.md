@@ -297,6 +297,7 @@ The AgentSkill enables AI agents (Claude Code, Codex, Cursor, etc.) to recognize
 **Checklist for new anchors:**
 - [ ] Add anchor to `docs/anchors/<name>.adoc`
 - [ ] Update `skill/semantic-anchor-translator/references/catalog.md` with the new entry
+- [ ] Research documented criticism and edition drift; if found, add a `== Criticism` / `== Current Status` section (EN + DE) with named, fetch-verified linked sources (see CONTRIBUTING and issue #603)
 
 **Future (Post-Phase 3):**
 1. User creates GitHub Issue via template
