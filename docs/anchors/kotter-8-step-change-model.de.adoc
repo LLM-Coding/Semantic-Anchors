@@ -55,4 +55,11 @@ Historischer Kontext:: Einer der meistzitierten Change-Management-Frameworks der
 * <<wardley-mapping,Wardley Mapping>> — visualisiert, wo in der Wertschöpfungskette Veränderung nötig ist, bevor die Vision definiert wird
 
 Gegenbeispiel:: Reines Top-down-Mandat ("ab Montag sind wir agil") — genau Kotters Punkt: ohne Dringlichkeit, Koalition, Vision und kurzfristige Erfolge entsteht Compliance-Theater, kein Wandel.
+
+[discrete]
+== *Kritik*:
+
+* Keine empirische Validierung des Gesamtmodells: Appelbaum, Habashy, Malo & Shafiq, https://doi.org/10.1108/02621711211253231["Back to the future: revisiting Kotter's 1996 change model"] (Journal of Management Development 31(8), 2012) werteten 15 Jahre Literatur aus — Belege für die meisten Einzelschritte, aber keine formale Studie, die das Modell als Ganzes validiert; seine Popularität "scheint mehr aus seinem direkten, nutzbaren Format zu stammen als aus wissenschaftlichem Konsens über die Ergebnisse"
+* Die Evidenzbasis von n-Schritt-Change-Modellen ist generell dünn: Rune Todnem By, https://doi.org/10.1080/14697010500359250["Organisational change management: A critical review"] (Journal of Change Management 5(4), 2005) findet geplante, schrittbasierte Ansätze — Kotters ist der bekannteste — "oft widersprüchlich, größtenteils ohne empirische Evidenz und gestützt auf ungeprüfte Hypothesen"
+* Kotters eigene Revision räumt die Linearität ein: Seine Organisation https://www.kotterinc.com/methodology/8-steps/[beschreibt das Original als "the linear 8 Step"], das er zu den 8 Accelerators von _Accelerate_ (2014; basierend auf https://hbr.org/2012/11/accelerate["Accelerate!"], HBR 2012) weiterentwickelte — mit einem "dual operating system", einem agilen Netzwerk neben der Hierarchie
 ====

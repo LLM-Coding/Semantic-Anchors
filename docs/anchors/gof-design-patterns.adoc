@@ -47,4 +47,11 @@ Key Proponents:: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides ("Desi
 * <<solid-principles,SOLID Principles>> - Design principles that GoF patterns help implement
 * <<fowler-patterns,Fowler Patterns>> - Enterprise application architecture patterns (complementary scope)
 * <<clean-architecture,Clean Architecture>> - Architectural style leveraging GoF principles
+
+[discrete]
+== *Criticism*:
+
+* Peter Norvig, https://norvig.com/design-patterns/["Design Patterns in Dynamic Languages"] (1996/1998) — 16 of the 23 patterns have a "qualitatively simpler implementation" in Lisp or Dylan than in C++, or vanish into the language entirely: many patterns compensate for missing language features rather than capture universal design wisdom
+* Paul Graham, https://www.paulgraham.com/icad.html["Revenge of the Nerds"] (2002) — recurring patterns may be evidence of "the human compiler at work": "When I see patterns in my programs, I consider it a sign of trouble", a sign the language's abstractions are not powerful enough
+* The authors themselves treat the catalog as a 1994 snapshot, not a closed canon: in the https://www.informit.com/articles/article.aspx?p=1404056[2009 InformIT interview] they discuss how they would reorganize and trim it today (see also the Criticism on <<gof-singleton-pattern,Singleton>>)
 ====

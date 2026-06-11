@@ -55,4 +55,11 @@ Historical Context:: One of the most cited change management frameworks in busin
 * <<wardley-mapping,Wardley Mapping>> — visualise where change is needed in the value chain before defining the vision
 
 Counter-example:: Pure top-down mandate ("from Monday we will be agile") — Kotter's whole point is that without urgency, coalition, vision and short-term wins, the mandate produces compliance theatre, not change.
+
+[discrete]
+== *Criticism*:
+
+* No empirical validation of the whole model: Appelbaum, Habashy, Malo & Shafiq, https://doi.org/10.1108/02621711211253231["Back to the future: revisiting Kotter's 1996 change model"] (Journal of Management Development 31(8), 2012) reviewed 15 years of literature — support for most individual steps, but no formal study validating the model as a whole; its popularity "appears to derive more from its direct and usable format than from any scientific consensus on the results"
+* The evidence base of n-step change models in general is thin: Rune Todnem By, https://doi.org/10.1080/14697010500359250["Organisational change management: A critical review"] (Journal of Change Management 5(4), 2005) finds planned, step-based approaches — of which Kotter's is the best-known — "often contradictory, mostly lacking empirical evidence and supported by unchallenged hypotheses"
+* Kotter's own revision concedes the linearity: his organization https://www.kotterinc.com/methodology/8-steps/[describes the original as "the linear 8 Step"] that he evolved into the 8 Accelerators of _Accelerate_ (2014; based on https://hbr.org/2012/11/accelerate["Accelerate!"], HBR 2012) with a "dual operating system" — an agile network running alongside the hierarchy
 ====

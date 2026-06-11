@@ -37,4 +37,11 @@ Schlüsselvertreter:: Robert C. Martin ("Uncle Bob")
 * Systeme, die langfristige Wartbarkeit erfordern
 * Wenn Teamgröße und Fluktuation hoch sind
 * Projekte, bei denen Geschäftsregeln vor Technologieänderungen geschützt werden müssen
+
+[discrete]
+== *Kritik*:
+
+* Jimmy Bogard, https://www.jimmybogard.com/vertical-slice-architecture/["Vertical Slice Architecture"] (2018) — nennt die "traditionelle Layered/Onion/Clean Architecture" monolithisch im Ansatz und nur für eine Minderheit der Requests angemessen; er kritisiert mock-lastige Tests und Abstraktionen "um Konzepte, die nicht abstrahiert gehören"; seine Alternative ist <<vertical-slice-architecture,Vertical Slice Architecture>>
+* Derek Comartin, https://codeopinion.com/clean-architecture-and-indirection-no-thanks/["'Clean Architecture' and indirection. No thanks."] (CodeOpinion) — tut kanonische Clean-Architecture-Beispiele als "nutzlose Indirektion" ab: Die Schichtung kostet, ohne sich in typischen Systemen zu bezahlen
+* Die Kritiken laufen zusammen: Die Dependency Rule erhebt auf jedes Feature eine fixe Indirektions-Steuer, während die meisten Änderungen ohnehin durch alle Schichten schneiden — genau die Kopplung, um die Vertical Slice Architecture stattdessen organisiert
 ====

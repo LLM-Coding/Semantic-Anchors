@@ -47,4 +47,11 @@ Schlüsselvertreter:: Bernice McCarthy ("The 4MAT System: Teaching to Learning S
 * <<pyramid-principle,Pyramid Principle>> - Top-down-Struktur für schriftliche Kommunikation; ergänzt 4MAT, das erfahrungsorientiert beginnt
 * <<feynman-technique,Feynman Technique>> - Selbstgesteuertes Lernen; 4MAT ist lehrergesteuertes Instruktionsdesign
 * <<diataxis-framework,Diátaxis Framework>> - Dokumentationstypen (Tutorial/How-to/Reference/Explanation) entsprechen grob den 4MAT-Quadranten
+
+[discrete]
+== *Kritik*:
+
+* 4MAT fußt auf der Lernstil-Theorie, und deren Matching-These ist empirisch nicht gedeckt: Pashler, McDaniel, Rohrer & Bjork, https://doi.org/10.1111/j.1539-6053.2009.01038.x["Learning Styles: Concepts and Evidence"] (Psychological Science in the Public Interest, 2008) fanden praktisch keine validen Belege, dass auf diagnostizierte Lernstile zugeschnittener Unterricht die Ergebnisse verbessert
+* Paul Kirschner, https://doi.org/10.1016/j.compedu.2016.12.006["Stop propagating the learning styles myth"] (Computers & Education, 2017) — fast alle Studien mit angeblichen Belegen scheitern an grundlegenden Kriterien wissenschaftlicher Validität
+* Die übliche Verteidigung: Der Why/What/How/What-If-Zyklus von 4MAT funktioniert als *Sequenzierungs*-Werkzeug, das jeder Lernende durchläuft — eine Lesart, die auch ohne die Lernstil-These trägt
 ====

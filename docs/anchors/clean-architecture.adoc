@@ -38,4 +38,11 @@ Key Proponent:: Robert C. Martin ("Uncle Bob")
 * Systems requiring long-term maintainability
 * When team size and turnover are high
 * Projects where business rules must be protected from technology changes
+
+[discrete]
+== *Criticism*:
+
+* Jimmy Bogard, https://www.jimmybogard.com/vertical-slice-architecture/["Vertical Slice Architecture"] (2018) — calls the "traditional layered/onion/clean architecture" monolithic in its approach and appropriate for only a minority of requests, criticizing mock-heavy tests and abstractions "around concepts that really shouldn't be abstracted"; his alternative is <<vertical-slice-architecture,Vertical Slice Architecture>>
+* Derek Comartin, https://codeopinion.com/clean-architecture-and-indirection-no-thanks/["'Clean Architecture' and indirection. No thanks."] (CodeOpinion) — dismisses canonical Clean Architecture examples as "useless indirection": the layering adds cost without paying for itself in typical systems
+* The critiques converge: the dependency rule imposes a fixed indirection tax on every feature, while most changes cut across all layers anyway — the coupling Vertical Slice Architecture organizes around instead
 ====

@@ -39,4 +39,11 @@ Schlüsselvertreter:: Clayton Christensen, Alan Klement, Bob Moesta
 * Identifikation echter Konkurrenz
 * Schreiben bedeutungsvollerer User Stories
 * Marktsegmentierung basierend auf Jobs, nicht Demografie
+
+[discrete]
+== *Kritik*:
+
+* Zwei Schulen beanspruchen denselben Begriff: Alan Klement dokumentiert in https://jtbd.info/know-the-two-very-different-interpretations-of-jobs-to-be-done-5a18b748bd89["Know the Two — Very — Different Interpretations of Jobs to be Done"], dass Christensen/Moestas *Jobs-as-Progress* und Ulwicks *Jobs-as-Activities* (Outcome-Driven Innovation) inkompatible Interpretationen sind, die Praktiker verwirren
+* Sogar der Ursprung ist umstritten: Ulwicks Strategyn erklärt, https://strategyn.com/jobs-to-be-done/history-of-jtbd/["JTBD wurde 1990 von Tony Ulwick erfunden"] und von Christensen lediglich popularisiert (https://hbr.org/2016/09/know-your-customers-jobs-to-be-done["Know Your Customers' 'Jobs to Be Done'"], HBR 2016)
+* Das nackte Akronym aktiviert also zwei widersprüchliche Priors — sage „JTBD (Christensen, Jobs als Fortschritt)" oder „JTBD (Ulwick, Outcome-Driven Innovation)"; der vollständige Name dieses Ankers trägt den Christensen-Qualifier aus genau diesem Grund
 ====

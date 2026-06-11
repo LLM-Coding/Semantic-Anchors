@@ -4,6 +4,11 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-11
 
+*Criticism sections, batch 3 (#603):*
+
+* The remaining twelve contested anchors from the catalog triage now carry a *Criticism* section (EN + DE), every claim with a named critic and a fetch-verified linked source: 4MAT (learning-styles evidence — Pashler et al. 2008, Kirschner 2017), AIDA (hierarchy-of-effects critique — Heath & Feldwick 2008, Vakratsas & Ambler 1999), Clean Architecture (indirection tax — Bogard, Comartin; alternative: Vertical Slice Architecture), CQRS (author-acknowledged overuse — Fowler, Dahan, Young), DRY (the authors' own "we did a poor job of explaining" concession plus Sandi Metz), Freytag's Pyramid (Jane Alison), GoF Design Patterns (Norvig's 16-of-23, Paul Graham's human compiler), Hero's Journey (folklorists Dundes and Toelken), Jobs To Be Done (the Christensen-vs-Ulwick two-schools problem), Kotter's 8 Steps (no empirical validation of the whole model — Appelbaum et al. 2012; Kotter's own Accelerate revision), MVP (term dilution — NN/g; Kniberg's skateboard corrective), and Save the Cat (Suderman's "Save the Movie!").
+* With batch 3, all 23 Criticism candidates and the 6 highest-drift Current Status candidates from the #603 triage are done — 28 anchors carry sourced sections.
+
 *Current Status sections, batch 2 (#603):*
 
 * The six anchors whose referent has editions or successors now carry a *Current Status* section (EN + DE) naming what is current, which edition an LLM's training-data prior most plausibly serves, and how to disambiguate in prompts — every claim fetch-verified by research agents: OWASP Top 10 (2025 edition is current; bare category IDs are ambiguous — A03 means Injection in 2021 but Software Supply Chain Failures in 2025), ISO/IEC 25010 (2023 revision: nine characteristics, Safety added; prior serves the withdrawn 2011 model), MADR (4.0.0; prior reproduces the 2.x-era template), Effective Go (deliberately frozen by the Go team since 2009, predates generics and modules), Bloom's Taxonomy (1956 nouns vs 2001 verbs — priors blend both), and Cockburn Use Cases (Use-Case 2.0 is an anchor of its own; the official Use Case 3.0 ebook exists since 2024 but its prior is thin — supply the definition in the prompt).
