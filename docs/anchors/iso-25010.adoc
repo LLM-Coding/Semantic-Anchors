@@ -53,4 +53,11 @@ Key Proponents:: ISO/IEC JTC 1/SC 7 (replaces ISO/IEC 9126)
 * <<atam,ATAM>>
 * <<arc42,arc42 Architecture Documentation>>
 * <<adr-according-to-nygard,ADR according to Nygard>>
+
+[discrete]
+== *Current Status*:
+
+* The eight-characteristic model described above is the 2011 edition — which ISO has withdrawn. The current edition, https://www.iso.org/standard/78176.html[ISO/IEC 25010:2023], expands the model to *nine* characteristics: *Safety* is new, Usability was renamed to *Interaction Capability*, Portability to *Flexibility* (free change summary: https://quality.arc42.org/articles/iso-25010-update-2023[arc42 Quality Model])
+* Most published material still describes the 2011 model — as of mid-2026 even the English Wikipedia article — so an LLM's training-data prior for "ISO 25010" most plausibly serves the older eight-characteristic edition
+* Name the edition explicitly ("ISO/IEC 25010:2023") whenever the distinction matters; the bare term will usually resolve to the 2011 model
 ====

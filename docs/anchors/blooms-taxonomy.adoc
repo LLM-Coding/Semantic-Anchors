@@ -59,4 +59,11 @@ Key Proponents:: Benjamin Bloom et al. ("Taxonomy of Educational Objectives", 19
 * <<feynman-technique,Feynman Technique>> — explaining-it-back is a concrete check at the Understand level; Bloom names the levels above it
 * <<socratic-method,Socratic Method>> — questioning drives learners up the levels; Bloom labels where they are
 * <<diataxis-framework,Diátaxis Framework>> — documentation types map loosely to cognitive levels (tutorial → Apply, explanation → Understand)
+
+[discrete]
+== *Current Status*:
+
+* Two versions circulate: the original 1956 framework (Bloom et al.) uses *nouns* — Knowledge, Comprehension, Application, Analysis, Synthesis, Evaluation — while the 2001 revision described above uses *verbs* and puts Create at the top. The standard citable summary of the differences is Krathwohl, https://people.ucsc.edu/~ktellez/blooms_taxonomy.pdf["A Revision of Bloom's Taxonomy: An Overview"] (Theory Into Practice 41(4), 2002)
+* An LLM's training-data prior plausibly *blends both versions* — material on each is abundant, and many secondary sources mix the level names — so an unqualified "Bloom's Taxonomy" can anchor to either category set
+* Name the version explicitly: "revised Bloom's taxonomy (Anderson/Krathwohl 2001)" or "original Bloom's taxonomy (1956)"
 ====

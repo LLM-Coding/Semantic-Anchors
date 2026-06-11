@@ -137,6 +137,15 @@ Jeder Anker wird als AsciiDoc-Datei mit Metadaten-Attributen gespeichert:
 * `:tags:` - Schlüsselwörter für die Suche (optional, aber empfohlen)
 * `:related:` - Verwandte Anker-IDs (optional)
 
+*Kritik und Aktueller Stand (Recherche verpflichtend, Sektion bei Fund):*
+
+Der Katalog ist ein Begriffslexikon, keine Empfehlungsliste — Aufnahme bedeutet, dass der Begriff als präziser Pointer funktioniert, nicht dass wir die Praxis empfehlen. Recherchiere für jeden neuen Anker, ob dokumentierte Kritik oder Drift existiert, und halte den Befund als Sektion fest:
+
+* `== Kritik` — die Methode selbst ist umstritten. Nur benannte, zitierfähige Kritik (Kritiker + verlinkte Quelle), nie Stimmungen wie „nutzt niemand mehr". Die Sektion referiert den Diskurs, sie urteilt nicht. Nennt der Diskurs Alternativen, nenne sie mit.
+* `== Aktueller Stand` — die Methode steht, aber Trainingsdaten-Prior und Gegenwart sind auseinandergelaufen: Es gibt eine neuere Edition (nenne die Edition, auf die der Prior vermutlich zeigt), einen Nachfolger, oder die Verbreitung ist abgeebbt.
+
+Verifiziere jede verlinkte Quelle vor dem Commit durch tatsächlichen Abruf. Findet die Recherche nichts Zitierfähiges, entfallen beide Sektionen — eine leere Sektion ist Rauschen. Hintergrund: die Katalog-Triage in https://github.com/LLM-Coding/Semantic-Anchors/issues/603[#603].
+
 == Gegenbeispiele
 
 Dies sind *KEINE* semantischen Anker:

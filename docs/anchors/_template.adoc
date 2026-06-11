@@ -33,4 +33,18 @@ Key Proponents:: Author Name ("Book Title"), Another Author
 
 * <<related-anchor-1,Related Anchor Name>>
 * <<related-anchor-2,Another Related Anchor>>
+
+// Research documented criticism and edition drift for every new anchor (see
+// CONTRIBUTING "Criticism and Current Status"). Include the sections below
+// only when the research finds citable sources — delete them otherwise.
+
+[discrete]
+== Criticism:
+
+* Named critic, https://example.org["Linked, fetch-verified source"] (year) — what the critique says; name the alternative the discourse proposes, if any
+
+[discrete]
+== Current Status:
+
+* Newer edition / successor / adoption shift, with linked source — and which version the training-data prior most plausibly serves
 ====

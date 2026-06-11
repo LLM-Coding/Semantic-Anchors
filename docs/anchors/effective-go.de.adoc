@@ -43,4 +43,11 @@ Schlüsselvertreter:: The Go Authors (https://go.dev/doc/effective_go)
 * Erklärung von Go-Idiomen, die sich von anderen Sprachen unterscheiden (z.B. Fehlerbehandlung, Interfaces)
 * LLM-Prompting für idiomatischen, produktionsreifen Go-Code
 
+[discrete]
+== *Aktueller Stand*:
+
+* Nach eigener Auskunft veraltet — https://go.dev/doc/effective_go[das Dokument] beginnt mit dem Hinweis: "This document was written for Go's release in 2009 and is not actively updated. While it remains a good guide for using the core language, it does not cover significant changes to the language (generics), ecosystem (modules), or libraries added since." Das Go-Team hat es bewusst eingefroren (https://go.dev/issue/28782[golang/go #28782], weiterhin offen)
+* Es stammt aus der Zeit vor der gesamten modernen Toolchain-Ära — Modules (2018/19) und Generics (Go 1.18, 2022) — seine Ratschläge *schweigen* zu diesen Themen, statt beim Sprachkern falsch zu liegen
+* Moderne Ergänzungen: die kuratierten https://go.dev/wiki/CodeReviewComments[Go Code Review Comments] (Selbstbeschreibung: "supplement to Effective Go") und Googles gepflegte https://google.github.io/styleguide/go/[Go-Style-Reihe] (Guide, Decisions, Best Practices)
+
 ====

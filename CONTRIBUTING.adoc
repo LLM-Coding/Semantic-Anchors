@@ -183,6 +183,15 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 * `:tags:` - Keywords for search (optional but recommended)
 * `:related:` - Related anchor IDs (optional)
 
+*Criticism and Current Status (research required, include when found):*
+
+The catalog is a lexicon, not a list of endorsements — inclusion means the term works as a precise pointer, not that we recommend the practice. For every new anchor, research whether documented criticism or drift exists, and add the finding as a section:
+
+* `== Criticism` — the method itself is contested. Only named, citable critique (critic + linked source), never vibes like "nobody uses this anymore". The section reports the discourse; it does not adjudicate. Where the discourse names alternatives, name them too.
+* `== Current Status` — the method stands, but the training-data prior and the present have drifted apart: a newer edition exists (name the edition the prior likely points to), a successor emerged, or adoption faded.
+
+Verify every linked source by actually fetching it before committing. If the research finds nothing citable, omit both sections — an empty section is noise. See https://github.com/LLM-Coding/Semantic-Anchors/issues/603[#603] for the full-catalog triage behind this convention.
+
 == Counter-Examples
 
 These are *NOT* semantic anchors:
@@ -262,6 +271,7 @@ For *new semantic anchors*:
 . All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`)
 . AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
 . Anchor tested with LLM prompt (see <<testing-anchor,Testing Your Semantic Anchor>>)
+. Documented criticism / edition drift researched — and captured in a _Criticism_ or _Current Status_ section with named, fetch-verified sources where found
 
 For *code changes*:
 
