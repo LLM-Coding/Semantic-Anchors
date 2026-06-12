@@ -1,7 +1,7 @@
 name: Propose New Semantic Anchor
 description: Suggest a new semantic anchor for the catalog
 title: "[Anchor Proposal]: "
-labels: ["new-anchor", "needs-validation"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:

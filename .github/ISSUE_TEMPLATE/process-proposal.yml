@@ -1,7 +1,7 @@
 name: ⚙️ Process Proposal
 description: Propose a change to project processes or governance
 title: "[Process Proposal]: "
-labels: ["process", "discussion"]
+labels: ["question"]
 body:
   - type: markdown
     attributes:
