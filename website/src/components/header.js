@@ -74,8 +74,9 @@ export function renderHeader() {
                 </button>
               </div>
             </div>
-            <!-- Row 2: Search + Role filter + Anchor count -->
-            <div class="flex items-center gap-3">
+            <!-- Row 2: Search + Role filter + Anchor count — catalog-only
+                 controls, hidden on every other route (#615) -->
+            <div id="header-catalog-controls" class="flex items-center gap-3">
               <input
                 id="header-search-input"
                 type="search"

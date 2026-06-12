@@ -14,6 +14,7 @@ export function renderMain() {
     <main class="flex-1">
       <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <section id="hero" class="mb-10">
+        <div>
           <h1 class="text-3xl sm:text-4xl font-bold text-[var(--color-text)] mb-3 leading-tight" data-i18n="hero.title">
             ${i18n.t('hero.title')}
           </h1>
@@ -114,6 +115,7 @@ export function renderMain() {
               data-i18n="hero.skipToCatalog"
             >${i18n.t('hero.skipToCatalog')}</a>
           </div>
+        </div>
         </section>
 
         <section id="filters" class="mb-6 flex flex-wrap gap-3 items-center">

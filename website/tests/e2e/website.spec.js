@@ -180,24 +180,17 @@ test.describe('Homepage - Card Grid', () => {
 })
 
 test.describe('Search away from the home grid (#615)', () => {
-  test('hides the anchor counter on non-home routes', async ({ page }) => {
+  test('hides the search controls on non-home routes', async ({ page }) => {
     await page.goto('/Semantic-Anchors/about/')
+    await page.waitForSelector('#doc-content h1', { timeout: 10000 })
+    await expect(page.locator('#header-search-input')).toBeHidden()
     await expect(page.locator('#anchor-count')).toBeHidden()
   })
 
-  test('typing in the header search jumps home and applies the query', async ({ page }) => {
-    await page.goto('/Semantic-Anchors/about/')
-    await page.waitForSelector('#header-search-input')
-
-    await page.fill('#header-search-input', 'TDD')
-
-    // The grid arrives filtered — wait for a card that survived the query,
-    // not for the first card in DOM order (which the filter may hide).
-    await page.waitForSelector('.anchor-card:visible', { timeout: 10000 })
-    await expect(page).toHaveURL(/\/Semantic-Anchors\/$/)
-    await expect(page.locator('#hero')).toBeHidden()
-    const visibleCards = await page.locator('.anchor-card:visible').count()
-    expect(visibleCards).toBeGreaterThan(0)
+  test('shows the search controls on the home route', async ({ page }) => {
+    await page.goto('/Semantic-Anchors/')
+    await page.waitForSelector('.anchor-card', { timeout: 10000 })
+    await expect(page.locator('#header-search-input')).toBeVisible()
     await expect(page.locator('#anchor-count')).toBeVisible()
   })
 })

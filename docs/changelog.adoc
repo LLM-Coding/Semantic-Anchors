@@ -6,9 +6,8 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *Search UX (#615):*
 
-* *Search results were invisible:* typing in the search box filtered the catalog grid, but the hero section above it pushed the results below the fold. An active search now hides the hero (it returns the moment the query is cleared), so results appear directly under the header.
-* *Search works from every page:* the header search box used to be dead outside the home page — no grid to filter, no results page. Typing on any route now jumps to the home page and applies the query there; the typed text survives the switch.
-* The anchor counter ("N / M anchors") is hidden on routes where it has no grid to count — it previously sat at a meaningless "0 / 0" everywhere outside the catalog.
+* *Search results were invisible:* typing in the search box filtered the catalog grid, but the hero section above it pushed the results below the fold. An active search now collapses the hero with a smooth 300ms animation (it slides back the moment the query is cleared), so results appear directly under the header. Honors `prefers-reduced-motion`.
+* *Search controls only where they work:* the header search box, role filter, and anchor counter used to appear on every page while being dead outside the home catalog (no grid to filter, the counter stuck at "0 / 0"). The whole control row is now shown only on the home route.
 
 *Direct links to contracts (#611):*
 

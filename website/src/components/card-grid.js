@@ -445,7 +445,7 @@ export function applyCardFilters(roleId, searchQuery) {
   // header instead of below the fold; clearing the query restores it. The
   // role filter alone deliberately leaves the hero in place (#615).
   const hero = document.getElementById('hero')
-  if (hero) hero.style.display = lowerQuery ? 'none' : ''
+  if (hero) hero.classList.toggle('hero-collapsed', !!lowerQuery)
 
   // Use full-text search if index is ready and query exists
   let matchingAnchorIds = null

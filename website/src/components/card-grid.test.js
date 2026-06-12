@@ -152,11 +152,11 @@ describe('hero visibility during search (#615)', () => {
       <span id="visible-count">0</span><span id="total-count">0</span>`
   }
 
-  it('hides the hero while a search query is active', async () => {
+  it('collapses the hero while a search query is active', async () => {
     setupDom()
     const { applyCardFilters } = await import('./card-grid.js')
     applyCardFilters('', 'mece')
-    expect(document.getElementById('hero').style.display).toBe('none')
+    expect(document.getElementById('hero').classList.contains('hero-collapsed')).toBe(true)
   })
 
   it('restores the hero when the query is cleared', async () => {
@@ -164,13 +164,13 @@ describe('hero visibility during search (#615)', () => {
     const { applyCardFilters } = await import('./card-grid.js')
     applyCardFilters('', 'mece')
     applyCardFilters('', '')
-    expect(document.getElementById('hero').style.display).toBe('')
+    expect(document.getElementById('hero').classList.contains('hero-collapsed')).toBe(false)
   })
 
   it('keeps the hero visible when only the role filter is active', async () => {
     setupDom()
     const { applyCardFilters } = await import('./card-grid.js')
     applyCardFilters('software-architect', '')
-    expect(document.getElementById('hero').style.display).toBe('')
+    expect(document.getElementById('hero').classList.contains('hero-collapsed')).toBe(false)
   })
 })

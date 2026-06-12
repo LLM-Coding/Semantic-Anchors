@@ -27,7 +27,7 @@ import {
 } from './components/onboarding-modal.js'
 import { renderContractsPage, initContractsPage } from './components/contracts-page.js'
 
-const APP_VERSION = '0.8.0'
+const APP_VERSION = '0.8.1'
 
 window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${import.meta.env.BASE_URL}anchor/${anchorId}`
@@ -182,15 +182,15 @@ function initApp() {
 
   createOnboardingModal()
 
-  // The anchor counter only means something next to the home grid — hide it
-  // on every other route (#615).
-  const syncAnchorCountVisibility = (path) => {
-    document.getElementById('anchor-count')?.classList.toggle('hidden', path !== '/')
+  // Search, role filter and counter only mean something next to the home
+  // grid — hide the whole control row on every other route (#615).
+  const syncCatalogControlsVisibility = (path) => {
+    document.getElementById('header-catalog-controls')?.classList.toggle('hidden', path !== '/')
   }
-  document.addEventListener('route:changed', (e) => syncAnchorCountVisibility(e.detail.path))
+  document.addEventListener('route:changed', (e) => syncCatalogControlsVisibility(e.detail.path))
 
   initRouter()
-  syncAnchorCountVisibility(getCurrentRouteSync())
+  syncCatalogControlsVisibility(getCurrentRouteSync())
 
   if (shouldShowOnboarding()) {
     showOnboarding()
@@ -528,14 +528,6 @@ function bindHeaderSearchInput() {
 
     if (query.trim()) {
       triggerSearchIndexBuild()
-    }
-
-    // Away from the home grid there is nothing to filter — jump home and let
-    // the grid initialization pick the typed text up from this input, which
-    // survives the route switch because the header is not re-rendered (#615).
-    if (getCurrentRouteSync() !== '/') {
-      navigate('/')
-      return
     }
 
     // Sync the main content search input if it exists

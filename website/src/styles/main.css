@@ -83,6 +83,43 @@ body {
   font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
 }
 
+/* Hero collapse during an active search (#615): grid-template-rows 1fr->0fr
+   transitions smoothly where display:none cannot. visibility flips after the
+   transition so the collapsed hero's links leave the tab order. */
+#hero {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows 300ms ease,
+    opacity 300ms ease,
+    margin-bottom 300ms ease,
+    visibility 0s 0s;
+}
+
+#hero > div {
+  min-height: 0;
+  overflow: hidden;
+}
+
+#hero.hero-collapsed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-bottom: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 300ms ease,
+    opacity 300ms ease,
+    margin-bottom 300ms ease,
+    visibility 0s 300ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero,
+  #hero.hero-collapsed {
+    transition: none;
+  }
+}
+
 .category-section {
   @apply mb-12;
   /* Clear the sticky category quick-nav when jumped to via #category-<id> */
