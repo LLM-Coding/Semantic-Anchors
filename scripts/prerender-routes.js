@@ -628,6 +628,51 @@ function writeHomeVariant(shell, lang) {
  * Throws (via prerenderRoute) if any fragment is missing, so the build
  * fails non-zero instead of shipping an incomplete set of static pages.
  */
+/**
+ * Pre-render one real page per semantic contract — /contract/<id> plus a
+ * /de/contract/<id> variant (#611). Mirrors prerenderAnchorPages: the body
+ * fragments are written by render-contracts.js into docs/contracts/ and the
+ * per-page head metadata flows through applyHead.
+ */
+function prerenderContractPages(shell) {
+  const contracts = loadWebsiteJson('public/data/contracts.json')
+  let count = 0
+  let skipped = 0
+  for (const contract of contracts) {
+    const fragment = `docs/contracts/${contract.id}.html`
+    const fragmentDe = `docs/contracts/${contract.id}.de.html`
+    if (!fs.existsSync(path.join(DIST, fragment))) {
+      console.warn(`  ! skipped /contract/${contract.id} — fragment ${fragment} missing`)
+      skipped++
+      continue
+    }
+    const enUrl = `${SITE}/contract/${contract.id}`
+    const deUrl = `${SITE}/de/contract/${contract.id}`
+
+    writeRouteVariant(shell, `/contract/${contract.id}`, fragment, {
+      title: `${contract.title} — Semantic Anchors`,
+      description: `${contract.title} — a semantic contract: ${contract.description}. Composable shared vocabulary for your CLAUDE.md / AGENTS.md.`,
+      canonicalUrl: enUrl,
+      enUrl,
+      deUrl,
+      lang: 'en',
+    })
+
+    writeRouteVariant(shell, `/de/contract/${contract.id}`, fragmentDe, {
+      title: `${contract.titleDe || contract.title} — Semantic Anchors`,
+      description: `${contract.titleDe || contract.title} — ein Semantic Contract: ${contract.descriptionDe || contract.description}. Komponierbares gemeinsames Vokabular für deine CLAUDE.md / AGENTS.md.`,
+      canonicalUrl: deUrl,
+      enUrl,
+      deUrl,
+      lang: 'de',
+    })
+    count++
+  }
+  console.log(
+    `  ✓ pre-rendered ${count} contract pages (EN + DE${skipped ? `, ${skipped} skipped` : ''})`
+  )
+}
+
 function main() {
   const shell = readShell()
   for (const route of ROUTES) {
@@ -636,8 +681,9 @@ function main() {
   }
   prerenderHome(shell)
   prerenderAnchorPages(shell)
+  prerenderContractPages(shell)
   console.log(
-    `\n✓ Pre-rendered ${ROUTES.length} routes + home + anchor pages to dist/<route>/index.html`
+    `\n✓ Pre-rendered ${ROUTES.length} routes + home + anchor + contract pages to dist/<route>/index.html`
   )
 }
 

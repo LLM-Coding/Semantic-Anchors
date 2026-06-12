@@ -27,7 +27,7 @@ import {
 } from './components/onboarding-modal.js'
 import { renderContractsPage, initContractsPage } from './components/contracts-page.js'
 
-const APP_VERSION = '0.6.1'
+const APP_VERSION = '0.7.0'
 
 window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${import.meta.env.BASE_URL}anchor/${anchorId}`

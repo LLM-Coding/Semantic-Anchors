@@ -90,3 +90,77 @@ describe('router language prefix (/de)', () => {
     expect(i18n.currentLang()).toBe('en')
   })
 })
+
+describe('router contract route (/contract/:id)', () => {
+  beforeEach(() => {
+    history.replaceState(null, '', '/')
+    window.location.hash = ''
+    localStorage.clear()
+    i18n.init()
+    document.body.innerHTML = ''
+    // jsdom does not implement scrollIntoView
+    window.Element.prototype.scrollIntoView = vi.fn()
+  })
+
+  function addContractsRoute() {
+    const handler = vi.fn(() => {
+      document.body.innerHTML = `
+        <div data-contract-id="specification"><h3>Specification</h3></div>`
+    })
+    addRoute('/contracts', handler)
+    return handler
+  }
+
+  it('renders the contracts page for /contract/:id', async () => {
+    const handler = addContractsRoute()
+    history.replaceState(null, '', '/contract/specification')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    await new Promise((r) => setTimeout(r, 0))
+
+    expect(handler).toHaveBeenCalled()
+  })
+
+  it('sets the document title from the contract card heading', async () => {
+    addContractsRoute()
+    history.replaceState(null, '', '/contract/specification')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    await new Promise((r) => setTimeout(r, 0))
+
+    expect(document.title).toBe('Specification — Semantic Anchors')
+  })
+
+  it('scrolls the contract card into view', async () => {
+    addContractsRoute()
+    const scrollSpy = vi.fn()
+    window.Element.prototype.scrollIntoView = scrollSpy
+    history.replaceState(null, '', '/contract/specification')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    await new Promise((r) => setTimeout(r, 0))
+
+    expect(scrollSpy).toHaveBeenCalled()
+  })
+
+  it('rejects unsafe contract ids', async () => {
+    const handler = addContractsRoute()
+    history.replaceState(null, '', '/contract/NOT%20a%20valid..id')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    await new Promise((r) => setTimeout(r, 0))
+
+    expect(handler).not.toHaveBeenCalled()
+  })
+
+  it('switches to German for /de/contract/:id', async () => {
+    const handler = addContractsRoute()
+    history.replaceState(null, '', '/de/contract/specification')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    await new Promise((r) => setTimeout(r, 0))
+
+    expect(handler).toHaveBeenCalled()
+    expect(i18n.currentLang()).toBe('de')
+  })
+})

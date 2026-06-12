@@ -120,6 +120,22 @@ anchorsData.forEach((anchor) => {
   }
 })
 
+// Individual contract pages (pre-rendered static pages since #611), each with
+// a /de variant — contracts.json carries full German fields for all entries.
+const contractsData = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '..', 'website/public/data/contracts.json'), 'utf-8')
+)
+contractsData.forEach((contract) => {
+  sitemap += urlEntry(
+    `${BASE_URL}/contract/${contract.id}`,
+    today,
+    'monthly',
+    '0.6',
+    `Contract: ${contract.title}`
+  )
+  sitemap += urlEntry(`${BASE_URL}/de/contract/${contract.id}`, today, 'monthly', '0.5')
+})
+
 sitemap += `</urlset>
 `
 
@@ -127,5 +143,5 @@ fs.writeFileSync(OUTPUT_FILE, sitemap, 'utf-8')
 
 console.log(`✓ Sitemap generated: ${OUTPUT_FILE}`)
 console.log(
-  `✓ Total URLs: ${PAGES.length + DE_PAGES.length + anchorsData.length + deAnchorCount} (${PAGES.length} pages + ${DE_PAGES.length} German pages + ${anchorsData.length} anchors + ${deAnchorCount} German anchors)`
+  `✓ Total URLs: ${PAGES.length + DE_PAGES.length + anchorsData.length + deAnchorCount + contractsData.length * 2} (${PAGES.length} pages + ${DE_PAGES.length} German pages + ${anchorsData.length} anchors + ${deAnchorCount} German anchors + ${contractsData.length * 2} contract pages)`
 )

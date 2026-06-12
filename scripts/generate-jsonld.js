@@ -28,6 +28,7 @@ const path = require('path')
 
 const ROOT = path.join(__dirname, '..')
 const ANCHORS_JSON = path.join(ROOT, 'website/public/data/anchors.json')
+const CONTRACTS_JSON = path.join(ROOT, 'website/public/data/contracts.json')
 const DIST = path.join(ROOT, 'website/dist')
 const BASE = 'https://llm-coding.github.io/Semantic-Anchors'
 const SET_ID = `${BASE}/#catalog`
@@ -102,6 +103,26 @@ function buildDefinedTermSet() {
       return term
     })
 
+  // Contracts are first-class defined terms too — each has a real page at
+  // /contract/<id> since #611.
+  const contracts = fs.existsSync(CONTRACTS_JSON)
+    ? JSON.parse(fs.readFileSync(CONTRACTS_JSON, 'utf-8'))
+    : []
+  for (const c of contracts) {
+    if (!c || !c.id || !c.title) continue
+    const url = `${BASE}/contract/${c.id}`
+    const term = {
+      '@type': 'DefinedTerm',
+      '@id': url,
+      name: c.title,
+      termCode: c.id,
+      url,
+      inDefinedTermSet: SET_ID,
+    }
+    if (c.description) term.description = c.description
+    terms.push(term)
+  }
+
   return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
@@ -109,7 +130,7 @@ function buildDefinedTermSet() {
     name: 'Semantic Anchors',
     url: `${BASE}/`,
     description:
-      'A curated catalog of semantic anchors — well-defined terms, methodologies, and frameworks used as shared vocabulary when communicating with Large Language Models.',
+      'A curated catalog of semantic anchors and semantic contracts — well-defined terms, methodologies, and frameworks used as shared vocabulary when communicating with Large Language Models.',
     hasDefinedTerm: terms,
   }
 }

@@ -245,6 +245,42 @@ function handleRoute() {
     return
   }
 
+  // Check for contract route (/contract/:id) — pre-rendered as real pages,
+  // resolved by the SPA to the contracts page scrolled to that contract's
+  // card (#611). Unlike anchors there is no modal; the card is highlighted
+  // in place.
+  if (path.startsWith('/contract/')) {
+    const contractId = path.replace('/contract/', '')
+    const safeContractId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(contractId) ? contractId : null
+    if (!safeContractId) return
+
+    closeOpenAnchorModal()
+    const contractsHandler = routes.get('/contracts')
+    if (typeof contractsHandler === 'function') {
+      currentRoute = '/contracts'
+      contractsHandler()
+    }
+    trackPageview()
+
+    // The contracts page renders asynchronously; locate the card on the
+    // next tick, title the page after its heading (real title, not a
+    // de-kebab-cased slug), and bring it into view.
+    setTimeout(() => {
+      const card = document.querySelector(`[data-contract-id="${safeContractId}"]`)
+      const heading = card ? card.querySelector('h3') : null
+      const readableName =
+        (heading && heading.textContent.trim()) ||
+        safeContractId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+      document.title = `${readableName} — Semantic Anchors`
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        card.classList.add('ring-2', 'ring-blue-400')
+        setTimeout(() => card.classList.remove('ring-2', 'ring-blue-400'), 2500)
+      }
+    }, 0)
+    return
+  }
+
   // Leaving an anchor route: close any open anchor modal so Back/forward and
   // in-app navigation don't leave it stranded as an overlay over the page.
   closeOpenAnchorModal()

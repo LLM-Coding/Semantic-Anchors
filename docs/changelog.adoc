@@ -4,6 +4,12 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-12
 
+*Direct links to contracts (#611):*
+
+* Every semantic contract now has its own pre-rendered page at `/contract/<id>`, with a German variant at `/de/contract/<id>` — own title, description, canonical URL, social-share metadata, and hreflang pairs, exactly like the anchor pages from #597. Sharing a single contract (e.g. _Specification_) now produces the right preview instead of the generic contracts-page card.
+* The cards on `/contracts` link to their detail pages; in the SPA, a `/contract/<id>` URL opens the contracts page scrolled to the highlighted card with the real contract title in the tab.
+* All 38 contract pages joined the sitemap, and contracts are now `DefinedTerm` entities in the site's structured data alongside the anchors — each citable by search engines and retrieval-grounded AI under its own URL.
+
 *Socratic Code-Theory Recovery skill v0.3 (#531, #532):*
 
 * *Per-context output files (#531)* — Phase 1 now writes `QUESTION_TREE-<context>.adoc` and `OPEN_QUESTIONS-<context>.adoc` instead of fixed filenames, so the documented "one bounded context at a time" workflow no longer silently overwrites earlier runs; Phase 2 reads the context-specific tree, and ADRs get a context prefix (`adrs/<context>-adr-NNN-*.adoc`) so two contexts cannot clobber each other's decision records.
