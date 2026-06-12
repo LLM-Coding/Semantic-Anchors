@@ -139,3 +139,38 @@ describe('category quick-nav', () => {
     expect(html).toContain('data-i18n-title="categories.testing-quality"')
   })
 })
+
+describe('hero visibility during search (#615)', () => {
+  function setupDom() {
+    document.body.innerHTML = `
+      <section id="hero">Hero</section>
+      <div class="category-section">
+        <div class="anchor-card" data-roles="" data-tags="mece" data-anchor="mece" style="display: block">
+          <span class="anchor-card-title">MECE</span>
+        </div>
+      </div>
+      <span id="visible-count">0</span><span id="total-count">0</span>`
+  }
+
+  it('hides the hero while a search query is active', async () => {
+    setupDom()
+    const { applyCardFilters } = await import('./card-grid.js')
+    applyCardFilters('', 'mece')
+    expect(document.getElementById('hero').style.display).toBe('none')
+  })
+
+  it('restores the hero when the query is cleared', async () => {
+    setupDom()
+    const { applyCardFilters } = await import('./card-grid.js')
+    applyCardFilters('', 'mece')
+    applyCardFilters('', '')
+    expect(document.getElementById('hero').style.display).toBe('')
+  })
+
+  it('keeps the hero visible when only the role filter is active', async () => {
+    setupDom()
+    const { applyCardFilters } = await import('./card-grid.js')
+    applyCardFilters('software-architect', '')
+    expect(document.getElementById('hero').style.display).toBe('')
+  })
+})

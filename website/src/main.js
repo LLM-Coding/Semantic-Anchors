@@ -27,7 +27,7 @@ import {
 } from './components/onboarding-modal.js'
 import { renderContractsPage, initContractsPage } from './components/contracts-page.js'
 
-const APP_VERSION = '0.7.0'
+const APP_VERSION = '0.8.0'
 
 window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${import.meta.env.BASE_URL}anchor/${anchorId}`
@@ -181,7 +181,16 @@ function initApp() {
   updateActiveNavLink()
 
   createOnboardingModal()
+
+  // The anchor counter only means something next to the home grid — hide it
+  // on every other route (#615).
+  const syncAnchorCountVisibility = (path) => {
+    document.getElementById('anchor-count')?.classList.toggle('hidden', path !== '/')
+  }
+  document.addEventListener('route:changed', (e) => syncAnchorCountVisibility(e.detail.path))
+
   initRouter()
+  syncAnchorCountVisibility(getCurrentRouteSync())
 
   if (shouldShowOnboarding()) {
     showOnboarding()
@@ -409,6 +418,17 @@ function initCardGridVisualization() {
 
   bindRoleFilter()
   bindSearchInput()
+
+  // A search started on another route arrives here with the query still in
+  // the header input — apply it as soon as the grid exists (#615).
+  const pendingQuery = document.getElementById('header-search-input')?.value || ''
+  if (pendingQuery.trim()) {
+    triggerSearchIndexBuild()
+    const mainSearch = document.getElementById('search-input')
+    if (mainSearch) mainSearch.value = pendingQuery
+    const roleId = document.getElementById('header-role-filter')?.value || ''
+    applyCardFilters(roleId, pendingQuery)
+  }
 }
 
 function bindRoleFilter() {
@@ -505,13 +525,22 @@ function bindHeaderSearchInput() {
 
   searchInput.oninput = (e) => {
     const query = e.target.value
-    // Sync the main content search input if it exists
-    const mainSearch = document.getElementById('search-input')
-    if (mainSearch) mainSearch.value = query
 
     if (query.trim()) {
       triggerSearchIndexBuild()
     }
+
+    // Away from the home grid there is nothing to filter — jump home and let
+    // the grid initialization pick the typed text up from this input, which
+    // survives the route switch because the header is not re-rendered (#615).
+    if (getCurrentRouteSync() !== '/') {
+      navigate('/')
+      return
+    }
+
+    // Sync the main content search input if it exists
+    const mainSearch = document.getElementById('search-input')
+    if (mainSearch) mainSearch.value = query
 
     const roleId = document.getElementById('header-role-filter')?.value || ''
     applyCardFilters(roleId, query)

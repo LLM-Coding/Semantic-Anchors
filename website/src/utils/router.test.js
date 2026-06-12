@@ -91,6 +91,28 @@ describe('router language prefix (/de)', () => {
   })
 })
 
+describe('router route-change event (#615)', () => {
+  beforeEach(() => {
+    history.replaceState(null, '', '/')
+    window.location.hash = ''
+    localStorage.clear()
+    i18n.init()
+  })
+
+  it('dispatches route:changed with the resolved path', () => {
+    const listener = vi.fn()
+    document.addEventListener('route:changed', listener)
+    addRoute('/event-test', vi.fn())
+    history.replaceState(null, '', '/event-test')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+
+    expect(listener).toHaveBeenCalled()
+    expect(listener.mock.calls.at(-1)[0].detail.path).toBe('/event-test')
+    document.removeEventListener('route:changed', listener)
+  })
+})
+
 describe('router contract route (/contract/:id)', () => {
   beforeEach(() => {
     history.replaceState(null, '', '/')

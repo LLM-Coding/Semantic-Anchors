@@ -13,7 +13,7 @@ export function renderMain() {
   return `
     <main class="flex-1">
       <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <section class="mb-10">
+        <section id="hero" class="mb-10">
           <h1 class="text-3xl sm:text-4xl font-bold text-[var(--color-text)] mb-3 leading-tight" data-i18n="hero.title">
             ${i18n.t('hero.title')}
           </h1>

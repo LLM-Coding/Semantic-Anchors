@@ -15,6 +15,13 @@ let scrollBeforeModal = 0
 const CONTRACT_HIGHLIGHT_CLASSES = ['ring-2', 'ring-blue-400']
 let highlightedContractCard = null
 
+// Routing is decided here, but route-dependent chrome (e.g. the header
+// anchor counter, visible only on the home grid) lives elsewhere — announce
+// every resolved route as a DOM event instead of importing UI modules (#615).
+function announceRoute(path) {
+  document.dispatchEvent(new CustomEvent('route:changed', { detail: { path } }))
+}
+
 function clearContractHighlight() {
   if (highlightedContractCard) {
     highlightedContractCard.classList.remove(...CONTRACT_HIGHLIGHT_CLASSES)
@@ -297,6 +304,7 @@ function handleRoute() {
       highlightedContractCard = card
     }
     locateContractCard()
+    announceRoute(path)
     return
   }
 
@@ -313,6 +321,7 @@ function handleRoute() {
     document.title = ROUTE_TITLES[path] || 'Semantic Anchors'
     handler()
     trackPageview()
+    announceRoute(path)
   } else {
     // Default to home if route not found
     const homeHandler = routes.get('/')
@@ -320,6 +329,7 @@ function handleRoute() {
       currentRoute = '/'
       document.title = ROUTE_TITLES['/']
       homeHandler()
+      announceRoute('/')
     }
   }
 }

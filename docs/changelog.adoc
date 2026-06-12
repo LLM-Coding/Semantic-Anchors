@@ -4,6 +4,12 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-12
 
+*Search UX (#615):*
+
+* *Search results were invisible:* typing in the search box filtered the catalog grid, but the hero section above it pushed the results below the fold. An active search now hides the hero (it returns the moment the query is cleared), so results appear directly under the header.
+* *Search works from every page:* the header search box used to be dead outside the home page — no grid to filter, no results page. Typing on any route now jumps to the home page and applies the query there; the typed text survives the switch.
+* The anchor counter ("N / M anchors") is hidden on routes where it has no grid to count — it previously sat at a meaningless "0 / 0" everywhere outside the catalog.
+
 *Direct links to contracts (#611):*
 
 * Every semantic contract now has its own pre-rendered page at `/contract/<id>`, with a German variant at `/de/contract/<id>` — own title, description, canonical URL, social-share metadata, and hreflang pairs, exactly like the anchor pages from #597. Sharing a single contract (e.g. _Specification_) now produces the right preview instead of the generic contracts-page card.
