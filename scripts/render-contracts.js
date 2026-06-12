@@ -74,7 +74,7 @@ function renderAnchorChips(contract, lang) {
 function renderContract(contract) {
   return `
     <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-5 mb-4">
-      <h3 class="text-lg font-semibold mb-1"><a href="${BASE}/contract/${escapeHtml(contract.id)}" class="hover:underline">${escapeHtml(contract.title)}</a></h3>
+      <h3 class="text-lg font-semibold mb-1"><a href="${BASE}/contract/${escapeHtml(contract.id)}" class="hover:underline">${escapeHtml(contract.title)}</a> <a href="${BASE}/contract/${escapeHtml(contract.id)}" class="inline-flex items-center align-middle text-[var(--color-text-secondary)] hover:text-blue-600 transition-colors" aria-label="Link to this contract"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.5-1.5M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.5 1.5"/></svg></a></h3>
       <p class="text-sm text-[var(--color-text-secondary)] mb-3">${escapeHtml(contract.description)}</p>
       <div class="rounded-md bg-[var(--color-bg-secondary)] p-3 mb-3 text-sm leading-relaxed">
         <ul class="list-disc list-inside space-y-1">

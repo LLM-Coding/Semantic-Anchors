@@ -214,6 +214,17 @@ export function renderContractCard(contract, isSelected) {
           <div class="flex-1 min-w-0">
             <div class="flex items-start justify-between gap-2 mb-1">
               <h3 class="text-lg font-semibold text-[var(--color-text)]"><a href="${import.meta.env.BASE_URL}contract/${esc(contract.id)}" class="hover:underline" title="${esc(i18n.t('contracts.permalink'))}">${esc(title)}</a></h3>
+              <div class="flex shrink-0 gap-1.5">
+              <a
+                href="${import.meta.env.BASE_URL}contract/${esc(contract.id)}"
+                class="contract-permalink inline-flex items-center justify-center rounded-md border border-[var(--color-border)] p-1.5 text-[var(--color-text-secondary)] hover:text-blue-600 hover:border-blue-300 dark:hover:text-blue-400 dark:hover:border-blue-700 transition-colors"
+                title="${esc(i18n.t('contracts.permalink'))}"
+                aria-label="${esc(i18n.t('contracts.permalink'))}"
+              >
+                <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.5-1.5M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.5 1.5"/>
+                </svg>
+              </a>
               <button
                 type="button"
                 class="contract-copy-btn shrink-0 inline-flex items-center justify-center rounded-md border border-[var(--color-border)] p-1.5 text-[var(--color-text-secondary)] hover:text-blue-600 hover:border-blue-300 dark:hover:text-blue-400 dark:hover:border-blue-700 transition-colors"
@@ -225,6 +236,7 @@ export function renderContractCard(contract, isSelected) {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
                 </svg>
               </button>
+              </div>
             </div>
             <p class="text-sm text-[var(--color-text-secondary)] mb-3">${esc(description)}</p>
             <div class="rounded-md bg-[var(--color-bg-secondary)] p-3 mb-3 text-sm leading-relaxed max-h-64 overflow-y-auto">

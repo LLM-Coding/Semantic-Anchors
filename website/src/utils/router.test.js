@@ -153,6 +153,41 @@ describe('router contract route (/contract/:id)', () => {
     expect(handler).not.toHaveBeenCalled()
   })
 
+  it('finds the card even when the contracts page renders late', async () => {
+    // Direct page loads fetch contracts.json first — the card appears well
+    // after the route handler returns. The router polls instead of checking
+    // once (#611 follow-up).
+    const handler = vi.fn(() => {
+      setTimeout(() => {
+        document.body.innerHTML = `
+        <div data-contract-id="specification"><h3>Specification</h3></div>`
+      }, 150)
+    })
+    addRoute('/contracts', handler)
+    history.replaceState(null, '', '/contract/specification')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    await new Promise((r) => setTimeout(r, 400))
+
+    expect(document.title).toBe('Specification — Semantic Anchors')
+  })
+
+  it('highlights the card persistently and clears it on the next route', async () => {
+    addContractsRoute()
+    addRoute('/elsewhere', vi.fn())
+    history.replaceState(null, '', '/contract/specification')
+
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    await new Promise((r) => setTimeout(r, 0))
+
+    const card = document.querySelector('[data-contract-id="specification"]')
+    expect(card.classList.contains('ring-2')).toBe(true)
+
+    history.replaceState(null, '', '/elsewhere')
+    window.dispatchEvent(new PopStateEvent('popstate'))
+    expect(card.classList.contains('ring-2')).toBe(false)
+  })
+
   it('switches to German for /de/contract/:id', async () => {
     const handler = addContractsRoute()
     history.replaceState(null, '', '/de/contract/specification')

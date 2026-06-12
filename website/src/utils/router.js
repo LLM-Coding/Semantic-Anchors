@@ -10,6 +10,18 @@ let currentRoute = null
 let routeBeforeModal = null
 let scrollBeforeModal = 0
 
+// The card highlighted by a /contract/:id route — cleared on the next route
+// change so the marker tracks the URL instead of fading on a timer (#611).
+const CONTRACT_HIGHLIGHT_CLASSES = ['ring-2', 'ring-blue-400']
+let highlightedContractCard = null
+
+function clearContractHighlight() {
+  if (highlightedContractCard) {
+    highlightedContractCard.classList.remove(...CONTRACT_HIGHLIGHT_CLASSES)
+    highlightedContractCard = null
+  }
+}
+
 // Base path for GitHub Pages subdirectory deployment
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '')
 
@@ -254,6 +266,7 @@ function handleRoute() {
     const safeContractId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(contractId) ? contractId : null
     if (!safeContractId) return
 
+    clearContractHighlight()
     closeOpenAnchorModal()
     const contractsHandler = routes.get('/contracts')
     if (typeof contractsHandler === 'function') {
@@ -262,24 +275,32 @@ function handleRoute() {
     }
     trackPageview()
 
-    // The contracts page renders asynchronously; locate the card on the
-    // next tick, title the page after its heading (real title, not a
-    // de-kebab-cased slug), and bring it into view.
-    setTimeout(() => {
+    // The contracts page renders asynchronously — on a direct page load it
+    // still has to fetch contracts.json first, so the card appears later
+    // than the next tick. Poll briefly (up to ~3s) instead of checking
+    // once; title the page after the card heading (real title, not a
+    // de-kebab-cased slug), bring the card into view, and highlight it
+    // persistently until the next route change.
+    const locateContractCard = (attempt = 0) => {
       const card = document.querySelector(`[data-contract-id="${safeContractId}"]`)
-      const heading = card ? card.querySelector('h3') : null
+      if (!card) {
+        if (attempt < 30) setTimeout(() => locateContractCard(attempt + 1), 100)
+        return
+      }
+      const heading = card.querySelector('h3')
       const readableName =
         (heading && heading.textContent.trim()) ||
         safeContractId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
       document.title = `${readableName} — Semantic Anchors`
-      if (card) {
-        card.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        card.classList.add('ring-2', 'ring-blue-400')
-        setTimeout(() => card.classList.remove('ring-2', 'ring-blue-400'), 2500)
-      }
-    }, 0)
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      card.classList.add(...CONTRACT_HIGHLIGHT_CLASSES)
+      highlightedContractCard = card
+    }
+    locateContractCard()
     return
   }
+
+  clearContractHighlight()
 
   // Leaving an anchor route: close any open anchor modal so Back/forward and
   // in-app navigation don't leave it stranded as an overlay over the page.
