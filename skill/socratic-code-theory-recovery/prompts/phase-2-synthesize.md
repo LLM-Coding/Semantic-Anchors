@@ -1,14 +1,15 @@
 # Phase 2 Prompt: Synthesize Documentation
 
-Run this prompt only after every `[OPEN]` leaf in `OPEN_QUESTIONS.adoc` has either a team answer or an explicit `(deferred)` marker.
+Run this prompt only after every `[OPEN]` leaf in `OPEN_QUESTIONS-[context-name].adoc` has either a team answer or an explicit `(deferred)` marker. Replace `[context-name]` with the same kebab-case context name Phase 1 used.
 
 ```
 You are performing Phase 2 of Socratic Code-Theory Recovery.
 
 Inputs:
-- QUESTION_TREE.adoc — the answered Question Tree from Phase 1.
-- OPEN_QUESTIONS.adoc — same OPEN leaves, now with team answers (or
-  (deferred) markers) written under each question.
+- QUESTION_TREE-[context-name].adoc — the answered Question Tree from
+  Phase 1.
+- OPEN_QUESTIONS-[context-name].adoc — same OPEN leaves, now with team
+  answers (or (deferred) markers) written under each question.
 
 Goal: synthesize documentation from the answered tree. Every claim must
 trace back to a tree leaf — this is a build-time check, not a Q-ID stamped
@@ -22,7 +23,7 @@ Produce four artifacts:
 1. docs/specs/prd-[context-name].adoc — Product Requirements Document
    - Problem statement, target users, goals, success criteria, scope
      boundaries, constraints, open questions
-   - Source: Q1 branch of QUESTION_TREE.adoc
+   - Source: Q1 branch of QUESTION_TREE-[context-name].adoc
    - Anchor: PRD (Cagan / Pichler)
 
 2. docs/specs/use-cases-[context-name].adoc — Specification
@@ -35,7 +36,7 @@ Produce four artifacts:
    - Supplementary Specifications: Entity Model, State Machines, Interface
      Contracts, Validation Rules.
    - Gherkin acceptance criteria where applicable.
-   - Source: Q2 branch of QUESTION_TREE.adoc
+   - Source: Q2 branch of QUESTION_TREE-[context-name].adoc
    - Anchor: Cockburn Use Cases
 
 3. docs/arc42/arc42-[context-name].adoc — Architecture
@@ -48,14 +49,16 @@ Produce four artifacts:
      the test concept. Only the goal ranking stays [OPEN]; "No
      information" is legitimate here only if Q4 produced no answered
      scenario at all.
-   - Source: Q3 branch of QUESTION_TREE.adoc
+   - Source: Q3 branch of QUESTION_TREE-[context-name].adoc
    - Anchor: arc42 (Starke / Hruschka)
 
-4. docs/specs/adrs/*.adoc — one ADR per significant design decision
+4. docs/specs/adrs/[context-name]-adr-NNN-*.adoc — one ADR per
+   significant design decision. The context-name prefix keeps ADRs from
+   different bounded contexts from colliding in the shared adrs/ folder.
    - Nygard format: Title, Status, Context, Decision, Consequences.
    - Include a Pugh Matrix listing the alternatives considered with a
      3-point scale (-1, 0, +1) against the quality goals from Q4.
-   - Source: Q3.9 branch of QUESTION_TREE.adoc
+   - Source: Q3.9 branch of QUESTION_TREE-[context-name].adoc
    - Anchor: ADR according to Nygard
 
 Rules for traceability:
@@ -77,8 +80,9 @@ Rules for traceability:
   "Sessions expire after 24 hours (team answer)."
 - Deferred questions stay as explicit gaps: "Quality-goal priorities are
   deferred and must be resolved before the next release."
-- Do not introduce facts that do not appear in QUESTION_TREE.adoc or
-  OPEN_QUESTIONS.adoc. If a Section feels under-specified, leave it
+- Do not introduce facts that do not appear in
+  QUESTION_TREE-[context-name].adoc or OPEN_QUESTIONS-[context-name].adoc.
+  If a Section feels under-specified, leave it
   under-specified — that is signal, not a defect.
 ```
 

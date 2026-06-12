@@ -7,7 +7,7 @@ arc42 is a 12-chapter template for documenting software architecture (Gernot Sta
 | Q-ID | Section | Sub-question(s) |
 |------|---------|-----------------|
 | Q3.1 | Introduction and Goals | What does the system do at the highest level? Which 3-5 quality goals drive design? Who are the most important stakeholders? |
-| Q3.2 | Architecture Constraints | Which technical, organizational, conventional constraints restrict design choices? |
+| Q3.2 | Architecture Constraints | Which technical (Q3.2.1), organizational/process (Q3.2.2), conventional (Q3.2.3) constraints restrict design choices? Fixed third level — look beyond code: CLAUDE.md/AGENTS.md, CONTRIBUTING, CI config, linter rules are valid evidence. |
 | Q3.3 | Context and Scope | What are the system's external interfaces — neighbours, channels, protocols? Business context vs technical context? |
 | Q3.4 | Solution Strategy | Which fundamental decisions and patterns shape the architecture? Technology choices, top-level decomposition, quality-goal approaches, organizational decisions? |
 | Q3.5 | Building Block View | How is the system decomposed into containers, components, classes? Static structure at multiple levels of zoom. |

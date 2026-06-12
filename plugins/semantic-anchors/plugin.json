@@ -1,6 +1,6 @@
 {
   "name": "semantic-anchors",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Semantic anchor skills for translating terminology and installing persistent anchor context into coding agents.",
   "author": {
     "name": "LLM Coding",

@@ -9,16 +9,16 @@ Recovers documentation from a brownfield codebase without hallucinating the part
 
 === Phase 1 — Build the Question Tree
 
-The skill prompts the LLM to build a Question Tree from five root questions about a bounded context (Problem/Users, Specification, Architecture, Quality Goals, Risks). Their second level is fixed — every run emits the same enumerated nodes (Q1.1–Q5.5: six PRD elements, six specification categories, the twelve arc42 chapters, the eight ISO/IEC 25010 characteristics plus a priority question, five risk categories), so Q-IDs are stable and trees from different runs can be diffed node-by-node. Adaptive, code-driven decomposition happens only below that fixed level — a node keeps splitting until each leaf maps to one specific `file:line`, so tree depth tracks code density and a large bounded context yields a deeper tree. Each leaf is classified:
+The skill prompts the LLM to build a Question Tree from five root questions about a bounded context (Problem/Users, Specification, Architecture, Quality Goals, Risks). Their second level is fixed — every run emits the same enumerated nodes (Q1.1–Q5.5: six PRD elements, six specification categories, the twelve arc42 chapters, the eight ISO/IEC 25010 characteristics plus a priority question, five risk categories — and a fixed third level under Q3.2 for technical, organizational, and conventional constraints, with CLAUDE.md, CONTRIBUTING, CI and linter config as valid evidence sources), so Q-IDs are stable and trees from different runs can be diffed node-by-node. Adaptive, code-driven decomposition happens only below that fixed level — a node keeps splitting until each leaf maps to one specific `file:line`, so tree depth tracks code density and a large bounded context yields a deeper tree. Each leaf is classified:
 
 * `[ANSWERED]` -- the LLM found it in the code, with `<file>:<line>` evidence
 * `[OPEN]` -- the answer is not derivable from code; tagged with a Category and the role that must answer (Product Owner, Architect, Developer, Domain Expert, Operations)
 
-Outputs two AsciiDoc files: `QUESTION_TREE.adoc` (full reasoning trace) and `OPEN_QUESTIONS.adoc` (handoff, grouped by role).
+Outputs two AsciiDoc files, suffixed with the bounded-context name so sequential runs never overwrite each other: `QUESTION_TREE-<context>.adoc` (full reasoning trace) and `OPEN_QUESTIONS-<context>.adoc` (handoff, grouped by role).
 
 === Between phases — Team answers the OPEN leaves
 
-`OPEN_QUESTIONS.adoc` is routed to humans by role. They write answers directly into the file. Deferred questions get an explicit `(deferred)` marker, not invention.
+`OPEN_QUESTIONS-<context>.adoc` is routed to humans by role. They write answers directly into the file. Deferred questions get an explicit `(deferred)` marker, not invention.
 
 === Phase 2 — Synthesize documentation
 
@@ -202,7 +202,7 @@ Any AI assistant that accepts a system prompt or custom instructions can use thi
 | ADR fields as Q3.9 sub-tree; what makes a decision architecturally significant; Pugh-matrix guidance
 
 | `references/output-schema.md`
-| Strict format for `QUESTION_TREE.adoc` and `OPEN_QUESTIONS.adoc`; Q-ID scheme; `[ANSWERED]`/`[OPEN]` block formats; Phase 2 traceability rules
+| Strict format for `QUESTION_TREE-<context>.adoc` and `OPEN_QUESTIONS-<context>.adoc`; Q-ID scheme; `[ANSWERED]`/`[OPEN]` block formats; Phase 2 traceability rules
 
 | `references/examples.md`
 | Worked `[ANSWERED]` and `[OPEN]` leaves for each major branch (Q1-Q5)

@@ -2,6 +2,13 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-12
+
+*Socratic Code-Theory Recovery skill v0.3 (#531, #532):*
+
+* *Per-context output files (#531)* — Phase 1 now writes `QUESTION_TREE-<context>.adoc` and `OPEN_QUESTIONS-<context>.adoc` instead of fixed filenames, so the documented "one bounded context at a time" workflow no longer silently overwrites earlier runs; Phase 2 reads the context-specific tree, and ADRs get a context prefix (`adrs/<context>-adr-NNN-*.adoc`) so two contexts cannot clobber each other's decision records.
+* *Fixed Q3.2 constraints sub-level (#532)* — the Architecture Constraints node now always emits Q3.2.1 technical, Q3.2.2 organizational/process, and Q3.2.3 conventional constraints, mirroring arc42 Chapter 2's constraint kinds; for this branch the prompt explicitly admits non-code evidence (CLAUDE.md/AGENTS.md, CONTRIBUTING, CI workflows, linter configs), closing the gap where process and convention constraints surfaced untraceably in Phase 2 output.
+
 == 2026-06-11
 
 *Current Status sections, batch 4 — triage complete (#603):*
