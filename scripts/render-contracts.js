@@ -26,6 +26,11 @@ const OUTPUT = path.join(ROOT, 'website/public/docs/contracts.html')
 const DETAIL_DIR = path.join(ROOT, 'website/public/docs/contracts')
 const BASE = '/Semantic-Anchors'
 
+// Same pattern the SPA router enforces before using ids in DOM selectors —
+// here it guards path.join/file writes against a malformed contracts.json
+// entry (defense-in-depth; the file is repo-maintained and trusted).
+const SAFE_ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -136,6 +141,10 @@ function main() {
 
   fs.mkdirSync(DETAIL_DIR, { recursive: true })
   for (const contract of contracts) {
+    if (!SAFE_ID_PATTERN.test(contract.id)) {
+      console.warn(`  ! skipped contract with unsafe id: ${JSON.stringify(contract.id)}`)
+      continue
+    }
     fs.writeFileSync(
       path.join(DETAIL_DIR, `${contract.id}.html`),
       renderContractDetail(contract, 'en'),

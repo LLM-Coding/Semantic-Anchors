@@ -638,7 +638,14 @@ function prerenderContractPages(shell) {
   const contracts = loadWebsiteJson('public/data/contracts.json')
   let count = 0
   let skipped = 0
+  // Mirror the router's id validation before ids enter paths and URLs.
+  const SAFE_CONTRACT_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
   for (const contract of contracts) {
+    if (!SAFE_CONTRACT_ID.test(contract.id)) {
+      console.warn(`  ! skipped contract with unsafe id: ${JSON.stringify(contract.id)}`)
+      skipped++
+      continue
+    }
     const fragment = `docs/contracts/${contract.id}.html`
     const fragmentDe = `docs/contracts/${contract.id}.de.html`
     if (!fs.existsSync(path.join(DIST, fragment))) {
