@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-14
+
+*Explaining and Teaching contract — persist the checklist:*
+
+* The _Explaining and Teaching_ contract now adds a single clause (EN + DE): for a long or multi-session explanation, persist the running understanding-checklist as a file so it survives context loss and can be resumed. An empirical A/B run — our contract versus the source prompt it was distilled from, both driven headless in a clean room with no `CLAUDE.md` leakage — showed the source prompt's one genuine advantage was the durable checklist file it wrote to disk; everything else (honoring opt-out, one step per turn, not announcing the method) our contract already did better. This closes that gap without sacrificing the scale-to-the-question behaviour.
+
 == 2026-06-12
 
 *Search UX (#615):*
