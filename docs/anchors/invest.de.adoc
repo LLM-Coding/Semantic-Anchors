@@ -1,0 +1,48 @@
+= INVEST
+:categories: requirements-engineering
+:roles: product-owner, business-analyst, team-lead, software-developer
+:related: user-story-mapping, moscow
+:proponents: Bill Wake
+:tags: user-stories, agile, scrum, acceptance-criteria, story-quality
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: INVEST-Kriterien für User Stories
+
+Auch bekannt als:: INVEST-Checkliste, INVEST-Merkhilfe
+
+[discrete]
+== *Kernkonzepte*:
+
+INVEST = **I**ndependent / **N**egotiable / **V**aluable / **E**stimable / **S**mall / **T**estable
+
+Independent (Unabhängig):: Stories sollten in sich abgeschlossen und in beliebiger Reihenfolge lieferbar sein; Abhängigkeiten zwischen Stories vermeiden, die eine feste Implementierungsreihenfolge erzwingen
+
+Negotiable (Verhandelbar):: Stories sind keine Verträge; die Details bleiben zwischen Team und Stakeholdern verhandelbar, bis sie in einen Sprint eingehen
+
+Valuable (Wertvoll):: Jede Story muss dem Nutzer oder dem Business einen klaren Wert liefern; Stories, die nur technischen Zwecken dienen, sollten in nutzersichtbaren Wert eingebettet werden
+
+Estimable (Schätzbar):: Das Team muss die Größe der Story schätzen können; ist das nicht möglich, ist die Story zu groß, zu vage oder erfordert einen Spike
+
+Small (Klein):: Stories sollten klein genug sein, um innerhalb eines Sprints abgeschlossen zu werden; große Epics müssen vor dem Sprint heruntergebrochen werden
+
+Testable (Testbar):: Stories brauchen konkrete Akzeptanzkriterien, damit Entwickler und Tester die Fertigstellung verifizieren können; nicht testbare Stories verstecken Mehrdeutigkeit
+
+
+Schlüsselvertreter:: Bill Wake ("INVEST in Good Stories, and SMART Tasks", 2003)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Review von User Stories vor dem Sprint Planning zur Beurteilung der Bereitschaft
+* Aufteilen von Epics in kleinere, lieferbare Stories
+* Coaching von Teams, was eine gut geformte User Story ausmacht
+* Während des Backlog Refinements, um Stories zu identifizieren, die mehr Arbeit benötigen
+* Als Definition-of-Ready-Checkliste für die Aufnahme einer Story in einen Sprint
+
+*Verwandte Anker*:
+
+* <<user-story-mapping,User Story Mapping>>
+* <<moscow,MoSCoW>>
+====
