@@ -65,6 +65,58 @@ Evaluate the response:
 * *Depth:* Does it cover multiple related concepts?
 * *Specificity:* Is the scope well-defined?
 
+== Viability Test — Does the Anchor Deliver?
+
+Recognition alone does not make a viable anchor. The link:docs/training-data-vs-practice.adoc[training-data-vs-practice article] demonstrates empirically that a model can _recognise_ a term yet silently substitute or confabulate when asked to _apply_ it. The viability test checks whether naming the anchor actually reshapes the output.
+
+=== The Before/After Test
+
+Give a model a task _without_ the anchor term, then the _same_ task _with_ the anchor. Compare structure:
+
+[source]
+----
+# Without anchor:
+Specify what an online shop must do when a customer places an order.
+
+# With anchor:
+Using <your anchor>, specify what an online shop must do when a customer places an order.
+----
+
+If the output structure does not change, the term is decorative — it fails the viability test.
+
+=== Three Failure Modes to Watch For
+
+[cols="1,2,2", options="header"]
+|===
+| Failure Mode | What happens | How to detect
+
+| *Silent substitution*
+| Model delivers content under the requested label, but the content belongs to a different concept.
+| Compare the output against the anchor's canonical definition. Does the structure match?
+
+| *Confabulation*
+| Model invents a confident, internally consistent but fictitious description.
+| Verify key claims (principles, proponents, dates) against the anchor's source material.
+
+| *No structural change*
+| Model "knows" the term but naming it does not reshape the output compared to a generic prompt.
+| Run the before/after test above. If A ≈ B, the anchor is not functional.
+|===
+
+=== Cross-Model Check
+
+Test on at least one _weak_ model (e.g., Haiku-class) and one _strong_ model (e.g., Opus-class). The tier rating reflects the result:
+
+* *★★★ Self-standing* — fires reliably on both weak and strong models.
+* *★★ Needs qualification* — fires only with author/qualifier on weaker models.
+* *★ Descriptive only* — does not reshape output even with qualification → *reject* or move to a *contract*.
+
+=== When to Use a Contract Instead
+
+A term that passes the four quality criteria but fails the viability test belongs in a *contract* (which supplies its own meaning in the prompt), not an anchor (which relies on pre-existing training data). As training data grows, such terms may become viable anchors in future model generations.
+
+See link:docs/training-data-vs-practice.adoc[An Anchor Delivers Only as Far as the Prior Reaches] for the full methodology and worked examples.
+
 == Developer Setup
 
 === Prerequisites

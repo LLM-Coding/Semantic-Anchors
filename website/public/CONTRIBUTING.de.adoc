@@ -61,6 +61,58 @@ Bewerten Sie die Antwort:
 * *Tiefe:* Deckt es mehrere verwandte Konzepte ab?
 * *Spezifität:* Ist der Umfang gut definiert?
 
+== Viability-Test — Does the Anchor Deliver?
+
+Erkennung allein macht keinen viablen Anchor. Der link:docs/training-data-vs-practice.adoc[training-data-vs-practice-Artikel] zeigt empirisch, dass ein Modell einen Begriff _erkennen_ und dennoch bei der _Anwendung_ Silent Substitution oder Confabulation zeigen kann. Der Viability-Test prüft, ob das Benennen des Anchors die Ausgabe tatsächlich verändert.
+
+=== Der Before/After-Test
+
+Geben Sie einem Modell eine Aufgabe _ohne_ den Anchor-Term, dann _dieselbe_ Aufgabe _mit_ dem Anchor. Vergleichen Sie die Struktur:
+
+[source]
+----
+# Ohne Anker:
+Spezifizieren Sie, was ein Online-Shop tun muss, wenn ein Kunde eine Bestellung aufgibt.
+
+# Mit Anker:
+Verwenden Sie <Ihren Anker>, um zu spezifizieren, was ein Online-Shop tun muss, wenn ein Kunde eine Bestellung aufgibt.
+----
+
+Wenn sich die Ausgabestruktur nicht ändert, ist der Term dekorativ — er besteht den Viability-Test nicht.
+
+=== Drei Failure Modes
+
+[cols="1,2,2", options="header"]
+|===
+| Failure Mode | Was passiert | Wie erkennen
+
+| *Silent Substitution*
+| Modell liefert Inhalt unter dem angefragten Label, aber der Inhalt gehört zu einem anderen Konzept.
+| Ausgabe gegen die kanonische Definition des Anchors prüfen. Stimmt die Struktur überein?
+
+| *Confabulation*
+| Modell erfindet eine überzeugt wirkende, intern konsistente aber fiktive Beschreibung.
+| Zentrale Behauptungen (Prinzipien, Proponenten, Jahreszahlen) gegen Quellmaterial verifizieren.
+
+| *No Structural Change*
+| Modell "kennt" den Term, aber das Benennen verändert die Ausgabe nicht gegenüber einem generischen Prompt.
+| Before/After-Test oben durchführen. Wenn A ≈ B, ist der Anker nicht funktional.
+|===
+
+=== Cross-Model-Check
+
+Auf mindestens einem _schwachen_ Modell (z.B. Haiku-Klasse) und einem _starken_ Modell (z.B. Opus-Klasse) testen. Das Tier-Rating spiegelt das Ergebnis:
+
+* *★★★ Self-standing* — feuert zuverlässig auf schwachen und starken Modellen.
+* *★★ Needs qualification* — feuert nur mit Autor/Qualifier auf schwächeren Modellen.
+* *★ Descriptive only* — verändert Ausgabe nicht einmal mit Qualifikation → *ablehnen* oder in einen *Contract* überführen.
+
+=== Wann stattdessen einen Contract verwenden
+
+Ein Term, der die vier Qualitätskriterien besteht aber den Viability-Test nicht, gehört in einen *Contract* (der seine eigene Bedeutung im Prompt mitliefert), nicht in einen Anchor (der auf vorhandene Trainingsdaten angewiesen ist). Wenn Trainingsdaten wachsen, können solche Terme in zukünftigen Modellgenerationen viable Anchors werden.
+
+Siehe link:docs/training-data-vs-practice.adoc[An Anchor Delivers Only as Far as the Prior Reaches] für die vollständige Methodik und Worked Examples.
+
 == Wie man einen neuen Anker vorschlägt
 
 Wir verwenden einen *automatisierten Workflow mit GitHub Copilot* zur Validierung und Anreicherung von Vorschlägen:
