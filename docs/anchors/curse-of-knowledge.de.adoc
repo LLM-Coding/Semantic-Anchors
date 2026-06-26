@@ -1,0 +1,48 @@
+= Curse of Knowledge
+:categories: communication-presentation
+:roles: technical-writer, educator, software-developer
+:related: feynman-technique, blooms-taxonomy, bluf, inverted-pyramid-style
+:proponents: Colin Camerer, George Loewenstein, Martin Weber, Chip Heath, Dan Heath
+:tags: cognitive-bias, communication, audience, jargon, empathy-gap
+
+[%collapsible]
+====
+Auch bekannt als:: Curse of Expertise, Fluch des Wissens
+
+[discrete]
+== *Kernkonzepte*:
+
+Wissen macht Nicht-Wissen unmöglich:: Sobald man etwas verstanden hat, kann man nur schwer rekonstruieren, wie es war, es nicht zu wissen; der Geisteszustand des Anfängers wird unzugänglich.
+
+Überschätzter geteilter Kontext:: Experten setzen systematisch Hintergrundwissen, Vokabular und Zwischenschritte voraus, über die das Publikum tatsächlich nicht verfügt.
+
+Unerklärter Jargon und übersprungene Schritte:: Der Bias zeigt sich als undefinierte Fachbegriffe und logische Verbindungen, die der Autor "errät", der Leser aber nicht nachvollziehen kann.
+
+Empathielücke:: Ein Versäumnis, den tatsächlichen Wissensstand des Publikums zu modellieren, nicht ein Mangel an Intelligenz beim Publikum.
+
+Gegenmittel — offenlegen und externalisieren:: Verborgene Annahmen explizit machen, Begriffe definieren, übersprungene Schritte ausformulieren und gegen einen repräsentativen Leser testen statt gegen sich selbst.
+
+Schlüsselvertreter:: Colin Camerer, George Loewenstein, Martin Weber (https://www.journals.uchicago.edu/doi/abs/10.1086/261651["The Curse of Knowledge in Economic Settings: An Experimental Analysis", Journal of Political Economy 97(5):1232-1254, 1989] — prägten den Begriff); Chip Heath, Dan Heath (https://heathbrothers.com/made-to-stick-introduction/["Made to Stick", 2007] — machten ihn bekannt und beriefen sich auf Elizabeth Newtons "Tapper und Zuhörer"-Studie von 1990); Steven Pinker (https://www.psychologicalscience.org/observer/the-curse-of-knowledge-pinker-describes-a-key-cause-of-bad-writing["The Sense of Style", 2014] — benennt ihn als Hauptursache schlechten Schreibens)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Begutachtung von Dokumentation, Tutorials oder Onboarding-Material für ein Publikum, das weniger Experte ist als der Autor
+* Diagnose, warum eine Erklärung, ein Vortrag oder eine Fehlermeldung die Leser verwirrt
+* Lehre: Entscheiden, welche Schritte und Begriffe explizit gemacht statt vorausgesetzt werden müssen
+* Einen LLM anweisen, für ein Nicht-Experten-Publikum zu schreiben oder seine eigenen Annahmen und definierten Begriffe offenzulegen
+* Code-Review von Kommentaren, API-Dokumentation und Commit-Nachrichten, die zu viel Kontext voraussetzen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<feynman-technique,Feynman Technique>>
+* <<blooms-taxonomy,Bloom's Taxonomy>>
+* <<bluf,BLUF>>
+* <<inverted-pyramid-style,Inverted Pyramid Style>>
+
+[discrete]
+== *Aktueller Status*:
+
+* Steven Pinker fasste den Bias in https://www.psychologicalscience.org/observer/the-curse-of-knowledge-pinker-describes-a-key-cause-of-bad-writing["The Sense of Style" (2014)] als Schreibproblem neu, nannte ihn "the single best explanation I know of why good people write bad prose" und empfahl, Texte gegen einen repräsentativen Leser zu testen — die Deutung, die die heutige Diskussion des Begriffs außerhalb der Ökonomie am wahrscheinlichsten dominiert
+====

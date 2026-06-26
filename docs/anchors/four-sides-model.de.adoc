@@ -1,0 +1,39 @@
+= Vier-Seiten-Modell (Schulz von Thun)
+:categories: communication-presentation
+:roles: consultant, team-lead, educator
+:proponents: Friedemann Schulz von Thun
+:tags: communication, psychology, message, misunderstanding, interpersonal
+
+[%collapsible]
+====
+Vollständiger Name:: Vier-Seiten-Modell der Kommunikation nach Friedemann Schulz von Thun
+
+Auch bekannt als:: Kommunikationsquadrat, Vier-Ohren-Modell, Four-Sides Model
+
+[discrete]
+== *Kernkonzepte*:
+
+Vier Seiten einer Nachricht:: Jede Nachricht trägt vier Aspekte zugleich; der Sender spricht mit "vier Schnäbeln", der Empfänger hört mit "vier Ohren"
++
+Sachinhalt::: Die Daten und Fakten, über die die Nachricht informiert; der Empfänger prüft sie auf Wahrheit, Relevanz und Vollständigkeit
+Selbstoffenbarung::: Was die Nachricht über den Sender preisgibt — Motive, Werte, Gefühle, Absichten, bewusst oder unbewusst
+Beziehung::: Was der Sender vom Empfänger hält und wie beide zueinander stehen, transportiert über Ton, Formulierung und Körpersprache
+Appell::: Wozu der Sender den Empfänger bewegen will — offene Bitte oder verdeckte Manipulation
+
+Vier Ohren:: Der Empfänger entschlüsselt mit vier passenden Ohren; ein einseitig ausgeprägtes Ohr (etwa ein überempfindliches Beziehungsohr) führt zu wiederkehrenden Missverständnissen
+
+Unpassende Ohren:: Missverständnisse entstehen, wenn der Sender eine Seite betont, der Empfänger aber eine andere hört; das klassische Beispiel ist die Aussage "Die Ampel ist grün" — eine Sachaussage, die als Appell oder Beziehungsbotschaft gehört wird
+
+Theoretische Wurzeln:: Verbindet Karl Bühlers Organon-Modell (Sender, Empfänger, Gegenstand) mit Paul Watzlawicks Axiom, dass jede Nachricht einen Inhalts- und einen Beziehungsaspekt hat
+
+Schlüsselvertreter:: Friedemann Schulz von Thun ("Miteinander reden 1: Störungen und Klärungen", 1981)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Diagnose wiederkehrender Missverständnisse in Teams oder im Coaching
+* Vermittlung von aktivem Zuhören und Feedback-Kompetenzen
+* Feedback geben oder nehmen, indem man die Sachseite von der Beziehungsseite trennt
+* Konflikte entschärfen, indem man die Selbstoffenbarungs- und Appellebene einer aufgeladenen Aussage sichtbar macht
+* Eine LLM auffordern, eine Nachricht auf allen vier Kommunikationsebenen zu analysieren
+====

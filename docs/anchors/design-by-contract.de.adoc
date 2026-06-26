@@ -1,0 +1,61 @@
+= Design by Contract
+:categories: design-principles
+:roles: software-developer, software-architect
+:related: solid-lsp, solid-principles, postels-law, ears-requirements
+:proponents: Bertrand Meyer
+:tags: preconditions, postconditions, invariants, correctness, eiffel
+
+[%collapsible]
+====
+Auch bekannt als:: DbC, Programming by Contract
+
+[discrete]
+== *Kernkonzepte*:
+
+Vorbedingung (Precondition):: Die Pflicht des Aufrufers — eine Bedingung, die vor dem Aufruf einer Routine gelten muss. Wird sie verletzt, liegt der Fehler beim *Client*, nicht beim Supplier.
+
+Nachbedingung (Postcondition):: Die Zusicherung des Suppliers — eine Bedingung, deren Erfüllung die Routine beim Rücksprung garantiert, sofern die Vorbedingungen galten. Wird sie verletzt, liegt der Fehler beim *Supplier*.
+
+Klasseninvariante (Class invariant):: Eine Konsistenzbedingung, die für jede Instanz in jedem beobachtbaren Zustand gilt — vor und nach jeder öffentlichen Routine. Sie schränkt die Abstraktion über ihre gesamte Lebensdauer ein.
+
+Client/Supplier-Metapher:: Eine Routine ist ein Vertrag zwischen Aufrufer (Client) und Implementierung (Supplier): Die Pflicht jeder Partei ist der Vorteil der anderen. Der Supplier muss Zustände, die seine Vorbedingungen ausschließen, nicht behandeln.
+
+Schuldzuweisung (Blame assignment):: Da jede Klausel genau eine verantwortliche Partei hat, lokalisiert eine verletzte Zusicherung den Defekt: eine gebrochene Vorbedingung beschuldigt den Aufrufer, eine gebrochene Nachbedingung oder Invariante die Implementierung. Keine defensive Doppelprüfung auf beiden Seiten.
+
+Vertragsvererbung (Contract inheritance):: Subklassen dürfen Vorbedingungen *abschwächen* (nicht mehr verlangen als die Oberklasse) und Nachbedingungen sowie Invarianten *verstärken* (nicht weniger zusichern). Das ist genau verhaltensbasierte Subtypisierung.
+
+Bezug zum LSP:: Die obigen Vererbungsregeln sind die vertragsbezogene Formulierung des <<solid-lsp,Liskovschen Substitutionsprinzips>>. Ein Subtyp, der sie einhält, ist ohne Überraschungen für Clients gegen seinen Obertyp austauschbar.
+
+Spannung mit Postels Gesetz:: DbC sagt, sei *strikt* bei Vorbedingungen und scheitere hart bei Verletzung. <<postels-law,Postels Gesetz>> sagt, sei *liberal* in dem, was du akzeptierst. Beide gelten an verschiedenen Grenzen — DbC regelt vertrauenswürdige interne Modulnähte; Postel regelt nicht vertrauenswürdige externe Eingaben am Systemrand. Eine Verwechslung lässt ungültigen Zustand nach innen lecken.
+
+Schlüsselvertreter:: Bertrand Meyer, der den Begriff für die Sprache https://www.eiffel.com/values/design-by-contract/[Eiffel] prägte (~1986) und ihn in _Object-Oriented Software Construction_ (1988, 1997) ausarbeitete. "Design by Contract" ist eine https://www.eiffel.com/values/design-by-contract/[Marke von Eiffel Software] (registriert 2004).
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Die Pflichten und Zusicherungen der öffentlichen API eines Moduls präzise spezifizieren
+* Klassenhierarchien entwerfen, die austauschbar bleiben müssen (verhaltensbasierte Subtypisierung)
+* Eingabevalidierung an eine einzige, klar definierte Naht schieben, statt defensive Prüfungen zu verstreuen
+* Ein LLM anweisen, Routinen mit expliziten Vor-/Nachbedingungen und Invarianten zu generieren
+* Über Korrektheit nachdenken, bevor man zu erschöpfenden Tests greift (ergänzt das Testen, ersetzt es nicht)
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<solid-lsp,Liskovsches Substitutionsprinzip>> — die Vererbungsregeln von DbC formalisieren verhaltensbasierte Subtypisierung
+* <<solid-principles,SOLID-Prinzipien>> — DbC stärkt die Austauschbarkeitsgarantie, auf die SOLID baut
+* <<postels-law,Postels Gesetz>> — gegensätzliche Haltung zur Eingabestriktheit; über die Grenzenscope versöhnt
+* <<ears-requirements,EARS Requirements>> — Vor-/Nachbedingungen formulieren Anforderungen als prüfbare Zusicherungen
+
+[discrete]
+== *Kritik*:
+
+* Bjarne Stroustrup zum C++26-Contracts-Entwurf (https://www.theregister.com/2026/03/31/cplusplus26_approved/[The Register], 2026) — "It's claimed to be a minimal viable product. It's not minimal, it's not viable" — und er empfahl, Contracts in C++ nicht zu verwenden. Natives, durchgängiges DbC bleibt weitgehend auf Eiffel beschränkt; Mainstream-Sprachen erhalten nur teilweise oder umstrittene Unterstützung.
+* Ausdrucksgrenze (https://www.researchgate.net/publication/2929130_Supporting_Design_by_Contract_in_Java[Supporting Design by Contract in Java]) — in einer Teilmenge der Wirtssprache geschriebene Verträge können oft volle funktionale Korrektheit nicht ausdrücken und erzwingen umständliche Umwege; zur Laufzeit geprüfte Verträge fangen Verletzungen spät ab, statt ihre Abwesenheit zu beweisen.
+
+[discrete]
+== *Aktueller Status*:
+
+* C++-Contracts wurden 2019 aus dem C++20-Arbeitsentwurf *entfernt*, von der Study Group SG21 neu begonnen und erst mit C++26 in den Standard aufgenommen (https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2025/p2899r1.pdf[P2899 Rationale]; https://www.theregister.com/2026/03/31/cplusplus26_approved/[The Register], 2026) — DbC auf Sprachebene bleibt außerhalb von Eiffel also jung und umstritten. Trainingsdaten-Priors vor 2026 behandeln C++-Contracts wahrscheinlich als fehlend oder experimentell.
+* Native Unterstützung gibt es in Ada 2012, https://www.eiffel.com/values/design-by-contract/[Eiffel], D, Kotlin und anderen; Python setzt auf Drittanbieter-Bibliotheken (z. B. `deal`, `icontract`) statt auf ein Sprachfeature.
+====

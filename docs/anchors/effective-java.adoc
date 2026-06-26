@@ -1,0 +1,58 @@
+= Effective Java
+:categories: development-workflow
+:roles: software-developer, software-architect
+:related: effective-go, gof-builder-pattern, solid-principles
+:proponents: Joshua Bloch
+:tags: java, best-practices, idiomatic, api-design, style-guide
+:tier: 3
+
+[%collapsible]
+====
+
+[discrete]
+== *Core Concepts*:
+
+Items format:: A catalog of ~90 short, self-contained "Items", each a concrete best-practice rule with rationale and trade-offs
+
+Object creation:: Static factory methods over constructors; the Builder pattern for many parameters; enforce singletons and non-instantiability deliberately
+
+The general object contracts:: Obey the `equals`/`hashCode`/`compareTo`/`clone` contracts; always override `hashCode` when overriding `equals`; consistently override `toString`
+
+Classes and interfaces:: Minimize accessibility and mutability (favour immutable classes); favour composition over inheritance; prefer interfaces to abstract classes; design and document for inheritance or prohibit it
+
+Generics:: Eliminate unchecked warnings; prefer lists to arrays and generic types/methods; use bounded wildcards by the PECS rule (Producer-Extends, Consumer-Super)
+
+Enums and annotations:: Use enums instead of `int` constants; use the `EnumMap`/`EnumSet`; prefer annotations to naming patterns; consistently use `@Override`
+
+Lambdas and streams:: Prefer lambdas to anonymous classes and method references to lambdas; use streams judiciously and favour side-effect-free functions (Java 8 features, added in the 3rd edition)
+
+Methods and exceptions:: Check parameters for validity; design method signatures carefully; use exceptions only for exceptional conditions; favour standard exceptions; document all thrown exceptions
+
+Resource and concurrency hygiene:: Prefer try-with-resources to `try`-`finally`; prefer executors and tasks to threads; favour concurrency utilities over `wait`/`notify`; document thread safety
+
+Key Proponent:: Joshua Bloch ("Effective Java", Addison-Wesley) — former Sun/Google engineer who led the design of the Java Collections Framework and other core APIs
+
+[discrete]
+== *When to Use*:
+
+* Onboarding Java developers to idiomatic, robust API and class design
+* Code review discussions grounded in a shared, citable rule set ("Item 17: minimize mutability")
+* Establishing team-wide Java coding standards and design conventions
+* Explaining Java-specific contracts (`equals`/`hashCode`, generics, PECS) and their pitfalls
+* Prompting an LLM to produce idiomatic, robust Java code
+
+[discrete]
+== *Related Anchors*:
+
+* <<effective-go,Effective Go>>
+* <<gof-builder-pattern,Builder Pattern>>
+* <<solid-principles,SOLID Principles>>
+
+[discrete]
+== *Current Status*:
+
+* The 3rd edition (Addison-Wesley, https://www.pearson.com/en-us/subject-catalog/p/effective-java/P200000000138/9780134685991[published December 2017], commonly cited as 2018) is the current edition. It added items for Java 7-9 features — lambdas, streams, the `java.time` package, and try-with-resources
+* Because it predates Java's six-month release cadence, some Item advice now has newer language alternatives: *records* (Java 16) replace much hand-written immutable-class and Builder boilerplate; *sealed classes* (Java 17) and *pattern matching for `switch`* (Java 21) supersede some inheritance and `instanceof` guidance; *virtual threads* (Java 21) change the "prefer executors to threads" calculus
+* The book's design principles (favour immutability, composition over inheritance, the object contracts, PECS) remain valid; only the mechanics for some Items have shifted. A training-data prior keyed on "Effective Java" most plausibly reflects the 3rd edition and is therefore silent on records, sealed classes, and virtual threads
+
+====

@@ -1,0 +1,57 @@
+= Effective Java
+:categories: development-workflow
+:roles: software-developer, software-architect
+:related: effective-go, gof-builder-pattern, solid-principles
+:proponents: Joshua Bloch
+:tags: java, best-practices, idiomatic, api-design, style-guide
+
+[%collapsible]
+====
+
+[discrete]
+== *Kernkonzepte*:
+
+Item-Format:: Ein Katalog von ~90 kurzen, in sich geschlossenen "Items", jedes eine konkrete Best-Practice-Regel mit Begründung und Trade-offs
+
+Objekterzeugung:: Statische Factory-Methoden statt Konstruktoren; das Builder-Pattern bei vielen Parametern; Singletons und Nicht-Instanziierbarkeit bewusst erzwingen
+
+Die allgemeinen Objekt-Verträge:: Die Verträge von `equals`/`hashCode`/`compareTo`/`clone` einhalten; bei Überschreiben von `equals` stets `hashCode` überschreiben; `toString` konsistent überschreiben
+
+Klassen und Interfaces:: Sichtbarkeit und Veränderlichkeit minimieren (unveränderliche Klassen bevorzugen); Komposition statt Vererbung; Interfaces gegenüber abstrakten Klassen bevorzugen; für Vererbung entwerfen und dokumentieren oder sie verbieten
+
+Generics:: Unchecked-Warnungen beseitigen; Listen gegenüber Arrays und generische Typen/Methoden bevorzugen; beschränkte Wildcards nach der PECS-Regel (Producer-Extends, Consumer-Super) verwenden
+
+Enums und Annotationen:: Enums statt `int`-Konstanten verwenden; `EnumMap`/`EnumSet` nutzen; Annotationen gegenüber Namenskonventionen bevorzugen; `@Override` konsequent verwenden
+
+Lambdas und Streams:: Lambdas gegenüber anonymen Klassen und Methodenreferenzen gegenüber Lambdas bevorzugen; Streams mit Bedacht einsetzen und seiteneffektfreie Funktionen bevorzugen (Java-8-Features, ergänzt in der 3. Auflage)
+
+Methoden und Exceptions:: Parameter auf Gültigkeit prüfen; Methodensignaturen sorgfältig entwerfen; Exceptions nur für Ausnahmesituationen verwenden; Standard-Exceptions bevorzugen; alle geworfenen Exceptions dokumentieren
+
+Ressourcen- und Nebenläufigkeits-Hygiene:: try-with-resources gegenüber `try`-`finally` bevorzugen; Executors und Tasks gegenüber Threads bevorzugen; Concurrency-Utilities gegenüber `wait`/`notify` bevorzugen; Thread-Sicherheit dokumentieren
+
+Schlüsselvertreter:: Joshua Bloch ("Effective Java", Addison-Wesley) — ehemaliger Sun-/Google-Ingenieur, der den Entwurf des Java Collections Framework und anderer Kern-APIs leitete
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Einarbeitung von Java-Entwicklern in idiomatisches, robustes API- und Klassendesign
+* Code-Review-Diskussionen auf Basis eines gemeinsamen, zitierbaren Regelsatzes ("Item 17: minimize mutability")
+* Etablierung teamweiter Java-Coding-Standards und Design-Konventionen
+* Erklärung Java-spezifischer Verträge (`equals`/`hashCode`, Generics, PECS) und ihrer Fallstricke
+* Aufforderung an ein LLM, idiomatischen, robusten Java-Code zu erzeugen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<effective-go,Effective Go>>
+* <<gof-builder-pattern,Builder Pattern>>
+* <<solid-principles,SOLID Principles>>
+
+[discrete]
+== *Aktueller Status*:
+
+* Die 3. Auflage (Addison-Wesley, https://www.pearson.com/en-us/subject-catalog/p/effective-java/P200000000138/9780134685991[erschienen im Dezember 2017], häufig als 2018 zitiert) ist die aktuelle Auflage. Sie ergänzte Items für Java-7-9-Features — Lambdas, Streams, das `java.time`-Paket und try-with-resources
+* Da sie dem Sechs-Monats-Release-Zyklus von Java vorausgeht, gibt es zu einigen Items inzwischen neuere Sprachalternativen: *Records* (Java 16) ersetzen viel handgeschriebenen Boilerplate für unveränderliche Klassen und Builder; *Sealed Classes* (Java 17) und *Pattern Matching für `switch`* (Java 21) lösen einen Teil der Vererbungs- und `instanceof`-Empfehlungen ab; *Virtual Threads* (Java 21) verändern die Abwägung "Executors statt Threads bevorzugen"
+* Die Designprinzipien des Buches (Unveränderlichkeit bevorzugen, Komposition statt Vererbung, die Objekt-Verträge, PECS) bleiben gültig; nur die Mechanik einiger Items hat sich verschoben. Ein auf "Effective Java" geprägter Trainingsdaten-Prior spiegelt am ehesten die 3. Auflage wider und schweigt daher zu Records, Sealed Classes und Virtual Threads
+
+====

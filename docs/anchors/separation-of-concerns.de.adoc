@@ -1,0 +1,48 @@
+= Separation of Concerns
+:categories: design-principles
+:roles: software-developer, software-architect
+:related: cohesion-criteria, unix-philosophy, solid-srp, dry, clean-architecture
+:proponents: Edsger W. Dijkstra
+:tags: modularity, cohesion, coupling, srp, information-hiding
+
+[%collapsible]
+====
+Auch bekannt als:: SoC, Trennung der Belange
+
+[discrete]
+== *Kernkonzepte*:
+
+Belang (Concern):: Ein eigenständiger Aspekt oder eine Verantwortlichkeit eines Systems — Korrektheit vs. Effizienz, Geschäftslogik vs. Präsentation, Persistenz vs. Domänenregeln
+
+Isolation:: Jeder Belang wird isoliert betrachtet, entworfen und geändert, sodass über einen Aspekt nachgedacht werden kann, ohne dass die anderen stören
+
+Modularität:: Das Trennen von Belangen in eigenständige Einheiten ist die strukturelle Grundlage modularer Software — hohe Kohäsion innerhalb einer Einheit, geringe Kopplung zwischen Einheiten
+
+Unabhängige Änderung:: Sind Belange sauber getrennt, wirkt sich eine Änderung an einem Aspekt nur minimal auf die anderen aus
+
+Ausprägungen:: Das Prinzip zeigt sich konkret als Schichtung (Layering), Modularisierung, MVC, Microservice-Grenzen und aspektorientierte Programmierung
+
+Bezug zu Information Hiding:: David Parnas' Information Hiding (1972) ist der komplementäre Mechanismus — Dijkstra trennt Belange, um klar zu *denken*, Parnas verbirgt Entwurfsentscheidungen, um sicher zu *ändern*
+
+Bezug zu SRP:: Das Single Responsibility Principle wendet Separation of Concerns auf Klassen-/Modulebene an — "ein Modul sollte nur einen Grund zur Änderung haben"
+
+Schlüsselvertreter:: Edsger W. Dijkstra prägte den Begriff in https://www.cs.utexas.edu/~EWD/transcriptions/EWD04xx/EWD447.html["On the role of scientific thought" (EWD447, 1974)]: "the separation of concerns ... even if not perfectly possible, is yet the only available technique for effective ordering of one's thoughts"
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Zerlegung eines Systems in Module, Schichten oder Services mit klaren Grenzen
+* Code-Review auf vermischte Verantwortlichkeiten (z. B. Geschäftslogik vermengt mit I/O oder Präsentation)
+* Begründung architektonischer Schnitte — warum Persistenz, Domäne und UI getrennt bleiben
+* Vermittlung, warum hohe Kohäsion und geringe Kopplung wichtig sind
+* Anweisung an ein LLM, Code in klar abgegrenzte, unabhängig änderbare Einheiten zu strukturieren
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<cohesion-criteria,Cohesion Criteria>>
+* <<unix-philosophy,Unix Philosophy>>
+* <<solid-srp,Single Responsibility Principle>>
+* <<dry,Don't Repeat Yourself>>
+* <<clean-architecture,Clean Architecture>>
+====

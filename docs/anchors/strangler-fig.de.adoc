@@ -1,0 +1,59 @@
+= Strangler Fig
+:categories: software-architecture
+:roles: software-architect, software-developer, team-lead
+:related: domain-driven-design, event-driven-architecture, clean-architecture
+:proponents: Martin Fowler
+:tags: legacy-modernization, migration, refactoring, incremental, facade
+
+[%collapsible]
+====
+Vollständiger Name:: Strangler Fig Application
+
+Auch bekannt als:: Strangler-Fig-Pattern, Strangler Application (ursprünglicher Titel von 2004, später von Fowler umbenannt)
+
+[discrete]
+== *Kernkonzepte*:
+
+Routing-Facade:: Ein Proxy fängt die an das Legacy-System gerichteten Requests ab und leitet jeden einzeln entweder an das alte System oder an seinen neuen Ersatz weiter; Clients behalten dieselbe Schnittstelle und merken nichts von der laufenden Migration
+
+Inkrementelle Ablösung:: Funktionalität wird Stück für Stück migriert statt in einem einzigen Big-Bang-Rewrite; das neue System wächst um das alte herum, bis der Legacy-Host stillgelegt werden kann
+
+Botanische Metapher:: Benannt nach der Würgefeige, die in einem Wirtsbaum keimt, Wurzeln zum Boden treibt und den Wirt allmählich umschließt, bis sie selbsttragend an seiner Stelle steht — das neue System "erwürgt" das Legacy-System
+
+Event Interception:: Abfangen der Events oder Aufrufe, die in das Legacy-System fließen, sodass neues Verhalten eingezogen und vom alten Code weggeleitet werden kann
+
+Asset Capture:: Schrittweises Übernehmen der Daten und Fähigkeiten ("Assets") des Legacy-Systems, wobei jedes beim Ersetzen in das neue System überführt wird
+
+Transitionsarchitektur:: Die Facade und etwaige Anti-Corruption-Layer sind Gerüst, das nach Abschluss der Migration wieder abgebaut wird; beide Systeme koexistieren und teilen sich während des Übergangs ggf. Datenspeicher
+
+Vermeidet Big-Bang-Rewrite:: Reduziert das Risiko, indem das Legacy-System durchgängig lauffähig und rollback-fähig bleibt, statt auf einen einzigen Cutover zu setzen
+
+Schlüsselvertreter:: Martin Fowler (https://martinfowler.com/bliki/StranglerFigApplication.html[StranglerFigApplication], https://martinfowler.com/tags/2004.html[2004])
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Modernisierung eines großen, komplexen oder Legacy-Monolithen, bei dem ein vollständiger Rewrite zu riskant wäre
+* Zerlegung eines Monolithen in Microservices durch Herauslösen jeweils einer Fähigkeit oder Domäne
+* Wenn das ursprüngliche System während der Migration über einen längeren Zeitraum weiterlaufen kann
+* Wenn Requests an das Back-End abgefangen werden können und der Legacy-Quellcode zum Umleiten von Aufrufen anpassbar ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<domain-driven-design,Domain-Driven Design>>
+* <<event-driven-architecture,Event-Driven Architecture>>
+* <<clean-architecture,Clean Architecture>>
+
+[discrete]
+== *Kritik*:
+
+* Microsoft, https://learn.microsoft.com/en-us/azure/architecture/patterns/strangler-fig[Azure Architecture Center — Strangler Fig pattern] (2026) — warnt, dass die Facade mit der Migration Schritt halten muss und nicht zum Single Point of Failure oder Performance-Engpass werden darf, und dass die gemeinsame Nutzung von Datenspeichern durch beide Systeme sorgfältigen gleichzeitigen Zugriff erfordert; empfiehlt einen Anti-Corruption-Layer für systemübergreifende Aufrufe
+* Amazon Web Services, https://docs.aws.amazon.com/prescriptive-guidance/latest/modernization-decomposing-monoliths/strangler-fig.html[Decomposing monoliths into microservices — Strangler fig pattern] — weist darauf hin, dass Legacy- und modernisiertes System "für eine gewisse Zeit nebeneinander leben", was Doppelpflege-Kosten verursacht; das Muster ist ungeeignet, wenn Requests nicht abgefangen werden können, der Legacy-Quellcode unzugänglich ist oder das System schnell vollständig stillgelegt werden muss
+
+[discrete]
+== *Aktueller Status*:
+
+* Über Fowlers ursprünglichen Essay hinaus in der Cloud-Modernisierungsliteratur breit übernommen: als eigenständiges Muster dokumentiert vom https://learn.microsoft.com/en-us/azure/architecture/patterns/strangler-fig[Microsoft Azure Architecture Center] und von der https://docs.aws.amazon.com/prescriptive-guidance/latest/modernization-decomposing-monoliths/strangler-fig.html[AWS Prescriptive Guidance], meist als Monolith-zu-Microservices-Zerlegung gerahmt
+* Namensdrift: Fowler betitelte es ursprünglich "Strangler Application" und benannte es später in "Strangler Fig Application" um, um die botanische Metapher wiederherzustellen (https://martinfowler.com/bliki/OriginalStranglerFigApplication.html[Original Strangler Fig Application]); Trainingsdaten-Priors zeigen womöglich noch das ältere Label "Strangler" / "Strangler Application"
+====

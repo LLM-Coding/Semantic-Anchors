@@ -1,0 +1,49 @@
+= Eisenhower Matrix
+:categories: strategic-planning
+:roles: team-lead, product-owner, consultant
+:related: mece, cynefin-framework, decisional-balance-sheet
+:proponents: Dwight D. Eisenhower, Stephen Covey
+:tags: prioritization, time-management, urgency, importance, productivity
+
+[%collapsible]
+====
+Auch bekannt als:: Dringend-Wichtig-Matrix, Eisenhower-Box, Time Management Matrix
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwei Achsen:: Jede Aufgabe wird auf zwei unabhängigen Dimensionen verortet — *Dringlichkeit* (verlangt sie jetzt Aufmerksamkeit?) und *Wichtigkeit* (trägt sie zu Zielen und Werten bei?). Die zentrale Einsicht: Beides ist nicht dasselbe.
+
+Vier Quadranten:: Das 2x2-Raster ergibt vier Priorisierungs-Aktionen::
++
+Erledigen (dringend + wichtig)::: Krisen, Deadlines, drängende Probleme — sofort selbst bearbeiten
+Planen (wichtig, nicht dringend)::: Planung, Prävention, Beziehungspflege, Lernen — bewusst Zeit blocken; Covey nennt diesen Quadranten II "das Herz wirksamer persönlicher Führung"
+Delegieren (dringend, nicht wichtig)::: Unterbrechungen, manche Meetings und Anrufe — an andere abgeben
+Streichen (weder dringend noch wichtig)::: Beschäftigung, Belangloses, Zeitfresser — ganz weglassen
+
+Schlüsselvertreter:: Dwight D. Eisenhower (zugeschrieben) — popularisierte die Dringend/Wichtig-Unterscheidung in einer https://quoteinvestigator.com/2014/05/09/urgent/[Rede vom 19. August 1954] vor dem Ökumenischen Rat der Kirchen, in der er einen ungenannten "ehemaligen Universitätspräsidenten" zitierte (gemeinhin Dr J. Roscoe Miller, Präsident der Northwestern University, zugeschrieben): "I have two kinds of problems, the urgent and the important. The urgent are not important, and the important are never urgent." Stephen R. Covey machte daraus die Vier-Quadranten-"Time Management Matrix" in *The 7 Habits of Highly Effective People* (1989), Habit 3 ("Put First Things First")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Triage einer Aufgabenliste, wenn alles gleich dringend erscheint
+* Teams coachen, echte Wichtigkeit von erzeugter Dringlichkeit zu trennen
+* Persönliches Zeitmanagement und Wochenplanung
+* Entscheiden, was zu tun, delegieren, aufschieben oder streichen ist
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<mece,MECE>>
+* <<cynefin-framework,Cynefin Framework>>
+* <<decisional-balance-sheet,Decisional Balance Sheet>>
+
+[discrete]
+== *Kritik*:
+
+* Meng Zhu, Yang Yang & Christopher K. Hsee, https://academic.oup.com/jcr/article-abstract/45/3/673/4847790["The Mere Urgency Effect", Journal of Consumer Research 45(3): 673–690] (2018; freie Kopie: https://pmc.ncbi.nlm.nih.gov/articles/PMC10159458/[PMC10159458]) — in fünf Experimenten wählten Menschen systematisch Aufgaben allein wegen ihrer Dringlichkeit, selbst wenn diese objektiv schlechter waren als wichtige Alternativen. Dieser "mere urgency effect" legt nahe, dass die saubere Zwei-Achsen-Logik der Matrix gegen eine tiefe kognitive Verzerrung ankämpft: Die Achsen bloß zu *sehen* hindert Menschen nicht daran, Dringlichkeit überzugewichten.
+* Stephen Covey selbst warnt in https://www.franklincovey.com/the-7-habits/[The 7 Habits], dass ein von Dringlichkeit getriebenes Leben den Quadranten II ("wichtig, nicht dringend") verdrängt — genau jenen Quadranten, den er das Herz der Wirksamkeit nennt. Die Kritik ist dem Framework selbst eigen: Sein Urheber warnt, dass die Matrix leicht missbraucht wird, indem man reaktiv in den Quadranten I und III lebt.
+* Allgemeine Kritik, dass ein 2x2-Raster Priorisierung übervereinfacht — es behandelt "Wichtigkeit" und "Dringlichkeit" als binär und unabhängig und ignoriert Abhängigkeiten, Aufwand/Kosten, Wertgröße und Zeit-Verfall, also Dimensionen, die reichere Methoden (z. B. gewichtete Bewertung, Cost of Delay) explizit machen.
+
+Der Kritik-Abschnitt gibt den Diskurs wieder; er entscheidet ihn nicht.
+====

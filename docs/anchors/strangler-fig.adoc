@@ -1,0 +1,60 @@
+= Strangler Fig
+:categories: software-architecture
+:roles: software-architect, software-developer, team-lead
+:related: domain-driven-design, event-driven-architecture, clean-architecture
+:proponents: Martin Fowler
+:tags: legacy-modernization, migration, refactoring, incremental, facade
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Strangler Fig Application
+
+Also known as:: Strangler Fig pattern, Strangler Application (original 2004 title, later renamed by Fowler)
+
+[discrete]
+== *Core Concepts*:
+
+Routing facade:: A proxy intercepts requests bound for the legacy system and routes each one to either the old system or its new replacement; clients keep the same interface and stay unaware that a migration is in progress
+
+Incremental replacement:: Functionality is migrated piece by piece rather than in a single big-bang rewrite; the new system grows around the old one until the legacy host can be decommissioned
+
+Botanical metaphor:: Named after the strangler fig vine that germinates in a host tree, sends roots to the ground, and gradually envelops the host until it stands self-supporting in its place — the new system "strangles" the legacy
+
+Event interception:: Intercepting the events or calls that flow into the legacy system so new behaviour can be layered in and routed away from the old code
+
+Asset capture:: Progressively taking ownership of the data and capabilities ("assets") that the legacy system holds, moving each into the new system as it is replaced
+
+Transitional architecture:: The facade and any anti-corruption layers are scaffolding meant to be torn down once migration completes; both systems coexist and may share data stores during the transition
+
+Avoids big-bang rewrite:: Reduces risk by keeping the legacy system live and rolling back-able throughout, instead of betting on a single cutover
+
+Key Proponent:: Martin Fowler (https://martinfowler.com/bliki/StranglerFigApplication.html[StranglerFigApplication], https://martinfowler.com/tags/2004.html[2004])
+
+[discrete]
+== *When to Use*:
+
+* Modernizing a large, complex, or legacy monolith where a full rewrite would be too risky
+* Decomposing a monolith into microservices by extracting one capability or domain at a time
+* When the original system can keep running for an extended period during migration
+* When requests to the back-end can be intercepted and the legacy source can be modified to redirect calls
+
+[discrete]
+== *Related Anchors*:
+
+* <<domain-driven-design,Domain-Driven Design>>
+* <<event-driven-architecture,Event-Driven Architecture>>
+* <<clean-architecture,Clean Architecture>>
+
+[discrete]
+== *Criticism*:
+
+* Microsoft, https://learn.microsoft.com/en-us/azure/architecture/patterns/strangler-fig[Azure Architecture Center — Strangler Fig pattern] (2026) — warns that the facade must keep pace with the migration and must not become a single point of failure or performance bottleneck, and that both systems sharing data stores requires careful concurrent access; recommends an Anti-corruption Layer for cross-system calls
+* Amazon Web Services, https://docs.aws.amazon.com/prescriptive-guidance/latest/modernization-decomposing-monoliths/strangler-fig.html[Decomposing monoliths into microservices — Strangler fig pattern] — notes the legacy and modernized systems "live together for a period of time," which imposes dual-maintenance cost; the pattern is unsuitable when requests cannot be intercepted, the legacy source is inaccessible, or the system must be fully decommissioned quickly
+
+[discrete]
+== *Current Status*:
+
+* Widely adopted in cloud-modernization guidance beyond Fowler's original essay: documented as a first-class pattern by both the https://learn.microsoft.com/en-us/azure/architecture/patterns/strangler-fig[Microsoft Azure Architecture Center] and https://docs.aws.amazon.com/prescriptive-guidance/latest/modernization-decomposing-monoliths/strangler-fig.html[AWS Prescriptive Guidance], typically framed as monolith-to-microservices decomposition
+* Naming drift: Fowler originally titled it "Strangler Application" and later renamed it "Strangler Fig Application" to restore the botanical metaphor (https://martinfowler.com/bliki/OriginalStranglerFigApplication.html[Original Strangler Fig Application]); training-data priors may still surface the older "Strangler" / "Strangler Application" label
+====
