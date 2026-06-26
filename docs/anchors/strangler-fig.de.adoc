@@ -4,6 +4,7 @@
 :related: domain-driven-design, event-driven-architecture, clean-architecture
 :proponents: Martin Fowler
 :tags: legacy-modernization, migration, refactoring, incremental, facade
+:tier: 2
 
 [%collapsible]
 ====
