@@ -4,6 +4,7 @@
 :related: clean-architecture, fallacies-of-distributed-computing, conways-law
 :proponents: Adam Wiggins
 :tags: cloud-native, saas, config, stateless, deployment, heroku
+:tier: 2
 
 [%collapsible]
 ====
