@@ -1,4 +1,4 @@
-= req42
+= req42 Requirements Framework
 :categories: requirements-engineering
 :roles: business-analyst, software-architect, product-owner
 :related: arc42, ears-requirements, cockburn-use-cases, docs-as-code
