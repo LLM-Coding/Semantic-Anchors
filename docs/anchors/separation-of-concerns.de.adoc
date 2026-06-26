@@ -4,6 +4,7 @@
 :related: cohesion-criteria, unix-philosophy, solid-srp, dry, clean-architecture
 :proponents: Edsger W. Dijkstra
 :tags: modularity, cohesion, coupling, srp, information-hiding
+:tier: 1
 
 [%collapsible]
 ====
