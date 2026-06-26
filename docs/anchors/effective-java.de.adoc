@@ -4,6 +4,7 @@
 :related: effective-go, gof-builder-pattern, solid-principles
 :proponents: Joshua Bloch
 :tags: java, best-practices, idiomatic, api-design, style-guide
+:tier: 3
 
 [%collapsible]
 ====
