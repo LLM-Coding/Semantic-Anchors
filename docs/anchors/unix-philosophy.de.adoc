@@ -4,6 +4,7 @@
 :related: separation-of-concerns, dry, kiss-principle, code-smells
 :proponents: Doug McIlroy, Eric S. Raymond
 :tags: modularity, composability, simplicity, pipes, kiss
+:tier: 2
 
 [%collapsible]
 ====
