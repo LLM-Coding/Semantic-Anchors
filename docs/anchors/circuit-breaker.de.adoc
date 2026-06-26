@@ -4,6 +4,7 @@
 :related: fallacies-of-distributed-computing, cap-theorem, event-driven-architecture
 :proponents: Michael Nygard, Martin Fowler
 :tags: resilience, fault-tolerance, stability-pattern, microservices, fail-fast
+:tier: 2
 
 [%collapsible]
 ====
