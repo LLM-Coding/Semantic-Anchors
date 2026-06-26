@@ -4,6 +4,7 @@
 :related: solid-lsp, solid-principles, postels-law, ears-requirements
 :proponents: Bertrand Meyer
 :tags: preconditions, postconditions, invariants, correctness, eiffel
+:tier: 2
 
 [%collapsible]
 ====
