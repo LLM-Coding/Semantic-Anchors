@@ -1,0 +1,62 @@
+= Design by Contract
+:categories: design-principles
+:roles: software-developer, software-architect
+:related: solid-lsp, solid-principles, postels-law, ears-requirements
+:proponents: Bertrand Meyer
+:tags: preconditions, postconditions, invariants, correctness, eiffel
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: DbC, Programming by Contract
+
+[discrete]
+== *Core Concepts*:
+
+Precondition:: The caller's obligation — a condition that must hold before a routine is called. If it is violated, the bug is in the *client*, not the supplier.
+
+Postcondition:: The supplier's guarantee — a condition the routine promises to establish on return, provided its preconditions held. If it is violated, the bug is in the *supplier*.
+
+Class invariant:: A consistency condition that holds for every instance in every observable state, before and after each public routine. It constrains the abstraction across its whole lifetime.
+
+Client/supplier metaphor:: A routine is a contract between caller (client) and implementation (supplier): each party's obligation is the other's benefit. The supplier need not handle states its preconditions exclude.
+
+Blame assignment:: Because each clause has a single responsible party, a violated assertion localizes the defect: a broken precondition blames the caller, a broken postcondition or invariant blames the implementation. No defensive double-checking on both sides.
+
+Contract inheritance:: Subclasses may *weaken* preconditions (demand no more than the parent) and *strengthen* postconditions and invariants (promise no less). This is exactly behavioural subtyping.
+
+Relation to LSP:: The inheritance rules above are the contract-level statement of the <<solid-lsp,Liskov Substitution Principle>>. A subtype that obeys them is substitutable for its supertype without surprising clients.
+
+Scope tension with Postel's Law:: DbC says be *strict* about preconditions and fail hard on violation. <<postels-law,Postel's Law>> says be *liberal* in what you accept. They apply at different boundaries — DbC governs trusted internal module seams; Postel governs untrusted external inputs at the system edge. Confusing the two leaks invalid state inward.
+
+Key Proponent:: Bertrand Meyer, who coined the term for the https://www.eiffel.com/values/design-by-contract/[Eiffel] language (~1986) and developed it in _Object-Oriented Software Construction_ (1988, 1997). "Design by Contract" is a https://www.eiffel.com/values/design-by-contract/[trademark of Eiffel Software] (registered 2004).
+
+[discrete]
+== *When to Use*:
+
+* Specifying the obligations and guarantees of a module's public API precisely
+* Designing class hierarchies that must remain substitutable (behavioural subtyping)
+* Pushing input validation to a single, well-defined seam instead of scattering defensive checks
+* Prompting an LLM to generate routines with explicit pre/postconditions and invariants
+* Reasoning about correctness before reaching for exhaustive tests (complements, not replaces, testing)
+
+[discrete]
+== *Related Anchors*:
+
+* <<solid-lsp,Liskov Substitution Principle>> — DbC's inheritance rules formalize behavioural subtyping
+* <<solid-principles,SOLID Principles>> — DbC reinforces the substitutability guarantee SOLID depends on
+* <<postels-law,Postel's Law>> — opposing stance on input strictness; reconciled by boundary scope
+* <<ears-requirements,EARS Requirements>> — pre/postconditions express requirements as checkable assertions
+
+[discrete]
+== *Criticism*:
+
+* Bjarne Stroustrup, on the C++26 contracts design (https://www.theregister.com/2026/03/31/cplusplus26_approved/[The Register], 2026) — "It's claimed to be a minimal viable product. It's not minimal, it's not viable" — and recommended not using contracts in C++. Native, end-to-end DbC stays largely confined to Eiffel; mainstream languages get only partial or contested support.
+* Expressiveness limit (https://www.researchgate.net/publication/2929130_Supporting_Design_by_Contract_in_Java[Supporting Design by Contract in Java]) — contracts written in a subset of the host language often lack the power to state full functional correctness, forcing cumbersome workarounds; runtime-checked contracts catch violations late rather than proving absence of them.
+
+[discrete]
+== *Current Status*:
+
+* C++ contracts were *removed* from the C++20 working draft in 2019, restarted by study group SG21, and only landed in the standard as part of C++26 (https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2025/p2899r1.pdf[P2899 Rationale]; https://www.theregister.com/2026/03/31/cplusplus26_approved/[The Register], 2026) — so language-level DbC remains young and contested outside Eiffel. Training-data priors from before 2026 likely treat C++ contracts as absent or experimental.
+* Native support exists in Ada 2012, https://www.eiffel.com/values/design-by-contract/[Eiffel], D, Kotlin, and others; Python relies on third-party libraries (e.g. `deal`, `icontract`) rather than a language feature.
+====

@@ -186,6 +186,25 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Andy Hunt, David Thomas
 - **Core:** Lightweight end-to-end slice that validates architectural direction on real infrastructure; unlike a spike, tracer code is kept and refined into the final system; enables rapid directional correction via the "aim-fire-adjust" loop; primary goal is architecture validation, not feature delivery
 
+### Circuit Breaker
+- **Also known as:** Circuit Breaker stability pattern
+- **Proponents:** Michael Nygard, Martin Fowler
+- **Core:** Wraps remote calls in a closed/open/half-open state machine that trips on a failure threshold to fail-fast and trigger fallbacks, preventing cascading failure; pairs with timeout, retry, and bulkhead
+
+### Strangler Fig
+- **Also known as:** Strangler Fig Application
+- **Proponents:** Martin Fowler
+- **Core:** Incrementally retire a legacy system by placing a routing facade in front of it and migrating capabilities piece by piece into a new system that grows until it "strangles" and replaces the host, avoiding a big-bang rewrite
+
+### Team Topologies
+- **Proponents:** Matthew Skelton, Manuel Pais
+- **Core:** Org-design framework for fast flow: four team types (stream-aligned, enabling, complicated-subsystem, platform) and three interaction modes (collaboration, X-as-a-Service, facilitating) that limit team cognitive load and operationalize Conway's Law via the Inverse Conway Maneuver and explicit Team APIs
+
+### Twelve-Factor App
+- **Also known as:** 12-Factor App
+- **Proponents:** Adam Wiggins (Heroku)
+- **Core:** Twelve principles for portable, scalable cloud-native/SaaS apps — config in env, stateless disposable processes, backing services as attached resources, strict build-release-run separation, port binding, horizontal concurrency, dev/prod parity, and logs as event streams
+
 ## Design Principles
 
 ### DRY (Don't Repeat Yourself)
@@ -386,6 +405,20 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Martin Fowler
 - **Core:** Repository, Unit of Work, Data Mapper, Active Record, etc.
 
+### Separation of Concerns
+- **Also known as:** SoC
+- **Proponents:** Edsger W. Dijkstra
+- **Core:** Isolate each distinct aspect or responsibility (correctness vs. efficiency, logic vs. presentation, domain vs. persistence) so it can be reasoned about and changed independently — the structural basis for modularity, high cohesion, and low coupling
+
+### Unix Philosophy
+- **Proponents:** Doug McIlroy, Eric S. Raymond
+- **Core:** Make each program do one thing well, compose small sharp tools through pipes, and treat plain text streams as the universal interface
+
+### Design by Contract
+- **Also known as:** DbC, Programming by Contract
+- **Proponents:** Bertrand Meyer
+- **Core:** Specifies software correctness as enforceable preconditions (caller's obligation), postconditions (supplier's guarantee), and class invariants — assigning blame on violation, formalizing behavioural subtyping (LSP), and coined for Eiffel by Bertrand Meyer
+
 ## Problem-Solving
 
 ### First Principles Thinking
@@ -454,6 +487,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Fritz B. Simon, Helm Stierlin, Gunthard Weber, Paul Watzlawick
 - **Core:** Heidelberg School of systemic consulting — all-partiality, neutrality, circular questions, context clarification, problems as emergent relational patterns; the consultant cannot instruct a closed system, only offer irritations it may integrate
 
+### Fermi Estimation
+- **Also known as:** Order-of-Magnitude Estimation, Back-of-the-Envelope Calculation
+- **Proponents:** Enrico Fermi
+- **Core:** Estimate an unknown by decomposing it into bracketed sub-quantities, reasoning in powers of ten and taking geometric means, so independent errors cancel and the product lands within a factor of 2-3 — enough to sanity-check or size a problem
+
 ## Requirements Engineering
 
 ### Cockburn Use Cases
@@ -494,6 +532,15 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### Problem Space NVC
 - **Core:** Needs-Value-Constraints framework for problem definition
+
+### Laddering (Interview Technique)
+- **Also known as:** Means-End Laddering, Laddering Interview
+- **Proponents:** George Kelly, Dennis Hinkle, Thomas Reynolds, Jonathan Gutman
+- **Core:** Bidirectional interview technique that maps attribute→consequence→value chains by laddering up ("why is that important to you?") toward values and down ("how / for example?") toward specifics; surfaces a hierarchy of user motivations rather than a single root cause like Five Whys
+
+### req42
+- **Proponents:** Peter Hruschka, Markus Meuten
+- **Core:** Free, open-source AsciiDoc template for pragmatic agile requirements documentation — the requirements companion to arc42, covering goals, stakeholders, scope, backlog, quality requirements, constraints, and risks
 
 ## Communication & Presentation
 
@@ -547,6 +594,15 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** MBTI, Myers-Briggs, 16 Personality Types
 - **Proponents:** Isabel Briggs Myers, Katharine Cook Briggs, Carl Gustav Jung
 - **Core:** Four dichotomies (E/I, S/N, T/F, J/P) produce 16 personality types describing communication preferences, decision-making styles, and team dynamics
+
+### Curse of Knowledge
+- **Proponents:** Camerer, Loewenstein & Weber; popularized by Chip & Dan Heath
+- **Core:** Once you know something you cannot imagine not knowing it, so experts overestimate shared context and leave jargon and steps unexplained; the antidote is to surface assumptions, define terms, and model the audience
+
+### Four-Sides Model (Schulz von Thun)
+- **Also known as:** Communication Square, Four-Ears Model, Vier-Seiten-Modell
+- **Proponents:** Friedemann Schulz von Thun
+- **Core:** Every message carries four facets at once — factual information (Sachinhalt), self-revelation (Selbstoffenbarung), relationship (Beziehung), and appeal (Appell); the sender speaks with "four beaks" and the receiver listens with "four ears", and mismatched ears cause misunderstanding
 
 ## Documentation
 
@@ -634,6 +690,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
 - **Core:** Apply software engineering to operations; SLI/SLO/SLA; error budgets balance reliability vs. feature velocity (100% is the wrong target); eliminate toil with ~50% ops cap; blameless postmortems; four golden signals (latency, traffic, errors, saturation); release & capacity engineering
 
+### Effective Java
+- **Proponents:** Joshua Bloch
+- **Core:** Catalog of ~90 "Items" of idiomatic Java best practice — static factories & the Builder pattern, the equals/hashCode contracts, minimize mutability, composition over inheritance, generics with PECS, enums over int constants, and try-with-resources
+
 ## Statistical Methods
 
 ### SPC (Statistical Process Control)
@@ -699,6 +759,30 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** MHC, Meaningful Human Control over Individual Attacks
 - **Proponents:** Article 36 (coined the term, 2013), Noel Sharkey (five-level framework, 2014), ICRC, UN CCW GGE, IEEE Global Initiative
 - **Core:** Requirement that humans retain genuine, substantive control over autonomous systems making high-stakes decisions — not merely formulaic "human-in-the-loop" oversight; demands situational awareness, an identifiable accountability chain (never transferable to machines), positive human authorization of critical actions, and timely intervention/override; Sharkey's five levels (L1 human deliberates → L5 fully autonomous) classify the degree of autonomy; originates in the autonomous-weapons / international humanitarian law debate but applies to medical AI, autonomous driving, and critical infrastructure; underlies the EU AI Act's human-oversight requirements
+
+### OKR (Objectives and Key Results)
+- **Proponents:** Andy Grove, John Doerr
+- **Core:** A qualitative Objective paired with 3-5 measurable Key Results, set on a quarterly cadence as ambitious stretch goals (~0.7 = success), kept transparent for alignment and decoupled from compensation
+
+### Eisenhower Matrix
+- **Also known as:** Urgent-Important Matrix, Eisenhower Box, Time Management Matrix
+- **Proponents:** Dwight D. Eisenhower (attrib.), Stephen Covey
+- **Core:** Plots tasks on two axes — urgency × importance — into four quadrants (Do, Schedule, Delegate, Delete) to separate genuine importance from manufactured urgency; admitted with a Criticism section (mere-urgency effect) since its framing is contested
+
+### Consent vs. Consensus
+- **Proponents:** Gerard Endenburg (Sociocracy), Brian Robertson (Holacracy)
+- **Core:** Consensus requires everyone's active "yes"; consent requires only the absence of a paramount, reasoned objection ("good enough for now, safe enough to try"), so objections are argued and integrated rather than vetoed — speeding decisions and avoiding lowest-common-denominator outcomes and groupthink
+
+## Knowledge Management
+
+### Dreyfus Model of Skill Acquisition
+- **Proponents:** Stuart Dreyfus, Hubert Dreyfus
+- **Core:** Five stages from Novice to Expert (Novice, Advanced Beginner, Competent, Proficient, Expert) tracing a shift from rigid rule-following to intuitive pattern recognition, so teaching and explanation depth should match the learner's stage
+
+### ADDIE Model
+- **Also known as:** ADDIE, Instructional Systems Design (ISD)
+- **Proponents:** Florida State University; Robert Maribe Branch
+- **Core:** Five-phase instructional-design process — Analysis, Design, Development, Implementation, Evaluation (formative + summative, often paired with Kirkpatrick) — modern usage iterative rather than strict waterfall
 
 ## Creative Writing & Storytelling
 

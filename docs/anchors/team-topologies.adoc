@@ -1,0 +1,65 @@
+= Team Topologies
+:categories: software-architecture
+:roles: software-architect, team-lead, product-owner
+:related: conways-law, domain-driven-design, cynefin-framework
+:proponents: Matthew Skelton, Manuel Pais
+:tags: org-design, team-structure, cognitive-load, conways-law, flow
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Team Topologies: Organizing Business and Technology Teams for Fast Flow
+
+[discrete]
+== *Core Concepts*:
+
+Four fundamental team types::
++
+Stream-aligned team::: Aligned to a single flow of work (a product, service, or user journey); the primary team type that delivers value end-to-end
+Enabling team::: Helps stream-aligned teams acquire missing capabilities; works as a temporary coach, not a permanent dependency
+Complicated-subsystem team::: Owns a part requiring deep specialist knowledge (e.g. a math-heavy or hardware-bound subsystem) to reduce the burden on stream-aligned teams
+Platform team::: Provides internal self-service products that reduce the cognitive load of stream-aligned teams
+
+Three interaction modes::
++
+Collaboration::: Two teams work closely together for a defined period to discover new patterns
+X-as-a-Service::: One team consumes something another team provides with minimal collaboration
+Facilitating::: One team helps or coaches another to remove impediments
+
+Cognitive load:: Team structures are designed to limit the amount a single team must hold in its head; the platform exists to offload it
+
+Conway's Law operationalized:: Team boundaries and communication paths are deliberately designed because organizations ship designs that copy their communication structures (the "Inverse Conway Maneuver")
+
+Team API:: Each team makes its interfaces explicit — code, services, documentation, and ways of working — so other teams know how to interact with it
+
+Fracture planes:: Natural boundaries (e.g. business domain, regulatory, change cadence) along which to split work into stream-aligned teams
+
+Key Proponents:: Matthew Skelton, Manuel Pais ("Team Topologies", IT Revolution, 2019)
+
+[discrete]
+== *When to Use*:
+
+* Designing or restructuring software-delivery organizations for fast flow
+* Reducing handoffs and dependencies between teams
+* Deciding whether a capability belongs in a platform, an enabling team, or a stream-aligned team
+* Reasoning about cognitive load when a team owns too much
+* Applying the Inverse Conway Maneuver to align architecture and org structure
+
+[discrete]
+== *Related Anchors*:
+
+* <<conways-law,Conway's Law>>
+* <<domain-driven-design,Domain-Driven Design>>
+* <<cynefin-framework,Cynefin Framework>>
+
+[discrete]
+== *Criticism*:
+
+* Patricia Aas, https://patricia.no/2025/05/24/team_topologies.html["The fundamental misunderstanding in Team Topologies"] (2025) — argues the book conflates Conway's Law (a descriptive observation) with the Inverse Conway Maneuver (a prescriptive recipe), commits the fallacy of "affirming the consequent," and that deliberately restricting team communication to force an architecture contradicts Conway's own case for adaptable organizations. She also questions the book's use of "cognitive load." The discourse she points toward favors broad collaboration over engineered communication barriers.
+
+[discrete]
+== *Current Status*:
+
+* A https://itrevolution.com/product/team-topologies-second-edition/[second edition] (IT Revolution, 2025) adds new cross-industry case studies and a new authors' foreword while keeping the four team types and three interaction modes intact. Training-data priors most plausibly reflect the 2019 first edition; the core vocabulary is unchanged between editions.
+
+====

@@ -1,0 +1,49 @@
+= Curse of Knowledge
+:categories: communication-presentation
+:roles: technical-writer, educator, software-developer
+:related: feynman-technique, blooms-taxonomy, bluf, inverted-pyramid-style
+:proponents: Colin Camerer, George Loewenstein, Martin Weber, Chip Heath, Dan Heath
+:tags: cognitive-bias, communication, audience, jargon, empathy-gap
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: Curse of Expertise, Knowledge Gap Bias
+
+[discrete]
+== *Core Concepts*:
+
+Knowing makes un-knowing impossible:: Once you understand something, you cannot easily reconstruct what it was like not to know it; the mental state of the novice becomes inaccessible.
+
+Overestimated shared context:: Experts systematically assume the audience holds background, vocabulary, and intermediate steps that the audience does not actually have.
+
+Unexplained jargon and skipped steps:: The bias surfaces as opaque terms left undefined and logical links the writer "divines" but the reader cannot.
+
+Empathy gap:: A failure to model the audience's actual knowledge state, not a failure of the audience's intelligence.
+
+Antidote — surface and externalize:: Make hidden assumptions explicit, define terms, spell out skipped steps, and test against a representative reader instead of yourself.
+
+Key Proponents:: Colin Camerer, George Loewenstein, Martin Weber (https://www.journals.uchicago.edu/doi/abs/10.1086/261651["The Curse of Knowledge in Economic Settings: An Experimental Analysis", Journal of Political Economy 97(5):1232-1254, 1989] — coined the term); Chip Heath, Dan Heath (https://heathbrothers.com/made-to-stick-introduction/["Made to Stick", 2007] — popularized it, citing Elizabeth Newton's 1990 "tappers and listeners" study); Steven Pinker (https://www.psychologicalscience.org/observer/the-curse-of-knowledge-pinker-describes-a-key-cause-of-bad-writing["The Sense of Style", 2014] — names it the chief cause of bad writing)
+
+[discrete]
+== *When to Use*:
+
+* Reviewing documentation, tutorials, or onboarding material for an audience less expert than the author
+* Diagnosing why an explanation, talk, or error message confuses its readers
+* Teaching: deciding which steps and terms must be made explicit rather than assumed
+* Prompting an LLM to write for a non-expert audience, or to surface and state its own assumptions and defined terms
+* Code review of comments, API docs, and commit messages that assume too much context
+
+[discrete]
+== *Related Anchors*:
+
+* <<feynman-technique,Feynman Technique>>
+* <<blooms-taxonomy,Bloom's Taxonomy>>
+* <<bluf,BLUF>>
+* <<inverted-pyramid-style,Inverted Pyramid Style>>
+
+[discrete]
+== *Current Status*:
+
+* Steven Pinker reframed the bias as a writing problem in https://www.psychologicalscience.org/observer/the-curse-of-knowledge-pinker-describes-a-key-cause-of-bad-writing["The Sense of Style" (2014)], calling it "the single best explanation I know of why good people write bad prose" and prescribing testing prose against a representative reader — the framing most likely to dominate present-day discussion of the term outside economics
+====

@@ -1,0 +1,45 @@
+= Fermi Estimation
+:categories: problem-solving
+:roles: software-architect, data-scientist, software-developer, consultant
+:related: first-principles-thinking, mece, five-whys
+:proponents: Enrico Fermi
+:tags: estimation, order-of-magnitude, back-of-envelope, approximation, decomposition
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Order-of-Magnitude Estimation, Back-of-the-Envelope Calculation, Fermi Problem, Guesstimation
+
+[discrete]
+== *Core Concepts*:
+
+Decomposition:: Break an unknown quantity into a chain of smaller sub-quantities you can each estimate with some confidence
+
+Order-of-magnitude reasoning:: Reason in powers of ten; aim to land the right power of ten rather than an exact figure
+
+Bracketing:: For each sub-quantity, pick a plausible lower and upper bound, then take the geometric mean of the bounds as the estimate
+
+Error cancellation:: Independent over- and under-estimates tend to cancel, so the product of many rough guesses is often within a factor of 2-3 of the true value
+
+Sanity check / sizing:: Use the estimate to test whether a claim, design, or measured number is even plausible before investing in precision
+
+The piano-tuner problem:: Fermi's classic teaching example — "How many piano tuners are there in Chicago?" — solved by chaining population, pianos per household, tuning frequency, and tuner throughput
+
+Key Proponents:: Enrico Fermi (estimated the Trinity-test yield by dropping paper scraps in the blast wave, landing within an order of magnitude); Lawrence Weinstein and John A. Adam (https://press.princeton.edu/books/paperback/9780691129495/guesstimation["Guesstimation: Solving the World's Problems on the Back of a Cocktail Napkin"], Princeton University Press, 2008)
+
+[discrete]
+== *When to Use*:
+
+* Sizing a system before committing to detailed analysis (capacity, cost, traffic)
+* Build-vs-buy and feasibility checks where exact numbers are unavailable
+* Interview and whiteboard estimation problems
+* Validating a surprising metric or vendor claim against rough physical limits
+* Prompting an LLM to sanity-check a quantitative estimate by decomposing it and reasoning in powers of ten
+
+[discrete]
+== *Related Anchors*:
+
+* <<first-principles-thinking,First Principles Thinking>>
+* <<mece,MECE>>
+* <<five-whys,Five Whys>>
+====

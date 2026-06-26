@@ -1,0 +1,71 @@
+= req42
+:categories: requirements-engineering
+:roles: business-analyst, software-architect, product-owner
+:related: arc42, ears-requirements, cockburn-use-cases, docs-as-code
+:proponents: Peter Hruschka, Markus Meuten
+:tags: requirements, framework, agile, docs-as-code, arc42
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: req42 — Framework für pragmatisches, agiles Requirements Engineering
+
+Auch bekannt als:: das Requirements-Gegenstück zu arc42
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwölf "Schubladen":: Ein leichtgewichtiges Template aus zwölf Abschnitten, das bewusst die Struktur von arc42 spiegelt, um agile Requirements zu erfassen, ohne in eine schwergewichtige Spezifikation abzudriften. Nur die Schubladen füllen, die ein Projekt wirklich braucht.
+
+01 Business Goals:: Warum das Produkt existiert und woran sich Erfolg misst
+
+02 Stakeholders:: Wer ein Interesse am System hat und was er erwartet
+
+03 Scope:: Was drin und was draußen ist — die Systemgrenze
+
+04 Product Backlog:: Features, User Stories und Produktideen
+
+05 Supporting Models:: Diagramme und Modelle, die die Requirements verdeutlichen (Kontext, Daten, Prozesse)
+
+06 Quality Requirements:: Qualitätsziele und -szenarien — der Fokus, der req42 vom reinen Backlog-Management unterscheidet
+
+07 Constraints:: Randbedingungen, die Design- und Implementierungsentscheidungen einschränken
+
+08 Domain Terminology:: Gemeinsames Vokabular; ein Glossar
+
+09 Assets:: Vorhandenes, das wiederverwendet oder geschützt werden soll
+
+10 Teams:: Wer das Produkt baut
+
+11 Roadmap:: Geplante Reihenfolge der Auslieferung über die Zeit
+
+12 Risks / Assumptions:: Offene Risiken und die Annahmen, auf denen der Plan ruht
+
+Passt zu arc42:: req42 dokumentiert die Requirements (das "Was" und "Warum"), arc42 die Architektur (das "Wie"). Beide teilen Autorenschaft, Struktur und Tooling und lassen sich daher nahtlos kombinieren.
+
+Docs-as-Code:: Verteilt als AsciiDoc-Template, gebaut mit dem arc42-Generator; versionierbar, diff-fähig und toolchain-freundlich. Lizenziert unter CC BY-SA 4.0 (frei und Open Source).
+
+Schlüsselvertreter:: Dr. Peter Hruschka und Markus Meuten (https://req42.de). Hruschka ist Principal der Atlantic Systems Guild, Gründungsmitglied des IREB und Mitentwickler von arc42; req42 greift zudem auf die Volere-Tradition zurück.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Requirements im agilen Kontext dokumentieren, ohne Struktur aufzugeben
+* Einem Product Backlog einen Rahmen für Qualitätsanforderungen, Constraints und Risiken geben — nicht nur User Stories
+* Ein Requirements-Dokument mit einem arc42-Architekturdokument paaren, sodass beide Struktur und Tooling teilen
+* Leichtgewichtige Docs-as-Code-Requirements, die neben dem Code in der Versionsverwaltung leben
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<arc42,arc42 Architecture Documentation>>
+* <<ears-requirements,EARS Requirements Syntax>>
+* <<cockburn-use-cases,Cockburn Use Cases>>
+* <<docs-as-code,Docs-as-Code>>
+
+[discrete]
+== *Aktueller Status*:
+
+* Deutlich weniger bekannt als das Schwester-Framework arc42. Ein LLM erkennt "req42" vor allem *wegen* des Namens und der Struktur von arc42; der Trainingsdaten-Prior zu req42s eigenem Inhalt der zwölf Abschnitte ist dünn, sodass das Modell eher von arc42 extrapoliert als req42 korrekt abruft. Abschnittsnamen gegen die Quelle (https://docs.req42.de, https://github.com/Hruschka/req42-framework) prüfen, statt auf das Gedächtnis zu vertrauen.
+* Aktiv gepflegt als freies, quelloffenes Template (CC BY-SA 4.0) auf https://github.com/Hruschka/req42-framework[GitHub], mit Hinweisen auf Abschnittsebene unter https://docs.req42.de — dasselbe Docs-as-Code-Modell wie arc42.
+====

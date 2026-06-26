@@ -1,0 +1,63 @@
+= OKR (Objectives and Key Results)
+:categories: strategic-planning
+:roles: product-owner, team-lead, consultant
+:related: definition-of-done
+:proponents: Andy Grove, John Doerr
+:tags: goal-setting, objectives, key-results, alignment, okr
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Objectives and Key Results
+
+Also known as:: OKRs; descended from Intel's iMBO (Intel Management by Objectives)
+
+[discrete]
+== *Core Concepts*:
+
+Objective:: A single qualitative, inspirational, time-bound statement of *what* you want to achieve; memorable and direction-setting, not a metric
+
+Key Results:: Typically 3-5 quantitative, measurable outcomes that prove the Objective is met; answer *how* you know you got there — outcomes, not a task list
+
+Objective + Key Results:: One Objective is paired with its Key Results; "if the Objective is the destination, the Key Results are the milestones that measure progress toward it"
+
+Quarterly cadence:: OKRs are usually set and reviewed on a quarterly rhythm, nested under annual or strategic OKRs
+
+Ambitious / stretch goals:: Aspirational "moonshot" OKRs are calibrated so that scoring ~0.7 of the way (70%) is considered success; consistently scoring 1.0 signals goals set too low
+
+Grading (0.0-1.0):: At cycle end each Key Result is scored on a 0-1 scale; the score drives a conversation, not a verdict
+
+Transparency / alignment:: OKRs are public across the organization so teams can see and connect to each other's goals; alignment by visibility, not by mechanical cascade
+
+Decoupled from compensation:: OKRs are deliberately separated from bonuses and performance reviews, so people set honest stretch goals instead of sandbagging
+
+Key Proponents:: Andy Grove (originated the approach at Intel as "iMBO", documented in "High Output Management", 1983); John Doerr (learned it from Grove at Intel, introduced it to Google in 1999, popularized it in "Measure What Matters", 2018, https://www.whatmatters.com/[whatmatters.com])
+
+[discrete]
+== *When to Use*:
+
+* Translating strategy into focused, measurable quarterly goals for teams
+* Creating organization-wide alignment and transparency around priorities
+* Shifting a team's focus from output (tasks shipped) to outcomes (value delivered)
+* Setting ambitious stretch goals where ~70% attainment counts as success
+* Prompting an LLM to draft, critique, or grade an Objective with its Key Results
+
+[discrete]
+== *Related Anchors*:
+
+* <<definition-of-done,Definition of Done>>
+
+[discrete]
+== *Criticism*:
+
+* Goodhart's Law ("when a measure becomes a target, it ceases to be a good measure") is the recurring failure mode: once a Key Result is the target, people optimise the number rather than the outcome. McKenna Agile Consultants, https://www.mckennaagileconsultants.com/applying-goodharts-law-in-okrs-avoiding-common-pitfalls-in-strategic-execution/["Applying Goodhart's Law in OKRs"] — the proposed mitigation is to pair quantity KRs with quality/guardrail KRs and to keep OKRs decoupled from rewards
+* Ant Murphy, https://www.antmurphy.me/newsletter/escape-okr-theatre["Escape OKR Theatre"] — *cascading* OKRs assume strategy perfectly mirrors the org chart, which it rarely does; cascading is often a symptom of missing strategy and produces a "sea of OKRs". Murphy argues OKRs should *align, not cascade*, favouring fewer, strategy-derived OKRs
+* "OKR theatre" / performance theatre: teams fluently discuss "driving key metrics" while struggling to name the problem they solve. Bjørn Broum, https://bbroum.substack.com/p/the-okr-performance-theater["The OKR Performance Theater"]
+
+[discrete]
+== *Current Status*:
+
+* The framework remains widely adopted but reportedly hard to sustain: per https://en.wikipedia.org/wiki/Objectives_and_key_results[Wikipedia's OKR article], Google's Rick Klau later advised skipping *individual* OKRs to avoid a waterfall/cascade trap — a shift from the individual-level usage many training-data examples assume
+* The canonical modern reference is Doerr's "Measure What Matters" (2018) and https://www.whatmatters.com/[whatmatters.com]; the original Grove formulation predates the term "OKR" and lives in "High Output Management" (1983)
+
+====

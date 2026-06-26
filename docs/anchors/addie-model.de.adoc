@@ -1,0 +1,61 @@
+= ADDIE Model
+:categories: knowledge-management
+:roles: educator, technical-writer, consultant
+:related: blooms-taxonomy, 4mat, feynman-technique, double-diamond
+:proponents: Florida State University (origin); Robert Maribe Branch (codification)
+:tags: instructional-design, training, learning-design, evaluation, education
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: ADDIE, Instructional Systems Design (ISD)
+
+Vollständiger Name:: Analysis, Design, Development, Implementation, Evaluation
+
+[discrete]
+== *Kernkonzepte*:
+
+Analysis:: Das Lernproblem klären; Bedarf, Zielgruppenmerkmale, Lernziele, Rahmenbedingungen und die vorhandene Wissenslücke ermitteln
+
+Design:: Messbare Lernziele, Bewertungsinstrumente, Inhaltsstruktur und Medienauswahl definieren — der Bauplan, der vor jeder Materialerstellung entsteht
+
+Development:: Die eigentlichen Lernmaterialien (Inhalte, Storyboards, Medien, Technik) gemäß dem Design-Bauplan erstellen und zusammenstellen; umfasst Pilottests
+
+Implementation:: Die Schulung durchführen — Trainer schulen, Lernende vorbereiten und das Programm in der vorgesehenen Umgebung ausführen
+
+Evaluation:: Die Wirksamkeit sowohl formativ (laufend, in jeder Phase) als auch summativ (Endergebnis) bewerten; häufig mit Kirkpatricks vier Ebenen kombiniert
+
+Iterativ, nicht streng wasserfallartig:: Ursprünglich sequenziell, wird modernes ADDIE als zyklischer, dynamischer Prozess dargestellt, bei dem die Evaluation in jede Phase zurückwirkt
+
+Schlüsselvertreter:: Florida State University, Center for Educational Technology (~1975, für die US Army, später alle US-Streitkräfte über das IPISD-Framework); Robert Maribe Branch ("Instructional Design: The ADDIE Approach", Springer, 2009) — eine maßgebliche moderne Kodifizierung. ADDIE ist eher eine generische Bezeichnung für den ISD-Prozess als ein Modell eines einzelnen Autors.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Strukturierte Schulungen, Kurse oder Lernmaterialien von Grund auf entwerfen
+* Dokumentation oder Onboarding-Programme erstellen, die messbare Lernergebnisse erfordern
+* Coaching- oder Beratungsmandate, die organisatorische Fähigkeiten aufbauen
+* Eine gemeinsame Terminologie für ein Instructional-Design- oder E-Learning-Team etablieren
+* Ein LLM anleiten, ein Curriculum oder einen Trainingsplan entlang definierter Phasen zu strukturieren
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<blooms-taxonomy,Bloom's Taxonomy>> — rahmt die in der Design-Phase gesetzten Lernziele
+* <<4mat,4MAT>> — ein Lernzyklus-Modell, das ADDIEs Struktur ergänzt
+* <<feynman-technique,Feynman Technique>> — eine Lernmethode, die innerhalb von Development einsetzbar ist
+* <<double-diamond,Double Diamond>> — ein vergleichbares Diverge/Converge-Prozessmodell aus dem Design
+
+[discrete]
+== *Kritik*:
+
+* Roundtable Learning, https://roundtablelearning.com/what-is-the-addie-model-less-than-100-words/["What is the ADDIE Model? Strengths & Weaknesses"] — kritisiert ADDIE für seine lineare Natur, den übermäßig detaillierten Ansatz und den Zeitaufwand für Erstellung und Umsetzung; Mängel zeigen sich erst in späten Phasen
+* Michael Allen / Allen Interactions, https://elearningindustry.com/sam-successive-approximation-model-for-rapid-instructional-design["SAM: A Rapid Design And Development Model"] (eLearning Industry) — nennt ADDIE "rigid and too linear", "slow to evaluate" und belastet durch die "waterfall nature of execution"; schlägt SAM (Successive Approximation Model) vor, eine schnelle, iterative, agile Alternative, die Lernenden stets etwas Nutzbares vorlegt
+* Der breitere Diskurs verbindet dies mit Agile / Rapid-Prototyping Instructional Design als moderne Antwort auf ADDIEs vorgelagerte Sequenzierung
+
+[discrete]
+== *Aktueller Status*:
+
+* Weiterhin das am häufigsten gelehrte ISD-Framework, aber zunehmend iterativ statt streng wasserfallartig dargestellt; Branchs Kodifizierung von 2009 (https://link.springer.com/book/10.1007/978-0-387-09506-6[Springer]) ist die gängige moderne Referenz
+* SAM und Agile ID sind die wichtigsten zeitgenössischen Alternativen für schnelllebige, multimediale und Online-Learning-Projekte (https://en.wikipedia.org/wiki/ADDIE_model[ADDIE model, Wikipedia])
+====
