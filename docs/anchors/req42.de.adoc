@@ -4,6 +4,7 @@
 :related: arc42, ears-requirements, cockburn-use-cases, docs-as-code
 :proponents: Peter Hruschka, Markus Meuten
 :tags: requirements, framework, agile, docs-as-code, arc42
+:tier: 3
 
 [%collapsible]
 ====
