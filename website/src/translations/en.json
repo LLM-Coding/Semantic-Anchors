@@ -112,6 +112,7 @@
   "card.edit": "Edit on GitHub",
   "card.copyKeyword": "Copy keyword to clipboard",
   "card.keywordCopied": "Keyword copied!",
+  "card.advisory": "Advisory",
   "card.copyLink": "Copy link to this anchor",
   "card.linkCopied": "Link copied!",
   "card.roles": "role",

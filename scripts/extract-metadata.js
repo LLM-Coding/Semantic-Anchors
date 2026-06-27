@@ -89,6 +89,12 @@ function parseAnchorFile(filePath) {
   const tierAttr = attributes.tier
   if (tierAttr) anchor.tier = parseInt(tierAttr, 10)
 
+  // Optional advisory: a short caution label for anchors whose activated framing
+  // conflicts with their field's own consensus (#624). The detail/source lives in
+  // the anchor's Criticism / Current Status section (SSOT); this is only the flag.
+  const advisoryAttr = attributes.advisory
+  if (advisoryAttr) anchor.advisory = decodeHtmlEntities(advisoryAttr.trim())
+
   // Validation
   const errors = []
   const warnings = []

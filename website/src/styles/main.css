@@ -252,6 +252,20 @@ html {
   @apply italic;
 }
 
+/* Advisory flag (#624): counter-consensus-framing caution. Amber palette chosen
+   for AA contrast in both themes; detail/source live in the Criticism section. */
+.anchor-advisory-badge {
+  @apply inline-flex items-start gap-1 mb-2 px-2 py-1 rounded text-xs font-medium;
+  @apply bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-200;
+  @apply border border-amber-300 dark:border-amber-800;
+}
+
+.anchor-advisory-banner {
+  @apply flex items-start gap-2 mb-4 px-4 py-3 rounded-lg text-sm font-medium;
+  @apply bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-200;
+  @apply border border-amber-300 dark:border-amber-800;
+}
+
 .anchor-card-meta {
   @apply flex flex-wrap items-center gap-2 text-xs;
   @apply text-gray-500 dark:text-gray-400;

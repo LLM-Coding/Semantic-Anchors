@@ -232,6 +232,14 @@ function renderAnchorCard(anchor, categoryColor, categoryId) {
       </div>
 
       ${
+        anchor.advisory
+          ? `
+        <div class="anchor-advisory-badge" role="note" aria-label="${escapeHtml(i18n.t('card.advisory'))}: ${escapeHtml(anchor.advisory)}"><span aria-hidden="true">⚠</span> ${escapeHtml(anchor.advisory)}</div>
+      `
+          : ''
+      }
+
+      ${
         anchor.proponents && anchor.proponents.length > 0
           ? `
         <p class="anchor-card-proponents">${escapeHtml(anchor.proponents.slice(0, 2).join(', '))}</p>

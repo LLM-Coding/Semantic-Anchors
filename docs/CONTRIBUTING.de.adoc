@@ -174,6 +174,7 @@ Jeder Anker wird als AsciiDoc-Datei mit Metadaten-Attributen gespeichert:
 * `:proponents:` - Schlüsselpersonen, Publikationen oder Standards
 * `:tags:` - Schlüsselwörter für die Suche (optional, aber empfohlen)
 * `:related:` - Verwandte Anker-IDs (optional)
+* `:advisory:` - Kurzes Hinweis-Label (optional). Nur für *Counter-Consensus-Framing*: Der Anker aktiviert zuverlässig, aber sein Framing widerspricht dem dokumentierten Konsens seines eigenen Fachgebiets. Wird als sichtbares Badge in Karte/Modal gerendert; Detail und zitierte Quelle bleiben im `== Criticism` / `== Current Status`-Abschnitt (Single Source of Truth). Siehe `eisenhower-matrix.adoc`.
 
 == Gegenbeispiele
 

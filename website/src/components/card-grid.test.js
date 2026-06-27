@@ -61,6 +61,38 @@ describe('umbrella anchors', () => {
   })
 })
 
+describe('advisory badge', () => {
+  const categories = [{ id: 'strategic-planning', name: 'Strategy' }]
+  const make = (advisory) => [
+    {
+      id: 'eisenhower-matrix',
+      title: 'Eisenhower Matrix',
+      categories: ['strategic-planning'],
+      roles: ['team-lead'],
+      tags: [],
+      proponents: [],
+      ...(advisory ? { advisory } : {}),
+    },
+  ]
+
+  it('renders an advisory badge with the label when anchor.advisory is set', () => {
+    const html = renderCardGrid(categories, make('Use with caution: primes urgency'))
+    expect(html).toContain('anchor-advisory-badge')
+    expect(html).toContain('Use with caution: primes urgency')
+  })
+
+  it('does not render an advisory badge when anchor.advisory is absent', () => {
+    const html = renderCardGrid(categories, make(null))
+    expect(html).not.toContain('anchor-advisory-badge')
+  })
+
+  it('escapes the advisory label', () => {
+    const html = renderCardGrid(categories, make('<script>x</script>'))
+    expect(html).not.toContain('<script>x</script>')
+    expect(html).toContain('&lt;script&gt;')
+  })
+})
+
 describe('category quick-nav', () => {
   const categories = [
     { id: 'testing-quality', name: 'Testing' },

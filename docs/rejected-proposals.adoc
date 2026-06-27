@@ -15,6 +15,9 @@ A legitimate concept or framework that is *recognized* (models can talk about it
 Too niche::
 A real methodology but too specialized for reliable activation across different LLMs and contexts. Fails the link:#/about[Consistent] and/or link:#/about[Rich] criteria.
 
+Counter-consensus framing::
+The term reliably activates coherent knowledge (it passes all four criteria), but the activated framing contradicts the documented consensus of the framework's *own source field* — admitting it would prime an LLM toward an approach its own canonical literature marks as misleading or superseded. This category requires *citing that consensus source*; it must not rest on a contributor's personal disagreement. Where the term is still worth keeping, the alternative to outright rejection is to admit it with an `:advisory:` flag (a visible caution in the card/modal, detail in the anchor's Criticism / Current Status section) — see the Eisenhower Matrix.
+
 == Rejected Proposals
 
 [cols="2,2,3", options="header"]

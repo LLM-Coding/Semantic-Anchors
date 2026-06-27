@@ -269,6 +269,21 @@ export async function loadAnchorContent(anchorId) {
     const allAnchors = await fetchAnchorsData()
     const currentAnchor = allAnchors.find((a) => a.id === anchorId)
 
+    // Advisory banner (#624): a counter-consensus-framing caution. The detail and
+    // source live in the anchor's Criticism / Current Status section below (SSOT);
+    // this banner is only the flag and points the reader there. Built via DOM APIs
+    // with textContent (not innerHTML) so the label can never be an HTML sink.
+    if (currentAnchor?.advisory) {
+      const banner = document.createElement('div')
+      banner.className = 'anchor-advisory-banner'
+      banner.setAttribute('role', 'note')
+      const icon = document.createElement('span')
+      icon.setAttribute('aria-hidden', 'true')
+      icon.textContent = '⚠'
+      banner.append(icon, ` ${currentAnchor.advisory}`)
+      contentEl.insertBefore(banner, contentEl.firstChild)
+    }
+
     if (currentAnchor?.subAnchors) {
       // Safe: renderSubAnchorList uses escapeHtml for all dynamic values
       contentEl.innerHTML += renderSubAnchorList(currentAnchor.subAnchors, allAnchors)
