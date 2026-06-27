@@ -93,6 +93,34 @@ describe('advisory badge', () => {
   })
 })
 
+describe('new badge', () => {
+  const categories = [{ id: 'strategic-planning', name: 'Strategy' }]
+  const make = (addedAt) => [
+    {
+      id: 'eisenhower-matrix',
+      title: 'Eisenhower Matrix',
+      categories: ['strategic-planning'],
+      roles: ['team-lead'],
+      tags: [],
+      proponents: [],
+      ...(addedAt ? { addedAt } : {}),
+    },
+  ]
+  const daysAgo = (n) => new Date(Date.now() - n * 24 * 60 * 60 * 1000).toISOString()
+
+  it('renders a new badge for anchors added within 30 days', () => {
+    expect(renderCardGrid(categories, make(daysAgo(5)))).toContain('anchor-new-badge')
+  })
+
+  it('does not render a new badge for anchors older than 30 days', () => {
+    expect(renderCardGrid(categories, make(daysAgo(45)))).not.toContain('anchor-new-badge')
+  })
+
+  it('does not render a new badge when addedAt is absent', () => {
+    expect(renderCardGrid(categories, make(null))).not.toContain('anchor-new-badge')
+  })
+})
+
 describe('category quick-nav', () => {
   const categories = [
     { id: 'testing-quality', name: 'Testing' },

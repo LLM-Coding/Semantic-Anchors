@@ -10,12 +10,54 @@
 
 const fs = require('fs')
 const path = require('path')
+const { execFileSync } = require('child_process')
 const asciidoctor = require('@asciidoctor/core')()
 const { getAnchorDefinition } = require('./lib/anchor-definition')
 
 // Paths
+const REPO_ROOT = path.join(__dirname, '..')
 const ANCHORS_DIR = path.join(__dirname, '..', 'docs', 'anchors')
 const OUTPUT_DIR = path.join(__dirname, '..', 'website', 'public', 'data')
+
+/**
+ * Map each anchor id to the ISO date its .adoc was first added to git (#652),
+ * so the website can flag recently-added anchors. One `git log` call over the
+ * anchors dir, oldest-first, recording the first add event per file. Returns an
+ * empty map when git history is unavailable (no repo, or a shallow CI checkout)
+ * — callers then simply omit `addedAt` and render no "new" badge.
+ */
+function buildAddedAtMap() {
+  const map = {}
+  let out
+  try {
+    out = execFileSync(
+      'git',
+      [
+        'log',
+        '--diff-filter=A',
+        '--reverse',
+        '--format=%x00%aI',
+        '--name-only',
+        '--',
+        'docs/anchors',
+      ],
+      { cwd: REPO_ROOT, encoding: 'utf-8', maxBuffer: 32 * 1024 * 1024 }
+    )
+  } catch {
+    return map // not a git repo, git missing, etc.
+  }
+  let currentDate = null
+  for (const line of out.split('\n')) {
+    if (line.startsWith('\0')) {
+      currentDate = line.slice(1).trim()
+    } else if (line.startsWith('docs/anchors/') && line.endsWith('.adoc')) {
+      const base = path.basename(line, '.adoc')
+      if (base.match(/\.\w{2}$/)) continue // skip language variants (e.g. x.de)
+      if (!map[base] && currentDate) map[base] = currentDate // first (oldest) add wins
+    }
+  }
+  return map
+}
 
 // Ensure output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {
@@ -263,6 +305,9 @@ function main() {
 
   console.log(`📂 Found ${files.length} anchor files\n`)
 
+  // First-added dates from git, for the "recently added" badge (#652).
+  const addedAt = buildAddedAtMap()
+
   // Parse all files
   const anchors = []
   const errors = []
@@ -277,6 +322,7 @@ function main() {
         errors.push({ file, issues: result.errors })
         console.log(`   ✗ ${file}: ${result.errors.join(', ')}`)
       } else {
+        if (addedAt[result.anchor.id]) result.anchor.addedAt = addedAt[result.anchor.id]
         anchors.push(result.anchor)
         if (result.warnings) {
           warnings.push({ file, issues: result.warnings })
