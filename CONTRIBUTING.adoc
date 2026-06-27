@@ -10,6 +10,31 @@ Semantic anchors are well-defined terms, methodologies, and frameworks that serv
 
 *Example:* When you mention "TDD, London School" to an LLM, it activates knowledge about mock-heavy testing, outside-in development, and the work of Steve Freeman and Nat Pryce - much richer than simply saying "use mocks in testing."
 
+== Artifact Types: Anchor, Contract, Skill
+
+The catalog ships three artifact types. Knowing which one you are proposing decides where your contribution belongs. The full rationale lives in link:docs/specs/adrs/adr-007-artifact-taxonomy.adoc[ADR-007]; the working definitions are here.
+
+[cols="1,2,2,1", options="header"]
+|===
+| Type | Function | Linguistic shape | Loading
+
+| *Anchor* | "What do I know?" — focuses pre-existing knowledge | Noun / named concept ("Cockburn Use Cases") | Passive (activation signal)
+| *Contract* | "What may I do?" — pins which anchors apply + invariants | Declarative ("follows / NEVER / MUST") | Always-on
+| *Skill* | "How do I do it?" — supplies procedure | Verb / imperative ("Create / Verify / Write") | On-demand
+|===
+
+* *Anchor* — a named activation signal for a knowledge cluster that is *already dense* in an LLM's training data. It focuses; it does not teach. Must pass the four Quality Criteria below.
+* *Contract* — terse, always-on shared vocabulary (in `CLAUDE.md` / `AGENTS.md`) that pins which anchors apply and states invariants. The moment it describes *how* to do something step by step, that part belongs in a Skill.
+* *Skill* — on-demand procedural machinery (`references/`, prompts, a workflow) for a *how* the model cannot execute from a name alone.
+
+*Discrimination test:*
+
+. Knowledge already dense in the LLM, only needs focusing → *Anchor*
+. Need to pin which anchors apply and what is allowed/forbidden → *Contract*
+. Need to describe *how* something is concretely done → *Skill*
+
+*The thin-prior rule.* If a name is *not* dense in the training data, it is *not an anchor* — naming it does not reliably change the output structure compared to a generic prompt. What repairs it depends on what is missing: a missing *meaning/framing* → a *Contract* (it supplies its own meaning; a URL never repairs a prior); a missing *procedure* → a *Skill*. A thin name is never forced to be an anchor.
+
 == Quality Criteria
 
 Before proposing a new semantic anchor, ensure it meets these four criteria:

@@ -10,6 +10,31 @@ Semantic Anchors (semantische Anker) sind klar definierte Begriffe, Methodologie
 
 *Beispiel:* Wenn Sie einem LLM "TDD, London School" erwähnen, aktiviert es Wissen über Mock-intensive Tests, Outside-in-Entwicklung und die Arbeit von Steve Freeman und Nat Pryce - viel reichhaltiger als einfach zu sagen "verwende Mocks beim Testen."
 
+== Artefakttypen: Anchor, Contract, Skill
+
+Der Katalog kennt drei Artefakttypen. Welchen Sie vorschlagen, entscheidet, wohin Ihr Beitrag gehört. Die vollständige Begründung steht in link:specs/adrs/adr-007-artifact-taxonomy.adoc[ADR-007]; die Arbeitsdefinitionen stehen hier.
+
+[cols="1,2,2,1", options="header"]
+|===
+| Typ | Funktion | Sprachform | Laden
+
+| *Anchor* | „Was weiß ich?" — fokussiert vorhandenes Wissen | Nomen / benanntes Konzept („Cockburn Use Cases") | Passiv (Aktivierungssignal)
+| *Contract* | „Was darf ich?" — pinnt anwendbare Anchors + Invarianten | Deklarativ („folgt / NIE / MUSS") | Always-on
+| *Skill* | „Wie tue ich es?" — liefert Prozedur | Verb / Imperativ („Erstellen / Verifizieren / Schreiben") | On-demand
+|===
+
+* *Anchor* — ein benanntes Aktivierungssignal für einen Wissenscluster, der in den Trainingsdaten eines LLMs *bereits dicht* vorhanden ist. Er fokussiert; er lehrt nicht. Muss die vier Qualitätskriterien unten bestehen.
+* *Contract* — knappes, always-on geltendes gemeinsames Vokabular (in `CLAUDE.md` / `AGENTS.md`), das pinnt, welche Anchors gelten, und Invarianten festlegt. Sobald er beschreibt, *wie* etwas Schritt für Schritt zu tun ist, gehört dieser Teil in einen Skill.
+* *Skill* — on-demand geladene prozedurale Maschinerie (`references/`, Prompts, ein Workflow) für ein *Wie*, das das Modell nicht allein aus einem Namen ausführen kann.
+
+*Unterscheidungstest:*
+
+. Wissen schon dicht im LLM, braucht nur Fokus → *Anchor*
+. Pinnen nötig, welche Anchors gelten und was erlaubt/verboten ist → *Contract*
+. Beschreiben nötig, *wie* etwas konkret getan wird → *Skill*
+
+*Die Thin-Prior-Regel.* Ist ein Name in den Trainingsdaten *nicht* dicht, ist er *kein Anchor* — ihn zu benennen verändert die Ausgabestruktur nicht zuverlässig gegenüber einem generischen Prompt. Was ihn repariert, hängt davon ab, was fehlt: fehlt die *Bedeutung/Rahmung* → ein *Contract* (er liefert seine eigene Bedeutung; eine URL repariert keinen Prior); fehlt die *Prozedur* → ein *Skill*. Ein dünner Name wird nie zum Anchor gezwungen.
+
 == Qualitätskriterien
 
 Bevor Sie einen neuen semantischen Anker vorschlagen, stellen Sie sicher, dass er diese vier Kriterien erfüllt:
