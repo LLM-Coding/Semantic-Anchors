@@ -88,6 +88,16 @@ Bewerten Sie die Antwort:
 * *Tiefe:* Deckt es mehrere verwandte Konzepte ab?
 * *Spezifität:* Ist der Umfang gut definiert?
 
+== Viability-Test (Liefert der Anker?)
+
+Erkennung ist nicht Aktivierung. Ein Modell kann flüssig *über* einen Begriff reden, während sein Benennen an der Ausgabe nichts ändert — oder schlimmer: still ein älteres Konzept substituiert oder ein plausibel klingendes, aber erfundenes konfabuliert. Der link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice]-Artikel dokumentiert diese Failure-Modes über Modellfamilien hinweg. Der Aktivierungstest oben fängt die Erkennung; der Viability-Test unten fängt die Lieferung.
+
+. *Before/After-Test.* Dem Modell eine Aufgabe *ohne* den Anker-Term geben, dann dieselbe Aufgabe *mit* ihm. Ändert sich die Ausgabestruktur? Wenn nicht, ist der Term dekorativ, nicht funktional.
+. *Substitutions-Check.* "Was ist [Term]?" auf einem schwächeren Modell (Haiku-Klasse) fragen. Hedgt es, substituiert still oder konfabuliert es, ist der Prior zu dünn für einen Anchor — er gehört in einen *Contract* (der seine eigene Bedeutung mitliefert), gemäß der Thin-Prior-Regel unter _Artefakttypen_.
+. *Cross-Model-Check.* Hält der Before/After-Unterschied auf mindestens einem schwachen *und* einem starken Modell? Wenn nur auf Frontier-Modellen, als ★★ (needs qualification) notieren.
+
+Ein Term, der die vier Qualitätskriterien besteht, aber den Viability-Test nicht, ist ein *Contract*, kein Anchor.
+
 == Wie man einen neuen Anker vorschlägt
 
 Wir verwenden einen *automatisierten Workflow mit GitHub Copilot* zur Validierung und Anreicherung von Vorschlägen:

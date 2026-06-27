@@ -90,6 +90,16 @@ Evaluate the response:
 * *Depth:* Does it cover multiple related concepts?
 * *Specificity:* Is the scope well-defined?
 
+== Viability Test (Does the anchor deliver?)
+
+Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice] article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
+
+. *Before/After test.* Give a model a task *without* the anchor term, then the same task *with* it. Does the output structure change? If not, the term is decorative, not functional.
+. *Substitution check.* Ask "What is [term]?" on a weaker model (Haiku-class). If it hedges, silently substitutes, or confabulates, the prior is too thin for an anchor — it belongs in a *Contract* (which supplies its own meaning), per the thin-prior rule in _Artifact Types_ above.
+. *Cross-model check.* Does the before/after difference hold on at least one weak *and* one strong model? If it only fires on frontier models, note it as ★★ (needs qualification).
+
+A term that passes the four Quality Criteria but fails the viability test is a *Contract*, not an Anchor.
+
 == Developer Setup
 
 === Prerequisites

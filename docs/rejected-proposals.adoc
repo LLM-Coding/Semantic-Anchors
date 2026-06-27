@@ -9,8 +9,8 @@ Understanding why proposals are rejected helps contributors submit better propos
 Structurally unsuitable::
 The term is too vague, has no defined methodology, or is a pure instruction rather than a concept. Fails the link:#/about[Precise] and/or link:#/about[Rich] criteria.
 
-Not in training data::
-A legitimate concept or framework, but not established enough in LLM training data to reliably activate the right knowledge. Fails the link:#/about[Consistent] criterion.
+Insufficient training-data density::
+A legitimate concept or framework that is *recognized* (models can talk about it) but does not reliably *activate* in outputs: naming it does not structurally change the result compared to a generic prompt, or it triggers silent substitution / confabulation on weaker models. Fails the link:#/about[Consistent] criterion. Terms here may become viable anchors as training data grows — until then, a link:#/contracts[Semantic Contract] (which supplies its own meaning) is the right home. (Formerly "Not in training data".)
 
 Too niche::
 A real methodology but too specialized for reliable activation across different LLMs and contexts. Fails the link:#/about[Consistent] and/or link:#/about[Rich] criteria.
@@ -42,7 +42,7 @@ A real methodology but too specialized for reliable activation across different 
 *Now available as link:#/contracts[Semantic Contract]*: "Layer Boundaries".
 
 | *MIRRR UX Framework* (https://github.com/LLM-Coding/Semantic-Anchors/issues/150[#150])
-| Not in training data
+| Insufficient training-data density
 | A real UX framework with defined methodology, but not widely enough documented for LLMs to reliably recognize it and activate the correct concepts.
 
 | *YOLO* (https://github.com/LLM-Coding/Semantic-Anchors/issues/443[#443])
