@@ -4,6 +4,11 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-27
 
+*Viability test for anchor proposals — recognition ≠ activation (#640):*
+
+* Contribution guidance now tests not just whether a model *recognizes* a term but whether naming it *changes the output*. A new "Viability Test" section in `CONTRIBUTING.adoc` / `CONTRIBUTING.de.adoc` adds a before/after test, a substitution check (silent substitution / confabulation on weaker models), and a cross-model check; `propose-anchor.yml` gains an optional viability-test field. A term that passes the four quality criteria but fails viability belongs in a *Contract*, not an anchor — the destination the taxonomy (#585) defines. Proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/640[#640].
+* The "Not in training data" rejection category was sharpened and renamed *Insufficient training-data density*, distinguishing recognition from activation and pointing thin-prior terms at a Semantic Contract.
+
 *Artifact taxonomy formalised — Anchor vs. Contract vs. Skill (#585):*
 
 * The three artifact types the catalog ships now have an explicit, written definition instead of an implicitly-reconstructed one. New `ADR-007` (Nygard + Pugh, +63 vs. keeping it implicit) defines each type by function, linguistic shape and loading behaviour, plus a discrimination test; the working definitions are mirrored into `CONTRIBUTING.adoc` and `CONTRIBUTING.de.adoc` so contributors meet them where they look. ADR drafted by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/585[#585].
