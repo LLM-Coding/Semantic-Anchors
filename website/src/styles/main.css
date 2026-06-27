@@ -266,6 +266,20 @@ html {
   @apply border border-amber-300 dark:border-amber-800;
 }
 
+/* Direct-answer block (#580): a standalone "What is X?" definition for crawlers
+   and as the modal lead-in. .anchor-answer wraps the crawlable fragment block;
+   .anchor-answer-lead is the curated lead paragraph in the modal. */
+.anchor-answer,
+.anchor-answer-lead {
+  @apply mb-4 px-4 py-3 rounded-lg text-base leading-relaxed;
+  @apply bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100;
+  @apply border-l-4 border-blue-400 dark:border-blue-500;
+}
+
+.anchor-answer p {
+  @apply m-0;
+}
+
 .anchor-card-meta {
   @apply flex flex-wrap items-center gap-2 text-xs;
   @apply text-gray-500 dark:text-gray-400;

@@ -34,6 +34,8 @@
   "hero.title": "Nichts installieren. Nichts laden. Einfach tippen.",
   "hero.intro": "Semantic Anchors sind Wörter — etablierte Begriffe wie Clean Architecture, Cockburn Use Cases oder MECE — die in jedem modernen LLM ein präzises Konzept aktivieren.",
   "hero.introEmphasis": "Du installierst sie nicht. Du importierst sie nicht. Du tippst sie.",
+  "home.answer.heading": "Was sind Semantic Anchors?",
+  "home.answer.body": "Semantic Anchors ist ein kuratierter Katalog klar definierter Begriffe — Methoden, Frameworks und Prinzipien wie MECE, arc42 und BLUF — die als gemeinsames Vokabular für die Kommunikation mit Large Language Models dienen. Das Benennen eines Anchors aktiviert einen dichten, vorberechneten Wissenscluster im Modell, sodass ein einzelnes Wort die Ausgabe präzise steuert statt eines langen Prompts.",
   "hero.withoutLabel": "Ohne Anker",
   "hero.withAnchorLabel": "Mit Anker",
   "hero.example.1.without": "Bitte refaktoriere diesen Code unter Berücksichtigung der Dependency Rule, mit Entitäten im Kern, Frameworks am Rand, Use Cases dazwischen, I/O getrennt von Fachlogik, Datenbank über Interfaces isoliert, sodass die inneren Schichten nichts von den äußeren wissen, und jeder Framework-Aufruf über einen Adapter läuft, damit der Kern Framework-unabhängig und isoliert testbar bleibt…",

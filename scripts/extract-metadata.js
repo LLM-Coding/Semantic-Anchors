@@ -11,6 +11,7 @@
 const fs = require('fs')
 const path = require('path')
 const asciidoctor = require('@asciidoctor/core')()
+const { getAnchorDefinition } = require('./lib/anchor-definition')
 
 // Paths
 const ANCHORS_DIR = path.join(__dirname, '..', 'docs', 'anchors')
@@ -94,6 +95,13 @@ function parseAnchorFile(filePath) {
   // the anchor's Criticism / Current Status section (SSOT); this is only the flag.
   const advisoryAttr = attributes.advisory
   if (advisoryAttr) anchor.advisory = decodeHtmlEntities(advisoryAttr.trim())
+
+  // Curated direct-answer definition (#580): a standalone "What is X?" sentence.
+  // Use the shared resolver so the cleaning/validation matches the crawlable
+  // answer block and the JSON-LD exactly — but keep only the *curated* value, so
+  // the modal lead never duplicates the Core-Concept text it renders below.
+  const def = getAnchorDefinition(anchor.filePath)
+  if (def && def.source === 'curated') anchor.definition = decodeHtmlEntities(def.text)
 
   // Validation
   const errors = []

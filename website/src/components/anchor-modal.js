@@ -269,6 +269,21 @@ export async function loadAnchorContent(anchorId) {
     const allAnchors = await fetchAnchorsData()
     const currentAnchor = allAnchors.find((a) => a.id === anchorId)
 
+    // Both blocks are prepended with insertBefore(firstChild), so the one
+    // inserted LAST ends up on top. Insert the definition first and the advisory
+    // second, so the final order is: advisory caution, then definition, then
+    // content — a caution is never demoted below the definition (#624 + #580).
+
+    // Direct-answer lead (#580): a curated standalone definition, shown above the
+    // content as the "What is X?" answer. Only curated definitions land here, so it
+    // never duplicates the Core-Concept text rendered below. textContent, no sink.
+    if (currentAnchor?.definition) {
+      const lead = document.createElement('p')
+      lead.className = 'anchor-answer-lead'
+      lead.textContent = currentAnchor.definition
+      contentEl.insertBefore(lead, contentEl.firstChild)
+    }
+
     // Advisory banner (#624): a counter-consensus-framing caution. The detail and
     // source live in the anchor's Criticism / Current Status section below (SSOT);
     // this banner is only the flag and points the reader there. Built via DOM APIs

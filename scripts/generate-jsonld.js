@@ -37,49 +37,10 @@ const SET_ID = `${BASE}/#catalog`
 // reference. Both represent the whole set; other routes do not.
 const TARGETS = [path.join(DIST, 'index.html'), path.join(DIST, 'all-anchors', 'index.html')]
 
-/**
- * Pull a short definition for an anchor from the first "Core Concepts" entry in
- * its .adoc. Returns a cleaned, length-capped string, or null when nothing
- * usable is found (safe to omit — DefinedTerm.description is optional).
- */
-function extractDescription(filePath) {
-  const abs = path.join(ROOT, filePath)
-  if (!fs.existsSync(abs)) return null
-  const lines = fs.readFileSync(abs, 'utf-8').split('\n')
-
-  const ccIndex = lines.findIndex((l) => /Core Concepts/i.test(l))
-  if (ccIndex === -1) return null
-
-  // First definition-list description after the Core Concepts heading:
-  //   Term:: definition text
-  for (let i = ccIndex + 1; i < lines.length && i < ccIndex + 12; i++) {
-    const m = lines[i].match(/^.+?::\s+(.+)$/)
-    if (m) {
-      const cleaned = cleanAdoc(m[1])
-      return cleaned.length >= 20 ? capLength(cleaned, 220) : null
-    }
-  }
-  return null
-}
-
-/** Strip the AsciiDoc inline markup that would be noise in a description. */
-function cleanAdoc(s) {
-  return s
-    .replace(/link:[^[]*\[([^\]]*)\]/g, '$1') // link:url[text] -> text
-    .replace(/<<[^,>]+,\s*([^>]+)>>/g, '$1') // <<id,text>> -> text
-    .replace(/<<([^>]+)>>/g, '$1') // <<id>> -> id
-    .replace(/[*_`]/g, '') // bold/italic/mono markers
-    .replace(/\s+/g, ' ')
-    .trim()
-}
-
-/** Cap at a word boundary, appending an ellipsis when truncated. */
-function capLength(s, max) {
-  if (s.length <= max) return s
-  const cut = s.slice(0, max)
-  const lastSpace = cut.lastIndexOf(' ')
-  return `${cut.slice(0, lastSpace > 40 ? lastSpace : max).trim()}…`
-}
+// Anchor definitions (curated `:definition:` preferred, else derived from the
+// first "Core Concepts" entry) come from the shared resolver so the JSON-LD
+// DefinedTerm description matches the rendered answer block (#580).
+const { getAnchorDefinition, extractDescription } = require('./lib/anchor-definition')
 
 /** Build the DefinedTermSet object from anchors.json. */
 function buildDefinedTermSet() {
@@ -98,8 +59,8 @@ function buildDefinedTermSet() {
         url,
         inDefinedTermSet: SET_ID,
       }
-      const description = a.filePath ? extractDescription(a.filePath) : null
-      if (description) term.description = description
+      const def = a.filePath ? getAnchorDefinition(a.filePath) : null
+      if (def) term.description = def.text
       return term
     })
 

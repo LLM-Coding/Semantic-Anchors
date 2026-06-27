@@ -6,6 +6,7 @@
 :tags: design-principles, oop, solid, uncle-bob
 :tier: 3
 :sub-anchors: solid-srp, solid-ocp, solid-lsp, solid-isp, solid-dip
+:definition: SOLID is a set of five object-oriented design principles popularised by Robert C. Martin: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. Together they steer code toward loose coupling and high cohesion, reducing rigidity and fragility as a system grows.
 
 [%collapsible]
 ====
