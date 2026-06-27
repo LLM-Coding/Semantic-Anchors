@@ -5,6 +5,7 @@
 :proponents: Dwight D. Eisenhower, Stephen Covey
 :tags: prioritization, time-management, urgency, importance, productivity
 :tier: 2
+:advisory: Aktiviert ein Dringlichkeits-Framing, vor dem das eigene Fachgebiet warnt (siehe Kritik)
 
 [%collapsible]
 ====
@@ -47,4 +48,9 @@ Schlüsselvertreter:: Dwight D. Eisenhower (zugeschrieben) — popularisierte di
 * Allgemeine Kritik, dass ein 2x2-Raster Priorisierung übervereinfacht — es behandelt "Wichtigkeit" und "Dringlichkeit" als binär und unabhängig und ignoriert Abhängigkeiten, Aufwand/Kosten, Wertgröße und Zeit-Verfall, also Dimensionen, die reichere Methoden (z. B. gewichtete Bewertung, Cost of Delay) explizit machen.
 
 Der Kritik-Abschnitt gibt den Diskurs wieder; er entscheidet ihn nicht.
+
+[discrete]
+== *Aktueller Stand*:
+
+Aktiv genutzt und weit verbreitet gelehrt. Der Vorbehalt betrifft nicht Veraltung, sondern das Framing: Die Matrix aktiviert eine "nach Dringlichkeit × Wichtigkeit sortieren"-Logik, die ihr eigenes Fachgebiet als anfällig für den *Mere-Urgency-Effekt* dokumentiert (Zhu, Yang & Hsee 2018; siehe Kritik). Nutze sie, um Wichtigkeit *von* Dringlichkeit zu trennen — nicht als Freibrief, das bloß Dringliche zu tun. Deshalb trägt der Anchor ein `:advisory:`-Flag.
 ====

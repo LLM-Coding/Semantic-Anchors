@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-27
 
+*Counter-consensus framing — advisory flag + rejection category (#624):*
+
+* Some terms activate reliably yet prime a framing their own field cautions against (e.g. the Eisenhower Matrix and the "mere-urgency effect"). Two new handling paths: a hard rejection category *Counter-consensus framing* in `rejected-proposals.adoc` (which requires a cited consensus source from the framework's own field), and — for terms worth keeping — an optional `:advisory:` anchor attribute that renders as a visible amber badge on the card and a banner in the modal, with the detail and source staying in the anchor's Criticism / Current Status section (single source of truth). The Eisenhower Matrix is the seed: it gains an `:advisory:` flag and a `== Current Status` section. Proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/624[#624].
+
 *Viability test for anchor proposals — recognition ≠ activation (#640):*
 
 * Contribution guidance now tests not just whether a model *recognizes* a term but whether naming it *changes the output*. A new "Viability Test" section in `CONTRIBUTING.adoc` / `CONTRIBUTING.de.adoc` adds a before/after test, a substitution check (silent substitution / confabulation on weaker models), and a cross-model check; `propose-anchor.yml` gains an optional viability-test field. A term that passes the four quality criteria but fails viability belongs in a *Contract*, not an anchor — the destination the taxonomy (#585) defines. Proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/640[#640].

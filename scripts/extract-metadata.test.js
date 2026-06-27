@@ -29,6 +29,31 @@ describe('extract-metadata', () => {
     const strategy = anchors.find((a) => a.id === 'gof-strategy-pattern')
     expect(strategy).toBeDefined()
     expect(strategy.umbrella).toBe('gof-design-patterns')
-    expect(strategy.tier).toBe(1)
+    expect(strategy.tier).toBe(3)
+  })
+
+  it('should extract the optional :advisory: attribute', () => {
+    execFileSync('node', ['scripts/extract-metadata.js'], {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'pipe',
+    })
+
+    const anchors = JSON.parse(
+      fs.readFileSync(
+        path.join(__dirname, '..', 'website', 'public', 'data', 'anchors.json'),
+        'utf-8'
+      )
+    )
+
+    // Eisenhower Matrix carries an advisory (counter-consensus framing, #624).
+    const eisenhower = anchors.find((a) => a.id === 'eisenhower-matrix')
+    expect(eisenhower).toBeDefined()
+    expect(typeof eisenhower.advisory).toBe('string')
+    expect(eisenhower.advisory.length).toBeGreaterThan(0)
+
+    // Anchors without the attribute must not carry an empty advisory field.
+    const withoutAdvisory = anchors.find((a) => a.id === 'gof-design-patterns')
+    expect(withoutAdvisory).toBeDefined()
+    expect(withoutAdvisory.advisory).toBeUndefined()
   })
 })

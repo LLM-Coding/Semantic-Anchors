@@ -217,6 +217,7 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 * `:proponents:` - Key people, publications, or standards
 * `:tags:` - Keywords for search (optional but recommended)
 * `:related:` - Related anchor IDs (optional)
+* `:advisory:` - Short caution label (optional). Use only for *counter-consensus framing*: the anchor activates reliably but its framing conflicts with its own field's documented consensus. Renders as a visible badge in the card/modal; keep the detail and the cited source in the `== Criticism` / `== Current Status` section (single source of truth). See `eisenhower-matrix.adoc`.
 
 *Criticism and Current Status (research required, include when found):*
 

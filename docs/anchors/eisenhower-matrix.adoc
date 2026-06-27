@@ -5,6 +5,7 @@
 :proponents: Dwight D. Eisenhower, Stephen Covey
 :tags: prioritization, time-management, urgency, importance, productivity
 :tier: 2
+:advisory: Activates an urgency-first framing its own field cautions against (see Criticism)
 
 [%collapsible]
 ====
@@ -47,4 +48,9 @@ Key Proponents:: Dwight D. Eisenhower (attrib.) — popularized the urgent/impor
 * General critique that a 2x2 grid oversimplifies prioritization — it treats "importance" and "urgency" as binary and independent, ignoring dependencies, effort/cost, value magnitude, and time-decay, dimensions that richer methods (e.g. weighted scoring, cost-of-delay) make explicit.
 
 The Criticism section reports the discourse; it does not adjudicate it.
+
+[discrete]
+== *Current Status*:
+
+Actively used and widely taught. The point of caution is not obsolescence but framing: the matrix activates a "sort by urgency × importance" logic that its own field documents as vulnerable to the *mere-urgency effect* (Zhu, Yang & Hsee 2018; see Criticism). Use it to *separate* importance from urgency — not as licence to act on whatever is merely urgent. This is why the anchor carries an `:advisory:` flag.
 ====
