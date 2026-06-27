@@ -170,6 +170,15 @@ renderFile(
 )
 
 renderFile(
+  path.join(ROOT, 'docs/arc42-documentation-skill.adoc'),
+  path.join(WEB_DOCS, 'arc42-documentation-skill.html')
+)
+renderFile(
+  path.join(ROOT, 'docs/arc42-documentation-skill.de.adoc'),
+  path.join(WEB_DOCS, 'arc42-documentation-skill.de.html')
+)
+
+renderFile(
   path.join(ROOT, 'docs/harness-inventory.adoc'),
   path.join(WEB_DOCS, 'harness-inventory.html')
 )
