@@ -22,7 +22,9 @@ Options:
   --source PATH       Markdown file containing the semantic-anchor block to inject
   --target-dir DIR    Target project directory for project scope (default: .)
   --scope SCOPE       project or home (default: project)
-  --claude-hook       Install/update a Claude SessionStart hook that re-injects the block
+  --claude-hook       Install/update a Claude SessionStart hook that re-injects the block.
+                      Only for files Claude Code does NOT load natively; skipped for CLAUDE.md.
+                      Registered with matcher "startup" (not on resume).
   -h, --help          Show this help text
 USAGE
 }
@@ -223,13 +225,13 @@ install_claude_hook() {
   local hook_root hook_script settings_file hook_command relative_target
 
   if [ "$SCOPE" = "project" ]; then
-    hook_root="$TARGET_DIR/.claude/semantic-anchor-onboarding"
+    hook_root="$TARGET_DIR/.claude/semantic-contracts-installer"
     hook_script="$hook_root/session-start.sh"
     settings_file="$TARGET_DIR/.claude/settings.json"
     relative_target="$(relative_to_target "$target_file")"
-    hook_command="\"\$CLAUDE_PROJECT_DIR\"/.claude/semantic-anchor-onboarding/session-start.sh \"\$CLAUDE_PROJECT_DIR/$relative_target\""
+    hook_command="\"\$CLAUDE_PROJECT_DIR\"/.claude/semantic-contracts-installer/session-start.sh \"\$CLAUDE_PROJECT_DIR/$relative_target\""
   else
-    hook_root="$HOME/.claude/semantic-anchor-onboarding"
+    hook_root="$HOME/.claude/semantic-contracts-installer"
     hook_script="$hook_root/session-start.sh"
     settings_file="$HOME/.claude/settings.json"
     hook_command="\"$hook_script\" \"$target_file\""
@@ -269,7 +271,8 @@ for i, entry in enumerate(session_start):
     if not isinstance(entry, dict):
         continue
     for j, hook in enumerate(entry.get("hooks", [])):
-        if isinstance(hook, dict) and "semantic-anchor-onboarding" in hook.get("command", ""):
+        cmd = hook.get("command", "") if isinstance(hook, dict) else ""
+        if "semantic-contracts-installer" in cmd or "semantic-anchor-onboarding" in cmd:
             entry_idx, hook_idx = i, j
             break
     if entry_idx is not None:
@@ -280,7 +283,7 @@ if entry_idx is not None:
 else:
     session_start.append(
         {
-            "matcher": "startup|resume",
+            "matcher": "startup",
             "hooks": [new_hook],
         }
     )
@@ -303,11 +306,19 @@ build_injected_block
 TARGET_FILE="$(select_target_file)"
 inject_block "$TARGET_FILE"
 
+# #515: Claude Code loads CLAUDE.md natively at session start, so a SessionStart
+# hook that re-injects the same block would double-load it. Skip the hook for
+# CLAUDE.md targets; it only adds value for files Claude Code does not auto-load.
+if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ] && [ "$(basename "$TARGET_FILE")" = "CLAUDE.md" ]; then
+  echo "Skipping Claude SessionStart hook: $TARGET_FILE is loaded natively by Claude Code (the hook would double-load the block)." >&2
+  INSTALL_CLAUDE_HOOK=0
+fi
+
 if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ]; then
   install_claude_hook "$TARGET_FILE"
 fi
 
-echo "Semantic anchors installed into: $TARGET_FILE"
+echo "Semantic contracts installed into: $TARGET_FILE"
 if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ]; then
   echo "Claude SessionStart hook installed or updated."
 fi
