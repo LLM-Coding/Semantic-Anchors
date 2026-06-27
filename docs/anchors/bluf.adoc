@@ -3,6 +3,7 @@
 :roles: business-analyst, team-lead, technical-writer, consultant
 :proponents: US Military (Army writing standards), adopted broadly in business and government
 :tier: 3
+:definition: BLUF — Bottom Line Up Front — is a communication structure from US military practice: state the conclusion, decision, or key request in the very first sentence, then give the supporting detail. The reader gets the essential takeaway immediately instead of reading to the end to find it.
 
 [%collapsible]
 ====

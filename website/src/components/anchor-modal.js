@@ -284,6 +284,16 @@ export async function loadAnchorContent(anchorId) {
       contentEl.insertBefore(banner, contentEl.firstChild)
     }
 
+    // Direct-answer lead (#580): a curated standalone definition, shown above the
+    // content as the "What is X?" answer. Only curated definitions land here, so it
+    // never duplicates the Core-Concept text rendered below. textContent, no sink.
+    if (currentAnchor?.definition) {
+      const lead = document.createElement('p')
+      lead.className = 'anchor-answer-lead'
+      lead.textContent = currentAnchor.definition
+      contentEl.insertBefore(lead, contentEl.firstChild)
+    }
+
     if (currentAnchor?.subAnchors) {
       // Safe: renderSubAnchorList uses escapeHtml for all dynamic values
       contentEl.innerHTML += renderSubAnchorList(currentAnchor.subAnchors, allAnchors)

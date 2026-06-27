@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-27
 
+*Direct-answer blocks for AI/LLM citability (#580):*
+
+* A GEO audit found the site ranks #1-3 in traditional search yet gets *zero* citations from ChatGPT, Perplexity, Gemini and Copilot for "What is Semantic Anchors?". The fix: every anchor's pre-rendered page now carries a concise, standalone *direct-answer block* that AI crawlers (which mostly do not run JS) can quote verbatim, and the home page gains a crawlable "What is Semantic Anchors?" answer section (EN + DE). A shared resolver prefers a curated `:definition:` attribute and otherwise derives one from the first Core Concept, so the answer block, the modal lead-in, and the DefinedTerm JSON-LD description all agree. Curated definitions seeded for 11 high-value anchors (MECE, BLUF, arc42, Clean Architecture, TDD London School, Gherkin, SOLID, Cynefin, Socratic Method, Chain of Thought, DDD); the rest use the derived fallback until curated. Proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/580[#580].
+
 *Onboarding skill repositioned to a Semantic Contracts installer (#521, #515):*
 
 * The `semantic-anchor-onboarding` skill installed a list of anchors the model mostly already knows. It is renamed and repositioned as *`semantic-contracts-installer`*: its default mode now installs *Semantic Contracts* — the compositions and rendered templates the model cannot guess (e.g. "Specification" = Cockburn use cases + Gherkin + EARS) — reading a bundled `data/contracts.json` snapshot (refreshable via `scripts/refresh-contracts.sh`). The former anchor-block flow stays as an `--anchors-only` sub-mode. The old skill name remains for one release as a deprecation alias that forwards to the new one and idempotently overwrites blocks it previously installed (same markers). The plugin is bumped to v0.6.0.

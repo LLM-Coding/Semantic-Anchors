@@ -95,6 +95,14 @@ function parseAnchorFile(filePath) {
   const advisoryAttr = attributes.advisory
   if (advisoryAttr) anchor.advisory = decodeHtmlEntities(advisoryAttr.trim())
 
+  // Curated direct-answer definition (#580): a standalone "What is X?" sentence.
+  // Only the curated `:definition:` attribute lands in the data (and the modal
+  // lead-in); the crawlable answer block and JSON-LD fall back to a derived
+  // definition where this is absent, but the modal must not duplicate the
+  // Core-Concept text it already renders below.
+  const definitionAttr = attributes.definition
+  if (definitionAttr) anchor.definition = decodeHtmlEntities(definitionAttr.trim())
+
   // Validation
   const errors = []
   const warnings = []

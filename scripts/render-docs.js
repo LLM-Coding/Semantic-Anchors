@@ -20,9 +20,34 @@
 const fs = require('fs')
 const path = require('path')
 const Asciidoctor = require('@asciidoctor/core')
+const { getAnchorDefinition } = require('./lib/anchor-definition')
 
 const asciidoctor = Asciidoctor()
 const ROOT = path.join(__dirname, '..')
+
+/** Minimal HTML escape for text injected into rendered fragments. */
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+/**
+ * Build the crawlable "direct answer" block for an anchor (#580): a concise,
+ * standalone definition LLM/AI-overview crawlers can quote verbatim. Returns ''
+ * when no definition is available, so the fragment is unchanged.
+ */
+function answerBlockHtml(anchorFileRel) {
+  const def = getAnchorDefinition(anchorFileRel)
+  if (!def) return ''
+  return (
+    `<div class="anchor-answer" data-answer-block data-answer-source="${def.source}">` +
+    `<p>${escapeHtml(def.text)}</p>` +
+    `</div>\n`
+  )
+}
 
 const OPTS = {
   safe: 'safe',
@@ -88,13 +113,13 @@ function rewriteLegacyHashLinks(html) {
   return html.replace(/href="#\//g, 'href="/Semantic-Anchors/')
 }
 
-function renderFile(srcPath, destPath, quiet = false) {
+function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
     const html = String(asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false }))
     const { toc, body } = extractToc(rewriteLegacyHashLinks(html))
-    fs.writeFileSync(destPath, body, 'utf-8')
+    fs.writeFileSync(destPath, prependHtml + body, 'utf-8')
     if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
     const tocPath = destPath.replace(/\.html$/, '.toc.html')
     if (toc) {
@@ -212,7 +237,8 @@ for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
   renderFile(
     path.join(ANCHORS_SRC, file),
     path.join(ANCHORS_OUT, file.replace(/\.adoc$/, '.html')),
-    true
+    true,
+    answerBlockHtml(`docs/anchors/${file}`)
   )
   anchorFragments++
 }

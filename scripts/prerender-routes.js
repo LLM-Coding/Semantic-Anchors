@@ -584,12 +584,21 @@ function writeHomeVariant(shell, lang) {
   const title = tr['hero.title'] || ''
   const intro = tr['hero.intro'] || ''
   const emphasis = tr['hero.introEmphasis'] || ''
+  // Direct-answer block (#580): a crawlable, self-contained "What is Semantic
+  // Anchors?" definition AI-overview crawlers can quote verbatim — the exact
+  // query the GEO audit found the site absent for.
+  const answerHeading = tr['home.answer.heading'] || ''
+  const answerBody = tr['home.answer.body'] || ''
 
   const block = `
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <h1 class="text-3xl sm:text-4xl font-bold mb-3 leading-tight">${escapeHtml(title)}</h1>
         <p class="mb-2 max-w-3xl">${escapeHtml(intro)}</p>
         <p class="font-semibold max-w-3xl">${escapeHtml(emphasis)}</p>
+      </section>
+      <section class="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-2">${escapeHtml(answerHeading)}</h2>
+        <p class="anchor-answer max-w-3xl" data-answer-block>${escapeHtml(answerBody)}</p>
       </section>
       ${buildCatalogMarkup(lang, tr)}
     `
