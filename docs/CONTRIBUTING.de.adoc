@@ -20,7 +20,7 @@ Der Katalog kennt drei Artefakttypen. Welchen Sie vorschlagen, entscheidet, wohi
 
 | *Anchor* | „Was weiß ich?" — fokussiert vorhandenes Wissen | Nomen / benanntes Konzept („Cockburn Use Cases") | Passiv (Aktivierungssignal)
 | *Contract* | „Was darf ich?" — pinnt anwendbare Anchors + Invarianten | Deklarativ („folgt / NIE / MUSS") | Always-on
-| *Skill* | „Wie tue ich es?" — liefert Prozedur | Verb / Imperativ („Authoring / Erstellen") | On-demand
+| *Skill* | „Wie tue ich es?" — liefert Prozedur | Verb / Imperativ („Erstellen / Verifizieren / Schreiben") | On-demand
 |===
 
 * *Anchor* — ein benanntes Aktivierungssignal für einen Wissenscluster, der in den Trainingsdaten eines LLMs *bereits dicht* vorhanden ist. Er fokussiert; er lehrt nicht. Muss die vier Qualitätskriterien unten bestehen.

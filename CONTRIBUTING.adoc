@@ -20,7 +20,7 @@ The catalog ships three artifact types. Knowing which one you are proposing deci
 
 | *Anchor* | "What do I know?" — focuses pre-existing knowledge | Noun / named concept ("Cockburn Use Cases") | Passive (activation signal)
 | *Contract* | "What may I do?" — pins which anchors apply + invariants | Declarative ("follows / NEVER / MUST") | Always-on
-| *Skill* | "How do I do it?" — supplies procedure | Verb / imperative ("Authoring / Create") | On-demand
+| *Skill* | "How do I do it?" — supplies procedure | Verb / imperative ("Create / Verify / Write") | On-demand
 |===
 
 * *Anchor* — a named activation signal for a knowledge cluster that is *already dense* in an LLM's training data. It focuses; it does not teach. Must pass the four Quality Criteria below.

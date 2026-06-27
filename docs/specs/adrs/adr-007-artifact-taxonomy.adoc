@@ -71,7 +71,7 @@ We define three artifact types with distinct functions in the LLM interaction mo
 
 | **Skill**
 | "How do I do it?" — supplies procedure
-| Verb / imperative ("Authoring / Create")
+| Verb / imperative ("Create / Verify / Write")
 | On-demand
 |===
 
@@ -161,7 +161,7 @@ Baseline: keep the taxonomy implicit (status quo) = 0.
 | Anchor-naming evaluable #582 (8) | +2 | 0 | +1 | -1
 | AI citability #580 (7) | +2 | 0 | +1 | -1
 | Low migration cost (5) | -1 | 0 | 0 | +1
-| **Weighted total** | **+67** | **0** | **+33** | **-37**
+| **Weighted total** | **+63** | **0** | **+34** | **-48**
 |===
 
 The three-way split wins decisively. The two-way option (Anchor vs. everything-else)
