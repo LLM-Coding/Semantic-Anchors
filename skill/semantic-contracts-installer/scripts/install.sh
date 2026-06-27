@@ -371,7 +371,11 @@ inject_block "$TARGET_FILE"
 # double-loading after this reinstall.
 if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ] && [ "$(basename "$TARGET_FILE")" = "CLAUDE.md" ]; then
   echo "Skipping Claude SessionStart hook: $TARGET_FILE is loaded natively by Claude Code (the hook would double-load the block)." >&2
-  if remove_claude_hook | grep -q "removed stale"; then
+  if ! remove_hook_output="$(remove_claude_hook)"; then
+    echo "ERROR: failed to remove a previously-installed SessionStart hook; aborting to avoid leaving a stale hook that double-loads the block." >&2
+    exit 1
+  fi
+  if printf '%s\n' "$remove_hook_output" | grep -q "removed stale"; then
     echo "Removed a previously-installed SessionStart hook pointing at the native file." >&2
   fi
   INSTALL_CLAUDE_HOOK=0
