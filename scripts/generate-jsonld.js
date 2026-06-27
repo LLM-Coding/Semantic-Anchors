@@ -106,10 +106,22 @@ function buildScriptTag() {
   return `<script type="application/ld+json">\n${json}\n</script>`
 }
 
-/** Insert the script tag before </head>, unless the set is already present. */
+/**
+ * Insert the script tag before </head>, unless the set is already present.
+ *
+ * Reads directly and treats a missing file as "nothing to do" via the read's
+ * own error, rather than an `fs.existsSync` pre-check: a check-then-write pair
+ * is a file-system race (TOCTOU), since the path could change between the two
+ * calls (CodeQL js/file-system-race).
+ */
 function injectInto(file, scriptTag) {
-  if (!fs.existsSync(file)) return false
-  let html = fs.readFileSync(file, 'utf-8')
+  let html
+  try {
+    html = fs.readFileSync(file, 'utf-8')
+  } catch (err) {
+    if (err.code === 'ENOENT') return false
+    throw err
+  }
   if (html.includes(SET_ID)) return false // idempotent
   if (!html.includes('</head>')) return false
   html = html.replace('</head>', `  ${scriptTag}\n  </head>`)
@@ -147,4 +159,4 @@ function main() {
 
 if (require.main === module) main()
 
-module.exports = { buildDefinedTermSet, buildScriptTag, extractDescription }
+module.exports = { buildDefinedTermSet, buildScriptTag, extractDescription, injectInto }
