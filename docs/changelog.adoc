@@ -4,6 +4,12 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-27
 
+*Artifact taxonomy formalised — Anchor vs. Contract vs. Skill (#585):*
+
+* The three artifact types the catalog ships now have an explicit, written definition instead of an implicitly-reconstructed one. New `ADR-007` (Nygard + Pugh, +67 vs. keeping it implicit) defines each type by function, linguistic shape and loading behaviour, plus a discrimination test; the working definitions are mirrored into `CONTRIBUTING.adoc` and `CONTRIBUTING.de.adoc` so contributors meet them where they look. ADR drafted by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/585[#585].
+* *Thin-prior rule:* a name not dense in training data is not an anchor — if the missing piece is _meaning_ it becomes a *Contract* (which supplies its own meaning), if it is _procedure_ it becomes a *Skill*. This reconciles the one point where #585's draft and the viability proposal (#640) disagreed, and matches the project's "weak prior → contract" position. The taxonomy unblocks the contract/skill split (#529) and the onboarding-skill pivot (#521).
+* The arc42 Chapter 9 ADR index was completed (it had also been missing ADR-006).
+
 *Build fix — req42 anchor title (#643):*
 
 * The deploy build broke at the metadata step because the `req42` anchor's title equalled its filename id, which the validator treats as "no real title set". Gave it a descriptive title (`req42 Requirements Framework`), in the same style as `arc42 Architecture Documentation`.

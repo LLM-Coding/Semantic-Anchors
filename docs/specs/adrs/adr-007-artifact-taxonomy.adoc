@@ -1,0 +1,203 @@
+= ADR-007: Artifact Taxonomy — Anchor vs. Contract vs. Skill
+:toc:
+:icons: font
+
+== Status
+
+**Accepted** — 2026-06-27
+
+Drafted as a process proposal by Jens Grote in
+https://github.com/LLM-Coding/Semantic-Anchors/issues/585[#585]; accepted with one
+reconciliation (see _Decision → The thin-prior rule_) so that this ADR, the
+viability test in
+https://github.com/LLM-Coding/Semantic-Anchors/issues/640[#640], and the
+project's established "weak prior → contract" position agree.
+
+== Context
+
+The catalog ships three distinct artifact types — Anchors, Contracts, and Skills —
+but their boundaries were defined only implicitly, through examples and convention.
+Each time the line mattered, the same taxonomy was reconstructed from scratch:
+
+* **PR #582** (Cockburn Use Cases → Use Cases rename) — a contributor weakened an
+  anchor name without a rule to point at; the reviewer had to explain activation
+  theory ad hoc in a review thread. The generic term "Use Cases" activates several
+  knowledge clusters at once (UML/Jacobson, ISO 29148, Cockburn) and so destroys the
+  anchor's focusing property.
+* **#529** (over-grown Architecture Documentation contract) — a contract silently
+  drifted into a multi-page procedure because no rule said "a contract pins
+  vocabulary; a skill carries procedure."
+* **#580** (AI/LLM citability) — without an extractable statement of what each
+  artifact type *is*, crawlers and retrieval pipelines cannot categorize and cite the
+  content.
+
+=== The core insight (from PR #582)
+
+A bare prompt "write a use case for feature X" draws from several traditions at once.
+A Semantic Anchor like "Cockburn Use Cases" acts as a **focusing lens**: it tells the
+model "you already know this — use *this* cluster, not the others." It adds no new
+information; it selects. That is fundamentally different from a Contract (which sets
+boundaries) and a Skill (which teaches a procedure the model does not inherently
+carry).
+
+=== Requirements
+
+* **Contributor clarity** — a contributor can decide "is my artifact an Anchor, a
+  Contract, or a Skill?" without re-deriving theory.
+* **Prevents scope creep** — over-scoped contracts (#529) become recognizable and
+  splittable.
+* **Anchor-naming is evaluable** — a rename (#582) can be judged against a stated
+  criterion.
+* **AI citability** — each type has an extractable "what is X?" definition (#580).
+* **Low migration cost** — existing artifacts need little or no rework.
+
+== Decision
+
+We define three artifact types with distinct functions in the LLM interaction model.
+
+[cols="1,2,2,1", options="header"]
+|===
+| Type | Function | Linguistic shape | Loading
+
+| **Anchor**
+| "What do I know?" — focuses pre-existing knowledge
+| Noun / named concept ("Cockburn Use Cases")
+| Passive (activation signal)
+
+| **Contract**
+| "What may I do?" — pins which anchors apply + invariants
+| Declarative ("follows / NEVER / MUST")
+| Always-on
+
+| **Skill**
+| "How do I do it?" — supplies procedure
+| Verb / imperative ("Authoring / Create")
+| On-demand
+|===
+
+=== Anchor — "What do I know?"
+
+A named activation signal for a dense, pre-computed knowledge cluster in an LLM's
+training data. It focuses existing knowledge without supplying new information — a
+WHERE-clause on the model's training knowledge. It must satisfy the four quality
+criteria already in CONTRIBUTING (Precise, Rich, Consistent, Attributable) and the
+named concept must already be *dense* in the model's training data.
+
+=== Contract — "What may I do?"
+
+Terse, always-on shared vocabulary that pins which composition of anchors applies in a
+project context and states invariants (what MUST / MUST NOT happen). It lives in
+`CLAUDE.md` / `AGENTS.md` / Kiro Steering. The moment it describes *how* to do
+something step by step, it has exceeded its scope and the procedural part belongs in a
+Skill (this is the rule #529 needed).
+
+=== Skill — "How do I do it?"
+
+On-demand procedural machinery (`references/`, prompts, an invocation workflow) that
+supplies step-by-step guidance the model does not carry densely enough to execute from
+a name alone.
+
+=== Discrimination test
+
+[cols="3,1", options="header"]
+|===
+| Question | Type
+
+| Is the knowledge already dense in the LLM and only needs focusing? | **Anchor**
+| Do we need to pin which anchors apply and what is allowed/forbidden? | **Contract**
+| Do we need to describe *how* something is concretely done? | **Skill**
+|===
+
+Word-form heuristic — a useful shorthand, not a hard gate: a standalone technical term
+reads as an Anchor; "is / uses / follows / NEVER / ALWAYS" reads as a Contract;
+"create / verify / wire / write" reads as a Skill.
+
+=== The thin-prior rule (reconciliation of #585 and #640)
+
+A name that is *not* dense in the training data is **not an anchor** — naming it does
+not reliably reshape the output (the viability test of #640). What repairs it depends
+on *what is missing*:
+
+* **Meaning / which framing is missing** → a **Contract**. A contract is
+  self-contained; it supplies its own vocabulary and constraints and does not depend on
+  a pre-existing prior. This is the project's established position ("weak prior →
+  contract, not anchor"): a URL never repairs a prior.
+* **Procedure / the *how* is missing** → a **Skill**, loaded on demand.
+
+A thin name is therefore never forced to be an anchor. This is the single point on
+which #585's original draft (which routed thin concepts to a Skill) is sharpened: the
+default for a thin *vocabulary* gap is a Contract; a Skill is for a *procedural* gap.
+
+=== Worked examples
+
+*Use Cases* — Anchor "Cockburn Use Cases" (Fully Dressed template, Goal Levels) ·
+Contract "Specification" ("Use Cases in Cockburn Fully Dressed format; Actor-Goal list
+first; never a UML diagram as a substitute") · Skill "Use Case Authoring" (analyze →
+actors → goals → main path → extensions → format).
+
+*Architecture Documentation* — Anchors "arc42", "C4 Model", "Nygard ADRs" · Contract
+"Architecture Documentation" ("follows arc42; C4 via PlantUML; Nygard ADRs with a
+3-point Pugh matrix") · Skill "arc42 Documentation Authoring" (scaffolding,
+traceability rules, Chapter 11 structure, ADR↔risk wiring). This split is exactly what
+#529 proposes.
+
+=== Where the taxonomy lives
+
+Both: this ADR is the canonical, reasoned record; the operational definitions and the
+discrimination test are mirrored into `CONTRIBUTING.adoc` and
+`docs/CONTRIBUTING.de.adoc` so contributors meet them where they look. The ADR carries
+the rationale; CONTRIBUTING carries the test. Each cross-links the other.
+
+=== Pugh matrix
+
+Baseline: keep the taxonomy implicit (status quo) = 0.
+
+[cols="3,1,1,1,1", options="header"]
+|===
+| Criterion (weight) | Three-way (chosen) | Implicit (baseline) | Two-way (Anchor vs. rest) | No distinction
+
+| Contributor clarity (10) | +2 | 0 | +1 | -2
+| Prevents scope creep #529 (9) | +2 | 0 | +1 | -2
+| Anchor-naming evaluable #582 (8) | +2 | 0 | +1 | -1
+| AI citability #580 (7) | +2 | 0 | +1 | -1
+| Low migration cost (5) | -1 | 0 | 0 | +1
+| **Weighted total** | **+67** | **0** | **+33** | **-37**
+|===
+
+The three-way split wins decisively. The two-way option (Anchor vs. everything-else)
+scores positive but leaves the contract↔skill boundary — the exact gap behind #529 —
+unresolved, so it does not actually solve the motivating problem.
+
+== Consequences
+
+=== Positive
+
+* A contributor can place any artifact with the discrimination test.
+* Over-scoped contracts are recognizable and splittable (#529).
+* Anchor renames are evaluable against the Precise criterion (#582).
+* Each type has an extractable "what is X?" block for AI citability (#580).
+* The thin-prior rule gives #640's viability test a definite destination
+  (Contract or Skill), removing the one inconsistency between the two proposals.
+
+=== Negative / risks
+
+* Existing artifacts should eventually be audited against the taxonomy (migration
+  effort) — but no retroactive rework is required for this ADR to hold.
+* Partially-dense concepts still need case-by-case judgement (Anchor backed by a
+  supplementary Skill, or replaced by a Contract).
+
+=== Open questions (deferred, not blocking)
+
+* Should the LLM activation test in CONTRIBUTING explicitly measure *cluster density*,
+  not only recognition? — taken up by #640.
+* Is the taxonomy stable across models, or does it need model-specific density
+  indicators?
+
+== References
+
+* https://github.com/LLM-Coding/Semantic-Anchors/issues/585[#585] — this taxonomy proposal (Jens Grote)
+* https://github.com/LLM-Coding/Semantic-Anchors/issues/640[#640] — Viability Test (recognition ≠ activation)
+* https://github.com/LLM-Coding/Semantic-Anchors/issues/529[#529] — split the over-grown Architecture Documentation contract
+* https://github.com/LLM-Coding/Semantic-Anchors/issues/580[#580] — direct-answer blocks for AI/LLM citability
+* https://github.com/LLM-Coding/Semantic-Anchors/pull/582[PR #582] — Cockburn Use Cases → Use Cases rename discussion
+* `CONTRIBUTING.adoc` — Anchor Quality Criteria (Precise, Rich, Consistent, Attributable)

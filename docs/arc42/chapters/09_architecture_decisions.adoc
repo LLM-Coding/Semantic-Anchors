@@ -33,6 +33,16 @@ Dieses Kapitel referenziert die detaillierten Architecture Decision Records (ADR
 |**Card Grid** statt Treemap für Visualisierung
 |Löst fundamentale Usability-Probleme (Text-Truncation, Kontrast, Viewport), größerer Pugh-Score (+137)
 |Accepted
+
+|link:../specs/adrs/adr-006-code-review-tooling.adoc[ADR-006]
+|**Code-Review-Tooling**
+|Strukturierte, werkzeuggestützte Reviews
+|Accepted
+
+|link:../specs/adrs/adr-007-artifact-taxonomy.adoc[ADR-007]
+|**Artefakt-Taxonomie** — Anchor vs. Contract vs. Skill
+|Explizite Dreiteilung beseitigt die wiederholt ad hoc rekonstruierte Grenze (Pugh +67); Thin-Prior-Regel macht #585 und #640 konsistent
+|Accepted
 |===
 
 === ADR-001: Vite als Static Site Generator
