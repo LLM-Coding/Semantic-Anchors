@@ -17,7 +17,10 @@ SOURCE_URL="https://llm-coding.github.io/Semantic-Anchors/data/contracts.json"
 
 mkdir -p "$DATA_DIR"
 
-tmp="$(mktemp)"
+# Create the temp file inside DATA_DIR so the final `mv` is an atomic,
+# same-filesystem rename (mktemp's default /tmp could be a different filesystem,
+# making mv a non-atomic copy that can leave a partial snapshot on failure).
+tmp="$(mktemp "$DATA_DIR/.contracts.json.XXXXXX")"
 trap 'rm -f "$tmp"' EXIT
 
 echo "Fetching $SOURCE_URL ..."

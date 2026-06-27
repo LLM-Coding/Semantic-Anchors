@@ -302,6 +302,64 @@ except BaseException:
 PY
 }
 
+# Remove any SessionStart hook this skill family installed (current id or the
+# former semantic-anchor-onboarding id), pruning now-empty entries. Used when the
+# target is natively loaded, so a previously-installed stale hook is cleaned up
+# rather than left double-loading the block.
+remove_claude_hook() {
+  local settings_file
+  if [ "$SCOPE" = "project" ]; then
+    settings_file="$TARGET_DIR/.claude/settings.json"
+  else
+    settings_file="$HOME/.claude/settings.json"
+  fi
+  [ -f "$settings_file" ] || return 0
+
+  cp "$settings_file" "$settings_file.bak.$(date +%Y%m%d%H%M%S)"
+
+  python3 - "$settings_file" <<'PY'
+import json, os, sys, tempfile
+
+settings_path = sys.argv[1]
+with open(settings_path, "r", encoding="utf-8") as handle:
+    settings = json.load(handle)
+
+session_start = settings.get("hooks", {}).get("SessionStart", [])
+managed = ("semantic-contracts-installer", "semantic-anchor-onboarding")
+removed = False
+for entry in session_start:
+    if not isinstance(entry, dict):
+        continue
+    kept = [h for h in entry.get("hooks", [])
+            if not (isinstance(h, dict) and any(m in h.get("command", "") for m in managed))]
+    if len(kept) != len(entry.get("hooks", [])):
+        removed = True
+    entry["hooks"] = kept
+
+if not removed:
+    sys.exit(0)
+
+# Drop entries with no hooks left, and empty containers.
+settings["hooks"]["SessionStart"] = [e for e in session_start if e.get("hooks")]
+if not settings["hooks"]["SessionStart"]:
+    del settings["hooks"]["SessionStart"]
+if not settings["hooks"]:
+    del settings["hooks"]
+
+settings_dir = os.path.dirname(settings_path) or "."
+fd, tmp_path = tempfile.mkstemp(dir=settings_dir, suffix=".tmp")
+try:
+    with os.fdopen(fd, "w", encoding="utf-8") as handle:
+        json.dump(settings, handle, indent=2)
+        handle.write("\n")
+    os.replace(tmp_path, settings_path)
+except BaseException:
+    os.unlink(tmp_path)
+    raise
+print("removed stale SessionStart hook")
+PY
+}
+
 build_injected_block
 TARGET_FILE="$(select_target_file)"
 inject_block "$TARGET_FILE"
@@ -309,8 +367,13 @@ inject_block "$TARGET_FILE"
 # #515: Claude Code loads CLAUDE.md natively at session start, so a SessionStart
 # hook that re-injects the same block would double-load it. Skip the hook for
 # CLAUDE.md targets; it only adds value for files Claude Code does not auto-load.
+# Also remove any previously-installed hook, so a stale one does not keep
+# double-loading after this reinstall.
 if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ] && [ "$(basename "$TARGET_FILE")" = "CLAUDE.md" ]; then
   echo "Skipping Claude SessionStart hook: $TARGET_FILE is loaded natively by Claude Code (the hook would double-load the block)." >&2
+  if remove_claude_hook | grep -q "removed stale"; then
+    echo "Removed a previously-installed SessionStart hook pointing at the native file." >&2
+  fi
   INSTALL_CLAUDE_HOOK=0
 fi
 
