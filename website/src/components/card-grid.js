@@ -10,6 +10,17 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;')
 }
 
+// An anchor is flagged "new" for 30 days after its first commit (#652). Computed
+// at render time against the current date, so the badge expires on its own.
+const NEW_WINDOW_MS = 30 * 24 * 60 * 60 * 1000
+
+function isRecentlyAdded(anchor) {
+  if (!anchor.addedAt) return false
+  const added = new Date(anchor.addedAt).getTime()
+  if (Number.isNaN(added)) return false
+  return Date.now() - added < NEW_WINDOW_MS
+}
+
 /**
  * Category color palette (matching previous categories)
  */
@@ -192,7 +203,11 @@ function renderAnchorCard(anchor, categoryColor, categoryId) {
       aria-labelledby="${cardTitleId}"
     >
       <div class="anchor-card-header">
-        <h3 id="${cardTitleId}" class="anchor-card-title">${escapeHtml(anchor.title)}</h3>
+        <h3 id="${cardTitleId}" class="anchor-card-title">${escapeHtml(anchor.title)}${
+          isRecentlyAdded(anchor)
+            ? ` <span class="anchor-new-badge" title="${escapeHtml(i18n.t('card.new'))}">${escapeHtml(i18n.t('card.new'))}</span>`
+            : ''
+        }</h3>
         <div class="flex gap-1">
           <button
             class="anchor-copy-keyword-btn"

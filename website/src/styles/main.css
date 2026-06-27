@@ -280,6 +280,13 @@ html {
   @apply m-0;
 }
 
+/* "New" badge (#652): flags anchors added within the last 30 days so they're
+   easy to spot. Green pill next to the card title; expires on its own. */
+.anchor-new-badge {
+  @apply inline-block align-middle ml-1 px-1.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wide;
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
 .anchor-card-meta {
   @apply flex flex-wrap items-center gap-2 text-xs;
   @apply text-gray-500 dark:text-gray-400;
