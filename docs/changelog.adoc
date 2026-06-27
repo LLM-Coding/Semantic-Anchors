@@ -4,6 +4,11 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-06-27
 
+*Onboarding skill repositioned to a Semantic Contracts installer (#521, #515):*
+
+* The `semantic-anchor-onboarding` skill installed a list of anchors the model mostly already knows. It is renamed and repositioned as *`semantic-contracts-installer`*: its default mode now installs *Semantic Contracts* — the compositions and rendered templates the model cannot guess (e.g. "Specification" = Cockburn use cases + Gherkin + EARS) — reading a bundled `data/contracts.json` snapshot (refreshable via `scripts/refresh-contracts.sh`). The former anchor-block flow stays as an `--anchors-only` sub-mode. The old skill name remains for one release as a deprecation alias that forwards to the new one and idempotently overwrites blocks it previously installed (same markers). The plugin is bumped to v0.6.0.
+* *SessionStart hook fixed (#515):* the installer no longer installs a Claude hook for `CLAUDE.md` (Claude Code loads it natively, so the hook double-loaded the block), and the hook is registered with matcher `startup` only — no more noisy re-injection on every resume.
+
 *Counter-consensus framing — advisory flag + rejection category (#624):*
 
 * Some terms activate reliably yet prime a framing their own field cautions against (e.g. the Eisenhower Matrix and the "mere-urgency effect"). Two new handling paths: a hard rejection category *Counter-consensus framing* in `rejected-proposals.adoc` (which requires a cited consensus source from the framework's own field), and — for terms worth keeping — an optional `:advisory:` anchor attribute that renders as a visible amber badge on the card and a banner in the modal, with the detail and source staying in the anchor's Criticism / Current Status section (single source of truth). The Eisenhower Matrix is the seed: it gains an `:advisory:` flag and a `== Current Status` section. Proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/624[#624].

@@ -1,0 +1,228 @@
+[
+  {
+    "id": "specification",
+    "title": "Specification",
+    "titleDe": "Spezifikation",
+    "description": "What we mean when we say 'spec'",
+    "descriptionDe": "Was wir meinen, wenn wir 'Spec' sagen",
+    "anchors": ["cockburn-use-cases", "gherkin", "bdd-given-when-then", "ears-requirements"],
+    "template": "When we talk about a \"specification\" or \"spec\", we mean:\n- Persona Use Cases in Cockburn's Fully Dressed format (Primary Actor, Trigger, Main Success Scenario, Extensions, Postconditions) at User Goal level, with Business Rules (BR-IDs)\n- System Use Cases for each technical interface (API endpoint, CLI command, event, file format): input/validation, processing, output/status codes, error responses\n- Activity Diagrams for all flows (not just the happy path)\n- Acceptance criteria in Gherkin format (Given/When/Then)\n- Individual requirements in EARS syntax where applicable (When/While/If/Shall)\n- Supplementary Specifications as needed: Entity Model, State Machines, Interface Contracts, Validation Rules",
+    "templateDe": "Wenn wir von einer \"Spezifikation\" oder \"Spec\" sprechen, meinen wir:\n- Persona Use Cases im Cockburn Fully Dressed Format (Primary Actor, Trigger, Main Success Scenario, Extensions, Nachbedingungen) auf User-Goal-Ebene, mit Geschäftsregeln (BR-IDs)\n- System Use Cases für jede technische Schnittstelle (API-Endpunkt, CLI-Befehl, Event, Dateiformat): Input/Validierung, Verarbeitung, Output/Statuscodes, Fehlerantworten\n- Activity Diagrams für alle Abläufe (nicht nur der Happy Path)\n- Akzeptanzkriterien im Gherkin-Format (Given/When/Then)\n- Einzelanforderungen in EARS-Syntax wo passend (When/While/If/Shall)\n- Ergänzende Spezifikationen nach Bedarf: Entity Model, State Machines, Interface Contracts, Validierungsregeln",
+    "category": "requirements"
+  },
+  {
+    "id": "requirements-discovery",
+    "title": "Requirements Discovery",
+    "titleDe": "Anforderungsermittlung",
+    "description": "How we clarify requirements before writing specs",
+    "descriptionDe": "Wie wir Anforderungen klären, bevor wir Specs schreiben",
+    "anchors": ["socratic-method", "mece", "prd", "impact-mapping", "user-story-mapping"],
+    "template": "Clarify requirements using the Socratic Method:\n- Ask at most 3 questions at a time, challenge assumptions\n- Use MECE to ensure questions cover all areas without overlap\n- Keep asking until you fully understand the requirements\n\nFrame the scope before writing it down:\n- Impact Mapping connects deliverables to business goals and actors — so you build what moves a goal, not just what was asked.\n- User Story Mapping lays stories along the user's journey and exposes a coherent first slice.\n\nDocument the result as a PRD (problem, goals, personas, success criteria, scope).",
+    "templateDe": "Anforderungen mit der Sokratischen Methode klären:\n- Höchstens 3 Fragen gleichzeitig, Annahmen hinterfragen\n- MECE nutzen, um alle Bereiche überlappungsfrei abzudecken\n- Weiterfragen bis die Anforderungen vollständig verstanden sind\n\nDen Scope rahmen, bevor er aufgeschrieben wird:\n- Impact Mapping verbindet Lieferobjekte mit Geschäftszielen und Akteuren — damit man baut, was ein Ziel bewegt, nicht nur was gefragt wurde.\n- User Story Mapping ordnet Stories entlang der Nutzerreise an und legt eine sinnvolle erste Scheibe offen.\n\nDas Ergebnis als PRD dokumentieren (Problem, Ziele, Personas, Erfolgskriterien, Scope).",
+    "category": "requirements"
+  },
+  {
+    "id": "architecture-documentation",
+    "title": "Architecture Documentation",
+    "titleDe": "Architekturdokumentation",
+    "description": "How we document architecture with diagrams, ADRs, and decision evaluation",
+    "descriptionDe": "Wie wir Architektur mit Diagrammen, ADRs und Entscheidungsbewertung dokumentieren",
+    "anchors": ["arc42", "c4-diagrams", "adr-according-to-nygard", "pugh-matrix", "quality-attribute-scenario"],
+    "template": "Architecture documentation follows arc42. Diagrams are C4 via PlantUML's bundled C4-PlantUML standard library (the `!include <C4/...>` stdlib form), not Mermaid. Decisions are Nygard ADRs with a 3-point Pugh matrix. Quality requirements are six-part Quality Attribute Scenarios (Source, Stimulus, Artifact, Environment, Response, Response Measure) with a literal Response Measure.\n\nThat is the shared vocabulary. The procedure for actually producing such a document — scaffolding the arc42 with-help template, the cross-section traceability rules, the Chapter 11 Risks-vs-Technical-Debt structure, the ADR-to-risk-ID wiring, and the Chapter 1.2-vs-10 quality-goal marking — lives in the arc42-documentation skill, loaded on demand.",
+    "templateDe": "Architekturdokumentation folgt arc42. Diagramme sind C4 über PlantUMLs gebündelte C4-PlantUML-Standardbibliothek (die `!include <C4/...>`-stdlib-Form), nicht Mermaid. Entscheidungen sind Nygard-ADRs mit einer 3-Punkt-Pugh-Matrix. Qualitätsanforderungen sind sechsteilige Quality Attribute Scenarios (Source, Stimulus, Artifact, Environment, Response, Response Measure) mit einer konkreten Response Measure.\n\nDas ist das gemeinsame Vokabular. Die Prozedur zum Erstellen eines solchen Dokuments — Scaffolding des arc42-with-help-Templates, die Cross-Section-Traceability-Regeln, die Kapitel-11-Struktur (Risiken vs. Technische Schuld), das ADR-zu-Risiko-ID-Wiring und die Kapitel-1.2-vs-10-Markierung der Qualitätsziele — liegt im arc42-documentation-Skill, der bei Bedarf geladen wird.",
+    "category": "architecture"
+  },
+  {
+    "id": "crosscutting-concepts",
+    "title": "Crosscutting Concepts",
+    "titleDe": "Querschnittliche Konzepte",
+    "description": "Baseline arc42 Chapter 8 concepts every system documents: threat model, security, test, observability, error handling",
+    "descriptionDe": "Basis-Konzepte für arc42 Kapitel 8, die jedes System dokumentiert: Threat Model, Security, Test, Observability, Error Handling",
+    "anchors": ["arc42", "stride", "testing-pyramid"],
+    "template": "arc42 leaves Chapter 8 open. We require five baseline crosscutting concepts, in this order:\n\n- 8.1 Threat Model — STRIDE; threats get IDs (T-001…).\n- 8.2 Security — every mitigation references the T-IDs it closes.\n- 8.3 Test — testing pyramid; tests trace to Use Cases and Business Rules.\n- 8.4 Observability — logs, metrics, traces, audit trails.\n- 8.5 Error Handling — retry, circuit breaker, fallback, recovery.\n\nAdd further Chapter 8.x concepts (persistence, i18n, accessibility, configuration, performance) only when the system actually has that concern.",
+    "templateDe": "arc42 lässt Kapitel 8 offen. Wir verlangen fünf querschnittliche Basis-Konzepte, in dieser Reihenfolge:\n\n- 8.1 Threat Model — STRIDE; Bedrohungen erhalten IDs (T-001…).\n- 8.2 Security — jede Mitigation referenziert die T-IDs, die sie schließt.\n- 8.3 Test — Testpyramide; Tests verweisen auf Use Cases und Business Rules.\n- 8.4 Observability — Logs, Metriken, Traces, Audit-Trails.\n- 8.5 Error Handling — Retry, Circuit Breaker, Fallback, Recovery.\n\nWeitere Kapitel-8.x-Konzepte (Persistenz, i18n, Barrierefreiheit, Konfiguration, Performance) nur aufnehmen, wenn das System diesen Belang tatsächlich hat.",
+    "category": "architecture"
+  },
+  {
+    "id": "layer-boundaries",
+    "title": "Layer Boundaries",
+    "titleDe": "Schichtgrenzen",
+    "description": "How we handle boundaries between layers",
+    "descriptionDe": "Wie wir Grenzen zwischen Schichten handhaben",
+    "anchors": [
+      "clean-architecture",
+      "hexagonal-architecture",
+      "domain-driven-design",
+      "solid-dip",
+      "solid-isp"
+    ],
+    "template": "At every layer boundary:\n- Expose only well-defined DTOs and contracts — never domain entities\n- Use explicit mapping at every seam\n- Apply Anti-Corruption Layers when integrating external systems\n- Dependency direction points inward (DIP)",
+    "templateDe": "An jeder Schichtgrenze:\n- Nur definierte DTOs und Contracts exponieren — niemals Domain-Entitäten\n- Explizites Mapping an jeder Nahtstelle\n- Anti-Corruption-Layer bei Integration externer Systeme\n- Abhängigkeitsrichtung zeigt nach innen (DIP)",
+    "category": "architecture"
+  },
+  {
+    "id": "backlog-management",
+    "title": "Backlog Management",
+    "titleDe": "Backlog-Verwaltung",
+    "description": "How we create and prioritize implementation tasks",
+    "descriptionDe": "Wie wir Implementierungsaufgaben erstellen und priorisieren",
+    "anchors": ["invest", "moscow"],
+    "template": "Create EPICs and User Stories as GitHub issues from the specification.\n- User Stories follow INVEST criteria (Independent, Negotiable, Valuable, Estimable, Small, Testable)\n- Prioritize with MoSCoW (Must/Should/Could/Won't)\n- Mark dependencies between issues\n- Groom the backlog regularly as the project evolves",
+    "templateDe": "EPICs und User Stories als GitHub Issues aus der Spezifikation erstellen.\n- User Stories folgen den INVEST-Kriterien (Independent, Negotiable, Valuable, Estimable, Small, Testable)\n- Priorisierung mit MoSCoW (Must/Should/Could/Won't)\n- Abhängigkeiten zwischen Issues markieren\n- Backlog regelmäßig groomen",
+    "category": "development"
+  },
+  {
+    "id": "vertical-slicing",
+    "title": "Vertical Slicing",
+    "titleDe": "Vertikale Schnitte",
+    "description": "How we build the first increment and grow the system in thin end-to-end slices",
+    "descriptionDe": "Wie wir das erste Inkrement bauen und das System in dünnen End-to-End-Scheiben wachsen lassen",
+    "anchors": ["walking-skeleton", "tracer-bullet", "thin-vertical-slice", "spike-solution"],
+    "template": "Build the first increment as a walking skeleton: a deployable end-to-end slice that wires every architectural layer together and does almost nothing else.\n\nGrow the system as thin vertical slices — each slice cuts through all layers and delivers one small piece of user value. Slices are tracer bullets: kept and refined, never thrown away.\n\nWhen a technical unknown blocks a slice, run a spike solution first — a timeboxed, throwaway experiment that removes the risk. Spike code is discarded; only its lesson carries into the slice.",
+    "templateDe": "Das erste Inkrement als Walking Skeleton bauen: eine deploybare End-to-End-Scheibe, die alle Architekturschichten verbindet und sonst fast nichts tut.\n\nDas System in dünnen vertikalen Scheiben wachsen lassen — jede Scheibe geht durch alle Schichten und liefert ein kleines Stück Nutzerwert. Scheiben sind Tracer Bullets: behalten und verfeinert, nie weggeworfen.\n\nWenn ein technisches Unbekanntes eine Scheibe blockiert, zuerst eine Spike Solution durchführen — ein zeitlich begrenztes Wegwerf-Experiment, das das Risiko beseitigt. Spike-Code wird verworfen; nur seine Erkenntnis fließt in die Scheibe ein.",
+    "category": "development"
+  },
+  {
+    "id": "implement-next",
+    "title": "Implement Next",
+    "titleDe": "Nächstes Feature",
+    "description": "The implementation loop for each issue",
+    "descriptionDe": "Der Implementierungs-Loop für jedes Issue",
+    "anchors": [
+      "tdd-london-school",
+      "tdd-chicago-school",
+      "definition-of-done",
+      "conventional-commits"
+    ],
+    "template": "For each issue:\n- Create a feature branch for the EPIC\n- Select next issue from backlog (respect dependencies)\n- Analyze and document analysis as a comment on the issue\n- Implement using TDD (London or Chicago School as appropriate)\n- Each test references its Use Case ID for traceability\n- Commit with Conventional Commits, reference issue number\n- Check if spec or architecture docs need updating\n- When EPIC is complete, create a Pull Request",
+    "templateDe": "Für jedes Issue:\n- Feature-Branch für das EPIC erstellen\n- Nächstes Issue aus dem Backlog wählen (Abhängigkeiten beachten)\n- Analysieren und Analyse als Kommentar am Issue dokumentieren\n- Mit TDD implementieren (London oder Chicago School je nach Kontext)\n- Jeder Test referenziert seine Use-Case-ID für Rückverfolgbarkeit\n- Mit Conventional Commits committen, Issue-Nummer referenzieren\n- Prüfen ob Spec oder Architektur-Docs aktualisiert werden müssen\n- Wenn EPIC fertig, Pull Request erstellen",
+    "category": "development"
+  },
+  {
+    "id": "refactoring",
+    "title": "Refactoring",
+    "titleDe": "Refactoring",
+    "description": "How we identify and execute refactorings safely",
+    "descriptionDe": "Wie wir Refactorings sicher identifizieren und durchführen",
+    "anchors": ["code-smells", "mikado-method"],
+    "template": "Refactoring targets are named code smells, not a vague urge to \"clean up\".\n\nFor any refactoring that does not complete in one step, use the Mikado Method: attempt the change, note what breaks, revert, and do the prerequisites first — never leave the build broken while you dig.\n\nRefactoring commits change structure only. Behaviour changes go in separate commits, and the test suite stays green at every commit.",
+    "templateDe": "Refactoring-Ziele sind benannte Code Smells, kein vager Drang \"aufzuräumen\".\n\nFür jedes Refactoring, das nicht in einem Schritt fertig wird, die Mikado-Methode nutzen: die Änderung versuchen, notieren was bricht, zurücksetzen und zuerst die Voraussetzungen erledigen — den Build nie kaputt lassen, während man gräbt.\n\nRefactoring-Commits ändern nur Struktur. Verhaltensänderungen kommen in separate Commits, und die Testsuite bleibt bei jedem Commit grün.",
+    "category": "development"
+  },
+  {
+    "id": "code-quality",
+    "title": "Code Quality",
+    "titleDe": "Code-Qualität",
+    "description": "Coding conventions and design principles",
+    "descriptionDe": "Coding-Konventionen und Design-Prinzipien",
+    "anchors": ["solid-principles", "dry", "kiss-principle", "domain-driven-design"],
+    "template": "Our code follows:\n- SOLID principles\n- DRY, KISS\n- Ubiquitous Language from Domain-Driven Design (same terms in code as in the specification)",
+    "templateDe": "Unser Code folgt:\n- SOLID-Prinzipien\n- DRY, KISS\n- Ubiquitous Language aus Domain-Driven Design (gleiche Begriffe im Code wie in der Spezifikation)",
+    "category": "development"
+  },
+  {
+    "id": "quality-review",
+    "title": "Quality Review",
+    "titleDe": "Qualitätsprüfung",
+    "description": "How we review code and check for security issues",
+    "descriptionDe": "Wie wir Code reviewen und Sicherheitsprobleme prüfen",
+    "anchors": ["fagan-inspection", "owasp-top-10", "atam"],
+    "template": "Quality assurance follows three layers:\n- Code review using Fagan Inspection (structured, systematic, with defined phases)\n- Security review based on OWASP Top 10\n- Architecture review using ATAM (scenario-based tradeoff analysis against quality goals)\n- Use a different AI model or fresh session for reviews to avoid blind spots",
+    "templateDe": "Qualitätssicherung folgt drei Schichten:\n- Code-Review mit Fagan Inspection (strukturiert, systematisch, mit definierten Phasen)\n- Security-Review basierend auf OWASP Top 10\n- Architektur-Review mit ATAM (szenariobasierte Tradeoff-Analyse gegen Qualitätsziele)\n- Anderes KI-Modell oder frische Session für Reviews nutzen, um blinde Flecken zu vermeiden",
+    "category": "quality"
+  },
+  {
+    "id": "documentation-style",
+    "title": "Docs-as-Code",
+    "titleDe": "Docs-as-Code",
+    "description": "How we write and build documentation",
+    "descriptionDe": "Wie wir Dokumentation schreiben und bauen",
+    "anchors": ["docs-as-code", "plain-english-strunk-white", "gutes-deutsch-wolf-schneider"],
+    "template": "Documentation follows Docs-as-Code according to Ralf D. Müller:\n- AsciiDoc as format, PlantUML for inline diagrams, built by docToolchain\n- Version-controlled, peer-reviewed, and built automatically\n- Plain English according to Strunk & White (or Gutes Deutsch nach Wolf Schneider)\n- Projects following this contract include the `dtcw` wrapper and `docToolchainConfig.groovy` so PlantUML / AsciiDoc actually render.",
+    "templateDe": "Dokumentation folgt Docs-as-Code nach Ralf D. Müller:\n- AsciiDoc als Format, PlantUML für Inline-Diagramme, gebaut von docToolchain\n- Versioniert, reviewt und automatisch gebaut\n- Gutes Deutsch nach Wolf Schneider (oder Plain English nach Strunk & White)\n- Projekte, die diesem Contract folgen, enthalten den `dtcw`-Wrapper und `docToolchainConfig.groovy`, damit PlantUML / AsciiDoc tatsächlich gerendert werden.",
+    "category": "documentation"
+  },
+  {
+    "id": "socratic-code-theory-recovery",
+    "title": "Socratic Code Theory Recovery",
+    "titleDe": "Sokratische Code-Theorie-Rekonstruktion",
+    "description": "Recover a program's 'theory' from source code through recursive question refinement",
+    "descriptionDe": "Die 'Theorie' eines Programms aus dem Quellcode durch rekursive Fragenverfeinerung rekonstruieren",
+    "anchors": [
+      "socratic-method",
+      "arc42",
+      "iso-25010",
+      "adr-according-to-nygard",
+      "mental-model-according-to-naur"
+    ],
+    "template": "Recover a program's \"theory\" (Naur 1985) from source code through recursive question refinement.\n\n- Start with 5 root questions: Q1 Problem/Users, Q2 Specification, Q3 Architecture, Q4 Quality Goals, Q5 Risks.\n\n- The second level of the tree is FIXED, not free. Every run emits exactly these nodes, in this order, even when a node's only leaf is [OPEN] or [ANSWERED: not applicable]:\n  - Q1.1-Q1.6: product identity, primary users, channels, why-built, success metrics, segment priority\n  - Q2.1-Q2.6: actors, use-case catalog, per-interface system specs, data/entity model, acceptance criteria, cross-cutting business rules\n  - Q3.1-Q3.12: the twelve arc42 chapters, in arc42 order\n  - Q4.1-Q4.8: the eight ISO/IEC 25010 characteristics; plus Q4.9: which characteristic has priority\n  - Q5.1-Q5.5: technical debt, security risks, operational risks, dependency/supply-chain risks, scaling/performance risks\n\n- Below the fixed second level, decompose adaptively and code-driven; a node is a leaf only when it can be answered from one specific file:line evidence (a directory is too coarse — decompose further) or definitively marked [OPEN]. Depth tracks code density: a small bounded context yields a shallow tree, a large one a deep tree, capped at four levels below a fixed node. Depth varies between runs — expected.\n\n- Q-IDs are stable: Q3.7 is always Deployment View, in every run, so trees from different runs can be diffed node-by-node.\n\n- Each leaf is [ANSWERED] (with file:line evidence) or [OPEN] (with Category, Ask role, and why it is unanswerable from code).\n\n- Quality is not wholly team knowledge. Derive quality scenarios for the Q4 branch and arc42 Chapter 10 from measurable code behaviour — literal thresholds, timeouts, budgets, the threat catalogue and test concept from Q3.8 — as [ANSWERED] with file:line; never invent target numbers. Only the quality-goal ranking (Q4.9) is [OPEN]. arc42 Chapter 10 carries the derivable scenarios, never just an [OPEN] pointer. Chapter 1.2 names only the top 3-5 quality goals; Chapter 10 covers all eight characteristics — mark each Chapter 10 entry as concretising a Chapter 1.2 top goal or as derived.\n\n- Open Questions are the handoff document: always emit one section per role (Product Owner, Architect, Developer, Domain Expert, Operations), even when a section is empty (\"No open questions for this role\").\n\n- Two-phase workflow: Phase 1 builds the tree; the team answers the Open Questions; Phase 2 synthesizes documentation from the answered tree.",
+    "templateDe": "Die \"Theorie\" eines Programms (Naur 1985) aus dem Quellcode durch rekursive Fragenverfeinerung rekonstruieren.\n\n- Mit 5 Wurzelfragen starten: Q1 Problem/Nutzer, Q2 Spezifikation, Q3 Architektur, Q4 Qualitätsziele, Q5 Risiken.\n\n- Die zweite Baumebene ist FIX, nicht frei. Jeder Lauf erzeugt genau diese Knoten, in dieser Reihenfolge, auch wenn ein Knoten nur ein [OPEN]- oder [ANSWERED: not applicable]-Blatt hat:\n  - Q1.1-Q1.6: Produktidentität, primäre Nutzer, Kanäle, Warum-gebaut, Erfolgsmetriken, Segmentpriorität\n  - Q2.1-Q2.6: Akteure, Use-Case-Katalog, System-Specs pro Schnittstelle, Daten-/Entity-Modell, Akzeptanzkriterien, übergreifende Geschäftsregeln\n  - Q3.1-Q3.12: die zwölf arc42-Kapitel, in arc42-Reihenfolge\n  - Q4.1-Q4.8: die acht ISO/IEC-25010-Merkmale; plus Q4.9: welches Merkmal Priorität hat\n  - Q5.1-Q5.5: technische Schuld, Sicherheitsrisiken, Betriebsrisiken, Abhängigkeits-/Supply-Chain-Risiken, Skalierungs-/Performance-Risiken\n\n- Unterhalb der fixen zweiten Ebene adaptiv und code-getrieben zerlegen; ein Knoten ist nur dann ein Blatt, wenn er aus einer konkreten file:line-Evidenz beantwortbar ist (ein Verzeichnis ist zu grob — weiter zerlegen) oder definitiv [OPEN] markiert werden kann. Die Tiefe folgt der Code-Dichte: ein kleiner Bounded Context ergibt einen flachen Baum, ein großer einen tiefen, gedeckelt auf vier Ebenen unter einem fixen Knoten. Die Tiefe variiert zwischen Läufen — erwartet.\n\n- Q-IDs sind stabil: Q3.7 ist in jedem Lauf die Verteilungssicht, sodass Bäume verschiedener Läufe Knoten für Knoten verglichen werden können.\n\n- Jedes Blatt ist [ANSWERED] (mit file:line-Evidenz) oder [OPEN] (mit Kategorie, zuständiger Rolle und Begründung, warum es aus dem Code nicht beantwortbar ist).\n\n- Qualität ist nicht vollständig Team-Wissen. Qualitätsszenarien für den Q4-Ast und arc42-Kapitel 10 aus messbarem Code-Verhalten ableiten — literale Schwellwerte, Timeouts, Budgets, den Threat-Katalog und das Test-Konzept aus Q3.8 — als [ANSWERED] mit file:line; Zielwerte nie erfinden. Nur das Qualitätsziel-Ranking (Q4.9) ist [OPEN]. arc42-Kapitel 10 trägt die ableitbaren Szenarien, nie nur einen [OPEN]-Verweis. Kapitel 1.2 nennt nur die obersten 3-5 Qualitätsziele; Kapitel 10 deckt alle acht Merkmale ab — jeden Kapitel-10-Eintrag als Konkretisierung eines Kapitel-1.2-Top-Ziels oder als abgeleitet markieren.\n\n- Offene Fragen sind das Übergabedokument: immer einen Abschnitt pro Rolle erzeugen (Product Owner, Architekt, Entwickler, Domänenexperte, Operations), auch wenn ein Abschnitt leer ist (\"Keine offenen Fragen für diese Rolle\").\n\n- Zwei-Phasen-Workflow: Phase 1 baut den Baum; das Team beantwortet die offenen Fragen; Phase 2 synthetisiert Dokumentation aus dem beantworteten Baum.",
+    "category": "documentation"
+  },
+  {
+    "id": "concise-response",
+    "title": "Concise Response (TLDR)",
+    "titleDe": "Knappe Antwort (TLDR)",
+    "description": "How responses should be structured for brevity",
+    "descriptionDe": "Wie Antworten für Kürze strukturiert sein sollen",
+    "anchors": ["bluf", "plain-english-strunk-white"],
+    "template": "Responses lead with the conclusion first (BLUF). Keep to essential points. No filler, no preamble. Use short sentences, active voice, and no unnecessary words (Strunk & White).",
+    "templateDe": "Antworten beginnen mit der Schlussfolgerung (BLUF). Nur das Wesentliche. Kein Fülltext, keine Einleitung. Kurze Sätze, aktive Sprache, keine überflüssigen Wörter (Wolf Schneider).",
+    "category": "communication"
+  },
+  {
+    "id": "simple-explanation",
+    "title": "Simple Explanation (ELI5)",
+    "titleDe": "Einfache Erklärung (ELI5)",
+    "description": "How to explain complex concepts simply",
+    "descriptionDe": "Wie man komplexe Konzepte einfach erklärt",
+    "anchors": ["feynman-technique"],
+    "template": "Explain complex concepts using simple language and everyday analogies. When the explanation feels hard to write, that reveals gaps in understanding — study those areas first (Feynman Technique).",
+    "templateDe": "Komplexe Konzepte mit einfacher Sprache und Alltagsanalogien erklären. Wenn die Erklärung schwerfällt, zeigt das Wissenslücken — diese zuerst vertiefen (Feynman-Technik).",
+    "category": "communication"
+  },
+  {
+    "id": "explaining-teaching",
+    "title": "Explaining and Teaching",
+    "titleDe": "Erklären und Lehren",
+    "description": "How to teach a topic until understanding is verified, not just explained",
+    "descriptionDe": "Wie man ein Thema lehrt, bis das Verständnis geprüft ist — nicht nur erklärt",
+    "anchors": ["4mat", "mental-model-according-to-naur", "socratic-method", "feynman-technique", "blooms-taxonomy", "definition-of-done"],
+    "template": "When asked to explain or teach something (including \"why does X…\"), act as a teacher running a dialogue, not a lecture — your goal is that the learner can apply it afterwards, not that you delivered it.\n\nStart by having the learner restate what they already understand (Socratic Method), so you teach the gap, not the whole topic; adjust depth on request (ELI5 / ELI-intern). Keep a short running checklist of what they must grasp — the problem and why it exists, the solution with its design decisions and edge cases, and why it matters — a Definition of Done for understanding, worked one item at a time; for a long or multi-session explanation, persist that checklist as a file so it survives context loss and can be resumed.\n\nTake one small step per turn: fill the gap with questions, not answers; ask, or explain the next smallest piece in a few sentences and then check it — then stop and wait. Never stack several steps in one turn. Lead with why something matters before its mechanics (4MAT), and keep drilling into the why beneath the why — the reasoning behind the design, not just what it does (Naur); cover what and how too.\n\nCheck by quizzing, never \"makes sense?\" — open or multiple-choice questions; for multiple choice, vary which option is correct and don't reveal the answer until the learner has committed. The sharpest check is having them explain it back in their own words (Feynman Technique) or apply it to a fresh case; use a concrete artifact (an example, code, a trace) when it helps. React to the actual answer: if they've got it, advance; if not, give a short targeted hint and re-ask. \"Understood\" means they can use it on a new case, not recite it (Bloom's Apply, not recall) — don't move on, and don't end, until they've shown that.\n\nDon't announce or walk through the method you're using — let it shape what you do, not what you say. Scale to the question: a small factual ask gets a one-line answer, and the learner can say \"just tell me\" anytime. If you're unsure of the topic, learn it before teaching.",
+    "templateDe": "Wenn du etwas erklären oder lehren sollst (auch „warum macht X…“), agiere als Lehrperson, die einen Dialog führt, keine Vorlesung hält — dein Ziel ist, dass die lernende Person es danach anwenden kann, nicht dass du es geliefert hast.\n\nBeginne damit, die lernende Person ihr aktuelles Verständnis zurückerklären zu lassen (Socratic Method), damit du die Lücke lehrst, nicht das ganze Thema; passe die Tiefe auf Wunsch an (ELI5 / ELI-intern). Führe eine kurze laufende Checkliste, was verstanden sein muss — das Problem und warum es existiert, die Lösung mit ihren Design-Entscheidungen und Edge Cases, und warum es zählt — eine Definition of Done fürs Verständnis, Punkt für Punkt abgearbeitet; bei einer langen oder über mehrere Sitzungen laufenden Erklärung halte diese Checkliste als Datei fest, damit sie Kontextverlust übersteht und wieder aufgenommen werden kann.\n\nGeh einen kleinen Schritt pro Zug: fülle die Lücke mit Fragen, nicht mit Antworten; frage, oder erkläre das nächstkleinere Stück in wenigen Sätzen und prüfe es dann — dann stopp und warte. Nie mehrere Schritte in einem Zug stapeln. Beginne mit dem Warum, bevor du zur Mechanik kommst (4MAT), und bohre weiter ins Warum hinter dem Warum — die Begründung hinter dem Design, nicht bloß was es tut (Naur); decke auch das Was und Wie ab.\n\nPrüfe durch Quizzen, nie „passt das?“ — offene oder Multiple-Choice-Fragen; bei Multiple Choice variiere, welche Option richtig ist, und verrate die Antwort erst, wenn die Person sich festgelegt hat. Die schärfste Probe ist das Zurückerklären in eigenen Worten (Feynman Technique) oder das Anwenden auf einen neuen Fall; nutze ein konkretes Artefakt (ein Beispiel, Code, einen Trace), wenn es hilft. Reagiere auf die tatsächliche Antwort: sitzt es, geh weiter; sitzt es nicht, gib einen kurzen gezielten Hinweis und frag erneut. „Verstanden“ heißt, sie kann es auf einen neuen Fall anwenden, nicht abrufen (Blooms Apply, nicht Abrufen) — geh nicht weiter und beende nicht, bis sie das gezeigt hat.\n\nKündige die Methode, die du benutzt, nicht an und arbeite sie nicht vor — lass sie formen, was du tust, nicht was du sagst. Passe dich an die Frage an: eine kleine Faktfrage bekommt eine einzeilige Antwort, und die lernende Person darf jederzeit sagen „sag’s mir einfach“. Wenn du beim Thema selbst unsicher bist, lerne es, bevor du lehrst.",
+    "category": "communication"
+  },
+  {
+    "id": "writing-style",
+    "title": "Writing Style",
+    "titleDe": "Schreibstil",
+    "description": "How we write technical texts — language, tone, and structure",
+    "descriptionDe": "Wie wir technische Texte schreiben — Sprache, Ton und Struktur",
+    "anchors": ["gutes-deutsch-wolf-schneider", "plain-english-strunk-white"],
+    "template": "Writing follows Gutes Deutsch nach Wolf Schneider (or Plain English according to Strunk & White).\n\nAdditionally:\n- Technical terms stay in English (LLM, Prompt, Token, Spec, etc.)\n- Address the reader directly, use first person sparingly but deliberately\n- Use analogies to human thinking to explain technical concepts\n- One thought per paragraph (5-8 sentences is fine)\n- Section headings are statements, not topic announcements\n- First sentence says what the paragraph is about\n- Show code and prompts, don't just claim things work\n- Conclusions make a clear statement — never end with 'it remains exciting'",
+    "templateDe": "Schreibstil folgt Gutes Deutsch nach Wolf Schneider (oder Plain English nach Strunk & White).\n\nZusätzlich:\n- Fachbegriffe auf Englisch lassen (LLM, Prompt, Token, Spec, etc.)\n- Leser direkt ansprechen, Ich-Perspektive sparsam aber gezielt\n- Analogien zum menschlichen Denken für technische Konzepte\n- Ein Gedanke pro Absatz (5-8 Sätze OK)\n- Zwischenüberschriften als Aussagen, nicht Themenankündigungen\n- Erster Satz sagt sofort worum es geht\n- Code/Prompts zeigen, nicht nur behaupten\n- Fazit: klare Aussage, kein 'es bleibt spannend'",
+    "category": "communication"
+  },
+  {
+    "id": "tdd-hamburg-style",
+    "title": "TDD, Hamburg Style",
+    "titleDe": "TDD, Hamburg Style",
+    "description": "Design-led TDD recipe by Ralf Westphal — close the requirements/logic gap before writing code, then test at service boundaries with minimal mocking",
+    "descriptionDe": "Design-geführtes TDD-Rezept nach Ralf Westphal — die Lücke zwischen Anforderungen und Logik vor dem Codieren schließen, dann an Servicegrenzen mit minimalem Mocking testen",
+    "anchors": ["red-green-tdd", "tdd-london-school", "tdd-chicago-school", "iosp"],
+    "template": "Design-led TDD recipe by Ralf Westphal — close the requirements/logic gap before writing code, then test at service boundaries with minimal mocking. Use it when the problem is too complex for pure micro-step Red-Green-Refactor.\n\n- **ACD cycle (Analyze → Design → Code)** precedes the test loop: first model the solution to close the gap between requirements and logic, only then code.\n- **\"Right from the start\" philosophy** — implement correctly the first time so refactoring is a correction, not routine cleanup.\n- **Service-level testing** — test behind the public API, independent of API technology.\n- **Minimal mocking** — closer to *TDD, Chicago School* than *London School*.\n- **IOSP (Integration Operation Segregation Principle)** — a function is either composition (Integration) or logic (Operation), never both; structural support for simple unit tests.\n- **Deep Work over Small Steps** — accept that some problems can't be sliced into tiny green increments; stay red longer when the design demands it.\n\nComposes: *TDD, London School*, *TDD, Chicago School*, *Red-Green-Refactor*, *IOSP*.\nSources: https://ralfw.de/hamburg-style-tdd/, https://ralfw.de/tdd-how-it-can-be-done-right/",
+    "templateDe": "Design-geführtes TDD-Rezept nach Ralf Westphal — die Lücke zwischen Anforderungen und Logik vor dem Codieren schließen, dann an Servicegrenzen mit minimalem Mocking testen. Anwenden, wenn das Problem zu komplex für reines micro-step Red-Green-Refactor ist.\n\n- **ACD-Zyklus (Analyze → Design → Code)** geht dem Test-Loop voraus: zuerst die Lösung modellieren, um die Lücke zwischen Anforderungen und Logik zu schließen, erst dann codieren.\n- **\"Right from the start\"-Philosophie** — beim ersten Mal korrekt implementieren, sodass Refactoring eine Korrektur ist, keine Routinebereinigung.\n- **Service-Level-Testing** — hinter der öffentlichen API testen, unabhängig von der API-Technologie.\n- **Minimales Mocking** — näher an *TDD, Chicago School* als an *London School*.\n- **IOSP (Integration Operation Segregation Principle)** — eine Funktion ist entweder Komposition (Integration) oder Logik (Operation), niemals beides; strukturelle Unterstützung für einfache Unit-Tests.\n- **Deep Work statt Small Steps** — akzeptieren, dass manche Probleme nicht in kleine grüne Inkremente zerlegt werden können; länger rot bleiben, wenn das Design es erfordert.\n\nKomponiert: *TDD, London School*, *TDD, Chicago School*, *Red-Green-Refactor*, *IOSP*.\nQuellen: https://ralfw.de/hamburg-style-tdd/, https://ralfw.de/tdd-how-it-can-be-done-right/",
+    "category": "development"
+  },
+  {
+    "id": "strategic-architecture-analysis",
+    "title": "Strategic Architecture Analysis",
+    "titleDe": "Strategische Architekturanalyse",
+    "description": "How we analyze architecture strategically — mapping evolution, classifying complexity, exploring the option space, and weighing tradeoffs",
+    "descriptionDe": "Wie wir Architektur strategisch analysieren — Evolution kartieren, Komplexität einordnen, den Optionsraum erkunden und Tradeoffs abwägen",
+    "anchors": ["wardley-mapping", "cynefin-framework", "morphological-box", "atam", "five-whys"],
+    "template": "Strategic architecture analysis combines four lenses, each for a different question. Reach for it when evaluating build-vs-buy, assessing architecture fitness for changing requirements, or running a strategic technology-radar review.\n\nMap the value chain with Wardley Mapping to see how each component evolves — what is commodity, what is genesis, and where the strategic differentiation actually sits.\n\nClassify each challenge with the Cynefin Framework — Clear, Complicated, Complex, or Chaotic — so the response fits the domain instead of forcing one playbook onto every problem.\n\nWhen a decision has a wide solution space, lay the dimensions and their options out in a Morphological Box and combine them deliberately, rather than anchoring on the first design that comes to mind.\n\nEvaluate the shortlisted architectures against the quality goals with ATAM, naming the sensitivity points, the tradeoff points, and the risks each option carries.\n\nWhen the root cause of a problem stays unclear, drill down with the Five Whys before committing to a direction.",
+    "templateDe": "Strategische Architekturanalyse kombiniert vier Perspektiven, jede für eine andere Frage. Anwenden bei Build-vs-Buy-Entscheidungen, bei der Bewertung der Architektur-Eignung für sich ändernde Anforderungen oder bei einem strategischen Technologie-Radar-Review.\n\nDie Wertschöpfungskette mit Wardley Mapping kartieren, um zu sehen, wie sich jede Komponente entwickelt — was Commodity ist, was Genesis, und wo die strategische Differenzierung tatsächlich liegt.\n\nJede Herausforderung mit dem Cynefin Framework einordnen — Clear, Complicated, Complex oder Chaotic — damit die Reaktion zur Domäne passt, statt jedem Problem dasselbe Vorgehen aufzuzwingen.\n\nHat eine Entscheidung einen weiten Lösungsraum, die Dimensionen und ihre Optionen in einem Morphologischen Kasten ausbreiten und bewusst kombinieren, statt sich am erstbesten Entwurf festzubeißen.\n\nDie verbleibenden Architekturen mit ATAM gegen die Qualitätsziele bewerten und dabei Sensitivitätspunkte, Tradeoff-Punkte und die Risiken jeder Option benennen.\n\nBleibt die Ursache eines Problems unklar, mit den Five Whys nachbohren, bevor eine Richtung festgelegt wird.",
+    "category": "architecture"
+  }
+]

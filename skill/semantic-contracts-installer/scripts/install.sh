@@ -22,7 +22,9 @@ Options:
   --source PATH       Markdown file containing the semantic-anchor block to inject
   --target-dir DIR    Target project directory for project scope (default: .)
   --scope SCOPE       project or home (default: project)
-  --claude-hook       Install/update a Claude SessionStart hook that re-injects the block
+  --claude-hook       Install/update a Claude SessionStart hook that re-injects the block.
+                      Only for files Claude Code does NOT load natively; skipped for CLAUDE.md.
+                      Registered with matcher "startup" (not on resume).
   -h, --help          Show this help text
 USAGE
 }
@@ -223,13 +225,13 @@ install_claude_hook() {
   local hook_root hook_script settings_file hook_command relative_target
 
   if [ "$SCOPE" = "project" ]; then
-    hook_root="$TARGET_DIR/.claude/semantic-anchor-onboarding"
+    hook_root="$TARGET_DIR/.claude/semantic-contracts-installer"
     hook_script="$hook_root/session-start.sh"
     settings_file="$TARGET_DIR/.claude/settings.json"
     relative_target="$(relative_to_target "$target_file")"
-    hook_command="\"\$CLAUDE_PROJECT_DIR\"/.claude/semantic-anchor-onboarding/session-start.sh \"\$CLAUDE_PROJECT_DIR/$relative_target\""
+    hook_command="\"\$CLAUDE_PROJECT_DIR\"/.claude/semantic-contracts-installer/session-start.sh \"\$CLAUDE_PROJECT_DIR/$relative_target\""
   else
-    hook_root="$HOME/.claude/semantic-anchor-onboarding"
+    hook_root="$HOME/.claude/semantic-contracts-installer"
     hook_script="$hook_root/session-start.sh"
     settings_file="$HOME/.claude/settings.json"
     hook_command="\"$hook_script\" \"$target_file\""
@@ -269,7 +271,8 @@ for i, entry in enumerate(session_start):
     if not isinstance(entry, dict):
         continue
     for j, hook in enumerate(entry.get("hooks", [])):
-        if isinstance(hook, dict) and "semantic-anchor-onboarding" in hook.get("command", ""):
+        cmd = hook.get("command", "") if isinstance(hook, dict) else ""
+        if "semantic-contracts-installer" in cmd or "semantic-anchor-onboarding" in cmd:
             entry_idx, hook_idx = i, j
             break
     if entry_idx is not None:
@@ -280,7 +283,7 @@ if entry_idx is not None:
 else:
     session_start.append(
         {
-            "matcher": "startup|resume",
+            "matcher": "startup",
             "hooks": [new_hook],
         }
     )
@@ -299,15 +302,90 @@ except BaseException:
 PY
 }
 
+# Remove any SessionStart hook this skill family installed (current id or the
+# former semantic-anchor-onboarding id), pruning now-empty entries. Used when the
+# target is natively loaded, so a previously-installed stale hook is cleaned up
+# rather than left double-loading the block.
+remove_claude_hook() {
+  local settings_file
+  if [ "$SCOPE" = "project" ]; then
+    settings_file="$TARGET_DIR/.claude/settings.json"
+  else
+    settings_file="$HOME/.claude/settings.json"
+  fi
+  [ -f "$settings_file" ] || return 0
+
+  cp "$settings_file" "$settings_file.bak.$(date +%Y%m%d%H%M%S)"
+
+  python3 - "$settings_file" <<'PY'
+import json, os, sys, tempfile
+
+settings_path = sys.argv[1]
+with open(settings_path, "r", encoding="utf-8") as handle:
+    settings = json.load(handle)
+
+session_start = settings.get("hooks", {}).get("SessionStart", [])
+managed = ("semantic-contracts-installer", "semantic-anchor-onboarding")
+removed = False
+for entry in session_start:
+    if not isinstance(entry, dict):
+        continue
+    kept = [h for h in entry.get("hooks", [])
+            if not (isinstance(h, dict) and any(m in h.get("command", "") for m in managed))]
+    if len(kept) != len(entry.get("hooks", [])):
+        removed = True
+    entry["hooks"] = kept
+
+if not removed:
+    sys.exit(0)
+
+# Drop entries with no hooks left, and empty containers.
+settings["hooks"]["SessionStart"] = [e for e in session_start if e.get("hooks")]
+if not settings["hooks"]["SessionStart"]:
+    del settings["hooks"]["SessionStart"]
+if not settings["hooks"]:
+    del settings["hooks"]
+
+settings_dir = os.path.dirname(settings_path) or "."
+fd, tmp_path = tempfile.mkstemp(dir=settings_dir, suffix=".tmp")
+try:
+    with os.fdopen(fd, "w", encoding="utf-8") as handle:
+        json.dump(settings, handle, indent=2)
+        handle.write("\n")
+    os.replace(tmp_path, settings_path)
+except BaseException:
+    os.unlink(tmp_path)
+    raise
+print("removed stale SessionStart hook")
+PY
+}
+
 build_injected_block
 TARGET_FILE="$(select_target_file)"
 inject_block "$TARGET_FILE"
+
+# #515: Claude Code loads CLAUDE.md natively at session start, so a SessionStart
+# hook that re-injects the same block would double-load it. Skip the hook for
+# CLAUDE.md targets; it only adds value for files Claude Code does not auto-load.
+# Also remove any previously-installed hook, so a stale one does not keep
+# double-loading after this reinstall.
+if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ] && [ "$(basename "$TARGET_FILE")" = "CLAUDE.md" ]; then
+  echo "Skipping Claude SessionStart hook: $TARGET_FILE is loaded natively by Claude Code (the hook would double-load the block)." >&2
+  if ! remove_hook_output="$(remove_claude_hook)"; then
+    echo "ERROR: failed to remove a previously-installed SessionStart hook; aborting to avoid leaving a stale hook that double-loads the block." >&2
+    exit 1
+  fi
+  if printf '%s\n' "$remove_hook_output" | grep -q "removed stale"; then
+    echo "Removed a previously-installed SessionStart hook pointing at the native file." >&2
+  fi
+  INSTALL_CLAUDE_HOOK=0
+fi
 
 if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ]; then
   install_claude_hook "$TARGET_FILE"
 fi
 
-echo "Semantic anchors installed into: $TARGET_FILE"
+echo "Semantic contracts installed into: $TARGET_FILE"
 if [ "$INSTALL_CLAUDE_HOOK" -eq 1 ]; then
   echo "Claude SessionStart hook installed or updated."
 fi
