@@ -2,6 +2,50 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-06-27
+
+*Build fix — req42 anchor title (#643):*
+
+* The deploy build broke at the metadata step because the `req42` anchor's title equalled its filename id, which the validator treats as "no real title set". Gave it a descriptive title (`req42 Requirements Framework`), in the same style as `arc42 Architecture Documentation`.
+
+*Dependency security — npm audit (website):*
+
+* `npm audit fix` cleared the three *high*-severity advisories that were failing the CI security audit (`npm audit --audit-level=high`): *Vite* 7.3.2 -> 7.3.6 (`server.fs.deny` bypass on Windows alternate paths, plus the bundled `launch-editor` NTLMv2 hash disclosure) and *ws* (uninitialized memory disclosure, memory-exhaustion DoS). Pure lockfile bumps within the declared `^7.3.1` range — build and unit tests stay green.
+* The four remaining *moderate* advisories (`js-yaml`, `uuid`) are dev-only transitive dependencies of `@lhci/cli` (Lighthouse CI) whose only fix is a breaking downgrade to `@lhci/cli@0.6.1`; they sit below the CI gate and are left in place rather than break the Lighthouse step.
+
+== 2026-06-26
+
+*18 new anchors from the proposal-triage batch (#642):*
+
+_Architecture & Design_
+
+* *Circuit Breaker* — wraps a protected call in a state machine (Closed/Open/Half-Open) that trips to fail-fast once failures cross a threshold, preventing resource exhaustion and cascading failure (Michael Nygard, _Release It!_, 2007; Martin Fowler; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/630[#630])
+* *Strangler Fig* — incrementally replaces a legacy system by routing functionality to new code around its edges until the old system can be retired, avoiding a big-bang rewrite (Martin Fowler, 2004; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/631[#631])
+* *Team Topologies* — organises delivery around four team types (Stream-aligned, Enabling, Complicated-Subsystem, Platform) and three interaction modes for fast flow (Matthew Skelton & Manuel Pais, 2019; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/632[#632])
+* *Twelve-Factor App* — twelve practices for portable, scalable SaaS (explicit dependencies, config in the environment, stateless processes, disposability) (Adam Wiggins, Heroku, 2011; proposed by https://github.com/mc2259[@mc2259] in https://github.com/LLM-Coding/Semantic-Anchors/issues/622[#622])
+* *Separation of Concerns* — study and change each distinct aspect of a system in isolation, so one can be reasoned about without interference from the others (Edsger W. Dijkstra, 1974; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/627[#627])
+* *Unix Philosophy* — make each program do one thing well and compose small sharp tools via pipes (Doug McIlroy, 1978; Eric S. Raymond, _The Art of Unix Programming_, 2003; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/628[#628])
+* *Design by Contract* — specify routines with preconditions (caller's obligation), postconditions (supplier's guarantee) and invariants, assigning blame precisely when a contract is violated (Bertrand Meyer, Eiffel, 1986; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/633[#633])
+
+_Strategy, Problem-Solving & Requirements_
+
+* *OKR (Objectives and Key Results)* — couples a qualitative Objective with a few measurable Key Results to focus and align goals (Andy Grove at Intel; popularised by John Doerr, _Measure What Matters_, 2018; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/635[#635])
+* *Fermi Estimation* — decompose an unknown quantity into estimable sub-quantities and reason in powers of ten to land the right order of magnitude (Enrico Fermi; proposed by Ralf D. Müller in https://github.com/LLM-Coding/Semantic-Anchors/issues/608[#608])
+* *Eisenhower Matrix* — plots tasks on urgency × importance to separate the two and prioritise accordingly; admitted deliberately _with_ a fetch-verified Criticism section (mere-urgency effect; Covey's own caution) (Dwight D. Eisenhower; popularised by Stephen Covey; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/623[#623])
+* *Laddering (Interview Technique)* — reconstructs the means-end chain attribute -> consequence -> value through repeated "why is that important to you?" probing (George Kelly; Hinkle; Reynolds & Gutman; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/634[#634])
+* *Consent vs. Consensus* — distinguishes decision by absence of a reasoned objection ("good enough for now, safe enough to try") from decision by everyone's active agreement (Gerard Endenburg, Sociocracy; Brian Robertson, Holacracy; proposed by https://github.com/fdesoye[@fdesoye] in https://github.com/LLM-Coding/Semantic-Anchors/issues/626[#626])
+* *req42* — the pragmatic, agile requirements framework structured as twelve "drawers" mirroring arc42; the requirements companion to arc42 (Peter Hruschka & Markus Meuten; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/625[#625])
+
+_Communication & Learning_
+
+* *Curse of Knowledge* — once you know something you cannot reconstruct not knowing it, so experts overestimate shared context (Camerer, Loewenstein & Weber, 1989; popularised by Chip & Dan Heath; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/638[#638])
+* *Four-Sides Model (Schulz von Thun)* — every message carries four sides at once — fact, self-revelation, relationship, appeal — and is heard with four matching "ears" (Friedemann Schulz von Thun, 1981; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/636[#636])
+* *Dreyfus Model of Skill Acquisition* — five stages from Novice to Expert describing how rule-following gives way to intuitive, context-driven mastery (Stuart & Hubert Dreyfus, 1980; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/637[#637])
+* *Effective Java* — Joshua Bloch's catalogue of ~90 concrete best-practice "Items" for idiomatic, robust Java (Joshua Bloch, 3rd ed. 2018; proposed by https://github.com/schtiefl[@schtiefl] in https://github.com/LLM-Coding/Semantic-Anchors/issues/618[#618])
+* *ADDIE Model* — the instructional-design process of Analysis, Design, Development, Implementation, Evaluation (Florida State University origin; codified by Robert Maribe Branch, 2009; proposed by https://github.com/davidlohner[@davidlohner] in https://github.com/LLM-Coding/Semantic-Anchors/issues/621[#621])
+
+A new *Knowledge Management* catalog section was added to house Dreyfus & ADDIE.
+
 == 2026-06-14
 
 *Explaining and Teaching contract — persist the checklist:*
