@@ -1,6 +1,6 @@
 = Twelve-Factor App
 :categories: software-architecture
-:roles: software-developer, devops-engineer, software-architect
+:roles: software-developer, devops-engineer, software-architect, legal-compliance
 :related: clean-architecture, fallacies-of-distributed-computing, conways-law
 :proponents: Adam Wiggins
 :tags: cloud-native, saas, config, stateless, deployment, heroku

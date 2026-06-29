@@ -1,6 +1,6 @@
 = C4-Diagrams
 :categories: software-architecture
-:roles: software-architect, technical-writer, team-lead, consultant
+:roles: software-architect, technical-writer, team-lead, consultant, legal-compliance
 :proponents: Simon Brown
 :tags: C4, C4 model, architecture diagrams, context container component code, Simon Brown, visualization
 :related: arc42, adr-according-to-nygard, domain-driven-design

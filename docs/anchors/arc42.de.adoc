@@ -1,6 +1,6 @@
 = arc42 Architecture Documentation
 :categories: software-architecture
-:roles: software-architect, technical-writer, team-lead
+:roles: software-architect, technical-writer, team-lead, legal-compliance
 :proponents: Gernot Starke, Peter Hruschka
 :tier: 3
 :tags: arc42, architecture documentation, software architecture, documentation template, Starke, Hruschka

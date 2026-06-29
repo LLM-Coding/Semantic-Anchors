@@ -1,6 +1,6 @@
 = ADR according to Nygard
 :categories: software-architecture
-:roles: software-architect, software-developer, team-lead
+:roles: software-architect, software-developer, team-lead, legal-compliance
 :proponents: Michael Nygard
 :tags: ADR, architecture decision record, Nygard, decision documentation, architecture decisions
 :related: madr, arc42, c4-diagrams
