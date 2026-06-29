@@ -21,6 +21,7 @@ const fs = require('fs')
 const path = require('path')
 const Asciidoctor = require('@asciidoctor/core')
 const { getAnchorDefinition } = require('./lib/anchor-definition')
+const { injectByline } = require('./lib/byline')
 
 const asciidoctor = Asciidoctor()
 const ROOT = path.join(__dirname, '..')
@@ -117,7 +118,14 @@ function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
-    const html = String(asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false }))
+    // loadFile (not convertFile) so we can read the document header metadata
+    // (author, revision date) that embedded-mode rendering otherwise drops.
+    const doc = asciidoctor.loadFile(srcPath, OPTS)
+    // getAuthor()/getRevisionDate() return a truthy Opal object that stringifies
+    // to '' when the source has no author/date, so normalize to trimmed strings.
+    const author = String(doc.getAuthor() || '').trim()
+    const revdate = String(doc.getRevisionDate() || '').trim()
+    const html = injectByline(String(doc.convert()), author, revdate)
     const { toc, body } = extractToc(rewriteLegacyHashLinks(html))
     fs.writeFileSync(destPath, prependHtml + body, 'utf-8')
     if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
