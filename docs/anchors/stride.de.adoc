@@ -1,6 +1,6 @@
 = STRIDE Bedrohungsmodell
 :categories: testing-quality
-:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, team-lead
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, team-lead, data-protection-officer
 :related: owasp-top-10, regulated-environment
 :proponents: Loren Kohnfelder, Praerit Garg, Adam Shostack
 :tags: security, threat-modeling, appsec, risk, threats

@@ -1,0 +1,65 @@
+= Twelve-Factor App
+:categories: software-architecture
+:roles: software-developer, devops-engineer, software-architect, legal-compliance
+:related: clean-architecture, fallacies-of-distributed-computing, conways-law
+:proponents: Adam Wiggins
+:tags: cloud-native, saas, config, stateless, deployment, heroku
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: 12-Factor App
+
+[discrete]
+== *Core Concepts*:
+
+Codebase:: One codebase tracked in revision control, many deploys; a one-to-one relationship between app and codebase
+
+Dependencies:: Explicitly declare and isolate dependencies; never rely on implicit system-wide packages
+
+Config in the environment:: Store config (credentials, hostnames, per-deploy values) in environment variables, strictly separated from code
+
+Backing services:: Treat databases, queues, caches and SMTP as attached resources, swappable by changing config without code edits
+
+Build, release, run:: Strictly separate the three stages; releases are immutable and append-only, every release has a unique ID
+
+Stateless, disposable processes:: Execute the app as one or more stateless, share-nothing processes; persist state only in backing services. Maximize robustness with fast startup and graceful shutdown (Disposability)
+
+Port binding:: Export the service by binding to a port; the app is self-contained and needs no runtime webserver injection
+
+Concurrency:: Scale out horizontally via the process model, treating processes as first-class citizens
+
+Dev/prod parity:: Keep development, staging and production as similar as possible — small time, personnel and tooling gaps
+
+Logs as event streams:: Treat logs as time-ordered event streams written to stdout; the execution environment handles routing and storage
+
+Admin processes:: Run admin and management tasks (migrations, REPLs) as one-off processes in an identical environment to the long-running ones
+
+Key Proponent:: Adam Wiggins (Heroku, https://12factor.net/[12factor.net], 2011)
+
+[discrete]
+== *When to Use*:
+
+* Designing or reviewing cloud-native and SaaS applications for portability and scalability
+* Establishing deployment, config and statelessness conventions for a containerized or PaaS workload
+* Onboarding developers to twelve-factor vocabulary (config-in-env, attached resources, build/release/run)
+* Prompting an LLM to scaffold a deployable, environment-portable service rather than a machine-bound one
+
+[discrete]
+== *Related Anchors*:
+
+* <<clean-architecture,Clean Architecture>>
+* <<fallacies-of-distributed-computing,Fallacies of Distributed Computing>>
+* <<conways-law,Conway's Law>>
+
+[discrete]
+== *Criticism*:
+
+* Kevin Hoffman, https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/["Beyond the Twelve-Factor App"] (O'Reilly, 2016) — argues the original set is incomplete for modern cloud platforms and proposes a revised *fifteen-factor* methodology, adding *API First*, *Telemetry* and *Authentication and Authorization* as first-class factors
+
+[discrete]
+== *Current Status*:
+
+* The canonical https://12factor.net/[12factor.net] document was "Last updated 2017" and stood unchanged for roughly eight years; a training-data prior most plausibly serves this frozen 2011/2017 text
+* Salesforce/Heroku launched an official https://12factor.net/blog/evolving-twelve-factor[Twelve-Factor modernization initiative] (Brian Hammons, 10 Feb 2025), an open-source effort revisiting the principles for containers, Kubernetes and serverless and proposing a new *Identity* factor
+====

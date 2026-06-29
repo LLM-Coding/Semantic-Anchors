@@ -1,6 +1,6 @@
 = Quality Attribute Scenario
 :categories: software-architecture, requirements-engineering
-:roles: software-architect, business-analyst, product-owner, team-lead
+:roles: software-architect, business-analyst, product-owner, team-lead, data-protection-officer, ethics-officer
 :related: atam, arc42, iso-25010, ears-requirements
 :proponents: Len Bass, Paul Clements, Rick Kazman
 :tags: quality attributes, quality requirements, scenarios, SEI, testable requirements, response measure

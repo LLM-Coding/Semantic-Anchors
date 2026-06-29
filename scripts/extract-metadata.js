@@ -200,6 +200,9 @@ function roleIdToName(id) {
     consultant: 'Consultant / Coach',
     'team-lead': 'Team Lead / Engineering Manager',
     educator: 'Educator / Trainer',
+    'data-protection-officer': 'Data Protection Officer',
+    'legal-compliance': 'Legal / Compliance Counsel',
+    'ethics-officer': 'Ethics Officer / AI Ethics Board',
   }
   return (
     names[id] ||

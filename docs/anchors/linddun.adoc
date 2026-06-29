@@ -1,6 +1,6 @@
 = LINDDUN
 :categories: testing-quality
-:roles: software-architect, software-developer, qa-engineer, business-analyst, consultant, devops-engineer
+:roles: software-architect, software-developer, qa-engineer, business-analyst, consultant, devops-engineer, data-protection-officer
 :related: owasp-top-10, regulated-environment
 :proponents: Kim Wuyts, Riccardo Scandariato, Wouter Joosen
 :tags: privacy, threat-modeling, privacy-engineering, GDPR, data-protection, threat-analysis, privacy-by-design
