@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-01
+
+*New contract — Presentation Planning (Präsentation planen):*
+
+* A new `presentation-planning` contract (category *Communication*, EN + DE) bundles known anchors into a plan-a-talk workflow: *link:#/anchor/socratic-method[Socratic Method]* to elicit the brief, *link:#/anchor/curse-of-knowledge[Curse of Knowledge]* for audience empathy, *link:#/anchor/pyramid-principle[Pyramid Principle]* + *link:#/anchor/mece[MECE]* for top-down structure, *link:#/anchor/three-act-structure[Three-Act Structure]* / *link:#/anchor/story-circle-dan-harmon[Story Circle]* for the narrative arc, *link:#/anchor/4mat[4MAT]* for why-first, and *link:#/anchor/bluf[BLUF]* for the opening. It produces a plan (core message, audience, arc, per-section takeaways) rather than slides, and works one step at a time. It deliberately excludes delivery/stagecraft — no established anchor covers it yet. Proposed by https://github.com/raifdmueller[@raifdmueller].
+
 == 2026-06-27
 
 *"New" badge on recently-added anchors (#652):*
