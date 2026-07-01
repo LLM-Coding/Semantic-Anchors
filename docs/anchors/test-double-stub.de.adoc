@@ -1,0 +1,38 @@
+= Test Double: Stub (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Gerard Meszaros
+:related: test-double-meszaros, test-double-spy, test-double-mock
+:tags: test-double, stub, testing, isolation, canned-response
+:tier: 3
+:parent-anchor: test-double-meszaros
+
+[%collapsible]
+====
+[discrete]
+== *Kernkonzepte*:
+
+Zweck:: Liefert vordefinierte (vorgefertigte) Antworten auf Aufrufe während eines Tests. Verifiziert keine Interaktionen — stellt nur Daten bereit.
+
+Verhalten:: Gibt feste Werte unabhängig von der Eingabe zurück. Keine Assertion darüber, ob oder wie er aufgerufen wurde.
+
+Abgrenzung zum Mock:: Ein Stub lässt einen Test nie fehlschlagen. Er liefert nur Daten. Ein Mock hat Erwartungen und kann den Test fehlschlagen lassen, wenn die Interaktionen falsch sind.
+
+Schlüsselvertreter:: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Einem LLM sagen: "Erzeuge ein Stub-Test-Double, das diese festen Daten zurückgibt"
+* Isolieren des System Under Test von externen Abhängigkeiten (Datenbank, API)
+* Zustandsbasiertes Testen (Chicago School TDD)
+* Wenn das *Ergebnis* zählt, nicht *wie* es zustande kam
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<test-double-meszaros,Test Double (Meszaros)>> — übergreifende Taxonomie
+* <<test-double-spy,Spy>> — ein Stub, der zusätzlich Aufrufe aufzeichnet
+* <<test-double-mock,Mock>> — wenn Interaktionsverifikation benötigt wird
+* <<tdd-chicago-school,TDD, Chicago School>> — bevorzugt Stubs gegenüber Mocks
+====

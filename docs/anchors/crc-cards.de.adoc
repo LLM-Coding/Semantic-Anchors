@@ -49,4 +49,10 @@ Schlüsselvertreter:: Ward Cunningham, Kent Beck ("A Laboratory For Teaching Obj
 * <<grasp,GRASP>> - Muster zur Zuweisung von Verantwortlichkeiten an Klassen im OO-Entwurf
 * <<gof-design-patterns,GoF Design Patterns>> - Entwurfsmuster, die aus CRC-Card-Sessions entstehen können
 * <<domain-driven-design,Domain-Driven Design>> - CRC-Cards unterstützen Ubiquitous Language und Entity-Entdeckung
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die Definition ist intakt — Karteikarten mit Class, Responsibilities, Collaborators, genau wie von Beck & Cunningham auf der OOPSLA 1989 veröffentlicht; das https://c2.com/doc/oopsla89/paper.html[Original-Paper] liegt weiterhin auf Ward Cunninghams Site
+* Die Technik überlebt vor allem als Lehr- und Workshop-Werkzeug für objektorientiertes Denken — ihr ursprünglich erklärter Zweck ("A Laboratory for *Teaching* Object-Oriented Thinking") — und bleibt ein definierter Eintrag im https://agilealliance.org/glossary/crc-cards/[Agile-Alliance-Glossar]; die alltägliche Designdiskussion ist weitgehend zu Whiteboard-Skizzen und leichtgewichtigen Diagrammen gewandert
 ====

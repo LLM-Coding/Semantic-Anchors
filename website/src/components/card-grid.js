@@ -10,6 +10,17 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;')
 }
 
+// An anchor is flagged "new" for 30 days after its first commit (#652). Computed
+// at render time against the current date, so the badge expires on its own.
+const NEW_WINDOW_MS = 30 * 24 * 60 * 60 * 1000
+
+function isRecentlyAdded(anchor) {
+  if (!anchor.addedAt) return false
+  const added = new Date(anchor.addedAt).getTime()
+  if (Number.isNaN(added)) return false
+  return Date.now() - added < NEW_WINDOW_MS
+}
+
 /**
  * Category color palette (matching previous categories)
  */
@@ -192,7 +203,11 @@ function renderAnchorCard(anchor, categoryColor, categoryId) {
       aria-labelledby="${cardTitleId}"
     >
       <div class="anchor-card-header">
-        <h3 id="${cardTitleId}" class="anchor-card-title">${escapeHtml(anchor.title)}</h3>
+        <h3 id="${cardTitleId}" class="anchor-card-title">${escapeHtml(anchor.title)}${
+          isRecentlyAdded(anchor)
+            ? ` <span class="anchor-new-badge" title="${escapeHtml(i18n.t('card.new'))}">${escapeHtml(i18n.t('card.new'))}</span>`
+            : ''
+        }</h3>
         <div class="flex gap-1">
           <button
             class="anchor-copy-keyword-btn"
@@ -230,6 +245,14 @@ function renderAnchorCard(anchor, categoryColor, categoryId) {
           </a>
         </div>
       </div>
+
+      ${
+        anchor.advisory
+          ? `
+        <div class="anchor-advisory-badge" role="note" aria-label="${escapeHtml(i18n.t('card.advisory'))}: ${escapeHtml(anchor.advisory)}"><span aria-hidden="true">⚠</span> ${escapeHtml(anchor.advisory)}</div>
+      `
+          : ''
+      }
 
       ${
         anchor.proponents && anchor.proponents.length > 0
@@ -440,6 +463,12 @@ export function applyCardFilters(roleId, searchQuery) {
   const sections = document.querySelectorAll('.category-section')
 
   const lowerQuery = searchQuery ? searchQuery.toLowerCase().trim() : ''
+
+  // An active search hides the hero so the results sit directly under the
+  // header instead of below the fold; clearing the query restores it. The
+  // role filter alone deliberately leaves the hero in place (#615).
+  const hero = document.getElementById('hero')
+  if (hero) hero.classList.toggle('hero-collapsed', !!lowerQuery)
 
   // Use full-text search if index is ready and query exists
   let matchingAnchorIds = null

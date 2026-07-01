@@ -48,4 +48,11 @@ Key Proponents:: Andy Hunt & Dave Thomas, *The Pragmatic Programmer* (1999)
 * <<single-level-of-abstraction-principle,Single Level of Abstraction Principle>> — hält extrahierte Abstraktionen kohärent
 * <<kiss-principle,KISS Principle>> — das Einfachheits-Gegengewicht zur Über-Abstraktion
 * <<yagni,YAGNI>> — die Abstraktion erst bauen, wenn sie wirklich gebraucht wird
+
+[discrete]
+== *Kritik*:
+
+* Sandi Metz, https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction["The Wrong Abstraction"] (2016) — übereifriges DRY erzeugt Abstraktionen, in die spätere Anforderungen nicht passen: "duplication is far cheaper than the wrong abstraction"; ihr Rat: die Duplizierung wieder einführen, bis sich die richtige Abstraktion zeigt
+* Die Autoren selbst räumen ein, dass das Prinzip breit missverstanden wird: In der 20th Anniversary Edition (2019) schreiben Thomas & Hunt, sie hätten DRY ursprünglich "schlecht erklärt" — es zielt auf Duplizierung von *Wissen und Absicht*; Code-Deduplizierung ist "ein winziger und ziemlich trivialer Teil" (https://media.pragprog.com/titles/tpp20/dry.pdf[offizieller Kapitelauszug])
+* Die Folgerung beider Kritiken: Zwei Code-Stücke, die gleich aussehen, aber unterschiedliches Fachwissen kodieren, sind keine DRY-Verletzung — sie zu verschmelzen erzeugt Kopplung, nicht Klarheit
 ====

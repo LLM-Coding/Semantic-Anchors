@@ -60,4 +60,10 @@ Schlüsselstandard:: IEC 61508 "Funktionale Sicherheit sicherheitsbezogener elek
 * Etablierung von Softwareentwicklungsprozessen für Sicherheitsanwendungen
 * Durchführung von HAZOP-Studien (Hazard and Operability)
 * Implementierung funktionaler Sicherheitsmanagementsysteme
+
+[discrete]
+== *Aktueller Stand*:
+
+* Der Prior ist fast vollständig auf Edition 2 (2010) trainiert, die seit über 15 Jahren der veröffentlichte Standard ist — Ed-2-Wissen (SIL-Tabellen, Lifecycle-Phasen) ist weiterhin maßgeblich
+* Edition 3 steht Mitte 2026 in der finalen Freigabe (https://webstore.iec.ch/en/publication/5515[IEC-Prognose: Veröffentlichung um Oktober 2026]), mit Cybersecurity-Anbindung an IEC 62443 und Leitlinien zu KI/ML in Sicherheitsfunktionen — wenn die "aktuelle Edition" zählt, im IEC-Webstore prüfen statt Ed 3 anzunehmen
 ====

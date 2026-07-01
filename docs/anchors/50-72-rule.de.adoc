@@ -1,0 +1,50 @@
+= 50/72 Rule
+:categories: development-workflow
+:roles: software-developer, devops-engineer
+:related: plain-english-strunk-white, bluf, inverted-pyramid-style
+:proponents: Tim Pope
+:tags: git, commit-messages, version-control, conventions, readability
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: 50/72 Rule for Git Commit Messages
+
+Auch bekannt als:: Git Commit Message Convention, Seven Rules of Git Commits
+
+[discrete]
+== *Kernkonzepte*:
+
+50-Zeichen-Betreffzeile:: Die Betreffzeile sollte etwa 50 Zeichen lang sein — ein weiches Limit, das den Autor zwingt, die Änderung präzise zu benennen. GitHub kürzt nach 72 Zeichen ab; `git log --oneline` noch früher. 50 Zeichen als Ziel, 72 als harte Obergrenze.
+
+Imperativform:: Schreibe die Betreffzeile im Imperativ: „Fix bug" statt „Fixed bug" oder „Fixes bug." Das spiegelt die eigene Konvention von Git wider — `git merge` erzeugt „Merge branch…", `git revert` erzeugt „Revert…".
+
+Leerzeile als Trenner:: Trenne die Betreffzeile vom Textkörper durch eine Leerzeile. Git-Werkzeuge — `rebase`, `format-patch`, `log --oneline` — verlassen sich auf diesen Trenner, um Zusammenfassung und Erklärung zu unterscheiden. Ohne die Leerzeile geraten diese Werkzeuge durcheinander.
+
+Zeilenumbruch bei 72 Zeichen:: Brich den Textkörper bei 72 Zeichen um. Mit Gits 4-Leerzeichen-Einrückung passt eine 72-Zeichen-Zeile in ein 80-Spalten-Terminal. Dasselbe Limit macht die Nachricht als E-Mail-Patch via `git format-patch` verwendbar.
+
+Textkörper erklärt das Warum:: Der Code-Diff zeigt bereits, was sich geändert hat. Der Commit-Text erklärt die Entscheidung — Kontext, Abwägungen, Hintergrund. Das Wie gehört in Quellkommentare; das Warum gehört in den Commit.
+
+Schlüsselvertreter:: Tim Pope (https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html["A Note About Git Commit Messages", tbaggery.com, 2008] — hat die Regel geprägt und verbreitet); Chris Beams (https://cbea.ms/git-commit/["How to Write a Git Commit Message", cbea.ms] — hat sie als „Seven Rules" kodifiziert)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Beim Schreiben von Commit-Nachrichten in jedem Git-Repository
+* Bei der Konfiguration von `commit.template` oder Linting-Hooks (`commitlint`, `.gitmessage`)
+* Im Code-Review: Prüfen, ob eine Commit-Nachricht Reviewern und zukünftigen `git bisect`-Nutzern genug Kontext bietet
+* Beim Anweisen eines LLM zur Erzeugung einer Commit-Nachricht — die Nennung „50/72 Rule" aktiviert die vollständige Konvention, ohne jede Einzelregel wiederholen zu müssen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<plain-english-strunk-white,Plain English (Strunk & White)>> — dieselbe Sprachökonomie, angewandt auf Prosa
+* <<bluf,BLUF>> — das Wichtigste zuerst (Betreffzeile), Details im Textkörper
+* <<inverted-pyramid-style,Inverted Pyramid Style>> — Wichtigstes zuerst, unterstützende Details folgen
+
+[discrete]
+== *Aktueller Status*:
+
+* Der Artikel https://cbea.ms/git-commit/["How to Write a Git Commit Message"] von Chris Beams ist die am häufigsten verlinkte Ausarbeitung von Tim Popes Originalpost; er ergänzt Großschreibung, kein abschließender Punkt und die formale Regel „Warum erklären, nicht Wie"
+* <<conventional-commits,Conventional Commits>> fügt ein `type(scope):`-Präfix hinzu, das direkt in das 50-Zeichen-Budget eingreift; https://blog.thirstybear.co.uk/2025/05/git-commit-messages-why-keep-50.html[Thirstybear (2025)] argumentiert, dass diese Metadaten in Commit-Trailer gehören, nicht in die Betreffzeile, und verteidigt das 50-Zeichen-Limit mit typografischen Gründen — unter Verweis auf die Empfehlung des Schweizer Designers Emil Ruder von 50–60 Zeichen pro Zeile als Lesbarkeitsoptimum
+====

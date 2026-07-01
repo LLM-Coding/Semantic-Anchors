@@ -1,7 +1,7 @@
 name: Propose New Semantic Anchor
 description: Suggest a new semantic anchor for the catalog
 title: "[Anchor Proposal]: "
-labels: ["new-anchor", "needs-validation"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
@@ -70,6 +70,24 @@ body:
         Response: ...
     validations:
       required: true
+
+  - type: textarea
+    id: viability-test
+    attributes:
+      label: Viability Test (Optional but encouraged)
+      description: |
+        Recognition is not activation. Does naming this anchor actually change the
+        LLM's output structure? Compare: (A) the task without the anchor term vs.
+        (B) the same task with it. See the training-data-vs-practice article for the
+        methodology.
+      placeholder: |
+        Task: "..."
+        Without anchor: [brief description of output structure]
+        With anchor: [brief description of output structure]
+        Structural difference: [what changed]
+        Weak model tested: [model name, result]
+    validations:
+      required: false
 
   - type: checkboxes
     id: checklist

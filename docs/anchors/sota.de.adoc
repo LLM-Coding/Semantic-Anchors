@@ -58,4 +58,10 @@ Schlüsselvertreter:: Weit verbreitet in der ML/AI-Forschungsgemeinschaft
 * Konsistente Bedeutung über Kontexte hinweg: "am besten performend" und "aktuellst"
 * Präziser Trigger für umfassendes Rechercheverhalten
 * Aktiviert forschungsorientierte Antwortmuster in LLMs
+
+[discrete]
+== *Aktueller Stand*:
+
+* "SOTA" ist ein Zeitstempel, keine Tatsache: Das State-of-the-Art-Wissen jedes Modells friert am Trainings-Cutoff ein — und sogar die Referenz-Infrastruktur churnt: Papers with Code, lange der kanonische SOTA-Tracker, leitet inzwischen zu Hugging Face um und existiert als Leaderboard-Site nicht mehr (verifiziert Juni 2026)
+* Wer "SOTA" schreibt oder liest, hängt Datum und Quelle an; für aktuelle Rankings ein lebendes Leaderboard (z. B. https://lmarena.ai/[lmarena.ai]) zum Lesezeitpunkt konsultieren statt einer Liste aus dem Modellgedächtnis
 ====

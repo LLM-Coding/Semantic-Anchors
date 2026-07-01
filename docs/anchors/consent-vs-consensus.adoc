@@ -1,0 +1,50 @@
+= Consent vs. Consensus
+:categories: strategic-planning
+:roles: team-lead, consultant, product-owner
+:related: cynefin-framework, devils-advocate, double-diamond
+:proponents: Gerard Endenburg, Brian Robertson
+:tags: decision-making, sociocracy, holacracy, governance, facilitation
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Consent-based decision-making vs. consensus decision-making
+
+[discrete]
+== *Core Concepts*:
+
+Consensus:: Active agreement of everyone — each participant must be *for* the proposal ("yes"). Seeks the option everyone prefers; a veto can block without an argument. Risks slow decisions, lowest-common-denominator outcomes, and groupthink.
+
+Consent:: Absence of a *paramount, reasoned objection* — participants need only be *not against* ("no objection"). The test is "good enough for now, safe enough to try", not "does everyone love it".
+
+Paramount objection:: An objection must be argued and show how the proposal would harm the group's aim or impair someone's ability to work toward it. Mere preference or "I'd do it differently" is not an objection.
+
+Objection integration:: Valid objections are harvested and integrated into an amended proposal, rather than triggering a veto — the proposal evolves until no paramount objection remains.
+
+Sociocracy (Sociocratic Circle Method):: Gerard Endenburg formalized consent-based governance in the 1970s (building on Kees Boeke's Quaker-rooted consensus practice at the Werkplaats school). Consent is one of four principles, alongside circles, double-linking, and elections.
+
+Holacracy (Integrative Decision-Making):: Brian Robertson's structured governance process (HolacracyOne, 2007): propose, react, amend, then test for objections. Decisions are anchored in *roles' needs*, not personal preference or ego.
+
+Key Proponents:: Gerard Endenburg (Sociocratic Circle-Organizing Method); Brian Robertson ("Holacracy: The New Management System for a Rapidly Changing World"); roots in Kees Boeke and the Quaker "sense of the meeting"
+
+[discrete]
+== *When to Use*:
+
+* Naming why a group is stuck seeking unanimous enthusiasm when "no objection" would suffice
+* Designing or facilitating fast, non-blocking governance decisions
+* Distinguishing a reasoned, integrable objection from a personal preference or veto
+* Explaining self-management practices in sociocratic or Holacratic organizations
+* Contrasting with relatives: Quaker "sense of the meeting", IETF "rough consensus", "lazy consensus", and "disagree and commit"
+
+[discrete]
+== *Related Anchors*:
+
+* <<cynefin-framework,Cynefin Framework>>
+* <<devils-advocate,Devil's Advocate>>
+* <<double-diamond,Double Diamond>>
+
+[discrete]
+== *Current Status*:
+
+* Classic sociocracy (Endenburg) has a documented modular successor: https://patterns.sociocracy30.org/[Sociocracy 3.0 (S3)], created by Bernhard Bockelbrink, James Priest, and Liliana David (launched 2015), which deconstructs the integrated method into 70+ adoptable patterns and adds principles such as empiricism and transparency. See https://en.wikipedia.org/wiki/Sociocracy[Sociocracy (Wikipedia)] for the lineage from Kees Boeke through Endenburg.
+====

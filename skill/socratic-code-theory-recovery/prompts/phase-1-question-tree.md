@@ -1,6 +1,6 @@
 # Phase 1 Prompt: Build the Question Tree
 
-Copy the block below into a session that has read access to the bounded context. Replace `[bounded context path]` with the actual path. Adapt the Q1-Q5 wording if your domain has different starting concerns, but do not change the fixed second level, the leaf classification, the Q-ID scheme, or the output files.
+Copy the block below into a session that has read access to the bounded context. Replace `[bounded context path]` with the actual path and `[context-name]` with the short human-readable context name in kebab-case (e.g. `auth`, `vibe-core`) — the same name Phase 2 uses for its output files. Adapt the Q1-Q5 wording if your domain has different starting concerns, but do not change the fixed second level, the leaf classification, the Q-ID scheme, or the output-file naming scheme.
 
 ```
 You are performing Socratic Code-Theory Recovery on a brownfield bounded
@@ -31,6 +31,22 @@ Process:
      Q4.9       which characteristic has priority
      Q5.1-Q5.5  technical debt, security risks, operational risks,
                 dependency/supply-chain risks, scaling/performance risks
+
+   One node carries a FIXED third level too: Q3.2 (Architecture
+   Constraints) always emits exactly these three sub-nodes, mirroring the
+   constraint kinds arc42 Chapter 2 distinguishes:
+     Q3.2.1 technical constraints — language, runtime, mandated
+            frameworks/libraries
+     Q3.2.2 organizational/process constraints — git workflow, branching,
+            release process, review rules
+     Q3.2.3 conventional constraints — naming, file layout, code-style
+            rules, commit conventions
+   For the Q3.2 branch specifically, look beyond source code: CLAUDE.md /
+   AGENTS.md, CONTRIBUTING files, CI workflow definitions, and
+   linter/formatter configs are valid evidence sources — cite them
+   file:line like any other evidence. Constraints of these kinds rarely
+   live in dense code, so a code-density-driven decomposition would walk
+   right past them.
 
 3. Below the fixed second level, decompose ADAPTIVELY and code-driven.
    A node is a leaf ONLY when its question can be answered with specific
@@ -79,16 +95,17 @@ Process:
    an [ANSWERED] quality scenario with file:line. Never invent a target
    number. Only the quality-goal ranking (Q4.9) is [OPEN].
 
-5. Output two files in AsciiDoc:
+5. Output two files in AsciiDoc, named after the bounded context so that
+   sequential runs on different contexts never overwrite each other:
 
-   QUESTION_TREE.adoc
+   QUESTION_TREE-[context-name].adoc
      - Full hierarchical tree with all nodes and Q-IDs
      - Each leaf marked [ANSWERED] (with evidence) or [OPEN] (with Category
        and Ask role)
      - Includes all reasoning, not only the leaves
 
-   OPEN_QUESTIONS.adoc
-     - Only the [OPEN] leaves, copied verbatim from QUESTION_TREE.adoc
+   OPEN_QUESTIONS-[context-name].adoc
+     - Only the [OPEN] leaves, copied verbatim from the Question Tree file
      - Always one section per Ask role (Product Owner, Architect,
        Developer, Domain Expert, Operations) — emit every section even
        when it is empty ("No open questions for this role")
@@ -101,12 +118,12 @@ team has filled in the [OPEN] leaves.
 
 ## What to do after the prompt completes
 
-1. **Sanity-check `QUESTION_TREE.adoc` for evidence.** Pick three `[ANSWERED]` leaves at random and verify the cited file:line actually contains the claim. If any cite is wrong, the LLM is hallucinating evidence — re-run with a smaller bounded context.
+1. **Sanity-check `QUESTION_TREE-[context-name].adoc` for evidence.** Pick three `[ANSWERED]` leaves at random and verify the cited file:line actually contains the claim. If any cite is wrong, the LLM is hallucinating evidence — re-run with a smaller bounded context.
 
 2. **Sanity-check the tree for depth.** Scan for `[ANSWERED]` leaves whose evidence is a directory or a whole file, or whose answer is one paragraph standing in for an entire arc42 chapter (a common failure on `Q3.5` building-block view and `Q2.3` per-interface system specs). Those leaves were not decomposed far enough — decomposition stopped before the answer became specific. Re-run Phase 1, or decompose those branches further. Note: the OPEN-question count measures only the OPEN side; a healthy count (10-15) does not mean the ANSWERED side is deep enough — check leaf granularity separately.
 
-3. **Route `OPEN_QUESTIONS.adoc` to the team.** One section per Ask role. Typically 10-15 questions for a small bounded context; if you see 50+, the bounded context is too large.
+3. **Route `OPEN_QUESTIONS-[context-name].adoc` to the team.** One section per Ask role. Typically 10-15 questions for a small bounded context; if you see 50+, the bounded context is too large.
 
-4. **Team writes answers directly into `OPEN_QUESTIONS.adoc`** under each question. Mark deferrals explicitly as `(deferred)` so Phase 2 can decide whether to leave them as gaps in the documentation.
+4. **Team writes answers directly into `OPEN_QUESTIONS-[context-name].adoc`** under each question. Mark deferrals explicitly as `(deferred)` so Phase 2 can decide whether to leave them as gaps in the documentation.
 
 5. Only after every leaf has an answer or an explicit deferral, run Phase 2.

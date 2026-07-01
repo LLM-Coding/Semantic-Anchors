@@ -47,4 +47,11 @@ Key Proponent:: Albert Humphrey (Stanford Research Institute, 1960s–1970s)
 * <<pugh-matrix,Pugh Matrix>>
 * <<wardley-mapping,Wardley Mapping>>
 * <<moscow,MoSCoW>>
+
+[discrete]
+== *Criticism*:
+
+* Hill & Westbrook, https://doi.org/10.1016/S0024-6301(96)00095-7["SWOT Analysis: It's Time for a Product Recall"] (Long Range Planning, 1997) — in a study of 20 companies, SWOT produced long, vague, unweighted bullet lists that were never verified and never used in the subsequent strategy process
+* Criticized as a static snapshot: no prioritisation, no probability or impact weighting, and no built-in step from analysis to action — the TOWS variant exists precisely to patch this gap
+* Alternatives named in the discourse: structured option evaluation (e.g. <<pugh-matrix,Pugh Matrix>>) and evolution-aware positioning (<<wardley-mapping,Wardley Mapping>>) where SWOT's four static quadrants fall short
 ====

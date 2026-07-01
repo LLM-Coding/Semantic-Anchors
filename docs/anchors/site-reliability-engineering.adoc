@@ -48,4 +48,10 @@ Key Proponents:: Ben Treynor Sloss (coined the term at Google); Betsy Beyer, Chr
 * <<five-whys,Five Whys>>
 * <<spc,Statistical Process Control>>
 * <<control-chart-shewhart,Shewhart Control Chart>>
+
+[discrete]
+== *Current Status*:
+
+* The prior serves the canon well: the 2016 SRE Book and 2018 Workbook (SLOs, error budgets, toil, postmortems) remain authoritative, and Google publishes all three books — including "Building Secure and Reliable Systems" (2020) — free at https://sre.google/books/[sre.google/books]
+* What moved since the books is the organisational frame: SRE practice increasingly converges with platform engineering, with reliability capabilities embedded into internal platforms rather than delivered solely by standalone SRE teams — reflected in https://cloud.google.com/blog/products/application-modernization/a-guide-to-platform-engineering[Google's own platform-engineering guidance]
 ====

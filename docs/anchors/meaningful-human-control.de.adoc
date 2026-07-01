@@ -93,4 +93,10 @@ Dieser Anker ist als *Tier 2 — qualifizierungsbedürftig* eingestuft. Er steht
 * *Warum nicht Tier 3*: MHC lässt sich ohne domänenspezifischen Kontext nicht bewerten (Waffen vs. Medizin vs. Automotive). Dasselbe System kann MHC in einer Domäne erfüllen und in einer anderen verfehlen. Sharkey-Stufe S3 mag für Frachtschiffe genügen, nicht aber für die Zielbekämpfung mit Waffengewalt.
 * *Warum nicht Tier 1*: MHC ist ein gut etabliertes, mehrfach belegtes Konzept mit klarer Definition, konsistenter Verwendung über Domänen hinweg, attribuierbarem Ursprung und reicher konzeptueller Aktivierung.
 * *Qualifizierungspfad*: Um MHC anzuwenden, muss man beantworten: „Wer kontrolliert was, mit welchen Informationen, unter welchen Einschränkungen, und wer trägt die Verantwortung?" Die fünf Kriterien oben operationalisieren diese Frage.
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die kanonische Referenz ist Santoni de Sio & van den Hoven, https://doi.org/10.3389/frobt.2018.00015["Meaningful Human Control over Autonomous Systems: A Philosophical Account"] (Frontiers in Robotics and AI, 2018), mit den Bedingungen "Tracking" und "Tracing"
+* Der Prior ist dünn: ein rein akademischer Fußabdruck, verankert in einem Open-Access-Philosophie-Paper (TU-Delft-Ethikgruppe) und einer Nischen-Literatur zur KI-Ethik, mit wenig Praktiker-Rezeption — liefere die Tracking/Tracing-Definitionen im Prompt mit, wenn es auf Präzision ankommt
 ====

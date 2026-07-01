@@ -46,4 +46,11 @@ Key Proponents:: Jon Postel (RFC 760/761, 1980, im Kontext von TCP/IP)
 * <<semantic-versioning,Semantic Versioning>> — die Explizit-Versionierung als Ergänzung zu toleranten Inputs
 * <<solid-principles,SOLID Principles>> — Schnittstellendesign und Contract-Stabilität
 * <<event-driven-architecture,Event-Driven Architecture>> — tolerante Reader für sich entwickelnde Event-Schemas
+
+[discrete]
+== *Kritik*:
+
+* Eric Allman, https://queue.acm.org/detail.cfm?id=1999945["The Robustness Principle Reconsidered"] (ACM Queue, 2011) — Jahrzehnte liberaler Annahme züchteten De-facto-Protokoll-Forks und Sicherheitslücken; Toleranz, die als Übergang gedacht war, wurde permanent
+* https://www.rfc-editor.org/rfc/rfc9413[RFC 9413, "Maintaining Robust Protocols"] (Thomson & Schinazi, IETF, 2023) — offizielle IETF-Leitlinie, dass pauschale Nachsicht Protokoll-Ökosystemen langfristig schadet; mehrdeutige Toleranz ermöglicht Interoperabilitätsfehler und Angriffe wie Request Smuggling
+* Im Diskurs benannte Alternative: aktive Protokollpflege mit striktem Parsing und expliziter Versionierung ("fail fast") statt stillschweigender Annahme fehlerhaften Inputs — siehe <<semantic-versioning,Semantic Versioning>>
 ====

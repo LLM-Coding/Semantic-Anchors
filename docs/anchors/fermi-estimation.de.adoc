@@ -1,0 +1,45 @@
+= Fermi Estimation
+:categories: problem-solving
+:roles: software-architect, data-scientist, software-developer, consultant
+:related: first-principles-thinking, mece, five-whys
+:proponents: Enrico Fermi
+:tags: estimation, order-of-magnitude, back-of-envelope, approximation, decomposition
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Order-of-Magnitude Estimation, Back-of-the-Envelope Calculation, Fermi-Problem, Guesstimation
+
+[discrete]
+== *Kernkonzepte*:
+
+Zerlegung:: Eine unbekannte Größe in eine Kette kleinerer Teilgrößen aufteilen, die sich jeweils mit gewisser Sicherheit schätzen lassen
+
+Größenordnungs-Denken:: In Zehnerpotenzen denken; das Ziel ist die richtige Zehnerpotenz, nicht der exakte Wert
+
+Eingrenzung (Bracketing):: Für jede Teilgröße eine plausible Unter- und Obergrenze wählen und das geometrische Mittel der Grenzen als Schätzwert nehmen
+
+Fehlerausgleich:: Unabhängige Über- und Unterschätzungen heben sich tendenziell auf, sodass das Produkt vieler grober Schätzungen oft innerhalb eines Faktors 2-3 vom wahren Wert liegt
+
+Plausibilitätsprüfung / Dimensionierung:: Mit der Schätzung prüfen, ob eine Behauptung, ein Design oder eine gemessene Zahl überhaupt plausibel ist, bevor man in Präzision investiert
+
+Das Klavierstimmer-Problem:: Fermis klassisches Lehrbeispiel — "Wie viele Klavierstimmer gibt es in Chicago?" — gelöst durch Verkettung von Bevölkerung, Klavieren pro Haushalt, Stimmhäufigkeit und Durchsatz pro Stimmer
+
+Schlüsselvertreter:: Enrico Fermi (schätzte die Sprengkraft des Trinity-Tests, indem er Papierschnipsel in die Druckwelle fallen ließ, und lag innerhalb einer Größenordnung); Lawrence Weinstein und John A. Adam (https://press.princeton.edu/books/paperback/9780691129495/guesstimation["Guesstimation: Solving the World's Problems on the Back of a Cocktail Napkin"], Princeton University Press, 2008)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Dimensionierung eines Systems vor detaillierter Analyse (Kapazität, Kosten, Traffic)
+* Build-vs-Buy- und Machbarkeitsprüfungen, wenn exakte Zahlen fehlen
+* Schätzaufgaben in Interviews und am Whiteboard
+* Prüfung einer überraschenden Kennzahl oder Hersteller-Behauptung gegen grobe physikalische Grenzen
+* Einen LLM auffordern, eine quantitative Schätzung zu plausibilisieren, indem er sie zerlegt und in Zehnerpotenzen rechnet
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<first-principles-thinking,First Principles Thinking>>
+* <<mece,MECE>>
+* <<five-whys,Five Whys>>
+====

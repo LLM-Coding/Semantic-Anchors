@@ -48,4 +48,11 @@ Key Proponents:: Andy Hunt & Dave Thomas, *The Pragmatic Programmer* (1999)
 * <<single-level-of-abstraction-principle,Single Level of Abstraction Principle>> — keeps extracted abstractions coherent
 * <<kiss-principle,KISS Principle>> — the simplicity counterweight to over-abstraction
 * <<yagni,YAGNI>> — don't build the abstraction until you actually need it
+
+[discrete]
+== *Criticism*:
+
+* Sandi Metz, https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction["The Wrong Abstraction"] (2016) — overzealous DRY produces abstractions that later requirements don't fit: "duplication is far cheaper than the wrong abstraction"; her advice is to re-introduce the duplication until the right abstraction reveals itself
+* The authors themselves concede the principle is widely misread: in the 20th Anniversary Edition (2019), Thomas & Hunt write they "did a poor job of explaining" DRY — it targets duplication of *knowledge and intent*; code deduplication is "a tiny and fairly trivial part" (https://media.pragprog.com/titles/tpp20/dry.pdf[official chapter extract])
+* The corollary both critiques share: two pieces of code that look alike but encode different business knowledge are not a DRY violation — merging them creates coupling, not clarity
 ====

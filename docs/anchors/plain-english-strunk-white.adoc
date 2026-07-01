@@ -48,4 +48,11 @@ Key Proponents:: William Strunk Jr. ("The Elements of Style", 1918); E.B. White 
 * <<gutes-deutsch-wolf-schneider,Gutes Deutsch nach Wolf Schneider>> — the German-language equivalent of clarity-first writing principles
 * <<bluf,BLUF (Bottom Line Up Front)>> — complements plain style with a structure that leads with the conclusion
 * <<pyramid-principle,Pyramid Principle according to Barbara Minto>> — a complementary framework for structuring arguments hierarchically
+
+[discrete]
+== *Criticism*:
+
+* Geoffrey K. Pullum, https://sites.stat.columbia.edu/gelman/communication/Pullum2009.pdf["50 Years of Stupid Grammar Advice"] (The Chronicle of Higher Education, 2009) — several of the book's grammar claims are factually wrong (some "passive" examples are not passive), and the authors routinely violate their own rules; linguists fault the book for presenting personal style preferences as rules of English
+* The blanket rules ("avoid passive voice", "omit needless words") are criticised as dogma when applied mechanically — the passive is the correct choice whenever the receiver of the action is the topic
+* Alternatives named in the discourse: Joseph M. Williams, "Style: Toward Clarity and Grace" (1990) and Steven Pinker, "The Sense of Style" (2014) — clarity guidance grounded in linguistics and reader psychology rather than prescription
 ====

@@ -21,26 +21,26 @@ export function renderFooter(version) {
             </a>
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <a
-              href="llms.txt"
+              href="${import.meta.env.BASE_URL}llms.txt"
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
               data-i18n="footer.llmsTxt"
               title="LLM-readable full reference"
             >${i18n.t('footer.llmsTxt')}</a>
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <a
-              href="#/all-anchors"
+              href="${import.meta.env.BASE_URL}all-anchors"
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
               data-i18n="footer.allAnchors"
             >${i18n.t('footer.allAnchors')}</a>
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <a
-              href="#/rejected-proposals"
+              href="${import.meta.env.BASE_URL}rejected-proposals"
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
               data-i18n="footer.rejectedProposals"
             >${i18n.t('footer.rejectedProposals')}</a>
             <span class="text-gray-300 dark:text-gray-600">|</span>
             <a
-              href="#/evaluations"
+              href="${import.meta.env.BASE_URL}evaluations"
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
               data-i18n="footer.evaluations"
             >${i18n.t('footer.evaluations')}</a>

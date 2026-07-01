@@ -61,4 +61,10 @@ Key Standard:: IEC 61508 "Functional Safety of Electrical/Electronic/Programmabl
 * Establishing software development processes for safety applications
 * Conducting hazard and operability (HAZOP) studies
 * Implementing functional safety management systems
+
+[discrete]
+== *Current Status*:
+
+* The prior is trained almost entirely on Edition 2 (2010), which has been the published standard for 15+ years — Ed-2 knowledge (SIL tables, lifecycle phases) is still authoritative
+* Edition 3 is in final approval as of mid-2026 (https://webstore.iec.ch/en/publication/5515[IEC forecasts publication around October 2026]), adding cybersecurity alignment with IEC 62443 and guidance on AI/ML in safety functions — when "current edition" matters, check the IEC webstore rather than assuming Ed 3 is out
 ====

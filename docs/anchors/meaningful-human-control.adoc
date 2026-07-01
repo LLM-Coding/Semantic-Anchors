@@ -93,4 +93,10 @@ This anchor is classified as *Tier 2 — Needs qualification*. It is not self-st
 * *Why not Tier 3*: MHC cannot be evaluated without domain-specific context (weapons vs. medical vs. automotive). The same system may satisfy MHC in one domain and fail in another. Sharkey level L3 may be sufficient for cargo ships but not for lethal targeting.
 * *Why not Tier 1*: MHC is a well-established, multi-source concept with clear definition, consistent usage across domains, attributable origin, and rich conceptual activation.
 * *Qualification path*: To apply MHC, the user must answer: "Who controls what, with what information, under what constraints, and who is accountable?" The five criteria above operationalize this question.
+
+[discrete]
+== *Current Status*:
+
+* The canonical reference is Santoni de Sio & van den Hoven, https://doi.org/10.3389/frobt.2018.00015["Meaningful Human Control over Autonomous Systems: A Philosophical Account"] (Frontiers in Robotics and AI, 2018), proposing the "tracking" and "tracing" conditions
+* The prior is thin: an academic-only footprint anchored in one open-access philosophy paper (TU Delft ethics group) and a niche AI-ethics literature, with little practitioner coverage — supply the tracking/tracing definitions in the prompt when precision matters
 ====

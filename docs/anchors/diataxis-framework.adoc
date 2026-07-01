@@ -40,4 +40,10 @@ Key Proponent:: Daniele Procida
 * Planning documentation structure
 * Evaluating documentation quality
 * Complementing Docs-as-Code approaches
+
+[discrete]
+== *Current Status*:
+
+* The four-quadrant core (tutorials, how-to guides, reference, explanation) is stable; https://diataxis.fr/[diataxis.fr] is a living, unversioned site — the colophon says the work "continues to be elaborated and explored"
+* The site has grown around the core: a theory section (the map, foundations, quality) and newer practical guidance such as https://diataxis.fr/complex-hierarchies/["Diátaxis in complex hierarchies"] — a prior anchored on the older Divio four-quadrant article (2014–2021) misses these refinements and the points where Procida has since revised his earlier presentation
 ====

@@ -55,4 +55,10 @@ Key Proponent:: Martin Fowler ("Patterns of Enterprise Application Architecture"
 * <<domain-driven-design,Domain-Driven Design>> - Complements PEAA with domain modeling approach
 * <<hexagonal-architecture,Hexagonal Architecture>> - Architectural style emphasizing ports and adapters
 * <<clean-architecture,Clean Architecture>> - Layered architecture pattern with dependency rules
+
+[discrete]
+== *Current Status*:
+
+* The prior reproduces the 2002 catalog (Active Record, Data Mapper, Unit of Work, Repository …) as hand-rolled patterns; Fowler himself notes "many patterns are now implemented by common frameworks" while maintaining they are "still relevant today" (https://martinfowler.com/books/eaa.html[P of EAA book page])
+* The https://martinfowler.com/eaaCatalog/[online catalog] is content-unchanged since its "original 2003 publication", and the planned follow-up volumes (https://martinfowler.com/eaaDev/[eaaDev]) have been "pretty much frozen" since 2006 — the catalog reflects the J2EE/.NET era, not current distributed and frontend-heavy practice
 ====

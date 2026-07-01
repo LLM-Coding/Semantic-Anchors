@@ -1,46 +1,56 @@
 = LASR nach Toth/Zörner
 :categories: software-architecture
-:roles: software-architect, software-developer, technical-writer, team-lead, consultant
-:related: arc42, adr-according-to-nygard, c4-diagrams
+:roles: software-architect, software-developer, qa-engineer, team-lead, consultant
+:related: atam, arc42, quality-attribute-scenario
 :proponents: Stefan Toth, Stefan Zörner
-:tags: architecture-documentation, solution-strategy, interfaces, risks, lightweight, communication
+:tags: software-reviews, architecture-review, quality-attributes, risks, lightweight, atam-alternative
 
 [%collapsible]
 ====
-Vollständiger Name:: LASR – Leichtgewichtige Architekturdokumentation nach Toth/Zörner
+Vollständiger Name:: LASR – Lightweight Approach for Software Reviews (Stefan Toth & Stefan Zörner)
 
-Auch bekannt als:: Leichtgewichtige Architekturkommunikation, LASR-Template
+Auch bekannt als:: LASR Reviews
 
 [discrete]
 == *Kernkonzepte*:
 
-L – Lösungsstrategie:: Übergeordnete Beschreibung, wie die Lösung die wichtigsten Qualitätsanforderungen und Randbedingungen adressiert; die zentralen Architekturideen, die das System prägen
+Eine Review-Methode:: LASR ist eine strukturierte Methode für effiziente Software-Reviews — sie deckt Schwächen in Softwarelösungen auf und hinterfragt technische und architektonische Ideen. Schlanker als ATAM, aber weiterhin auf die wichtigsten Qualitätsaspekte fokussiert
 
-A – Architekturüberblick:: Wesentliche Struktur- und Laufzeitsichten mit den wichtigsten Bausteinen, deren Verantwortlichkeiten und ihrer Interaktion zur Laufzeit
+Lean Mission Statement:: Die Vision des Systems zu einer kurzen, gemeinsamen Aussage verdichten — der Referenzpunkt des Reviews
 
-S – Schnittstellen:: Definition aller relevanten Außenschnittstellen (APIs, Protokolle, Datenformate) sowie wichtiger interner Schnittstellen zwischen den Hauptkomponenten
+Evaluation Criteria:: Die wichtigsten Qualitätsattribute des Systems identifizieren — die quantifizierten Ziele bilden die Review-Benchmark
 
-R – Risiken:: Identifikation der kritischsten technischen Risiken, offener Fragen und bekannter Schwächen zusammen mit vorgeschlagenen Maßnahmen zur Risikoreduzierung
+Risk-based Review:: Die bedeutendsten Risiken gegen diese Ziele identifizieren
 
-Bewusst leichtgewichtig:: LASR konzentriert sich gezielt auf die vier kommunikationsrelevantesten Aspekte einer Architektur und verzichtet auf Details, die das Stakeholder-Verständnis nicht verbessern
+Quality-focused Analysis:: Die kontroversen Lücken (oder deren Abwesenheit) vertieft analysieren
 
-Lebendes Dokument:: Wird parallel zur Architektur aktualisiert; dient der Kommunikation des aktuellen Stands, nicht der Archivierung von Geschichte
+LASR Result Diagram:: Quantifiziert das Review: Die Ziele bilden eine Benchmark-Linie, die Systembewertung eine zweite — die Lücken dazwischen treiben die vertiefte Analyse
 
-Schlüsselvertreter:: Stefan Toth ("Vorgehensmuster für Softwarearchitektur"), Stefan Zörner ("Softwarearchitekturen dokumentieren und kommunizieren")
+Workshop-Format:: Ein moderiertes, spielerisches Team-Event (LASR-Cards, Templates und Checklisten als Print & Play); funktioniert mit wenigen Personen, vor Ort oder remote, erste Ergebnisse in Stunden
+
+Community-getrieben und frei:: Offene Lizenz, frei auch für kommerzielle Nutzung; unterstützt von embarc
+
+Schlüsselvertreter:: Stefan Toth & Stefan Zörner (https://leanpub.com/reviewing-software-systems["Reviewing Software Systems"], Leanpub, 2023; deutsche Ausgabe "Software-Systeme reviewen"); kanonische Site https://www.lasr-reviews.org/[lasr-reviews.org]
 
 [discrete]
 == *Wann zu verwenden*:
 
-* Kommunikation der Architektur an Stakeholder, die einen prägnanten Überblick statt vollständiger Dokumentation benötigen
-* Agile Projekte, in denen eine leichtgewichtige Alternative zu arc42 bevorzugt wird
-* Architektur-Reviews, bei denen die vier LASR-Aspekte als strukturierte Review-Checkliste dienen
-* Einarbeitung neuer Teammitglieder in die wesentlichen Entwurfsentscheidungen eines bestehenden Systems
-* Workshops, in denen Teams gemeinsam die wesentlichen Architekturentscheidungen erfassen
+* Review eines Softwaresystems oder Lösungsentwurfs, wenn ATAM zu schwergewichtig ist
+* Validierung einer Architektur gegen ihre wichtigsten Qualitätsattribute
+* Technische Risiken im Team in einem kurzen Workshop aufdecken und priorisieren
+* Etablierung einer wiederkehrenden, leichtgewichtigen Review-Praxis
 
 [discrete]
 == *Verwandte Anker*:
 
-* <<arc42,arc42 Architekturdokumentation>>
-* <<adr-according-to-nygard,ADR nach Nygard>>
-* <<c4-diagrams,C4-Diagramme>>
+* <<atam,ATAM>> — die schwergewichtige szenariobasierte Bewertungsmethode, die LASR verschlankt
+* <<arc42,arc42 Architekturdokumentation>> — das Dokumentations-Gegenstück; LASR reviewt, was arc42 dokumentiert
+* <<quality-attribute-scenario,Quality Attribute Scenario>> — eine rigorose Form für die Evaluation Criteria
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die kanonischen Quellen sind https://www.lasr-reviews.org/[lasr-reviews.org] und das Buch https://leanpub.com/reviewing-software-systems["Reviewing Software Systems"] (Toth & Zörner, Leanpub, 2023)
+* Der Prior ist dünn — eine 2023 selbstverlegte Methode zweier deutscher Berater mit im Wesentlichen einer Community-Site. LLMs kennen bestenfalls zuverlässig den Namen, nicht die Methode: Liefere die Schritte von lasr-reviews.org im Prompt mit, statt dem Anker allein zu vertrauen
+* Ein warnendes Beispiel aus diesem Katalog selbst: Eine frühere Version dieses Eintrags beschrieb LASR selbstbewusst als „leichtgewichtiges Architekturdokumentations-Template" mit erfundener Akronym-Auflösung — stille Substitution auf dünnem Prior, exakt der Use-Case-3.0-Fehlermodus. Im Juni 2026 gegen die verifizierten Quellen korrigiert
 ====

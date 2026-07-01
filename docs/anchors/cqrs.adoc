@@ -47,4 +47,11 @@ Key Proponents:: Greg Young (coined CQRS), Bertrand Meyer (CQS origin, "Object-O
 * <<domain-driven-design,Domain-Driven Design>> - Often combined with CQRS for complex domains
 * <<hexagonal-architecture,Hexagonal Architecture>> - Ports and adapters complement CQRS separation
 * <<fowler-patterns,Fowler Patterns>> - CQRS builds on enterprise application patterns
+
+[discrete]
+== *Criticism*:
+
+* Martin Fowler, https://martinfowler.com/bliki/CQRS.html[bliki: CQRS] — warns that "for most systems CQRS adds risky complexity", a "significant mental leap" that pays off only in specific bounded contexts, not as a default pattern
+* Udi Dahan, one of CQRS's main proponents, opens https://udidahan.com/2011/04/22/when-to-avoid-cqrs/["When to avoid CQRS"] (2011) with "Most people using CQRS (and Event Sourcing too) shouldn't have done so" — and adds that CQRS "should not be your top-level architectural pattern"
+* Greg Young himself pushed back on scope creep in https://web.archive.org/web/20121129063556/http://codebetter.com/gregyoung/2012/09/09/cqrs-is-not-an-architecture-2/["CQRS is not an Architecture"] (2012, archived): CQRS is a pattern applied inside a single component, not an architectural style for a whole system
 ====

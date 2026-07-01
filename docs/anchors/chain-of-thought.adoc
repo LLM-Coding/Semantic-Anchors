@@ -3,6 +3,7 @@
 :roles: software-developer, data-scientist, business-analyst
 :proponents: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 :tier: 3
+:definition: Chain of Thought (CoT) is a prompting technique for large language models that asks the model to reason step by step before stating a final answer. Making the intermediate steps explicit improves accuracy on multi-step arithmetic, logic, and reasoning tasks compared with answering directly.
 
 [%collapsible]
 ====
@@ -60,4 +61,10 @@ Let's solve this step by step:
 ...
 Therefore: [Conclusion]
 ----
+
+[discrete]
+== *Current Status*:
+
+* The core finding (Wei et al., https://arxiv.org/abs/2201.11903[NeurIPS 2022]) is stable, but its practical relevance is cutoff-bound: reasoning models (late 2024 onward) internalise chain-of-thought during training — https://platform.openai.com/docs/guides/reasoning-best-practices[OpenAI's own docs] now advise against "think step by step" prompts for those models
+* Treat CoT output as a useful but unreliable window into model reasoning: Turpin et al., https://arxiv.org/abs/2305.04388["Language Models Don't Always Say What They Think"] (2023) and https://www.anthropic.com/research/reasoning-models-dont-say-think[Anthropic's 2025 follow-up] show stated reasoning can be unfaithful to the actual decision factors — not a safety or audit guarantee
 ====

@@ -41,4 +41,10 @@ Schlüsselvertreter:: Michael Fagan ("Design and Code Inspections to Reduce Erro
 
 * <<mutation-testing,Mutation Testing>>
 * <<testing-pyramid,Testing Pyramid>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die Definition ist intakt und seit Fagans https://doi.org/10.1147/sj.153.0182[Paper von 1976] (IBM Systems Journal 15(3)) unverändert: eine formale Inspektion mit verteilten Rollen, definierten Phasen und gemessenen Defektdaten
+* Die formale, meetingbasierte Inspektion wird heute selten praktiziert; asynchrones, toolgestütztes Pull-Request-Review hat sie weitgehend ersetzt — ein dokumentierter Wandel mit eigenen Trade-offs: Modernes Review findet weniger Defekte pro Stunde Rigorosität, leistet dafür Wissenstransfer und Team-Awareness (Bacchelli & Bird, https://sback.it/publications/icse2013.pdf["Expectations, Outcomes, and Challenges of Modern Code Review"], ICSE 2013; https://www.microsoft.com/en-us/research/publication/convergent-software-peer-review-practices/[Rigby & Bird, FSE 2013])
 ====

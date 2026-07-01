@@ -1,0 +1,52 @@
+= Deep Modules
+:categories: design-principles
+:roles: software-developer, software-architect
+:related: solid-principles, kiss-principle, separation-of-concerns, grasp
+:proponents: John Ousterhout
+:tags: modularity, abstraction, interface, complexity, information-hiding
+:tier: 2
+
+[%collapsible]
+====
+Auch bekannt als:: Module Depth, Deep Classes
+
+[discrete]
+== *Kernkonzepte*:
+
+Modultiefe:: Das Verhältnis von Nutzen (bereitgestellte Funktionalität) zu Kosten (Schnittstellenkomplexität). Ein tiefes Modul bietet mächtige Funktionalität hinter einer kleinen, stabilen Schnittstelle; ein flaches Modul exponiert nahezu so viel Komplexität, wie es enthält.
+
+Flaches Modul:: Ein Modul, dessen öffentliche Schnittstelle fast so komplex ist wie seine Implementierung. Flache Module verschieben die Komplexitätslast auf den Aufrufer, anstatt sie zu verbergen — Schnittstellenkosten ohne proportionalen Abstraktionsgewinn.
+
+Schnittstelle als Kosten:: Jedes Element einer öffentlichen API — Parameter, Typen, Konfigurationsoptionen, Seiteneffekte — ist kognitive Kosten, die jeder Aufrufer zahlen muss. Tiefe Module minimieren diese Kosten und maximieren gleichzeitig den Nutzen.
+
+Information Hiding:: Module sollen Entwurfsentscheidungen kapseln, die sich wahrscheinlich ändern werden: Datenstrukturen, Algorithmen, Dateiformate, Protokolle. Diese Entscheidungen bleiben für Aufrufer unsichtbar, sodass die Schnittstelle stabil bleibt, auch wenn sich die Implementierung weiterentwickelt.
+
+Classitis:: Outerhousts Begriff für das Anti-Pattern, ein System in viele winzige, flache Klassen zu zerlegen. Jede Klasse fügt der kollektiven kognitiven Last ihre eigene Schnittstelle hinzu, ohne die Gesamtimplementierungskomplexität zu reduzieren.
+
+Andere Schicht, andere Abstraktion:: Jede Architekturschicht soll Abstraktionen anbieten, die sich von der darunterliegenden Schicht bedeutsam unterscheiden. Eine Schicht, die lediglich Aufrufe der darunter liegenden Schicht umbenennt, ohne Substanz hinzuzufügen, ist ein flacher Durchreicher — ein Zeichen schlechten Designs.
+
+Schlüsselvertreter:: John Ousterhout (https://www.amazon.com/Philosophy-Software-Design-2nd/dp/173210221X["A Philosophy of Software Design", 2nd ed., Yaknyam Press, 2021]; 1. Auflage 2018 — Kapitel 4: „Modules Should Be Deep")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Beim Entwerfen der öffentlichen API eines Moduls — prüfen, ob die Schnittstelle einfacher ist als die dahinterliegende Implementierung
+* Beim Überprüfen einer vorgeschlagenen Klassenzerlegung, ob sie Komplexität reduziert oder nur umverteilt
+* Beim Identifizieren von Pass-Through-Methoden und Wrapper-Ketten, die Schnittstellenkosten hinzufügen, ohne Details zu verbergen
+* Bei der Anweisung an ein LLM, APIs oder Klassengrenzen mit minimaler sichtbarer Oberfläche zu entwerfen
+* Bei der Wahl zwischen einer allgemeinen und einer spezifischen API — die tiefere, allgemeinere Option bevorzugen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<solid-principles,SOLID Principles>>
+* <<kiss-principle,KISS Principle>>
+* <<separation-of-concerns,Separation of Concerns>>
+* <<grasp,GRASP>>
+
+[discrete]
+== *Kritik*:
+
+* Andrey Lebedev, https://andremoniy.medium.com/not-my-philosophy-of-software-design-13d9f1e09451["Not My Philosophy of Software Design"] (Medium) — argumentiert, dass das Erzwingen von Tiefe in einer einzelnen Klasse das Single Responsibility Principle verletzt; das Java-I/O-Beispiel vermischt Dateilesen und Pufferung — zwei genuine separate Belange; tiefe Allzweck-Klassen widersetzen sich zudem der Komposition und erzeugen Kopplung, die der Domain-Driven-Design-Praxis widerspricht
+* https://softengbook.org/articles/deep-modules["Modules Should Be Deep!"] (Software Engineering: A Modern Approach) — fügt Nuancen hinzu: `String.isEmpty()` bietet semantische Klarheit und sichere Kapselung trotz trivialer Implementierung und stellt damit eine rein quantitative Interpretation von Tiefe in Frage; Bertrand Meyers Eisberg-Metapher — kleine sichtbare Spitze über großem versenktem Sockel — wird als ergänzende Sichtweise angeführt
+====

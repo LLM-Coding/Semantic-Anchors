@@ -20,9 +20,35 @@
 const fs = require('fs')
 const path = require('path')
 const Asciidoctor = require('@asciidoctor/core')
+const { getAnchorDefinition } = require('./lib/anchor-definition')
+const { injectByline } = require('./lib/byline')
 
 const asciidoctor = Asciidoctor()
 const ROOT = path.join(__dirname, '..')
+
+/** Minimal HTML escape for text injected into rendered fragments. */
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+/**
+ * Build the crawlable "direct answer" block for an anchor (#580): a concise,
+ * standalone definition LLM/AI-overview crawlers can quote verbatim. Returns ''
+ * when no definition is available, so the fragment is unchanged.
+ */
+function answerBlockHtml(anchorFileRel) {
+  const def = getAnchorDefinition(anchorFileRel)
+  if (!def) return ''
+  return (
+    `<div class="anchor-answer" data-answer-block data-answer-source="${def.source}">` +
+    `<p>${escapeHtml(def.text)}</p>` +
+    `</div>\n`
+  )
+}
 
 const OPTS = {
   safe: 'safe',
@@ -77,18 +103,36 @@ function extractToc(html) {
  * sidecar `<basename>.toc.html` file so doc-page.js can render it in its
  * own sidebar slot.
  */
-function renderFile(srcPath, destPath) {
+/**
+ * Rewrite legacy hash-router links (href="#/anchor/x", href="#/about", …)
+ * that authors used in the .adoc sources to real clean URLs, so the
+ * pre-rendered pages are navigable without JavaScript and crawlable (#599).
+ * In-page TOC/section links (href="#section-id", no slash) stay untouched.
+ * With JS the router intercepts the clean URLs for SPA navigation.
+ */
+function rewriteLegacyHashLinks(html) {
+  return html.replace(/href="#\//g, 'href="/Semantic-Anchors/')
+}
+
+function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
-    const html = String(asciidoctor.convertFile(srcPath, { ...OPTS, to_file: false }))
-    const { toc, body } = extractToc(html)
-    fs.writeFileSync(destPath, body, 'utf-8')
-    console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
+    // loadFile (not convertFile) so we can read the document header metadata
+    // (author, revision date) that embedded-mode rendering otherwise drops.
+    const doc = asciidoctor.loadFile(srcPath, OPTS)
+    // getAuthor()/getRevisionDate() return a truthy Opal object that stringifies
+    // to '' when the source has no author/date, so normalize to trimmed strings.
+    const author = String(doc.getAuthor() || '').trim()
+    const revdate = String(doc.getRevisionDate() || '').trim()
+    const html = injectByline(String(doc.convert()), author, revdate)
+    const { toc, body } = extractToc(rewriteLegacyHashLinks(html))
+    fs.writeFileSync(destPath, prependHtml + body, 'utf-8')
+    if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
     const tocPath = destPath.replace(/\.html$/, '.toc.html')
     if (toc) {
       fs.writeFileSync(tocPath, toc, 'utf-8')
-      console.log(`Rendered: ${path.relative(ROOT, tocPath)}`)
+      if (!quiet) console.log(`Rendered: ${path.relative(ROOT, tocPath)}`)
     } else if (fs.existsSync(tocPath)) {
       fs.unlinkSync(tocPath)
     }
@@ -105,7 +149,12 @@ renderFile(path.join(ROOT, 'docs/about.adoc'), path.join(WEB_DOCS, 'about.html')
 renderFile(path.join(ROOT, 'docs/about.de.adoc'), path.join(WEB_DOCS, 'about.de.html'))
 
 renderFile(path.join(ROOT, 'CONTRIBUTING.adoc'), path.join(WEB_PUBLIC, 'CONTRIBUTING.html'))
-renderFile(path.join(ROOT, 'CONTRIBUTING.de.adoc'), path.join(WEB_PUBLIC, 'CONTRIBUTING.de.html'))
+// The German CONTRIBUTING source lives only in website/public/ (served raw to
+// the SPA); render it from there so the /de/contributing page can be built.
+renderFile(
+  path.join(WEB_PUBLIC, 'CONTRIBUTING.de.adoc'),
+  path.join(WEB_PUBLIC, 'CONTRIBUTING.de.html')
+)
 
 renderFile(path.join(ROOT, 'docs/changelog.adoc'), path.join(WEB_DOCS, 'changelog.html'))
 
@@ -154,8 +203,22 @@ renderFile(
 )
 
 renderFile(
+  path.join(ROOT, 'docs/arc42-documentation-skill.adoc'),
+  path.join(WEB_DOCS, 'arc42-documentation-skill.html')
+)
+renderFile(
+  path.join(ROOT, 'docs/arc42-documentation-skill.de.adoc'),
+  path.join(WEB_DOCS, 'arc42-documentation-skill.de.html')
+)
+
+renderFile(
   path.join(ROOT, 'docs/harness-inventory.adoc'),
   path.join(WEB_DOCS, 'harness-inventory.html')
+)
+
+renderFile(
+  path.join(ROOT, 'docs/training-data-vs-practice.adoc'),
+  path.join(WEB_DOCS, 'training-data-vs-practice.html')
 )
 renderFile(
   path.join(ROOT, 'docs/socratic-recovery-skill.de.adoc'),
@@ -170,6 +233,24 @@ renderFile(
   path.join(ROOT, 'docs/spec-driven-workflow.de.adoc'),
   path.join(WEB_DOCS, 'spec-driven-workflow.de.html')
 )
+
+// Render every anchor (EN + DE) to its own fragment for the pre-rendered
+// /anchor/<id> and /de/anchor/<id> pages (#597). ~315 small documents;
+// logged as a single summary line to keep the build output readable.
+const ANCHORS_SRC = path.join(ROOT, 'docs/anchors')
+const ANCHORS_OUT = path.join(WEB_DOCS, 'anchors')
+let anchorFragments = 0
+for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
+  if (!file.endsWith('.adoc')) continue
+  renderFile(
+    path.join(ANCHORS_SRC, file),
+    path.join(ANCHORS_OUT, file.replace(/\.adoc$/, '.html')),
+    true,
+    answerBlockHtml(`docs/anchors/${file}`)
+  )
+  anchorFragments++
+}
+console.log(`Rendered: ${anchorFragments} anchor fragments to website/public/docs/anchors/`)
 
 // Render contracts page from JSON
 require('./render-contracts.js')

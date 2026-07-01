@@ -14,11 +14,11 @@ Der Skill weist das LLM an, aus fünf Wurzelfragen zum Bounded Context (Problem/
 * `[ANSWERED]` -- das LLM hat es im Code gefunden, mit `<file>:<line>`-Evidenz
 * `[OPEN]` -- die Antwort steckt nicht im Code; mit Category und der Rolle markiert, die antworten muss (Product Owner, Architect, Developer, Domain Expert, Operations)
 
-Output sind zwei AsciiDoc-Dateien: `QUESTION_TREE.adoc` (vollständige Begründungs-Spur) und `OPEN_QUESTIONS.adoc` (Handoff, nach Rolle gruppiert).
+Output sind zwei AsciiDoc-Dateien, mit dem Bounded-Context-Namen als Suffix, damit sequenzielle Läufe einander nie überschreiben: `QUESTION_TREE-<context>.adoc` (vollständige Begründungs-Spur) und `OPEN_QUESTIONS-<context>.adoc` (Handoff, nach Rolle gruppiert).
 
 === Zwischen den Phasen — Team beantwortet die OPEN-Leafs
 
-`OPEN_QUESTIONS.adoc` wird rollenweise an Menschen geleitet. Sie schreiben Antworten direkt in die Datei. Verschobene Fragen bekommen einen expliziten `(deferred)`-Marker, keine Erfindung.
+`OPEN_QUESTIONS-<context>.adoc` wird rollenweise an Menschen geleitet. Sie schreiben Antworten direkt in die Datei. Verschobene Fragen bekommen einen expliziten `(deferred)`-Marker, keine Erfindung.
 
 === Phase 2 — Dokumentation synthetisieren
 
@@ -202,7 +202,7 @@ Jeder Assistent, der einen System-Prompt oder Custom Instructions akzeptiert, ka
 | ADR-Felder als Q3.9-Sub-Tree; was eine Entscheidung architektonisch signifikant macht; Pugh-Matrix-Leitfaden
 
 | `references/output-schema.md`
-| Striktes Format für `QUESTION_TREE.adoc` und `OPEN_QUESTIONS.adoc`; Q-ID-Schema; `[ANSWERED]`/`[OPEN]`-Blockformate; Phase-2-Traceability-Regeln
+| Striktes Format für `QUESTION_TREE-<context>.adoc` und `OPEN_QUESTIONS-<context>.adoc`; Q-ID-Schema; `[ANSWERED]`/`[OPEN]`-Blockformate; Phase-2-Traceability-Regeln
 
 | `references/examples.md`
 | Worked `[ANSWERED]` und `[OPEN]` Leaves für jeden Hauptast (Q1-Q5)

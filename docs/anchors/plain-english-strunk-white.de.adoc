@@ -47,4 +47,11 @@ Schlüsselvertreter:: William Strunk Jr. ("The Elements of Style", 1918); E.B. W
 * <<gutes-deutsch-wolf-schneider,Gutes Deutsch nach Wolf Schneider>> — das deutschsprachige Äquivalent zu klarheitsfokussierten Schreibprinzipien
 * <<bluf,BLUF (Bottom Line Up Front)>> — ergänzt den klaren Schreibstil mit einer Struktur, die mit der Schlussfolgerung beginnt
 * <<pyramid-principle,Pyramid Principle nach Barbara Minto>> — ein ergänzendes Framework zur hierarchischen Strukturierung von Argumenten
+
+[discrete]
+== *Kritik*:
+
+* Geoffrey K. Pullum, https://sites.stat.columbia.edu/gelman/communication/Pullum2009.pdf["50 Years of Stupid Grammar Advice"] (The Chronicle of Higher Education, 2009) — mehrere Grammatik-Behauptungen des Buchs sind sachlich falsch (manche "Passiv"-Beispiele sind gar kein Passiv), und die Autoren verletzen routinemäßig ihre eigenen Regeln; Linguisten kritisieren, dass persönliche Stilvorlieben als Regeln des Englischen ausgegeben werden
+* Die Pauschalregeln ("Passiv vermeiden", "überflüssige Wörter streichen") gelten als Dogma, wenn sie mechanisch angewendet werden — das Passiv ist die richtige Wahl, wann immer der Empfänger der Handlung das Thema ist
+* Im Diskurs benannte Alternativen: Joseph M. Williams, "Style: Toward Clarity and Grace" (1990) und Steven Pinker, "The Sense of Style" (2014) — Klarheits-Leitfäden, die auf Linguistik und Leserpsychologie statt auf Präskription gründen
 ====

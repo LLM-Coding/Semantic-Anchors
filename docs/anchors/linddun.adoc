@@ -46,4 +46,10 @@ Key Proponents:: Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven / Dis
 
 * <<owasp-top-10,OWASP Top 10>>
 * <<regulated-environment,Regulated Environment>>
+
+[discrete]
+== *Current Status*:
+
+* The prior likely reflects the original academic LINDDUN of the 2010s: a single heavyweight DFD-based method with the old seven categories including plain "Unawareness"
+* Current https://linddun.org/[LINDDUN] (KU Leuven) is a family of three flavors — https://linddun.org/go/[GO] (33-card lightweight deck, 2024 redesign), PRO (systematic), and https://linddun.org/maestro/[MAESTRO] (most thorough) — built on a 2024-updated threat knowledge base where the "U" became "Unawareness & Unintervenability"
 ====

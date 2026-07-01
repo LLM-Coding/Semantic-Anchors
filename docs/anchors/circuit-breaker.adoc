@@ -1,0 +1,55 @@
+= Circuit Breaker
+:categories: software-architecture
+:roles: software-developer, software-architect, devops-engineer
+:related: fallacies-of-distributed-computing, cap-theorem, event-driven-architecture
+:proponents: Michael Nygard, Martin Fowler
+:tags: resilience, fault-tolerance, stability-pattern, microservices, fail-fast
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: Circuit Breaker stability pattern
+
+[discrete]
+== *Core Concepts*:
+
+Closed state:: Normal operation; calls pass through to the protected resource while the breaker counts failures
+
+Open state:: Once failures cross the threshold the breaker trips; further calls fail immediately (fail-fast) without invoking the protected call, preventing resource exhaustion and cascading failure
+
+Half-open state:: After a reset timeout the breaker tentatively lets a trial call through to probe whether the dependency has recovered; success closes the breaker, failure re-opens it
+
+Failure threshold:: Configured count or rate of failures that trips the breaker from closed to open
+
+Fail-fast:: Returning an error instantly instead of blocking on a call known to be failing, freeing threads and connections
+
+Fallback:: The client-side strategy when the breaker is open — return cached data, a default, a queued request, or a graceful error
+
+Composes with:: Pairs with timeout (bound each call), retry (recover from transient faults), and bulkhead (isolate failures) as a stability-pattern set
+
+Key Proponents:: Michael Nygard ("Release It!", Pragmatic Bookshelf, 2007), who introduced it as a stability pattern; Martin Fowler (https://martinfowler.com/bliki/CircuitBreaker.html[bliki: CircuitBreaker]), who popularized it further
+
+[discrete]
+== *When to Use*:
+
+* Calls across a network boundary to a remote service or dependency that can become slow or unavailable
+* Microservice architectures where one failing service must not cascade into a system-wide outage
+* Integrations with third-party APIs of uncertain reliability
+* Any operation that can exhaust threads, connections, or other bounded resources while waiting on a stuck dependency
+* Prompting an LLM to add resilience to inter-service communication
+
+[discrete]
+== *Related Anchors*:
+
+* <<fallacies-of-distributed-computing,Fallacies of Distributed Computing>>
+* <<cap-theorem,CAP Theorem>>
+* <<event-driven-architecture,Event-Driven Architecture>>
+
+[discrete]
+== *Current Status*:
+
+* The reference Java implementation in training-data priors is often Netflix Hystrix, which is now frozen. Its https://github.com/Netflix/Hystrix[README] states: "Hystrix is no longer in active development, and is currently in maintenance mode." (final stable release 1.5.18, November 2018)
+* Netflix's own guidance points elsewhere: "we intend to continue using Hystrix for existing applications, and to leverage open and active projects like resilience4j for new internal projects. We are beginning to recommend others do the same." (https://github.com/Netflix/Hystrix[Netflix/Hystrix])
+* https://resilience4j.readme.io/[Resilience4j] is the maintained successor in the Java/Spring ecosystem and is recommended by Spring Cloud as the default circuit breaker
+* In service-mesh deployments, circuit breaking is increasingly handled at the infrastructure layer by the sidecar proxy (e.g. https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/circuit_breaking[Envoy circuit breaking], used by https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/[Istio]) rather than in application code
+====

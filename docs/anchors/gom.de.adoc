@@ -45,4 +45,10 @@ Schlüsselvertreter:: Jörg Becker, Michael Rosemann, Rolf Schütte ("Grundsätz
 * <<arc42,arc42 Architekturdokumentation>>
 * <<c4-diagrams,C4-Diagramme>>
 * <<morphological-box,Morphologischer Kasten>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die kanonische Referenz ist Becker, Rosemann & Schütte, "Grundsätze ordnungsmäßiger Modellierung", Wirtschaftsinformatik 37(5), 1995, S. 435–445 — ein DOI existiert nicht; stabile Nachweise: https://dblp.org/rec/journals/wi/BeckerRS95.html[dblp] und die https://www.wi.uni-muenster.de/de/forschung/publikationen/3436[Publikationsseite der Uni Münster]
+* Der Prior ist dünn: ein rein deutschsprachiges akademisches Paper aus der Wirtschaftsinformatik mit praktisch keinem englischsprachigen Fußabdruck — liefere die sechs Grundsätze im Prompt mit, statt dich auf den Begriff zu verlassen
 ====

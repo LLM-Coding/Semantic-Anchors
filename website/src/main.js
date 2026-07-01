@@ -27,7 +27,7 @@ import {
 } from './components/onboarding-modal.js'
 import { renderContractsPage, initContractsPage } from './components/contracts-page.js'
 
-const APP_VERSION = '0.4.0'
+const APP_VERSION = '0.8.1'
 
 window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${import.meta.env.BASE_URL}anchor/${anchorId}`
@@ -161,7 +161,9 @@ function initApp() {
   addRoute('/brownfield-experiment-report', renderBrownfieldExperimentReportPage)
   addRoute('/brownfield-fair-comparison', renderBrownfieldFairComparisonPage)
   addRoute('/socratic-recovery-skill', renderSocraticRecoverySkillPage)
+  addRoute('/arc42-documentation-skill', renderArc42DocumentationSkillPage)
   addRoute('/harness-inventory', renderHarnessInventoryPage)
+  addRoute('/training-data-vs-practice', renderTrainingDataPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -180,7 +182,16 @@ function initApp() {
   updateActiveNavLink()
 
   createOnboardingModal()
+
+  // Search, role filter and counter only mean something next to the home
+  // grid — hide the whole control row on every other route (#615).
+  const syncCatalogControlsVisibility = (path) => {
+    document.getElementById('header-catalog-controls')?.classList.toggle('hidden', path !== '/')
+  }
+  document.addEventListener('route:changed', (e) => syncCatalogControlsVisibility(e.detail.path))
+
   initRouter()
+  syncCatalogControlsVisibility(getCurrentRouteSync())
 
   if (shouldShowOnboarding()) {
     showOnboarding()
@@ -317,6 +328,15 @@ function renderSocraticRecoverySkillPage() {
   loadDocContent('docs/socratic-recovery-skill.adoc')
 }
 
+function renderArc42DocumentationSkillPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/arc42-documentation-skill.adoc')
+}
+
 function renderHarnessInventoryPage() {
   const pageContent = document.getElementById('page-content')
   if (!pageContent) return
@@ -324,6 +344,15 @@ function renderHarnessInventoryPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/harness-inventory.adoc')
+}
+
+function renderTrainingDataPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/training-data-vs-practice.adoc')
 }
 
 function renderContractsPageHandler() {
@@ -399,6 +428,17 @@ function initCardGridVisualization() {
 
   bindRoleFilter()
   bindSearchInput()
+
+  // A search started on another route arrives here with the query still in
+  // the header input — apply it as soon as the grid exists (#615).
+  const pendingQuery = document.getElementById('header-search-input')?.value || ''
+  if (pendingQuery.trim()) {
+    triggerSearchIndexBuild()
+    const mainSearch = document.getElementById('search-input')
+    if (mainSearch) mainSearch.value = pendingQuery
+    const roleId = document.getElementById('header-role-filter')?.value || ''
+    applyCardFilters(roleId, pendingQuery)
+  }
 }
 
 function bindRoleFilter() {
@@ -495,13 +535,14 @@ function bindHeaderSearchInput() {
 
   searchInput.oninput = (e) => {
     const query = e.target.value
-    // Sync the main content search input if it exists
-    const mainSearch = document.getElementById('search-input')
-    if (mainSearch) mainSearch.value = query
 
     if (query.trim()) {
       triggerSearchIndexBuild()
     }
+
+    // Sync the main content search input if it exists
+    const mainSearch = document.getElementById('search-input')
+    if (mainSearch) mainSearch.value = query
 
     const roleId = document.getElementById('header-role-filter')?.value || ''
     applyCardFilters(roleId, query)
@@ -550,6 +591,13 @@ function bindLanguageToggle() {
 }
 
 function handleLanguageChange() {
+  // Keep the toggle label correct for programmatic language switches too
+  // (e.g. the router switching to German on a /de/<route> URL).
+  const langLabel = i18n.currentLang() === 'en' ? 'DE' : 'EN'
+  document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach((el) => {
+    el.textContent = langLabel
+  })
+
   const currentRoute = getCurrentRouteSync()
 
   if (currentRoute === '/about') {
@@ -574,6 +622,10 @@ function handleLanguageChange() {
     loadDocContent('docs/brownfield-fair-comparison.adoc')
   } else if (currentRoute === '/harness-inventory') {
     loadDocContent('docs/harness-inventory.adoc')
+  } else if (currentRoute === '/training-data-vs-practice') {
+    loadDocContent('docs/training-data-vs-practice.adoc')
+  } else if (currentRoute === '/contracts') {
+    renderContractsPageHandler()
   } else if (currentRoute === '/') {
     initCardGridVisualization()
   }

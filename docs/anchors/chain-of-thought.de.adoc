@@ -59,4 +59,10 @@ Lass uns das Schritt für Schritt lösen:
 ...
 Daher: [Schlussfolgerung]
 ----
+
+[discrete]
+== *Aktueller Stand*:
+
+* Der Kernbefund (Wei et al., https://arxiv.org/abs/2201.11903[NeurIPS 2022]) ist stabil, seine praktische Relevanz aber cutoff-gebunden: Reasoning-Modelle (ab Ende 2024) internalisieren Chain-of-Thought im Training — https://platform.openai.com/docs/guides/reasoning-best-practices[OpenAIs eigene Doku] rät für diese Modelle inzwischen von "think step by step"-Prompts ab
+* CoT-Output ist ein nützliches, aber unzuverlässiges Fenster ins Modell-Reasoning: Turpin et al., https://arxiv.org/abs/2305.04388["Language Models Don't Always Say What They Think"] (2023) und https://www.anthropic.com/research/reasoning-models-dont-say-think[Anthropics Follow-up von 2025] zeigen, dass das geäußerte Reasoning den tatsächlichen Entscheidungsfaktoren untreu sein kann — keine Safety- oder Audit-Garantie
 ====

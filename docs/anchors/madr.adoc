@@ -47,4 +47,11 @@ Reference:: https://adr.github.io/madr/
 * Organizations using Markdown-based documentation workflows
 * When LLM assistance is needed to generate consistent decision records
 * Complementing arc42 Section 9 (Architecture Decisions)
+
+[discrete]
+== *Current Status*:
+
+* The current release is https://adr.github.io/madr/[MADR 4.0.0] (September 2024). The name changed twice along the way: MADR 3.x (2022) renamed "Markdown *Architectural* Decision Records" to "Markdown *Any* Decision Records"; 4.0 renamed it back, while keeping the template usable for any decision
+* An LLM's training-data prior most plausibly reproduces the 2.x-era format (2018–2022, the longest-lived and most widely copied variant): inline `* Status:` / `* Deciders:` / `* Date:` bullets and split "Positive/Negative Consequences" sections — rather than the current YAML front matter with `decision-makers`, the merged "Consequences" section, and the "Confirmation" element introduced in 3.x/4.x
+* When the exact format matters, point the model at the https://github.com/adr/madr/tree/4.0.0/template[current template] or paste it into the prompt — the anchor name reliably evokes the concept, but not the current field set
 ====

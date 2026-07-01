@@ -47,4 +47,11 @@ Key Proponents:: Bernice McCarthy ("The 4MAT System: Teaching to Learning Styles
 * <<pyramid-principle,Pyramid Principle>> - Top-down structure for written communication; complements 4MAT which is experience-first
 * <<feynman-technique,Feynman Technique>> - Self-directed learning; 4MAT is teacher-directed instructional design
 * <<diataxis-framework,Diátaxis Framework>> - Documentation types (tutorial/how-to/reference/explanation) map loosely to 4MAT quadrants
+
+[discrete]
+== *Criticism*:
+
+* 4MAT rests on learning-styles theory, and the matching claim lacks empirical support: Pashler, McDaniel, Rohrer & Bjork, https://doi.org/10.1111/j.1539-6053.2009.01038.x["Learning Styles: Concepts and Evidence"] (Psychological Science in the Public Interest, 2008) found virtually no valid evidence that teaching matched to a diagnosed learning style improves outcomes
+* Paul Kirschner, https://doi.org/10.1016/j.compedu.2016.12.006["Stop propagating the learning styles myth"] (Computers & Education, 2017) — nearly all studies claiming supporting evidence fail basic criteria of scientific validity
+* The common defense: 4MAT's Why/What/How/What-If cycle works as a lesson-*sequencing* device that every learner moves through — a reading that survives even when the underlying learning-styles claim is dropped
 ====

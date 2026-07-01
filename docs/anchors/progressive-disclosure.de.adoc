@@ -1,0 +1,48 @@
+= Progressive Disclosure
+:categories: communication-presentation
+:roles: ux-designer, technical-writer, educator
+:related: curse-of-knowledge, inverted-pyramid-style, diataxis-framework, blooms-taxonomy
+:proponents: John M. Carroll, Mary Rosson, Jakob Nielsen
+:tags: ux, information-architecture, documentation, cognitive-load, layering
+:tier: 2
+
+[%collapsible]
+====
+Auch bekannt als:: Layered Information Disclosure, Training-Wheels-Design
+
+[discrete]
+== *Kernkonzepte*:
+
+Wesentliches zuerst:: Zeige auf dem Primärbildschirm nur die wichtigsten Optionen; verschiebe erweiterte oder selten genutzte Funktionen in Nebenansichten. Nutzer erleben Leistungsfähigkeit, ohne davon überwältigt zu werden.
+
+Auf Anfrage offenbaren:: Zusätzliche Tiefe wird genau dann verfügbar, wenn der Nutzer sie anfordert — nicht früher. Der Auslöser muss einen deutlichen „Information Scent" tragen, damit Nutzer wissen, dass mehr vorhanden ist.
+
+Reduzierung der kognitiven Belastung:: Die Begrenzung des sichtbaren Optionsumfangs verbessert drei Usability-Metriken gleichzeitig: Erlernbarkeit, Nutzungseffizienz und Fehlerquote.
+
+Zwei-Ebenen-Grenze:: Designs mit mehr als zwei Offenbarungsebenen erzielen durchgehend niedrige Usability. Wenn eine dritte Ebene nötig erscheint, muss das Feature-Set vereinfacht werden — nicht um eine weitere Ebene ergänzt.
+
+Schlüsselvertreter:: John M. Carroll und Kollegen (Training-Wheels-Forschung bei IBM, 1983–1984; siehe https://www.nngroup.com/articles/training-wheels-user-interface/[Nielsens Zusammenfassung der Carroll-Befunde, NN/g, 2006] — die ursprüngliche empirische Grundlage); Jakob Nielsen (https://www.nngroup.com/articles/progressive-disclosure/[„Progressive Disclosure", NN/g, 2006] — formalisierte die Usability-Leitlinien und die Zwei-Ebenen-Empfehlung)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Gestaltung von UIs für Anwendungen mit vielen Funktionen oder Konfigurationsoptionen
+* Strukturierung von Dokumentation, sodass ein einziger Einstiegspunkt Anfänger und Experten gleichermaßen bedient
+* Aufbau von Onboarding-Flows, die neuen Nutzern zum Erfolg verhelfen, bevor erweiterte Einstellungen sichtbar werden
+* Formulierung von LLM-Prompts für geschichteten Output — Zusammenfassung zuerst, vollständige Details auf Anfrage
+* Erstellung von Tutorials, die Anfänger und Fortgeschrittene auf derselben Seite ansprechen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<curse-of-knowledge,Curse of Knowledge>>
+* <<inverted-pyramid-style,Inverted Pyramid Style>>
+* <<diataxis-framework,Diátaxis Framework>>
+* <<blooms-taxonomy,Bloom's Taxonomy>>
+
+[discrete]
+== *Kritik*:
+
+* Carroll und Rosson (1997) wiesen darauf hin, dass die empirische Basis für Progressive Disclosure schmal ist: Die grundlegenden Training-Wheels-Studien verwendeten eine einzige Anwendung (einen Texteditor) und einen einzigen Interface-Stil (menübasierte Steuerung), was die Verallgemeinerbarkeit der Technik offenlässt (zitiert in https://ixdf.org/literature/book/the-glossary-of-human-computer-interaction/progressive-disclosure[IxDF Glossary of Human-Computer Interaction])
+* Nielsen selbst warnt: Mehr als zwei Offenbarungsebenen führen durchgehend zu niedriger Usability — die Technik kann ein zugrundeliegendes Informationsarchitektur-Problem verdecken statt lösen (https://www.nngroup.com/articles/progressive-disclosure/[NN/g, 2006])
+====

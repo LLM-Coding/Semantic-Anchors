@@ -61,4 +61,10 @@ Ralf Westphal ("Integration Operation Segregation Principle (IOSP)", 2022 — su
 * <<grasp,GRASP>> - GRASP's "High Cohesion" and "Low Coupling" are structurally supported by IOSP's tree-like composition
 * <<solid-dip,SOLID DIP>> - IOSP can replace DIP for the purpose of testability; DIP is retained only for genuine alternative implementations
 * <<clean-architecture,Clean Architecture>> - Layered abstraction at architecture scale mirrors IOSP's function-level separation
+
+[discrete]
+== *Current Status*:
+
+* The canonical source is Ralf Westphal's own writing — https://ralfwestphal.substack.com/p/integration-operation-segregation["Integration Operation Segregation Principle (IOSP)"] (Substack); note that clean-code-developer.de, often assumed to host it, has no IOSP page
+* The prior is thin: the principle originates from a small German Clean Code Developer / Flow Design school, with the inventor's blog posts as primary sources and mostly German-language secondary coverage — state the rule explicitly in the prompt (functions either contain logic or call other functions, never both)
 ====

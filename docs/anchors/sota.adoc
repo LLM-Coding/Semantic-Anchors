@@ -59,4 +59,10 @@ Key Proponent:: Widely used in ML/AI research community
 * Consistent meaning across contexts: "best performing" and "most current"
 * Concise trigger for comprehensive research behavior
 * Activates research-oriented response patterns in LLMs
+
+[discrete]
+== *Current Status*:
+
+* "SOTA" is a timestamp, not a fact: any model's state-of-the-art knowledge is frozen at its training cutoff — and even the reference infrastructure churns: Papers with Code, long the canonical SOTA tracker, now redirects to Hugging Face and no longer exists as a leaderboard site (verified June 2026)
+* When writing or reading "SOTA", attach an explicit date and source; for current rankings consult a live leaderboard (e.g. https://lmarena.ai/[lmarena.ai]) at the time of reading rather than any list a model produces from memory
 ====

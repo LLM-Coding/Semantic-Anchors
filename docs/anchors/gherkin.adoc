@@ -5,6 +5,7 @@
 :proponents: Aslak Hellesøy
 :tags: gherkin, bdd, cucumber, given-when-then, specification-by-example, dsl, acceptance-testing, living-documentation
 :tier: 3
+:definition: Gherkin is the structured, plain-language syntax used by Behaviour-Driven Development tools such as Cucumber to write executable specifications. Scenarios follow a Given/When/Then form — context, action, outcome — so the same text serves as readable acceptance criteria for stakeholders and as automated tests.
 
 [%collapsible]
 ====

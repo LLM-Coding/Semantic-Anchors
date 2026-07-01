@@ -1,0 +1,50 @@
+= Consent vs. Consensus
+:categories: strategic-planning
+:roles: team-lead, consultant, product-owner
+:related: cynefin-framework, devils-advocate, double-diamond
+:proponents: Gerard Endenburg, Brian Robertson
+:tags: decision-making, sociocracy, holacracy, governance, facilitation
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Konsent-basierte Entscheidungsfindung vs. Konsens-Entscheidungsfindung
+
+[discrete]
+== *Kernkonzepte*:
+
+Konsens (Consensus):: Aktive Zustimmung aller — jede Person muss *für* den Vorschlag sein ("Ja"). Sucht die Option, die alle bevorzugen; ein Veto kann ohne Begründung blockieren. Risiken: langsame Entscheidungen, Ergebnisse auf dem kleinsten gemeinsamen Nenner und Groupthink.
+
+Konsent (Consent):: Fehlen eines *schwerwiegenden, begründeten Einwands* — Teilnehmende müssen nur *nicht dagegen* sein ("kein Einwand"). Der Prüfstein ist "gut genug für jetzt, sicher genug zum Ausprobieren", nicht "lieben es alle".
+
+Schwerwiegender Einwand (paramount objection):: Ein Einwand muss begründet sein und zeigen, wie der Vorschlag dem Ziel der Gruppe schaden oder die Arbeit darauf hin beeinträchtigen würde. Eine bloße Präferenz oder "ich würde es anders machen" ist kein Einwand.
+
+Integration von Einwänden:: Gültige Einwände werden gesammelt und in einen überarbeiteten Vorschlag integriert, statt ein Veto auszulösen — der Vorschlag entwickelt sich weiter, bis kein schwerwiegender Einwand mehr besteht.
+
+Soziokratie (Sociocratic Circle Method):: Gerard Endenburg formalisierte die konsent-basierte Governance in den 1970er-Jahren (aufbauend auf Kees Boekes Quaker-geprägter Konsenspraxis an der Werkplaats-Schule). Konsent ist eines von vier Prinzipien, neben Kreisen, Doppelter Verknüpfung und Wahlen.
+
+Holacracy (Integrative Decision-Making):: Brian Robertsons strukturierter Governance-Prozess (HolacracyOne, 2007): vorschlagen, reagieren, überarbeiten, dann auf Einwände prüfen. Entscheidungen sind in den *Bedürfnissen der Rollen* verankert, nicht in persönlicher Präferenz oder Ego.
+
+Schlüsselvertreter:: Gerard Endenburg (Sociocratic Circle-Organizing Method); Brian Robertson ("Holacracy: The New Management System for a Rapidly Changing World"); Wurzeln bei Kees Boeke und dem Quaker "sense of the meeting"
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Benennen, warum eine Gruppe feststeckt, weil sie einstimmige Begeisterung sucht, wo "kein Einwand" genügen würde
+* Gestaltung oder Facilitierung schneller, nicht-blockierender Governance-Entscheidungen
+* Unterscheidung eines begründeten, integrierbaren Einwands von einer persönlichen Präferenz oder einem Veto
+* Erläuterung von Selbstorganisationspraktiken in soziokratischen oder Holacratic-Organisationen
+* Abgrenzung zu Verwandten: Quaker "sense of the meeting", IETF "rough consensus", "lazy consensus" und "disagree and commit"
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<cynefin-framework,Cynefin Framework>>
+* <<devils-advocate,Devil's Advocate>>
+* <<double-diamond,Double Diamond>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die klassische Soziokratie (Endenburg) hat einen dokumentierten modularen Nachfolger: https://patterns.sociocracy30.org/[Sociocracy 3.0 (S3)], entwickelt von Bernhard Bockelbrink, James Priest und Liliana David (gestartet 2015), das die integrierte Methode in über 70 adoptierbare Patterns zerlegt und Prinzipien wie Empirie und Transparenz ergänzt. Siehe https://en.wikipedia.org/wiki/Sociocracy[Sociocracy (Wikipedia)] für die Linie von Kees Boeke über Endenburg.
+====

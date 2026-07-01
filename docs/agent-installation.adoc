@@ -7,6 +7,8 @@ Most frontier LLMs (GPT-4, Claude, Gemini) already have semantic anchors in thei
 
 However, *local or smaller LLMs* (Llama, Mistral, Phi, etc.) may not recognize all anchors reliably. For these models, you can inject explicit anchor definitions into your project's agent instruction files. This ensures consistent behavior regardless of the model's training data.
 
+TIP: The higher-value install is *Semantic Contracts*, not bare anchors. A contract pins which anchors apply in your project and carries a rendered template the model cannot guess (e.g. "Specification" = Cockburn use cases + Gherkin + EARS). The `semantic-contracts-installer` skill installs contracts by default and keeps the bare-anchor flow below as its `--anchors-only` sub-mode.
+
 == Portable Baseline (Recommended)
 
 For the widest compatibility, install anchors into a project-level `AGENTS.md` first, then add agent-specific mirrors only where the official docs say they help.
@@ -17,7 +19,7 @@ First, copy the template and fill in your chosen anchors:
 
 [source,bash]
 ----
-cp skill/semantic-anchor-onboarding/assets/templates/anchor-block.md my-anchors.md
+cp skill/semantic-contracts-installer/assets/templates/anchor-block.md my-anchors.md
 # Edit my-anchors.md — replace {{PRIMARY_ANCHOR_*}} / {{PRIMARY_EXPLAINER_*}} placeholders
 ----
 
@@ -25,7 +27,7 @@ Then run the installer:
 
 [source,bash]
 ----
-./skill/semantic-anchor-onboarding/scripts/install.sh \
+./skill/semantic-contracts-installer/scripts/install.sh \
   --source my-anchors.md \
   --target-dir . \
   --scope project
@@ -47,7 +49,7 @@ Claude Code uses `CLAUDE.md` for project memory and also supports hooks.
 +
 [source,bash]
 ----
-./skill/semantic-anchor-onboarding/scripts/install.sh \
+./skill/semantic-contracts-installer/scripts/install.sh \
   --source my-anchors.md \
   --target-dir . \
   --scope project \
@@ -78,3 +80,26 @@ Windsurf supports `AGENTS.md` alongside Windsurf Rules.
 
 * Use `AGENTS.md` for portable project context shared with other agents.
 * Use Windsurf Rules only when you need editor-specific or scoped behavior.
+
+=== link:https://opencode.ai[OpenCode]
+OpenCode supports `AGENTS.md` for project-level instructions and a plugin system for runtime enforcement.
+
+* *Static Context*: Use `AGENTS.md` as the shared baseline — OpenCode reads it automatically.
+* *Runtime Enforcement*: Install the link:https://github.com/JensGrote/opencode-semantic-anchors[opencode-semantic-anchors] plugin to enforce anchors as runtime contracts via plugin hooks (BLOCK/WARN modes, step confirmation, source verification):
++
+[source,bash]
+----
+npm install opencode-semantic-anchors
+----
++
+Then add to `opencode.jsonc`:
++
+[source,jsonc]
+----
+{
+  "plugin": "opencode-semantic-anchors",
+  "config": "opencode-semantic-anchors.yaml"
+}
+----
++
+This enforces anchors at runtime without consuming LLM context tokens. See the link:https://github.com/JensGrote/opencode-semantic-anchors[plugin documentation] for configuration details.

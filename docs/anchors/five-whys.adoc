@@ -70,4 +70,11 @@ Why? → Default configuration was never reviewed for production
 Root Cause: Configuration review process missing
 Countermeasure: Establish pre-production configuration checklist
 ----
+
+[discrete]
+== *Criticism*:
+
+* Alan J. Card, https://qualitysafety.bmj.com/content/26/8/671["The problem with '5 whys'"] (BMJ Quality & Safety, 2017) — no evidence of effectiveness despite wide institutional adoption; the technique pushes investigators down a single linear causal path and its results are not reproducible across teams
+* John Allspaw, https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/["The Infinite Hows (or, the Dangers of the Five Whys)"] (2014) — "why" questions invite blame and narrative bias in complex systems; he proposes asking "how" about the conditions instead
+* The deeper objection: in complex systems a single root cause often does not exist — incidents emerge from interacting contributing factors, which a five-step linear chain cannot represent
 ====

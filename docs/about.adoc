@@ -81,6 +81,8 @@ Different people using the same semantic anchor will get *similar, predictable r
 
 Not every term makes a good semantic anchor. We maintain high quality standards:
 
+*Inclusion means precision, not endorsement.* The catalog is a lexicon: an anchor's presence means the term works as a precise pointer to a dense, well-documented concept — not that we recommend the practice. Where a method is contested or its current edition has drifted away from the training-data prior, the anchor says so in a _Criticism_ or _Current Status_ section with named, linked sources.
+
 === Precise
 References a *specific, established body of knowledge* with clear boundaries.
 
@@ -323,6 +325,14 @@ What concepts do you associate with 'MECE'?
 ----
 
 If the LLM provides accurate, detailed information, it's safe to use that anchor.
+
+== Related Work & External Validation
+
+Independent thinkers have arrived at the same idea, and practitioners have validated the framing.
+
+*Matt Pocock — "Leading Words".* In https://youtu.be/UNzCG3lw6O0?t=714["Building Great Agent Skills: The Missing Manual"] (the "Steering" segment, from ~11:54), Pocock describes _leading words_: specific terms that pack dense meaning to steer an agent's behaviour and reasoning trace. It is the same core idea as a Semantic Anchor, reached independently — one dense term instead of a long instruction. The difference is scope: Pocock's framing steers an agent while you author skills; this catalog is a curated, shared vocabulary organized by an anchor / contract / skill taxonomy.
+
+*Lynn Cole — "Prompting with pre-computed priors".* Systems architect Lynn Cole coined this three-word framing for _why_ anchors work, quote-sharing the catalog on https://www.linkedin.com/posts/lynn-cole_these-are-outstanding-when-i-talk-about-share-7467744538934145025-zkUW/[LinkedIn] (2026-06-03): "When I talk about prompting with pre-computed priors, this is basically what I'm talking about." A well-known term does not _describe_ a concept — it _conditions_ the model toward a dense region its training already built, so a few tokens buy rich, consistent activation.
 
 == Contributing
 

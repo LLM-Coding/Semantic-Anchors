@@ -1,8 +1,8 @@
-# Output Schema — QUESTION_TREE.adoc and OPEN_QUESTIONS.adoc
+# Output Schema — QUESTION_TREE-<context-name>.adoc and OPEN_QUESTIONS-<context-name>.adoc
 
-Two AsciiDoc files. The schema is rigid enough to be machine-checkable but written in plain prose so a team member can read it.
+Two AsciiDoc files, each suffixed with the kebab-cased bounded-context name so sequential runs on different contexts never overwrite each other. The schema is rigid enough to be machine-checkable but written in plain prose so a team member can read it.
 
-## QUESTION_TREE.adoc
+## QUESTION_TREE-<context-name>.adoc
 
 Hierarchical tree, top-down. Each node has a Q-ID, the question, and (for leaves) either an `[ANSWERED]` or `[OPEN]` marker.
 
@@ -95,7 +95,7 @@ Ask role: <one or more of: Product Owner | Architect | Developer | Domain Expert
 - **Ask role** is the role-class of person who can answer, not a named individual. Multiple roles are fine — list them in order of best to ask.
 - The body of the leaf must explain *why* the code can't answer it. If the body says "the code doesn't say", widen it: "the code persists status=PENDING but never transitions it" is a real reason; "we don't know" is not.
 
-## OPEN_QUESTIONS.adoc
+## OPEN_QUESTIONS-<context-name>.adoc
 
 A flat, role-grouped projection of every `[OPEN]` leaf. This is the handoff document — the team sees only their section.
 
@@ -137,7 +137,7 @@ _(write here)_
 
 - One section per Ask role.
 - A leaf with multiple Ask roles is duplicated under each role's section — make it explicit to whichever role reads first.
-- The `*Your answer:*` block is mandatory. Team members write directly into the file. Phase 2 reads this file together with `QUESTION_TREE.adoc`.
+- The `*Your answer:*` block is mandatory. Team members write directly into the file. Phase 2 reads this file together with `QUESTION_TREE-<context-name>.adoc`.
 - A deferred question gets `(deferred — <reason>)` instead of an answer. Phase 2 treats deferred questions as explicit gaps, not as filled-in answers.
 
 ## Phase 2 traceability

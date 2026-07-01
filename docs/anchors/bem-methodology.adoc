@@ -52,4 +52,9 @@ Key Proponents:: Yandex development team
 * Projects where developers need to quickly understand (S)CSS structure
 * Component-based architectures (React, Vue, Angular)
 
+[discrete]
+== *Current Status*:
+
+* The definition at https://getbem.com/[getbem.com] and https://bem.info/en/methodology/[bem.info] is stable and still accurate — BEM itself is a finished methodology
+* Mainstream practice has shifted: https://2024.stateofcss.com/en-US/tools/[State of CSS 2024] shows Tailwind CSS "far ahead of other, more traditional competitors", and the survey no longer even tracks naming methodologies as it did in https://2020.stateofcss.com/en-US/technologies/methodologies/[2020]; CSS Modules, CSS-in-JS, and native scoping/nesting/cascade layers solve by platform the global-namespace problem BEM solved by convention
 ====

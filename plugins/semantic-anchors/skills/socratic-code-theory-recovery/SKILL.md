@@ -3,7 +3,7 @@ name: socratic-code-theory-recovery
 description: Recover the "theory" (Naur 1985) of an existing codebase through recursive question refinement before writing documentation. Use on brownfield projects where the spec is missing — produces a Question Tree separating what is answerable from code (with evidence) from what must be asked of the team (routed by role). Phase 1 builds the tree; team answers the OPEN leaves; Phase 2 synthesizes PRD, Cockburn use cases, arc42 architecture, and Nygard ADRs from the answered tree.
 metadata:
   author: LLM-Coding
-  version: "0.2"
+  version: "0.3"
   source: https://github.com/LLM-Coding/Semantic-Anchors
 license: MIT
 ---
@@ -18,13 +18,13 @@ When this skill is invoked:
 
 1. **Check whether the user named a bounded context.** Look at the same message that invoked the skill and at the immediately preceding messages. A valid bounded-context pointer is a path (relative or absolute) to a directory, plus a short human-readable name for what the context is (e.g. `src/auth`, "Authentication"). If both are present, proceed to Phase 1.
 
-2. **If no bounded context is named, ask for it before doing anything else.** Do not start Phase 1 against the current working directory by default — Phase 1 produces files (`QUESTION_TREE.adoc`, `OPEN_QUESTIONS.adoc`) and running it on the wrong directory wastes work. Ask exactly:
+2. **If no bounded context is named, ask for it before doing anything else.** Do not start Phase 1 against the current working directory by default — Phase 1 produces files (`QUESTION_TREE-<context-name>.adoc`, `OPEN_QUESTIONS-<context-name>.adoc`) and running it on the wrong directory wastes work. Ask exactly:
 
    > Which bounded context should I apply Socratic Code-Theory Recovery to? Give me a directory path (the bounded context's code root) and a short human-readable name. If you want the whole current repo treated as one bounded context, say so explicitly.
 
-3. **Once you have the pointer, run Phase 1.** Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md) — substitute `[bounded context path]` with the user's path. Do not change the leaf classification, Q-ID scheme, or output files.
+3. **Once you have the pointer, run Phase 1.** Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md) — substitute `[bounded context path]` with the user's path and `[context-name]` with the kebab-cased human-readable name. Do not change the leaf classification, Q-ID scheme, or the output-file naming scheme.
 
-4. **Stop after Phase 1.** Phase 2 must wait for the team to answer the `[OPEN]` leaves in `OPEN_QUESTIONS.adoc`. Tell the user that Phase 1 is complete, where the two output files are, and what the next manual step is — do not proceed to Phase 2 in the same session unless the user explicitly asks.
+4. **Stop after Phase 1.** Tell the user that Phase 1 is complete, where the two output files are, and that the next step is routing `OPEN_QUESTIONS-<context-name>.adoc` to the team. Phase 2 is gated on the file, not on being asked: before starting Phase 2 — even when the user explicitly requests it — check that every `[OPEN]` leaf in `OPEN_QUESTIONS-<context-name>.adoc` has either a team answer or an explicit `(deferred)` marker. If any leaf has neither, do not run Phase 2; list the unanswered leaves instead.
 
 ## When to use this skill
 
@@ -57,7 +57,7 @@ The fix: model the gaps explicitly. Every question about the system is either `[
                   └────────────────┬───────────────┘
                                    ▼
                   ┌────────────────────────────────┐
-   Between        │  OPEN_QUESTIONS.adoc           │
+   Between        │  OPEN_QUESTIONS-<context>.adoc │
                   │  ──► team (routed by role)     │
                   │  ──► answers fill in OPENs     │
                   └────────────────┬───────────────┘
@@ -71,18 +71,18 @@ The fix: model the gaps explicitly. Every question about the system is either `[
 
 ### Phase 1: Build the Question Tree
 
-Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md). Adapt the bounded-context path and the Q1-Q5 wording; do not change the fixed second level, the leaf classification, the Q-ID scheme, or the output files.
+Use [prompts/phase-1-question-tree.md](prompts/phase-1-question-tree.md). Adapt the bounded-context path and the Q1-Q5 wording; do not change the fixed second level, the leaf classification, the Q-ID scheme, or the output-file naming scheme.
 
-Outputs:
+Outputs (named after the context so sequential runs on different bounded contexts never overwrite each other):
 
-- `QUESTION_TREE.adoc` — the full hierarchical reasoning trace
-- `OPEN_QUESTIONS.adoc` — only the `[OPEN]` leaves, grouped by Ask role
+- `QUESTION_TREE-<context-name>.adoc` — the full hierarchical reasoning trace
+- `OPEN_QUESTIONS-<context-name>.adoc` — only the `[OPEN]` leaves, grouped by Ask role
 
 The five root questions decompose into a **fixed second level** — the same enumerated node set on every run, so Q-IDs are stable and trees from different runs can be diffed node-by-node. Adaptive, code-driven decomposition applies only *below* the fixed level. The fixed nodes:
 
 - **Q1.1–Q1.6** — product identity, primary users, channels, why-built, success metrics, segment priority.
 - **Q2.1–Q2.6** — actors, use-case catalog, per-interface system specs, data/entity model, acceptance criteria, cross-cutting business rules. See [references/cockburn-use-cases.md](references/cockburn-use-cases.md).
-- **Q3.1–Q3.12** — the twelve arc42 chapters, in arc42 order. See [references/arc42.md](references/arc42.md). Design rationale lives in the Q3.9 chapter — see [references/nygard-adrs.md](references/nygard-adrs.md).
+- **Q3.1–Q3.12** — the twelve arc42 chapters, in arc42 order. See [references/arc42.md](references/arc42.md). Design rationale lives in the Q3.9 chapter — see [references/nygard-adrs.md](references/nygard-adrs.md). **Q3.2 (Architecture Constraints) additionally carries a fixed third level** — Q3.2.1 technical, Q3.2.2 organizational/process, Q3.2.3 conventional constraints — because these rarely live in dense code; for this branch, `CLAUDE.md`/`AGENTS.md`, CONTRIBUTING files, CI workflows, and linter configs are valid evidence sources.
 - **Q4.1–Q4.8** — the eight ISO/IEC 25010 characteristics; **Q4.9** — which characteristic has priority. See [references/iso-25010.md](references/iso-25010.md).
 - **Q5.1–Q5.5** — technical debt, security risks, operational risks, dependency/supply-chain risks, scaling/performance risks.
 
@@ -96,9 +96,9 @@ Worked examples — one `[ANSWERED]` and one `[OPEN]` leaf for each major branch
 
 ### Between Phases: Team answers the OPEN leaves
 
-Route `OPEN_QUESTIONS.adoc` to the people whose role appears in each section: Product Owner, Architect, Developer, Domain Expert, Operations. In one controlled experiment with a 13,000-line Go codebase, 11 targeted OPEN questions were enough to close the gap to the original documentation.
+Route `OPEN_QUESTIONS-<context-name>.adoc` to the people whose role appears in each section: Product Owner, Architect, Developer, Domain Expert, Operations. In one controlled experiment with a 13,000-line Go codebase, 11 targeted OPEN questions were enough to close the gap to the original documentation.
 
-Team answers are written **directly into `OPEN_QUESTIONS.adoc`** under each question, marked clearly. Do not call Phase 2 until every OPEN leaf has either an answer or an explicit `(deferred)` marker.
+Team answers are written **directly into `OPEN_QUESTIONS-<context-name>.adoc`** under each question, marked clearly. Do not call Phase 2 until every OPEN leaf has either an answer or an explicit `(deferred)` marker.
 
 ### Phase 2: Synthesize documentation
 

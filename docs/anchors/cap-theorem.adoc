@@ -46,4 +46,11 @@ Key Proponents:: Eric Brewer (2000 conjecture, PODC keynote); formally proved by
 
 * <<event-driven-architecture,Event-Driven Architecture>> — eventual consistency as an AP design choice
 * <<fallacies-of-distributed-computing,Fallacies of Distributed Computing>> — the network assumptions CAP makes explicit
+
+[discrete]
+== *Criticism*:
+
+* Eric Brewer himself, https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/["CAP Twelve Years Later: How the 'Rules' Have Changed"] (IEEE Computer, 2012) — the "2 of 3" formulation is misleading; the trade-off is narrower and more nuanced than the slogan suggests
+* Martin Kleppmann, https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html["Please stop calling databases CP or AP"] (2015) — CAP's formal definitions are too narrow to classify real systems; many databases are neither CP nor AP under the theorem's own terms
+* Alternative named in the discourse: reason with precise consistency models (linearizability, causal consistency, etc.) and the PACELC framing instead of the CP/AP dichotomy
 ====

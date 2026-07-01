@@ -46,4 +46,11 @@ Schlüsselvertreter:: Albert Humphrey (Stanford Research Institute, 1960er–197
 * <<pugh-matrix,Pugh-Matrix>>
 * <<wardley-mapping,Wardley Mapping>>
 * <<moscow,MoSCoW>>
+
+[discrete]
+== *Kritik*:
+
+* Hill & Westbrook, https://doi.org/10.1016/S0024-6301(96)00095-7["SWOT Analysis: It's Time for a Product Recall"] (Long Range Planning, 1997) — in einer Studie mit 20 Unternehmen erzeugte SWOT lange, vage, ungewichtete Stichpunktlisten, die nie verifiziert und im anschließenden Strategieprozess nie verwendet wurden
+* Kritisiert als statische Momentaufnahme: keine Priorisierung, keine Wahrscheinlichkeits- oder Wirkungsgewichtung, kein eingebauter Schritt von der Analyse zur Handlung — die TOWS-Variante existiert genau, um diese Lücke zu schließen
+* Im Diskurs benannte Alternativen: strukturierte Optionsbewertung (z. B. <<pugh-matrix,Pugh-Matrix>>) und evolutionsbewusste Positionierung (<<wardley-mapping,Wardley Mapping>>), wo die vier statischen Quadranten von SWOT zu kurz greifen
 ====

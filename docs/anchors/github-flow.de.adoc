@@ -41,4 +41,10 @@ Schlüsselvertreter:: Scott Chacon ("GitHub Flow", 2011)
 
 * <<conventional-commits,Conventional Commits>>
 * <<semantic-versioning,Semantic Versioning (SemVer)>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Der Prior reproduziert höchstwahrscheinlich Scott Chacons https://scottchacon.com/2011/08/31/github-flow/[Original-Formulierung von 2011], in der Continuous Deployment der Kern ist — "anything in the master branch is deployable", gemergte Arbeit wird sofort deployt, oft mehrmals täglich
+* GitHubs https://docs.github.com/en/get-started/using-github/github-flow[aktuelle offizielle Beschreibung] ist zu einem generischen Branch → PR → Review → Merge-Workflow ohne jeden Deployment-Schritt geschrumpft — sage, welche der beiden Varianten du meinst
 ====

@@ -1,0 +1,40 @@
+= Four-Sides Model (Schulz von Thun)
+:categories: communication-presentation
+:roles: consultant, team-lead, educator
+:proponents: Friedemann Schulz von Thun
+:tags: communication, psychology, message, misunderstanding, interpersonal
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Four-Sides Model of Communication according to Friedemann Schulz von Thun
+
+Also known as:: Communication Square, Four-Ears Model, Vier-Seiten-Modell
+
+[discrete]
+== *Core Concepts*:
+
+Four sides of a message:: Every message carries four facets simultaneously; the sender speaks with "four beaks" and the receiver listens with "four ears"
++
+Factual information (Sachinhalt)::: The data and facts the message states; the receiver checks it for truth, relevance, and completeness
+Self-revelation (Selbstoffenbarung)::: What the message discloses about the sender — motives, values, emotions, intentions, consciously or not
+Relationship (Beziehung)::: What the sender thinks of the receiver and how they stand to each other, carried by tone, phrasing, and body language
+Appeal (Appell)::: What the sender wants the receiver to do, think, or feel — open advice or hidden manipulation
+
+Four ears:: The receiver decodes through four matching ears; a one-sidedly developed ear (for example an over-sensitive relationship ear) causes recurring misunderstanding
+
+Mismatched ears:: Misunderstanding arises when the sender stresses one side but the receiver hears another; the classic example is the passenger saying "The traffic light is green" — a factual remark heard as an appeal or a relationship message
+
+Theoretical roots:: Combines Karl Bühler's Organon model (sender, receiver, subject) with Paul Watzlawick's axiom that every message has a content and a relationship aspect
+
+Key Proponents:: Friedemann Schulz von Thun ("Miteinander reden 1: Störungen und Klärungen", 1981)
+
+[discrete]
+== *When to Use*:
+
+* Diagnosing recurring misunderstandings in teams or coaching conversations
+* Teaching active listening and feedback skills
+* Giving or receiving feedback by separating the factual side from the relationship side
+* Defusing conflict by surfacing the self-revelation and appeal layers of a charged statement
+* Prompting an LLM to analyze a message on all four communication levels
+====

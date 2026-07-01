@@ -10,6 +10,31 @@ Semantic anchors are well-defined terms, methodologies, and frameworks that serv
 
 *Example:* When you mention "TDD, London School" to an LLM, it activates knowledge about mock-heavy testing, outside-in development, and the work of Steve Freeman and Nat Pryce - much richer than simply saying "use mocks in testing."
 
+== Artifact Types: Anchor, Contract, Skill
+
+The catalog ships three artifact types. Knowing which one you are proposing decides where your contribution belongs. The full rationale lives in link:docs/specs/adrs/adr-007-artifact-taxonomy.adoc[ADR-007]; the working definitions are here.
+
+[cols="1,2,2,1", options="header"]
+|===
+| Type | Function | Linguistic shape | Loading
+
+| *Anchor* | "What do I know?" — focuses pre-existing knowledge | Noun / named concept ("Cockburn Use Cases") | Passive (activation signal)
+| *Contract* | "What may I do?" — pins which anchors apply + invariants | Declarative ("follows / NEVER / MUST") | Always-on
+| *Skill* | "How do I do it?" — supplies procedure | Verb / imperative ("Create / Verify / Write") | On-demand
+|===
+
+* *Anchor* — a named activation signal for a knowledge cluster that is *already dense* in an LLM's training data. It focuses; it does not teach. Must pass the four Quality Criteria below.
+* *Contract* — terse, always-on shared vocabulary (in `CLAUDE.md` / `AGENTS.md`) that pins which anchors apply and states invariants. The moment it describes *how* to do something step by step, that part belongs in a Skill.
+* *Skill* — on-demand procedural machinery (`references/`, prompts, a workflow) for a *how* the model cannot execute from a name alone.
+
+*Discrimination test:*
+
+. Knowledge already dense in the LLM, only needs focusing → *Anchor*
+. Need to pin which anchors apply and what is allowed/forbidden → *Contract*
+. Need to describe *how* something is concretely done → *Skill*
+
+*The thin-prior rule.* If a name is *not* dense in the training data, it is *not an anchor* — naming it does not reliably change the output structure compared to a generic prompt. What repairs it depends on what is missing: a missing *meaning/framing* → a *Contract* (it supplies its own meaning; a URL never repairs a prior); a missing *procedure* → a *Skill*. A thin name is never forced to be an anchor.
+
 == Quality Criteria
 
 Before proposing a new semantic anchor, ensure it meets these four criteria:
@@ -64,6 +89,16 @@ Evaluate the response:
 * *Accuracy:* Is the explanation correct?
 * *Depth:* Does it cover multiple related concepts?
 * *Specificity:* Is the scope well-defined?
+
+== Viability Test (Does the anchor deliver?)
+
+Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice] article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
+
+. *Before/After test.* Give a model a task *without* the anchor term, then the same task *with* it. Does the output structure change? If not, the term is decorative, not functional.
+. *Substitution check.* Ask "What is [term]?" on a weaker model (Haiku-class). If it hedges, silently substitutes, or confabulates, the prior is too thin for an anchor — it belongs in a *Contract* (which supplies its own meaning), per the thin-prior rule in _Artifact Types_ above.
+. *Cross-model check.* Does the before/after difference hold on at least one weak *and* one strong model? If it only fires on frontier models, note it as ★★ (needs qualification).
+
+A term that passes the four Quality Criteria but fails the viability test is a *Contract*, not an Anchor.
 
 == Developer Setup
 
@@ -182,6 +217,16 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 * `:proponents:` - Key people, publications, or standards
 * `:tags:` - Keywords for search (optional but recommended)
 * `:related:` - Related anchor IDs (optional)
+* `:advisory:` - Short caution label (optional). Use only for *counter-consensus framing*: the anchor activates reliably but its framing conflicts with its own field's documented consensus. Renders as a visible badge in the card/modal; keep the detail and the cited source in the `== Criticism` / `== Current Status` section (single source of truth). See `eisenhower-matrix.adoc`.
+
+*Criticism and Current Status (research required, include when found):*
+
+The catalog is a lexicon, not a list of endorsements — inclusion means the term works as a precise pointer, not that we recommend the practice. For every new anchor, research whether documented criticism or drift exists, and add the finding as a section:
+
+* `== Criticism` — the method itself is contested. Only named, citable critique (critic + linked source), never vibes like "nobody uses this anymore". The section reports the discourse; it does not adjudicate. Where the discourse names alternatives, name them too.
+* `== Current Status` — the method stands, but the training-data prior and the present have drifted apart: a newer edition exists (name the edition the prior likely points to), a successor emerged, or adoption faded.
+
+Verify every linked source by actually fetching it before committing. If the research finds nothing citable, omit both sections — an empty section is noise. See https://github.com/LLM-Coding/Semantic-Anchors/issues/603[#603] for the full-catalog triage behind this convention.
 
 == Counter-Examples
 
@@ -262,6 +307,7 @@ For *new semantic anchors*:
 . All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`)
 . AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
 . Anchor tested with LLM prompt (see <<testing-anchor,Testing Your Semantic Anchor>>)
+. Documented criticism / edition drift researched — and captured in a _Criticism_ or _Current Status_ section with named, fetch-verified sources where found
 
 For *code changes*:
 

@@ -80,4 +80,10 @@ Schlüsselvertreter:: Combines GitHub-flavoured Markdown task lists with Gina Tr
 * Remains fully functional in plain text editors
 * Enables rich metadata without sacrificing readability
 * Facilitates both manual and automated task tracking
+
+[discrete]
+== *Aktueller Stand*:
+
+* Das zugrunde liegende todo.txt-Format ist lebendig und kanonisch unter https://todotxt.org/[todotxt.org] (Gina Trapani): eine Aufgabe pro Zeile, Prioritäten als `(A)`, Projekte als `+projekt`, Kontexte als `@kontext`
+* Der Prior ist doppelt dünn: todo.txt selbst ist ein Einzelbetreuer-Nischenökosystem aus der Plain-Text-Produktivitätsszene, und die *Markdown-flavoured*-Kombination dieses Ankers ist eine Projekt-Konvention obendrauf — füge die konkreten Konventionen in den Prompt ein, statt dich auf den Namen zu verlassen
 ====

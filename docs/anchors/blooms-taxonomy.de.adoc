@@ -59,4 +59,11 @@ Key Proponents:: Benjamin Bloom et al. („Taxonomy of Educational Objectives", 
 * <<feynman-technique,Feynman Technique>> — Zurückerklären ist ein konkreter Check auf der Understand-Stufe; Bloom benennt die Stufen darüber
 * <<socratic-method,Socratic Method>> — Fragen treiben Lernende die Stufen hinauf; Bloom etikettiert, wo sie stehen
 * <<diataxis-framework,Diátaxis Framework>> — Doku-Typen bilden grob auf kognitive Stufen ab (Tutorial → Apply, Explanation → Understand)
+
+[discrete]
+== *Aktueller Stand*:
+
+* Zwei Versionen sind im Umlauf: Das Original von 1956 (Bloom et al.) verwendet *Substantive* — Knowledge, Comprehension, Application, Analysis, Synthesis, Evaluation — die oben beschriebene Revision von 2001 dagegen *Verben*, mit Create an der Spitze. Die zitierfähige Standardübersicht der Unterschiede ist Krathwohl, https://people.ucsc.edu/~ktellez/blooms_taxonomy.pdf["A Revision of Bloom's Taxonomy: An Overview"] (Theory Into Practice 41(4), 2002)
+* Der Trainingsdaten-Prior eines LLM *vermischt plausibel beide Versionen* — Material zu beiden ist reichlich vorhanden, und viele Sekundärquellen mischen die Stufennamen — ein unqualifiziertes „Bloom's Taxonomy" kann also auf beide Kategoriesätze ankern
+* Nenne die Version explizit: „revidierte Bloom-Taxonomie (Anderson/Krathwohl 2001)" oder „Original-Taxonomie (1956)"
 ====

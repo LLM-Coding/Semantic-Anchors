@@ -52,4 +52,11 @@ Schlüsselvertreter:: ISO/IEC JTC 1/SC 7 (ersetzt ISO/IEC 9126)
 * <<atam,ATAM>>
 * <<arc42,arc42 Architekturdokumentation>>
 * <<adr-according-to-nygard,ADR nach Nygard>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Das oben beschriebene Acht-Merkmale-Modell ist die Ausgabe von 2011 — die ISO inzwischen zurückgezogen hat. Die aktuelle Ausgabe https://www.iso.org/standard/78176.html[ISO/IEC 25010:2023] erweitert das Modell auf *neun* Merkmale: *Safety* ist neu, Usability wurde in *Interaction Capability* umbenannt, Portability in *Flexibility* (frei lesbare Änderungsübersicht: https://quality.arc42.org/articles/iso-25010-update-2023[arc42 Quality Model])
+* Der Großteil des veröffentlichten Materials beschreibt weiterhin das 2011er Modell — Mitte 2026 sogar noch der englische Wikipedia-Artikel — der Trainingsdaten-Prior eines LLM für „ISO 25010" bedient also höchstwahrscheinlich die ältere Acht-Merkmale-Ausgabe
+* Nenne die Ausgabe explizit („ISO/IEC 25010:2023"), wann immer der Unterschied zählt; der bloße Begriff löst meist zum 2011er Modell auf
 ====

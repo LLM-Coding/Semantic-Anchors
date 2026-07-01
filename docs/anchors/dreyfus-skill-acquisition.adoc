@@ -1,0 +1,57 @@
+= Dreyfus Model of Skill Acquisition
+:categories: knowledge-management
+:roles: educator, consultant, team-lead
+:related: blooms-taxonomy, feynman-technique, 4mat
+:proponents: Stuart Dreyfus, Hubert Dreyfus
+:tags: skill-acquisition, learning, expertise, mentoring, competence
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: Dreyfus Model of Skill Acquisition according to Stuart E. and Hubert L. Dreyfus
+
+Also known as:: Five-Stage Model of Adult Skill Acquisition, Novice-to-Expert model
+
+[discrete]
+== *Core Concepts*:
+
+Five stages::
++
+Novice::: Follows context-free rules rigidly; recognizes no situational nuance; needs explicit instructions
+Advanced Beginner::: Applies situational maxims drawn from experience; still rule-oriented but starts reading context
+Competent::: Plans consciously and sets goals; copes with complexity by deliberately choosing what matters; feels responsibility for outcomes
+Proficient::: Perceives situations holistically; intuition emerges, though responses are still decided analytically
+Expert::: Acts with fluid, intuitive mastery; perception and action merge; deliberates only when something unfamiliar appears
+
+Analytical-to-intuitive progression:: Skill develops from detached rule-following toward involved, intuitive pattern recognition — not by accumulating more rules
+
+Stage-matched instruction:: Each stage needs a different kind of guidance; novices want rules and recipes, experts want holistic context and are hindered by step-by-step rules
+
+Key Proponents:: Stuart E. and Hubert L. Dreyfus, https://www.researchgate.net/publication/235125013_A_Five-Stage_Model_of_the_Mental_Activities_Involved_in_Directed_Skill_Acquisition["A Five-Stage Model of the Mental Activities Involved in Directed Skill Acquisition"] (1980, UC Berkeley Operations Research Center for the U.S. Air Force Office of Scientific Research); applied to nursing by Patricia Benner ("From Novice to Expert", 1984) and to software by Andy Hunt ("Pragmatic Thinking and Learning: Refactor Your Wetware", 2008)
+
+[discrete]
+== *When to Use*:
+
+* Calibrating teaching or explanation depth to a learner's stage
+* Designing mentoring and onboarding paths that move people from rules to intuition
+* Diagnosing why rule-heavy documentation helps novices but frustrates experts
+* Structuring competency frameworks and skill matrices for a team
+* Framing how an LLM should adjust the granularity of its guidance to the user's expertise
+
+[discrete]
+== *Related Anchors*:
+
+* <<blooms-taxonomy,Bloom's Taxonomy>>
+* <<feynman-technique,Feynman Technique>>
+* <<4mat,4MAT>>
+
+[discrete]
+== *Criticism*:
+
+* Fernand Gobet and Philippe Chassy, https://www.tandfonline.com/doi/full/10.3402/meo.v15i0.4846["The Dreyfus model of clinical problem-solving skills acquisition: a critical perspective"] and their 2008 paper in the _International Journal of Nursing Studies_ (45: 129-139) — argue there is no empirical evidence for discrete stages in the development of expertise, and that experts in fact use slow analytical problem-solving (e.g. look-ahead search in chess), contrary to the model's "experts act only intuitively" claim; they propose an alternative theory of intuition based on chunking
+
+[discrete]
+== *Current Status*:
+
+* The Dreyfus brothers later added a sixth stage of *mastery* and reframed the model (Rousse & Dreyfus, https://philarchive.org/archive/ROURTS["Revisiting the Six Stages of Skill Acquisition"]); training-data priors most often reflect the original five-stage version popularized by Benner and Hunt
+====

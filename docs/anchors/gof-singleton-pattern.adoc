@@ -26,4 +26,11 @@ Ensure a class only has one instance, and provide a global point of access to it
 [discrete]
 == *Related Anchors*:
 * <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+
+[discrete]
+== *Criticism*:
+
+* Erich Gamma, co-author of the original GoF book, said in the 2009 interview https://www.informit.com/articles/article.aspx?p=1404056["Design Patterns 15 Years Later"] (InformIT, Larry O'Brien) that he favours dropping Singleton from the pattern catalog: "Its use is almost always a design smell"
+* Miško Hevery, https://testing.googleblog.com/2008/08/by-miko-hevery-so-you-join-new-project.html["Singletons are Pathological Liars"] (Google Testing Blog, 2008) — Singletons hide dependencies from the API surface and make code hard to test in isolation
+* Widely categorised as an anti-pattern in modern practice: it introduces global mutable state, couples consumers to a concrete class, and complicates concurrency and test isolation — dependency injection of a single instance is the commonly recommended alternative
 ====

@@ -3,10 +3,31 @@
  * Deployed under a base path (e.g., /Semantic-Anchors/)
  */
 
+import { i18n } from '../i18n.js'
+
 const routes = new Map()
 let currentRoute = null
 let routeBeforeModal = null
 let scrollBeforeModal = 0
+
+// The card highlighted by a /contract/:id route — cleared on the next route
+// change so the marker tracks the URL instead of fading on a timer (#611).
+const CONTRACT_HIGHLIGHT_CLASSES = ['ring-2', 'ring-blue-400']
+let highlightedContractCard = null
+
+// Routing is decided here, but route-dependent chrome (e.g. the header
+// anchor counter, visible only on the home grid) lives elsewhere — announce
+// every resolved route as a DOM event instead of importing UI modules (#615).
+function announceRoute(path) {
+  document.dispatchEvent(new CustomEvent('route:changed', { detail: { path } }))
+}
+
+function clearContractHighlight() {
+  if (highlightedContractCard) {
+    highlightedContractCard.classList.remove(...CONTRACT_HIGHLIGHT_CLASSES)
+    highlightedContractCard = null
+  }
+}
 
 // Base path for GitHub Pages subdirectory deployment
 const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '')
@@ -21,7 +42,10 @@ const ROUTE_TITLES = {
   '/brownfield-experiment-report': 'Brownfield Experiment 1a Report — Semantic Anchors',
   '/brownfield-fair-comparison': 'Brownfield Fair Comparison — Semantic Anchors',
   '/socratic-recovery-skill': 'Socratic Code-Theory Recovery Skill — Semantic Anchors',
+  '/arc42-documentation-skill': 'arc42 Documentation Authoring Skill — Semantic Anchors',
   '/harness-inventory': 'The Harness Inventory — Semantic Anchors',
+  '/training-data-vs-practice':
+    'An Anchor Delivers Only as Far as the Prior Reaches — Semantic Anchors',
   '/evaluations': 'Evaluations — Semantic Anchors',
   '/contributing': 'Contributing — Semantic Anchors',
   '/changelog': 'Changelog — Semantic Anchors',
@@ -45,6 +69,19 @@ function stripBase(pathname) {
  */
 function buildPath(route) {
   return BASE_PATH + route
+}
+
+/**
+ * Split an optional language prefix off a route path. The pre-rendered
+ * German pages live under /de/<route> (e.g. /de/about); the SPA resolves
+ * them to the same route handlers with the language switched to German.
+ * @param {string} path - Route path with the base already stripped.
+ * @returns {{path: string, lang: string|null}}
+ */
+function splitLangPrefix(path) {
+  if (path === '/de') return { path: '/', lang: 'de' }
+  if (path.startsWith('/de/')) return { path: path.slice(3), lang: 'de' }
+  return { path, lang: null }
 }
 
 /**
@@ -77,7 +114,7 @@ export function getCurrentRoute() {
   if (window.location.hash.startsWith('#/')) {
     return window.location.hash.slice(1)
   }
-  return stripBase(window.location.pathname)
+  return splitLangPrefix(stripBase(window.location.pathname)).path
 }
 
 /**
@@ -181,6 +218,11 @@ function closeOpenAnchorModal() {
 }
 
 function handleRoute() {
+  // A /de/<route> URL (pre-rendered German page) switches the app language
+  // before the route handler runs, so the SPA hydrates in German.
+  const { lang } = splitLangPrefix(stripBase(window.location.pathname))
+  if (lang) i18n.setLang(lang)
+
   let path = getCurrentRoute()
 
   // Normalize trailing slash: GitHub Pages 301-redirects routes like
@@ -223,6 +265,52 @@ function handleRoute() {
     return
   }
 
+  // Check for contract route (/contract/:id) — pre-rendered as real pages,
+  // resolved by the SPA to the contracts page scrolled to that contract's
+  // card (#611). Unlike anchors there is no modal; the card is highlighted
+  // in place.
+  if (path.startsWith('/contract/')) {
+    const contractId = path.replace('/contract/', '')
+    const safeContractId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(contractId) ? contractId : null
+    if (!safeContractId) return
+
+    clearContractHighlight()
+    closeOpenAnchorModal()
+    const contractsHandler = routes.get('/contracts')
+    if (typeof contractsHandler === 'function') {
+      currentRoute = '/contracts'
+      contractsHandler()
+    }
+    trackPageview()
+
+    // The contracts page renders asynchronously — on a direct page load it
+    // still has to fetch contracts.json first, so the card appears later
+    // than the next tick. Poll briefly (up to ~3s) instead of checking
+    // once; title the page after the card heading (real title, not a
+    // de-kebab-cased slug), bring the card into view, and highlight it
+    // persistently until the next route change.
+    const locateContractCard = (attempt = 0) => {
+      const card = document.querySelector(`[data-contract-id="${safeContractId}"]`)
+      if (!card) {
+        if (attempt < 30) setTimeout(() => locateContractCard(attempt + 1), 100)
+        return
+      }
+      const heading = card.querySelector('h3')
+      const readableName =
+        (heading && heading.textContent.trim()) ||
+        safeContractId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+      document.title = `${readableName} — Semantic Anchors`
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      card.classList.add(...CONTRACT_HIGHLIGHT_CLASSES)
+      highlightedContractCard = card
+    }
+    locateContractCard()
+    announceRoute(path)
+    return
+  }
+
+  clearContractHighlight()
+
   // Leaving an anchor route: close any open anchor modal so Back/forward and
   // in-app navigation don't leave it stranded as an overlay over the page.
   closeOpenAnchorModal()
@@ -234,6 +322,7 @@ function handleRoute() {
     document.title = ROUTE_TITLES[path] || 'Semantic Anchors'
     handler()
     trackPageview()
+    announceRoute(path)
   } else {
     // Default to home if route not found
     const homeHandler = routes.get('/')
@@ -241,6 +330,7 @@ function handleRoute() {
       currentRoute = '/'
       document.title = ROUTE_TITLES['/']
       homeHandler()
+      announceRoute('/')
     }
   }
 }

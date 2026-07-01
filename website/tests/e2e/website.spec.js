@@ -95,6 +95,17 @@ test.describe('Homepage - Card Grid', () => {
     expect(allCards).toBeGreaterThan(visibleCards)
   })
 
+  test('hides the hero while searching and restores it on clear (#615)', async ({ page }) => {
+    await page.waitForSelector('.anchor-card', { timeout: 10000 })
+    await expect(page.locator('#hero')).toBeVisible()
+
+    await page.fill('#header-search-input', 'TDD')
+    await expect(page.locator('#hero')).toBeHidden()
+
+    await page.fill('#header-search-input', '')
+    await expect(page.locator('#hero')).toBeVisible()
+  })
+
   test('should open anchor modal on card click', async ({ page }) => {
     await page.waitForSelector('.anchor-card', { timeout: 10000 })
 
@@ -165,6 +176,22 @@ test.describe('Homepage - Card Grid', () => {
     const proposeLink = page.locator('a[href*="issues/new"]')
     await expect(proposeLink).toBeVisible()
     await expect(proposeLink).toContainText('Propose New Anchor')
+  })
+})
+
+test.describe('Search away from the home grid (#615)', () => {
+  test('hides the search controls on non-home routes', async ({ page }) => {
+    await page.goto('/Semantic-Anchors/about/')
+    await page.waitForSelector('#doc-content h1', { timeout: 10000 })
+    await expect(page.locator('#header-search-input')).toBeHidden()
+    await expect(page.locator('#anchor-count')).toBeHidden()
+  })
+
+  test('shows the search controls on the home route', async ({ page }) => {
+    await page.goto('/Semantic-Anchors/')
+    await page.waitForSelector('.anchor-card', { timeout: 10000 })
+    await expect(page.locator('#header-search-input')).toBeVisible()
+    await expect(page.locator('#anchor-count')).toBeVisible()
   })
 })
 

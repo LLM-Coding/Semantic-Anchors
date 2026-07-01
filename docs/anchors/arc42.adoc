@@ -3,6 +3,7 @@
 :roles: software-architect, technical-writer, team-lead, legal-compliance
 :proponents: Gernot Starke, Peter Hruschka
 :tier: 3
+:definition: arc42 is a template for documenting software architecture, created by Gernot Starke and Peter Hruschka. It organises an architecture into twelve standardised sections — from goals, constraints, and context through building blocks, runtime, and deployment to decisions, quality, and risks — so teams document consistently and completely.
 
 [%collapsible]
 ====
@@ -49,4 +50,10 @@ Key Proponents:: Gernot Starke, Peter Hruschka
 * Medium to large software projects
 * When stakeholder communication is critical
 * Long-lived systems requiring maintainability
+
+[discrete]
+== *Current Status*:
+
+* The current release is template version https://arc42.org/download[9.0] (July 2025); the 12-section structure has been stable for many years — v9's main change splits Section 10 into a quality-requirements overview (10.1) and detailed scenarios (10.2)
+* What evolves is the material around the skeleton: help texts, translations, the tips-and-examples site https://docs.arc42.org/home/[docs.arc42.org], and the https://quality.arc42.org/[arc42 quality model (Q42)] — a prior trained on v7/v8 material knows the section structure correctly but misses the Section-10 split and Q42
 ====

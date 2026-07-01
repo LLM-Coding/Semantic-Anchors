@@ -1,0 +1,63 @@
+= Unix Philosophy
+:categories: design-principles
+:roles: software-developer, software-architect
+:related: separation-of-concerns, dry, kiss-principle, code-smells
+:proponents: Doug McIlroy, Eric S. Raymond
+:tags: modularity, composability, simplicity, pipes, kiss
+:tier: 2
+
+[%collapsible]
+====
+Auch bekannt als:: Software-Tools-Philosophie, Unix-Designphilosophie
+
+[discrete]
+== *Kernkonzepte*:
+
+Eine Sache gut machen:: "Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new features." (Doug McIlroy, Bell System Technical Journal, 1978)
+
+Kleine Tools komponieren:: Erwarte, dass die Ausgabe jedes Programms zur Eingabe eines weiteren, noch unbekannten Programms wird; kleine, scharfe Werkzeuge fügen sich über Pipes zu größeren Abläufen zusammen
+
+Text-Streams als universelle Schnittstelle:: "Write programs to handle text streams, because that is a universal interface" — Klartext ist die gemeinsame Sprache, die unabhängige Tools zusammenarbeiten lässt
+
+Prototypen früh bauen:: Zögere nicht, die unbeholfenen Teile zu verwerfen und neu zu bauen; bevorzuge schnelles Prototyping gegenüber Über-Design
+
+Worse is better:: Richard P. Gabriels Beobachtung, dass einfache, verfügbare Implementierungen sich schneller verbreiten als elegante, vollständige — eine beschreibende Sicht darauf, warum sich der Unix-Stil durchsetzte
+
+Rule of Modularity:: Baue ein Programm aus einfachen Teilen, die durch klare, wohldefinierte Schnittstellen verbunden sind (Eric S. Raymond)
+
+Rule of Composition:: Entwirf Programme so, dass sie mit anderen Programmen verbunden werden können; halte Formate parsebar, damit Tools sich verketten lassen (Eric S. Raymond)
+
+Rule of Silence:: "When a program has nothing surprising to say, it should say nothing" — stiller Erfolg hält die Ausgabe als Eingabe eines anderen Programms nutzbar (Eric S. Raymond)
+
+Schlüsselvertreter:: Doug McIlroy (Bell System Technical Journal, 1978), Eric S. Raymond ("The Art of Unix Programming", 2003, mit 17 Designregeln)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Entwurf von CLI-Tools, Skripten und Pipelines, die mit anderen komponieren sollen
+* Entscheidung, ob ein bestehendes Programm erweitert oder ein separates, fokussiertes gebaut wird
+* Argumentation für klartext- und zeilenorientierte Datenformate statt undurchsichtiger Binär-Blobs
+* Review eines Tools, das Flags und Feature Creep ansammelt
+* Prompting eines LLM, um kleine, einzweckige, komponierbare Programme im Unix-Stil zu erzeugen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<separation-of-concerns,Separation of Concerns>>
+* <<dry,DRY (Don't Repeat Yourself)>>
+* <<kiss-principle,KISS-Prinzip>>
+* <<code-smells,Code Smells>>
+
+[discrete]
+== *Kritik*:
+
+* Rob Pike und Brian Kernighan, "Program Design in the UNIX Environment" / "cat -v Considered Harmful" (1984) — argumentieren, dass Unix selbst von der Philosophie abdriftete, da Utilities wie `cat` Flags (`-n`, `-s`, `-b`, `-v`) ansammelten, die "eine Sache gut machen" verletzen; zusammengefasst unter https://en.wikipedia.org/wiki/Unix_philosophy[Unix philosophy (Wikipedia)]
+* Simson Garfinkel, Daniel Weise, Steven Strassmann (Hrsg.), https://en.wikipedia.org/wiki/The_UNIX-HATERS_Handbook[The UNIX-HATERS Handbook] (1994) — eine Sammlung der UNIX-HATERS-Mailingliste, die die "worse is better"-Designkultur als Quelle obskurer Flags, kryptischer Fehler und verlorener Arbeit angreift
+* Richard P. Gabriel, https://en.wikipedia.org/wiki/Worse_is_better["The Rise of Worse is Better"] (1989, veröffentlicht 1991) — beschreibt die Philosophie deskriptiv statt als Tugend: einfache, aber unvollständige Designs (C, Unix) setzten sich gegen korrektere, elegantere durch (Lisp-Maschinen), was nahelegt, dass sich der Stil aus Marktgründen verbreitet, nicht weil er richtig ist
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die Philosophie bleibt der konzeptionelle Kern von CLI-Tooling, Shells und Pipelines, steht aber im Spannungsverhältnis zu modernem monolithischem GUI-/IDE- und All-in-One-Plattform-Tooling, das Integration und Auffindbarkeit über die Komposition kleiner Text-Stream-Tools stellt
+* Eric S. Raymonds https://en.wikipedia.org/wiki/Unix_philosophy[17 Regeln] (2003) sind die meistzitierte moderne Kodifizierung; Trainingsdaten-Prioren bedienen am ehesten die McIlroy-Zusammenfassung und Raymonds Regeln, während die Pike/Kernighan-Kritik an Unix' eigenem Abdriften die dokumentierte Gegenströmung ist
+====

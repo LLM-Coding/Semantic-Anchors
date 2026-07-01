@@ -81,4 +81,10 @@ Key Proponents:: Combines GitHub-flavoured Markdown task lists with Gina Trapani
 * Remains fully functional in plain text editors
 * Enables rich metadata without sacrificing readability
 * Facilitates both manual and automated task tracking
+
+[discrete]
+== *Current Status*:
+
+* The underlying todo.txt format is alive and canonical at https://todotxt.org/[todotxt.org] (Gina Trapani): one task per line, priorities as `(A)`, projects as `+project`, contexts as `@context`
+* The prior is thin twice over: todo.txt itself is a single-maintainer niche ecosystem from the plain-text-productivity scene, and the *Markdown-flavoured* combination this anchor describes is a project-level convention on top — paste the concrete conventions into the prompt rather than relying on the name
 ====

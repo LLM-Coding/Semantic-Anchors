@@ -34,4 +34,10 @@ Schlüsselvertreter:: Simon Brown
 * Onboarding neuer Teammitglieder
 * Architekturdokumentation und -review
 * Ersetzen oder Ergänzen von UML
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die vier Ebenen (System Context, Container, Component, Code) und die ergänzenden Diagramme (System Landscape, Dynamic, Deployment) sind stabil; https://c4model.com/[c4model.com] wird von Simon Brown aktiv gepflegt, mit Änderungen bis in 2026
+* Im September 2024 wurde die Site von einer langen Einzelseite zu einer mehrseitigen Referenz umgebaut, mit neuer Anleitung (Microservices modellieren, Queues und Topics, Review-Checkliste) — ein auf den alten Einseiter trainierter Prior verpasst diese Inhalte und die geschärfte https://c4model.com/tooling[Diagramming-vs-Modelling]-Rahmung rund um Tooling wie Structurizr
 ====

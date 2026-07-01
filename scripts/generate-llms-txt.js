@@ -159,6 +159,7 @@ function adocToMarkdown(adoc) {
 // ─── Generate docs/all-anchors.adoc ─────────────────────────────────────────
 
 function generateAllAnchorsAdoc() {
+  const anchoredIds = new Set()
   const lines = [
     '= Semantic Anchors — Complete Reference',
     ':toc:',
@@ -177,6 +178,17 @@ function generateAllAnchorsAdoc() {
     for (const anchorId of category.anchors) {
       const filepath = path.join(ROOT, 'docs/anchors', `${anchorId}.adoc`)
       if (fs.existsSync(filepath)) {
+        // Explicit block anchor so each anchor section gets its stable
+        // catalog ID (e.g. #mece) instead of a title-derived one — the
+        // static home catalog links to /all-anchors#<anchor-id> (#595).
+        // AsciiDoc anchors must start with a letter; digit-leading IDs
+        // (4mat) already match their title-derived ID, so skip those.
+        // Multi-category anchors are included once per category — only
+        // the first occurrence gets the ID to avoid duplicate-id warnings.
+        if (/^[a-z]/.test(anchorId) && !anchoredIds.has(anchorId)) {
+          anchoredIds.add(anchorId)
+          lines.push(`[[${anchorId}]]`)
+        }
         lines.push(`include::anchors/${anchorId}.adoc[leveloffset=+2]`)
         lines.push('')
       }
@@ -337,6 +349,9 @@ function generateLlmsTxt() {
       lines.push('exist within your team.')
       lines.push('Add them to your AGENTS.md or CLAUDE.md.')
       lines.push('Select and download: https://llm-coding.github.io/Semantic-Anchors/#/contracts')
+      lines.push(
+        'Plain text (all contracts): https://llm-coding.github.io/Semantic-Anchors/contracts.txt'
+      )
       lines.push('')
 
       for (const contract of contracts) {
@@ -363,6 +378,57 @@ function generateLlmsTxt() {
   console.warn(`Generated: website/public/llms.txt (${totalAnchors} anchors, ~${kb} KB)`)
 }
 
+// ─── Generate website/public/contracts.txt (contracts-only, LLM-readable) ────
+
+function generateContractsTxt() {
+  const contractsPath = path.join(ROOT, 'website/public/data/contracts.json')
+  let contracts
+  try {
+    contracts = JSON.parse(fs.readFileSync(contractsPath, 'utf-8'))
+  } catch {
+    console.warn('  contracts.json not found — skipping contracts.txt')
+    return
+  }
+  if (!Array.isArray(contracts) || contracts.length === 0) return
+
+  const lines = [
+    '# Semantic Contracts',
+    '',
+    `> ${contracts.length} composable contracts that define what terms mean in your project —`,
+    '> by composing established Semantic Anchors or by providing custom team definitions.',
+    '> Add them to your AGENTS.md or CLAUDE.md.',
+    '> Source: https://github.com/LLM-Coding/Semantic-Anchors',
+    '> Select & copy: https://llm-coding.github.io/Semantic-Anchors/#/contracts',
+    '',
+    '---',
+    '',
+  ]
+
+  for (const contract of contracts) {
+    lines.push(`## ${contract.title}`)
+    lines.push('')
+    if (contract.description) {
+      lines.push(`_${contract.description}_`)
+      lines.push('')
+    }
+    lines.push(contract.template)
+    lines.push('')
+    if (contract.anchors && contract.anchors.length > 0) {
+      lines.push(`*Referenced anchors: ${contract.anchors.join(', ')}*`)
+      lines.push('')
+    }
+  }
+
+  const output =
+    lines
+      .join('\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trimEnd() + '\n'
+  fs.writeFileSync(path.join(ROOT, 'website/public/contracts.txt'), output, 'utf-8')
+  const kb = Math.round(Buffer.byteLength(output, 'utf-8') / 1024)
+  console.warn(`Generated: website/public/contracts.txt (${contracts.length} contracts, ~${kb} KB)`)
+}
+
 // ─── Generate website/public/docs/all-anchors.adoc (inlined, no includes) ────
 
 /**
@@ -380,6 +446,7 @@ function stripDocAttrs(content) {
 }
 
 function generateAllAnchorsWebAdoc() {
+  const anchoredIds = new Set()
   const WEB_DOCS = path.join(ROOT, 'website/public/docs')
   fs.mkdirSync(WEB_DOCS, { recursive: true })
 
@@ -407,6 +474,12 @@ function generateAllAnchorsWebAdoc() {
       const filepath = path.join(ROOT, 'docs/anchors', `${anchorId}.adoc`)
       if (fs.existsSync(filepath)) {
         const anchorContent = fs.readFileSync(filepath, 'utf-8')
+        // Same stable per-anchor section ID as in the include-based
+        // docs/all-anchors.adoc (see generateAllAnchorsAdoc).
+        if (/^[a-z]/.test(anchorId) && !anchoredIds.has(anchorId)) {
+          anchoredIds.add(anchorId)
+          lines.push(`[[${anchorId}]]`)
+        }
         lines.push(shiftHeadings(stripDocAttrs(anchorContent), 2))
         lines.push('')
       }
@@ -426,3 +499,4 @@ function generateAllAnchorsWebAdoc() {
 generateAllAnchorsAdoc()
 generateAllAnchorsWebAdoc()
 generateLlmsTxt()
+generateContractsTxt()

@@ -2,12 +2,201 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-01
+
+*Six new anchors:*
+
+* *link:#/anchor/deep-modules[Deep Modules]* (John Ousterhout, _A Philosophy of Software Design_) — design-principles: a deep module hides a powerful implementation behind a simple interface. Proposed by https://github.com/rdmueller[@rdmueller] in #660.
+* *link:#/anchor/test-seam[Test Seam]* (Michael Feathers, _Working Effectively with Legacy Code_) — testing-quality: a place to alter behaviour without editing there, to get legacy code under test. Proposed by https://github.com/rdmueller[@rdmueller] in #661.
+* *link:#/anchor/progressive-disclosure[Progressive Disclosure]* (Jack Carroll; Jakob Nielsen / NN/g) — communication-presentation: show the common few first, reveal the rest on demand. Proposed by https://github.com/rdmueller[@rdmueller] in #662.
+* *link:#/anchor/zone-of-proximal-development[Zone of Proximal Development]* (Lev Vygotsky) — communication-presentation: the gap between solo and guided performance, and scaffolding within it. Proposed by https://github.com/rdmueller[@rdmueller] in #663.
+* *link:#/anchor/sender-receiver-discrepancy[Sender-Receiver Discrepancy]* — communication-presentation: the cause-agnostic umbrella over communication-gap models (meaning is reconstructed by the receiver). Proposed by https://github.com/rehsack[@rehsack] in #639.
+* *link:#/anchor/50-72-rule[50/72 Rule]* (Tim Pope) — development-workflow: 50-char subject, 72-char body wrap for readable Git commits. Proposed by https://github.com/steffakasid[@steffakasid] in #620.
+
+All ship bilingual (EN/DE) with proponents, "when to use", related anchors, and — where documented — Criticism / Current Status sections with fetch-verified sources.
+*New contract — Presentation Planning (Präsentation planen):*
+
+* A new `presentation-planning` contract (category *Communication*, EN + DE) bundles known anchors into a plan-a-talk workflow: *link:#/anchor/socratic-method[Socratic Method]* to elicit the brief, *link:#/anchor/curse-of-knowledge[Curse of Knowledge]* for audience empathy, *link:#/anchor/pyramid-principle[Pyramid Principle]* + *link:#/anchor/mece[MECE]* for top-down structure, *link:#/anchor/three-act-structure[Three-Act Structure]* / *link:#/anchor/story-circle-dan-harmon[Story Circle]* for the narrative arc, *link:#/anchor/4mat[4MAT]* for why-first, and *link:#/anchor/bluf[BLUF]* for the opening. It produces a plan (core message, audience, arc, per-section takeaways) rather than slides, and works one step at a time. It deliberately excludes delivery/stagecraft — no established anchor covers it yet. Proposed by https://github.com/raifdmueller[@raifdmueller].
+
+== 2026-06-27
+
+*"New" badge on recently-added anchors (#652):*
+
+* Anchors added in the last 30 days now show a green *New* badge on their card, so returning visitors can spot fresh entries at a glance. The "added" date is derived from each anchor file's first git commit at build time (no manual upkeep) and stored as `addedAt`; the badge is computed at render time against the current date, so it expires on its own. Bilingual ("New" / "Neu"). The deploy workflow now checks out full history (`fetch-depth: 0`) so the dates are available in CI.
+
+*Direct-answer blocks for AI/LLM citability (#580):*
+
+* A GEO audit found the site ranks #1-3 in traditional search yet gets *zero* citations from ChatGPT, Perplexity, Gemini and Copilot for "What is Semantic Anchors?". The fix: every anchor's pre-rendered page now carries a concise, standalone *direct-answer block* that AI crawlers (which mostly do not run JS) can quote verbatim, and the home page gains a crawlable "What is Semantic Anchors?" answer section (EN + DE). A shared resolver prefers a curated `:definition:` attribute and otherwise derives one from the first Core Concept, so the answer block, the modal lead-in, and the DefinedTerm JSON-LD description all agree. Curated definitions seeded for 11 high-value anchors (MECE, BLUF, arc42, Clean Architecture, TDD London School, Gherkin, SOLID, Cynefin, Socratic Method, Chain of Thought, DDD); the rest use the derived fallback until curated. Proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/580[#580].
+
+*Onboarding skill repositioned to a Semantic Contracts installer (#521, #515):*
+
+* The `semantic-anchor-onboarding` skill installed a list of anchors the model mostly already knows. It is renamed and repositioned as *`semantic-contracts-installer`*: its default mode now installs *Semantic Contracts* — the compositions and rendered templates the model cannot guess (e.g. "Specification" = Cockburn use cases + Gherkin + EARS) — reading a bundled `data/contracts.json` snapshot (refreshable via `scripts/refresh-contracts.sh`). The former anchor-block flow stays as an `--anchors-only` sub-mode. The old skill name remains for one release as a deprecation alias that forwards to the new one and idempotently overwrites blocks it previously installed (same markers). The plugin is bumped to v0.6.0.
+* *SessionStart hook fixed (#515):* the installer no longer installs a Claude hook for `CLAUDE.md` (Claude Code loads it natively, so the hook double-loaded the block), and the hook is registered with matcher `startup` only — no more noisy re-injection on every resume.
+
+*Counter-consensus framing — advisory flag + rejection category (#624):*
+
+* Some terms activate reliably yet prime a framing their own field cautions against (e.g. the Eisenhower Matrix and the "mere-urgency effect"). Two new handling paths: a hard rejection category *Counter-consensus framing* in `rejected-proposals.adoc` (which requires a cited consensus source from the framework's own field), and — for terms worth keeping — an optional `:advisory:` anchor attribute that renders as a visible amber badge on the card and a banner in the modal, with the detail and source staying in the anchor's Criticism / Current Status section (single source of truth). The Eisenhower Matrix is the seed: it gains an `:advisory:` flag and a `== Current Status` section. Proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/624[#624].
+
+*Viability test for anchor proposals — recognition ≠ activation (#640):*
+
+* Contribution guidance now tests not just whether a model *recognizes* a term but whether naming it *changes the output*. A new "Viability Test" section in `CONTRIBUTING.adoc` / `CONTRIBUTING.de.adoc` adds a before/after test, a substitution check (silent substitution / confabulation on weaker models), and a cross-model check; `propose-anchor.yml` gains an optional viability-test field. A term that passes the four quality criteria but fails viability belongs in a *Contract*, not an anchor — the destination the taxonomy (#585) defines. Proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/640[#640].
+* The "Not in training data" rejection category was sharpened and renamed *Insufficient training-data density*, distinguishing recognition from activation and pointing thin-prior terms at a Semantic Contract.
+
+*CI now runs the unit tests:*
+
+* The Vitest unit suites (the `website` app's 100+ component/util tests and the `scripts` metadata-extraction test) ran nowhere in CI — only lint, E2E, Lighthouse and the security audit did. A drifted assertion had silently gone red on `main` as a result. A new *Unit Tests* job in `test.yml` runs both suites on every push and PR; `scripts` gains Vitest and a `test` script so its test is executable in CI.
+
+*Architecture Documentation contract split — vocabulary stays, procedure moves to a skill (#529):*
+
+* The `architecture-documentation` contract had grown to seven paragraphs — most of it procedure, not vocabulary. It now shrinks to one paragraph of shared vocabulary (arc42; C4 via PlantUML; Nygard ADRs with a 3-point Pugh matrix; six-part Quality Attribute Scenarios). The procedure — scaffolding the arc42 with-help template, the five cross-section traceability rules, the Chapter 11 Risks-vs-Technical-Debt structure, the ADR↔risk-ID wiring, the Chapter 1.2-vs-10 quality-goal marking — moves into a new on-demand *arc42-documentation* skill (`SKILL.md` + a chapter-by-chapter checklist), shipped in the plugin (bumped to v0.5.0) with its own website page. This is the Anchor/Contract/Skill taxonomy (ADR-007, #585) applied to the project's own artifacts: a contract that drifted into a skill, split back. `crosscutting-concepts` is already terse and stays as-is.
+
+*Artifact taxonomy formalised — Anchor vs. Contract vs. Skill (#585):*
+
+* The three artifact types the catalog ships now have an explicit, written definition instead of an implicitly-reconstructed one. New `ADR-007` (Nygard + Pugh, +63 vs. keeping it implicit) defines each type by function, linguistic shape and loading behaviour, plus a discrimination test; the working definitions are mirrored into `CONTRIBUTING.adoc` and `CONTRIBUTING.de.adoc` so contributors meet them where they look. ADR drafted by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/585[#585].
+* *Thin-prior rule:* a name not dense in training data is not an anchor — if the missing piece is _meaning_ it becomes a *Contract* (which supplies its own meaning), if it is _procedure_ it becomes a *Skill*. This reconciles the one point where #585's draft and the viability proposal (#640) disagreed, and matches the project's "weak prior → contract" position. The taxonomy unblocks the contract/skill split (#529) and the onboarding-skill pivot (#521).
+* The arc42 Chapter 9 ADR index was completed (it had also been missing ADR-006).
+
+*Build fix — req42 anchor title (#643):*
+
+* The deploy build broke at the metadata step because the `req42` anchor's title equalled its filename id, which the validator treats as "no real title set". Gave it a descriptive title (`req42 Requirements Framework`), in the same style as `arc42 Architecture Documentation`.
+
+*Dependency security — npm audit (website):*
+
+* `npm audit fix` cleared the three *high*-severity advisories that were failing the CI security audit (`npm audit --audit-level=high`): *Vite* 7.3.2 -> 7.3.6 (`server.fs.deny` bypass on Windows alternate paths, plus the bundled `launch-editor` NTLMv2 hash disclosure) and *ws* (uninitialized memory disclosure, memory-exhaustion DoS). Pure lockfile bumps within the declared `^7.3.1` range — build and unit tests stay green.
+* The four remaining *moderate* advisories (`js-yaml`, `uuid`) are dev-only transitive dependencies of `@lhci/cli` (Lighthouse CI) whose only fix is a breaking downgrade to `@lhci/cli@0.6.1`; they sit below the CI gate and are left in place rather than break the Lighthouse step.
+
+== 2026-06-26
+
+*18 new anchors from the proposal-triage batch (#642):*
+
+_Architecture & Design_
+
+* *link:#/anchor/circuit-breaker[Circuit Breaker]* — wraps a protected call in a state machine (Closed/Open/Half-Open) that trips to fail-fast once failures cross a threshold, preventing resource exhaustion and cascading failure (Michael Nygard, _Release It!_, 2007; Martin Fowler; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/630[#630])
+* *link:#/anchor/strangler-fig[Strangler Fig]* — incrementally replaces a legacy system by routing functionality to new code around its edges until the old system can be retired, avoiding a big-bang rewrite (Martin Fowler, 2004; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/631[#631])
+* *link:#/anchor/team-topologies[Team Topologies]* — organises delivery around four team types (Stream-aligned, Enabling, Complicated-Subsystem, Platform) and three interaction modes for fast flow (Matthew Skelton & Manuel Pais, 2019; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/632[#632])
+* *link:#/anchor/twelve-factor-app[Twelve-Factor App]* — twelve practices for portable, scalable SaaS (explicit dependencies, config in the environment, stateless processes, disposability) (Adam Wiggins, Heroku, 2011; proposed by https://github.com/mc2259[@mc2259] in https://github.com/LLM-Coding/Semantic-Anchors/issues/622[#622])
+* *link:#/anchor/separation-of-concerns[Separation of Concerns]* — study and change each distinct aspect of a system in isolation, so one can be reasoned about without interference from the others (Edsger W. Dijkstra, 1974; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/627[#627])
+* *link:#/anchor/unix-philosophy[Unix Philosophy]* — make each program do one thing well and compose small sharp tools via pipes (Doug McIlroy, 1978; Eric S. Raymond, _The Art of Unix Programming_, 2003; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/628[#628])
+* *link:#/anchor/design-by-contract[Design by Contract]* — specify routines with preconditions (caller's obligation), postconditions (supplier's guarantee) and invariants, assigning blame precisely when a contract is violated (Bertrand Meyer, Eiffel, 1986; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/633[#633])
+
+_Strategy, Problem-Solving & Requirements_
+
+* *link:#/anchor/okr[OKR (Objectives and Key Results)]* — couples a qualitative Objective with a few measurable Key Results to focus and align goals (Andy Grove at Intel; popularised by John Doerr, _Measure What Matters_, 2018; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/635[#635])
+* *link:#/anchor/fermi-estimation[Fermi Estimation]* — decompose an unknown quantity into estimable sub-quantities and reason in powers of ten to land the right order of magnitude (Enrico Fermi; proposed by Ralf D. Müller in https://github.com/LLM-Coding/Semantic-Anchors/issues/608[#608])
+* *link:#/anchor/eisenhower-matrix[Eisenhower Matrix]* — plots tasks on urgency × importance to separate the two and prioritise accordingly; admitted deliberately _with_ a fetch-verified Criticism section (mere-urgency effect; Covey's own caution) (Dwight D. Eisenhower; popularised by Stephen Covey; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/623[#623])
+* *link:#/anchor/laddering[Laddering (Interview Technique)]* — reconstructs the means-end chain attribute -> consequence -> value through repeated "why is that important to you?" probing (George Kelly; Hinkle; Reynolds & Gutman; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/634[#634])
+* *link:#/anchor/consent-vs-consensus[Consent vs. Consensus]* — distinguishes decision by absence of a reasoned objection ("good enough for now, safe enough to try") from decision by everyone's active agreement (Gerard Endenburg, Sociocracy; Brian Robertson, Holacracy; proposed by https://github.com/fdesoye[@fdesoye] in https://github.com/LLM-Coding/Semantic-Anchors/issues/626[#626])
+* *link:#/anchor/req42[req42]* — the pragmatic, agile requirements framework structured as twelve "drawers" mirroring arc42; the requirements companion to arc42 (Peter Hruschka & Markus Meuten; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/625[#625])
+
+_Communication & Learning_
+
+* *link:#/anchor/curse-of-knowledge[Curse of Knowledge]* — once you know something you cannot reconstruct not knowing it, so experts overestimate shared context (Camerer, Loewenstein & Weber, 1989; popularised by Chip & Dan Heath; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/638[#638])
+* *link:#/anchor/four-sides-model[Four-Sides Model (Schulz von Thun)]* — every message carries four sides at once — fact, self-revelation, relationship, appeal — and is heard with four matching "ears" (Friedemann Schulz von Thun, 1981; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/636[#636])
+* *link:#/anchor/dreyfus-skill-acquisition[Dreyfus Model of Skill Acquisition]* — five stages from Novice to Expert describing how rule-following gives way to intuitive, context-driven mastery (Stuart & Hubert Dreyfus, 1980; proposed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/issues/637[#637])
+* *link:#/anchor/effective-java[Effective Java]* — Joshua Bloch's catalogue of ~90 concrete best-practice "Items" for idiomatic, robust Java (Joshua Bloch, 3rd ed. 2018; proposed by https://github.com/schtiefl[@schtiefl] in https://github.com/LLM-Coding/Semantic-Anchors/issues/618[#618])
+* *link:#/anchor/addie-model[ADDIE Model]* — the instructional-design process of Analysis, Design, Development, Implementation, Evaluation (Florida State University origin; codified by Robert Maribe Branch, 2009; proposed by https://github.com/davidlohner[@davidlohner] in https://github.com/LLM-Coding/Semantic-Anchors/issues/621[#621])
+
+A new *Knowledge Management* catalog section was added to house Dreyfus & ADDIE.
+
+== 2026-06-14
+
+*Explaining and Teaching contract — persist the checklist:*
+
+* The _Explaining and Teaching_ contract now adds a single clause (EN + DE): for a long or multi-session explanation, persist the running understanding-checklist as a file so it survives context loss and can be resumed. An empirical A/B run — our contract versus the source prompt it was distilled from, both driven headless in a clean room with no `CLAUDE.md` leakage — showed the source prompt's one genuine advantage was the durable checklist file it wrote to disk; everything else (honoring opt-out, one step per turn, not announcing the method) our contract already did better. This closes that gap without sacrificing the scale-to-the-question behaviour.
+
+== 2026-06-12
+
+*Search UX (#615):*
+
+* *Search results were invisible:* typing in the search box filtered the catalog grid, but the hero section above it pushed the results below the fold. An active search now collapses the hero with a smooth 300ms animation (it slides back the moment the query is cleared), so results appear directly under the header. Honors `prefers-reduced-motion`.
+* *Search controls only where they work:* the header search box, role filter, and anchor counter used to appear on every page while being dead outside the home catalog (no grid to filter, the counter stuck at "0 / 0"). The whole control row is now shown only on the home route.
+
+*Direct links to contracts (#611):*
+
+* Every semantic contract now has its own pre-rendered page at `/contract/<id>`, with a German variant at `/de/contract/<id>` — own title, description, canonical URL, social-share metadata, and hreflang pairs, exactly like the anchor pages from #597. Sharing a single contract (e.g. _Specification_) now produces the right preview instead of the generic contracts-page card.
+* The cards on `/contracts` link to their detail pages; in the SPA, a `/contract/<id>` URL opens the contracts page scrolled to the highlighted card with the real contract title in the tab.
+* All 38 contract pages joined the sitemap, and contracts are now `DefinedTerm` entities in the site's structured data alongside the anchors — each citable by search engines and retrieval-grounded AI under its own URL.
+
+*Socratic Code-Theory Recovery skill v0.3 (#531, #532):*
+
+* *Per-context output files (#531)* — Phase 1 now writes `QUESTION_TREE-<context>.adoc` and `OPEN_QUESTIONS-<context>.adoc` instead of fixed filenames, so the documented "one bounded context at a time" workflow no longer silently overwrites earlier runs; Phase 2 reads the context-specific tree, and ADRs get a context prefix (`adrs/<context>-adr-NNN-*.adoc`) so two contexts cannot clobber each other's decision records.
+* *Fixed Q3.2 constraints sub-level (#532)* — the Architecture Constraints node now always emits Q3.2.1 technical, Q3.2.2 organizational/process, and Q3.2.3 conventional constraints, mirroring arc42 Chapter 2's constraint kinds; for this branch the prompt explicitly admits non-code evidence (CLAUDE.md/AGENTS.md, CONTRIBUTING, CI workflows, linter configs), closing the gap where process and convention constraints surfaced untraceably in Phase 2 output.
+
+== 2026-06-11
+
+*Current Status sections, batch 4 — triage complete (#603):*
+
+* The remaining 14 versioned/living anchors now carry a *Current Status* section (EN + DE), all facts fetch-verified: arc42 (v9.0, July 2025, Section-10 split), C4 (levels stable, site rewritten 09/2024), Diátaxis (core stable, site grown), GitHub Flow (Chacon's 2011 continuous-deployment original vs GitHub's deploy-free current docs), PEAA (catalog unchanged since 2003, eaaDev frozen since 2006), BEM (definition stable, practice moved to utility-first — State of CSS no longer tracks methodologies), IEC 61508 (Ed 2 still current; Ed 3 forecast ~10/2026), LINDDUN (now a GO/PRO/MAESTRO family; no "MAID"), SRE (books canonical; platform-engineering convergence), SOTA (Papers with Code — the canonical tracker — no longer exists), Chain of Thought (reasoning models internalise it; OpenAI advises against "think step by step"), LLM-Evaluations (MMLU already superseded), Fagan Inspection and CRC Cards (definitions intact, practice moved on).
+* The five thin-prior anchors (GoM, IOSP, Meaningful Human Control, todo.txt-flavoured Markdown, LASR) get verified canonical sources plus explicit supply-the-definition advice.
+* *LASR rewritten:* verification revealed the previous entry was a silent substitution — it described a fabricated "lightweight architecture documentation template" with an invented acronym expansion (and the AgentSkill catalog carried a second, different invented expansion). The real LASR is the *Lightweight Approach for Software Reviews* (Toth & Zörner, lasr-reviews.org, "Reviewing Software Systems", Leanpub 2023), a streamlined ATAM alternative. The corrected anchor documents its own failure case as evidence for the thin-prior warning.
+* The About page now states the lexicon positioning: inclusion means precision, not endorsement.
+
+*Criticism sections, batch 3 (#603):*
+
+* The remaining twelve contested anchors from the catalog triage now carry a *Criticism* section (EN + DE), every claim with a named critic and a fetch-verified linked source: 4MAT (learning-styles evidence — Pashler et al. 2008, Kirschner 2017), AIDA (hierarchy-of-effects critique — Heath & Feldwick 2008, Vakratsas & Ambler 1999), Clean Architecture (indirection tax — Bogard, Comartin; alternative: Vertical Slice Architecture), CQRS (author-acknowledged overuse — Fowler, Dahan, Young), DRY (the authors' own "we did a poor job of explaining" concession plus Sandi Metz), Freytag's Pyramid (Jane Alison), GoF Design Patterns (Norvig's 16-of-23, Paul Graham's human compiler), Hero's Journey (folklorists Dundes and Toelken), Jobs To Be Done (the Christensen-vs-Ulwick two-schools problem), Kotter's 8 Steps (no empirical validation of the whole model — Appelbaum et al. 2012; Kotter's own Accelerate revision), MVP (term dilution — NN/g; Kniberg's skateboard corrective), and Save the Cat (Suderman's "Save the Movie!").
+* With batch 3, all 23 Criticism candidates and the 6 highest-drift Current Status candidates from the #603 triage are done — 28 anchors carry sourced sections.
+
+*Current Status sections, batch 2 (#603):*
+
+* The six anchors whose referent has editions or successors now carry a *Current Status* section (EN + DE) naming what is current, which edition an LLM's training-data prior most plausibly serves, and how to disambiguate in prompts — every claim fetch-verified by research agents: OWASP Top 10 (2025 edition is current; bare category IDs are ambiguous — A03 means Injection in 2021 but Software Supply Chain Failures in 2025), ISO/IEC 25010 (2023 revision: nine characteristics, Safety added; prior serves the withdrawn 2011 model), MADR (4.0.0; prior reproduces the 2.x-era template), Effective Go (deliberately frozen by the Go team since 2009, predates generics and modules), Bloom's Taxonomy (1956 nouns vs 2001 verbs — priors blend both), and Cockburn Use Cases (Use-Case 2.0 is an anchor of its own; the official Use Case 3.0 ebook exists since 2024 but its prior is thin — supply the definition in the prompt).
+* *New contribution convention:* every new anchor proposal now includes a criticism / edition-drift research step; findings land in Criticism / Current Status sections with named, fetch-verified linked sources. Documented in CONTRIBUTING (EN + DE) and the anchor template.
+* Fixed the Wolf Schneider criticism source from batch 1: it now links the concrete Sprachlog post in which Anatol Stefanowitsch calls Schneider the "oberster Sprachnörgler der deutschsprachigen Journaille" (Sprachbrocken 49/2012), instead of a category archive.
+
+*Criticism sections, batch 1 (#603):*
+
+* The catalog is a lexicon, not a list of endorsements — and a lexicon marks its contested entries. Following a full triage of all 161 anchors (#603), the ten anchors with the most prominent documented critique now carry a *Criticism* section (EN + DE) citing named, linked sources and the alternatives the discourse proposes: GoF Singleton (Gamma 2009, Hevery 2008), Testing Pyramid (Testing Trophy, Spotify honeycomb), SWOT (Hill & Westbrook 1997), Plain English / Strunk & White (Pullum 2009), Gutes Deutsch / Wolf Schneider (descriptive-linguistics critique), Postel's Law (Allman 2011, RFC 9413), Red/Green TDD ("Is TDD Dead?" debate, Coplien), CAP Theorem (Brewer 2012, Kleppmann 2015), Five Whys (Card 2017, Allspaw 2014), and SOLID (North's CUPID, Ousterhout). The MBTI anchor pioneered this format.
+
+*Share metadata & descriptions (#601):*
+
+* *Per-page Open Graph / Twitter cards* — every pre-rendered page now carries its own `og:url`, `og:title`, `og:description` and `twitter:*` tags (previously all subpages shipped the home-page values, so sharing an anchor link rendered the generic home preview). German pages get `og:locale=de_DE`.
+* *Accurate home description* — the hard-coded "110+ semantic anchors" claim (real count: 161) is replaced by counts computed from the data files at build time; the static shell texts are now count-free so they cannot go stale.
+* *Normalized snippet lengths* — meta descriptions are capped at ~160 characters on a word boundary; very short anchor extracts get the anchor title prefixed.
+
+== 2026-06-10
+
+*Real anchor pages (#597):*
+
+* Every `/anchor/<id>` URL was an HTTP 404, served only through the JavaScript SPA fallback — while the sitemap and the DefinedTerm structured data advertised all 161 of them. Each anchor is now a real pre-rendered page (own title, description, canonical URL, content expanded), plus a German `/de/anchor/<id>` variant for the 155 translated anchors, with `hreflang` pairs. The static home catalog now links to these pages directly.
+
+*The website now works without JavaScript (#595):*
+
+* *Static navigation* — the HTML shell shipped empty header/footer placeholders and not a single `<a href>` link, so without JavaScript the site was a dead end for crawlers, LLM fetchers, and no-JS visitors. The shell now carries a real header (logo + nav) and footer with plain clean-URL links; with JavaScript the SPA hydrates on top exactly as before.
+* *Static home catalog* — the full category → anchor catalog (161 anchors) is pre-rendered into the home page, each anchor linking to its stable section in the _Full Reference_ (`/all-anchors#<anchor-id>`).
+* *Static German pages* — the home page and every doc page with a German translation are pre-rendered under `/de/…` with honest `hreflang` pairs (the previous `?lang=de` alternate served identical English HTML). A `/de` URL switches the SPA to German for JS users.
+* The legacy `#/route` hash links in the JS header/footer were replaced with the same clean URLs.
+
+*Discoverability (SEO / AI):*
+
+* *Structured data* — added a standalone `Organization` entity and a `DefinedTermSet` with a `DefinedTerm` for every anchor (name, canonical URL, and a definition where available), generated at build time from `anchors.json`. Lets search engines and retrieval-grounded AI resolve "Semantic Anchors" as a distinct entity and each anchor as a defined term (#579).
+* *Fixed:* the _An Anchor Delivers Only as Far as the Prior Reaches_ article was not pre-rendered and was therefore invisible to search engines and LLM crawlers. It is now pre-rendered like every other doc page.
+* *Landing answer block* — the home page rendered its hero (the "what are Semantic Anchors?" definition) only client-side, so crawlers and LLM fetchers saw an empty shell. The hero copy is now pre-rendered into the static home page, single-sourced from the translations so it never drifts from the live hero (#580).
+
+== 2026-06-09
+
+*New contracts:*
+
+* *Strategic Architecture Analysis* — a strategic-analysis recipe that combines four lenses with the questions they answer: Wardley Mapping (how each component evolves), the Cynefin Framework (match the response to the domain), a Morphological Box (explore the option space deliberately instead of anchoring on the first design), ATAM (weigh tradeoffs against the quality goals), and the Five Whys (drill to the root cause); for build-vs-buy decisions, architecture-fitness reviews, and strategic technology-radar reviews
+
+*Updated article:*
+
+* *An Anchor Delivers Only as Far as the Prior Reaches* — added Fable 5 (Anthropic's newest model, probed on its release day) as a fourth column in the prior-mapping matrix. It holds the richest Use-Case 2.0 prior of the four models yet still hedges on Use-Case 3.0, strengthening the finding that a dense 2.0 prior does not buy a 3.0 one.
+
+== 2026-06-08
+
+*Refined contracts:*
+
+* *Explaining and Teaching* — reworked from a structured "explain in 4MAT order" loop into a question-driven teaching dialogue: open by having the learner restate what they know, then one small step per turn (ask, or explain a little and check, then stop and wait), quiz with multiple-choice questions whose answer is withheld until the learner commits, and don't advance until they can apply it to a fresh case. The anchors (Socratic Method, 4MAT, Naur, Feynman, Bloom's, Definition of Done) now shape behaviour as attributions rather than named steps, with an explicit "don't announce the method" guard so the scaffold no longer leaks into the output. Also keeps the over-fire brake (a one-line question gets a one-line answer) and learner opt-out
+
+*New article:*
+
+* *An Anchor Delivers Only as Far as the Prior Reaches* — how a semantic anchor's power depends on how densely the concept sits in an LLM's training data, with a reproducible A–E experiment across Claude Haiku 4.5, Sonnet 4.6 and Opus 4.8. Prompted by https://github.com/simasch[@simasch]'s https://github.com/LLM-Coding/Semantic-Anchors/pull/582[#582] on the Cockburn Use Cases anchor.
+
 == 2026-06-03
 
 *New anchors:*
 
-* *IOSP (Integration Operation Segregation Principle)* — a function shall either contain logic (Operation) or call other functions (Integration), but never both; the formal refinement of SRP at function level; separates integration (coordination/sequencing) from operation (business logic/computation); eliminates mock-heavy tests by avoiding new'ing in functions that contain logic; formally checkable via IospAnalyzer (Roslyn); reduces the need for Dependency Injection (DIP) at the function level (Ralf Westphal, 2022; Stefan Lieser, 2025; proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/556[#556])
-* *AIDA Model* — the classic copywriting/advertising funnel: Attention → Interest → Desire → Action; a sequential hierarchy-of-effects model that makes persuasive copy do each job in turn (hook, relevance, wanting, call to action) instead of jumping to the ask; pins the canonical four-stage form and notes variants (AIDAS, AIDCA, AIDA-R); fills the persuasion/copywriting gap in the communication cluster (commonly attributed to E. St. Elmo Lewis, 1898)
+* *link:#/anchor/iosp[IOSP (Integration Operation Segregation Principle)]* — a function shall either contain logic (Operation) or call other functions (Integration), but never both; the formal refinement of SRP at function level; separates integration (coordination/sequencing) from operation (business logic/computation); eliminates mock-heavy tests by avoiding new'ing in functions that contain logic; formally checkable via IospAnalyzer (Roslyn); reduces the need for Dependency Injection (DIP) at the function level (Ralf Westphal, 2022; Stefan Lieser, 2025; proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/issues/556[#556])
+* *link:#/anchor/aida-model[AIDA Model]* — the classic copywriting/advertising funnel: Attention → Interest → Desire → Action; a sequential hierarchy-of-effects model that makes persuasive copy do each job in turn (hook, relevance, wanting, call to action) instead of jumping to the ask; pins the canonical four-stage form and notes variants (AIDAS, AIDCA, AIDA-R); fills the persuasion/copywriting gap in the communication cluster (commonly attributed to E. St. Elmo Lewis, 1898)
 
 *New contracts:*
 
@@ -17,9 +206,9 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New anchors:*
 
-* *DRY (Don't Repeat Yourself)* — "every piece of knowledge must have a single, unambiguous, authoritative representation within a system"; targets duplicated knowledge/intent rather than coincidental textual similarity, with the Rule of Three (Fowler) and the wrong-abstraction caution ("duplication is far cheaper than the wrong abstraction", Sandi Metz) as guardrails; antonym WET (Andy Hunt & Dave Thomas, *The Pragmatic Programmer*, 1999; proposed by https://github.com/GaboCapo[@GaboCapo] in https://github.com/LLM-Coding/Semantic-Anchors/issues/560[#560])
-* *Event Storming according to Alberto Brandolini* — a collaborative workshop that models a domain as past-tense domain events on a timeline using a fixed colour notation (orange Event, blue Command, yellow Aggregate, lilac Policy, green Read Model, pink External System, red Hotspot) across three levels (Big Picture, Process Modeling, Design Level); surfaces bounded-context seams via pivotal events and makes assumptions explicit as hotspots; Reverse Event Storming reconstructs legacy systems (Alberto Brandolini, 2012/2013; proposed by https://github.com/SidekickJohn[@SidekickJohn] in https://github.com/LLM-Coding/Semantic-Anchors/issues/558[#558])
-* *Bloom's Taxonomy* — the six-level hierarchy of cognitive learning objectives (Remember, Understand, Apply, Analyze, Evaluate, Create) with measurable action verbs per level; pins the Revised 2001 version and its knowledge dimension; complements the teaching cluster (4MAT, Feynman, Socratic) by grading the cognitive *level* a step targets — so "demonstrated understanding" can be set at Apply/Analyze rather than recall (Benjamin Bloom, 1956; Anderson & Krathwohl revision, 2001)
+* *link:#/anchor/dry[DRY (Don't Repeat Yourself)]* — "every piece of knowledge must have a single, unambiguous, authoritative representation within a system"; targets duplicated knowledge/intent rather than coincidental textual similarity, with the Rule of Three (Fowler) and the wrong-abstraction caution ("duplication is far cheaper than the wrong abstraction", Sandi Metz) as guardrails; antonym WET (Andy Hunt & Dave Thomas, *The Pragmatic Programmer*, 1999; proposed by https://github.com/GaboCapo[@GaboCapo] in https://github.com/LLM-Coding/Semantic-Anchors/issues/560[#560])
+* *link:#/anchor/event-storming[Event Storming according to Alberto Brandolini]* — a collaborative workshop that models a domain as past-tense domain events on a timeline using a fixed colour notation (orange Event, blue Command, yellow Aggregate, lilac Policy, green Read Model, pink External System, red Hotspot) across three levels (Big Picture, Process Modeling, Design Level); surfaces bounded-context seams via pivotal events and makes assumptions explicit as hotspots; Reverse Event Storming reconstructs legacy systems (Alberto Brandolini, 2012/2013; proposed by https://github.com/SidekickJohn[@SidekickJohn] in https://github.com/LLM-Coding/Semantic-Anchors/issues/558[#558])
+* *link:#/anchor/blooms-taxonomy[Bloom's Taxonomy]* — the six-level hierarchy of cognitive learning objectives (Remember, Understand, Apply, Analyze, Evaluate, Create) with measurable action verbs per level; pins the Revised 2001 version and its knowledge dimension; complements the teaching cluster (4MAT, Feynman, Socratic) by grading the cognitive *level* a step targets — so "demonstrated understanding" can be set at Apply/Analyze rather than recall (Benjamin Bloom, 1956; Anderson & Krathwohl revision, 2001)
 
 *New contracts:*
 
@@ -29,24 +218,24 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New anchors:*
 
-* *Meaningful Human Control (MHC)* — the requirement that humans keep genuine, substantive control over autonomous systems making high-stakes decisions, rather than formulaic "human-in-the-loop" oversight; demands situational awareness, an identifiable accountability chain that cannot pass to machines, positive human authorization of critical actions, and timely intervention; Sharkey's five levels (L1 human deliberates → L5 fully autonomous) grade the autonomy; rooted in the autonomous-weapons / international humanitarian law debate (Article 36, 2013) and now underpinning the EU AI Act's human-oversight rules (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/543[#543], issue https://github.com/LLM-Coding/Semantic-Anchors/issues/540[#540])
-* *Conway's Law* — organizations produce designs whose structure mirrors their communication structure; underlies team-topology and module-boundary reasoning and the Inverse Conway Maneuver (Melvin Conway, 1968; https://github.com/LLM-Coding/Semantic-Anchors/issues/506[#506])
-* *CAP Theorem* — a partitioned distributed system must trade Consistency against Availability; reframed by PACELC for the no-partition case (Brewer 2000; Gilbert & Lynch 2002; https://github.com/LLM-Coding/Semantic-Anchors/issues/508[#508])
-* *Fallacies of Distributed Computing* — the eight false network assumptions (reliable, zero latency, infinite bandwidth, secure, fixed topology, one admin, zero transport cost, homogeneous) as an audit checklist for distributed designs (L. P. Deutsch & J. Gosling, Sun; https://github.com/LLM-Coding/Semantic-Anchors/issues/507[#507])
-* *Law of Demeter* — "only talk to your immediate friends"; the Principle of Least Knowledge against train-wreck call chains (Ian Holland & Karl Lieberherr, Northeastern, 1987; https://github.com/LLM-Coding/Semantic-Anchors/issues/509[#509])
-* *First Principles Thinking* — decompose a problem to irreducible truths and reason up, instead of reasoning by analogy (roots in Aristotle/Descartes; https://github.com/LLM-Coding/Semantic-Anchors/issues/510[#510])
-* *Postel's Law* — the Robustness Principle: "be conservative in what you send, be liberal in what you accept", with the modern strictness/versioning caveat (Jon Postel, RFC 761, 1980; https://github.com/LLM-Coding/Semantic-Anchors/issues/512[#512])
-* *Goodhart's Law* — "when a measure becomes a target, it ceases to be a good measure"; a critique lens for KPIs and LLM-evaluation criteria (Charles Goodhart 1975; Strathern's formulation; https://github.com/LLM-Coding/Semantic-Anchors/issues/513[#513])
-* *Inverted Pyramid Style* — the journalistic news structure: most important information first, with a long prunable tail; distinct from BLUF (short) and the Pyramid Principle (complete argument) (proposed by https://github.com/mhchem[@mhchem] in https://github.com/LLM-Coding/Semantic-Anchors/issues/538[#538])
+* *link:#/anchor/meaningful-human-control[Meaningful Human Control (MHC)]* — the requirement that humans keep genuine, substantive control over autonomous systems making high-stakes decisions, rather than formulaic "human-in-the-loop" oversight; demands situational awareness, an identifiable accountability chain that cannot pass to machines, positive human authorization of critical actions, and timely intervention; Sharkey's five levels (L1 human deliberates → L5 fully autonomous) grade the autonomy; rooted in the autonomous-weapons / international humanitarian law debate (Article 36, 2013) and now underpinning the EU AI Act's human-oversight rules (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/543[#543], issue https://github.com/LLM-Coding/Semantic-Anchors/issues/540[#540])
+* *link:#/anchor/conways-law[Conway's Law]* — organizations produce designs whose structure mirrors their communication structure; underlies team-topology and module-boundary reasoning and the Inverse Conway Maneuver (Melvin Conway, 1968; https://github.com/LLM-Coding/Semantic-Anchors/issues/506[#506])
+* *link:#/anchor/cap-theorem[CAP Theorem]* — a partitioned distributed system must trade Consistency against Availability; reframed by PACELC for the no-partition case (Brewer 2000; Gilbert & Lynch 2002; https://github.com/LLM-Coding/Semantic-Anchors/issues/508[#508])
+* *link:#/anchor/fallacies-of-distributed-computing[Fallacies of Distributed Computing]* — the eight false network assumptions (reliable, zero latency, infinite bandwidth, secure, fixed topology, one admin, zero transport cost, homogeneous) as an audit checklist for distributed designs (L. P. Deutsch & J. Gosling, Sun; https://github.com/LLM-Coding/Semantic-Anchors/issues/507[#507])
+* *link:#/anchor/law-of-demeter[Law of Demeter]* — "only talk to your immediate friends"; the Principle of Least Knowledge against train-wreck call chains (Ian Holland & Karl Lieberherr, Northeastern, 1987; https://github.com/LLM-Coding/Semantic-Anchors/issues/509[#509])
+* *link:#/anchor/first-principles-thinking[First Principles Thinking]* — decompose a problem to irreducible truths and reason up, instead of reasoning by analogy (roots in Aristotle/Descartes; https://github.com/LLM-Coding/Semantic-Anchors/issues/510[#510])
+* *link:#/anchor/postels-law[Postel's Law]* — the Robustness Principle: "be conservative in what you send, be liberal in what you accept", with the modern strictness/versioning caveat (Jon Postel, RFC 761, 1980; https://github.com/LLM-Coding/Semantic-Anchors/issues/512[#512])
+* *link:#/anchor/goodharts-law[Goodhart's Law]* — "when a measure becomes a target, it ceases to be a good measure"; a critique lens for KPIs and LLM-evaluation criteria (Charles Goodhart 1975; Strathern's formulation; https://github.com/LLM-Coding/Semantic-Anchors/issues/513[#513])
+* *link:#/anchor/inverted-pyramid-style[Inverted Pyramid Style]* — the journalistic news structure: most important information first, with a long prunable tail; distinct from BLUF (short) and the Pyramid Principle (complete argument) (proposed by https://github.com/mhchem[@mhchem] in https://github.com/LLM-Coding/Semantic-Anchors/issues/538[#538])
 
 == 2026-05-22
 
 *New anchors:*
 
-* *Quality Attribute Scenario* — Bass, Clements & Kazman's six-part scenario format (SEI, *Software Architecture in Practice*) that turns a vague quality goal into a testable statement: Source, Stimulus, Artifact, Environment, Response, Response Measure; the Response Measure is what makes it verifiable. The format underlies arc42 Chapter 10 quality requirements and the leaves of an ATAM utility tree.
-* *Luhmann's System Theory* — Niklas Luhmann's sociological systems theory; autopoiesis, operational closure, structural coupling, double contingency, communication as the operation of social systems; a theory for analysing complex socio-technical systems where boundaries are contested (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
-* *Simon's Constructivism* — Fritz B. Simon's introduction to systems theory and constructivism; viability vs. truth, trivial vs. non-trivial machines, second-order cybernetics, perturbation instead of instruction (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
-* *Systemic Consulting (Heidelberg School)* — the Heidelberg School of systemic consulting after Fritz B. Simon; all-partiality, neutrality, circular questions, context clarification, intervention as irritation rather than instruction (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
+* *link:#/anchor/quality-attribute-scenario[Quality Attribute Scenario]* — Bass, Clements & Kazman's six-part scenario format (SEI, *Software Architecture in Practice*) that turns a vague quality goal into a testable statement: Source, Stimulus, Artifact, Environment, Response, Response Measure; the Response Measure is what makes it verifiable. The format underlies arc42 Chapter 10 quality requirements and the leaves of an ATAM utility tree.
+* *link:#/anchor/luhmann-system-theory[Luhmann's System Theory]* — Niklas Luhmann's sociological systems theory; autopoiesis, operational closure, structural coupling, double contingency, communication as the operation of social systems; a theory for analysing complex socio-technical systems where boundaries are contested (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
+* *link:#/anchor/simon-constructivism[Simon's Constructivism]* — Fritz B. Simon's introduction to systems theory and constructivism; viability vs. truth, trivial vs. non-trivial machines, second-order cybernetics, perturbation instead of instruction (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
+* *link:#/anchor/systemic-consulting[Systemic Consulting (Heidelberg School)]* — the Heidelberg School of systemic consulting after Fritz B. Simon; all-partiality, neutrality, circular questions, context clarification, intervention as irritation rather than instruction (proposed by https://github.com/JensGrote[@JensGrote] in https://github.com/LLM-Coding/Semantic-Anchors/pull/517[#517])
 
 *Contract updates:*
 
@@ -67,22 +256,22 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New anchors:*
 
-* *Hoshin Kanri* — Yoji Akao's Lean strategy-deployment discipline; 3-5 year True North objectives cascade into annual hoshin via the X-Matrix, with two-way *catchball* negotiation and monthly Bowling-Chart reviews; deliberately restricted to the few vital goals (proposed by https://github.com/jaoltr[@jaoltr] in https://github.com/LLM-Coding/Semantic-Anchors/issues/468[#468])
-* *Double Diamond* — UK Design Council's design-process model (2005, expanded 2019); two divergent-convergent cycles — Discover/Define (problem space) and Develop/Deliver (solution space); "design the right thing, then design the thing right" (proposed by https://github.com/jaoltr[@jaoltr] in https://github.com/LLM-Coding/Semantic-Anchors/issues/467[#467])
-* *Decisional Balance Sheet* — Janis & Mann's four-cell decision matrix (1977) extending Franklin's "moral algebra"; surfaces utilitarian and social trade-offs, used in decision coaching and Motivational Interviewing to resolve ambivalence (proposed by https://github.com/Mabla70[@Mabla70] in https://github.com/LLM-Coding/Semantic-Anchors/issues/448[#448])
+* *link:#/anchor/hoshin-kanri[Hoshin Kanri]* — Yoji Akao's Lean strategy-deployment discipline; 3-5 year True North objectives cascade into annual hoshin via the X-Matrix, with two-way *catchball* negotiation and monthly Bowling-Chart reviews; deliberately restricted to the few vital goals (proposed by https://github.com/jaoltr[@jaoltr] in https://github.com/LLM-Coding/Semantic-Anchors/issues/468[#468])
+* *link:#/anchor/double-diamond[Double Diamond]* — UK Design Council's design-process model (2005, expanded 2019); two divergent-convergent cycles — Discover/Define (problem space) and Develop/Deliver (solution space); "design the right thing, then design the thing right" (proposed by https://github.com/jaoltr[@jaoltr] in https://github.com/LLM-Coding/Semantic-Anchors/issues/467[#467])
+* *link:#/anchor/decisional-balance-sheet[Decisional Balance Sheet]* — Janis & Mann's four-cell decision matrix (1977) extending Franklin's "moral algebra"; surfaces utilitarian and social trade-offs, used in decision coaching and Motivational Interviewing to resolve ambivalence (proposed by https://github.com/Mabla70[@Mabla70] in https://github.com/LLM-Coding/Semantic-Anchors/issues/448[#448])
 
 == 2026-05-08
 
 *New anchors:*
 
-* *Kano Model* — Noriaki Kano's two-dimensional quality model classifying features as Must-be, Performance, Attractive, Indifferent or Reverse, surveyed via paired functional/dysfunctional questions; pairs naturally with MoSCoW for backlog prioritisation (proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/459[#459])
-* *Kotter's 8-Step Change Model* — John P. Kotter's classic transformation framework from *Leading Change* (HBR 1995, book 1996): urgency, guiding coalition, vision, communication, empowerment, short-term wins, consolidation, anchor in culture; the model is the inversion of the eight common errors that kill transformations (proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/460[#460])
+* *link:#/anchor/kano-model[Kano Model]* — Noriaki Kano's two-dimensional quality model classifying features as Must-be, Performance, Attractive, Indifferent or Reverse, surveyed via paired functional/dysfunctional questions; pairs naturally with MoSCoW for backlog prioritisation (proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/459[#459])
+* *link:#/anchor/kotter-8-step-change-model[Kotter's 8-Step Change Model]* — John P. Kotter's classic transformation framework from *Leading Change* (HBR 1995, book 1996): urgency, guiding coalition, vision, communication, empowerment, short-term wins, consolidation, anchor in culture; the model is the inversion of the eight common errors that kill transformations (proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/460[#460])
 
 == 2026-05-07
 
 *New anchors:*
 
-* *XY Problem* — Communication anti-pattern from technical-support culture, coined by Mark Jason Dominus (2001) and popularised by Eric S. Raymond ("How To Ask Questions The Smart Way"); the asker requests Y when the real goal is X (proposed by https://github.com/dernerl[@dernerl] in https://github.com/LLM-Coding/Semantic-Anchors/issues/457[#457])
+* *link:#/anchor/xy-problem[XY Problem]* — Communication anti-pattern from technical-support culture, coined by Mark Jason Dominus (2001) and popularised by Eric S. Raymond ("How To Ask Questions The Smart Way"); the asker requests Y when the real goal is X (proposed by https://github.com/dernerl[@dernerl] in https://github.com/LLM-Coding/Semantic-Anchors/issues/457[#457])
 
 == 2026-05-03
 
@@ -94,7 +283,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New anchors:*
 
-* *Cockburn Use Cases* — Alistair Cockburn's structured textual use case format with Goal Levels (Summary, User Goal, Subfunction) and Actor-Goal List discovery technique
+* *link:#/anchor/cockburn-use-cases[Cockburn Use Cases]* — Alistair Cockburn's structured textual use case format with Goal Levels (Summary, User Goal, Subfunction) and Actor-Goal List discovery technique
 
 *New contracts:*
 
@@ -104,40 +293,40 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New anchors:*
 
-* *Single Level of Abstraction Principle (SLAP)* — Kent Beck's Composed Method, codified as a Clean Code function-design rule by Robert C. Martin (proposed by https://github.com/eirikbell[@eirikbell] in https://github.com/LLM-Coding/Semantic-Anchors/issues/440[#440])
-* *Occam's Razor* — William of Ockham's parsimony principle applied to explanations, debugging and architecture rationale (proposed by https://github.com/danielschmeiss[@danielschmeiss] in https://github.com/LLM-Coding/Semantic-Anchors/issues/439[#439])
-* *Code Smells* — Kent Beck / Martin Fowler / Robert C. Martin catalogue of surface indications pointing to deeper design problems (proposed by https://github.com/ma7tz[@ma7tz] in https://github.com/LLM-Coding/Semantic-Anchors/issues/435[#435])
-* *What Would Chuck Norris Do? (WWCND)* — Tier 3 disposition-activator for direct commitment under uncertainty; originally rejected in https://github.com/LLM-Coding/Semantic-Anchors/issues/426[#426], re-proposed by https://github.com/cornelius[@cornelius] in https://github.com/LLM-Coding/Semantic-Anchors/issues/438[#438] with a 16-page empirical validation (3 models × 19 prompts × N=2 = 114 manually scored responses) that passed all four catalog criteria
+* *link:#/anchor/single-level-of-abstraction-principle[Single Level of Abstraction Principle (SLAP)]* — Kent Beck's Composed Method, codified as a Clean Code function-design rule by Robert C. Martin (proposed by https://github.com/eirikbell[@eirikbell] in https://github.com/LLM-Coding/Semantic-Anchors/issues/440[#440])
+* *link:#/anchor/occams-razor[Occam's Razor]* — William of Ockham's parsimony principle applied to explanations, debugging and architecture rationale (proposed by https://github.com/danielschmeiss[@danielschmeiss] in https://github.com/LLM-Coding/Semantic-Anchors/issues/439[#439])
+* *link:#/anchor/code-smells[Code Smells]* — Kent Beck / Martin Fowler / Robert C. Martin catalogue of surface indications pointing to deeper design problems (proposed by https://github.com/ma7tz[@ma7tz] in https://github.com/LLM-Coding/Semantic-Anchors/issues/435[#435])
+* *link:#/anchor/what-would-chuck-norris-do[What Would Chuck Norris Do? (WWCND)]* — Tier 3 disposition-activator for direct commitment under uncertainty; originally rejected in https://github.com/LLM-Coding/Semantic-Anchors/issues/426[#426], re-proposed by https://github.com/cornelius[@cornelius] in https://github.com/LLM-Coding/Semantic-Anchors/issues/438[#438] with a 16-page empirical validation (3 models × 19 prompts × N=2 = 114 manually scored responses) that passed all four catalog criteria
 
 == 2026-04-15
 
 *New anchors* (proposed by Ralf D. Müller in https://github.com/LLM-Coding/Semantic-Anchors/issues/436[#436]):
 
-* *Lehman's Software Classification* — Meir M. Lehman's S-/P-/E-type taxonomy and Laws of Software Evolution
+* *link:#/anchor/lehmans-classification[Lehman's Software Classification]* — Meir M. Lehman's S-/P-/E-type taxonomy and Laws of Software Evolution
 
 == 2026-04-12
 
 *New anchors:*
 
-* *Red/Green TDD* — Kent Beck's classical TDD cycle (proposed by https://github.com/petehodgson-tribe[@petehodgson-tribe] in https://github.com/LLM-Coding/Semantic-Anchors/issues/412[#412])
-* *4MAT* — Bernice McCarthy's learning cycle: why → what → how → what if (proposed by https://github.com/rweisleder[@rweisleder] in https://github.com/LLM-Coding/Semantic-Anchors/issues/413[#413])
-* *Walking Skeleton* — Alistair Cockburn's end-to-end production-capable skeleton (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/420[#420])
-* *Tracer Bullet* — Hunt & Thomas's exploratory end-to-end slice (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/421[#421])
-* *Thin Vertical Slice* — Cockburn & Cohn's end-to-end delivery technique (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/422[#422])
-* *Spike Solution* — Kent Beck's time-boxed XP research technique (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/423[#423])
-* *Minimum Viable Product (MVP)* — Eric Ries's lean-startup hypothesis validation (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/424[#424])
+* *link:#/anchor/red-green-tdd[Red/Green TDD]* — Kent Beck's classical TDD cycle (proposed by https://github.com/petehodgson-tribe[@petehodgson-tribe] in https://github.com/LLM-Coding/Semantic-Anchors/issues/412[#412])
+* *link:#/anchor/4mat[4MAT]* — Bernice McCarthy's learning cycle: why → what → how → what if (proposed by https://github.com/rweisleder[@rweisleder] in https://github.com/LLM-Coding/Semantic-Anchors/issues/413[#413])
+* *link:#/anchor/walking-skeleton[Walking Skeleton]* — Alistair Cockburn's end-to-end production-capable skeleton (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/420[#420])
+* *link:#/anchor/tracer-bullet[Tracer Bullet]* — Hunt & Thomas's exploratory end-to-end slice (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/421[#421])
+* *link:#/anchor/thin-vertical-slice[Thin Vertical Slice]* — Cockburn & Cohn's end-to-end delivery technique (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/422[#422])
+* *link:#/anchor/spike-solution[Spike Solution]* — Kent Beck's time-boxed XP research technique (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/423[#423])
+* *link:#/anchor/mvp[Minimum Viable Product (MVP)]* — Eric Ries's lean-startup hypothesis validation (proposed by https://github.com/cpoepke[@cpoepke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/424[#424])
 
 == 2026-04-07
 
 *New anchors* (proposed by Gernot Starke):
 
-* *Cohesion Criteria (Constantine & Yourdon)* — Seven levels of module cohesion from coincidental to functional
+* *link:#/anchor/cohesion-criteria[Cohesion Criteria (Constantine & Yourdon)]* — Seven levels of module cohesion from coincidental to functional
 
 == 2026-04-01
 
 *New anchors:*
 
-* *Effective Go* — The Go Authors' canonical guide to idiomatic Go
+* *link:#/anchor/effective-go[Effective Go]* — The Go Authors' canonical guide to idiomatic Go
 
 == 2026-03-29
 
@@ -145,26 +334,26 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New anchors* (proposed by https://github.com/deehtodd[@deehtodd] in https://github.com/LLM-Coding/Semantic-Anchors/issues/387[#387]):
 
-* *Three-Act Structure* — Aristotle / Syd Field / McKee
-* *Hero's Journey (Monomyth)* — Joseph Campbell / Christopher Vogler
-* *Save the Cat! 15-Beat Sheet* — Blake Snyder
-* *Fichtean Curve* — John Gardner / Janet Burroway
-* *Freytag's Pyramid (Five-Act)* — Gustav Freytag / John Yorke
-* *Story Circle* — Dan Harmon
-* *Kishōtenketsu* — Classical Chinese/Japanese tradition
-* *Hemingway Bridge* — Tiago Forte's session re-entry technique (proposed by https://github.com/arampp[@arampp] in https://github.com/LLM-Coding/Semantic-Anchors/issues/389[#389])
-* *CRC-Cards* — Ward Cunningham & Kent Beck's collaborative OO design technique (proposed by https://github.com/arampp[@arampp] in https://github.com/LLM-Coding/Semantic-Anchors/issues/386[#386])
+* *link:#/anchor/three-act-structure[Three-Act Structure]* — Aristotle / Syd Field / McKee
+* *link:#/anchor/heros-journey[Hero's Journey (Monomyth)]* — Joseph Campbell / Christopher Vogler
+* *link:#/anchor/save-the-cat[Save the Cat! 15-Beat Sheet]* — Blake Snyder
+* *link:#/anchor/fichtean-curve[Fichtean Curve]* — John Gardner / Janet Burroway
+* *link:#/anchor/freytags-pyramid[Freytag's Pyramid (Five-Act)]* — Gustav Freytag / John Yorke
+* *link:#/anchor/story-circle-dan-harmon[Story Circle]* — Dan Harmon
+* *link:#/anchor/kishotenketsu[Kishōtenketsu]* — Classical Chinese/Japanese tradition
+* *link:#/anchor/hemingway-bridge[Hemingway Bridge]* — Tiago Forte's session re-entry technique (proposed by https://github.com/arampp[@arampp] in https://github.com/LLM-Coding/Semantic-Anchors/issues/389[#389])
+* *link:#/anchor/crc-cards[CRC-Cards]* — Ward Cunningham & Kent Beck's collaborative OO design technique (proposed by https://github.com/arampp[@arampp] in https://github.com/LLM-Coding/Semantic-Anchors/issues/386[#386])
 
 == 2026-03-26
 
 *New anchors:*
 
-* *GRASP* — Craig Larman's 9 OO responsibility-assignment patterns
-* *Vertical Slice Architecture* — Jimmy Bogard's feature-first architecture
-* *KISS Principle* — Keep It Simple (Tier 1)
-* *P.A.R.A. Method* — Tiago Forte's knowledge organization framework
-* *PERT* — Program Evaluation and Review Technique (Tier 2)
-* *ISO 25010* — Software product quality model
+* *link:#/anchor/grasp[GRASP]* — Craig Larman's 9 OO responsibility-assignment patterns
+* *link:#/anchor/vertical-slice-architecture[Vertical Slice Architecture]* — Jimmy Bogard's feature-first architecture
+* *link:#/anchor/kiss-principle[KISS Principle]* — Keep It Simple (Tier 1)
+* *link:#/anchor/para-method[P.A.R.A. Method]* — Tiago Forte's knowledge organization framework
+* *link:#/anchor/pert[PERT]* — Program Evaluation and Review Technique (Tier 2)
+* *link:#/anchor/iso-25010[ISO 25010]* — Software product quality model
 
 *New features:*
 
@@ -178,17 +367,17 @@ Quality review of all anchors: introduced a three-tier rating system (★★★ 
 *Removed:*
 
 * *Rubber Duck Debugging* — concept is fully covered by <<socratic-method,Socratic Method>>; no actionable LLM instruction on its own
-* *DRY (Don't Repeat Yourself)* — design principle, but "make it DRY" is too vague as an LLM instruction
+* *link:#/anchor/dry[DRY (Don't Repeat Yourself)]* — design principle, but "make it DRY" is too vague as an LLM instruction
 * *SPOT (Single Point of Truth)* — too similar to SSOT; consolidated into <<ssot-principle,SSOT>>
 * *Chatham House Rule* — well-defined rule, but no practical LLM application
 
 *Renamed & upgraded:*
 
-* *Mental Model (Naur)* → *Programming as Theory Building (Naur)* — sharpened focus on documenting the "why" behind code (★☆☆ → ★★☆)
-* *Problem Space NVC* → *Nonviolent Communication (Rosenberg)* — stronger trigger, clear 4-step process (★★☆ → ★★★)
-* *Test Double (Meszaros)* → ★★★ umbrella anchor with 5 new sub-anchors: *Dummy*, *Stub*, *Spy*, *Mock*, *Fake* — each a precise, actionable LLM instruction (★☆☆ → ★★★)
-* *Jobs To Be Done* — upgraded to ★★★, strong for landing pages and customer analysis
-* *SOTA* — upgraded to ★★★, "Recherchiere SOTA zu [Thema]" reliably activates research mode
+* *link:#/anchor/mental-model-according-to-naur[Mental Model (Naur)]* → *Programming as Theory Building (Naur)* — sharpened focus on documenting the "why" behind code (★☆☆ → ★★☆)
+* *link:#/anchor/problem-space-nvc[Problem Space NVC]* → *Nonviolent Communication (Rosenberg)* — stronger trigger, clear 4-step process (★★☆ → ★★★)
+* *link:#/anchor/test-double-meszaros[Test Double (Meszaros)]* → ★★★ umbrella anchor with 5 new sub-anchors: *Dummy*, *Stub*, *Spy*, *Mock*, *Fake* — each a precise, actionable LLM instruction (★☆☆ → ★★★)
+* *link:#/anchor/jobs-to-be-done[Jobs To Be Done]* — upgraded to ★★★, strong for landing pages and customer analysis
+* *link:#/anchor/sota[SOTA]* — upgraded to ★★★, "Recherchiere SOTA zu [Thema]" reliably activates research mode
 
 *New quality criteria for proposals:*
 
@@ -197,46 +386,46 @@ Quality review of all anchors: introduced a three-tier rating system (★★★ 
 
 == 2026-03-12
 
-* *Plain English (Strunk & White)* in https://github.com/LLM-Coding/Semantic-Anchors/pull/177[#177]
-* *Gutes Deutsch (Wolf Schneider)* in https://github.com/LLM-Coding/Semantic-Anchors/pull/175[#175]
+* *link:#/anchor/plain-english-strunk-white[Plain English (Strunk & White)]* in https://github.com/LLM-Coding/Semantic-Anchors/pull/177[#177]
+* *link:#/anchor/gutes-deutsch-wolf-schneider[Gutes Deutsch (Wolf Schneider)]* in https://github.com/LLM-Coding/Semantic-Anchors/pull/175[#175]
 
 == 2026-03-11
 
-* *Gherkin* in https://github.com/LLM-Coding/Semantic-Anchors/pull/171[#171]
-* *SWOT* in https://github.com/LLM-Coding/Semantic-Anchors/pull/169[#169]
+* *link:#/anchor/gherkin[Gherkin]* in https://github.com/LLM-Coding/Semantic-Anchors/pull/171[#171]
+* *link:#/anchor/swot[SWOT]* in https://github.com/LLM-Coding/Semantic-Anchors/pull/169[#169]
 
 == 2026-03-09
 
-* *GoF Design Patterns Umbrella* — 23 GoF patterns as sub-anchors with tier system (12 Tier-1, 7 Tier-2, 4 Tier-3) in https://github.com/LLM-Coding/Semantic-Anchors/pull/159[#159]
-* *SOLID Principles Umbrella* — 5 SOLID principles as sub-anchors (SRP, OCP, LSP, ISP, DIP, all Tier-1) in https://github.com/LLM-Coding/Semantic-Anchors/pull/161[#161]
-* *Myers-Briggs Type Indicator (MBTI)* — proposed by https://github.com/gernotstarke[@gernotstarke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/158[#158]. Thank you!
-* *CQRS* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/137[#137]. Thank you!
-* *GoF Design Patterns* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/140[#140]. Thank you!
-* *Test Double (Meszaros)* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/142[#142]. Thank you!
-* *Event-Driven Architecture* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/143[#143]. Thank you!
-* *BDD (Given-When-Then)* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/138[#138], merged via https://github.com/LLM-Coding/Semantic-Anchors/pull/152[#152]. Thank you!
-* *YAGNI* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/139[#139], merged via https://github.com/LLM-Coding/Semantic-Anchors/pull/152[#152]. Thank you!
+* *link:#/anchor/gof-design-patterns[GoF Design Patterns Umbrella]* — 23 GoF patterns as sub-anchors with tier system (12 Tier-1, 7 Tier-2, 4 Tier-3) in https://github.com/LLM-Coding/Semantic-Anchors/pull/159[#159]
+* *link:#/anchor/solid-principles[SOLID Principles Umbrella]* — 5 SOLID principles as sub-anchors (SRP, OCP, LSP, ISP, DIP, all Tier-1) in https://github.com/LLM-Coding/Semantic-Anchors/pull/161[#161]
+* *link:#/anchor/myers-briggs-type-indicator[Myers-Briggs Type Indicator (MBTI)]* — proposed by https://github.com/gernotstarke[@gernotstarke] in https://github.com/LLM-Coding/Semantic-Anchors/issues/158[#158]. Thank you!
+* *link:#/anchor/cqrs[CQRS]* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/137[#137]. Thank you!
+* *link:#/anchor/gof-design-patterns[GoF Design Patterns]* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/140[#140]. Thank you!
+* *link:#/anchor/test-double-meszaros[Test Double (Meszaros)]* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/142[#142]. Thank you!
+* *link:#/anchor/event-driven-architecture[Event-Driven Architecture]* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/143[#143]. Thank you!
+* *link:#/anchor/bdd-given-when-then[BDD (Given-When-Then)]* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/138[#138], merged via https://github.com/LLM-Coding/Semantic-Anchors/pull/152[#152]. Thank you!
+* *link:#/anchor/yagni[YAGNI]* — contributed by https://github.com/Nantero1[@Nantero1] in https://github.com/LLM-Coding/Semantic-Anchors/pull/139[#139], merged via https://github.com/LLM-Coding/Semantic-Anchors/pull/152[#152]. Thank you!
 
 == 2026-03-06
 
-* *ATAM* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/133[#133]
-* *LASR* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/135[#135]
+* *link:#/anchor/atam[ATAM]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/133[#133]
+* *link:#/anchor/lasr[LASR]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/135[#135]
 
 == 2026-03-04
 
-* *OWASP Top 10* — proposed by https://github.com/Advisior[@Advisior] in https://github.com/LLM-Coding/Semantic-Anchors/issues/130[#130]. Thank you!
+* *link:#/anchor/owasp-top-10[OWASP Top 10]* — proposed by https://github.com/Advisior[@Advisior] in https://github.com/LLM-Coding/Semantic-Anchors/issues/130[#130]. Thank you!
 
 == 2026-03-01
 
-* *GoM (Grundsätze ordnungsmäßiger Modellierung)* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/126[#126]
+* *link:#/anchor/gom[GoM (Grundsätze ordnungsmäßiger Modellierung)]* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/126[#126]
 
 == 2026-02-23
 
-* *Regulated Environment* — proposed by https://github.com/bit-jkraushaar[@bit-jkraushaar] in https://github.com/LLM-Coding/Semantic-Anchors/issues/120[#120]. Thank you!
+* *link:#/anchor/regulated-environment[Regulated Environment]* — proposed by https://github.com/bit-jkraushaar[@bit-jkraushaar] in https://github.com/LLM-Coding/Semantic-Anchors/issues/120[#120]. Thank you!
 
 == 2026-02-22
 
-* *MoSCoW* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/115[#115]
+* *link:#/anchor/moscow[MoSCoW]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/115[#115]
 
 == 2026-02-17
 
@@ -244,91 +433,91 @@ Quality review of all anchors: introduced a three-tier rating system (★★★ 
 
 == 2026-02-16
 
-* *Fowler Patterns (PEAA)* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/99[#99]
+* *link:#/anchor/fowler-patterns[Fowler Patterns (PEAA)]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/99[#99]
 
 == 2026-02-13
 
-* *Morphological Box* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/67[#67]
-* *IEC 61508 SIL Levels* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/67[#67]
+* *link:#/anchor/morphological-box[Morphological Box]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/67[#67]
+* *link:#/anchor/iec-61508-sil-levels[IEC 61508 SIL Levels]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/67[#67]
 * Split from monolithic README.adoc into individual anchor files (https://github.com/LLM-Coding/Semantic-Anchors/pull/38[#38])
 
 == 2026-02-12
 
-* *Socratic Method* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
-* *BLUF* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *link:#/anchor/socratic-method[Socratic Method]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *link:#/anchor/bluf[BLUF]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
 * *Rubber Duck Debugging* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
-* *Chain of Thought* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
-* *Devil's Advocate* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
-* *Five Whys* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
-* *Feynman Technique* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
-* *MADR* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/29[#29]
+* *link:#/anchor/chain-of-thought[Chain of Thought]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *link:#/anchor/devils-advocate[Devil's Advocate]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *link:#/anchor/five-whys[Five Whys]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *link:#/anchor/feynman-technique[Feynman Technique]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/31[#31]
+* *link:#/anchor/madr[MADR]* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/29[#29]
 
 == 2026-02-11
 
-* *TIMTOWTDI* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/28[#28]. Thank you!
+* *link:#/anchor/timtowtdi[TIMTOWTDI]* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/28[#28]. Thank you!
 
 == 2026-02-07
 
-* *MECE Principle* — proposed by https://github.com/ingo-eichhorst[@ingo-eichhorst] in https://github.com/LLM-Coding/Semantic-Anchors/issues/26[#26]. Thank you!
+* *link:#/anchor/mece[MECE Principle]* — proposed by https://github.com/ingo-eichhorst[@ingo-eichhorst] in https://github.com/LLM-Coding/Semantic-Anchors/issues/26[#26]. Thank you!
 
 == 2026-02-05
 
-* *Nelson Rules* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/20[#20]
-* *Control Chart (Shewhart)* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/21[#21]
-* *SPC* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/22[#22]
+* *link:#/anchor/nelson-rules[Nelson Rules]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/20[#20]
+* *link:#/anchor/control-chart-shewhart[Control Chart (Shewhart)]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/21[#21]
+* *link:#/anchor/spc[SPC]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/22[#22]
 
 == 2026-02-03
 
-* *DRY Principle* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
+* *link:#/anchor/dry[DRY Principle]* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
 * *SPOT Principle* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
-* *SSOT Principle* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
-* *SOTA* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/16[#16]
-* *todo.txt-flavoured Markdown* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/14[#14]
+* *link:#/anchor/ssot-principle[SSOT Principle]* — added in https://github.com/LLM-Coding/Semantic-Anchors/pull/19[#19]
+* *link:#/anchor/sota[SOTA]* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/16[#16]
+* *link:#/anchor/todotxt-flavoured-markdown[todo.txt-flavoured Markdown]* — proposed by https://github.com/raifdmueller[@raifdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/14[#14]
 
 == 2026-01-21
 
-* *Pyramid Principle* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/12[#12]
+* *link:#/anchor/pyramid-principle[Pyramid Principle]* — proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/12[#12]
 
 == 2025-11-18
 
-* *Mutation Testing* — contributed by ThomasPeuss. Thank you!
+* *link:#/anchor/mutation-testing[Mutation Testing]* — contributed by ThomasPeuss. Thank you!
 
 == 2025-11-13
 
-* *BEM Methodology* — contributed by Robert Nimax. Thank you!
+* *link:#/anchor/bem-methodology[BEM Methodology]* — contributed by Robert Nimax. Thank you!
 
 == 2025-11-11
 
-* *Conventional Commits* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/4[#4]. Thank you!
-* *Semantic Versioning* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/4[#4]. Thank you!
-* *SOLID Principles* — contributed by https://github.com/bit-jkraushaar[@bit-jkraushaar]. Thank you!
+* *link:#/anchor/conventional-commits[Conventional Commits]* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/4[#4]. Thank you!
+* *link:#/anchor/semantic-versioning[Semantic Versioning]* — contributed by https://github.com/rehsack[@rehsack] in https://github.com/LLM-Coding/Semantic-Anchors/pull/4[#4]. Thank you!
+* *link:#/anchor/solid-principles[SOLID Principles]* — contributed by https://github.com/bit-jkraushaar[@bit-jkraushaar]. Thank you!
 
 == 2025-11-10 — Initial Catalog
 
 First commit by https://github.com/rdmueller[@rdmueller] with 23 founding anchors:
 
-* *TDD, London School*
-* *TDD, Chicago School*
-* *Problem Space NVC*
-* *Mental Model (Naur)*
-* *EARS Requirements*
-* *arc42*
-* *ADR (Nygard)*
-* *Pugh Matrix*
-* *C4 Diagrams*
-* *Docs-as-Code*
-* *Domain-Driven Design*
-* *Hexagonal Architecture*
-* *Clean Architecture*
-* *User Story Mapping*
-* *Impact Mapping*
-* *Jobs To Be Done*
-* *Cynefin Framework*
-* *Wardley Mapping*
-* *Property-Based Testing*
-* *Testing Pyramid*
-* *Diátaxis Framework*
-* *What Qualifies as a Semantic Anchor*
+* *link:#/anchor/tdd-london-school[TDD, London School]*
+* *link:#/anchor/tdd-chicago-school[TDD, Chicago School]*
+* *link:#/anchor/problem-space-nvc[Problem Space NVC]*
+* *link:#/anchor/mental-model-according-to-naur[Mental Model (Naur)]*
+* *link:#/anchor/ears-requirements[EARS Requirements]*
+* *link:#/anchor/arc42[arc42]*
+* *link:#/anchor/adr-according-to-nygard[ADR (Nygard)]*
+* *link:#/anchor/pugh-matrix[Pugh Matrix]*
+* *link:#/anchor/c4-diagrams[C4 Diagrams]*
+* *link:#/anchor/docs-as-code[Docs-as-Code]*
+* *link:#/anchor/domain-driven-design[Domain-Driven Design]*
+* *link:#/anchor/hexagonal-architecture[Hexagonal Architecture]*
+* *link:#/anchor/clean-architecture[Clean Architecture]*
+* *link:#/anchor/user-story-mapping[User Story Mapping]*
+* *link:#/anchor/impact-mapping[Impact Mapping]*
+* *link:#/anchor/jobs-to-be-done[Jobs To Be Done]*
+* *link:#/anchor/cynefin-framework[Cynefin Framework]*
+* *link:#/anchor/wardley-mapping[Wardley Mapping]*
+* *link:#/anchor/property-based-testing[Property-Based Testing]*
+* *link:#/anchor/testing-pyramid[Testing Pyramid]*
+* *link:#/anchor/diataxis-framework[Diátaxis Framework]*
+* *link:#/anchor/what-qualifies-as-a-semantic-anchor[What Qualifies as a Semantic Anchor]*
 
 == Community Contributors
 

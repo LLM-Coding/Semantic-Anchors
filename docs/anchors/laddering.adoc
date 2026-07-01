@@ -1,0 +1,57 @@
+= Laddering (Interview Technique)
+:categories: requirements-engineering
+:roles: business-analyst, ux-designer, product-owner
+:related: five-whys, jobs-to-be-done
+:proponents: George Kelly, Dennis Hinkle, Thomas Reynolds, Jonathan Gutman
+:tags: interview, elicitation, means-end, user-research, requirements
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: Means-End Laddering, Laddering Interview
+
+[discrete]
+== *Core Concepts*:
+
+Means-end chain:: A laddering interview reconstructs the chain attribute -> consequence -> value: a concrete feature of a product or solution, the consequence it produces for the user, and the personal value that consequence serves. The chain is the unit of insight, not any single answer.
+
+Laddering up:: Probe toward abstraction with "Why is that important to you?" repeatedly, climbing from attributes through consequences toward the respondent's underlying goals and values.
+
+Laddering down:: Probe toward specifics with "How?" or "Can you give an example?" to move from a stated value or abstract need back down to concrete attributes and observable behaviour.
+
+Bidirectional movement:: Unlike single-direction questioning, a skilled interviewer moves both up and down the ladder within one session to map the whole value hierarchy and to verify links.
+
+Contrast with Five Whys:: Five Whys is a unidirectional root-cause technique that drills down one causal chain to a single defect or systemic cause. Laddering is bidirectional and surfaces a hierarchy of personal values and motivations, not a single root cause — it asks "why does this matter to *you*" (motivational), not "why did this fail" (causal).
+
+Hierarchical value map:: The aggregate analytical output across respondents — a graph linking common attributes, consequences, and values, used to find the dominant means-end paths a design or message should target.
+
+Soft vs. hard laddering:: Soft laddering uses free, probe-driven personal interviews; hard laddering uses structured forms or surveys that force the respondent up the ladder. Soft yields richer data, hard scales better and reduces interviewer bias.
+
+Key Proponents:: George Kelly (Personal Construct Psychology, 1955) and Dennis Hinkle (Ohio State PhD dissertation, 1965, "The change of personal constructs from the viewpoint of a theory of construct implications") originated laddering of constructs; Thomas J. Reynolds and Jonathan Gutman adapted it for means-end marketing research ("Laddering Theory, Method, Analysis, and Interpretation", Journal of Advertising Research, 1988)
+
+[discrete]
+== *When to Use*:
+
+* Eliciting the *why* behind a stated requirement or feature request, when the surface ask hides a deeper goal
+* User and customer research where motivations and personal values drive adoption
+* Designing product messaging, positioning, or value propositions grounded in user values
+* Prioritising features by tracing each back to the value it ultimately serves
+* Moving an interview past superficial preferences toward actionable, goal-level insight
+
+[discrete]
+== *Related Anchors*:
+
+* <<five-whys,Five Whys>>
+* <<jobs-to-be-done,Jobs to be Done>>
+
+[discrete]
+== *Criticism*:
+
+* Klaus G. Grunert and Suzanne C. Grunert, https://doi.org/10.1016/0167-8116(95)00022-T["Measuring subjective meaning structures by the laddering method: Theoretical considerations and methodological problems"] (International Journal of Research in Marketing, 1995) — identify validity threats across data collection, coding, and analysis: respondents may produce post-hoc rationalisations rather than report real cognitive structures, and forced upward probing ("hard" laddering) cannot represent level-skipping chains that genuinely exist in memory.
+* Practitioner accounts warn of interviewer-induced error: leading the respondent with suggestive probes ("Does that make you feel more successful?") and stopping too early by mistaking a consequence for a terminal value (https://www.userintuition.ai/reference-guides/laddering-technique-qualitative-research/[User Intuition, "The Laddering Technique in Qualitative Research"]).
+
+[discrete]
+== *Current Status*:
+
+* Originating in 1950s-60s clinical Personal Construct Psychology, laddering crossed into marketing and consumer research via Reynolds and Gutman (1988) and is now standard in UX research, requirements elicitation, and brand strategy. The hard/soft distinction (Grunert and Grunert, 1995) remains the live methodological axis, with recent work extending laddering to online and remote interview settings.
+====

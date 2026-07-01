@@ -39,4 +39,10 @@ Schlüsselvertreter:: Daniele Procida
 * Planung von Dokumentationsstruktur
 * Bewertung von Dokumentationsqualität
 * Ergänzung von Docs-as-Code-Ansätzen
+
+[discrete]
+== *Aktueller Stand*:
+
+* Der Vier-Quadranten-Kern (Tutorials, How-to Guides, Reference, Explanation) ist stabil; https://diataxis.fr/[diataxis.fr] ist eine lebende, unversionierte Site — laut Kolophon wird das Werk "weiter ausgearbeitet und erkundet"
+* Die Site ist um den Kern herum gewachsen: ein Theorieteil (Map, Foundations, Quality) und neuere Praxis-Anleitung wie https://diataxis.fr/complex-hierarchies/["Diátaxis in complex hierarchies"] — ein auf den älteren Divio-Artikel (2014–2021) geankerter Prior verpasst diese Verfeinerungen und die Stellen, an denen Procida seine frühere Darstellung inzwischen revidiert hat
 ====

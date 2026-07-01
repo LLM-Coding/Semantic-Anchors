@@ -1,0 +1,47 @@
+= Zone of Proximal Development
+:categories: communication-presentation
+:roles: educator, technical-writer, consultant
+:related: blooms-taxonomy, 4mat, feynman-technique
+:proponents: Lev Vygotsky
+:tags: learning, pedagogy, scaffolding, education, zpd
+:tier: 2
+
+[%collapsible]
+====
+Auch bekannt als:: ZPD; Zone of Next Development; Nächste Entwicklungszone
+
+[discrete]
+== *Kernkonzepte*:
+
+Die Lernlücke:: Der Abstand zwischen dem, was eine lernende Person selbstständig leisten kann ("tatsächliches Entwicklungsniveau"), und dem, was sie mit Unterstützung durch eine kompetenzbringende Person erreichen kann ("potenzielles Entwicklungsniveau"). Instruktion ist nur in dieser Lücke produktiv — darüber hinaus überfordert die Aufgabe, darunter entsteht kein Lernen.
+
+Kompetenzbringende Person (More-Knowledgeable Other, MKO):: Jede Person — Lehrende, Peer, Mentorin — mit größerer Kompetenz im relevanten Bereich. Eine nur geringfügig weiter fortgeschrittene Person aus der Lerngruppe erfüllt die Rolle oft genauso gut wie eine Fachkraft.
+
+Scaffolding:: Zeitlich begrenzte, zielgerichtete Unterstützung, die es ermöglicht, innerhalb der ZPD zu arbeiten. *Vygotsky selbst hat den Begriff "Scaffolding" nie verwendet.* David Wood, Jerome S. Bruner und Gail Ross führten ihn 1976 — nach Vygotskys Tod — ein, um die Unterstützungsstrukturen zu benennen, die ihre Tutoring-Experimente sichtbar machten.
+
+Fading:: Schrittweiser Rückzug der Unterstützung, wenn die Kompetenz wächst. Fading ist das Zeichen dafür, dass Lernen stattgefunden hat und die ZPD nach oben verschoben wurde. Ohne Fading entsteht Abhängigkeit statt Autonomie.
+
+Schlüsselvertreter:: Lev Vygotsky (_Mind in Society: The Development of Higher Psychological Processes_, Harvard University Press, 1978 — führte die ZPD-Definition ein); David Wood, Jerome S. Bruner & Gail Ross (https://acamh.onlinelibrary.wiley.com/doi/10.1111/j.1469-7610.1976.tb00381.x["The Role of Tutoring in Problem Solving", _Journal of Child Psychology and Psychiatry_, 17, 89–100, 1976] — prägten den Begriff "Scaffolding")
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Instruktion und Onboarding gestalten: Schwierigkeitsgrad knapp über der selbstständigen Leistungsgrenze ansetzen, nicht darunter
+* LLM-Prompting: „Erkläre X auf dem Niveau von jemandem, der Y kennt, aber noch nicht Z" — die ZPD gezielt ansprechen statt von Grund auf oder über-erklären
+* Coaching und Mentoring: erkennen, was die mentorierte Person fast allein kann; dort ansetzen und Unterstützung schrittweise zurückziehen
+* Dokumentationsprüfung: prüfen, ob Erklärungen zu viel voraussetzen (jenseits der ZPD) oder Bekanntes wiederholen (unterhalb der ZPD)
+* KI-gestützte Tutoring-Systeme kalibrieren: nachgewiesene Leistung als Ausgangsbasis nutzen und die nächste Herausforderungsstufe ansteuern
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<blooms-taxonomy,Bloom's Taxonomy>> — klassifiziert das kognitive Niveau einer Aufgabe; die ZPD benennt das Herausforderungsband, in dem eine konkrete Person wachsen kann
+* <<4mat,4MAT>> — strukturiert den Lehrweg von der Motivation bis zum Transfer; die ZPD zeigt, wo auf diesem Weg die lernende Person gerade steht
+* <<feynman-technique,Feynman Technique>> — macht die tatsächliche Verständnisgrenze der lernenden Person sichtbar, die der unteren Grenze ihrer ZPD entspricht
+
+[discrete]
+== *Aktueller Status*:
+
+* „Scaffolding" wird in Sekundärliteratur häufig Vygotsky zugeschrieben, taucht aber in seinen Schriften nicht auf. Die Unterscheidung ist beim Prompting relevant: „ZPD" aktiviert Vygotskys soziokulturelle Rahmung; „Scaffolding" aktiviert die unterrichtsmethodischen Mechanismen von Wood/Bruner/Ross. Beide sind gültige Anker für verwandte, aber unterschiedliche Konzepte.
+* Moll (1990) argumentierte, dass auf Wissenstransfer vom Experten zum Novizen ausgerichtete Interpretationen „zu eng, theoretisch irreführend und von begrenztem Unterrichtsnutzen" seien; er forderte stattdessen kollektive, aktivitätsbasierte Zonen statt individueller Experten-Novizen-Dyaden. Siehe: https://journals.sagepub.com/doi/10.1080/02103702.1990.10822276[Luis C. Moll, „Vygotsky's zone of proximal development: Rethinking its instructional implications", _Infancia y Aprendizaje_, 1990]
+====

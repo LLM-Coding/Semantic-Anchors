@@ -1,0 +1,55 @@
+= Circuit Breaker
+:categories: software-architecture
+:roles: software-developer, software-architect, devops-engineer
+:related: fallacies-of-distributed-computing, cap-theorem, event-driven-architecture
+:proponents: Michael Nygard, Martin Fowler
+:tags: resilience, fault-tolerance, stability-pattern, microservices, fail-fast
+:tier: 2
+
+[%collapsible]
+====
+Auch bekannt als:: Circuit-Breaker-Stabilitätsmuster
+
+[discrete]
+== *Kernkonzepte*:
+
+Geschlossener Zustand (Closed):: Normalbetrieb; Aufrufe gehen zur geschützten Ressource durch, während der Breaker Fehler zählt
+
+Offener Zustand (Open):: Sobald die Fehler den Schwellwert überschreiten, löst der Breaker aus; weitere Aufrufe schlagen sofort fehl (Fail-Fast), ohne den geschützten Aufruf auszuführen — das verhindert Ressourcenerschöpfung und kaskadierende Ausfälle
+
+Halb-offener Zustand (Half-Open):: Nach einem Reset-Timeout lässt der Breaker probeweise einen Testaufruf durch, um zu prüfen, ob die Abhängigkeit sich erholt hat; Erfolg schließt den Breaker, Fehlschlag öffnet ihn erneut
+
+Fehlerschwellwert:: Konfigurierte Anzahl oder Rate von Fehlern, die den Breaker von geschlossen auf offen umschaltet
+
+Fail-Fast:: Sofortige Rückgabe eines Fehlers statt Blockierung bei einem als fehlerhaft bekannten Aufruf; gibt Threads und Verbindungen frei
+
+Fallback:: Die clientseitige Strategie bei offenem Breaker — zwischengespeicherte Daten, ein Standardwert, ein eingereihter Request oder ein kontrollierter Fehler
+
+Kombinierbar mit:: Ergänzt Timeout (jeden Aufruf begrenzen), Retry (von transienten Fehlern erholen) und Bulkhead (Fehler isolieren) als Satz von Stabilitätsmustern
+
+Schlüsselvertreter:: Michael Nygard ("Release It!", Pragmatic Bookshelf, 2007), der es als Stabilitätsmuster einführte; Martin Fowler (https://martinfowler.com/bliki/CircuitBreaker.html[bliki: CircuitBreaker]), der es weiter bekannt machte
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Aufrufe über eine Netzwerkgrenze zu einem entfernten Dienst oder einer Abhängigkeit, die langsam oder nicht verfügbar werden kann
+* Microservice-Architekturen, in denen ein ausfallender Dienst keinen systemweiten Ausfall auslösen darf
+* Integrationen mit Drittanbieter-APIs unsicherer Zuverlässigkeit
+* Jede Operation, die Threads, Verbindungen oder andere begrenzte Ressourcen erschöpfen kann, während sie auf eine hängende Abhängigkeit wartet
+* Beim Prompting eines LLM, um Resilienz in der Dienst-zu-Dienst-Kommunikation hinzuzufügen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<fallacies-of-distributed-computing,Fallacies of Distributed Computing>>
+* <<cap-theorem,CAP Theorem>>
+* <<event-driven-architecture,Event-Driven Architecture>>
+
+[discrete]
+== *Aktueller Status*:
+
+* Die in den Trainingsdaten verankerte Java-Referenzimplementierung ist häufig Netflix Hystrix, das inzwischen eingefroren ist. Die https://github.com/Netflix/Hystrix[README] besagt: "Hystrix is no longer in active development, and is currently in maintenance mode." (letztes stabiles Release 1.5.18, November 2018)
+* Netflix' eigene Empfehlung verweist anderswohin: "we intend to continue using Hystrix for existing applications, and to leverage open and active projects like resilience4j for new internal projects. We are beginning to recommend others do the same." (https://github.com/Netflix/Hystrix[Netflix/Hystrix])
+* https://resilience4j.readme.io/[Resilience4j] ist der gepflegte Nachfolger im Java/Spring-Ökosystem und wird von Spring Cloud als Standard-Circuit-Breaker empfohlen
+* In Service-Mesh-Deployments wird Circuit Breaking zunehmend auf der Infrastrukturebene durch den Sidecar-Proxy erledigt (z. B. https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/circuit_breaking[Envoy Circuit Breaking], genutzt von https://istio.io/latest/docs/tasks/traffic-management/circuit-breaking/[Istio]) statt im Anwendungscode
+====

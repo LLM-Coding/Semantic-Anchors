@@ -49,4 +49,10 @@ Schlüsselvertreter:: Gernot Starke, Peter Hruschka
 * Mittlere bis große Softwareprojekte
 * Wenn Stakeholder-Kommunikation kritisch ist
 * Langlebige Systeme, die Wartbarkeit erfordern
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die aktuelle Version ist Template-Version https://arc42.org/download[9.0] (Juli 2025); die 12-Kapitel-Struktur ist seit vielen Jahren stabil — die Hauptänderung von v9 teilt Kapitel 10 in eine Qualitätsanforderungs-Übersicht (10.1) und detaillierte Szenarien (10.2)
+* Was sich entwickelt, ist das Material um das Skelett herum: Hilfetexte, Übersetzungen, die Tipps-und-Beispiele-Site https://docs.arc42.org/home/[docs.arc42.org] und das https://quality.arc42.org/[arc42-Qualitätsmodell (Q42)] — ein auf v7/v8 trainierter Prior kennt die Kapitelstruktur korrekt, verpasst aber den Kapitel-10-Split und Q42
 ====

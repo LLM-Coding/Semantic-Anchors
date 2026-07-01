@@ -26,4 +26,11 @@ Stelle sicher, dass eine Klasse nur eine Instanz hat, und biete einen globalen Z
 [discrete]
 == *Verwandte Anker*:
 * <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+
+[discrete]
+== *Kritik*:
+
+* Erich Gamma, Mitautor des GoF-Originals, sagte 2009 im Interview https://www.informit.com/articles/article.aspx?p=1404056["Design Patterns 15 Years Later"] (InformIT, Larry O'Brien), er würde Singleton aus dem Pattern-Katalog streichen: "Its use is almost always a design smell"
+* Miško Hevery, https://testing.googleblog.com/2008/08/by-miko-hevery-so-you-join-new-project.html["Singletons are Pathological Liars"] (Google Testing Blog, 2008) — Singletons verstecken Abhängigkeiten vor der API-Oberfläche und machen Code schwer isoliert testbar
+* In der modernen Praxis verbreitet als Anti-Pattern eingestuft: globaler veränderlicher Zustand, Kopplung an eine konkrete Klasse, erschwerte Nebenläufigkeit und Testisolation — Dependency Injection einer einzelnen Instanz ist die übliche empfohlene Alternative
 ====

@@ -1,0 +1,63 @@
+= Unix Philosophy
+:categories: design-principles
+:roles: software-developer, software-architect
+:related: separation-of-concerns, dry, kiss-principle, code-smells
+:proponents: Doug McIlroy, Eric S. Raymond
+:tags: modularity, composability, simplicity, pipes, kiss
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: Software Tools philosophy, Unix design philosophy
+
+[discrete]
+== *Core Concepts*:
+
+Do one thing well:: "Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new features." (Doug McIlroy, Bell System Technical Journal, 1978)
+
+Compose small tools:: Expect the output of every program to become the input to another, as yet unknown, program; small sharp tools combine into larger workflows via pipes
+
+Text streams as universal interface:: "Write programs to handle text streams, because that is a universal interface" — plain text is the lingua franca that lets independent tools interoperate
+
+Build prototypes early:: Don't hesitate to throw away the clumsy parts and rebuild them; favour fast prototyping over over-design
+
+Worse is better:: Richard P. Gabriel's observation that simple, available implementations spread faster than elegant, complete ones — a descriptive lens on why the Unix style won
+
+Rule of Modularity:: Build a program out of simple parts connected by clean, well-defined interfaces (Eric S. Raymond)
+
+Rule of Composition:: Design programs to be connected to other programs; keep formats parseable so tools chain together (Eric S. Raymond)
+
+Rule of Silence:: "When a program has nothing surprising to say, it should say nothing" — quiet success keeps output usable as another program's input (Eric S. Raymond)
+
+Key Proponents:: Doug McIlroy (Bell System Technical Journal, 1978), Eric S. Raymond ("The Art of Unix Programming", 2003, with 17 design rules)
+
+[discrete]
+== *When to Use*:
+
+* Designing CLI tools, scripts, and pipelines meant to compose with others
+* Deciding whether to extend an existing program or build a separate, focused one
+* Arguing for plain-text, line-oriented data formats over opaque binary blobs
+* Reviewing a tool that is accumulating flags and feature creep
+* Prompting an LLM to produce small, single-purpose, composable Unix-style programs
+
+[discrete]
+== *Related Anchors*:
+
+* <<separation-of-concerns,Separation of Concerns>>
+* <<dry,DRY (Don't Repeat Yourself)>>
+* <<kiss-principle,KISS Principle>>
+* <<code-smells,Code Smells>>
+
+[discrete]
+== *Criticism*:
+
+* Rob Pike and Brian Kernighan, "Program Design in the UNIX Environment" / "cat -v Considered Harmful" (1984) — argue that Unix itself drifted from the philosophy, with utilities like `cat` accreting flags (`-n`, `-s`, `-b`, `-v`) that violate "do one thing well"; summarized at https://en.wikipedia.org/wiki/Unix_philosophy[Unix philosophy (Wikipedia)]
+* Simson Garfinkel, Daniel Weise, Steven Strassmann (eds.), https://en.wikipedia.org/wiki/The_UNIX-HATERS_Handbook[The UNIX-HATERS Handbook] (1994) — a compilation of the UNIX-HATERS mailing list attacking the "worse is better" design culture as a source of obscure flags, cryptic errors, and lost work
+* Richard P. Gabriel, https://en.wikipedia.org/wiki/Worse_is_better["The Rise of Worse is Better"] (1989, published 1991) — frames the philosophy descriptively rather than as a virtue: simple-but-incomplete designs (C, Unix) outcompeted more correct, elegant ones (Lisp machines), implying the style spreads for market reasons, not because it is right
+
+[discrete]
+== *Current Status*:
+
+* The philosophy remains the conceptual core of CLI tooling, shells, and pipelines, but sits in tension with modern monolithic GUI/IDE and all-in-one platform tooling, where integration and discoverability are valued over composition of small text-stream tools
+* Eric S. Raymond's https://en.wikipedia.org/wiki/Unix_philosophy[17 rules] (2003) are the most cited modern codification; training-data priors most plausibly serve the McIlroy summary and Raymond's rules, while the Pike/Kernighan critique of Unix's own drift is the documented counter-current
+====

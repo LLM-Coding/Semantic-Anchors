@@ -46,4 +46,10 @@ Key Proponents:: Jörg Becker, Michael Rosemann, Rolf Schütte ("Grundsätze ord
 * <<arc42,arc42 Architecture Documentation>>
 * <<c4-diagrams,C4 Diagrams>>
 * <<morphological-box,Morphological Box>>
+
+[discrete]
+== *Current Status*:
+
+* The canonical reference is Becker, Rosemann & Schütte, "Grundsätze ordnungsmäßiger Modellierung", Wirtschaftsinformatik 37(5), 1995, pp. 435–445 — no DOI exists; stable records: https://dblp.org/rec/journals/wi/BeckerRS95.html[dblp] and the https://www.wi.uni-muenster.de/de/forschung/publikationen/3436[University of Münster publication page]
+* The prior is thin: a German-language-only academic paper from the Wirtschaftsinformatik community with virtually no English-language footprint — supply the six principles in the prompt rather than relying on the term
 ====

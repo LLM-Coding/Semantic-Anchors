@@ -1,0 +1,61 @@
+= ADDIE Model
+:categories: knowledge-management
+:roles: educator, technical-writer, consultant
+:related: blooms-taxonomy, 4mat, feynman-technique, double-diamond
+:proponents: Florida State University (origin); Robert Maribe Branch (codification)
+:tags: instructional-design, training, learning-design, evaluation, education
+:tier: 3
+
+[%collapsible]
+====
+Also known as:: ADDIE, Instructional Systems Design (ISD)
+
+Full Name:: Analysis, Design, Development, Implementation, Evaluation
+
+[discrete]
+== *Core Concepts*:
+
+Analysis:: Clarify the instructional problem; identify needs, audience characteristics, learning goals, constraints, and the existing knowledge gap
+
+Design:: Define measurable learning objectives, assessment instruments, content structure, and media selection — the blueprint produced before any materials are built
+
+Development:: Build and assemble the actual learning materials (content, storyboards, media, technology) against the design blueprint; includes pilot testing
+
+Implementation:: Deliver the instruction — train facilitators, prepare learners, and run the program in its intended environment
+
+Evaluation:: Assess effectiveness through both formative (ongoing, each phase) and summative (final outcome) evaluation; frequently paired with Kirkpatrick's four levels
+
+Iterative, not strictly waterfall:: Though originally sequential, modern ADDIE is drawn as a cyclical, dynamic process where Evaluation feeds back into every phase
+
+Key Proponents:: Florida State University's Center for Educational Technology (~1975, for the US Army, later all US armed forces via the IPISD framework); Robert Maribe Branch ("Instructional Design: The ADDIE Approach", Springer, 2009) — a key modern codification. ADDIE is a generic label for the ISD process rather than a single-author model.
+
+[discrete]
+== *When to Use*:
+
+* Designing structured training, courses, or learning materials from scratch
+* Producing documentation or onboarding programs that require measurable learning outcomes
+* Coaching or consulting engagements that build organizational capability
+* Establishing a shared vocabulary for an instructional-design or e-learning team
+* Prompting an LLM to scaffold a curriculum or training plan along defined phases
+
+[discrete]
+== *Related Anchors*:
+
+* <<blooms-taxonomy,Bloom's Taxonomy>> — frames the learning objectives set in the Design phase
+* <<4mat,4MAT>> — a learning-cycle model that complements ADDIE's structure
+* <<feynman-technique,Feynman Technique>> — a learning method usable within Development
+* <<double-diamond,Double Diamond>> — a comparable diverge/converge process model from design
+
+[discrete]
+== *Criticism*:
+
+* Roundtable Learning, https://roundtablelearning.com/what-is-the-addie-model-less-than-100-words/["What is the ADDIE Model? Strengths & Weaknesses"] — criticizes ADDIE for its linear nature, overly-detailed approach, and the time required to create and implement it; defects surface only in late phases
+* Michael Allen / Allen Interactions, https://elearningindustry.com/sam-successive-approximation-model-for-rapid-instructional-design["SAM: A Rapid Design And Development Model"] (eLearning Industry) — calls ADDIE "rigid and too linear," "slow to evaluate," and burdened by the "waterfall nature of execution"; proposes SAM (Successive Approximation Model), a rapid, iterative, agile alternative that always keeps something usable in front of learners
+* Broader discourse pairs this with Agile / rapid-prototyping instructional design as the modern answer to ADDIE's front-loaded sequencing
+
+[discrete]
+== *Current Status*:
+
+* Still the most widely taught ISD framework, but increasingly presented as iterative rather than strict waterfall; Branch's 2009 codification (https://link.springer.com/book/10.1007/978-0-387-09506-6[Springer]) is the common modern reference
+* SAM and Agile ID are the main contemporary alternatives for fast-moving, multimedia, and online-learning projects (https://en.wikipedia.org/wiki/ADDIE_model[ADDIE model, Wikipedia])
+====

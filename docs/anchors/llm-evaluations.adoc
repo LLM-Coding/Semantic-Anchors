@@ -51,4 +51,10 @@ Key Proponents:: Percy Liang et al. (Stanford, "Holistic Evaluation of Language 
 * <<chain-of-thought,Chain of Thought (CoT)>>
 * <<sota,SOTA (State-of-the-Art)>>
 * <<mutation-testing,Mutation Testing>>
+
+[discrete]
+== *Current Status*:
+
+* The methodology is stable (held-out benchmarks, harnesses, holistic suites); any concrete benchmark list is cutoff-bound — MMLU was already superseded by https://arxiv.org/abs/2406.01574[MMLU-Pro] and https://arxiv.org/abs/2311.12022[GPQA] by 2024, and those will saturate too
+* Never trust a model's memorised benchmark numbers or "current leading benchmark" claims: point it at living sources — https://github.com/EleutherAI/lm-evaluation-harness[lm-evaluation-harness] and https://crfm.stanford.edu/helm/[HELM] — and date every score you quote
 ====

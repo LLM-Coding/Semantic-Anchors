@@ -50,4 +50,11 @@ Key Proponents:: Eric Ries ("The Lean Startup", 2011); Frank Robinson coined the
 * <<impact-mapping,Impact Mapping>> - Technique for aligning MVP scope with business outcomes
 * <<user-story-mapping,User Story Mapping>> - Visual tool for identifying the minimum set of stories for an MVP
 * <<walking-skeleton,Walking Skeleton>> - Architectural counterpart; validates structure rather than market demand
+
+[discrete]
+== *Criticism*:
+
+* The term is diluted in practice: Nielsen Norman Group (https://www.nngroup.com/articles/mvp-definition/[Sara Paul, "Minimum Viable Product (MVP): Definition"]) notes that "'MVP' often means different things to different people" — from paper prototype to released product — and advises defining what you are testing and what you expect to learn before using the word
+* Henrik Kniberg's widely cited corrective https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp["Making sense of MVP — and why I prefer Earliest Testable/Usable/Lovable"] (Crisp, 2016 — the skateboard→car drawing) argues "Minimum" and "Product" mislead teams into shipping useless fragments; each increment should be a smaller complete solution to the user's need, not a piece of the final one
+* Disambiguation advice: state which sense you mean — Ries's learning vehicle ("maximum validated learning for least effort") or Kniberg's Earliest Testable/Usable/Lovable staging — rather than relying on the bare acronym
 ====

@@ -50,4 +50,10 @@ Schlüsselvertreter:: Percy Liang et al. (Stanford, "Holistic Evaluation of Lang
 * <<chain-of-thought,Chain of Thought (CoT)>>
 * <<sota,SOTA (State-of-the-Art)>>
 * <<mutation-testing,Mutation Testing>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Die Methodik ist stabil (Held-out-Benchmarks, Harnesses, holistische Suiten); jede konkrete Benchmark-Liste ist cutoff-gebunden — MMLU war schon 2024 von https://arxiv.org/abs/2406.01574[MMLU-Pro] und https://arxiv.org/abs/2311.12022[GPQA] abgelöst, und auch die werden saturieren
+* Traue nie den memorierten Benchmark-Zahlen oder "aktuell führender Benchmark"-Behauptungen eines Modells: Verweise es auf lebende Quellen — https://github.com/EleutherAI/lm-evaluation-harness[lm-evaluation-harness] und https://crfm.stanford.edu/helm/[HELM] — und datiere jeden zitierten Score
 ====

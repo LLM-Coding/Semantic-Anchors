@@ -8,7 +8,7 @@
     <!-- Primary Meta Tags -->
     <title>Semantic Anchors - Shared Vocabulary for LLM Communication</title>
     <meta name="title" content="Semantic Anchors - Shared Vocabulary for LLM Communication" />
-    <meta name="description" content="110+ semantic anchors and semantic contracts for precise LLM communication. Curated methodologies, frameworks, and composable project conventions. Evaluated across 10 models." />
+    <meta name="description" content="A curated catalog of semantic anchors and semantic contracts — shared vocabulary for precise communication with Large Language Models." />
     <meta name="keywords" content="semantic anchors, semantic contracts, LLM, large language models, AI communication, prompt engineering, software development, TDD, architecture patterns, design principles, AGENTS.md" />
     <meta name="author" content="LLM Coding Community" />
     <meta name="language" content="English, German" />
@@ -21,14 +21,14 @@
 
     <!-- Language Alternates -->
     <link rel="alternate" hreflang="en" href="https://llm-coding.github.io/Semantic-Anchors/" />
-    <link rel="alternate" hreflang="de" href="https://llm-coding.github.io/Semantic-Anchors/?lang=de" />
+    <link rel="alternate" hreflang="de" href="https://llm-coding.github.io/Semantic-Anchors/de/" />
     <link rel="alternate" hreflang="x-default" href="https://llm-coding.github.io/Semantic-Anchors/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://llm-coding.github.io/Semantic-Anchors/" />
     <meta property="og:title" content="Semantic Anchors - Shared Vocabulary for LLM Communication" />
-    <meta property="og:description" content="110+ semantic anchors and semantic contracts for precise LLM communication. Evaluated across 10 models." />
+    <meta property="og:description" content="A curated catalog of semantic anchors and semantic contracts — shared vocabulary for precise communication with Large Language Models." />
     <meta property="og:image" content="https://llm-coding.github.io/Semantic-Anchors/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -40,7 +40,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://llm-coding.github.io/Semantic-Anchors/" />
     <meta name="twitter:title" content="Semantic Anchors - Shared Vocabulary for LLM Communication" />
-    <meta name="twitter:description" content="110+ semantic anchors and semantic contracts for precise LLM communication. Evaluated across 10 models." />
+    <meta name="twitter:description" content="A curated catalog of semantic anchors and semantic contracts — shared vocabulary for precise communication with Large Language Models." />
     <meta name="twitter:image" content="https://llm-coding.github.io/Semantic-Anchors/twitter-card.png" />
 
     <!-- Structured Data (Schema.org) -->
@@ -51,18 +51,34 @@
       "name": "Semantic Anchors",
       "alternateName": "Semantic Anchors for LLMs",
       "url": "https://llm-coding.github.io/Semantic-Anchors/",
-      "description": "110+ semantic anchors and semantic contracts for precise communication with Large Language Models. Evaluated across 10 models.",
+      "description": "A curated catalog of semantic anchors and semantic contracts — shared vocabulary for precise communication with Large Language Models.",
       "inLanguage": ["en", "de"],
-      "publisher": {
-        "@type": "Organization",
-        "name": "LLM Coding Community",
-        "url": "https://github.com/LLM-Coding"
-      },
+      "publisher": { "@id": "https://llm-coding.github.io/Semantic-Anchors/#organization" },
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://llm-coding.github.io/Semantic-Anchors/#/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+
+    <!-- Standalone Organization entity (resolvable by @id, not only nested as
+         publisher) so search engines and AI can identify "Semantic Anchors" as
+         a distinct entity. See issue #579. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://llm-coding.github.io/Semantic-Anchors/#organization",
+      "name": "Semantic Anchors",
+      "alternateName": "LLM Coding Community",
+      "url": "https://llm-coding.github.io/Semantic-Anchors/",
+      "logo": "https://llm-coding.github.io/Semantic-Anchors/logo.png",
+      "description": "A curated catalog of semantic anchors and semantic contracts — shared vocabulary for precise communication with Large Language Models.",
+      "sameAs": [
+        "https://github.com/LLM-Coding",
+        "https://github.com/LLM-Coding/Semantic-Anchors"
+      ]
     }
     </script>
 
@@ -96,17 +112,54 @@
   </head>
   <body>
     <!--
-      Skeleton shell: reserves viewport-height layout space so first paint
-      already has the expected header/content/footer footprint. Without this
-      the SPA boot caused CLS ~0.975 (empty #app → populated #app). main.js
-      detects the skeleton via #shell-header / #shell-footer and replaces the
-      header + footer in place, leaving #page-content untouched. See #432.
+      Static shell: real header/footer navigation with plain <a href> links so
+      crawlers and no-JS visitors can reach every pre-rendered page (#595).
+      The reserved min-heights keep the CLS fix from #432 intact. main.js
+      detects the shell via #shell-header / #shell-footer and replaces the
+      header + footer in place at boot (search, filters, menus, language and
+      theme toggles are JS-only extras), leaving #page-content untouched.
+      Keep the link set in sync with src/components/header.js / footer.js.
     -->
     <div id="app">
       <div id="shell-root" class="flex flex-col" style="min-height: 100vh;">
-        <div id="shell-header" class="border-b border-[var(--color-border)]" style="height: 8.75rem;" aria-hidden="true"></div>
+        <div id="shell-header" class="border-b border-[var(--color-border)]" style="min-height: 8.75rem;">
+          <header>
+            <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+              <a href="%BASE_URL%" class="no-underline flex flex-col items-center">
+                <img src="%BASE_URL%logo.png" alt="Semantic Anchors" width="218" height="96" class="h-24 w-[218px] max-w-none shrink-0" />
+                <span class="text-xs text-[var(--color-text-secondary)] leading-tight">One word, and the AI gets the rest.</span>
+              </a>
+              <div class="flex-1 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-lg">
+                <a href="%BASE_URL%" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Anchors</a>
+                <a href="%BASE_URL%contracts" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Contracts</a>
+                <a href="%BASE_URL%spec-driven-development" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Spec-Driven Dev</a>
+                <a href="%BASE_URL%about" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">About</a>
+                <a href="%BASE_URL%agentskill" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">AgentSkill</a>
+                <a href="%BASE_URL%harness-inventory" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Harness Inventory</a>
+                <a href="%BASE_URL%training-data-vs-practice" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Anchors &amp; Training Data</a>
+                <a href="%BASE_URL%contributing" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Contributing</a>
+                <a href="%BASE_URL%changelog" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Changelog</a>
+                <a href="%BASE_URL%de/" hreflang="de" lang="de" class="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Deutsch</a>
+              </div>
+            </nav>
+          </header>
+        </div>
         <div id="page-content" class="flex-1" style="min-height: calc(100vh - 14.75rem);"></div>
-        <div id="shell-footer" class="border-t border-[var(--color-border)]" style="height: 6rem;" aria-hidden="true"></div>
+        <div id="shell-footer" class="border-t border-[var(--color-border)]" style="min-height: 6rem;">
+          <footer>
+            <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center gap-4">
+              <a href="https://github.com/LLM-Coding/Semantic-Anchors" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">GitHub</a>
+              <span class="text-gray-300 dark:text-gray-600">|</span>
+              <a href="%BASE_URL%llms.txt" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">llms.txt</a>
+              <span class="text-gray-300 dark:text-gray-600">|</span>
+              <a href="%BASE_URL%all-anchors" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Full Reference</a>
+              <span class="text-gray-300 dark:text-gray-600">|</span>
+              <a href="%BASE_URL%rejected-proposals" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Rejected Proposals</a>
+              <span class="text-gray-300 dark:text-gray-600">|</span>
+              <a href="%BASE_URL%evaluations" class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors">Evaluations</a>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/main.js"></script>

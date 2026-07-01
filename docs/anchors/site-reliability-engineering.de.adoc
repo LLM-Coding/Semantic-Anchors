@@ -48,4 +48,10 @@ Schlüsselvertreter:: Ben Treynor Sloss (prägte den Begriff bei Google); Betsy 
 * <<five-whys,Fünf Warum>>
 * <<spc,Statistische Prozesskontrolle>>
 * <<control-chart-shewhart,Shewhart-Regelkarte>>
+
+[discrete]
+== *Aktueller Stand*:
+
+* Der Prior bedient den Kanon gut: SRE Book (2016) und Workbook (2018) — SLOs, Error Budgets, Toil, Postmortems — bleiben maßgeblich, und Google stellt alle drei Bücher inklusive "Building Secure and Reliable Systems" (2020) frei unter https://sre.google/books/[sre.google/books] bereit
+* Bewegt hat sich seitdem der organisatorische Rahmen: SRE-Praxis konvergiert zunehmend mit Platform Engineering — Reliability-Fähigkeiten wandern in interne Plattformen statt in eigenständige SRE-Teams; nachzulesen in https://cloud.google.com/blog/products/application-modernization/a-guide-to-platform-engineering[Googles eigener Platform-Engineering-Anleitung]
 ====
