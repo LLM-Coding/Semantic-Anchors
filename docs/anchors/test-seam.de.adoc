@@ -1,0 +1,50 @@
+= Test Seam
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:related: tdd-london-school, testing-pyramid, test-double-meszaros
+:proponents: Michael Feathers
+:tags: legacy-code, seams, testability, refactoring, dependency-breaking
+:tier: 2
+
+[%collapsible]
+====
+Auch bekannt als:: Seam (Feathers), Legacy Seam
+
+[discrete]
+== *Kernkonzepte*:
+
+Seam (Naht):: Ein Ort im Programm, an dem das Verhalten geändert werden kann, ohne den Code genau dort zu bearbeiten. Feathers definiert: „a place where you can alter behavior in your program without editing in that place" (https://www.informit.com/articles/article.aspx?p=359417&seqNum=3["Working Effectively with Legacy Code", Addison-Wesley, 2004, Kapitel 4: „The Seam Model"]).
+
+Enabling Point (Einschaltpunkt):: Jede Naht hat einen zugehörigen Enabling Point — eine Stelle außerhalb der Naht, an der die Auswahl des Verhaltens getroffen wird (z. B. ein Konstruktorparameter, ein Classpath-Eintrag oder eine Präprozessordefinition). Am Enabling Point erfolgt die testspezifische Substitution; die Naht macht sie möglich.
+
+Object Seam:: Die häufigste Naht in objektorientiertem Code. Polymorphismus bestimmt die ausgeführte Methode zur Laufzeit; das Einsetzen einer Unterklasse oder Schnittstellenimplementierung am Enabling Point ersetzt die Abhängigkeit, ohne den aufgerufenen Code zu verändern. Feathers empfiehlt diesen Typ für OO-Sprachen.
+
+Link Seam:: Linker, Classpath oder Module-Loader sind der Enabling Point. Das Austauschen einer Bibliothek oder Klasse zur Linkzeit wechselt das Verhalten ohne Quelltextänderung. Nützlich, wenn Object Seams nicht verfügbar sind (z. B. bei statischen Methodenaufrufen oder finalen Klassen).
+
+Preprocessing Seam:: Verfügbar in Sprachen mit Makropräprozessor (C, C++). Präprozessordefinitionen sind die Enabling Points; Makros schreiben den Code vor der Kompilierung um und ermöglichen testspezifische Substitution ohne Produktionsquelltext zu ändern.
+
+Abhängigkeiten aufbrechen:: Ziel der Nahtidentifikation ist es, fest verdrahtete Abhängigkeiten zu lösen, damit Einheiten von Legacy-Code unter Test gestellt werden können — ohne die Produktionslogik vorab umzustrukturieren.
+
+Schlüsselvertreter:: Michael Feathers (https://www.informit.com/articles/article.aspx?p=359417&seqNum=3["Working Effectively with Legacy Code", Addison-Wesley, 2004, Kapitel 4: „The Seam Model"] — prägte den Begriff und die Drei-Typen-Taxonomie)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Einführung von Tests in unkontrolliert gewachsenen Legacy-Code, ohne ihn vorab umzustrukturieren
+* Identifikation von Stellen, an denen ein Test Double eingesetzt werden kann, wenn direkter Objektaufbau eine Ersetzung verhindert
+* Wahl zwischen Object-, Link- oder Preprocessing-Seam je nach Sprachbeschränkungen und verfügbarem Werkzeug
+* Benennung von Testbarkeitsgrenzen in Design- oder Code-Review-Gesprächen — das Naht-Vokabular macht sichtbar, was in einem Test abgefangen werden kann und was nicht
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<tdd-london-school,TDD, London School>>
+* <<testing-pyramid,Testing Pyramid>>
+* <<test-double-meszaros,Test Double (Meszaros)>>
+
+[discrete]
+== *Aktueller Status*:
+
+* Martin Fowler erweiterte das Konzept in https://martinfowler.com/bliki/LegacySeam.html["Legacy Seam" (Bliki, 2023)] auf TypeScript und JavaScript: Modulexporte werden zum modernen Enabling Point neben den klassischen OO- und Link-Nähten, und der Artikel weitet die Anwendung über das reine Testen hinaus auf Legacy-Ablösung und Verhaltensinspektion aus.
+* Mike Bland verband Nähte mit Schnittstellenqualität in https://mike-bland.com/2023/08/23/legacy-code-seams-and-the-most-important-design-guideline.html["Legacy code, seams, and the most important design guideline" (2023)]: Object Seams sind die häufigste und flexibelste Art, und die Qualität einer Naht folgt direkt der Qualität der Schnittstelle (Scott Meyers: „Make interfaces easy to use correctly and hard to use incorrectly").
+====

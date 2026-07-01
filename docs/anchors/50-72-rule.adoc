@@ -1,0 +1,50 @@
+= 50/72 Rule
+:categories: development-workflow
+:roles: software-developer, devops-engineer
+:related: plain-english-strunk-white, bluf, inverted-pyramid-style
+:proponents: Tim Pope
+:tags: git, commit-messages, version-control, conventions, readability
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: 50/72 Rule for Git Commit Messages
+
+Also known as:: Git Commit Message Convention, Seven Rules of Git Commits
+
+[discrete]
+== *Core Concepts*:
+
+50-character subject line:: Keep the subject line to roughly 50 characters — a soft limit that focuses the author on stating the change concisely. GitHub truncates at 72 characters; `git log --oneline` truncates earlier. Aim for 50; treat 72 as the hard ceiling.
+
+Imperative mood:: Write the subject in the imperative: "Fix bug" not "Fixed bug" or "Fixes bug." This mirrors the convention Git itself follows — `git merge` generates "Merge branch…", `git revert` generates "Revert…".
+
+Blank line separator:: Separate the subject from the body with a blank line. Git tools — `rebase`, `format-patch`, `log --oneline` — rely on this separator to distinguish the summary from the explanation. Running them together confuses these tools.
+
+72-character body wrap:: Wrap the commit body at 72 characters. With Git's 4-space indentation, a 72-character line fits within an 80-column terminal. The same limit makes the message usable as an email patch via `git format-patch`.
+
+Body explains why, not how:: The code diff already shows what changed. The commit body explains the reasoning — context, decision, tradeoffs. How the code works belongs in source comments; why this change exists belongs in the commit.
+
+Key Proponents:: Tim Pope (https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html["A Note About Git Commit Messages", tbaggery.com, 2008] — popularized the rule); Chris Beams (https://cbea.ms/git-commit/["How to Write a Git Commit Message", cbea.ms] — codified it as the "Seven Rules")
+
+[discrete]
+== *When to Use*:
+
+* Writing commit messages in any Git repository
+* Configuring `commit.template` or linting with `commitlint` or a `.gitmessage` hook
+* Code review: checking whether a commit message gives reviewers and future `git bisect` users enough context
+* Instructing an LLM to generate a commit message — naming "50/72 Rule" activates the full convention without repeating each constraint
+
+[discrete]
+== *Related Anchors*:
+
+* <<plain-english-strunk-white,Plain English (Strunk & White)>> — the same economy-of-words discipline applied to prose
+* <<bluf,BLUF>> — state the conclusion (subject line) first; supporting detail follows in the body
+* <<inverted-pyramid-style,Inverted Pyramid Style>> — most important information first, supporting context below
+
+[discrete]
+== *Current Status*:
+
+* Chris Beams' https://cbea.ms/git-commit/["How to Write a Git Commit Message"] is the most widely linked elaboration of Tim Pope's original post; it adds capitalization, no trailing period, and the "explain why vs. how" distinction as formal rules
+* <<conventional-commits,Conventional Commits>> adds a `type(scope):` prefix that competes directly with the 50-character budget; https://blog.thirstybear.co.uk/2025/05/git-commit-messages-why-keep-50.html[Thirstybear (2025)] argues that this metadata belongs in commit trailers rather than the subject line, and defends the 50-character limit on typographic grounds — citing Swiss designer Emil Ruder's 50–60 characters per line as the readability optimum
+====

@@ -1,0 +1,47 @@
+= Zone of Proximal Development
+:categories: communication-presentation
+:roles: educator, technical-writer, consultant
+:related: blooms-taxonomy, 4mat, feynman-technique
+:proponents: Lev Vygotsky
+:tags: learning, pedagogy, scaffolding, education, zpd
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: ZPD; Zone of Next Development
+
+[discrete]
+== *Core Concepts*:
+
+The learning gap:: The distance between what a learner can do independently ("actual development level") and what they can achieve with guidance from a More-Knowledgeable Other ("level of potential development"). Instruction is productive only inside this gap — above it the task exceeds the learner's reach; below it nothing new is learned.
+
+More-Knowledgeable Other (MKO):: Any person — teacher, peer, mentor — with greater competence in the relevant domain. The MKO need not be a formal authority; a marginally more advanced peer often fulfils the role just as well.
+
+Scaffolding:: Temporary, targeted support that enables the learner to work within the ZPD. *Vygotsky never used the term "scaffolding."* David Wood, Jerome S. Bruner, and Gail Ross introduced it in 1976 — after Vygotsky's death — to name the practical support structures their tutoring experiments revealed.
+
+Fading:: Gradual withdrawal of scaffolding as competence grows. Fading is the sign that learning has occurred and the ZPD has shifted upward. Without fading, support breeds dependency rather than autonomy.
+
+Key Proponents:: Lev Vygotsky (_Mind in Society: The Development of Higher Psychological Processes_, Harvard University Press, 1978 — introduced the ZPD definition); David Wood, Jerome S. Bruner & Gail Ross (https://acamh.onlinelibrary.wiley.com/doi/10.1111/j.1469-7610.1976.tb00381.x["The Role of Tutoring in Problem Solving", _Journal of Child Psychology and Psychiatry_, 17, 89–100, 1976] — coined "scaffolding")
+
+[discrete]
+== *When to Use*:
+
+* Designing instruction or onboarding content: pitch difficulty just above the learner's current independent ability, not at or below it
+* LLM prompting: "Explain X at the level of someone who knows Y but not yet Z" — targeting the ZPD rather than explaining from scratch or over-explaining
+* Coaching and mentoring: identify what the mentee can almost do alone; scaffold from there and withdraw support as skill grows
+* Documentation review: check whether explanations assume too much (beyond the reader's ZPD) or repeat what is already known (below it)
+* Calibrating AI-assisted tutoring: use demonstrated learner performance as the baseline and target the next challenge level
+
+[discrete]
+== *Related Anchors*:
+
+* <<blooms-taxonomy,Bloom's Taxonomy>> — classifies the cognitive level of a task; ZPD locates the challenge band where a specific learner can grow
+* <<4mat,4MAT>> — structures a teaching arc from motivation to transfer; ZPD identifies where in that arc the learner currently stands
+* <<feynman-technique,Feynman Technique>> — surfaces the learner's actual understanding floor, which maps to the lower bound of their ZPD
+
+[discrete]
+== *Current Status*:
+
+* "Scaffolding" is widely attributed to Vygotsky in secondary literature, but the term is absent from his writing. The distinction matters when prompting an LLM: invoking "ZPD" activates Vygotsky's sociocultural framing; invoking "scaffolding" activates Wood/Bruner/Ross's instructional mechanics. Both are valid anchors for related but distinct ideas.
+* Moll (1990) argued that interpretations focused on skill-transfer from expert to novice are "too narrow, theoretically misleading, and of limited instructional utility," calling instead for collective, activity-based zones rather than individual expert–novice dyads. See: https://journals.sagepub.com/doi/10.1080/02103702.1990.10822276[Luis C. Moll, "Vygotsky's zone of proximal development: Rethinking its instructional implications", _Infancia y Aprendizaje_, 1990]
+====
