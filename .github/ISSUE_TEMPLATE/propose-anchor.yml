@@ -76,14 +76,13 @@ body:
     attributes:
       label: Viability Test (Optional but encouraged)
       description: |
-        Recognition is not activation. Does naming this anchor actually change the
-        LLM's output structure? Compare: (A) the task without the anchor term vs.
-        (B) the same task with it. See the training-data-vs-practice article for the
-        methodology.
+        Does naming this anchor actually change the LLM's output structure?
+        Give a model a task WITHOUT the anchor term, then the SAME task WITH the anchor.
+        See the training-data-vs-practice article for the full methodology.
       placeholder: |
-        Task: "..."
-        Without anchor: [brief description of output structure]
-        With anchor: [brief description of output structure]
+        Task: "Specify what an online shop must do when a customer places an order."
+        Without anchor: [describe output structure]
+        With anchor: [describe output structure]
         Structural difference: [what changed]
         Weak model tested: [model name, result]
     validations:

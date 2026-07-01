@@ -9,8 +9,8 @@ Understanding why proposals are rejected helps contributors submit better propos
 Structurally unsuitable::
 The term is too vague, has no defined methodology, or is a pure instruction rather than a concept. Fails the link:#/about[Precise] and/or link:#/about[Rich] criteria.
 
-Insufficient training-data density::
-A legitimate concept or framework that is *recognized* (models can talk about it) but does not reliably *activate* in outputs: naming it does not structurally change the result compared to a generic prompt, or it triggers silent substitution / confabulation on weaker models. Fails the link:#/about[Consistent] criterion. Terms here may become viable anchors as training data grows — until then, a link:#/contracts[Semantic Contract] (which supplies its own meaning) is the right home. (Formerly "Not in training data".)
+Fails viability (recognized but inert)::
+The model can _recognise_ the term (talks _about_ it correctly) but the term is _inert_ — naming it does not structurally change the output compared to a generic prompt, or triggers silent substitution / confabulation on weaker models. Fails the link:#/viability-test[Viability Test]. Terms in this category may become viable anchors as training data grows — consider a link:#/contracts[contract] for now. See the link:#/viability-test[Viability Test] for the empirical methodology. (Formerly "Insufficient training-data density".)
 
 Too niche::
 A real methodology but too specialized for reliable activation across different LLMs and contexts. Fails the link:#/about[Consistent] and/or link:#/about[Rich] criteria.
@@ -45,7 +45,7 @@ The term reliably activates coherent knowledge (it passes all four criteria), bu
 *Now available as link:#/contracts[Semantic Contract]*: "Layer Boundaries".
 
 | *MIRRR UX Framework* (https://github.com/LLM-Coding/Semantic-Anchors/issues/150[#150])
-| Insufficient training-data density
+| Fails viability (recognized but inert)
 | A real UX framework with defined methodology, but not widely enough documented for LLMs to reliably recognize it and activate the correct concepts.
 
 | *YOLO* (https://github.com/LLM-Coding/Semantic-Anchors/issues/443[#443])
@@ -80,3 +80,5 @@ ____
 If the response is vague, inconsistent across models, or fails to activate a coherent body of knowledge, the proposal does not qualify.
 
 See link:#/about[About] for the full quality criteria and examples.
+
+NOTE: This viability-based rejection category is part of a broader refresh of the contribution-quality gate. Together with the link:https://github.com/LLM-Coding/Semantic-Anchors/issues/585[Formal Artifact Taxonomy (#585)] (what an anchor _is_) and link:https://github.com/LLM-Coding/Semantic-Anchors/issues/624[Counter-consensus Framing (#624)] (what still gets rejected even if it passes all criteria), the three proposals form a complete framework: theory + empirical test + boundary condition.

@@ -10,31 +10,6 @@ Semantic anchors are well-defined terms, methodologies, and frameworks that serv
 
 *Example:* When you mention "TDD, London School" to an LLM, it activates knowledge about mock-heavy testing, outside-in development, and the work of Steve Freeman and Nat Pryce - much richer than simply saying "use mocks in testing."
 
-== Artifact Types: Anchor, Contract, Skill
-
-The catalog ships three artifact types. Knowing which one you are proposing decides where your contribution belongs. The full rationale lives in link:docs/specs/adrs/adr-007-artifact-taxonomy.adoc[ADR-007]; the working definitions are here.
-
-[cols="1,2,2,1", options="header"]
-|===
-| Type | Function | Linguistic shape | Loading
-
-| *Anchor* | "What do I know?" — focuses pre-existing knowledge | Noun / named concept ("Cockburn Use Cases") | Passive (activation signal)
-| *Contract* | "What may I do?" — pins which anchors apply + invariants | Declarative ("follows / NEVER / MUST") | Always-on
-| *Skill* | "How do I do it?" — supplies procedure | Verb / imperative ("Create / Verify / Write") | On-demand
-|===
-
-* *Anchor* — a named activation signal for a knowledge cluster that is *already dense* in an LLM's training data. It focuses; it does not teach. Must pass the four Quality Criteria below.
-* *Contract* — terse, always-on shared vocabulary (in `CLAUDE.md` / `AGENTS.md`) that pins which anchors apply and states invariants. The moment it describes *how* to do something step by step, that part belongs in a Skill.
-* *Skill* — on-demand procedural machinery (`references/`, prompts, a workflow) for a *how* the model cannot execute from a name alone.
-
-*Discrimination test:*
-
-. Knowledge already dense in the LLM, only needs focusing → *Anchor*
-. Need to pin which anchors apply and what is allowed/forbidden → *Contract*
-. Need to describe *how* something is concretely done → *Skill*
-
-*The thin-prior rule.* If a name is *not* dense in the training data, it is *not an anchor* — naming it does not reliably change the output structure compared to a generic prompt. What repairs it depends on what is missing: a missing *meaning/framing* → a *Contract* (it supplies its own meaning; a URL never repairs a prior); a missing *procedure* → a *Skill*. A thin name is never forced to be an anchor.
-
 == Quality Criteria
 
 Before proposing a new semantic anchor, ensure it meets these four criteria:
@@ -90,15 +65,57 @@ Evaluate the response:
 * *Depth:* Does it cover multiple related concepts?
 * *Specificity:* Is the scope well-defined?
 
-== Viability Test (Does the anchor deliver?)
+== Viability Test — Does the Anchor Deliver?
 
-Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice] article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
+Recognition alone does not make a viable anchor. The link:docs/training-data-vs-practice.adoc[training-data-vs-practice article] demonstrates empirically that a model can _recognise_ a term yet silently substitute or confabulate when asked to _apply_ it. The viability test checks whether naming the anchor actually reshapes the output.
 
-. *Before/After test.* Give a model a task *without* the anchor term, then the same task *with* it. Does the output structure change? If not, the term is decorative, not functional.
-. *Substitution check.* Ask "What is [term]?" on a weaker model (Haiku-class). If it hedges, silently substitutes, or confabulates, the prior is too thin for an anchor — it belongs in a *Contract* (which supplies its own meaning), per the thin-prior rule in _Artifact Types_ above.
-. *Cross-model check.* Does the before/after difference hold on at least one weak *and* one strong model? If it only fires on frontier models, note it as ★★ (needs qualification).
+=== The Before/After Test
 
-A term that passes the four Quality Criteria but fails the viability test is a *Contract*, not an Anchor.
+Give a model a task _without_ the anchor term, then the _same_ task _with_ the anchor. Compare structure:
+
+[source]
+----
+# Without anchor:
+Specify what an online shop must do when a customer places an order.
+
+# With anchor:
+Using <your anchor>, specify what an online shop must do when a customer places an order.
+----
+
+If the output structure does not change, the term is decorative — it fails the viability test.
+
+=== Three Failure Modes to Watch For
+
+[cols="1,2,2", options="header"]
+|===
+| Failure Mode | What happens | How to detect
+
+| *Silent substitution*
+| Model delivers content under the requested label, but the content belongs to a different concept.
+| Compare the output against the anchor's canonical definition. Does the structure match?
+
+| *Confabulation*
+| Model invents a confident, internally consistent but fictitious description.
+| Verify key claims (principles, proponents, dates) against the anchor's source material.
+
+| *No structural change*
+| Model "knows" the term but naming it does not reshape the output compared to a generic prompt.
+| Run the before/after test above. If A ≈ B, the anchor is not functional.
+|===
+
+=== Cross-Model Check
+
+Test on at least one _weak_ model (e.g., Haiku-class) and one _strong_ model (e.g., Opus-class). The tier rating reflects the result:
+
+* *★★★ Self-standing* — fires reliably on both weak and strong models.
+* *★★ Needs qualification* — fires only with author/qualifier on weaker models.
+* *★ Descriptive only* — does not reshape output even with qualification → *reject* or move to a *contract*.
+
+=== When to Use a Contract Instead
+
+A term that passes the four quality criteria but fails the viability test belongs in a *contract* (which supplies its own meaning in the prompt), not an anchor (which relies on pre-existing training data). As training data grows, such terms may become viable anchors in future model generations.
+
+See link:docs/training-data-vs-practice.adoc[An Anchor Delivers Only as Far as the Prior Reaches] for the full methodology and worked examples.
 
 == Developer Setup
 
@@ -217,7 +234,6 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 * `:proponents:` - Key people, publications, or standards
 * `:tags:` - Keywords for search (optional but recommended)
 * `:related:` - Related anchor IDs (optional)
-* `:advisory:` - Short caution label (optional). Use only for *counter-consensus framing*: the anchor activates reliably but its framing conflicts with its own field's documented consensus. Renders as a visible badge in the card/modal; keep the detail and the cited source in the `== Criticism` / `== Current Status` section (single source of truth). See `eisenhower-matrix.adoc`.
 
 *Criticism and Current Status (research required, include when found):*
 

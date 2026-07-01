@@ -9,8 +9,8 @@ Das Verständnis der Ablehnungsgründe hilft Mitwirkenden, bessere Vorschläge e
 Strukturell ungeeignet::
 Der Begriff ist zu vage, hat keine definierte Methodik oder ist eine reine Anweisung statt eines Konzepts. Erfüllt das link:#/about[Precise]- und/oder link:#/about[Rich]-Kriterium nicht.
 
-Nicht in Trainingsdaten::
-Ein legitimes Konzept oder Framework, aber nicht ausreichend in den LLM-Trainingsdaten etabliert, um zuverlässig das richtige Wissen zu aktivieren. Erfüllt das link:#/about[Consistent]-Kriterium nicht.
+Viability-Test nicht bestanden (erkannt aber wirkungslos)::
+Das Modell _erkennt_ den Begriff (spricht _darüber_ korrekt), aber der Begriff ist _wirkungslos_ — das Benennen verändert die Ausgabestruktur im Vergleich zu einem generischen Prompt nicht oder löst Silent Substitution / Confabulation auf schwächeren Modellen aus. Besteht den link:#/viability-test[Viability-Test] nicht. Begriffe in dieser Kategorie können mit wachsenden Trainingsdaten zu viablen Ankern werden — erwägen Sie stattdessen einen link:#/contracts[Contract]. Siehe den link:#/viability-test[Viability-Test] für die empirische Methodik. (Zuvor "Nicht in Trainingsdaten".)
 
 Zu spezialisiert::
 Eine echte Methodik, aber zu spezialisiert für zuverlässige Aktivierung über verschiedene LLMs und Kontexte hinweg. Erfüllt das link:#/about[Consistent]- und/oder link:#/about[Rich]-Kriterium nicht.
@@ -42,7 +42,7 @@ Eine echte Methodik, aber zu spezialisiert für zuverlässige Aktivierung über 
 *Jetzt verfügbar als link:#/contracts[Semantic Contract]*: "Layer Boundaries".
 
 | *MIRRR UX Framework* (https://github.com/LLM-Coding/Semantic-Anchors/issues/150[#150])
-| Nicht in Trainingsdaten
+| Viability-Test nicht bestanden (erkannt aber wirkungslos)
 | Ein echtes UX-Framework mit definierter Methodik, aber nicht weit genug dokumentiert, damit LLMs es zuverlässig erkennen und die richtigen Konzepte aktivieren.
 
 | *YOLO* (https://github.com/LLM-Coding/Semantic-Anchors/issues/443[#443])
@@ -77,3 +77,5 @@ ____
 Wenn die Antwort vage ist, über Modelle hinweg inkonsistent, oder kein kohärentes Wissensgebiet aktiviert, qualifiziert sich der Vorschlag nicht.
 
 Siehe link:#/about[Über] für die vollständigen Qualitätskriterien und Beispiele.
+
+HINWEIS: Diese viability-basierte Ablehnungskategorie ist Teil einer breiteren Neugestaltung des Contribution-Quality-Gates. Zusammen mit der link:https://github.com/LLM-Coding/Semantic-Anchors/issues/585[Formal Artifact Taxonomy (#585)] (was ein Anker _ist_) und dem link:https://github.com/LLM-Coding/Semantic-Anchors/issues/624[Counter-consensus Framing (#624)] (was trotz bestandener Kriterien abgelehnt wird) bilden die drei Vorschläge ein vollständiges Framework: Theorie + empirischer Test + Randbedingung.
