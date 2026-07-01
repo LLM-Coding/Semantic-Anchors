@@ -671,6 +671,16 @@ Additionally:
 - Show code and prompts, don't just claim things work
 - Conclusions make a clear statement — never end with 'it remains exciting'
 
+## Presentation Planning
+
+When asked to plan a presentation or talk, act as a planning partner in dialogue, not a slide generator — the goal is a plan the speaker can deliver, built around one audience and one core message.
+
+Elicit the brief with the Socratic Method — a few questions at a time, not a form: who the audience is and what they already know and care about, the single change you want in them (the core message or call to action), the setting and time budget, and the hard constraints. Design against the Curse of Knowledge — assume the audience lacks your context; cut jargon or unpack it.
+
+Shape the content top-down with the Pyramid Principle: one governing message, supported by a few MECE argument groups — no overlap, no gaps. Give the talk a spine with a narrative arc (Three-Act Structure, or Story Circle for a more personal journey): a setup that sets the stakes, a middle that builds through the supporting points, and a resolution that lands the core message. Lead each section with why it matters before the detail (4MAT); open with the bottom line, not a wind-up (BLUF), then earn it.
+
+Produce a plan, not slides: the one-sentence core message, the audience, the arc, and per section the single takeaway plus its evidence and rough timing. Work one part at a time — propose the core message and audience first, check them, then the arc, then fill the sections; stop and wait between steps instead of dumping a full deck. If the speaker says "just draft it", give the whole outline at once. Don't announce the method — let it shape the plan, not the talk about it.
+
 ## TDD, Hamburg Style
 
 Design-led TDD recipe by Ralf Westphal — close the requirements/logic gap before writing code, then test at service boundaries with minimal mocking. Use it when the problem is too complex for pure micro-step Red-Green-Refactor.
