@@ -1,0 +1,50 @@
+= Test Seam
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:related: tdd-london-school, testing-pyramid, test-double-meszaros
+:proponents: Michael Feathers
+:tags: legacy-code, seams, testability, refactoring, dependency-breaking
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: Seam (Feathers), Legacy Seam
+
+[discrete]
+== *Core Concepts*:
+
+Seam:: A place in a program where behavior can be altered without editing the code at that place. Feathers defines it as "a place where you can alter behavior in your program without editing in that place" (https://www.informit.com/articles/article.aspx?p=359417&seqNum=3["Working Effectively with Legacy Code", Addison-Wesley, 2004, Chapter 4: "The Seam Model"]).
+
+Enabling Point:: Every seam has a paired enabling point — a location outside the seam where the choice of behavior is made (e.g., a constructor parameter, a classpath entry, a preprocessor define). The enabling point is where test substitution happens; the seam is what makes it possible.
+
+Object Seam:: The most common seam in object-oriented code. Polymorphism means the method executed is determined at runtime; injecting a subclass or interface implementation at the enabling point replaces the dependency without touching the callee. Feathers recommends this type for OO languages.
+
+Link Seam:: The linker, classpath, or module loader is the enabling point. Substituting a different library or class at link time swaps behavior without source changes. Useful when object seams are unavailable (e.g., static method calls, final classes).
+
+Preprocessing Seam:: Available in languages with a macro preprocessor (C, C++). Preprocessor defines are the enabling points; macros rewrite code before compilation, allowing test-time substitution without modifying production source.
+
+Breaking dependencies:: The purpose of identifying seams is to break hard-wired dependencies so that units of legacy code can be placed under test — without first restructuring the production logic.
+
+Key Proponents:: Michael Feathers (https://www.informit.com/articles/article.aspx?p=359417&seqNum=3["Working Effectively with Legacy Code", Addison-Wesley, 2004, Chapter 4: "The Seam Model"] — coined the term and the three-type taxonomy)
+
+[discrete]
+== *When to Use*:
+
+* Introducing tests into an untested legacy codebase without restructuring production code first
+* Identifying where a test double can be injected when direct construction prevents replacement
+* Choosing between object, link, or preprocessing seams based on language constraints and available tooling
+* Naming testability boundaries in design or code-review discussions — seam vocabulary makes visible what can and cannot be intercepted in a test
+
+[discrete]
+== *Related Anchors*:
+
+* <<tdd-london-school,TDD, London School>>
+* <<testing-pyramid,Testing Pyramid>>
+* <<test-double-meszaros,Test Double (Meszaros)>>
+
+[discrete]
+== *Current Status*:
+
+* Martin Fowler extended the concept in https://martinfowler.com/bliki/LegacySeam.html["Legacy Seam" (bliki, 2023)], adapting it to TypeScript and JavaScript: module-level exports become a modern enabling point alongside classic OO and link seams, and the article broadens the use beyond pure testing to legacy displacement and behavior probing.
+* Mike Bland connected seams to interface quality in https://mike-bland.com/2023/08/23/legacy-code-seams-and-the-most-important-design-guideline.html["Legacy code, seams, and the most important design guideline" (2023)], arguing that object seams are the most common and flexible kind and that seam quality tracks directly with interface quality (Scott Meyers: "Make interfaces easy to use correctly and hard to use incorrectly").
+====

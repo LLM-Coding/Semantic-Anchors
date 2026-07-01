@@ -1,0 +1,56 @@
+= Eisenhower Matrix
+:categories: strategic-planning
+:roles: team-lead, product-owner, consultant
+:related: mece, cynefin-framework, decisional-balance-sheet
+:proponents: Dwight D. Eisenhower, Stephen Covey
+:tags: prioritization, time-management, urgency, importance, productivity
+:tier: 2
+:advisory: Activates an urgency-first framing its own field cautions against (see Criticism)
+
+[%collapsible]
+====
+Also known as:: Urgent-Important Matrix, Eisenhower Box, Time Management Matrix
+
+[discrete]
+== *Core Concepts*:
+
+Two axes:: Every task is plotted on two independent dimensions — *urgency* (does it demand attention now?) and *importance* (does it contribute to your goals and values?). The central insight is that the two are not the same.
+
+Four quadrants:: The 2x2 grid yields four prioritization actions::
++
+Do (urgent + important)::: Crises, deadlines, pressing problems — handle immediately yourself
+Schedule (important, not urgent)::: Planning, prevention, relationship-building, learning — block time deliberately; Covey calls this Quadrant II "the heart of effective personal management"
+Delegate (urgent, not important)::: Interruptions, some meetings and calls — hand to someone else
+Delete (neither urgent nor important)::: Busywork, trivia, time-wasters — drop entirely
+
+Key Proponents:: Dwight D. Eisenhower (attrib.) — popularized the urgent/important distinction in an https://quoteinvestigator.com/2014/05/09/urgent/[August 19, 1954 speech] to the World Council of Churches, where he quoted an unnamed "former college president" (popularly traced to Dr J. Roscoe Miller, president of Northwestern University): "I have two kinds of problems, the urgent and the important. The urgent are not important, and the important are never urgent." Stephen R. Covey turned the distinction into the four-quadrant "Time Management Matrix" in *The 7 Habits of Highly Effective People* (1989), Habit 3 ("Put First Things First")
+
+[discrete]
+== *When to Use*:
+
+* Triaging a backlog or to-do list when everything feels equally pressing
+* Coaching teams to separate genuine importance from manufactured urgency
+* Personal time management and weekly planning
+* Deciding what to do, delegate, defer, or drop
+
+[discrete]
+== *Related Anchors*:
+
+* <<mece,MECE>>
+* <<cynefin-framework,Cynefin Framework>>
+* <<decisional-balance-sheet,Decisional Balance Sheet>>
+
+[discrete]
+== *Criticism*:
+
+* Meng Zhu, Yang Yang & Christopher K. Hsee, https://academic.oup.com/jcr/article-abstract/45/3/673/4847790["The Mere Urgency Effect", Journal of Consumer Research 45(3): 673–690] (2018; open copy: https://pmc.ncbi.nlm.nih.gov/articles/PMC10159458/[PMC10159458]) — across five experiments people systematically chose tasks merely because they were urgent, even when those tasks were objectively worse than important alternatives. This "mere urgency effect" suggests the matrix's clean two-axis logic fights a deep cognitive bias: simply *seeing* the axes does not stop people from over-weighting urgency.
+* Stephen Covey himself, in https://www.franklincovey.com/the-7-habits/[The 7 Habits], cautions that an urgency-driven life crowds out Quadrant II ("important, not urgent") — the very quadrant he calls the heart of effectiveness. The critique is internal to the framework: its proponent warns the matrix is easy to misuse by living reactively in Quadrants I and III.
+* General critique that a 2x2 grid oversimplifies prioritization — it treats "importance" and "urgency" as binary and independent, ignoring dependencies, effort/cost, value magnitude, and time-decay, dimensions that richer methods (e.g. weighted scoring, cost-of-delay) make explicit.
+
+The Criticism section reports the discourse; it does not adjudicate it.
+
+[discrete]
+== *Current Status*:
+
+Actively used and widely taught. The point of caution is not obsolescence but framing: the matrix activates a "sort by urgency × importance" logic that its own field documents as vulnerable to the *mere-urgency effect* (Zhu, Yang & Hsee 2018; see Criticism). Use it to *separate* importance from urgency — not as licence to act on whatever is merely urgent. This is why the anchor carries an `:advisory:` flag.
+====

@@ -3,6 +3,7 @@
 :roles: software-architect, technical-writer, team-lead
 :proponents: Gernot Starke, Peter Hruschka
 :tier: 3
+:definition: arc42 is a template for documenting software architecture, created by Gernot Starke and Peter Hruschka. It organises an architecture into twelve standardised sections — from goals, constraints, and context through building blocks, runtime, and deployment to decisions, quality, and risks — so teams document consistently and completely.
 
 [%collapsible]
 ====

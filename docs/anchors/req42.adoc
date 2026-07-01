@@ -1,0 +1,71 @@
+= req42 Requirements Framework
+:categories: requirements-engineering
+:roles: business-analyst, software-architect, product-owner
+:related: arc42, ears-requirements, cockburn-use-cases, docs-as-code
+:proponents: Peter Hruschka, Markus Meuten
+:tags: requirements, framework, agile, docs-as-code, arc42
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: req42 — Framework for Pragmatic, Agile Requirements
+
+Also known as:: the requirements companion to arc42
+
+[discrete]
+== *Core Concepts*:
+
+Twelve "drawers":: A lightweight template of twelve sections, deliberately mirroring arc42's structure, for capturing agile requirements without drifting into heavyweight specification. Fill only the drawers a project actually needs.
+
+01 Business Goals:: Why the product exists and what success looks like
+
+02 Stakeholders:: Who has an interest in the system and what they expect
+
+03 Scope:: What is in and out — the system boundary
+
+04 Product Backlog:: Features, user stories, and product ideas
+
+05 Supporting Models:: Diagrams and models that clarify the requirements (context, data, processes)
+
+06 Quality Requirements:: Quality goals and scenarios — the focus that sets req42 apart from pure backlog management
+
+07 Constraints:: Conditions that limit design and implementation decisions
+
+08 Domain Terminology:: Shared vocabulary; a glossary
+
+09 Assets:: Existing things to reuse or protect
+
+10 Teams:: Who builds the product
+
+11 Roadmap:: Planned sequence of delivery over time
+
+12 Risks / Assumptions:: Open risks and the assumptions the plan rests on
+
+Pairs with arc42:: req42 documents the requirements (the "what" and "why"); arc42 documents the architecture (the "how"). The two share authorship, structure, and tooling, so they combine seamlessly.
+
+Docs-as-code:: Distributed as an AsciiDoc template built with the arc42 generator; version-controllable, diffable, and toolchain-friendly. Licensed CC BY-SA 4.0 (free and open source).
+
+Key Proponents:: Dr. Peter Hruschka and Markus Meuten (https://req42.de). Hruschka is a principal of the Atlantic Systems Guild, IREB founding member, and co-creator of arc42; req42 also draws on the Volere requirements tradition.
+
+[discrete]
+== *When to Use*:
+
+* Documenting requirements in an agile context without abandoning structure
+* Giving a product backlog a frame for quality requirements, constraints, and risks — not just user stories
+* Pairing a requirements document with an arc42 architecture document so both share structure and tooling
+* Lightweight, docs-as-code requirements that live next to the code in version control
+
+[discrete]
+== *Related Anchors*:
+
+* <<arc42,arc42 Architecture Documentation>>
+* <<ears-requirements,EARS Requirements Syntax>>
+* <<cockburn-use-cases,Cockburn Use Cases>>
+* <<docs-as-code,Docs-as-Code>>
+
+[discrete]
+== *Current Status*:
+
+* Far less widely known than its sibling arc42. An LLM recognizes "req42" mainly *because* of arc42's name and structure; the training-data prior on req42's own twelve-section content is thin, so the model may extrapolate from arc42 rather than recall req42 accurately. Verify section names against the source (https://docs.req42.de, https://github.com/Hruschka/req42-framework) rather than trusting recall.
+* Actively maintained as a free, open-source template (CC BY-SA 4.0) on https://github.com/Hruschka/req42-framework[GitHub], with section-level guidance at https://docs.req42.de — the same docs-as-code model as arc42.
+====

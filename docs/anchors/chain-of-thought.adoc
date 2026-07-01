@@ -3,6 +3,7 @@
 :roles: software-developer, data-scientist, business-analyst
 :proponents: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 :tier: 3
+:definition: Chain of Thought (CoT) is a prompting technique for large language models that asks the model to reason step by step before stating a final answer. Making the intermediate steps explicit improves accuracy on multi-step arithmetic, logic, and reasoning tasks compared with answering directly.
 
 [%collapsible]
 ====

@@ -1,0 +1,55 @@
+= Sender-Receiver Discrepancy
+:categories: communication-presentation
+:roles: technical-writer, consultant, business-analyst
+:related: curse-of-knowledge, four-sides-model, feynman-technique, problem-space-nvc, plain-english-strunk-white, bluf
+:proponents: Claude Shannon, Warren Weaver, Friedemann Schulz von Thun, Stuart Hall, Herbert H. Clark
+:tags: communication, encoding-decoding, audience, misunderstanding, shared-understanding
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: Communication Gap, Encoding-Decoding Gap, Intended-vs-Received Gap
+
+NOTE: This is an umbrella concept spanning multiple independent communication models. It names the phenomenon cause-agnostically; individual frameworks (Shannon-Weaver, Schulz von Thun, Hall, Clark) each diagnose specific causes. It is therefore a candidate for a *contract* rather than a single-proponent anchor.
+
+[discrete]
+== *Core Concepts*:
+
+Intended meaning ≠ received meaning:: The sender constructs a message with a particular intent; the receiver reconstructs a meaning from that message. These are independent cognitive acts. The reconstructed meaning is not guaranteed to match the intended one.
+
+Encoding and decoding are separate processes:: The sender encodes meaning into words, signs, or structure. The receiver decodes them through their own context, knowledge, and assumptions. Any mismatch between the sender's encoding frame and the receiver's decoding frame produces a discrepancy.
+
+Cause-agnostic umbrella — four diagnostic lenses::
++
+Noise (Shannon & Weaver, 1948)::: Physical or semantic interference in the channel distorts the signal before it reaches the receiver; the discrepancy originates outside either party.
+Four sides of a message (Schulz von Thun, 1981)::: The sender stresses one of four facets — factual content, self-disclosure, relationship, or appeal; the receiver decodes through a different "ear", producing a systematic mismatch without any channel failure.
+Active decoding positions (Hall, 1973/1980)::: Receivers are not passive; they construct meaning from their own social and cultural context. The same encoded message yields dominant, negotiated, or oppositional readings depending on the receiver's framework.
+Insufficient common ground (Clark & Brennan, 1991)::: Communication succeeds only when sender and receiver have accumulated enough shared knowledge, beliefs, and assumptions — their common ground. Without adequate grounding, the receiver fills gaps with their own model rather than the sender's intent.
+
+Meaning is reconstructed, not transmitted:: No meaning travels intact from sender to receiver. The receiver always re-creates meaning by combining what the message provides with what they already know. The illusion of transparent transmission is itself a source of discrepancy.
+
+Key Proponents::
+Claude Shannon & Warren Weaver (https://www.communicationtheory.org/shannon-and-weaver-model-of-communication/["A Mathematical Theory of Communication", Bell System Technical Journal, 1948] — noise-in-channel model); +
+Friedemann Schulz von Thun (https://www.schulz-von-thun.de/die-modelle/das-kommunikationsquadrat["Miteinander reden 1: Störungen und Klärungen", 1981] — multi-layer encoding/decoding via the Communication Square); +
+Stuart Hall (https://en.wikipedia.org/wiki/Encoding/decoding_model_of_communication["Encoding/Decoding", 1973/1980] — audiences actively construct meaning from three subject positions); +
+Herbert H. Clark & Susan E. Brennan (https://en.wikipedia.org/wiki/Grounding_in_communication["Grounding in communication", in: Perspectives on Socially Shared Cognition, APA, 1991] — mutual understanding depends on accumulated common ground)
+
+[discrete]
+== *When to Use*:
+
+* Naming the root phenomenon before choosing a diagnostic framework — use this term to describe the problem, then choose Shannon-Weaver, Schulz von Thun, Hall, or Clark to diagnose its cause
+* Reviewing a document, email, or specification to ask whether the receiver's likely decoding matches the sender's intent
+* Debriefing after a miscommunication in a team: "We had a sender-receiver discrepancy — which layer broke down?"
+* Prompting an LLM to evaluate a draft from the reader's perspective, not the writer's
+* Framing a communication training or workshop before introducing specific models
+
+[discrete]
+== *Related Anchors*:
+
+* <<curse-of-knowledge,Curse of Knowledge>>
+* <<four-sides-model,Four-Sides Model (Schulz von Thun)>>
+* <<feynman-technique,Feynman Technique>>
+* <<problem-space-nvc,Problem Space NVC>>
+* <<plain-english-strunk-white,Plain English (Strunk & White)>>
+* <<bluf,BLUF>>
+====

@@ -10,10 +10,13 @@ Structurally unsuitable::
 The term is too vague, has no defined methodology, or is a pure instruction rather than a concept. Fails the link:#/about[Precise] and/or link:#/about[Rich] criteria.
 
 Insufficient training-data density::
-The term is recognised (models can talk _about_ it) but does not reliably _activate_ the concept in outputs. Naming it does not structurally change the output compared to a generic prompt, or triggers silent substitution / confabulation on weaker models. Terms in this category may become viable anchors as training data grows — consider a link:#/contracts[contract] for now. See link:#/training-data-vs-practice[An Anchor Delivers Only as Far as the Prior Reaches] for the empirical methodology. Fails the viability test.
+The term is recognised (models can talk _about_ it) but does not reliably _activate_ the concept in outputs. Naming it does not structurally change the output compared to a generic prompt, or triggers silent substitution / confabulation on weaker models. Terms in this category may become viable anchors as training data grows — consider a link:#/contracts[contract] for now. See link:#/training-data-vs-practice[An Anchor Delivers Only as Far as the Prior Reaches] for the empirical methodology. Fails the viability test. (Formerly "Not in training data".)
 
 Too niche::
 A real methodology but too specialized for reliable activation across different LLMs and contexts. Fails the link:#/about[Consistent] and/or link:#/about[Rich] criteria.
+
+Counter-consensus framing::
+The term reliably activates coherent knowledge (it passes all four criteria), but the activated framing contradicts the documented consensus of the framework's *own source field* — admitting it would prime an LLM toward an approach its own canonical literature marks as misleading or superseded. This category requires *citing that consensus source*; it must not rest on a contributor's personal disagreement. Where the term is still worth keeping, the alternative to outright rejection is to admit it with an `:advisory:` flag (a visible caution in the card/modal, detail in the anchor's Criticism / Current Status section) — see the Eisenhower Matrix.
 
 == Rejected Proposals
 

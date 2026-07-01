@@ -104,6 +104,17 @@ const ROUTES = [
       'Installierbarer Claude Code Skill für den Brownfield-Workflow zur Dokumentations-Wiederherstellung. Zweiphasiger Question Tree mit [ANSWERED]/[OPEN]-Blättern und Q-ID-Nachverfolgbarkeit.',
   },
   {
+    path: '/arc42-documentation-skill',
+    fragment: 'docs/arc42-documentation-skill.html',
+    title: 'arc42 Documentation Authoring Skill — Semantic Anchors',
+    description:
+      "Installable Claude Code Skill carrying the procedure for authoring an arc42 architecture document: the cross-section traceability rules arc42's templates don't enforce, the Chapter 11 Risks-vs-Technical-Debt structure, ADR-to-risk-ID wiring, and the six-part Quality Attribute Scenario form. The how-to companion to the Architecture Documentation contract.",
+    fragmentDe: 'docs/arc42-documentation-skill.de.html',
+    titleDe: 'arc42-Dokumentation-Skill — Semantic Anchors',
+    descriptionDe:
+      'Installierbarer Claude Code Skill mit der Prozedur zum Erstellen einer arc42-Architekturdokumentation: die Cross-Section-Traceability-Regeln, die Kapitel-11-Struktur (Risiken vs. Technische Schuld), das ADR-zu-Risiko-ID-Wiring und die sechsteilige Quality-Attribute-Scenario-Form. Das How-to-Gegenstück zum Architekturdokumentation-Contract.',
+  },
+  {
     path: '/training-data-vs-practice',
     fragment: 'docs/training-data-vs-practice.html',
     title: 'An Anchor Delivers Only as Far as the Prior Reaches — Semantic Anchors',
@@ -573,12 +584,21 @@ function writeHomeVariant(shell, lang) {
   const title = tr['hero.title'] || ''
   const intro = tr['hero.intro'] || ''
   const emphasis = tr['hero.introEmphasis'] || ''
+  // Direct-answer block (#580): a crawlable, self-contained "What is Semantic
+  // Anchors?" definition AI-overview crawlers can quote verbatim — the exact
+  // query the GEO audit found the site absent for.
+  const answerHeading = tr['home.answer.heading'] || ''
+  const answerBody = tr['home.answer.body'] || ''
 
   const block = `
       <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <h1 class="text-3xl sm:text-4xl font-bold mb-3 leading-tight">${escapeHtml(title)}</h1>
         <p class="mb-2 max-w-3xl">${escapeHtml(intro)}</p>
         <p class="font-semibold max-w-3xl">${escapeHtml(emphasis)}</p>
+      </section>
+      <section class="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-2">${escapeHtml(answerHeading)}</h2>
+        <p class="anchor-answer max-w-3xl" data-answer-block>${escapeHtml(answerBody)}</p>
       </section>
       ${buildCatalogMarkup(lang, tr)}
     `

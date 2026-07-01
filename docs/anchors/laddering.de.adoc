@@ -1,0 +1,57 @@
+= Laddering (Interviewtechnik)
+:categories: requirements-engineering
+:roles: business-analyst, ux-designer, product-owner
+:related: five-whys, jobs-to-be-done
+:proponents: George Kelly, Dennis Hinkle, Thomas Reynolds, Jonathan Gutman
+:tags: interview, elicitation, means-end, user-research, requirements
+:tier: 3
+
+[%collapsible]
+====
+Auch bekannt als:: Means-End Laddering, Laddering Interview
+
+[discrete]
+== *Kernkonzepte*:
+
+Means-End-Kette:: Ein Laddering-Interview rekonstruiert die Kette Attribut -> Konsequenz -> Wert: ein konkretes Merkmal eines Produkts oder einer Lösung, die Konsequenz, die es für den Nutzer erzeugt, und der persönliche Wert, dem diese Konsequenz dient. Die Kette ist die Erkenntniseinheit, nicht eine einzelne Antwort.
+
+Laddering nach oben:: Mit "Warum ist Ihnen das wichtig?" wiederholt in Richtung Abstraktion fragen und so von Attributen über Konsequenzen zu den zugrunde liegenden Zielen und Werten des Befragten aufsteigen.
+
+Laddering nach unten:: Mit "Wie?" oder "Können Sie ein Beispiel geben?" in Richtung Konkretes fragen, um von einem genannten Wert oder abstrakten Bedürfnis zurück zu konkreten Attributen und beobachtbarem Verhalten zu gelangen.
+
+Bidirektionale Bewegung:: Anders als bei einseitigem Fragen bewegt sich eine geübte Interviewerin innerhalb einer Sitzung sowohl nach oben als auch nach unten, um die gesamte Werthierarchie abzubilden und Verknüpfungen zu prüfen.
+
+Abgrenzung zu Five Whys:: Five Whys ist eine unidirektionale Ursachenanalyse, die eine Kausalkette bis zu einem einzelnen Defekt oder einer systemischen Ursache hinunterbohrt. Laddering ist bidirektional und legt eine Hierarchie persönlicher Werte und Motive offen, keine einzelne Grundursache — es fragt "Warum ist das *Ihnen* wichtig" (motivational), nicht "Warum ist das fehlgeschlagen" (kausal).
+
+Hierarchical Value Map:: Das aggregierte Analyseergebnis über alle Befragten — ein Graph, der häufige Attribute, Konsequenzen und Werte verknüpft, um die dominanten Means-End-Pfade zu finden, die ein Design oder eine Botschaft adressieren sollte.
+
+Soft vs. Hard Laddering:: Soft Laddering nutzt freie, sondierende Einzelinterviews; Hard Laddering nutzt strukturierte Formulare oder Umfragen, die den Befragten die Leiter hinaufzwingen. Soft liefert reichere Daten, Hard skaliert besser und reduziert Interviewer-Bias.
+
+Schlüsselvertreter:: George Kelly (Personal Construct Psychology, 1955) und Dennis Hinkle (Dissertation Ohio State, 1965, "The change of personal constructs from the viewpoint of a theory of construct implications") begründeten das Laddering von Konstrukten; Thomas J. Reynolds und Jonathan Gutman adaptierten es für die Means-End-Marktforschung ("Laddering Theory, Method, Analysis, and Interpretation", Journal of Advertising Research, 1988)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Das *Warum* hinter einer genannten Anforderung oder einem Feature-Wunsch herausarbeiten, wenn die Oberflächen-Bitte ein tieferes Ziel verbirgt
+* Nutzer- und Kundenforschung, bei der Motive und persönliche Werte die Akzeptanz treiben
+* Gestaltung von Produktbotschaften, Positionierung oder Wertversprechen auf Basis von Nutzerwerten
+* Priorisierung von Features, indem jedes auf den letztlich bedienten Wert zurückgeführt wird
+* Ein Interview über oberflächliche Präferenzen hinaus zu handlungsleitender Erkenntnis auf Zielebene führen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<five-whys,Five Whys>>
+* <<jobs-to-be-done,Jobs to be Done>>
+
+[discrete]
+== *Kritik*:
+
+* Klaus G. Grunert und Suzanne C. Grunert, https://doi.org/10.1016/0167-8116(95)00022-T["Measuring subjective meaning structures by the laddering method: Theoretical considerations and methodological problems"] (International Journal of Research in Marketing, 1995) — benennen Validitätsrisiken in Datenerhebung, Codierung und Analyse: Befragte liefern möglicherweise nachträgliche Rationalisierungen statt echte kognitive Strukturen, und erzwungenes Aufwärtsfragen ("Hard" Laddering) kann ebenenüberspringende Ketten, die im Gedächtnis tatsächlich existieren, nicht abbilden.
+* Praxisberichte warnen vor interviewerbedingten Fehlern: das Lenken des Befragten durch suggestive Fragen ("Macht Sie das erfolgreicher?") und zu frühes Abbrechen, indem eine Konsequenz mit einem Endwert verwechselt wird (https://www.userintuition.ai/reference-guides/laddering-technique-qualitative-research/[User Intuition, "The Laddering Technique in Qualitative Research"]).
+
+[discrete]
+== *Aktueller Status*:
+
+* Laddering entstand in der klinischen Personal Construct Psychology der 1950er/60er Jahre, gelangte über Reynolds und Gutman (1988) in die Markt- und Konsumforschung und ist heute Standard in UX-Forschung, Anforderungserhebung und Markenstrategie. Die Unterscheidung Hard/Soft (Grunert und Grunert, 1995) bleibt die zentrale methodische Achse, wobei neuere Arbeiten Laddering auf Online- und Remote-Interviewsettings ausweiten.
+====

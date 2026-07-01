@@ -1,0 +1,66 @@
+= Skill: arc42-Dokumentation erstellen
+:toc:
+
+Das Semantic-Anchors-Projekt liefert einen **Claude Code Skill**, der die *Prozedur* zum Erstellen einer arc42-Architekturdokumentation bündelt. Er ist das How-to-Gegenstück zum link:#/contracts[Architekturdokumentation-Contract]: Der Contract pinnt das Vokabular (arc42, C4 über PlantUML, Nygard-ADRs mit 3-Punkt-Pugh-Matrix, sechsteilige Quality Attribute Scenarios); dieser Skill trägt die Cross-Section-Regeln, die arc42s eigene Templates nicht erzwingen.
+
+== Warum ein Contract *und* ein Skill
+
+Ein Contract ist knappes, always-on geltendes Vokabular — er sagt einem Agenten, *was* das Projekt unter „Architekturdokumentation" versteht, und gehört in `CLAUDE.md` / `AGENTS.md`. Sobald er beschreibt, *wie* das Dokument zu erstellen ist — Scaffolding-Befehle, Traceability-Regeln, Kapitelstruktur — ist er einem Contract entwachsen, und die Prozedur gehört in einen Skill, der bei Bedarf geladen wird. Das ist die link:#/contracts[Anchor/Contract/Skill-Taxonomie] (ADR-007) auf sich selbst angewandt: Dieser Skill ist genau die Extraktion, die die Taxonomie vorhersagt.
+
+== Was er tut
+
+Der Skill führt einen Agenten durch sechs Schritte und einen abschließenden Definition-of-Done-Durchgang:
+
+. *Scaffolding statt Wiederholung.* Das arc42-„with-help"-Template per docToolchain `downloadTemplate` nach `src/docs/` erzeugen; der Hilfetext jedes Kapitels ist seine eigene Strukturspezifikation.
+. *Diagramme.* PlantUML, nicht Mermaid; Bausteine nutzen C4 über die gebündelte C4-PlantUML-stdlib (`!include <C4/...>`), nie die Remote-URL, nie eine vendored Kopie.
+. *Entscheidungen.* Nygard-ADRs mit 3-Punkt-Pugh-Matrix; unbestätigte Begründung → Status „Accepted (inferred)" und Pugh `?`; die Consequences jedes ADR referenzieren die Kapitel-11-Risiko-IDs (R-NNN), die sie erzeugen.
+. *Cross-Section-Traceability* — die fünf Regeln, die arc42 nicht erzwingt: Qualitätsziel → Kapitel-4-Ansatz; Kapitel-3-Fremdsysteme = Kapitel-5-Level-1-Menge; jeder Baustein in ≥1 Runtime-Szenario inkl. eines Fehler/Recovery-Szenarios; Kapitel-9-ADR-Index; jeder Baustein nennt Verantwortung, Schnittstelle, Quellort.
+. *Qualitätsziele.* Kapitel 1.2 nennt nur die Top 3-5; Kapitel 10 deckt den Rest, jedes Szenario in sechsteiliger Form (Source, Stimulus, Artifact, Environment, Response, Response Measure) mit konkreter Response Measure, verlinkt auf sein 1.2-Ziel oder als „derived" markiert.
+. *Kapitel 11.* Risiken und Technische Schuld als zwei Unterabschnitte — Risiken mit Wahrscheinlichkeit/Auswirkung/Priorität und Mitigations-Querverweis; jeder Schuld-Eintrag nennt den Baustein, den er belastet.
+
+== Wann ihn verwenden
+
+Verwende diesen Skill, wenn:
+
+* du eine neue arc42-Dokumentation erstellst, leere Kapitel füllst oder eine bestehende gegen die Projektregeln prüfst.
+* du ein Dokument willst, das über die Abschnitte hinweg zusammenhält, statt zwölf isoliert geschriebener Kapitel.
+
+Nutze ein anderes Artefakt, wenn:
+
+* du Dokumentation aus bestehendem Code *wiederherstellst* statt sie vorwärts zu schreiben — nutze den link:#/socratic-recovery-skill[Socratic-Code-Theory-Recovery-Skill]; seine Phase 2 synthetisiert ein arc42-Dokument und wendet dieselben hier definierten Regeln an.
+* du nur das Vokabular brauchst, nicht die Prozedur — dann genügt der link:#/contracts[Architekturdokumentation-Contract] allein.
+
+== Installation
+
+Der Skill folgt der https://agentskills.io[agentskills.io]-Spezifikation und liegt im Semantic-Anchors-Claude-Code-Plugin neben den Skills Translator, Onboarding und Socratic Code-Theory Recovery.
+
+**Empfohlen: Installation über den Claude Code Plugin Marketplace.** In einer Claude-Code-Session ausführen:
+
+[source,text]
+----
+/plugin marketplace add LLM-Coding/Semantic-Anchors
+/plugin install semantic-anchors@semantic-anchors
+----
+
+Der `arc42-documentation`-Skill ist sofort verfügbar, ohne weitere Änderungen an `CLAUDE.md`.
+
+**Alternative: den Skill manuell referenzieren**, wenn der Marketplace-Weg nicht möglich ist:
+
+[source,markdown]
+----
+## Skills
+
+Use the arc42-documentation skill from
+https://github.com/LLM-Coding/Semantic-Anchors/tree/main/skill/arc42-documentation
+when authoring or auditing an arc42 architecture document.
+----
+
+== Was im Skill steckt
+
+* `SKILL.md` — die sechsstufige Prozedur und die Definition of Done.
+* `references/chapter-checklist.md` — ein Kapitel-für-Kapitel-Schlussdurchgang (Kap. 1-12) plus die ADR↔Kapitel-11-Wiring-Regel.
+
+== Siehe auch
+
+* link:#/contracts[Semantic Contracts] — der Architekturdokumentation-Contract, den dieser Skill umsetzt.
+* link:#/socratic-recovery-skill[Socratic-Code-Theory-Recovery-Skill] — ein arc42-Dokument aus bestehendem Code wiederherstellen.

@@ -33,6 +33,16 @@ Dieses Kapitel referenziert die detaillierten Architecture Decision Records (ADR
 |**Card Grid** statt Treemap für Visualisierung
 |Löst fundamentale Usability-Probleme (Text-Truncation, Kontrast, Viewport), größerer Pugh-Score (+137)
 |Accepted
+
+|link:../specs/adrs/adr-006-code-review-tooling.adoc[ADR-006]
+|**Code-Review-Tooling**
+|Strukturierte, werkzeuggestützte Reviews
+|Accepted
+
+|link:../specs/adrs/adr-007-artifact-taxonomy.adoc[ADR-007]
+|**Artefakt-Taxonomie** — Anchor vs. Contract vs. Skill
+|Explizite Dreiteilung beseitigt die wiederholt ad hoc rekonstruierte Grenze (Pugh +63); Thin-Prior-Regel macht #585 und #640 konsistent
+|Accepted
 |===
 
 === ADR-001: Vite als Static Site Generator
@@ -188,13 +198,12 @@ Issue #59 (Text-Truncation), Issue #60 (Map-Cut-off), Issue #61 (Poor Contrast).
 
 === Zukünftige Entscheidungen
 
-**Offene Punkte:**
+Künftige Architekturentscheidungen erhalten die jeweils nächste freie ADR-Nummer (aktuell **ADR-008**). Nummern werden nicht mehr vorab reserviert: Eine frühere Fassung dieser Liste hatte ADR-006 für die Suchindex-Implementierung und ADR-007 für eine Analytics-Lösung vorgemerkt — beide Nummern sind inzwischen anderweitig vergeben (ADR-006 Code-Review-Tooling, ADR-007 Artefakt-Taxonomie), was genau die Kollision zeigt, die das Vorab-Reservieren erzeugt.
 
-* **ADR-005**: Card Grid Visualisierung - Accepted (ersetzt ADR-003 Treemap)
-* **ADR-006**: Suchindex-Implementierung (Client-Side vs. Build-Time)
-* **ADR-007**: Analytics-Lösung (Plausible vs. Simple Analytics vs. Keine)
-* **ADR-008**: Service Worker für Offline-Support (Ja/Nein)
-* **ADR-009**: Testing-Framework für E2E (Playwright vs. Cypress)
+**Noch nicht als ADR erfasste Themen:**
+
+* Suchindex-Implementierung (Client-Side vs. Build-Time)
+* Service Worker für Offline-Support (Ja/Nein)
 
 === Entscheidungsprozess
 

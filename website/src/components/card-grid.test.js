@@ -61,6 +61,66 @@ describe('umbrella anchors', () => {
   })
 })
 
+describe('advisory badge', () => {
+  const categories = [{ id: 'strategic-planning', name: 'Strategy' }]
+  const make = (advisory) => [
+    {
+      id: 'eisenhower-matrix',
+      title: 'Eisenhower Matrix',
+      categories: ['strategic-planning'],
+      roles: ['team-lead'],
+      tags: [],
+      proponents: [],
+      ...(advisory ? { advisory } : {}),
+    },
+  ]
+
+  it('renders an advisory badge with the label when anchor.advisory is set', () => {
+    const html = renderCardGrid(categories, make('Use with caution: primes urgency'))
+    expect(html).toContain('anchor-advisory-badge')
+    expect(html).toContain('Use with caution: primes urgency')
+  })
+
+  it('does not render an advisory badge when anchor.advisory is absent', () => {
+    const html = renderCardGrid(categories, make(null))
+    expect(html).not.toContain('anchor-advisory-badge')
+  })
+
+  it('escapes the advisory label', () => {
+    const html = renderCardGrid(categories, make('<script>x</script>'))
+    expect(html).not.toContain('<script>x</script>')
+    expect(html).toContain('&lt;script&gt;')
+  })
+})
+
+describe('new badge', () => {
+  const categories = [{ id: 'strategic-planning', name: 'Strategy' }]
+  const make = (addedAt) => [
+    {
+      id: 'eisenhower-matrix',
+      title: 'Eisenhower Matrix',
+      categories: ['strategic-planning'],
+      roles: ['team-lead'],
+      tags: [],
+      proponents: [],
+      ...(addedAt ? { addedAt } : {}),
+    },
+  ]
+  const daysAgo = (n) => new Date(Date.now() - n * 24 * 60 * 60 * 1000).toISOString()
+
+  it('renders a new badge for anchors added within 30 days', () => {
+    expect(renderCardGrid(categories, make(daysAgo(5)))).toContain('anchor-new-badge')
+  })
+
+  it('does not render a new badge for anchors older than 30 days', () => {
+    expect(renderCardGrid(categories, make(daysAgo(45)))).not.toContain('anchor-new-badge')
+  })
+
+  it('does not render a new badge when addedAt is absent', () => {
+    expect(renderCardGrid(categories, make(null))).not.toContain('anchor-new-badge')
+  })
+})
+
 describe('category quick-nav', () => {
   const categories = [
     { id: 'testing-quality', name: 'Testing' },

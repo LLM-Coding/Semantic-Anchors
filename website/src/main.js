@@ -161,6 +161,7 @@ function initApp() {
   addRoute('/brownfield-experiment-report', renderBrownfieldExperimentReportPage)
   addRoute('/brownfield-fair-comparison', renderBrownfieldFairComparisonPage)
   addRoute('/socratic-recovery-skill', renderSocraticRecoverySkillPage)
+  addRoute('/arc42-documentation-skill', renderArc42DocumentationSkillPage)
   addRoute('/harness-inventory', renderHarnessInventoryPage)
   addRoute('/training-data-vs-practice', renderTrainingDataPage)
   addRoute('/contracts', renderContractsPageHandler)
@@ -325,6 +326,15 @@ function renderSocraticRecoverySkillPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/socratic-recovery-skill.adoc')
+}
+
+function renderArc42DocumentationSkillPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/arc42-documentation-skill.adoc')
 }
 
 function renderHarnessInventoryPage() {

@@ -1,0 +1,57 @@
+= Dreyfus Model of Skill Acquisition
+:categories: knowledge-management
+:roles: educator, consultant, team-lead
+:related: blooms-taxonomy, feynman-technique, 4mat
+:proponents: Stuart Dreyfus, Hubert Dreyfus
+:tags: skill-acquisition, learning, expertise, mentoring, competence
+:tier: 3
+
+[%collapsible]
+====
+Vollständiger Name:: Dreyfus Model of Skill Acquisition nach Stuart E. und Hubert L. Dreyfus
+
+Auch bekannt als:: Five-Stage Model of Adult Skill Acquisition, Novice-to-Expert-Modell
+
+[discrete]
+== *Kernkonzepte*:
+
+Fünf Stufen::
++
+Novice (Anfänger)::: Folgt kontextfreien Regeln starr; erkennt keine situativen Nuancen; benötigt explizite Anweisungen
+Advanced Beginner (Fortgeschrittener Anfänger)::: Wendet aus Erfahrung gewonnene situative Maximen an; noch regelorientiert, beginnt aber den Kontext zu lesen
+Competent (Kompetent)::: Plant bewusst und setzt Ziele; bewältigt Komplexität durch gezielte Auswahl des Wesentlichen; übernimmt Verantwortung für Ergebnisse
+Proficient (Gewandt)::: Nimmt Situationen ganzheitlich wahr; Intuition entsteht, Reaktionen werden aber noch analytisch entschieden
+Expert (Experte)::: Handelt mit fließender, intuitiver Meisterschaft; Wahrnehmung und Handlung verschmelzen; deliberiert nur, wenn etwas Unbekanntes auftaucht
+
+Übergang von analytisch zu intuitiv:: Kompetenz entwickelt sich vom distanzierten Regelbefolgen hin zu involvierter, intuitiver Mustererkennung — nicht durch das Anhäufen weiterer Regeln
+
+Stufengerechte Vermittlung:: Jede Stufe braucht eine andere Art der Anleitung; Anfänger wollen Regeln und Rezepte, Experten wollen ganzheitlichen Kontext und werden durch Schritt-für-Schritt-Regeln behindert
+
+Schlüsselvertreter:: Stuart E. und Hubert L. Dreyfus, https://www.researchgate.net/publication/235125013_A_Five-Stage_Model_of_the_Mental_Activities_Involved_in_Directed_Skill_Acquisition["A Five-Stage Model of the Mental Activities Involved in Directed Skill Acquisition"] (1980, UC Berkeley Operations Research Center für das U.S. Air Force Office of Scientific Research); angewendet auf die Pflege durch Patricia Benner ("From Novice to Expert", 1984) und auf Software durch Andy Hunt ("Pragmatic Thinking and Learning: Refactor Your Wetware", 2008)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Anpassung der Vermittlungs- oder Erklärungstiefe an die Stufe der lernenden Person
+* Gestaltung von Mentoring- und Onboarding-Pfaden, die Menschen von Regeln zur Intuition führen
+* Diagnose, warum regellastige Dokumentation Anfängern hilft, Experten aber frustriert
+* Strukturierung von Kompetenzrahmen und Skill-Matrizen für ein Team
+* Festlegung, wie ein LLM die Granularität seiner Anleitung an die Expertise der Nutzenden anpassen soll
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<blooms-taxonomy,Bloom's Taxonomy>>
+* <<feynman-technique,Feynman Technique>>
+* <<4mat,4MAT>>
+
+[discrete]
+== *Kritik*:
+
+* Fernand Gobet und Philippe Chassy, https://www.tandfonline.com/doi/full/10.3402/meo.v15i0.4846["The Dreyfus model of clinical problem-solving skills acquisition: a critical perspective"] sowie ihr Beitrag von 2008 im _International Journal of Nursing Studies_ (45: 129-139) — argumentieren, dass es keine empirischen Belege für klar abgegrenzte Stufen in der Entwicklung von Expertise gibt und dass Experten tatsächlich langsames analytisches Problemlösen einsetzen (z. B. Vorausberechnung im Schach), entgegen der These des Modells, Experten handelten nur intuitiv; sie schlagen eine alternative Theorie der Intuition auf Basis von Chunking vor
+
+[discrete]
+== *Aktueller Status*:
+
+* Die Dreyfus-Brüder ergänzten später eine sechste Stufe der *Meisterschaft* und reformulierten das Modell (Rousse & Dreyfus, https://philarchive.org/archive/ROURTS["Revisiting the Six Stages of Skill Acquisition"]); Trainingsdaten-Priors spiegeln meist die ursprüngliche Fünf-Stufen-Version wider, die durch Benner und Hunt verbreitet wurde
+====

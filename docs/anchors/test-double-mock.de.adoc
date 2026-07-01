@@ -1,0 +1,39 @@
+= Test Double: Mock (Meszaros)
+:categories: testing-quality
+:roles: software-developer, qa-engineer
+:proponents: Gerard Meszaros
+:related: test-double-meszaros, test-double-spy, test-double-stub, tdd-london-school
+:tags: test-double, mock, testing, isolation, interaction-verification
+:tier: 3
+:parent-anchor: test-double-meszaros
+
+[%collapsible]
+====
+[discrete]
+== *Kernkonzepte*:
+
+Zweck:: Vorprogrammiert mit Erwartungen, welche Aufrufe erfolgen sollen. Verifiziert, dass bestimmte Interaktionen stattgefunden haben — der Test schlägt fehl, wenn die erwarteten Interaktionen ausbleiben.
+
+Verhalten:: Hat eingebaute Assertions. Ruft das System Under Test die falsche Methode, mit falschen Argumenten oder in der falschen Reihenfolge auf, lässt der Mock den Test sofort fehlschlagen.
+
+Abgrenzung zum Stub:: Ein Stub liefert Daten passiv. Ein Mock *verifiziert Verhalten* aktiv.
+
+Abgrenzung zum Spy:: Ein Spy zeichnet Aufrufe für *nachträgliche* Assertion auf. Ein Mock erzwingt Erwartungen *während* der Ausführung.
+
+Schlüsselvertreter:: Gerard Meszaros ("xUnit Test Patterns", 2007)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Einem LLM sagen: "Erzeuge ein Mock-Test-Double, das diese Interaktionen verifiziert"
+* Interaktionsbasiertes Testen (London School TDD)
+* Wenn das *Verhalten* mehr zählt als das *Ergebnis*
+* Verifizieren, dass eine Benachrichtigung gesendet, ein Log geschrieben oder ein Service korrekt aufgerufen wurde
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<test-double-meszaros,Test Double (Meszaros)>> — übergreifende Taxonomie
+* <<test-double-spy,Spy>> — nachträgliche Assertion statt Erwartungen
+* <<tdd-london-school,TDD, London School>> — bevorzugt Mocks für Outside-in-Design
+====

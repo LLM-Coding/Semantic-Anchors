@@ -1,0 +1,48 @@
+= Progressive Disclosure
+:categories: communication-presentation
+:roles: ux-designer, technical-writer, educator
+:related: curse-of-knowledge, inverted-pyramid-style, diataxis-framework, blooms-taxonomy
+:proponents: John M. Carroll, Mary Rosson, Jakob Nielsen
+:tags: ux, information-architecture, documentation, cognitive-load, layering
+:tier: 2
+
+[%collapsible]
+====
+Also known as:: Layered Information Disclosure, Training Wheels Design
+
+[discrete]
+== *Core Concepts*:
+
+Show essentials first:: Present only the most important options on the primary screen; defer advanced or rarely used features to secondary views. Users gain access to power without being overwhelmed by it.
+
+Reveal on demand:: Additional depth becomes available exactly when the user requests it — not before. The trigger must carry strong information scent so users know that more exists.
+
+Cognitive load reduction:: Limiting the visible option set improves three usability metrics simultaneously: learnability, efficiency of use, and error rate.
+
+Two-level limit:: Designs with more than two disclosure levels consistently yield low usability. When a third level seems necessary, the feature set needs simplification, not another layer.
+
+Key Proponents:: John M. Carroll and colleagues (training-wheels research at IBM, 1983–1984; see https://www.nngroup.com/articles/training-wheels-user-interface/[Nielsen's summary of Carroll's findings, NN/g, 2006] — the original empirical basis); Jakob Nielsen (https://www.nngroup.com/articles/progressive-disclosure/["Progressive Disclosure", NN/g, 2006] — formalized the usability guidelines and the two-level recommendation)
+
+[discrete]
+== *When to Use*:
+
+* Designing UIs for applications with many features or configuration options
+* Structuring documentation so that one entry point serves both beginners and experts
+* Building onboarding flows that let new users succeed before exposing advanced settings
+* Prompting an LLM to produce layered output — executive summary first, full detail on request
+* Authoring tutorials where novice and expert readers share the same page
+
+[discrete]
+== *Related Anchors*:
+
+* <<curse-of-knowledge,Curse of Knowledge>>
+* <<inverted-pyramid-style,Inverted Pyramid Style>>
+* <<diataxis-framework,Diátaxis Framework>>
+* <<blooms-taxonomy,Bloom's Taxonomy>>
+
+[discrete]
+== *Criticism*:
+
+* Carroll and Rosson (1997) noted that empirical support for progressive disclosure is narrow: the foundational training-wheels studies used a single application (a word processor) and a single interface style (menu-based control), leaving the technique's generalizability unconfirmed (cited in https://ixdf.org/literature/book/the-glossary-of-human-computer-interaction/progressive-disclosure[IxDF Glossary of Human-Computer Interaction])
+* Nielsen warns that exceeding two disclosure levels consistently produces low usability — the technique can mask an underlying information-architecture problem rather than solve it (https://www.nngroup.com/articles/progressive-disclosure/[NN/g, 2006])
+====

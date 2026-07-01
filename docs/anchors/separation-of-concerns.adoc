@@ -1,0 +1,49 @@
+= Separation of Concerns
+:categories: design-principles
+:roles: software-developer, software-architect
+:related: cohesion-criteria, unix-philosophy, solid-srp, dry, clean-architecture
+:proponents: Edsger W. Dijkstra
+:tags: modularity, cohesion, coupling, srp, information-hiding
+:tier: 1
+
+[%collapsible]
+====
+Also known as:: SoC
+
+[discrete]
+== *Core Concepts*:
+
+Concern:: A distinct aspect or responsibility of a system — correctness vs. efficiency, business logic vs. presentation, persistence vs. domain rules
+
+Isolation:: Each concern is studied, designed, and changed in isolation, so that one aspect can be reasoned about without interference from the others
+
+Modularity:: Separating concerns into distinct units is the structural basis for modular software — high cohesion within a unit, low coupling between units
+
+Independent change:: When concerns are cleanly separated, a change to one aspect ripples minimally into the others
+
+Manifestations:: The principle shows up concretely as layering, modularization, MVC, microservices boundaries, and aspect-oriented programming
+
+Relation to information hiding:: David Parnas's information hiding (1972) is the complementary mechanism — Dijkstra separates concerns to *think* clearly, Parnas hides design decisions to *change* safely
+
+Relation to SRP:: The Single Responsibility Principle applies Separation of Concerns at the class/module granularity — "a module should have one reason to change"
+
+Key Proponent:: Edsger W. Dijkstra coined the term in https://www.cs.utexas.edu/~EWD/transcriptions/EWD04xx/EWD447.html["On the role of scientific thought" (EWD447, 1974)]: "the separation of concerns ... even if not perfectly possible, is yet the only available technique for effective ordering of one's thoughts"
+
+[discrete]
+== *When to Use*:
+
+* Decomposing a system into modules, layers, or services with clear boundaries
+* Reviewing code for tangled responsibilities (e.g. business logic mixed with I/O or presentation)
+* Justifying architectural seams — why persistence, domain, and UI are kept apart
+* Teaching why high cohesion and low coupling matter
+* Prompting an LLM to structure code into well-bounded, independently changeable units
+
+[discrete]
+== *Related Anchors*:
+
+* <<cohesion-criteria,Cohesion Criteria>>
+* <<unix-philosophy,Unix Philosophy>>
+* <<solid-srp,Single Responsibility Principle>>
+* <<dry,Don't Repeat Yourself>>
+* <<clean-architecture,Clean Architecture>>
+====

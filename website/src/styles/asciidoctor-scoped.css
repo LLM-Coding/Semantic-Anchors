@@ -62,6 +62,21 @@
     font-size: 1em;
   }
 
+  /*
+   * Author/date byline injected below the <h1> by render-docs.js. Embedded-mode
+   * rendering drops the AsciiDoctor #header, so the byline is styled here.
+   */
+  & .doc-byline {
+    margin: -0.25em 0 1.5em;
+    padding-bottom: 0.75em;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+  & .doc-byline .doc-byline-date::before {
+    content: '\00a0\2022\00a0';
+  }
+
   & p {
     line-height: 1.6;
     margin-bottom: 1.25rem;

@@ -1,0 +1,63 @@
+= OKR (Objectives and Key Results)
+:categories: strategic-planning
+:roles: product-owner, team-lead, consultant
+:related: definition-of-done
+:proponents: Andy Grove, John Doerr
+:tags: goal-setting, objectives, key-results, alignment, okr
+:tier: 2
+
+[%collapsible]
+====
+Vollständiger Name:: Objectives and Key Results
+
+Auch bekannt als:: OKRs; hervorgegangen aus Intels iMBO (Intel Management by Objectives)
+
+[discrete]
+== *Kernkonzepte*:
+
+Objective:: Eine einzelne qualitative, inspirierende, zeitlich begrenzte Aussage darüber, *was* du erreichen willst; einprägsam und richtungsweisend, keine Kennzahl
+
+Key Results:: Typischerweise 3-5 quantitative, messbare Ergebnisse, die belegen, dass das Objective erreicht ist; sie beantworten, *woran* du das erkennst — Outcomes, keine Aufgabenliste
+
+Objective + Key Results:: Ein Objective wird mit seinen Key Results gepaart; "ist das Objective das Ziel, sind die Key Results die Meilensteine, die den Fortschritt messen"
+
+Quartals-Rhythmus:: OKRs werden meist im Quartalsrhythmus gesetzt und überprüft, eingebettet in jährliche oder strategische OKRs
+
+Ambitionierte / Stretch-Goals:: Aspirational "Moonshot"-OKRs sind so kalibriert, dass ein Erreichen von ~0,7 (70 %) bereits als Erfolg gilt; durchgängig 1,0 zu erreichen signalisiert zu niedrig gesteckte Ziele
+
+Bewertung (0,0-1,0):: Am Zyklusende wird jedes Key Result auf einer Skala von 0 bis 1 bewertet; der Wert treibt ein Gespräch an, kein Urteil
+
+Transparenz / Alignment:: OKRs sind organisationsweit öffentlich, sodass Teams die Ziele der anderen sehen und sich daran ausrichten können; Alignment durch Sichtbarkeit, nicht durch mechanisches Kaskadieren
+
+Entkoppelt von der Vergütung:: OKRs werden bewusst von Boni und Leistungsbeurteilungen getrennt, damit Menschen ehrliche Stretch-Goals setzen statt zu untertreiben
+
+Schlüsselvertreter:: Andy Grove (begründete den Ansatz bei Intel als "iMBO", dokumentiert in "High Output Management", 1983); John Doerr (lernte ihn bei Intel von Grove, führte ihn 1999 bei Google ein, machte ihn mit "Measure What Matters", 2018, populär, https://www.whatmatters.com/[whatmatters.com])
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Übersetzung von Strategie in fokussierte, messbare Quartalsziele für Teams
+* Schaffung organisationsweiter Ausrichtung und Transparenz über Prioritäten
+* Verlagerung des Team-Fokus von Output (gelieferte Aufgaben) zu Outcome (geliefertem Wert)
+* Setzen ambitionierter Stretch-Goals, bei denen ~70 % Zielerreichung als Erfolg zählt
+* Aufforderung an ein LLM, ein Objective mit seinen Key Results zu entwerfen, zu kritisieren oder zu bewerten
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<definition-of-done,Definition of Done>>
+
+[discrete]
+== *Kritik*:
+
+* Goodharts Gesetz ("Wird ein Maß zum Ziel, taugt es nicht mehr als Maß") ist der wiederkehrende Fehlermodus: Sobald ein Key Result das Ziel ist, optimieren Menschen die Zahl statt das Outcome. McKenna Agile Consultants, https://www.mckennaagileconsultants.com/applying-goodharts-law-in-okrs-avoiding-common-pitfalls-in-strategic-execution/["Applying Goodhart's Law in OKRs"] — die vorgeschlagene Gegenmaßnahme ist, Mengen-KRs mit Qualitäts-/Guardrail-KRs zu paaren und OKRs von Belohnungen entkoppelt zu halten
+* Ant Murphy, https://www.antmurphy.me/newsletter/escape-okr-theatre["Escape OKR Theatre"] — *kaskadierende* OKRs setzen voraus, dass die Strategie das Organigramm exakt abbildet, was sie selten tut; Kaskadieren ist oft ein Symptom fehlender Strategie und erzeugt ein "Meer von OKRs". Murphy argumentiert, OKRs sollten *ausrichten, nicht kaskadieren*, und plädiert für wenige, aus der Strategie abgeleitete OKRs
+* "OKR-Theater" / Performance-Theater: Teams sprechen flüssig über "Treiben von Key-Metriken", tun sich aber schwer zu benennen, welches Problem sie lösen. Bjørn Broum, https://bbroum.substack.com/p/the-okr-performance-theater["The OKR Performance Theater"]
+
+[discrete]
+== *Aktueller Status*:
+
+* Das Framework ist weiterhin weit verbreitet, aber Berichten zufolge schwer durchzuhalten: laut https://en.wikipedia.org/wiki/Objectives_and_key_results[Wikipedias OKR-Artikel] riet Googles Rick Klau später davon ab, *individuelle* OKRs zu setzen, um eine Wasserfall-/Kaskaden-Falle zu vermeiden — eine Abkehr von der Nutzung auf Einzelebene, die viele Trainingsdaten-Beispiele annehmen
+* Die kanonische moderne Referenz ist Doerrs "Measure What Matters" (2018) und https://www.whatmatters.com/[whatmatters.com]; die ursprüngliche Grove-Formulierung ist älter als der Begriff "OKR" und steht in "High Output Management" (1983)
+
+====
