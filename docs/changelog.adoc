@@ -4,6 +4,16 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-07-01
 
+*Six new anchors:*
+
+* *link:#/anchor/deep-modules[Deep Modules]* (John Ousterhout, _A Philosophy of Software Design_) — design-principles: a deep module hides a powerful implementation behind a simple interface. Proposed by https://github.com/rdmueller[@rdmueller] in #660.
+* *link:#/anchor/test-seam[Test Seam]* (Michael Feathers, _Working Effectively with Legacy Code_) — testing-quality: a place to alter behaviour without editing there, to get legacy code under test. Proposed by https://github.com/rdmueller[@rdmueller] in #661.
+* *link:#/anchor/progressive-disclosure[Progressive Disclosure]* (Jack Carroll; Jakob Nielsen / NN/g) — communication-presentation: show the common few first, reveal the rest on demand. Proposed by https://github.com/rdmueller[@rdmueller] in #662.
+* *link:#/anchor/zone-of-proximal-development[Zone of Proximal Development]* (Lev Vygotsky) — communication-presentation: the gap between solo and guided performance, and scaffolding within it. Proposed by https://github.com/rdmueller[@rdmueller] in #663.
+* *link:#/anchor/sender-receiver-discrepancy[Sender-Receiver Discrepancy]* — communication-presentation: the cause-agnostic umbrella over communication-gap models (meaning is reconstructed by the receiver). Proposed by https://github.com/rehsack[@rehsack] in #639.
+* *link:#/anchor/50-72-rule[50/72 Rule]* (Tim Pope) — development-workflow: 50-char subject, 72-char body wrap for readable Git commits. Proposed by https://github.com/steffakasid[@steffakasid] in #620.
+
+All ship bilingual (EN/DE) with proponents, "when to use", related anchors, and — where documented — Criticism / Current Status sections with fetch-verified sources.
 *New contract — Presentation Planning (Präsentation planen):*
 
 * A new `presentation-planning` contract (category *Communication*, EN + DE) bundles known anchors into a plan-a-talk workflow: *link:#/anchor/socratic-method[Socratic Method]* to elicit the brief, *link:#/anchor/curse-of-knowledge[Curse of Knowledge]* for audience empathy, *link:#/anchor/pyramid-principle[Pyramid Principle]* + *link:#/anchor/mece[MECE]* for top-down structure, *link:#/anchor/three-act-structure[Three-Act Structure]* / *link:#/anchor/story-circle-dan-harmon[Story Circle]* for the narrative arc, *link:#/anchor/4mat[4MAT]* for why-first, and *link:#/anchor/bluf[BLUF]* for the opening. It produces a plan (core message, audience, arc, per-section takeaways) rather than slides, and works one step at a time. It deliberately excludes delivery/stagecraft — no established anchor covers it yet. Proposed by https://github.com/raifdmueller[@raifdmueller].

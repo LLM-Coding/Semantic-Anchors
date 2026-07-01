@@ -1,0 +1,55 @@
+= Sender-Receiver Discrepancy
+:categories: communication-presentation
+:roles: technical-writer, consultant, business-analyst
+:related: curse-of-knowledge, four-sides-model, feynman-technique, problem-space-nvc, plain-english-strunk-white, bluf
+:proponents: Claude Shannon, Warren Weaver, Friedemann Schulz von Thun, Stuart Hall, Herbert H. Clark
+:tags: communication, encoding-decoding, audience, misunderstanding, shared-understanding
+:tier: 2
+
+[%collapsible]
+====
+Auch bekannt als:: Communication Gap, Encoding-Decoding Gap, Sender-Empfänger-Diskrepanz
+
+NOTE: Dies ist ein Oberbegriff, der mehrere unabhängige Kommunikationsmodelle zusammenfasst. Er benennt das Phänomen ursachenneutral; die einzelnen Rahmenwerke (Shannon-Weaver, Schulz von Thun, Hall, Clark) diagnostizieren jeweils spezifische Ursachen. Der Begriff ist daher ein Kandidat für einen *Contract* statt für einen Einzelvertreter-Anchor.
+
+[discrete]
+== *Kernkonzepte*:
+
+Gemeinte Bedeutung ≠ verstandene Bedeutung:: Der Sender konstruiert eine Nachricht mit einer bestimmten Absicht; der Empfänger rekonstruiert daraus eine eigene Bedeutung. Beides sind unabhängige kognitive Akte. Die rekonstruierte Bedeutung stimmt nicht zwingend mit der intendierten überein.
+
+Kodierung und Dekodierung sind getrennte Prozesse:: Der Sender kodiert Bedeutung in Worte, Zeichen oder Strukturen. Der Empfänger dekodiert sie mit seinem eigenen Kontext, Wissen und seinen Annahmen. Jede Abweichung zwischen dem Kodierungsrahmen des Senders und dem Dekodierungsrahmen des Empfängers erzeugt eine Diskrepanz.
+
+Ursachenneutraler Oberbegriff — vier diagnostische Linsen::
++
+Rauschen (Shannon & Weaver, 1948)::: Physikalische oder semantische Störungen im Kanal verzerren das Signal, bevor es den Empfänger erreicht; die Diskrepanz entsteht außerhalb beider Parteien.
+Vier Seiten einer Nachricht (Schulz von Thun, 1981)::: Der Sender betont eine von vier Seiten — Sachinhalt, Selbstoffenbarung, Beziehung oder Appell; der Empfänger hört mit einem anderen „Ohr" und erzeugt so ein systematisches Missverständnis, ohne dass ein Kanalfehler vorliegt.
+Aktive Dekodierungspositionen (Hall, 1973/1980)::: Empfänger sind nicht passiv; sie konstruieren Bedeutung aus ihrem eigenen sozialen und kulturellen Kontext. Dieselbe kodierte Nachricht ergibt dominante, ausgehandelte oder oppositionelle Lesarten, je nach Rahmen des Empfängers.
+Unzureichende gemeinsame Grundlage (Clark & Brennan, 1991)::: Kommunikation gelingt nur, wenn Sender und Empfänger genügend geteiltes Wissen, gemeinsame Überzeugungen und Annahmen aufgebaut haben — ihr Common Ground. Ohne ausreichendes Grounding füllt der Empfänger Lücken mit seinem eigenen Modell statt mit der Absicht des Senders.
+
+Bedeutung wird rekonstruiert, nicht übertragen:: Keine Bedeutung reist unverändert vom Sender zum Empfänger. Der Empfänger erschafft Bedeutung immer neu — aus dem, was die Nachricht liefert, plus dem, was er bereits weiß. Die Illusion transparenter Übertragung ist selbst eine Quelle der Diskrepanz.
+
+Schlüsselvertreter::
+Claude Shannon & Warren Weaver (https://www.communicationtheory.org/shannon-and-weaver-model-of-communication/["A Mathematical Theory of Communication", Bell System Technical Journal, 1948] — Rauschen-im-Kanal-Modell); +
+Friedemann Schulz von Thun (https://www.schulz-von-thun.de/die-modelle/das-kommunikationsquadrat["Miteinander reden 1: Störungen und Klärungen", 1981] — mehrschichtige Kodierung/Dekodierung über das Kommunikationsquadrat); +
+Stuart Hall (https://en.wikipedia.org/wiki/Encoding/decoding_model_of_communication["Encoding/Decoding", 1973/1980] — Empfänger konstruieren Bedeutung aktiv aus drei Subjektpositionen); +
+Herbert H. Clark & Susan E. Brennan (https://en.wikipedia.org/wiki/Grounding_in_communication["Grounding in communication", in: Perspectives on Socially Shared Cognition, APA, 1991] — gegenseitiges Verstehen hängt von aufgebautem Common Ground ab)
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Das Grundphänomen benennen, bevor ein Diagnosewerkzeug gewählt wird — diesen Begriff nutzen, um das Problem zu beschreiben; dann Shannon-Weaver, Schulz von Thun, Hall oder Clark zur Ursachenfindung einsetzen
+* Ein Dokument, eine E-Mail oder Spezifikation prüfen, ob die wahrscheinliche Dekodierung des Empfängers mit der Absicht des Senders übereinstimmt
+* Nach einem Missverständnis im Team analysieren: „Wir hatten eine Sender-Empfänger-Diskrepanz — auf welcher Ebene ist es schiefgelaufen?"
+* Einen LLM anweisen, einen Entwurf aus der Perspektive des Lesers zu bewerten, nicht aus der des Autors
+* Einen Kommunikationsworkshop oder ein Training einleiten, bevor spezifische Modelle eingeführt werden
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<curse-of-knowledge,Curse of Knowledge>>
+* <<four-sides-model,Four-Sides Model (Schulz von Thun)>>
+* <<feynman-technique,Feynman Technique>>
+* <<problem-space-nvc,Problem Space NVC>>
+* <<plain-english-strunk-white,Plain English (Strunk & White)>>
+* <<bluf,BLUF>>
+====

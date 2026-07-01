@@ -86,6 +86,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kent Beck
 - **Core:** Classical TDD cycle — write failing test first (red), minimal code to pass (green), then refactor; watch it fail for the right reason; one failing test at a time; test names describe behavior, not method signatures; counters the default LLM habit of writing tests after the implementation
 
+### Test Seam
+- **Also known as:** Seam (Feathers), Legacy Seam
+- **Proponents:** Michael Feathers
+- **Core:** A place where behavior can be altered without editing at that place; each seam has an enabling point (constructor parameter, classpath entry, preprocessor define) that selects which behavior executes; three types — Object (polymorphism/DI), Link (linker/classpath), Preprocessing (macros) — used to break hard dependencies and get legacy code under test without modifying production logic
+
 ## Software Architecture
 
 ### Conway's Law
@@ -419,6 +424,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Bertrand Meyer
 - **Core:** Specifies software correctness as enforceable preconditions (caller's obligation), postconditions (supplier's guarantee), and class invariants — assigning blame on violation, formalizing behavioural subtyping (LSP), and coined for Eiffel by Bertrand Meyer
 
+### Deep Modules
+- **Also known as:** Module Depth, Deep Classes
+- **Proponents:** John Ousterhout
+- **Core:** Simple interface hiding powerful implementation — a module is deep when its benefit (functionality provided) far exceeds its cost (interface complexity); shallow modules and "classitis" (too many tiny classes) are the anti-patterns; companion principle: "different layer, different abstraction"; rooted in information hiding (Parnas)
+
 ## Problem-Solving
 
 ### First Principles Thinking
@@ -604,6 +614,21 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Friedemann Schulz von Thun
 - **Core:** Every message carries four facets at once — factual information (Sachinhalt), self-revelation (Selbstoffenbarung), relationship (Beziehung), and appeal (Appell); the sender speaks with "four beaks" and the receiver listens with "four ears", and mismatched ears cause misunderstanding
 
+### Progressive Disclosure
+- **Also known as:** Layered Information Disclosure, Training Wheels Design
+- **Proponents:** John M. Carroll (IBM, 1983–1984); popularized by Jakob Nielsen / NN/g
+- **Core:** Show only the most important options first; reveal advanced or rarely used features on demand to reduce cognitive load — improves learnability, efficiency, and error rate simultaneously
+
+### Zone of Proximal Development
+- **Also known as:** ZPD; Zone of Next Development
+- **Proponents:** Lev Vygotsky
+- **Core:** Distance between what a learner can do independently (actual development level) and what they can achieve with guidance from a More-Knowledgeable Other (MKO); scaffolding — coined by Wood, Bruner & Ross (1976), not Vygotsky — provides temporary support within the ZPD; fading gradually withdraws that support as competence grows; applicable when pitching instruction, prompting LLMs to calibrate explanation depth, or reviewing documentation for audience fit
+
+### Sender-Receiver Discrepancy
+- **Also known as:** Communication Gap, Encoding-Decoding Gap, Sender-Empfänger-Diskrepanz
+- **Proponents:** Claude Shannon & Warren Weaver, Friedemann Schulz von Thun, Stuart Hall, Herbert H. Clark & Susan E. Brennan (umbrella — no single proponent)
+- **Core:** Intended meaning ≠ received meaning; the sender encodes and the receiver decodes through independent cognitive processes, so the reconstructed meaning is not guaranteed to match the intent. Cause-agnostic umbrella over Shannon-Weaver (noise in channel), Schulz von Thun (four-sides mismatched ears), Hall (active decoding positions), and Clark (insufficient common ground); names the phenomenon before choosing a diagnostic framework. Candidate contract rather than single-proponent anchor.
+
 ## Documentation
 
 ### P.A.R.A. Method
@@ -693,6 +718,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Effective Java
 - **Proponents:** Joshua Bloch
 - **Core:** Catalog of ~90 "Items" of idiomatic Java best practice — static factories & the Builder pattern, the equals/hashCode contracts, minimize mutability, composition over inheritance, generics with PECS, enums over int constants, and try-with-resources
+
+### 50/72 Rule
+- **Also known as:** Git Commit Message Convention, Seven Rules of Git Commits
+- **Proponents:** Tim Pope
+- **Core:** Subject line ≤ 50 characters, imperative mood, blank line separator, body wrapped at 72 characters, body explains why not how; enables `git log`, `rebase`, and `format-patch` to display history cleanly across terminals, UIs, and email patches
 
 ## Statistical Methods
 
