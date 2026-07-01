@@ -238,6 +238,14 @@ Welche Konzepte verbindest du mit 'MECE'?
 
 Wenn das LLM genaue, detaillierte Informationen liefert, ist es sicher, diesen Anker zu verwenden.
 
+== Verwandte Arbeiten & externe Bestätigung
+
+Unabhängige Köpfe sind auf dieselbe Idee gekommen, und Praktiker haben das Framing bestätigt.
+
+*Matt Pocock — "Leading Words".* In https://youtu.be/UNzCG3lw6O0?t=714["Building Great Agent Skills: The Missing Manual"] (Abschnitt "Steering", ab ~11:54) beschreibt Pocock _leading words_: konkrete Begriffe, die dichte Bedeutung transportieren, um das Verhalten und die Reasoning-Spur eines Agenten zu steuern. Das ist derselbe Kerngedanke wie ein Semantic Anchor, unabhängig erreicht — ein dichtes Wort statt einer langen Anweisung. Der Unterschied liegt im Umfang: Pococks Framing steuert einen Agenten beim Erstellen von Skills; dieser Katalog ist ein kuratiertes, geteiltes Vokabular, geordnet nach einer Anchor- / Contract- / Skill-Taxonomie.
+
+*Lynn Cole — "Prompting with pre-computed priors".* Die Systemarchitektin Lynn Cole prägte dieses Drei-Wort-Framing dafür, _warum_ Anchors funktionieren, und teilte den Katalog auf https://www.linkedin.com/posts/lynn-cole_these-are-outstanding-when-i-talk-about-share-7467744538934145025-zkUW/[LinkedIn] (2026-06-03): "When I talk about prompting with pre-computed priors, this is basically what I'm talking about." Ein bekannter Begriff _beschreibt_ ein Konzept nicht — er _konditioniert_ das Modell auf eine dichte Region, die sein Training bereits aufgebaut hat, sodass wenige Token reiche, konsistente Aktivierung bringen.
+
 == Mitwirken
 
 Wir begrüßen Vorschläge für neue semantische Anker! Siehe unseren link:../CONTRIBUTING.de.adoc[Contributing Guide] für Details zu:
