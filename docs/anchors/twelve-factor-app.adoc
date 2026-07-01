@@ -60,6 +60,6 @@ Key Proponent:: Adam Wiggins (Heroku, https://12factor.net/[12factor.net], 2011)
 [discrete]
 == *Current Status*:
 
-* The canonical https://12factor.net/[12factor.net] document was "Last updated 2017" and stood unchanged for roughly eight years; a training-data prior most plausibly serves this frozen 2011/2017 text
+* The canonical https://12factor.net/[12factor.net] document was "Last updated 2017" and stood unchanged for over eight years
 * Salesforce/Heroku launched an official https://12factor.net/blog/evolving-twelve-factor[Twelve-Factor modernization initiative] (Brian Hammons, 10 Feb 2025), an open-source effort revisiting the principles for containers, Kubernetes and serverless and proposing a new *Identity* factor
 ====
