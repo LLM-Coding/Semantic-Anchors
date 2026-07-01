@@ -46,6 +46,36 @@ jobs:
         working-directory: ./scripts
         run: npm run format:check
 
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install dependencies (website)
+        working-directory: ./website
+        run: npm ci
+
+      - name: Run unit tests (website)
+        working-directory: ./website
+        run: npm test
+
+      - name: Install dependencies (scripts)
+        working-directory: ./scripts
+        run: npm ci
+
+      - name: Run unit tests (scripts)
+        working-directory: ./scripts
+        run: npm test
+
   e2e-tests:
     name: E2E Tests
     runs-on: ubuntu-latest
