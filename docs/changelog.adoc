@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-02
+
+*Social-media preview image (Open Graph / Twitter card):*
+
+* Sharing the site on LinkedIn, X, Slack and the like showed *no preview* — the `og:image` and `twitter:image` meta tags pointed at `og-image.png` / `twitter-card.png`, which never existed (404). Both files are now shipped: a 1200×630 branded card (dark theme, anchor mark, "Shared vocabulary for precise communication with LLMs"). No HTML change was needed; the tags already referenced the correct names.
+
 == 2026-07-01
 
 *Six new anchors:*
