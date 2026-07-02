@@ -3,6 +3,8 @@ node_modules/
 !website/public/logo.png
 !website/public/icon.png
 !website/public/hmze-logo.png
+!website/public/og-image.png
+!website/public/twitter-card.png
 !docs/workflow-diagram.svg
 .playwright-mcp/
 .venv/
