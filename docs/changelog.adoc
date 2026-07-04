@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-03
+
+*LinkedIn preview robustness:*
+
+* The `og:image` tag now also carries the `name="image"` attribute (`<meta name="image" property="og:image" …>`), a form LinkedIn's scraper reads more reliably. The image, filenames and other tags were already correct (see 2026-07-02); this only hardens how strict scrapers pick it up.
+
 == 2026-07-02
 
 *Social-media preview image (Open Graph / Twitter card):*
