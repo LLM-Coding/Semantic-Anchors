@@ -1,6 +1,7 @@
 = SOLID Principles
 :categories: design-principles
 :roles: software-developer, software-architect, educator, consultant
+:proponents: Robert C. Martin
 
 [%collapsible]
 ====

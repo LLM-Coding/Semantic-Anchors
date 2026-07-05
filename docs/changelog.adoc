@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-05
+
+*Metadata audit — `:proponents:` backfill (#668, Phase A):*
+
+* `:proponents:` is a required attribute, yet a catalog-wide audit found it missing in many anchors. This fixes 33 anchors: 22 newly attributed to a clear, canonical originator (EN + DE), and 11 German files brought in sync with their English source. Examples of the newly attributed — *link:#/anchor/clean-architecture[Clean Architecture]* (Robert C. Martin), *link:#/anchor/domain-driven-design[Domain-Driven Design]* (Eric Evans), *link:#/anchor/hexagonal-architecture[Hexagonal Architecture]* (Alistair Cockburn), *link:#/anchor/wardley-mapping[Wardley Mapping]* (Simon Wardley), *link:#/anchor/pyramid-principle[Pyramid Principle]* (Barbara Minto). A handful of anchors with no single originator (`sota`, `ssot-principle`, `devils-advocate`, the meta-anchor `what-qualifies-as-a-semantic-anchor`) are deferred pending a "no single proponent" convention. Phases B (`:tags:`) and C (`:related:`) follow.
+
 == 2026-07-03
 
 *LinkedIn preview robustness:*

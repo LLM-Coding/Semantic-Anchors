@@ -1,6 +1,7 @@
 = Mental Model according to Naur
 :categories: development-workflow
 :roles: software-developer, team-lead, educator, consultant
+:proponents: Peter Naur
 
 [%collapsible]
 ====

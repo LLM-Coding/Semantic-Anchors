@@ -1,6 +1,7 @@
 = Property-Based Testing
 :categories: testing-quality
 :roles: software-developer, qa-engineer
+:proponents: Koen Claessen, John Hughes (QuickCheck)
 
 [%collapsible]
 ====

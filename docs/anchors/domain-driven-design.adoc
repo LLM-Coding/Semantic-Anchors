@@ -1,6 +1,7 @@
 = Domain-Driven Design according to Evans
 :categories: software-architecture
 :roles: software-architect, software-developer, business-analyst, team-lead
+:proponents: Eric Evans
 :tier: 3
 :definition: Domain-Driven Design, introduced by Eric Evans, tackles complex software by centring the design on the business domain. A shared Ubiquitous Language unites developers and domain experts, Bounded Contexts delimit models, and tactical patterns — entities, value objects, aggregates, repositories — express the domain directly in code.
 
