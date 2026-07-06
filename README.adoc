@@ -3,7 +3,7 @@
 :icons: font
 :experimental:
 
-image:https://api.star-history.com/svg?repos=LLM-Coding/Semantic-Anchors&type=date&legend=top-left[link=https://www.star-history.com/#LLM-Coding/Semantic-Anchors&type=date&legend=top-left]
+image:https://api.star-history.com/svg?repos=LLM-Coding/Semantic-Anchors&type=Date[Star History Chart,link=https://star-history.com/#LLM-Coding/Semantic-Anchors&Date]
 
 == 🚀 Explore the Catalog
 
@@ -161,11 +161,14 @@ The website is automatically deployed to GitHub Pages on push to `main`:
 
 All major decisions documented with Pugh matrices:
 
-* link:docs/specs/adrs/adr-001-vite-static-site-generator.adoc[ADR-001]: Vite as Static Site Generator
-* link:docs/specs/adrs/adr-002-asciidoc-metadata-attributes.adoc[ADR-002]: AsciiDoc Attributes for Metadata
-* link:docs/specs/adrs/adr-003-apache-echarts-treemap.adoc[ADR-003]: Apache ECharts for Treemap (deprecated)
+* link:docs/specs/adrs/adr-001-static-site-generator.adoc[ADR-001]: Vite as Static Site Generator
+* link:docs/specs/adrs/adr-002-metadata-storage.adoc[ADR-002]: AsciiDoc Attributes for Metadata
+* link:docs/specs/adrs/adr-003-treemap-library.adoc[ADR-003]: Apache ECharts for Treemap (superseded by ADR-005)
 * link:docs/specs/adrs/adr-004-one-file-per-anchor.adoc[ADR-004]: One File per Anchor
 * link:docs/specs/adrs/adr-005-card-grid-visualization.adoc[ADR-005]: Card Grid Visualization (current)
+* link:docs/specs/adrs/adr-006-code-review-tooling.adoc[ADR-006]: Code-Review Tooling
+* link:docs/specs/adrs/adr-007-artifact-taxonomy.adoc[ADR-007]: Artifact Taxonomy — Anchor vs. Contract vs. Skill
+* link:docs/specs/adrs/adr-008-personality-assessment-anchors.adoc[ADR-008]: Personality & Assessment Frameworks — the Utility Gate
 
 == Documentation
 
