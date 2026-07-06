@@ -1,0 +1,64 @@
+= Big Five (OCEAN) Persönlichkeitsmerkmale
+:categories: communication-presentation
+:roles: consultant, team-lead, educator, ux-designer, product-owner, data-scientist
+:proponents: Lewis R. Goldberg, Paul T. Costa, Robert R. McCrae
+:tags: Persönlichkeitsmerkmale, Big Five, OCEAN, Fünf-Faktoren-Modell, FFM, Trait-Psychologie, Teamdynamik
+:tier: 2
+
+[%collapsible]
+====
+Vollständiger Name:: Big Five Persönlichkeitsmerkmale / Fünf-Faktoren-Modell (FFM)
+
+Auch bekannt als:: OCEAN, Fünf-Faktoren-Modell (FFM), die Big Five, CANOE
+
+[discrete]
+== *Kernkonzepte*:
+
+Fünf breite Dimensionen (OCEAN):: Das Modell beschreibt Persönlichkeit entlang fünf kontinuierlicher, weitgehend unabhängiger Dimensionen:
+* *Openness / Offenheit für Erfahrungen* — Fantasie, Neugier, Vorliebe für Neues vs. Routine und Konvention
+* *Conscientiousness / Gewissenhaftigkeit* — Organisation, Verlässlichkeit, Selbstdisziplin vs. Spontaneität und Nachlässigkeit
+* *Extraversion* — Geselligkeit, Durchsetzungsstärke, Energie aus der Außenwelt vs. Zurückhaltung
+* *Agreeableness / Verträglichkeit* — Mitgefühl, Kooperation, Vertrauen vs. Antagonismus und Skepsis
+* *Neuroticism / Neurotizismus* (vs. emotionale Stabilität) — Neigung zu Angst, Launenhaftigkeit, emotionaler Reaktivität vs. Gelassenheit
+
+Kontinuierliche Merkmale, keine Typen:: Jede Dimension ist ein Spektrum, auf dem eine Person hoch oder niedrig liegt; das Modell sortiert Menschen bewusst nicht in diskrete Typen (im Gegensatz zu den 16 Kästchen des MBTI).
+
+Facetten:: Jeder Faktor zerfällt in engere Facetten (z. B. Gewissenhaftigkeit → Ordnung, Pflichtbewusstsein, Selbstdisziplin, Leistungsstreben) und erlaubt so feinere Profile.
+
+Lexikalische Hypothese:: Die fünf Faktoren ergaben sich empirisch aus der lexikalischen Hypothese — dass die wichtigsten Persönlichkeitsunterschiede als einzelne Wörter in der Sprache kodiert werden — über Faktorenanalyse von Eigenschaftsadjektiven.
+
+Zwei Linien, ein Modell:: Lewis Goldbergs „Big Five" (lexikalisch, adjektivbasiert) und Costa & McCraes Fünf-Faktoren-Modell (fragebogenbasiert, das NEO-PI-R) konvergieren auf dieselben fünf Dimensionen; OCEAN ist das gemeinsame Merkwort.
+
+Prädiktiver Nutzen:: Merkmalswerte korrelieren — moderat, aber konsistent — mit Ergebnissen wie Arbeitsleistung (besonders Gewissenhaftigkeit), Wohlbefinden und Studienerfolg.
+
+Wichtige Proponenten:: Lewis R. Goldberg (prägte „Big Five", frühe 1980er); Paul T. Costa & Robert R. McCrae (Fünf-Faktoren-Modell / NEO-PI-R). Frühe lexikalische Wurzeln: Tupes & Christal (1961).
+
+[discrete]
+== *Wann einzusetzen*:
+
+Für zuverlässige Aktivierung das Modell *und die Aufgabe* nennen — „profiliere diese Persona entlang der fünf OCEAN-Dimensionen" — statt des nackten Begriffs.
+
+* Reichhaltigere, evidenzbasierte User Personas in der UX-Forschung (nach OCEAN bewerten statt Ad-hoc-Eigenschaften zu erfinden)
+* Kommunikation oder Botschaften auf das Merkmalsprofil einer beschriebenen Zielgruppe zuschneiden
+* Über Teamzusammensetzung und wahrscheinliche Reibung nachdenken (z. B. Paarungen mit hoher vs. niedriger Gewissenhaftigkeit)
+* Coaching und Selbstreflexion auf einem validierten Merkmalsvokabular
+* Qualitative Analyse von Interview- oder Umfragetext in vergleichbare Merkmalsdimensionen strukturieren
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Big Five sortiert Menschen in Typen" — es beschreibt kontinuierliche Merkmale, keine Kategorien
+* ❌ „Werte sind festgelegt" — Merkmale sind im Erwachsenenalter relativ stabil, verschieben sich aber über die Lebensspanne
+* ❌ „Es erklärt, *warum* jemand sich so verhält" — das Modell ist deskriptiv und prädiktiv, nicht kausal
+* ✓ „Big Five ist das empirisch dominante Merkmalsmodell" — ist es, weshalb es der übliche wissenschaftliche Maßstab gegenüber MBTI und DISC ist
+====
+
+== Criticism:
+
+* Michael Gurven et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC4104167/["How Universal Is the Big Five?", _Journal of Personality and Social Psychology_ 104(2)] (2013) — die Fünf-Faktoren-Struktur replizierte bei den Tsimane im bolivianischen Amazonasgebiet nicht; eine Zwei-Faktoren-Struktur („Prosozialität / Fleiß") passte besser und stellt die behauptete Universalität in Frage. Die Datenbasis ist stark WEIRD (Western, Educated, Industrialized, Rich, Democratic).
+* Das Modell ist *deskriptiv, nicht erklärend*: aus lexikalischer Hypothese und Faktorenanalyse abgeleitet, benennt es kovariierende Merkmale ohne kausale Theorie ihrer Herkunft.
+
+[discrete]
+== Current Status:
+
+* Nach wie vor das dominante, empirisch am besten validierte Merkmalsmodell der akademischen Psychologie und der Standard-Maßstab, an dem andere Persönlichkeitsinstrumente gemessen werden. Der wichtigste strukturierte Herausforderer ist das sechsfaktorielle https://en.wikipedia.org/wiki/HEXACO_model_of_personality_structure[HEXACO-Modell] (Ashton & Lee), das *Honesty-Humility* (Ehrlichkeit-Bescheidenheit) ergänzt. Der Prior, den die meisten Trainingsdaten bedienen, ist das fünffaktorielle OCEAN-Modell.

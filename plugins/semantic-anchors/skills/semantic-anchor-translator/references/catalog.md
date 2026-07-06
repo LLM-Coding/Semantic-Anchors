@@ -605,6 +605,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Isabel Briggs Myers, Katharine Cook Briggs, Carl Gustav Jung
 - **Core:** Four dichotomies (E/I, S/N, T/F, J/P) produce 16 personality types describing communication preferences, decision-making styles, and team dynamics
 
+### Big Five (OCEAN) Personality Traits
+- **Also known as:** OCEAN, Five-Factor Model (FFM), the Big Five, CANOE
+- **Proponents:** Lewis R. Goldberg; Paul T. Costa & Robert R. McCrae
+- **Core:** Five continuous, largely independent trait dimensions — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism — scored on a spectrum (not types); the empirically dominant trait model. Name the task ("profile along the five OCEAN dimensions") for reliable activation
+
 ### Curse of Knowledge
 - **Proponents:** Camerer, Loewenstein & Weber; popularized by Chip & Dan Heath
 - **Core:** Once you know something you cannot imagine not knowing it, so experts overestimate shared context and leave jargon and steps unexplained; the antidote is to surface assumptions, define terms, and model the audience

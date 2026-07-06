@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-07-06
 
+*New anchor — Big Five / OCEAN (#673), the first admitted under ADR-008:*
+
+* *link:#/anchor/big-five[Big Five / OCEAN]* (Lewis R. Goldberg; Paul T. Costa & Robert R. McCrae) — communication-presentation: five continuous trait dimensions (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism), the empirically dominant trait model and the scientific benchmark against MBTI/DISC. Added as the first anchor to clear the new Utility Gate: tier ★★☆ (fires with the qualified form "profile along the OCEAN dimensions"), bilingual, with a fetch-verified Criticism section (Gurven et al. 2013 — the structure failed to replicate among the Tsimane; the evidence base is heavily WEIRD) and a Current Status pointing to the HEXACO challenger. Proposed by https://github.com/raifdmueller[@raifdmueller] in #673.
+
 *ADR-008 — Personality & assessment frameworks as anchors (the Utility Gate):*
 
 * The catalog held one personality anchor (MBTI) while the proposal template rejected "personality/assessment frameworks" — a contradiction that recurred with each new proposal (DISC #671, Big Five/OCEAN #673, HEXACO #674). ADR-008 resolves it with a *topic-neutral Utility Gate*: no subject area is banned or blessed; a framework is admitted only if naming it demonstrably changes the LLM's output structure (the existing Viability Test), and carries a Criticism section. MBTI is re-subjected to the same test rather than grandfathered. CONTRIBUTING (EN + DE) and the proposal template are updated to state the topic-neutral rule; the arc42 Chapter 9 ADR index lists ADR-008.

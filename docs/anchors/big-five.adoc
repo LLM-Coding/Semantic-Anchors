@@ -1,0 +1,64 @@
+= Big Five (OCEAN) Personality Traits
+:categories: communication-presentation
+:roles: consultant, team-lead, educator, ux-designer, product-owner, data-scientist
+:proponents: Lewis R. Goldberg, Paul T. Costa, Robert R. McCrae
+:tags: personality traits, Big Five, OCEAN, Five-Factor Model, FFM, trait psychology, team dynamics
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: Big Five Personality Traits / Five-Factor Model (FFM)
+
+Also known as:: OCEAN, Five-Factor Model (FFM), the Big Five, CANOE
+
+[discrete]
+== *Core Concepts*:
+
+Five Broad Dimensions (OCEAN):: The model describes personality along five continuous, largely independent dimensions:
+* *Openness to experience* — imagination, curiosity, preference for novelty vs. routine and convention
+* *Conscientiousness* — organisation, dependability, self-discipline vs. spontaneity and carelessness
+* *Extraversion* — sociability, assertiveness, energy drawn from the outer world vs. reserve
+* *Agreeableness* — compassion, cooperation, trust vs. antagonism and skepticism
+* *Neuroticism* (vs. Emotional Stability) — proneness to anxiety, moodiness, emotional reactivity vs. calm
+
+Continuous Traits, Not Types:: Each dimension is a spectrum a person scores high or low on; the model deliberately does not sort people into discrete types (contrast MBTI's 16 boxes).
+
+Facets:: Each factor decomposes into narrower facets (e.g., Conscientiousness → order, dutifulness, self-discipline, achievement-striving), giving finer-grained profiles.
+
+Lexical Hypothesis:: The five factors emerged empirically via the lexical hypothesis — the idea that the most important personality differences become encoded as single words in language — through factor analysis of trait adjectives.
+
+Two Lineages, One Model:: Lewis Goldberg's "Big Five" (lexical, adjective-based) and Costa & McCrae's Five-Factor Model (questionnaire-based, the NEO-PI-R) converge on the same five dimensions; OCEAN is the shared mnemonic.
+
+Predictive Use:: Trait scores correlate — modestly but consistently — with outcomes such as job performance (especially Conscientiousness), well-being, and academic achievement.
+
+Key Proponents:: Lewis R. Goldberg (coined "Big Five", early 1980s); Paul T. Costa & Robert R. McCrae (Five-Factor Model / NEO-PI-R). Early lexical roots: Tupes & Christal (1961).
+
+[discrete]
+== *When to Use*:
+
+For reliable activation, name the model *and the task* — "profile this persona along the five OCEAN dimensions" — rather than the bare term.
+
+* Building richer, evidence-based user personas in UX research (score along OCEAN instead of inventing ad-hoc traits)
+* Tailoring communication or messaging to a described audience's trait profile
+* Reasoning about team composition and likely friction (e.g., high- vs. low-Conscientiousness pairings)
+* Coaching and self-reflection grounded in a validated trait vocabulary
+* Structuring qualitative analysis of interview or survey text into comparable trait dimensions
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Big Five sorts people into types" — it describes continuous traits, not categories
+* ❌ "Scores are fixed" — traits are relatively stable in adulthood but shift across the lifespan
+* ❌ "It explains *why* someone behaves as they do" — the model is descriptive and predictive, not causal
+* ✓ "Big Five is the empirically dominant trait model" — it is, which is why it is the usual scientific benchmark against MBTI and DISC
+====
+
+== Criticism:
+
+* Michael Gurven et al., https://pmc.ncbi.nlm.nih.gov/articles/PMC4104167/["How Universal Is the Big Five?", _Journal of Personality and Social Psychology_ 104(2)] (2013) — the five-factor structure failed to replicate among the Tsimane of the Bolivian Amazon; a two-factor "prosociality / industriousness" structure fit better, challenging the model's claimed universality. The evidence base is heavily WEIRD (Western, Educated, Industrialized, Rich, Democratic).
+* The model is *descriptive, not explanatory*: derived from the lexical hypothesis and factor analysis, it names covarying traits without a causal theory of their origin.
+
+[discrete]
+== Current Status:
+
+* Still the dominant, most empirically validated trait model in academic psychology, and the standard scientific benchmark against which other personality instruments are judged. The main structured challenger is the six-factor https://en.wikipedia.org/wiki/HEXACO_model_of_personality_structure[HEXACO model] (Ashton & Lee), which adds *Honesty-Humility*. The prior most training data serves is the five-factor OCEAN model.
