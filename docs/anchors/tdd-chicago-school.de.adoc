@@ -2,6 +2,8 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer
 :proponents: Kent Beck, Martin Fowler
+:tags: TDD, classicist TDD, Detroit School, Chicago School, state-based testing, inside-out, Kent Beck
+:tier: 3
 
 [%collapsible]
 ====
