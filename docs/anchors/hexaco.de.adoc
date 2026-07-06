@@ -1,0 +1,61 @@
+= HEXACO Persönlichkeitsmodell
+:categories: communication-presentation
+:roles: consultant, team-lead, educator, ux-designer, product-owner, data-scientist
+:proponents: Kibeom Lee, Michael C. Ashton
+:tags: Persönlichkeitsmerkmale, HEXACO, Honesty-Humility, Sechs-Faktoren-Modell, Dark Triad, Trait-Psychologie
+:tier: 2
+
+[%collapsible]
+====
+Vollständiger Name:: HEXACO Model of Personality Structure
+
+Auch bekannt als:: HEXACO, Sechs-Faktoren-Modell, der H-Faktor
+
+[discrete]
+== *Kernkonzepte*:
+
+Sechs Dimensionen (HEXACO):: Das Modell beschreibt Persönlichkeit entlang sechs kontinuierlicher Dimensionen:
+* *Honesty-Humility (H) / Ehrlichkeit-Bescheidenheit* — Aufrichtigkeit, Fairness, Gier-Vermeidung, Bescheidenheit vs. Manipulation, Anspruchsdenken, Gier
+* *Emotionality (E) / Emotionalität* — Ängstlichkeit, Besorgnis, Sentimentalität, Bedürfnis nach Unterstützung (rotierte Variante des Big-Five-Neurotizismus)
+* *eXtraversion (X)* — soziales Selbstwertgefühl, Geselligkeit, Lebhaftigkeit
+* *Agreeableness (A) / Verträglichkeit* — Vergebungsbereitschaft, Sanftmut, Geduld (rotierte Variante — Ärger/Temperament liegt hier, nicht in Emotionalität)
+* *Conscientiousness (C) / Gewissenhaftigkeit* — Organisation, Fleiß, Umsicht
+* *Openness to Experience (O) / Offenheit* — ästhetisches Empfinden, Neugier, Unkonventionalität
+
+Der sechste Faktor ist der Kern:: HEXACO ist im Wesentlichen die Big Five *plus* Honesty-Humility. Drei Faktoren (X, C, O) entsprechen Big-Five-Pendants; Emotionalität und Verträglichkeit sind „rotierte Varianten" mit verschobenem Inhalt; Honesty-Humility ist tatsächlich neu.
+
+Honesty-Humility sagt die dunkle Seite vorher:: Der H-Faktor ist der stärkste einzelne Merkmals-Prädiktor für unethisches, ausbeuterisches und manipulatives Verhalten und korreliert stark (invers) mit der Dark Triad — Machiavellismus, Narzissmus, Psychopathie. Das leistet die Big Five nicht, und genau deshalb verdient HEXACO einen eigenen Platz statt Alias der Big Five zu sein.
+
+Lexikalischer, sprachübergreifender Ursprung:: Die sechs Faktoren traten wiederholt in faktorenanalytischen lexikalischen Studien vieler Sprachen auf (Niederländisch, Deutsch, Koreanisch, Italienisch, Ungarisch, Polnisch u. a.).
+
+Kontinuierliche Merkmale, keine Typen:: Wie bei der Big Five ist jede Dimension ein Spektrum, keine Kategorie.
+
+Wichtige Proponenten:: Kibeom Lee & Michael C. Ashton (erste Arbeiten ~2004; Buch _The H Factor of Personality_, 2013).
+
+[discrete]
+== *Wann einzusetzen*:
+
+Für zuverlässige Aktivierung das Modell *und die Aufgabe* nennen — „bewerte entlang der HEXACO-Dimensionen, besonders Honesty-Humility" — statt des nackten Begriffs.
+
+* Wenn Integrität, Fairness oder Ausbeutungsrisiko die relevante Achse ist (Ethik-Diskussionen, Modellierung von Gegenparteien) — der Honesty-Humility-Faktor, den die Big Five auslässt
+* Über Dark-Personality-Muster (Dark Triad) mit einem validierten Merkmalsvokabular nachdenken
+* Reichhaltigere Persona- oder Teammodellierung, wenn Honesty-Humility Signal trägt
+* Jeder Big-Five-Anwendungsfall, in dem die zusätzliche sechste Dimension unterscheidende Information liefert
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „HEXACO ist nur die Big Five umbenannt" — es ergänzt einen tatsächlich eigenständigen sechsten Faktor (H) und rotiert zwei weitere
+* ❌ „Honesty-Humility ist ein Wahrheitstest" — es ist eine Persönlichkeitsdisposition, kein Lügendetektor
+* ✓ „HEXACOs Daseinsberechtigung ist der H-Faktor" — seine eigenständige Utility gegenüber Big Five ist Honesty-Humility
+====
+
+== Criticism:
+
+* Boele De Raad und Kollegen, via die https://en.wikipedia.org/wiki/HEXACO_model_of_personality_structure[HEXACO-Modell-Übersicht] — nur drei Faktoren (Extraversion, Verträglichkeit, Gewissenhaftigkeit) replizieren vollständig über Kulturen hinweg; der sechste Faktor Honesty-Humility wird „nicht immer konsistent repliziert", und in einigen lexikalischen Studien treten alternative sechste Faktoren auf (z. B. Hedonismus-Spontaneität), weshalb Universalitätsansprüche vorsichtig zu behandeln sind.
+* Big-Five-Vertreter argumentieren, Honesty-Humility lasse sich weitgehend in (niedriger) Big-Five-Verträglichkeit unterbringen, und stellen infrage, ob ein eigener sechster Faktor gerechtfertigt ist.
+
+[discrete]
+== Current Status:
+
+* Eine aktiv beforschte sechsfaktorielle Alternative zur Big Five mit wachsender Verbreitung — besonders in der Integritäts-, Ethik- und Dark-Triad-Forschung, wo der Honesty-Humility-Faktor eigenständigen prädiktiven Wert zeigt. Die Big Five (siehe Big Five / OCEAN Anchor) bleibt der verbreitetere Standard; der Prior, den die meisten Trainingsdaten bedienen, ist weiterhin fünffaktoriell, mit HEXACO als anerkanntem sechsfaktoriellem Herausforderer.

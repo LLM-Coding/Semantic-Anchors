@@ -610,6 +610,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Lewis R. Goldberg; Paul T. Costa & Robert R. McCrae
 - **Core:** Five continuous, largely independent trait dimensions — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism — scored on a spectrum (not types); the empirically dominant trait model. Name the task ("profile along the five OCEAN dimensions") for reliable activation
 
+### HEXACO Personality Model
+- **Also known as:** HEXACO, Six-Factor Model, the H Factor
+- **Proponents:** Kibeom Lee & Michael C. Ashton
+- **Core:** Six trait dimensions — Honesty-Humility, Emotionality, eXtraversion, Agreeableness, Conscientiousness, Openness. Essentially Big Five plus Honesty-Humility (H), the strongest trait predictor of unethical/exploitative behaviour and the Dark Triad — its distinct value over Big Five. Name the task ("assess along HEXACO, especially Honesty-Humility") for reliable activation
+
 ### Curse of Knowledge
 - **Proponents:** Camerer, Loewenstein & Weber; popularized by Chip & Dan Heath
 - **Core:** Once you know something you cannot imagine not knowing it, so experts overestimate shared context and leave jargon and steps unexplained; the antidote is to surface assumptions, define terms, and model the audience
