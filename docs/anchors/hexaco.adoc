@@ -1,0 +1,61 @@
+= HEXACO Personality Model
+:categories: communication-presentation
+:roles: consultant, team-lead, educator, ux-designer, product-owner, data-scientist
+:proponents: Kibeom Lee, Michael C. Ashton
+:tags: personality traits, HEXACO, Honesty-Humility, six-factor model, Dark Triad, trait psychology
+:tier: 2
+
+[%collapsible]
+====
+Full Name:: HEXACO Model of Personality Structure
+
+Also known as:: HEXACO, Six-Factor Model, the H Factor
+
+[discrete]
+== *Core Concepts*:
+
+Six Dimensions (HEXACO):: The model describes personality along six continuous dimensions:
+* *Honesty-Humility (H)* — sincerity, fairness, greed-avoidance, modesty vs. manipulativeness, entitlement, greed
+* *Emotionality (E)* — fearfulness, anxiety, sentimentality, need for support (a rotated variant of Big Five Neuroticism)
+* *eXtraversion (X)* — social self-esteem, sociability, liveliness
+* *Agreeableness (A)* — forgiveness, gentleness, patience (a rotated variant — anger/temper sits here, not in Emotionality)
+* *Conscientiousness (C)* — organisation, diligence, prudence
+* *Openness to Experience (O)* — aesthetic appreciation, curiosity, unconventionality
+
+The Sixth Factor Is the Point:: HEXACO is essentially the Big Five *plus* Honesty-Humility. Three factors (X, C, O) map onto Big Five counterparts; Emotionality and Agreeableness are "rotated variants" with shifted content; Honesty-Humility is genuinely new.
+
+Honesty-Humility Predicts the Dark Side:: The H factor is the strongest single trait predictor of unethical, exploitative, and manipulative behaviour, and correlates strongly (inversely) with the Dark Triad — Machiavellianism, narcissism, psychopathy. This is coverage the Big Five does not provide, and the reason HEXACO earns its own place rather than being an alias of Big Five.
+
+Lexical, Cross-Language Origin:: The six factors recurred across factor-analytic lexical studies in many languages (Dutch, German, Korean, Italian, Hungarian, Polish, and others).
+
+Continuous Traits, Not Types:: Like the Big Five, each dimension is a spectrum, not a category.
+
+Key Proponents:: Kibeom Lee & Michael C. Ashton (first papers ~2004; book _The H Factor of Personality_, 2013).
+
+[discrete]
+== *When to Use*:
+
+For reliable activation, name the model *and the task* — "assess along the HEXACO dimensions, especially Honesty-Humility" — rather than the bare term.
+
+* When integrity, fairness, or exploitation risk is the relevant axis (ethics discussions, counterparty modelling) — the Honesty-Humility factor the Big Five omits
+* Reasoning about dark-personality patterns (Dark Triad) with a validated trait vocabulary
+* Richer persona or team modelling where honesty-humility carries signal
+* Any Big Five use case where the extra sixth dimension adds discriminating information
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "HEXACO is just the Big Five renamed" — it adds a genuinely distinct sixth factor (H) and rotates two others
+* ❌ "Honesty-Humility is a truthfulness test" — it is a personality disposition, not a lie detector
+* ✓ "HEXACO's reason to exist is the H factor" — its distinct utility over Big Five is Honesty-Humility
+====
+
+== Criticism:
+
+* Boele De Raad and colleagues, via the https://en.wikipedia.org/wiki/HEXACO_model_of_personality_structure[HEXACO model overview] — only three factors (Extraversion, Agreeableness, Conscientiousness) replicate fully across cultures; the sixth factor Honesty-Humility is "not always consistently replicated", and alternative sixth factors (e.g. hedonism-spontaneity) emerge in some lexical studies, so claims of six-factor universality should be treated cautiously.
+* Big Five proponents argue Honesty-Humility can be largely accommodated within (low) Big Five Agreeableness, questioning whether a distinct sixth factor is warranted.
+
+[discrete]
+== Current Status:
+
+* An actively researched six-factor alternative to the Big Five, with growing adoption — particularly in integrity, ethics, and Dark-Triad research, where the Honesty-Humility factor shows distinct predictive value. The Big Five (see the Big Five / OCEAN anchor) remains the more widely used default; the prior most training data serves is still five-factor, with HEXACO the recognised six-factor challenger.

@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-07-06
 
+*New anchor — HEXACO (#674):*
+
+* *link:#/anchor/hexaco[HEXACO]* (Kibeom Lee & Michael C. Ashton) — communication-presentation: the six-factor personality model — Big Five plus *Honesty-Humility*, the strongest trait predictor of unethical/exploitative behaviour and the Dark Triad. Admitted under ADR-008 because that sixth factor delivers distinct utility the Big Five cannot (the redundancy test, not a synonym). Tier ★★☆ (fires with the qualified form "assess along HEXACO, especially Honesty-Humility"), bilingual, with a fetch-verified Criticism section (De Raad et al. — the sixth factor does not always replicate cross-culturally) and a Current Status referencing the Big Five. Proposed by https://github.com/raifdmueller[@raifdmueller] in #674.
+
 *New anchor — Big Five / OCEAN (#673), the first admitted under ADR-008:*
 
 * *link:#/anchor/big-five[Big Five / OCEAN]* (Lewis R. Goldberg; Paul T. Costa & Robert R. McCrae) — communication-presentation: five continuous trait dimensions (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism), the empirically dominant trait model and the scientific benchmark against MBTI/DISC. Added as the first anchor to clear the new Utility Gate: tier ★★☆ (fires with the qualified form "profile along the OCEAN dimensions"), bilingual, with a fetch-verified Criticism section (Gurven et al. 2013 — the structure failed to replicate among the Tsimane; the evidence base is heavily WEIRD) and a Current Status pointing to the HEXACO challenger. Proposed by https://github.com/raifdmueller[@raifdmueller] in #673.
