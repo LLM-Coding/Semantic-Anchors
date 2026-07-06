@@ -100,6 +100,8 @@ Recognition is not activation. A model can talk fluently *about* a term while na
 
 A term that passes the four Quality Criteria but fails the viability test is a *Contract*, not an Anchor.
 
+*This gate is topic-neutral.* No subject area is privileged or banned — personality and assessment frameworks (MBTI, DISC, Big Five, HEXACO) are neither excluded for their topic nor admitted for being well-known. They must clear the same Viability Test as any other candidate, and — given their contested empirical standing — carry a `== Criticism` / `== Current Status` section. The rationale is in link:docs/specs/adrs/adr-008-personality-assessment-anchors.adoc[ADR-008].
+
 == Developer Setup
 
 === Prerequisites

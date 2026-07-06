@@ -32,7 +32,7 @@ body:
 
         The review agent **rejects** proposals that are:
         - Pure philosophy without actionable instructions (e.g., "TIMTOWTDI")
-        - Personality/assessment frameworks without LLM utility (e.g., "MBTI")
+        - Recognition-only terms that fail the viability test — naming them does not change output structure. This gate is topic-neutral: personality/assessment frameworks (MBTI, DISC, Big Five, HEXACO) are judged by utility, not topic (see ADR-008)
         - Fully covered by an existing anchor (e.g., "Rubber Duck Debugging" ≈ Socratic Method)
         - Too vague to produce consistent LLM output (e.g., "Keep it simple")
         - Not an established concept (invented by the proposer)

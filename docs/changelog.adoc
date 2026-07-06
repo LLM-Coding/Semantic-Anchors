@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-06
+
+*ADR-008 — Personality & assessment frameworks as anchors (the Utility Gate):*
+
+* The catalog held one personality anchor (MBTI) while the proposal template rejected "personality/assessment frameworks" — a contradiction that recurred with each new proposal (DISC #671, Big Five/OCEAN #673, HEXACO #674). ADR-008 resolves it with a *topic-neutral Utility Gate*: no subject area is banned or blessed; a framework is admitted only if naming it demonstrably changes the LLM's output structure (the existing Viability Test), and carries a Criticism section. MBTI is re-subjected to the same test rather than grandfathered. CONTRIBUTING (EN + DE) and the proposal template are updated to state the topic-neutral rule; the arc42 Chapter 9 ADR index lists ADR-008.
+
 == 2026-07-05
 
 *Metadata audit — `:proponents:` backfill (#668, Phase A):*

@@ -43,6 +43,11 @@ Dieses Kapitel referenziert die detaillierten Architecture Decision Records (ADR
 |**Artefakt-Taxonomie** — Anchor vs. Contract vs. Skill
 |Explizite Dreiteilung beseitigt die wiederholt ad hoc rekonstruierte Grenze (Pugh +63); Thin-Prior-Regel macht #585 und #640 konsistent
 |Accepted
+
+|link:../../specs/adrs/adr-008-personality-assessment-anchors.adoc[ADR-008]
+|**Persönlichkeits-/Assessment-Modelle als Anker** — der Utility-Gate
+|Topic-neutrales Kriterium: Aufnahme entscheidet Utility (Viability-Test), nicht das Thema (Pugh +63); löst den Widerspruch Template↔Katalog und unterwirft MBTI demselben Test
+|Accepted
 |===
 
 === ADR-001: Vite als Static Site Generator
@@ -198,7 +203,7 @@ Issue #59 (Text-Truncation), Issue #60 (Map-Cut-off), Issue #61 (Poor Contrast).
 
 === Zukünftige Entscheidungen
 
-Künftige Architekturentscheidungen erhalten die jeweils nächste freie ADR-Nummer (aktuell **ADR-008**). Nummern werden nicht mehr vorab reserviert: Eine frühere Fassung dieser Liste hatte ADR-006 für die Suchindex-Implementierung und ADR-007 für eine Analytics-Lösung vorgemerkt — beide Nummern sind inzwischen anderweitig vergeben (ADR-006 Code-Review-Tooling, ADR-007 Artefakt-Taxonomie), was genau die Kollision zeigt, die das Vorab-Reservieren erzeugt.
+Künftige Architekturentscheidungen erhalten die jeweils nächste freie ADR-Nummer (aktuell **ADR-009**). Nummern werden nicht mehr vorab reserviert: Eine frühere Fassung dieser Liste hatte ADR-006 für die Suchindex-Implementierung und ADR-007 für eine Analytics-Lösung vorgemerkt — beide Nummern sind inzwischen anderweitig vergeben (ADR-006 Code-Review-Tooling, ADR-007 Artefakt-Taxonomie), was genau die Kollision zeigt, die das Vorab-Reservieren erzeugt.
 
 **Noch nicht als ADR erfasste Themen:**
 

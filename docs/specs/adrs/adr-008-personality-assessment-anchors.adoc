@@ -1,0 +1,151 @@
+= ADR-008: Personality & Assessment Frameworks as Anchors — the Utility Gate
+:toc:
+:icons: font
+
+== Status
+
+**Accepted** — 2026-07-06
+
+Surfaced while reviewing a cluster of personality/assessment proposals — DISC
+(https://github.com/LLM-Coding/Semantic-Anchors/issues/671[#671]), Big Five / OCEAN
+(https://github.com/LLM-Coding/Semantic-Anchors/issues/673[#673]), HEXACO
+(https://github.com/LLM-Coding/Semantic-Anchors/issues/674[#674]) — against an
+existing anchor, `myers-briggs-type-indicator`, and a proposal template that lists
+_"personality/assessment frameworks without LLM utility (e.g. MBTI)"_ as a rejection
+criterion. The catalog was deciding each case ad hoc, and the template appeared to
+contradict its own catalog. This ADR removes the contradiction by naming the actual
+criterion.
+
+== Context
+
+The catalog holds one personality-model anchor (`myers-briggs-type-indicator`,
+tier ★★★ by legacy acceptance) while its `propose-anchor` template rejects
+"personality/assessment frameworks without LLM utility." Read as a *topic* rule, that
+is a contradiction — MBTI is such a framework. Read as a *utility* rule, it is not: the
+operative words are "without LLM utility."
+
+Meanwhile four candidates arrived at once:
+
+* **DISC (#671)** — behavioural model (Marston); proposal empty, needs viability data.
+* **Big Five / OCEAN (#673)** — the empirically robust five-factor model
+  (Goldberg; Costa & McCrae). OCEAN and Five-Factor Model are the *same* model.
+* **HEXACO (#674)** — six-factor extension (Lee & Ashton) adding Honesty-Humility.
+* **WEIRD (#675)** — *not* a personality model; a methodological-bias lens
+  (Henrich, Heine & Norenzayan, 2010).
+
+Without a stated rule, each is litigated from scratch, and the MBTI-vs-template tension
+recurs every time.
+
+=== The core insight
+
+The catalog already defines an anchor by *activation*, not *recognition*. ADR-007
+fixes the artifact taxonomy (Anchor = focusing signal for knowledge already dense in
+training data); `CONTRIBUTING.adoc` already carries a **Viability Test** — _"a term
+that passes the four Quality Criteria but fails the viability test is a Contract, not an
+Anchor"_ — and #640 formalises "recognition ≠ activation." The criterion for admission
+is therefore **whether naming the term reliably changes the LLM's output structure**,
+never the term's subject area. Nothing in the catalog's theory licenses banning or
+blessing a *topic*.
+
+=== Requirements
+
+* **One rule, uniformly applied** — to existing anchors (MBTI) and new proposals alike.
+* **No arbitrary topic bans** — the criterion is utility, not subject area.
+* **Preserves the "anchor = changes output" thesis** — no drift toward a glossary.
+* **Resolves the template↔catalog contradiction** — template and catalog must agree.
+* **Low churn** — reuse the existing Viability Test; avoid mass rework.
+
+== Decision
+
+**We adopt a topic-neutral Utility Gate.** No subject area is privileged or banned. A
+personality or assessment framework is admitted as an Anchor **if and only if** it
+clears the same bar as any other candidate:
+
+. It passes the four Quality Criteria (precise, rich, consistent, attributable), and
+. It passes the **Viability Test** in `CONTRIBUTING.adoc` — naming it demonstrably
+  changes the output structure of a task (before/after), on at least one weak and one
+  strong model — not mere recognition, and
+. Given the contested empirical standing typical of these frameworks, it carries a
+  `== Criticism` / `== Current Status` section (per #603).
+
+A framework that is only *recognised* (fluent description, no output-structure change)
+is **★☆☆ descriptive-only → rejected**, exactly as the template already states. "MBTI"
+is not banned for being about personality; a personality model is not admitted for
+being well-known. Utility decides.
+
+=== Consequences for the open set
+
+[cols="2,3", options="header"]
+|===
+| Proposal | Ruling under the Utility Gate
+
+| Big Five / OCEAN (#673) | Admissible *if* a documented activation pattern is shown (e.g. "profile along OCEAN dimensions" yields structured, comparable output). Likely tier ★★☆ (needs the qualified form). The empirically strongest of the personality set.
+| HEXACO (#674) | Admit *only if* the Honesty-Humility factor delivers utility beyond Big Five; otherwise "covered by an existing anchor" (ADR-007) → reject as redundant.
+| DISC (#671) | Same gate. Proposal currently lacks viability data; bounce back until the before/after test is supplied.
+| WEIRD (#675) | Not a personality model — an analytical lens whose naming triggers a concrete generalisability check. Passes the gate on its own merit; judged on domain fit, not on this ADR's personality tension.
+| MBTI (in catalog) | Re-subjected to the same gate. It must document an activation pattern (a before/after where naming MBTI changes output) *and* gain a Criticism section, or be reclassified — downgraded in tier, or deprecated to the Rejected Proposals page. Its legacy ★★★ is not grandfathered.
+|===
+
+=== Where the decision lives
+
+Both. This ADR is the reasoned record; the operational rule already exists as the
+Viability Test in `CONTRIBUTING.adoc`, which gains one sentence making topic-neutrality
+explicit and citing this ADR. The `propose-anchor` template's rejection bullet is
+reworded from the MBTI example to the topic-neutral gate.
+
+=== Pugh matrix
+
+Baseline: keep deciding case-by-case with no stated rule (status quo) = 0.
+
+[cols="3,1,1,1,1", options="header"]
+|===
+| Criterion (weight) | Utility gate (chosen) | Status quo (baseline) | Exclude category | Liberal admit
+
+| Consistency with "anchor = activation" thesis (10) | +2 | 0 | 0 | -2
+| Resolves template↔catalog contradiction (9) | +2 | 0 | +1 | +1
+| No arbitrary topic ban / applies uniformly (8) | +2 | 0 | -2 | +1
+| Keeps catalog focused (anti-glossary) (7) | +2 | 0 | +1 | -2
+| Low churn / migration cost (5) | -1 | 0 | -2 | +1
+| **Weighted total** | **+63** | **0** | **-10** | **-12**
+|===
+
+The Utility Gate wins decisively. "Exclude category" scores negative because banning a
+subject area is arbitrary (it would also delete a working anchor and reject WEIRD, which
+is not even a personality model). "Liberal admit" abandons the activation thesis and
+drifts the catalog toward a glossary.
+
+== Consequences
+
+=== Positive
+
+* One criterion, stated once, applied to every candidate — no more ad-hoc litigation.
+* Template and catalog agree; the apparent contradiction dissolves.
+* The catalog's identity ("anchors change output") is protected against glossary drift.
+* Reuses machinery already in `CONTRIBUTING.adoc`; almost no new process.
+
+=== Negative / risks
+
+* **MBTI must be re-justified or reclassified.** Removing/downgrading an existing
+  ★★★ anchor is visible churn and may surprise contributors who cited it. Mitigation:
+  treat it as a tracked follow-up, not a silent deletion; give it the before/after test
+  first.
+* **Viability evidence is judgement-laden.** "Does the output structure change?" has a
+  grey zone. Mitigation: require the before/after artefact in the proposal, on a weak
+  *and* a strong model, per the existing test.
+* **Borderline utility for genuinely useful topics.** Some frameworks with real-world
+  value but weak *LLM* utility will be rejected; that is the intended cost of a
+  utility-defined catalog, not a defect.
+
+=== Open questions (deferred, not blocking)
+
+* Should reclassified anchors (e.g. MBTI if it fails) move to Rejected Proposals with a
+  "was previously listed" note, or stay as a downgraded ★☆☆ with a caveat? Decide when
+  the first reclassification actually happens.
+
+== References
+
+* ADR-007 — Artifact Taxonomy (Anchor vs. Contract vs. Skill): the activation-vs-recognition basis this ADR applies.
+* `CONTRIBUTING.adoc` — _Viability Test_ and _Quality Criteria_ (the operational gate).
+* https://github.com/LLM-Coding/Semantic-Anchors/issues/640[#640] — recognition ≠ activation (viability test).
+* https://github.com/LLM-Coding/Semantic-Anchors/issues/671[#671] (DISC), https://github.com/LLM-Coding/Semantic-Anchors/issues/673[#673] (Big Five/OCEAN), https://github.com/LLM-Coding/Semantic-Anchors/issues/674[#674] (HEXACO), https://github.com/LLM-Coding/Semantic-Anchors/issues/675[#675] (WEIRD) — the proposals that motivated this ADR.
+* https://github.com/LLM-Coding/Semantic-Anchors/issues/603[#603] — Criticism / Current Status requirement.
