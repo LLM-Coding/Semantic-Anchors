@@ -98,6 +98,8 @@ Erkennung ist nicht Aktivierung. Ein Modell kann flüssig *über* einen Begriff 
 
 Ein Term, der die vier Qualitätskriterien besteht, aber den Viability-Test nicht, ist ein *Contract*, kein Anchor.
 
+*Dieses Gate ist themenneutral.* Kein Themengebiet ist bevorzugt oder verboten — Persönlichkeits- und Assessment-Modelle (MBTI, DISC, Big Five, HEXACO) werden weder wegen ihres Themas ausgeschlossen noch wegen ihrer Bekanntheit aufgenommen. Sie müssen denselben Viability-Test bestehen wie jeder andere Kandidat und — angesichts ihrer umstrittenen empirischen Absicherung — einen `== Criticism` / `== Current Status`-Abschnitt tragen. Die Begründung steht in link:specs/adrs/adr-008-personality-assessment-anchors.adoc[ADR-008].
+
 == Wie man einen neuen Anker vorschlägt
 
 Wir verwenden einen *automatisierten Workflow mit GitHub Copilot* zur Validierung und Anreicherung von Vorschlägen:
