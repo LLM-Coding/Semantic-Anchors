@@ -3,6 +3,9 @@
 :roles: team-lead, consultant, educator, ux-designer, product-owner
 :proponents: Isabel Briggs Myers, Katharine Cook Briggs, Carl Gustav Jung
 :tags: personality types, MBTI, psychological types, communication styles, team dynamics, Jungian psychology
+:related: big-five, hexaco
+:tier: 1
+:advisory: Gilt weithin als Pseudowissenschaft mit geringer Test-Retest-Reliabilität — zur Reflexion und für den Dialog nutzen, nicht zur Auswahl (siehe Criticism)
 
 [%collapsible]
 ====
@@ -50,10 +53,13 @@ Historischer Kontext:: Während des Zweiten Weltkriegs entwickelt, um Frauen bei
 * "MBTI ist ein Ausgangspunkt für Selbstreflexion und Dialog" — Korrekte Nutzung ist explorativ, nicht diagnostisch
 
 [discrete]
-== *Einschränkungen und Kritik*:
+== *Criticism*:
 
-* Die Test-Retest-Reliabilität ist mäßig — dieselbe Person kann bei erneuter Durchführung einen anderen Typ erhalten
-* Binäre Dichotomien vereinfachen kontinuierliche Merkmalsverteilungen zu stark
-* Nicht empfohlen für Einstellungsentscheidungen oder Personalauswahl mit hohem Einsatz
-* Kritisiert wegen geringer prädiktiver Validität für Arbeitsleistung im Vergleich zu z.B. Big-Five-Persönlichkeitsmerkmalen
+* David J. Pittenger, via die https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator[MBTI-Übersicht] — schlechte Test-Retest-Reliabilität: zwischen 39% und 76% der Befragten erhalten bei erneuter Durchführung nach nur fünf Wochen einen anderen Typ (etwa 50% ändern sich auf mindestens einer Skala). Die prädiktive Validität für Arbeitsleistung ist gering, und das eigene Manual rät davon ab, den Test zur Vorhersage von Berufserfolg zu nutzen.
+* Wird von der Fachgemeinschaft weithin als Pseudowissenschaft betrachtet (Organisationspsychologe Adam Grant: „there's no evidence behind it") — die vier binären Dichotomien zwingen kontinuierlichen Merkmalen diskrete Typen auf.
+
+[discrete]
+== *Current Status*:
+
+* Wissenschaftlich diskreditiert, aber kommerziell dominant — rund 50 Millionen Menschen haben ihn abgelegt, tausende Unternehmen und Hochschulen nutzen ihn. Als Ausgangspunkt für Selbstreflexion und Dialog behandeln, niemals als Diagnose- oder Auswahlinstrument; deshalb trägt der Anker ein `:advisory:`-Flag. Die empirisch validierten Alternativen sind die Big Five / OCEAN und HEXACO.
 ====
