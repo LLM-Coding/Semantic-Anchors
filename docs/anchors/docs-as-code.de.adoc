@@ -3,6 +3,7 @@
 :roles: technical-writer, software-developer, devops-engineer
 :proponents: Ralf D. Müller
 :tags: docs as code, documentation, AsciiDoc, version control, technical writing, Mueller
+:related: diataxis-framework, arc42, conventional-commits
 
 [%collapsible]
 ====

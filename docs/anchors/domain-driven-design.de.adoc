@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer, business-analyst, team-lead
 :proponents: Eric Evans
 :tags: DDD, domain-driven design, bounded context, ubiquitous language, aggregates, Eric Evans
+:related: hexagonal-architecture, clean-architecture, event-storming
 
 [%collapsible]
 ====

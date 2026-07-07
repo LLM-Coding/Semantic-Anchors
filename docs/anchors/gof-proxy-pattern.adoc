@@ -5,6 +5,7 @@
 :tier: 3
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, proxy, access control, lazy loading, caching, virtual proxy
+:related: gof-design-patterns, gof-decorator-pattern, gof-adapter-pattern
 
 [%collapsible]
 ====

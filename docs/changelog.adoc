@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-07-07
 
+*Metadata audit — `:related:` backfill (#668, Phase C — audit complete):*
+
+* Added curated `:related:` cross-links to 70 anchors (EN + DE) that lacked them — 2–5 genuinely related anchors each, using category and tag overlap as candidates and hand-curating to real conceptual connections (the SOLID and GoF-pattern clusters, the personality models, the TDD schools, the SPC trio, and so on). 187/188 anchors now carry `:related:` (the meta-anchor `what-qualifies-as-a-semantic-anchor` is intentionally standalone). This closes the #668 metadata audit: Phase A (`:proponents:`), Phase B (`:tags:`), Phase C (`:related:`) — the catalog's required and recommended metadata is now complete.
+
 *Metadata audit — `:tags:` backfill (#668, Phase B):*
 
 * Completes `:tags:` for the whole catalog — 100% of anchors now carry search keywords. Added tags to 39 anchors that lacked them (EN + DE), derived from each concept's name, aliases, key sub-concepts and proponents (e.g. `arc42` → arc42, architecture documentation, Starke, Hruschka). Follows the Phase A `:proponents:` backfill; Phase C (`:related:`) is the remaining follow-up.

@@ -3,6 +3,7 @@
 :roles: data-scientist, devops-engineer, team-lead, qa-engineer
 :proponents: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
 :tags: SPC, statistical process control, control charts, Shewhart, quality, variation
+:related: control-chart-shewhart, nelson-rules
 
 [%collapsible]
 ====

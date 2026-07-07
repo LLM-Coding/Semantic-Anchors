@@ -5,6 +5,7 @@
 :tier: 1
 :proponents: Robert C. Martin, Bertrand Meyer
 :tags: SOLID, design principle, OCP, open closed
+:related: solid-principles, solid-lsp, solid-srp
 
 [%collapsible]
 ====

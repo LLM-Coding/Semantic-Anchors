@@ -5,6 +5,7 @@
 :tier: 3
 :proponents: Robert C. Martin
 :tags: SOLID, design principle, SRP, single responsibility
+:related: solid-principles, separation-of-concerns, single-level-of-abstraction-principle
 
 [%collapsible]
 ====

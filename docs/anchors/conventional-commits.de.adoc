@@ -3,6 +3,7 @@
 :roles: software-developer, devops-engineer
 :proponents: Benjamin E. Coe, James J. Womack, Steve Mao
 :tags: conventional commits, commit messages, semantic commits, changelog, git
+:related: semantic-versioning, github-flow, definition-of-done
 
 [%collapsible]
 ====

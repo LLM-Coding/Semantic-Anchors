@@ -3,6 +3,7 @@
 :roles: business-analyst, team-lead, technical-writer, consultant
 :proponents: US-Militär (Army writing standards), weithin in Wirtschaft und Regierung übernommen
 :tags: BLUF, bottom line up front, concise communication, executive summary, clarity
+:related: pyramid-principle, mece, inverted-pyramid-style, plain-english-strunk-white
 
 [%collapsible]
 ====

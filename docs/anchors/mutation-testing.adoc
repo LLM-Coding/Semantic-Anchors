@@ -3,6 +3,7 @@
 :roles: software-developer, qa-engineer
 :proponents: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
 :tags: mutation testing, test quality, fault injection, test effectiveness, coverage
+:related: property-based-testing, testing-pyramid
 :tier: 3
 
 [%collapsible]

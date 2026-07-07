@@ -5,6 +5,7 @@
 :tier: 1
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, singleton, global state, instance control
+:related: gof-design-patterns, gof-abstract-factory-pattern
 
 [%collapsible]
 ====

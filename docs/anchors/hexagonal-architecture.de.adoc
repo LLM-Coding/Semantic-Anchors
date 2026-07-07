@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer
 :proponents: Alistair Cockburn
 :tags: hexagonal architecture, ports and adapters, Cockburn, isolation, boundaries
+:related: clean-architecture, domain-driven-design, separation-of-concerns
 
 [%collapsible]
 ====

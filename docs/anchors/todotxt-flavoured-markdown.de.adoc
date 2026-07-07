@@ -3,6 +3,7 @@
 :roles: software-developer, team-lead, technical-writer
 :proponents: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
 :tags: todo.txt, task management, markdown, Gina Trapani, plain text, task lists
+:related: gtd, para-method
 
 [%collapsible]
 ====

@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer
 :proponents: Robert C. Martin
 :tags: clean architecture, dependency rule, layers, Robert C. Martin, ports and adapters
+:related: hexagonal-architecture, domain-driven-design, solid-principles
 :tier: 3
 :definition: Clean Architecture, formulated by Robert C. Martin, organises code into concentric layers whose dependencies point only inward toward the domain. Business rules sit at the centre, independent of frameworks, UI, and databases at the outer edges. The Dependency Rule keeps the core testable and insulated from external change.
 
