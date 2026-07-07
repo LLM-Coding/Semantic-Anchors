@@ -2,6 +2,7 @@
 :categories: development-workflow
 :roles: software-developer, data-scientist, consultant
 :proponents: Community
+:tier: 3
 :tags: SOTA, state of the art, benchmark, current best, research
 :related: llm-evaluations, first-principles-thinking
 

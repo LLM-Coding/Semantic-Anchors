@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer, team-lead, devops-engineer
 :proponents: Mike Cohn
+:tier: 3
 :tags: testing pyramid, unit tests, integration tests, e2e, test strategy, Mike Cohn
 :related: tdd-london-school, tdd-chicago-school, mutation-testing
 

@@ -3,6 +3,7 @@
 :roles: software-architect, team-lead, product-owner
 :related: arc42, adr-according-to-nygard, quality-attribute-scenario
 :proponents: Rick Kazman, Mark Klein, Paul Clements
+:tier: 3
 :tags: architecture evaluation, quality attributes, tradeoffs, utility tree, SEI, risk analysis
 
 [%collapsible]

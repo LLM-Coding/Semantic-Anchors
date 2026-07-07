@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant
 :proponents: International Electrotechnical Commission (IEC)
+:tier: 3
 :related: testing-pyramid, mutation-testing
 :tags: safety, functional-safety, SIL, standards, certification, risk-assessment
 

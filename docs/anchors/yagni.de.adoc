@@ -2,6 +2,7 @@
 :categories: design-principles
 :roles: software-developer, software-architect, consultant
 :proponents: Ron Jeffries, Kent Beck
+:tier: 1
 :related: dry, ssot-principle, tdd-chicago-school, kiss-principle
 :tags: yagni, extreme-programming, simplicity, incremental-design, over-engineering
 

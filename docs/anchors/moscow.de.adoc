@@ -3,6 +3,7 @@
 :roles: product-owner, business-analyst, team-lead, consultant
 :related: user-story-mapping, impact-mapping
 :proponents: Dai Clegg
+:tier: 3
 :tags: prioritization, requirements, agile, dsdm
 
 [%collapsible]

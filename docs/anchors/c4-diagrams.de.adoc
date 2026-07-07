@@ -2,6 +2,7 @@
 :categories: software-architecture
 :roles: software-architect, technical-writer, team-lead, consultant
 :proponents: Simon Brown
+:tier: 3
 :tags: C4, C4 model, architecture diagrams, context container component code, Simon Brown, visualization
 :related: arc42, adr-according-to-nygard, domain-driven-design
 

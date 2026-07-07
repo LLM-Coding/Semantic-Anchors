@@ -3,6 +3,7 @@
 :roles: software-architect, business-analyst, consultant, team-lead
 :related: arc42, c4-diagrams, morphological-box
 :proponents: Jörg Becker, Michael Rosemann, Rolf Schütte
+:tier: 2
 :tags: modeling, enterprise-architecture, business-process, bpm, principles, quality
 
 [%collapsible]

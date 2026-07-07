@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, team-lead
 :related: regulated-environment, iec-61508-sil-levels
 :proponents: OWASP Foundation
+:tier: 3
 :tags: security, web-security, vulnerabilities, risk, appsec, owasp
 
 [%collapsible]

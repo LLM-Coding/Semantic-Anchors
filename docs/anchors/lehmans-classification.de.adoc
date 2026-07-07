@@ -3,6 +3,7 @@
 :roles: software-architect, requirements-engineer, team-lead, educator
 :related: arc42, cohesion-criteria
 :proponents: Meir M. Lehman
+:tier: 2
 :tags: klassifikation, software-evolution, requirements, wartung, s-type, p-type, e-type
 
 [%collapsible]
