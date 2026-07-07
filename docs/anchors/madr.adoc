@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer, team-lead
 :proponents: Oliver Kopp, Olaf Zimmermann (and MADR community)
 :tags: MADR, markdown ADR, architecture decision record, decision documentation
+:related: adr-according-to-nygard, arc42
 :tier: 3
 
 [%collapsible]

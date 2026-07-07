@@ -5,6 +5,7 @@
 :tier: 1
 :proponents: Robert C. Martin
 :tags: SOLID, design principle, ISP, interface segregation
+:related: solid-principles, solid-dip, solid-srp
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :tier: 1
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, template method, algorithm skeleton, hook, inheritance
+:related: gof-design-patterns, gof-strategy-pattern, gof-factory-method-pattern
 
 [%collapsible]
 ====

@@ -3,6 +3,7 @@
 :roles: product-owner, business-analyst, team-lead, consultant
 :proponents: Gojko Adzic
 :tags: impact mapping, Gojko Adzic, strategic planning, goals, deliverables, product
+:related: user-story-mapping, wardley-mapping, okr
 
 [%collapsible]
 ====

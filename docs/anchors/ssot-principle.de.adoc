@@ -3,6 +3,7 @@
 :roles: software-architect, data-scientist, business-analyst
 :proponents: Community
 :tags: SSOT, single source of truth, data consistency, canonical source, DRY
+:related: dry, single-level-of-abstraction-principle, separation-of-concerns
 
 [%collapsible]
 ====

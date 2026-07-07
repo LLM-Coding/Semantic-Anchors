@@ -3,6 +3,7 @@
 :roles: data-scientist, devops-engineer, team-lead
 :proponents: Walter A. Shewhart
 :tags: control chart, Shewhart, SPC, statistical process control, quality, variation
+:related: spc, nelson-rules
 
 [%collapsible]
 ====

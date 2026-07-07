@@ -3,6 +3,7 @@
 :roles: software-developer, data-scientist, business-analyst
 :proponents: Wei et al. (Google Research, 2022), "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
 :tags: chain of thought, CoT, reasoning, step-by-step, prompting, LLM reasoning
+:related: first-principles-thinking, feynman-technique, fermi-estimation
 
 [%collapsible]
 ====

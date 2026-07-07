@@ -3,6 +3,7 @@
 :roles: software-developer, data-scientist, consultant
 :proponents: Community
 :tags: SOTA, state of the art, benchmark, current best, research
+:related: llm-evaluations, first-principles-thinking
 
 [%collapsible]
 ====

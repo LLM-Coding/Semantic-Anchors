@@ -3,6 +3,7 @@
 :roles: business-analyst, qa-engineer, technical-writer
 :proponents: Alistair Mavin
 :tags: EARS, requirements syntax, requirements engineering, Mavin, easy approach to requirements syntax
+:related: cockburn-use-cases, invest, req42
 :tier: 3
 
 [%collapsible]

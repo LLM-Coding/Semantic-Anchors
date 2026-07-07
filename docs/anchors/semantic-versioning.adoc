@@ -3,6 +3,7 @@
 :roles: software-developer, devops-engineer, product-owner
 :proponents: Tom Preston-Werner
 :tags: semantic versioning, SemVer, versioning, major minor patch, Tom Preston-Werner
+:related: conventional-commits, twelve-factor-app
 :tier: 3
 
 [%collapsible]

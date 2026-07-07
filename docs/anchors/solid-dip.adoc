@@ -5,6 +5,7 @@
 :tier: 3
 :proponents: Robert C. Martin
 :tags: SOLID, design principle, DIP, dependency inversion
+:related: solid-principles, solid-srp, solid-ocp, solid-lsp, solid-isp
 
 [%collapsible]
 ====

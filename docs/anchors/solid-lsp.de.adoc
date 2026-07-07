@@ -5,6 +5,7 @@
 :tier: 1
 :proponents: Robert C. Martin, Barbara Liskov
 :tags: SOLID, design principle, LSP, liskov, substitution
+:related: solid-principles, solid-ocp, solid-dip
 
 [%collapsible]
 ====

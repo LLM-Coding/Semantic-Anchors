@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect, consultant, educator
 :proponents: Larry Wall
 :tags: TIMTOWTDI, there is more than one way to do it, Perl, Larry Wall, flexibility
+:related: unix-philosophy, effective-go, kiss-principle
 :tier: 1
 
 [%collapsible]

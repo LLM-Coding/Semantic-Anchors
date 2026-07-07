@@ -5,6 +5,7 @@
 :tier: 3
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, factory, polymorphism, instantiation
+:related: gof-design-patterns, gof-abstract-factory-pattern, gof-template-method-pattern
 
 [%collapsible]
 ====
