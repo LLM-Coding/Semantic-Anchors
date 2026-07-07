@@ -1,0 +1,61 @@
+= DISC-Modell (Marston)
+:categories: communication-presentation
+:roles: consultant, team-lead, educator, ux-designer, product-owner
+:proponents: William Moulton Marston
+:tags: Persönlichkeit, DISC, Verhaltensstile, Marston, Kommunikationsstile, Teamdynamik
+:related: myers-briggs-type-indicator, big-five, hexaco
+:tier: 1
+:advisory: Gilt als Pseudowissenschaft ohne nachgewiesene prädiktive Validität — zur Reflexion und für den Dialog nutzen, nicht zur Auswahl (siehe Criticism)
+
+[%collapsible]
+====
+Vollständiger Name:: DISC-Modell der Verhaltensstile
+
+Auch bekannt als:: DISC, DiSC, Marstons DISC
+
+[discrete]
+== *Kernkonzepte*:
+
+Vier Verhaltensstile:: Das moderne Modell ordnet Verhalten in vier Quadranten:
+* *Dominance / Dominanz (D)* — direkt, ergebnisorientiert, durchsetzungsstark; Fokus auf das *Was*
+* *Influence / Initiative (I)* — kontaktfreudig, begeisternd, überzeugend; Fokus auf *Menschen*
+* *Steadiness / Stetigkeit (S)* — geduldig, verlässlich, kooperativ; Fokus auf *Tempo* und Stabilität
+* *Conscientiousness / Gewissenhaftigkeit (C)* — präzise, analytisch, qualitätsorientiert; Fokus auf das *Wie*
+
+Marstons Originalbegriffe:: In _Emotions of Normal People_ (1928) benannte Marston die vier als Dominance, Inducement, Submission und Compliance; die modernen Instrumente benennen sie wie oben um.
+
+Zwei Achsen:: Die Quadranten ergeben sich aus zwei Dimensionen — wie eine Person die Umgebung wahrnimmt (günstig vs. feindlich) und ihr Gefühl von Kontrolle darin (mehr vs. weniger mächtig).
+
+Stil, keine Fähigkeit:: DISC beschreibt einen Verhaltens-*Stil* und seine Kommunikationspräferenzen, nicht Kompetenz oder festen Charakter.
+
+Theorie vs. Instrument:: Marston stellte die *Theorie* auf, baute aber kein Instrument und patentierte nichts. Die Selbsttests kamen später (Walter Clarkes Activity Vector Analysis, 1956; John Geiers DiSC, 1970er) und sind heute kommerzielle Produkte vieler Anbieter.
+
+Wichtige Proponenten:: William Moulton Marston (Theorie, 1928); Instrumente von Walter Clarke sowie später John Geier und kommerziellen Verlagen.
+
+[discrete]
+== *Wann einzusetzen*:
+
+Für zuverlässige Aktivierung das Modell *und die Aufgabe* nennen — „ordne den Kommunikationsstil dieser Person den DISC-Quadranten zu" — statt des nackten Begriffs.
+
+* Kommunikations- und Kollaborationspräferenzen im Team rahmen (D/I/S/C-Tendenzen als geteilte Kurzform)
+* Moderation, Coaching oder Workshops, wo ein leichtgewichtiges Verhaltensvokabular den Dialog unterstützt
+* Anpassen, wie eine Botschaft an den Stil eines beschriebenen Gegenübers geliefert wird
+* Onboarding-Gespräche über Arbeitsstile
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Mein DISC-Typ sagt, was ich kann" — es beschreibt eine Verhaltenspräferenz, keine Fähigkeit
+* ❌ „DISC ist wissenschaftlich validiert" — ist es nicht; es sagt Arbeitsleistung nicht besser als der Zufall vorher
+* ✓ „DISC ist ein Gesprächseinstieg" — korrekt genutzt exploratorisch, nie zur Auswahl oder Diagnose
+====
+
+== *Criticism*:
+
+* Via die https://en.wikipedia.org/wiki/DISC_assessment[DISC-Assessment-Übersicht] — als *pseudowissenschaftlich* eingestuft: die wissenschaftliche Validität von DISC ist nicht nachgewiesen, und die Tests zeigen *keine Fähigkeit, Arbeitsleistung vorherzusagen* (eine deutsche Studie von 2013 fand die Reliabilität „weitgehend" erfüllt, die Validität „überhaupt nicht"). DISC-Daten lassen sich besser als Kombinationen der Big Five erklären denn als eigenständige Merkmale.
+* Die scheinbare Treffsicherheit beruht teils auf dem *Barnum-Effekt* — vage, allgemein schmeichelhafte Beschreibungen werden als persönlich zutreffend akzeptiert. Marstons vier Kategorien ignorieren die Persönlichkeitsforschung nach 1920.
+
+[discrete]
+== *Current Status*:
+
+* In Unternehmenstrainings und Teambuilding kommerziell beliebt, aber wissenschaftlich diskreditiert; da Marston die Theorie nie patentierte, verkaufen viele Anbieter konkurrierende DISC-Instrumente. Als Ausgangspunkt für Reflexion und Dialog behandeln, niemals als Diagnose- oder Einstellungsinstrument; deshalb trägt der Anker ein `:advisory:`-Flag. Die empirisch validierten Alternativen sind die Big Five / OCEAN und HEXACO.

@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-07
+
+*New anchor — DISC (#671), the last of the personality cluster:*
+
+* *link:#/anchor/disc-model[DISC Model]* (William Moulton Marston, 1928) — communication-presentation: four behavioural styles (Dominance, Influence, Steadiness, Conscientiousness) as a lightweight communication-style shorthand. Like MBTI, DISC *passes* the ADR-008 Utility Gate — naming it reliably imposes the four-quadrant frame on output — so it is admitted, at tier ★☆☆ with an `:advisory:` flag (#624) and a fetch-verified Criticism section (classified as pseudoscience; no demonstrated predictive validity; the apparent accuracy is partly the Barnum effect; DISC data are better explained as Big Five combinations). Bilingual, cross-linked with MBTI, Big Five, and HEXACO. Proposed by https://github.com/rdmueller[@rdmueller] in #671. This completes the personality-model cluster under ADR-008.
+
 == 2026-07-06
 
 *MBTI held to the ADR-008 Utility Gate:*
