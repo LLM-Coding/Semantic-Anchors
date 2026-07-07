@@ -3,7 +3,7 @@
 :roles: software-architect, data-scientist, devops-engineer
 :related: event-driven-architecture, fallacies-of-distributed-computing
 :proponents: Eric Brewer, Seth Gilbert, Nancy Lynch
-:tags: cap, distributed-systems, consistency, availability, partition-tolerance, pacelc
+:tags: cap, distributed-systems, consistency, availability, partition-tolerance, pacelc, resilience
 :tier: 3
 
 [%collapsible]

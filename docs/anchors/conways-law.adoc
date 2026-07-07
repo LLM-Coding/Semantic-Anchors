@@ -3,7 +3,7 @@
 :roles: software-architect, team-lead, product-owner, consultant
 :related: domain-driven-design, cohesion-criteria, vertical-slice-architecture
 :proponents: Melvin E. Conway
-:tags: conways-law, organization, architecture, team-topologies, communication-structure, sociotechnical
+:tags: conways-law, organization, architecture, team-topologies, communication-structure, sociotechnical, feedback
 :tier: 3
 
 [%collapsible]

@@ -3,7 +3,7 @@
 :roles: devops-engineer, software-architect, team-lead, software-developer
 :related: five-whys, spc, control-chart-shewhart
 :proponents: Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
-:tags: sre, reliability, slo, error-budget, observability, devops, incident-response, toil
+:tags: sre, reliability, slo, error-budget, observability, devops, incident-response, toil, resilience, feedback
 :tier: 3
 
 [%collapsible]
