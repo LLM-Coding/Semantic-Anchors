@@ -615,6 +615,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Kibeom Lee & Michael C. Ashton
 - **Core:** Six trait dimensions — Honesty-Humility, Emotionality, eXtraversion, Agreeableness, Conscientiousness, Openness. Essentially Big Five plus Honesty-Humility (H), the strongest trait predictor of unethical/exploitative behaviour and the Dark Triad — its distinct value over Big Five. Name the task ("assess along HEXACO, especially Honesty-Humility") for reliable activation
 
+### DISC Model (Marston)
+- **Also known as:** DISC, DiSC
+- **Proponents:** William Moulton Marston (theory, 1928)
+- **Core:** Four behavioural styles — Dominance, Influence, Steadiness, Conscientiousness — a lightweight communication-style shorthand. Advisory: classified as pseudoscience with no demonstrated predictive validity; use for reflection/dialogue, not selection. Name the task ("map onto the DISC quadrants") for reliable activation
+
 ### Curse of Knowledge
 - **Proponents:** Camerer, Loewenstein & Weber; popularized by Chip & Dan Heath
 - **Core:** Once you know something you cannot imagine not knowing it, so experts overestimate shared context and leave jargon and steps unexplained; the antidote is to surface assumptions, define terms, and model the audience

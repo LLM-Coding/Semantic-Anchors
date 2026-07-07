@@ -1,0 +1,61 @@
+= DISC Model (Marston)
+:categories: communication-presentation
+:roles: consultant, team-lead, educator, ux-designer, product-owner
+:proponents: William Moulton Marston
+:tags: personality, DISC, behavioural styles, Marston, communication styles, team dynamics
+:related: myers-briggs-type-indicator, big-five, hexaco
+:tier: 1
+:advisory: Classified as pseudoscience with no demonstrated predictive validity — use for reflection and dialogue, not selection (see Criticism)
+
+[%collapsible]
+====
+Full Name:: DISC Model of Behavioural Styles
+
+Also known as:: DISC, DiSC, Marston's DISC
+
+[discrete]
+== *Core Concepts*:
+
+Four Behavioural Styles:: The modern model sorts behaviour into four quadrants:
+* *Dominance (D)* — direct, results-driven, assertive; focus on the *what*
+* *Influence (I)* — outgoing, enthusiastic, persuasive; focus on *people*
+* *Steadiness (S)* — patient, dependable, cooperative; focus on *pace* and stability
+* *Conscientiousness (C)* — precise, analytical, quality-focused; focus on *how*
+
+Marston's Original Terms:: In _Emotions of Normal People_ (1928) Marston named the four as Dominance, Inducement, Submission, and Compliance; the modern instruments relabel them as above.
+
+Two Axes:: The quadrants arise from two dimensions — how a person perceives the environment (favourable vs. antagonistic) and their sense of control within it (more vs. less powerful).
+
+Style, Not Ability:: DISC describes a behavioural *style* and its communication preferences, not competence or fixed character.
+
+Theory vs. Instrument:: Marston proposed the *theory* but never built an assessment or patented it. The self-assessment tools came later (Walter Clarke's Activity Vector Analysis, 1956; John Geier's DiSC, 1970s) and are today commercial products from many vendors.
+
+Key Proponents:: William Moulton Marston (theory, 1928); assessment instruments by Walter Clarke and later John Geier and commercial publishers.
+
+[discrete]
+== *When to Use*:
+
+For reliable activation, name the model *and the task* — "map this person's communication style onto the DISC quadrants" — rather than the bare term.
+
+* Framing communication and collaboration preferences within a team (D/I/S/C tendencies as a shared shorthand)
+* Facilitation, coaching, or workshop settings where a lightweight behavioural vocabulary helps dialogue
+* Tailoring how a message is delivered to a described counterpart's style
+* Onboarding conversations about working styles
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "My DISC type says what I can do" — it describes a behavioural preference, not ability
+* ❌ "DISC is scientifically validated" — it is not; it predicts job performance no better than chance
+* ✓ "DISC is a conversational starting point" — correct use is exploratory dialogue, never selection or diagnosis
+====
+
+== *Criticism*:
+
+* Via the https://en.wikipedia.org/wiki/DISC_assessment[DISC assessment overview] — classified as *pseudoscientific*: the scientific validity of DISC has not been demonstrated, and the assessments have shown *no ability to predict job performance* (psychologist Wendell Williams specifically criticises its use in recruitment; a 2013 study found reliability "largely" met but validity "not at all"). DISC data are better explained as combinations of the Big Five than as independent traits.
+* Its apparent accuracy is partly the *Barnum effect* — people accept vague, broadly flattering descriptions as personally true. Marston's four categories ignore personality science after 1920.
+
+[discrete]
+== *Current Status*:
+
+* Commercially popular in corporate training and team-building yet scientifically discredited; because Marston never patented the theory, many vendors sell competing DISC instruments. Treat it as a starting point for reflection and dialogue, never as a diagnostic or hiring tool; this is why the anchor carries an `:advisory:` flag. The empirically validated alternatives are the Big Five / OCEAN and HEXACO.
