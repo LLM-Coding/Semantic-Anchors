@@ -3,7 +3,9 @@
 :roles: team-lead, consultant, educator, ux-designer, product-owner
 :proponents: Isabel Briggs Myers, Katharine Cook Briggs, Carl Gustav Jung
 :tags: personality types, MBTI, psychological types, communication styles, team dynamics, Jungian psychology
+:related: big-five, hexaco
 :tier: 1
+:advisory: Widely regarded as pseudoscience with low test-retest reliability — use for reflection and dialogue, not selection (see Criticism)
 
 [%collapsible]
 ====
@@ -51,10 +53,13 @@ Historical Context:: Developed during World War II to help women entering the in
 * ✓ "MBTI is a starting point for self-reflection and dialogue" — Correct use is exploratory, not diagnostic
 
 [discrete]
-== *Limitations and Criticisms*:
+== *Criticism*:
 
-* Test-retest reliability is modest — the same person can receive a different type on retaking the assessment
-* Binary dichotomies oversimplify continuous trait distributions
-* Not endorsed for high-stakes hiring or selection decisions
-* Criticized for low predictive validity for job performance compared to, e.g., Big Five personality traits
+* David J. Pittenger, via the https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator[MBTI overview] — poor test-retest reliability: between 39% and 76% of respondents obtain a different type when retaking the indicator after only five weeks (about 50% change on at least one scale). Predictive validity for job performance is poor, and the instrument's own manual discourages using it to predict job success.
+* Widely regarded as pseudoscience by the scientific community (organizational psychologist Adam Grant: "there's no evidence behind it") — the four binary dichotomies impose discrete types on traits that are in fact continuous.
+
+[discrete]
+== *Current Status*:
+
+* Scientifically discredited yet commercially dominant — roughly 50 million people have taken it and thousands of businesses and colleges use it. Treat it as a starting point for self-reflection and dialogue, never as a diagnostic or selection tool; this is why the anchor carries an `:advisory:` flag. The empirically validated alternatives are the Big Five / OCEAN and HEXACO.
 ====

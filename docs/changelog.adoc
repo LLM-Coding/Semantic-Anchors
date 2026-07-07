@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-07-06
 
+*MBTI held to the ADR-008 Utility Gate:*
+
+* Applying ADR-008 to the existing *link:#/anchor/myers-briggs-type-indicator[MBTI]* anchor, without grandfathering. MBTI *passes* the gate — naming it reliably imposes the 16-type / four-dichotomy structure on output, which is genuine output-structure change, not mere recognition — so it stays. But its criticism did not meet the #603 convention: it now carries a proper fetch-verified `== Criticism` section (Pittenger — 39–76% receive a different type on a five-week retest; widely regarded as pseudoscience) and a `== Current Status`, plus an `:advisory:` flag (#624) and `:related:` links to the empirically validated Big Five and HEXACO. The gate keeps its teeth: MBTI clears it on utility while being held to the same criticism standard as new anchors.
+
 *New anchor — HEXACO (#674):*
 
 * *link:#/anchor/hexaco[HEXACO]* (Kibeom Lee & Michael C. Ashton) — communication-presentation: the six-factor personality model — Big Five plus *Honesty-Humility*, the strongest trait predictor of unethical/exploitative behaviour and the Dark Triad. Admitted under ADR-008 because that sixth factor delivers distinct utility the Big Five cannot (the redundancy test, not a synonym). Tier ★★☆ (fires with the qualified form "assess along HEXACO, especially Honesty-Humility"), bilingual, with a fetch-verified Criticism section (De Raad et al. — the sixth factor does not always replicate cross-culturally) and a Current Status referencing the Big Five. Proposed by https://github.com/raifdmueller[@raifdmueller] in #674.
