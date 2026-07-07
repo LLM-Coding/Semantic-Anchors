@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-07-07
 
+*Fix — dead `:related:` links:*
+
+* Repointed pre-existing broken cross-references to their real anchor IDs: `kiss-principle`/`yagni` → `dry` (was `dry-principle`), `yagni` → `ssot-principle` (was `spot-principle`), `effective-go` → `effective-java` (was `clean-code`). All `:related:` targets across the catalog now resolve to existing anchors.
+
 *Metadata audit — `:related:` backfill (#668, Phase C — audit complete):*
 
 * Added curated `:related:` cross-links to 70 anchors (EN + DE) that lacked them — 2–5 genuinely related anchors each, using category and tag overlap as candidates and hand-curating to real conceptual connections (the SOLID and GoF-pattern clusters, the personality models, the TDD schools, the SPC trio, and so on). 187/188 anchors now carry `:related:` (the meta-anchor `what-qualifies-as-a-semantic-anchor` is intentionally standalone). This closes the #668 metadata audit: Phase A (`:proponents:`), Phase B (`:tags:`), Phase C (`:related:`) — the catalog's required and recommended metadata is now complete.
