@@ -5,6 +5,7 @@
 :proponents: L. Peter Deutsch, James Gosling
 :tags: distributed-systems, networking, reliability, latency, fallacies, resilience
 :tier: 3
+:systemic-dimensions: resilience, boundary
 
 [%collapsible]
 ====

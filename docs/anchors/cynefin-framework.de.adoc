@@ -3,6 +3,7 @@
 :roles: team-lead, consultant, product-owner, software-architect
 :proponents: Dave Snowden
 :tier: 3
+:systemic-dimensions: emergence, boundary
 :related: wardley-mapping
 :tags: complexity, decision-making, sensemaking, strategy, domains
 

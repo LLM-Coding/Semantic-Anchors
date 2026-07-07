@@ -5,6 +5,7 @@
 :proponents: Eric Brewer, Seth Gilbert, Nancy Lynch
 :tags: cap, distributed-systems, consistency, availability, partition-tolerance, pacelc
 :tier: 3
+:systemic-dimensions: boundary, resilience
 
 [%collapsible]
 ====

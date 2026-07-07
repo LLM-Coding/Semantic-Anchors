@@ -5,6 +5,7 @@
 :related: wardley-mapping
 :tags: complexity, decision-making, sensemaking, strategy, domains
 :tier: 3
+:systemic-dimensions: emergence, boundary
 :definition: Cynefin, created by Dave Snowden, is a sense-making framework that sorts situations into five domains — Clear, Complicated, Complex, Chaotic, and Disorder — each with a different cause-and-effect relationship. It helps choose the right response, from applying best practice in ordered domains to probing and experimenting in the complex one.
 
 [%collapsible]

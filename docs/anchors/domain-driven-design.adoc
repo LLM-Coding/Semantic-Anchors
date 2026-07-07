@@ -5,6 +5,7 @@
 :tags: DDD, domain-driven design, bounded context, ubiquitous language, aggregates, Eric Evans
 :related: hexagonal-architecture, clean-architecture, event-storming
 :tier: 3
+:systemic-dimensions: boundary
 :definition: Domain-Driven Design, introduced by Eric Evans, tackles complex software by centring the design on the business domain. A shared Ubiquitous Language unites developers and domain experts, Bounded Contexts delimit models, and tactical patterns — entities, value objects, aggregates, repositories — express the domain directly in code.
 
 [%collapsible]

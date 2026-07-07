@@ -5,6 +5,7 @@
 :proponents: Matthew Skelton, Manuel Pais
 :tags: org-design, team-structure, cognitive-load, conways-law, flow
 :tier: 2
+:systemic-dimensions: boundary, feedback
 
 [%collapsible]
 ====

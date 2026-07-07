@@ -5,6 +5,7 @@
 :proponents: Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
 :tags: sre, reliability, slo, error-budget, observability, devops, incident-response, toil
 :tier: 3
+:systemic-dimensions: resilience, feedback
 
 [%collapsible]
 ====

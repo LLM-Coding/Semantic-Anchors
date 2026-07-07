@@ -119,6 +119,9 @@ function parseAnchorFile(filePath) {
     related: parseList(attributes.related),
     proponents: parseList(attributes.proponents),
     tags: parseList(attributes.tags),
+    // Optional systemic-dimensions lens (#519 spike): a searchable tag over the
+    // four systemic dimensions — boundary, emergence, feedback, resilience.
+    systemicDimensions: parseList(attributes['systemic-dimensions']),
     filePath: `docs/anchors/${id}.adoc`,
   }
 
@@ -287,6 +290,8 @@ function generateMetadata(anchors, categories, roles) {
       ).toFixed(2),
       anchorsWithTags: anchors.filter((a) => a.tags.length > 0).length,
       anchorsWithRelated: anchors.filter((a) => a.related.length > 0).length,
+      anchorsWithSystemicDimensions: anchors.filter((a) => a.systemicDimensions.length > 0)
+        .length,
     },
   }
 }

@@ -5,6 +5,7 @@
 :related: domain-driven-design, hexagonal-architecture, clean-architecture
 :tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency
 :tier: 3
+:systemic-dimensions: feedback, emergence
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: Martin Fowler
 :tags: legacy-modernization, migration, refactoring, incremental, facade
 :tier: 2
+:systemic-dimensions: boundary, resilience
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: Michael Nygard, Martin Fowler
 :tags: resilience, fault-tolerance, stability-pattern, microservices, fail-fast
 :tier: 2
+:systemic-dimensions: resilience, feedback
 
 [%collapsible]
 ====
