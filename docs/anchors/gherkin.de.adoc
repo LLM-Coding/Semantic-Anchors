@@ -3,6 +3,7 @@
 :roles: software-developer, qa-engineer, business-analyst, product-owner
 :related: bdd-given-when-then, ears-requirements, tdd-london-school
 :proponents: Aslak Hellesøy
+:tier: 3
 :tags: gherkin, bdd, cucumber, given-when-then, specification-by-example, dsl, acceptance-testing, living-documentation
 
 [%collapsible]

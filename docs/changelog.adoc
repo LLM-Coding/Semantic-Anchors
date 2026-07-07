@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-07-08
+
+*Fix — EN/DE metadata parity:*
+
+* A parity audit found 121 metadata drifts between anchors' English and German files: `:tier:` was missing from ~90 German files, the GoF-pattern and SOLID German files carried tiers inconsistent with their English source (EN 3 vs DE 1/2), and several narrative anchors (three-act-structure, hero's-journey, save-the-cat, …) had `:related:` / `:tags:` only in English; `problem-space-nvc.de` was also missing a category and a role. Synced all identifier/number metadata (`:categories:`, `:roles:`, `:tier:`, `:related:`, `:tags:`) from the authoritative English files to their German counterparts across 100 files. Two `:proponents:` fields keep their localized German phrasing, by design.
+
 == 2026-07-07
 
 *Fix — dead `:related:` links:*

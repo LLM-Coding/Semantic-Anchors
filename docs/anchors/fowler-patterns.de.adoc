@@ -2,6 +2,7 @@
 :categories: design-principles
 :roles: software-architect, software-developer, team-lead
 :proponents: Martin Fowler
+:tier: 3
 :related: domain-driven-design, hexagonal-architecture, clean-architecture
 :tags: enterprise, architecture, patterns, design-patterns, orm
 

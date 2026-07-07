@@ -2,6 +2,7 @@
 :categories: communication-presentation
 :roles: business-analyst, consultant, software-architect, data-scientist
 :proponents: Barbara Minto
+:tier: 3
 :tags: MECE, mutually exclusive collectively exhaustive, Barbara Minto, structuring, McKinsey
 :related: pyramid-principle, bluf, morphological-box
 

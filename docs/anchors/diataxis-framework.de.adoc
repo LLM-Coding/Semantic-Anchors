@@ -2,6 +2,7 @@
 :categories: documentation
 :roles: technical-writer, educator
 :proponents: Daniele Procida
+:tier: 3
 :tags: Diataxis, documentation, tutorials, how-to, reference, explanation, Procida
 :related: docs-as-code, arc42, inverted-pyramid-style
 

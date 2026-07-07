@@ -3,6 +3,7 @@
 :roles: product-owner, business-analyst, team-lead, consultant, educator
 :related: moscow, user-story-mapping, impact-mapping
 :proponents: D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
+:tier: 2
 :tags: pert, project-planning, estimation, schedule, uncertainty, three-point-estimation, critical-path, network-diagram
 
 [%collapsible]

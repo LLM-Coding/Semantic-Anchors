@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer, educator
 :proponents: Gerard Meszaros
+:tier: 3
 :related: tdd-london-school, tdd-chicago-school, property-based-testing
 :tags: test-double, mock, stub, spy, fake, dummy, xunit, testing, isolation
 

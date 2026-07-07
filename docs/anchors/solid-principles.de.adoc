@@ -2,6 +2,9 @@
 :categories: design-principles
 :roles: software-developer, software-architect, educator, consultant
 :proponents: Robert C. Martin
+:tags: design-principles, oop, solid, uncle-bob
+:related: gof-design-patterns, clean-architecture
+:tier: 3
 
 [%collapsible]
 ====

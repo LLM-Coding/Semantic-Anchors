@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer, business-analyst, product-owner
 :proponents: Dan North
+:tier: 3
 :related: tdd-london-school, tdd-chicago-school, user-story-mapping
 :tags: bdd, gherkin, cucumber, specification-by-example, three-amigos, given-when-then, living-documentation
 

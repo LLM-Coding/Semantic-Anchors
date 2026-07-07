@@ -3,6 +3,7 @@
 :roles: software-architect, qa-engineer, product-owner, business-analyst, team-lead
 :related: atam, arc42, adr-according-to-nygard
 :proponents: ISO/IEC JTC 1/SC 7
+:tier: 3
 :tags: quality model, software quality, quality attributes, product quality, quality in use, assessment, ISO, IEC
 
 [%collapsible]

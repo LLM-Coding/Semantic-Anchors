@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer
 :related: clean-architecture, hexagonal-architecture, cqrs
 :proponents: Jimmy Bogard
+:tier: 3
 :tags: feature slices, vertical slices, VSA, feature cohesion, CQRS
 
 [%collapsible]

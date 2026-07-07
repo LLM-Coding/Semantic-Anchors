@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer, qa-engineer, team-lead, consultant
 :related: atam, arc42, quality-attribute-scenario
 :proponents: Stefan Toth, Stefan Zörner
+:tier: 3
 :tags: software-reviews, architecture-review, quality-attributes, risks, lightweight, atam-alternative
 
 [%collapsible]

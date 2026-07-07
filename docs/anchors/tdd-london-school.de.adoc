@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer, software-architect
 :proponents: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
+:tier: 3
 :tags: TDD, London school, mockist, outside-in, Freeman, Pryce, interaction testing, mocks
 :related: tdd-chicago-school, red-green-tdd, test-double-mock
 

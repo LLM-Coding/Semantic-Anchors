@@ -1,7 +1,8 @@
 = Problem Space NVC
-:categories: requirements-engineering
-:roles: business-analyst, product-owner, consultant, ux-designer
+:categories: requirements-engineering, communication-presentation
+:roles: business-analyst, product-owner, consultant, ux-designer, team-lead
 :proponents: Marshall Rosenberg
+:tier: 3
 :tags: nvc, communication, empathy, conflict-resolution, requirements
 :related: jobs-to-be-done, impact-mapping, user-story-mapping
 
