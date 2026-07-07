@@ -5,7 +5,7 @@
 :tags: Persönlichkeit, DISC, Verhaltensstile, Marston, Kommunikationsstile, Teamdynamik
 :related: myers-briggs-type-indicator, big-five, hexaco
 :tier: 1
-:advisory: Gilt als Pseudowissenschaft ohne nachgewiesene prädiktive Validität — zur Reflexion und für den Dialog nutzen, nicht zur Auswahl (siehe Criticism)
+:advisory: Gilt als Pseudowissenschaft ohne nachgewiesene prädiktive Validität — zur Reflexion und für den Dialog nutzen, nicht zur Auswahl (siehe Kritik)
 
 [%collapsible]
 ====
@@ -50,12 +50,12 @@ Für zuverlässige Aktivierung das Modell *und die Aufgabe* nennen — „ordne 
 * ✓ „DISC ist ein Gesprächseinstieg" — korrekt genutzt exploratorisch, nie zur Auswahl oder Diagnose
 ====
 
-== *Criticism*:
+== *Kritik*:
 
-* Via die https://en.wikipedia.org/wiki/DISC_assessment[DISC-Assessment-Übersicht] — als *pseudowissenschaftlich* eingestuft: die wissenschaftliche Validität von DISC ist nicht nachgewiesen, und die Tests zeigen *keine Fähigkeit, Arbeitsleistung vorherzusagen* (eine deutsche Studie von 2013 fand die Reliabilität „weitgehend" erfüllt, die Validität „überhaupt nicht"). DISC-Daten lassen sich besser als Kombinationen der Big Five erklären denn als eigenständige Merkmale.
+* Via die https://en.wikipedia.org/wiki/DISC_assessment[DISC-Assessment-Übersicht] — als *pseudowissenschaftlich* eingestuft: die wissenschaftliche Validität von DISC ist nicht nachgewiesen, und die Tests zeigen *keine Fähigkeit, Arbeitsleistung vorherzusagen* (Psychologe Wendell Williams kritisiert speziell den Einsatz in der Personalauswahl; eine Studie von 2013 fand die Reliabilität „weitgehend" erfüllt, die Validität „überhaupt nicht"). DISC-Daten lassen sich besser als Kombinationen der Big Five erklären denn als eigenständige Merkmale.
 * Die scheinbare Treffsicherheit beruht teils auf dem *Barnum-Effekt* — vage, allgemein schmeichelhafte Beschreibungen werden als persönlich zutreffend akzeptiert. Marstons vier Kategorien ignorieren die Persönlichkeitsforschung nach 1920.
 
 [discrete]
-== *Current Status*:
+== *Aktueller Status*:
 
 * In Unternehmenstrainings und Teambuilding kommerziell beliebt, aber wissenschaftlich diskreditiert; da Marston die Theorie nie patentierte, verkaufen viele Anbieter konkurrierende DISC-Instrumente. Als Ausgangspunkt für Reflexion und Dialog behandeln, niemals als Diagnose- oder Einstellungsinstrument; deshalb trägt der Anker ein `:advisory:`-Flag. Die empirisch validierten Alternativen sind die Big Five / OCEAN und HEXACO.
