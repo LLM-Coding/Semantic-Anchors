@@ -4,7 +4,7 @@
 :proponents: Gregor Hohpe, Bobby Woolf, Martin Fowler
 :tier: 3
 :related: domain-driven-design, hexagonal-architecture, clean-architecture
-:tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency
+:tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency, feedback, emergence
 
 [%collapsible]
 ====

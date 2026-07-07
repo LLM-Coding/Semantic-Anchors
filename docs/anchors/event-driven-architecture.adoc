@@ -3,7 +3,7 @@
 :roles: software-architect, software-developer, devops-engineer
 :proponents: Gregor Hohpe, Bobby Woolf, Martin Fowler
 :related: domain-driven-design, hexagonal-architecture, clean-architecture
-:tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency
+:tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency, feedback, emergence
 :tier: 3
 
 [%collapsible]

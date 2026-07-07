@@ -3,7 +3,7 @@
 :roles: software-architect, software-developer, team-lead
 :related: domain-driven-design, event-driven-architecture, clean-architecture
 :proponents: Martin Fowler
-:tags: legacy-modernization, migration, refactoring, incremental, facade
+:tags: legacy-modernization, migration, refactoring, incremental, facade, resilience
 :tier: 2
 
 [%collapsible]

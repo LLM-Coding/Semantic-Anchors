@@ -3,7 +3,7 @@
 :roles: software-architect, team-lead, product-owner
 :related: conways-law, domain-driven-design, cynefin-framework
 :proponents: Matthew Skelton, Manuel Pais
-:tags: org-design, team-structure, cognitive-load, conways-law, flow
+:tags: org-design, team-structure, cognitive-load, conways-law, flow, feedback
 :tier: 2
 
 [%collapsible]
