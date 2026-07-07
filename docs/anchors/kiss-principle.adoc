@@ -2,7 +2,7 @@
 :categories: design-principles
 :roles: software-developer, software-architect, consultant, educator
 :proponents: Kelly Johnson, Robert C. Martin
-:related: yagni, dry-principle, solid-principles
+:related: yagni, dry, solid-principles
 :tags: kiss, simplicity, design-principles, over-engineering, readability
 :tier: 1
 

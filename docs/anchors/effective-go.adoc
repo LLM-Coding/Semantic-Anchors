@@ -1,7 +1,7 @@
 = Effective Go
 :categories: development-workflow
 :roles: software-developer, software-architect
-:related: clean-code, conventional-commits
+:related: effective-java, conventional-commits
 :proponents: The Go Authors
 :tags: go, golang, best-practices, idiomatic, style-guide
 :tier: 3
