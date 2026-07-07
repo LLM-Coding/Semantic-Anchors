@@ -2,6 +2,7 @@
 :categories: software-architecture
 :roles: software-architect, software-developer, team-lead
 :proponents: Michael Nygard
+:tags: ADR, architecture decision record, Nygard, decision documentation, architecture decisions
 :tier: 3
 
 [%collapsible]

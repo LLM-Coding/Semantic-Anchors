@@ -2,6 +2,7 @@
 :categories: software-architecture
 :roles: software-architect, software-developer, team-lead
 :proponents: Oliver Kopp, Olaf Zimmermann (and MADR community)
+:tags: MADR, markdown ADR, architecture decision record, decision documentation
 
 [%collapsible]
 ====

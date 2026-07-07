@@ -2,6 +2,7 @@
 :categories: development-workflow
 :roles: software-developer, ux-designer
 :proponents: Yandex development team
+:tags: BEM, Block Element Modifier, CSS, SCSS, naming convention, frontend, stylesheets
 :tier: 3
 
 [%collapsible]

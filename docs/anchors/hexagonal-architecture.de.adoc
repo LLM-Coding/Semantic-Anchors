@@ -2,6 +2,7 @@
 :categories: software-architecture
 :roles: software-architect, software-developer
 :proponents: Alistair Cockburn
+:tags: hexagonal architecture, ports and adapters, Cockburn, isolation, boundaries
 
 [%collapsible]
 ====

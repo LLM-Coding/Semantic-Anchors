@@ -2,6 +2,7 @@
 :categories: design-principles
 :roles: software-architect, data-scientist, business-analyst
 :proponents: Community
+:tags: SSOT, single source of truth, data consistency, canonical source, DRY
 :tier: 1
 
 [%collapsible]
