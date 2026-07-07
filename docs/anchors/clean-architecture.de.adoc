@@ -2,6 +2,7 @@
 :categories: software-architecture
 :roles: software-architect, software-developer
 :proponents: Robert C. Martin
+:tags: clean architecture, dependency rule, layers, Robert C. Martin, ports and adapters
 
 [%collapsible]
 ====

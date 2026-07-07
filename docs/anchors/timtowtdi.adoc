@@ -2,6 +2,7 @@
 :categories: development-workflow
 :roles: software-developer, software-architect, consultant, educator
 :proponents: Larry Wall
+:tags: TIMTOWTDI, there is more than one way to do it, Perl, Larry Wall, flexibility
 :tier: 1
 
 [%collapsible]

@@ -2,6 +2,7 @@
 :categories: statistical-methods
 :roles: data-scientist, devops-engineer
 :proponents: Lloyd S. Nelson
+:tags: Nelson rules, control chart, SPC, statistical process control, out of control
 :tier: 3
 :parent-anchor: spc
 

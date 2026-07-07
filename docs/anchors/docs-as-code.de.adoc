@@ -2,6 +2,7 @@
 :categories: documentation
 :roles: technical-writer, software-developer, devops-engineer
 :proponents: Ralf D. Müller
+:tags: docs as code, documentation, AsciiDoc, version control, technical writing, Mueller
 
 [%collapsible]
 ====

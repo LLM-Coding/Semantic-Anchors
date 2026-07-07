@@ -3,6 +3,7 @@
 :roles: software-developer, team-lead, educator, consultant
 :related: adr-according-to-nygard, docs-as-code
 :proponents: Peter Naur
+:tags: theory building, Naur, programming as theory building, mental model, tacit knowledge, software maintenance
 :tier: 2
 
 [%collapsible]

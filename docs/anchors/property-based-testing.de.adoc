@@ -2,6 +2,7 @@
 :categories: testing-quality
 :roles: software-developer, qa-engineer
 :proponents: Koen Claessen, John Hughes (QuickCheck)
+:tags: property-based testing, QuickCheck, invariants, generative testing, Hypothesis
 
 [%collapsible]
 ====

@@ -2,6 +2,7 @@
 :categories: development-workflow
 :roles: software-developer, devops-engineer
 :proponents: Benjamin E. Coe, James J. Womack, Steve Mao
+:tags: conventional commits, commit messages, semantic commits, changelog, git
 :tier: 3
 
 [%collapsible]
