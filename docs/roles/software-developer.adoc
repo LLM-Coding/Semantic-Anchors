@@ -1,0 +1,13 @@
+= Software Developer / Engineer
+:id: software-developer
+:name-de: Softwareentwickler
+
+Implements, tests, and maintains software systems. Applies design patterns, coding standards, and test practices in daily work. Responsible for code quality, peer reviews, and continuous integration.
+
+== Sources
+
+* IEEE 610.12 — Standard Glossary of Software Engineering Terminology
+* ISO/IEC 24765 — Systems and Software Engineering Vocabulary
+* ISO/IEC 12207 — Software Life Cycle Processes (Developer role)
+* Scrum Guide 2020 — Developer accountability
+* SAFe — Agile Team member

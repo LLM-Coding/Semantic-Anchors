@@ -1,0 +1,13 @@
+= Data Scientist / Statistician
+:id: data-scientist
+:name-de: Datenanalyst / Statistiker / Datenarchitekt
+
+Analyzes data, builds models, and derives insights through statistical methods and machine learning. Validates hypotheses through evidence-based experimentation. Ensures data quality and reproducibility.
+
+== Sources
+
+* CRISP-DM — Cross-Industry Standard Process for Data Mining
+* Statistical foundations (Fisher, Neyman-Pearson)
+* ISO/IEC 20546 — Big Data Reference Architecture
+* DAMA-DMBOK — Data Management Body of Knowledge
+* Google Rules of ML — Best Practices for ML Engineering

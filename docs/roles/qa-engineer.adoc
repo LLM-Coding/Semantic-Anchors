@@ -1,0 +1,13 @@
+= QA Engineer / Tester
+:id: qa-engineer
+:name-de: QA-Engineer / Tester
+
+Designs and executes test strategies across all levels (unit, integration, E2E). Ensures quality through systematic verification and validation. Supports quality management systems and audit evidence.
+
+== Sources
+
+* ISTQB Foundation Level Syllabus
+* ISO/IEC 25010 — Systems and Software Quality Models
+* ISO 9001 — Quality Management Systems (verification & validation)
+* ITIL 4 — Service Validation and Testing practice
+* ISO/IEC 12207 — Software Testing Process
