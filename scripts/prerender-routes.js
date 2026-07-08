@@ -49,6 +49,18 @@ const ROUTES = [
     path: '/workflow',
     redirectTo: '/spec-driven-development',
   },
+  // "Detroit School" and "Classicist TDD" are synonyms for the Chicago School
+  // (state-based, inside-out TDD). Only the Chicago anchor exists; redirect the
+  // synonym URL to it so shared/typed Detroit links resolve and SEO stays
+  // consolidated on one canonical page.
+  {
+    path: '/anchor/tdd-detroit-school',
+    redirectTo: '/anchor/tdd-chicago-school',
+  },
+  {
+    path: '/de/anchor/tdd-detroit-school',
+    redirectTo: '/de/anchor/tdd-chicago-school',
+  },
   {
     path: '/spec-driven-development',
     fragment: 'docs/spec-driven-workflow.html',
