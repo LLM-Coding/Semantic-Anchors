@@ -5,15 +5,23 @@
     "anchors": [
       "4mat",
       "aida-model",
+      "big-five",
       "blooms-taxonomy",
       "bluf",
+      "curse-of-knowledge",
+      "disc-model",
+      "four-sides-model",
       "gutes-deutsch-wolf-schneider",
+      "hexaco",
       "inverted-pyramid-style",
       "mece",
       "myers-briggs-type-indicator",
       "plain-english-strunk-white",
       "problem-space-nvc",
-      "pyramid-principle"
+      "progressive-disclosure",
+      "pyramid-principle",
+      "sender-receiver-discrepancy",
+      "zone-of-proximal-development"
     ]
   },
   {
@@ -36,6 +44,8 @@
       "code-smells",
       "cohesion-criteria",
       "crc-cards",
+      "deep-modules",
+      "design-by-contract",
       "dry",
       "fowler-patterns",
       "gof-abstract-factory-pattern",
@@ -67,6 +77,7 @@
       "kiss-principle",
       "law-of-demeter",
       "postels-law",
+      "separation-of-concerns",
       "single-level-of-abstraction-principle",
       "solid-dip",
       "solid-isp",
@@ -75,6 +86,7 @@
       "solid-principles",
       "solid-srp",
       "ssot-principle",
+      "unix-philosophy",
       "yagni"
     ]
   },
@@ -82,10 +94,12 @@
     "id": "development-workflow",
     "name": "Development Workflow",
     "anchors": [
+      "50-72-rule",
       "bem-methodology",
       "conventional-commits",
       "definition-of-done",
       "effective-go",
+      "effective-java",
       "github-flow",
       "mental-model-according-to-naur",
       "mikado-method",
@@ -119,6 +133,8 @@
     "id": "knowledge-management",
     "name": "Knowledge Management",
     "anchors": [
+      "addie-model",
+      "dreyfus-skill-acquisition",
       "gtd",
       "hemingway-bridge",
       "para-method",
@@ -142,6 +158,7 @@
       "decisional-balance-sheet",
       "devils-advocate",
       "double-diamond",
+      "fermi-estimation",
       "feynman-technique",
       "first-principles-thinking",
       "five-whys",
@@ -164,10 +181,12 @@
       "event-storming",
       "invest",
       "kano-model",
+      "laddering",
       "moscow",
       "prd",
       "problem-space-nvc",
       "quality-attribute-scenario",
+      "req42",
       "user-story-mapping"
     ]
   },
@@ -180,6 +199,7 @@
       "atam",
       "c4-diagrams",
       "cap-theorem",
+      "circuit-breaker",
       "clean-architecture",
       "conways-law",
       "cqrs",
@@ -194,7 +214,10 @@
       "lehmans-classification",
       "madr",
       "quality-attribute-scenario",
+      "strangler-fig",
+      "team-topologies",
       "tracer-bullet",
+      "twelve-factor-app",
       "vertical-slice-architecture",
       "walking-skeleton"
     ]
@@ -212,8 +235,10 @@
     "id": "strategic-planning",
     "name": "Strategic Planning",
     "anchors": [
+      "consent-vs-consensus",
       "cynefin-framework",
       "decisional-balance-sheet",
+      "eisenhower-matrix",
       "goodharts-law",
       "hoshin-kanri",
       "impact-mapping",
@@ -222,6 +247,7 @@
       "kotter-8-step-change-model",
       "meaningful-human-control",
       "mvp",
+      "okr",
       "pert",
       "pugh-matrix",
       "swot",
@@ -251,6 +277,7 @@
       "test-double-mock",
       "test-double-spy",
       "test-double-stub",
+      "test-seam",
       "testing-pyramid"
     ]
   }
