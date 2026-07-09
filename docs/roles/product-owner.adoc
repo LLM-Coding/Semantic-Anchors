@@ -1,0 +1,13 @@
+= Product Owner / Product Manager
+:id: product-owner
+:name-de: Product Owner / Produktmanager
+
+Maximizes product value by managing the backlog, prioritizing features, and representing stakeholder needs. Accountable for the "what" and "why" of product development. Single point of accountability for product decisions.
+
+== Sources
+
+* Scrum Guide 2020 (Schwaber/Sutherland) — Product Owner accountability
+* SAFe — Product Owner / Product Manager roles
+* Kanban — Flow-based product ownership
+* LeSS — Product Owner in large-scale Scrum
+* Marty Cagan — Inspired: How to Create Tech Products Customers Love

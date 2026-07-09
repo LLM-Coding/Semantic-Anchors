@@ -1,0 +1,21 @@
+= Ethics Officer / AI Ethics Board
+:id: ethics-officer
+:name-de: Ethikbeauftragter / KI-Ethikgremium
+
+Assesses ethical implications of AI systems and ensures human-centred development. Oversees risk management for high-risk AI systems and defines ethical guidelines. May operate as individual role or as collective board.
+
+== Responsibilities
+
+* Ethical impact assessment of AI systems
+* Oversight of AI risk management (high-risk classification)
+* Definition and monitoring of ethical guidelines
+* Stakeholder engagement on AI ethics questions
+* Bias detection and fairness evaluation
+
+== Sources
+
+* EU AI Act Art. 9 — Risk management system for high-risk AI
+* ISO/IEC 42001 — Artificial Intelligence Management System
+* IEEE 7000 — Model Process for Addressing Ethical Concerns During System Design
+* EU Commission — Ethics Guidelines for Trustworthy AI (2019)
+* OECD AI Principles (2019)

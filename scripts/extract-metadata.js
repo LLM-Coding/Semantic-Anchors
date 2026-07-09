@@ -203,6 +203,7 @@ function generateRolesData(anchors) {
         roleMap.set(roleId, {
           id: roleId,
           name: roleIdToName(roleId),
+          name_de: roleIdToNameDe(roleId),
           anchors: [],
         })
       }
@@ -256,6 +257,36 @@ function roleIdToName(id) {
     consultant: 'Consultant / Coach',
     'team-lead': 'Team Lead / Engineering Manager',
     educator: 'Educator / Trainer',
+  }
+  return (
+    names[id] ||
+    id
+      .split('-')
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ')
+  )
+}
+
+/**
+ * Convert role ID to German human-readable name
+ */
+function roleIdToNameDe(id) {
+  const names = {
+    'software-developer': 'Softwareentwickler',
+    'software-architect': 'Softwarearchitekt',
+    'qa-engineer': 'QA-Engineer / Tester',
+    'devops-engineer': 'DevOps-Engineer',
+    'product-owner': 'Product Owner / Produktmanager',
+    'business-analyst': 'Business Analyst / Anforderungsmanager',
+    'technical-writer': 'Technischer Redakteur',
+    'ux-designer': 'UX-Designer / UX-Researcher',
+    'data-scientist': 'Datenanalyst / Statistiker / Datenarchitekt',
+    consultant: 'Berater / Coach',
+    'team-lead': 'Teamleiter / Engineering Manager',
+    educator: 'Dozent / Trainer',
+    'data-protection-officer': 'Datenschutzbeauftragter',
+    'legal-compliance': 'Syndikusanwalt / Unternehmensjurist / Compliance-Beauftragter',
+    'ethics-officer': 'Ethikbeauftragter / KI-Ethikgremium',
   }
   return (
     names[id] ||

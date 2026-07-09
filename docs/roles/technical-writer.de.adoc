@@ -1,0 +1,13 @@
+= Technischer Redakteur
+:id: technical-writer
+:name-en: Technical Writer / Documentation Specialist
+
+Erstellt und pflegt technische Dokumentation — Benutzerhandbücher, API-Dokumentation, Architekturdokumentation. Wendet Informationsarchitektur, Docs-as-Code-Praktiken und strukturiertes Authoring an.
+
+== Quellen
+
+* Diátaxis Framework (Procida) — Tutorial, How-To, Referenz, Erklärung
+* docs-as-code — Dokumentation versioniert im Repository
+* tekom — Technische Kommunikation (Berufsverband)
+* ISO/IEC/IEEE 26511 — Anforderungen an das Management von Benutzerinformationen
+* ITIL 4 — Wissensmanagement-Praktik

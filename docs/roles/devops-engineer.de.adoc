@@ -1,0 +1,13 @@
+= DevOps-Engineer
+:id: devops-engineer
+:name-en: DevOps Engineer
+
+Baut und betreibt CI/CD-Pipelines, Infrastructure-as-Code und Monitoring. Verbindet Entwicklung und Betrieb für Continuous Delivery. Verantwortet Deployment-, Release- und Incident-Prozesse.
+
+== Quellen
+
+* DORA Metrics — Accelerate (Forsgren, Humble, Kim)
+* Google SRE Book — Site Reliability Engineering
+* ITIL 4 — Bereitstellungsmanagement, Releasemanagement, Überwachung und Ereignismanagement
+* ISO 20000 — IT-Service-Management (Release & Bereitstellung)
+* CALMS Framework (Culture, Automation, Lean, Measurement, Sharing)

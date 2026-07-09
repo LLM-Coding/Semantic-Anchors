@@ -1,0 +1,13 @@
+= Softwareentwickler
+:id: software-developer
+:name-en: Software Developer / Engineer
+
+Implementiert, testet und pflegt Softwaresysteme. Wendet Design Patterns, Coding-Standards und Testpraktiken in der täglichen Arbeit an. Verantwortlich für Code-Qualität, Peer Reviews und Continuous Integration.
+
+== Quellen
+
+* IEEE 610.12 — Standard Glossary of Software Engineering Terminology
+* ISO/IEC 24765 — System- und Software-Engineering-Vokabular
+* ISO/IEC 12207 — Lebenszyklusprozesse für Software (Entwicklerrolle)
+* Scrum Guide 2020 — Verantwortlichkeit des Developers
+* SAFe — Agiles Teammitglied

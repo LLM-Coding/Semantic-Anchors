@@ -1,0 +1,21 @@
+= Ethikbeauftragter / KI-Ethikgremium
+:id: ethics-officer
+:name-en: Ethics Officer / AI Ethics Board
+
+Bewertet ethische Implikationen von KI-Systemen und stellt menschenzentrierte Entwicklung sicher. Überwacht Risikomanagement für Hochrisiko-KI-Systeme und definiert ethische Leitlinien. Kann als Einzelrolle oder als kollektives Gremium agieren.
+
+== Aufgaben
+
+* Ethische Folgenabschätzung von KI-Systemen
+* Überwachung des KI-Risikomanagements (Hochrisiko-Klassifizierung)
+* Definition und Monitoring ethischer Leitlinien
+* Stakeholder-Einbindung bei KI-Ethikfragen
+* Bias-Erkennung und Fairness-Bewertung
+
+== Quellen
+
+* KI-Verordnung (EU AI Act) Art. 9 — Risikomanagementsystem für Hochrisiko-KI
+* ISO/IEC 42001 — Managementsystem für Künstliche Intelligenz
+* IEEE 7000 — Modellprozess zur Berücksichtigung ethischer Belange im Systemdesign
+* EU-Kommission — Ethik-Leitlinien für vertrauenswürdige KI (2019)
+* OECD-Grundsätze zur KI (2019)

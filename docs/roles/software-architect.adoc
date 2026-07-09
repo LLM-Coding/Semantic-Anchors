@@ -1,0 +1,13 @@
+= Software Architect
+:id: software-architect
+:name-de: Softwarearchitekt
+
+Designs system structures, defines quality attributes, and makes cross-cutting technical decisions. Documents architecture using established frameworks (arc42, C4, ADRs). Ensures architectural integrity across development teams.
+
+== Sources
+
+* ISO/IEC 42010 — Architecture Description
+* ISO 20000 — IT Service Management (Service Design)
+* ITIL 4 — Service Design, Architecture Management practice
+* iSAQB Foundation/Advanced Level Curriculum
+* SEI — Software Architecture in Practice (Bass, Clements, Kazman)

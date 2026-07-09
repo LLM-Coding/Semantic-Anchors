@@ -1,0 +1,13 @@
+= Educator / Trainer
+:id: educator
+:name-de: Dozent / Trainer
+
+Teaches concepts, facilitates learning, and develops training material. Makes complex topics accessible through didactic methods. Evaluates learning outcomes and adapts teaching approaches.
+
+== Sources
+
+* Bloom's Taxonomy — Cognitive learning levels
+* Feynman Technique — Teaching as understanding test
+* Didaktik der Informatik (German CS education framework)
+* Kirkpatrick Model — Training evaluation (4 levels)
+* ADDIE Model — Instructional design process
