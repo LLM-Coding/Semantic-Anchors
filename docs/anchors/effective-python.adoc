@@ -1,0 +1,58 @@
+= Effective Python
+:categories: development-workflow
+:roles: software-developer, software-architect
+:related: effective-java, effective-go, solid-principles
+:proponents: Brett Slatkin
+:tags: python, best-practices, idiomatic, pythonic, style-guide
+:tier: 3
+
+[%collapsible]
+====
+
+[discrete]
+== *Core Concepts*:
+
+Items format:: A catalog of ~125 short, self-contained "Items", each a concrete best-practice rule with rationale and trade-offs (grouped into chapters)
+
+Pythonic thinking:: Follow PEP 8 style and the Zen of Python; prefer f-strings over `%` and `str.format`; know the difference between `bytes` and `str`; prefer helper functions to complex expressions
+
+Lists and dictionaries:: Prefer comprehensions to `map`/`filter`; use `enumerate` instead of `range`; use `zip` to iterate in parallel; use catch-all unpacking over indexing; avoid `else` blocks after `for`/`while`
+
+Functions:: Prefer raising exceptions to returning `None`; enforce clarity with keyword-only and positional-only arguments; return generators instead of building lists; never modify default argument values (use `None` and docstrings)
+
+Comprehensions and generators:: Use generator expressions for large comprehensions; compose generators with `yield from`; reach for `itertools` before hand-rolling iteration
+
+Classes and interfaces:: Compose classes rather than nesting dicts/tuples deeply; use `@classmethod` polymorphism; prefer public attributes and `@property` over getters/setters; use functions instead of classes for simple interfaces
+
+Metaclasses and attributes:: Use `@property` and descriptors for reusable attribute behaviour; prefer `__getattr__`/`__getattribute__` sparingly; validate subclasses with `__init_subclass__`
+
+Concurrency and parallelism:: Use threads for blocking I/O, not parallelism (the GIL); use `Queue` to coordinate pipelines; use coroutines and `asyncio` for many concurrent functions; use `concurrent.futures` and processes for true parallelism
+
+Robustness, testing, and collaboration:: Make programs robust and performant (new chapters in the 3rd edition); test with `unittest`/`Mock`; document with docstrings; isolate dependencies with virtual environments (`venv`)
+
+Key Proponent:: Brett Slatkin ("Effective Python", Addison-Wesley) — principal software engineer at Google and creator of the book's runnable example suite
+
+[discrete]
+== *When to Use*:
+
+* Onboarding Python developers to idiomatic, robust ("Pythonic") code
+* Code review discussions grounded in a shared, citable rule set ("Item 30: consider generators instead of returning lists")
+* Establishing team-wide Python coding standards and conventions
+* Explaining Python-specific idioms and pitfalls (comprehensions, generators, the GIL, `@property`, keyword-only arguments)
+* Prompting an LLM to produce idiomatic, production-quality Python code
+
+[discrete]
+== *Related Anchors*:
+
+* <<effective-java,Effective Java>>
+* <<effective-go,Effective Go>>
+* <<solid-principles,SOLID Principles>>
+
+[discrete]
+== *Current Status*:
+
+* The 3rd edition (Pearson Addison-Wesley, https://www.informit.com/store/effective-python-125-specific-ways-to-write-better-9780138172183[published 20 November 2024], ISBN 978-0-13-817218-3) is the current edition. It expands from the 2nd edition's 90 Items to 125 Items — https://effectivepython.com/[35 new Items] plus two new chapters on robustness and performance
+* The 1st edition (2015) targeted Python 2 as well as 3; the 2nd edition (2019) was Python-3-only through ~3.8; the 3rd edition covers modern Python 3, including features such as the walrus operator, structural pattern matching, and updated typing and `asyncio` guidance
+* The book's core advice (prefer comprehensions and generators, respect the GIL, compose classes, use `@property`) remains stable across editions; only specific Items track the language. A training-data prior keyed on "Effective Python" most plausibly reflects the 2nd edition (90 Items) and is therefore silent on the 35 Items added in the 3rd edition
+
+====

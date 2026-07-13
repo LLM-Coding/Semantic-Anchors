@@ -734,6 +734,10 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Joshua Bloch
 - **Core:** Catalog of ~90 "Items" of idiomatic Java best practice — static factories & the Builder pattern, the equals/hashCode contracts, minimize mutability, composition over inheritance, generics with PECS, enums over int constants, and try-with-resources
 
+### Effective Python
+- **Proponents:** Brett Slatkin
+- **Core:** Catalog of ~125 "Items" of idiomatic ("Pythonic") best practice — PEP 8 & the Zen of Python, comprehensions and generators over map/filter, prefer exceptions to returning None, keyword-only arguments, compose classes and use @property, threads for I/O vs. the GIL, asyncio and concurrent.futures for concurrency
+
 ### 50/72 Rule
 - **Also known as:** Git Commit Message Convention, Seven Rules of Git Commits
 - **Proponents:** Tim Pope
