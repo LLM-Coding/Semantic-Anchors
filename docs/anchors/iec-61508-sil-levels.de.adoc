@@ -1,6 +1,6 @@
 = IEC 61508 SIL Levels
 :categories: testing-quality
-:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, legal-compliance, ethics-officer
 :proponents: International Electrotechnical Commission (IEC)
 :tier: 3
 :related: testing-pyramid, mutation-testing

@@ -1,6 +1,6 @@
 = OWASP Top 10
 :categories: testing-quality
-:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, team-lead
+:roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, team-lead, data-protection-officer
 :related: regulated-environment, iec-61508-sil-levels
 :proponents: OWASP Foundation
 :tier: 3
