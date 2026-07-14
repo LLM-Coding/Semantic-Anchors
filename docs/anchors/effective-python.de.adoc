@@ -1,0 +1,58 @@
+= Effective Python
+:categories: development-workflow
+:roles: software-developer, software-architect
+:related: effective-java, effective-go, solid-principles
+:proponents: Brett Slatkin
+:tags: python, best-practices, idiomatic, pythonic, style-guide
+:tier: 3
+
+[%collapsible]
+====
+
+[discrete]
+== *Kernkonzepte*:
+
+Item-Format:: Ein Katalog von ~125 kurzen, in sich geschlossenen "Items", jedes eine konkrete Best-Practice-Regel mit Begründung und Trade-offs (in Kapiteln gruppiert)
+
+Pythonisches Denken:: Dem PEP-8-Stil und dem Zen of Python folgen; f-Strings gegenüber `%` und `str.format` bevorzugen; den Unterschied zwischen `bytes` und `str` kennen; Hilfsfunktionen komplexen Ausdrücken vorziehen
+
+Listen und Dictionaries:: Comprehensions gegenüber `map`/`filter` bevorzugen; `enumerate` statt `range` verwenden; `zip` zum parallelen Iterieren nutzen; Catch-all-Unpacking statt Indizierung; `else`-Blöcke nach `for`/`while` vermeiden
+
+Funktionen:: Exceptions dem Rückgabewert `None` vorziehen; Klarheit durch keyword-only- und positional-only-Argumente erzwingen; Generatoren statt aufgebauter Listen zurückgeben; veränderliche Default-Argumente nie modifizieren (`None` und Docstrings verwenden)
+
+Comprehensions und Generatoren:: Generator-Ausdrücke für große Comprehensions verwenden; Generatoren mit `yield from` komponieren; `itertools` nutzen, bevor man Iteration selbst schreibt
+
+Klassen und Interfaces:: Klassen komponieren, statt Dicts/Tupel tief zu verschachteln; `@classmethod`-Polymorphie nutzen; öffentliche Attribute und `@property` gegenüber Gettern/Settern bevorzugen; Funktionen statt Klassen für einfache Interfaces verwenden
+
+Metaklassen und Attribute:: `@property` und Deskriptoren für wiederverwendbares Attributverhalten nutzen; `__getattr__`/`__getattribute__` sparsam einsetzen; Subklassen mit `__init_subclass__` validieren
+
+Nebenläufigkeit und Parallelität:: Threads für blockierende I/O nutzen, nicht für Parallelität (das GIL); `Queue` zur Koordination von Pipelines; Coroutinen und `asyncio` für viele nebenläufige Funktionen; `concurrent.futures` und Prozesse für echte Parallelität
+
+Robustheit, Testen und Zusammenarbeit:: Programme robust und performant machen (neue Kapitel in der 3. Auflage); mit `unittest`/`Mock` testen; mit Docstrings dokumentieren; Abhängigkeiten mit virtuellen Umgebungen (`venv`) isolieren
+
+Schlüsselvertreter:: Brett Slatkin ("Effective Python", Addison-Wesley) — Principal Software Engineer bei Google und Autor der lauffähigen Beispielsammlung des Buches
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Einarbeitung von Python-Entwicklern in idiomatischen, robusten ("pythonischen") Code
+* Code-Review-Diskussionen auf Basis eines gemeinsamen, zitierbaren Regelsatzes ("Item 30: consider generators instead of returning lists")
+* Etablierung teamweiter Python-Coding-Standards und Konventionen
+* Erklärung Python-spezifischer Idiome und Fallstricke (Comprehensions, Generatoren, das GIL, `@property`, keyword-only-Argumente)
+* Aufforderung an ein LLM, idiomatischen, produktionsreifen Python-Code zu erzeugen
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<effective-java,Effective Java>>
+* <<effective-go,Effective Go>>
+* <<solid-principles,SOLID Principles>>
+
+[discrete]
+== *Aktueller Status*:
+
+* Die 3. Auflage (Pearson Addison-Wesley, https://www.informit.com/store/effective-python-125-specific-ways-to-write-better-9780138172183[erschienen am 20. November 2024], ISBN 978-0-13-817218-3) ist die aktuelle Auflage. Sie erweitert die 90 Items der 2. Auflage auf 125 Items — https://effectivepython.com/[35 neue Items] sowie zwei neue Kapitel zu Robustheit und Performance
+* Die 1. Auflage (2015) adressierte Python 2 und 3; die 2. Auflage (2019) war Python-3-only bis ~3.8; die 3. Auflage deckt modernes Python 3 ab, einschließlich Features wie den Walross-Operator, strukturelles Pattern Matching sowie aktualisierte Typing- und `asyncio`-Empfehlungen
+* Die Kernaussagen des Buches (Comprehensions und Generatoren bevorzugen, das GIL respektieren, Klassen komponieren, `@property` nutzen) bleiben über die Auflagen stabil; nur einzelne Items folgen der Sprache. Ein auf "Effective Python" geprägter Trainingsdaten-Prior spiegelt am ehesten die 2. Auflage (90 Items) wider und schweigt daher zu den 35 in der 3. Auflage ergänzten Items
+
+====
