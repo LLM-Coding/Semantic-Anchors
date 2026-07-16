@@ -222,6 +222,7 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 * `:proponents:` - Key people, publications, or standards. If the anchor is an established term of art with no single originator (e.g. `sota`, `ssot-principle`), use the sentinel `Community` rather than omitting the required field or inventing an attribution. A missing proponent is a signal worth checking: a term traceable to no person, publication, or standard is weakly _attributable_ and may be general vocabulary rather than a semantic anchor.
 * `:tags:` - Keywords for search (optional but recommended)
 * `:related:` - Related anchor IDs (optional)
+* `:tier:` - Activation tier: `1` (frontier-only), `2` (needs qualification), `3` (broadly recognized)
 * `:advisory:` - Short caution label (optional). Use only for *counter-consensus framing*: the anchor activates reliably but its framing conflicts with its own field's documented consensus. Renders as a visible badge in the card/modal; keep the detail and the cited source in the `== Criticism` / `== Current Status` section (single source of truth). See `eisenhower-matrix.adoc`.
 
 *Criticism and Current Status (research required, include when found):*
