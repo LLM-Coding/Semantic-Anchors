@@ -87,7 +87,7 @@ The anchor can be *traced to key proponents, publications, or documented standar
 
 Before proposing, test the anchor with this prompt in an LLM:
 
-```
+```text
 What concepts do you associate with '<your semantic anchor name>'?
 ```
 
