@@ -143,6 +143,8 @@ Run specific hook:
 pre-commit run asciidoc-linter --all-files
 ----
 
+NOTE: Local build artifacts (e.g. `website/dist/`, generated files in `website/public/docs/`) must not be committed. These are produced by the CI/CD pipeline.
+
 == How to Propose a New Anchor
 
 We use an *automated workflow with GitHub Copilot* to validate and enrich proposals:
@@ -316,6 +318,7 @@ For *code changes*:
 . No regressions in existing tests
 . No new high/critical security vulnerabilities
 . Follows ESLint/Prettier code style
+. No build artifacts in commit (e.g. `website/dist/`, generated files)
 
 === AI-Assisted Reviews
 

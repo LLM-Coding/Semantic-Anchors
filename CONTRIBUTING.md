@@ -4,224 +4,348 @@ Thank you for your interest in contributing to the Semantic Anchors catalog! Thi
 
 ## Table of Contents
 
+- [What are Semantic Anchors?](#what-are-semantic-anchors)
+- [Artifact Types: Anchor, Contract, Skill](#artifact-types-anchor-contract-skill)
+- [Quality Criteria](#quality-criteria)
+- [Testing Your Semantic Anchor](#testing-your-semantic-anchor)
+- [Viability Test (Does the anchor deliver?)](#viability-test-does-the-anchor-deliver)
+- [Developer Setup](#developer-setup)
 - [How to Propose a New Anchor](#how-to-propose-a-new-anchor)
-- [Quality Criteria for Semantic Anchors](#quality-criteria-for-semantic-anchors)
-- [Testing Methodology](#testing-methodology)
-- [Improving Existing Anchors](#improving-existing-anchors)
-- [Development Setup](#development-setup)
-- [Pull Request Workflow](#pull-request-workflow)
+- [Anchor File Format](#anchor-file-format)
+- [Counter-Examples](#counter-examples)
+- [Categories](#categories)
+- [Professional Roles](#professional-roles)
+- [PR Review Policy](#pr-review-policy)
+- [Issue Title Convention](#issue-title-convention)
 - [Code of Conduct](#code-of-conduct)
+- [Questions?](#questions)
+- [License](#license)
 
-## How to Propose a New Anchor
+## What are Semantic Anchors?
 
-### Using the Issue Template (Recommended)
+Semantic anchors are well-defined terms, methodologies, and frameworks that serve as reference points when communicating with Large Language Models (LLMs). They act as shared vocabulary that triggers specific, contextually rich knowledge domains within an LLM's training data.
 
-1. Go to [Issues](https://github.com/LLM-Coding/Semantic-Anchors/issues/new/choose)
-2. Select **"🌟 Propose New Semantic Anchor"**
-3. Fill out the template completely
-4. Submit the issue
+**Example:** When you mention "TDD, London School" to an LLM, it activates knowledge about mock-heavy testing, outside-in development, and the work of Steve Freeman and Nat Pryce - much richer than simply saying "use mocks in testing."
 
-The maintainers will review your proposal and provide feedback.
+## Artifact Types: Anchor, Contract, Skill
 
-### What Makes a Good Proposal
+The catalog ships three artifact types. Knowing which one you are proposing decides where your contribution belongs. The full rationale lives in [ADR-007](docs/specs/adrs/adr-007-artifact-taxonomy.adoc); the working definitions are here.
 
-A good proposal includes:
-- **Clear name**: The term or phrase that serves as the anchor
-- **Full explanation**: What concepts does this anchor activate?
-- **Key proponents**: Who originated or standardized this concept?
-- **Use cases**: When should someone invoke this anchor?
-- **LLM test results**: Evidence that LLMs recognize and respond appropriately
+| Type | Function | Linguistic shape | Loading |
+|------|----------|-----------------|---------|
+| **Anchor** | "What do I know?" — focuses pre-existing knowledge | Noun / named concept ("Cockburn Use Cases") | Passive (activation signal) |
+| **Contract** | "What may I do?" — pins which anchors apply + invariants | Declarative ("follows / NEVER / MUST") | Always-on |
+| **Skill** | "How do I do it?" — supplies procedure | Verb / imperative ("Create / Verify / Write") | On-demand |
 
-## Quality Criteria for Semantic Anchors
+- **Anchor** — a named activation signal for a knowledge cluster that is *already dense* in an LLM's training data. It focuses; it does not teach. Must pass the four Quality Criteria below.
+- **Contract** — terse, always-on shared vocabulary (in `CLAUDE.md` / `AGENTS.md`) that pins which anchors apply and states invariants. The moment it describes *how* to do something step by step, that part belongs in a Skill.
+- **Skill** — on-demand procedural machinery (`references/`, prompts, a workflow) for a *how* the model cannot execute from a name alone.
 
-Before proposing an anchor, verify it meets these criteria:
+**Discrimination test:**
+
+1. Knowledge already dense in the LLM, only needs focusing → **Anchor**
+2. Need to pin which anchors apply and what is allowed/forbidden → **Contract**
+3. Need to describe *how* something is concretely done → **Skill**
+
+**The thin-prior rule.** If a name is *not* dense in the training data, it is *not an anchor* — naming it does not reliably change the output structure compared to a generic prompt. What repairs it depends on what is missing: a missing *meaning/framing* → a **Contract** (it supplies its own meaning; a URL never repairs a prior); a missing *procedure* → a **Skill**. A thin name is never forced to be an anchor.
+
+## Quality Criteria
+
+Before proposing a new semantic anchor, ensure it meets these four criteria:
 
 ### ✅ Precise
-References a specific, established body of knowledge with clear boundaries.
-- ✓ "TDD, London School" - specific variant with defined practices
-- ✗ "Best practices" - too vague, no clear boundaries
+
+The anchor references a *specific, established body of knowledge* with clear boundaries.
+
+- ✓ "SOLID Principles" - five specific design principles (SRP, OCP, LSP, ISP, DIP)
+- ✗ "Good design" - vague and subjective
 
 ### ✅ Rich
-Activates multiple interconnected concepts, not just a single instruction.
-- ✓ "SOLID Principles" - triggers S.O.L.I.D. breakdown, design patterns, OOP principles
-- ✗ "TLDR" - just means "summarize," no conceptual depth
+
+The anchor activates *multiple interconnected concepts*, not just a single instruction.
+
+- ✓ "Domain-Driven Design" - activates bounded contexts, ubiquitous language, aggregates, value objects, entities, repositories, etc.
+- ✗ "Use meaningful names" - single instruction with no conceptual depth
 
 ### ✅ Consistent
-Different users invoking it get similar conceptual activation.
-- ✓ "Clean Architecture" - well-documented pattern, consistent interpretation
-- ✗ "ELI5" - vague target level, inconsistent results
+
+Different users invoking the anchor should get *similar conceptual activation* from the LLM.
+
+- ✓ "Test-Driven Development" - widely documented methodology with consistent understanding
+- ✗ "Modern testing" - different interpretations by different people
 
 ### ✅ Attributable
-Can be traced to key proponents, publications, or documented standards.
-- ✓ "Hexagonal Architecture" - Alistair Cockburn, documented pattern
-- ✗ "Keep it simple" - no clear origin, just general advice
 
-### ❌ Counter-Examples (NOT Semantic Anchors)
+The anchor can be *traced to key proponents, publications, or documented standards*.
 
-- **"TLDR"** - Underspecified, no defined structure
-- **"ELI5"** - Vague target level, no pedagogical framework
-- **"Keep it short/simple"** - Pure instruction, no conceptual depth
-- **"Best practices"** - Too broad, no specific framework
+- ✓ "Hexagonal Architecture" (Alistair Cockburn, 2005)
+- ✗ "Best practices" - no specific source or authority
 
-## Testing Methodology
+> **Tip:** Not sure if your proposal qualifies? Check our [Rejected Proposals](https://raifdmueller.github.io/Semantic-Anchors/#/rejected-proposals) page to see previously evaluated terms that didn't meet the criteria — and why.
 
-**IMPORTANT:** Always test your proposed anchor with an LLM before submitting.
+## Testing Your Semantic Anchor
 
-### Test Prompt
+Before proposing, test the anchor with this prompt in an LLM:
 
 ```
-What concepts do you associate with '<your anchor name>'?
+What concepts do you associate with '<your semantic anchor name>'?
 ```
 
 > **Note:** The proposal template includes a required **LLM Activation Test Result** field. Paste your test output there — it front-loads the Precise/Rich/Consistent signal for reviewers.
 
-### Evaluate the Response
+Evaluate the response:
 
-Ask yourself:
 - **Recognition**: Does the LLM recognize the term?
-- **Accuracy**: Is the interpretation correct?
-- **Depth**: Does it activate multiple related concepts?
-- **Specificity**: Is the response focused and detailed?
+- **Accuracy**: Is the explanation correct?
+- **Depth**: Does it cover multiple related concepts?
+- **Specificity**: Is the scope well-defined?
 
-### Example: Good Test Result
+## Viability Test (Does the anchor deliver?)
 
-**Prompt:** "What concepts do you associate with 'SOLID Principles'?"
+Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The [training-data-vs-practice](https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice) article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
 
-**Response should include:**
-- Single Responsibility Principle
-- Open/Closed Principle
-- Liskov Substitution Principle
-- Interface Segregation Principle
-- Dependency Inversion Principle
-- Object-oriented design
-- Robert C. Martin (Uncle Bob)
+1. **Before/After test.** Give a model a task *without* the anchor term, then the same task *with* it. Does the output structure change? If not, the term is decorative, not functional.
+2. **Substitution check.** Ask "What is [term]?" on a weaker model (Haiku-class). If it hedges, silently substitutes, or confabulates, the prior is too thin for an anchor — it belongs in a **Contract** (which supplies its own meaning), per the thin-prior rule in _Artifact Types_ above.
+3. **Cross-model check.** Does the before/after difference hold on at least one weak *and* one strong model? If it only fires on frontier models, note it as ★★ (needs qualification).
 
-If the LLM provides a detailed, accurate response like this, your anchor is likely good!
+A term that passes the four Quality Criteria but fails the viability test is a **Contract**, not an Anchor.
 
-### Example: Poor Test Result
+**This gate is topic-neutral.** No subject area is privileged or banned — personality and assessment frameworks (MBTI, DISC, Big Five, HEXACO) are neither excluded for their topic nor admitted for being well-known. They must clear the same Viability Test as any other candidate, and — given their contested empirical standing — carry a `== Criticism` / `== Current Status` section. The rationale is in [ADR-008](docs/specs/adrs/adr-008-personality-assessment-anchors.adoc).
 
-**Prompt:** "What concepts do you associate with 'TLDR'?"
-
-**Response might be:**
-- "Too Long; Didn't Read"
-- Means to summarize
-- Used in online communication
-
-This lacks depth and doesn't activate a rich conceptual framework.
-
-## Improving Existing Anchors
-
-Found an issue with an existing anchor? We welcome improvements!
-
-1. Go to [Issues](https://github.com/LLM-Coding/Semantic-Anchors/issues/new/choose)
-2. Select **"📝 Improve Existing Anchor"**
-3. Fill out the form:
-   - Which anchor needs improvement?
-   - What's wrong or missing?
-   - What change do you propose?
-   - References supporting your suggestion
-4. Submit the issue
-
-## Development Setup
-
-If you want to contribute code or work on the website:
+## Developer Setup
 
 ### Prerequisites
 
-- Node.js 20+
-- npm or pnpm
 - Git
+- Python 3.12+ (for pre-commit hooks)
+- Node.js 20+ (for website development, optional)
 
-### Clone the Repository
+### Installing Pre-Commit Hooks
 
-```bash
-git clone https://github.com/LLM-Coding/Semantic-Anchors.git
-cd Semantic-Anchors
-```
+**Required for all contributors!**
 
-### Install Dependencies
-
-Both `website/` and `scripts/` have their own `package.json`. Install both:
+Run the installation script:
 
 ```bash
-# Script dependencies (needed for anchor syncing and doc rendering)
-cd scripts
-npm install
-
-# Website dependencies
-cd ../website
-npm install
+./pre-commit-install.sh
 ```
 
-### Run Development Server
+This installs:
 
-Always use `npm run dev` (not `npx vite` directly). The `predev` hook syncs anchor `.adoc` files from `docs/anchors/` into `website/public/docs/anchors/`. Without this step, clicking anchor cards results in a 404 error.
+- **AsciiDoc Linter** - validates anchor file syntax automatically
+- **pre-commit framework** - runs checks before each commit
+- **Standard hooks** - trailing whitespace, YAML/JSON validation
+
+### Manual Hook Execution
+
+Run all hooks on all files:
 
 ```bash
-cd website
-npm run dev
-# → http://localhost:5173/Semantic-Anchors/
+pre-commit run --all-files
 ```
 
-> **Note:** The dev server URL includes `/Semantic-Anchors/` because of the Vite `base` configuration. This matches the GitHub Pages deployment path.
-
-### Run Tests
+Run specific hook:
 
 ```bash
-cd website
-npm run test
+pre-commit run asciidoc-linter --all-files
 ```
 
-### Build for Production
+> **Note:** Local build artifacts (e.g. `website/dist/`, generated files in `website/public/docs/`) must not be committed. These are produced by the CI/CD pipeline.
 
-The `prebuild` hook runs three steps automatically: syncing anchors, rendering docs, and rendering contracts. Then Vite builds the bundle and pre-renders static routes.
+## How to Propose a New Anchor
 
-```bash
-cd website
-npm run build
+We use an **automated workflow with GitHub Copilot** to validate and enrich proposals:
+
+### Step 1: Create an Issue
+
+Click the [Propose New Anchor](https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml) button on the [website](https://raifdmueller.github.io/Semantic-Anchors/) or create an issue using our proposal template.
+
+**All you need to provide:**
+
+- The term or concept name
+- An LLM activation test result (required)
+- (Optional) Why you think it would be valuable
+
+### Step 2: Copilot Validation
+
+GitHub Copilot automatically:
+
+1. Tests the anchor against the four quality criteria
+2. Either accepts or rejects the proposal
+3. If rejected: Explains why it doesn't meet criteria
+4. If accepted: Enriches the issue with detailed information
+
+### Step 3: Copilot Creates the Anchor
+
+Once accepted and enriched, Copilot is assigned to:
+
+1. Create the AsciiDoc file in `docs/anchors/`
+2. Add all required metadata (categories, roles, proponents, tags)
+3. Submit a Pull Request
+4. Maintainers review and merge
+
+### Step 4: Published
+
+After merge, the new anchor appears on the website within minutes via automated deployment!
+
+## Anchor File Format
+
+Each anchor is stored as an AsciiDoc file with metadata attributes:
+
+```asciidoc
+= TDD, London School
+:categories: testing-quality
+:roles: software-developer, qa-engineer, software-architect
+:related: tdd-chicago-school, hexagonal-architecture
+:proponents: Steve Freeman, Nat Pryce
+:tags: testing, tdd, mocking, outside-in
+:tier: 2
+
+[%collapsible]
+====
+*Full Name*: Test-Driven Development, London School
+
+*Also known as*: Mockist TDD, Outside-In TDD
+
+*Core Concepts*:
+* Mock-heavy testing
+* Outside-in development
+* Interaction-based testing
+
+*Key Proponents*: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
+
+*When to Use*:
+* Complex systems with many collaborating objects
+* When designing APIs and interfaces
+* Distributed systems where integration is costly
+====
 ```
 
-## Pull Request Workflow
+### Required Metadata
 
-### For Code Contributions
+- `:categories:` — One or more category IDs (see website for list)
+- `:roles:` — One or more professional role IDs (see [Professional Roles](#professional-roles) for valid IDs)
+- `:proponents:` — Key people, publications, or standards. If the anchor is an established term of art with no single originator (e.g. `sota`, `ssot-principle`), use the sentinel `Community` rather than omitting the required field or inventing an attribution. A missing proponent is a signal worth checking: a term traceable to no person, publication, or standard is weakly _attributable_ and may be general vocabulary rather than a semantic anchor.
+- `:tags:` — Keywords for search (optional but recommended)
+- `:related:` — Related anchor IDs (optional)
+- `:tier:` — Activation tier: `1` (frontier-only), `2` (needs qualification), `3` (broadly recognized)
+- `:advisory:` — Short caution label (optional). Use only for *counter-consensus framing*: the anchor activates reliably but its framing conflicts with its own field's documented consensus. Renders as a visible badge in the card/modal; keep the detail and the cited source in the `== Criticism` / `== Current Status` section (single source of truth). See `eisenhower-matrix.adoc`.
 
-1. **Fork the repository** (if you're not a maintainer)
-2. **Create a feature branch**:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Make your changes**
-4. **Write/update tests** if applicable
-5. **Run tests**:
-   ```bash
-   npm run test
-   ```
-6. **Commit your changes**:
-   ```bash
-   git commit -m "feat: Add feature description"
-   ```
-   Use [Conventional Commits](https://www.conventionalcommits.org/) format:
-   - `feat:` - New feature
-   - `fix:` - Bug fix
-   - `docs:` - Documentation changes
-   - `test:` - Test changes
-   - `chore:` - Maintenance tasks
-7. **Push to your fork**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-8. **Create a Pull Request** on GitHub
-9. **Wait for review** - Maintainers will review and provide feedback
+### Criticism and Current Status (research required, include when found)
 
-### For New Anchors
+The catalog is a lexicon, not a list of endorsements — inclusion means the term works as a precise pointer, not that we recommend the practice. For every new anchor, research whether documented criticism or drift exists, and add the finding as a section:
 
-**Note:** Currently, new anchors are added via maintainer workflow after issue approval. In the future (Phase 4), this will be automated via GitHub Copilot.
+- `== Criticism` — the method itself is contested. Only named, citable critique (critic + linked source), never vibes like "nobody uses this anymore". The section reports the discourse; it does not adjudicate. Where the discourse names alternatives, name them too.
+- `== Current Status` — the method stands, but the training-data prior and the present have drifted apart: a newer edition exists (name the edition the prior likely points to), a successor emerged, or adoption faded.
 
-**Current Process:**
-1. Create an issue using the **"Propose New Anchor"** template
-2. Maintainers review and approve
-3. Maintainers create the anchor file and PR
-4. Community reviews the PR
+Verify every linked source by actually fetching it before committing. If the research finds nothing citable, omit both sections — an empty section is noise. See [#603](https://github.com/LLM-Coding/Semantic-Anchors/issues/603) for the full-catalog triage behind this convention.
+
+## Counter-Examples
+
+These are **NOT** semantic anchors:
+
+| Term | Why not |
+|------|---------|
+| "TLDR" | Underspecified instruction, no defined structure |
+| "ELI5" | Vague target level, no pedagogical framework |
+| "Keep it short" | Pure instruction, no conceptual depth |
+| "Best practices" | No specific body of knowledge, not attributable |
+| "Modern approach" | Too vague, not consistent across users |
+
+## Categories
+
+Anchors are organized into 12 MECE (Mutually Exclusive, Collectively Exhaustive) categories:
+
+1. Communication & Presentation
+2. Design Principles & Patterns
+3. Development Workflow
+4. Dialogue & Interaction Patterns
+5. Documentation Practices
+6. Meta (repository and catalog concepts)
+7. Problem-Solving Methodologies
+8. Requirements Engineering
+9. Software Architecture
+10. Statistical Methods & Process Monitoring
+11. Strategic Planning & Decision Making
+12. Testing & Quality Practices
+
+See the website for full category descriptions.
+
+## Professional Roles
+
+Anchors are tagged with professional roles to help filter relevant content. Use the **role ID** (kebab-case) in the `:roles:` metadata attribute.
+
+See [`docs/roles/`](docs/roles/) for detailed role descriptions (EN + DE).
+
+### Operational Professional Roles
+
+| ID | Display Name |
+|----|--------------|
+| software-developer | Software Developer / Engineer |
+| software-architect | Software Architect |
+| qa-engineer | QA Engineer / Tester |
+| devops-engineer | DevOps Engineer |
+| product-owner | Product Owner / Product Manager |
+| business-analyst | Business Analyst / Requirements Engineer |
+| technical-writer | Technical Writer / Documentation Specialist |
+| ux-designer | UX Designer / Researcher |
+| data-scientist | Data Scientist / Statistician |
+| consultant | Consultant / Coach |
+| team-lead | Team Lead / Engineering Manager |
+| educator | Educator / Trainer |
+
+### Organizational Governance Roles
+
+| ID | Display Name |
+|----|--------------|
+| data-protection-officer | Data Protection Officer |
+| ethics-officer | Ethics Officer |
+| legal-compliance | Legal & Compliance |
+
+## PR Review Policy
+
+### Review Requirements
+
+All pull requests to `main` require at least one approving review before merging.
+
+### Sampling Review (~20%)
+
+For active periods with many contributions, maintainers apply a **20% sampling review**:
+
+- At least 1 in 5 PRs receives a thorough, line-by-line review
+- All other PRs receive a high-level review (structure, quality criteria, CI status)
+- AI-generated PRs (GitHub Copilot) always receive human review
+
+### Automated Checks (Required to Pass)
+
+Every PR must pass all of the following before merge:
+
+- **E2E Tests** — all 28+ Playwright tests green
+- **Lint & Format Check** — ESLint + Prettier (no errors)
+- **Dependency Audit** — `npm audit --audit-level=high` clean
+- **CodeQL** — no high/critical security findings
+- **AsciiDoc Linter** — anchor files conform to format (pre-commit hook)
+
+### What Reviewers Check
+
+For **new semantic anchors**:
+
+1. Quality criteria met (Precise, Rich, Consistent, Attributable)
+2. All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`, `:tier:`)
+3. AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
+4. Anchor tested with LLM prompt (see [Testing Your Semantic Anchor](#testing-your-semantic-anchor))
+5. Documented criticism / edition drift researched — and captured in a _Criticism_ or _Current Status_ section with named, fetch-verified sources where found
+
+For **code changes**:
+
+1. No regressions in existing tests
+2. No new high/critical security vulnerabilities
+3. Follows ESLint/Prettier code style
+4. No build artifacts in commit (e.g. `website/dist/`, generated files)
+
+### AI-Assisted Reviews
+
+This project uses **CodeRabbit** for automated AI code review on all PRs. CodeRabbit reviews are advisory — human maintainer approval is still required.
 
 ## Issue Title Convention
 
@@ -273,14 +397,14 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 
 ## Questions?
 
-- **General questions**: [GitHub Discussions](https://github.com/LLM-Coding/Semantic-Anchors/discussions)
-- **Bug reports**: Use the [Bug Report template](https://github.com/LLM-Coding/Semantic-Anchors/issues/new/choose)
-- **Feature requests**: Open a [new issue](https://github.com/LLM-Coding/Semantic-Anchors/issues/new)
+- Browse existing anchors on the [website](https://raifdmueller.github.io/Semantic-Anchors/)
+- Check the [README](README.adoc) for project overview
+- Open a [GitHub issue](https://github.com/LLM-Coding/Semantic-Anchors/issues) for questions
 
 ## License
 
-By contributing to Semantic Anchors, you agree that your contributions will be licensed under the same license as the project (see [LICENSE](LICENSE)).
+By contributing, you agree that your contributions will be licensed under the same license as this project (see [LICENSE](LICENSE) file).
 
 ---
 
-Thank you for contributing to Semantic Anchors! 🎉
+**Ready to propose?** Click here: [Propose New Semantic Anchor](https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml)

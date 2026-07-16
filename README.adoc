@@ -15,7 +15,7 @@
 
 == 🚀 Explore the Catalog
 
-Browse the full catalog of 60+ semantic anchors with interactive visualization, search, and role-based filtering:
+Browse the full catalog of 180+ semantic anchors with interactive visualization, search, and role-based filtering:
 
 🌐 *https://raifdmueller.github.io/Semantic-Anchors/[Visit Semantic Anchors Website]*
 
@@ -79,27 +79,35 @@ The catalog is organized into 12 MECE (Mutually Exclusive, Collectively Exhausti
 
 == Professional Roles
 
-Filter anchors by role:
+Filter anchors by role (see link:docs/roles/[`docs/roles/`] for detailed descriptions):
 
-* Software Developer / Engineer
-* Software Architect
-* QA Engineer / Tester
-* DevOps Engineer
-* Product Owner / Product Manager
-* Business Analyst / Requirements Engineer
-* Technical Writer / Documentation Specialist
-* UX Designer / Researcher
-* Data Scientist / Statistician
-* Consultant / Coach
-* Team Lead / Engineering Manager
-* Educator / Trainer
+=== Operational Professional Roles
+
+* software-developer
+* software-architect
+* qa-engineer
+* devops-engineer
+* product-owner
+* business-analyst
+* technical-writer
+* ux-designer
+* data-scientist
+* consultant
+* team-lead
+* educator
+
+=== Organizational Governance Roles
+
+* data-protection-officer
+* ethics-officer
+* legal-compliance
 
 == Project Structure
 
 ----
 Semantic-Anchors/
 ├── docs/
-│   ├── anchors/          # Individual anchor files (60+)
+│   ├── anchors/          # Individual anchor files (180+)
 │   ├── about.adoc        # About page content
 │   ├── PRD.md            # Product Requirements
 │   ├── specs/            # Specifications & ADRs
