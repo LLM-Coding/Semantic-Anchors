@@ -189,10 +189,11 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 ----
 = TDD, London School
 :categories: testing-quality
-:roles: software-developer, qa-engineer, architect
+:roles: software-developer, qa-engineer, software-architect
 :related: tdd-chicago-school, hexagonal-architecture
 :proponents: Steve Freeman, Nat Pryce
 :tags: testing, tdd, mocking, outside-in
+:tier: 2
 
 [%collapsible]
 ====
@@ -308,7 +309,7 @@ Every PR must pass all of the following before merge:
 For *new semantic anchors*:
 
 . Quality criteria met (Precise, Rich, Consistent, Attributable)
-. All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`)
+. All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`, `:tier:`)
 . AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
 . Anchor tested with LLM prompt (see <<testing-anchor,Testing Your Semantic Anchor>>)
 . Documented criticism / edition drift researched — and captured in a _Criticism_ or _Current Status_ section with named, fetch-verified sources where found
