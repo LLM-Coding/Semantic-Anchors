@@ -127,7 +127,7 @@ A term that passes the four Quality Criteria but fails the viability test is a *
 Run the installation script:
 
 ```bash
-./pre-commit-install.sh
+./.pre-commit-install.sh
 ```
 
 This installs:
