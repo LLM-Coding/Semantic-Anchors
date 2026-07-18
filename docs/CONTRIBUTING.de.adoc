@@ -144,10 +144,11 @@ Jeder Anker wird als AsciiDoc-Datei mit Metadaten-Attributen gespeichert:
 ----
 = TDD, London School
 :categories: testing-quality
-:roles: software-developer, qa-engineer, architect
+:roles: software-developer, qa-engineer, software-architect
 :related: tdd-chicago-school, hexagonal-architecture
 :proponents: Steve Freeman, Nat Pryce
 :tags: testing, tdd, mocking, outside-in
+:tier: 2
 
 [%collapsible]
 ====
@@ -176,6 +177,7 @@ Jeder Anker wird als AsciiDoc-Datei mit Metadaten-Attributen gespeichert:
 * `:proponents:` - Schlüsselpersonen, Publikationen oder Standards
 * `:tags:` - Schlüsselwörter für die Suche (optional, aber empfohlen)
 * `:related:` - Verwandte Anker-IDs (optional)
+* `:tier:` - Aktivierungsstufe: `1` (nur Frontier-Modelle), `2` (braucht Qualifizierung), `3` (breit erkannt)
 * `:advisory:` - Kurzes Hinweis-Label (optional). Nur für *Counter-Consensus-Framing*: Der Anker aktiviert zuverlässig, aber sein Framing widerspricht dem dokumentierten Konsens seines eigenen Fachgebiets. Wird als sichtbares Badge in Karte/Modal gerendert; Detail und zitierte Quelle bleiben im `== Criticism` / `== Current Status`-Abschnitt (Single Source of Truth). Siehe `eisenhower-matrix.adoc`.
 
 == Gegenbeispiele
@@ -210,20 +212,137 @@ Siehe die Website für vollständige Kategorienbeschreibungen.
 
 == Berufliche Rollen
 
-Anker sind mit beruflichen Rollen getaggt, um relevante Inhalte zu filtern:
+Anker sind mit beruflichen Rollen getaggt, um relevante Inhalte zu filtern. Verwenden Sie die *Rollen-ID* (kebab-case) im `:roles:` Metadaten-Attribut.
 
-. Software-Entwickler / Engineer
-. Software-Architekt
-. QA Engineer / Tester
-. DevOps Engineer
-. Product Owner / Product Manager
-. Business Analyst / Requirements Engineer
-. Technical Writer / Dokumentationsspezialist
-. UX Designer / Researcher
-. Data Scientist / Statistiker
-. Consultant / Coach
-. Team Lead / Engineering Manager
-. Educator / Trainer
+Siehe link:roles/[docs/roles/] für ausführliche Rollenbeschreibungen (EN + DE).
+
+=== Operative Fachliche Rollen
+
+[cols="1,2", options="header"]
+|===
+| ID | Anzeigename
+
+| software-developer | Softwareentwickler/in
+| software-architect | Softwarearchitekt/in
+| qa-engineer | QA-Ingenieur/in / Tester/in
+| devops-engineer | DevOps-Ingenieur/in
+| product-owner | Product Owner / Produktmanager/in
+| business-analyst | Business Analyst / Anforderungsmanager/in
+| technical-writer | Technische/r Redakteur/in
+| ux-designer | UX-Designer/in / Researcher/in
+| data-scientist | Data Scientist / Statistiker/in
+| consultant | Berater/in / Coach
+| team-lead | Teamleiter/in / Engineering Manager/in
+| educator | Trainer/in / Dozent/in
+|===
+
+=== Organisatorische Governance-Rollen
+
+[cols="1,2", options="header"]
+|===
+| ID | Anzeigename
+
+| data-protection-officer | Datenschutzbeauftragte/r
+| ethics-officer | Ethikbeauftragte/r
+| legal-compliance | Recht & Compliance
+|===
+
+== Entwicklungsumgebung
+
+=== Voraussetzungen
+
+* Git
+* Python 3.12+ (für pre-commit Hooks)
+* Node.js 20+ (für Website-Entwicklung, optional)
+
+=== Pre-Commit Hooks installieren
+
+*Pflicht für alle Beitragenden!*
+
+Installationsskript ausführen:
+
+[source,bash]
+----
+./pre-commit-install.sh
+----
+
+Dies installiert:
+
+* *AsciiDoc Linter* - validiert Anker-Dateisyntax automatisch
+* *pre-commit Framework* - führt Checks vor jedem Commit aus
+* *Standard-Hooks* - Trailing Whitespace, YAML/JSON-Validierung
+
+=== Manuelle Hook-Ausführung
+
+Alle Hooks auf allen Dateien ausführen:
+
+[source,bash]
+----
+pre-commit run --all-files
+----
+
+Spezifischen Hook ausführen:
+
+[source,bash]
+----
+pre-commit run asciidoc-linter --all-files
+----
+
+NOTE: Lokale Build-Artefakte (z.B. `website/dist/`, generierte Dateien in `website/public/docs/`) dürfen nicht committed werden. Diese werden durch die CI/CD-Pipeline erzeugt.
+
+== Criticism und Current Status (Recherche erforderlich, aufnehmen wenn gefunden)
+
+Der Katalog ist ein Lexikon, keine Empfehlungsliste — Aufnahme bedeutet, dass der Term als präziser Pointer funktioniert, nicht dass wir die Praxis empfehlen. Für jeden neuen Anchor recherchieren, ob dokumentierte Kritik oder Drift existiert, und das Ergebnis als Section aufnehmen:
+
+* `== Criticism` — die Methode selbst ist umstritten. Nur benannte, zitierbare Kritik (Kritiker + verlinkte Quelle), niemals Bauchgefühl wie „das nutzt doch keiner mehr". Die Section berichtet den Diskurs; sie urteilt nicht. Wo der Diskurs Alternativen benennt, diese ebenfalls benennen.
+* `== Current Status` — die Methode besteht, aber der Training-Data-Prior und die Gegenwart sind auseinandergedriftet: eine neuere Edition existiert (die Edition benennen, auf die der Prior wahrscheinlich zeigt), ein Successor ist entstanden, oder die Adoption hat nachgelassen.
+
+Jede verlinkte Quelle vor dem Commit tatsächlich fetchen und verifizieren. Falls die Recherche nichts Zitierbares findet, beide Sections weglassen — eine leere Section ist Noise. Siehe https://github.com/LLM-Coding/Semantic-Anchors/issues/603[#603] für die Full-Catalog-Triage hinter dieser Konvention.
+
+== PR-Review-Richtlinie
+
+=== Review-Anforderungen
+
+Alle Pull Requests auf `main` erfordern mindestens ein genehmigendes Review vor dem Merge.
+
+=== Stichproben-Review (~20%)
+
+In aktiven Phasen mit vielen Beiträgen wenden Maintainer ein *20% Stichproben-Review* an:
+
+* Mindestens 1 von 5 PRs erhält ein gründliches, zeilenweises Review
+* Alle anderen PRs erhalten ein High-Level-Review (Struktur, Qualitätskriterien, CI-Status)
+* KI-generierte PRs (GitHub Copilot) erhalten immer ein menschliches Review
+
+=== Automatisierte Checks (müssen bestehen)
+
+Jeder PR muss vor dem Merge alle folgenden Checks bestehen:
+
+* *E2E Tests* — alle 28+ Playwright-Tests grün
+* *Lint & Format Check* — ESLint + Prettier (keine Fehler)
+* *Dependency Audit* — `npm audit --audit-level=high` sauber
+* *CodeQL* — keine high/critical Security-Findings
+* *AsciiDoc Linter* — Anker-Dateien entsprechen dem Format (pre-commit Hook)
+
+=== Was Reviewer prüfen
+
+Für *neue semantische Anker*:
+
+. Qualitätskriterien erfüllt (Präzise, Reichhaltig, Konsistent, Zuordenbar)
+. Alle erforderlichen Metadaten-Attribute vorhanden (`:categories:`, `:roles:`, `:proponents:`, `:tier:`)
+. AsciiDoc-Format korrekt (`[%collapsible]`-Block, korrekte Attribut-Syntax)
+. Anker mit LLM-Prompt getestet (siehe <<Testen Ihres semantischen Ankers>>)
+. Dokumentierte Kritik / Editions-Drift recherchiert — und in einem _Criticism_- oder _Current Status_-Abschnitt mit benannten, fetch-verifizierten Quellen festgehalten, sofern vorhanden
+
+Für *Code-Änderungen*:
+
+. Keine Regressionen in bestehenden Tests
+. Keine neuen high/critical Sicherheitslücken
+. Folgt ESLint/Prettier Code-Style
+. Keine Build-Artefakte im Commit (z.B. `website/dist/`, generierte Dateien)
+
+=== KI-unterstützte Reviews
+
+Dieses Projekt verwendet *CodeRabbit* für automatisiertes KI-Code-Review auf allen PRs. CodeRabbit-Reviews sind beratend — menschliche Maintainer-Genehmigung ist weiterhin erforderlich.
 
 == Issue-Titel-Konvention
 
@@ -273,11 +392,30 @@ Alle Issues sollten einem konsistenten `[Typ]: <Name>` Titelformat folgen. Dies 
 
 == Verhaltenskodex
 
-* Seien Sie respektvoll und konstruktiv in Diskussionen
-* Schlagen Sie Anker in gutem Glauben vor
-* Respektieren Sie Maintainer-Entscheidungen zu Qualitätskriterien
-* Fokussieren Sie auf etablierte, dokumentierte Methodologien
-* Geben Sie den ursprünglichen Vertretern Anerkennung
+=== Unser Versprechen
+
+Wir verpflichten uns, die Teilnahme an diesem Projekt zu einer belästigungsfreien Erfahrung für alle zu machen, unabhängig von Alter, Körpergröße, Behinderung, Ethnizität, Geschlechtsidentität und -ausdruck, Erfahrungsniveau, Nationalität, persönlichem Erscheinungsbild, Rasse, Religion oder sexueller Identität und Orientierung.
+
+=== Unsere Standards
+
+*Positives Verhalten:*
+
+* Verwendung von einladender und inklusiver Sprache
+* Respektvoller Umgang mit unterschiedlichen Standpunkten
+* Konstruktive Kritik anmutig akzeptieren
+* Fokus auf das, was für die Community am besten ist
+* Empathie gegenüber anderen Community-Mitgliedern zeigen
+
+*Inakzeptables Verhalten:*
+
+* Trolling, beleidigende/abwertende Kommentare und persönliche Angriffe
+* Öffentliche oder private Belästigung
+* Veröffentlichung privater Informationen anderer ohne Erlaubnis
+* Anderes Verhalten, das vernünftigerweise als unangemessen betrachtet werden könnte
+
+=== Durchsetzung
+
+Fälle von missbräuchlichem, belästigendem oder anderweitig inakzeptablem Verhalten können den Projekt-Maintainern gemeldet werden. Alle Beschwerden werden geprüft und untersucht und führen zu einer Reaktion, die als notwendig und angemessen erachtet wird.
 
 == Fragen?
 
