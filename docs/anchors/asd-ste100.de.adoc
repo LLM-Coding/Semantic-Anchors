@@ -1,0 +1,47 @@
+= ASD-STE100 (Simplified Technical English)
+:categories: communication-presentation
+:roles: technical-writer, software-developer, consultant, educator, business-analyst
+:related: gutes-deutsch-wolf-schneider, plain-english-strunk-white
+:proponents: AECMA, ASD Simplified Technical English Maintenance Group (STEMG)
+:tier: 3
+:tags: writing, english, clarity, controlled-language, technical-writing, standard, aerospace
+
+[%collapsible]
+====
+Vollständiger Name:: ASD Simplified Technical English (ASD-STE100)
+
+Auch bekannt als:: STE, Simplified Technical English, AECMA Simplified English
+
+[discrete]
+== *Kernkonzepte*:
+
+Kontrolliertes Vokabular:: Ein Wörterbuch mit rund 900 zugelassenen Wörtern; jedes Wort hat genau eine Wortart und eine Bedeutung — das entfernt Mehrdeutigkeit, die freies Englisch zulässt
+
+Ein Wort, eine Bedeutung:: Wörter außerhalb des Wörterbuchs, oder mit nicht gelisteten Bedeutungen, sind untersagt — Autoren verwenden stattdessen ein zugelassenes Synonym
+
+Begrenzte Satzlänge:: Anweisungen umfassen maximal 20 Wörter, beschreibende Texte maximal 25 Wörter; eine Anweisung und ein Thema pro Satz, ein Thema pro Absatz
+
+Begrenzte Grammatik:: Aktiv wird bevorzugt (Passiv nur, wenn der Handelnde unbekannt ist); ein eng begrenztes Set erlaubter Zeitformen (Imperativ, Infinitiv, einfaches Präsens/Präteritum, Futur); keine komplexen Hilfsverbkonstruktionen; mehrteilige Substantive auf drei Wörter begrenzt
+
+Schlüsselvertreter:: AECMA / European Association of Aerospace Industries (erster Leitfaden, 1986); ASD Simplified Technical English Maintenance Group (STEMG), aktueller Herausgeber
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Beim Verfassen von Wartungs-, Bedienungs- oder Verfahrensdokumentation für technische oder sicherheitskritische Ausrüstung
+* Bei Dokumentation für Leser mit begrenzten Englischkenntnissen oder ein globales, nicht-muttersprachliches Publikum
+* Beim Entwurf von UI-Texten oder Schnittstellentexten, wo konsistente, eindeutige Formulierungen zählen (ein Anwendungsfeld, in das STE über die Luftfahrt hinaus expandiert ist)
+* Bei jedem Anwendungsfall für kontrollierte Sprache, bei dem ein festes Vokabular und eine feste Grammatik Übersetzungskosten und Mehrdeutigkeit reduzieren
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<plain-english-strunk-white,Plain English nach Strunk & White>> — ein allgemeiner Klarheitsstandard für englische Prosa, ohne kontrolliertes Vokabular
+* <<gutes-deutsch-wolf-schneider,Gutes Deutsch nach Wolf Schneider>> — das deutschsprachige Äquivalent zu klarheitsfokussierten Standards
+
+[discrete]
+== *Aktueller Status*:
+
+* Issue 9 (Januar 2025) ist die aktuelle Ausgabe; ASD-STE100 erlangte 2025 den Status eines internationalen Standards, nach Jahrzehnten als Industriespezifikation (internationaler Spezifikationsstatus bereits seit 2005) — eine Versionsverschiebung, die ein Trainingsdaten-Prior möglicherweise nicht widerspiegelt
+* Ursprünglich auf Wartungsdokumentation der Luftfahrt beschränkt, wird STE inzwischen dokumentiert auch außerhalb von Luftfahrt und Verteidigung eingesetzt — Wikipedia, https://en.wikipedia.org/wiki/Simplified_Technical_English["Simplified Technical English"] (Stand 2026) berichtet, dass 64 % der Nutzer von Issue 8 außerhalb dieser Branchen arbeiteten, und dass Experten davor warnen, STE als Ersatz für einen vollständigen grammatikbasierten Styleguide zu behandeln oder sich bei der Anwendung auf Software-Prüfwerkzeuge statt geschultes menschliches Review zu verlassen
+====

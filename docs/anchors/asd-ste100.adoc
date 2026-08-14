@@ -1,0 +1,47 @@
+= ASD-STE100 (Simplified Technical English)
+:categories: communication-presentation
+:roles: technical-writer, software-developer, consultant, educator, business-analyst
+:related: gutes-deutsch-wolf-schneider, plain-english-strunk-white
+:proponents: AECMA, ASD Simplified Technical English Maintenance Group (STEMG)
+:tags: writing, english, clarity, controlled-language, technical-writing, standard, aerospace
+:tier: 3
+
+[%collapsible]
+====
+Full Name:: ASD Simplified Technical English (ASD-STE100)
+
+Also known as:: STE, Simplified Technical English, AECMA Simplified English
+
+[discrete]
+== *Core Concepts*:
+
+Controlled Vocabulary:: A dictionary of roughly 900 approved words; each word carries exactly one part of speech and one meaning, removing ambiguity that free English tolerates
+
+One Word, One Meaning:: Words outside the dictionary, or with meanings not listed, are disallowed — writers substitute an approved synonym instead
+
+Restricted Sentence Length:: Instructions run to a maximum of 20 words, descriptive text to 25 words; one instruction and one topic per sentence, one topic per paragraph
+
+Restricted Grammar:: Active voice preferred (passive only when the agent is unknown); a narrow set of permitted tenses (imperative, infinitive, simple present/past, future); no complex auxiliary constructions; multi-word nouns capped at three words
+
+Key Proponents:: AECMA / European Association of Aerospace Industries (first guide, 1986); ASD Simplified Technical English Maintenance Group (STEMG), current maintainer
+
+[discrete]
+== *When to Use*:
+
+* Writing maintenance, operating, or procedural documentation for technical or safety-critical equipment
+* Producing documentation for readers with limited English proficiency or a global, non-native-speaker audience
+* Designing UI copy or interface text where consistent, unambiguous wording matters (an application STE has expanded into beyond aerospace)
+* Any controlled-language use case where a fixed vocabulary and grammar reduce translation cost and ambiguity
+
+[discrete]
+== *Related Anchors*:
+
+* <<plain-english-strunk-white,Plain English according to Strunk & White>> — a general-purpose clarity standard for English prose, without a controlled vocabulary
+* <<gutes-deutsch-wolf-schneider,Gutes Deutsch nach Wolf Schneider>> — the German-language equivalent clarity-first standard
+
+[discrete]
+== *Current Status*:
+
+* Issue 9 (January 2025) is the current edition; ASD-STE100 gained international-standard status in 2025, after decades as an industry specification (international specification status since 2005) — a version shift a training-data prior may not reflect
+* Originally scoped to aerospace maintenance documentation, STE now sees documented use outside aerospace and defense — Wikipedia, https://en.wikipedia.org/wiki/Simplified_Technical_English["Simplified Technical English"] (accessed 2026) reports 64% of Issue 8 users worked outside those sectors, and that experts caution against treating STE as a substitute for a full grammar-based style guide or relying on software checkers in place of trained human review
+====

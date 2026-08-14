@@ -603,6 +603,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** William Strunk Jr., E.B. White
 - **Core:** Omit needless words, use active voice, prefer concrete language, write with nouns and verbs — clarity-first principles for English writing ("The Elements of Style")
 
+### ASD-STE100 (Simplified Technical English)
+- **Also known as:** STE, Simplified Technical English, AECMA Simplified English
+- **Proponents:** AECMA, ASD Simplified Technical English Maintenance Group (STEMG)
+- **Core:** Controlled vocabulary of ~900 approved words (one word, one meaning), restricted sentence length (20 words for instructions, 25 for descriptive text), restricted grammar (active voice, limited tenses) — a controlled-language standard for technical documentation, originating in aerospace maintenance manuals
+
 ### 4MAT
 - **Also known as:** 4MAT System of Instruction, McCarthy's 4MAT, 4MAT Learning Cycle
 - **Proponents:** Bernice McCarthy
