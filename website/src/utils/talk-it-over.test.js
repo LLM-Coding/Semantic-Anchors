@@ -138,7 +138,7 @@ describe('catalogPrompt — the reader’s LLM may only fetch URLs it was given'
   it('leaves the one-click path intact for the real manifest', () => {
     const prompt = catalogPrompt(fromManifest(realManifest)).replace(
       '{url}',
-      'https://llm-coding.github.io/Semantic-Anchors/llms-index.md?v=00000000'
+      'https://llm-coding.github.io/Semantic-Anchors/llms-index.txt?v=00000000'
     )
     const providerUrl = 'https://claude.ai/new?q=' + encodeURIComponent(prompt)
 

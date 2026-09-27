@@ -49,10 +49,14 @@ describe('renderMain — appearances strip', () => {
 })
 
 describe('renderMain — TalkItOver catalog button', () => {
+  // .txt, not .md: GitHub Pages serves .md as text/markdown, and ChatGPT
+  // refuses that with "400 Unsupported content-type" — then answers from the
+  // web instead of saying it could not read the file. Both files hold the same
+  // bytes, so only the extension decides whether the reader gets the catalog.
   it('hands over the index, not the full-text file', () => {
     const html = renderMain()
 
-    expect(html).toContain('llms-index.md')
+    expect(html).toContain('llms-index.txt')
     expect(html).not.toContain('url="/Semantic-Anchors/llms.txt"')
   })
 
@@ -74,7 +78,7 @@ describe('renderMain — TalkItOver catalog button', () => {
 
     expect(url).toMatch(/^https:\/\//)
     expect(new URL(url).href).toBe(url)
-    expect(new URL(url).pathname.endsWith('/llms-index.md')).toBe(true)
+    expect(new URL(url).pathname.endsWith('/llms-index.txt')).toBe(true)
   })
 
   it('carries the catalog prompt and its version', () => {
