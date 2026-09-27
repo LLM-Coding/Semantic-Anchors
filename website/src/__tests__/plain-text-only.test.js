@@ -1,7 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
+
+vi.mock('../i18n.js', () => ({
+  i18n: { t: (key) => key, currentLang: () => 'en' },
+}))
 
 import * as manifest from '../utils/llms-index-manifest.js'
 
@@ -113,6 +117,26 @@ describe('the button only names plain text', () => {
       'These are served as text/markdown. ChatGPT refuses them and invents an ' +
         'answer instead of saying so.'
     ).toEqual([])
+  })
+
+  /*
+   * The addresses above all travel through the manifest. The button's own `url`
+   * attribute does not — it is built inline in main-content.js, so it sat
+   * outside every guard in this file and stayed .md after the rename. ChatGPT
+   * refused it with "400 Unsupported content-type" and answered from the web
+   * instead, which is the exact failure the header of this file describes.
+   *
+   * So the check has to read the rendered attribute, not the manifest.
+   */
+  it('hands over the index as .txt, not .md', async () => {
+    const { renderMain } = await import('../components/main-content.js')
+    const url = renderMain().match(/<talk-it-over[\s\S]*?url="([^"]*)"/)[1]
+
+    expect(
+      new URL(url).pathname,
+      'The button is served as text/markdown. ChatGPT refuses it and invents ' +
+        'an answer instead of saying so.'
+    ).toMatch(/\.txt$/)
   })
 
   it('writes every bundle as .txt', () => {

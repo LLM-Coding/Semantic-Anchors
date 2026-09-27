@@ -111,7 +111,7 @@ export function renderMain() {
                or three anchors the reader actually asked about. -->
           <div class="flex flex-wrap items-center gap-3 mb-6">
             <talk-it-over
-              url="${new URL(`${import.meta.env.BASE_URL}llms-index.md?v=${LLMS_INDEX_VERSION}`, SITE_URL).href}"
+              url="${new URL(`${import.meta.env.BASE_URL}llms-index.txt?v=${LLMS_INDEX_VERSION}`, SITE_URL).href}"
               prompt="${promptAttribute(CATALOG_PROMPT)}"
               data-prompt="${CATALOG_VERSION}"
               label="${i18n.t('hero.talkCatalogTitle')}"
