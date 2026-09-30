@@ -2,8 +2,8 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 21 semantic contracts, and
-> 200 anchors in 14 categories — the anchors both
-> one by one and bundled into 18 files that hold a whole category.
+> 215 anchors in 14 categories — the anchors both
+> one by one and bundled into 22 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
 > question about a workflow, a method or this project is usually answered by a
@@ -43,7 +43,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 200 terms in full, 18 files
+## Anchor bundles — the same 215 terms in full, 22 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -52,22 +52,26 @@
 - [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 4 anchors in full.
 - [Creative Writing](https://llm-coding.github.io/Semantic-Anchors/bundles/creative-writing.txt): 7 anchors in full.
 - [Design Principles & Patterns (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 35 anchors in full.
-- [Design Principles & Patterns (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 16 anchors in full.
-- [Development Workflow](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow.txt): 18 anchors in full.
+- [Design Principles & Patterns (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 19 anchors in full.
+- [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 18 anchors in full.
+- [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 4 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
-- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 3 anchors in full.
-- [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 6 anchors in full.
+- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 4 anchors in full.
+- [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 7 anchors in full.
 - [Meta](https://llm-coding.github.io/Semantic-Anchors/bundles/meta.txt): 3 anchors in full.
-- [Problem Solving (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 17 anchors in full.
-- [Problem Solving (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 2 anchors in full.
-- [Requirements Engineering](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering.txt): 13 anchors in full.
+- [Problem Solving (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 13 anchors in full.
+- [Problem Solving (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 11 anchors in full.
+- [Problem Solving (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-3.txt): 6 anchors in full.
+- [Requirements Engineering](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering.txt): 15 anchors in full.
 - [Software Architecture (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-1.txt): 23 anchors in full.
 - [Software Architecture (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 5 anchors in full.
-- [Statistical Methods & Process Monitoring](https://llm-coding.github.io/Semantic-Anchors/bundles/statistical-methods.txt): 4 anchors in full.
-- [Strategic Planning](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning.txt): 19 anchors in full.
-- [Testing & Quality Practices](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality.txt): 21 anchors in full.
+- [Statistical Methods & Process Monitoring](https://llm-coding.github.io/Semantic-Anchors/bundles/statistical-methods.txt): 5 anchors in full.
+- [Strategic Planning (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-1.txt): 17 anchors in full.
+- [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 4 anchors in full.
+- [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 21 anchors in full.
+- [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 4 anchors in full.
 
-## Anchors — 200 named terms, grouped by category
+## Anchors — 215 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -141,10 +145,13 @@
 - [GoF-Visitor Pattern](https://llm-coding.github.io/Semantic-Anchors/anchors/gof-visitor-pattern.txt)
 - [GRASP](https://llm-coding.github.io/Semantic-Anchors/anchors/grasp.txt)
 - [Integration Operation Segregation Principle (IOSP)](https://llm-coding.github.io/Semantic-Anchors/anchors/iosp.txt)
+- [Jidoka](https://llm-coding.github.io/Semantic-Anchors/anchors/jidoka.txt)
 - [KISS Principle](https://llm-coding.github.io/Semantic-Anchors/anchors/kiss-principle.txt)
 - [Law of Demeter](https://llm-coding.github.io/Semantic-Anchors/anchors/law-of-demeter.txt)
 - [Locality of Behaviour](https://llm-coding.github.io/Semantic-Anchors/anchors/locality-of-behaviour.txt)
+- [Poka-Yoke](https://llm-coding.github.io/Semantic-Anchors/anchors/poka-yoke.txt)
 - [Postel's Law](https://llm-coding.github.io/Semantic-Anchors/anchors/postels-law.txt)
+- [QFD](https://llm-coding.github.io/Semantic-Anchors/anchors/qfd.txt)
 - [Separation of Concerns](https://llm-coding.github.io/Semantic-Anchors/anchors/separation-of-concerns.txt)
 - [Single Level of Abstraction Principle (SLAP)](https://llm-coding.github.io/Semantic-Anchors/anchors/single-level-of-abstraction-principle.txt)
 - [SOLID-Dependency Inversion Principle](https://llm-coding.github.io/Semantic-Anchors/anchors/solid-dip.txt)
@@ -161,6 +168,7 @@
 ### Development Workflow
 
 - [50/72 Rule](https://llm-coding.github.io/Semantic-Anchors/anchors/50-72-rule.txt)
+- [Andon](https://llm-coding.github.io/Semantic-Anchors/anchors/andon.txt)
 - [BEM Methodology](https://llm-coding.github.io/Semantic-Anchors/anchors/bem-methodology.txt)
 - [Boy Scout Rule](https://llm-coding.github.io/Semantic-Anchors/anchors/boy-scout-rule.txt)
 - [Conventional Commits](https://llm-coding.github.io/Semantic-Anchors/anchors/conventional-commits.txt)
@@ -169,8 +177,10 @@
 - [Effective Java](https://llm-coding.github.io/Semantic-Anchors/anchors/effective-java.txt)
 - [Effective Python](https://llm-coding.github.io/Semantic-Anchors/anchors/effective-python.txt)
 - [GitHub Flow](https://llm-coding.github.io/Semantic-Anchors/anchors/github-flow.txt)
+- [Kaizen](https://llm-coding.github.io/Semantic-Anchors/anchors/kaizen.txt)
 - [Programming as Theory Building (Naur)](https://llm-coding.github.io/Semantic-Anchors/anchors/mental-model-according-to-naur.txt)
 - [Mikado Method](https://llm-coding.github.io/Semantic-Anchors/anchors/mikado-method.txt)
+- [PDCA](https://llm-coding.github.io/Semantic-Anchors/anchors/pdca.txt)
 - [Regulated Environment](https://llm-coding.github.io/Semantic-Anchors/anchors/regulated-environment.txt)
 - [Semantic Versioning (SemVer)](https://llm-coding.github.io/Semantic-Anchors/anchors/semantic-versioning.txt)
 - [Site Reliability Engineering](https://llm-coding.github.io/Semantic-Anchors/anchors/site-reliability-engineering.txt)
@@ -178,6 +188,7 @@
 - [Spike Solution](https://llm-coding.github.io/Semantic-Anchors/anchors/spike-solution.txt)
 - [Thin Vertical Slice](https://llm-coding.github.io/Semantic-Anchors/anchors/thin-vertical-slice.txt)
 - [TIMTOWTDI](https://llm-coding.github.io/Semantic-Anchors/anchors/timtowtdi.txt)
+- [Value Stream Mapping](https://llm-coding.github.io/Semantic-Anchors/anchors/value-stream-mapping.txt)
 
 ### Dialogue Interaction
 
@@ -188,6 +199,7 @@
 
 ### Documentation
 
+- [A3 Problem Solving](https://llm-coding.github.io/Semantic-Anchors/anchors/a3-problem-solving.txt)
 - [Diátaxis Framework](https://llm-coding.github.io/Semantic-Anchors/anchors/diataxis-framework.txt)
 - [Docs-as-Code according to Ralf D. Müller](https://llm-coding.github.io/Semantic-Anchors/anchors/docs-as-code.txt)
 - [Simplified Technical English (ASD-STE100)](https://llm-coding.github.io/Semantic-Anchors/anchors/simplified-technical-english.txt)
@@ -196,6 +208,7 @@
 
 - [ADDIE Model](https://llm-coding.github.io/Semantic-Anchors/anchors/addie-model.txt)
 - [Dreyfus Model of Skill Acquisition](https://llm-coding.github.io/Semantic-Anchors/anchors/dreyfus-skill-acquisition.txt)
+- [Genchi Genbutsu](https://llm-coding.github.io/Semantic-Anchors/anchors/genchi-genbutsu.txt)
 - [GTD — Getting Things Done](https://llm-coding.github.io/Semantic-Anchors/anchors/gtd.txt)
 - [Hemingway Bridge](https://llm-coding.github.io/Semantic-Anchors/anchors/hemingway-bridge.txt)
 - [P.A.R.A. Method](https://llm-coding.github.io/Semantic-Anchors/anchors/para-method.txt)
@@ -209,23 +222,34 @@
 
 ### Problem Solving
 
+- [A3 Problem Solving](https://llm-coding.github.io/Semantic-Anchors/anchors/a3-problem-solving.txt)
 - [Chain of Thought (CoT)](https://llm-coding.github.io/Semantic-Anchors/anchors/chain-of-thought.txt)
 - [Crisis and Emergency Risk Communication (CERC)](https://llm-coding.github.io/Semantic-Anchors/anchors/crisis-and-emergency-risk-communication.txt)
 - [Decisional Balance Sheet](https://llm-coding.github.io/Semantic-Anchors/anchors/decisional-balance-sheet.txt)
 - [Devil's Advocate](https://llm-coding.github.io/Semantic-Anchors/anchors/devils-advocate.txt)
+- [DMADV](https://llm-coding.github.io/Semantic-Anchors/anchors/dmadv.txt)
 - [DMAIC](https://llm-coding.github.io/Semantic-Anchors/anchors/dmaic.txt)
 - [Double Diamond](https://llm-coding.github.io/Semantic-Anchors/anchors/double-diamond.txt)
 - [Fermi Estimation](https://llm-coding.github.io/Semantic-Anchors/anchors/fermi-estimation.txt)
 - [Feynman Technique](https://llm-coding.github.io/Semantic-Anchors/anchors/feynman-technique.txt)
 - [First Principles Thinking](https://llm-coding.github.io/Semantic-Anchors/anchors/first-principles-thinking.txt)
 - [Five Whys (Ohno)](https://llm-coding.github.io/Semantic-Anchors/anchors/five-whys.txt)
+- [FMEA](https://llm-coding.github.io/Semantic-Anchors/anchors/fmea.txt)
+- [Genchi Genbutsu](https://llm-coding.github.io/Semantic-Anchors/anchors/genchi-genbutsu.txt)
+- [Ishikawa Diagram](https://llm-coding.github.io/Semantic-Anchors/anchors/ishikawa-diagram.txt)
+- [Kaizen](https://llm-coding.github.io/Semantic-Anchors/anchors/kaizen.txt)
 - [Luhmann's System Theory](https://llm-coding.github.io/Semantic-Anchors/anchors/luhmann-system-theory.txt)
 - [Morphological Box](https://llm-coding.github.io/Semantic-Anchors/anchors/morphological-box.txt)
+- [Muda, Mura, Muri](https://llm-coding.github.io/Semantic-Anchors/anchors/muda-mura-muri.txt)
 - [Occam's Razor](https://llm-coding.github.io/Semantic-Anchors/anchors/occams-razor.txt)
+- [PDCA](https://llm-coding.github.io/Semantic-Anchors/anchors/pdca.txt)
 - [Premortem](https://llm-coding.github.io/Semantic-Anchors/anchors/premortem.txt)
 - [Second-Order Thinking](https://llm-coding.github.io/Semantic-Anchors/anchors/second-order-thinking.txt)
 - [Simon's Constructivism](https://llm-coding.github.io/Semantic-Anchors/anchors/simon-constructivism.txt)
+- [SIPOC](https://llm-coding.github.io/Semantic-Anchors/anchors/sipoc.txt)
 - [Systemic Consulting (Heidelberg School)](https://llm-coding.github.io/Semantic-Anchors/anchors/systemic-consulting.txt)
+- [Toyota Kata](https://llm-coding.github.io/Semantic-Anchors/anchors/toyota-kata.txt)
+- [Value Stream Mapping](https://llm-coding.github.io/Semantic-Anchors/anchors/value-stream-mapping.txt)
 - [What Would Chuck Norris Do? (WWCND)](https://llm-coding.github.io/Semantic-Anchors/anchors/what-would-chuck-norris-do.txt)
 - [XY Problem](https://llm-coding.github.io/Semantic-Anchors/anchors/xy-problem.txt)
 
@@ -241,8 +265,10 @@
 - [MoSCoW](https://llm-coding.github.io/Semantic-Anchors/anchors/moscow.txt)
 - [PRD](https://llm-coding.github.io/Semantic-Anchors/anchors/prd.txt)
 - [Nonviolent Communication (Rosenberg)](https://llm-coding.github.io/Semantic-Anchors/anchors/problem-space-nvc.txt)
+- [QFD](https://llm-coding.github.io/Semantic-Anchors/anchors/qfd.txt)
 - [Quality Attribute Scenario](https://llm-coding.github.io/Semantic-Anchors/anchors/quality-attribute-scenario.txt)
 - [req42 Requirements Framework](https://llm-coding.github.io/Semantic-Anchors/anchors/req42.txt)
+- [SIPOC](https://llm-coding.github.io/Semantic-Anchors/anchors/sipoc.txt)
 - [User Story Mapping](https://llm-coding.github.io/Semantic-Anchors/anchors/user-story-mapping.txt)
 
 ### Software Architecture
@@ -279,6 +305,7 @@
 ### Statistical Methods & Process Monitoring
 
 - [Control Chart (Shewhart)](https://llm-coding.github.io/Semantic-Anchors/anchors/control-chart-shewhart.txt)
+- [DMADV](https://llm-coding.github.io/Semantic-Anchors/anchors/dmadv.txt)
 - [DMAIC](https://llm-coding.github.io/Semantic-Anchors/anchors/dmaic.txt)
 - [Nelson Rules](https://llm-coding.github.io/Semantic-Anchors/anchors/nelson-rules.txt)
 - [SPC (Statistical Process Control)](https://llm-coding.github.io/Semantic-Anchors/anchors/spc.txt)
@@ -296,6 +323,7 @@
 - [Kano Model](https://llm-coding.github.io/Semantic-Anchors/anchors/kano-model.txt)
 - [Kotter's 8-Step Change Model](https://llm-coding.github.io/Semantic-Anchors/anchors/kotter-8-step-change-model.txt)
 - [Meaningful Human Control (MHC)](https://llm-coding.github.io/Semantic-Anchors/anchors/meaningful-human-control.txt)
+- [Muda, Mura, Muri](https://llm-coding.github.io/Semantic-Anchors/anchors/muda-mura-muri.txt)
 - [Minimum Viable Product (MVP)](https://llm-coding.github.io/Semantic-Anchors/anchors/mvp.txt)
 - [OKR (Objectives and Key Results)](https://llm-coding.github.io/Semantic-Anchors/anchors/okr.txt)
 - [PERT](https://llm-coding.github.io/Semantic-Anchors/anchors/pert.txt)
@@ -303,18 +331,23 @@
 - [Pugh-Matrix](https://llm-coding.github.io/Semantic-Anchors/anchors/pugh-matrix.txt)
 - [Second-Order Thinking](https://llm-coding.github.io/Semantic-Anchors/anchors/second-order-thinking.txt)
 - [SWOT](https://llm-coding.github.io/Semantic-Anchors/anchors/swot.txt)
+- [Toyota Kata](https://llm-coding.github.io/Semantic-Anchors/anchors/toyota-kata.txt)
 - [Wardley Mapping](https://llm-coding.github.io/Semantic-Anchors/anchors/wardley-mapping.txt)
 
 ### Testing & Quality Practices
 
+- [Andon](https://llm-coding.github.io/Semantic-Anchors/anchors/andon.txt)
 - [BDD (Behavior-Driven Development)](https://llm-coding.github.io/Semantic-Anchors/anchors/bdd-given-when-then.txt)
 - [Fagan Inspection](https://llm-coding.github.io/Semantic-Anchors/anchors/fagan-inspection.txt)
+- [FMEA](https://llm-coding.github.io/Semantic-Anchors/anchors/fmea.txt)
 - [Gherkin](https://llm-coding.github.io/Semantic-Anchors/anchors/gherkin.txt)
 - [IEC 61508 SIL Levels](https://llm-coding.github.io/Semantic-Anchors/anchors/iec-61508-sil-levels.txt)
+- [Jidoka](https://llm-coding.github.io/Semantic-Anchors/anchors/jidoka.txt)
 - [LINDDUN](https://llm-coding.github.io/Semantic-Anchors/anchors/linddun.txt)
 - [LLM-Evaluations](https://llm-coding.github.io/Semantic-Anchors/anchors/llm-evaluations.txt)
 - [Mutation Testing](https://llm-coding.github.io/Semantic-Anchors/anchors/mutation-testing.txt)
 - [OWASP Top 10](https://llm-coding.github.io/Semantic-Anchors/anchors/owasp-top-10.txt)
+- [Poka-Yoke](https://llm-coding.github.io/Semantic-Anchors/anchors/poka-yoke.txt)
 - [Property-Based Testing](https://llm-coding.github.io/Semantic-Anchors/anchors/property-based-testing.txt)
 - [Red/Green TDD](https://llm-coding.github.io/Semantic-Anchors/anchors/red-green-tdd.txt)
 - [STRIDE Threat Model](https://llm-coding.github.io/Semantic-Anchors/anchors/stride.txt)

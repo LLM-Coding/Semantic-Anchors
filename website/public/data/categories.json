@@ -79,10 +79,13 @@
       "gof-visitor-pattern",
       "grasp",
       "iosp",
+      "jidoka",
       "kiss-principle",
       "law-of-demeter",
       "locality-of-behaviour",
+      "poka-yoke",
       "postels-law",
+      "qfd",
       "separation-of-concerns",
       "single-level-of-abstraction-principle",
       "solid-dip",
@@ -102,6 +105,7 @@
     "name": "Development Workflow",
     "anchors": [
       "50-72-rule",
+      "andon",
       "bem-methodology",
       "boy-scout-rule",
       "conventional-commits",
@@ -110,15 +114,18 @@
       "effective-java",
       "effective-python",
       "github-flow",
+      "kaizen",
       "mental-model-according-to-naur",
       "mikado-method",
+      "pdca",
       "regulated-environment",
       "semantic-versioning",
       "site-reliability-engineering",
       "sota",
       "spike-solution",
       "thin-vertical-slice",
-      "timtowtdi"
+      "timtowtdi",
+      "value-stream-mapping"
     ]
   },
   {
@@ -135,6 +142,7 @@
     "id": "documentation",
     "name": "Documentation",
     "anchors": [
+      "a3-problem-solving",
       "diataxis-framework",
       "docs-as-code",
       "simplified-technical-english"
@@ -146,6 +154,7 @@
     "anchors": [
       "addie-model",
       "dreyfus-skill-acquisition",
+      "genchi-genbutsu",
       "gtd",
       "hemingway-bridge",
       "para-method",
@@ -165,23 +174,34 @@
     "id": "problem-solving",
     "name": "Problem Solving",
     "anchors": [
+      "a3-problem-solving",
       "chain-of-thought",
       "crisis-and-emergency-risk-communication",
       "decisional-balance-sheet",
       "devils-advocate",
+      "dmadv",
       "dmaic",
       "double-diamond",
       "fermi-estimation",
       "feynman-technique",
       "first-principles-thinking",
       "five-whys",
+      "fmea",
+      "genchi-genbutsu",
+      "ishikawa-diagram",
+      "kaizen",
       "luhmann-system-theory",
       "morphological-box",
+      "muda-mura-muri",
       "occams-razor",
+      "pdca",
       "premortem",
       "second-order-thinking",
       "simon-constructivism",
+      "sipoc",
       "systemic-consulting",
+      "toyota-kata",
+      "value-stream-mapping",
       "what-would-chuck-norris-do",
       "xy-problem"
     ]
@@ -200,8 +220,10 @@
       "moscow",
       "prd",
       "problem-space-nvc",
+      "qfd",
       "quality-attribute-scenario",
       "req42",
+      "sipoc",
       "user-story-mapping"
     ]
   },
@@ -244,6 +266,7 @@
     "name": "Statistical Methods & Process Monitoring",
     "anchors": [
       "control-chart-shewhart",
+      "dmadv",
       "dmaic",
       "nelson-rules",
       "spc"
@@ -264,6 +287,7 @@
       "kano-model",
       "kotter-8-step-change-model",
       "meaningful-human-control",
+      "muda-mura-muri",
       "mvp",
       "okr",
       "pert",
@@ -271,6 +295,7 @@
       "pugh-matrix",
       "second-order-thinking",
       "swot",
+      "toyota-kata",
       "wardley-mapping"
     ]
   },
@@ -278,14 +303,18 @@
     "id": "testing-quality",
     "name": "Testing & Quality Practices",
     "anchors": [
+      "andon",
       "bdd-given-when-then",
       "fagan-inspection",
+      "fmea",
       "gherkin",
       "iec-61508-sil-levels",
+      "jidoka",
       "linddun",
       "llm-evaluations",
       "mutation-testing",
       "owasp-top-10",
+      "poka-yoke",
       "property-based-testing",
       "red-green-tdd",
       "stride",

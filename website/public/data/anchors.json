@@ -60,6 +60,60 @@
     "addedAt": "2026-07-01T09:57:48+02:00"
   },
   {
+    "id": "a3-problem-solving",
+    "title": "A3 Problem Solving",
+    "categories": [
+      "problem-solving",
+      "documentation"
+    ],
+    "roles": [
+      "team-lead",
+      "consultant",
+      "business-analyst",
+      "technical-writer",
+      "educator"
+    ],
+    "related": [
+      "five-whys",
+      "pdca",
+      "dmaic",
+      "hoshin-kanri",
+      "value-stream-mapping"
+    ],
+    "proponents": [
+      "John Shook",
+      "Toyota",
+      "Durward K. Sobek II",
+      "Art Smalley"
+    ],
+    "tags": [
+      "A3 problem solving",
+      "A3 thinking",
+      "A3 report",
+      "Managing to Learn",
+      "Shook",
+      "PDCA",
+      "root cause",
+      "countermeasure",
+      "one page",
+      "Toyota"
+    ],
+    "filePath": "docs/anchors/a3-problem-solving.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "addie-model",
     "title": "ADDIE Model",
     "categories": [
@@ -152,6 +206,57 @@
     ],
     "filePath": "docs/anchors/aida-model.adoc",
     "addedAt": "2026-06-03T22:41:27+02:00"
+  },
+  {
+    "id": "andon",
+    "title": "Andon",
+    "categories": [
+      "development-workflow",
+      "testing-quality"
+    ],
+    "roles": [
+      "devops-engineer",
+      "team-lead",
+      "qa-engineer",
+      "software-developer"
+    ],
+    "related": [
+      "kaizen",
+      "genchi-genbutsu",
+      "muda-mura-muri",
+      "red-green-tdd",
+      "site-reliability-engineering"
+    ],
+    "proponents": [
+      "Taiichi Ohno",
+      "Toyota Motor Corporation"
+    ],
+    "tags": [
+      "Andon",
+      "andon cord",
+      "andon board",
+      "jidoka",
+      "stop the line",
+      "fixed-position stop",
+      "line stop",
+      "visual management",
+      "call for help",
+      "escalation"
+    ],
+    "filePath": "docs/anchors/andon.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
     "id": "arc42",
@@ -1336,6 +1441,59 @@
     "addedAt": "2026-07-07T06:48:54+02:00"
   },
   {
+    "id": "dmadv",
+    "title": "DMADV",
+    "categories": [
+      "problem-solving",
+      "statistical-methods"
+    ],
+    "roles": [
+      "consultant",
+      "team-lead",
+      "product-owner",
+      "qa-engineer",
+      "data-scientist"
+    ],
+    "related": [
+      "dmaic",
+      "fmea",
+      "sipoc",
+      "pugh-matrix",
+      "kano-model",
+      "qfd"
+    ],
+    "proponents": [
+      "Motorola",
+      "General Electric"
+    ],
+    "tags": [
+      "DMADV",
+      "DFSS",
+      "Design for Six Sigma",
+      "define measure analyze design verify",
+      "new product development",
+      "CTQ",
+      "QFD",
+      "House of Quality",
+      "design verification",
+      "tollgate"
+    ],
+    "filePath": "docs/anchors/dmadv.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "dmaic",
     "title": "DMAIC",
     "categories": [
@@ -1982,6 +2140,60 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "fmea",
+    "title": "FMEA",
+    "categories": [
+      "testing-quality",
+      "problem-solving"
+    ],
+    "roles": [
+      "qa-engineer",
+      "software-architect",
+      "systems-thinker",
+      "devops-engineer",
+      "consultant"
+    ],
+    "related": [
+      "dmaic",
+      "ishikawa-diagram",
+      "premortem",
+      "stride",
+      "iec-61508-sil-levels"
+    ],
+    "proponents": [
+      "US Armed Forces (MIL-P-1629)",
+      "NASA",
+      "AIAG",
+      "VDA"
+    ],
+    "tags": [
+      "FMEA",
+      "FMECA",
+      "failure mode and effects analysis",
+      "RPN",
+      "risk priority number",
+      "action priority",
+      "severity occurrence detection",
+      "reliability",
+      "DFMEA",
+      "PFMEA"
+    ],
+    "filePath": "docs/anchors/fmea.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "four-sides-model",
     "title": "Four-Sides Model (Schulz von Thun)",
     "categories": [
@@ -2080,6 +2292,58 @@
     "filePath": "docs/anchors/freytags-pyramid.adoc",
     "tier": 3,
     "addedAt": "2026-03-29T15:18:24+00:00"
+  },
+  {
+    "id": "genchi-genbutsu",
+    "title": "Genchi Genbutsu",
+    "categories": [
+      "problem-solving",
+      "knowledge-management"
+    ],
+    "roles": [
+      "software-architect",
+      "team-lead",
+      "consultant",
+      "business-analyst"
+    ],
+    "related": [
+      "five-whys",
+      "kaizen",
+      "andon",
+      "xy-problem",
+      "socratic-method"
+    ],
+    "proponents": [
+      "Taiichi Ohno",
+      "Toyota Motor Corporation",
+      "Art Smalley"
+    ],
+    "tags": [
+      "Genchi Genbutsu",
+      "gemba",
+      "go and see",
+      "Ohno Circle",
+      "chalk circle",
+      "direct observation",
+      "gemba walk",
+      "Toyota Way",
+      "actual place actual thing",
+      "go to the source"
+    ],
+    "filePath": "docs/anchors/genchi-genbutsu.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
     "id": "gherkin",
@@ -3497,6 +3761,55 @@
     "addedAt": "2026-06-03T09:46:39+02:00"
   },
   {
+    "id": "ishikawa-diagram",
+    "title": "Ishikawa Diagram",
+    "categories": [
+      "problem-solving"
+    ],
+    "roles": [
+      "qa-engineer",
+      "team-lead",
+      "systems-thinker",
+      "consultant",
+      "software-developer"
+    ],
+    "related": [
+      "five-whys",
+      "dmaic",
+      "fmea",
+      "sipoc",
+      "mece"
+    ],
+    "proponents": [
+      "Kaoru Ishikawa"
+    ],
+    "tags": [
+      "Ishikawa diagram",
+      "fishbone diagram",
+      "cause and effect diagram",
+      "6M",
+      "seven basic tools of quality",
+      "root cause analysis",
+      "kaizen",
+      "Kawasaki",
+      "quality"
+    ],
+    "filePath": "docs/anchors/ishikawa-diagram.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "iso-25010",
     "title": "ISO/IEC 25010",
     "categories": [
@@ -3532,6 +3845,59 @@
     "addedAt": "2026-03-23T13:51:39+00:00"
   },
   {
+    "id": "jidoka",
+    "title": "Jidoka",
+    "categories": [
+      "design-principles",
+      "testing-quality"
+    ],
+    "roles": [
+      "devops-engineer",
+      "qa-engineer",
+      "software-architect",
+      "software-developer",
+      "team-lead"
+    ],
+    "related": [
+      "poka-yoke",
+      "andon",
+      "circuit-breaker",
+      "site-reliability-engineering",
+      "five-whys"
+    ],
+    "proponents": [
+      "Sakichi Toyoda",
+      "Taiichi Ohno",
+      "Toyota"
+    ],
+    "tags": [
+      "Jidoka",
+      "autonomation",
+      "automation with a human touch",
+      "Toyota Production System",
+      "andon",
+      "stop the line",
+      "Sakichi Toyoda",
+      "automatic loom",
+      "fail fast",
+      "built-in quality"
+    ],
+    "filePath": "docs/anchors/jidoka.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "jobs-to-be-done",
     "title": "Jobs To Be Done (JTBD)",
     "categories": [
@@ -3563,6 +3929,59 @@
     "filePath": "docs/anchors/jobs-to-be-done.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "kaizen",
+    "title": "Kaizen",
+    "categories": [
+      "problem-solving",
+      "development-workflow"
+    ],
+    "roles": [
+      "team-lead",
+      "consultant",
+      "qa-engineer",
+      "product-owner"
+    ],
+    "related": [
+      "muda-mura-muri",
+      "toyota-kata",
+      "andon",
+      "dmaic",
+      "boy-scout-rule"
+    ],
+    "proponents": [
+      "Masaaki Imai",
+      "Taiichi Ohno",
+      "Toyota Motor Corporation",
+      "Art Smalley"
+    ],
+    "tags": [
+      "Kaizen",
+      "kaikaku",
+      "continuous improvement",
+      "standardised work",
+      "standardise the gain",
+      "kaizen event",
+      "kaizen blitz",
+      "gemba kaizen",
+      "PDCA",
+      "everyone everywhere every day"
+    ],
+    "filePath": "docs/anchors/kaizen.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
     "id": "kano-model",
@@ -4205,6 +4624,60 @@
     "addedAt": "2026-02-22T07:45:12+00:00"
   },
   {
+    "id": "muda-mura-muri",
+    "title": "Muda, Mura, Muri",
+    "categories": [
+      "problem-solving",
+      "strategic-planning"
+    ],
+    "roles": [
+      "systems-thinker",
+      "team-lead",
+      "consultant",
+      "business-analyst"
+    ],
+    "related": [
+      "kaizen",
+      "andon",
+      "genchi-genbutsu",
+      "dmaic",
+      "spc"
+    ],
+    "proponents": [
+      "Taiichi Ohno",
+      "Toyota Motor Corporation",
+      "James P. Womack"
+    ],
+    "tags": [
+      "Muda",
+      "Mura",
+      "Muri",
+      "the seven wastes",
+      "TIMWOOD",
+      "TIMWOODS",
+      "waste",
+      "unevenness",
+      "overburden",
+      "eighth waste",
+      "the three Ms",
+      "type one muda"
+    ],
+    "filePath": "docs/anchors/muda-mura-muri.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "mutation-testing",
     "title": "Mutation Testing",
     "categories": [
@@ -4459,6 +4932,57 @@
     "addedAt": "2026-03-26T09:24:39+00:00"
   },
   {
+    "id": "pdca",
+    "title": "PDCA",
+    "categories": [
+      "problem-solving",
+      "development-workflow"
+    ],
+    "roles": [
+      "team-lead",
+      "consultant",
+      "qa-engineer",
+      "systems-thinker"
+    ],
+    "related": [
+      "dmaic",
+      "dmadv",
+      "spc",
+      "five-whys",
+      "ishikawa-diagram"
+    ],
+    "proponents": [
+      "Walter A. Shewhart",
+      "W. Edwards Deming",
+      "Kaoru Ishikawa"
+    ],
+    "tags": [
+      "PDCA",
+      "PDSA",
+      "Deming cycle",
+      "Shewhart cycle",
+      "plan do check act",
+      "plan do study act",
+      "kaizen",
+      "continuous improvement",
+      "quality"
+    ],
+    "filePath": "docs/anchors/pdca.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "pert",
     "title": "PERT",
     "categories": [
@@ -4530,6 +5054,58 @@
     "filePath": "docs/anchors/plain-english-strunk-white.adoc",
     "tier": 3,
     "addedAt": "2026-03-12T10:36:40+00:00"
+  },
+  {
+    "id": "poka-yoke",
+    "title": "Poka-Yoke",
+    "categories": [
+      "design-principles",
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer",
+      "software-architect",
+      "ux-designer",
+      "team-lead"
+    ],
+    "related": [
+      "jidoka",
+      "design-by-contract",
+      "red-green-tdd",
+      "five-whys",
+      "dmaic"
+    ],
+    "proponents": [
+      "Shigeo Shingo",
+      "Toyota"
+    ],
+    "tags": [
+      "Poka-Yoke",
+      "mistake-proofing",
+      "error-proofing",
+      "baka-yoke",
+      "Shingo",
+      "zero quality control",
+      "source inspection",
+      "defect prevention",
+      "forcing function",
+      "fail-safe"
+    ],
+    "filePath": "docs/anchors/poka-yoke.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
     "id": "postels-law",
@@ -4800,6 +5376,60 @@
     "filePath": "docs/anchors/pyramid-principle.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "qfd",
+    "title": "QFD",
+    "categories": [
+      "requirements-engineering",
+      "design-principles"
+    ],
+    "roles": [
+      "requirements-engineer",
+      "product-owner",
+      "business-analyst",
+      "ux-designer",
+      "software-architect"
+    ],
+    "related": [
+      "pugh-matrix",
+      "kano-model",
+      "morphological-box",
+      "quality-attribute-scenario",
+      "dmaic"
+    ],
+    "proponents": [
+      "Yoji Akao",
+      "Shigeru Mizuno",
+      "Mitsubishi Heavy Industries",
+      "Glenn Mazur"
+    ],
+    "tags": [
+      "QFD",
+      "Quality Function Deployment",
+      "House of Quality",
+      "voice of the customer",
+      "Akao",
+      "Mizuno",
+      "correlation roof",
+      "technical characteristics",
+      "requirements prioritisation",
+      "ISO 16355"
+    ],
+    "filePath": "docs/anchors/qfd.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
     "id": "quality-attribute-scenario",
@@ -5284,6 +5914,56 @@
     "filePath": "docs/anchors/single-level-of-abstraction-principle.adoc",
     "tier": 2,
     "addedAt": "2026-04-20T11:41:01+02:00"
+  },
+  {
+    "id": "sipoc",
+    "title": "SIPOC",
+    "categories": [
+      "problem-solving",
+      "requirements-engineering"
+    ],
+    "roles": [
+      "business-analyst",
+      "consultant",
+      "requirements-engineer",
+      "product-owner",
+      "team-lead"
+    ],
+    "related": [
+      "dmaic",
+      "dmadv",
+      "ishikawa-diagram",
+      "event-storming",
+      "mece"
+    ],
+    "proponents": [
+      "Total Quality Management practice (no single originator)"
+    ],
+    "tags": [
+      "SIPOC",
+      "COPIS",
+      "suppliers inputs process outputs customers",
+      "process scoping",
+      "high-level process map",
+      "define phase",
+      "Six Sigma",
+      "kaizen",
+      "process boundaries"
+    ],
+    "filePath": "docs/anchors/sipoc.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
     "id": "site-reliability-engineering",
@@ -6328,6 +7008,57 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "toyota-kata",
+    "title": "Toyota Kata",
+    "categories": [
+      "problem-solving",
+      "strategic-planning"
+    ],
+    "roles": [
+      "team-lead",
+      "consultant",
+      "systems-thinker",
+      "qa-engineer"
+    ],
+    "related": [
+      "kaizen",
+      "genchi-genbutsu",
+      "pdca",
+      "dmaic",
+      "okr"
+    ],
+    "proponents": [
+      "Mike Rother",
+      "Jeffrey Liker"
+    ],
+    "tags": [
+      "Toyota Kata",
+      "Improvement Kata",
+      "Coaching Kata",
+      "target condition",
+      "current condition",
+      "scientific thinking",
+      "PDCA",
+      "five questions",
+      "starter kata",
+      "obstacle parking lot"
+    ],
+    "filePath": "docs/anchors/toyota-kata.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
     "id": "tracer-bullet",
     "title": "Tracer Bullet",
     "categories": [
@@ -6509,6 +7240,60 @@
     "filePath": "docs/anchors/user-story-mapping.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "value-stream-mapping",
+    "title": "Value Stream Mapping",
+    "categories": [
+      "problem-solving",
+      "development-workflow"
+    ],
+    "roles": [
+      "business-analyst",
+      "consultant",
+      "team-lead",
+      "devops-engineer",
+      "systems-thinker"
+    ],
+    "related": [
+      "muda-mura-muri",
+      "dmaic",
+      "a3-problem-solving",
+      "jidoka",
+      "five-whys"
+    ],
+    "proponents": [
+      "Mike Rother",
+      "John Shook",
+      "Lean Enterprise Institute",
+      "Toyota"
+    ],
+    "tags": [
+      "Value Stream Mapping",
+      "VSM",
+      "lean",
+      "current state map",
+      "future state map",
+      "flow efficiency",
+      "lead time",
+      "muda",
+      "material and information flow",
+      "Learning to See"
+    ],
+    "filePath": "docs/anchors/value-stream-mapping.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
     "id": "vertical-slice-architecture",
