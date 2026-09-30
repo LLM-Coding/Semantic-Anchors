@@ -1,0 +1,62 @@
+= Chesterton's Fence
+:categories: problem-solving, development-workflow
+:roles: software-developer, software-architect, team-lead, consultant, systems-thinker
+:proponents: G.K. Chesterton
+:tags: Chesterton's Fence, Chestertons Zaun, Legacy Code, Code-Archäologie, sicheres Löschen, institutionelles Gedächtnis, Warum steht das hier, Status quo, Bestandsaufnahme, Modernisierung
+:related: second-order-thinking, five-whys, lehmans-classification, boy-scout-rule, residuality-theory
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Chesterton's Fence
+
+Auch bekannt als:: Das Gleichnis vom Zaun auf der Straße; „Reiß keinen Zaun ein, bevor du weißt, warum er dort steht"
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Das Gleichnis dreht die Beweislast um -- sie liegt beim Entfernenden.* G.K. Chesterton, _The Thing_ (1929), Kapitel „The Drift from Domesticity": „There exists in such a case a certain institution or law; let us say for the sake of simplicity, a fence or gate erected across a road. The more modern type of reformer goes gaily up to it and says, 'I don't see the use of this; let us clear it away.' To which the more intelligent type of reformer will do well to answer: 'If you don't see the use of it, I certainly won't let you clear it away. Go away and think. Then, when you can come back and tell me that you do see the use of it, I may allow you to destroy it.'" Keinen Grund zu sehen ist eine Aussage über den Betrachter, nicht über den Zaun.
+* *Das unerklärte Artefakt ist ein Beleg, kein Rauschen.* Chestertons Begründung ist die Hälfte, die sich am besten auf Technik übertragen lässt: „The gate or fence did not grow there. It was not set up by somnambulists who built it in their sleep." Ein fest verdrahtetes Retry-Delay von sieben Sekunden, ein Feature Flag, das seit zwei Jahren an ist, eine defensive Prüfung, die niemand begründen kann -- jedes davon ist ein billiges Protokoll eines Fehlers, den jemand einmal erlebt hat.
+* *Der Anker erkauft einen Aufschub, kein Veto -- und die Ausstiegsklausel stammt von Chesterton selbst.* Zwei Sätze später im selben Essay: „If he knows how it arose, and what purposes it was supposed to serve, he may really be able to say that they were bad purposes, or that they have since become bad purposes, or that they are purposes which are no longer served." Eine ernsthafte, zeitlich begrenzte Suche, die nichts findet, rechtfertigt das Entfernen. Dann aber umkehrbar entfernen -- hinter einem Flag, in einem revertierbaren Commit -- und das Signal beobachten, das verraten würde, dass der Zaun tragend war.
+* *Der Anker blickt zurück, `second-order-thinking` blickt nach vorn.* Second-Order Thinking fragt „und was dann?" zu einer Änderung, die noch bevorsteht. Chesterton's Fence fragt „und warum steht das hier?" zu etwas, das schon steht. Beides greift ineinander: erst den Grund rekonstruieren, dann verfolgen, was das Entfernen in Gang setzt.
+* *Die Grabung ist eine Methode, keine Haltung.* `git log` und `git blame` auf die Zeile, `git log -S` auf den unerklärten String, das Ticket oder der Pull Request, der sie eingeführt hat, der Incident davor, das On-Call-Runbook und die Alert-Definitionen, und der Autor, falls erreichbar. Betriebsdokumentation erklärt eine merkwürdige Codezeile meist schneller als der Code selbst.
+* *Der Aufwand richtet sich nach dem Schaden im Irrtumsfall.* Eine ungenutzte CSS-Klasse und ein Retry-Delay im Zahlungsfluss verdienen nicht dieselbe Archäologie. Das Zeitbudget bestimmt, was kaputtgeht, wenn man danebenliegt.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Beim Übernehmen oder Modernisieren eines Systems, dessen Eigenheiten im heutigen Team niemand mehr erklären kann -- der Fall, für den das Prinzip gemacht ist
+* Bei jeder Aufräumliste, in der schon die Wörter „gefahrlos", „offensichtlich ungenutzt" oder „schneller Gewinn" stehen
+* Beim Review eines Pull Requests, dessen Diff überwiegend aus Löschungen besteht
+* Beim Abkündigen einer API, eines Config-Flags, eines Cronjobs oder einer Datenbankspalte, die keine Aufrufer mehr zu haben scheint
+* Beim Einstieg in ein Team, dessen Prozess von außen sinnlos wirkt
+* Als Bremse für einen Static Analyzer -- oder ein LLM --, das selbstsicher toten Code meldet
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Ändere nie etwas, das du nicht verstehst" -- das Prinzip verlangt eine Untersuchung, keine dauerhafte Konservierung. Chesterton erlaubt das Zerstören ausdrücklich, sobald der Zweck bekannt und für schlecht befunden ist.
+* ❌ „Der Zaun bleibt, bis jemand seine Nutzlosigkeit beweist" -- das macht die Beweislast unwiderlegbar, denn die Abwesenheit eines Grundes lässt sich nicht beweisen. Verlangt ist ein ernsthafter, befristeter Versuch, den Grund zu finden.
+* ❌ „Es ist ein Argument für Tradition" -- in Chestertons Essay war es das. Auf einen Codebestand angewandt ist es ein Argument über Belege: Das Artefakt ist der einzige überlebende Zeuge eines Fehlers, dessen Ticket längst geschlossen ist.
+* ❌ „Verstehen heißt den Code lesen" -- der Grund steht selten im Code. Er steht im Incident, im Vertrag, im Schreiben der Aufsichtsbehörde, beim Dienstleister, der früher in Timeouts lief.
+* ✓ „Es ist eine Abbruchregel für selbstsicheres Löschen" -- trifft zu, und genau das macht es brauchbar statt nur weise.
+====
+
+== *Kritik*:
+
+* *Reformer sehen den Nutzen des Zauns in aller Regel sehr wohl.* Paul Currion liest das Original gegen sich selbst: „The problem is that, even in Chesterton's day, none of the reformers he so clearly disdained failed to see the use of the fence; it was simply that they disagreed with people like Chesterton that that use was worth preserving the fence for." Und er nennt die Rahmung Türsteherei statt Argument -- Chesterton „doesn't just want to have a debate about the anti-domestic drift; he wants to decide who is allowed to have that debate based on whether they meet his philosophical criteria", also: „Chesterton's fence is being erected to exclude somebody". https://currion.net/2020/09/20/tearing-down-chestertons-fence/[Currion, „Tearing down Chesterton's fence"] (20. September 2020).
+* *Als Gesprächsstopper eingesetzt, läuft der Anker leer.* Kevin Corcorans Einwand: Wer für das Entfernen argumentiert, hat die Archäologie meist längst gemacht -- „Public choice theory meets Chesterton's injunction to understand what led to these regulatory fences being created." Wo das zutrifft, gilt: „invoking Chesterton's Fence is likewise toothless -- the person doing so only shows they are a step behind in the discussion." https://www.econlib.org/misusing-chestertons-fence/[Corcoran, „Misusing Chesterton's Fence", Econlib] (15. Dezember 2022).
+* *Auch das Entfernen ist ein Verfahren, und das Verfahren ist selbst ein Zaun.* Stuart Armstrongs Beitrag besteht aus einem einzigen Satz und dreht das Prinzip gegen sich selbst, als „Chesterton's meta-fence": „in our current system (democratic market economies with large governments) the common practice of taking down Chesterton fences is a process which seems well established and has a decent track record, and should not be unduly interfered with (unless you fully understand it)". https://www.lesswrong.com/posts/WxDpeBi6aQAMH4BGB/stub-the-problem-with-chesterton-s-fence[Armstrong, LessWrong] (5. Januar 2016). Das ist die Form, die in beide Richtungen schneidet: Vorsicht beim Entfernen ist auch eine Politik, und sie hat Kosten, die niemand zählt.
+* *Das Prinzip unterscheidet den klugen Zaun nicht vom ungerechten.* Arnold Kling: „Conservatives use the shorthand 'Chesterton's Fence' to describe their position." Sein Gegenbeispiel ist die Rassentrennung -- „Racial segregation was wrong. But it was like a fence that had been in place for a long time. Does that mean it should be left in place?" -- und sein Schluss ist eine Reparatur, keine Absage: Das Argument „has to be more nuanced than just 'never tear down the fence'". https://arnoldkling.substack.com/p/the-trouble-with-chestertons-fence[Kling, „The Trouble with Chesterton's Fence"] (25. August 2023).
+* *Zu „Chestertons Zaun" fand sich keine zitierbare deutschsprachige Kritik* -- die deutschen Treffer waren durchweg zustimmende Nacherzählungen. Französisch, Spanisch, Japanisch und Chinesisch wurden nicht gesucht. Das ist eine Lücke unserer Suche, nicht des Diskurses.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Der Name stammt nicht von Chesterton.* Die Zeichenfolge „Chesterton's fence" kommt in _The Thing_ nirgends vor; der https://www.gkc.org.uk/gkc/books/The_Thing.txt[Volltext bei gkc.org.uk] enthält das Gleichnis in „The Drift from Domesticity", aber nie das Etikett. Chesterton schrieb das Gleichnis, benannt hat es jemand anderes. Wer und wann, ließ sich aus keiner zitierbaren Quelle belegen -- deshalb wird hier keine Urheberschaft für den Namen behauptet.
+* *Auch die Kurzfassung, die heute kursiert, ist nicht seine.* https://fs.blog/chestertons-fence/[Farnam Street] formuliert sie als „Do not remove a fence until you know why it was put up in the first place" -- kürzer, schärfer und kein Satz aus dem Essay. Dieselbe Seite trägt den Vorbehalt nach, den die Kurzfassung verliert: „The point is not that the status quo is always right, that every fence should remain standing." Der zweite Verbreitungsweg ist der https://www.lesswrong.com/w/chesterton-s-fence[LessWrong-Wiki-Eintrag], der die Gegenargumente gleich mitsammelt.
+* *Die Software-Welt hat den Anker als Regel über Legacy Code übernommen, nicht über Institutionen.* Oskar Dudycz' https://event-driven.io/en/chesterton_fence_and_software_architecture/[Essay zu Chesterton's Fence und Softwarearchitektur] (17. August 2022) steht stellvertretend für das Genre: Der Zaun wird zur Codezeile, deren Zweck verloren ging, die Reform zum Refactoring. Das ist ein echter Themenwechsel -- Chesterton verteidigte den Haushalt, kein Retry-Delay -- und es ist der Sinn, in dem der Anker heute benutzt wird.
+* *Die Verschiebung ist nur in eine Richtung erwähnenswert.* Die technische Lesart widerspricht dem Original nicht, sie verengt es. Wo Chestertons Kritiker die Politik des Essays angreifen, erbt die Engineering-Verwendung nichts davon, denn ein Payment-Service hat keine Gegner auszuschließen.
+* *Ein Prior-Test am 30.09.2026 hat gemessen, was das Benennen ändert.* In einem Legacy-Modernisierungsszenario, das das Prinzip nicht nahelegte, nannte es keine der Baselines von sich aus. Ein schwächeres Modell ohne Anker erklärte das Entfernen dauerhaft aktiver Feature Flags zum „safe, high-confidence win"; mit Anker schob es eine Phase „Understand the fence" davor und fragte, ob die Flags abgeschlossene Rollouts seien oder Kill Switches für einen bekannt problematischen Pfad. Eine starke Baseline war schon vorsichtig; dort ergänzte der Anker die Methode -- Runbook und Alert-Definitionen vor dem Code lesen -- und eine ausdrückliche Regel, wann das Entfernen verdient ist. Siehe das link:#/prior-tests[Prior-Test-Register].
