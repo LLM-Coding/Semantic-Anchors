@@ -5458,7 +5458,7 @@ A class should have only one reason to change. Each module or class should be re
 
 ### The Spectrum of Semantic Anchors
 
-### What Qualifies as a Semantic Anchor
+## What Qualifies as a Semantic Anchor
 
 A term qualifies as a semantic anchor when it activates a rich, well-defined conceptual framework in the LLM's training data. The key differentiator is **definition depth** – not whether the anchor is about domain knowledge or interaction patterns.
 
@@ -5490,7 +5490,7 @@ The distinction isn't a strict category but rather a matter of emphasis. Most an
 
 The quality bar is the same across this spectrum – all anchors must be well-defined, rich, and activatable.
 
-#### Counter-Examples
+### Counter-Examples
 
 Well-known terms that are **not** semantic anchors because they lack definition depth:
 
@@ -5504,20 +5504,7 @@ Well-known terms that are **not** semantic anchors because they lack definition 
 
 These terms may be useful in conversation, but they don't activate rich conceptual frameworks the way true semantic anchors do.
 
-Below is a curated list of semantic anchors useful for software development, architecture, and requirements engineering. Each anchor includes related concepts and practices.
-
-The catalog is organized into the following categories:
-
-* Testing & Quality Practices
-* Architecture & Design
-* Design Principles & Patterns
-* Requirements Engineering
-* Documentation
-* Communication & Presentation
-* Decision Making & Strategy
-* Development Practices
-* Statistical Methods & Process Monitoring
-* Interaction & Reasoning Patterns
+The catalog itself is the list. Browse it on the [catalog home page](https://llm-coding.github.io/Semantic-Anchors/), filter it by category or role there, or read the [quality criteria](#/about) and the [rejected proposals](#/rejected-proposals) to see where the line is drawn in practice. Every measurement behind a tier rating is recorded in the [prior-test register](#/prior-tests).
 
 ---
 

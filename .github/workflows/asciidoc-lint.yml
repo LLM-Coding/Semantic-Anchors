@@ -23,8 +23,14 @@ jobs:
           python-version: '3.12'
 
       - name: Install AsciiDoc Linter
+        # Pinned to a commit on purpose. The linter has no releases, so an
+        # unpinned install tracks its default branch: a rule change upstream
+        # turns this repository red with no commit here. That happened on
+        # 2026-09-24, when "fix rules that never fire through the CLI" made
+        # dormant rules start reporting. Bump this SHA deliberately, and read
+        # the new findings before you do.
         run: |
-          pip install git+https://github.com/doctoolchain/asciidoc-linter.git
+          pip install "git+https://github.com/doctoolchain/asciidoc-linter.git@ea57b29"
 
       - name: Run AsciiDoc Linter
         run: |

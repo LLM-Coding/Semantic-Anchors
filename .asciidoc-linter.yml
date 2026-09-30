@@ -6,3 +6,18 @@ rules:
   # recognise attribute blocks as valid "blank-line substitutes".
   WS001:
     enabled: false
+
+  # HEAD002 (HeadingFormatRule) requires headings to start with an uppercase
+  # letter. Three anchors in this catalog are named after things whose own
+  # spelling is lowercase -- arc42, req42 and todo.txt -- so the rule is wrong
+  # about them, and "fixing" the headings would make the documentation wrong
+  # instead. The linter offers no per-file exception, and lowering the severity
+  # does not help either: LintReport.exit_code returns 1 for any finding
+  # regardless of severity, so the job would stay red. Disabling the rule is
+  # therefore the only lever the tool gives us.
+  #
+  # The one genuine finding this rule's neighbour HEAD001 reported -- a heading
+  # level skipped in what-qualifies-as-a-semantic-anchor -- was fixed rather
+  # than suppressed. HEAD001 stays enabled.
+  HEAD002:
+    enabled: false
