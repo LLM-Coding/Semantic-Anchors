@@ -1,0 +1,65 @@
+= Poka-Yoke
+:categories: design-principles, testing-quality
+:roles: software-developer, qa-engineer, software-architect, ux-designer, team-lead
+:proponents: Shigeo Shingo, Toyota
+:tags: Poka-Yoke, Fehlervermeidung, Mistake-Proofing, Baka-Yoke, Shingo, Null-Fehler, Quellprüfung, Fehler und Defekt, Forcing Function, narrensicher
+:related: jidoka, design-by-contract, red-green-tdd, five-whys, dmaic
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Poka-Yoke (ポカヨケ), aus _poka_ (unabsichtlicher Schnitzer) und _yokeru_ (vermeiden)
+
+Auch bekannt als:: Fehlervermeidung, Mistake-Proofing, Error-Proofing; ursprünglich _Baka-Yoke_ (narrensicher); im Interface-Design die Forcing Function
+
+[discrete]
+== *Kernkonzepte*:
+
+Ein Fehler ist kein Defekt:: Diese Unterscheidung trägt die ganze Methode. Ein menschlicher Fehler ist ein Schnitzer, der jedem passiert. Ein Defekt ist das, was den nächsten Schritt erreicht, weil den Schnitzer niemand aufgefangen hat. Fehler sind unvermeidlich und nicht das Ziel. Art Smalley formuliert die Entwurfsregel trocken: „you cannot eliminate human errors, but you can make it impossible for errors to become defects."
+
+Verhindern schlägt Erkennen:: Die Geräte zerfallen in zwei Klassen, und die Reihenfolge ist keine Geschmacksfrage. Ein *verhindernder* Mechanismus macht den Fehler körperlich unmöglich — ein asymmetrischer Stecker, der nur in einer Lage passt. Ein *warnender* Mechanismus lässt den Fehler zu und meldet ihn. Verhindern hat Vorrang, weil Warnen darauf angewiesen bleibt, dass ein Mensch hinsieht.
+
+Drei Stufen des Abfangens:: Den Fehler verhindern; oder den Fehler erkennen, bevor er zum Defekt wird; oder den Defekt erkennen. Jede Stufe abwärts ist schlechter. Wer nur Stufe drei erreicht, hat schwache Fehlervermeidung gebaut.
+
+Den Fehler wegkonstruieren, nicht wegtrainieren:: Die Antwort auf einen wiederkehrenden Schnitzer ist ein geänderter Prozess oder ein geändertes Artefakt — nie eine Erinnerung, ein Checklistenpunkt oder eine strengere Ansage. Wenn die Abhilfe „besser aufpassen" heißt, ist es kein Poka-Yoke.
+
+Billig, einfach, an der Quelle:: Shingos Geräte sind Stifte, Vorrichtungen, Zähler, Endschalter — eingebaut dort, wo der Fehler entsteht, nicht an einer nachgelagerten Prüfstation. Sein Begriff dafür ist *Quellprüfung*: prüfe die Bedingung, die den Defekt erzeugt, nicht den Defekt.
+
+Die Namensgeschichte gehört zum Begriff:: Shingo nannte die Geräte zuerst _Baka-Yoke_, narrensicher. Um 1963 brach bei Arakawa Auto Body eine Teilzeitkraft über dem Wort in Tränen aus. „it was clear to me that 'foolproofing' was a poorly chosen term", schrieb er. Die Umbenennung verschiebt die Schuld vom Menschen auf den Prozess — und genau das behauptet die Methode.
+
+Wichtiger Vertreter:: Shigeo Shingo, der die Praxis ordnete und benannte und sie in _Zero Quality Control: Source Inspection and the Poka-Yoke System_ (Productivity Press, englische Ausgabe 1986) darlegte.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Wenn ein wiederkehrender Defekt auf einen Schnitzer zurückgeht, der jedem passieren kann, und nicht auf fehlendes Wissen
+* Beim Entwurf von APIs, CLIs und Konfigurationsformaten, damit sich der falsche Aufruf gar nicht erst ausdrücken lässt — Typen statt Validierung, Enums statt Strings, Pflichtargumente statt Vorgaben
+* Als Leitplanke in Build und Deployment: ein Pre-Commit-Hook, der ein Secret verweigert; eine Pipeline, die kein ungetaggtes Image ausrollt
+* In Oberflächen, wo eine zerstörende Aktion eine Forcing Function braucht statt eines Warnhinweises
+* Als Gegenstück zu `five-whys`: Ist die Ursache bekannt, macht Poka-Yoke sie unwiederholbar
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Poka-Yoke heißt narrensicher" — genau diese Lesart wollte Shingo mit der Umbenennung loswerden
+* ❌ „Eine Warnleuchte ist ein Poka-Yoke" — sie gehört zur schwächeren Klasse; ein echtes Poka-Yoke nimmt die Möglichkeit weg
+* ❌ „Es beseitigt menschliche Fehler" — es beseitigt die *Folge*; der Fehler passiert weiter
+* ❌ „Das ist Fertigungstechnik" — der Mechanismus ist eine Einschränkung im Entwurf und trägt überall dort, wo ein Entwurf eine tragen kann
+* ✓ „Mach das Falsche unmöglich, nicht bloß unerwünscht" — die Arbeitsprobe, ob wirklich eins gebaut wurde
+====
+
+== *Kritik*:
+
+* *Shingos Urheberschaft ist umstritten, und der schärfste Einwand kommt aus der Lean-Szene selbst.* Christoph Roser schreibt: „Shigeo Shingo did not invent the Toyota Production System. He also did not invent the method of SMED." Er datiert die Beteiligung spät: „Shingo was involved only towards the end of the program around 1970, when he was contracted to do a class on quick changeover methods… he participated in only one quick changeover workshop at Toyota!" Die Benennung und die Vermittlung spricht Roser ihm zu: „What he did was bring its knowledge to the United States and popularize it there. And that by itself is also a major achievement!" — Shingo habe „key terms used in lean manufacturing (for example, SMED for quick changeovers or Poka Yoke for mistake proofing)" geprägt. https://www.allaboutlean.com/shigeo-shingo/[Roser, „On the Lean Guru Shigeo Shingo"] (2. Februar 2014, aktualisiert 13. Dezember 2025).
+* *Die Bücher sind seine Lesart von Toyota, nicht die von Toyota.* Art Smalley: „Shingo was an external consultant to Toyota, not a Toyota employee. His books present his interpretation of Toyota's practices, which does not always align perfectly with Toyota's internal understanding." https://artoflean.com/reference/poka-yoke/[Smalley, „Poka-Yoke", TPS Encyclopedia]. Roser ergänzt, das Verhältnis habe sich abgekühlt, nachdem Shingo TPS-Interna veröffentlichte: „This publication was to my knowledge without consent of Toyota, and he no longer did any trainings at Toyota afterwards."
+* *In Japan fiel die Aufnahme kühl aus.* Roser, dieselbe Quelle: „Japanese lean experts who read his books considered them mediocre when compared to the literature available in Japanese and overall very poorly written." Der Ruf ist weitgehend ein westlicher.
+* *Die Reichweite ist kleiner als die Begeisterung.* Die Technik trifft wiederholbare Schnitzer mit einer beobachtbaren falschen Bedingung. Wo die richtige Antwort vorher nicht feststeht — eine Diagnose, eine neue Entwurfsentscheidung, ein Ermessensurteil — gibt es nichts, wogegen man konstruieren könnte. Ein zitierbarer Kritiker, der genau das sagt, ließ sich nicht finden; die Grenze folgt aus der Definition der Quellprüfung selbst und steht hier als Grenze, nicht als belegte Kritik.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Im Automobil-Qualitätsmanagement ist es eine stehende Forderung.* IATF 16949 widmet der Fehlervermeidung Abschnitt 10.2.4: Organisationen müssen „establish a documented process to determine the use of appropriate error-proofing methodology", das Verfahren in der Prozessrisikoanalyse wie der PFMEA festhalten, eine Prüffrequenz im Control Plan setzen, die Geräte bis zum Versagen oder simulierten Versagen prüfen und einen Reaktionsplan für deren Ausfall bereithalten. Die Norm formuliert die Forderung, ohne das Wort Poka-Yoke zu nennen. https://advisera.com/16949academy/blog/2017/10/11/how-to-establish-an-error-proofing-process-according-to-iatf-16949/[Stojanovic, „How to establish an error-proofing process according to IATF 16949"] (11. Oktober 2017).
+* *Im Englischen hat sich der neutrale Begriff durchgesetzt.* „Mistake-Proofing" und „Error-Proofing" sind die Fachbegriffe in Qualitätsliteratur und Normen. „Poka-Yoke" überlebt als wiedererkennbares Etikett und ist für ein Modell der stärkere Prior.
+* *In der Software läuft der Gedanke unter anderen Namen* — Forcing Function, „make illegal states unrepresentable", Guardrails, Fail-Safe-Defaults. Wer Poka-Yoke ausdrücklich nennt, kauft die Unterscheidung von Fehler und Defekt mit und die Rangfolge Verhindern vor Warnen. Die anderen Begriffe tragen beides nur lose mit.

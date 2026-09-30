@@ -1,0 +1,69 @@
+= PDCA
+:categories: problem-solving, development-workflow
+:roles: team-lead, consultant, qa-engineer, systems-thinker
+:proponents: Walter A. Shewhart, W. Edwards Deming, Kaoru Ishikawa
+:tags: PDCA, PDSA, Deming cycle, Shewhart cycle, plan do check act, plan do study act, kaizen, continuous improvement, quality
+:related: dmaic, dmadv, spc, five-whys, ishikawa-diagram
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Plan-Do-Check-Act
+
+Also known as:: the Deming cycle, the Deming wheel, the Shewhart cycle; PDSA (Plan-Do-Study-Act) in Deming's own wording
+
+[discrete]
+== *Core Concepts*:
+
+Four Steps, Repeated Forever:: The loop is deliberately small and deliberately endless:
+* *Plan* — state the problem, form a hypothesis about cause and remedy, and decide how the result will be judged
+* *Do* — carry out the change, preferably on a small scale
+* *Check* — compare the observed result with what was expected
+* *Act* — standardise the change if it worked, or return to Plan if it did not
+
+The Scientific Method, Shrunk to Fit a Shop Floor:: PDCA is an experiment loop: hypothesis, trial, evaluation, decision. Its ancestor is Shewhart's 1939 sequence of specification, production and inspection, which he bent from a straight line into a circle precisely because "these three steps must go in a circle instead of in a straight line".
+
+Small Scale First:: The Do step is meant to be a *test*, not a rollout. Running the change on a small scale is what keeps a failed hypothesis cheap — and what makes the Check step interpretable at all.
+
+Act Means Standardise or Loop:: The step most often skipped. A successful change that is not written into the standard decays; a failed change that is not fed back into Plan teaches nothing. Act is where the loop either compounds knowledge or leaks it.
+
+The Engine Under Kaizen:: PDCA, the seven basic quality tools and the QC-story format became the foundation of _kaizen_ in Japan. When a text says "continuous improvement" without naming a method, PDCA is usually what it means.
+
+Ancestor of the Phase-Gated Cycles:: `dmaic` is PDCA with gates, measurement discipline and statistics bolted on; `dmadv` is the same lineage applied to design. Both descend from this four-step loop.
+
+Deming Preferred "Study":: Deming warned that "check" is misleading, because the English word means "to hold back". His own late formulation is PDSA — Plan-Do-Study-Act — where Study asks what was *learned*, not merely whether the target was hit. See Current Status: the naming split is not cosmetic.
+
+[discrete]
+== *When to Use*:
+
+* Any improvement where the remedy is a hypothesis rather than a known fix
+* Small, reversible changes that can be tested before they are committed — the loop's economics depend on the test being cheap
+* As the frame for retrospectives, incident follow-ups and process experiments that would otherwise end at "we should do better"
+* Where an organisation needs a shared vocabulary for "we tried it, here is what we learned" — PDCA gives the four slots
+* As the structural skeleton of a management system: ISO 9001:2015 and its siblings are organised around exactly these four steps
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Deming invented PDCA" — he did not. Japanese executives recast his 1950 Deming wheel into PDCA in 1951; Deming later wrote, "How the PDCA ever came into existence I know not."
+* ❌ "PDCA and PDSA are two names for one thing" — Deming himself denied it: asked how the QC circle and the Deming circle relate, he answered, "They bear no relation to each other."
+* ❌ "Check means verify the deliverable" — Check compares result with *prediction*. Without a prediction recorded in Plan, there is nothing to check against.
+* ❌ "One pass through the cycle is a PDCA" — the method is the repetition. A single loop is an experiment, not an improvement system.
+* ✓ "PDCA is the scientific method wearing work clothes" — fair, and the reason its critics measure it against scientific standards.
+====
+
+== *Criticism*:
+
+* *Almost nobody runs it as specified.* Michael J. Taylor and colleagues reviewed 73 peer-reviewed healthcare articles that claimed to apply PDSA and found that only *two* met all five core principles of the method. "Less than 20% (14/73) fully documented the application of a sequence of iterative cycles", and "only 15% (7/47) reported the use of quantitative data at monthly or more frequent data intervals to inform progression of cycles." Their conclusion is blunt: "the varied practice compromises its effectiveness as a method for improvement." https://pmc.ncbi.nlm.nih.gov/articles/PMC3963536/[Taylor, McNicholas, Nicolay, Darzi, Bell & Reed, "Systematic review of the application of the plan–do–study–act method to improve quality in healthcare", _BMJ Quality & Safety_ 23(4), 2014, pp. 290–298]. The finding cuts both ways: it is a criticism of practice, and it makes claims of PDCA's effectiveness hard to evaluate, since what was measured was rarely the method.
+* *Deming rejected the version everyone uses.* Ronald D. Moen and Clifford L. Norman document the objection from the source. In a letter of 17 November 1990, Deming wrote: "Be sure to call it PDSA, not the corruption PDCA." He "warned his audiences that the PDCA version is frequently inaccurate because the English word 'check' means 'to hold back'". https://qicentral.rcpch.ac.uk/wp-content/uploads/sites/9/2021/10/Moen-and-Norman-on-Deming-circling-back-ph556x.pdf[Moen & Norman, "Circling Back", _Quality Progress_, November 2010, ASQ]. Calling PDCA "the Deming cycle" attributes to Deming a cycle he publicly disowned.
+* *The two cycles are aimed at different levels.* At a US Government Accounting Office roundtable, Deming was asked how the QC circle and the Deming circle relate: "They bear no relation to each other. The Deming circle is a quality control program. It is a plan for management. … Maybe you could say that the Deming circle is for management, and the QC circle is for a group of people that work on faults encountered at the local level" (same source). Teams that adopt PDCA for strategy are using a local fault-fixing loop for a job it was not shaped for.
+* *Check without prediction degrades into review.* The gap Moen, Nolan and Provost closed in 1991 by requiring prediction and theory in the Plan step is exactly the gap the Taylor review measured twenty years later: cycles run without recorded predictions and without data over time cannot produce the deductive-inductive interplay that makes the loop scientific.
+
+[discrete]
+== *Current Status*:
+
+* *The naming split is documented, and the popular name is the "corrupted" one.* Moen and Norman lay out the lineage: Shewhart's cycle (1939) → Deming wheel (1950, JUSE seminar: design, production, sales, research) → Japanese QC's PDCA (1951, per Masaaki Imai, with no individual ever claiming authorship) → Ishikawa's expanded PDCA for TQC (1985) → Deming's Shewhart cycle (1986) → Deming's PDSA, "the Shewhart Cycle for Learning and Improvement" (1993). PDCA won the popularity contest; PDSA carries Deming's intent.
+* *The split is now regional and professional, not resolved.* Healthcare quality improvement writes PDSA, following Deming and the Model for Improvement that Langley, Nolan and colleagues built on the PDSA cycle in 1994. Manufacturing, Lean and the ISO management-system world write PDCA. Both priors are strong; a prompt that needs the learning emphasis should say PDSA and say why.
+* *PDCA is embedded in the ISO management-system standards.* ISO 9001:2015 names the Plan-Do-Check-Act cycle explicitly in its introduction and organises its requirement clauses along it — planning (6) as Plan, support and operation (7, 8) as Do, performance evaluation (9) as Check, improvement (10) as Act. https://the9000store.com/articles/iso-9000-tips-plan-do-check-act/[Overview of the ISO 9001:2015 PDCA structure]. That embedding is why the four-letter form will not go away, whatever Deming wrote.

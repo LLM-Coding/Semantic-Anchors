@@ -1,0 +1,67 @@
+= Toyota Kata
+:categories: problem-solving, strategic-planning
+:roles: team-lead, consultant, systems-thinker, qa-engineer
+:proponents: Mike Rother, Jeffrey Liker
+:tags: Toyota Kata, Verbesserungskata, Coaching-Kata, Zielzustand, Ist-Zustand, wissenschaftliches Denken, PDCA, Fünf Fragen, Starter-Kata, Hindernis
+:related: kaizen, genchi-genbutsu, pdca, dmaic, okr
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Toyota Kata — Managing People for Improvement, Adaptiveness and Superior Results (Mike Rother, McGraw-Hill, 4. August 2009)
+
+Auch bekannt als:: Verbesserungskata und Coaching-Kata, Improvement Kata / Coaching Kata, Starter-Kata, Routine des wissenschaftlichen Denkens
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwei Routinen, nicht eine Methode:: Toyota Kata benennt ein *Paar*. Die Verbesserungskata übt der Lernende, die Coaching-Kata übt sein Coach, während der Lernende arbeitet. Wer nur eine der beiden nennt, verliert den Kern: Die Routine überlebt in einer Organisation durch das Coaching, nicht durch das Arbeitsblatt.
+
+Die Verbesserungskata in vier Schritten:: Der Lernende durchläuft:
+* *Richtung oder Challenge* -- wohin die Organisation langfristig will, selten geändert
+* *Ist-Zustand erfassen* -- gemessen und beobachtet am Prozess selbst, nicht aus einem Report erschlossen
+* *Nächsten Zielzustand festlegen* -- eine Beschreibung, wie der Prozess zu einem festen Termin arbeiten soll
+* *Zum Zielzustand experimentieren* -- ein Hindernis nach dem anderen, ein Experiment nach dem anderen, jedes mit einer Vorhersage
+
+Ein Zielzustand beschreibt einen Prozesszustand:: Das ist der tragende Gedanke und der, der am häufigsten verlorengeht. Ein Zielzustand sagt, wie der Prozess *arbeitet* -- Muster, Reihenfolge, Merkmale, dazu das Datum -- und nicht bloß, welche Kennzahl bis wann höher sein soll. Genau das trennt ihn von einem Key Result aus `okr` oder einem KPI-Ziel. Eine Zahl sagt, ob man angekommen ist; ein Zielzustand sagt, wie das Ankommen aussieht -- erst dadurch lässt sich ein Experiment dagegen entwerfen.
+
+Die Coaching-Kata sind fünf Fragen:: Christoph Roser gibt die Karte so wieder: 1. „Was ist der Zielzustand?" 2. „Was ist der Ist-Zustand?" 3. „Welche Hindernisse halten dich vom Zielzustand ab? Welches davon gehst du jetzt an?" 4. „Was ist dein nächster Schritt (dein nächster PDCA-Zyklus)?" 5. „Wo können wir hingehen und sehen, was wir aus diesem Schritt gelernt haben?" Der Coach fragt. Der Coach antwortet nicht.
+
+Die Schwelle des Wissens:: Gearbeitet wird am Rand des Bekannten. Wo der Weg klar ist, braucht es keine Kata. Die Routine existiert für die Grauzone zwischen Ist- und Zielzustand, in der die ehrliche Antwort „wissen wir noch nicht" lautet und nur ein billiges, schnelles, vorhergesagtes Experiment weiterhilft.
+
+Starter-Kata, nicht Abschluss-Kata:: Rother nennt die vorgegebenen Formen ausdrücklich *Starter*-Kata: ein Gerüst zum Üben wissenschaftlichen Denkens, das man wieder ablegt. Wer das Arbeitsblatt zum Ergebnis erklärt, dreht die Absicht um.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Bei hartnäckigen Problemen, die eine einmalige Korrektur überstanden haben und deren Ursache wirklich unbekannt ist
+* Wenn aus einem vagen „wir müssten schneller werden" etwas Prüfbares werden soll: ein beschriebener Zustand plus Termin
+* Beim Coaching -- die Fünf Fragen geben einer Führungskraft einen Weg, Menschen zu entwickeln, ohne ihnen das Problem wegzunehmen
+* Überall dort, wo Ziele gesetzt, aber keine Wege beschrieben werden; die Kata legt die Lücke zwischen Ziel- und Ist-Zustand offen
+* Als tägliches Gegenstück zu einer projektförmigen Methode wie `dmaic`
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Ein Zielzustand ist eine Zielzahl" -- er beschreibt, wie der Prozess arbeiten soll; die Zahl ist eines von mehreren Merkmalen
+* ❌ „Die Fünf Fragen sind die Methode" -- sie sind die Hälfte des Coaches und wertlos ohne einen Lernenden, der die Verbesserungskata geübt hat
+* ❌ „Kata heißt starres Ritual" -- Rothers *Starter*-Kata sind Übungsformen zum Ablegen, wie Tonleitern für Musiker
+* ❌ „Toyota lehrt das unter diesem Namen" -- Rother hat die Routinen aus der Beobachtung Toyotas abgeleitet und benannt; die Rahmung stammt von ihm
+* ✓ „Es ist PDCA mit Coach und beschriebenem Ziel" -- als Kurzfassung tragfähig
+====
+
+== *Kritik*:
+
+* *Der Trainingsmarkt hat die Praxis überholt.* Christoph Roser, Professor an der Hochschule Karlsruhe: „the promotion and training of kata has overtaken the actual improvement process". Zum Zertifikatsmarkt: „I am not sure if a ~3-hour online Toyota Kata course really prepares someone to be a coach" -- „true skill comes only from practice". Über Kata als Geschäftsmodell sagt er offen „I am not overly fond of it", hält das zugrundeliegende Konzept aber für „sound and valid". https://www.allaboutlean.com/toyota-kata/[Roser, „Toyota Kata"] (11. September 2018).
+* *Führungskräfte greifen zuerst nach der Coaching-Karte.* Mark Rosenthal beobachtet, dass Manager „want to jump right into coaching", weil „the '5 Questions' and some of them think that is all there is to it", und warnt: „Until you have _struggled as a learner_ to apply the Improvement Kata…please don't just pick up the 5 Questions card." https://theleanthinker.com/2017/12/21/mike-rother-the-toyota-kata-practice-guide/[Rosenthal, „Mike Rother: The Toyota Kata Practice Guide"] (21. Dezember 2017).
+* *Das Buch von 2009 sagt das Was, nicht das Wie.* Dieselbe Rezension nennt das Original „a fairly high-level summary of research findings", dem der „step-by-step guide of _how to practice and what to practice_" weitgehend fehlt. Deshalb musste acht Jahre später ein eigener Praxisleitfaden folgen.
+* *Wissenschaftliches Denken kam ohne wissenschaftliche Skepsis.* Bob Emiliani rechnet Rothers Buch von 2009 an, „scientific thinking" im Lean-Wortschatz verankert zu haben, und hält der Szene vor, den Rest des Pakets nie übernommen zu haben: „The Lean community is anything but scientifically skeptical", die Praktiker verhielten sich wie „true believers". https://bobemiliani.substack.com/p/scientific-thinking-without-skepticism[Emiliani, „Scientific Thinking Without Skepticism"] (30. Juni 2026).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Die Wie-Lücke schloss ein zweites Buch.* Rother veröffentlichte _The Toyota Kata Practice Guide_ (McGraw-Hill, 2017) als das Übungshandbuch, das dem Buch von 2009 fehlte -- bestätigt in Rosenthals Rezension oben. Wer nur das Material von 2009 kennt, kennt die Begriffe, aber nicht die Übungen.
+* *In den Toyota Way eingearbeitet, nicht an seine Stelle gesetzt.* Jeffrey Liker hat sein Toyota-Way-Modell so umgebaut, dass wissenschaftliches Denken in der Mitte steht, und sieht die Kata als Mechanismus, es zu entwickeln: „perhaps we can view the kata as a catalyst that juices scientific thinking, which, in turn, is the engine that drives the Toyota Way." Eine Ablösung ist es ausdrücklich nicht: „Does this mean that Toyota Kata now replaces the Toyota Way since scientific thinking is at the center? Certainly not." https://www.lean.org/the-lean-post/articles/the-toyota-way-and-toyota-kata-how-do-they-fit/[Liker, Lean Enterprise Institute] (18. März 2022).
+* *Der Name stammt von Rother, nicht von Toyota.* Liker beschreibt, wie Rother „Kata" aus dem Kampfsport übernahm, um beobachtete Routinen zu benennen. Eine Quelle, nach der Toyota selbst diese Routinen unter diesem Namen lehrt, fanden wir nicht -- „Toyota Kata" ist der Titel eines Buches über Toyota, kein interner Toyota-Begriff.

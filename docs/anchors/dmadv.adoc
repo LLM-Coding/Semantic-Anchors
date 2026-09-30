@@ -1,0 +1,67 @@
+= DMADV
+:categories: problem-solving, statistical-methods
+:roles: consultant, team-lead, product-owner, qa-engineer, data-scientist
+:proponents: Motorola, General Electric
+:tags: DMADV, DFSS, Design for Six Sigma, define measure analyze design verify, new product development, CTQ, QFD, House of Quality, design verification, tollgate
+:related: dmaic, fmea, sipoc, pugh-matrix, kano-model, qfd
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Define, Measure, Analyze, Design, Verify
+
+Also known as:: DFSS, Design for Six Sigma
+
+[discrete]
+== *Core Concepts*:
+
+Quality is Designed In, Not Inspected In:: DMADV exists because the cheapest place to remove a defect is the drawing board. Once a product or process is built, `dmaic` can only push its capability toward the limit the design allows. DMADV sets that limit.
+
+The Five Phases Owe Different Deliverables Than DMAIC's:: Same first three letters, different work:
+* *Define* — the design mandate: customer segments, the business case, and the scope of what is being created. Not a defect to be reduced, but a gap to be filled.
+* *Measure* — the Voice of the Customer translated into measurable CTQs (Critical to Quality) with targets and tolerances. There is no process to baseline yet, so "measure" means *quantify the requirement*, not the status quo.
+* *Analyze* — generate and compare design *concepts* against the CTQs, then pick one. This is the phase where `pugh-matrix` and `kano-model` earn their keep.
+* *Design* — the detailed design: parameters, tolerances, and a predicted capability for each CTQ, usually with `fmea` on the chosen concept and designed experiments on the critical parameters.
+* *Verify* — build it, run pilot production, and demonstrate that the delivered thing meets the CTQs before handover to operations.
+
+Verify is Not Control:: DMAIC's last phase sustains a gain that already exists. DMADV's last phase proves a prediction. The question is not "is it still holding?" but "did the design do what the model said it would?" Handover to an operational control plan happens *after* Verify, which is where the two roadmaps meet.
+
+Predicted Capability Instead of Measured Capability:: Through Analyze and Design there is nothing to measure, so DMADV works on models — capability predictions, transfer functions, tolerance stacks, simulation. This is the method's core bet and the source of most of its criticism.
+
+Design Freeze as a Tollgate:: Like DMAIC, phases end in formal reviews and a project can be stopped at one. The tollgate at the end of Design is the expensive one: after it, changes cost an order of magnitude more.
+
+The Trigger That Picks DMADV:: Use DMADV when the process does not exist yet, or when an existing process is so far from the requirement that improving it cannot close the gap. If a capable process is merely running badly, DMADV is the wrong tool and `dmaic` is the right one.
+
+[discrete]
+== *When to Use*:
+
+* Designing a new product, service or process where the quality target is fixed before the first prototype
+* Replacing a process whose *entrenched* capability cannot reach the requirement, no matter how well it is tuned
+* Translating fuzzy customer wishes into numeric, testable acceptance targets before the architecture is chosen — the CTQ step is useful far outside manufacturing
+* Comparing design concepts on explicit criteria rather than on whoever argues loudest
+* As the counterpart to `dmaic` in a portfolio: naming which of the two applies is itself a decision worth making out loud
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "DMADV and DMAIC differ only in the last two letters" — they differ in what Measure and Analyze *mean*. DMAIC measures a process; DMADV quantifies a requirement. DMAIC analyses causes; DMADV analyses concepts.
+* ❌ "DFSS is a standardised roadmap like DMAIC" — it is not. DMADV, IDOV and DDICA all circulate under the DFSS label, and no single one won.
+* ❌ "Verify means testing the finished product" — Verify means demonstrating the *predicted* capability on pilot output, against the CTQs fixed in Measure.
+* ✓ "DMADV is a stage-gate design process with a statistics habit" — fair, and the reason it collides with design cultures that work by iteration.
+====
+
+== *Criticism*:
+
+* *Applied to invention, it damages invention.* The most-cited case is 3M. Brian Hindo's report names DFSS explicitly as one of the two Six Sigma tools CEO James McNerney imported: "The other flavor is called Design for Six Sigma, or DFSS, which purports to systematize a new product development process." Post-it note inventor Art Fry "places the blame for 3M's recent lack of innovative sizzle squarely on Six Sigma's application in 3M's research labs", and 3M R&D vice-president Larry Wendling conceded: "We were letting, I think, the process get in the way of doing the actual invention." Successor CEO George Buckley "loosened the reins a bit by removing 3M research scientists' obligation to hew to Six Sigma objectives." https://effectuation.org/hubfs/Journal%20Articles/2016/06/3m-struggle-between-efficiency-and-creativity.pdf[Hindo, "At 3M, A Struggle Between Efficiency And Creativity", _BusinessWeek_, 11 June 2007].
+* *The evidence points the same way beyond the anecdote.* The same report cites work by Wharton's Mary Benner and Harvard's Michael L. Tushman analysing patents in paint and photography firms before and after a quality drive: "after the quality push, patents issued based primarily on prior work made up a dramatically larger share of the total, while those not based on prior work dwindled." A design method that shifts output toward the incremental is a poor fit for the phase whose job is the non-incremental.
+* *The translation tool at DMADV's heart produces numbers that do not mean what designers think they mean.* Andrew Olewnik and Kemper Lewis studied the House of Quality, the QFD matrix that converts customer attributes into engineering targets in the Measure phase, and concluded that "while the tool offers conceptual support to the design process, the quantitative information that results is largely invalid." http://www.emerald.com/ijqrm/article/25/2/125-146/139984[Olewnik & Lewis, "Limitations of the House of Quality to provide quantitative design information", _International Journal of Quality & Reliability Management_ 25(2), 2008, pp. 125–146].
+* *Its optima are model optima.* The https://en.wikipedia.org/wiki/Design_for_Six_Sigma[Design for Six Sigma overview] states the standing objection to the statistical-modelling step plainly: even the best statistical model is an approximation to reality, so an estimated optimum need not be an actual optimum. DMADV inherits every weakness of the model it designs against, and it commits to that model before there is anything to measure.
+
+[discrete]
+== *Current Status*:
+
+* *DMAIC was standardised; DMADV was not.* Six Sigma's improvement road became ISO 13053-1:2011, whose title says "Part 1: DMAIC methodology" — see `dmaic`. The design road has no comparable single roadmap: DMADV shares the DFSS label with IDOV (identify, design, optimise, verify) and DDICA, among others. Anyone who says "we run DFSS" has said less than they think.
+* *The name still travels better than the practice.* DMADV remains the canonical answer to "what is the design-side counterpart of DMAIC?" and that is the prior a model reliably serves. Which phases a given organisation actually runs varies far more than the acronym suggests.
+* *Its tools outlived the roadmap.* QFD, `pugh-matrix`, design `fmea` and designed experiments are all in routine use in product development without anyone invoking DMADV. As an anchor, DMADV is most useful as the *name of the sequence*; the individual tools have their own, stronger priors.

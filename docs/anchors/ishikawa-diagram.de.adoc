@@ -1,0 +1,66 @@
+= Ishikawa-Diagramm
+:categories: problem-solving
+:roles: qa-engineer, team-lead, systems-thinker, consultant, software-developer
+:proponents: Kaoru Ishikawa
+:tags: Ishikawa-Diagramm, Fischgrätendiagramm, Ursache-Wirkungs-Diagramm, 6M, sieben elementare Qualitätswerkzeuge, Ursachenanalyse, Kaizen, Kawasaki, Qualität
+:related: five-whys, dmaic, fmea, sipoc, mece
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Ishikawa-Ursache-Wirkungs-Diagramm
+
+Auch bekannt als:: Fischgrätendiagramm, Fishbone-Diagramm, Ursache-Wirkungs-Diagramm
+
+[discrete]
+== *Kernkonzepte*:
+
+Eine Wirkung, viele Gräten:: Die Problemaussage sitzt am Kopf des Fisches. Eine Wirbelsäule führt dorthin, von ihr zweigen beschriftete Gräten ab, jede mit Ursachen einer Art, und von diesen wiederum Nebenursachen. Die Form existiert, um *parallele* Ursachen nebeneinander zu halten.
+
+Die Arbeitsteilung mit Five Whys:: `five-whys` folgt einer Ursachenkette nach unten und ist stark, wenn diese Kette echt und einzeln ist. Das Fischgrätendiagramm spannt mehrere Ketten zugleich auf und ist das Werkzeug für Probleme mit Einflussfaktoren statt einer Ursache. 5 Whys auf ein Mehrfaktorproblem liefert eine selbstbewusste Antwort über genau einen Ast; ein Fischgrätendiagramm auf eine einfache Kette liefert fünf fast leere Äste. Die Wahl richtet sich nach der Gestalt der Kausalität, nicht nach Gewohnheit.
+
+Kategorien sind Gedächtnisstützen:: Die Astbeschriftungen sind Denkanstöße, keine Taxonomie. In der Fertigung sind es die 5 M — Mensch, Maschine, Material, Methode, Messung —, erweitert auf 8 M. Dienstleistungen nutzen 4 bis 5 S (Surroundings, Suppliers, Systems, Skill, Safety), das Produktmarketing 8 P. Softwareteams erfinden regelmäßig eigene Sätze, und das liegt innerhalb der Methode, nicht daneben.
+
+Strukturiertes Brainstorming, keine Beweisführung:: Was das Diagramm hervorbringt, ist eine *Verdächtigenliste*. Es gewichtet nicht, prüft nicht und sagt nicht, welcher Verdächtige gehandelt hat. Der nächste Schritt — an die Daten gehen — ist nicht Teil des Diagramms. Deshalb enden so viele Fischgräten dort, wo die eigentliche Arbeit beginnen müsste.
+
+Der Wert steckt in den Nebenursachen:: Ein Ast mit einem Wort darauf hat eine Kategorie festgehalten, keine Ursache. Die Technik verdient ihr Geld zwei und drei Ebenen tiefer, wo aus „Methode" ein bestimmter Schritt wird, der auf eine bestimmte Weise falsch ausgeführt wird.
+
+Eines der sieben elementaren Werkzeuge:: Das Fischgrätendiagramm steht neben Fehlersammelkarte, Histogramm, Pareto-Diagramm, Grafiken, Streudiagramm und Schichtung. Zusammen mit PDCA und dem QC-Story-Format wurde dieser Satz die Grundlage des _Kaizen_ in Japan.
+
+Schlüsselvertreter:: Kaoru Ishikawa, der die Technik in den 1960er-Jahren populär machte, während er das Qualitätsmanagement auf den Werften von Kawasaki Heavy Industries aufbaute; das Grundkonzept reicht in die 1920er-Jahre zurück.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Bei Vorfall- und Fehleranalysen, zu denen plausibel mehrere Faktoren beigetragen haben und keine einzelne Kette das Ergebnis erklärt
+* Früh in einer Untersuchung, um den Kandidatenraum zu weiten, bevor er verengt wird — die Gegenbewegung zu `five-whys`
+* In Gruppen, weil die Äste stilleren Beteiligten einen strukturierten Platz für ihren Beitrag geben
+* In der Analyze-Phase von `dmaic` als Standardgenerator für Ursachenhypothesen, die die Daten danach bestätigen oder verwerfen
+* Immer dann, wenn ein Team sich bereits auf eine Erklärung eingeschossen hat und sehen muss, was sonst noch im Spiel ist
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Das Fischgrätendiagramm findet die Ursache" — es erzeugt Kandidaten. Entschieden wird an Belegen, und die enthält das Diagramm nicht.
+* ❌ „Man muss die 6 M nehmen" — die Kategorien sind Anstöße. Ein Satz, der zur Domäne passt, schlägt einen auswendig gelernten.
+* ❌ „Es ersetzt 5 Whys" — sie beantworten verschieden geformte Fragen. Parallele Ursachen: Fischgräte. Eine Kette: `five-whys`. Oft beides, in dieser Reihenfolge.
+* ❌ „Ein gefülltes Diagramm ist eine fertige Analyse" — ein gefülltes Diagramm ist eine ungeprüfte Hypothesenliste.
+* ✓ „Es ist `mece`-Denken, auf Ursachen angewandt" — als Anspruch trifft das zu; in der Praxis überlappen die Kategorien, was zu den Kritikpunkten unten gehört.
+====
+
+== *Kritik*:
+
+* *Es sagt nicht, wonach es sucht.* Mark Paradies von TapRooT zählt die Lücken nüchtern auf: „there is no guidance for building the bones of the fish. The building of the bone structure depends on the knowledge of the investigator", der Technik fehle „any guidance for what a ‚root cause' is", und Ursachen per Abstimmung auszuwählen sei „simply the team's opinion. It doesn't prove that the selected cause caused the incident." Außerdem biete die Methode „no guidance to help investigators develop effective corrective actions". https://taproot.com/fishbone-diagram-root-cause-analysis-pros-cons/[Paradies, „Fishbone Diagram Root Cause Analysis — Pros & Cons", 7. Oktober 2020].
+* *Einen Vorfall in eine feste Form zu pressen, ist keine Analyse.* Mark Galley von ThinkReliability greift die Prämisse selbst an: „The premise of the fishbone is there is one single effect for a given problem", und das „does not reflect the nature of real problems". Zu den Kategorien: „Making the incident fit into a predefined shape is contrived, not scientific" — der Vorfall ist geschehen und hat damit eine eigene Struktur, die die Schablone überschreibt. https://blog.thinkreliability.com/updating-the-fishbone-diagram-cause-and-effect-analysis-improved[Galley, „Updating the Fishbone Diagram", 1. Februar 2021].
+* *Brainstorming verdrängt das Sammeln von Belegen.* Galleys praktischer Einwand betrifft, wohin die Stunde fließt: Statt zu spekulieren, sollten Untersuchende „spend that time gathering specific evidence to support or disprove the possible causes". Ein Diagramm voller ungeprüfter Äste fühlt sich nach Fortschritt an und erzeugt keinen.
+* *Es kann nicht sichtbar machen, was der Raum nicht weiß.* Weil die Äste von den Beteiligten stammen, erbt das Diagramm deren blinde Flecken und hat keinen Mechanismus, die Auslassung aufzudecken. Paradies macht denselben Punkt über Untersuchende ohne Human-Factors-Ausbildung, die Ursachen raten. Diese Grenze ist strukturell, keine Frage der Moderationskunst.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Kanonisch und unverändert.* Das Diagramm ist dokumentiert als „one of the seven basic tools of quality control"; Ishikawa machte es in den 1960er-Jahren auf den Kawasaki-Werften populär. https://en.wikipedia.org/wiki/Ishikawa_diagram[Übersicht zum Ishikawa-Diagramm]. Editionsdrift gibt es hier nicht: Das Werkzeug der 1960er und das heute gelehrte sind dasselbe.
+* *Die Kategoriensätze haben sich vermehrt, die Methode nicht.* 5 M, 8 M, 8 P und 4 bis 5 S sind alle im Umlauf (dieselbe Quelle), und Teams erfinden domänenspezifische Sätze frei. Wo Genauigkeit zählt, gehört der Kategoriensatz in den Prompt — sonst kommen die 6 M der Fertigung.
+* *Sein Platz im Qualitätskanon ist belegt und stabil.* Ronald D. Moen und Clifford L. Norman führen die sieben elementaren Werkzeuge auf — „check sheet, histograms, Pareto chart, fishbone diagram, graphs, scatter diagrams and stratification" — und ordnen sie zusammen mit dem PDCA-Zyklus und dem QC-Story-Format der Grundlage des _Kaizen_ in Japan zu. https://qicentral.rcpch.ac.uk/wp-content/uploads/sites/9/2021/10/Moen-and-Norman-on-Deming-circling-back-ph556x.pdf[Moen & Norman, „Circling Back", _Quality Progress_, November 2010, ASQ].
+* *Die Kritik kommt aus der RCA-Zunft, nicht aus dem Qualitätsmanagement.* Die schärfsten Einwände stammen von Praktikern, die strukturierte Ursachenmethoden verkaufen und das Fischgrätendiagramm als das positionieren, was ihr Ansatz ersetzt. Das macht die Einwände nicht falsch — die fehlende Definition von „Ursache" und der fehlende Belegschritt sind real —, erklärt aber, wo der Diskurs stattfindet und warum Quellen des Qualitätsmanagements nichts davon berichten.

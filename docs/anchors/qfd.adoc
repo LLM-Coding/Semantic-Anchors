@@ -1,0 +1,63 @@
+= QFD
+:categories: requirements-engineering, design-principles
+:roles: requirements-engineer, product-owner, business-analyst, ux-designer, software-architect
+:proponents: Yoji Akao, Shigeru Mizuno, Mitsubishi Heavy Industries, Glenn Mazur
+:tags: QFD, Quality Function Deployment, House of Quality, voice of the customer, Akao, Mizuno, correlation roof, technical characteristics, requirements prioritisation, ISO 16355
+:related: pugh-matrix, kano-model, morphological-box, quality-attribute-scenario, dmaic
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Quality Function Deployment (品質機能展開, hinshitsu kinō tenkai)
+
+Also known as:: the House of Quality (its best-known matrix, not the method itself); voice-of-the-customer deployment
+
+[discrete]
+== *Core Concepts*:
+
+Deployment, Not Translation:: QFD carries customer needs through a chain of matrices — customer needs into technical characteristics, those into part characteristics, those into process and production requirements. Each matrix inherits the priorities of the one before, so a need that mattered at the start still has weight at the machine. The word in the name is *deployment*: priority propagates.
+
+The House of Quality:: The first matrix, and the signature artifact. Customer needs (the WHATs) form the rows, measurable technical characteristics (the HOWs) the columns, and the body records how strongly each characteristic serves each need. Side rooms hold customer importance ratings and a competitive benchmark; the basement holds target values for each characteristic.
+
+The Correlation Roof Is the Part Nothing Else Has:: The triangular roof sits above the columns and records how the *technical characteristics relate to each other* — which ones reinforce, and, crucially, which ones conflict. Lighter and stiffer; faster and cheaper to run; more secure and simpler to operate. A `pugh-matrix` scores options against criteria and a `kano-model` classifies needs; neither asks what the engineering parameters do to each other. The roof forces those tradeoffs into the open before a design is chosen.
+
+Targets, Not Wishes:: The output is a ranked set of technical characteristics with numeric target values. "Responsive" becomes a millisecond figure. QFD is the machinery that gets from adjective to number.
+
+Customer Voice Stays Customer Voice:: Needs are recorded in the customer's words and only then mapped. The discipline exists because the usual failure is an engineer silently substituting a solution for a need.
+
+Key Proponents:: Yoji Akao and Shigeru Mizuno developed the method in Japan; Wikipedia dates the start to 1966 and records that "with the late Shigeru Mizuno, he developed Quality Function Deployment". The first large-scale application is the one everyone cites: the House of Quality "appeared in 1972 in the design of an oil tanker by Mitsubishi Heavy Industries". The yard is almost always named as Kobe; no primary source naming it could be confirmed, so this anchor stops at the company. Sources: https://en.wikipedia.org/wiki/Yoji_Akao[Wikipedia, Yoji Akao] and https://en.wikipedia.org/wiki/Quality_function_deployment[Wikipedia, Quality function deployment].
+
+[discrete]
+== *When to Use*:
+
+* Turning a pile of vague stakeholder wishes into a ranked, measurable set of technical targets
+* Early product or architecture definition, before options are generated — QFD frames the criteria a `pugh-matrix` will later score against
+* Whenever quality attributes conflict and somebody has to name the tradeoff out loud
+* As the requirements front end of a `dmaic` or DMADV project, where the customer's CTQs need to be derived rather than asserted
+* Cross-functional work where marketing, design, and engineering keep talking past each other
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "QFD is the House of Quality" — the House is one matrix in a chain; the QFD Institute calls this "a most common myth"
+* ❌ "QFD scores options" — it derives characteristics and targets; scoring competing designs is the `pugh-matrix` job
+* ❌ "QFD replaces talking to customers" — it is a way to process the voice of the customer, not a substitute for collecting it
+* ❌ "Bigger matrices are more thorough" — size is the dominant failure mode
+* ✓ "The roof is where the conflicts live" — the most quoted reason to reach for QFD rather than a simpler tool
+====
+
+== *Criticism*:
+
+* *The numbers it produces are not the kind of numbers engineers think they are.* Andrew Olewnik and Kemper Lewis, "Limitations of the House of Quality to provide quantitative design information", _International Journal of Quality & Reliability Management_ 25(2), 125–146 (2008), https://doi.org/10.1108/02656710810846916[DOI 10.1108/02656710810846916]. They argue that while the House supports conceptual design, "the quantitative information that results is largely invalid", because designers interpret the numerical outputs in ways the method's own assumptions do not license — and that relying on those outputs "can lead to potentially invalid and/or poor decisions". https://www.emerald.com/ijqrm/article-abstract/25/2/125/139984/Limitations-of-the-House-of-Quality-to-provide[Abstract at Emerald].
+* *The matrix does not scale, and its authors' own institute says so.* The QFD Institute: "In some projects, the HoQ can have 1000 rows x 1000 columns = 1,000,000 relationships to examine and quantify. This could take years to complete!" It adds that "95% of the customer needs and functional/non-functional requirements identified in HoQ are too low priority to assign engineering resources or budget to improve." https://www.qfdi.org/classical-blitz-or-reverse[QFD Institute, "Classical, Blitz, or Reverse QFD"].
+* *Western practice adopted the picture and dropped the method.* Glenn Mazur, via the QFD Institute: "Consider the HoQ as a highway interchange between the customer and the engineer. To limit QFD to only this tool is like building the interchange in an empty field without connecting roads." The Institute calls HoQ-only QFD "a most common myth" and notes the House "is neither the starting point nor the finish in most QFD studies." https://www.qfdi.org/house-of-quality[QFD Institute, "What is House of Quality (HoQ)?"].
+* *The arithmetic was questionable from the start.* Mazur again, writing on the ISO standard: "Quality professionals have long decried the abacus math in Japanese models brought to the U.S. in the 1980s" — ordinal rating scales lacking "equality of intervals" were nevertheless multiplied and summed. https://www.qualitymag.com/articles/98216-iso-16355-the-new-standard-for-qfd-part-1[Mazur, "ISO 16355: The New Standard for QFD, Part 1", _Quality_ magazine, 26 August 2024].
+
+[discrete]
+== *Current Status*:
+
+* *QFD is standardised, and the standard demotes the House.* The nine-part ISO 16355 series covers QFD; Part 1 is https://www.sis.se/en/produkter/sociology-services-company-organization/quality/application-of-statistical-methods/iso-16355-12021/[ISO 16355-1:2021, "Application of statistical and related methods to new technology and product development process — Part 1: General principles and perspectives of quality function deployment (QFD)"], edition 2, approved 31 May 2021, superseding the 2015 first edition. Mazur summarises the shift: "The House of Quality and other time- and resource-intensive matrices are now optional and more efficient effect-to-cause diagrams are recommended for most projects."
+* *Blitz QFD is the lean answer to the complexity complaint.* The QFD Institute created it "to address the trend towards Lean Thinking and Agile Development"; in Blitz QFD "the House of Quality may be completely unnecessary", replaced by a Maximum Value Table and an effect-to-cause wishbone that deploy only the top-priority needs.
+* *Note the split between name and artifact.* The strong prior in most models is the House of Quality picture, not the full deployment chain or the ISO process. When you name QFD, say which you mean.

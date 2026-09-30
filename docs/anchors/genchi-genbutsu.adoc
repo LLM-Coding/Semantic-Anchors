@@ -1,0 +1,63 @@
+= Genchi Genbutsu
+:categories: problem-solving, knowledge-management
+:proponents: Taiichi Ohno, Toyota Motor Corporation, Art Smalley
+:roles: software-architect, team-lead, consultant, business-analyst
+:tags: Genchi Genbutsu, gemba, go and see, Ohno Circle, chalk circle, direct observation, gemba walk, Toyota Way, actual place actual thing, go to the source
+:related: five-whys, kaizen, andon, xy-problem, socratic-method
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Genchi Genbutsu (現地現物) — "the actual place, the actual thing"
+
+Also known as:: go and see, go to gemba, go see for yourself, one of the five principles of the Toyota Way 2001
+
+[discrete]
+== *Core Concepts*:
+
+Two Words, Two Demands:: Art Smalley reads the characters apart: 現地 (genchi) is "the actual place" where work happens; 現物 (genbutsu) is "the actual thing itself — not reports or descriptions of it". Both halves must be satisfied. Going to the place and then reading a dashboard there satisfies neither.
+
+Go Yourself:: The person who will decide is the person who must observe. Delegating the looking and receiving a summary reintroduces exactly the layer of abstraction the principle exists to remove.
+
+Gemba Is the Sibling Term:: *Gemba* (現場) is the actual place — "the scene", in the sense a Japanese journalist or detective would use. Smalley notes both terms share 現 (gen), "present" or "actual", and calls this "Toyota's linguistic emphasis on reality versus assumption". Genchi genbutsu is the practice; gemba is where it happens.
+
+The Ohno Circle:: The canonical illustration. Taiichi Ohno would chalk a circle on the factory floor and have an engineer stand in it and watch the process. Christoph Roser: "Often, a disciple stood in the circle for hours before Ohno was satisfied." The point was not endurance but perception — the premise is that most people do not see what is in front of them, and that hours of watching reveal what a walk-past cannot.
+
+Observation Before Hypothesis:: Genchi genbutsu sits upstream of every cause-hunting method. It is what makes a `five-whys` chain worth anything: without direct observation the first "why" is answered from memory, and every later one inherits the guess.
+
+Why This Matters for an LLM:: Named, it pushes toward reading the actual code, the actual log line, the actual trace, the actual failing test — before theorising. A model's default is to answer from the pattern it already carries, which is precisely the report-not-the-thing failure the principle targets. "Genchi genbutsu" is a short instruction to go and look first.
+
+[discrete]
+== *When to Use*:
+
+* Before proposing a cause for any bug: read the failing output, not the description of it
+* When a summary, ticket or handover is the only evidence available — the term names what is missing
+* Requirements work, where what users say they do and what they do diverge
+* Incident review, where the trace and the log are the genbutsu and the reconstruction is not
+* Any time an explanation feels plausible and no one has yet looked
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "It means walking the factory floor" — the place is whatever place the work actually happens, including a terminal and a log
+* ❌ "A gemba walk is genchi genbutsu" — a scheduled tour can be either the practice or a substitute for it
+* ❌ "Go and see means go and check" — Smalley lists "confirming preexisting conclusions rather than observing openly" first among the common mistakes
+* ❌ "One visit is enough" — "single visits instead of repeated observation" is another of Smalley's named failures
+* ✓ "It is the observation step that `five-whys` depends on" — correct, and the reason the two belong together
+====
+
+== *Criticism*:
+
+* *In practice it becomes theatre.* Annette Franz's critique is aimed at the practice as executed by leaders: when treated as an inspection, "employees perform. They hide problems, sanitize reality, and the walk becomes a staged event, not a learning exercise." Her sharper point concerns credibility: "When leaders repeatedly ask, 'What's getting in your way?' and nothing changes, credibility erodes fast." And without discipline, "Gemba collapses into performative leadership" — "Gemba becomes expensive theater." Franz's own conclusion is that the method is not the fault: leaders are. https://cx-journey.com/2026/03/gemba-walks-dont-fail-leaders-do.html[Franz, "Gemba Walks Don't Fail. Leaders Do."] (18 March 2026).
+* *The observed change under observation.* The staged-event problem is not only a leadership failing; it is a measurement problem the principle does not solve. What genchi genbutsu delivers is the actual place under the condition of being watched, and nothing in the method separates the two.
+* *The Ohno circle does not transplant.* Christoph Roser is direct about the limits of imitating it: "Not everybody is willing to observe a process for potentially hours on end. There is a risk of the trainee becoming upset about this 'waste of time.'" He adds the practical precondition that it "works only where workers have the time to answer your questions" and that you "must not interrupt their work", and argues for adapting the exercise rather than copying it. https://www.allaboutlean.com/chalk-circle/[Roser, "Taiichi Ohno's Chalk Circle"] (5 January 2016, updated 21 August 2025).
+* *The story's provenance is thinly sourced.* Roser's account, like most, presents the chalk circle as established fact without documentary evidence. Treat it as a teaching legend that carries the idea, not as a verified episode.
+
+[discrete]
+== *Current Status*:
+
+* *Formally codified at Toyota.* Smalley records that when Toyota wrote down its management philosophy for a global workforce, genchi genbutsu became one of the five key principles of the Toyota Way 2001, alongside Challenge, Kaizen, Respect and Teamwork. https://artoflean.com/reference/genchi-genbutsu/[Smalley, "Genchi Genbutsu", TPS Encyclopedia].
+* *The failure modes are catalogued, which is itself a sign of drift.* Smalley lists five recurring mistakes: confirming preexisting conclusions instead of observing openly; single visits instead of repeated observation; delegating the observation to subordinates; physical presence without active attention; and limiting the practice to factory floors. A principle needs such a list only once the ritual has outgrown the substance.
+* *"Gemba walk" is now the dominant Western form of the term* — a scheduled leadership round rather than an engineer standing still for three hours. Both senses live in current training data; the walk is the one a model is likelier to produce unprompted.

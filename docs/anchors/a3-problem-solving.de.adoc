@@ -1,0 +1,62 @@
+= A3 Problem Solving
+:categories: problem-solving, documentation
+:roles: team-lead, consultant, business-analyst, technical-writer, educator
+:proponents: John Shook, Toyota, Durward K. Sobek II, Art Smalley
+:tags: A3 Problem Solving, A3-Denken, A3-Report, Managing to Learn, Shook, PDCA, Ursachenanalyse, Gegenmaßnahme, eine Seite, Toyota
+:related: five-whys, pdca, dmaic, hoshin-kanri, value-stream-mapping
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: A3 Problem Solving
+
+Auch bekannt als:: A3-Denken, A3-Managementprozess, A3-Report
+
+[discrete]
+== *Kernkonzepte*:
+
+Dieser Anker meint die Methode, nicht das Papierformat:: „A3" wird auf zwei Arten gebraucht, und sie werden dauernd verwechselt. Die eine ist ein *Format* — ein Bogen von 297 × 420 mm, so wie die X-Matrix in `hoshin-kanri` „a single-page A3 artifact" heißt. Die andere, hier gemeinte, ist eine *Problemlösungsmethode* mit fester Erzählfolge, so wie `five-whys` darauf verweist. Alles, was auf einen großen Bogen passt, ist A3 im ersten Sinn. Nur die Folge unten ist A3 Problem Solving.
+
+Die Geschichte läuft von links nach rechts:: Hintergrund — warum das zählt. Ist-Zustand mit Daten und einer Skizze. Ziel als messbare Vorgabe. Ursachenanalyse, meist `five-whys` oder ein Ishikawa-Diagramm. Gegenmaßnahmen. Umsetzungsplan mit Verantwortlichen und Terminen. Nachverfolgung: woran man erkennt, dass es gewirkt hat, und was man gelernt hat. Das Lean Enterprise Institute nennt dieselbe Spannweite: „the current situation, the nature of the issue, the range of possible counter-measures, the best countermeasure, the means (who will do what when) to put it into practice, and the evidence that the issue has actually been addressed."
+
+Es ist PDCA auf einer Seite:: Die linke Hälfte ist Plan, die rechte Do, Check, Act. Das Blatt erzwingt die Reihenfolge des Zyklus und macht einen übersprungenen Schritt als Lücke sichtbar.
+
+Die Beschränkung ist die Methode:: Ein Bogen ist keine Geschmacksfrage. Er erzwingt Auswahl, verbietet den Anhang und lässt keine unklare Problemstellung hinter Umfang verschwinden. Passt die Analyse nicht, ist das Problem noch nicht verstanden.
+
+Ein Gespräch, kein Dokument:: Bei Shook entsteht das A3 in Durchgängen, wird von einem Mentor infrage gestellt und neu geschrieben. Der Verantwortliche trägt Verantwortung ohne Weisungsbefugnis und muss Zustimmung mit Argumenten gewinnen. Das LEI sagt ausdrücklich, es handle sich um „a management process learned through dialogue rather than merely a document", und der systematische Zugang gelte „regardless of whether they are guided by or record their findings on an A3 document".
+
+Wichtige Vertreter:: John Shook mit _Managing to Learn: Using the A3 Management Process to Solve Problems, Gain Agreement, Mentor, and Lead_ (Lean Enterprise Institute, 2008) als Referenztext, dazu Durward K. Sobek II und Art Smalley mit _Understanding A3 Thinking_ (Productivity Press, 2008).
+
+[discrete]
+== *Wann einsetzen*:
+
+* Bei einem wiederkehrenden Problem, das einen Verantwortlichen, eine Ursache und eine Überprüfung braucht — kein Ticket und keine Vermutung
+* Für Störungs- und Post-Mortem-Berichte, in denen Ursache und Gegenmaßnahme das Ziel sind, nicht die Erzählung
+* Für Vorschläge, die teamübergreifend Zustimmung brauchen, ohne dass jemand weisungsbefugt wäre
+* Beim Coaching: Das A3 ist zuerst ein Mentoring-Werkzeug, erst danach ein Bericht
+* Als Gefäß für `five-whys`, das nur das Feld Ursachenanalyse füllt und nichts darum herum
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Ein A3 ist jede einseitige Zusammenfassung" — das ist die Formatlesart; die Methode ist die Folge
+* ❌ „Das A3 ist das Ergebnis" — Shook: „The A3 itself is nothing–it's just a blank piece of paper you use to tell a story"
+* ❌ „Vorlage ausfüllen, fertig" — genau der benannte Fehlschlag, und Shooks eigener Einwand gegen Vorlagen
+* ❌ „Ein Durchgang reicht" — die Methode setzt das Umschreiben unter Widerspruch voraus
+* ✓ „PDCA, auf einem Bogen sichtbar gemacht" — eine faire und brauchbare Kurzfassung
+====
+
+== *Kritik*:
+
+* *Die Warnung des Urhebers gilt der Vorlage.* John Shook im Gespräch mit Mark Graban: „I'm always skeptical of standard templates for something like that only because that tends to lean toward that tendency to see it as a fill-in-the-box exercise." Und zur eigentlichen Schwierigkeit: „You can learn to write an A3 in a day, but learning to use it as a management process takes much longer." https://www.leanblog.org/2009/01/john-shook-a3-problem-solving-managing-to-learn/[Graban, „John Shook on A3 Problem Solving and the Managing to Learn Process"] (6. Januar 2009). Eine Methode, deren bekanntester Fürsprecher vor ihrer häufigsten Anwendung warnen muss, verdient diesen Hinweis.
+* *Ohne Coach und Managementsystem greift sie nicht.* Mike Loughrin von Transformance Advisors zählt die Gründe des Scheiterns auf: Organisationen unterschätzen den Prozess und halten ihn für „one piece of paper, one pencil, and one eraser"; das Coaching wird gekürzt — „Many have not required a coaching role while others have not trained their leaders with the skills required for success"; es fehlt ein System, um Vorhaben zu starten, zu verfolgen und abzuschließen; und die Methode wird auf Probleme gezwungen, für die andere Zugänge besser passen, wobei schlechter Zuschnitt Vorhaben über 120 Tage hinaus versanden lässt. https://transformanceadvisors.com/portfolio/why-do-a3-fail/[Loughrin, „Why do A3 problem solving efforts often fail?"] (ohne Datumsangabe auf der Seite).
+* *Die Wirkung soll außerhalb des Artefakts liegen — das macht die Methode schwer einzuführen.* Sobek und Smalley: „The power of the A3 report, however, derives not from the report itself, but rather from the development of the culture and mindset required for the implementation of the A3 system." https://www.routledge.com/Understanding-A3-Thinking-A-Critical-Component-of-Toyotas-PDCA-Management-System/SobekII-Smalley/p/book/9781563273605[_Understanding A3 Thinking_, Productivity Press, 2008]. Als Kritik gelesen ist das ein Eingeständnis: Wer die Form kauft, kauft nichts.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Beide Bedeutungen von „A3" sind in Gebrauch*, auch in diesem Katalog: `hoshin-kanri` nutzt A3 als Papierformat für die X-Matrix, `five-whys` als Problemlösungsmethode. Keines ist falsch. Sag dazu, welches du meinst — sonst liefert ein Modell bereitwillig ein einseitiges Layout, wo eine Ursachendisziplin gefragt war.
+* *Das LEI trennt das Denken weiterhin vom Blatt.* Sein Lexikon definiert A3-Denken als „a systematic approach to resolving problems" und hält fest: „someone can follow this systematic approach, regardless of whether they are guided by or record their findings on an A3 document." https://www.lean.org/lexicon-terms/a3-report/[LEI Lexicon, „A3 Report"].
+* *Keine Norm, keine Auflagendrift.* Anders als `dmaic` (ISO 13053) oder `qfd` (ISO 16355) hat A3 keine normative Definition. _Managing to Learn_ (2008) bleibt der maßgebliche Text und der stärkste Prior; die kursierenden Vorlagen unterscheiden sich in Zahl und Beschriftung der Felder — genau das, was Shook bemängelte.

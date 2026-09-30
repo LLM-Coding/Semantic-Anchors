@@ -399,3 +399,76 @@ The inversion is worth recording: the stronger model is the more ambiguous one, 
 *The weak tier knows the name and cannot run the framework.* Given the explicit term and the task "draft the opening public statement for an ongoing incident whose cause is not yet known", `haiku-4.5` failed to name the six principles in both runs. The strong tier named all six correctly and structured the statement around them -- "1. Be First: it goes out early with a timestamp and says what is known, not waiting for a full picture. … 6. Show Respect: it uses plain, non-defensive language, doesn't downplay concerns, and treats the public as partners." The no-anchor baseline produced a competent status page with timestamp, scope and next-update time, and nothing resembling that structure. The delta is real and lives on the frontier tier only.
 
 *Criticism research, 2026-09-24, English and German.* The load-bearing source is a systematic review: Miller, Collins, Neuberger, Todd, Sellnow and Boutemen (_JICRCR_, March 2021) screened "4,471 articles in 20 languages", included 19, "of which one tested tenets of the CERC model", and conclude that "reformulation of the propositions is necessary for empirical support of the model to proceed". CERC is distilled practice, not an empirically established model. Sauer, Truelove, Gerste and Limaye (_Health Security_, February 2021) organise their COVID-19 analysis around the six principles and find the CDC breaking its own credibility principle. Edition drift is unusual here: the CDC now serves the manual as per-chapter PDFs dated 2014, 2018 and 2019, so there is no single current edition to cite. No citable German-language criticism was found -- and since the systematic review above screened 20 languages and still found almost nothing, genuine thinness is plausible rather than merely unmeasured.
+== Run 2026-09-30
+
+[cols="1,3"]
+|===
+|Candidates |16 terms from Six Sigma and the Toyota Production System, proposed as a cluster in https://github.com/LLM-Coding/Semantic-Anchors/issues/753[#753]
+|Models |`claude-haiku-4-5-20251001` (weak), `claude-opus-5` (strong)
+|Runs |16 activation probes (strong tier), 16 substitution probes (weak tier), 32 before/after probes, then 18 more after the before/after design was found to be broken. 82 probes in total
+|Clean room |`claude -p --strict-mcp-config --setting-sources ""` with `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN`, each probe in its own empty working directory
+|Not tested |`claude-sonnet-5` was skipped again. Findings are a lower bound
+|===
+
+=== Two defects in our own method, found the hard way
+
+This run produced two false results before it produced a true one. Both are recorded because both are easy to repeat.
+
+*The probe read the harness.* The first before/after run gave every probe the same working directory -- the one holding the control file that listed all sixteen terms and both prompt variants. The models read it. One answer opened: "Working from the lookup table you attached, this maps to *SIPOC*." Thirteen of forty-eight probes named the harness outright, which makes the no-anchor condition worthless: the baseline could see the term it was supposed to be blind to. *The rule this produces: a clean room is not a clean directory reused across probes. Each probe gets its own empty working directory, and the harness lives where the probe cannot reach it.*
+
+*The task named the method for us.* The rerun fixed the directory and still gave a false result, this time in the opposite direction. Every task had been written from the candidate's own _When to Use_ section, so each task telegraphed its method. Fourteen of sixteen no-anchor baselines then named the method *unprompted*: the plain answer to "how should we handle an import job that occasionally receives malformed records" opens "The right frame for this is *Jidoka*", and the plain answer to "write up this incident" produces a titled A3 sheet with all seven canonical sections. Measured that way almost every candidate looks decorative -- and the measurement is meaningless, because the term was already in the question. *The rule this produces: a viability task must not be drawn from the anchor's own description. If the baseline names the method, the task tested the prompt, not the anchor.*
+
+=== The test that settled it
+
+The third run replaced sixteen tailored tasks with *one neutral scenario* that no candidate owns: a six-person team maintaining a web shop, three-week releases needing hotfixes, support tickets up 40%, two overloaded on-call engineers, and a new subscription product due next quarter. The scenario admits every candidate without implying any.
+
+Two no-anchor baselines were run against it. *Neither named a single one of the sixteen methods.* Both produced ordinary consulting prose under headings like "The core read" and "What I'd do, in priority order". That is the clean baseline the first two runs never had.
+
+Against that baseline, naming the term changed the artifact in fifteen of sixteen cases:
+
+* *SIPOC* produced two complete Suppliers/Inputs/Process/Outputs/Customers tables where the baseline had prose.
+* *FMEA* produced a rated worksheet -- and volunteered the *AP (Action Priority)* column of the current AIAG-VDA form, not only the classic RPN.
+* *A3* produced the seven canonical sections in order.
+* *DMADV* imposed five phase gates on a scenario the baseline had answered as a priority list.
+
+The lesson generalises past this cluster: *on a task where the method is the obvious default, an anchor's measurable delta is zero -- and that is a fact about the task, not about the anchor.*
+
+=== The sixteen candidates
+
+All sixteen passed recognition on the strong tier and the substitution check on the weak tier: Haiku expanded every acronym correctly, with no hedging, no silent substitution and no confabulation across all sixteen probes. Fifteen then passed the steering test and are registered as anchors at ★★★.
+
+[cols="2,1,4"]
+|===
+|Term |Verdict |Note
+
+|DMADV |★★★ |Imposes five phase gates plus CTQ translation. `dmaic` named it but could not invoke it
+|PDCA |★★★ |Carries the PDCA/PDSA naming split; Deming's own preference is recorded under Current Status
+|FMEA |★★★ |The only candidate whose anchored output volunteered a *newer* edition of its own artifact than the classic form
+|SIPOC |★★★ |Largest single artifact delta in the run: prose to two five-row tables
+|Ishikawa Diagram |★★★ |Relabels causes to the canonical 6M and forces parallel branches where `five-whys` follows one chain
+|Value Stream Mapping |★★★ |Adds the future-state map and the process-versus-waiting-time split
+|Poka-Yoke |★★★ |Shifts the answer from validation and training to making the wrong input impossible
+|QFD |★★★ |Produces the WHATs x HOWs matrix with the correlation roof -- the conflict view neither `pugh-matrix` nor `kano-model` carries
+|Jidoka |★★★ |Moves detection upstream and replaces log-and-continue with stop-and-quarantine
+|A3 Problem Solving |★★★ |The fixed one-page section set is the method; the constraint is what the anchor buys
+|Toyota Kata |★★★ |Adds the coaching half -- five questions, obstacle parking lot, experiment record -- on top of the improvement loop
+|Andon |★★★ |Adds explicit stop authority and a timed escalation ladder, not just more monitoring
+|Genchi Genbutsu |★★★ |Makes the model refuse to theorise and ask for the actual trace first
+|Muda, Mura, Muri |★★★ |Registered as the triple. Naming only waste hides its cause; the chain runs Mura to Muri to Muda
+|Kaizen |★★★ |The vagueness worry did not survive measurement -- see below
+|Kanban (TPS) |rejected |The name anchors the other concept -- see below
+|===
+
+=== Kaizen: the vagueness worry was tested, not assumed
+
+Kaizen was proposed with a flag on it: it is both a named Toyota practice and an everyday word for "continuous improvement", and the rejection criteria exclude terms too vague to produce consistent output. The measurement does not support the worry. On the neutral scenario the term produced a staged structure the baseline had no equivalent of -- a week of observation before any change, a facilitated session where the team names the waste, then weekly PDCA cycles on one change at a time. The prior is bounded: the recognition probe returned _kaikaku_ as the deliberate contrast, _hansei_, and "standardize the gain, then improve from the new standard", and it flagged the kaizen event as "somewhat at odds with the original 'daily habit' spirit" without being asked. Registered, with the event-theatre critique carried in its Criticism section.
+
+=== Kanban (TPS): rejected, and the reason is a name collision
+
+This is the one rejection, and it is not a thin prior. The prior is dense -- it is attached to the wrong concept.
+
+The proposal asked for the Toyota pull-signal card. On the bare name, both tiers return the *software* Kanban Method instead. The strong tier opens: "Kanban is a pull-based method for managing work, originating in Toyota's manufacturing system and later adapted for software and knowledge work (largely via David Anderson's formulation)" -- Toyota appears as etymology, then the answer goes to boards and WIP limits. The weak tier does the same.
+
+The steering test removes any doubt. Asked to apply "Kanban" to the neutral scenario, the output carries eight markers of the software method -- WIP limits, commitment point, classes of service, replenishment, STATIK, cumulative flow diagram -- and *zero* markers of the manufacturing practice: no replenishment card, no supermarket, no two-bin system, no material flow. The anchored answer does not disambiguate; it simply assumes software Kanban.
+
+So the term cannot anchor the sense it was proposed for, and a qualifier would not repair it -- the qualifier would be fighting the prior rather than focusing it. Recorded on the rejected-proposals page. *The software sense remains a viable separate proposal under its own name* -- "Kanban Method (Anderson)" is what the bare name actually activates. That is a different candidate and was not tested here.

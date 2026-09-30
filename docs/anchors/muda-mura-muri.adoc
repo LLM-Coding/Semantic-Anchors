@@ -1,0 +1,66 @@
+= Muda, Mura, Muri
+:categories: problem-solving, strategic-planning
+:proponents: Taiichi Ohno, Toyota Motor Corporation, James P. Womack
+:roles: systems-thinker, team-lead, consultant, business-analyst
+:tags: Muda, Mura, Muri, the seven wastes, TIMWOOD, TIMWOODS, waste, unevenness, overburden, eighth waste, the three Ms, type one muda
+:related: kaizen, andon, genchi-genbutsu, dmaic, spc
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Muda (無駄), Mura (斑), Muri (無理) — waste, unevenness, overburden; the "three Ms" of the Toyota Production System
+
+Also known as:: the 3Ms, the three evils, the seven wastes (muda only), TIMWOOD / TIMWOODS (muda only)
+
+[discrete]
+== *Core Concepts*:
+
+Anchor the Triple, Not Muda Alone:: This is the whole reason the anchor exists. Naming only waste hides what produces the waste. Muda is the symptom that is easy to see and easy to count; mura and muri are the conditions that regenerate it after every clean-up.
+
+The Three, Defined:: The Lean Enterprise Institute's lexicon:
+* *Muda* — "Any activity that consumes resources without creating value for the customer."
+* *Mura* — "Unevenness in an operation; for example, a gyrating schedule not caused by end-consumer demand but rather by the production system, or an uneven work pace in an operation causing operators to hurry and then wait."
+* *Muri* — "Overburdening equipment or operators by requiring them to run at a higher or harder pace with more force and effort for a longer period of time than equipment designs and appropriate workforce management allow."
+
+The Causal Chain Runs Mura → Muri → Muda:: Jim Womack argues for reversing the conventional recital order: "I would tell them to have it read 'Mura, muri, muda.'" His reason is the mechanism itself — "The inevitable result is that mura creates muri that undercuts previous efforts to eliminate muda." Unevenness forces people and machines past their design point; overburden then manufactures the very waste that was eliminated last quarter.
+
+The Seven Wastes:: Ohno's categories are transporting, inventory, motion, waiting, over-production, over-processing and defects. Over-production is traditionally treated as the worst, because it generates most of the others.
+
+The Eighth Waste Is a Later Addition:: "Unused skills" was appended to the original seven, "as resolving this waste is a key enabler to resolving the others". The mnemonic "TIM WOOD" covers the seven; "TIM WOODS", with the S for skills, covers eight. The eighth is not Ohno's.
+
+Type One and Type Two Muda:: The lexicon distinguishes waste that cannot be removed quickly (rework a current process cannot avoid) from waste that kaizen can remove at once. The distinction stops "eliminate all waste" from being an instruction nobody can follow.
+
+In Software:: Mura is the release train that ships nothing for three weeks and everything on Thursday; muri is the sprint committed at 110% capacity; muda is the rework, the queue, the half-finished branch. Attacking the rework without touching the batching is the mistake the triple names.
+
+[discrete]
+== *When to Use*:
+
+* Whenever a "waste elimination" or efficiency effort is being planned, to force the question of what regenerates the waste
+* Capacity and scheduling discussions — mura and muri are the vocabulary that batching and overcommitment otherwise lack
+* Retrospectives where the same waste keeps returning after being removed
+* As the diagnostic layer under `kaizen`: kaizen is the habit, the three Ms are what it looks for
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Lean is about eliminating waste" — that is muda only, and Womack's argument is that muda-first is the wrong order
+* ❌ "There are eight wastes" — there are Ohno's seven plus a later, widely adopted eighth; the distinction matters when citing him
+* ❌ "Muri means working hard" — it means being required to run past the design point of the person or machine, which is a property of the system, not of effort
+* ❌ "Mura is just variation" — it is unevenness *manufactured by the system itself*, not demand variation from the customer
+* ✓ "Fix mura first and much of the muda stops coming back" — this is Womack's point exactly
+====
+
+== *Criticism*:
+
+* *The conventional ordering teaches the wrong reflex.* Womack's essay is itself a criticism of how the three Ms are usually taught and used — muda first, as a hunt for visible waste, with mura and muri as footnotes. He locates the failure in the sequence: "mura creates muri that undercuts previous efforts to eliminate muda", so a muda-first programme is structurally condemned to repeat itself. https://www.lean.org/the-lean-post/articles/mura-muri-muda/[Womack, "Mura, Muri, Muda?", Lean Enterprise Institute] (6 July 2006).
+* *Muri, read from the shop floor, is the point of the system rather than a defect in it.* Jane Slaughter's account of "management by stress" describes a system tuned so that "The ideal state is achieved when the plant is running with all stations just on the line between green and yellow" — that is, deliberately at the edge of overburden, using the operator's inability to keep up as the signal for where to improve next. On this reading, muri is not an accident the method removes but a lever the method applies. https://www.multinationalmonitor.org/hyper/issues/1990/01/slaughter.html[Slaughter, "Management by Stress", _Multinational Monitor_, January/February 1990].
+* *Waste-hunting without the people half is the common failure mode.* Bob Emiliani's Real Lean / Fake Lean distinction names it: Fake Lean is "the technical application of 'Continuous Improvement' tools and methods, invariably in a zero-sum fashion", while Real Lean is "the application of both 'Continuous Improvement' and 'Respect for People'". His summary of what actually happened: "Lean intends to correct two big problems in organizations: bad processes and bad management. But it usually corrected only one – bad processes." https://bobemiliani.substack.com/p/back-story-real-vs-fake-lean[Emiliani, "The Backstory: Real vs. Fake Lean"] (13 September 2013).
+
+[discrete]
+== *Current Status*:
+
+* *Womack's reordering has not displaced the conventional recital.* "Muda, mura, muri" remains the common sequence in training material and in most model output, twenty years after the essay. Expect a model to produce the muda-first order and the seven wastes list unless the causal chain is named explicitly.
+* *"The seven wastes" now usually means eight.* TIMWOODS, with unused skills or unused human potential added, is the version most current material teaches. Attributing all eight to Ohno is a common and avoidable error.
+* *Type One / Type Two muda is fading from popular usage* even though it remains in the Lean Enterprise Institute lexicon. It is the distinction that makes waste lists actionable, and it is the first thing dropped in short-form summaries.

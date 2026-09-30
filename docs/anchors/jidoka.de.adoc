@@ -1,0 +1,65 @@
+= Jidoka
+:categories: design-principles, testing-quality
+:roles: devops-engineer, qa-engineer, software-architect, software-developer, team-lead
+:proponents: Sakichi Toyoda, Taiichi Ohno, Toyota
+:tags: Jidoka, Autonomation, Automation mit menschlichem Antlitz, Toyota-Produktionssystem, Andon, Band anhalten, Sakichi Toyoda, Webstuhl, Fail Fast, eingebaute Qualität
+:related: poka-yoke, andon, circuit-breaker, site-reliability-engineering, five-whys
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Jidoka (自働化)
+
+Auch bekannt als:: Autonomation, Automation mit menschlichem Antlitz, „automation with a human touch", eingebaute Qualität, „Stop the Line"
+
+[discrete]
+== *Kernkonzepte*:
+
+Der Kern ist das Anhalten, nicht das Laufen:: Art Smalley bringt es auf eine Zeile: „The essence of jidoka is 'automatically stop,' not 'automatically run.'" Eine Maschine, die weiterproduziert, während etwas schiefläuft, ist schlimmer als eine, die stehenbleibt — sie macht aus einem Problem einen Stapel Ausschuss.
+
+Der zusätzliche Strich trägt die Bedeutung:: Geschrieben wird 自働化 mit dem Menschen-Radikal in 働, nicht das schlichte 自動化 gewöhnlicher Automatisierung. In diesem Schriftzeichen steckt die ganze Behauptung: eine Maschine mit eingebautem Urteil, nicht eine Maschine, die bloß läuft.
+
+Vier Schritte, jedes Mal:: Abweichung erkennen. Anhalten. Den unmittelbaren Zustand beheben oder eingrenzen. Die Ursache untersuchen und eine Gegenmaßnahme setzen. Wer Schritt vier auslässt, hat ein Band, das oft stillsteht und nichts lernt — so kommt Jidoka zu dem Ruf, Ausbringung zu kosten.
+
+Andon dehnt das Prinzip auf Menschen aus:: Dieselbe Befugnis bekommt die Bedienung. Ein Zug an der Leine oder ein Druck auf den Knopf erzeugt ein sichtbares Signal und holt den Teamleiter. Der Mensch gilt als der Sensor, den die Maschine nicht hat.
+
+Eine von zwei Säulen:: Taiichi Ohno stellte das Toyota-Produktionssystem auf Just-in-Time und Jidoka. Beide decken die Schwäche des anderen: JIT nimmt die Bestände weg, die Probleme verbergen; Jidoka sorgt dafür, dass das freigelegte Problem das Band anhält, statt stromabwärts zu wandern. Wer nur JIT nennt, nennt das halbe TPS.
+
+Es befreit Menschen vom Bewachen von Maschinen:: Weil der Webstuhl sich selbst anhielt, konnte eine Person viele bedienen. Autonomation trennt menschliche von maschineller Arbeit — das wirtschaftliche Argument, getrennt vom Qualitätsargument.
+
+Ursprung:: Die Webstühle von Sakichi Toyoda. Toyota Industries hält fest, sein Kraftwebstuhl von 1896, „Japan's first power loom built of steel and wood", sei „also equipped with the weft auto stop mechanism" gewesen, und der Typ G von 1924 habe „weft break auto-stop, warp break auto-stop and other devices" ergänzt. Ohno trug das Prinzip vom Webstuhl an das Montageband.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Beim Entwurf einer Pipeline oder eines Systems, das bei schlechtem Signal anhalten muss, statt den Defekt weiterzureichen — rote Builds, die den Merge sperren; ein Canary, der das Rollout abbricht
+* Als benannte Gegenposition zu „lass grün, wir reparieren später"
+* Für Fail-Fast-Entwürfe: Zusicherungen, Vorbedingungen, ein auslösender `circuit-breaker`, verweigerte Auslieferung bei fehlgeschlagenem Health Check
+* Um der Person an der Arbeit die Befugnis zu geben, sie anzuhalten — und diesen Halt sichtbar zu machen
+* Immer dann, wenn es um Erkennung *und* die Reaktion darauf geht, denn Jidoka besteht darauf, dass beides zusammengehört
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Jidoka heißt Automatisierung" — der Witz steckt im zusätzlichen Zeichen; gewöhnliche Automatisierung ist 自動化
+* ❌ „Jidoka ist die Andon-Leine" — die Leine ist ein Fall davon; das Prinzip ist erkennen, anhalten, beheben, untersuchen
+* ❌ „Das Anhalten ist das Ziel" — das Anhalten löst die Untersuchung aus, die folgt
+* ❌ „Jidoka und Just-in-Time sind Alternativen" — sie sind die zwei Säulen und brauchen einander
+* ✓ „Qualität einbauen statt herausprüfen" — die gängige Kurzformel, und sie trifft zu
+====
+
+== *Kritik*:
+
+* *Der Westen nahm die glanzvolle Säule und ließ diese stehen.* Strategos: „Yet this aspect of TPS is mostly ignored in the West", und „when it is discussed, there is a lot of confusion and misunderstanding" — auch weil „Japanese language (at least in everyday usage) seems less precise than English and the several meanings of Jidoka do not translate well". Härter fällt das Urteil über das Management aus: „The line-stoppage version of Jidoka requires a strong stomach and purity of mind that few managers (Japanese or American) possess." http://strategosinc.com/RESOURCES/18-Misc/jidoka.htm[Strategos, „Jidoka & Autonomation"].
+* *Den meisten Organisationen fehlt die Kapazität, die Jidoka voraussetzt.* Christoph Rosers Einwand ist keine Weltanschauung, sondern eine Rechnung: Anhalten zahlt sich nur aus, wenn jemand frei ist, das Problem zu lösen, und in den meisten Werken gilt: „your highly qualified problem solver simply has no time to solve problems". Die Folge ist genau der Kompromiss, den die Methode verhindern soll — „you may have to do with a quick fix" statt Ursachenbeseitigung, weil Toyotas personelle Reserve fehlt. https://www.allaboutlean.com/jidoka-2/[Roser, „The Philosophy and Practicality of Jidoka"] (24. Juli 2018).
+* *Auch das Nie-Anhalten ist bepreist.* Roser stellt Toyota dem alten GM-Werk Fremont gegenüber, wo eine „Never stop"-Vorgabe Defekte stromabwärts schob und „massive problems" mit „enormous" Reparaturkosten erzeugte — während das Band trotzdem häufig stand. Die Kritik schneidet in beide Richtungen: Jidoka ist teuer, und es zu lassen ebenso.
+* *Erkennen ohne Reagieren ist der übliche Fehlschlag.* Smalley warnt davor, Jidoka auf „pulling a cord" zu verkürzen und die Technik zu übergehen, es mit beliebiger Automatisierung zu verwechseln und „detection without response systems" einzubauen. Ohne eine Kultur, die für einen Qualitätsstopp Ausbringung fallen lässt, ist das Andon Dekoration. https://artoflean.com/topics/jidoka/[Smalley, „Jidoka — Automation with a Human Touch"].
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Das Gründungsdatum ist strittig, und die Quellen liegen Jahrzehnte auseinander.* Die Werksgeschichte von Toyota Industries nennt 1896 für den Kraftwebstuhl mit Schussfaden-Abstellvorrichtung und 1924 für den Typ G mit automatischem Schützenwechsel sowie Schuss- und Kettfaden-Abstellung. https://www.toyota-industries.com/company/history/toyoda_sakichi/[Toyota Industries, „The Story of Sakichi Toyoda"]. Art Smalley datiert den automatischen Webstuhl anders — Idee um 1901, fertiggestellt 1926 nach rund 25 Jahren Entwicklung. https://artoflean.com/topics/jidoka/[Art of Lean, Jidoka]. Beide Quellen sind seriös; ehrlich ist „Sakichi Toyodas Webstühle, vom Kraftwebstuhl 1896 bis zum Typ G 1924", nicht eine einzelne Jahreszahl.
+* *Der Begriff ist stabil und bei Toyota weiter in Gebrauch*: Jidoka und Just-in-Time sind dort nach wie vor die beiden benannten Säulen des TPS. Anders als `dmaic` oder `qfd` trägt Jidoka keine ISO-Norm; es wird über Praxis und Literatur weitergegeben.
+* *In der Software kam der Gedanke ohne das Wort an.* Andon-Leine, Stop-the-Line-CI, gesperrter Merge bei Rot, automatischer Rollback bei rotem Canary und der auslösende `circuit-breaker` sind Jidoka — nur nennt es kaum ein Team so. Wer es benennt, bekommt das mit, was die englischen Begriffe weglassen: die Pflicht, der Ursache nachzugehen, nicht bloß anzuhalten.

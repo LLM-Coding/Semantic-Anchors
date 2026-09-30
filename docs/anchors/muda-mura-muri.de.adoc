@@ -1,0 +1,66 @@
+= Muda, Mura, Muri
+:categories: problem-solving, strategic-planning
+:proponents: Taiichi Ohno, Toyota Motor Corporation, James P. Womack
+:roles: systems-thinker, team-lead, consultant, business-analyst
+:tags: Muda, Mura, Muri, sieben Verschwendungsarten, TIMWOOD, TIMWOODS, Verschwendung, Unausgeglichenheit, Überlastung, achte Verschwendung, die drei Mu
+:related: kaizen, andon, genchi-genbutsu, dmaic, spc
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Muda (無駄), Mura (斑), Muri (無理) -- Verschwendung, Unausgeglichenheit, Überlastung; die „drei Mu" des Toyota-Produktionssystems
+
+Auch bekannt als:: die 3M, die drei Übel, die sieben Verschwendungsarten (nur Muda), TIMWOOD / TIMWOODS (nur Muda)
+
+[discrete]
+== *Kernkonzepte*:
+
+Verankert wird das Trio, nicht Muda allein:: Das ist der ganze Grund für diesen Anker. Wer nur die Verschwendung benennt, verdeckt, was sie erzeugt. Muda ist das leicht sichtbare, leicht zählbare Symptom; Mura und Muri sind die Bedingungen, die es nach jedem Aufräumen neu hervorbringen.
+
+Die drei, definiert:: Das Lexikon des Lean Enterprise Institute:
+* *Muda* -- „Any activity that consumes resources without creating value for the customer."
+* *Mura* -- „Unevenness in an operation; for example, a gyrating schedule not caused by end-consumer demand but rather by the production system, or an uneven work pace in an operation causing operators to hurry and then wait."
+* *Muri* -- „Overburdening equipment or operators by requiring them to run at a higher or harder pace with more force and effort for a longer period of time than equipment designs and appropriate workforce management allow."
+
+Die Ursachenkette läuft Mura → Muri → Muda:: Jim Womack plädiert dafür, die gewohnte Reihenfolge umzudrehen: „I would tell them to have it read 'Mura, muri, muda.'" Sein Grund ist der Mechanismus selbst: „The inevitable result is that mura creates muri that undercuts previous efforts to eliminate muda." Unausgeglichenheit treibt Menschen und Maschinen über ihren Auslegungspunkt, Überlastung erzeugt dann genau die Verschwendung, die im letzten Quartal beseitigt wurde.
+
+Die sieben Verschwendungsarten:: Ohnos Kategorien sind Transport, Bestände, Bewegung, Warten, Überproduktion, Überbearbeitung und Fehler. Überproduktion gilt als die schlimmste, weil sie die meisten anderen nach sich zieht.
+
+Die achte Verschwendung kam später dazu:: „Unused skills" wurde den ursprünglichen sieben hinzugefügt, „as resolving this waste is a key enabler to resolving the others". Die Eselsbrücke „TIM WOOD" deckt die sieben ab, „TIM WOODS" mit S für skills die acht. Die achte stammt nicht von Ohno.
+
+Muda vom Typ eins und Typ zwei:: Das Lexikon unterscheidet Verschwendung, die sich nicht schnell entfernen lässt (Nacharbeit, die ein Prozess derzeit nicht vermeiden kann), von solcher, die Kaizen sofort beseitigen kann. Erst diese Unterscheidung macht aus „alle Verschwendung beseitigen" eine befolgbare Anweisung.
+
+In der Software:: Mura ist der Release-Zug, der drei Wochen nichts und am Donnerstag alles ausliefert; Muri ist der zu 110 Prozent zugesagte Sprint; Muda sind Nacharbeit, Warteschlange und der halbfertige Branch. Die Nacharbeit anzugehen, ohne die Stapelbildung anzurühren, ist genau der Fehler, den das Trio benennt.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Immer wenn ein Programm gegen Verschwendung oder für Effizienz geplant wird -- um die Frage zu erzwingen, was die Verschwendung nachliefert
+* In Kapazitäts- und Terminfragen: Mura und Muri liefern das Vokabular, das Stapelbildung und Überzusage sonst fehlt
+* In Retrospektiven, in denen dieselbe Verschwendung nach der Beseitigung zurückkehrt
+* Als Diagnoseschicht unter `kaizen`: Kaizen ist die Gewohnheit, die drei Mu sind das, wonach sie sucht
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Lean heißt Verschwendung beseitigen" -- das ist nur Muda, und Womacks Argument lautet, dass Muda zuerst die falsche Reihenfolge ist
+* ❌ „Es gibt acht Verschwendungsarten" -- es gibt Ohnos sieben plus eine spätere, weit verbreitete achte; beim Zitieren zählt der Unterschied
+* ❌ „Muri heißt hart arbeiten" -- es heißt, über den Auslegungspunkt von Mensch oder Maschine hinaus arbeiten zu müssen; das ist eine Eigenschaft des Systems, nicht der Anstrengung
+* ❌ „Mura ist einfach Streuung" -- es ist Unausgeglichenheit, die *das System selbst erzeugt*, nicht Nachfrageschwankung des Kunden
+* ✓ „Beseitige zuerst Mura, und viel Muda kommt nicht zurück" -- genau das ist Womacks Punkt
+====
+
+== *Kritik*:
+
+* *Die gewohnte Reihenfolge lehrt den falschen Reflex.* Womacks Aufsatz ist selbst eine Kritik daran, wie die drei Mu üblicherweise gelehrt und benutzt werden: Muda zuerst, als Jagd auf sichtbare Verschwendung, Mura und Muri als Fußnoten. Den Fehler verortet er in der Reihenfolge: „mura creates muri that undercuts previous efforts to eliminate muda" -- ein Muda-zuerst-Programm ist also strukturell dazu verurteilt, sich zu wiederholen. https://www.lean.org/the-lean-post/articles/mura-muri-muda/[Womack, „Mura, Muri, Muda?", Lean Enterprise Institute] (6. Juli 2006).
+* *Vom Band aus gelesen, ist Muri der Zweck des Systems, nicht sein Defekt.* Jane Slaughters Darstellung des „management by stress" beschreibt ein System, das so eingestellt wird, dass gilt: „The ideal state is achieved when the plant is running with all stations just on the line between green and yellow." Also bewusst an der Grenze zur Überlastung, wobei das Nicht-mehr-Mitkommen des Werkers als Signal für den nächsten Verbesserungsschritt dient. So gelesen ist Muri kein Unfall, den die Methode beseitigt, sondern ein Hebel, den sie ansetzt. https://www.multinationalmonitor.org/hyper/issues/1990/01/slaughter.html[Slaughter, „Management by Stress", _Multinational Monitor_, Januar/Februar 1990].
+* *Verschwendungsjagd ohne die Menschenhälfte ist die verbreitete Fehlform.* Bob Emilianis Unterscheidung von Real Lean und Fake Lean benennt sie: Fake Lean sei „the technical application of 'Continuous Improvement' tools and methods, invariably in a zero-sum fashion", Real Lean dagegen „the application of both 'Continuous Improvement' and 'Respect for People'". Seine Bilanz: „Lean intends to correct two big problems in organizations: bad processes and bad management. But it usually corrected only one – bad processes." https://bobemiliani.substack.com/p/back-story-real-vs-fake-lean[Emiliani, „The Backstory: Real vs. Fake Lean"] (13. September 2013).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Womacks Umstellung hat sich nicht durchgesetzt.* „Muda, Mura, Muri" bleibt zwanzig Jahre nach dem Aufsatz die übliche Reihenfolge in Schulungsmaterial und in den meisten Modellantworten. Ohne ausdrückliche Nennung der Ursachenkette liefert ein Modell Muda zuerst und die Liste der sieben Verschwendungsarten.
+* *„Die sieben Verschwendungsarten" meint heute meist acht.* TIMWOODS, um ungenutzte Fähigkeiten oder ungenutztes menschliches Potenzial ergänzt, ist die Fassung, die aktuelles Material lehrt. Alle acht Ohno zuzuschreiben ist ein häufiger und vermeidbarer Fehler.
+* *Muda vom Typ eins und Typ zwei verschwindet aus dem allgemeinen Gebrauch*, obwohl die Unterscheidung im Lexikon des Lean Enterprise Institute steht. Sie ist das, was Verschwendungslisten handhabbar macht -- und das Erste, was in Kurzfassungen wegfällt.

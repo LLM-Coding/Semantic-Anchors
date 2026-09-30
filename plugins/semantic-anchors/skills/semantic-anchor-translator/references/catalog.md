@@ -4,6 +4,27 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Testing & Quality
 
+### FMEA
+- **Also known as:** Failure Mode and Effects Analysis; FMECA with criticality analysis
+- **Proponents:** US Armed Forces (MIL-P-1629, 1949), NASA, AIAG, VDA
+- **Core:** Per-failure-mode rows rated for Severity, Occurrence and Detection, ranked and turned into actions; the classic RPN (S x O x D) was replaced by Action Priority in the AIAG-VDA handbook (first edition June 2019)
+
+### Poka-Yoke
+- **Also known as:** mistake-proofing, error-proofing; originally baka-yoke ("fool-proofing")
+- **Proponents:** Shigeo Shingo, Toyota
+- **Core:** Make the wrong action impossible rather than warning against it; a human error is inevitable but must not be allowed to become a defect that flows downstream. Prevention/control is strictly preferred over warning/detection
+
+### Jidoka
+- **Also known as:** autonomation, "automation with a human touch"
+- **Proponents:** Sakichi Toyoda, Taiichi Ohno, Toyota
+- **Core:** Halt on the anomaly instead of passing a defect downstream; one of the two TPS pillars alongside Just-in-Time. Software form: fail fast, circuit breakers, stop the deployment on a failing canary
+
+### Andon
+- **Also known as:** andon board, andon cord, stop-the-line authority
+- **Proponents:** Taiichi Ohno, Toyota Motor Corporation
+- **Core:** A signal nobody can miss, a cord anyone may pull, and a guaranteed response. The radical part is the authority, not the hardware; a rising pull count early on signals that problems are surfacing rather than hiding
+
+
 ### TDD, London School
 - **Also known as:** Mockist TDD, Outside-In TDD
 - **Proponents:** Steve Freeman, Nat Pryce
@@ -448,6 +469,56 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Problem-Solving
 
+### DMADV
+- **Also known as:** DFSS, Design for Six Sigma
+- **Proponents:** Motorola, General Electric
+- **Core:** Define, Measure, Analyze, Design, Verify — the design-side sibling of DMAIC, for when the process does not exist yet. Activates CTQ translation, QFD, Kano, Pugh, DOE and tolerance design rather than control charts
+
+### PDCA
+- **Also known as:** Plan-Do-Check-Act, the Deming cycle, the Shewhart cycle; PDSA with "Study"
+- **Proponents:** Walter A. Shewhart, W. Edwards Deming, Kaoru Ishikawa
+- **Core:** State a hypothesis before acting, then standardise the gain after — the two parts that separate it from generic iteration. Deming rejected "Check" as a corruption and insisted on PDSA
+
+### SIPOC
+- **Also known as:** COPIS (read right-to-left, customer-first)
+- **Proponents:** Total Quality Management practice (no single originator)
+- **Core:** Suppliers, Inputs, Process, Outputs, Customers in five columns, drawn to settle where a process starts and stops before anyone argues about details; the Define-phase artifact of DMAIC
+
+### Ishikawa Diagram
+- **Also known as:** fishbone diagram, cause-and-effect diagram
+- **Proponents:** Kaoru Ishikawa
+- **Core:** Causes grouped under named parallel categories (the 6M: Machine, Method, Material, Measurement, Manpower, Milieu), for contributing factors rather than a single chain — where 5 Whys follows one chain. One of the Seven Basic Tools of Quality
+
+### Value Stream Mapping
+- **Also known as:** VSM; originally material- and information-flow mapping
+- **Proponents:** Mike Rother, John Shook (*Learning to See*, LEI 1999), Toyota
+- **Core:** Separates process time from waiting time along a flow, yielding flow efficiency, then demands a future-state map with targets — not just a list of speed-ups
+
+### A3 Problem Solving
+- **Also known as:** A3 report, A3 thinking
+- **Proponents:** John Shook (*Managing to Learn*), Toyota, Durward K. Sobek II, Art Smalley
+- **Core:** Background, current condition, target, analysis, countermeasures, plan and follow-up on a single A3 sheet. The size constraint is the method; the power is in the dialogue, not the template
+
+### Toyota Kata
+- **Proponents:** Mike Rother (*Toyota Kata*, McGraw-Hill 2009), Jeffrey Liker
+- **Core:** Improvement Kata (direction, measured current condition, dated target condition, experiments) plus Coaching Kata (the Five Questions, practised daily). A target condition describes a process state, not just a number — which is what distinguishes it from an OKR
+
+### Genchi Genbutsu
+- **Also known as:** "go and see", gemba, gemba walk, the Ohno Circle
+- **Proponents:** Taiichi Ohno, Toyota Motor Corporation, Art Smalley
+- **Core:** Go to the actual place and see the actual thing before theorising. For an LLM the practical effect is to demand the real traces, logs and code instead of answering from general knowledge
+
+### Muda, Mura, Muri
+- **Also known as:** the three Ms; the seven wastes, TIMWOOD
+- **Proponents:** Taiichi Ohno, Toyota Motor Corporation, James P. Womack
+- **Core:** Waste, unevenness and overburden taken as a set. The chain runs Mura to Muri to Muda, so naming only waste hides its cause; Womack argues the order should be reversed from the usual slogan
+
+### Kaizen
+- **Also known as:** continuous improvement; kaizen event, kaizen blitz; contrast kaikaku
+- **Proponents:** Masaaki Imai (1986), Taiichi Ohno, Toyota Motor Corporation
+- **Core:** Small, frequent, low-risk changes by the people doing the work; standardise the gain, then improve from the new standard. Kaikaku is the deliberate contrast — radical, discontinuous change
+
+
 ### First Principles Thinking
 - **Also known as:** Reasoning from First Principles, Reasoning from Fundamentals
 - **Proponents:** roots in Aristotle and Descartes; popularized in modern engineering discourse
@@ -530,6 +601,12 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Follow a consequence into the next consequence rather than listing more effects at the same level; first-order effects are immediate and visible, second-order effects are delayed, behavioural and often dominant; applies to inaction too
 
 ## Requirements Engineering
+
+### QFD
+- **Also known as:** Quality Function Deployment, House of Quality; Blitz QFD
+- **Proponents:** Yoji Akao, Shigeru Mizuno, Glenn Mazur
+- **Core:** Translates customer needs (WHATs) into technical characteristics (HOWs) through a weighted relationship matrix; the correlation "roof" shows where two characteristics reinforce or conflict — the view neither Pugh Matrix nor Kano Model carries. Standardised as ISO 16355
+
 
 ### Cockburn Use Cases
 - **Also known as:** Fully Dressed Use Cases, Goal-Level Use Cases

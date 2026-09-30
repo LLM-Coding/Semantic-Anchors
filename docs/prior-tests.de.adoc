@@ -399,3 +399,76 @@ Die Umkehrung ist festzuhalten: Das stärkere Modell ist das mehrdeutigere, weil
 *Die schwache Stufe kennt den Namen und kann das Framework nicht ausführen.* Mit dem ausgeschriebenen Begriff und der Aufgabe „draft the opening public statement for an ongoing incident whose cause is not yet known" gelang es `haiku-4.5` in beiden Läufen nicht, die sechs Prinzipien zu nennen. Die starke Stufe nannte alle sechs korrekt und baute die Meldung darauf auf -- „1. Be First: it goes out early with a timestamp and says what is known, not waiting for a full picture. … 6. Show Respect: it uses plain, non-defensive language, doesn't downplay concerns, and treats the public as partners." Die ankerlose Vergleichsmessung lieferte eine saubere Statusseite mit Zeitstempel, Betroffenheit und nächstem Update -- und nichts, was dieser Struktur ähnelte. Das Delta ist echt und lebt allein auf der Frontier-Stufe.
 
 *Kritik-Recherche, 24.09.2026, Englisch und Deutsch.* Die tragende Quelle ist eine Übersichtsarbeit: Miller, Collins, Neuberger, Todd, Sellnow und Boutemen (_JICRCR_, März 2021) sichteten „4,471 articles in 20 languages", nahmen 19 auf, „of which one tested tenets of the CERC model", und folgern, „reformulation of the propositions is necessary for empirical support of the model to proceed". CERC ist verdichtete Praxis, kein empirisch abgesichertes Modell. Sauer, Truelove, Gerste und Limaye (_Health Security_, Februar 2021) ordnen ihre Corona-Analyse entlang der sechs Prinzipien und finden die CDC beim Bruch ihres eigenen Glaubwürdigkeitsprinzips. Die Editionsfrage ist hier ungewöhnlich: Die CDC liefert das Handbuch inzwischen als Kapitel-PDFs mit den Jahrgängen 2014, 2018 und 2019 aus -- eine einheitliche aktuelle Ausgabe gibt es nicht. Zitierbare deutschsprachige Kritik fand sich keine -- und da die genannte Übersichtsarbeit 20 Sprachen sichtete und fast nichts fand, ist echte Dünnheit plausibel und nicht bloß ungemessen.
+== Lauf vom 30.09.2026
+
+[cols="1,3"]
+|===
+|Kandidaten |16 Begriffe aus Six Sigma und dem Toyota-Produktionssystem, als Cluster vorgeschlagen in https://github.com/LLM-Coding/Semantic-Anchors/issues/753[#753]
+|Modelle |`claude-haiku-4-5-20251001` (schwach), `claude-opus-5` (stark)
+|Läufe |16 Aktivierungsproben (starke Stufe), 16 Substitutionsproben (schwache Stufe), 32 Vorher/Nachher-Proben, danach 18 weitere, nachdem sich das Vorher/Nachher-Design als kaputt erwies. 82 Proben insgesamt
+|Reinraum |`claude -p --strict-mcp-config --setting-sources ""` mit `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN`, jede Probe in einem eigenen leeren Arbeitsverzeichnis
+|Nicht geprüft |`claude-sonnet-5` blieb erneut aus. Die Befunde sind eine Untergrenze
+|===
+
+=== Zwei Fehler in der eigenen Methode
+
+Dieser Lauf lieferte zwei falsche Ergebnisse, bevor er ein richtiges lieferte. Beide stehen hier, weil beide leicht zu wiederholen sind.
+
+*Die Probe las die Prüfvorrichtung mit.* Der erste Vorher/Nachher-Lauf gab allen Proben dasselbe Arbeitsverzeichnis -- jenes, in dem die Steuerdatei mit allen sechzehn Begriffen und beiden Prompt-Varianten lag. Die Modelle lasen sie. Eine Antwort begann: „Working from the lookup table you attached, this maps to *SIPOC*." Dreizehn von achtundvierzig Proben nannten die Prüfvorrichtung ausdrücklich. Damit ist die ankerlose Bedingung wertlos: Die Vergleichsmessung sah den Begriff, für den sie blind sein sollte. *Die Regel daraus: Ein Reinraum ist kein sauberes Verzeichnis, das mehrere Proben teilen. Jede Probe bekommt ein eigenes leeres Arbeitsverzeichnis, und die Prüfvorrichtung liegt außerhalb ihrer Reichweite.*
+
+*Die Aufgabe nannte die Methode für uns.* Der Neulauf behob das Verzeichnis und lieferte trotzdem ein falsches Ergebnis, nun in die Gegenrichtung. Jede Aufgabe war aus dem _When to Use_ des jeweiligen Kandidaten abgeleitet -- also stand die Methode bereits in der Frage. Vierzehn von sechzehn ankerlosen Vergleichsmessungen nannten die Methode daraufhin *von selbst*: Die Antwort auf „wie gehen wir mit einem Import-Job um, der gelegentlich fehlerhafte Datensätze bekommt" beginnt mit „The right frame for this is *Jidoka*", und die Antwort auf „schreib diesen Vorfall auf" liefert ein betiteltes A3-Blatt mit allen sieben kanonischen Abschnitten. So gemessen wirkt fast jeder Kandidat dekorativ -- und die Messung sagt nichts, weil der Begriff schon in der Frage stand. *Die Regel daraus: Eine Viability-Aufgabe darf nicht aus der Beschreibung des Ankers stammen. Nennt die Vergleichsmessung die Methode selbst, hat die Aufgabe den Prompt geprüft, nicht den Anker.*
+
+=== Der Test, der entschied
+
+Der dritte Lauf ersetzte sechzehn maßgeschneiderte Aufgaben durch *ein neutrales Szenario*, das keinem Kandidaten gehört: ein Sechs-Personen-Team betreibt einen Webshop, Releases dauern drei Wochen und brauchen Hotfixes, die Support-Tickets steigen um 40 %, zwei Bereitschaftsleute sind überlastet, und nächstes Quartal soll ein Abo-Produkt starten. Das Szenario lässt jeden Kandidaten zu und legt keinen nahe.
+
+Zwei ankerlose Vergleichsmessungen liefen dagegen. *Keine nannte auch nur eine der sechzehn Methoden.* Beide lieferten gewöhnliche Beratungsprosa unter Überschriften wie „The core read" und „What I'd do, in priority order". Das ist die saubere Vergleichsmessung, die den ersten beiden Läufen fehlte.
+
+Gegen diese Basis änderte der benannte Begriff in fünfzehn von sechzehn Fällen das Artefakt:
+
+* *SIPOC* lieferte zwei vollständige Suppliers/Inputs/Process/Outputs/Customers-Tabellen, wo die Basis Prosa hatte.
+* *FMEA* lieferte ein bewertetes Arbeitsblatt -- und brachte von sich aus die *AP-Spalte (Action Priority)* der aktuellen AIAG-VDA-Form mit, nicht nur die klassische RPZ.
+* *A3* lieferte die sieben kanonischen Abschnitte in der richtigen Reihenfolge.
+* *DMADV* legte dem Szenario fünf Phasentore auf, das die Basis als Prioritätenliste beantwortet hatte.
+
+Die Lehre reicht über dieses Cluster hinaus: *Bei einer Aufgabe, für die die Methode ohnehin naheliegt, ist der messbare Effekt eines Ankers null -- und das ist eine Aussage über die Aufgabe, nicht über den Anker.*
+
+=== Die sechzehn Kandidaten
+
+Alle sechzehn bestanden die Wiedererkennung auf der starken Stufe und den Substitutionstest auf der schwachen: Haiku löste jedes Akronym korrekt auf, ohne Ausweichen, ohne stille Ersetzung, ohne Konfabulation. Fünfzehn bestanden danach den Steuerungstest und sind als Anker mit ★★★ eingetragen.
+
+[cols="2,1,4"]
+|===
+|Begriff |Urteil |Anmerkung
+
+|DMADV |★★★ |Legt fünf Phasentore und eine CTQ-Übersetzung auf. `dmaic` nannte den Begriff, konnte ihn aber nicht aufrufen
+|PDCA |★★★ |Trägt die Namensspaltung PDCA/PDSA; Demings eigene Präferenz steht unter Aktueller Stand
+|FMEA |★★★ |Der einzige Kandidat, dessen Ausgabe eine *neuere* Fassung des eigenen Artefakts mitbrachte als die klassische
+|SIPOC |★★★ |Größter Einzeleffekt des Laufs: von Prosa zu zwei fünfzeiligen Tabellen
+|Ishikawa-Diagramm |★★★ |Ordnet Ursachen den kanonischen 6M zu und erzwingt parallele Äste, wo `five-whys` einer Kette folgt
+|Value Stream Mapping |★★★ |Ergänzt die Future-State-Karte und die Trennung von Bearbeitungs- und Wartezeit
+|Poka-Yoke |★★★ |Verschiebt die Antwort von Validierung und Schulung hin dazu, die falsche Eingabe unmöglich zu machen
+|QFD |★★★ |Liefert die WHATs-x-HOWs-Matrix samt Korrelationsdach -- die Konfliktsicht, die weder `pugh-matrix` noch `kano-model` trägt
+|Jidoka |★★★ |Zieht die Erkennung nach vorn und ersetzt Weiterlaufen-und-Loggen durch Anhalten und Aussondern
+|A3 Problem Solving |★★★ |Der feste Abschnittssatz auf einer Seite *ist* die Methode; die Beschränkung ist der Gewinn
+|Toyota Kata |★★★ |Ergänzt die Coaching-Hälfte -- fünf Fragen, Hindernisliste, Experimentprotokoll -- über der Verbesserungsschleife
+|Andon |★★★ |Ergänzt ausdrückliche Stopp-Befugnis und eine getaktete Eskalationsleiter, nicht bloß mehr Monitoring
+|Genchi Genbutsu |★★★ |Bringt das Modell dazu, das Theoretisieren zu verweigern und zuerst den echten Trace zu verlangen
+|Muda, Mura, Muri |★★★ |Als Dreiklang eingetragen. Nur die Verschwendung zu benennen verdeckt ihre Ursache; die Kette läuft Mura zu Muri zu Muda
+|Kaizen |★★★ |Die Vagheitssorge hielt der Messung nicht stand -- siehe unten
+|Kanban (TPS) |abgelehnt |Der Name verankert den anderen Begriff -- siehe unten
+|===
+
+=== Kaizen: die Vagheitssorge wurde geprüft, nicht unterstellt
+
+Kaizen kam mit einem Vorbehalt: Der Begriff ist zugleich benannte Toyota-Praxis und Alltagswort für „kontinuierliche Verbesserung", und die Ablehnungskriterien schließen Begriffe aus, die zu vage für konsistente Ausgaben sind. Die Messung stützt den Vorbehalt nicht. Auf dem neutralen Szenario erzeugte der Begriff eine gestufte Struktur, für die die Basis keine Entsprechung hatte: eine Woche Beobachtung vor jeder Änderung, eine moderierte Sitzung, in der das Team die Verschwendung benennt, danach wöchentliche PDCA-Zyklen über je eine Änderung. Der Prior ist scharf umrissen -- die Aktivierungsprobe lieferte ungefragt _kaikaku_ als bewussten Gegenbegriff, _hansei_ sowie „standardize the gain, then improve from the new standard" und merkte zum Kaizen-Event an, es stehe „somewhat at odds with the original 'daily habit' spirit". Eingetragen, mit der Kritik am Event-Theater in der Criticism-Section.
+
+=== Kanban (TPS): abgelehnt, und der Grund ist eine Namenskollision
+
+Das ist die einzige Ablehnung, und sie beruht nicht auf einem dünnen Prior. Der Prior ist dicht -- er hängt am falschen Begriff.
+
+Der Vorschlag zielte auf die Toyota-Signalkarte. Auf den nackten Namen liefern beide Stufen stattdessen die *Software*-Methode Kanban. Die starke Stufe beginnt: „Kanban is a pull-based method for managing work, originating in Toyota's manufacturing system and later adapted for software and knowledge work (largely via David Anderson's formulation)" -- Toyota erscheint als Etymologie, dann geht die Antwort zu Boards und WIP-Limits. Die schwache Stufe macht dasselbe.
+
+Der Steuerungstest räumt den letzten Zweifel aus. Auf das neutrale Szenario angewandt, trägt die Ausgabe acht Marker der Software-Methode -- WIP-Limits, Commitment Point, Classes of Service, Replenishment, STATIK, Cumulative Flow Diagram -- und *null* Marker der Fertigungspraxis: keine Signalkarte, kein Supermarkt, kein Zwei-Behälter-System, kein Materialfluss. Die Antwort unterscheidet die Lesarten nicht; sie setzt Software-Kanban einfach voraus.
+
+Der Begriff kann die vorgeschlagene Lesart also nicht verankern, und ein Qualifier repariert das nicht -- er würde gegen den Prior arbeiten statt ihn zu fokussieren. Festgehalten auf der Rejected-Proposals-Seite. *Die Software-Lesart bleibt ein eigener, tragfähiger Vorschlag unter eigenem Namen* -- „Kanban Method (Anderson)" ist das, was der nackte Name tatsächlich aktiviert. Das ist ein anderer Kandidat und wurde hier nicht geprüft.

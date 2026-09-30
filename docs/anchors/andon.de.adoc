@@ -1,0 +1,63 @@
+= Andon
+:categories: development-workflow, testing-quality
+:proponents: Taiichi Ohno, Toyota Motor Corporation
+:roles: devops-engineer, team-lead, qa-engineer, software-developer
+:tags: Andon, Andon-Leine, Andon-Tafel, Jidoka, Reißleine, Bandstopp, feste Stoppposition, visuelles Management, Hilferuf, Eskalation
+:related: kaizen, genchi-genbutsu, muda-mura-muri, red-green-tdd, site-reliability-engineering
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Andon (行灯), japanisch für „Papierlaterne" -- das Signalsystem des Toyota-Produktionssystems
+
+Auch bekannt als:: Andon-Leine, Andon-Tafel, Andon-Leuchte, Recht zum Bandstopp, die sichtbare Hälfte von Jidoka
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwei Hälften, ein Wort:: Andon meint beides -- die *Anzeige*, eine Tafel oder Leuchte über dem Band, die den Zustand jeder Station zeigt, und den *Auslöser*, die Leine oder Taste, die ein Werker zieht, wenn etwas nicht stimmt. Wikipedia definiert die Anzeigeseite: „a system which notifies managerial, maintenance, and other workers of a quality or process problem."
+
+Radikal ist die Befugnis, nicht die Hardware:: Jeder Werker darf das Signal geben, und das Signal bindet alle über ihm. Das kehrt die übliche Werkshierarchie um -- und genau dieser Teil liegt nicht mit im Karton. Mark Graban sagt es nüchtern: „It's not the cord or a button that matters… It's the process and the management system that matters."
+
+Drei Farben, je ein Satz:: Jane Slaughter beschreibt die Tafel so: „A green light indicates there are no problems; a yellow light shows that the operator is having trouble keeping up and needs help; and a red light means there is a problem which requires stopping the line."
+
+Erst Hilferuf, dann Stopp:: Graban korrigiert die populäre Fassung: Ein Zug „sounds an alarm and turns on a yellow light", das Band läuft bis zur nächsten *festen Stoppposition* weiter, und der Teamleiter hat ein Fenster von „maybe 5 to 30 seconds". Gelingt die Hilfe, „the line never stops at all." Dass der Stopp an einer festen Position erfolgt -- zwischen zwei Arbeitszyklen, nicht mitten im Handgriff --, ist Absicht: Eine unterbrochene Arbeit soll den Fehler nicht vergrößern.
+
+Eine steigende Zugzahl ist ein gutes Zeichen:: Zu Beginn bedeuten mehr Züge, dass mehr Probleme *sichtbar* werden, nicht dass es mehr gibt. Grabans Vergleich ist der Standardbeleg: Toyotas Werk in Georgetown zählte rund 2.000 Züge pro Woche, ein neues Ford-Werk in Dearborn zwei -- nicht weil Ford weniger Probleme hatte, sondern weil die Werker der Reaktion nicht trauten. Beunruhigend ist der Wert nahe null.
+
+Die sichtbare Hälfte von Jidoka:: Jidoka -- Automatisierung mit menschlichem Urteil -- heißt: Ein Prozess hält sich selbst an, wenn er Ausschuss produziert. Andon ist der Weg, auf dem ein *Mensch* dieselbe Befugnis ausübt und der Stopp für alle zugleich sichtbar wird.
+
+Entsprechungen in der Software:: Ein roter Build, auf dem niemand aufbauen darf; ein blockiertes Deployment; ein Canary-Rollout, der bei schlechter Metrik abgebrochen wird; ein Pager, den jeder auslösen darf, ohne zu fragen. Der Mechanismus ist jedes Mal trivial, die Befugnis ist der ganze Entwurf.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Wenn geklärt werden soll, wer Arbeit anhalten darf -- das Benennen macht die Befugnis ausdrücklich statt stillschweigend
+* Für Rote-Build-Disziplin und Stopp-Regeln rund um CI, den direkten Nachfahren der Idee (`red-green-tdd`)
+* Bei Canary- und Stufen-Rollouts, deren automatischer oder manueller Abbruch das Andon ist
+* Zur Diagnose eines stillen Teams: Hält nie jemand etwas an, prüfe, ob die Befugnis existiert oder nur die Taste
+* Beim Entwurf von Eskalationswegen, in denen nach dem Signal der Antwortende das Problem trägt, nicht der Meldende
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Ein Werker zieht und das ganze Werk steht" -- Graban nennt das den Mythos; Puffer zwischen Abschnitten fangen einen lokalen Stopp ab, angehalten wird erst an der nächsten festen Position
+* ❌ „Andon ist eine Stoppvorrichtung" -- es ist zuerst ein Hilferuf; die meisten Züge sind vor jedem Stopp erledigt
+* ❌ „Leine montiert, Andon eingeführt" -- ohne Antwort binnen Sekunden und schuldfreie Reaktion ist die Leine Dekoration
+* ❌ „Viele Züge heißt schlechter Prozess" -- am Anfang heißt es, der Prozess ist endlich sichtbar
+* ✓ „Andon ist Jidoka, ausgeübt von einem Menschen" -- trifft zu und erklärt, warum es neben `kaizen` gehört und nicht ins Werkzeugkapitel
+====
+
+== *Kritik*:
+
+* *Von der anderen Seite des Bandes gelesen, ist die Tafel ein Taktgeber.* Jane Slaughter macht Andon in ihrer Darstellung dessen, was Labor Notes „management by stress" nannte, zum Sinnbild des ganzen Systems: „Management by stress is the most sophisticated version of team concept, even though it contradicts many traditional notions of good management." Der Einwand ist präzise und betrifft die Einstellung des Systems: „The ideal state is achieved when the plant is running with all stations just on the line between green and yellow." Ein System, das bewusst an der Grenze zu „komme nicht mit" gefahren wird, benutzt das Notsignal des Werkers als Regelgröße. https://www.multinationalmonitor.org/hyper/issues/1990/01/slaughter.html[Slaughter, „Management by Stress", _Multinational Monitor_, Januar/Februar 1990]. Slaughter ist gemeinsam mit Mike Parker Autorin von _Choosing Sides: Unions and the Team Concept_.
+* *Die verpflanzte Fassung scheiterte sofort.* Der Abstand der Zugzahlen zwischen Toyota und Ford wird meist als Kulturgeschichte erzählt, er ist aber auch eine Kritik am Mechanismus: ohne das Managementsystem kopiert, erzeugte die Leine Schweigen. Graban: Fords seltene Züge zeigten Misstrauen gegenüber der Reaktion des Managements, keinen besseren Prozess. https://www.leanblog.org/2026/06/andon-cord-stop-the-line-myth/[Graban, „No, One Toyota Worker Can't Stop the Whole Factory"] (29. Juni 2026).
+* *Die populäre Erzählung stimmt in den Details nicht -- und die Details tragen den Entwurf.* Grabans Beitrag ist durchgehend eine Korrektur der Andon-Legende aus Managementliteratur und Konferenzvorträgen: der sofortige Totalstopp, der einsame heldenhafte Werker. Feste Stoppposition, Antwortfenster von 5 bis 30 Sekunden und die nötige Nähe kompetenter Hilfe machen die Praxis aus -- und genau sie lässt die Legende weg.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Toyota hat die Leinen durch Tasten ersetzt.* Beginnend im Werk Toyota City 2013 wichen die Leinen über Kopf drahtlosen gelben Tasten auf Hüfthöhe, weltweit schrittweise ausgerollt, während einzelne Werke bei Leinen blieben. Die genannten Gründe sind profan: „reduce overhead clutter, improve safety by removing tools…that could snag on the cord" und „simplify line reconfiguration". https://www.leanblog.org/2014/08/toyota-andon-cord-buttons/[Graban, „Why Toyota is Eliminating the Andon Cord from its Factories"] (2. August 2014, aktualisiert 17. Mai 2026). Das Wort „Leine" in „Andon-Leine" ist an der Quelle also bereits Geschichte.
+* *In der Software lebt der Begriff überwiegend als Metapher.* „Pull the andon cord" ist in DevOps- und SRE-Texten gängige Kurzform für einen gestoppten Release. Was Trainingsdaten meist tragen, ist dieser metaphorische Sinn plus die Mythos-Fassung; feste Stoppposition und Antwort binnen Sekunden fehlen in aller Regel -- genau deshalb lohnt das Benennen des Ankers.

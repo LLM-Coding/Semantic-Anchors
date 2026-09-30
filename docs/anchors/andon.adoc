@@ -1,0 +1,63 @@
+= Andon
+:categories: development-workflow, testing-quality
+:proponents: Taiichi Ohno, Toyota Motor Corporation
+:roles: devops-engineer, team-lead, qa-engineer, software-developer
+:tags: Andon, andon cord, andon board, jidoka, stop the line, fixed-position stop, line stop, visual management, call for help, escalation
+:related: kaizen, genchi-genbutsu, muda-mura-muri, red-green-tdd, site-reliability-engineering
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Andon (行灯), Japanese for "paper lantern" — the signal system of the Toyota Production System
+
+Also known as:: andon cord, andon board, andon light, stop-the-line authority, the visible half of jidoka
+
+[discrete]
+== *Core Concepts*:
+
+Two Halves, One Word:: Andon names both the *display* — a board or lamp above the line showing the status of every station — and the *trigger*, the cord or button an operator pulls when something is wrong. Wikipedia's definition covers the display side: "a system which notifies managerial, maintenance, and other workers of a quality or process problem."
+
+The Radical Part Is the Authority, Not the Hardware:: Any operator may signal, and the signal is binding on everyone above them. That is an inversion of ordinary factory hierarchy, and it is the part that does not ship in the box. Mark Graban puts it flatly: "It's not the cord or a button that matters… It's the process and the management system that matters."
+
+Three Colours, One Sentence Each:: Jane Slaughter's description of the board: "A green light indicates there are no problems; a yellow light shows that the operator is having trouble keeping up and needs help; and a red light means there is a problem which requires stopping the line."
+
+It Is a Call for Help Before It Is a Stop:: Graban corrects the popular version: a pull "sounds an alarm and turns on a yellow light", the line keeps moving to the next *fixed position*, and a team leader gets a window of "maybe 5 to 30 seconds" to respond. If they succeed, "the line never stops at all." Stopping at a fixed position — between work cycles, not mid-task — is deliberate, so an interrupted job does not compound the defect.
+
+A Rising Pull Count Is a Good Sign:: Early in an andon rollout, more pulls mean more problems *surfacing*, not more problems existing. Graban's comparison is the standard evidence: Toyota's Georgetown plant recorded roughly 2,000 pulls a week, a new Ford plant in Dearborn two — not because Ford had fewer problems, but because its workers did not trust the response. A count near zero is the alarming reading.
+
+The Visible Half of Jidoka:: Jidoka — automation with a human touch — means a process stops itself when it produces a defect. Andon is how a *human* exercises the same authority, and how the stop becomes visible to everyone at once.
+
+Software Analogues:: A red build that nobody may build on top of; blocking a deploy; halting a canary rollout on a failing metric; a pager that any engineer may fire without asking permission. In each case the mechanism is trivial and the authority is the whole design.
+
+[discrete]
+== *When to Use*:
+
+* Establishing who may halt work — the naming makes the authority explicit rather than implicit
+* Red-build discipline and stop-the-line rules around CI, the direct descendant of the idea (`red-green-tdd`)
+* Canary and progressive rollouts, where an automatic or manual abort is the andon
+* Diagnosing a quiet team: if nobody ever stops anything, ask whether the authority exists or only the button does
+* Designing escalation paths where the responder, not the reporter, owns the problem once the signal is raised
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "One worker pulling the cord stops the whole factory" — Graban calls this the myth; buffers between sections absorb a local stop, and the line halts only at the next fixed position
+* ❌ "Andon is a line-stop device" — it is first a call for help; most pulls are resolved before any stop
+* ❌ "Install the cord and you have andon" — without a responder within seconds and a no-blame reaction, the cord is decoration
+* ❌ "Many pulls means the process is bad" — early on it means the process is finally visible
+* ✓ "Andon is jidoka performed by a person" — accurate, and the reason it belongs next to `kaizen` rather than to tooling
+====
+
+== *Criticism*:
+
+* *Read from the other side of the line, the board is a pacing device.* Jane Slaughter, in her account of what Labor Notes called "management by stress", treats andon as the emblem of the whole system: "Management by stress is the most sophisticated version of team concept, even though it contradicts many traditional notions of good management." The objection is precise, and it is about tuning: "The ideal state is achieved when the plant is running with all stations just on the line between green and yellow." A system deliberately balanced at the edge of "cannot keep up" uses the operator's distress signal as its control input. https://www.multinationalmonitor.org/hyper/issues/1990/01/slaughter.html[Slaughter, "Management by Stress", _Multinational Monitor_, January/February 1990]. Slaughter is co-author, with Mike Parker, of _Choosing Sides: Unions and the Team Concept_.
+* *The transplanted version failed on arrival.* The Toyota/Ford pull-count gap is usually told as a culture story, but it is also a criticism of the mechanism: copied without the management system, the cord produced silence. Graban: Ford's rare pulls reflected worker distrust of how management would respond, not a better process. https://www.leanblog.org/2026/06/andon-cord-stop-the-line-myth/[Graban, "No, One Toyota Worker Can't Stop the Whole Factory"] (29 June 2026).
+* *The popular story is wrong in its details, and the details carry the design.* Graban's whole piece is a correction of the andon legend circulating in management writing and software conference talks — the instant total stop, the lone heroic worker. The fixed-position stop, the 5-to-30-second response window and the required proximity of capable help are what make the practice work, and they are exactly what the legend omits.
+
+[discrete]
+== *Current Status*:
+
+* *Toyota replaced the cords with buttons.* Starting at the Toyota City plant in 2013, overhead cords gave way to wireless, waist-high yellow buttons, rolled out gradually worldwide while some plants kept cords. The stated reasons are mundane: "reduce overhead clutter, improve safety by removing tools…that could snag on the cord" and "simplify line reconfiguration". https://www.leanblog.org/2014/08/toyota-andon-cord-buttons/[Graban, "Why Toyota is Eliminating the Andon Cord from its Factories"] (2 August 2014, updated 17 May 2026). The word "cord" in "andon cord" is therefore already historical at the source.
+* *The term survives in software mostly as metaphor.* "Pull the andon cord" is common shorthand in DevOps and SRE writing for stopping a release. The prior most training data carries is this metaphorical sense plus the myth version; the fixed-position stop and the responder-within-seconds requirement are usually absent, which is precisely why naming the anchor is worth doing.

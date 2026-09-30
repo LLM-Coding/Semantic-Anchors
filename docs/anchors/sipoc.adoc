@@ -1,0 +1,66 @@
+= SIPOC
+:categories: problem-solving, requirements-engineering
+:roles: business-analyst, consultant, requirements-engineer, product-owner, team-lead
+:proponents: Total Quality Management practice (no single originator)
+:tags: SIPOC, COPIS, suppliers inputs process outputs customers, process scoping, high-level process map, define phase, Six Sigma, kaizen, process boundaries
+:related: dmaic, dmadv, ishikawa-diagram, event-storming, mece
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Suppliers, Inputs, Process, Outputs, Customers
+
+Also known as:: COPIS when filled out in reverse; high-level process map; process scoping diagram
+
+[discrete]
+== *Core Concepts*:
+
+Five Columns, One Page:: Every SIPOC is the same table. *Suppliers* provide the *Inputs*; the *Process* — five to seven steps, no more — turns them into *Outputs*; the *Customers* receive them. The one-page limit is not a convention, it is the tool. A SIPOC that needs a second page has become a process map and lost its job.
+
+Its Job is Drawing the Boundary:: SIPOC answers "where does this process start and stop, and who is on each side?" before anyone argues about what is wrong inside it. In `dmaic` it belongs to the Define phase, and it is also a standard opener for kaizen events.
+
+Process First, Then Outward:: The usual fill order is P → O → C → I → S: name the process steps, then what comes out, then who receives it, then what goes in, then who supplies it. Starting with Suppliers invites a shopping list; starting with the Process keeps the scope honest.
+
+Customers are Plural and Named:: The Customers column forces the question of *who exactly* receives each output — internal handover partners included. Most scoping arguments turn out to be disagreements hiding in this column.
+
+Boundary Objects, Not Detail:: Inputs and Outputs are the things that cross the boundary: documents, data, decisions, material. Anything that never crosses the line belongs inside the Process column or nowhere.
+
+COPIS Reverses the Reading:: "To emphasize putting the needs of the customer foremost, the tool is sometimes called COPIS and the process information is filled out in reverse order by starting with the customer and working upstream to the supplier." Same five columns, opposite direction, different conversation: COPIS starts from what the customer needs and asks what must be true upstream.
+
+Where it Sits Among the Tools:: SIPOC scopes, `ishikawa-diagram` hypothesises causes inside that scope, and detailed process mapping comes later. Using SIPOC for any of the other two jobs is the most common way to waste it.
+
+[discrete]
+== *When to Use*:
+
+* At the start of a process improvement effort, before the problem statement is fixed — the scope argument is cheaper on one page
+* Whenever "the process" means different things to different people in the room
+* For system boundaries in software work: SIPOC maps cleanly onto "who calls us, what do they send, what do we return, who consumes it"
+* As a Define-phase artefact in `dmaic`, and to frame the customer side of `dmadv` before CTQs are written
+* As a warm-up before `event-storming` or detailed modelling, to agree what is in and out of scope
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "A SIPOC is a process map" — it is deliberately the opposite: five to seven steps, no branching, no swim lanes. Detail is someone else's tool.
+* ❌ "Customers means paying customers" — it means whoever receives an output, mostly colleagues.
+* ❌ "COPIS is a different tool" — same table, reversed reading order, customer-first.
+* ❌ "Once drawn, it is done" — the SIPOC is a scoping agreement, and scoping agreements go stale.
+* ✓ "SIPOC is a boundary contract in table form" — fair, and it explains why the arguments it triggers are the point rather than a delay.
+====
+
+== *Criticism*:
+
+* *Most of them are decoration.* Christian Loyer, then plant manager at Ecolab, writes that the large majority of SIPOCs have no real meaning and make no difference in continuous improvement projects, because they are "not detailed enough" and "not integrated at all" — the columns are filled in but never linked, so nobody can say which supplier feeds which input, or which step produces which output. https://www.processexcellencenetwork.com/lean-six-sigma-business-performance/articles/the-integrated-sipoc-the-full-power-of-system-thin[Loyer, "Using an Integrated SIPOC for Better Results", Process Excellence Network, 3 June 2011].
+* *Clarity is mistaken for understanding.* The tool's tidiness is itself a hazard: a finished SIPOC can give the impression that the process is understood when only its most general elements have been captured. "Using SIPOC alone won't stop problems occurring within processes", and "it's very simplistic, so it only serves as a starting point for process mapping". https://thinkinsights.net/consulting/sipoc-process-analysis[Think Insights, "SIPOC Process Analysis"].
+* *It inherits the blind spots of whoever is in the room.* "Your SIPOC model is only as good as the people who created it. If key people are missing when its created then it's likely important items will be missing" (same source). The tool has no mechanism that surfaces its own omissions — a weakness it shares with every brainstorming-based artefact, including `ishikawa-diagram`.
+* *The named criticism is thin, and that is worth saying.* We found no academic or book-length critique of SIPOC specifically; the objections above come from practitioner writing. Our search covered English and German sources only. That is a limit of our search, not evidence that no critique exists.
+
+[discrete]
+== *Current Status*:
+
+* *Old, stable, and unowned.* SIPOC "was in use at least as early as the total quality management programs of the late 1980s" and continues in use today; it is described as a simplification of Philip Crosby's process model. https://en.wikipedia.org/wiki/SIPOC[SIPOC overview]. No single author claims it, which is one reason the five column names are stable while everything around them varies.
+* *Its home is the Define phase.* The tool "is often presented at the outset of process improvement efforts such as kaizen events or during the 'define' phase of the DMAIC process" (same source). That is the prior a model will serve: ask for a SIPOC and expect a Six Sigma-flavoured scoping table.
+* *COPIS is a live variant, not a historical footnote.* Customer-first ordering is the standard answer where the improvement is driven by customer need rather than by internal defects. Naming COPIS instead of SIPOC changes which column the conversation starts in — a small prompt lever with a real effect.
+* *Practitioner extensions circulate.* Integrated and augmented forms — linking the columns to each other, or adding requirements and measures — exist precisely because the plain five-column table stops short. None has displaced the original five letters.

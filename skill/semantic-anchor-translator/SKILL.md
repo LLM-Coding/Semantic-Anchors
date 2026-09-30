@@ -1,9 +1,9 @@
 ---
 name: semantic-anchor-translator
-description: Bi-directional translator between verbose descriptions and established terminology (semantic anchors). Use when (1) user describes a concept verbosely and you want to identify the precise term, or (2) user asks for methodology/approach and you want to suggest relevant anchors. Covers 120+ terms across testing, architecture, design principles, problem-solving, requirements, documentation, communication, development workflow, statistical methods, strategic planning, and creative writing.
+description: Bi-directional translator between verbose descriptions and established terminology (semantic anchors). Use when (1) user describes a concept verbosely and you want to identify the precise term, or (2) user asks for methodology/approach and you want to suggest relevant anchors. Covers 200+ terms across testing, architecture, design principles, problem-solving, requirements, documentation, communication, development workflow, statistical methods, strategic planning, and creative writing.
 metadata:
   author: LLM-Coding
-  version: "1.3"
+  version: "1.4"
   source: https://github.com/LLM-Coding/Semantic-Anchors
 license: MIT
 ---
