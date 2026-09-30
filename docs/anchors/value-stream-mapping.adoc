@@ -1,0 +1,66 @@
+= Value Stream Mapping
+:categories: problem-solving, development-workflow
+:roles: business-analyst, consultant, team-lead, devops-engineer, systems-thinker
+:proponents: Mike Rother, John Shook, Lean Enterprise Institute, Toyota
+:tags: Value Stream Mapping, VSM, lean, current state map, future state map, flow efficiency, lead time, muda, material and information flow, Learning to See
+:related: muda-mura-muri, dmaic, a3-problem-solving, jidoka, five-whys
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Value Stream Mapping
+
+Also known as:: VSM; material and information flow mapping (the original Toyota name); value stream analysis
+
+[discrete]
+== *Core Concepts*:
+
+Two Maps, Not One:: The method's backbone is the pair. A *current-state map* records the value stream as it actually runs today, walked backwards from the customer. A *future-state map* shows the stream as it should run after improvement. A map without its counterpart is a picture, not a method.
+
+Material Flow and Information Flow on One Sheet:: The lower half of the sheet follows the product; the upper half follows the signals that tell each step what to make and when. Drawing both together is what exposes the scheduling decisions that create the queues — the reason Toyota called it *material and information flow mapping*.
+
+The Timeline Separates Process Time from Waiting Time:: A stepped line along the bottom splits total lead time into the minutes work is actually being done and the hours or days it spends waiting. The ratio of the two is *flow efficiency*, and in most real streams it is shockingly small. This separation is the single most transferable idea in the method.
+
+Door to Door, One Product Family:: The scope is a single product family across one facility or one end-to-end service, not the whole company and not one workstation. Too narrow and you optimise a local step; too broad and the map becomes wallpaper.
+
+Waste Is Found, Not Assumed:: The map is a diagnostic. Inventory piles, rework loops, and batch-and-queue scheduling become visible as symbols, which is why the book is called _Learning to See_.
+
+A Plan Is Part of the Deliverable:: Rother and Shook end with a value-stream plan — who does what by when — so the future state is scheduled, not merely drawn.
+
+Key Proponents:: Mike Rother and John Shook, whose workbook _Learning to See: value-stream mapping to create value and eliminate muda_ (Lean Enterprise Institute, Brookline MA, 1999) introduced the technique to an English-speaking audience. The practice itself comes from Toyota.
+
+[discrete]
+== *When to Use*:
+
+* Diagnosing why an end-to-end delivery takes weeks when the work in it takes hours
+* Making queueing and handover cost visible to people who only ever see their own step
+* Before a larger improvement programme, as the Define/Measure groundwork a `dmaic` project needs
+* In software delivery, to measure flow efficiency across commit, review, test, and release rather than optimising one stage
+* Any linear, repeatable flow with a recognisable product family
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "A value stream map is a process flowchart" — a flowchart shows steps; a VSM adds information flow, inventory between steps, and a lead-time timeline
+* ❌ "You map the whole organisation" — one product family, door to door
+* ❌ "The current-state map is the deliverable" — without a future state and a plan, nothing changes
+* ❌ "It works anywhere" — it assumes a reasonably linear flow
+* ✓ "The point is the gap between process time and lead time" — that gap is what the method was built to reveal
+====
+
+== *Criticism*:
+
+* *It ignores variability, and variability is what actually creates the queues.* Todd R. Zabelle, writing for the Project Production Institute, argues from operations science that "focusing only on waste (muda) ignores variability (muri), and the fact that variability has to be buffered regardless whether by capacity, inventory or time." He also faults the "value-added fantasy" — the assumption that cutting non-value-added time automatically raises efficiency — for overlooking the VUT equation and Little's Law, and notes that VSM "does not provide a means for diagnosing the causes of long cycle times" and "frequently does not compute utilization and thus misses situations where a production system is facing demand in excess of capacity." https://projectproduction.org/journal/operations-science-view-of-value-stream-mapping/[Zabelle, "Operations Science View of Value Stream Mapping"] (6 December 2018).
+* *Nothing checks whether the future state is reachable.* Same source: "while there is a design step in Value Stream Mapping to depict a 'future state,' there aren't any means to confirm whether the future state is actually achievable." The map asserts a target; it does not test it.
+* *It does not fit unstructured work.* Christoph Roser rules out job shops, where "the material flow is not standardized and may differ for every part. This makes a value stream map difficult to draw, and hence usually quite incomplete," and indirect and administrative areas, "because they often have no structured flow. Swim lanes are much better here." https://www.allaboutlean.com/when-vsm/[Roser, "When to Do Value Stream Maps (and When Not!)"] (28 July 2015, updated 21 August 2025). This is the limit software teams hit first.
+* *Mapping crowds out improving.* Roser again: "the Western world puts too much emphasis on value stream mapping. Many invest too much time in making a value stream and then have no time or energy left to actually improve the situation on the shop floor," adding that maps "are often pushed by consultants that need to familiarize themselves with the shop floor of their client."
+* *Detail kills it.* Roser puts the sweet spot at "between 4 and 15 process boxes" and says "anything above 30 is a waste of time," reporting from his own experience: "I once made the mistake of doing a value stream map with over 60 process boxes, but nothing useful came ever out of this." An oversized map becomes "in effect a wallpaper that looks pretty and impresses people." https://www.allaboutlean.com/vsm-pitfalls/[Roser, "Practical Tips for Value Stream Mapping"] (18 August 2015, updated 21 August 2025).
+
+[discrete]
+== *Current Status*:
+
+* *The 1999 workbook is still the reference text.* _Learning to See_ (Lean Enterprise Institute, 1999) remains in print and in LEI's catalogue, which describes the same two-step sequence the anchor names: "You begin by mapping the current state of the value stream, looking for all the sources of waste. After identifying the waste, you draw a map of a leaner future state and a value-stream plan to guide implementation." https://www.lean.org/store/book/learning-to-see/[LEI, _Learning to See_].
+* *Rother's own work moved on.* His later books are _Creating Continuous Flow_ (2001) and _Toyota Kata_ (2009), which teaches an iterative improvement routine rather than a map. https://en.wikipedia.org/wiki/Mike_Rother[Wikipedia, Mike Rother]. Whether he moved because mapping alone failed to produce lasting change is a common claim in the lean community; no statement to that effect could be confirmed from a primary source, so it is not asserted here.
+* *In software the term has drifted.* "Value stream management" in DevOps tooling usually means dashboards over delivery-pipeline metrics, not a hand-drawn current-state and future-state pair. When precision matters, say which one you mean.

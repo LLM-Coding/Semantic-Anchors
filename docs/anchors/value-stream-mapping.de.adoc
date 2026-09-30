@@ -1,0 +1,66 @@
+= Value Stream Mapping
+:categories: problem-solving, development-workflow
+:roles: business-analyst, consultant, team-lead, devops-engineer, systems-thinker
+:proponents: Mike Rother, John Shook, Lean Enterprise Institute, Toyota
+:tags: Value Stream Mapping, Wertstromanalyse, Wertstromdesign, VSM, Lean, Ist-Zustand, Soll-Zustand, Flusseffizienz, Durchlaufzeit, Verschwendung
+:related: muda-mura-muri, dmaic, a3-problem-solving, jidoka, five-whys
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Value Stream Mapping
+
+Auch bekannt als:: VSM, Wertstromanalyse (Ist-Zustand), Wertstromdesign (Soll-Zustand), ursprünglich bei Toyota „Material- und Informationsflussanalyse"
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwei Karten, nicht eine:: Das Paar trägt die Methode. Die *Ist-Karte* hält den Wertstrom so fest, wie er heute läuft — abgelaufen vom Kunden rückwärts. Die *Soll-Karte* zeigt, wie er nach der Verbesserung laufen soll. Eine Karte ohne ihr Gegenstück ist ein Bild, keine Methode.
+
+Materialfluss und Informationsfluss auf einem Blatt:: Die untere Hälfte folgt dem Produkt, die obere den Signalen, die jedem Schritt sagen, was wann zu tun ist. Erst beides zusammen zeigt, welche Steuerungsentscheidung die Warteschlangen erzeugt — deshalb hieß das Verfahren bei Toyota *Material- und Informationsflussanalyse*.
+
+Die Zeitleiste trennt Bearbeitungszeit von Wartezeit:: Eine Treppenlinie am unteren Rand zerlegt die Durchlaufzeit in die Minuten, in denen tatsächlich gearbeitet wird, und die Stunden oder Tage des Wartens. Ihr Verhältnis ist die *Flusseffizienz*, und sie fällt in echten Wertströmen erschreckend klein aus. Diese Trennung ist der Gedanke, der sich am weitesten übertragen lässt.
+
+Von Tür zu Tür, eine Produktfamilie:: Der Ausschnitt ist eine Produktfamilie über einen Standort oder eine Ende-zu-Ende-Leistung — nicht das ganze Unternehmen und nicht ein Arbeitsplatz. Zu eng optimiert man einen Einzelschritt, zu weit wird die Karte Tapete.
+
+Verschwendung wird gefunden, nicht vermutet:: Die Karte ist ein Diagnosewerkzeug. Bestände, Nacharbeitsschleifen und Losgrößensteuerung werden als Symbole sichtbar. Darum heißt das Buch _Learning to See_.
+
+Der Plan gehört zum Ergebnis:: Rother und Shook schließen mit einem Wertstromplan — wer macht was bis wann. Der Soll-Zustand ist damit terminiert, nicht nur gezeichnet.
+
+Wichtige Vertreter:: Mike Rother und John Shook mit dem Arbeitsbuch _Learning to See: value-stream mapping to create value and eliminate muda_ (Lean Enterprise Institute, Brookline MA, 1999), das die Technik im englischen Sprachraum bekannt machte. Die Praxis selbst stammt von Toyota.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Wenn eine Ende-zu-Ende-Lieferung Wochen dauert, obwohl die Arbeit darin Stunden braucht
+* Um Warte- und Übergabekosten für Menschen sichtbar zu machen, die immer nur ihren eigenen Schritt sehen
+* Als Vorarbeit für ein `dmaic`-Projekt, das eine Ausgangsmessung braucht
+* In der Softwarelieferung, um die Flusseffizienz über Commit, Review, Test und Release zu messen, statt eine einzelne Stufe zu optimieren
+* Für jeden einigermaßen linearen, wiederkehrenden Fluss mit erkennbarer Produktfamilie
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Eine Wertstromkarte ist ein Flussdiagramm" — das Flussdiagramm zeigt Schritte; die Wertstromkarte ergänzt Informationsfluss, Bestände zwischen den Schritten und die Zeitleiste
+* ❌ „Man kartiert die ganze Organisation" — eine Produktfamilie, von Tür zu Tür
+* ❌ „Die Ist-Karte ist das Ergebnis" — ohne Soll-Zustand und Plan ändert sich nichts
+* ❌ „Das funktioniert überall" — die Methode setzt einen einigermaßen linearen Fluss voraus
+* ✓ „Es geht um die Lücke zwischen Bearbeitungszeit und Durchlaufzeit" — genau die soll die Methode aufdecken
+====
+
+== *Kritik*:
+
+* *Sie übersieht Variabilität — und die erzeugt die Warteschlangen.* Todd R. Zabelle argumentiert im Journal des Project Production Institute aus der Operations Science: „focusing only on waste (muda) ignores variability (muri), and the fact that variability has to be buffered regardless whether by capacity, inventory or time." Er nennt die Annahme, weniger nicht-wertschöpfende Zeit hebe automatisch die Effizienz, eine „value-added fantasy", die VUT-Gleichung und Little's Law ignoriere, und hält fest, VSM „does not provide a means for diagnosing the causes of long cycle times" und „frequently does not compute utilization and thus misses situations where a production system is facing demand in excess of capacity." https://projectproduction.org/journal/operations-science-view-of-value-stream-mapping/[Zabelle, „Operations Science View of Value Stream Mapping"] (6. Dezember 2018).
+* *Nichts prüft, ob der Soll-Zustand erreichbar ist.* Dieselbe Quelle: „while there is a design step in Value Stream Mapping to depict a 'future state,' there aren't any means to confirm whether the future state is actually achievable." Die Karte behauptet ein Ziel, sie prüft es nicht.
+* *Unstrukturierte Arbeit trägt sie nicht.* Christoph Roser schließt Werkstattfertigung aus, wo „the material flow is not standardized and may differ for every part. This makes a value stream map difficult to draw, and hence usually quite incomplete", ebenso indirekte und administrative Bereiche, „because they often have no structured flow. Swim lanes are much better here." https://www.allaboutlean.com/when-vsm/[Roser, „When to Do Value Stream Maps (and When Not!)"] (28. Juli 2015, aktualisiert 21. August 2025). An diese Grenze stoßen Softwareteams zuerst.
+* *Kartieren verdrängt Verbessern.* Roser weiter: „the Western world puts too much emphasis on value stream mapping. Many invest too much time in making a value stream and then have no time or energy left to actually improve the situation on the shop floor." Und: Karten „are often pushed by consultants that need to familiarize themselves with the shop floor of their client."
+* *Detailtiefe ruiniert die Karte.* Roser setzt den brauchbaren Bereich auf „between 4 and 15 process boxes" und urteilt: „anything above 30 is a waste of time." Aus eigener Erfahrung: „I once made the mistake of doing a value stream map with over 60 process boxes, but nothing useful came ever out of this." Eine überladene Karte sei „in effect a wallpaper that looks pretty and impresses people." https://www.allaboutlean.com/vsm-pitfalls/[Roser, „Practical Tips for Value Stream Mapping"] (18. August 2015, aktualisiert 21. August 2025).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Das Arbeitsbuch von 1999 ist weiterhin der Referenztext.* _Learning to See_ (Lean Enterprise Institute, 1999) ist lieferbar, und die Verlagsbeschreibung nennt genau die zwei Schritte dieses Ankers: „You begin by mapping the current state of the value stream, looking for all the sources of waste. After identifying the waste, you draw a map of a leaner future state and a value-stream plan to guide implementation." https://www.lean.org/store/book/learning-to-see/[LEI, _Learning to See_].
+* *Rother selbst ist weitergezogen.* Es folgten _Creating Continuous Flow_ (2001) und _Toyota Kata_ (2009), das eine iterative Verbesserungsroutine lehrt statt einer Karte. https://en.wikipedia.org/wiki/Mike_Rother[Wikipedia, Mike Rother]. Ob er wechselte, weil Kartieren allein keine dauerhafte Veränderung brachte, wird in der Lean-Szene oft behauptet; eine Primärquelle dafür ließ sich nicht finden, deshalb steht es hier nicht als Tatsache.
+* *In der Software ist der Begriff verrutscht.* „Value Stream Management" in DevOps-Werkzeugen meint meist Kennzahl-Dashboards über die Delivery-Pipeline, nicht das Paar aus Ist- und Soll-Karte. Wenn es genau sein muss, sag dazu, welches von beidem gemeint ist.

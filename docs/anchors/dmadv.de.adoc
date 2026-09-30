@@ -1,0 +1,67 @@
+= DMADV
+:categories: problem-solving, statistical-methods
+:roles: consultant, team-lead, product-owner, qa-engineer, data-scientist
+:proponents: Motorola, General Electric
+:tags: DMADV, DFSS, Design for Six Sigma, define measure analyze design verify, Produktentwicklung, CTQ, QFD, House of Quality, Designverifikation, Tollgate
+:related: dmaic, fmea, sipoc, pugh-matrix, kano-model, qfd
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Define, Measure, Analyze, Design, Verify
+
+Auch bekannt als:: DFSS, Design for Six Sigma
+
+[discrete]
+== *Kernkonzepte*:
+
+Qualität wird entworfen, nicht erprüft:: DMADV existiert, weil ein Fehler am Reißbrett am billigsten verschwindet. Ist das Produkt erst gebaut, kann `dmaic` seine Fähigkeit nur noch an die Grenze schieben, die der Entwurf zulässt. DMADV legt diese Grenze fest.
+
+Dieselben Anfangsbuchstaben, andere Arbeit:: Die fünf Phasen schulden etwas anderes als bei DMAIC:
+* *Define* — der Entwurfsauftrag: Kundensegmente, Business Case, Umfang des Neuen. Kein Fehler, der zu senken wäre, sondern eine Lücke, die zu füllen ist.
+* *Measure* — die Voice of the Customer, übersetzt in messbare CTQs (Critical to Quality) mit Zielwert und Toleranz. Es gibt noch keinen Prozess zum Messen, also heißt „Measure" hier: *die Anforderung beziffern*, nicht den Ist-Zustand.
+* *Analyze* — Entwurfs*konzepte* erzeugen und gegen die CTQs vergleichen, dann eines wählen. Hier verdienen `pugh-matrix` und `kano-model` ihr Geld.
+* *Design* — der Detailentwurf: Parameter, Toleranzen, eine vorhergesagte Fähigkeit je CTQ, dazu meist ein `fmea` auf dem gewählten Konzept und statistische Versuchsplanung an den kritischen Parametern.
+* *Verify* — bauen, Pilotproduktion fahren und belegen, dass das Gelieferte die CTQs trifft, bevor der Betrieb es übernimmt.
+
+Verify ist nicht Control:: DMAICs letzte Phase hält einen Gewinn, den es schon gibt. DMADVs letzte Phase prüft eine Vorhersage. Die Frage lautet nicht „hält es noch?", sondern „hat der Entwurf getan, was das Modell versprach?" Die Übergabe an einen Control Plan folgt *nach* Verify — dort treffen sich die beiden Roadmaps.
+
+Vorhergesagte statt gemessener Fähigkeit:: Durch Analyze und Design hindurch gibt es keinen *Prozess* zu messen, weil er noch nicht existiert. Prototypen, DOE-Läufe und Simulationen liefern durchaus Daten -- aber die Fähigkeit des künftigen Prozesses wird aus Modellen *vorhergesagt*: Übertragungsfunktionen, Toleranzketten, Fähigkeitsschätzungen. Bestätigt wird sie erst in Verify am realen Gegenstand. Dieser Abstand zwischen vorhergesagter und nachgewiesener Fähigkeit ist die zentrale Wette der Methode und die Quelle der meisten Kritik.
+
+Design Freeze als Tollgate:: Wie bei DMAIC enden Phasen in formalen Reviews, und ein Projekt kann an einem gestoppt werden. Teuer ist das Gate am Ende von Design: Danach kostet jede Änderung eine Größenordnung mehr.
+
+Der Auslöser, der DMADV wählt:: DMADV gilt, wenn der Prozess noch nicht existiert oder wenn ein bestehender so weit von der Anforderung entfernt ist, dass Verbessern die Lücke nicht schließt. Läuft ein grundsätzlich fähiger Prozess nur schlecht, ist DMADV falsch und `dmaic` richtig.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Ein neues Produkt, eine Dienstleistung oder einen Prozess entwerfen, bei dem das Qualitätsziel vor dem ersten Prototyp feststeht
+* Einen Prozess ersetzen, dessen *strukturelle* Fähigkeit die Anforderung nicht erreicht, egal wie gut er eingestellt wird
+* Unscharfe Kundenwünsche in numerische, prüfbare Abnahmeziele übersetzen, bevor die Architektur gewählt wird — der CTQ-Schritt trägt weit über die Fertigung hinaus
+* Entwurfskonzepte an offengelegten Kriterien vergleichen statt daran, wer am lautesten argumentiert
+* Als Gegenstück zu `dmaic` im Portfolio: Schon die Frage, welches von beiden gilt, ist eine Entscheidung, die man aussprechen sollte
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „DMADV und DMAIC unterscheiden sich nur in den letzten zwei Buchstaben" — sie unterscheiden sich darin, was Measure und Analyze *bedeuten*. DMAIC misst einen Prozess, DMADV beziffert eine Anforderung. DMAIC analysiert Ursachen, DMADV analysiert Konzepte.
+* ❌ „DFSS ist eine normierte Roadmap wie DMAIC" — ist es nicht. Unter dem Label DFSS kursieren DMADV, IDOV und DDICA, und keines hat sich durchgesetzt.
+* ❌ „Verify heißt, das fertige Produkt zu testen" — Verify heißt, die *vorhergesagte* Fähigkeit an Pilotmaterial zu belegen, gegen die in Measure fixierten CTQs.
+* ✓ „DMADV ist ein Stage-Gate-Entwurfsprozess mit Statistik-Gewohnheit" — trifft es, und erklärt, warum er mit iterativen Entwurfskulturen kollidiert.
+====
+
+== *Kritik*:
+
+* *Auf Erfindung angewandt, beschädigt es die Erfindung.* Der meistzitierte Fall ist 3M. Brian Hindos Reportage nennt DFSS ausdrücklich als eines der beiden Six-Sigma-Werkzeuge, die CEO James McNerney einführte: „The other flavor is called Design for Six Sigma, or DFSS, which purports to systematize a new product development process." Post-it-Erfinder Art Fry „places the blame for 3M's recent lack of innovative sizzle squarely on Six Sigma's application in 3M's research labs", und F&E-Vizepräsident Larry Wendling räumte ein: „We were letting, I think, the process get in the way of doing the actual invention." Nachfolger George Buckley „loosened the reins a bit by removing 3M research scientists' obligation to hew to Six Sigma objectives." https://effectuation.org/hubfs/Journal%20Articles/2016/06/3m-struggle-between-efficiency-and-creativity.pdf[Hindo, „At 3M, A Struggle Between Efficiency And Creativity", _BusinessWeek_, 11. Juni 2007].
+* *Jenseits der Anekdote weist die Empirie in dieselbe Richtung.* Dieselbe Reportage zitiert eine Untersuchung von Mary Benner (Wharton) und Michael L. Tushman (Harvard) zu Patenten in Lack- und Fotounternehmen vor und nach einer Qualitätsoffensive: „after the quality push, patents issued based primarily on prior work made up a dramatically larger share of the total, while those not based on prior work dwindled." Eine Entwurfsmethode, die die Ausbeute ins Inkrementelle verschiebt, passt schlecht zu der Phase, deren Aufgabe das Nicht-Inkrementelle ist.
+* *Das Übersetzungswerkzeug im Kern von DMADV liefert Zahlen, die nicht bedeuten, was Entwickler in ihnen lesen.* Andrew Olewnik und Kemper Lewis untersuchten das House of Quality — die QFD-Matrix, die in der Measure-Phase Kundenmerkmale in technische Zielwerte übersetzt — und schließen: „while the tool offers conceptual support to the design process, the quantitative information that results is largely invalid." http://www.emerald.com/ijqrm/article/25/2/125-146/139984[Olewnik & Lewis, „Limitations of the House of Quality to provide quantitative design information", _International Journal of Quality & Reliability Management_ 25(2), 2008, S. 125–146].
+* *Seine Optima sind Modell-Optima.* Die https://en.wikipedia.org/wiki/Design_for_Six_Sigma[Übersicht zu Design for Six Sigma] formuliert den stehenden Einwand gegen den Modellierungsschritt nüchtern: Auch das beste statistische Modell bleibt eine Näherung, ein geschätztes Optimum muss also kein echtes sein. DMADV erbt jede Schwäche des Modells, gegen das es entwirft — und legt sich auf dieses Modell fest, bevor es etwas zu messen gibt.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *DMAIC wurde normiert, DMADV nicht.* Der Verbesserungsweg von Six Sigma wurde zu ISO 13053-1:2011, deren Titel „Part 1: DMAIC methodology" lautet — siehe `dmaic`. Für den Entwurfsweg gibt es keine vergleichbare einheitliche Roadmap: DMADV teilt das Label DFSS unter anderem mit IDOV (identify, design, optimise, verify) und DDICA. Wer „wir machen DFSS" sagt, hat weniger gesagt, als er glaubt.
+* *Der Name reist besser als die Praxis.* DMADV bleibt die kanonische Antwort auf „Was ist das Entwurfs-Gegenstück zu DMAIC?", und genau diesen Prior bedienen Modelle zuverlässig. Welche Phasen eine Organisation tatsächlich fährt, schwankt weit stärker als das Akronym vermuten lässt.
+* *Die Werkzeuge haben die Roadmap überlebt.* QFD, `pugh-matrix`, Design-`fmea` und statistische Versuchsplanung sind in der Produktentwicklung im Alltagsgebrauch, ohne dass jemand DMADV aufruft. Als Anker taugt DMADV vor allem als *Name der Reihenfolge*; die Einzelwerkzeuge haben eigene, stärkere Prioren.

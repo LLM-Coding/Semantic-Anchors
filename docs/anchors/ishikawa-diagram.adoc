@@ -1,0 +1,66 @@
+= Ishikawa Diagram
+:categories: problem-solving
+:roles: qa-engineer, team-lead, systems-thinker, consultant, software-developer
+:proponents: Kaoru Ishikawa
+:tags: Ishikawa diagram, fishbone diagram, cause and effect diagram, 6M, seven basic tools of quality, root cause analysis, kaizen, Kawasaki, quality
+:related: five-whys, dmaic, fmea, sipoc, mece
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Ishikawa Cause-and-Effect Diagram
+
+Also known as:: fishbone diagram, cause-and-effect diagram, Fishikawa
+
+[discrete]
+== *Core Concepts*:
+
+One Effect, Many Branches:: The problem statement sits at the head of the fish. A spine runs to it, and labelled bones branch off, each carrying causes of one kind, with sub-causes branching off those. The shape exists to hold *parallel* causes side by side.
+
+The Division of Labour With Five Whys:: `five-whys` follows one causal chain downward and is at its best when the chain is real and single. The fishbone spreads across several chains at once and is the tool for problems with contributing factors rather than a cause. Running 5 Whys on a multi-factor problem produces a confident answer about one branch; running a fishbone on a simple chain produces five near-empty branches. Choose by the shape of the causality, not by habit.
+
+Categories as Memory Aids:: The branch labels are prompts, not a taxonomy. The manufacturing set is the 5 Ms — Manpower, Machine, Material, Method, Measurement — extended to 8 with Mission, Management and Maintenance. Services use 4–5 Ss (Surroundings, Suppliers, Systems, Skill, Safety); product marketing uses 8 Ps. Software teams routinely invent their own set, and that is within the method rather than a deviation from it.
+
+Structured Brainstorming, Not Evidence:: What the diagram produces is a *list of suspects*. It does not rank them, does not test them and does not tell you which one acted. The step that follows — going to the data — is not part of the diagram, which is why so many fishbones end where the real work should have started.
+
+Sub-Causes are Where the Value Is:: A branch with one word on it has recorded a category, not a cause. The technique earns its keep two and three levels down, where "Method" becomes a specific step performed in a specific wrong way.
+
+One of the Seven Basic Tools:: The fishbone diagram sits alongside the check sheet, histogram, Pareto chart, graphs, scatter diagram and stratification. Together with PDCA and the QC-story format, this set became the foundation of _kaizen_ in Japan.
+
+Key Proponent:: Kaoru Ishikawa, who popularised the technique in the 1960s while pioneering quality management at Kawasaki Heavy Industries' shipyards; the basic concept goes back to the 1920s.
+
+[discrete]
+== *When to Use*:
+
+* Incident and defect analysis where several factors plausibly contributed and no single chain explains the outcome
+* Early in an investigation, to widen the candidate set before narrowing it — the opposite move from `five-whys`
+* Group settings, where the branches give quieter participants a structured place to contribute
+* In the Analyze phase of `dmaic`, as the standard generator of cause hypotheses that the data then confirms or kills
+* Whenever a team has already converged on one explanation and needs to see what else is on the board
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "The fishbone finds the root cause" — it generates candidates. Evidence decides, and the diagram contains none.
+* ❌ "You must use the 6 Ms" — the categories are prompts. A set that fits the domain beats a memorised one.
+* ❌ "It replaces 5 Whys" — they answer different shapes of question. Parallel causes: fishbone. One chain: `five-whys`. Often both, in that order.
+* ❌ "A filled diagram is a finished analysis" — a filled diagram is a hypothesis list that has not been tested yet.
+* ✓ "It is `mece` thinking applied to causes" — fair as an aspiration; the categories overlap in practice, which is one of the criticisms below.
+====
+
+== *Criticism*:
+
+* *It offers no definition of what it is looking for.* Mark Paradies of TapRooT lists the gaps bluntly: "there is no guidance for building the bones of the fish. The building of the bone structure depends on the knowledge of the investigator", the technique lacks "any guidance for what a 'root cause' is", and selecting causes by voting "is simply the team's opinion. It doesn't prove that the selected cause caused the incident." He adds that the method "provide[s] no guidance to help investigators develop effective corrective actions". https://taproot.com/fishbone-diagram-root-cause-analysis-pros-cons/[Paradies, "Fishbone Diagram Root Cause Analysis — Pros & Cons", 7 October 2020].
+* *Forcing an incident into a fixed shape is not analysis.* Mark Galley of ThinkReliability objects to the premise itself: "The premise of the fishbone is there is one single effect for a given problem", which "does not reflect the nature of real problems". On the categories: "Making the incident fit into a predefined shape is contrived, not scientific" — the incident already happened and therefore has a structure of its own, which the template overwrites. https://blog.thinkreliability.com/updating-the-fishbone-diagram-cause-and-effect-analysis-improved[Galley, "Updating the Fishbone Diagram", 1 February 2021].
+* *Brainstorming displaces evidence-gathering.* Galley's practical objection is about where the hour goes: rather than speculating, investigators should "spend that time gathering specific evidence to support or disprove the possible causes". A diagram full of unverified branches can feel like progress while producing none.
+* *It cannot surface what the room does not know.* Because the branches come from the participants, the diagram inherits their blind spots and has no mechanism to reveal the omission. Paradies makes the same point about investigators without human-factors training guessing at causes. This limitation is structural, not a matter of facilitation skill.
+
+[discrete]
+== *Current Status*:
+
+* *Canonical and unchanged.* The diagram is documented as "one of the seven basic tools of quality control", with Ishikawa popularising it in the 1960s at the Kawasaki shipyards. https://en.wikipedia.org/wiki/Ishikawa_diagram[Ishikawa diagram overview]. There is no edition drift here: the 1960s tool and the tool taught today are the same tool.
+* *The category sets multiplied, the method did not.* 5 Ms, 8 Ms, 8 Ps and 4–5 Ss all circulate (same source), and teams invent domain-specific sets freely. When precision matters, name the category set in the prompt — otherwise expect the manufacturing 6 Ms by default.
+* *Its place in the quality canon is documented and stable.* Ronald D. Moen and Clifford L. Norman list the seven basic tools — "check sheet, histograms, Pareto chart, fishbone diagram, graphs, scatter diagrams and stratification" — and trace them, together with the PDCA cycle and the QC-story format, to the foundation of _kaizen_ in Japan. https://qicentral.rcpch.ac.uk/wp-content/uploads/sites/9/2021/10/Moen-and-Norman-on-Deming-circling-back-ph556x.pdf[Moen & Norman, "Circling Back", _Quality Progress_, November 2010, ASQ].
+* *The criticism comes from the RCA profession, not from quality management.* The sharpest objections are raised by practitioners who sell structured root-cause methods and who position the fishbone as the thing their approach replaces. That does not make the objections wrong — the missing definition of "root cause" and the absent evidence step are real — but it explains where the discourse lives and why quality-management sources report none of it.

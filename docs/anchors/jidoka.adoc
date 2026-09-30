@@ -1,0 +1,65 @@
+= Jidoka
+:categories: design-principles, testing-quality
+:roles: devops-engineer, qa-engineer, software-architect, software-developer, team-lead
+:proponents: Sakichi Toyoda, Taiichi Ohno, Toyota
+:tags: Jidoka, autonomation, automation with a human touch, Toyota Production System, andon, stop the line, Sakichi Toyoda, automatic loom, fail fast, built-in quality
+:related: poka-yoke, andon, circuit-breaker, site-reliability-engineering, five-whys
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Jidoka (自働化)
+
+Also known as:: autonomation; automation with a human touch; automation with human wisdom; built-in quality; "stop the line"
+
+[discrete]
+== *Core Concepts*:
+
+The Essence Is Automatic Stopping, Not Automatic Running:: Art Smalley puts it in one line: "The essence of jidoka is 'automatically stop,' not 'automatically run.'" A machine that keeps producing while something is wrong is worse than a machine that halts, because it converts one problem into a batch of defects.
+
+The Extra Stroke Carries the Meaning:: The Japanese is written 自働化 with the person radical in 働, not the plain 自動化 of ordinary automation. The character difference is the whole claim: a machine with human judgement built into it, not a machine that merely moves.
+
+Four Steps, Every Time:: Detect the abnormality. Stop. Fix or contain the immediate condition. Investigate the root cause and countermeasure it. Stopping without step four is a line that halts often and learns nothing — which is how jidoka acquires a reputation for costing output.
+
+Andon Extends It to People:: The same authority is given to the operator. Pulling the cord or pressing the button raises a visible signal and brings a team leader; the person is treated as the detector the machine lacks.
+
+One Pillar of Two:: Taiichi Ohno built the Toyota Production System on Just-in-Time and jidoka. They work against each other's weaknesses: JIT strips out the inventory that hides problems, jidoka makes sure the exposed problem stops the line rather than flowing downstream. Naming only JIT is naming half of TPS.
+
+It Frees People from Watching Machines:: Because the loom stopped itself, one operator could tend many. Autonomation separates human work from machine work — the economic argument, distinct from the quality one.
+
+Origin:: Sakichi Toyoda's looms. Toyota Industries records that his 1896 power loom, "Japan's first power loom built of steel and wood", was "also equipped with the weft auto stop mechanism", and that the 1924 Type G added "weft break auto-stop, warp break auto-stop and other devices". Ohno carried the principle from the loom to the assembly line.
+
+[discrete]
+== *When to Use*:
+
+* Designing a pipeline or system that must halt on a bad signal rather than push a defect downstream — failing builds that block merge, a canary that aborts the rollout
+* Arguing against "keep it green, we'll fix it later" — jidoka is the named counter-position
+* Fail-fast design: assertions, preconditions, `circuit-breaker` tripping, refusing to serve on a failed health check
+* Giving the person closest to the work the authority to stop it, and making that stop visible
+* Whenever the discussion is about detection *and* the response to detection, since jidoka insists both belong together
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Jidoka means automation" — the whole point is the extra character; plain automation is 自動化
+* ❌ "Jidoka is the andon cord" — the cord is one instance; the principle is detect-stop-fix-investigate
+* ❌ "Stopping is the goal" — stopping is the trigger for the investigation that follows
+* ❌ "Jidoka and Just-in-Time are alternatives" — they are the two pillars and depend on each other
+* ✓ "Build quality in rather than inspect it in" — the standard English gloss, and accurate
+====
+
+== *Criticism*:
+
+* *The West took the glamorous pillar and left this one.* Strategos: "Yet this aspect of TPS is mostly ignored in the West", and "when it is discussed, there is a lot of confusion and misunderstanding", partly because "Japanese language (at least in everyday usage) seems less precise than English and the several meanings of Jidoka do not translate well". The harder judgement is on management: "The line-stoppage version of Jidoka requires a strong stomach and purity of mind that few managers (Japanese or American) possess." http://strategosinc.com/RESOURCES/18-Misc/jidoka.htm[Strategos, "Jidoka & Autonomation"].
+* *Most organisations lack the capacity jidoka assumes.* Christoph Roser's objection is not philosophical but arithmetic: stopping only pays if somebody is free to solve the problem, and in most plants "your highly qualified problem solver simply has no time to solve problems". The consequence is the compromise the method is supposed to prevent — "you may have to do with a quick fix" instead of root-cause elimination, because Toyota's staffing slack is not there. https://www.allaboutlean.com/jidoka-2/[Roser, "The Philosophy and Practicality of Jidoka"] (24 July 2018).
+* *The economics of never stopping are also on record.* Roser contrasts Toyota with GM's old Fremont plant, where a "never stop" policy pushed defects downstream and produced "massive problems" and "enormous" repair costs — while the line stopped frequently anyway. The criticism cuts both ways: jidoka is expensive, and not doing it is expensive too.
+* *Detection without response is the common failure.* Smalley warns against treating jidoka as merely "pulling a cord" while ignoring the engineering, against conflating it with any automation, and against "installing detection without response systems". Without a culture that lets output drop for a quality stop, the andon is decoration. https://artoflean.com/topics/jidoka/[Smalley, "Jidoka — Automation with a Human Touch"].
+
+[discrete]
+== *Current Status*:
+
+* *The founding date is genuinely disputed, and sources disagree by decades.* Toyota Industries' own history gives 1896 for the power loom with a weft auto-stop mechanism and 1924 for the non-stop-shuttle-change Type G with both weft- and warp-break auto-stop. https://www.toyota-industries.com/company/history/toyoda_sakichi/[Toyota Industries, "The Story of Sakichi Toyoda"]. Art Smalley dates the automatic loom differently — conceived around 1901 and completed in 1926 after some 25 years of development. https://artoflean.com/topics/jidoka/[Art of Lean, Jidoka]. Both are reputable; the honest form is "Sakichi Toyoda's looms, from the 1896 power loom to the 1924 Type G", not a single year.
+* *The term is stable and still current at Toyota*, where jidoka and Just-in-Time remain the two named pillars of TPS. Unlike `dmaic` or `qfd` it carries no ISO standard; it is transmitted through practice and literature.
+* *In software the concept arrived without the word.* Andon cords, stop-the-line CI, blocking merge on red, automated rollback on a failing canary, and `circuit-breaker` tripping are all jidoka; teams rarely call them that. Naming it supplies what the English terms leave out: the obligation to investigate the cause, not just to stop.

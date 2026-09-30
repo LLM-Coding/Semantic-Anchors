@@ -1,0 +1,63 @@
+= Kaizen
+:categories: problem-solving, development-workflow
+:proponents: Masaaki Imai, Taiichi Ohno, Toyota Motor Corporation, Art Smalley
+:tags: Kaizen, kaikaku, continuous improvement, standardised work, standardise the gain, kaizen event, kaizen blitz, gemba kaizen, PDCA, everyone everywhere every day
+:roles: team-lead, consultant, qa-engineer, product-owner
+:related: muda-mura-muri, toyota-kata, andon, dmaic, boy-scout-rule
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Kaizen (改善) — kai, "change", plus zen, "for the better"; conventionally rendered "continuous improvement"
+
+Also known as:: continual improvement, gemba kaizen, daily kaizen; popularised in the West by Masaaki Imai (1930–2023), founder of the Kaizen Institute (1985)
+
+[discrete]
+== *Core Concepts*:
+
+Small, Continuous, By Everyone:: The unit is the small change made by the person doing the work, repeated without end. Imai's most-quoted formulation, as reported by Mark Graban: "Kaizen is everyone, everywhere, every day." The improvement is not delegated to a specialist function.
+
+Kaikaku Is the Deliberate Contrast:: *Kaikaku* (改革) is radical, discontinuous change — Jim Womack glosses it as "the Japanese word for revolution, in contrast with kaizen, which is incremental improvement". The pair is what keeps kaizen precise: without kaikaku as its opposite, "continuous improvement" drifts into meaning any change at all. Womack's own position is sequential: "lean transformation will always need to begin with evolution: kaizen and model lines…These create the basic stability", and only afterwards "we really do need to go fast".
+
+Standardise the Gain, Then Improve From the New Standard:: The second thing that keeps the term precise. An improvement that is not written into the standard is not kaizen; it is a good day. Art Smalley: "Permanent conditions change when the gains get built into standards and held by an operating system that runs daily", with "standardized work as the mechanism connecting daily management to daily improvement — not as a document in a binder". Standard and improvement alternate: the standard is the floor the next improvement starts from, never a freeze.
+
+A Habit, Not a Project:: Graban summarises Imai's position: "Not a project. Not an event. A daily practice, distributed across the entire organization, expected of everyone — not delegated to a kaizen office or a specialist team."
+
+It Needs Something to Look At:: Kaizen without `muda-mura-muri` has no diagnosis and without `genchi-genbutsu` no evidence. It is the habit; those supply what the habit examines.
+
+In Software:: The `boy-scout-rule` is kaizen scoped to a file. Retrospective actions that actually change the working agreement are kaizen; retrospective actions that produce a list are not, because nothing was standardised.
+
+[discrete]
+== *When to Use*:
+
+* Framing improvement as an everyday obligation of the whole team rather than a quarterly initiative
+* Distinguishing a small, reversible, local change from a redesign — say kaizen or say kaikaku, and the conversation separates
+* Any improvement effort where the gain will evaporate unless the new way becomes the documented default
+* As the daily counterpart to a project-shaped method such as `dmaic`, and as the cultural ground under `toyota-kata`
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Kaizen means a week-long improvement workshop" — that is a kaizen event, a Western packaging, and the thing the criticism below targets
+* ❌ "Kaizen is any improvement" — kaikaku exists precisely so that the word keeps meaning *incremental*
+* ❌ "Kaizen is the opposite of standardisation" — it depends on it; without a standard there is nothing to improve from and no way to hold a gain
+* ❌ "Kaizen is a Toyota tool" — it is a management philosophy that Imai generalised well beyond manufacturing
+* ✓ "It is a habit that produces small, standardised changes made by the people doing the work" — accurate
+====
+
+== *Criticism*:
+
+* *The event replaced the habit.* Art Smalley's critique is aimed squarely at the packaged form: "Kaizen events most commonly fail because organizations never make the transition from running improvement events to building an operating and management system that sustains results daily." And on the arithmetic of the format itself: "A one-week event cannot change permanent conditions on its own. At most it is a vehicle for local change and learning." His conclusion is the line the criticism turns on: "The event is not the system. The daily discipline is the system." https://artoflean.com/gemba-coach/why-does-kaizen-fail/[Smalley, "Why Does Kaizen Fail?", Art of Lean].
+* *"Kamikaze kaizen".* Smalley reports that Jim Womack coined the term for such efforts — "intense bursts of activity with no lasting effect other than a fiery death". We verified this quotation only in Smalley's article, not in an original Womack publication; treat it as attributed via Smalley.
+* *Imai himself was frustrated by how the West took it up.* In his foreword to _Healthcare Kaizen_, quoted by Graban: "I am profoundly frustrated with the slow pace at which Kaizen strategy has been embraced by the business community", and "Embracing Kaizen is a long-term journey. It is not a flavor of the month and requires the cultural change, commitment and self-discipline that needs to be sustained over many decades." https://www.leanblog.org/2023/06/in-memoriam-masaaki-imai-the-father-of-kaizen-1930%E2%81%A0-%E2%81%A02023/[Graban, "In Memoriam: Masaaki Imai"] (16 June 2023).
+* *Continuous improvement without respect for people is the standard failure.* Bob Emiliani: Fake Lean is "the technical application of 'Continuous Improvement' tools and methods, invariably in a zero-sum fashion"; Real Lean requires both continuous improvement *and* respect for people. https://bobemiliani.substack.com/p/back-story-real-vs-fake-lean[Emiliani, "The Backstory: Real vs. Fake Lean"] (13 September 2013).
+
+[discrete]
+== *Current Status*:
+
+* *The founding text is _Kaizen (Ky'zen), the Key to Japan's Competitive Success_* — Masaaki Imai, Random House Business Division, New York, 1986, 259 pages. The widely cited later edition is published by McGraw-Hill; the title is often given without the "(Ky'zen)" of the original.
+* *The more influential book is the second one.* _Gemba Kaizen: A Commonsense, Low-Cost Approach to Management_ (McGraw-Hill, 1997) moved the emphasis to the actual place of work and won the Shingo Research Prize in 1999. Imai's last book was _Strategic KAIZEN_ (McGraw-Hill, 2021). He died on 12 June 2023, aged 92.
+* *The trademarked form is a live complication.* The Kaizen Institute, which Imai founded in 1985, writes the term as KAIZEN™ in its own material. The word is simultaneously generic Japanese vocabulary, a management philosophy and a consultancy's brand — worth knowing when a source's capitalisation looks odd.
+* *"Kaizen event" remains the dominant Western usage* despite the criticism above, and it is the sense a model is likeliest to reach for. Naming daily kaizen, or naming kaikaku as the contrast, is what steers it back.

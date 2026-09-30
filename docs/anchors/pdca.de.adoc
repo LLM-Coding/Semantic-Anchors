@@ -1,0 +1,69 @@
+= PDCA
+:categories: problem-solving, development-workflow
+:roles: team-lead, consultant, qa-engineer, systems-thinker
+:proponents: Walter A. Shewhart, W. Edwards Deming, Kaoru Ishikawa
+:tags: PDCA, PDSA, Deming-Kreis, Shewhart-Zyklus, plan do check act, plan do study act, Kaizen, kontinuierliche Verbesserung, Qualität
+:related: dmaic, dmadv, spc, five-whys, ishikawa-diagram
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Plan-Do-Check-Act
+
+Auch bekannt als:: Deming-Kreis, Deming-Rad, Shewhart-Zyklus; in Demings eigener Fassung PDSA (Plan-Do-Study-Act)
+
+[discrete]
+== *Kernkonzepte*:
+
+Vier Schritte, endlos wiederholt:: Die Schleife ist mit Absicht klein und mit Absicht ohne Ende:
+* *Plan* — das Problem benennen, eine Hypothese zu Ursache und Abhilfe bilden und festlegen, woran das Ergebnis gemessen wird
+* *Do* — die Änderung durchführen, möglichst im kleinen Maßstab
+* *Check* — das beobachtete Ergebnis mit dem erwarteten vergleichen
+* *Act* — die Änderung zum Standard machen, wenn sie wirkte; zurück zu Plan, wenn nicht
+
+Die wissenschaftliche Methode, auf Werkstattgröße geschrumpft:: PDCA ist eine Experimentschleife: Hypothese, Versuch, Auswertung, Entscheidung. Ihr Vorfahr ist Shewharts Folge von 1939 aus specification, production und inspection, die er gerade deshalb von der Geraden zum Kreis bog: „these three steps must go in a circle instead of in a straight line".
+
+Erst im Kleinen:: Der Do-Schritt ist als *Test* gemeint, nicht als Rollout. Der kleine Maßstab hält eine falsche Hypothese billig — und macht den Check-Schritt überhaupt erst deutbar.
+
+Act heißt standardisieren oder erneut schleifen:: Der am häufigsten übersprungene Schritt. Eine erfolgreiche Änderung, die nicht in den Standard geschrieben wird, verfällt; eine gescheiterte, die nicht nach Plan zurückfließt, lehrt nichts. In Act entscheidet sich, ob die Schleife Wissen sammelt oder verliert.
+
+Der Motor unter Kaizen:: PDCA, die sieben elementaren Qualitätswerkzeuge und das QC-Story-Format wurden in Japan die Grundlage des _Kaizen_. Wo ein Text „kontinuierliche Verbesserung" schreibt, ohne eine Methode zu nennen, meint er meist PDCA.
+
+Vorfahr der phasengetakteten Zyklen:: `dmaic` ist PDCA mit Gates, Messdisziplin und Statistik; `dmadv` überträgt dieselbe Linie auf den Entwurf. Beide stammen von dieser Vierschrittschleife ab.
+
+Deming bevorzugte „Study":: Deming warnte, „check" führe in die Irre, weil das englische Wort „to hold back" bedeute — zurückhalten. Seine späte Fassung heißt PDSA, Plan-Do-Study-Act: Study fragt, was *gelernt* wurde, nicht bloß, ob der Zielwert getroffen ist. Siehe Aktueller Stand — die Namensspaltung ist kein Schönheitsfehler.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Bei jeder Verbesserung, deren Abhilfe eine Hypothese ist und keine bekannte Lösung
+* Für kleine, umkehrbare Änderungen, die sich testen lassen, bevor man sich bindet — die Ökonomie der Schleife hängt daran, dass der Test billig ist
+* Als Rahmen für Retrospektiven, Incident-Nachbereitungen und Prozessexperimente, die sonst bei „wir sollten besser werden" enden
+* Wo ein gemeinsames Vokabular für „wir haben es versucht, das haben wir gelernt" fehlt — PDCA liefert die vier Fächer
+* Als Gerüst eines Managementsystems: ISO 9001:2015 und ihre Geschwister sind genau entlang dieser vier Schritte gegliedert
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Deming hat PDCA erfunden" — hat er nicht. Japanische Führungskräfte formten 1951 sein Deming-Rad von 1950 zu PDCA um; Deming schrieb später: „How the PDCA ever came into existence I know not."
+* ❌ „PDCA und PDSA sind zwei Namen für dasselbe" — Deming selbst bestritt das: Auf die Frage, wie QC-Zirkel und Deming-Kreis zusammenhängen, antwortete er „They bear no relation to each other."
+* ❌ „Check heißt, das Ergebnis abnehmen" — Check vergleicht das Ergebnis mit der *Vorhersage*. Ohne eine in Plan festgehaltene Vorhersage gibt es nichts zu prüfen.
+* ❌ „Ein Durchlauf ist ein PDCA" — die Methode *ist* die Wiederholung. Eine einzelne Runde ist ein Experiment, kein Verbesserungssystem.
+* ✓ „PDCA ist die wissenschaftliche Methode in Arbeitskleidung" — trifft es, und erklärt, warum die Kritik sie an wissenschaftlichen Maßstäben misst.
+====
+
+== *Kritik*:
+
+* *Fast niemand führt sie so aus, wie sie spezifiziert ist.* Michael J. Taylor und Kollegen prüften 73 begutachtete Arbeiten aus dem Gesundheitswesen, die PDSA anzuwenden beanspruchten, und fanden *zwei*, die alle fünf Kernprinzipien erfüllten. „Less than 20% (14/73) fully documented the application of a sequence of iterative cycles", und „only 15% (7/47) reported the use of quantitative data at monthly or more frequent data intervals to inform progression of cycles." Ihr Fazit ist deutlich: „the varied practice compromises its effectiveness as a method for improvement." https://pmc.ncbi.nlm.nih.gov/articles/PMC3963536/[Taylor, McNicholas, Nicolay, Darzi, Bell & Reed, „Systematic review of the application of the plan–do–study–act method to improve quality in healthcare", _BMJ Quality & Safety_ 23(4), 2014, S. 290–298]. Der Befund schneidet nach zwei Seiten: Er kritisiert die Praxis — und er macht Wirksamkeitsaussagen über PDCA schwer prüfbar, weil selten die Methode gemessen wurde.
+* *Deming verwarf genau die Fassung, die alle benutzen.* Ronald D. Moen und Clifford L. Norman belegen den Einwand an der Quelle. In einem Brief vom 17. November 1990 schrieb Deming: „Be sure to call it PDSA, not the corruption PDCA." Er „warned his audiences that the PDCA version is frequently inaccurate because the English word ‚check' means ‚to hold back'". https://qicentral.rcpch.ac.uk/wp-content/uploads/sites/9/2021/10/Moen-and-Norman-on-Deming-circling-back-ph556x.pdf[Moen & Norman, „Circling Back", _Quality Progress_, November 2010, ASQ]. Wer PDCA „den Deming-Kreis" nennt, schreibt Deming einen Zyklus zu, den er öffentlich zurückwies.
+* *Die beiden Zyklen zielen auf verschiedene Ebenen.* Bei einer Runde im US Government Accounting Office wurde Deming gefragt, wie QC-Zirkel und Deming-Kreis zusammenhängen: „They bear no relation to each other. The Deming circle is a quality control program. It is a plan for management. … Maybe you could say that the Deming circle is for management, and the QC circle is for a group of people that work on faults encountered at the local level" (dieselbe Quelle). Wer PDCA für Strategiearbeit nimmt, benutzt eine lokale Fehlerbehebungsschleife für eine Aufgabe, für die sie nicht geformt wurde.
+* *Check ohne Vorhersage verkommt zum Statusbericht.* Die Lücke, die Moen, Nolan und Provost 1991 schlossen, indem sie Vorhersage und Theorie im Plan-Schritt verlangten, ist genau die Lücke, die das Taylor-Review zwanzig Jahre später vermaß: Ohne festgehaltene Vorhersage und ohne Daten über die Zeit entsteht kein Wechselspiel aus Deduktion und Induktion — und damit nichts Wissenschaftliches.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Die Namensspaltung ist belegt, und der populäre Name ist der „verdorbene".* Moen und Norman legen die Linie offen: Shewhart-Zyklus (1939) → Deming-Rad (1950, JUSE-Seminar: Design, Produktion, Verkauf, Forschung) → PDCA der japanischen QC (1951, laut Masaaki Imai, ohne dass je jemand die Urheberschaft beanspruchte) → Ishikawas erweitertes PDCA für TQC (1985) → Demings Shewhart-Zyklus (1986) → Demings PDSA, „the Shewhart Cycle for Learning and Improvement" (1993). PDCA gewann die Popularität, PDSA trägt Demings Absicht.
+* *Die Spaltung ist heute regional und fachlich, nicht aufgelöst.* Die Qualitätsverbesserung im Gesundheitswesen schreibt PDSA — Deming folgend und dem Model for Improvement, das Langley, Nolan und Kollegen 1994 auf dem PDSA-Zyklus aufbauten. Fertigung, Lean und die ISO-Welt schreiben PDCA. Beide Prioren sind stark; wer die Lernbetonung braucht, sollte PDSA schreiben und sagen, warum.
+* *PDCA steckt in den ISO-Managementsystemnormen.* ISO 9001:2015 nennt den Plan-Do-Check-Act-Zyklus ausdrücklich in der Einleitung und ordnet die Forderungskapitel danach: Planung (6) als Plan, Unterstützung und Betrieb (7, 8) als Do, Bewertung der Leistung (9) als Check, Verbesserung (10) als Act. https://the9000store.com/articles/iso-9000-tips-plan-do-check-act/[Überblick zur PDCA-Struktur der ISO 9001:2015]. Diese Verankerung ist der Grund, warum die Vier-Buchstaben-Fassung bleibt, was immer Deming schrieb.

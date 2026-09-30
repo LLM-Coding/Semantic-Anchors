@@ -1,0 +1,67 @@
+= FMEA
+:categories: testing-quality, problem-solving
+:roles: qa-engineer, software-architect, systems-thinker, devops-engineer, consultant
+:proponents: US Armed Forces (MIL-P-1629), NASA, AIAG, VDA
+:tags: FMEA, FMECA, Fehlermöglichkeits- und Einflussanalyse, RPZ, Risikoprioritätszahl, Action Priority, Bedeutung Auftreten Entdeckung, Zuverlässigkeit, DFMEA, PFMEA
+:related: dmaic, ishikawa-diagram, premortem, stride, iec-61508-sil-levels
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Failure Mode and Effects Analysis — Fehlermöglichkeits- und Einflussanalyse
+
+Auch bekannt als:: FMECA (mit zusätzlicher Kritikalitätsbewertung); nach Gegenstand Design-FMEA (DFMEA) und Prozess-FMEA (PFMEA)
+
+[discrete]
+== *Kernkonzepte*:
+
+Von unten nach oben, nicht von oben nach unten:: FMEA beginnt beim Bauteil oder Prozessschritt und fragt, was *hier* ausfallen kann, und verfolgt die Wirkung nach außen. Die Fehlerbaumanalyse geht umgekehrt vor, vom unerwünschten Ereignis zu seinen Ursachen. Die falsche Richtung erzeugt ein plausibel aussehendes Dokument zu einer Frage, die niemand gestellt hat.
+
+Drei Fragen je Fehlermöglichkeit:: Zu jeder Ausfallart hält die Analyse fest: die *Wirkung* (was Kunde oder System merkt), die *Ursache* (warum es passiert) und die *Maßnahmen* (was es verhindert oder entdeckt). Getrennte Spalten, weil sie getrennte Abhilfen haben: Vermeidung greift die Ursache an, Entdeckung das Durchschlüpfen.
+
+Drei Bewertungen — und was früher damit geschah:: Jede Fehlermöglichkeit wird nach Bedeutung (Severity), Auftreten (Occurrence) und Entdeckung (Detection) bewertet, klassisch auf einer Skala von 1 bis 10. Die klassische Risikoprioritätszahl ist ihr Produkt — RPZ = B × A × E — und legt die Reihenfolge der Abarbeitung fest. Genau an dieser Multiplikation hängt der zentrale Streit der Methode; siehe Kritik und Aktueller Stand.
+
+Vermeiden schlägt Entdecken:: Eine Maßnahme, die den Fehler verhindert, ist mehr wert als eine, die ihn nachträglich fängt, und das Bewertungsschema soll das abbilden. Wer die RPZ jagt, verbessert oft die Entdeckung, weil sie am billigsten ist — die Zahl sinkt, das Risiko nicht.
+
+Nach vorn gerichtet, anders als Ursachenanalyse:: `five-whys` und `ishikawa-diagram` arbeiten rückwärts von etwas Geschehenem. FMEA arbeitet vorwärts auf etwas zu, das noch nicht passiert ist. Das macht sie in der Absicht zum Geschwister von `premortem` und im Aufbau zu dem von `stride`: Beide zählen Fehlermöglichkeiten gegen ein Modell auf, bevor es einen Schaden zu untersuchen gibt.
+
+Ein lebendes Dokument, keine Lieferung:: Eine FMEA, die einmal für ein Audit geschrieben und nie wieder geöffnet wird, hat ihre Funktion verloren. Ihr Wert entsteht dadurch, dass sie bei Änderungen an Entwurf, Prozess oder Felddaten erneut aufgeschlagen wird.
+
+Wichtige Stationen:: 1949 im US-Militärdokument MIL-P-1629 beschrieben, 1980 als MIL-STD-1629A überarbeitet; NASA-Auftragnehmer setzten Varianten in Apollo, Viking, Voyager und Skylab ein; Ford führte FMEA nach der Pinto-Affäre ein und weitete sie auf die Prozess-FMEA aus; die AIAG veröffentlichte 1993 den ersten Automobilstandard.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Beim Entwerfen oder Ändern von etwas, dessen Ausfall teuer, gefährlich oder schwer umkehrbar ist
+* Vor Launch, Migration oder Umschaltung, um Fehlermöglichkeiten aufzuzählen, solange noch Maßnahmen ergänzt werden können
+* In Sicherheits- und Regulierungsarbeit, wo der prüfbare Nachweis betrachteter Fehlermöglichkeiten selbst eine Forderung ist — siehe `iec-61508-sil-levels`
+* In Software: Abhängigkeits- und Schnittstellenanalyse, Resilienz-Reviews, überall dort, wo „was passiert, wenn dieser Aufruf nie zurückkommt?" eine schriftliche Antwort braucht
+* Als Risiko-Gegenstück zu `dmaic`: FMEA ist Standardwerkzeug in dessen Analyze- und Improve-Phase
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „FMEA findet die Ursache eines Vorfalls" — sie ist vorausschauend. Für Geschehenes taugen `five-whys` oder `ishikawa-diagram`.
+* ❌ „Eine niedrige RPZ bedeutet niedriges Risiko" — eine Fehlermöglichkeit mit Bedeutung 10 bleibt eine mit Bedeutung 10. Die Zahl verdeckt gerade das Wichtigste.
+* ❌ „FMEA deckt Mehrfachausfälle ab" — von unten angewandt findet sie Einzelfehler. Ausfälle, die zwei Teilsysteme gleichzeitig brauchen, bleiben ihr weitgehend unsichtbar.
+* ❌ „RPZ ist, was FMEA ausmacht" — der Automobilstandard hat die RPZ zugunsten der Action Priority gestrichen. Die Bewertungen blieben, die Multiplikation nicht.
+* ✓ „FMEA ist strukturierter Pessimismus mit Prüfspur" — trifft es, und erklärt, warum sie gut zu `premortem` passt.
+====
+
+== *Kritik*:
+
+* *Die RPZ sortiert konstruktionsbedingt falsch.* Die https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis[FMEA-Übersicht] benennt den Defekt genau: „The multiplication of the severity, occurrence and detection rankings may result in rank reversals, where a less serious failure mode receives a higher RPN than a more serious failure mode." Diese Rangumkehr ist kein Anwendungsfehler, sie folgt aus der Multiplikation ordinaler Bewertungen.
+* *Rechnen auf Ordinalskalen ist keine läßliche Sünde.* Michael Krisper katalogisiert die Problemklasse, zu der die RPZ gehört — „ordinal scales, semi-quantitative arithmetics, range compression, risk inversion, ambiguity, and neglection of uncertainty" — über 24 dokumentierte Probleme ordinaler Risikomatrizen hinweg und plädiert für durchgehend quantitative Risikobewertung. https://arxiv.org/abs/2103.05440[Krisper, „Problems with Risk Matrices Using Ordinal Scales", arXiv:2103.05440, 2021].
+* *Der Ersatz zog eigene Kritik auf sich, aus der FMEA-Praxis.* Richard Harpster argumentierte schon vor der Veröffentlichung gegen die AIAG-VDA-Design-FMEA: Deren Struktur-, Funktions- und Fehlerbaum-Ansatz sei „both ineffective as a risk management tool and very inefficient", er „more closely resembles a fault tree analysis than a Design FMEA process", und Ingenieure „will not spend the time and effort to develop verifyable functions/requirements for each of the sub-assemblies". https://www.qualitydigest.com/inside/risk-management-column/case-against-aiag-vda-dfmea-013118.html[Harpster, „The Case Against the AIAG-VDA DFMEA", _Quality Digest_, 31. Januar 2018].
+* *Komplexität ist selbst ein Risiko.* Carl S. Carlson, Autor von _Effective FMEAs_, nennt fünf Einwände gegen das neue Handbuch: Es „adds considerable new terminology and other complexities", es „consumes valuable time on potentially lower-risk tasks", „enforcing causes at next lower level can miss important causes", es erschien vor der zugehörigen Norm, und es „does an inadequate job of clearly identifying high-risk interfaces". https://accendoreliability.com/reviewing-aiag-vda-fmea-handbook/[Carlson, „Reviewing AIAG / VDA FMEA Handbook", Accendo Reliability, 1. Dezember 2022]. Sein Punkt: Komplexität kann genau die Hochrisikopunkte begraben, die sie sichtbar machen sollte.
+* *Allein eingesetzt trägt sie nicht, was auf sie gelegt wird.* Dieselbe FMEA-Übersicht berichtet, im Gesundheitswesen habe die Methode „limited validity when used in isolation" gezeigt, wobei Zuschnitt und Organisationsgrenzen das Ergebnis stark beeinflussen. Wo die Grenze gezogen wird, entscheidet, was die Analyse überhaupt finden kann.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Die Automobilwelt ersetzte die RPZ 2019 durch die Action Priority.* Das AIAG & VDA FMEA Handbook erschien in erster Auflage im Juni 2019 und löste die AIAG-Handbücher der 4. Auflage und VDA Band 4 ab. Mary Rowzee beschreibt die Änderung: „the recommended method of combining these three indices into a single composite value is no longer the risk priority number" — stattdessen weist eine dreiachsige Referenztabelle jeder Fehlermöglichkeit eine hohe, mittlere oder niedrige Action Priority zu. https://www.qualitydigest.com/inside/lean-article/understanding-aiag-vda-s-fmea-process-and-approach-061820.html[Rowzee, „Understanding AIAG-VDA's FMEA Process and Approach", _Quality Digest_, 18. Juni 2020]. Eine zweite Quelle sagt es unverblümt: „the Risk Priority Number or RPN has been eliminated. It has been replaced by the AP or Action Priority process." https://quality-one.com/aiag-vda-fmea/[Quality-One, AIAG & VDA FMEA].
+* *Das Handbuch ordnete die Methode zugleich in sieben Schritte* — Planung und Vorbereitung, Strukturanalyse, Funktionsanalyse, Fehleranalyse, Risikoanalyse, Optimierung, Ergebnisdokumentation. Das ist eine andere Form als das spaltenweise Formblatt, das die meisten Trainingsdaten beschreiben (Rowzee, siehe oben).
+* *Außerhalb der Automobilbranche ist die RPZ nicht verschwunden.* Die generischen Normen bleiben in Gebrauch — IEC 60812 für FMEA und FMECA, SAE J1739 im Automobilbereich —, und in nicht-automobilem Material dominiert die RPZ weiter als Prior. Sagt ein Prompt nur „FMEA", greift das Modell erwartbar zu Bedeutung × Auftreten × Entdeckung, solange Action Priority nicht genannt wird.
+* *Folge fürs Prompten:* Die Auflage zu nennen zählt hier mehr als bei den meisten Ankern. „FMEA" liefert das klassische Formblatt, „AIAG & VDA FMEA (2019)" liefert sieben Schritte und Action Priority. Das sind verschiedene Artefakte.

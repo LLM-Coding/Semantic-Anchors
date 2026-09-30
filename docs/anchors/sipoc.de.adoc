@@ -1,0 +1,66 @@
+= SIPOC
+:categories: problem-solving, requirements-engineering
+:roles: business-analyst, consultant, requirements-engineer, product-owner, team-lead
+:proponents: Total Quality Management practice (no single originator)
+:tags: SIPOC, COPIS, suppliers inputs process outputs customers, Prozessabgrenzung, grobe Prozesslandkarte, Define-Phase, Six Sigma, Kaizen, Systemgrenze
+:related: dmaic, dmadv, ishikawa-diagram, event-storming, mece
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Suppliers, Inputs, Process, Outputs, Customers — Lieferanten, Eingaben, Prozess, Ergebnisse, Kunden
+
+Auch bekannt als:: COPIS, wenn rückwärts ausgefüllt; grobe Prozesslandkarte; Scoping-Diagramm
+
+[discrete]
+== *Kernkonzepte*:
+
+Fünf Spalten, eine Seite:: Jedes SIPOC ist dieselbe Tabelle. *Suppliers* liefern die *Inputs*; der *Process* — fünf bis sieben Schritte, nicht mehr — macht daraus die *Outputs*; die *Customers* empfangen sie. Die Seitengrenze ist keine Konvention, sie ist das Werkzeug. Ein SIPOC, das eine zweite Seite braucht, ist eine Prozesslandkarte geworden und hat seine Aufgabe verloren.
+
+Seine Aufgabe ist die Grenzziehung:: SIPOC beantwortet „wo fängt dieser Prozess an, wo hört er auf, und wer steht auf welcher Seite?", bevor jemand darüber streitet, was darin schiefläuft. In `dmaic` gehört es in die Define-Phase, und es ist der übliche Auftakt von Kaizen-Events.
+
+Erst der Prozess, dann nach außen:: Die übliche Reihenfolge ist P → O → C → I → S: Prozessschritte benennen, dann was herauskommt, dann wer es empfängt, dann was hineingeht, dann wer liefert. Wer bei den Lieferanten beginnt, bekommt eine Einkaufsliste; wer beim Prozess beginnt, hält den Umfang ehrlich.
+
+Kunden sind mehrere und namentlich:: Die Customers-Spalte erzwingt die Frage, *wer genau* welches Ergebnis empfängt — interne Übergabepartner eingeschlossen. Die meisten Scoping-Streitigkeiten sind Meinungsverschiedenheiten, die sich in dieser Spalte verstecken.
+
+Nur, was die Grenze überquert:: Inputs und Outputs sind die Dinge, die über die Grenze gehen: Dokumente, Daten, Entscheidungen, Material. Was die Linie nie überquert, gehört in die Process-Spalte oder nirgendwohin.
+
+COPIS dreht die Leserichtung um:: „To emphasize putting the needs of the customer foremost, the tool is sometimes called COPIS and the process information is filled out in reverse order by starting with the customer and working upstream to the supplier." Dieselben fünf Spalten, entgegengesetzte Richtung, anderes Gespräch: COPIS beginnt beim Kundenbedarf und fragt, was stromaufwärts wahr sein muss.
+
+Sein Platz im Werkzeugkasten:: SIPOC grenzt ab, `ishikawa-diagram` stellt Ursachenhypothesen innerhalb dieser Grenze auf, die detaillierte Prozessaufnahme kommt später. SIPOC für eine der anderen beiden Aufgaben zu nehmen, ist die häufigste Art, es zu verschwenden.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Zu Beginn einer Verbesserungsinitiative, bevor die Problemstellung steht — der Streit über den Umfang ist auf einer Seite billiger
+* Immer dann, wenn „der Prozess" für die Anwesenden Verschiedenes bedeutet
+* Für Systemgrenzen in der Softwarearbeit: SIPOC passt sauber auf „wer ruft uns, was schickt er, was geben wir zurück, wer verbraucht es"
+* Als Define-Artefakt in `dmaic` und um die Kundenseite von `dmadv` zu rahmen, bevor CTQs geschrieben werden
+* Als Aufwärmen vor `event-storming` oder detaillierter Modellierung, um sich über den Geltungsbereich zu einigen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Ein SIPOC ist eine Prozesslandkarte" — es ist mit Absicht das Gegenteil: fünf bis sieben Schritte, keine Verzweigungen, keine Swimlanes. Detail ist ein anderes Werkzeug.
+* ❌ „Customers meint zahlende Kunden" — gemeint ist, wer ein Ergebnis empfängt, meist Kolleginnen und Kollegen.
+* ❌ „COPIS ist ein anderes Werkzeug" — dieselbe Tabelle, umgekehrte Leserichtung, Kunde zuerst.
+* ❌ „Einmal gezeichnet, ist es fertig" — das SIPOC ist eine Abgrenzungsvereinbarung, und solche Vereinbarungen veralten.
+* ✓ „SIPOC ist ein Grenzvertrag in Tabellenform" — trifft es, und erklärt, warum die Streitgespräche, die es auslöst, der Zweck sind und keine Verzögerung.
+====
+
+== *Kritik*:
+
+* *Die meisten sind Dekoration.* Christian Loyer, damals Werkleiter bei Ecolab, schreibt, die große Mehrheit der SIPOCs habe keine wirkliche Bedeutung und verändere in Verbesserungsprojekten nichts, weil sie „not detailed enough" und „not integrated at all" seien — die Spalten werden gefüllt, aber nie verknüpft. Niemand kann sagen, welcher Lieferant welchen Input speist oder welcher Schritt welches Ergebnis erzeugt. https://www.processexcellencenetwork.com/lean-six-sigma-business-performance/articles/the-integrated-sipoc-the-full-power-of-system-thin[Loyer, „Using an Integrated SIPOC for Better Results", Process Excellence Network, 3. Juni 2011].
+* *Klarheit wird für Verständnis gehalten.* Die Aufgeräumtheit des Werkzeugs ist selbst eine Gefahr: Ein fertiges SIPOC erweckt den Eindruck, der Prozess sei verstanden, während nur seine gröbsten Elemente erfasst sind. „Using SIPOC alone won't stop problems occurring within processes", und „it's very simplistic, so it only serves as a starting point for process mapping". https://thinkinsights.net/consulting/sipoc-process-analysis[Think Insights, „SIPOC Process Analysis"].
+* *Es erbt die blinden Flecken der Anwesenden.* „Your SIPOC model is only as good as the people who created it. If key people are missing when its created then it's likely important items will be missing" (dieselbe Quelle). Das Werkzeug hat keinen Mechanismus, der eigene Auslassungen sichtbar macht — eine Schwäche, die es mit jedem auf Brainstorming beruhenden Artefakt teilt, auch mit `ishikawa-diagram`.
+* *Die benannte Kritik ist dünn, und das gehört gesagt.* Eine akademische oder buchlange Kritik speziell an SIPOC fanden wir nicht; die Einwände oben stammen aus Praktikertexten. Gesucht wurde auf Englisch und Deutsch. Das ist eine Grenze unserer Suche, kein Beleg, dass es keine Kritik gibt.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Alt, stabil und herrenlos.* SIPOC „was in use at least as early as the total quality management programs of the late 1980s" und ist weiterhin in Gebrauch; beschrieben wird es als Vereinfachung von Philip Crosbys Prozessmodell. https://en.wikipedia.org/wiki/SIPOC[SIPOC-Übersicht]. Niemand beansprucht die Urheberschaft — mit ein Grund, warum die fünf Spaltennamen stabil sind, während alles darum herum variiert.
+* *Sein Zuhause ist die Define-Phase.* Das Werkzeug „is often presented at the outset of process improvement efforts such as kaizen events or during the ‚define' phase of the DMAIC process" (dieselbe Quelle). Das ist der Prior, den ein Modell bedient: Wer ein SIPOC verlangt, bekommt eine Scoping-Tabelle in Six-Sigma-Färbung.
+* *COPIS ist eine lebende Variante, keine Fußnote.* Die kundenzuerst-Reihenfolge ist die Standardantwort dort, wo die Verbesserung vom Kundenbedarf getrieben wird und nicht von internen Fehlern. COPIS statt SIPOC zu sagen, ändert die Spalte, in der das Gespräch beginnt — ein kleiner Prompt-Hebel mit echter Wirkung.
+* *Erweiterungen aus der Praxis kursieren.* Integrierte und erweiterte Formen — Spalten untereinander verknüpft oder um Anforderungen und Messgrößen ergänzt — existieren gerade deshalb, weil die schlichte Fünf-Spalten-Tabelle zu früh aufhört. Keine hat die fünf Ursprungsbuchstaben verdrängt.

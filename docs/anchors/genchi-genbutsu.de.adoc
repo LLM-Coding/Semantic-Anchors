@@ -1,0 +1,63 @@
+= Genchi Genbutsu
+:categories: problem-solving, knowledge-management
+:proponents: Taiichi Ohno, Toyota Motor Corporation, Art Smalley
+:roles: software-architect, team-lead, consultant, business-analyst
+:tags: Genchi Genbutsu, Gemba, hingehen und schauen, Ohno-Kreis, Kreidekreis, direkte Beobachtung, Gemba Walk, Toyota Way, tatsächlicher Ort, an die Quelle gehen
+:related: five-whys, kaizen, andon, xy-problem, socratic-method
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Genchi Genbutsu (現地現物) -- „der tatsächliche Ort, das tatsächliche Ding"
+
+Auch bekannt als:: hingehen und selbst anschauen, ans Gemba gehen, go and see, eines der fünf Prinzipien des Toyota Way 2001
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwei Wörter, zwei Forderungen:: Art Smalley liest die Zeichen getrennt: 現地 (genchi) ist „the actual place", wo die Arbeit stattfindet; 現物 (genbutsu) ist „the actual thing itself -- not reports or descriptions of it". Beide Hälften müssen erfüllt sein. Wer hingeht und dort ein Dashboard liest, erfüllt keine von beiden.
+
+Geh selbst:: Wer entscheidet, muss beobachten. Das Hinschauen zu delegieren und eine Zusammenfassung zu bekommen, führt genau jene Abstraktionsschicht wieder ein, gegen die das Prinzip gerichtet ist.
+
+Gemba ist der Schwesterbegriff:: *Gemba* (現場) ist der tatsächliche Ort -- „der Tatort", im Sinne eines japanischen Reporters oder Ermittlers. Smalley weist darauf hin, dass beide Begriffe das Zeichen 現 („gegenwärtig", „tatsächlich") teilen, und nennt das „Toyota's linguistic emphasis on reality versus assumption". Genchi Genbutsu ist die Praxis, Gemba der Ort.
+
+Der Ohno-Kreis:: Die kanonische Veranschaulichung. Taiichi Ohno zeichnete einen Kreidekreis auf den Hallenboden und ließ einen Ingenieur darin stehen und den Prozess beobachten. Christoph Roser: „Often, a disciple stood in the circle for hours before Ohno was satisfied." Es ging nicht um Ausdauer, sondern um Wahrnehmung: Die Annahme lautet, dass die meisten Menschen nicht sehen, was vor ihnen liegt, und dass stundenlanges Zusehen zeigt, was ein Vorbeigehen nie zeigt.
+
+Beobachtung vor Hypothese:: Genchi Genbutsu liegt vor jeder Ursachensuche. Es ist das, was eine Kette nach `five-whys` überhaupt erst brauchbar macht: Ohne direkte Beobachtung wird das erste „Warum" aus dem Gedächtnis beantwortet, und jedes weitere erbt die Vermutung.
+
+Warum das für ein LLM zählt:: Benannt, drängt der Begriff dazu, den tatsächlichen Code, die tatsächliche Logzeile, den tatsächlichen Trace, den tatsächlich fehlschlagenden Test zu lesen -- bevor theoretisiert wird. Die Voreinstellung eines Modells ist, aus dem bereits mitgebrachten Muster zu antworten. Genau das ist der Fehler „Bericht statt Sache", auf den das Prinzip zielt. „Genchi Genbutsu" ist die kurze Anweisung: erst hinsehen.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Vor jeder Ursachenvermutung zu einem Fehler: die fehlschlagende Ausgabe lesen, nicht deren Beschreibung
+* Wenn nur Zusammenfassung, Ticket oder Übergabe als Beleg vorliegen -- der Begriff benennt, was fehlt
+* In der Anforderungserhebung, wo auseinanderfällt, was Nutzer sagen und was sie tun
+* In der Incident-Analyse, wo Trace und Log das Genbutsu sind und die Rekonstruktion es nicht ist
+* Immer wenn eine Erklärung plausibel klingt und noch niemand nachgesehen hat
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Es heißt, durch die Werkshalle zu gehen" -- der Ort ist, wo die Arbeit tatsächlich geschieht, auch ein Terminal und ein Log
+* ❌ „Ein Gemba Walk ist Genchi Genbutsu" -- eine geplante Runde kann die Praxis sein oder ihr Ersatz
+* ❌ „Hingehen heißt nachprüfen" -- Smalley nennt „confirming preexisting conclusions rather than observing openly" als ersten der häufigen Fehler
+* ❌ „Einmal hinschauen genügt" -- „single visits instead of repeated observation" ist ein weiterer von Smalleys benannten Fehlern
+* ✓ „Es ist der Beobachtungsschritt, auf dem `five-whys` aufsetzt" -- zutreffend, und der Grund, beide zusammen zu nennen
+====
+
+== *Kritik*:
+
+* *In der Praxis wird Theater daraus.* Annette Franz zielt auf die gelebte Praxis von Führungskräften: Wird die Runde als Kontrolle verstanden, „employees perform. They hide problems, sanitize reality, and the walk becomes a staged event, not a learning exercise." Ihr schärferer Punkt betrifft die Glaubwürdigkeit: „When leaders repeatedly ask, 'What's getting in your way?' and nothing changes, credibility erodes fast." Ohne Disziplin gilt: „Gemba collapses into performative leadership" -- „Gemba becomes expensive theater." Franz selbst entlastet die Methode und belastet die Führung. https://cx-journey.com/2026/03/gemba-walks-dont-fail-leaders-do.html[Franz, „Gemba Walks Don't Fail. Leaders Do."] (18. März 2026).
+* *Das Beobachtete ändert sich unter Beobachtung.* Das inszenierte Ereignis ist nicht nur ein Führungsfehler, sondern ein Messproblem, das die Methode nicht löst. Genchi Genbutsu liefert den tatsächlichen Ort unter der Bedingung, beobachtet zu werden -- und nichts im Verfahren trennt beides.
+* *Der Ohno-Kreis lässt sich nicht verpflanzen.* Christoph Roser benennt die Grenzen des Nachahmens offen: „Not everybody is willing to observe a process for potentially hours on end. There is a risk of the trainee becoming upset about this 'waste of time.'" Dazu die praktische Voraussetzung, die Übung „works only where workers have the time to answer your questions", und man „must not interrupt their work". Er plädiert für Anpassung statt Kopie. https://www.allaboutlean.com/chalk-circle/[Roser, „Taiichi Ohno's Chalk Circle"] (5. Januar 2016, aktualisiert 21. August 2025).
+* *Die Herkunft der Geschichte ist dünn belegt.* Rosers Darstellung führt den Kreidekreis wie die meisten als feststehende Tatsache an, ohne Belegstelle. Behandle ihn als Lehrlegende, die den Gedanken trägt, nicht als geprüfte Begebenheit.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Bei Toyota förmlich kodifiziert.* Smalley hält fest: Als Toyota seine Managementphilosophie für eine weltweite Belegschaft aufschrieb, wurde Genchi Genbutsu eines der fünf Kernprinzipien des Toyota Way 2001, neben Challenge, Kaizen, Respect und Teamwork. https://artoflean.com/reference/genchi-genbutsu/[Smalley, „Genchi Genbutsu", TPS Encyclopedia].
+* *Die Fehlformen sind katalogisiert -- schon das zeigt die Drift.* Smalley listet fünf wiederkehrende Fehler: vorgefasste Schlüsse bestätigen statt offen beobachten; einmal statt wiederholt hinsehen; die Beobachtung an Untergebene delegieren; körperlich anwesend, aber unaufmerksam sein; die Praxis auf Werkshallen beschränken. Eine solche Liste braucht ein Prinzip erst, wenn das Ritual die Sache überwachsen hat.
+* *„Gemba Walk" ist im Westen die beherrschende Form des Begriffs* -- eine terminierte Führungsrunde statt eines Ingenieurs, der drei Stunden stillsteht. Beide Bedeutungen liegen in heutigen Trainingsdaten; die Runde ist die, die ein Modell von selbst produziert.

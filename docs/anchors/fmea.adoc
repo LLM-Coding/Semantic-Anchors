@@ -1,0 +1,67 @@
+= FMEA
+:categories: testing-quality, problem-solving
+:roles: qa-engineer, software-architect, systems-thinker, devops-engineer, consultant
+:proponents: US Armed Forces (MIL-P-1629), NASA, AIAG, VDA
+:tags: FMEA, FMECA, failure mode and effects analysis, RPN, risk priority number, action priority, severity occurrence detection, reliability, DFMEA, PFMEA
+:related: dmaic, ishikawa-diagram, premortem, stride, iec-61508-sil-levels
+:tier: 3
+:prior-test: 2026-09-30
+:tested-on: haiku-4.5=yes, opus-5=yes
+
+[%collapsible]
+====
+Full Name:: Failure Mode and Effects Analysis
+
+Also known as:: FMECA (Failure Mode, Effects and Criticality Analysis) when a criticality step is added; Design FMEA (DFMEA) and Process FMEA (PFMEA) by scope
+
+[discrete]
+== *Core Concepts*:
+
+Bottom-Up, Not Top-Down:: FMEA starts at the component or process step and asks what can fail *here*, then traces the effect outward. Fault tree analysis works the other way, from an undesired event down to its causes. Picking the wrong direction produces a plausible-looking document that answers a question nobody asked.
+
+Three Questions Per Failure Mode:: For every way an item can fail, the analysis records its *effect* (what the customer or system notices), its *cause* (why it happens), and its *controls* (what prevents it or detects it). These are separate columns because they have separate remedies: prevention attacks the cause, detection attacks the escape.
+
+Three Ratings, and What Used to Be Done With Them:: Each failure mode is rated for Severity, Occurrence and Detection, classically on a 1–10 scale. The traditional Risk Priority Number is their product — RPN = S × O × D — used to rank what gets fixed first. That multiplication is where the method's central controversy sits; see Criticism and Current Status.
+
+Prevention Beats Detection:: A control that stops a failure mode from occurring is worth more than one that catches it afterwards, and the rating scheme is meant to reflect that. Systems that chase a low RPN often improve Detection because it is cheapest, which lowers the number without lowering the risk.
+
+Forward-Looking, Unlike Root Cause Analysis:: `five-whys` and `ishikawa-diagram` work backwards from something that already happened. FMEA works forwards from something that has not happened yet, which makes it a sibling of `premortem` in intent and of `stride` in structure — both enumerate failure modes against a model before there is damage to investigate.
+
+A Living Document, Not a Deliverable:: An FMEA that is written once for an audit and never reopened has lost its function. Its value is in being revisited when the design, the process or the field data change.
+
+Key Milestones:: Procedures were described in 1949 in the US military document MIL-P-1629, revised as MIL-STD-1629A in 1980; NASA contractors applied variants across Apollo, Viking, Voyager and Skylab; Ford introduced FMEA after the Pinto affair and extended it to process FMEA; AIAG published the first automotive FMEA standard in 1993.
+
+[discrete]
+== *When to Use*:
+
+* Designing or changing something whose failure is expensive, dangerous or hard to reverse
+* Before a launch, migration or cutover, to enumerate failure modes while there is still time to add controls
+* Safety and regulatory work, where an auditable record of considered failure modes is itself a requirement — see `iec-61508-sil-levels`
+* In software: dependency and interface failure analysis, resilience reviews, and anything where "what happens when this call never returns?" needs a written answer
+* As the risk counterpart to `dmaic`: FMEA is a standard tool in its Analyze and Improve phases
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "FMEA finds the root cause of an incident" — it is a prospective method. For an incident that already happened, use `five-whys` or `ishikawa-diagram`.
+* ❌ "A low RPN means low risk" — a severity-10 failure mode with a low RPN is still a severity-10 failure mode. The number hides exactly what matters most.
+* ❌ "FMEA covers combined failures" — used bottom-up it finds single-point failure modes. Failures that require two subsystems to fail together are largely invisible to it.
+* ❌ "RPN is what FMEA is" — the automotive standard has dropped RPN in favour of Action Priority. The ratings survived; the multiplication did not.
+* ✓ "FMEA is a structured pessimism exercise with an audit trail" — fair, and the reason it pairs well with `premortem`.
+====
+
+== *Criticism*:
+
+* *The RPN ranks things wrongly, by construction.* The https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis[FMEA overview] states the defect precisely: "The multiplication of the severity, occurrence and detection rankings may result in rank reversals, where a less serious failure mode receives a higher RPN than a more serious failure mode." Rank reversal is not an error in applying the method; it follows from multiplying ordinal ratings.
+* *Arithmetic on ordinal scales is not a small sin.* Michael Krisper catalogues the problem class that the RPN belongs to — "ordinal scales, semi-quantitative arithmetics, range compression, risk inversion, ambiguity, and neglection of uncertainty" — across 24 documented problems with ordinal risk matrices, and argues for fully quantitative risk assessment instead. https://arxiv.org/abs/2103.05440[Krisper, "Problems with Risk Matrices Using Ordinal Scales", arXiv:2103.05440, 2021].
+* *The replacement drew its own criticism, from FMEA practitioners.* Richard Harpster argued against the AIAG-VDA design FMEA before it shipped, holding that its structure/function/failure-tree approach is "both ineffective as a risk management tool and very inefficient", that it "more closely resembles a fault tree analysis than a Design FMEA process", and that engineers "will not spend the time and effort to develop verifyable functions/requirements for each of the sub-assemblies". https://www.qualitydigest.com/inside/risk-management-column/case-against-aiag-vda-dfmea-013118.html[Harpster, "The Case Against the AIAG-VDA DFMEA", _Quality Digest_, 31 January 2018].
+* *Complexity is a risk of its own.* Carl S. Carlson, author of _Effective FMEAs_, lists five concerns with the new handbook: it "adds considerable new terminology and other complexities", it "consumes valuable time on potentially lower-risk tasks", "enforcing causes at next lower level can miss important causes", it was published before a corresponding standard existed, and it "does an inadequate job of clearly identifying high-risk interfaces". https://accendoreliability.com/reviewing-aiag-vda-fmea-handbook/[Carlson, "Reviewing AIAG / VDA FMEA Handbook", Accendo Reliability, 1 December 2022]. His point is that complexity can bury the high-risk items it was meant to surface.
+* *Used alone it does not carry the weight put on it.* The same FMEA overview reports that in healthcare the method showed "limited validity when used in isolation", with scoping and organisational boundaries strongly affecting the result. Where the boundary is drawn decides what the analysis can find.
+
+[discrete]
+== *Current Status*:
+
+* *The automotive world replaced RPN with Action Priority in 2019.* The AIAG & VDA FMEA Handbook, first edition, was published in June 2019 and replaced AIAG's 4th-edition FMEA manuals and VDA Volume 4. Mary Rowzee describes the change: "the recommended method of combining these three indices into a single composite value is no longer the risk priority number" — instead a three-axis reference table assigns each failure mode a high, medium or low Action Priority. https://www.qualitydigest.com/inside/lean-article/understanding-aiag-vda-s-fmea-process-and-approach-061820.html[Rowzee, "Understanding AIAG-VDA's FMEA Process and Approach", _Quality Digest_, 18 June 2020]. A second source puts it flatly: "the Risk Priority Number or RPN has been eliminated. It has been replaced by the AP or Action Priority process." https://quality-one.com/aiag-vda-fmea/[Quality-One, AIAG & VDA FMEA].
+* *The handbook also reorganised the method into seven steps* — planning and preparation, structure analysis, function analysis, failure analysis, risk analysis, optimisation, results documentation — which is a different shape from the column-by-column worksheet most training data describes (Rowzee, as above).
+* *RPN has not disappeared outside automotive.* The generic standards remain in use — IEC 60812 for FMEA and FMECA, SAE J1739 in the automotive space — and RPN is still the dominant prior in most non-automotive material. When a prompt says "FMEA", expect the model to reach for Severity × Occurrence × Detection unless Action Priority is named.
+* *Consequence for prompting:* naming the edition matters here more than for most anchors. "FMEA" gets the classic worksheet; "AIAG & VDA FMEA (2019)" gets seven steps and Action Priority. The two produce different artefacts.

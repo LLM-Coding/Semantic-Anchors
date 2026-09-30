@@ -9,8 +9,8 @@ Das Verständnis der Ablehnungsgründe hilft Mitwirkenden, bessere Vorschläge e
 Strukturell ungeeignet::
 Der Begriff ist zu vage, hat keine definierte Methodik oder ist eine reine Anweisung statt eines Konzepts. Erfüllt das link:#/about[Precise]- und/oder link:#/about[Rich]-Kriterium nicht.
 
-Nicht in Trainingsdaten::
-Ein legitimes Konzept oder Framework, aber nicht ausreichend in den LLM-Trainingsdaten etabliert, um zuverlässig das richtige Wissen zu aktivieren. Erfüllt das link:#/about[Consistent]-Kriterium nicht.
+Unzureichende Trainingsdaten-Dichte::
+Ein legitimes Konzept oder Framework, das zwar *wiedererkannt* wird (Modelle können darüber reden), aber in der Ausgabe nicht zuverlässig *aktiviert*: Den Begriff zu nennen verändert das Ergebnis gegenüber einem allgemeinen Prompt strukturell nicht, oder er löst auf schwächeren Modellen stille Ersetzung oder Konfabulation aus. Erfüllt das link:#/about[Consistent]-Kriterium nicht. Begriffe hier können mit wachsenden Trainingsdaten noch zu tragfähigen Ankern werden -- bis dahin ist ein link:#/contracts[Semantic Contract] (der seine Bedeutung selbst mitbringt) der richtige Ort. (Früher „Nicht in Trainingsdaten".)
 
 Zu spezialisiert::
 Eine echte Methodik, aber zu spezialisiert für zuverlässige Aktivierung über verschiedene LLMs und Kontexte hinweg. Erfüllt das link:#/about[Consistent]- und/oder link:#/about[Rich]-Kriterium nicht.
@@ -42,13 +42,19 @@ Eine echte Methodik, aber zu spezialisiert für zuverlässige Aktivierung über 
 *Jetzt verfügbar als link:#/contracts[Semantic Contract]*: "Layer Boundaries".
 
 | *MIRRR UX Framework* (https://github.com/LLM-Coding/Semantic-Anchors/issues/150[#150])
-| Nicht in Trainingsdaten
+| Unzureichende Trainingsdaten-Dichte
 | Ein echtes UX-Framework mit definierter Methodik, aber nicht weit genug dokumentiert, damit LLMs es zuverlässig erkennen und die richtigen Konzepte aktivieren.
 
 | *YOLO* (https://github.com/LLM-Coding/Semantic-Anchors/issues/443[#443])
 | Strukturell ungeeignet
 | Mehrdeutig und keine Methodik: entweder „You Only Look Once" (ein Computer-Vision-Modell, zu eng) oder das Motto „You Only Live Once" (reines Sentiment, wie TLDR). Keine konsistente Aktivierung, keine umsetzbare Struktur. +
 Die im Thread genannte Idee „rapid exploration / permission to bypass" lässt sich besser durch Komposition bestehender Anker ausdrücken (link:#/anchor/spike-solution[Spike Solution], link:#/anchor/walking-skeleton[Walking Skeleton], link:#/anchor/mvp[MVP]) innerhalb der Complex-/Chaotic-Domänen des link:#/anchor/cynefin-framework[Cynefin-Frameworks].
+
+| *Kanban (TPS)* (https://github.com/LLM-Coding/Semantic-Anchors/issues/769[#769])
+| Unzureichende Trainingsdaten-Dichte
+| Vorgeschlagen als die Toyota-Signalkarte, das physische *Kanban*, das eine Nachlieferung auslöst. Der Prior ist nicht dünn -- er hängt am gleichnamigen anderen Begriff, und er ersetzt still. Auf den nackten Namen liefern beide Stufen die *Software*-Methode Kanban (David J. Anderson): Die starke Stufe beginnt „Kanban is a pull-based method for managing work, originating in Toyota's manufacturing system and later adapted for software and knowledge work (largely via David Anderson's formulation)" -- Toyota steht nur als Etymologie da, dann geht die Antwort zu Boards und WIP-Limits. +
+Ein Steuerungstest auf einem neutralen Szenario entscheidet: Die Ausgabe trägt acht Marker der Software-Methode (WIP-Limits, Commitment Point, Classes of Service, Replenishment, STATIK, Cumulative Flow Diagram) und *null* Marker der Fertigungspraxis -- keine Signalkarte, kein Supermarkt, kein Zwei-Behälter-System, kein Materialfluss. Die Antwort unterscheidet die Lesarten nie; sie setzt die Software-Lesart voraus. Ein Qualifier repariert das nicht, er würde gegen den Prior arbeiten statt ihn zu fokussieren. +
+*Die Software-Lesart bleibt als eigener Vorschlag offen* -- unter dem Namen, der sie tatsächlich aktiviert: „Kanban Method (Anderson)". Dieser Kandidat wurde nicht geprüft. Vollständige Messung im link:#/prior-tests[Prior-Test-Register], Lauf vom 30.09.2026. Die übrigen 15 Begriffe desselben Clusters (https://github.com/LLM-Coding/Semantic-Anchors/issues/753[#753]) wurden aufgenommen.
 
 |===
 
