@@ -278,6 +278,9 @@ include::anchors/bem-methodology.adoc[leveloffset=+2]
 
 include::anchors/boy-scout-rule.adoc[leveloffset=+2]
 
+[[chestertons-fence]]
+include::anchors/chestertons-fence.adoc[leveloffset=+2]
+
 [[conventional-commits]]
 include::anchors/conventional-commits.adoc[leveloffset=+2]
 
@@ -409,6 +412,8 @@ include::anchors/a3-problem-solving.adoc[leveloffset=+2]
 
 [[chain-of-thought]]
 include::anchors/chain-of-thought.adoc[leveloffset=+2]
+
+include::anchors/chestertons-fence.adoc[leveloffset=+2]
 
 include::anchors/crisis-and-emergency-risk-communication.adoc[leveloffset=+2]
 

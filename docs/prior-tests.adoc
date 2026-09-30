@@ -472,3 +472,41 @@ The proposal asked for the Toyota pull-signal card. On the bare name, both tiers
 The steering test removes any doubt. Asked to apply "Kanban" to the neutral scenario, the output carries eight markers of the software method -- WIP limits, commitment point, classes of service, replenishment, STATIK, cumulative flow diagram -- and *zero* markers of the manufacturing practice: no replenishment card, no supermarket, no two-bin system, no material flow. The anchored answer does not disambiguate; it simply assumes software Kanban.
 
 So the term cannot anchor the sense it was proposed for, and a qualifier would not repair it -- the qualifier would be fighting the prior rather than focusing it. Recorded on the rejected-proposals page. *The software sense remains a viable separate proposal under its own name* -- "Kanban Method (Anderson)" is what the bare name actually activates. That is a different candidate and was not tested here.
+=== Chesterton's Fence — a separate proposal, measured the same day
+
+Not part of the cluster. Proposed by Matt Wynne in https://github.com/LLM-Coding/Semantic-Anchors/issues/752[#752] on 2026-09-28, with an activation test run on GPT-6 Sol. That is a different model family from the two tiers this register measures against, so the test was repeated here: nine probes, each in its own empty working directory.
+
+[cols="2,1,3"]
+|===
+|Criterion |Verdict |Evidence
+
+|Precise |met |The strong tier returns the source unprompted -- G.K. Chesterton, _The Thing_ (1929), "The Drift from Domesticity". No competing field
+|Rich |met |Epistemic humility, institutional memory, second-order effects, systems thinking, reversible experiments
+|Consistent |met |Both tiers agree; Haiku answers correctly with no hedging and no confabulation
+|Attributable |met |Named author, dated work
+|Prior density |strong on the weak tier |Acts as an instruction where the baseline does not -- see below
+|===
+
+Tier ★★★, route: anchor.
+
+*The steering task deliberately did not imply the principle.* A team inherits a payment service with a 400-line validation module, three always-on feature flags, a nightly reconciliation job and a hard-coded 7-second retry delay, and wants to modernise it. *None of three no-anchor baselines named Chesterton's Fence unprompted*, which is what makes this measurement readable at all -- the failure mode that wrecked the cluster's first two runs.
+
+On the weak tier the result is a clean behavioural inversion. Without the term:
+
+[quote]
+____
+remove the always-on feature flags and parameterize the retry delay *immediately* (these are safe, high-confidence wins)
+____
+
+With it, the same model opens a "Phase 1: Understand the fence" stage and asks of the very same flags: "Were they added for a gradual rollout that finished? Or are they kill switches for a known problematic vendor/flow?"
+
+*On the strong tier the delta is narrower, and that is recorded rather than smoothed away.* Opus was already doing archaeology without the term -- its baseline heading reads "Do archaeology before refactoring". What naming it added there was the *method* of finding the reason (read the on-call runbook and alert definitions before the code; `git log -S` on the check nobody can explain) and an explicit exit rule:
+
+[quote]
+____
+Chesterton's Fence is not a veto, and "we couldn't find out why" isn't a reason to keep something forever. Timebox each investigation … If a good-faith search turns up nothing, you've earned the removal.
+____
+
+That second half is what separates the anchor from a licence for inertia, and it fires without being asked for.
+
+*The overlap risk was measured, not assumed.* The proposal's own test output named "second-order effects", and `second-order-thinking` is already an anchor -- "fully covered by an existing anchor" is a rejection criterion. Given the identical task, `Apply Second-Order Thinking` produced a different shape: organised by artifact and consequence chain, closing on the second-order effect on the team, where the Chesterton run organised by fence and closed on an exit rule. Two lenses, not one.

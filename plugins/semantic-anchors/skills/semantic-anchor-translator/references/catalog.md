@@ -469,6 +469,12 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Problem-Solving
 
+### Chesterton's Fence
+- **Also known as:** the fence across the road; "why is this here?"
+- **Proponents:** G.K. Chesterton (*The Thing*, 1929, "The Drift from Domesticity")
+- **Core:** Before removing something whose purpose you cannot see, establish why it is there — the odd-looking check is the one most likely to be load-bearing. Not a veto: once a timeboxed, good-faith search turns up nothing, removal is earned, provided it is reversible and observed. Runs *backwards* from an artifact already standing, where Second-Order Thinking runs forwards from a change you are about to make
+
+
 ### DMADV
 - **Also known as:** DFSS, Design for Six Sigma
 - **Proponents:** Motorola, General Electric

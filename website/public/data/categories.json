@@ -108,6 +108,7 @@
       "andon",
       "bem-methodology",
       "boy-scout-rule",
+      "chestertons-fence",
       "conventional-commits",
       "definition-of-done",
       "effective-go",
@@ -176,6 +177,7 @@
     "anchors": [
       "a3-problem-solving",
       "chain-of-thought",
+      "chestertons-fence",
       "crisis-and-emergency-risk-communication",
       "decisional-balance-sheet",
       "devils-advocate",

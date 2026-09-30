@@ -472,3 +472,41 @@ Der Vorschlag zielte auf die Toyota-Signalkarte. Auf den nackten Namen liefern b
 Der Steuerungstest räumt den letzten Zweifel aus. Auf das neutrale Szenario angewandt, trägt die Ausgabe acht Marker der Software-Methode -- WIP-Limits, Commitment Point, Classes of Service, Replenishment, STATIK, Cumulative Flow Diagram -- und *null* Marker der Fertigungspraxis: keine Signalkarte, kein Supermarkt, kein Zwei-Behälter-System, kein Materialfluss. Die Antwort unterscheidet die Lesarten nicht; sie setzt Software-Kanban einfach voraus.
 
 Der Begriff kann die vorgeschlagene Lesart also nicht verankern, und ein Qualifier repariert das nicht -- er würde gegen den Prior arbeiten statt ihn zu fokussieren. Festgehalten auf der Rejected-Proposals-Seite. *Die Software-Lesart bleibt ein eigener, tragfähiger Vorschlag unter eigenem Namen* -- „Kanban Method (Anderson)" ist das, was der nackte Name tatsächlich aktiviert. Das ist ein anderer Kandidat und wurde hier nicht geprüft.
+=== Chesterton's Fence -- ein eigener Vorschlag, am selben Tag gemessen
+
+Nicht Teil des Clusters. Vorgeschlagen von Matt Wynne in https://github.com/LLM-Coding/Semantic-Anchors/issues/752[#752] am 28.09.2026, mit einem Aktivierungstest auf GPT-6 Sol. Das ist eine andere Modellfamilie als die beiden Stufen dieses Registers, also wurde der Test hier wiederholt: neun Proben, jede in einem eigenen leeren Arbeitsverzeichnis.
+
+[cols="2,1,3"]
+|===
+|Kriterium |Urteil |Beleg
+
+|Precise |erfüllt |Die starke Stufe liefert die Quelle ungefragt -- G.K. Chesterton, _The Thing_ (1929), „The Drift from Domesticity". Kein konkurrierendes Feld
+|Rich |erfüllt |Epistemische Bescheidenheit, institutionelles Gedächtnis, Folgewirkungen, Systemdenken, reversible Experimente
+|Consistent |erfüllt |Beide Stufen stimmen überein; Haiku antwortet korrekt, ohne Ausweichen und ohne Konfabulation
+|Attributable |erfüllt |Benannter Autor, datiertes Werk
+|Prior-Dichte |stark auf der schwachen Stufe |Wirkt dort als Anweisung, wo die Vergleichsmessung es nicht tut -- siehe unten
+|===
+
+Tier ★★★, Route: Anchor.
+
+*Die Steuerungsaufgabe legte das Prinzip bewusst nicht nahe.* Ein Team erbt einen Payment-Service mit einem 400-Zeilen-Validierungsmodul, drei dauerhaft eingeschalteten Feature Flags, einem nächtlichen Abgleichlauf und einer fest verdrahteten Wartezeit von 7 Sekunden im Retry -- und soll ihn modernisieren. *Keine der drei ankerlosen Vergleichsmessungen nannte Chesterton's Fence von selbst.* Genau das macht diese Messung überhaupt lesbar; es ist der Fehler, der die ersten beiden Läufe des Clusters ruiniert hatte.
+
+Auf der schwachen Stufe steht eine saubere Verhaltensumkehr. Ohne den Begriff:
+
+[quote]
+____
+remove the always-on feature flags and parameterize the retry delay *immediately* (these are safe, high-confidence wins)
+____
+
+Mit ihm eröffnet dasselbe Modell eine Phase „Understand the fence" und fragt zu denselben Flags: „Were they added for a gradual rollout that finished? Or are they kill switches for a known problematic vendor/flow?"
+
+*Auf der starken Stufe ist der Effekt schmaler, und das steht hier, statt geglättet zu werden.* Opus betrieb schon ohne den Begriff Archäologie -- seine Überschrift lautet „Do archaeology before refactoring". Was der Name dort hinzufügte, war die *Methode* des Nachforschens (Runbook und Alert-Definitionen vor dem Code lesen; `git log -S` auf die Prüfung, die niemand erklären kann) und eine ausdrückliche Ausstiegsregel:
+
+[quote]
+____
+Chesterton's Fence is not a veto, and "we couldn't find out why" isn't a reason to keep something forever. Timebox each investigation … If a good-faith search turns up nothing, you've earned the removal.
+____
+
+Diese zweite Hälfte trennt den Anker von einem Freibrief für Stillstand -- und sie greift, ohne dass man danach fragt.
+
+*Das Überschneidungsrisiko wurde gemessen, nicht unterstellt.* Das Testergebnis des Vorschlags nannte selbst „second-order effects", und `second-order-thinking` ist bereits ein Anker -- „vollständig durch einen bestehenden Anker abgedeckt" ist ein Ablehnungsgrund. Auf derselben Aufgabe erzeugte `Apply Second-Order Thinking` eine andere Gliederung: nach Artefakten und Folgeketten, endend bei der Zweitwirkung auf das Team, während der Chesterton-Lauf nach Zäunen gliederte und mit einer Ausstiegsregel schloss. Zwei Linsen, nicht eine.

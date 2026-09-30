@@ -645,6 +645,57 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "chestertons-fence",
+    "title": "Chesterton’s Fence",
+    "categories": [
+      "problem-solving",
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "team-lead",
+      "consultant",
+      "systems-thinker"
+    ],
+    "related": [
+      "second-order-thinking",
+      "five-whys",
+      "lehmans-classification",
+      "boy-scout-rule",
+      "residuality-theory"
+    ],
+    "proponents": [
+      "G.K. Chesterton"
+    ],
+    "tags": [
+      "Chesterton's Fence",
+      "legacy code",
+      "code archaeology",
+      "safe deletion",
+      "institutional memory",
+      "why does this exist",
+      "status quo",
+      "epistemic humility",
+      "The Drift from Domesticity",
+      "modernisation"
+    ],
+    "filePath": "docs/anchors/chestertons-fence.adoc",
+    "tier": 3,
+    "priorTest": "2026-09-30",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-09-30T17:48:53+02:00"
+  },
+  {
     "id": "circuit-breaker",
     "title": "Circuit Breaker",
     "categories": [
