@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 247 well-defined terms, methodologies, and frameworks
+> 249 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -3752,6 +3752,58 @@ A class should have only one reason to change. Each module or class should be re
 * **The discourse moved to the separation discipline, not away from the rule.** Kent Beck's _Tidy First?_ (2023) made "structural and behavioral changes should be kept in separate PRs (or at least in separate commits)" the mainstream framing -- which is exactly the remedy the rule's critics ask for. Worth stating precisely: Beck does not name the Boy Scout Rule. He supplies the discipline; he is not on record as correcting it.
 * **No retraction found.** Martin has publicly qualified several _Clean Code_ positions, and a second edition exists. We found no citable evidence that this rule is among the things he revised -- an absence in our check rather than a confirmed continuity.
 
+### Chesterton's Fence
+
+***Full Name***: Chesterton's Fence
+
+***Also known as***: The fence-and-gate parable; "don't remove a fence until you know why it was put up"
+
+[discrete]
+## **Core Concepts**:
+
+* **The parable moves the burden of proof onto the remover.** G.K. Chesterton, _The Thing_ (1929), chapter "The Drift from Domesticity": "There exists in such a case a certain institution or law; let us say for the sake of simplicity, a fence or gate erected across a road. The more modern type of reformer goes gaily up to it and says, 'I don't see the use of this; let us clear it away.' To which the more intelligent type of reformer will do well to answer: 'If you don't see the use of it, I certainly won't let you clear it away. Go away and think. Then, when you can come back and tell me that you do see the use of it, I may allow you to destroy it.'" Not seeing a reason is a fact about the observer, not about the fence.
+* **The unexplained artifact is evidence, not noise.** Chesterton's supporting argument is the half that travels best into engineering: "The gate or fence did not grow there. It was not set up by somnambulists who built it in their sleep." A hard-coded seven-second retry delay, a feature flag that has been on for two years, a defensive check nobody can justify -- each one is a cheap record of a failure that once happened to somebody.
+* **It buys a delay, not a veto -- and Chesterton wrote the exit clause himself.** Two sentences later in the same essay: "If he knows how it arose, and what purposes it was supposed to serve, he may really be able to say that they were bad purposes, or that they have since become bad purposes, or that they are purposes which are no longer served." A good-faith, timeboxed investigation that turns up nothing earns the removal. Take it out reversibly -- behind a flag, in a revertible commit -- and watch the signal that would tell you the fence was load-bearing.
+* **It looks backwards, where second-order thinking looks forwards.** `second-order-thinking` asks "and then what?" about a change you are about to make. Chesterton's Fence asks "and why is this here?" about something already standing. The two compose: recover the reason first, then trace what removing it sets in motion.
+* **The dig is a method, not an attitude.** `git log` and `git blame` on the line, `git log -S` on the unexplained string, the ticket or pull request that introduced it, the incident it followed, the on-call runbook and the alert definitions, and the author if they are still reachable. Operational documentation usually explains a strange line of code faster than the code does.
+* **The effort scales with the blast radius.** An unused CSS class and a retry delay in a payment flow do not deserve the same archaeology. Let what breaks if you are wrong set the timebox.
+
+[discrete]
+## **When to Use**:
+
+* Inheriting or modernising a system whose oddities nobody on the current team can explain -- the case the principle was made for
+* Any cleanup list that already contains the words "safe", "obviously unused" or "quick win"
+* Reviewing a pull request whose diff is mostly deletions
+* Deprecating an API, a config flag, a cron job or a database column that appears to have no callers
+* Joining a team and meeting a process that looks pointless from the outside
+* As a brake on a static analyser -- or an LLM -- that confidently reports dead code
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Never change anything you don't understand" -- the principle demands an investigation, not permanent preservation. Chesterton explicitly allows destruction once the purpose is known and found wanting.
+* ❌ "The fence stays until someone proves it useless" -- that turns the burden into an unfalsifiable one, because nobody can prove the absence of a reason. The test is a serious attempt to find the reason, bounded in time.
+* ❌ "It is an argument for tradition" -- in Chesterton's essay it was one. Applied to a codebase it is an argument about evidence: the artifact is the only surviving witness to a failure whose ticket is long closed.
+* ❌ "Understanding it means reading the code" -- the reason is rarely in the code. It is in the incident, the contract, the regulator's letter, the vendor who used to time out.
+* ✓ "It is a stopping rule for confident deletion" -- fair, and that is what makes it usable rather than merely wise.
+
+## **Criticism**:
+
+* **Reformers usually do see the use of the fence.** Paul Currion reads the original essay against itself: "The problem is that, even in Chesterton's day, none of the reformers he so clearly disdained failed to see the use of the fence; it was simply that they disagreed with people like Chesterton that that use was worth preserving the fence for." He also calls the framing gatekeeping rather than argument -- Chesterton "doesn't just want to have a debate about the anti-domestic drift; he wants to decide who is allowed to have that debate based on whether they meet his philosophical criteria", so "Chesterton's fence is being erected to exclude somebody". https://currion.net/2020/09/20/tearing-down-chestertons-fence/[Currion, "Tearing down Chesterton's fence"] (20 September 2020).
+* **Invoked as a conversation-stopper, it is toothless.** Kevin Corcoran's objection is that the people arguing for removal have typically done the archaeology already: "Public choice theory meets Chesterton's injunction to understand what led to these regulatory fences being created." Where that is so, "invoking Chesterton's Fence is likewise toothless -- the person doing so only shows they are a step behind in the discussion." https://www.econlib.org/misusing-chestertons-fence/[Corcoran, "Misusing Chesterton's Fence", Econlib] (15 December 2022).
+* **The removal process is itself a fence.** Stuart Armstrong's one-sentence post turns the principle on itself as "Chesterton's meta-fence": "in our current system (democratic market economies with large governments) the common practice of taking down Chesterton fences is a process which seems well established and has a decent track record, and should not be unduly interfered with (unless you fully understand it)". https://www.lesswrong.com/posts/WxDpeBi6aQAMH4BGB/stub-the-problem-with-chesterton-s-fence[Armstrong, LessWrong] (5 January 2016). This is the cuts-both-ways form: caution about removal is a policy too, and it has costs nobody counts.
+* **The principle cannot tell a wise fence from an unjust one.** Arnold Kling: "Conservatives use the shorthand 'Chesterton's Fence' to describe their position." His counter-example is segregation -- "Racial segregation was wrong. But it was like a fence that had been in place for a long time. Does that mean it should be left in place?" -- and his conclusion is a repair rather than a rejection: the argument "has to be more nuanced than just 'never tear down the fence'". https://arnoldkling.substack.com/p/the-trouble-with-chestertons-fence[Kling, "The Trouble with Chesterton's Fence"] (25 August 2023).
+* **No named German-language critique was found.** A German search returned only approving restatements. French, Spanish, Japanese and Chinese were not searched. That is a gap in our search, not in the discourse.
+
+[discrete]
+## **Current Status**:
+
+* **The name is not Chesterton's.** The string "Chesterton's fence" does not occur anywhere in _The Thing_; the https://www.gkc.org.uk/gkc/books/The_Thing.txt[full text at gkc.org.uk] carries the parable in "The Drift from Domesticity" and never the label. Chesterton wrote the parable, someone else named it. Who, and when, we could not establish from a citable source, so no coinage is claimed here.
+* **The compressed version that circulates is also not his.** https://fs.blog/chestertons-fence/[Farnam Street] states it as "Do not remove a fence until you know why it was put up in the first place" -- shorter, sharper and not a sentence in the essay. The same page carries the caveat the short form loses: "The point is not that the status quo is always right, that every fence should remain standing." The https://www.lesswrong.com/w/chesterton-s-fence[LessWrong wiki entry] is the other main route by which the label spread, and it collects the counter-arguments alongside it.
+* **Software adopted it as a rule about legacy code, not about institutions.** Oskar Dudycz's https://event-driven.io/en/chesterton_fence_and_software_architecture/[essay on Chesterton's Fence and software architecture] (17 August 2022) is representative of the genre: the fence becomes the line of code whose purpose is lost, and the reform becomes a refactoring. This is a genuine shift of subject -- Chesterton was defending the household, not a retry delay -- and it is the sense in which the anchor is used today.
+* **The drift is worth naming in one direction only.** Nothing in the software reading contradicts the original argument; it narrows it. Where Chesterton's critics attack the essay's politics, the engineering use inherits none of it, because a payment service has no opponents to exclude.
+* **A prior test on 2026-09-30 measured what naming it changes.** On a legacy-modernisation scenario that did not imply the principle, no baseline named it unprompted. A weak-tier model without the anchor called removing always-on feature flags a "safe, high-confidence win"; with the anchor it inserted an "Understand the fence" phase and asked whether the flags were finished rollouts or kill switches for a known bad vendor path. A strong-tier baseline was already cautious, and what the anchor added there was method -- read the runbook and the alert definitions before the code -- plus an explicit rule for when removal is earned. See the [prior-test register](#/prior-tests).
+
 ### Conventional Commits
 
 [discrete]
@@ -5622,6 +5674,58 @@ Therefore: [Conclusion]
 
 * The core finding (Wei et al., https://arxiv.org/abs/2201.11903[NeurIPS 2022]) is stable, but its practical relevance is cutoff-bound: reasoning models (late 2024 onward) internalise chain-of-thought during training — https://platform.openai.com/docs/guides/reasoning-best-practices[OpenAI's own docs] now advise against "think step by step" prompts for those models
 * Treat CoT output as a useful but unreliable window into model reasoning: Turpin et al., https://arxiv.org/abs/2305.04388["Language Models Don't Always Say What They Think"] (2023) and https://www.anthropic.com/research/reasoning-models-dont-say-think[Anthropic's 2025 follow-up] show stated reasoning can be unfaithful to the actual decision factors — not a safety or audit guarantee
+
+### Chesterton's Fence
+
+***Full Name***: Chesterton's Fence
+
+***Also known as***: The fence-and-gate parable; "don't remove a fence until you know why it was put up"
+
+[discrete]
+## **Core Concepts**:
+
+* **The parable moves the burden of proof onto the remover.** G.K. Chesterton, _The Thing_ (1929), chapter "The Drift from Domesticity": "There exists in such a case a certain institution or law; let us say for the sake of simplicity, a fence or gate erected across a road. The more modern type of reformer goes gaily up to it and says, 'I don't see the use of this; let us clear it away.' To which the more intelligent type of reformer will do well to answer: 'If you don't see the use of it, I certainly won't let you clear it away. Go away and think. Then, when you can come back and tell me that you do see the use of it, I may allow you to destroy it.'" Not seeing a reason is a fact about the observer, not about the fence.
+* **The unexplained artifact is evidence, not noise.** Chesterton's supporting argument is the half that travels best into engineering: "The gate or fence did not grow there. It was not set up by somnambulists who built it in their sleep." A hard-coded seven-second retry delay, a feature flag that has been on for two years, a defensive check nobody can justify -- each one is a cheap record of a failure that once happened to somebody.
+* **It buys a delay, not a veto -- and Chesterton wrote the exit clause himself.** Two sentences later in the same essay: "If he knows how it arose, and what purposes it was supposed to serve, he may really be able to say that they were bad purposes, or that they have since become bad purposes, or that they are purposes which are no longer served." A good-faith, timeboxed investigation that turns up nothing earns the removal. Take it out reversibly -- behind a flag, in a revertible commit -- and watch the signal that would tell you the fence was load-bearing.
+* **It looks backwards, where second-order thinking looks forwards.** `second-order-thinking` asks "and then what?" about a change you are about to make. Chesterton's Fence asks "and why is this here?" about something already standing. The two compose: recover the reason first, then trace what removing it sets in motion.
+* **The dig is a method, not an attitude.** `git log` and `git blame` on the line, `git log -S` on the unexplained string, the ticket or pull request that introduced it, the incident it followed, the on-call runbook and the alert definitions, and the author if they are still reachable. Operational documentation usually explains a strange line of code faster than the code does.
+* **The effort scales with the blast radius.** An unused CSS class and a retry delay in a payment flow do not deserve the same archaeology. Let what breaks if you are wrong set the timebox.
+
+[discrete]
+## **When to Use**:
+
+* Inheriting or modernising a system whose oddities nobody on the current team can explain -- the case the principle was made for
+* Any cleanup list that already contains the words "safe", "obviously unused" or "quick win"
+* Reviewing a pull request whose diff is mostly deletions
+* Deprecating an API, a config flag, a cron job or a database column that appears to have no callers
+* Joining a team and meeting a process that looks pointless from the outside
+* As a brake on a static analyser -- or an LLM -- that confidently reports dead code
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Never change anything you don't understand" -- the principle demands an investigation, not permanent preservation. Chesterton explicitly allows destruction once the purpose is known and found wanting.
+* ❌ "The fence stays until someone proves it useless" -- that turns the burden into an unfalsifiable one, because nobody can prove the absence of a reason. The test is a serious attempt to find the reason, bounded in time.
+* ❌ "It is an argument for tradition" -- in Chesterton's essay it was one. Applied to a codebase it is an argument about evidence: the artifact is the only surviving witness to a failure whose ticket is long closed.
+* ❌ "Understanding it means reading the code" -- the reason is rarely in the code. It is in the incident, the contract, the regulator's letter, the vendor who used to time out.
+* ✓ "It is a stopping rule for confident deletion" -- fair, and that is what makes it usable rather than merely wise.
+
+## **Criticism**:
+
+* **Reformers usually do see the use of the fence.** Paul Currion reads the original essay against itself: "The problem is that, even in Chesterton's day, none of the reformers he so clearly disdained failed to see the use of the fence; it was simply that they disagreed with people like Chesterton that that use was worth preserving the fence for." He also calls the framing gatekeeping rather than argument -- Chesterton "doesn't just want to have a debate about the anti-domestic drift; he wants to decide who is allowed to have that debate based on whether they meet his philosophical criteria", so "Chesterton's fence is being erected to exclude somebody". https://currion.net/2020/09/20/tearing-down-chestertons-fence/[Currion, "Tearing down Chesterton's fence"] (20 September 2020).
+* **Invoked as a conversation-stopper, it is toothless.** Kevin Corcoran's objection is that the people arguing for removal have typically done the archaeology already: "Public choice theory meets Chesterton's injunction to understand what led to these regulatory fences being created." Where that is so, "invoking Chesterton's Fence is likewise toothless -- the person doing so only shows they are a step behind in the discussion." https://www.econlib.org/misusing-chestertons-fence/[Corcoran, "Misusing Chesterton's Fence", Econlib] (15 December 2022).
+* **The removal process is itself a fence.** Stuart Armstrong's one-sentence post turns the principle on itself as "Chesterton's meta-fence": "in our current system (democratic market economies with large governments) the common practice of taking down Chesterton fences is a process which seems well established and has a decent track record, and should not be unduly interfered with (unless you fully understand it)". https://www.lesswrong.com/posts/WxDpeBi6aQAMH4BGB/stub-the-problem-with-chesterton-s-fence[Armstrong, LessWrong] (5 January 2016). This is the cuts-both-ways form: caution about removal is a policy too, and it has costs nobody counts.
+* **The principle cannot tell a wise fence from an unjust one.** Arnold Kling: "Conservatives use the shorthand 'Chesterton's Fence' to describe their position." His counter-example is segregation -- "Racial segregation was wrong. But it was like a fence that had been in place for a long time. Does that mean it should be left in place?" -- and his conclusion is a repair rather than a rejection: the argument "has to be more nuanced than just 'never tear down the fence'". https://arnoldkling.substack.com/p/the-trouble-with-chestertons-fence[Kling, "The Trouble with Chesterton's Fence"] (25 August 2023).
+* **No named German-language critique was found.** A German search returned only approving restatements. French, Spanish, Japanese and Chinese were not searched. That is a gap in our search, not in the discourse.
+
+[discrete]
+## **Current Status**:
+
+* **The name is not Chesterton's.** The string "Chesterton's fence" does not occur anywhere in _The Thing_; the https://www.gkc.org.uk/gkc/books/The_Thing.txt[full text at gkc.org.uk] carries the parable in "The Drift from Domesticity" and never the label. Chesterton wrote the parable, someone else named it. Who, and when, we could not establish from a citable source, so no coinage is claimed here.
+* **The compressed version that circulates is also not his.** https://fs.blog/chestertons-fence/[Farnam Street] states it as "Do not remove a fence until you know why it was put up in the first place" -- shorter, sharper and not a sentence in the essay. The same page carries the caveat the short form loses: "The point is not that the status quo is always right, that every fence should remain standing." The https://www.lesswrong.com/w/chesterton-s-fence[LessWrong wiki entry] is the other main route by which the label spread, and it collects the counter-arguments alongside it.
+* **Software adopted it as a rule about legacy code, not about institutions.** Oskar Dudycz's https://event-driven.io/en/chesterton_fence_and_software_architecture/[essay on Chesterton's Fence and software architecture] (17 August 2022) is representative of the genre: the fence becomes the line of code whose purpose is lost, and the reform becomes a refactoring. This is a genuine shift of subject -- Chesterton was defending the household, not a retry delay -- and it is the sense in which the anchor is used today.
+* **The drift is worth naming in one direction only.** Nothing in the software reading contradicts the original argument; it narrows it. Where Chesterton's critics attack the essay's politics, the engineering use inherits none of it, because a payment service has no opponents to exclude.
+* **A prior test on 2026-09-30 measured what naming it changes.** On a legacy-modernisation scenario that did not imply the principle, no baseline named it unprompted. A weak-tier model without the anchor called removing always-on feature flags a "safe, high-confidence win"; with the anchor it inserted an "Understand the fence" phase and asked whether the flags were finished rollouts or kill switches for a known bad vendor path. A strong-tier baseline was already cautious, and what the anchor added there was method -- read the runbook and the alert definitions before the code -- plus an explicit rule for when removal is earned. See the [prior-test register](#/prior-tests).
 
 ### Crisis and Emergency Risk Communication (CERC)
 

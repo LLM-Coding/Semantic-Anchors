@@ -445,6 +445,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Chesterton’s Fence -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/chestertons-fence</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/chestertons-fence</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Circuit Breaker -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/circuit-breaker</loc>

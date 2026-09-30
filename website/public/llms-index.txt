@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 21 semantic contracts, and
-> 215 anchors in 14 categories — the anchors both
+> 216 anchors in 14 categories — the anchors both
 > one by one and bundled into 22 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -43,7 +43,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 215 terms in full, 22 files
+## Anchor bundles — the same 216 terms in full, 22 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -53,15 +53,15 @@
 - [Creative Writing](https://llm-coding.github.io/Semantic-Anchors/bundles/creative-writing.txt): 7 anchors in full.
 - [Design Principles & Patterns (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 35 anchors in full.
 - [Design Principles & Patterns (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 19 anchors in full.
-- [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 18 anchors in full.
-- [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 4 anchors in full.
+- [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 15 anchors in full.
+- [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 8 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
 - [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 4 anchors in full.
 - [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 7 anchors in full.
 - [Meta](https://llm-coding.github.io/Semantic-Anchors/bundles/meta.txt): 3 anchors in full.
 - [Problem Solving (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 13 anchors in full.
-- [Problem Solving (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 11 anchors in full.
-- [Problem Solving (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-3.txt): 6 anchors in full.
+- [Problem Solving (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 10 anchors in full.
+- [Problem Solving (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-3.txt): 8 anchors in full.
 - [Requirements Engineering](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering.txt): 15 anchors in full.
 - [Software Architecture (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-1.txt): 23 anchors in full.
 - [Software Architecture (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 5 anchors in full.
@@ -71,7 +71,7 @@
 - [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 21 anchors in full.
 - [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 4 anchors in full.
 
-## Anchors — 215 named terms, grouped by category
+## Anchors — 216 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -171,6 +171,7 @@
 - [Andon](https://llm-coding.github.io/Semantic-Anchors/anchors/andon.txt)
 - [BEM Methodology](https://llm-coding.github.io/Semantic-Anchors/anchors/bem-methodology.txt)
 - [Boy Scout Rule](https://llm-coding.github.io/Semantic-Anchors/anchors/boy-scout-rule.txt)
+- [Chesterton's Fence](https://llm-coding.github.io/Semantic-Anchors/anchors/chestertons-fence.txt)
 - [Conventional Commits](https://llm-coding.github.io/Semantic-Anchors/anchors/conventional-commits.txt)
 - [Definition of Done](https://llm-coding.github.io/Semantic-Anchors/anchors/definition-of-done.txt)
 - [Effective Go](https://llm-coding.github.io/Semantic-Anchors/anchors/effective-go.txt)
@@ -224,6 +225,7 @@
 
 - [A3 Problem Solving](https://llm-coding.github.io/Semantic-Anchors/anchors/a3-problem-solving.txt)
 - [Chain of Thought (CoT)](https://llm-coding.github.io/Semantic-Anchors/anchors/chain-of-thought.txt)
+- [Chesterton's Fence](https://llm-coding.github.io/Semantic-Anchors/anchors/chestertons-fence.txt)
 - [Crisis and Emergency Risk Communication (CERC)](https://llm-coding.github.io/Semantic-Anchors/anchors/crisis-and-emergency-risk-communication.txt)
 - [Decisional Balance Sheet](https://llm-coding.github.io/Semantic-Anchors/anchors/decisional-balance-sheet.txt)
 - [Devil's Advocate](https://llm-coding.github.io/Semantic-Anchors/anchors/devils-advocate.txt)
