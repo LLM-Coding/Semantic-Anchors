@@ -52,7 +52,7 @@
 - [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 4 anchors in full.
 - [Creative Writing](https://llm-coding.github.io/Semantic-Anchors/bundles/creative-writing.txt): 7 anchors in full.
 - [Design Principles & Patterns (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 35 anchors in full.
-- [Design Principles & Patterns (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 19 anchors in full.
+- [Design Principles & Patterns (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 18 anchors in full.
 - [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 15 anchors in full.
 - [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 8 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
@@ -67,7 +67,7 @@
 - [Software Architecture (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 5 anchors in full.
 - [Statistical Methods & Process Monitoring](https://llm-coding.github.io/Semantic-Anchors/bundles/statistical-methods.txt): 5 anchors in full.
 - [Strategic Planning (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-1.txt): 17 anchors in full.
-- [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 4 anchors in full.
+- [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 5 anchors in full.
 - [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 21 anchors in full.
 - [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 4 anchors in full.
 
@@ -151,7 +151,6 @@
 - [Locality of Behaviour](https://llm-coding.github.io/Semantic-Anchors/anchors/locality-of-behaviour.txt)
 - [Poka-Yoke](https://llm-coding.github.io/Semantic-Anchors/anchors/poka-yoke.txt)
 - [Postel's Law](https://llm-coding.github.io/Semantic-Anchors/anchors/postels-law.txt)
-- [QFD](https://llm-coding.github.io/Semantic-Anchors/anchors/qfd.txt)
 - [Separation of Concerns](https://llm-coding.github.io/Semantic-Anchors/anchors/separation-of-concerns.txt)
 - [Single Level of Abstraction Principle (SLAP)](https://llm-coding.github.io/Semantic-Anchors/anchors/single-level-of-abstraction-principle.txt)
 - [SOLID-Dependency Inversion Principle](https://llm-coding.github.io/Semantic-Anchors/anchors/solid-dip.txt)
@@ -331,6 +330,7 @@
 - [PERT](https://llm-coding.github.io/Semantic-Anchors/anchors/pert.txt)
 - [Premortem](https://llm-coding.github.io/Semantic-Anchors/anchors/premortem.txt)
 - [Pugh-Matrix](https://llm-coding.github.io/Semantic-Anchors/anchors/pugh-matrix.txt)
+- [QFD](https://llm-coding.github.io/Semantic-Anchors/anchors/qfd.txt)
 - [Second-Order Thinking](https://llm-coding.github.io/Semantic-Anchors/anchors/second-order-thinking.txt)
 - [SWOT](https://llm-coding.github.io/Semantic-Anchors/anchors/swot.txt)
 - [Toyota Kata](https://llm-coding.github.io/Semantic-Anchors/anchors/toyota-kata.txt)

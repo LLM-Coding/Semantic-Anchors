@@ -226,9 +226,6 @@ include::anchors/poka-yoke.adoc[leveloffset=+2]
 [[postels-law]]
 include::anchors/postels-law.adoc[leveloffset=+2]
 
-[[qfd]]
-include::anchors/qfd.adoc[leveloffset=+2]
-
 [[separation-of-concerns]]
 include::anchors/separation-of-concerns.adoc[leveloffset=+2]
 
@@ -522,6 +519,7 @@ include::anchors/prd.adoc[leveloffset=+2]
 
 include::anchors/problem-space-nvc.adoc[leveloffset=+2]
 
+[[qfd]]
 include::anchors/qfd.adoc[leveloffset=+2]
 
 [[quality-attribute-scenario]]
@@ -687,6 +685,8 @@ include::anchors/premortem.adoc[leveloffset=+2]
 
 [[pugh-matrix]]
 include::anchors/pugh-matrix.adoc[leveloffset=+2]
+
+include::anchors/qfd.adoc[leveloffset=+2]
 
 include::anchors/second-order-thinking.adoc[leveloffset=+2]
 
