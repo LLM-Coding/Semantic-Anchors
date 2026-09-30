@@ -1,5 +1,5 @@
 = QFD
-:categories: requirements-engineering, design-principles
+:categories: requirements-engineering, strategic-planning
 :roles: requirements-engineer, product-owner, business-analyst, ux-designer, software-architect
 :proponents: Yoji Akao, Shigeru Mizuno, Mitsubishi Heavy Industries, Glenn Mazur
 :tags: QFD, Quality Function Deployment, House of Quality, voice of the customer, Akao, Mizuno, correlation roof, technical characteristics, requirements prioritisation, ISO 16355

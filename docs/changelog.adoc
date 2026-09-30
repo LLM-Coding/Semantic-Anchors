@@ -15,7 +15,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 * *link:#/anchor/ishikawa-diagram[Ishikawa Diagram]* (Kaoru Ishikawa) — problem-solving: parallel cause categories where link:#/anchor/five-whys[5 Whys] follows a single chain. Tier ★★★, #758.
 * *link:#/anchor/value-stream-mapping[Value Stream Mapping]* (Mike Rother, John Shook, _Learning to See_, LEI 1999) — problem-solving + development-workflow: separates process time from waiting time, then demands a future state. Tier ★★★, #759.
 * *link:#/anchor/poka-yoke[Poka-Yoke]* (Shigeo Shingo) — design-principles + testing-quality: make the wrong input impossible rather than validating and training against it. Tier ★★★, #760.
-* *link:#/anchor/qfd[QFD]* (Yoji Akao, Shigeru Mizuno) — requirements-engineering + design-principles: a method for deploying customer needs through design and production. Its best-known tool, the House of Quality, carries a correlation roof showing where two technical characteristics fight each other — the view neither link:#/anchor/pugh-matrix[Pugh Matrix] nor link:#/anchor/kano-model[Kano Model] has. Tier ★★★, #761.
+* *link:#/anchor/qfd[QFD]* (Yoji Akao, Shigeru Mizuno) — requirements-engineering + strategic-planning: a method for deploying customer needs through design and production. Its best-known tool, the House of Quality, carries a correlation roof showing where two technical characteristics fight each other — the view neither link:#/anchor/pugh-matrix[Pugh Matrix] nor link:#/anchor/kano-model[Kano Model] has. Tier ★★★, #761.
 
 *Toyota Production System:*
 
