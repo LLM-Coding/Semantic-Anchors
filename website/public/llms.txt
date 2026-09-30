@@ -5799,7 +5799,7 @@ Play devil's advocate: What are the strongest arguments against this approach?
 
 ***Verify is Not Control***: DMAIC's last phase sustains a gain that already exists. DMADV's last phase proves a prediction. The question is not "is it still holding?" but "did the design do what the model said it would?" Handover to an operational control plan happens **after** Verify, which is where the two roadmaps meet.
 
-***Predicted Capability Instead of Measured Capability***: Through Analyze and Design there is nothing to measure, so DMADV works on models — capability predictions, transfer functions, tolerance stacks, simulation. This is the method's core bet and the source of most of its criticism.
+***Predicted Capability Instead of Measured Capability***: Through Analyze and Design there is no **process** to measure, because it does not exist yet. Prototypes, DOE runs and simulations do produce data, but the capability of the future process is **predicted** from models — transfer functions, tolerance stacks, capability estimates — and only confirmed against the real thing in Verify. That gap between predicted and demonstrated capability is the method's core bet and the source of most of its criticism.
 
 ***Design Freeze as a Tollgate***: Like DMAIC, phases end in formal reviews and a project can be stopped at one. The tollgate at the end of Design is the expensive one: after it, changes cost an order of magnitude more.
 
@@ -9136,7 +9136,7 @@ For reliable activation, name the method **and its first step** — "apply Resid
 
 ***Verify is Not Control***: DMAIC's last phase sustains a gain that already exists. DMADV's last phase proves a prediction. The question is not "is it still holding?" but "did the design do what the model said it would?" Handover to an operational control plan happens **after** Verify, which is where the two roadmaps meet.
 
-***Predicted Capability Instead of Measured Capability***: Through Analyze and Design there is nothing to measure, so DMADV works on models — capability predictions, transfer functions, tolerance stacks, simulation. This is the method's core bet and the source of most of its criticism.
+***Predicted Capability Instead of Measured Capability***: Through Analyze and Design there is no **process** to measure, because it does not exist yet. Prototypes, DOE runs and simulations do produce data, but the capability of the future process is **predicted** from models — transfer functions, tolerance stacks, capability estimates — and only confirmed against the real thing in Verify. That gap between predicted and demonstrated capability is the method's core bet and the source of most of its criticism.
 
 ***Design Freeze as a Tollgate***: Like DMAIC, phases end in formal reviews and a project can be stopped at one. The tollgate at the end of Design is the expensive one: after it, changes cost an order of magnitude more.
 

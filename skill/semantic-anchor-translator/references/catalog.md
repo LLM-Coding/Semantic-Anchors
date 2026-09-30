@@ -603,9 +603,9 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ## Requirements Engineering
 
 ### QFD
-- **Also known as:** Quality Function Deployment, House of Quality; Blitz QFD
+- **Also known as:** Quality Function Deployment; Blitz QFD
 - **Proponents:** Yoji Akao, Shigeru Mizuno, Glenn Mazur
-- **Core:** Translates customer needs (WHATs) into technical characteristics (HOWs) through a weighted relationship matrix; the correlation "roof" shows where two characteristics reinforce or conflict — the view neither Pugh Matrix nor Kano Model carries. Standardised as ISO 16355
+- **Core:** A method that deploys customer needs through design, process and production decisions. Its best-known *tool* — not a second name for it — is the House of Quality, a matrix mapping needs (WHATs) to technical characteristics (HOWs) with a correlation "roof" showing where two characteristics reinforce or conflict; that conflict view is what neither Pugh Matrix nor Kano Model carries. Mazur calls HoQ-only QFD "a most common myth"; in Blitz QFD the House may be skipped entirely. Standardised as ISO 16355
 
 
 ### Cockburn Use Cases

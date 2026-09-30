@@ -28,7 +28,7 @@ Dieselben Anfangsbuchstaben, andere Arbeit:: Die fünf Phasen schulden etwas and
 
 Verify ist nicht Control:: DMAICs letzte Phase hält einen Gewinn, den es schon gibt. DMADVs letzte Phase prüft eine Vorhersage. Die Frage lautet nicht „hält es noch?", sondern „hat der Entwurf getan, was das Modell versprach?" Die Übergabe an einen Control Plan folgt *nach* Verify — dort treffen sich die beiden Roadmaps.
 
-Vorhergesagte statt gemessener Fähigkeit:: Durch Analyze und Design hindurch gibt es nichts zu messen. Also arbeitet DMADV mit Modellen: Fähigkeitsprognosen, Übertragungsfunktionen, Toleranzketten, Simulation. Das ist die zentrale Wette der Methode und die Quelle der meisten Kritik.
+Vorhergesagte statt gemessener Fähigkeit:: Durch Analyze und Design hindurch gibt es keinen *Prozess* zu messen, weil er noch nicht existiert. Prototypen, DOE-Läufe und Simulationen liefern durchaus Daten -- aber die Fähigkeit des künftigen Prozesses wird aus Modellen *vorhergesagt*: Übertragungsfunktionen, Toleranzketten, Fähigkeitsschätzungen. Bestätigt wird sie erst in Verify am realen Gegenstand. Dieser Abstand zwischen vorhergesagter und nachgewiesener Fähigkeit ist die zentrale Wette der Methode und die Quelle der meisten Kritik.
 
 Design Freeze als Tollgate:: Wie bei DMAIC enden Phasen in formalen Reviews, und ein Projekt kann an einem gestoppt werden. Teuer ist das Gate am Ende von Design: Danach kostet jede Änderung eine Größenordnung mehr.
 

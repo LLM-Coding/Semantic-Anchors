@@ -435,7 +435,7 @@ The lesson generalises past this cluster: *on a task where the method is the obv
 
 === The sixteen candidates
 
-All sixteen passed recognition on the strong tier and the substitution check on the weak tier: Haiku expanded every acronym correctly, with no hedging, no silent substitution and no confabulation across all sixteen probes. Fifteen then passed the steering test and are registered as anchors at ★★★.
+All sixteen passed recognition on the strong tier, and Haiku expanded every acronym correctly with no hedging and no confabulation across all sixteen probes. On the substitution check the count is fifteen, not sixteen: recognising the *word* is not the same as reaching the intended *concept*, and Kanban is exactly that gap — Haiku answers confidently and answers about the software Kanban Method, which is the silent substitution the check exists to catch. Fifteen then passed the steering test and are registered as anchors at ★★★.
 
 [cols="2,1,4"]
 |===
