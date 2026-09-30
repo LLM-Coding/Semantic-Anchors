@@ -5,7 +5,7 @@
 :tier: 3
 :tags: semantic anchor, meta, criteria, quality, anchor definition, activation
 
-=== Was qualifiziert als semantischer Anker
+== Was qualifiziert als semantischer Anker
 
 Ein Begriff qualifiziert sich als semantischer Anker, wenn er ein reichhaltiges, wohldefiniertes konzeptionelles Framework in den Trainingsdaten des LLM aktiviert. Der Schlüsselunterschied ist die *Definitionstiefe* – nicht, ob der Anker Domänenwissen oder Interaktionsmuster betrifft.
 
@@ -39,7 +39,7 @@ Socratic Method:: Interaktionsmuster für Dialog + Domänenwissen aus philosophi
 
 Die Qualitätsmesslatte ist über das gesamte Spektrum gleich – alle Anker müssen wohldefiniert, reichhaltig und aktivierbar sein.
 
-==== Gegenbeispiele
+=== Gegenbeispiele
 
 Wohlbekannte Begriffe, die *keine* semantischen Anker sind, weil ihnen Definitionstiefe fehlt:
 
@@ -53,17 +53,4 @@ Wohlbekannte Begriffe, die *keine* semantischen Anker sind, weil ihnen Definitio
 
 Diese Begriffe mögen in Konversationen nützlich sein, aber sie aktivieren keine reichhaltigen konzeptionellen Frameworks wie echte semantische Anker.
 
-Unten ist eine kuratierte Liste semantischer Anker, nützlich für Softwareentwicklung, Architektur und Requirements Engineering. Jeder Anker enthält verwandte Konzepte und Praktiken.
-
-Der Katalog ist in folgende Kategorien organisiert:
-
-* <<testing-quality-practices,Testing & Quality Practices>>
-* <<architecture-design,Architecture & Design>>
-* <<design-principles-patterns,Design Principles & Patterns>>
-* <<requirements-engineering,Requirements Engineering>>
-* <<documentation,Documentation>>
-* <<communication-presentation,Communication & Presentation>>
-* <<decision-making-strategy,Decision Making & Strategy>>
-* <<development-practices,Development Practices>>
-* <<statistical-methods-process-monitoring,Statistical Methods & Process Monitoring>>
-* <<interaction-reasoning-patterns,Interaction & Reasoning Patterns>>
+Der Katalog selbst ist die Liste. Er steht auf der link:#/[Startseite] und lässt sich dort nach Kategorie oder Rolle filtern. Wo die Grenze in der Praxis verläuft, zeigen die link:#/about[Qualitätskriterien] und die link:#/rejected-proposals[abgelehnten Vorschläge]. Jede Messung hinter einer Tier-Einstufung steht im link:#/prior-tests[Prior-Test-Register].
