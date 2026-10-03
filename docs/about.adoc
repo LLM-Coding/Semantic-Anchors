@@ -41,7 +41,7 @@
 
 Think of them as *shortcuts to rich context* - instead of explaining a complex methodology from scratch, you can invoke a semantic anchor and the LLM will activate its entire knowledge base about that concept.
 
-Others have named the same move. Matt Pocock calls them https://github.com/mattpocock/skills/blob/main/docs/productivity/writing-for-agents.md[_leading words_] -- "a compact concept already in the model's pretraining (_tight_, _red_, _tracer bullet_) that the agent thinks with while running the document". He contributes the principle and its reach; this catalog contributes the curated list. See <<Related Work & External Validation>>.
+Others have named the same idea. Matt Pocock calls them https://github.com/mattpocock/skills/blob/main/docs/productivity/writing-for-agents.md[_leading words_]: he contributes the principle and its reach, this catalog the curated list. <<Related Work & External Validation>> quotes his definition.
 
 === Example
 

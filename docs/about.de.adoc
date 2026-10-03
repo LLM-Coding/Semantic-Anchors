@@ -70,7 +70,7 @@
 
 Stellen Sie sich diese als *Abkürzungen zu reichhaltigem Kontext* vor – anstatt eine komplexe Methodologie von Grund auf zu erklären, können Sie einen semantischen Anker verwenden und das LLM wird seine gesamte Wissensbasis über dieses Konzept aktivieren.
 
-Andere haben denselben Zug benannt. Matt Pocock nennt sie https://github.com/mattpocock/skills/blob/main/docs/productivity/writing-for-agents.md[_leading words_] -- "a compact concept already in the model's pretraining (_tight_, _red_, _tracer bullet_) that the agent thinks with while running the document". Von ihm kommt das Prinzip und seine Reichweite, von diesem Katalog die kuratierte Liste. Siehe <<Verwandte Arbeiten & externe Bestätigung>>.
+Andere haben dieselbe Idee benannt. Matt Pocock nennt sie https://github.com/mattpocock/skills/blob/main/docs/productivity/writing-for-agents.md[_leading words_]: Von ihm kommt das Prinzip und seine Reichweite, von diesem Katalog die kuratierte Liste. <<Verwandte Arbeiten & externe Bestätigung>> zitiert seine Definition.
 
 === Beispiel
 
