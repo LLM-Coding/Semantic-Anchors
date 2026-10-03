@@ -71,3 +71,30 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Lighthouse runs here rather than in test.yml because it measures the
+  # deployed site: `needs: deploy` is the whole point. In test.yml the job
+  # had `needs: []` and ran against whatever was already live, so a push
+  # could be graded on its predecessor.
+  #
+  # It uses the action instead of a local @lhci/cli devDependency. That
+  # package was the sole root of all nine `high` audit findings and of 206
+  # of 578 lockfile entries -- an FTP client and OpenTelemetry
+  # instrumentation among them -- which every PR installed for a job that
+  # only ever ran on main. The action keeps that tree on GitHub's runner.
+  lighthouse:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Pinned to a commit SHA, not a tag: a tag can be moved to point at
+      # other code, and this step runs with the repository checked out.
+      - name: Run Lighthouse against the deployed site
+        uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18 # 12.6.2
+        with:
+          configPath: ./website/.lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
