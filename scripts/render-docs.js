@@ -22,7 +22,7 @@ const path = require('path')
 const Asciidoctor = require('@asciidoctor/core')
 const { getAnchorDefinition } = require('./lib/anchor-definition')
 const { injectByline } = require('./lib/byline')
-const { labelSectionAnchors } = require('./lib/section-anchors')
+const { hideSectionAnchors } = require('./lib/section-anchors')
 
 const asciidoctor = Asciidoctor()
 const ROOT = path.join(__dirname, '..')
@@ -126,7 +126,7 @@ function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
     // to '' when the source has no author/date, so normalize to trimmed strings.
     const author = String(doc.getAuthor() || '').trim()
     const revdate = String(doc.getRevisionDate() || '').trim()
-    const html = labelSectionAnchors(injectByline(String(doc.convert()), author, revdate))
+    const html = hideSectionAnchors(injectByline(String(doc.convert()), author, revdate))
     const { toc, body } = extractToc(rewriteLegacyHashLinks(html))
     fs.writeFileSync(destPath, prependHtml + body, 'utf-8')
     if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
