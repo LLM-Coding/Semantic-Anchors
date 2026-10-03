@@ -41,6 +41,8 @@
 
 Think of them as *shortcuts to rich context* - instead of explaining a complex methodology from scratch, you can invoke a semantic anchor and the LLM will activate its entire knowledge base about that concept.
 
+Others have named the same idea. Matt Pocock calls them https://github.com/mattpocock/skills/blob/main/docs/productivity/writing-for-agents.md[_leading words_]: he contributes the principle and its reach, this catalog the curated list. <<Related Work & External Validation>> quotes his definition.
+
 === Example
 
 Instead of saying:
@@ -330,7 +332,7 @@ If the LLM provides accurate, detailed information, it's safe to use that anchor
 
 Independent thinkers have arrived at the same idea, and practitioners have validated the framing.
 
-*Matt Pocock — "Leading Words".* In https://youtu.be/UNzCG3lw6O0?t=714["Building Great Agent Skills: The Missing Manual"] (the "Steering" segment, from ~11:54), Pocock describes _leading words_: specific terms that pack dense meaning to steer an agent's behaviour and reasoning trace. It is the same core idea as a Semantic Anchor, reached independently — one dense term instead of a long instruction. The difference is scope: Pocock's framing steers an agent while you author skills; this catalog is a curated, shared vocabulary organized by an anchor / contract / skill taxonomy.
+*Matt Pocock — "Leading Words".* Pocock has since written the idea down, in the `writing-for-agents` reference of his https://github.com/mattpocock/skills/blob/main/docs/productivity/writing-for-agents.md[skills repository] (MIT): a leading word is "a compact concept already in the model's pretraining (_tight_, _red_, _tracer bullet_) that the agent thinks with while running the document", and "it anchors twice: execution in the body, invocation in the pointer". He had put it on video first, in https://youtu.be/UNzCG3lw6O0?t=714["Building Great Agent Skills: The Missing Manual"] (the "Steering" segment, from ~11:54), where he describes _leading words_ as: specific terms that pack dense meaning to steer an agent's behaviour and reasoning trace. It is the same core idea as a Semantic Anchor, reached independently — one dense term instead of a long instruction. The difference is scope: Pocock's framing steers an agent while you author skills; this catalog is a curated, shared vocabulary organized by an anchor / contract / skill taxonomy.
 
 *Lynn Cole — "Prompting with pre-computed priors".* Systems architect Lynn Cole coined this three-word framing for _why_ anchors work, quote-sharing the catalog on https://www.linkedin.com/posts/lynn-cole_these-are-outstanding-when-i-talk-about-share-7467744538934145025-zkUW/[LinkedIn] (2026-06-03): "When I talk about prompting with pre-computed priors, this is basically what I'm talking about." A well-known term does not _describe_ a concept — it _conditions_ the model toward a dense region its training already built, so a few tokens buy rich, consistent activation.
 
