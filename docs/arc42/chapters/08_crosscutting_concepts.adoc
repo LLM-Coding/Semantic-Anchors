@@ -169,7 +169,7 @@ const logger = {
 * **Unit Tests**: Utils, State Manager, Search Engine (Vitest)
 * **Component Tests**: Card Grid, Filter, Search Bar (Vitest + @testing-library)
 * **E2E Tests**: User Flows (Playwright)
-* **Accessibility Tests**: axe-core, Lighthouse CI
+* **Accessibility Tests**: axe-core in Playwright (`accessibility.spec.js`, every PR, full WCAG 2.1 A/AA rule set incl. interactive states); Lighthouse CI after deploy for performance and SEO
 
 **Test-Strategie:**
 

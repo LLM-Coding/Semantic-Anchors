@@ -321,7 +321,7 @@ In aktiven Phasen mit vielen Beiträgen wenden Maintainer ein *20% Stichproben-R
 
 Jeder PR muss vor dem Merge alle folgenden Checks bestehen:
 
-* *E2E Tests* — alle 28+ Playwright-Tests grün
+* *E2E Tests* — alle 28+ Playwright-Tests grün, einschließlich der axe-Barrierefreiheits-Scans (`website/tests/e2e/accessibility.spec.js`, WCAG 2.1 A/AA) für Katalog, geöffnetes Modal, Suche/Filter, Dark Mode, eine Doku-Seite und die deutsche Variante. Lighthouse CI prüft Performance und SEO nach dem Merge auf `main` gegen die ausgelieferte Seite.
 * *Lint & Format Check* — ESLint + Prettier (keine Fehler)
 * *Dependency Audit* — `npm audit --audit-level=high` sauber
 * *CodeQL* — keine high/critical Security-Findings
