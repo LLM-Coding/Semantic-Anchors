@@ -16,7 +16,6 @@
     "test:e2e:prod": "PLAYWRIGHT_BASE_URL=https://raifdmueller.github.io/Semantic-Anchors/ playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
-    "test:lighthouse": "lhci autorun",
     "test:all": "npm run test && npm run test:e2e",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
@@ -25,7 +24,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.2.1",
     "eslint": "^10.0.2",
@@ -43,11 +41,6 @@
   },
   "overrides": {
     "minimatch": ">=10.2.1",
-    "cookie": ">=0.7.0",
-    "tmp": ">=0.2.6",
-    "lighthouse": "^13.4.1",
-    "puppeteer-core": "^25.7.0",
-    "@puppeteer/browsers": "^3.2.0",
     "brace-expansion": "^5.0.12",
     "undici": "^7.30.0"
   }
