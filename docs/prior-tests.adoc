@@ -517,7 +517,7 @@ That second half is what separates the anchor from a licence for inertia, and it
 |===
 |Candidates |14 terms proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/775[#775] to https://github.com/LLM-Coding/Semantic-Anchors/issues/788[#788], each because it appears in Florian Bruniaux's `claude-code-ultimate-guide`
 |Models |`claude-haiku-4-5` (weak). Strong-tier activation was run per candidate on `claude-opus-5-5` by the proposer and is recorded in each issue, not repeated here
-|Runs |14 bare-name probes, 14 attribution probes, 29 baseline runs across eleven scenarios, 28 anchored runs. 91 probes in total
+|Runs |14 bare-name probes, 14 attribution probes, 33 baseline runs across fourteen scenarios, 25 anchored runs. 86 probes in total
 |Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN`, each probe in its own empty directory outside the repository. Verified once against the custom-instructions probe, which answered "none"
 |Not tested |`claude-sonnet-5` was skipped again. Findings are a lower bound
 |===

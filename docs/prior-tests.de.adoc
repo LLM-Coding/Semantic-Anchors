@@ -517,7 +517,7 @@ Diese zweite Hälfte trennt den Anker von einem Freibrief für Stillstand -- und
 |===
 |Kandidaten |14 Begriffe, vorgeschlagen in https://github.com/LLM-Coding/Semantic-Anchors/issues/775[#775] bis https://github.com/LLM-Coding/Semantic-Anchors/issues/788[#788], jeder davon, weil er in Florian Bruniaux' `claude-code-ultimate-guide` auftaucht
 |Modelle |`claude-haiku-4-5` (schwach). Die Aktivierung auf dem starken Tier lief je Kandidat auf `claude-opus-5-5` beim Einreicher und steht in den Issues; hier nicht wiederholt
-|Läufe |14 Proben auf den nackten Namen, 14 auf die Attribution, 29 Baselines über elf Szenarien, 28 Läufe mit Anker. Zusammen 91 Proben
+|Läufe |14 Proben auf den nackten Namen, 14 auf die Attribution, 33 Baselines über vierzehn Szenarien, 25 Läufe mit Anker. Zusammen 86 Proben
 |Clean Room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` mit `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN`, jede Probe in einem eigenen leeren Verzeichnis außerhalb des Repositories. Einmal gegen die Probe auf eigene Instruktionen geprüft, Antwort „none"
 |Nicht getestet |`claude-sonnet-5` wurde erneut übersprungen. Die Befunde sind eine Untergrenze
 |===

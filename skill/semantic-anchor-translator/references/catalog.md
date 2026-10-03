@@ -646,6 +646,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Fritz B. Simon, Humberto Maturana, Gregory Bateson
 - **Core:** Introduction to systems theory and constructivism — viability vs. truth, trivial vs. non-trivial machines, second-order cybernetics (the observer is part of the observed), information as "differences that make a difference", perturbation instead of instruction
 
+### The Spectrum of Semantic Anchors
+- **Also known as:** What Qualifies as a Semantic Anchor, anchor quality criteria
+- **Proponents:** Ralf D. Müller (Semantic Anchors project)
+- **Core:** The four criteria a term must meet to work as an anchor — precise, rich, consistent, attributable — with definition depth, not subject matter, as the differentiator; use it to judge whether a candidate term will activate a framework or merely instruct
+
 ### Systemic Consulting (Heidelberg School)
 - **Also known as:** Systemische Beratung, Heidelberg Model
 - **Proponents:** Fritz B. Simon, Helm Stierlin, Gunthard Weber, Paul Watzlawick
