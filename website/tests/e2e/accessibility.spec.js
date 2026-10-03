@@ -20,40 +20,45 @@ const KNOWN_VIOLATIONS = [
   { rule: 'nested-interactive', selector: '.anchor-card' },
 ]
 
-// Drops nodes covered by KNOWN_VIOLATIONS. Matching runs in one page round
-// trip, because the catalog yields one node per card.
+// Drops nodes covered by KNOWN_VIOLATIONS and reports which entries matched.
+// Matching runs in one page round trip, because the catalog yields one node
+// per card.
 async function withoutKnown(page, violations) {
   const checks = violations.flatMap((v) =>
     v.nodes.map((node) => ({
       target: node.target.length === 1 ? node.target[0] : null,
-      selectors: KNOWN_VIOLATIONS.filter((k) => k.rule === v.id).map((k) => k.selector),
+      selectors: KNOWN_VIOLATIONS.map((k) => (k.rule === v.id ? k.selector : null)),
     }))
   )
-  const known = await page.evaluate(
+  // For each node: index of the matching KNOWN_VIOLATIONS entry, or -1.
+  const hits = await page.evaluate(
     (items) =>
       items.map(({ target, selectors }) => {
-        if (!target || selectors.length === 0) return false
-        const el = document.querySelector(target)
-        return !!el && selectors.some((s) => el.matches(s))
+        const el = target && document.querySelector(target)
+        return el ? selectors.findIndex((s) => s !== null && el.matches(s)) : -1
       }),
     checks
   )
   let i = 0
-  return violations
-    .map((v) => ({ ...v, nodes: v.nodes.filter(() => !known[i++]) }))
+  const remaining = violations
+    .map((v) => ({ ...v, nodes: v.nodes.filter(() => hits[i++] === -1) }))
     .filter((v) => v.nodes.length > 0)
+  return { remaining, matched: new Set(hits.filter((h) => h !== -1)) }
 }
 
+// Fails on any violation not covered by KNOWN_VIOLATIONS. Returns the known
+// entries that did not occur, so a test can flag exclusions gone stale.
 async function expectNoViolations(page) {
   const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze()
-  const violations = await withoutKnown(page, results.violations)
-  const summary = violations.map((v) => ({
+  const { remaining, matched } = await withoutKnown(page, results.violations)
+  const summary = remaining.map((v) => ({
     rule: v.id,
     impact: v.impact,
     help: v.help,
     targets: v.nodes.map((n) => n.target.join(' ')).slice(0, 5),
   }))
   expect(summary, JSON.stringify(summary, null, 2)).toEqual([])
+  return KNOWN_VIOLATIONS.filter((_, idx) => !matched.has(idx))
 }
 
 async function openCatalog(page, path = '/') {
@@ -68,7 +73,10 @@ test.describe('Accessibility (axe)', () => {
 
   test('catalog home page', async ({ page }) => {
     await openCatalog(page)
-    await expectNoViolations(page)
+    const unused = await expectNoViolations(page)
+    // The catalog shows every known violation; one that no longer occurs is
+    // fixed, so its KNOWN_VIOLATIONS entry must go.
+    expect(unused, 'known violation no longer occurs, remove its entry').toEqual([])
   })
 
   test('open anchor modal', async ({ page }) => {
@@ -82,7 +90,14 @@ test.describe('Accessibility (axe)', () => {
     await openCatalog(page)
     await page.fill('#header-search-input', 'test')
     await page.selectOption('#header-role-filter', 'software-developer')
-    await expect(page.locator('.anchor-card:visible').first()).toBeVisible()
+    // Searching hides the hero; the filter must leave fewer cards visible.
+    await expect(page.locator('#hero')).toBeHidden()
+    const total = await page.locator('.anchor-card').count()
+    await expect(async () => {
+      const visible = await page.locator('.anchor-card:visible').count()
+      expect(visible).toBeGreaterThan(0)
+      expect(visible).toBeLessThan(total)
+    }).toPass({ timeout: 10000 })
     await expectNoViolations(page)
   })
 
