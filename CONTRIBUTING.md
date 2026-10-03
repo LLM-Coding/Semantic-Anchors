@@ -320,7 +320,7 @@ For active periods with many contributions, maintainers apply a **20% sampling r
 
 Every PR must pass all of the following before merge:
 
-- **E2E Tests** — all 28+ Playwright tests green
+- **E2E Tests** — all 28+ Playwright tests green, including the axe accessibility scans (`website/tests/e2e/accessibility.spec.js`, WCAG 2.1 A/AA) of the catalog, the open modal, search/filter, dark mode, a doc page and the German variant. Lighthouse CI checks performance and SEO against the deployed site after merge to `main`.
 - **Lint & Format Check** — ESLint + Prettier (no errors)
 - **Dependency Audit** — `npm audit --audit-level=high` clean
 - **CodeQL** — no high/critical security findings

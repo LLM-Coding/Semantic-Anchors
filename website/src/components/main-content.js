@@ -39,10 +39,10 @@ export function renderMain() {
 
           <div class="grid sm:grid-cols-2 gap-4 mb-3">
             <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-4">
-              <div class="text-xs uppercase tracking-wide text-[var(--color-text-secondary)] mb-2 font-semibold" data-i18n="hero.withoutLabel">
+              <div id="hero-without-label" class="text-xs uppercase tracking-wide text-[var(--color-text-secondary)] mb-2 font-semibold" data-i18n="hero.withoutLabel">
                 ${i18n.t('hero.withoutLabel')}
               </div>
-              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed font-mono max-h-32 overflow-y-auto pr-2" data-i18n="${keyWithout}">
+              <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed font-mono max-h-32 overflow-y-auto pr-2" tabindex="0" role="region" aria-labelledby="hero-without-label" data-i18n="${keyWithout}">
                 ${i18n.t(keyWithout)}
               </p>
             </div>
