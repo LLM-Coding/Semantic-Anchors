@@ -2,6 +2,10 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-03
+
+*The Lighthouse dependency is gone, and Lighthouse now runs against the deployed site.* `@lhci/cli` was the sole root of all nine `high` npm advisories and of 310 of the lockfile's 579 packages -- an FTP client, a PAC proxy agent and OpenTelemetry instrumentation among them. Every pull request installed that tree for a job configured to run only on `main`, and the `Dependency Security Audit` kept failing on advisories against an unchanged lockfile, three times in a row on unrelated pull requests. Lighthouse now runs as `treosh/lighthouse-ci-action`, pinned to a commit SHA, in `deploy.yml` with `needs: deploy` -- so it grades the build that was just published, which the old job could not: it declared `needs: []` and measured whatever happened to be live. The assertions are unchanged, read from the same `website/.lighthouserc.json`. The lockfile drops to 269 packages, `npm audit --audit-level=high` exits 0, and the three remaining advisories are `moderate` ones in `vitest` and `eslint`, below the gate. Five `overrides` that existed only to pin that subtree were removed with it.
+
 == 2026-09-30
 
 *Fifteen new anchors: the Six Sigma and Toyota Production System cluster.* The catalog already had the entry points to both families — link:#/anchor/dmaic[DMAIC], link:#/anchor/spc[SPC], link:#/anchor/five-whys[5 Whys], link:#/anchor/hoshin-kanri[Hoshin Kanri], link:#/anchor/kano-model[Kano Model], link:#/anchor/pugh-matrix[Pugh Matrix] — but not the surrounding vocabulary a practitioner actually names in a prompt. Sixteen terms were proposed as a cluster by Ralf D. Müller in #753; fifteen were measured, accepted and written, and one was rejected for a reason worth reading.
