@@ -245,12 +245,9 @@ function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false) {
       ${isRecent ? 'data-recent="true"' : ''}
       data-roles="${escapeHtml(anchor.roles ? anchor.roles.join(',') : '')}"
       data-tags="${escapeHtml(anchor.tags ? anchor.tags.join(',') : '')}"
-      tabindex="0"
-      role="button"
-      aria-labelledby="${cardTitleId}"
     >
       <div class="anchor-card-header">
-        <h3 id="${cardTitleId}" class="anchor-card-title">${escapeHtml(anchor.title)}${
+        <h3 id="${cardTitleId}" class="anchor-card-title"><button type="button" class="anchor-card-open">${escapeHtml(anchor.title)}</button>${
           isRecentlyAdded(anchor)
             ? ` <span class="anchor-new-badge" title="${escapeHtml(i18n.t('card.new'))}">${escapeHtml(i18n.t('card.new'))}</span>`
             : ''
@@ -372,7 +369,6 @@ function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false) {
 
 // Store handler references to prevent duplicate listeners
 let clickHandler = null
-let keydownHandler = null
 
 /**
  * Initialize card grid event handlers
@@ -389,9 +385,6 @@ export function initCardGrid() {
   // Remove existing listeners if any
   if (clickHandler) {
     container.removeEventListener('click', clickHandler)
-  }
-  if (keydownHandler) {
-    container.removeEventListener('keydown', keydownHandler)
   }
 
   // Click handler using event delegation
@@ -441,22 +434,6 @@ export function initCardGrid() {
     }
   }
   container.addEventListener('click', clickHandler)
-
-  // Keyboard handler (Enter/Space on focused card)
-  keydownHandler = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      const card = e.target.closest('.anchor-card')
-      if (card) {
-        e.preventDefault()
-        const anchorId = card.dataset.anchor
-        const event = new CustomEvent('anchor-selected', {
-          detail: { anchorId },
-        })
-        document.dispatchEvent(event)
-      }
-    }
-  }
-  container.addEventListener('keydown', keydownHandler)
 }
 
 /**

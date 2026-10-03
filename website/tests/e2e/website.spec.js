@@ -26,7 +26,9 @@ test.describe('Homepage - Card Grid', () => {
     // Check navigation links (use .first() to select desktop nav, not mobile)
     await expect(page.locator('a[data-route="/"]').first()).toContainText('Anchors')
     await expect(page.locator('a[data-route="/about"]').first()).toContainText('About')
-    await expect(page.locator('a[data-route="/contributing"]').first()).toContainText('Contributing')
+    await expect(page.locator('a[data-route="/contributing"]').first()).toContainText(
+      'Contributing'
+    )
   })
 
   test('should display card grid with categories', async ({ page }) => {
@@ -392,20 +394,26 @@ test.describe('Accessibility', () => {
   test('should support keyboard navigation on cards', async ({ page }) => {
     await page.waitForSelector('.anchor-card', { timeout: 10000 })
 
-    // Focus first card with Tab
-    await page.keyboard.press('Tab')
-    await page.keyboard.press('Tab') // Skip theme toggle
-    await page.keyboard.press('Tab') // Skip lang toggle
-
-    // Card should be focusable
+    // The card itself is not focusable any more (#791): it holds the copy
+    // buttons and the edit link, so a button role on the container would
+    // expose those as presentational. The title is the primary control.
     const firstCard = page.locator('.anchor-card').first()
-    await firstCard.focus()
+    await expect(firstCard).not.toHaveAttribute('role', 'button')
 
-    // Press Enter to open modal
+    const opener = firstCard.locator('.anchor-card-open')
+    await opener.focus()
+    await expect(opener).toBeFocused()
+
     await page.keyboard.press('Enter')
 
-    // Modal should open
     const modal = page.locator('#anchor-modal')
+    await expect(modal).not.toHaveClass(/hidden/)
+
+    // Space is the other activation a button owes a keyboard user.
+    await page.keyboard.press('Escape')
+    await expect(modal).toHaveClass(/hidden/)
+    await opener.focus()
+    await page.keyboard.press('Space')
     await expect(modal).not.toHaveClass(/hidden/)
   })
 

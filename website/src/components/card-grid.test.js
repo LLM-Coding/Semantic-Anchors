@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { renderCardGrid } from './card-grid.js'
+import { renderCardGrid, initCardGrid } from './card-grid.js'
 
 // Mock i18n module
 vi.mock('../i18n.js', () => ({
@@ -444,5 +444,68 @@ describe('recency selection invariant', () => {
     const ids = markedIds(html)
     for (let i = 0; i < 12; i++) expect(ids.has(`ok${i}`)).toBe(true)
     for (let i = 12; i < 20; i++) expect(ids.has(`ok${i}`)).toBe(false)
+  })
+})
+
+describe('card structure — one primary control per card (#791)', () => {
+  const CATEGORIES = [{ id: 'design-principles', name: 'Design Principles' }]
+  const ANCHORS = [
+    {
+      id: 'cqs',
+      title: 'CQS',
+      categories: ['design-principles'],
+      roles: ['software-developer'],
+      tags: [],
+      proponents: [],
+    },
+  ]
+
+  const mount = () => {
+    document.body.innerHTML = '<div id="main-content"></div>'
+    const container = document.getElementById('main-content')
+    container.innerHTML = renderCardGrid(CATEGORIES, ANCHORS)
+    initCardGrid()
+    return container
+  }
+
+  // axe reports nested-interactive (serious, WCAG 4.1.2): a `button` role
+  // exposes its descendants as presentational, so a screen reader may never
+  // announce the copy buttons and the edit link that sit inside the card.
+  it('does not declare the card itself a button', () => {
+    const card = mount().querySelector('.anchor-card')
+    expect(card.getAttribute('role')).toBeNull()
+    expect(card.getAttribute('tabindex')).toBeNull()
+  })
+
+  // The card still has to be reachable and operable by keyboard. A real
+  // <button> gives that for free, including Enter and Space.
+  it('makes the title a real button that names the anchor', () => {
+    const card = mount().querySelector('.anchor-card')
+    const opener = card.querySelector('.anchor-card-title button, button.anchor-card-open')
+    expect(opener).not.toBeNull()
+    expect(opener.tagName).toBe('BUTTON')
+    expect(opener.textContent).toContain('CQS')
+  })
+
+  it('opens the anchor when the title button is activated', () => {
+    const card = mount().querySelector('.anchor-card')
+    const opener = card.querySelector('.anchor-card-title button, button.anchor-card-open')
+    const seen = []
+    document.addEventListener('anchor-selected', (e) => seen.push(e.detail.anchorId))
+    opener.click()
+    expect(seen).toEqual(['cqs'])
+  })
+
+  // The keydown handler matched any Enter/Space inside the card, so a keyboard
+  // user pressing Enter on a copy button copied *and* opened the modal. Only
+  // the primary control may open the anchor.
+  it('does not open the anchor when a copy button is used by keyboard', () => {
+    const card = mount().querySelector('.anchor-card')
+    const copy = card.querySelector('.anchor-copy-keyword-btn')
+    expect(copy).not.toBeNull()
+    const seen = []
+    document.addEventListener('anchor-selected', (e) => seen.push(e.detail.anchorId))
+    copy.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
+    expect(seen).toEqual([])
   })
 })
