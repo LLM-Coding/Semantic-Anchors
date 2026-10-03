@@ -2,8 +2,8 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 21 semantic contracts, and
-> 216 anchors in 14 categories — the anchors both
-> one by one and bundled into 22 files that hold a whole category.
+> 230 anchors in 14 categories — the anchors both
+> one by one and bundled into 23 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
 > question about a workflow, a method or this project is usually answered by a
@@ -43,7 +43,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 216 terms in full, 22 files
+## Anchor bundles — the same 230 terms in full, 23 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -51,27 +51,28 @@
 - [Communication & Presentation (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-1.txt): 18 anchors in full.
 - [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 4 anchors in full.
 - [Creative Writing](https://llm-coding.github.io/Semantic-Anchors/bundles/creative-writing.txt): 7 anchors in full.
-- [Design Principles & Patterns (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 35 anchors in full.
-- [Design Principles & Patterns (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 18 anchors in full.
+- [Design Principles & Patterns (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 34 anchors in full.
+- [Design Principles & Patterns (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 11 anchors in full.
+- [Design Principles & Patterns (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-3.txt): 13 anchors in full.
 - [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 15 anchors in full.
-- [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 8 anchors in full.
+- [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 10 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
-- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 4 anchors in full.
+- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 6 anchors in full.
 - [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 7 anchors in full.
 - [Meta](https://llm-coding.github.io/Semantic-Anchors/bundles/meta.txt): 3 anchors in full.
 - [Problem Solving (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 13 anchors in full.
 - [Problem Solving (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 10 anchors in full.
 - [Problem Solving (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-3.txt): 8 anchors in full.
-- [Requirements Engineering](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering.txt): 15 anchors in full.
-- [Software Architecture (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-1.txt): 23 anchors in full.
-- [Software Architecture (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 5 anchors in full.
+- [Requirements Engineering](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering.txt): 16 anchors in full.
+- [Software Architecture (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-1.txt): 17 anchors in full.
+- [Software Architecture (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 16 anchors in full.
 - [Statistical Methods & Process Monitoring](https://llm-coding.github.io/Semantic-Anchors/bundles/statistical-methods.txt): 5 anchors in full.
 - [Strategic Planning (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-1.txt): 17 anchors in full.
 - [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 5 anchors in full.
-- [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 21 anchors in full.
-- [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 4 anchors in full.
+- [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 12 anchors in full.
+- [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 18 anchors in full.
 
-## Anchors — 216 named terms, grouped by category
+## Anchors — 230 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -113,6 +114,7 @@
 - [Boy Scout Rule](https://llm-coding.github.io/Semantic-Anchors/anchors/boy-scout-rule.txt)
 - [Code Smells](https://llm-coding.github.io/Semantic-Anchors/anchors/code-smells.txt)
 - [Cohesion Criteria](https://llm-coding.github.io/Semantic-Anchors/anchors/cohesion-criteria.txt)
+- [CQS (Command-Query Separation)](https://llm-coding.github.io/Semantic-Anchors/anchors/command-query-separation.txt)
 - [CRC-Cards](https://llm-coding.github.io/Semantic-Anchors/anchors/crc-cards.txt)
 - [CUPID Properties](https://llm-coding.github.io/Semantic-Anchors/anchors/cupid-properties.txt)
 - [Deep Modules](https://llm-coding.github.io/Semantic-Anchors/anchors/deep-modules.txt)
@@ -148,9 +150,13 @@
 - [Jidoka](https://llm-coding.github.io/Semantic-Anchors/anchors/jidoka.txt)
 - [KISS Principle](https://llm-coding.github.io/Semantic-Anchors/anchors/kiss-principle.txt)
 - [Law of Demeter](https://llm-coding.github.io/Semantic-Anchors/anchors/law-of-demeter.txt)
+- [Principle of Least Privilege (Saltzer & Schroeder)](https://llm-coding.github.io/Semantic-Anchors/anchors/least-privilege.txt)
 - [Locality of Behaviour](https://llm-coding.github.io/Semantic-Anchors/anchors/locality-of-behaviour.txt)
 - [Poka-Yoke](https://llm-coding.github.io/Semantic-Anchors/anchors/poka-yoke.txt)
 - [Postel's Law](https://llm-coding.github.io/Semantic-Anchors/anchors/postels-law.txt)
+- [Railway Oriented Programming](https://llm-coding.github.io/Semantic-Anchors/anchors/railway-oriented-programming.txt)
+- [Refactoring Catalog according to Fowler](https://llm-coding.github.io/Semantic-Anchors/anchors/refactoring-catalog.txt)
+- [Richardson Maturity Model](https://llm-coding.github.io/Semantic-Anchors/anchors/richardson-maturity-model.txt)
 - [Separation of Concerns](https://llm-coding.github.io/Semantic-Anchors/anchors/separation-of-concerns.txt)
 - [Single Level of Abstraction Principle (SLAP)](https://llm-coding.github.io/Semantic-Anchors/anchors/single-level-of-abstraction-principle.txt)
 - [SOLID-Dependency Inversion Principle](https://llm-coding.github.io/Semantic-Anchors/anchors/solid-dip.txt)
@@ -178,9 +184,11 @@
 - [Effective Python](https://llm-coding.github.io/Semantic-Anchors/anchors/effective-python.txt)
 - [GitHub Flow](https://llm-coding.github.io/Semantic-Anchors/anchors/github-flow.txt)
 - [Kaizen](https://llm-coding.github.io/Semantic-Anchors/anchors/kaizen.txt)
+- [Keep a Changelog](https://llm-coding.github.io/Semantic-Anchors/anchors/keep-a-changelog.txt)
 - [Programming as Theory Building (Naur)](https://llm-coding.github.io/Semantic-Anchors/anchors/mental-model-according-to-naur.txt)
 - [Mikado Method](https://llm-coding.github.io/Semantic-Anchors/anchors/mikado-method.txt)
 - [PDCA](https://llm-coding.github.io/Semantic-Anchors/anchors/pdca.txt)
+- [Refactoring Catalog according to Fowler](https://llm-coding.github.io/Semantic-Anchors/anchors/refactoring-catalog.txt)
 - [Regulated Environment](https://llm-coding.github.io/Semantic-Anchors/anchors/regulated-environment.txt)
 - [Semantic Versioning (SemVer)](https://llm-coding.github.io/Semantic-Anchors/anchors/semantic-versioning.txt)
 - [Site Reliability Engineering](https://llm-coding.github.io/Semantic-Anchors/anchors/site-reliability-engineering.txt)
@@ -202,6 +210,8 @@
 - [A3 Problem Solving](https://llm-coding.github.io/Semantic-Anchors/anchors/a3-problem-solving.txt)
 - [Diátaxis Framework](https://llm-coding.github.io/Semantic-Anchors/anchors/diataxis-framework.txt)
 - [Docs-as-Code according to Ralf D. Müller](https://llm-coding.github.io/Semantic-Anchors/anchors/docs-as-code.txt)
+- [4+1 View Model according to Kruchten](https://llm-coding.github.io/Semantic-Anchors/anchors/four-plus-one-view-model.txt)
+- [Keep a Changelog](https://llm-coding.github.io/Semantic-Anchors/anchors/keep-a-changelog.txt)
 - [Simplified Technical English (ASD-STE100)](https://llm-coding.github.io/Semantic-Anchors/anchors/simplified-technical-english.txt)
 
 ### Knowledge Management
@@ -257,6 +267,7 @@
 ### Requirements Engineering
 
 - [Cockburn Use Cases](https://llm-coding.github.io/Semantic-Anchors/anchors/cockburn-use-cases.txt)
+- [Connextra User Story Format](https://llm-coding.github.io/Semantic-Anchors/anchors/connextra-user-story.txt)
 - [Double Diamond](https://llm-coding.github.io/Semantic-Anchors/anchors/double-diamond.txt)
 - [EARS-Requirements](https://llm-coding.github.io/Semantic-Anchors/anchors/ears-requirements.txt)
 - [Event Storming according to Alberto Brandolini](https://llm-coding.github.io/Semantic-Anchors/anchors/event-storming.txt)
@@ -277,6 +288,7 @@
 - [ADR according to Nygard](https://llm-coding.github.io/Semantic-Anchors/anchors/adr-according-to-nygard.txt)
 - [arc42 Architecture Documentation](https://llm-coding.github.io/Semantic-Anchors/anchors/arc42.txt)
 - [ATAM](https://llm-coding.github.io/Semantic-Anchors/anchors/atam.txt)
+- [Bulkhead Pattern](https://llm-coding.github.io/Semantic-Anchors/anchors/bulkhead.txt)
 - [C4-Diagrams](https://llm-coding.github.io/Semantic-Anchors/anchors/c4-diagrams.txt)
 - [CAP Theorem](https://llm-coding.github.io/Semantic-Anchors/anchors/cap-theorem.txt)
 - [Circuit Breaker](https://llm-coding.github.io/Semantic-Anchors/anchors/circuit-breaker.txt)
@@ -284,10 +296,13 @@
 - [Conway's Law](https://llm-coding.github.io/Semantic-Anchors/anchors/conways-law.txt)
 - [CQRS (Command Query Responsibility Segregation)](https://llm-coding.github.io/Semantic-Anchors/anchors/cqrs.txt)
 - [CUPID Properties](https://llm-coding.github.io/Semantic-Anchors/anchors/cupid-properties.txt)
+- [Defense in Depth](https://llm-coding.github.io/Semantic-Anchors/anchors/defense-in-depth.txt)
 - [Domain-Driven Design according to Evans](https://llm-coding.github.io/Semantic-Anchors/anchors/domain-driven-design.txt)
+- [Enterprise Integration Patterns (Hohpe/Woolf)](https://llm-coding.github.io/Semantic-Anchors/anchors/enterprise-integration-patterns.txt)
 - [Event-Driven Architecture](https://llm-coding.github.io/Semantic-Anchors/anchors/event-driven-architecture.txt)
 - [Event Storming according to Alberto Brandolini](https://llm-coding.github.io/Semantic-Anchors/anchors/event-storming.txt)
 - [Fallacies of Distributed Computing](https://llm-coding.github.io/Semantic-Anchors/anchors/fallacies-of-distributed-computing.txt)
+- [4+1 View Model according to Kruchten](https://llm-coding.github.io/Semantic-Anchors/anchors/four-plus-one-view-model.txt)
 - [GoM](https://llm-coding.github.io/Semantic-Anchors/anchors/gom.txt)
 - [Hexagonal Architecture (Ports & Adapters)](https://llm-coding.github.io/Semantic-Anchors/anchors/hexagonal-architecture.txt)
 - [ISO/IEC 25010](https://llm-coding.github.io/Semantic-Anchors/anchors/iso-25010.txt)
@@ -296,6 +311,7 @@
 - [MADR](https://llm-coding.github.io/Semantic-Anchors/anchors/madr.txt)
 - [Quality Attribute Scenario](https://llm-coding.github.io/Semantic-Anchors/anchors/quality-attribute-scenario.txt)
 - [Residuality Theory](https://llm-coding.github.io/Semantic-Anchors/anchors/residuality-theory.txt)
+- [Richardson Maturity Model](https://llm-coding.github.io/Semantic-Anchors/anchors/richardson-maturity-model.txt)
 - [Strangler Fig](https://llm-coding.github.io/Semantic-Anchors/anchors/strangler-fig.txt)
 - [Team Topologies](https://llm-coding.github.io/Semantic-Anchors/anchors/team-topologies.txt)
 - [Tracer Bullet](https://llm-coding.github.io/Semantic-Anchors/anchors/tracer-bullet.txt)
@@ -339,15 +355,19 @@
 ### Testing & Quality Practices
 
 - [Andon](https://llm-coding.github.io/Semantic-Anchors/anchors/andon.txt)
+- [Arrange-Act-Assert (AAA)](https://llm-coding.github.io/Semantic-Anchors/anchors/arrange-act-assert.txt)
 - [BDD (Behavior-Driven Development)](https://llm-coding.github.io/Semantic-Anchors/anchors/bdd-given-when-then.txt)
+- [Defense in Depth](https://llm-coding.github.io/Semantic-Anchors/anchors/defense-in-depth.txt)
 - [Fagan Inspection](https://llm-coding.github.io/Semantic-Anchors/anchors/fagan-inspection.txt)
 - [FMEA](https://llm-coding.github.io/Semantic-Anchors/anchors/fmea.txt)
 - [Gherkin](https://llm-coding.github.io/Semantic-Anchors/anchors/gherkin.txt)
 - [IEC 61508 SIL Levels](https://llm-coding.github.io/Semantic-Anchors/anchors/iec-61508-sil-levels.txt)
 - [Jidoka](https://llm-coding.github.io/Semantic-Anchors/anchors/jidoka.txt)
+- [Principle of Least Privilege (Saltzer & Schroeder)](https://llm-coding.github.io/Semantic-Anchors/anchors/least-privilege.txt)
 - [LINDDUN](https://llm-coding.github.io/Semantic-Anchors/anchors/linddun.txt)
 - [LLM-Evaluations](https://llm-coding.github.io/Semantic-Anchors/anchors/llm-evaluations.txt)
 - [Mutation Testing](https://llm-coding.github.io/Semantic-Anchors/anchors/mutation-testing.txt)
+- [OWASP ASVS (Application Security Verification Standard)](https://llm-coding.github.io/Semantic-Anchors/anchors/owasp-asvs.txt)
 - [OWASP Top 10](https://llm-coding.github.io/Semantic-Anchors/anchors/owasp-top-10.txt)
 - [Poka-Yoke](https://llm-coding.github.io/Semantic-Anchors/anchors/poka-yoke.txt)
 - [Property-Based Testing](https://llm-coding.github.io/Semantic-Anchors/anchors/property-based-testing.txt)
@@ -355,6 +375,7 @@
 - [STRIDE Threat Model](https://llm-coding.github.io/Semantic-Anchors/anchors/stride.txt)
 - [TDD, Chicago School](https://llm-coding.github.io/Semantic-Anchors/anchors/tdd-chicago-school.txt)
 - [TDD, London School](https://llm-coding.github.io/Semantic-Anchors/anchors/tdd-london-school.txt)
+- [Test Data Builder (Pryce)](https://llm-coding.github.io/Semantic-Anchors/anchors/test-data-builder.txt)
 - [Test Double: Dummy (Meszaros)](https://llm-coding.github.io/Semantic-Anchors/anchors/test-double-dummy.txt)
 - [Test Double: Fake (Meszaros)](https://llm-coding.github.io/Semantic-Anchors/anchors/test-double-fake.txt)
 - [Test Double (Meszaros)](https://llm-coding.github.io/Semantic-Anchors/anchors/test-double-meszaros.txt)

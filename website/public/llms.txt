@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 249 well-defined terms, methodologies, and frameworks
+> 269 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -1888,6 +1888,62 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 * Clean Architecture - Organizes code by cohesive business rules
 * Vertical Slice Architecture - Groups by feature cohesion rather than technical layer
 
+### CQS (Command-Query Separation)
+
+***Full Name***: Command-Query Separation, from Bertrand Meyer's _Object-Oriented Software Construction_ (1988), developed alongside Eiffel
+
+***Also known as***: CQS, command-query separation; Fowler prefers "modifiers" over "commands", and the term "mutators" is also current
+
+[discrete]
+## **Core Concepts**:
+
+***One Rule, Applied Per Method***: Every method is either a command, which changes state and returns nothing, or a query, which returns a value and changes no observable state. Never both. Fowler states the two halves: "Queries: Return a result and do not change the observable state of the system (are free of side effects). Commands: Change the state of a system but do not return a value."
+
+***Asking a Question Does Not Change the Answer***: The payoff is that a query can be called twice, in any order, from a logger or a debugger or an assertion, without moving the system. Reading a signature tells you whether the call is safe to repeat — which is exactly the property a reader cannot otherwise recover without reading the body.
+
+***This Is Not CQRS***: `cqrs` is an architectural pattern: separate read and write models, often separate stores, usually eventual consistency between them. CQS is a rule about a single method signature, and it applies in a 300-line codebase that will never have two models. Greg Young and Udi Dahan lifted Meyer's method-level rule to architecture; the lift does not replace the original.
+
+***The Design-by-Contract Motivation***: `design-by-contract` is the same author's work and the reason CQS exists. Pre-conditions, post-conditions and invariants call queries. If a query mutated, writing a contract would change the thing the contract describes, and assertions could not be compiled out of a release build.
+
+***Side Effects Versus Observable Side Effects***: A query may fill a cache, increment a hit counter or open a connection. CQS asks about **observable** state — what a caller can detect through the object's own interface. Memoisation is therefore compatible with the rule, not an exception to it.
+
+***Where the Rule Bends***: `pop()`, `next()` on an iterator and atomic compare-and-set all mutate and return, deliberately. Fowler: "Popping a stack is a good example of a query that modifies state. Meyer correctly says that you can avoid having this method, but it is a useful idiom. So I prefer to follow this principle when I can, but I'm prepared to break it to get my pop." Concurrency makes the case stronger: splitting compare-and-set into a query plus a command introduces the race the atomic operation exists to close.
+
+***The Diagnostic Use***: CQS is a reading tool as much as a writing rule. Go through an interface and sort the methods into commands and queries; the ones that resist sorting are where the design is unclear, which makes it a specific lens on `code-smells`.
+
+[discrete]
+## **When to Use**:
+
+* Designing or reviewing a class or module API, when a reader must see from the signature whether a call is safe to repeat
+* Sorting an existing interface: any method that both mutates and returns is a question to answer, not automatically a defect
+* Wherever assertions, contracts or invariants will call into the code (`design-by-contract`)
+* Writing code a model will extend: a command/query split survives being read out of context better than a convention in the docstring
+* Naming the deliberate exceptions, so `pop()` is a decision in the record and not an oversight
+* Per slice in `vertical-slice-architecture`, where the command/query split is the natural seam before any CQRS-scale separation
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "CQS and CQRS are the same thing, one is just the abbreviation" — CQS is Meyer's per-method rule from 1988; CQRS is the architectural pattern with two models
+* ❌ "CQS means you need separate read and write databases" — that is CQRS; CQS costs nothing architecturally and needs no second store
+* ❌ "A query must have no side effects at all" — it must have no **observable** ones; caching and counters are fine
+* ❌ "The rule is absolute" — Fowler breaks it for `pop()` on purpose, and atomic compare-and-set cannot obey it without reintroducing a race
+* ❌ "A command may return a status code" — returning an error or a status is the usual, defensible bend; returning the created entity's ID is the contested one
+* ✓ "Every method is a command or a query, and the exceptions are named" — the rule plus its named exceptions is the whole practice
+
+## **Criticism**:
+
+* **The author of the best-known modern write-up refuses to follow it absolutely.** Martin Fowler's bliki entry credits Meyer — "The term 'command query separation' was coined by Bertrand Meyer in his book 'Object Oriented Software Construction'" — endorses the value, "it's extremely handy if you can clearly separate methods that change state from those that don't", and then declines the pure position: "So I prefer to follow this principle when I can, but I'm prepared to break it to get my pop." https://martinfowler.com/bliki/CommandQuerySeparation.html[Fowler, "CommandQuerySeparation"] (5 December 2005).
+* **The database-generated ID is the standing counterexample, and it has a cost either way.** Mark Seemann names the collision: a repository method that saves a new entity and returns the ID the database assigned. "The problem with this design, obviously, is that it violates CQS. The Create method ought to be a Command, but it returns a value." His fix is to pass the ID in — `void Create(Guid id, T item)` — and he concedes the price: "Most software design decisions involve trade-offs, and so does this one. You gain better encapsulation for potentially worse performance." https://blog.ploeh.dk/2014/08/11/cqs-versus-server-generated-ids/[Seemann, "CQS versus server generated IDs"] (11 August 2014).
+* **Vladimir Khorikov answered that the price is too high.** Replying to Seemann directly: "While this solution clearly solves the problem of violation CQS, it does it at a high cost." His concrete objection is not aesthetic: "Besides the fact that this design results in two calls instead of one, GUIDs hurt performance of inserts." https://enterprisecraftsmanship.com/posts/cqs-with-database-generated-ids/[Khorikov, "CQS with Database-Generated Ids"] (15 November 2014). The exchange is the most useful criticism available, because both sides accept the rule and disagree only about what obeying it costs.
+* **No named German-language critic found.** Searched in English and German for documented objections to CQS as a method-level rule. The German-language material that surfaces is introductory or translated — definitions and tutorials, no citable critic. Treat this as a search result with its frame attached, not as evidence that none exists; the term is normally discussed in English.
+
+[discrete]
+## **Current Status**:
+
+* **CQS stayed a method-level rule while CQRS took the attention.** The acronym most teams meet first is CQRS, and the method-level original is often assumed to be its abbreviation. Fowler's 2005 entry remains the common modern reference for the original rule, and the 2014 Seemann/Khorikov exchange is still where the hard case is argued.
+* **The bare acronym is safe, and naming it partitions an interface.** Measured on `claude-haiku-4-5` in a clean room on 2026-10-03: asked how a developer should know, before calling one of twelve methods, whether the call is reversible — a task carrying none of CQS's vocabulary — the baseline answered with JavaDoc annotations and a naming convention. Naming CQS partitioned the twelve into queries that change nothing and commands that return void. The bare acronym also holds: asked "What is CQS?", the weak tier returned Meyer's rule without drifting to CQRS.
+
 ### CRC-Cards
 
 ***Full Name***: Class-Responsibility-Collaboration Cards
@@ -2932,6 +2988,58 @@ Ralf Westphal ("Integration Operation Segregation Principle (IOSP)", 2022 — su
 * GRASP — Low Coupling and Information Expert overlap with LoD
 * Cohesion Criteria — the cohesion side of the same design concern
 
+### Principle of Least Privilege (Saltzer & Schroeder)
+
+***Full Name***: Least privilege, design principle (f) in Jerome H. Saltzer and Michael D. Schroeder, "The Protection of Information in Computer Systems", _Proceedings of the IEEE_ 63(9), September 1975, pp. 1278-1308
+
+***Also known as***: PoLP, least authority (POLA), need-to-know, minimal privilege
+
+[discrete]
+## **Core Concepts**:
+
+***One of Eight, and the Authors' Own Words***: Saltzer and Schroeder introduce the set with "Here are eight examples of design principles that apply particularly to protection mechanisms." Principle (f) reads: "Least privilege: Every program and every user of the system should operate using the least set of privileges necessary to complete the job." Quoting that sentence is the whole anchor; everything below is its consequences.
+
+***Accident Before Attack***: The stated first purpose is not defence against an adversary. "Primarily, this principle limits the damage that can result from an accident or error." The authors give the reduction of "potential interactions among privileged programs" as the second reason and audit scope as the third: "if a question arises related to misuse of a privilege, the number of programs that must be audited is minimized."
+
+***Need-to-Know Is Their Example, Not a Separate Idea***: "The military security rule of 'need-to-know' is an example of this principle." So is the firewall placement argument: "if a mechanism can provide 'firewalls,' the principle of least privilege provides a rationale for where to install the firewalls."
+
+***"The Job" Is the Scoping Term***: The minimum is relative to a task, so the grant has to be recomputed when the task changes. That is the reading behind just-in-time access, short-lived tokens and scoped workload identity: the privilege expires with the job rather than outliving it.
+
+***Modern Descendants***: Default deny (the authors' own **fail-safe defaults**), separation of duties (their **separation of privilege**), need-to-know, capability-based security and the renamed **principle of least authority**, RBAC/ABAC/ReBAC as the policy languages, just-in-time and break-glass access as the lifetime mechanisms.
+
+***Zero Trust Is a Different Claim***: Zero Trust removes implicit trust from network location -- verify every request, wherever it comes from. Least privilege constrains the **size** of the grant. Zero Trust architectures use least privilege, but the two are independent: a system can authenticate every single request and still hand out standing admin.
+
+[discrete]
+## **When to Use**:
+
+* Writing CI/CD pipelines -- the measurement below shows this is where the anchor actually changes output
+* IAM policies, service accounts, workload identity and database grants
+* Agent and tool permissions, where the grant is an LLM's reach into a system (`meaningful-human-control`)
+* Container and process design: which capability does this process genuinely need
+* Reviewing an **Elevation of Privilege** threat from `stride`, or Broken Access Control from `owasp-top-10`
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Least privilege means read-only" -- it means the least set for the job, which sometimes includes write
+* ❌ "It is purely a security principle" -- damage from "an accident or error" is the first reason the authors give
+* ❌ "Zero Trust is least privilege" -- per-request verification and minimal grants are separate properties
+* ❌ "Grant it once and you are done" -- the minimum is defined relative to the job, so it has to shrink when the job ends
+* ❌ "The minimum set can be computed" -- the central academic objection says it cannot (see Criticism)
+* ✓ "Default deny, grant the least set for this job, and make the grant expire" -- the operational form
+
+## **Criticism**:
+
+* **Computing the minimum privilege set is infeasible, and the honest alternative grants more.** Fred B. Schneider of Cornell builds the case formally: the policy that grants exactly the privileges an extension needs cannot generally be derived, because establishing that the code meets its specification "is undecidable for general-purpose programming and specification languages", and a high-level specification "lacks information about how Ext works that would be needed for deducing" the policy. His conclusion: "So at least for the time being, it seems as though obtaining μPriv(Ext, Ext) for use by a reference monitor interposed between a base and its extensions is infeasible, and alternatives must be sought." The alternative he proposes is deliberately named against the original: "One such alternative, which might be called a Principle of Most Privilege, is to enforce a policy Priv(B) that merely prevents extensions from subverting the base system B." The paper closes that "practical protection for extensible systems is most easily obtained using policies that grant more privileges than would μPriv(Ext, Ext) -- the least privilege and more." https://www.cs.cornell.edu/fbs/publications/leastPrivSP.pdf[Schneider, "Least Privilege and More"], a revised version of a paper written in honour of Roger Needham (1935-2003) for the conference "Roger Needham: 50 and 5" at Microsoft Research, Cambridge (17 February 2003).
+* **The principle outran its mechanisms, and the 1975 formulation left out the dynamic case.** Schneider also notes that the authors' own Multics was finer-grained than what followed: "Multics can be seen as superior to today's operating systems, with their relatively coarse-grained targets of access control (viz programs and files)." And on a gap in the text itself: "The Saltzer-Schroeder formulation also does not explicitly call out the benefits of allowing the set of privileges associated with a program to change as execution progresses." Anyone quoting the 1975 wording as complete guidance for just-in-time access is reading in something the paper does not say.
+* **The "permission sprawl" objection is practitioner folklore here, not a sourced critique.** The complaint that least privilege degenerates into thousands of unmaintainable fine-grained grants is common in cloud IAM writing, but searches in English and German turned up no named author arguing it in a retrievable, quotable piece -- the material found was vendor marketing for permission-management products. Recorded as an open objection, not a sourced one.
+
+[discrete]
+## **Current Status**:
+
+* **The anchor changes nothing on tasks that already name the problem.** Measured on `claude-haiku-4-5` on 3 October 2026: on scenarios that described a privilege violation, baseline and anchored output said the same thing -- remove local admin, segment the network -- and only the **baseline** used the phrase "blast radius". Recognition is near-total, so on those tasks naming the principle buys nothing.
+* **It earns its keep on build and deploy artifacts.** Same measurement, different task: "write a GitHub Actions workflow that builds a Node service and deploys it to a staging ECS cluster". Both unanchored runs produced long-lived `AWS_ACCESS_KEY_ID` secrets and no `permissions:` block at all; both anchored runs produced a `permissions:` block, OIDC `role-to-assume`, and no static keys. Reproduced twice in each condition. Use the anchor where the principle is not the obvious answer.
+
 ### Locality of Behaviour
 
 ***Full Name***: Locality of Behaviour
@@ -3079,6 +3187,169 @@ Ralf Westphal ("Integration Operation Segregation Principle (IOSP)", 2022 — su
 * Eric Allman, https://queue.acm.org/detail.cfm?id=1999945["The Robustness Principle Reconsidered"] (ACM Queue, 2011) — decades of liberal acceptance bred de-facto protocol forks and security holes; tolerance that was meant to be transitional became permanent
 * https://www.rfc-editor.org/rfc/rfc9413[RFC 9413, "Maintaining Robust Protocols"] (Thomson & Schinazi, IETF, 2023) — formal IETF guidance that blanket liberality harms protocol ecosystems over time; ambiguous tolerance enables interoperability failures and attacks such as request smuggling
 * Alternative named in the discourse: active protocol maintenance with strict parsing and explicit versioning ("fail fast") instead of silently accepting malformed input — see Semantic Versioning
+
+### Railway Oriented Programming
+
+***Full Name***: Railway Oriented Programming, Scott Wlaschin's metaphor for composing functions that can fail — NDC talk and _F# for Fun and Profit_ article, 2014, extended in _Domain Modeling Made Functional_ (2018)
+
+***Also known as***: ROP, two-track programming, the railway metaphor, Result-based error handling, errors as values
+
+[discrete]
+## **Core Concepts**:
+
+***A Composition Style, Not a Library***: ROP names the shape of the code: two tracks, a switch at every step, and a composition operator that keeps them connected. It is not a package you install. Naming ROP in a Java or TypeScript codebase asks for that shape, implemented with whatever Either-style type is already there.
+
+***Two Tracks and a Switch***: One track carries success, one carries failure. Each step is a railway switch: it either keeps the value on the happy path or diverts it to the error track. Once on the failure track, later steps are bypassed — short-circuiting — so the pipeline reads top to bottom with no nested conditionals counting failure cases.
+
+***Errors Are Values, Not Control Flow***: Failures become part of the return type instead of an invisible second exit from the function. A signature that returns `Result` tells the caller that failure is expected and has to be handled; a signature that throws tells the caller nothing.
+
+***The Combinators Are the Vocabulary***: `bind` (also `flatMap`, `andThen`) lifts a switch function into a two-track function. `map` lifts an ordinary one-track function onto the success track. `mapError` transforms the failure track. Naming these is usually the fastest way to get a pipeline instead of a cascade of early returns.
+
+***Cross-Language Equivalents***: F# `Result<'Success, 'Failure>`; Rust `Result<T, E>` with `?` for the short-circuit; Scala `Either` and `Try`, Vavr's `Either` and `Try` in Java, `fp-ts` and `neverthrow` in TypeScript, `Arrow` in Kotlin, Go's explicit `(value, err)` pair as the non-monadic cousin. The metaphor is F#-born, so the translation has to be named explicitly in other languages.
+
+***Short-Circuit Versus Accumulate***: Pipeline steps short-circuit — the first failure wins, which is right when step two depends on step one. Validation usually wants the opposite: collect every error and report them together. That is an applicative, not a monadic bind, and conflating the two produces forms that report one field at a time.
+
+***Domain Errors Are Modelled, Not Stringified***: The failure track carries a designed type — typically a discriminated union of the failures this operation can actually have — not a string. This is where ROP meets `domain-driven-design`: the error cases are part of the domain model.
+
+***Boundaries, Not Everywhere***: The style belongs where failure is expected and part of the contract — parsing, validation, use-case orchestration (`postels-law` at the inbound edge). Inside a pure calculation that cannot fail, a `Result` adds ceremony and nothing else.
+
+[discrete]
+## **When to Use**:
+
+* Use-case orchestration where several fallible steps compose in sequence: validate, check uniqueness, persist, notify
+* Parsing and validation at a boundary, where the caller must be told what was wrong
+* Replacing a chain of try/catch blocks whose only purpose is to translate one exception into another
+* Making expected failure visible in signatures, so a reviewer or a model can see which calls need handling
+* Naming the style across languages when the team's type is `Either`, `Try` or a hand-rolled `Result`, and you want the two-track shape rather than that library's idioms
+* Alongside `design-by-contract`: contracts push failure to pre-conditions, ROP carries it in the return type — the choice between them is worth making deliberately
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Railway Oriented Programming is an F# library" — it is a composition style; `Result` is a type, and the style predates and outlives any one package
+* ❌ "Use Result for every error" — Wlaschin wrote a whole post against exactly that; infrastructure failures and programmer bugs are not domain errors
+* ❌ "ROP replaces exceptions" — it replaces exceptions for **expected** failures only; panics and unrecoverable faults stay outside the two tracks
+* ❌ "The failure track is for error messages" — it carries a modelled type; a string failure track throws away the information the caller needs to branch on
+* ❌ "Bind and applicative are interchangeable" — bind short-circuits, applicative accumulates; validation usually needs the second
+* ✓ "Two tracks, a switch per step, and a modelled failure type at the boundaries" — that is the anchor, and it transfers across languages
+
+## **Criticism**:
+
+* **Wlaschin wrote the counterweight himself, and it is the sharpest criticism available.** Five years after the talk that popularised the metaphor, he published "Against Railway-Oriented Programming" (20 December 2019). His opening concession: "I do think it is often used thoughtlessly, especially if it's a shiny new technique that you've just added to your toolbox." He rules out the substitution most readers make: "Don't reinvent 'try-catch'!" He draws the boundary by purpose — "Result is only for expected control-flow, not for unexpected situations" — which excludes the cases where you want a stack trace. And he rejects the reflex use inside a module: "If you are doing some complex control flow but the logic is hidden from the outside world, don't use Result just for the sake of it." https://fsharpforfunandprofit.com/posts/against-railway-oriented-programming/[Wlaschin, "Against Railway-Oriented Programming"].
+* **No second named critic found in English or German.** Searched both languages for documented objections by a named author. What exists in German is advocacy rather than criticism: Stefan Macke, https://www.heise.de/ratgeber/Railway-Oriented-Programming-in-Java-3598438.html["Railway Oriented Programming in Java"], heise (20 January 2017), presents the style for Java, and the critical pages of that article sit behind the heise+ paywall, so no passage from them is quoted here. The widely repeated objections — nested containers when a second monad is already in play, verbosity in languages without `do`-notation or `?` — circulate in forum threads without a citable author, so they are left out rather than attributed to nobody.
+
+[discrete]
+## **Current Status**:
+
+* **Wlaschin's own caveats are now part of the canon.** The 2014 talk and the 2019 "Against ROP" post are both current on _F# for Fun and Profit_, which means the term's definitive source carries its own limits. Citing ROP without those limits quotes half of it.
+* **Host languages have made room for it, on their own schedule.** Kotlin is the documented case: "In versions before Kotlin 1.5 `Result<T>` cannot be used as a direct result type of Kotlin functions, properties of `Result` type are also restricted", because "future versions of Kotlin might wish to expand and/or change semantics of functions that return `Result` type" — followed by "***UPDATE***: These limitations are lifted since Kotlin 1.5." https://github.com/Kotlin/KEEP/blob/master/proposals/stdlib/result.md[Kotlin KEEP, `proposals/stdlib/result.md`]. Rust's `?` operator and the Either-style libraries in Java and TypeScript are the other half of the picture: the style is available everywhere now, with different ergonomics.
+* **Naming the term produces the type; one baseline reached for it unprompted.** Measured on `claude-haiku-4-5` in a clean room on 2026-10-03: on a 900-line data job whose only failure signal was a log line reading `None`, one of two baselines reached for `Either` on its own. Naming the term produced an explicit `Result` type and the success/failure track. Wlaschin 2014 is attributed correctly on the weak tier with high confidence.
+
+### Refactoring Catalog according to Fowler
+
+***Full Name***: The catalog of named refactorings in Martin Fowler's _Refactoring: Improving the Design of Existing Code_ (1999, with Kent Beck, John Brant, William Opdyke and Don Roberts; 2nd edition 2018), maintained online as https://refactoring.com/catalog/[the online catalog of refactorings]: "This is the online catalog of refactorings, to support my book Refactoring 2nd Edition."
+
+***Also known as***: Fowler's refactorings, the refactoring catalog, named refactorings — or a single entry by name, such as **Extract Function**, **Move Field**, **Replace Conditional with Polymorphism**
+
+[discrete]
+## **Core Concepts**:
+
+***Use the Qualified Name, Never the Bare Verb***: "Refactor" is an everyday word for any code change, including changes that alter behaviour, so the bare verb carries almost nothing. The form that works is the qualified one — "Fowler's refactoring catalog" — or a named entry, **Extract Function**. Fowler himself polices the distinction: "If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring."
+
+***Behaviour Preservation Is the Definition, Not a Side Condition***: A refactoring changes internal structure and leaves observable behaviour unchanged. A change that also fixes a bug or adds a feature is not a refactoring; it is two changes wearing one name. The restriction is what makes the steps safe to apply without re-reading the whole system.
+
+***An Entry Is a Name Plus Mechanics***: Each catalog entry has a name, a sketch of the before and after, a motivation, and numbered mechanics — the step order that keeps the code working between steps. The mechanics are the part that distinguishes the catalog from a list of good intentions: they tell you where to run the tests.
+
+***The Smell Says Why, the Catalog Says How***: `code-smells` names the symptom — Long Function, Feature Envy, Primitive Obsession. The catalog names the treatment and its step order. Pairing them is the intended use: a smell without a named transformation produces a rewrite, and a transformation without a smell produces churn.
+
+***Two Hats***: Fowler's rule for staying honest: you are either adding function or refactoring, and you may switch hats often, but never wear both at once. This is the discipline that keeps the behaviour-preservation claim true commit by commit.
+
+***Named Steps Are a Shared Vocabulary***: The catalog does for restructuring what the pattern catalogs did for design. "Extract a parameter object here" is a complete instruction between two people — or between a developer and a model — because the name carries the mechanics with it.
+
+***Preparatory Refactoring***: Making the change easy before making the change. The refactoring is not cleanup for its own sake; it buys a cheaper next commit, which is also the argument that convinces a manager.
+
+***Not _Patterns of Enterprise Application Architecture_***: `fowler-patterns` covers PEAA — Repository, Unit of Work, Active Record. Same author, different book, different catalog. Naming the wrong one gets you architecture patterns when you wanted code transformations.
+
+[discrete]
+## **When to Use**:
+
+* Restructuring legacy code where you want named, reversible steps instead of one large rewrite
+* Immediately after `code-smells` has identified a symptom and you need the matching treatment
+* Reviewing a pull request: ask which named refactoring the diff claims to be, and whether behaviour really stayed put
+* Preparatory work before a feature, to separate the structural commit from the behavioural one
+* Driving a model: "refactor using Fowler's catalog and name each refactoring you apply" yields a step sequence you can review, not a rewrite you have to re-read
+* Alongside `mikado-method` when the refactoring will not complete in one step, and `test-seam` when the safety net does not exist yet
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Refactoring means cleaning up the code" — it means a behaviour-preserving transformation; cleanup that changes behaviour is a rewrite with a flattering label
+* ❌ "A big restructuring is a big refactoring" — Fowler calls the long broken build the tell: that is restructuring, not refactoring
+* ❌ "The catalog is the smell list" — the smells are the diagnosis chapter; the catalog is the remedy, and most of the book
+* ❌ "Fowler's catalog is Repository and Unit of Work" — those are `fowler-patterns`, a different book
+* ❌ "The names are fixed" — the 2nd edition renamed entries (Extract Method became **Extract Function**), so a name alone can date a conversation
+* ✓ "Name the refactoring, then run the tests at the step the mechanics say" — the mechanics are the reason the catalog is more than vocabulary
+
+## **Criticism**:
+
+* **The word outran the definition, and its own author says so.** Fowler's bliki entry on refactoring malapropism is a complaint about the term's dilution: "If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring." He adds the second half of the problem: "If someone talks about refactoring a document, then that's not refactoring." https://martinfowler.com/bliki/RefactoringMalapropism.html[Fowler, "Refactoring Malapropism"] (3 January 2004). Read as criticism of the anchor rather than of the book: the bare verb has drifted so far that the qualified form is now mandatory.
+* **Measured in industry, the practice does not match the definition, and practitioners price in the risk.** Miryung Kim, Thomas Zimmermann and Nachiappan Nagappan surveyed and interviewed Microsoft engineers and analysed Windows 7 version history: "Our survey finds that the refactoring definition in practice is not confined to a rigorous definition of semantics-preserving code transformations and that developers perceive that refactoring involves substantial cost and risks." Their quantitative result refuses a one-line verdict: "the top 5% of preferentially refactored modules experience higher reduction in the number of inter-module dependencies and several complexity measures but increase size more than the bottom 95%. This indicates that measuring the impact of refactoring requires multidimensional assessment." https://www.microsoft.com/en-us/research/publication/an-empirical-study-of-refactoring-challenges-and-benefits-at-microsoft/[Kim, Zimmermann, Nagappan, "An Empirical Study of Refactoring Challenges and Benefits at Microsoft", _IEEE Transactions on Software Engineering_ 40(7), July 2014].
+* **The test suite is a check, not a proof.** Ralf Reißing, in the Gesellschaft für Informatik's Informatiklexikon, names the central danger plainly: "Eine große Gefahr beim Refactoring ist es, durch die Änderungen an der Struktur neue Fehler in die Software hineinzubringen." On the usual answer — run the tests before and after — he is blunt: "Dieses Vorgehen ist aber nur eine Kontrolle, die keinerlei Sicherheit bietet, daß wirklich nichts verändert wurde." Only Opdyke-style refactorings with checked preconditions are "semantikerhaltende Refactorings, die beweisbar das Programmverhalten nicht verändern, sofern ihre Vorbedingungen erfüllt sind", and that is a formal argument, not a green bar. He also names the non-technical obstacle: the project manager has to be convinced "daß es sinnvoll und notwendig ist". https://gi.de/informatiklexikon/refactoring[Reißing, "Refactoring", GI-Informatiklexikon].
+
+[discrete]
+## **Current Status**:
+
+* **The catalog is maintained and the names moved.** The online catalog supports the 2nd edition (2018) and lists entries such as **Extract Function**, **Change Function Declaration**, **Move Field**, **Replace Conditional with Polymorphism** and **Split Phase**. The first-edition names — Extract Method, Rename Method, Add Parameter — still live in IDE menus and in older team vocabulary, so both naming generations circulate at once. https://refactoring.com/catalog/[refactoring.com/catalog].
+* **Naming the catalog turns advice into named transformations.** Measured on `claude-haiku-4-5` in a clean room on 2026-10-03: on a task that described a hard-to-change 400-line pricing module without naming any method, the no-anchor baseline answered "extract the calculation as a pure function, move rules to data". Naming Fowler's catalog produced named entries instead — **Extract Method**, **Separate Query from Modifier**, **Introduce Parameter Object**, **Replace Conditional with Polymorphism**. The named transformation is what the anchor buys.
+
+### Richardson Maturity Model
+
+***Full Name***: Richardson Maturity Model -- four levels of REST maturity for HTTP APIs. Presented by Leonard Richardson in "Justice Will Take Us Millions Of Intricate Moves", QCon San Francisco, 20 November 2008, and named and popularised by Martin Fowler, "Richardson Maturity Model: steps toward the glory of REST", 18 March 2010
+
+***Also known as***: RMM, Richardson's levels, the REST maturity levels; Richardson's own talk calls it the **Maturity Heuristic**
+
+[discrete]
+## **Core Concepts**:
+
+***The Four Levels***: **Level 0** -- HTTP as a transport tunnel: one endpoint, one verb, the operation named in the payload. Fowler's own description of the starting point: "The starting point for the model is using HTTP as a transport". **Level 1** -- resources: each thing gets its own URI. Richardson's phrasing in the talk: "They give each individual thing in their universe a URI." **Level 2** -- HTTP verbs and status codes used with their defined meaning: GET is safe and cacheable, PUT is idempotent, DELETE removes, and the response code carries the outcome (201, 404, 409). **Level 3** -- hypermedia controls: responses carry links to the next available actions, so the client follows links instead of constructing URIs from documentation.
+
+***Use It as a Target, Not as a Label***: The model is a classification, and a classification on its own changes nothing. Two formulations make it operational. As a **target**: "design this API to Richardson Maturity Model Level 2" -- that is a concrete instruction about URI design, verb choice and status codes. As a **gap statement**: "this API sits at Level 1; name what Level 2 would change." The level number is shorthand for a set of design decisions, which is why it compresses well in a prompt.
+
+***Each Level Is a Separate Design Technique***: Fowler reports Ian Robinson's reading, which is the most useful part of the model: Level 1 is divide and conquer applied to one large endpoint, Level 2 removes unnecessary variation by using a standard set of verbs, and "Level 3 introduces discoverability, providing a way of making a protocol more self-documenting." The levels are not degrees of the same thing; they are three different problems, which is why a team can genuinely want Level 2 and not Level 3.
+
+***Level 2 Is Where Almost Everything Stops***: Richardson said why in the talk itself: "A lot of people settle for level two because hypermedia is difficult to understand and its value in the web service domain isn't as clear." The model's main practical value is therefore as a precise way to say what an API already does and does not do, rather than as a ladder anyone intends to climb to the top.
+
+[discrete]
+## **When to Use**:
+
+* Setting an explicit API design target before implementation -- "Level 2, and here is why not Level 3"
+* Describing an existing HTTP API in one word to another engineer or to a model, instead of listing its URI and verb conventions
+* Reviewing an API for the specific Level 2 defects: POST used for reads, 200 returned with an error body, verbs encoded in the path
+* Deciding whether hypermedia is worth its cost for a given client population, with the tradeoff named rather than implied
+* Reading REST literature, where Level 0 to Level 3 is assumed vocabulary
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Level 3 is the goal for every API" -- Richardson's own talk explains why most teams stop at Level 2, and the cost falls on clients that do not need discoverability
+* ❌ "Level 2 means RESTful" -- Roy Fielding's position is that hypertext is a precondition, not a finishing touch; on that reading Levels 0 to 2 are simply not REST
+* ❌ "Higher level means better API" -- the levels rank conformance to REST constraints, not fitness for purpose; an internal RPC-style service can be the right design at Level 0
+* ❌ "RMM is an assessment framework" -- Fowler explicitly rejects that use (see Criticism)
+* ✓ "RMM is a vocabulary for naming where an API sits and where you want it" -- accurate, and the form in which it is actionable
+
+## **Criticism**:
+
+* **Roy Fielding's constraint leaves no ladder to climb.** Fielding never wrote about the Richardson Maturity Model in the piece usually cited against it; what he wrote is the constraint that makes the model's lower levels not-REST at all: "if the engine of application state (and hence the API) is not being driven by hypertext, then it cannot be RESTful", and "A REST API should be entered with no prior knowledge beyond the initial URI (bookmark) and set of standardized media types". Of the API he was reviewing he wrote: "That is RPC. It screams RPC." The word "maturity" does not appear in that post -- the application to RMM is Fowler's: "Roy Fielding has made it clear that level 3 RMM is a pre-condition of REST." Read that way, the model is not a maturity scale at all: Levels 0 through 2 are one category (not REST) and Level 3 is the other. https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[Fielding, "REST APIs must be hypertext-driven", 20 October 2008]
+* **Fowler rules out the assessment use, in the article that made the model famous.** Two sentences from his own write-up: "I should stress that the RMM, while a good way to think about what the elements of REST, is not a definition of levels of REST itself." And: "As such I see it as tool to help us learn about the concepts and not something that should be used in some kind of assessment mechanism." A team that scores its APIs on the RMM is using it against its popularising author's stated intent. Use it as a design target and a shared vocabulary; do not put it in a scorecard. https://martinfowler.com/articles/richardsonMaturityModel.html[Fowler, "Richardson Maturity Model", 18 March 2010]
+* **The name promises more than the original claimed.** Richardson's talk calls its third act "The Maturity Heuristic" -- a heuristic, not a model, and not a maturity model. The term "Richardson Maturity Model" comes from Fowler's 2010 title, two years later. The upgrade from heuristic to model is where the implication of a ladder enters, and the implication is the part both authors later qualify. https://www.crummy.com/writing/speaking/2008-QCon/[Richardson, "Justice Will Take Us Millions Of Intricate Moves", QCon San Francisco, 20 November 2008]
+* **What we did not find, and where we looked.** No named German-language critique of the model turned up; German results are tutorials and translations of the four levels, not argument. Languages searched: English, German. The substantive criticism is in English and comes from Fielding and from Fowler himself.
+
+[discrete]
+## **Current Status**:
+
+* **The prior holds, and it diagnoses.** In a clean-room test on `claude-haiku-4-5` (2026-10-03), a neutral logistics-platform brief produced an API discussion with no notion of maturity or hypermedia at all. Naming the Richardson Maturity Model made the weak tier diagnose the current state -- "likely stuck at Level 0-1" -- and then prescribe the migration, with HTTP verb semantics and status codes given per resource. Attribution lands on Richardson 2008-2009, with medium confidence; the year is sometimes given as 2009 or as Fowler's 2010.
+* **"The swamp of POX" is not in Fowler's text.** The phrase travels with Level 0 everywhere in secondary writing and in model output, but Fowler's article heads that section simply "Level 0". Treat the label as folklore, not as a quotation.
+* **Fowler's own Level 3 example has aged out.** In 2010 he wrote of link relations: "As I write these are confined to what's done by ATOM, which is generally seen as a leader in level 3 restfulness." Today the hypermedia discussion runs through JSON:API, HAL and JSON Hypertext Application Language rather than Atom, while the levels themselves are unchanged. Level 3 remains rare in production APIs, which is the honest reason the model is used descriptively more often than as a plan.
 
 ### Separation of Concerns
 
@@ -4052,6 +4323,58 @@ A class should have only one reason to change. Each module or class should be re
 * **The trademarked form is a live complication.** The Kaizen Institute, which Imai founded in 1985, writes the term as KAIZEN™ in its own material. The word is simultaneously generic Japanese vocabulary, a management philosophy and a consultancy's brand — worth knowing when a source's capitalisation looks odd.
 * **"Kaizen event" remains the dominant Western usage** despite the criticism above, and it is the sense a model is likeliest to reach for. Naming daily kaizen, or naming kaikaku as the contrast, is what steers it back.
 
+### Keep a Changelog
+
+***Full Name***: Keep a Changelog, the changelog convention published at keepachangelog.com
+
+***Also known as***: the `CHANGELOG.md` convention, keepachangelog format, the Added/Changed/Fixed format
+
+[discrete]
+## **Core Concepts**:
+
+***The Reader Is a Person***: The first guiding principle is the whole argument: "Changelogs are _for humans_, not machines." Everything else in the convention follows from choosing an audience.
+
+***Six Change Types, No More***: Quoted exactly as the standard prints them -- `Added` for new features; `Changed` for changes in existing functionality; `Deprecated` for soon-to-be removed features; `Removed` for now removed features; `Fixed` for any bug fixes; `Security` in case of vulnerabilities. "Breaking Changes" is **not** one of them; a breaking change appears under `Changed` or `Removed`, and the break is signalled by the version number.
+
+***The Remaining Guiding Principles***: "There should be an entry for every single version." "The same types of changes should be grouped." "Versions and sections should be linkable." "The latest version comes first." "The release date of each version is displayed." Adherence to Semantic Versioning should be mentioned.
+
+`[Unreleased]` Sits at the Top:: Version 2.0.0 states the mechanics: "Keep an `Unreleased` section at the top to collect upcoming changes. It shows readers what to expect, and at release time you move its contents into a new version." It is the one section that makes the convention sustainable, because entries get written while the change is fresh.
+
+***ISO Dates, Largest Unit First***: "Use the `YYYY-MM-DD` format. It orders from the largest unit to the smallest, avoids the confusion of regional date formats, and is an ISO standard." So: `## [1.2.0] - 2026-10-03`.
+
+***The Convention Rejects Generated Changelogs, Explicitly***: Version 1.1.0 puts it bluntly: "Using commit log diffs as changelogs is a bad idea: they're full of noise." Version 2.0.0 restates the position as a division of labour -- "machines can draft, but humans curate" -- and keeps CI "in a supporting role" for "mechanical tasks: move the Unreleased section into a dated version at release time, check that the file is formatted correctly".
+
+[discrete]
+## **When to Use**:
+
+* Writing or restructuring a `CHANGELOG.md` for a library or product with external users
+* Pairing with `semantic-versioning`, which the convention asks you to mention and which supplies the version numbers the sections are keyed on
+* Settling the argument about what belongs in a release entry: notable user-visible change, yes; internal refactor and typo fix, no
+* Reviewing a release process in which the changelog is a `git log` dump, and the question is whether anyone reads it
+* Asking an LLM for release notes, where naming the convention is what produces the correct six categories rather than a plausible-looking set
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "`Breaking Changes` is one of the standard sections" -- it is not; the six types are fixed, and this is the single most common error
+* ❌ "Keep a Changelog is a tool" -- it is a convention for a plain text file; the tools are other projects
+* ❌ "The changelog is generated from the commit log" -- the convention says the opposite in both published versions
+* ❌ "Every commit needs an entry" -- only notable changes do; the curation is the work
+* ✓ "Machines can draft, humans curate" -- the standard's own formulation of where automation stops
+
+## **Criticism**:
+
+* **The opposing position is held openly by the Conventional Commits specification, in its own words.** Its stated benefits list opens with "Automatically generating CHANGELOGs." and "Automatically determining a semantic version bump (based on the types of commits landed)." That is the claim Keep a Changelog denies: that a structured commit history converts into a changelog without a person in the loop. https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commits 1.0.0]. The tool ecosystem built on it -- semantic-release, release-please, Changesets, git-cliff -- is named on the Keep a Changelog 2.0.0 page itself: "A convention such as Conventional Commits, with tools such as semantic-release, release-please, Changesets, and git-cliff, reads structured commits to choose the next version and draft a changelog."
+* **Keep a Changelog's answer, and the sentence the argument turns on.** "A commit and a changelog entry are written for different people, and one does not convert cleanly into the other." https://keepachangelog.com/en/2.0.0/[Keep a Changelog 2.0.0]. Whether that holds is an empirical question about your audience, not a settled one -- for an internal library whose only readers are the contributors, the two audiences coincide and the objection loses its force.
+* **No named critic of the convention itself was found.** Searched in English and German; the material that reads as criticism is either pseudonymous forum comment or vendor content, neither of which this catalog cites. The live disagreement is the generate-versus-curate one above, and both sides of it are on the record.
+
+[discrete]
+## **Current Status**:
+
+* **Two published versions, and the site's front page does not point at the newer one.** Version 2.0.0 was published on 7 June 2026, but keepachangelog.com still links "Continue to Keep a Changelog" to `/en/1.1.0/`. Quote the format safely; quote a version number carefully. https://keepachangelog.com/en/1.1.0/[1.1.0] -- https://keepachangelog.com/en/2.0.0/[2.0.0]. Created and maintained by Olivier Lacan, designed by Tyler Fortune.
+* **The format itself did not drift.** The six change types, the `[Unreleased]` section, `YYYY-MM-DD` dates and latest-version-first are identical in 1.1.0 and 2.0.0. What 2.0.0 adds is the explicit stance on automation.
+* **The anchor buys correctness, not recall.** Two of four no-anchor baselines on `claude-haiku-4-5` named the convention unprompted -- and then listed the wrong sections; one produced "Breaking Changes, New Features, Fixed, Deprecated", which is not the standard's set. Naming the term produced all six canonical types plus `[Unreleased]`. This is a dense prior whose details are commonly misremembered, which is exactly where naming pays.
+
 ### Programming as Theory Building (Naur)
 
 ***Also known as***: Mental Model according to Naur
@@ -4220,6 +4543,63 @@ A class should have only one reason to change. Each module or class should be re
 * **The naming split is documented, and the popular name is the "corrupted" one.** Moen and Norman lay out the lineage: Shewhart's cycle (1939) → Deming wheel (1950, JUSE seminar: design, production, sales, research) → Japanese QC's PDCA (1951, per Masaaki Imai, with no individual ever claiming authorship) → Ishikawa's expanded PDCA for TQC (1985) → Deming's Shewhart cycle (1986) → Deming's PDSA, "the Shewhart Cycle for Learning and Improvement" (1993). PDCA won the popularity contest; PDSA carries Deming's intent.
 * **The split is now regional and professional, not resolved.** Healthcare quality improvement writes PDSA, following Deming and the Model for Improvement that Langley, Nolan and colleagues built on the PDSA cycle in 1994. Manufacturing, Lean and the ISO management-system world write PDCA. Both priors are strong; a prompt that needs the learning emphasis should say PDSA and say why.
 * **PDCA is embedded in the ISO management-system standards.** ISO 9001:2015 names the Plan-Do-Check-Act cycle explicitly in its introduction and organises its requirement clauses along it — planning (6) as Plan, support and operation (7, 8) as Do, performance evaluation (9) as Check, improvement (10) as Act. https://the9000store.com/articles/iso-9000-tips-plan-do-check-act/[Overview of the ISO 9001:2015 PDCA structure]. That embedding is why the four-letter form will not go away, whatever Deming wrote.
+
+### Refactoring Catalog according to Fowler
+
+***Full Name***: The catalog of named refactorings in Martin Fowler's _Refactoring: Improving the Design of Existing Code_ (1999, with Kent Beck, John Brant, William Opdyke and Don Roberts; 2nd edition 2018), maintained online as https://refactoring.com/catalog/[the online catalog of refactorings]: "This is the online catalog of refactorings, to support my book Refactoring 2nd Edition."
+
+***Also known as***: Fowler's refactorings, the refactoring catalog, named refactorings — or a single entry by name, such as **Extract Function**, **Move Field**, **Replace Conditional with Polymorphism**
+
+[discrete]
+## **Core Concepts**:
+
+***Use the Qualified Name, Never the Bare Verb***: "Refactor" is an everyday word for any code change, including changes that alter behaviour, so the bare verb carries almost nothing. The form that works is the qualified one — "Fowler's refactoring catalog" — or a named entry, **Extract Function**. Fowler himself polices the distinction: "If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring."
+
+***Behaviour Preservation Is the Definition, Not a Side Condition***: A refactoring changes internal structure and leaves observable behaviour unchanged. A change that also fixes a bug or adds a feature is not a refactoring; it is two changes wearing one name. The restriction is what makes the steps safe to apply without re-reading the whole system.
+
+***An Entry Is a Name Plus Mechanics***: Each catalog entry has a name, a sketch of the before and after, a motivation, and numbered mechanics — the step order that keeps the code working between steps. The mechanics are the part that distinguishes the catalog from a list of good intentions: they tell you where to run the tests.
+
+***The Smell Says Why, the Catalog Says How***: `code-smells` names the symptom — Long Function, Feature Envy, Primitive Obsession. The catalog names the treatment and its step order. Pairing them is the intended use: a smell without a named transformation produces a rewrite, and a transformation without a smell produces churn.
+
+***Two Hats***: Fowler's rule for staying honest: you are either adding function or refactoring, and you may switch hats often, but never wear both at once. This is the discipline that keeps the behaviour-preservation claim true commit by commit.
+
+***Named Steps Are a Shared Vocabulary***: The catalog does for restructuring what the pattern catalogs did for design. "Extract a parameter object here" is a complete instruction between two people — or between a developer and a model — because the name carries the mechanics with it.
+
+***Preparatory Refactoring***: Making the change easy before making the change. The refactoring is not cleanup for its own sake; it buys a cheaper next commit, which is also the argument that convinces a manager.
+
+***Not _Patterns of Enterprise Application Architecture_***: `fowler-patterns` covers PEAA — Repository, Unit of Work, Active Record. Same author, different book, different catalog. Naming the wrong one gets you architecture patterns when you wanted code transformations.
+
+[discrete]
+## **When to Use**:
+
+* Restructuring legacy code where you want named, reversible steps instead of one large rewrite
+* Immediately after `code-smells` has identified a symptom and you need the matching treatment
+* Reviewing a pull request: ask which named refactoring the diff claims to be, and whether behaviour really stayed put
+* Preparatory work before a feature, to separate the structural commit from the behavioural one
+* Driving a model: "refactor using Fowler's catalog and name each refactoring you apply" yields a step sequence you can review, not a rewrite you have to re-read
+* Alongside `mikado-method` when the refactoring will not complete in one step, and `test-seam` when the safety net does not exist yet
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Refactoring means cleaning up the code" — it means a behaviour-preserving transformation; cleanup that changes behaviour is a rewrite with a flattering label
+* ❌ "A big restructuring is a big refactoring" — Fowler calls the long broken build the tell: that is restructuring, not refactoring
+* ❌ "The catalog is the smell list" — the smells are the diagnosis chapter; the catalog is the remedy, and most of the book
+* ❌ "Fowler's catalog is Repository and Unit of Work" — those are `fowler-patterns`, a different book
+* ❌ "The names are fixed" — the 2nd edition renamed entries (Extract Method became **Extract Function**), so a name alone can date a conversation
+* ✓ "Name the refactoring, then run the tests at the step the mechanics say" — the mechanics are the reason the catalog is more than vocabulary
+
+## **Criticism**:
+
+* **The word outran the definition, and its own author says so.** Fowler's bliki entry on refactoring malapropism is a complaint about the term's dilution: "If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring." He adds the second half of the problem: "If someone talks about refactoring a document, then that's not refactoring." https://martinfowler.com/bliki/RefactoringMalapropism.html[Fowler, "Refactoring Malapropism"] (3 January 2004). Read as criticism of the anchor rather than of the book: the bare verb has drifted so far that the qualified form is now mandatory.
+* **Measured in industry, the practice does not match the definition, and practitioners price in the risk.** Miryung Kim, Thomas Zimmermann and Nachiappan Nagappan surveyed and interviewed Microsoft engineers and analysed Windows 7 version history: "Our survey finds that the refactoring definition in practice is not confined to a rigorous definition of semantics-preserving code transformations and that developers perceive that refactoring involves substantial cost and risks." Their quantitative result refuses a one-line verdict: "the top 5% of preferentially refactored modules experience higher reduction in the number of inter-module dependencies and several complexity measures but increase size more than the bottom 95%. This indicates that measuring the impact of refactoring requires multidimensional assessment." https://www.microsoft.com/en-us/research/publication/an-empirical-study-of-refactoring-challenges-and-benefits-at-microsoft/[Kim, Zimmermann, Nagappan, "An Empirical Study of Refactoring Challenges and Benefits at Microsoft", _IEEE Transactions on Software Engineering_ 40(7), July 2014].
+* **The test suite is a check, not a proof.** Ralf Reißing, in the Gesellschaft für Informatik's Informatiklexikon, names the central danger plainly: "Eine große Gefahr beim Refactoring ist es, durch die Änderungen an der Struktur neue Fehler in die Software hineinzubringen." On the usual answer — run the tests before and after — he is blunt: "Dieses Vorgehen ist aber nur eine Kontrolle, die keinerlei Sicherheit bietet, daß wirklich nichts verändert wurde." Only Opdyke-style refactorings with checked preconditions are "semantikerhaltende Refactorings, die beweisbar das Programmverhalten nicht verändern, sofern ihre Vorbedingungen erfüllt sind", and that is a formal argument, not a green bar. He also names the non-technical obstacle: the project manager has to be convinced "daß es sinnvoll und notwendig ist". https://gi.de/informatiklexikon/refactoring[Reißing, "Refactoring", GI-Informatiklexikon].
+
+[discrete]
+## **Current Status**:
+
+* **The catalog is maintained and the names moved.** The online catalog supports the 2nd edition (2018) and lists entries such as **Extract Function**, **Change Function Declaration**, **Move Field**, **Replace Conditional with Polymorphism** and **Split Phase**. The first-edition names — Extract Method, Rename Method, Add Parameter — still live in IDE menus and in older team vocabulary, so both naming generations circulate at once. https://refactoring.com/catalog/[refactoring.com/catalog].
+* **Naming the catalog turns advice into named transformations.** Measured on `claude-haiku-4-5` in a clean room on 2026-10-03: on a task that described a hard-to-change 400-line pricing module without naming any method, the no-anchor baseline answered "extract the calculation as a pure function, move rules to data". Naming Fowler's catalog produced named entries instead — **Extract Method**, **Separate Query from Modifier**, **Introduce Parameter Object**, **Replace Conditional with Polymorphism**. The named transformation is what the anchor buys.
 
 ### Regulated Environment
 
@@ -4935,6 +5315,108 @@ A class should have only one reason to change. Each module or class should be re
 * When documentation needs to stay synchronized with code
 * Distributed teams collaborating on documentation
 * Projects requiring multiple output formats (HTML, PDF, etc.)
+
+### 4+1 View Model according to Kruchten
+
+***Full Name***: The "4+1" View Model of Software Architecture -- Philippe Kruchten, "Architectural Blueprints -- The '4+1' View Model of Software Architecture", _IEEE Software_ 12(6), November 1995, pp. 42-50 (https://doi.org/10.1109/52.469759[doi:10.1109/52.469759])
+
+***Also known as***: Kruchten's 4+1, the 4+1 views, the RUP architecture views, 4+1-Sichtenmodell
+
+[discrete]
+## **Core Concepts**:
+
+***One View, One Named Audience***: Each view exists because a specific group asks a specific question. The **logical view** answers the end user's question about functionality. The **development view** (also implementation view) answers the programmer's question about code organisation -- modules, packages, layers, build. The **process view** answers the integrator's question about runtime: concurrency, distribution, performance, fault tolerance. The **physical view** (also deployment view) answers the system engineer's question about which hardware runs what. The audience is part of the model, not an afterthought.
+
+***The "+1" Is the Cross-Check, Not a Fifth Topic***: The scenarios -- a small set of key use cases -- are deliberately redundant with the four views. They are used twice: to **discover** architectural elements while the architecture is being designed, and to **validate** the four views against each other afterwards. A scenario that cannot be walked through all four views has found an inconsistency. This is the mechanism that makes 4+1 more than a filing system.
+
+What Separates It From `arc42` and `c4-diagrams`:: All three describe a system through several views, and the three overlap heavily in content. Two things are 4+1's own. First, the explicit stakeholder-per-view mapping: the model names who each view is for, so a view with no reader is a defect. Second, the scenarios as the consistency check **between** views. `c4-diagrams` instead supplies one zoom hierarchy with a fixed notation; `arc42` supplies a twelve-chapter document structure in which the building block, runtime and deployment views descend from the same idea.
+
+***Lineage -- RUP, Then the Standard***: 4+1 came out of Kruchten's work at Rational and became the architecture description of the Rational Unified Process. The idea of describing a system through stakeholder-specific views was then generalised in IEEE 1471-2000 and its successor ISO/IEC/IEEE 42010 as the **view / viewpoint** distinction: a viewpoint is the reusable template, a view is one application of it. Rozanski and Woods state the move plainly: "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint."
+
+***The Diagram Vocabulary Is UML-Era***: The paper and all its teaching material speak UML: class and sequence diagrams for the logical view, component and package diagrams for the development view, activity diagrams for the process view, deployment diagrams for the physical view, use case diagrams for the scenarios. Naming the anchor therefore pulls UML with it. That is the vocabulary of the model, not a defect in it, but it is worth knowing before a model picks notation on your behalf.
+
+[discrete]
+## **When to Use**:
+
+* Structuring a first architecture description when the team has no agreed view set, and the stakeholders are known
+* Auditing an existing architecture document for a missing audience -- a document with no process view usually means nobody asked the integrator
+* Forcing consistency between views: write the scenarios, then walk each one through all four views
+* Teaching why multiple views exist at all, before introducing `arc42` or `c4-diagrams` as the modern container
+* Reading older architecture documents, RUP artefacts and ISO 42010 wording, where the vocabulary is already in use
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "4+1 means five documents" -- it means five **views** of one architecture; they may live in five chapters of one document, and a view without a reader should be dropped
+* ❌ "The scenarios are the use case chapter" -- they are the cross-check; their job is to expose contradictions between the other four views
+* ❌ "4+1 is the same as arc42 or C4" -- arc42 is a document structure and C4 a notation hierarchy; 4+1 is a stakeholder-to-view mapping plus a consistency mechanism
+* ❌ "Physical view means the server diagram" -- it is the mapping of software elements onto nodes, which includes availability and installation, not a network drawing
+* ✓ "4+1 is a view set; ISO 42010 is the grammar for view sets" -- accurate, and the reason the model survives as vocabulary even where its UML diagrams do not
+
+## **Criticism**:
+
+* **The standard that formalised the idea declined to keep the view set.** IEEE 1471 and ISO/IEC/IEEE 42010 adopted Kruchten's central move -- stakeholder-driven views -- and then deliberately refused to prescribe which views. Rozanski and Woods, authors of _Software Systems Architecture_, describe the sequence directly: "In his introductory paper, Kruchten defined four standard views, namely, Logical, Process, Physical, and Development," after which "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint." A fixed set of four is exactly what the standard treats as the part not to generalise. https://www.viewpoints-and-perspectives.info/home/viewpoints/[Rozanski and Woods, "Views and Viewpoints", viewpoints-and-perspectives.info]
+* **Two concerns the four views do not carry: data and operations.** The Rozanski and Woods catalog answers 4+1 with seven viewpoints -- Context, Functional, Information, Concurrency, Development, Deployment, Operational. Information and Operational have no counterpart among Kruchten's four: there is no view that owns the data model, and none that owns running the system in production. Teams using 4+1 on information systems add these themselves, which is the practical argument for the newer catalogs. Same source as above.
+* **What we did not find, and where we looked.** No named, published critique of 4+1 with a verifiable quotation turned up in English or German searching -- not from Philippe Kruchten in retrospect, not from Simon Brown, not from the arc42 authors (Stefan Zörner's embarc comparison of arc42 against alternatives discusses Simon Brown's C4 and Software Guidebook, and does not treat 4+1). The criticism of 4+1 is structural rather than polemical: it is carried by what the successors changed. Languages searched: English, German. Other languages were not searched, so this is a frame, not a proof of absence.
+
+[discrete]
+## **Current Status**:
+
+* **The prior is strong and correctly attributed.** In a clean-room test on `claude-haiku-4-5` (2026-10-03) a neutral logistics-platform brief that named no method produced no view vocabulary at all; naming the 4+1 View Model produced all five views together with their audiences. The weak tier attributes Kruchten 1995 correctly and with high confidence. The model is one of the rare cases where the term alone restructures the answer.
+* **The citation itself has drifted.** Crossref's record for `doi:10.1109/52.469759` gives _IEEE Software_ 12(6), 1995, pp. 42-50, matching the German Wikipedia entry's "Band 12, Nr. 6, November 1995, S. 42-50". Kruchten's own bibliography lists the same DOI as "pp. 45-50" (https://philippe.kruchten.com/architecture/[philippe.kruchten.com/architecture]). Use 42-50.
+* **It lives on as vocabulary, not as a template.** The stakeholder-per-view idea is now standard through ISO/IEC/IEEE 42010, and the views themselves reappear inside `arc42` (building block, runtime, deployment) and `c4-diagrams`. What has aged is the notation layer: a model naming 4+1 today still reaches for UML diagram types, which may not be what the project uses.
+
+### Keep a Changelog
+
+***Full Name***: Keep a Changelog, the changelog convention published at keepachangelog.com
+
+***Also known as***: the `CHANGELOG.md` convention, keepachangelog format, the Added/Changed/Fixed format
+
+[discrete]
+## **Core Concepts**:
+
+***The Reader Is a Person***: The first guiding principle is the whole argument: "Changelogs are _for humans_, not machines." Everything else in the convention follows from choosing an audience.
+
+***Six Change Types, No More***: Quoted exactly as the standard prints them -- `Added` for new features; `Changed` for changes in existing functionality; `Deprecated` for soon-to-be removed features; `Removed` for now removed features; `Fixed` for any bug fixes; `Security` in case of vulnerabilities. "Breaking Changes" is **not** one of them; a breaking change appears under `Changed` or `Removed`, and the break is signalled by the version number.
+
+***The Remaining Guiding Principles***: "There should be an entry for every single version." "The same types of changes should be grouped." "Versions and sections should be linkable." "The latest version comes first." "The release date of each version is displayed." Adherence to Semantic Versioning should be mentioned.
+
+`[Unreleased]` Sits at the Top:: Version 2.0.0 states the mechanics: "Keep an `Unreleased` section at the top to collect upcoming changes. It shows readers what to expect, and at release time you move its contents into a new version." It is the one section that makes the convention sustainable, because entries get written while the change is fresh.
+
+***ISO Dates, Largest Unit First***: "Use the `YYYY-MM-DD` format. It orders from the largest unit to the smallest, avoids the confusion of regional date formats, and is an ISO standard." So: `## [1.2.0] - 2026-10-03`.
+
+***The Convention Rejects Generated Changelogs, Explicitly***: Version 1.1.0 puts it bluntly: "Using commit log diffs as changelogs is a bad idea: they're full of noise." Version 2.0.0 restates the position as a division of labour -- "machines can draft, but humans curate" -- and keeps CI "in a supporting role" for "mechanical tasks: move the Unreleased section into a dated version at release time, check that the file is formatted correctly".
+
+[discrete]
+## **When to Use**:
+
+* Writing or restructuring a `CHANGELOG.md` for a library or product with external users
+* Pairing with `semantic-versioning`, which the convention asks you to mention and which supplies the version numbers the sections are keyed on
+* Settling the argument about what belongs in a release entry: notable user-visible change, yes; internal refactor and typo fix, no
+* Reviewing a release process in which the changelog is a `git log` dump, and the question is whether anyone reads it
+* Asking an LLM for release notes, where naming the convention is what produces the correct six categories rather than a plausible-looking set
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "`Breaking Changes` is one of the standard sections" -- it is not; the six types are fixed, and this is the single most common error
+* ❌ "Keep a Changelog is a tool" -- it is a convention for a plain text file; the tools are other projects
+* ❌ "The changelog is generated from the commit log" -- the convention says the opposite in both published versions
+* ❌ "Every commit needs an entry" -- only notable changes do; the curation is the work
+* ✓ "Machines can draft, humans curate" -- the standard's own formulation of where automation stops
+
+## **Criticism**:
+
+* **The opposing position is held openly by the Conventional Commits specification, in its own words.** Its stated benefits list opens with "Automatically generating CHANGELOGs." and "Automatically determining a semantic version bump (based on the types of commits landed)." That is the claim Keep a Changelog denies: that a structured commit history converts into a changelog without a person in the loop. https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commits 1.0.0]. The tool ecosystem built on it -- semantic-release, release-please, Changesets, git-cliff -- is named on the Keep a Changelog 2.0.0 page itself: "A convention such as Conventional Commits, with tools such as semantic-release, release-please, Changesets, and git-cliff, reads structured commits to choose the next version and draft a changelog."
+* **Keep a Changelog's answer, and the sentence the argument turns on.** "A commit and a changelog entry are written for different people, and one does not convert cleanly into the other." https://keepachangelog.com/en/2.0.0/[Keep a Changelog 2.0.0]. Whether that holds is an empirical question about your audience, not a settled one -- for an internal library whose only readers are the contributors, the two audiences coincide and the objection loses its force.
+* **No named critic of the convention itself was found.** Searched in English and German; the material that reads as criticism is either pseudonymous forum comment or vendor content, neither of which this catalog cites. The live disagreement is the generate-versus-curate one above, and both sides of it are on the record.
+
+[discrete]
+## **Current Status**:
+
+* **Two published versions, and the site's front page does not point at the newer one.** Version 2.0.0 was published on 7 June 2026, but keepachangelog.com still links "Continue to Keep a Changelog" to `/en/1.1.0/`. Quote the format safely; quote a version number carefully. https://keepachangelog.com/en/1.1.0/[1.1.0] -- https://keepachangelog.com/en/2.0.0/[2.0.0]. Created and maintained by Olivier Lacan, designed by Tyler Fortune.
+* **The format itself did not drift.** The six change types, the `[Unreleased]` section, `YYYY-MM-DD` dates and latest-version-first are identical in 1.1.0 and 2.0.0. What 2.0.0 adds is the explicit stance on automation.
+* **The anchor buys correctness, not recall.** Two of four no-anchor baselines on `claude-haiku-4-5` named the convention unprompted -- and then listed the wrong sections; one produced "Breaking Changes, New Features, Fixed, Deprecated", which is not the standard's set. Naming the term produced all six canonical types plus `[Unreleased]`. This is a dense prior whose details are commonly misremembered, which is exactly where naming pays.
 
 ### Simplified Technical English (ASD-STE100)
 
@@ -7214,6 +7696,62 @@ Cockburn's format is deliberately **prose-based and notation-agnostic**. It does
 * Jacobson's successor exists and works as an anchor of its own: https://www.ivarjacobson.com/publications/white-papers/use-case-20-e-book[Use-Case 2.0] (Jacobson, Spence & Bittner, free ebook, 2011) adapts use cases to iterative delivery via **use-case slices**
 * https://www.ivarjacobson.com/publications/books/use-case-30-ebook[Use Case 3.0] (de Mendonca & Jacobson, v1.0, 2024) **does** exist — but it is too young to be an anchor: LLMs hold no dense prior for it (see _Further Reading_ above), so supply its definition in the prompt if you want 3.0 semantics. Jacobson and Cockburn realigned their craft in https://queue.acm.org/detail.cfm?id=3631182["Use Cases are Essential"] (ACM Queue, 2023)
 
+### Connextra User Story Format
+
+***Full Name***: Connextra user story format -- the three-part user story template devised at Connextra, London
+
+***Also known as***: the user story template, the three-part story template, the "As a … I want … so that …" format, role-goal-benefit
+
+[discrete]
+## **Core Concepts**:
+
+***Always Say the Qualified Name***: Use "the Connextra user story format", never the bare company name. The bare name does not resolve to this concept in weaker models -- see Current Status for the measurement. The qualified string is the anchor; "Connextra" alone is a trap.
+
+***Three Slots, One Sentence***: **As a** `<role>`, **I want** `<goal or capability>`, **so that** `<benefit>`. Mike Cohn writes the skeleton as "As a …, I … so that …." -- who, what, why. The third slot is the one most often dropped and the only one that carries the reason the work is worth doing.
+
+***A Form, Not a Quality Standard***: `invest` judges whether a story is any good -- independent, negotiable, valuable, estimable, small, testable. This anchor names the **shape** the sentence takes. A story can fill all three slots and still fail every INVEST letter.
+
+***The Sentence Is the Promise of a Conversation, Not the Requirement***: The card exists to be talked about. This is the point the template's own critics press hardest, and it is part of the concept rather than an objection to it.
+
+***Where It Sits Among the Neighbours***: The Connextra form writes the story; `bdd-given-when-then` writes its acceptance criteria; `user-story-mapping` arranges many stories along a user's journey; `jobs-to-be-done` and the job story offer a different sentence with a different unit of analysis.
+
+***The Attributable Name***: Most practitioners know the template with no name at all. "Connextra" is what makes it citable -- a specific team at a specific London company in the early 2000s, rather than anonymous agile folklore.
+
+[discrete]
+## **When to Use**:
+
+* Turning stakeholder notes into backlog items, where the benefit clause is the test of whether anyone knows why the item exists
+* Reviewing a backlog for stories whose role slot says "system" or "developer", a reliable sign the item is a task
+* Teaching the form to a team new to stories, as a learning aid with an explicit exit -- see the Criticism section
+* Asking an LLM to draft backlog items, where naming the qualified form imposes the three-part shape; on a maintainer-backlog task that contained no user story at all, naming it imposed the template on the answer
+* Deciding deliberately between this form and a job story, rather than defaulting
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Connextra is a coding kata" -- it is a London software company; this specific confabulation is what weaker models produce from the bare name
+* ❌ "Connextra format and INVEST are the same thing" -- one is the sentence's form, the other is a quality check on the result
+* ❌ "A story is the sentence on the card" -- the card is a token for a conversation; Jeff Patton's whole objection is aimed at this reading
+* ❌ "Everything in the backlog must fit the template" -- Mike Cohn, who popularised it, says otherwise in plain words (see Criticism)
+* ❌ "As a system, I want …" -- no beneficiary, therefore no benefit clause worth writing; that item is a task
+* ✓ "It is the standard three-part form for a user story, and its author is attributable" -- accurate, and the reason it belongs next to `invest` rather than inside it
+
+## **Criticism**:
+
+* **Jeff Patton: the template turned stories into requirements.** Announcing _User Story Mapping_, Patton describes the book's purpose as "saving stories from the template zombies (that have turned them into yet another annoying way to express software requirements), and instead having really high-fidelity conversations about how our product helps people." https://jpattonassociates.com/jeff-pattons-book-released-user-story-mapping/[Patton, "Jeff Patton's Book Released: User Story Mapping"] (30 January 2015). The objection is not that the form is wrong but that filling it in has replaced the conversation it was meant to start.
+* **Alan Klement and Intercom: three structural defects, and a different sentence.** Klement lists the problems with the user story format as "They use Personas.", "They couple implementation with motivations and outcomes." and "They ignore context, situations, and anxieties." On the coupling: when a feature fails, "because implementation was coupled with motivations and outcomes. Because of the coupling, how can anyone know what was wrong?" His replacement is the job story, "When [situation]…[motivation]…[expected outcome]." https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/[Klement, "Designing Features Using Job Stories", Inside Intercom] (23 December 2013). See `jobs-to-be-done`.
+* **Chris Matts: put the value first.** Matts' Feature Injection reverses the order so the business benefit opens the sentence -- Liz Keogh prints his template as "In order to <deliver some business benefit> <these people> will need <these features>." The objection is about emphasis: the Connextra form opens with the stakeholder, so the benefit arrives last and is the easiest slot to leave empty. https://lizkeogh.com/2008/09/10/feature-injection-and-handling-technical-stories/[Keogh, "Feature Injection and handling technical stories"] (10 September 2008).
+* **Mike Cohn, who popularised the template, limits it himself.** "When expressing something in the standard user story template doesn't make sense, don't use that template." He warns that "too many stories are written as just 'as a user…'", which may "indicate a system not well suited to user stories", and on being made to comply: "The last thing I need would be a Scrum Master insisting I write it to follow a template." https://www.mountaingoatsoftware.com/agile/why-the-three-part-user-story-template-works-so-well[Cohn, "User Story Template: What It Is and Why It Works So Well", Mountain Goat Software].
+* **German-language criticism makes the same point about narrowed thinking.** Die Produktwerker: "Aber wer alles in das Format „Als (Nutzer) möchte ich…, damit …" zwängt, läuft Gefahr, das Denken zu verengen." https://produktwerker.de/fehler-bei-der-arbeit-mit-user-stories/[Die Produktwerker, "Die fünf größten Fehler bei der Arbeit mit User Stories"] (July 2025).
+
+[discrete]
+## **Current Status**:
+
+* **The bare company name confabulates, with no hedging.** Asked "What is Connextra?", `claude-haiku-4-5` in a clean room answered that it is "a software development kata (coding exercise) created by Emily Bache" and went on to describe a refactoring exercise that does not exist. An invented answer under a confident heading. Use the qualified form.
+* **The qualified form reaches the concept.** "The Connextra user story format" produced the right template, dated it to 2001 and credited the Connextra team on the same weak tier.
+* **The origin is attributable to a team and a company; the exact year is not as firm as it is usually printed.** Mike Cohn writes that the template "originated with agile coach Rachel Davies at a UK company, Connextra, in the early 2000s". Seb Rose's account agrees on the person and place: "The challenges teams had writing user stories led to the creation of the _Connextra template_ by Rachel Davies in the early 2000s." https://cucumber.io/blog/bdd/user-stories-are-not-the-same-as-features/[Rose, "User stories and BDD (part #1)"] (31 October 2019). Both sources say "early 2000s"; the widely repeated date of 2001 did not appear in either, and Davies is reported to credit the Connextra team rather than herself. Credit the team, and say "around 2001" rather than asserting it.
+* **Popularised, not authored, by Cohn.** _User Stories Applied_ (2004) and _Agile Estimating and Planning_ are why the form is near-universal.
+
 ### Double Diamond
 
 ***Full Name***: Double Diamond Design Process Model
@@ -7967,6 +8505,59 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * ADR according to Nygard
 * Quality Attribute Scenario
 
+### Bulkhead Pattern
+
+***Full Name***: Bulkhead, a stability pattern from Michael T. Nygard's _Release It!_
+
+***Also known as***: resource isolation, compartmentalisation, pool isolation; at infrastructure scale, cell-based architecture
+
+[discrete]
+## **Core Concepts**:
+
+***Partition the Resource, Not the Call***: A bulkhead gives each dependency, tenant or workload its own slice of a finite resource -- threads, connections, memory, processes, instances -- so that one slow or failing consumer can only exhaust its own slice. Microsoft's Azure Architecture Center states the goal in one line: "Isolate the elements of an application into pools so that if one element fails, the others continue to function."
+
+***The Name Is the Design***: From a ship's hull. Azure: "This pattern is named after the sectioned partitions (bulkheads) of a ship's hull. If the hull of a ship is compromised, only the damaged section fills with water, which prevents the ship from sinking." The ship still takes damage. It does not sink.
+
+***The Line Against Circuit Breaker***: A circuit breaker **stops calling** a dependency that keeps failing. A bulkhead **caps how much of the system** any one dependency can consume, whether it fails or merely gets slow. They answer different failure modes and are normally combined -- Azure lists the combination explicitly: "consider combining bulkheads with retry, circuit breaker, and throttling patterns."
+
+***Two Implementation Forms***: A **thread-pool bulkhead** gives each dependency its own executor, so a hanging downstream call blocks only that pool -- the classic Hystrix form. A **semaphore bulkhead** caps concurrent calls on the caller's own thread, with no extra pool. Resilience4j documents the trade: its `SemaphoreBulkhead` "should work well across a variety of threading and I/O models. It is based on a semaphore, and unlike Hystrix, does not provide 'shadow' thread pool option" -- and therefore "it is up to the client to ensure correct thread pool sizing that will be consistent with bulkhead configuration."
+
+***The Same Idea at Infrastructure Scale***: Separate pods, clusters, accounts or regions per tenant or criticality tier. Azure treats this as the same pattern under a second name: the approach is "also known as a _cell-based architecture_."
+
+***Timeouts Are a Precondition***: A bulkhead bounds how many calls can be stuck at once. Without a timeout, "stuck" means forever, and the partition fills up and stays full. The bulkhead then contains the damage instead of preventing it.
+
+[discrete]
+## **When to Use**:
+
+* Designing a service that fans out to dependencies with different latency profiles -- a slow third-party payment API next to a fast internal catalogue
+* Separating critical from best-effort consumers of the same service, so a batch job cannot starve interactive traffic
+* Multi-tenant systems, where the question is which blast radius a single noisy tenant gets
+* Reviewing an incident in which one dependency took the whole process down: the missing control is usually a bulkhead, not a retry
+* Together with `circuit-breaker` and timeouts, as the stability-pattern set rather than one pattern alone
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "A bulkhead and a circuit breaker do the same job" -- one limits concurrency, the other limits repeated failures; a system with only a breaker still dies of a slow dependency that never fails outright
+* ❌ "A bulkhead prevents the failure" -- it bounds the blast radius; the partitioned workload still degrades
+* ❌ "Finer partitioning is always safer" -- Azure asks you to "determine the level of granularity for the bulkheads" and to weigh "the overhead in terms of cost, performance, and manageability"
+* ❌ "Netflix invented it" -- Netflix popularised it through Hystrix and then moved away from that form; the pattern is Nygard's
+* ✓ "A bulkhead is a cap on how much of my system one dependency may consume" -- accurate, and it explains why the hard part is choosing the number
+
+## **Criticism**:
+
+* **Static partitioning buys isolation with wasted capacity, and Microsoft prints the condition under which that trade fails.** The Azure Architecture Center lists when not to use the pattern: "Less efficient use of resources might not be acceptable in the project" and "The added complexity isn't necessary." Reserved capacity that sits idle in one partition while another queues is the cost of the guarantee. https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead[Microsoft, "Bulkhead Pattern", Azure Architecture Center] (page updated 19 September 2026).
+* **The static number is the real objection, and it comes from the organisation that popularised the pattern.** Netflix's own `concurrency-limits` project exists because fixed limits have to be guessed and then go stale: "in large distributed systems that auto-scale this value quickly goes out of date and the service falls over by becoming non-responsive." https://github.com/Netflix/concurrency-limits[Netflix, _concurrency-limits_ README]. Netflix's stated reason for retiring Hystrix is the same shift, toward "more adaptive implementations".
+* **The thread-pool form lost its default status on cost grounds.** Resilience4j, the successor Netflix names, makes the semaphore the plain case and drops Hystrix's "shadow" thread pool, pushing pool sizing back to the caller. The extra threads, context switches and memory of a pool per dependency were a price the follow-on library chose not to pay by default. https://resilience4j.readme.io/docs/bulkhead[Resilience4j, Bulkhead documentation].
+
+[discrete]
+## **Current Status**:
+
+* **A named pattern in the book, verified in the second edition.** The Pragmatic Bookshelf table of contents for _Release It!_ Second Edition (2018) lists the Stability Patterns as "Timeouts, Circuit Breaker, Bulkheads, Steady State, Fail Fast". https://pragprog.com/titles/mnee2/release-it-second-edition/[_Release It!_ Second Edition, Pragmatic Bookshelf]. The publisher page covers the second edition only; the first edition (2007) is where the stability patterns first appeared.
+* **Hystrix is done; Resilience4j is the named successor.** The Netflix README states: "Hystrix is no longer in active development, and is currently in maintenance mode", with no further issue review, merges or releases, and points new projects at Resilience4j while existing ones stay on 1.5.18. https://github.com/Netflix/Hystrix[Netflix/Hystrix]. Polly covers .NET.
+* **Naming the term changes the answer.** On a neutral logistics-platform resilience task, one of three no-anchor baselines on `claude-haiku-4-5` proposed bulkheads unprompted and two did not. The term is worth naming.
+* **The attribution does not survive the weak tier.** Asked who created the pattern, the same model answered `creator=Netflix (collective); year=2011` -- Hystrix's popularisation, not Nygard 2007. This entry carries the attribution the model does not.
+
 ### C4-Diagrams
 
 ***Full Name***: C4 Model for Software Architecture Diagrams
@@ -8277,6 +8868,58 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * **The promised follow-ups are unverified.** North writes "I will expand on each property in future articles so that this one does not get any longer." We did not confirm that any were published -- which is a gap in our check, not evidence that none exist.
 * **A dedicated site, https://cupid.dev/[cupid.dev], restates the same five with the same one-line definitions.** Its own description calls it "based on an article by Daniel Terhorst-North". Whether North maintains it could not be established from the page.
 
+### Defense in Depth
+
+***Full Name***: Defense in Depth -- military doctrine adapted to information security; the reference text for the information-assurance reading is the NSA paper "Defense in Depth: A practical strategy for achieving Information Assurance in today's highly networked environments"
+
+***Also known as***: layered security, layered defense, the castle model, defence in depth
+
+[discrete]
+## **Core Concepts**:
+
+***Independence, Diversity, Assumed Failure***: Three conditions decide whether a set of controls is defence in depth or just a pile. **Independence**: a layer must not fail for the same reason as its neighbour. **Diversity**: different mechanisms, so one exploit does not pass through all of them. **Assumed failure**: every layer is designed on the premise that the one in front of it has already been breached. A set of correlated controls -- same vendor, same parser, same identity provider, same misconfiguration -- is one layer wearing several names. This is the part of the idea the term does not reliably carry (see Current Status), so state it rather than assume it.
+
+***Nobody Owns the Phrase***: This is weaker attribution than most entries in this catalog. The concept is military doctrine -- trade space for time, make the attacker spend resources rather than stopping them at a single line -- adapted to information security. The NSA paper is the citable information-assurance formulation; the safety-engineering counterpart is James Reason's Swiss cheese model of accident causation, where the holes in individual layers only matter when they line up. This entry quotes no primary Reason text, having verified none, so it gives neither year nor page for the model.
+
+***The NSA Formulation Is Not a Stack of Boxes***: The paper's organising claim is that information assurance "requires a balanced focus on three primary elements: People, Technology and Operations" -- so training, policy and incident response are layers in the same sense as a firewall. Its first recommended principle is "Defense in Multiple Places", on the reasoning that "adversaries can attack a target from multiple points using either insiders or outsiders". It calls itself a "best practices" strategy that "recommends a balance between the protection capability and cost, performance, and operational considerations".
+
+***Layers Are Weighted, Not Uniform***: The same paper tells you to "specify the security robustness (strength and assurance) of each Information Assurance component as a function of the value of what's it is protecting and the threat at the point of application", with the example that "it's often more effective and operationally suitable to deploy stronger mechanisms at the network boundaries than at the user desktop". Defence in depth is therefore a budgeting argument, not an instruction to harden everything equally.
+
+***Detection and Recovery Are Layers Too***: If every layer may fail, something must notice. Monitoring, alerting, incident response and backups belong in the decomposition, not as an afterthought to prevention.
+
+***Relation to Least Privilege***: `least-privilege` is what makes a layer's failure survivable -- it bounds what the attacker reaches after the breach. Defence in depth is the arrangement; least privilege sizes each compartment.
+
+[discrete]
+## **When to Use**:
+
+* Designing a control set for a single risky operation -- file upload, document rendering, deserialisation, arbitrary code execution
+* Reviewing a security design for correlated failure: which two layers die to the same bug
+* Sandboxing and isolation decisions, where the question is what the next layer assumes
+* Bridging security and safety thinking next to `fmea` and `poka-yoke`
+* After a `stride` threat model, to decide how many independent controls each high-rated threat gets
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "More controls means more depth" -- correlated controls are one layer; the count is of **independent** failures required, not of products
+* ❌ "Defence in depth is about the network perimeter" -- the NSA formulation puts People and Operations alongside Technology
+* ❌ "It is only prevention" -- detection, response and recovery are layers
+* ❌ "Zero Trust replaced it" -- Zero Trust removes trust in network location; it does not say how many independent controls a given operation needs
+* ✓ "Name each layer, say what it catches when the previous one fails, and show the two are not correlated" -- the form that makes the term mean something
+
+## **Criticism**:
+
+* **The literature defines it and then stops.** Phil Venables, writing on his own site, charges that the body of guidance offers no design principles at all: "There is a huge number of possible arrangements of controls to achieve defense in depth with little in the way of principles to guide us in how controls should be arrayed." On the standard texts: "Most of the content is essentially a variant of the definition I just gave, together with examples of the need to deploy multiple controls...Most of the examples are given without much discussion of why they are effective." He also finds the Swiss cheese model too flat -- it "does not support defense in depth working at multiple dimensions from policy and governance to technical controls" -- and warns that the linear reading "leads to viewing risk and risk mitigation as a simple chain of events without being able to look at the wider system which induced the design factors that led to the event." https://www.philvenables.com/post/defense-in-depth[Venables, "Defense in Depth"] (21 May 2022).
+* **Read as a shopping list, it produces the opposite of security.** Armin Recha names the failure mode directly: "Der zentrale Denkfehler vieler Security-Strategien liegt darin, Defense in Depth als Einkaufsliste zu betrachten" -- the central error is treating defence in depth as a shopping list. And on what that yields: "Im schlimmsten Fall entsteht eine trügerische Sicherheit. Formal sind alle notwendigen Komponenten vorhanden, operativ fehlt jedoch die Fähigkeit, Angriffe sauber einzuordnen und kontrolliert zu reagieren" -- at worst a deceptive sense of security, every required component formally present while the ability to classify and answer an attack is missing. https://www.security-insider.de/defense-in-depth-integration-resilienz-security-architekturen-a-21c61d9d2fe7f7a10fc504d970587f5c/[Recha, "Defense in Depth: Integration statt Einkaufsliste für Resilienz", _Security-Insider_] (8 April 2026). Recha is Regional Vice President DACH at Fastly, so read the piece as a vendor's argument -- the objection stands on its own, the framing is interested.
+* **The staffing cost is the practical objection.** Jochen Koehler argues the strategy is unreachable for most organisations as practised: "Ohne massiven personellen Aufwand können die allerwenigsten Unternehmen diesen Ansatz praktisch und vor allem erfolgreich umsetzen", and "Unternehmen müssen begreifen, dass mehr Tools nicht zwangsläufig mehr Sicherheit bedeuten" -- without massive staffing very few organisations can run the approach successfully, and more tools do not automatically mean more security. https://www.iavcworld.de/security/9443-defense-in-depth-klingt-gut-aber-ist-es-das-auch.html[Koehler, "Defense in depth: Klingt gut, aber ist es das auch?", _iavcworld_] (21 November 2023). Koehler is VP EMEA Sales at Ontinue; same caveat.
+
+[discrete]
+## **Current Status**:
+
+* **The NSA paper survives only in the Internet Archive, and it carries no date.** The nsa.gov URL it was published under is dead; the five-page document is retrievable through a Wayback Machine snapshot captured on 11 April 2016 (`web.archive.org/web/20160411062620/https://www.nsa.gov/ia/_files/support/defenseindepth.pdf`). The quotations above come from that file. The commonly repeated date of "around 2000" is a secondary claim: the document itself prints no date, version or revision. Anyone citing it as a dated standard is citing something the paper does not say.
+* **Naming it adds layers the baseline omits.** Measured on `claude-haiku-4-5` on 3 October 2026 against a document-rendering task: with the anchor named, two of two runs produced sandboxed preview rendering and an explicitly layered decomposition; without it, zero of two did.
+* **The premise does not come with the name.** In the same measurement, "assume breach" appeared in only one of the two anchored runs. The independence and assumed-failure requirement is therefore not reliable in the prior, which is why this entry states it in Core Concepts instead of leaving it to the model.
+
 ### Domain-Driven Design according to Evans
 
 ***Full Name***: Domain-Driven Design according to Eric Evans
@@ -8313,6 +8956,59 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Long-lived systems requiring deep domain understanding
 * When business and technical teams need close collaboration
 * Systems where the domain logic is the core value
+
+### Enterprise Integration Patterns (Hohpe/Woolf)
+
+***Full Name***: _Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions_ -- Gregor Hohpe and Bobby Woolf, Addison-Wesley Signature Series, 2003. The catalog lives at https://www.enterpriseintegrationpatterns.com/patterns/messaging/[enterpriseintegrationpatterns.com]
+
+***Also known as***: EIP, the Hohpe/Woolf patterns, the messaging pattern language
+
+[discrete]
+## **Core Concepts**:
+
+***The Four Integration Styles Come Before Any Pattern***: The book opens by comparing **File Transfer**, **Shared Database**, **Remote Procedure Invocation** and **Messaging**, and argues for messaging on the grounds of coupling -- in time, in location and in data format. That comparison is part of the anchor: naming EIP should produce the choice of style, not only a list of patterns. A design that never considered the other three styles has skipped the book's first chapter.
+
+***Sixty-Five Patterns in Six Categories***: The catalog states its own size: "This pattern catalog includes 65 integration patterns that we collected from integration projects and updated over two decades." The categories follow a message's journey -- **Messaging Channels**, **Message Construction**, **Message Routing**, **Message Transformation**, **Messaging Endpoints**, **System Management**. The categories are the usable abstraction; the full list of sixty-five is a reference, not something to recite.
+
+***The Handful That Carries Most Designs***: **Message Channel** -- the named pipe a sender writes to without knowing the receiver. **Message Router** -- a component that decides a message's destination from its content, keeping the decision out of both endpoints. **Message Translator** -- the seam where one system's format becomes another's. **Competing Consumers** -- several consumers on one channel, which is how messaging buys throughput and failover. **Dead Letter Channel** -- where a message goes when it cannot be delivered, so a failure becomes an inspectable object instead of a loss. **Canonical Data Model** -- one shared format at the boundary, so _n_ systems need _n_ translators and not _n²_.
+
+***Pipes and Filters Is the Base Metaphor***: Every routing and transformation pattern is a filter wired into a pipe. This is what makes the patterns composable: a Content Enricher followed by a Content-Based Router followed by a Splitter is a legitimate design, and each piece can be tested on its own.
+
+Not the Same Anchor as `event-driven-architecture`:: Both entries name Hohpe and Woolf, and the split matters. Event-driven architecture is an architectural **style**: the system reacts to events, state is distributed, consistency is eventual. EIP is the named **vocabulary** for building any messaging solution -- request/reply integration between a shop and an invoicing system is EIP territory and is not event-driven at all. Reach for EDA to decide how a system should behave; reach for EIP to name the parts once it does.
+
+***The Icon Language Is Part of Why It Travels***: Each pattern has a drawn symbol, and the site still distributes them: "You can create design documents using our icon language by downloading the Visio stencil or using the OmniGraffle stencil created by one of our readers." A pattern language with a notation gets drawn on whiteboards, and the names survive because the pictures do.
+
+[discrete]
+## **When to Use**:
+
+* Designing integration between systems you do not own, where the vocabulary has to be shared with another team
+* Naming the parts of an existing messaging flow before changing it -- most undocumented integrations turn out to be a router plus two translators
+* Error design: `Dead Letter Channel`, Invalid Message Channel and Idempotent Receiver answer questions that otherwise surface in production
+* Deciding integration style at all, by making File Transfer, Shared Database and RPC explicit alternatives instead of defaults
+* Reading Apache Camel or Spring Integration code and configuration, which use the pattern names as API
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "EIP means build an ESB" -- the patterns say nothing about where they run; the same Message Router can be a Camel route, a Lambda, a Kafka Streams stage or a `switch` statement
+* ❌ "EIP is event-driven architecture" -- EIP covers request/reply and batch integration too; EDA is one style you can build with it
+* ❌ "You need all 65" -- six categories and roughly six patterns carry most designs; the rest is a reference catalog
+* ❌ "It is a 2003 book, so it is obsolete" -- the names map directly onto today's platforms; what aged are the code examples, not the patterns
+* ✓ "EIP is the vocabulary for messaging design; EDA is a style" -- accurate, and the reason both entries exist
+
+## **Criticism**:
+
+* **The microservices community rejected the architecture the patterns were usually implemented in.** James Lewis and Martin Fowler open their definition of microservices with exactly this target: "When building communication structures between different processes, we've seen many products and approaches that stress putting significant smarts into the communication mechanism itself. A good example of this is the Enterprise Service Bus (ESB), where ESB products often include sophisticated facilities for message routing, choreography, transformation, and applying business rules." Their alternative is "smart endpoints and dumb pipes", and their footnote is blunter: "We can't resist mentioning Jim Webber's statement that ESB stands for 'Erroneous Spaghetti Box'." Note what the objection does and does not hit. Routing, transformation and choreography are EIP patterns; the criticism is of putting them in central middleware, not of the patterns themselves. But the 2003 pattern language is what the ESB vendors sold, and a model that reaches for EIP will suggest middleware-resident routing unless told otherwise. https://martinfowler.com/articles/microservices.html[Lewis and Fowler, "Microservices", 25 March 2014]
+* **Hohpe's own follow-up names the gap: the patterns describe single messages, not conversations.** His _Conversation Patterns_ work states the limitation directly: "Asynchronous Messaging is a great way for distributed systems to communicate while maintaining loose coupling. Sending a single message isn't always enough for a meaningful exchange, though: a request expects a response; a certificate exchange may be needed for initial authentication; an order message is supposed to lead to a payment message, and if something goes wrong, additional messages may be needed to handle or correct errors." Request-Response with Retry, Lease Renewal, Compensating Action and Tentative Operation live in that second language, not in the 2003 book. The page is also still labelled "Work in progress. Last update: Jan 2017", so the acknowledged gap has stayed open for roughly two decades. https://www.enterpriseintegrationpatterns.com/patterns/conversation/[Hohpe, "Conversation Patterns"]
+* **What we did not find, and where we looked.** No named German-language critique of the pattern language turned up; German-language results are book reviews and introductions. Languages searched: English, German. The substantive criticism is English and architectural -- it concerns centralised middleware, not the pattern catalog.
+
+[discrete]
+## **Current Status**:
+
+* **The prior produces the vocabulary unprompted, and cites its source.** In a clean-room test on `claude-haiku-4-5` (2026-10-03), naming Enterprise Integration Patterns on a neutral logistics-platform brief produced Request/Reply, Publish/Subscribe, Canonical Message Format and Message Translator without being asked for patterns, and the model referred to "Hohpe and Woolf's notation" without being asked for a source. The no-anchor baseline named none of them. This is the strongest of the three priors tested that day.
+* **There is no second edition, and saying so is not a quibble.** The 2003 Addison-Wesley edition is still the only one. The _Conversation Patterns_ work is announced as Volume 2 of the series and remains unpublished, work in progress on the site rather than a shipped book (checked 2026-10-03). Cite "the 2003 edition" or "the online catalog"; never "the second edition".
+* **The pattern count is confirmed, and the catalog is not the 2003 book.** The site states 65 patterns and carries the copyright line "© 2003, 2023" together with "updated over two decades" (checked 2026-10-03). A citation of "the 2003 book, 65 patterns" is correct about the count; it is not safe to assume the printed edition and today's online catalog say the same thing about any individual pattern.
+* **The names outlived the platforms.** Apache Camel and Spring Integration expose EIP pattern names as API, which is why the vocabulary still resolves for anyone reading integration code. The infrastructure under it has turned over -- message brokers, Kafka, serverless functions, managed queues -- while the pattern names did not change, which is the usual sign of a pattern language that was written at the right level.
 
 ### Event-Driven Architecture
 
@@ -8440,6 +9136,56 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * CAP Theorem — the consistency/availability consequence of partitions
 * Event-Driven Architecture — async patterns that assume unreliable networks
 * Hexagonal Architecture — isolating network adapters behind ports
+
+### 4+1 View Model according to Kruchten
+
+***Full Name***: The "4+1" View Model of Software Architecture -- Philippe Kruchten, "Architectural Blueprints -- The '4+1' View Model of Software Architecture", _IEEE Software_ 12(6), November 1995, pp. 42-50 (https://doi.org/10.1109/52.469759[doi:10.1109/52.469759])
+
+***Also known as***: Kruchten's 4+1, the 4+1 views, the RUP architecture views, 4+1-Sichtenmodell
+
+[discrete]
+## **Core Concepts**:
+
+***One View, One Named Audience***: Each view exists because a specific group asks a specific question. The **logical view** answers the end user's question about functionality. The **development view** (also implementation view) answers the programmer's question about code organisation -- modules, packages, layers, build. The **process view** answers the integrator's question about runtime: concurrency, distribution, performance, fault tolerance. The **physical view** (also deployment view) answers the system engineer's question about which hardware runs what. The audience is part of the model, not an afterthought.
+
+***The "+1" Is the Cross-Check, Not a Fifth Topic***: The scenarios -- a small set of key use cases -- are deliberately redundant with the four views. They are used twice: to **discover** architectural elements while the architecture is being designed, and to **validate** the four views against each other afterwards. A scenario that cannot be walked through all four views has found an inconsistency. This is the mechanism that makes 4+1 more than a filing system.
+
+What Separates It From `arc42` and `c4-diagrams`:: All three describe a system through several views, and the three overlap heavily in content. Two things are 4+1's own. First, the explicit stakeholder-per-view mapping: the model names who each view is for, so a view with no reader is a defect. Second, the scenarios as the consistency check **between** views. `c4-diagrams` instead supplies one zoom hierarchy with a fixed notation; `arc42` supplies a twelve-chapter document structure in which the building block, runtime and deployment views descend from the same idea.
+
+***Lineage -- RUP, Then the Standard***: 4+1 came out of Kruchten's work at Rational and became the architecture description of the Rational Unified Process. The idea of describing a system through stakeholder-specific views was then generalised in IEEE 1471-2000 and its successor ISO/IEC/IEEE 42010 as the **view / viewpoint** distinction: a viewpoint is the reusable template, a view is one application of it. Rozanski and Woods state the move plainly: "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint."
+
+***The Diagram Vocabulary Is UML-Era***: The paper and all its teaching material speak UML: class and sequence diagrams for the logical view, component and package diagrams for the development view, activity diagrams for the process view, deployment diagrams for the physical view, use case diagrams for the scenarios. Naming the anchor therefore pulls UML with it. That is the vocabulary of the model, not a defect in it, but it is worth knowing before a model picks notation on your behalf.
+
+[discrete]
+## **When to Use**:
+
+* Structuring a first architecture description when the team has no agreed view set, and the stakeholders are known
+* Auditing an existing architecture document for a missing audience -- a document with no process view usually means nobody asked the integrator
+* Forcing consistency between views: write the scenarios, then walk each one through all four views
+* Teaching why multiple views exist at all, before introducing `arc42` or `c4-diagrams` as the modern container
+* Reading older architecture documents, RUP artefacts and ISO 42010 wording, where the vocabulary is already in use
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "4+1 means five documents" -- it means five **views** of one architecture; they may live in five chapters of one document, and a view without a reader should be dropped
+* ❌ "The scenarios are the use case chapter" -- they are the cross-check; their job is to expose contradictions between the other four views
+* ❌ "4+1 is the same as arc42 or C4" -- arc42 is a document structure and C4 a notation hierarchy; 4+1 is a stakeholder-to-view mapping plus a consistency mechanism
+* ❌ "Physical view means the server diagram" -- it is the mapping of software elements onto nodes, which includes availability and installation, not a network drawing
+* ✓ "4+1 is a view set; ISO 42010 is the grammar for view sets" -- accurate, and the reason the model survives as vocabulary even where its UML diagrams do not
+
+## **Criticism**:
+
+* **The standard that formalised the idea declined to keep the view set.** IEEE 1471 and ISO/IEC/IEEE 42010 adopted Kruchten's central move -- stakeholder-driven views -- and then deliberately refused to prescribe which views. Rozanski and Woods, authors of _Software Systems Architecture_, describe the sequence directly: "In his introductory paper, Kruchten defined four standard views, namely, Logical, Process, Physical, and Development," after which "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint." A fixed set of four is exactly what the standard treats as the part not to generalise. https://www.viewpoints-and-perspectives.info/home/viewpoints/[Rozanski and Woods, "Views and Viewpoints", viewpoints-and-perspectives.info]
+* **Two concerns the four views do not carry: data and operations.** The Rozanski and Woods catalog answers 4+1 with seven viewpoints -- Context, Functional, Information, Concurrency, Development, Deployment, Operational. Information and Operational have no counterpart among Kruchten's four: there is no view that owns the data model, and none that owns running the system in production. Teams using 4+1 on information systems add these themselves, which is the practical argument for the newer catalogs. Same source as above.
+* **What we did not find, and where we looked.** No named, published critique of 4+1 with a verifiable quotation turned up in English or German searching -- not from Philippe Kruchten in retrospect, not from Simon Brown, not from the arc42 authors (Stefan Zörner's embarc comparison of arc42 against alternatives discusses Simon Brown's C4 and Software Guidebook, and does not treat 4+1). The criticism of 4+1 is structural rather than polemical: it is carried by what the successors changed. Languages searched: English, German. Other languages were not searched, so this is a frame, not a proof of absence.
+
+[discrete]
+## **Current Status**:
+
+* **The prior is strong and correctly attributed.** In a clean-room test on `claude-haiku-4-5` (2026-10-03) a neutral logistics-platform brief that named no method produced no view vocabulary at all; naming the 4+1 View Model produced all five views together with their audiences. The weak tier attributes Kruchten 1995 correctly and with high confidence. The model is one of the rare cases where the term alone restructures the answer.
+* **The citation itself has drifted.** Crossref's record for `doi:10.1109/52.469759` gives _IEEE Software_ 12(6), 1995, pp. 42-50, matching the German Wikipedia entry's "Band 12, Nr. 6, November 1995, S. 42-50". Kruchten's own bibliography lists the same DOI as "pp. 45-50" (https://philippe.kruchten.com/architecture/[philippe.kruchten.com/architecture]). Use 42-50.
+* **It lives on as vocabulary, not as a template.** The stakeholder-per-view idea is now standard through ISO/IEC/IEEE 42010, and the views themselves reappear inside `arc42` (building block, runtime, deployment) and `c4-diagrams`. What has aged is the notation layer: a model naming 4+1 today still reaches for UML diagram types, which may not be what the project uses.
 
 ### GoM
 
@@ -8811,6 +9557,55 @@ For reliable activation, name the method **and its first step** — "apply Resid
 
 * **Emerging, but genuinely published.** Beyond the Leanpub book, the theory has a peer-reviewed trail in Elsevier's _Procedia Computer Science_: https://www.sciencedirect.com/science/article/pii/S1877050920305585["An Introduction to Residuality Theory: Software Design Heuristics for Complex Systems"] (170, 2020, 875–880), https://www.sciencedirect.com/science/article/pii/S1877050921007420["The Philosophy of Residuality Theory"] (2021) and https://www.sciencedirect.com/science/article/pii/S1877050922004975["Residuality Theory, random simulation, and attractor networks"] (2022), plus a 2024 Springer chapter, https://link.springer.com/chapter/10.1007/978-3-031-75201-8_3["Embracing Residuality Theory in Software Architecture to Address Uncertainty: Key Challenges and Strategies"].
 * Reception is active rather than mainstream: InfoQ coverage (2025), a DDD Academy course, conference talks from 2018 onward. Treat it the way `event-storming` was treated before Brandolini's book was finished — a real method with a real vocabulary, still short of textbook consensus. The prior most training data serves is the residue/stressor/contagion vocabulary described here, and weaker models tend to dilute it into generic complexity-science terms.
+
+### Richardson Maturity Model
+
+***Full Name***: Richardson Maturity Model -- four levels of REST maturity for HTTP APIs. Presented by Leonard Richardson in "Justice Will Take Us Millions Of Intricate Moves", QCon San Francisco, 20 November 2008, and named and popularised by Martin Fowler, "Richardson Maturity Model: steps toward the glory of REST", 18 March 2010
+
+***Also known as***: RMM, Richardson's levels, the REST maturity levels; Richardson's own talk calls it the **Maturity Heuristic**
+
+[discrete]
+## **Core Concepts**:
+
+***The Four Levels***: **Level 0** -- HTTP as a transport tunnel: one endpoint, one verb, the operation named in the payload. Fowler's own description of the starting point: "The starting point for the model is using HTTP as a transport". **Level 1** -- resources: each thing gets its own URI. Richardson's phrasing in the talk: "They give each individual thing in their universe a URI." **Level 2** -- HTTP verbs and status codes used with their defined meaning: GET is safe and cacheable, PUT is idempotent, DELETE removes, and the response code carries the outcome (201, 404, 409). **Level 3** -- hypermedia controls: responses carry links to the next available actions, so the client follows links instead of constructing URIs from documentation.
+
+***Use It as a Target, Not as a Label***: The model is a classification, and a classification on its own changes nothing. Two formulations make it operational. As a **target**: "design this API to Richardson Maturity Model Level 2" -- that is a concrete instruction about URI design, verb choice and status codes. As a **gap statement**: "this API sits at Level 1; name what Level 2 would change." The level number is shorthand for a set of design decisions, which is why it compresses well in a prompt.
+
+***Each Level Is a Separate Design Technique***: Fowler reports Ian Robinson's reading, which is the most useful part of the model: Level 1 is divide and conquer applied to one large endpoint, Level 2 removes unnecessary variation by using a standard set of verbs, and "Level 3 introduces discoverability, providing a way of making a protocol more self-documenting." The levels are not degrees of the same thing; they are three different problems, which is why a team can genuinely want Level 2 and not Level 3.
+
+***Level 2 Is Where Almost Everything Stops***: Richardson said why in the talk itself: "A lot of people settle for level two because hypermedia is difficult to understand and its value in the web service domain isn't as clear." The model's main practical value is therefore as a precise way to say what an API already does and does not do, rather than as a ladder anyone intends to climb to the top.
+
+[discrete]
+## **When to Use**:
+
+* Setting an explicit API design target before implementation -- "Level 2, and here is why not Level 3"
+* Describing an existing HTTP API in one word to another engineer or to a model, instead of listing its URI and verb conventions
+* Reviewing an API for the specific Level 2 defects: POST used for reads, 200 returned with an error body, verbs encoded in the path
+* Deciding whether hypermedia is worth its cost for a given client population, with the tradeoff named rather than implied
+* Reading REST literature, where Level 0 to Level 3 is assumed vocabulary
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Level 3 is the goal for every API" -- Richardson's own talk explains why most teams stop at Level 2, and the cost falls on clients that do not need discoverability
+* ❌ "Level 2 means RESTful" -- Roy Fielding's position is that hypertext is a precondition, not a finishing touch; on that reading Levels 0 to 2 are simply not REST
+* ❌ "Higher level means better API" -- the levels rank conformance to REST constraints, not fitness for purpose; an internal RPC-style service can be the right design at Level 0
+* ❌ "RMM is an assessment framework" -- Fowler explicitly rejects that use (see Criticism)
+* ✓ "RMM is a vocabulary for naming where an API sits and where you want it" -- accurate, and the form in which it is actionable
+
+## **Criticism**:
+
+* **Roy Fielding's constraint leaves no ladder to climb.** Fielding never wrote about the Richardson Maturity Model in the piece usually cited against it; what he wrote is the constraint that makes the model's lower levels not-REST at all: "if the engine of application state (and hence the API) is not being driven by hypertext, then it cannot be RESTful", and "A REST API should be entered with no prior knowledge beyond the initial URI (bookmark) and set of standardized media types". Of the API he was reviewing he wrote: "That is RPC. It screams RPC." The word "maturity" does not appear in that post -- the application to RMM is Fowler's: "Roy Fielding has made it clear that level 3 RMM is a pre-condition of REST." Read that way, the model is not a maturity scale at all: Levels 0 through 2 are one category (not REST) and Level 3 is the other. https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[Fielding, "REST APIs must be hypertext-driven", 20 October 2008]
+* **Fowler rules out the assessment use, in the article that made the model famous.** Two sentences from his own write-up: "I should stress that the RMM, while a good way to think about what the elements of REST, is not a definition of levels of REST itself." And: "As such I see it as tool to help us learn about the concepts and not something that should be used in some kind of assessment mechanism." A team that scores its APIs on the RMM is using it against its popularising author's stated intent. Use it as a design target and a shared vocabulary; do not put it in a scorecard. https://martinfowler.com/articles/richardsonMaturityModel.html[Fowler, "Richardson Maturity Model", 18 March 2010]
+* **The name promises more than the original claimed.** Richardson's talk calls its third act "The Maturity Heuristic" -- a heuristic, not a model, and not a maturity model. The term "Richardson Maturity Model" comes from Fowler's 2010 title, two years later. The upgrade from heuristic to model is where the implication of a ladder enters, and the implication is the part both authors later qualify. https://www.crummy.com/writing/speaking/2008-QCon/[Richardson, "Justice Will Take Us Millions Of Intricate Moves", QCon San Francisco, 20 November 2008]
+* **What we did not find, and where we looked.** No named German-language critique of the model turned up; German results are tutorials and translations of the four levels, not argument. Languages searched: English, German. The substantive criticism is in English and comes from Fielding and from Fowler himself.
+
+[discrete]
+## **Current Status**:
+
+* **The prior holds, and it diagnoses.** In a clean-room test on `claude-haiku-4-5` (2026-10-03), a neutral logistics-platform brief produced an API discussion with no notion of maturity or hypermedia at all. Naming the Richardson Maturity Model made the weak tier diagnose the current state -- "likely stuck at Level 0-1" -- and then prescribe the migration, with HTTP verb semantics and status codes given per resource. Attribution lands on Richardson 2008-2009, with medium confidence; the year is sometimes given as 2009 or as Fowler's 2010.
+* **"The swamp of POX" is not in Fowler's text.** The phrase travels with Level 0 everywhere in secondary writing and in model output, but Fowler's article heads that section simply "Level 0". Treat the label as folklore, not as a quotation.
+* **Fowler's own Level 3 example has aged out.** In 2010 he wrote of link relations: "As I write these are confined to what's done by ATOM, which is generally seen as a leader in level 3 restfulness." Today the hypermedia discussion runs through JSON:API, HAL and JSON Hypertext Application Language rather than Atom, while the levels themselves are unchanged. Level 3 remains rare in production APIs, which is the honest reason the model is used descriptively more often than as a plan.
 
 ### Strangler Fig
 
@@ -10482,6 +11277,61 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * **Toyota replaced the cords with buttons.** Starting at the Toyota City plant in 2013, overhead cords gave way to wireless, waist-high yellow buttons, rolled out gradually worldwide while some plants kept cords. The stated reasons are mundane: "reduce overhead clutter, improve safety by removing tools…that could snag on the cord" and "simplify line reconfiguration". https://www.leanblog.org/2014/08/toyota-andon-cord-buttons/[Graban, "Why Toyota is Eliminating the Andon Cord from its Factories"] (2 August 2014, updated 17 May 2026). The word "cord" in "andon cord" is therefore already historical at the source.
 * **The term survives in software mostly as metaphor.** "Pull the andon cord" is common shorthand in DevOps and SRE writing for stopping a release. The prior most training data carries is this metaphorical sense plus the myth version; the fixed-position stop and the responder-within-seconds requirement are usually absent, which is precisely why naming the anchor is worth doing.
 
+### Arrange-Act-Assert (AAA)
+
+***Full Name***: Arrange-Act-Assert — three named phases for the body of a single unit test, abbreviated "3A" by the author who named it
+
+***Also known as***: 3A, the AAA pattern, Setup-Exercise-Verify (the first three phases of Gerard Meszaros' Four-Phase Test), Build-Operate-Check (the same split under different names in Robert C. Martin's _Clean Code_)
+
+[discrete]
+## **Core Concepts**:
+
+***Write the Name Out — the Acronym Points Somewhere Else***: "Arrange-Act-Assert" is the anchor. "AAA" is not: it is the standard abbreviation for Authentication, Authorization and Accounting in network access control, and that is what a model retrieves from the three letters alone (see **Current Status**). Spell it out in prompts, in test comments and in team vocabulary.
+
+***Three Phases, One Action***: Bill Wake's own definitions. **Arrange**: "Set up the object to be tested. We may need to surround the object with collaborators." **Act**: "Act on the object (through some mutator). You may need to give it parameters." **Assert**: "Make claims about the object, its collaborators, its parameters, and possibly (rarely!!) global state." The decisive word is **one** action: a second Act in the same test means a second test.
+
+***Origin, Dated by the Author Himself***: Wake's post https://xp123.com/3a-arrange-act-assert/["3A – Arrange, Act, Assert"] is dated 26 April 2011 and says: "I (Bill Wake) observed and named the pattern in 2001." The 2001 date is therefore the author's own recollection, written down ten years later, not a contemporaneous record.
+
+***The Fourth Phase Is the One AAA Drops***: Meszaros' Four-Phase Test names "fixture setup, exercise SUT, result verification and fixture teardown". AAA renames the first three and leaves the fourth implicit — "In the fourth phase, we tear down the test fixture to put the world back into the state in which you found it." In a test that touches files, databases, clocks or global state, that omission is yours to fix; AAA will not remind you.
+
+***Not the Same Altitude as Given-When-Then***: Given-When-Then shapes an **acceptance scenario** in the language of the domain, written to be read by people who do not read code (`gherkin`, `bdd-given-when-then`). Arrange-Act-Assert shapes the **body of one unit test** in code. The structures are parallel; the audience, the artifact and the level are not. Use Given-When-Then to agree on behaviour, Arrange-Act-Assert to lay out the test that checks it.
+
+***A Swollen Arrange Is a Diagnosis***: When the Arrange block dwarfs Act and Assert, the test is telling you something about the design: too many collaborators, a constructor that demands irrelevant data, hidden dependencies. The two standard remedies are test doubles (`test-double-meszaros`) and builders that hide safe defaults (`test-data-builder`).
+
+***Marking the Phases Is a Discipline, Not Decoration***: Meszaros' argument for writing the phases down: "Using comments to mark the phases of a Four-Phase Test is a good source of self-discipline in that it makes it very obvious when our tests are not Single Condition Tests."
+
+[discrete]
+## **When to Use**:
+
+* Asking for unit tests and wanting one behaviour per test instead of a single method that calls six things and asserts on all of them
+* Reviewing tests: the three phases make it visible where a failure comes from — bad setup, wrong call, or wrong expectation
+* Teaching test structure, where the named phases give beginners a shape to fill
+* Refactoring a test suite whose Arrange sections have grown out of control, as the entry point to builders and test doubles
+* Next to `bdd-given-when-then` when the team needs both levels and keeps confusing them
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "AAA" — the bare acronym retrieves Authentication, Authorization and Accounting, not testing; the written-out name is the anchor
+* ❌ "Arrange-Act-Assert means exactly one assertion per test" — contested, and Wake himself writes of that guideline: "I don't follow that guideline too closely." See **Criticism**
+* ❌ "It is just Given-When-Then for programmers" — same shape, different altitude and different audience
+* ❌ "Three phases cover every test" — teardown is missing by construction, and shared setup and multi-step scenarios need adaptations
+* ❌ "The comments are the pattern" — the single Act is the pattern; the comments only make a violation obvious
+* ✓ "One action per test, with setup and expectation visibly separated from it" — accurate, and the part worth insisting on
+
+## **Criticism**:
+
+* **The strict reading — one assertion per test — is contested, and the pattern's own author is on the permissive side.** Dave Astels made the case for the rule in "One Assertion Per Test" (23 February 2004), arguing that tests are specifications of behaviour and that the rule keeps you working in "the smallest steps possible, both for the finest-grained long-term verification, and for the most flexible design evolution"; where a test wants several assertions, he decomposes it into separate fixtures instead. Wake answers eleven years later in "Multiple Asserts Are OK": "I first heard the 'one assert per test' idea years ago from Dave Astels, and others have picked it up since then", and "Multiple assertions can be a sign of trouble in tests. But as you'll see by the end, some situations make good use of groups of assertions." https://www.artima.com/weblogs/viewpost.jsp?thread=35578[Astels, "One Assertion Per Test", Artima, 23 February 2004] and https://www.industriallogic.com/blog/multiple-asserts-are-ok/[Wake, "Multiple Asserts Are OK", Industrial Logic, 29 September 2015]. Anyone who cites "AAA" as authority for a hard one-assert rule is citing a position its author declined to hold.
+* **The three phases do not fit every test shape, and the teaching literature says so.** The Freie Universität Berlin's AG Software Engineering, in the course material for its Programmierpraktikum (Sommersemester 2026), names two cases where the plain structure breaks down: "Viele Tests teilen dasselbe aufwändige Setup — Kopieren kostet Zeit und erzeugt Fehlerquellen", and "Ein Testszenario besteht aus mehreren aufeinander aufbauenden Schritten, deren Zwischenzustände jeweils überprüft werden sollen." Their remedies are helper functions for the shared Arrange and an A-AA-AA shape with several Act/Assert cycles. The page presents these as adaptations rather than as grounds to abandon the pattern. https://www.inf.fu-berlin.de/inst/ag-se/teaching/K-ProPra-2026-04/pytest_aaa.html[AG Software Engineering, FU Berlin, "Das AAA-Muster: Strukturierte Unit-Tests"].
+* **Asserting the precondition before acting is the other standing patch.** "Arrange-Assert-Act-Assert" adds a check that the setup really produced the state the test assumes, so a failure cannot be silently blamed on the action. Wake shows the shape himself in "Multiple Asserts Are OK": "// arrange / set up something hairy / // assert on setup / assert setup looks right / // act / probe a behavior / // assert / verify its consequences". The cost is that the test now has two kinds of assertion in it, and the reader has to tell them apart.
+* **Teardown is a real gap, not a simplification.** Meszaros keeps the fourth phase for a reason — a test that does not put the world back breaks the next one — and AAA's three names give no place to put it. http://xunitpatterns.com/Four%20Phase%20Test.html[Meszaros, "Four-Phase Test", xunitpatterns.com] (the site serves plain HTTP only).
+
+[discrete]
+## **Current Status**:
+
+* **The bare acronym anchors a different field entirely.** Asked "What is AAA?" in a clean room on `claude-haiku-4-5` (2026-10-03), the weak tier answered: "AAA stands for **Authentication, Authorization, and Accounting**, a security framework commonly used in networking and access control", went on through RADIUS and TACACS+, and mentioned the American Automobile Association before any testing sense. The written-out name is therefore the anchor; the acronym alone is not.
+* **The prior behind the full name is dense enough to surface unprompted.** On a test-readability task measured the same day, the no-anchor baseline reached Arrange-Act-Assert by itself in two of four runs. Naming it makes the structure explicit and settles the one-assert question; it does not introduce an unfamiliar idea.
+
 ### BDD (Behavior-Driven Development)
 
 ***Also known as***: Specification by Example, Executable Specifications
@@ -10521,6 +11371,58 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * TDD, London School - Outside-in development approach that complements BDD
 * TDD, Chicago School - Developer-focused TDD practice
 * User Story Mapping - Requirements discovery that feeds BDD scenarios
+
+### Defense in Depth
+
+***Full Name***: Defense in Depth -- military doctrine adapted to information security; the reference text for the information-assurance reading is the NSA paper "Defense in Depth: A practical strategy for achieving Information Assurance in today's highly networked environments"
+
+***Also known as***: layered security, layered defense, the castle model, defence in depth
+
+[discrete]
+## **Core Concepts**:
+
+***Independence, Diversity, Assumed Failure***: Three conditions decide whether a set of controls is defence in depth or just a pile. **Independence**: a layer must not fail for the same reason as its neighbour. **Diversity**: different mechanisms, so one exploit does not pass through all of them. **Assumed failure**: every layer is designed on the premise that the one in front of it has already been breached. A set of correlated controls -- same vendor, same parser, same identity provider, same misconfiguration -- is one layer wearing several names. This is the part of the idea the term does not reliably carry (see Current Status), so state it rather than assume it.
+
+***Nobody Owns the Phrase***: This is weaker attribution than most entries in this catalog. The concept is military doctrine -- trade space for time, make the attacker spend resources rather than stopping them at a single line -- adapted to information security. The NSA paper is the citable information-assurance formulation; the safety-engineering counterpart is James Reason's Swiss cheese model of accident causation, where the holes in individual layers only matter when they line up. This entry quotes no primary Reason text, having verified none, so it gives neither year nor page for the model.
+
+***The NSA Formulation Is Not a Stack of Boxes***: The paper's organising claim is that information assurance "requires a balanced focus on three primary elements: People, Technology and Operations" -- so training, policy and incident response are layers in the same sense as a firewall. Its first recommended principle is "Defense in Multiple Places", on the reasoning that "adversaries can attack a target from multiple points using either insiders or outsiders". It calls itself a "best practices" strategy that "recommends a balance between the protection capability and cost, performance, and operational considerations".
+
+***Layers Are Weighted, Not Uniform***: The same paper tells you to "specify the security robustness (strength and assurance) of each Information Assurance component as a function of the value of what's it is protecting and the threat at the point of application", with the example that "it's often more effective and operationally suitable to deploy stronger mechanisms at the network boundaries than at the user desktop". Defence in depth is therefore a budgeting argument, not an instruction to harden everything equally.
+
+***Detection and Recovery Are Layers Too***: If every layer may fail, something must notice. Monitoring, alerting, incident response and backups belong in the decomposition, not as an afterthought to prevention.
+
+***Relation to Least Privilege***: `least-privilege` is what makes a layer's failure survivable -- it bounds what the attacker reaches after the breach. Defence in depth is the arrangement; least privilege sizes each compartment.
+
+[discrete]
+## **When to Use**:
+
+* Designing a control set for a single risky operation -- file upload, document rendering, deserialisation, arbitrary code execution
+* Reviewing a security design for correlated failure: which two layers die to the same bug
+* Sandboxing and isolation decisions, where the question is what the next layer assumes
+* Bridging security and safety thinking next to `fmea` and `poka-yoke`
+* After a `stride` threat model, to decide how many independent controls each high-rated threat gets
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "More controls means more depth" -- correlated controls are one layer; the count is of **independent** failures required, not of products
+* ❌ "Defence in depth is about the network perimeter" -- the NSA formulation puts People and Operations alongside Technology
+* ❌ "It is only prevention" -- detection, response and recovery are layers
+* ❌ "Zero Trust replaced it" -- Zero Trust removes trust in network location; it does not say how many independent controls a given operation needs
+* ✓ "Name each layer, say what it catches when the previous one fails, and show the two are not correlated" -- the form that makes the term mean something
+
+## **Criticism**:
+
+* **The literature defines it and then stops.** Phil Venables, writing on his own site, charges that the body of guidance offers no design principles at all: "There is a huge number of possible arrangements of controls to achieve defense in depth with little in the way of principles to guide us in how controls should be arrayed." On the standard texts: "Most of the content is essentially a variant of the definition I just gave, together with examples of the need to deploy multiple controls...Most of the examples are given without much discussion of why they are effective." He also finds the Swiss cheese model too flat -- it "does not support defense in depth working at multiple dimensions from policy and governance to technical controls" -- and warns that the linear reading "leads to viewing risk and risk mitigation as a simple chain of events without being able to look at the wider system which induced the design factors that led to the event." https://www.philvenables.com/post/defense-in-depth[Venables, "Defense in Depth"] (21 May 2022).
+* **Read as a shopping list, it produces the opposite of security.** Armin Recha names the failure mode directly: "Der zentrale Denkfehler vieler Security-Strategien liegt darin, Defense in Depth als Einkaufsliste zu betrachten" -- the central error is treating defence in depth as a shopping list. And on what that yields: "Im schlimmsten Fall entsteht eine trügerische Sicherheit. Formal sind alle notwendigen Komponenten vorhanden, operativ fehlt jedoch die Fähigkeit, Angriffe sauber einzuordnen und kontrolliert zu reagieren" -- at worst a deceptive sense of security, every required component formally present while the ability to classify and answer an attack is missing. https://www.security-insider.de/defense-in-depth-integration-resilienz-security-architekturen-a-21c61d9d2fe7f7a10fc504d970587f5c/[Recha, "Defense in Depth: Integration statt Einkaufsliste für Resilienz", _Security-Insider_] (8 April 2026). Recha is Regional Vice President DACH at Fastly, so read the piece as a vendor's argument -- the objection stands on its own, the framing is interested.
+* **The staffing cost is the practical objection.** Jochen Koehler argues the strategy is unreachable for most organisations as practised: "Ohne massiven personellen Aufwand können die allerwenigsten Unternehmen diesen Ansatz praktisch und vor allem erfolgreich umsetzen", and "Unternehmen müssen begreifen, dass mehr Tools nicht zwangsläufig mehr Sicherheit bedeuten" -- without massive staffing very few organisations can run the approach successfully, and more tools do not automatically mean more security. https://www.iavcworld.de/security/9443-defense-in-depth-klingt-gut-aber-ist-es-das-auch.html[Koehler, "Defense in depth: Klingt gut, aber ist es das auch?", _iavcworld_] (21 November 2023). Koehler is VP EMEA Sales at Ontinue; same caveat.
+
+[discrete]
+## **Current Status**:
+
+* **The NSA paper survives only in the Internet Archive, and it carries no date.** The nsa.gov URL it was published under is dead; the five-page document is retrievable through a Wayback Machine snapshot captured on 11 April 2016 (`web.archive.org/web/20160411062620/https://www.nsa.gov/ia/_files/support/defenseindepth.pdf`). The quotations above come from that file. The commonly repeated date of "around 2000" is a secondary claim: the document itself prints no date, version or revision. Anyone citing it as a dated standard is citing something the paper does not say.
+* **Naming it adds layers the baseline omits.** Measured on `claude-haiku-4-5` on 3 October 2026 against a document-rendering task: with the anchor named, two of two runs produced sandboxed preview rendering and an explicitly layered decomposition; without it, zero of two did.
+* **The premise does not come with the name.** In the same measurement, "assume breach" appeared in only one of the two anchored runs. The independence and assumed-failure requirement is therefore not reliable in the prior, which is why this entry states it in Core Concepts instead of leaving it to the model.
 
 ### Fagan Inspection
 
@@ -10777,6 +11679,58 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * **The term is stable and still current at Toyota**, where jidoka and Just-in-Time remain the two named pillars of TPS. Unlike `dmaic` or `qfd` it carries no ISO standard; it is transmitted through practice and literature.
 * **In software the concept arrived without the word.** Andon cords, stop-the-line CI, blocking merge on red, automated rollback on a failing canary, and `circuit-breaker` tripping are all jidoka; teams rarely call them that. Naming it supplies what the English terms leave out: the obligation to investigate the cause, not just to stop.
 
+### Principle of Least Privilege (Saltzer & Schroeder)
+
+***Full Name***: Least privilege, design principle (f) in Jerome H. Saltzer and Michael D. Schroeder, "The Protection of Information in Computer Systems", _Proceedings of the IEEE_ 63(9), September 1975, pp. 1278-1308
+
+***Also known as***: PoLP, least authority (POLA), need-to-know, minimal privilege
+
+[discrete]
+## **Core Concepts**:
+
+***One of Eight, and the Authors' Own Words***: Saltzer and Schroeder introduce the set with "Here are eight examples of design principles that apply particularly to protection mechanisms." Principle (f) reads: "Least privilege: Every program and every user of the system should operate using the least set of privileges necessary to complete the job." Quoting that sentence is the whole anchor; everything below is its consequences.
+
+***Accident Before Attack***: The stated first purpose is not defence against an adversary. "Primarily, this principle limits the damage that can result from an accident or error." The authors give the reduction of "potential interactions among privileged programs" as the second reason and audit scope as the third: "if a question arises related to misuse of a privilege, the number of programs that must be audited is minimized."
+
+***Need-to-Know Is Their Example, Not a Separate Idea***: "The military security rule of 'need-to-know' is an example of this principle." So is the firewall placement argument: "if a mechanism can provide 'firewalls,' the principle of least privilege provides a rationale for where to install the firewalls."
+
+***"The Job" Is the Scoping Term***: The minimum is relative to a task, so the grant has to be recomputed when the task changes. That is the reading behind just-in-time access, short-lived tokens and scoped workload identity: the privilege expires with the job rather than outliving it.
+
+***Modern Descendants***: Default deny (the authors' own **fail-safe defaults**), separation of duties (their **separation of privilege**), need-to-know, capability-based security and the renamed **principle of least authority**, RBAC/ABAC/ReBAC as the policy languages, just-in-time and break-glass access as the lifetime mechanisms.
+
+***Zero Trust Is a Different Claim***: Zero Trust removes implicit trust from network location -- verify every request, wherever it comes from. Least privilege constrains the **size** of the grant. Zero Trust architectures use least privilege, but the two are independent: a system can authenticate every single request and still hand out standing admin.
+
+[discrete]
+## **When to Use**:
+
+* Writing CI/CD pipelines -- the measurement below shows this is where the anchor actually changes output
+* IAM policies, service accounts, workload identity and database grants
+* Agent and tool permissions, where the grant is an LLM's reach into a system (`meaningful-human-control`)
+* Container and process design: which capability does this process genuinely need
+* Reviewing an **Elevation of Privilege** threat from `stride`, or Broken Access Control from `owasp-top-10`
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Least privilege means read-only" -- it means the least set for the job, which sometimes includes write
+* ❌ "It is purely a security principle" -- damage from "an accident or error" is the first reason the authors give
+* ❌ "Zero Trust is least privilege" -- per-request verification and minimal grants are separate properties
+* ❌ "Grant it once and you are done" -- the minimum is defined relative to the job, so it has to shrink when the job ends
+* ❌ "The minimum set can be computed" -- the central academic objection says it cannot (see Criticism)
+* ✓ "Default deny, grant the least set for this job, and make the grant expire" -- the operational form
+
+## **Criticism**:
+
+* **Computing the minimum privilege set is infeasible, and the honest alternative grants more.** Fred B. Schneider of Cornell builds the case formally: the policy that grants exactly the privileges an extension needs cannot generally be derived, because establishing that the code meets its specification "is undecidable for general-purpose programming and specification languages", and a high-level specification "lacks information about how Ext works that would be needed for deducing" the policy. His conclusion: "So at least for the time being, it seems as though obtaining μPriv(Ext, Ext) for use by a reference monitor interposed between a base and its extensions is infeasible, and alternatives must be sought." The alternative he proposes is deliberately named against the original: "One such alternative, which might be called a Principle of Most Privilege, is to enforce a policy Priv(B) that merely prevents extensions from subverting the base system B." The paper closes that "practical protection for extensible systems is most easily obtained using policies that grant more privileges than would μPriv(Ext, Ext) -- the least privilege and more." https://www.cs.cornell.edu/fbs/publications/leastPrivSP.pdf[Schneider, "Least Privilege and More"], a revised version of a paper written in honour of Roger Needham (1935-2003) for the conference "Roger Needham: 50 and 5" at Microsoft Research, Cambridge (17 February 2003).
+* **The principle outran its mechanisms, and the 1975 formulation left out the dynamic case.** Schneider also notes that the authors' own Multics was finer-grained than what followed: "Multics can be seen as superior to today's operating systems, with their relatively coarse-grained targets of access control (viz programs and files)." And on a gap in the text itself: "The Saltzer-Schroeder formulation also does not explicitly call out the benefits of allowing the set of privileges associated with a program to change as execution progresses." Anyone quoting the 1975 wording as complete guidance for just-in-time access is reading in something the paper does not say.
+* **The "permission sprawl" objection is practitioner folklore here, not a sourced critique.** The complaint that least privilege degenerates into thousands of unmaintainable fine-grained grants is common in cloud IAM writing, but searches in English and German turned up no named author arguing it in a retrievable, quotable piece -- the material found was vendor marketing for permission-management products. Recorded as an open objection, not a sourced one.
+
+[discrete]
+## **Current Status**:
+
+* **The anchor changes nothing on tasks that already name the problem.** Measured on `claude-haiku-4-5` on 3 October 2026: on scenarios that described a privilege violation, baseline and anchored output said the same thing -- remove local admin, segment the network -- and only the **baseline** used the phrase "blast radius". Recognition is near-total, so on those tasks naming the principle buys nothing.
+* **It earns its keep on build and deploy artifacts.** Same measurement, different task: "write a GitHub Actions workflow that builds a Node service and deploys it to a staging ECS cluster". Both unanchored runs produced long-lived `AWS_ACCESS_KEY_ID` secrets and no `permissions:` block at all; both anchored runs produced a `permissions:` block, OIDC `role-to-assume`, and no static keys. Reproduced twice in each condition. Use the anchor where the principle is not the obvious answer.
+
 ### LINDDUN
 
 ***Full Name***: LINDDUN Privacy Threat Modeling Framework
@@ -10950,6 +11904,58 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 ***Property-based testing***: Orthogonal but complementary approaches
 
 ***Fault injection***: Similar concept applied to production systems
+
+### OWASP ASVS (Application Security Verification Standard)
+
+***Full Name***: OWASP Application Security Verification Standard
+
+***Also known as***: ASVS, "ASVS Level 2" in its usual spoken form, the verifiable counterpart of the OWASP Top 10
+
+[discrete]
+## **Core Concepts**:
+
+***Requirements, Not Awareness***: The Top 10 ranks **categories of risk** so that people know what to worry about. ASVS states what a given application must **do**, as individually numbered, individually testable requirements. Name `owasp-top-10` and you get a list of concerns; name ASVS and you get controls somebody can pass or fail. The two do different jobs, which is why the catalog keeps both.
+
+***Three Levels, and You Have to Pick One***: L1 is the minimum baseline, L2 is the level intended for applications handling sensitive data, L3 is for high-assurance systems such as banking or healthcare. "Apply ASVS" is therefore an underspecified instruction -- the work at L1 and at L3 differs by an order of magnitude. Say **ASVS L2**.
+
+***Numbered Requirements Are the Mechanism***: Requirements carry IDs in a `chapter.section.requirement` scheme, so a pentest finding, a backlog item and a test case can all point at the same string. That traceability spine, not the prose, is what ASVS adds over a generic review.
+
+***Chapters Are the Decomposition***: Authentication, session management, access control, validation and encoding, cryptography, error handling and logging, data protection, communications, configuration, business logic, file handling, APIs. The chapter list is the reason an ASVS review covers the unglamorous half of application security instead of stopping at injection.
+
+***Name the Version, Because the IDs Moved***: v5.0.0 reorganised the chapters and renumbered requirements. A `V2.1.1` quoted from v4.0.3 does not denote the same requirement under v5.0. Any prompt or document that cites IDs has to say which version it cites.
+
+***Verification Is the Verb***: ASVS is written for the person checking, not only for the person building. Requirements are phrased "Verify that…", so the standard reads as a test plan and can be handed to QA rather than only to a pentester.
+
+[discrete]
+## **When to Use**:
+
+* Preparing or running a security review that needs a defined scope and a pass/fail outcome
+* Turning "make it secure" into a backlog -- requirement IDs are estimable work items
+* Writing security acceptance criteria a QA engineer can execute
+* Procurement and audit, where a named level and version is a contractual statement (`regulated-environment`)
+* As the requirement layer under a threat model: `stride` or `linddun` names the threat, ASVS supplies the control to verify
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "ASVS is the long version of the Top 10" -- different artefacts: one is an awareness ranking, the other a requirement catalogue with levels and IDs
+* ❌ "Apply ASVS" -- incomplete; without a level the instruction has no scope
+* ❌ "A requirement ID identifies a requirement forever" -- v5.0 renumbered, so an ID without a version is ambiguous
+* ❌ "Level 1 can be verified entirely from the outside" -- disputed inside the project itself (see Criticism)
+* ✓ "Verify against ASVS L2, v5.0.0, and report each requirement with pass, fail or not applicable" -- the form that actually produces a checklist
+
+## **Criticism**:
+
+* **The claim that Level 1 is black-box testable is contested inside the project.** Kevin W. Wall quotes v4.0.3's own words -- "Level 1 controls can be checked either automatically by tools or simply manually without access to source code" -- and rejects them: "I think that most of the Level 1 requirements in the 'Validation, Sanitization and Encoding' section are not generally testable in any reasonable fashion in most typical cases without access to source code." His verdict on the wording is blunt: "right now, this over-promising seems almost a case of ultra-hype and therefore (unintentionally) misleading." https://github.com/OWASP/ASVS/discussions/1651[Wall, "OWASP ASVS overpromising on Level 1 requirements being testable without source code", OWASP/ASVS Discussion #1651] (6 June 2023).
+* **A quarter of the standard may not apply, and deciding that is the work.** Mateusz Gołąbek's report on taking an existing product through ASVS v4.0.3 Level 2 counts 267 requirements, of which 80 were judged not applicable, and concludes that compliance in a mature system takes "careful review, in-depth research, and targeted fixes". That number is the honest price of the anchor: output that emits 267 verdicts without triage has skipped the hard part. https://softwaremill.com/implementing-owasp-asvs/[Gołąbek, "Implementing OWASP ASVS", SoftwareMill] (3 February 2025).
+* **The "checkbox security" objection has no citable owner.** The charge that verification standards invite tick-the-box compliance is repeated widely in vendor and consultancy writing, but searches in English and German produced no named author making it against ASVS specifically in a retrievable piece. It is recorded here as an open objection, not a sourced one.
+
+[discrete]
+## **Current Status**:
+
+* **v5.0.0 is current, released 30 May 2025**, with v4.0.3 as the long-lived predecessor most training data was written against; the project publishes mappings in both directions between the two. https://github.com/OWASP/ASVS/releases[OWASP/ASVS releases].
+* **The anchor earns its keep where the baseline reaches for the wrong standard.** Measured on `claude-haiku-4-5` on 3 October 2026: asked to prepare for a security review with no anchor, the model reached for SOC 2 and ISO 27001 -- governance frameworks, not application requirements. Naming ASVS moved it to L2 and to chapter citations (V4, V6, V13) against concrete work items.
+* **Attribution is the soft spot, which is one more reason to cite the version rather than a person.** Asked who created ASVS, the same model answered `creator=Mike Goodwin (OWASP); year=2009` with medium confidence. The institution is right; the named lead is not. Cite "ASVS v5.0.0, OWASP Foundation" and do not let a model name an author.
 
 ### OWASP Top 10
 
@@ -11238,6 +12244,99 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * Complex systems with many collaborating objects
 * When designing APIs and interfaces
 * Distributed systems where integration is costly
+
+### Test Data Builder (Pryce)
+
+***Full Name***: Test Data Builder — the Builder pattern applied to the Arrange phase of a test, named by Nat Pryce in http://www.natpryce.com/articles/000714.html["Test Data Builders: an alternative to the Object Mother pattern"] (27 August 2007) and carried into _Growing Object-Oriented Software, Guided by Tests_ (Steve Freeman and Nat Pryce, 2009)
+
+***Also known as***: test builder, builder-based fixture, `anOrder()…build()`; successor to the **Object Mother** pattern. Peter Schuh and Stephanie Punke wrote the paper on it ("ObjectMother: Easing Test Object Creation in XP", XP Universe 2001), but they did not coin the name -- Fowler records that it "was coined on a Thoughtworks project at the turn of the century"
+
+[discrete]
+## **Core Concepts**:
+
+***The Problem Is Constructor Noise***: Pryce starts from a test that has to name every field of an object graph to get one valid instance, and states the damage: "The code to create all those objects makes tests messy and hard to read and fills the tests with lots of unnecessary information that has nothing to do with the behaviour being tested. It also makes tests brittle: changes to the constructor arguments or the structure of the objects will break many tests."
+
+***Object Mother Is the Predecessor, and Its Failure Mode Is Variant Explosion***: An Object Mother is a class of named factory methods — `TestInvoices.newDeerstalkerAndCapeInvoice()`. Pryce's objection: "the Object Mother pattern does not cope at all well with variation in the test data. Every time programmers need some slightly different test data they add another factory method to the Object Mother." The end state is a dilemma: "Over time, the Object Mother becomes bloated, messy and hard to maintain. Either programmers add new factory methods without refactoring, in which case the Object Mother becomes full of duplicated code, or programmers refactor diligently, in which case the Object Mother becomes full of many, many fine-grained methods that each contain little more than a single new statement." Martin Fowler names the same fault from the other side: "Object Mothers do have their faults. In particular there's a heavy coupling in that many tests will depend on the exact data in the mothers."
+
+***Four Rules Define the Builder***: Pryce's recipe, for each class you want in a test — a builder that "Has an instance variable for each constructor parameter", "Initialises its instance variables to commonly used or safe values", "Has a `build` method that creates a new object using the values in its instance variables", and "Has 'chainable' public methods for overriding the values in its instance variables."
+
+***Safe Defaults Plus Explicit Overrides***: The defaults carry everything the test does not care about; the `with…()` calls name exactly what the test does care about. A test therefore reads as its own specification, because only the significant values appear in it.
+
+`but()` for Variants, Builders Inside Builders:: Pryce's own list of what a complete builder needs: "declare the properties of a Banana; specify the default values of those properties; write a method to build a Banana with the property values collected by the builder; define a static factory function to act as syntactic sugar; make the constructor private to enforce use of the factory function; write chained 'with…' methods that capture properties explicitly defined by tests; and write a 'but' method so that tests can define builders relative to the properties of other builders." Nesting comes from the defaults themselves being built: in his `InvoiceBuilder`, `Recipient recipient = new RecipientBuilder().build();`.
+
+```java
+public class BananaBuilder implements Builder<Banana> {
+    private double ripeness = 0.0;
+    private double curve = 0.5;
+
+    private BananaBuilder() {}
+
+    public static BananaBuilder aBanana() {
+        return new BananaBuilder();
+    }
+
+    public Banana build() {
+        Banana banana = new Banana(curve);
+        banana.ripen(ripeness);
+        return banana;
+    }
+
+    public BananaBuilder withRipeness(double ripeness) {
+        this.ripeness = ripeness;
+        return this;
+    }
+
+    public BananaBuilder withCurve(double curve) {
+        this.curve = curve;
+        return this;
+    }
+
+    public BananaBuilder but() {
+        return new BananaBuilder()
+                .withRipeness(ripeness)
+                .withCurve(curve);
+    }
+}
+```
+The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pryce's comparison sets a positional factory call against a builder chain and then makes the point about the positional one: "Nothing in the first example will tell you that 'London' has been accidentally passed as the second street line instead of the city name." The builder turns an ordering bug into a compile-time-visible label.
+
+***Sometimes They Escape Into Production***: "In some cases, Builders have so improved the code that they ended up being used in the production code as well."
+
+***Where It Sits***: The builder is a tool for the **Arrange** step (`arrange-act-assert`). It is the GoF Builder (`gof-builder-pattern`) aimed at a different goal, and its source text is the London-School book (`tdd-london-school`).
+
+[discrete]
+## **When to Use**:
+
+* Tests littered with long constructor calls whose arguments have nothing to do with the behaviour under test
+* An Object Mother that has grown past a dozen factory methods, or that tests now depend on field by field
+* Immutable value objects with mandatory constructor parameters, where there is no setter to reach for
+* Writing the Arrange step of many tests over the same aggregate, each varying one field
+* Reviewing a test suite for the `code-smells` of irrelevant setup data and fixtures shared by accident
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Test Data Builder and Object Mother are two names for the same idea" — the builder was introduced as the answer to the Object Mother's variant explosion
+* ❌ "It is just the GoF Builder" — same mechanics, different purpose: GoF separates constructing a complex object from its representation; the test builder exists to make irrelevant data invisible and relevant data explicit
+* ❌ "Reuse one builder instance to make several objects" — that aliases shared state between them; `but()` exists precisely to derive a fresh builder from an existing one
+* ❌ "Every test should spell out every field, for clarity" — then the defaults carry nothing and the noise is back
+* ❌ "Defaults should be realistic production data" — Pryce says "commonly used or safe values"; a default whose value a test silently depends on couples the suite to the builder
+* ✓ "A builder lets the Arrange step say only what the test depends on" — accurate, and the whole point
+
+## **Criticism**:
+
+* **Pryce himself is not satisfied with the implementation cost.** Three years after naming the pattern he wrote: "However, I've never been satisfied with the way of implementing Test Data Builders that I described previously on this site and in our book. There is far too much repetitive boilerplate code and duplication. All that code has to be written and then maintained as the system's domain classes evolve. Overall, I think Test Data Builders have a positive effect, but a lot can be done to reduce the overheads of using them." His remedy is a library rather than a retraction: Make It Easy, "a tiny framework to simplify writing Test Data Builders in Java, cutting down on duplicate and boilerplate code", with a .NET port by Graeme Foster. http://www.natpryce.com/articles/000769.html[Pryce, "Writing Test Data Builders: Make It Easy on Yourself", 30 January 2010].
+* **Mark Seemann argues the pattern is a workaround for a missing language feature.** His conclusion after working the pattern through C#, Haskell and F#: "The Test Data Builder design pattern truly is a recipe that addresses deficiencies in particular languages." His recommendation is a ladder away from it: "1. For mutable object models, use Test Data Builders. 2. Consider, however, modelling your domain with Value Objects and 'copy and update' instance methods. 3. Even better, consider using a programming language with built-in 'copy and update' expressions." Where records with copy-and-update syntax exist, the builder's job is already done by the language. https://blog.ploeh.dk/2017/09/11/test-data-without-builders/[Seemann, "Test data without Builders", 11 September 2017].
+* **From the practitioner side, the boilerplate charge stands, and generated builders do not fix the defaults.** Arho Huttunen: "While the test data builder pattern provides a lot of benefits, there is also one major drawback. That is, we end up writing a lot of boilerplate code." He reaches for Lombok's `@Builder` to cut the volume and reports the remaining gap: "There are no safe default values for our fields" — that is, the generated builder removes the typing but not the part that made Pryce's builder valuable. https://www.arhohuttunen.com/test-data-builders/[Huttunen, "How to Create a Test Data Builder"] (last updated 27 February 2021).
+* **The predecessor's criticism carries over if the defaults are abused.** Fowler's objection to Object Mothers — "a heavy coupling in that many tests will depend on the exact data in the mothers" — reappears whenever tests assert against values the builder supplied by default rather than values they set themselves. https://martinfowler.com/bliki/ObjectMother.html[Fowler, "ObjectMother", 24 October 2006].
+
+[discrete]
+## **Current Status**:
+
+* **This is the densest prior measured in its batch.** On a task about an unreadable test suite (`claude-haiku-4-5`, clean room, 2026-10-03), three of four no-anchor baselines proposed test data builders unprompted, one of them with the mechanism spelled out: `+new UserBuilder().withEmail("test@x.com").build()+` instead of a long constructor call. Naming the term therefore changes little on that task — which is a fact about the task, not about the term.
+* **The weak spot is attribution, not recognition.** Asked who created the pattern, the weak tier returned `creator=<agile-testing-community>` with `confidence=low`. It does not know Nat Pryce. The names, dates and venues in this entry are what the model cannot supply: Pryce 2007, _Growing Object-Oriented Software, Guided by Tests_ 2009, and Schuh and Punke's Object Mother paper at XP Universe 2001.
+* **The primary source has no HTTPS.** `natpryce.com` answers on port 80 and refuses port 443 (checked 2026-10-03), so the links above are deliberately `http://`. Treat a fetch failure there as a transport problem, not a dead source.
+* **The name is stable and the attribution is not contested.** Pryce's 2007 article is still the canonical reference, the pattern entered the mainstream through the 2009 GOOS book, and Seemann's 2017 critique is an argument about language choice rather than about what the pattern means. Nothing in the literature has renamed it.
 
 ### Test Double: Dummy (Meszaros)
 

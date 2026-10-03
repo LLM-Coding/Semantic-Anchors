@@ -112,6 +112,9 @@ include::anchors/code-smells.adoc[leveloffset=+2]
 [[cohesion-criteria]]
 include::anchors/cohesion-criteria.adoc[leveloffset=+2]
 
+[[command-query-separation]]
+include::anchors/command-query-separation.adoc[leveloffset=+2]
+
 [[crc-cards]]
 include::anchors/crc-cards.adoc[leveloffset=+2]
 
@@ -217,6 +220,9 @@ include::anchors/kiss-principle.adoc[leveloffset=+2]
 [[law-of-demeter]]
 include::anchors/law-of-demeter.adoc[leveloffset=+2]
 
+[[least-privilege]]
+include::anchors/least-privilege.adoc[leveloffset=+2]
+
 [[locality-of-behaviour]]
 include::anchors/locality-of-behaviour.adoc[leveloffset=+2]
 
@@ -225,6 +231,15 @@ include::anchors/poka-yoke.adoc[leveloffset=+2]
 
 [[postels-law]]
 include::anchors/postels-law.adoc[leveloffset=+2]
+
+[[railway-oriented-programming]]
+include::anchors/railway-oriented-programming.adoc[leveloffset=+2]
+
+[[refactoring-catalog]]
+include::anchors/refactoring-catalog.adoc[leveloffset=+2]
+
+[[richardson-maturity-model]]
+include::anchors/richardson-maturity-model.adoc[leveloffset=+2]
 
 [[separation-of-concerns]]
 include::anchors/separation-of-concerns.adoc[leveloffset=+2]
@@ -299,6 +314,9 @@ include::anchors/github-flow.adoc[leveloffset=+2]
 [[kaizen]]
 include::anchors/kaizen.adoc[leveloffset=+2]
 
+[[keep-a-changelog]]
+include::anchors/keep-a-changelog.adoc[leveloffset=+2]
+
 [[mental-model-according-to-naur]]
 include::anchors/mental-model-according-to-naur.adoc[leveloffset=+2]
 
@@ -307,6 +325,8 @@ include::anchors/mikado-method.adoc[leveloffset=+2]
 
 [[pdca]]
 include::anchors/pdca.adoc[leveloffset=+2]
+
+include::anchors/refactoring-catalog.adoc[leveloffset=+2]
 
 [[regulated-environment]]
 include::anchors/regulated-environment.adoc[leveloffset=+2]
@@ -359,6 +379,11 @@ include::anchors/diataxis-framework.adoc[leveloffset=+2]
 
 [[docs-as-code]]
 include::anchors/docs-as-code.adoc[leveloffset=+2]
+
+[[four-plus-one-view-model]]
+include::anchors/four-plus-one-view-model.adoc[leveloffset=+2]
+
+include::anchors/keep-a-changelog.adoc[leveloffset=+2]
 
 [[simplified-technical-english]]
 include::anchors/simplified-technical-english.adoc[leveloffset=+2]
@@ -494,6 +519,9 @@ include::anchors/xy-problem.adoc[leveloffset=+2]
 [[cockburn-use-cases]]
 include::anchors/cockburn-use-cases.adoc[leveloffset=+2]
 
+[[connextra-user-story]]
+include::anchors/connextra-user-story.adoc[leveloffset=+2]
+
 include::anchors/double-diamond.adoc[leveloffset=+2]
 
 [[ears-requirements]]
@@ -546,6 +574,9 @@ include::anchors/arc42.adoc[leveloffset=+2]
 [[atam]]
 include::anchors/atam.adoc[leveloffset=+2]
 
+[[bulkhead]]
+include::anchors/bulkhead.adoc[leveloffset=+2]
+
 [[c4-diagrams]]
 include::anchors/c4-diagrams.adoc[leveloffset=+2]
 
@@ -566,8 +597,14 @@ include::anchors/cqrs.adoc[leveloffset=+2]
 
 include::anchors/cupid-properties.adoc[leveloffset=+2]
 
+[[defense-in-depth]]
+include::anchors/defense-in-depth.adoc[leveloffset=+2]
+
 [[domain-driven-design]]
 include::anchors/domain-driven-design.adoc[leveloffset=+2]
+
+[[enterprise-integration-patterns]]
+include::anchors/enterprise-integration-patterns.adoc[leveloffset=+2]
 
 [[event-driven-architecture]]
 include::anchors/event-driven-architecture.adoc[leveloffset=+2]
@@ -576,6 +613,8 @@ include::anchors/event-storming.adoc[leveloffset=+2]
 
 [[fallacies-of-distributed-computing]]
 include::anchors/fallacies-of-distributed-computing.adoc[leveloffset=+2]
+
+include::anchors/four-plus-one-view-model.adoc[leveloffset=+2]
 
 [[gom]]
 include::anchors/gom.adoc[leveloffset=+2]
@@ -599,6 +638,8 @@ include::anchors/quality-attribute-scenario.adoc[leveloffset=+2]
 
 [[residuality-theory]]
 include::anchors/residuality-theory.adoc[leveloffset=+2]
+
+include::anchors/richardson-maturity-model.adoc[leveloffset=+2]
 
 [[strangler-fig]]
 include::anchors/strangler-fig.adoc[leveloffset=+2]
@@ -704,8 +745,13 @@ include::anchors/wardley-mapping.adoc[leveloffset=+2]
 
 include::anchors/andon.adoc[leveloffset=+2]
 
+[[arrange-act-assert]]
+include::anchors/arrange-act-assert.adoc[leveloffset=+2]
+
 [[bdd-given-when-then]]
 include::anchors/bdd-given-when-then.adoc[leveloffset=+2]
+
+include::anchors/defense-in-depth.adoc[leveloffset=+2]
 
 [[fagan-inspection]]
 include::anchors/fagan-inspection.adoc[leveloffset=+2]
@@ -720,6 +766,8 @@ include::anchors/iec-61508-sil-levels.adoc[leveloffset=+2]
 
 include::anchors/jidoka.adoc[leveloffset=+2]
 
+include::anchors/least-privilege.adoc[leveloffset=+2]
+
 [[linddun]]
 include::anchors/linddun.adoc[leveloffset=+2]
 
@@ -728,6 +776,9 @@ include::anchors/llm-evaluations.adoc[leveloffset=+2]
 
 [[mutation-testing]]
 include::anchors/mutation-testing.adoc[leveloffset=+2]
+
+[[owasp-asvs]]
+include::anchors/owasp-asvs.adoc[leveloffset=+2]
 
 [[owasp-top-10]]
 include::anchors/owasp-top-10.adoc[leveloffset=+2]
@@ -748,6 +799,9 @@ include::anchors/tdd-chicago-school.adoc[leveloffset=+2]
 
 [[tdd-london-school]]
 include::anchors/tdd-london-school.adoc[leveloffset=+2]
+
+[[test-data-builder]]
+include::anchors/test-data-builder.adoc[leveloffset=+2]
 
 [[test-double-dummy]]
 include::anchors/test-double-dummy.adoc[leveloffset=+2]

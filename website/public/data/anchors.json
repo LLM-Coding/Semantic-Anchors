@@ -293,6 +293,57 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "arrange-act-assert",
+    "title": "Arrange-Act-Assert (AAA)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer"
+    ],
+    "related": [
+      "bdd-given-when-then",
+      "gherkin",
+      "test-double-meszaros",
+      "red-green-tdd",
+      "test-data-builder"
+    ],
+    "proponents": [
+      "Bill Wake",
+      "Gerard Meszaros"
+    ],
+    "tags": [
+      "Arrange-Act-Assert",
+      "3A",
+      "unit test structure",
+      "test readability",
+      "Four-Phase Test",
+      "fixture setup",
+      "exercise SUT",
+      "result verification",
+      "teardown",
+      "one assert per test",
+      "single condition test",
+      "Given-When-Then",
+      "Build-Operate-Check"
+    ],
+    "filePath": "docs/anchors/arrange-act-assert.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
     "id": "atam",
     "title": "ATAM",
     "categories": [
@@ -543,6 +594,55 @@
       }
     ],
     "addedAt": "2026-09-24T14:26:26+02:00"
+  },
+  {
+    "id": "bulkhead",
+    "title": "Bulkhead Pattern",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "devops-engineer",
+      "software-developer"
+    ],
+    "related": [
+      "circuit-breaker",
+      "site-reliability-engineering",
+      "fallacies-of-distributed-computing",
+      "residuality-theory"
+    ],
+    "proponents": [
+      "Michael T. Nygard"
+    ],
+    "tags": [
+      "Bulkhead",
+      "bulkhead pattern",
+      "resource isolation",
+      "thread pool isolation",
+      "semaphore bulkhead",
+      "blast radius",
+      "failure containment",
+      "cell-based architecture",
+      "resource exhaustion",
+      "stability pattern",
+      "Hystrix",
+      "Resilience4j"
+    ],
+    "filePath": "docs/anchors/bulkhead.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "c4-diagrams",
@@ -858,6 +958,103 @@
     "filePath": "docs/anchors/cohesion-criteria.adoc",
     "tier": 2,
     "addedAt": "2026-04-07T16:00:53+02:00"
+  },
+  {
+    "id": "command-query-separation",
+    "title": "CQS (Command-Query Separation)",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [
+      "cqrs",
+      "design-by-contract",
+      "vertical-slice-architecture",
+      "code-smells"
+    ],
+    "proponents": [
+      "Bertrand Meyer"
+    ],
+    "tags": [
+      "CQS",
+      "command-query separation",
+      "command",
+      "query",
+      "modifier",
+      "mutator",
+      "side-effect free",
+      "referential transparency",
+      "Eiffel",
+      "Meyer",
+      "asking a question should not change the answer"
+    ],
+    "filePath": "docs/anchors/command-query-separation.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
+    "id": "connextra-user-story",
+    "title": "Connextra User Story Format",
+    "categories": [
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "business-analyst",
+      "requirements-engineer",
+      "team-lead"
+    ],
+    "related": [
+      "invest",
+      "user-story-mapping",
+      "jobs-to-be-done",
+      "bdd-given-when-then",
+      "cockburn-use-cases"
+    ],
+    "proponents": [
+      "Connextra team",
+      "Mike Cohn"
+    ],
+    "tags": [
+      "Connextra",
+      "Connextra user story format",
+      "user story template",
+      "As a I want so that",
+      "role goal benefit",
+      "three-part template",
+      "Rachel Davies",
+      "Mike Cohn",
+      "user story",
+      "story card"
+    ],
+    "filePath": "docs/anchors/connextra-user-story.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "consent-vs-consensus",
@@ -1329,6 +1526,56 @@
     "filePath": "docs/anchors/deep-modules.adoc",
     "tier": 2,
     "addedAt": "2026-07-01T09:57:48+02:00"
+  },
+  {
+    "id": "defense-in-depth",
+    "title": "Defense in Depth",
+    "categories": [
+      "software-architecture",
+      "testing-quality"
+    ],
+    "roles": [
+      "software-architect",
+      "devops-engineer"
+    ],
+    "related": [
+      "stride",
+      "owasp-top-10",
+      "fmea",
+      "poka-yoke",
+      "least-privilege"
+    ],
+    "proponents": [
+      "US National Security Agency",
+      "James Reason"
+    ],
+    "tags": [
+      "defense in depth",
+      "defence in depth",
+      "layered security",
+      "layered defense",
+      "independent layers",
+      "diversity of defense",
+      "assume breach",
+      "Swiss cheese model",
+      "blast radius",
+      "compartmentalization",
+      "people technology operations"
+    ],
+    "filePath": "docs/anchors/defense-in-depth.adoc",
+    "tier": 2,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "definition-of-done",
@@ -1892,6 +2139,57 @@
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
+    "id": "enterprise-integration-patterns",
+    "title": "Enterprise Integration Patterns (Hohpe/Woolf)",
+    "categories": [
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer"
+    ],
+    "related": [
+      "event-driven-architecture",
+      "circuit-breaker",
+      "domain-driven-design",
+      "cqrs"
+    ],
+    "proponents": [
+      "Gregor Hohpe",
+      "Bobby Woolf"
+    ],
+    "tags": [
+      "EIP",
+      "enterprise integration patterns",
+      "messaging",
+      "integration styles",
+      "Message Channel",
+      "Message Router",
+      "Message Translator",
+      "Competing Consumers",
+      "Dead Letter Channel",
+      "Canonical Data Model",
+      "pipes and filters",
+      "Apache Camel",
+      "Spring Integration",
+      "pattern language"
+    ],
+    "filePath": "docs/anchors/enterprise-integration-patterns.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
     "id": "event-driven-architecture",
     "title": "Event-Driven Architecture",
     "categories": [
@@ -2243,6 +2541,58 @@
       }
     ],
     "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
+    "id": "four-plus-one-view-model",
+    "title": "4+1 View Model according to Kruchten",
+    "categories": [
+      "software-architecture",
+      "documentation"
+    ],
+    "roles": [
+      "software-architect",
+      "technical-writer",
+      "team-lead"
+    ],
+    "related": [
+      "arc42",
+      "c4-diagrams",
+      "cockburn-use-cases",
+      "domain-driven-design"
+    ],
+    "proponents": [
+      "Philippe Kruchten"
+    ],
+    "tags": [
+      "4+1",
+      "4+1 view model",
+      "Kruchten",
+      "logical view",
+      "process view",
+      "development view",
+      "physical view",
+      "scenarios",
+      "use case view",
+      "views and viewpoints",
+      "RUP",
+      "ISO 42010",
+      "IEEE 1471",
+      "architecture description"
+    ],
+    "filePath": "docs/anchors/four-plus-one-view-model.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "four-sides-model",
@@ -4066,6 +4416,53 @@
     "addedAt": "2026-05-08T10:13:27+02:00"
   },
   {
+    "id": "keep-a-changelog",
+    "title": "Keep a Changelog",
+    "categories": [
+      "documentation",
+      "development-workflow"
+    ],
+    "roles": [
+      "technical-writer",
+      "software-developer",
+      "team-lead"
+    ],
+    "related": [
+      "semantic-versioning",
+      "conventional-commits",
+      "inverted-pyramid-style"
+    ],
+    "proponents": [
+      "Olivier Lacan"
+    ],
+    "tags": [
+      "Keep a Changelog",
+      "keepachangelog",
+      "CHANGELOG.md",
+      "changelog",
+      "release notes",
+      "Unreleased",
+      "Added Changed Deprecated Removed Fixed Security",
+      "ISO 8601",
+      "reverse chronological",
+      "curated changelog"
+    ],
+    "filePath": "docs/anchors/keep-a-changelog.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
     "id": "kishotenketsu",
     "title": "Kishōtenketsu",
     "categories": [
@@ -4260,6 +4657,59 @@
     "filePath": "docs/anchors/law-of-demeter.adoc",
     "tier": 3,
     "addedAt": "2026-06-01T21:31:00+02:00"
+  },
+  {
+    "id": "least-privilege",
+    "title": "Principle of Least Privilege (Saltzer & Schroeder)",
+    "categories": [
+      "design-principles",
+      "testing-quality"
+    ],
+    "roles": [
+      "software-architect",
+      "devops-engineer",
+      "software-developer"
+    ],
+    "related": [
+      "stride",
+      "owasp-top-10",
+      "meaningful-human-control",
+      "twelve-factor-app"
+    ],
+    "proponents": [
+      "Jerome H. Saltzer",
+      "Michael D. Schroeder"
+    ],
+    "tags": [
+      "least privilege",
+      "PoLP",
+      "principle of least authority",
+      "POLA",
+      "need-to-know",
+      "default deny",
+      "fail-safe defaults",
+      "separation of duties",
+      "capabilities",
+      "just-in-time access",
+      "Zero Trust",
+      "blast radius",
+      "Saltzer",
+      "Schroeder"
+    ],
+    "filePath": "docs/anchors/least-privilege.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "lehmans-classification",
@@ -4919,6 +5369,55 @@
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
+    "id": "owasp-asvs",
+    "title": "OWASP ASVS (Application Security Verification Standard)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer",
+      "software-architect",
+      "legal-compliance"
+    ],
+    "related": [
+      "owasp-top-10",
+      "stride",
+      "linddun",
+      "regulated-environment"
+    ],
+    "proponents": [
+      "OWASP Foundation"
+    ],
+    "tags": [
+      "OWASP ASVS",
+      "Application Security Verification Standard",
+      "ASVS L1",
+      "ASVS L2",
+      "ASVS L3",
+      "verification level",
+      "security requirements",
+      "requirement ID",
+      "application security",
+      "security review",
+      "pass/fail checklist"
+    ],
+    "filePath": "docs/anchors/owasp-asvs.adoc",
+    "tier": 2,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
     "id": "owasp-top-10",
     "title": "OWASP Top 10",
     "categories": [
@@ -5521,6 +6020,58 @@
     "addedAt": "2026-05-21T22:39:21+02:00"
   },
   {
+    "id": "railway-oriented-programming",
+    "title": "Railway Oriented Programming",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [
+      "design-by-contract",
+      "domain-driven-design",
+      "postels-law",
+      "code-smells"
+    ],
+    "proponents": [
+      "Scott Wlaschin"
+    ],
+    "tags": [
+      "ROP",
+      "railway oriented programming",
+      "two-track",
+      "success track",
+      "failure track",
+      "Result",
+      "Either",
+      "errors as values",
+      "bind",
+      "flatMap",
+      "map",
+      "mapError",
+      "short-circuiting",
+      "F#",
+      "Rust",
+      "Wlaschin"
+    ],
+    "filePath": "docs/anchors/railway-oriented-programming.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
     "id": "red-green-tdd",
     "title": "Red/Green TDD",
     "categories": [
@@ -5549,6 +6100,59 @@
     "filePath": "docs/anchors/red-green-tdd.adoc",
     "tier": 3,
     "addedAt": "2026-04-12T13:39:43+02:00"
+  },
+  {
+    "id": "refactoring-catalog",
+    "title": "Refactoring Catalog according to Fowler",
+    "categories": [
+      "design-principles",
+      "development-workflow"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "team-lead"
+    ],
+    "related": [
+      "code-smells",
+      "mikado-method",
+      "boy-scout-rule",
+      "red-green-tdd",
+      "test-seam"
+    ],
+    "proponents": [
+      "Martin Fowler",
+      "Kent Beck",
+      "William Opdyke"
+    ],
+    "tags": [
+      "refactoring",
+      "refactoring catalog",
+      "named refactorings",
+      "Extract Function",
+      "Extract Method",
+      "Replace Conditional with Polymorphism",
+      "Introduce Parameter Object",
+      "Separate Query from Modifier",
+      "behaviour-preserving transformation",
+      "mechanics",
+      "Two Hats",
+      "preparatory refactoring"
+    ],
+    "filePath": "docs/anchors/refactoring-catalog.adoc",
+    "tier": 2,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "regulated-environment",
@@ -5664,6 +6268,57 @@
     "filePath": "docs/anchors/residuality-theory.adoc",
     "tier": 2,
     "addedAt": "2026-07-24T20:57:14+02:00"
+  },
+  {
+    "id": "richardson-maturity-model",
+    "title": "Richardson Maturity Model",
+    "categories": [
+      "software-architecture",
+      "design-principles"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer"
+    ],
+    "related": [
+      "postels-law",
+      "twelve-factor-app",
+      "c4-diagrams"
+    ],
+    "proponents": [
+      "Leonard Richardson",
+      "Martin Fowler"
+    ],
+    "tags": [
+      "RMM",
+      "Richardson Maturity Model",
+      "REST",
+      "HATEOAS",
+      "hypermedia",
+      "resources",
+      "HTTP verbs",
+      "status codes",
+      "level 0",
+      "level 1",
+      "level 2",
+      "level 3",
+      "API design",
+      "maturity heuristic"
+    ],
+    "filePath": "docs/anchors/richardson-maturity-model.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "save-the-cat",
@@ -6679,6 +7334,57 @@
     "filePath": "docs/anchors/team-topologies.adoc",
     "tier": 2,
     "addedAt": "2026-06-26T20:19:59+00:00"
+  },
+  {
+    "id": "test-data-builder",
+    "title": "Test Data Builder (Pryce)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "qa-engineer"
+    ],
+    "related": [
+      "gof-builder-pattern",
+      "test-double-meszaros",
+      "tdd-london-school",
+      "arrange-act-assert",
+      "code-smells"
+    ],
+    "proponents": [
+      "Nat Pryce",
+      "Steve Freeman"
+    ],
+    "tags": [
+      "Test Data Builder",
+      "Object Mother",
+      "test fixture",
+      "safe defaults",
+      "fluent interface",
+      "with methods",
+      "but method",
+      "nested builders",
+      "Arrange phase",
+      "GOOS",
+      "Growing Object-Oriented Software",
+      "brittle tests",
+      "Make It Easy"
+    ],
+    "filePath": "docs/anchors/test-data-builder.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-03",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
     "id": "test-double-dummy",
