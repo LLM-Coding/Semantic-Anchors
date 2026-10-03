@@ -48,7 +48,6 @@ export default [
       'node_modules/**',
       'dist/**',
       'playwright-report/**',
-      '.lighthouseci/**',
       'test-results/**',
     ],
   },

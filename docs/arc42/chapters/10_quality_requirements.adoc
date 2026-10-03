@@ -373,6 +373,11 @@ Qualität
 
 **Automated Checks on PR:**
 
-* Lighthouse CI läuft auf Preview Deploy
-* axe-core scannt alle Seiten
+NOTE: Lighthouse läuft *nicht* auf Pull Requests. Es gibt keinen Preview Deploy;
+der Job hängt in `deploy.yml` an `needs: deploy` und misst die
+Produktionsseite nach dem Deploy auf `main`. Er berichtet und sperrt nichts --
+ein roter Lauf kommt an, wenn die Seite längst öffentlich ist. Accessibility auf
+Pull Requests deckt stattdessen axe-core ab.
+
+* axe-core scannt alle Seiten (deckt Accessibility auf Pull Requests ab)
 * Performance Budget Check (Bundle Size)
