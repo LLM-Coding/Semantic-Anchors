@@ -2,7 +2,7 @@
 :categories: software-architecture
 :roles: software-architect, software-developer
 :proponents: Greg Young, Bertrand Meyer, Udi Dahan
-:related: domain-driven-design, hexagonal-architecture, fowler-patterns
+:related: domain-driven-design, hexagonal-architecture, fowler-patterns, command-query-separation
 :tags: cqrs, cqs, architecture, commands, queries, read-write-separation
 :tier: 3
 

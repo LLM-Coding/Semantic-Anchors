@@ -151,7 +151,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### Defense in Depth
 - **Also known as:** layered security, defence in depth; Swiss cheese model in safety engineering
-- **Proponents:** US National Security Agency, James Reason
+- **Proponents:** US National Security Agency
 - **Core:** Independent layers that are each assumed to fail, so a breach of one is contained by the next. The conditions are what matter and what the name does not supply on its own: independence, diversity, and assumed failure. Correlated controls stacked together are not defence in depth
 
 ### Conway's Law
@@ -670,7 +670,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### Connextra User Story Format
 - **Also known as:** the user story template, role-goal-benefit, "As a … I want … so that …"
-- **Proponents:** Connextra team, Mike Cohn
+- **Proponents:** Rachel Davies, Connextra team, Mike Cohn
 - **Core:** Three parts that force a story to name who wants it and why, not just what to build. INVEST judges a story's quality; this names its form. Always say "Connextra user story format" — the bare company name is not a reliable anchor
 
 ### QFD

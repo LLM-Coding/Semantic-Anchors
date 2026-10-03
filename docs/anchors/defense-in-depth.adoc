@@ -1,6 +1,6 @@
 = Defense in Depth
 :categories: software-architecture, testing-quality
-:proponents: US National Security Agency, James Reason
+:proponents: US National Security Agency
 :roles: software-architect, devops-engineer
 :tags: defense in depth, defence in depth, layered security, layered defense, independent layers, diversity of defense, assume breach, Swiss cheese model, blast radius, compartmentalization, people technology operations
 :related: stride, owasp-top-10, fmea, poka-yoke, least-privilege

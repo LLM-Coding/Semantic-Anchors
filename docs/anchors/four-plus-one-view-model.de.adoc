@@ -10,7 +10,7 @@
 
 [%collapsible]
 ====
-Vollständiger Name:: The "4+1" View Model of Software Architecture -- Philippe Kruchten, „Architectural Blueprints -- The '4+1' View Model of Software Architecture", _IEEE Software_ 12(6), November 1995, S. 42-50 (https://doi.org/10.1109/52.469759[doi:10.1109/52.469759])
+Vollständiger Name:: The "4+1" View Model of Software Architecture -- Philippe Kruchten, „Architectural Blueprints -- The '4+1' View Model of Software Architecture“, _IEEE Software_ 12(6), November 1995, S. 42-50 (https://doi.org/10.1109/52.469759[doi:10.1109/52.469759])
 
 Auch bekannt als:: Kruchtens 4+1, die 4+1-Sichten, die Architektursichten des RUP, 4+1 View Model
 
@@ -19,7 +19,7 @@ Auch bekannt als:: Kruchtens 4+1, die 4+1-Sichten, die Architektursichten des RU
 
 Eine Sicht, ein benanntes Publikum:: Jede Sicht existiert, weil eine bestimmte Gruppe eine bestimmte Frage stellt. Die *logische Sicht* beantwortet die Frage des Endnutzers nach der Funktionalität. Die *Entwicklungssicht* (auch Implementierungssicht) beantwortet die Frage des Programmierers nach der Code-Organisation -- Module, Packages, Schichten, Build. Die *Prozesssicht* beantwortet die Frage des Integrators nach der Laufzeit: Parallelität, Verteilung, Performance, Fehlertoleranz. Die *physische Sicht* (auch Verteilungssicht) beantwortet die Frage des Systemtechnikers, welche Hardware was ausführt. Das Publikum gehört zum Modell, es ist kein Nachgedanke.
 
-Das „+1" ist die Gegenprobe, kein fünftes Thema:: Die Szenarien -- eine kleine Auswahl zentraler Use Cases -- sind absichtlich redundant zu den vier Sichten. Sie werden zweimal benutzt: um beim Entwerfen Architekturelemente zu *finden*, und um die vier Sichten danach gegeneinander zu *prüfen*. Ein Szenario, das sich nicht durch alle vier Sichten verfolgen lässt, hat einen Widerspruch gefunden. Dieser Mechanismus macht 4+1 zu mehr als einer Ablageordnung.
+Das „+1“ ist die Gegenprobe, kein fünftes Thema:: Die Szenarien -- eine kleine Auswahl zentraler Use Cases -- sind absichtlich redundant zu den vier Sichten. Sie werden zweimal benutzt: um beim Entwerfen Architekturelemente zu *finden*, und um die vier Sichten danach gegeneinander zu *prüfen*. Ein Szenario, das sich nicht durch alle vier Sichten verfolgen lässt, hat einen Widerspruch gefunden. Dieser Mechanismus macht 4+1 zu mehr als einer Ablageordnung.
 
 Was es von `arc42` und `c4-diagrams` trennt:: Alle drei beschreiben ein System über mehrere Sichten, und inhaltlich überlappen sie stark. Zwei Dinge gehören 4+1 allein. Erstens die ausdrückliche Zuordnung je einer Stakeholder-Gruppe zu jeder Sicht: Das Modell benennt, für wen eine Sicht da ist -- eine Sicht ohne Leser ist damit ein Mangel. Zweitens die Szenarien als Konsistenzprüfung *zwischen* den Sichten. `c4-diagrams` liefert stattdessen eine Zoom-Hierarchie mit fester Notation, `arc42` eine zwölfteilige Dokumentstruktur, in der Bausteinsicht, Laufzeitsicht und Verteilungssicht derselben Idee entstammen.
 
@@ -39,16 +39,16 @@ Das Diagrammvokabular stammt aus der UML-Zeit:: Das Paper und sein ganzes Lehrma
 [discrete]
 == *Häufige Missverständnisse*:
 
-* ❌ „4+1 heißt fünf Dokumente" -- es heißt fünf *Sichten* auf eine Architektur; sie können in fünf Kapiteln eines Dokuments stehen, und eine Sicht ohne Leser gehört gestrichen
-* ❌ „Die Szenarien sind das Use-Case-Kapitel" -- sie sind die Gegenprobe; ihre Aufgabe ist, Widersprüche zwischen den anderen vier Sichten aufzudecken
-* ❌ „4+1 ist dasselbe wie arc42 oder C4" -- arc42 ist eine Dokumentstruktur, C4 eine Notationshierarchie; 4+1 ist eine Zuordnung von Stakeholdern zu Sichten plus ein Prüfmechanismus
-* ❌ „Physische Sicht heißt Serverdiagramm" -- gemeint ist die Abbildung der Softwareelemente auf Knoten, einschließlich Verfügbarkeit und Installation, nicht eine Netzzeichnung
-* ✓ „4+1 ist ein Sichtenset, ISO 42010 ist die Grammatik für Sichtensets" -- trifft zu und erklärt, warum das Modell als Vokabular überlebt, auch wo seine UML-Diagramme es nicht tun
+* ❌ „4+1 heißt fünf Dokumente“ -- es heißt fünf *Sichten* auf eine Architektur; sie können in fünf Kapiteln eines Dokuments stehen, und eine Sicht ohne Leser gehört gestrichen
+* ❌ „Die Szenarien sind das Use-Case-Kapitel“ -- sie sind die Gegenprobe; ihre Aufgabe ist, Widersprüche zwischen den anderen vier Sichten aufzudecken
+* ❌ „4+1 ist dasselbe wie arc42 oder C4“ -- arc42 ist eine Dokumentstruktur, C4 eine Notationshierarchie; 4+1 ist eine Zuordnung von Stakeholdern zu Sichten plus ein Prüfmechanismus
+* ❌ „Physische Sicht heißt Serverdiagramm“ -- gemeint ist die Abbildung der Softwareelemente auf Knoten, einschließlich Verfügbarkeit und Installation, nicht eine Netzzeichnung
+* ✓ „4+1 ist ein Sichtenset, ISO 42010 ist die Grammatik für Sichtensets“ -- trifft zu und erklärt, warum das Modell als Vokabular überlebt, auch wo seine UML-Diagramme es nicht tun
 ====
 
 == *Kritik*:
 
-* *Der Standard, der die Idee formalisierte, behielt das Sichtenset nicht.* IEEE 1471 und ISO/IEC/IEEE 42010 übernahmen Kruchtens zentralen Schritt -- stakeholdergetriebene Sichten -- und weigerten sich dann ausdrücklich, Sichten vorzuschreiben. Rozanski und Woods, Autoren von _Software Systems Architecture_, schildern die Folge direkt: "In his introductory paper, Kruchten defined four standard views, namely, Logical, Process, Physical, and Development," und danach "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint." Genau der feste Vierersatz ist also der Teil, den der Standard nicht verallgemeinern wollte. https://www.viewpoints-and-perspectives.info/home/viewpoints/[Rozanski und Woods, „Views and Viewpoints", viewpoints-and-perspectives.info]
+* *Der Standard, der die Idee formalisierte, behielt das Sichtenset nicht.* IEEE 1471 und ISO/IEC/IEEE 42010 übernahmen Kruchtens zentralen Schritt -- stakeholdergetriebene Sichten -- und weigerten sich dann ausdrücklich, Sichten vorzuschreiben. Rozanski und Woods, Autoren von _Software Systems Architecture_, schildern die Folge direkt: "In his introductory paper, Kruchten defined four standard views, namely, Logical, Process, Physical, and Development," und danach "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint." Genau der feste Vierersatz ist also der Teil, den der Standard nicht verallgemeinern wollte. https://www.viewpoints-and-perspectives.info/home/viewpoints/[Rozanski und Woods, „Views and Viewpoints“, viewpoints-and-perspectives.info]
 * *Zwei Belange tragen die vier Sichten nicht: Daten und Betrieb.* Der Katalog von Rozanski und Woods antwortet auf 4+1 mit sieben Viewpoints -- Context, Functional, Information, Concurrency, Development, Deployment, Operational. Information und Operational haben bei Kruchten keine Entsprechung: Keine Sicht verantwortet das Datenmodell, keine den Betrieb in Produktion. Teams, die 4+1 auf Informationssysteme anwenden, ergänzen das selbst -- das ist das praktische Argument für die neueren Kataloge. Quelle wie oben.
 * *Was wir nicht gefunden haben, und wo wir gesucht haben.* Eine namentlich zurechenbare, veröffentlichte Kritik an 4+1 mit überprüfbarem Zitat fand sich weder auf Englisch noch auf Deutsch -- nicht von Philippe Kruchten im Rückblick, nicht von Simon Brown, nicht von den arc42-Autoren (Stefan Zörners embarc-Vergleich von arc42 mit Alternativen behandelt Simon Browns C4 und Software Guidebook, 4+1 dagegen nicht). Die Kritik an 4+1 ist strukturell statt polemisch: Sie steckt darin, was die Nachfolger geändert haben. Gesuchte Sprachen: Englisch, Deutsch. Weitere Sprachen wurden nicht durchsucht; das ist ein Rahmen, kein Beweis für Abwesenheit.
 
@@ -56,5 +56,5 @@ Das Diagrammvokabular stammt aus der UML-Zeit:: Das Paper und sein ganzes Lehrma
 == *Aktueller Stand*:
 
 * *Der Prior ist stark und korrekt zugeordnet.* In einem Clean-Room-Test auf `claude-haiku-4-5` (03.10.2026) erzeugte ein neutraler Auftrag zu einer Logistikplattform, der keine Methode nannte, überhaupt kein Sichtenvokabular; die Nennung des 4+1-Sichtenmodells erzeugte alle fünf Sichten samt Publikum. Die schwache Stufe ordnet Kruchten 1995 korrekt und mit hoher Sicherheit zu. Das Modell ist einer der seltenen Fälle, in denen der Begriff allein die Antwort umbaut.
-* *Die Quellenangabe selbst ist verrutscht.* Der Crossref-Eintrag zu `doi:10.1109/52.469759` nennt _IEEE Software_ 12(6), 1995, S. 42-50, übereinstimmend mit der deutschen Wikipedia („Band 12, Nr. 6, November 1995, S. 42-50"). Kruchtens eigene Literaturliste führt dieselbe DOI als „pp. 45-50" (https://philippe.kruchten.com/architecture/[philippe.kruchten.com/architecture]). Richtig ist 42-50.
+* *Die Quellenangabe selbst ist verrutscht.* Der Crossref-Eintrag zu `doi:10.1109/52.469759` nennt _IEEE Software_ 12(6), 1995, S. 42-50, übereinstimmend mit der deutschen Wikipedia („Band 12, Nr. 6, November 1995, S. 42-50“). Kruchtens eigene Literaturliste führt dieselbe DOI als „pp. 45-50“ (https://philippe.kruchten.com/architecture/[philippe.kruchten.com/architecture]). Richtig ist 42-50.
 * *Es lebt als Vokabular weiter, nicht als Schablone.* Die Zuordnung je einer Stakeholder-Gruppe zu einer Sicht ist über ISO/IEC/IEEE 42010 Standard geworden, und die Sichten selbst tauchen in `arc42` (Bausteinsicht, Laufzeitsicht, Verteilungssicht) und `c4-diagrams` wieder auf. Gealtert ist die Notationsschicht: Ein Modell, das heute 4+1 nennt, greift weiter zu UML-Diagrammtypen -- möglicherweise nicht zu denen des Projekts.

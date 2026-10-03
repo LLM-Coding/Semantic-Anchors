@@ -810,7 +810,8 @@
       "fallacies-of-distributed-computing",
       "cap-theorem",
       "event-driven-architecture",
-      "residuality-theory"
+      "residuality-theory",
+      "bulkhead"
     ],
     "proponents": [
       "Michael Nygard",
@@ -908,7 +909,8 @@
       "cohesion-criteria",
       "solid-principles",
       "solid-srp",
-      "kiss-principle"
+      "kiss-principle",
+      "refactoring-catalog"
     ],
     "proponents": [
       "Kent Beck",
@@ -1026,6 +1028,7 @@
       "cockburn-use-cases"
     ],
     "proponents": [
+      "Rachel Davies",
       "Connextra team",
       "Mike Cohn"
     ],
@@ -1195,7 +1198,8 @@
     "related": [
       "domain-driven-design",
       "hexagonal-architecture",
-      "fowler-patterns"
+      "fowler-patterns",
+      "command-query-separation"
     ],
     "proponents": [
       "Greg Young",
@@ -1546,8 +1550,7 @@
       "least-privilege"
     ],
     "proponents": [
-      "US National Security Agency",
-      "James Reason"
+      "US National Security Agency"
     ],
     "tags": [
       "defense in depth",
@@ -2203,7 +2206,8 @@
     "related": [
       "domain-driven-design",
       "hexagonal-architecture",
-      "clean-architecture"
+      "clean-architecture",
+      "enterprise-integration-patterns"
     ],
     "proponents": [
       "Gregor Hohpe",

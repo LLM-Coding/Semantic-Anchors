@@ -12,14 +12,14 @@
 ====
 Vollständiger Name:: OWASP Application Security Verification Standard
 
-Auch bekannt als:: ASVS, gesprochen meist „ASVS Level 2", das prüfbare Gegenstück zur OWASP Top 10
+Auch bekannt als:: ASVS, gesprochen meist „ASVS Level 2“, das prüfbare Gegenstück zur OWASP Top 10
 
 [discrete]
 == *Kernkonzepte*:
 
 Anforderungen statt Aufmerksamkeit:: Die Top 10 ordnet *Risikokategorien*, damit man weiß, worauf zu achten ist. ASVS sagt, was eine Anwendung *tun* muss -- in einzeln numerierten, einzeln prüfbaren Anforderungen. Wer `owasp-top-10` nennt, bekommt eine Liste von Sorgen; wer ASVS nennt, bekommt Controls, die jemand bestehen oder nicht bestehen kann. Beide leisten Verschiedenes, deshalb führt der Katalog beide.
 
-Drei Level, und eines musst du wählen:: L1 ist die Mindestbasis, L2 das Level für Anwendungen mit sensiblen Daten, L3 für Systeme mit hohem Schutzbedarf wie Banken oder Gesundheitswesen. „Wende ASVS an" ist darum unterspezifiziert -- der Aufwand zwischen L1 und L3 unterscheidet sich um eine Größenordnung. Sage *ASVS L2*.
+Drei Level, und eines musst du wählen:: L1 ist die Mindestbasis, L2 das Level für Anwendungen mit sensiblen Daten, L3 für Systeme mit hohem Schutzbedarf wie Banken oder Gesundheitswesen. „Wende ASVS an“ ist darum unterspezifiziert -- der Aufwand zwischen L1 und L3 unterscheidet sich um eine Größenordnung. Sage *ASVS L2*.
 
 Numerierte Anforderungen sind der Mechanismus:: Anforderungen tragen IDs im Schema `Kapitel.Abschnitt.Anforderung`. So zeigen Pentest-Finding, Backlog-Item und Testfall auf dieselbe Zeichenkette. Dieses Rückgrat der Nachvollziehbarkeit ist der Zugewinn gegenüber einem allgemeinen Review, nicht der Prosatext.
 
@@ -27,13 +27,13 @@ Die Kapitel sind die Zerlegung:: Authentifizierung, Session Management, Zugriffs
 
 Nenne die Version, denn die IDs sind verschoben:: v5.0.0 hat die Kapitel umgebaut und Anforderungen neu numeriert. Ein `V2.1.1` aus v4.0.3 bezeichnet unter v5.0 nicht dieselbe Anforderung. Jeder Prompt und jedes Dokument, das IDs zitiert, muss die Version nennen.
 
-Verifizieren ist das Verb:: ASVS ist für die prüfende Person geschrieben, nicht nur für die bauende. Anforderungen beginnen mit „Verify that…", der Standard liest sich also als Testplan und lässt sich an QA geben, nicht nur an einen Pentester.
+Verifizieren ist das Verb:: ASVS ist für die prüfende Person geschrieben, nicht nur für die bauende. Anforderungen beginnen mit „Verify that…“, der Standard liest sich also als Testplan und lässt sich an QA geben, nicht nur an einen Pentester.
 
 [discrete]
 == *Wann einsetzen*:
 
 * Wenn ein Security-Review einen festen Umfang und ein Bestanden/Nicht-bestanden braucht
-* Wenn „mach es sicher" in ein Backlog übersetzt werden soll -- Anforderungs-IDs sind schätzbare Arbeitspakete
+* Wenn „mach es sicher“ in ein Backlog übersetzt werden soll -- Anforderungs-IDs sind schätzbare Arbeitspakete
 * Für Sicherheits-Akzeptanzkriterien, die ein QA-Engineer ausführen kann
 * In Beschaffung und Audit, wo ein genanntes Level samt Version eine vertragliche Aussage ist (`regulated-environment`)
 * Als Anforderungsschicht unter einem Threat Model: `stride` oder `linddun` benennt den Threat, ASVS liefert das zu prüfende Control
@@ -41,22 +41,22 @@ Verifizieren ist das Verb:: ASVS ist für die prüfende Person geschrieben, nich
 [discrete]
 == *Häufige Missverständnisse*:
 
-* ❌ „ASVS ist die Langfassung der Top 10" -- verschiedene Artefakte: eine Aufmerksamkeitsrangliste gegen einen Anforderungskatalog mit Leveln und IDs
-* ❌ „Wende ASVS an" -- unvollständig; ohne Level hat die Anweisung keinen Umfang
-* ❌ „Eine Anforderungs-ID bezeichnet dauerhaft dieselbe Anforderung" -- v5.0 hat neu numeriert, eine ID ohne Version ist mehrdeutig
-* ❌ „Level 1 lässt sich vollständig von außen prüfen" -- im Projekt selbst bestritten (siehe Kritik)
-* ✓ „Prüfe gegen ASVS L2, v5.0.0, und melde jede Anforderung mit bestanden, nicht bestanden oder nicht anwendbar" -- die Form, die wirklich eine Prüfliste erzeugt
+* ❌ „ASVS ist die Langfassung der Top 10“ -- verschiedene Artefakte: eine Aufmerksamkeitsrangliste gegen einen Anforderungskatalog mit Leveln und IDs
+* ❌ „Wende ASVS an“ -- unvollständig; ohne Level hat die Anweisung keinen Umfang
+* ❌ „Eine Anforderungs-ID bezeichnet dauerhaft dieselbe Anforderung“ -- v5.0 hat neu numeriert, eine ID ohne Version ist mehrdeutig
+* ❌ „Level 1 lässt sich vollständig von außen prüfen“ -- im Projekt selbst bestritten (siehe Kritik)
+* ✓ „Prüfe gegen ASVS L2, v5.0.0, und melde jede Anforderung mit bestanden, nicht bestanden oder nicht anwendbar“ -- die Form, die wirklich eine Prüfliste erzeugt
 ====
 
 == *Kritik*:
 
-* *Dass Level 1 ohne Quellcode prüfbar sei, ist im Projekt selbst bestritten.* Kevin W. Wall zitiert den Wortlaut von v4.0.3 -- "Level 1 controls can be checked either automatically by tools or simply manually without access to source code" -- und widerspricht: "I think that most of the Level 1 requirements in the 'Validation, Sanitization and Encoding' section are not generally testable in any reasonable fashion in most typical cases without access to source code." Sein Urteil über die Formulierung ist deutlich: "right now, this over-promising seems almost a case of ultra-hype and therefore (unintentionally) misleading." https://github.com/OWASP/ASVS/discussions/1651[Wall, „OWASP ASVS overpromising on Level 1 requirements being testable without source code", OWASP/ASVS Discussion #1651] (6. Juni 2023).
-* *Ein Viertel des Standards kann unanwendbar sein, und das zu entscheiden ist die Arbeit.* Mateusz Gołąbeks Bericht über ASVS v4.0.3 Level 2 in einem bestehenden Produkt zählt 267 Anforderungen, davon 80 als nicht anwendbar eingestuft, und schließt, Konformität in einem gewachsenen System brauche "careful review, in-depth research, and targeted fixes". Diese Zahl ist der ehrliche Preis des Ankers: Eine Ausgabe, die 267 Urteile ohne Triage ausschüttet, hat den schweren Teil übersprungen. https://softwaremill.com/implementing-owasp-asvs/[Gołąbek, „Implementing OWASP ASVS", SoftwareMill] (3. Februar 2025).
-* *Der Vorwurf der „Checkbox Security" hat keinen zitierbaren Urheber.* Dass Verifizierungsstandards zum Abhaken verleiten, steht vielfach in Hersteller- und Beratungstexten, aber Suchen auf Englisch und Deutsch ergaben keinen namentlichen Autor, der das in einem abrufbaren Beitrag speziell gegen ASVS vorbringt. Hier als offener Einwand festgehalten, nicht als belegter.
+* *Dass Level 1 ohne Quellcode prüfbar sei, ist im Projekt selbst bestritten.* Kevin W. Wall zitiert den Wortlaut von v4.0.3 -- "Level 1 controls can be checked either automatically by tools or simply manually without access to source code" -- und widerspricht: "I think that most of the Level 1 requirements in the 'Validation, Sanitization and Encoding' section are not generally testable in any reasonable fashion in most typical cases without access to source code." Sein Urteil über die Formulierung ist deutlich: "right now, this over-promising seems almost a case of ultra-hype and therefore (unintentionally) misleading." https://github.com/OWASP/ASVS/discussions/1651[Wall, „OWASP ASVS overpromising on Level 1 requirements being testable without source code“, OWASP/ASVS Discussion #1651] (6. Juni 2023).
+* *Ein Viertel des Standards kann unanwendbar sein, und das zu entscheiden ist die Arbeit.* Mateusz Gołąbeks Bericht über ASVS v4.0.3 Level 2 in einem bestehenden Produkt zählt 267 Anforderungen, davon 80 als nicht anwendbar eingestuft, und schließt, Konformität in einem gewachsenen System brauche "careful review, in-depth research, and targeted fixes". Diese Zahl ist der ehrliche Preis des Ankers: Eine Ausgabe, die 267 Urteile ohne Triage ausschüttet, hat den schweren Teil übersprungen. https://softwaremill.com/implementing-owasp-asvs/[Gołąbek, „Implementing OWASP ASVS“, SoftwareMill] (3. Februar 2025).
+* *Der Vorwurf der „Checkbox Security“ hat keinen zitierbaren Urheber.* Dass Verifizierungsstandards zum Abhaken verleiten, steht vielfach in Hersteller- und Beratungstexten, aber Suchen auf Englisch und Deutsch ergaben keinen namentlichen Autor, der das in einem abrufbaren Beitrag speziell gegen ASVS vorbringt. Hier als offener Einwand festgehalten, nicht als belegter.
 
 [discrete]
 == *Aktueller Stand*:
 
 * *v5.0.0 ist aktuell, veröffentlicht am 30. Mai 2025*, mit v4.0.3 als langlebigem Vorgänger, gegen den die meisten Trainingsdaten geschrieben sind; das Projekt pflegt Mappings in beide Richtungen. https://github.com/OWASP/ASVS/releases[OWASP/ASVS releases].
 * *Der Anker zahlt sich dort aus, wo das Modell ohne ihn zum falschen Standard greift.* Gemessen auf `claude-haiku-4-5` am 3. Oktober 2026: Ohne Anker griff das Modell bei der Vorbereitung eines Security-Reviews zu SOC 2 und ISO 27001 -- Governance-Rahmenwerke, keine Anwendungsanforderungen. Mit ASVS benannt, arbeitete es auf L2 und zitierte Kapitel (V4, V6, V13) gegen konkrete Arbeitspakete.
-* *Die Zuschreibung ist die Schwachstelle -- ein Grund mehr, die Version zu nennen statt eine Person.* Auf die Frage, wer ASVS geschaffen hat, antwortete dasselbe Modell `creator=Mike Goodwin (OWASP); year=2009` mit mittlerer Konfidenz. Die Institution stimmt, die genannte Person nicht. Zitiere „ASVS v5.0.0, OWASP Foundation" und lass ein Modell keinen Autor benennen.
+* *Die Zuschreibung ist die Schwachstelle -- ein Grund mehr, die Version zu nennen statt eine Person.* Auf die Frage, wer ASVS geschaffen hat, antwortete dasselbe Modell `creator=Mike Goodwin (OWASP); year=2009` mit mittlerer Konfidenz. Die Institution stimmt, die genannte Person nicht. Zitiere „ASVS v5.0.0, OWASP Foundation“ und lass ein Modell keinen Autor benennen.

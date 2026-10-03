@@ -1,6 +1,6 @@
 = Connextra User Story Format
 :categories: requirements-engineering
-:proponents: Connextra team, Mike Cohn
+:proponents: Rachel Davies, Connextra team, Mike Cohn
 :roles: product-owner, business-analyst, requirements-engineer, team-lead
 :tags: Connextra, Connextra user story format, user story template, As a I want so that, role goal benefit, three-part template, Rachel Davies, Mike Cohn, user story, story card
 :related: invest, user-story-mapping, jobs-to-be-done, bdd-given-when-then, cockburn-use-cases

@@ -10,7 +10,7 @@
 
 [%collapsible]
 ====
-Full Name:: Railway Oriented Programming, Scott Wlaschin's metaphor for composing functions that can fail — NDC talk and _F# for Fun and Profit_ article, 2014, extended in _Domain Modeling Made Functional_ (2018)
+Full Name:: Railway Oriented Programming, Scott Wlaschin's metaphor for composing functions that can fail — _F# for Fun and Profit_ article (2013) and NDC talk (2014), extended in _Domain Modeling Made Functional_ (2018)
 
 Also known as:: ROP, two-track programming, the railway metaphor, Result-based error handling, errors as values
 

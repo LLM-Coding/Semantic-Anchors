@@ -27,7 +27,7 @@ Zwei Umsetzungsformen:: Ein *Thread-Pool-Bulkhead* gibt jeder Dependency einen e
 
 Dieselbe Idee auf Infrastrukturebene:: Getrennte Pods, Cluster, Accounts oder Regionen je Mandant oder Kritikalitätsstufe. Azure behandelt das als dasselbe Pattern unter zweitem Namen: der Ansatz ist "also known as a _cell-based architecture_."
 
-Timeouts sind Voraussetzung:: Ein Bulkhead begrenzt, wie viele Aufrufe gleichzeitig hängen dürfen. Ohne Timeout heißt „hängen" für immer -- die Partition läuft voll und bleibt voll. Dann grenzt das Bulkhead den Schaden ein, statt ihn zu verhindern.
+Timeouts sind Voraussetzung:: Ein Bulkhead begrenzt, wie viele Aufrufe gleichzeitig hängen dürfen. Ohne Timeout heißt „hängen“ für immer -- die Partition läuft voll und bleibt voll. Dann grenzt das Bulkhead den Schaden ein, statt ihn zu verhindern.
 
 [discrete]
 == *Wann einsetzen*:
@@ -41,18 +41,18 @@ Timeouts sind Voraussetzung:: Ein Bulkhead begrenzt, wie viele Aufrufe gleichzei
 [discrete]
 == *Häufige Missverständnisse*:
 
-* ❌ „Bulkhead und Circuit Breaker machen dasselbe" -- eines begrenzt Parallelität, das andere wiederholte Fehler; ein System mit nur einem Breaker stirbt weiter an einer langsamen Dependency, die nie hart ausfällt
-* ❌ „Ein Bulkhead verhindert den Ausfall" -- es begrenzt den Blast Radius; der betroffene Workload degradiert weiterhin
-* ❌ „Feiner partitionieren ist immer sicherer" -- Azure verlangt, "determine the level of granularity for the bulkheads", und den Aufwand "in terms of cost, performance, and manageability" abzuwägen
-* ❌ „Netflix hat es erfunden" -- Netflix hat es über Hystrix bekannt gemacht und sich dann von dieser Form abgewandt; das Pattern ist Nygards
-* ✓ „Ein Bulkhead ist eine Obergrenze dafür, wie viel meines Systems eine Dependency belegen darf" -- trifft zu und erklärt, warum das Schwierige die Wahl der Zahl ist
+* ❌ „Bulkhead und Circuit Breaker machen dasselbe“ -- eines begrenzt Parallelität, das andere wiederholte Fehler; ein System mit nur einem Breaker stirbt weiter an einer langsamen Dependency, die nie hart ausfällt
+* ❌ „Ein Bulkhead verhindert den Ausfall“ -- es begrenzt den Blast Radius; der betroffene Workload degradiert weiterhin
+* ❌ „Feiner partitionieren ist immer sicherer“ -- Azure verlangt, "determine the level of granularity for the bulkheads", und den Aufwand "in terms of cost, performance, and manageability" abzuwägen
+* ❌ „Netflix hat es erfunden“ -- Netflix hat es über Hystrix bekannt gemacht und sich dann von dieser Form abgewandt; das Pattern ist Nygards
+* ✓ „Ein Bulkhead ist eine Obergrenze dafür, wie viel meines Systems eine Dependency belegen darf“ -- trifft zu und erklärt, warum das Schwierige die Wahl der Zahl ist
 ====
 
 == *Kritik*:
 
 * *Statische Partitionierung kauft Isolation mit brachliegender Kapazität -- und Microsoft nennt die Bedingung, unter der dieser Tausch scheitert.* Das Azure Architecture Center listet, wann das Pattern nicht passt: "Less efficient use of resources might not be acceptable in the project" und "The added complexity isn't necessary." Reservierte Kapazität, die in einer Partition leer läuft, während eine andere wartet, ist der Preis der Garantie. https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead[Microsoft, "Bulkhead Pattern", Azure Architecture Center] (Seite aktualisiert 19. September 2026).
 * *Der eigentliche Einwand ist die statische Zahl -- und er kommt von der Organisation, die das Pattern bekannt gemacht hat.* Netflix' eigenes Projekt `concurrency-limits` existiert, weil feste Limits geraten werden müssen und dann veralten: "in large distributed systems that auto-scale this value quickly goes out of date and the service falls over by becoming non-responsive." https://github.com/Netflix/concurrency-limits[Netflix, _concurrency-limits_ README]. Als Grund für das Ende von Hystrix nennt Netflix dieselbe Bewegung, hin zu "more adaptive implementations".
-* *Die Thread-Pool-Form hat ihren Vorzugsstatus aus Kostengründen verloren.* Resilience4j, der von Netflix genannte Nachfolger, macht die Semaphore zum Normalfall und lässt Hystrix' „shadow"-Thread-Pool weg; das Sizing wandert zurück zum Aufrufer. Zusätzliche Threads, Context Switches und Speicher je Dependency waren ein Preis, den die Nachfolgebibliothek nicht zum Standard machen wollte. https://resilience4j.readme.io/docs/bulkhead[Resilience4j, Bulkhead-Dokumentation].
+* *Die Thread-Pool-Form hat ihren Vorzugsstatus aus Kostengründen verloren.* Resilience4j, der von Netflix genannte Nachfolger, macht die Semaphore zum Normalfall und lässt Hystrix' „shadow“-Thread-Pool weg; das Sizing wandert zurück zum Aufrufer. Zusätzliche Threads, Context Switches und Speicher je Dependency waren ein Preis, den die Nachfolgebibliothek nicht zum Standard machen wollte. https://resilience4j.readme.io/docs/bulkhead[Resilience4j, Bulkhead-Dokumentation].
 
 [discrete]
 == *Aktueller Stand*:
