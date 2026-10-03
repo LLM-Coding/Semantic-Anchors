@@ -637,7 +637,7 @@ function buildAppearancesMarkup(tr) {
         <p>${escapeHtml(tr['footer.featuredIn'] || '')}: ${group('press')}. ${escapeHtml(
           tr['footer.asSeenOn'] || ''
         )}: ${group('appearance')}. ${escapeHtml(
-          tr['footer.adaptedIn'] || ''
+          tr['footer.referencedIn'] || ''
         )}: ${group('adoption')}.</p>
       </section>`
 }

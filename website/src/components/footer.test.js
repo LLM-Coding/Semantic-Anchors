@@ -71,7 +71,7 @@ describe('renderFooter — "adapted in" row', () => {
 
   it('links the adapting catalog under its own label, not under press coverage', () => {
     const html = renderFooter('1.2.3')
-    expect(html).toContain('footer.adaptedIn')
+    expect(html).toContain('footer.referencedIn')
     expect(html).toContain(HREF)
   })
 

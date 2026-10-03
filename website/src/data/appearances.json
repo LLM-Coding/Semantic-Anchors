@@ -54,5 +54,45 @@
     "alt": "Claude Code Ultimate Guide",
     "label": "Claude Code Ultimate Guide (EN)",
     "titleKey": "footer.ccugAlt"
+  },
+  {
+    "id": "ocsa",
+    "kind": "adoption",
+    "href": "https://github.com/JensGrote/opencode-semantic-anchors",
+    "alt": "opencode-semantic-anchors",
+    "label": "opencode-semantic-anchors (EN)",
+    "titleKey": "footer.ocsaAlt"
+  },
+  {
+    "id": "speq",
+    "kind": "adoption",
+    "href": "https://github.com/marconae/speq-skill/blob/main/docs/semantic-anchors.md",
+    "alt": "speq-skill",
+    "label": "speq-skill (EN)",
+    "titleKey": "footer.speqAlt"
+  },
+  {
+    "id": "nova",
+    "kind": "adoption",
+    "href": "https://github.com/wandelbotsgmbh/wandelbots-nova/blob/main/docs/architecture/adr/README.md",
+    "alt": "wandelbots-nova",
+    "label": "wandelbots-nova (EN)",
+    "titleKey": "footer.novaAlt"
+  },
+  {
+    "id": "leverage",
+    "kind": "adoption",
+    "href": "https://github.com/Filip-Podstavec/claude-leverage",
+    "alt": "claude-leverage",
+    "label": "claude-leverage (EN)",
+    "titleKey": "footer.leverageAlt"
+  },
+  {
+    "id": "wwcnd",
+    "kind": "adoption",
+    "href": "https://github.com/cornelius/what-would-chuck-norris-do",
+    "alt": "what-would-chuck-norris-do",
+    "label": "what-would-chuck-norris-do (EN)",
+    "titleKey": "footer.wwcndAlt"
   }
 ]

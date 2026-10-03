@@ -81,7 +81,7 @@ export function renderMain() {
               class="w-full sm:mx-1 sm:h-4 sm:w-px sm:bg-[var(--color-border)]"
               aria-hidden="true"
             ></span>
-              <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.adaptedIn">${i18n.t('footer.adaptedIn')}</span>
+              <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.referencedIn">${i18n.t('footer.referencedIn')}</span>
               ${renderAppearances('adoption', import.meta.env.BASE_URL, (k) => i18n.t(k))}
             </div>
           </section>
