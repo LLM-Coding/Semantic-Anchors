@@ -61,12 +61,13 @@ export function renderMain() {
 
           <!-- Third-party coverage belongs where people actually look. In the
                footer it sat below ~200 anchor cards, which nobody scrolls to.
-               Press and appearances stay separately labelled: one is written
-               about us, the other is a conversation we joined. -->
+               The three groups stay separately labelled: press is written
+               about us, an appearance is a conversation we joined, and a
+               reference is someone else's project pointing here. -->
           <section
             id="appearances"
             class="mb-8 border-y border-[var(--color-border)] py-3"
-            aria-label="${i18n.t('footer.featuredIn')}"
+            aria-label="${i18n.t('footer.appearancesLabel')}"
           >
             <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
               <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.featuredIn">${i18n.t('footer.featuredIn')}</span>
@@ -81,7 +82,7 @@ export function renderMain() {
               class="w-full sm:mx-1 sm:h-4 sm:w-px sm:bg-[var(--color-border)]"
               aria-hidden="true"
             ></span>
-              <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.referencedIn">${i18n.t('footer.referencedIn')}</span>
+              <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.adaptedIn">${i18n.t('footer.adaptedIn')}</span>
               ${renderAppearances('adoption', import.meta.env.BASE_URL, (k) => i18n.t(k))}
             </div>
           </section>

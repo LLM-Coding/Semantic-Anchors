@@ -78,21 +78,5 @@
     "alt": "wandelbots-nova",
     "label": "wandelbots-nova (EN)",
     "titleKey": "footer.novaAlt"
-  },
-  {
-    "id": "leverage",
-    "kind": "adoption",
-    "href": "https://github.com/Filip-Podstavec/claude-leverage",
-    "alt": "claude-leverage",
-    "label": "claude-leverage (EN)",
-    "titleKey": "footer.leverageAlt"
-  },
-  {
-    "id": "wwcnd",
-    "kind": "adoption",
-    "href": "https://github.com/cornelius/what-would-chuck-norris-do",
-    "alt": "what-would-chuck-norris-do",
-    "label": "what-would-chuck-norris-do (EN)",
-    "titleKey": "footer.wwcndAlt"
   }
 ]
