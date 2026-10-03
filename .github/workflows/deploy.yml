@@ -75,20 +75,42 @@ jobs:
   # Lighthouse runs here rather than in test.yml because it measures the
   # deployed site: `needs: deploy` is the whole point. In test.yml the job
   # had `needs: []` and ran against whatever was already live, so a push
-  # could be graded on its predecessor.
+  # could be graded on its predecessor. It reports; it gates nothing, since
+  # a red run arrives after the site is already public. Accessibility on
+  # pull requests is covered by the axe E2E checks instead.
   #
   # It uses the action instead of a local @lhci/cli devDependency. That
-  # package was the sole root of all nine `high` audit findings and of 206
-  # of 578 lockfile entries -- an FTP client and OpenTelemetry
-  # instrumentation among them -- which every PR installed for a job that
-  # only ever ran on main. The action keeps that tree on GitHub's runner.
+  # package was the sole root of all nine `high` audit findings and of 310
+  # of the lockfile's 579 packages -- an FTP client, a PAC proxy agent and
+  # OpenTelemetry instrumentation among them -- which every pull request
+  # installed for a job that only ever ran on main. The action keeps that
+  # tree on GitHub's runner; the lockfile is down to 269 packages.
+  #
+  # This runs Lighthouse 12.6.1, not the 13.4.1 the removed devDependency
+  # resolved to. @lhci/cli@0.15.1 -- the newest there is -- pins
+  # `lighthouse` to exactly 12.6.1, so 13.x is not reachable through LHCI
+  # at all: the old 13.4.1 came from a local `overrides` entry forcing a
+  # combination LHCI does not declare. Scoring changed between the two
+  # majors, so the thresholds in .lighthouserc.json are not comparable
+  # across this change. Expect a one-off step in the numbers, and read the
+  # first few runs as a new baseline rather than a regression.
   lighthouse:
     name: Lighthouse CI
     runs-on: ubuntu-latest
     needs: deploy
+    # The workflow grants `pages: write` and `id-token: write` because the
+    # deploy job needs them. This job runs third-party code, so it drops to
+    # read: with the inherited token that action could publish to Pages or
+    # mint OIDC tokens against this repository.
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Keeps the token out of .git/config, where any later step --
+          # including the action's own code -- could read and reuse it.
+          persist-credentials: false
 
       # Pinned to a commit SHA, not a tag: a tag can be moved to point at
       # other code, and this step runs with the repository checked out.

@@ -4,7 +4,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-10-03
 
-*The Lighthouse dependency is gone, and Lighthouse now runs against the deployed site.* `@lhci/cli` was the sole root of all nine `high` npm advisories and of 310 of the lockfile's 579 packages -- an FTP client, a PAC proxy agent and OpenTelemetry instrumentation among them. Every pull request installed that tree for a job configured to run only on `main`, and the `Dependency Security Audit` kept failing on advisories against an unchanged lockfile, three times in a row on unrelated pull requests. Lighthouse now runs as `treosh/lighthouse-ci-action`, pinned to a commit SHA, in `deploy.yml` with `needs: deploy` -- so it grades the build that was just published, which the old job could not: it declared `needs: []` and measured whatever happened to be live. The assertions are unchanged, read from the same `website/.lighthouserc.json`. The lockfile drops to 269 packages, `npm audit --audit-level=high` exits 0, and the three remaining advisories are `moderate` ones in `vitest` and `eslint`, below the gate. Five `overrides` that existed only to pin that subtree were removed with it.
+*Lighthouse now measures the published site.* The performance and accessibility check moved out of the pull-request run, where it graded whatever happened to be live, and into the deploy, where it grades what was just published. Nothing changes for readers of the catalog; the thresholds are unchanged.
 
 == 2026-09-30
 
