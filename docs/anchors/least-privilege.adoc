@@ -1,0 +1,62 @@
+= Principle of Least Privilege (Saltzer & Schroeder)
+:categories: design-principles, testing-quality
+:proponents: Jerome H. Saltzer, Michael D. Schroeder
+:roles: software-architect, devops-engineer, software-developer
+:tags: least privilege, PoLP, principle of least authority, POLA, need-to-know, default deny, fail-safe defaults, separation of duties, capabilities, just-in-time access, Zero Trust, blast radius, Saltzer, Schroeder
+:related: stride, owasp-top-10, meaningful-human-control, twelve-factor-app
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Least privilege, design principle (f) in Jerome H. Saltzer and Michael D. Schroeder, "The Protection of Information in Computer Systems", _Proceedings of the IEEE_ 63(9), September 1975, pp. 1278-1308
+
+Also known as:: PoLP, least authority (POLA), need-to-know, minimal privilege
+
+[discrete]
+== *Core Concepts*:
+
+One of Eight, and the Authors' Own Words:: Saltzer and Schroeder introduce the set with "Here are eight examples of design principles that apply particularly to protection mechanisms." Principle (f) reads: "Least privilege: Every program and every user of the system should operate using the least set of privileges necessary to complete the job." Quoting that sentence is the whole anchor; everything below is its consequences.
+
+Accident Before Attack:: The stated first purpose is not defence against an adversary. "Primarily, this principle limits the damage that can result from an accident or error." The authors give the reduction of "potential interactions among privileged programs" as the second reason and audit scope as the third: "if a question arises related to misuse of a privilege, the number of programs that must be audited is minimized."
+
+Need-to-Know Is Their Example, Not a Separate Idea:: "The military security rule of 'need-to-know' is an example of this principle." So is the firewall placement argument: "if a mechanism can provide 'firewalls,' the principle of least privilege provides a rationale for where to install the firewalls."
+
+"The Job" Is the Scoping Term:: The minimum is relative to a task, so the grant has to be recomputed when the task changes. That is the reading behind just-in-time access, short-lived tokens and scoped workload identity: the privilege expires with the job rather than outliving it.
+
+Modern Descendants:: Default deny (the authors' own *fail-safe defaults*), separation of duties (their *separation of privilege*), need-to-know, capability-based security and the renamed *principle of least authority*, RBAC/ABAC/ReBAC as the policy languages, just-in-time and break-glass access as the lifetime mechanisms.
+
+Zero Trust Is a Different Claim:: Zero Trust removes implicit trust from network location -- verify every request, wherever it comes from. Least privilege constrains the *size* of the grant. Zero Trust architectures use least privilege, but the two are independent: a system can authenticate every single request and still hand out standing admin.
+
+[discrete]
+== *When to Use*:
+
+* Writing CI/CD pipelines -- the measurement below shows this is where the anchor actually changes output
+* IAM policies, service accounts, workload identity and database grants
+* Agent and tool permissions, where the grant is an LLM's reach into a system (`meaningful-human-control`)
+* Container and process design: which capability does this process genuinely need
+* Reviewing an *Elevation of Privilege* threat from `stride`, or Broken Access Control from `owasp-top-10`
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Least privilege means read-only" -- it means the least set for the job, which sometimes includes write
+* ❌ "It is purely a security principle" -- damage from "an accident or error" is the first reason the authors give
+* ❌ "Zero Trust is least privilege" -- per-request verification and minimal grants are separate properties
+* ❌ "Grant it once and you are done" -- the minimum is defined relative to the job, so it has to shrink when the job ends
+* ❌ "The minimum set can be computed" -- the central academic objection says it cannot (see Criticism)
+* ✓ "Default deny, grant the least set for this job, and make the grant expire" -- the operational form
+====
+
+== *Criticism*:
+
+* *Computing the minimum privilege set is infeasible, and the honest alternative grants more.* Fred B. Schneider of Cornell builds the case formally: the policy that grants exactly the privileges an extension needs cannot generally be derived, because establishing that the code meets its specification "is undecidable for general-purpose programming and specification languages", and a high-level specification "lacks information about how Ext works that would be needed for deducing" the policy. His conclusion: "So at least for the time being, it seems as though obtaining μPriv(Ext, Ext) for use by a reference monitor interposed between a base and its extensions is infeasible, and alternatives must be sought." The alternative he proposes is deliberately named against the original: "One such alternative, which might be called a Principle of Most Privilege, is to enforce a policy Priv(B) that merely prevents extensions from subverting the base system B." The paper closes that "practical protection for extensible systems is most easily obtained using policies that grant more privileges than would μPriv(Ext, Ext) -- the least privilege and more." https://www.cs.cornell.edu/fbs/publications/leastPrivSP.pdf[Schneider, "Least Privilege and More"], a revised version of a paper written in honour of Roger Needham (1935-2003) for the conference "Roger Needham: 50 and 5" at Microsoft Research, Cambridge (17 February 2003).
+* *The principle outran its mechanisms, and the 1975 formulation left out the dynamic case.* Schneider also notes that the authors' own Multics was finer-grained than what followed: "Multics can be seen as superior to today's operating systems, with their relatively coarse-grained targets of access control (viz programs and files)." And on a gap in the text itself: "The Saltzer-Schroeder formulation also does not explicitly call out the benefits of allowing the set of privileges associated with a program to change as execution progresses." Anyone quoting the 1975 wording as complete guidance for just-in-time access is reading in something the paper does not say.
+* *The "permission sprawl" objection is practitioner folklore here, not a sourced critique.* The complaint that least privilege degenerates into thousands of unmaintainable fine-grained grants is common in cloud IAM writing, but searches in English and German turned up no named author arguing it in a retrievable, quotable piece -- the material found was vendor marketing for permission-management products. Recorded as an open objection, not a sourced one.
+
+[discrete]
+== *Current Status*:
+
+* *The anchor changes nothing on tasks that already name the problem.* Measured on `claude-haiku-4-5` on 3 October 2026: on scenarios that described a privilege violation, baseline and anchored output said the same thing -- remove local admin, segment the network -- and only the *baseline* used the phrase "blast radius". Recognition is near-total, so on those tasks naming the principle buys nothing.
+* *It earns its keep on build and deploy artifacts.* Same measurement, different task: "write a GitHub Actions workflow that builds a Node service and deploys it to a staging ECS cluster". Both unanchored runs produced long-lived `AWS_ACCESS_KEY_ID` secrets and no `permissions:` block at all; both anchored runs produced a `permissions:` block, OIDC `role-to-assume`, and no static keys. Reproduced twice in each condition. Use the anchor where the principle is not the obvious answer.

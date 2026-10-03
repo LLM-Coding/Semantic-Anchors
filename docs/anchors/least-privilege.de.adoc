@@ -1,0 +1,62 @@
+= Principle of Least Privilege (Saltzer & Schroeder)
+:categories: design-principles, testing-quality
+:proponents: Jerome H. Saltzer, Michael D. Schroeder
+:roles: software-architect, devops-engineer, software-developer
+:tags: least privilege, PoLP, Prinzip der minimalen Rechte, principle of least authority, POLA, Need-to-know, Default Deny, Fail-safe Defaults, Funktionstrennung, Capabilities, Just-in-time-Zugriff, Zero Trust, Blast Radius, Saltzer, Schroeder
+:related: stride, owasp-top-10, meaningful-human-control, twelve-factor-app
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Least privilege, Entwurfsprinzip (f) in Jerome H. Saltzer und Michael D. Schroeder, „The Protection of Information in Computer Systems", _Proceedings of the IEEE_ 63(9), September 1975, S. 1278-1308
+
+Auch bekannt als:: PoLP, Prinzip der minimalen Rechte, Least Authority (POLA), Need-to-know
+
+[discrete]
+== *Kernkonzepte*:
+
+Eines von acht -- im Wortlaut der Autoren:: Saltzer und Schroeder führen die Liste ein mit „Here are eight examples of design principles that apply particularly to protection mechanisms." Prinzip (f) lautet: „Least privilege: Every program and every user of the system should operate using the least set of privileges necessary to complete the job." Dieser Satz ist der ganze Anker; alles Weitere sind seine Folgen.
+
+Erst der Unfall, dann der Angriff:: Der zuerst genannte Zweck ist nicht die Abwehr eines Angreifers. „Primarily, this principle limits the damage that can result from an accident or error." Als zweiten Grund nennen die Autoren weniger „potential interactions among privileged programs", als dritten den Prüfumfang: „if a question arises related to misuse of a privilege, the number of programs that must be audited is minimized."
+
+Need-to-know ist ihr Beispiel, nicht eine zweite Idee:: „The military security rule of 'need-to-know' is an example of this principle." Ebenso das Argument zur Platzierung von Schutzgrenzen: „if a mechanism can provide 'firewalls,' the principle of least privilege provides a rationale for where to install the firewalls."
+
+„The job" ist der Bezugspunkt:: Das Minimum gilt relativ zu einer Aufgabe, also muss die Rechtevergabe neu bestimmt werden, wenn sich die Aufgabe ändert. Darauf beruhen Just-in-time-Zugriff, kurzlebige Token und Scoped Workload Identity: Das Recht endet mit der Aufgabe, statt sie zu überleben.
+
+Moderne Nachfahren:: Default Deny (bei den Autoren selbst *fail-safe defaults*), Funktionstrennung (ihre *separation of privilege*), Need-to-know, Capability-basierte Sicherheit samt der Umbenennung zum *Principle of Least Authority*, RBAC/ABAC/ReBAC als Policy-Sprachen, Just-in-time- und Break-glass-Zugriff als Mechanismen für die Lebensdauer.
+
+Zero Trust behauptet etwas anderes:: Zero Trust nimmt der Netzposition das implizite Vertrauen -- jede Anfrage wird geprüft, woher sie auch kommt. Least Privilege begrenzt die *Größe* der Rechtevergabe. Zero-Trust-Architekturen nutzen Least Privilege, doch beides ist unabhängig: Ein System kann jede einzelne Anfrage authentifizieren und trotzdem dauerhafte Admin-Rechte verteilen.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Beim Schreiben von CI/CD-Pipelines -- dort ändert der Anker die Ausgabe messbar (siehe unten)
+* Bei IAM-Policies, Service Accounts, Workload Identity und Datenbankrechten
+* Bei Agent- und Tool-Berechtigungen, wo die Rechtevergabe die Reichweite eines LLM in ein System ist (`meaningful-human-control`)
+* Beim Entwurf von Containern und Prozessen: Welche Capability braucht dieser Prozess wirklich
+* Beim Bearbeiten eines *Elevation of Privilege*-Threats aus `stride` oder von Broken Access Control aus `owasp-top-10`
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Least Privilege heißt Nur-Lesen" -- es heißt: die kleinste Menge für die Aufgabe, und die umfasst manchmal Schreibrechte
+* ❌ „Es ist ein reines Sicherheitsprinzip" -- Schaden „from an accident or error" ist der erste Grund, den die Autoren nennen
+* ❌ „Zero Trust ist Least Privilege" -- Prüfung jeder Anfrage und minimale Rechte sind getrennte Eigenschaften
+* ❌ „Einmal vergeben, fertig" -- das Minimum gilt relativ zur Aufgabe, also muss es mit ihr enden
+* ❌ „Die minimale Rechtemenge lässt sich berechnen" -- der zentrale akademische Einwand sagt: nein (siehe Kritik)
+* ✓ „Default Deny, die kleinste Menge für diese Aufgabe, und die Vergabe läuft ab" -- die operative Form
+====
+
+== *Kritik*:
+
+* *Die minimale Rechtemenge zu berechnen ist nicht machbar, und die ehrliche Alternative vergibt mehr.* Fred B. Schneider von der Cornell University führt das formal aus: Die Policy, die genau die benötigten Rechte vergibt, lässt sich im Allgemeinen nicht ableiten, denn der Nachweis, dass Code seine Spezifikation erfüllt, "is undecidable for general-purpose programming and specification languages", und eine Spezifikation auf hoher Ebene "lacks information about how Ext works that would be needed for deducing" die Policy. Sein Fazit: "So at least for the time being, it seems as though obtaining μPriv(Ext, Ext) for use by a reference monitor interposed between a base and its extensions is infeasible, and alternatives must be sought." Die Alternative ist bewusst gegen das Original benannt: "One such alternative, which might be called a Principle of Most Privilege, is to enforce a policy Priv(B) that merely prevents extensions from subverting the base system B." Der Beitrag schließt, "practical protection for extensible systems is most easily obtained using policies that grant more privileges than would μPriv(Ext, Ext) -- the least privilege and more." https://www.cs.cornell.edu/fbs/publications/leastPrivSP.pdf[Schneider, „Least Privilege and More"], überarbeitete Fassung eines Beitrags zu Ehren von Roger Needham (1935-2003) für die Konferenz „Roger Needham: 50 and 5" bei Microsoft Research, Cambridge (17. Februar 2003).
+* *Das Prinzip war feiner als seine Mechanismen, und die Fassung von 1975 lässt den dynamischen Fall aus.* Schneider hält außerdem fest, dass das Multics der Autoren feinkörniger war als das Nachfolgende: "Multics can be seen as superior to today's operating systems, with their relatively coarse-grained targets of access control (viz programs and files)." Und zu einer Lücke im Text selbst: "The Saltzer-Schroeder formulation also does not explicitly call out the benefits of allowing the set of privileges associated with a program to change as execution progresses." Wer den Wortlaut von 1975 als vollständige Anleitung für Just-in-time-Zugriff zitiert, liest etwas hinein, was dort nicht steht.
+* *Der Einwand „Permission Sprawl" ist hier Praktikerfolklore, keine belegte Kritik.* Die Klage, Least Privilege verkomme zu tausenden unpflegbaren Feinrechten, steht vielfach in Cloud-IAM-Texten, doch Suchen auf Englisch und Deutsch ergaben keinen namentlichen Autor, der sie in einem abrufbaren, zitierbaren Beitrag vorbringt -- gefunden wurde Herstellerwerbung für Berechtigungsverwaltung. Als offener Einwand festgehalten, nicht als belegter.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Bei Aufgaben, die das Problem schon benennen, ändert der Anker nichts.* Gemessen auf `claude-haiku-4-5` am 3. Oktober 2026: Bei Szenarien, die den Rechteverstoß bereits beschrieben, sagten Basis- und Anker-Ausgabe dasselbe -- lokale Admin-Rechte entfernen, Netz segmentieren -- und nur die *Basis* benutzte das Wort „blast radius". Die Erkennung ist nahezu vollständig, also bringt das Benennen dort nichts.
+* *Er zahlt sich bei Build- und Deploy-Artefakten aus.* Dieselbe Messung, andere Aufgabe: „write a GitHub Actions workflow that builds a Node service and deploys it to a staging ECS cluster". Beide Läufe ohne Anker erzeugten langlebige `AWS_ACCESS_KEY_ID`-Secrets und überhaupt keinen `permissions:`-Block; beide Läufe mit Anker erzeugten einen `permissions:`-Block, OIDC `role-to-assume` und keine statischen Keys. Je Bedingung zweimal reproduziert. Setze den Anker dort ein, wo das Prinzip nicht die naheliegende Antwort ist.

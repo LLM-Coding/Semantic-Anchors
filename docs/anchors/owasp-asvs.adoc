@@ -1,0 +1,62 @@
+= OWASP ASVS (Application Security Verification Standard)
+:categories: testing-quality
+:proponents: OWASP Foundation
+:roles: software-developer, qa-engineer, software-architect, legal-compliance
+:tags: OWASP ASVS, Application Security Verification Standard, ASVS L1, ASVS L2, ASVS L3, verification level, security requirements, requirement ID, application security, security review, pass/fail checklist
+:related: owasp-top-10, stride, linddun, regulated-environment
+:tier: 2
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: OWASP Application Security Verification Standard
+
+Also known as:: ASVS, "ASVS Level 2" in its usual spoken form, the verifiable counterpart of the OWASP Top 10
+
+[discrete]
+== *Core Concepts*:
+
+Requirements, Not Awareness:: The Top 10 ranks *categories of risk* so that people know what to worry about. ASVS states what a given application must *do*, as individually numbered, individually testable requirements. Name `owasp-top-10` and you get a list of concerns; name ASVS and you get controls somebody can pass or fail. The two do different jobs, which is why the catalog keeps both.
+
+Three Levels, and You Have to Pick One:: L1 is the minimum baseline, L2 is the level intended for applications handling sensitive data, L3 is for high-assurance systems such as banking or healthcare. "Apply ASVS" is therefore an underspecified instruction -- the work at L1 and at L3 differs by an order of magnitude. Say *ASVS L2*.
+
+Numbered Requirements Are the Mechanism:: Requirements carry IDs in a `chapter.section.requirement` scheme, so a pentest finding, a backlog item and a test case can all point at the same string. That traceability spine, not the prose, is what ASVS adds over a generic review.
+
+Chapters Are the Decomposition:: Authentication, session management, access control, validation and encoding, cryptography, error handling and logging, data protection, communications, configuration, business logic, file handling, APIs. The chapter list is the reason an ASVS review covers the unglamorous half of application security instead of stopping at injection.
+
+Name the Version, Because the IDs Moved:: v5.0.0 reorganised the chapters and renumbered requirements. A `V2.1.1` quoted from v4.0.3 does not denote the same requirement under v5.0. Any prompt or document that cites IDs has to say which version it cites.
+
+Verification Is the Verb:: ASVS is written for the person checking, not only for the person building. Requirements are phrased "Verify that…", so the standard reads as a test plan and can be handed to QA rather than only to a pentester.
+
+[discrete]
+== *When to Use*:
+
+* Preparing or running a security review that needs a defined scope and a pass/fail outcome
+* Turning "make it secure" into a backlog -- requirement IDs are estimable work items
+* Writing security acceptance criteria a QA engineer can execute
+* Procurement and audit, where a named level and version is a contractual statement (`regulated-environment`)
+* As the requirement layer under a threat model: `stride` or `linddun` names the threat, ASVS supplies the control to verify
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "ASVS is the long version of the Top 10" -- different artefacts: one is an awareness ranking, the other a requirement catalogue with levels and IDs
+* ❌ "Apply ASVS" -- incomplete; without a level the instruction has no scope
+* ❌ "A requirement ID identifies a requirement forever" -- v5.0 renumbered, so an ID without a version is ambiguous
+* ❌ "Level 1 can be verified entirely from the outside" -- disputed inside the project itself (see Criticism)
+* ✓ "Verify against ASVS L2, v5.0.0, and report each requirement with pass, fail or not applicable" -- the form that actually produces a checklist
+====
+
+== *Criticism*:
+
+* *The claim that Level 1 is black-box testable is contested inside the project.* Kevin W. Wall quotes v4.0.3's own words -- "Level 1 controls can be checked either automatically by tools or simply manually without access to source code" -- and rejects them: "I think that most of the Level 1 requirements in the 'Validation, Sanitization and Encoding' section are not generally testable in any reasonable fashion in most typical cases without access to source code." His verdict on the wording is blunt: "right now, this over-promising seems almost a case of ultra-hype and therefore (unintentionally) misleading." https://github.com/OWASP/ASVS/discussions/1651[Wall, "OWASP ASVS overpromising on Level 1 requirements being testable without source code", OWASP/ASVS Discussion #1651] (6 June 2023).
+* *A quarter of the standard may not apply, and deciding that is the work.* Mateusz Gołąbek's report on taking an existing product through ASVS v4.0.3 Level 2 counts 267 requirements, of which 80 were judged not applicable, and concludes that compliance in a mature system takes "careful review, in-depth research, and targeted fixes". That number is the honest price of the anchor: output that emits 267 verdicts without triage has skipped the hard part. https://softwaremill.com/implementing-owasp-asvs/[Gołąbek, "Implementing OWASP ASVS", SoftwareMill] (3 February 2025).
+* *The "checkbox security" objection has no citable owner.* The charge that verification standards invite tick-the-box compliance is repeated widely in vendor and consultancy writing, but searches in English and German produced no named author making it against ASVS specifically in a retrievable piece. It is recorded here as an open objection, not a sourced one.
+
+[discrete]
+== *Current Status*:
+
+* *v5.0.0 is current, released 30 May 2025*, with v4.0.3 as the long-lived predecessor most training data was written against; the project publishes mappings in both directions between the two. https://github.com/OWASP/ASVS/releases[OWASP/ASVS releases].
+* *The anchor earns its keep where the baseline reaches for the wrong standard.* Measured on `claude-haiku-4-5` on 3 October 2026: asked to prepare for a security review with no anchor, the model reached for SOC 2 and ISO 27001 -- governance frameworks, not application requirements. Naming ASVS moved it to L2 and to chapter citations (V4, V6, V13) against concrete work items.
+* *Attribution is the soft spot, which is one more reason to cite the version rather than a person.* Asked who created ASVS, the same model answered `creator=Mike Goodwin (OWASP); year=2009` with medium confidence. The institution is right; the named lead is not. Cite "ASVS v5.0.0, OWASP Foundation" and do not let a model name an author.

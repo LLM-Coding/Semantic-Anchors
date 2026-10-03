@@ -1,0 +1,62 @@
+= Defense in Depth
+:categories: software-architecture, testing-quality
+:proponents: US National Security Agency, James Reason
+:roles: software-architect, devops-engineer
+:tags: defense in depth, Verteidigung in der Tiefe, mehrschichtige Sicherheit, gestaffelte Verteidigung, unabhängige Schichten, Diversität der Abwehr, Assume Breach, Schweizer-Käse-Modell, Blast Radius, Kompartimentierung, People Technology Operations
+:related: stride, owasp-top-10, fmea, poka-yoke, least-privilege
+:tier: 2
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Defense in Depth -- Militärdoktrin, übertragen auf Informationssicherheit; der zitierbare Referenztext für die Information-Assurance-Lesart ist das NSA-Papier „Defense in Depth: A practical strategy for achieving Information Assurance in today's highly networked environments"
+
+Auch bekannt als:: mehrschichtige Sicherheit, gestaffelte Verteidigung, Verteidigung in der Tiefe, Burgenmodell
+
+[discrete]
+== *Kernkonzepte*:
+
+Unabhängigkeit, Diversität, angenommenes Versagen:: Drei Bedingungen entscheiden, ob eine Menge von Controls Defense in Depth ist oder nur ein Stapel. *Unabhängigkeit*: Eine Schicht darf nicht aus demselben Grund versagen wie ihre Nachbarin. *Diversität*: verschiedene Mechanismen, damit ein Exploit nicht durch alle hindurchgeht. *Angenommenes Versagen*: Jede Schicht wird unter der Annahme entworfen, die davor sei schon überwunden. Korrelierte Controls -- derselbe Hersteller, derselbe Parser, derselbe Identity Provider, dieselbe Fehlkonfiguration -- sind eine Schicht mit mehreren Namen. Genau diesen Teil trägt der Begriff nicht zuverlässig (siehe Aktueller Stand), also schreibe ihn hin, statt ihn zu unterstellen.
+
+Niemandem gehört der Begriff:: Die Zuschreibung ist schwächer als bei den meisten Einträgen dieses Katalogs. Das Konzept ist Militärdoktrin -- Raum gegen Zeit tauschen, den Angreifer Ressourcen kosten statt ihn an einer Linie aufzuhalten -- übertragen auf Informationssicherheit. Das NSA-Papier ist die zitierbare Information-Assurance-Fassung; das Gegenstück aus der Sicherheitstechnik ist James Reasons Schweizer-Käse-Modell der Unfallentstehung, in dem die Löcher einzelner Schichten erst zählen, wenn sie sich überdecken. Dieser Eintrag zitiert keinen Primärtext von Reason, weil keiner geprüft vorliegt, und nennt deshalb weder Jahr noch Seite.
+
+Die NSA-Fassung ist kein Kistenstapel:: Die zentrale Aussage des Papiers: Information Assurance "requires a balanced focus on three primary elements: People, Technology and Operations" -- Schulung, Richtlinien und Incident Response sind also Schichten im selben Sinn wie eine Firewall. Das erste empfohlene Prinzip heißt „Defense in Multiple Places", begründet damit, dass "adversaries can attack a target from multiple points using either insiders or outsiders". Das Papier nennt sich selbst eine "best practices"-Strategie, die "recommends a balance between the protection capability and cost, performance, and operational considerations".
+
+Schichten sind gewichtet, nicht gleich:: Dasselbe Papier verlangt, "specify the security robustness (strength and assurance) of each Information Assurance component as a function of the value of what's it is protecting and the threat at the point of application", mit dem Beispiel, "it's often more effective and operationally suitable to deploy stronger mechanisms at the network boundaries than at the user desktop". Defense in Depth ist damit ein Budgetargument, keine Anweisung, alles gleich stark zu härten.
+
+Erkennen und Wiederherstellen sind auch Schichten:: Wenn jede Schicht versagen darf, muss etwas das Versagen merken. Monitoring, Alarmierung, Incident Response und Backups gehören in die Zerlegung, nicht als Anhang zur Prävention.
+
+Verhältnis zu Least Privilege:: `least-privilege` macht das Versagen einer Schicht überlebbar -- es begrenzt, was der Angreifer nach dem Durchbruch erreicht. Defense in Depth ist die Anordnung, Least Privilege bemisst jedes Kompartiment.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Beim Entwurf der Controls für eine einzelne riskante Operation -- Datei-Upload, Dokumentenrendering, Deserialisierung, Ausführung fremden Codes
+* Beim Review eines Sicherheitsentwurfs auf korreliertes Versagen: Welche zwei Schichten fallen durch denselben Fehler
+* Bei Sandbox- und Isolationsentscheidungen, wo die Frage lautet, was die nächste Schicht annimmt
+* Als Brücke zwischen Security- und Safety-Denken neben `fmea` und `poka-yoke`
+* Nach einem `stride`-Threat-Model, um zu entscheiden, wie viele unabhängige Controls ein hoch bewerteter Threat bekommt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Mehr Controls heißt mehr Tiefe" -- korrelierte Controls sind eine Schicht; gezählt werden *unabhängige* nötige Fehlschläge, nicht Produkte
+* ❌ „Defense in Depth betrifft den Netzwerkperimeter" -- die NSA-Fassung stellt People und Operations neben Technology
+* ❌ „Es geht nur um Prävention" -- Erkennung, Reaktion und Wiederherstellung sind Schichten
+* ❌ „Zero Trust hat es ersetzt" -- Zero Trust nimmt der Netzposition das Vertrauen; es sagt nicht, wie viele unabhängige Controls eine Operation braucht
+* ✓ „Benenne jede Schicht, sage, was sie fängt, wenn die vorige versagt, und zeige, dass beide nicht korreliert sind" -- die Form, die den Begriff bedeutungsvoll macht
+====
+
+== *Kritik*:
+
+* *Die Literatur definiert den Begriff und hört dann auf.* Phil Venables hält der Fachliteratur vor, überhaupt keine Entwurfsprinzipien zu liefern: "There is a huge number of possible arrangements of controls to achieve defense in depth with little in the way of principles to guide us in how controls should be arrayed." Zu den Standardtexten: "Most of the content is essentially a variant of the definition I just gave, together with examples of the need to deploy multiple controls...Most of the examples are given without much discussion of why they are effective." Auch das Schweizer-Käse-Modell hält er für zu flach -- es "does not support defense in depth working at multiple dimensions from policy and governance to technical controls" -- und warnt, die lineare Lesart "leads to viewing risk and risk mitigation as a simple chain of events without being able to look at the wider system which induced the design factors that led to the event." https://www.philvenables.com/post/defense-in-depth[Venables, „Defense in Depth"] (21. Mai 2022).
+* *Als Einkaufsliste gelesen, erzeugt es das Gegenteil von Sicherheit.* Armin Recha benennt den Fehlermodus direkt: „Der zentrale Denkfehler vieler Security-Strategien liegt darin, Defense in Depth als Einkaufsliste zu betrachten." Und zum Ergebnis: „Im schlimmsten Fall entsteht eine trügerische Sicherheit. Formal sind alle notwendigen Komponenten vorhanden, operativ fehlt jedoch die Fähigkeit, Angriffe sauber einzuordnen und kontrolliert zu reagieren." https://www.security-insider.de/defense-in-depth-integration-resilienz-security-architekturen-a-21c61d9d2fe7f7a10fc504d970587f5c/[Recha, „Defense in Depth: Integration statt Einkaufsliste für Resilienz", _Security-Insider_] (8. April 2026). Recha ist Regional Vice President DACH bei Fastly, der Beitrag ist also Herstellerargumentation -- der Einwand trägt für sich, die Rahmung ist interessiert.
+* *Der Personalaufwand ist der praktische Einwand.* Jochen Koehler hält die Strategie in der gelebten Form für die meisten Organisationen unerreichbar: „Ohne massiven personellen Aufwand können die allerwenigsten Unternehmen diesen Ansatz praktisch und vor allem erfolgreich umsetzen", und: „Unternehmen müssen begreifen, dass mehr Tools nicht zwangsläufig mehr Sicherheit bedeuten." https://www.iavcworld.de/security/9443-defense-in-depth-klingt-gut-aber-ist-es-das-auch.html[Koehler, „Defense in depth: Klingt gut, aber ist es das auch?", _iavcworld_] (21. November 2023). Koehler ist VP EMEA Sales bei Ontinue; derselbe Vorbehalt.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Das NSA-Papier existiert nur noch im Internet Archive -- und trägt kein Datum.* Die nsa.gov-URL, unter der es erschien, ist tot; das fünfseitige Dokument ist über einen Wayback-Machine-Snapshot vom 11. April 2016 abrufbar (`web.archive.org/web/20160411062620/https://www.nsa.gov/ia/_files/support/defenseindepth.pdf`). Die Zitate oben stammen aus dieser Datei. Das vielfach genannte „um 2000" ist eine Sekundärangabe: Das Dokument selbst druckt kein Datum, keine Version, keinen Revisionsstand. Wer es als datierten Standard zitiert, zitiert etwas, was das Papier nicht sagt.
+* *Das Benennen ergänzt Schichten, die ohne Anker fehlen.* Gemessen auf `claude-haiku-4-5` am 3. Oktober 2026 an einer Dokumentenrendering-Aufgabe: Mit genanntem Anker erzeugten zwei von zwei Läufen eine gesandboxte Vorschau-Darstellung und eine ausdrücklich geschichtete Zerlegung; ohne Anker null von zwei.
+* *Die Prämisse kommt nicht mit dem Namen.* In derselben Messung erschien „assume breach" nur in einem der beiden Läufe mit Anker. Die Forderung nach Unabhängigkeit und angenommenem Versagen ist im Prior also nicht verlässlich -- darum steht sie in diesem Eintrag unter Kernkonzepte und wird nicht dem Modell überlassen.

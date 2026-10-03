@@ -1,0 +1,62 @@
+= Keep a Changelog
+:categories: documentation, development-workflow
+:proponents: Olivier Lacan
+:roles: technical-writer, software-developer, team-lead
+:tags: Keep a Changelog, keepachangelog, CHANGELOG.md, changelog, release notes, Unreleased, Added Changed Deprecated Removed Fixed Security, ISO 8601, reverse chronological, curated changelog
+:related: semantic-versioning, conventional-commits, inverted-pyramid-style
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Keep a Changelog, the changelog convention published at keepachangelog.com
+
+Also known as:: the `CHANGELOG.md` convention, keepachangelog format, the Added/Changed/Fixed format
+
+[discrete]
+== *Core Concepts*:
+
+The Reader Is a Person:: The first guiding principle is the whole argument: "Changelogs are _for humans_, not machines." Everything else in the convention follows from choosing an audience.
+
+Six Change Types, No More:: Quoted exactly as the standard prints them -- `Added` for new features; `Changed` for changes in existing functionality; `Deprecated` for soon-to-be removed features; `Removed` for now removed features; `Fixed` for any bug fixes; `Security` in case of vulnerabilities. "Breaking Changes" is *not* one of them; a breaking change appears under `Changed` or `Removed`, and the break is signalled by the version number.
+
+The Remaining Guiding Principles:: "There should be an entry for every single version." "The same types of changes should be grouped." "Versions and sections should be linkable." "The latest version comes first." "The release date of each version is displayed." Adherence to Semantic Versioning should be mentioned.
+
+`[Unreleased]` Sits at the Top:: Version 2.0.0 states the mechanics: "Keep an `Unreleased` section at the top to collect upcoming changes. It shows readers what to expect, and at release time you move its contents into a new version." It is the one section that makes the convention sustainable, because entries get written while the change is fresh.
+
+ISO Dates, Largest Unit First:: "Use the `YYYY-MM-DD` format. It orders from the largest unit to the smallest, avoids the confusion of regional date formats, and is an ISO standard." So: `## [1.2.0] - 2026-10-03`.
+
+The Convention Rejects Generated Changelogs, Explicitly:: Version 1.1.0 puts it bluntly: "Using commit log diffs as changelogs is a bad idea: they're full of noise." Version 2.0.0 restates the position as a division of labour -- "machines can draft, but humans curate" -- and keeps CI "in a supporting role" for "mechanical tasks: move the Unreleased section into a dated version at release time, check that the file is formatted correctly".
+
+[discrete]
+== *When to Use*:
+
+* Writing or restructuring a `CHANGELOG.md` for a library or product with external users
+* Pairing with `semantic-versioning`, which the convention asks you to mention and which supplies the version numbers the sections are keyed on
+* Settling the argument about what belongs in a release entry: notable user-visible change, yes; internal refactor and typo fix, no
+* Reviewing a release process in which the changelog is a `git log` dump, and the question is whether anyone reads it
+* Asking an LLM for release notes, where naming the convention is what produces the correct six categories rather than a plausible-looking set
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "`Breaking Changes` is one of the standard sections" -- it is not; the six types are fixed, and this is the single most common error
+* ❌ "Keep a Changelog is a tool" -- it is a convention for a plain text file; the tools are other projects
+* ❌ "The changelog is generated from the commit log" -- the convention says the opposite in both published versions
+* ❌ "Every commit needs an entry" -- only notable changes do; the curation is the work
+* ✓ "Machines can draft, humans curate" -- the standard's own formulation of where automation stops
+====
+
+== *Criticism*:
+
+* *The opposing position is held openly by the Conventional Commits specification, in its own words.* Its stated benefits list opens with "Automatically generating CHANGELOGs." and "Automatically determining a semantic version bump (based on the types of commits landed)." That is the claim Keep a Changelog denies: that a structured commit history converts into a changelog without a person in the loop. https://www.conventionalcommits.org/en/v1.0.0/[Conventional Commits 1.0.0]. The tool ecosystem built on it -- semantic-release, release-please, Changesets, git-cliff -- is named on the Keep a Changelog 2.0.0 page itself: "A convention such as Conventional Commits, with tools such as semantic-release, release-please, Changesets, and git-cliff, reads structured commits to choose the next version and draft a changelog."
+* *Keep a Changelog's answer, and the sentence the argument turns on.* "A commit and a changelog entry are written for different people, and one does not convert cleanly into the other." https://keepachangelog.com/en/2.0.0/[Keep a Changelog 2.0.0]. Whether that holds is an empirical question about your audience, not a settled one -- for an internal library whose only readers are the contributors, the two audiences coincide and the objection loses its force.
+* *No named critic of the convention itself was found.* Searched in English and German; the material that reads as criticism is either pseudonymous forum comment or vendor content, neither of which this catalog cites. The live disagreement is the generate-versus-curate one above, and both sides of it are on the record.
+
+[discrete]
+== *Current Status*:
+
+* *Two published versions, and the site's front page does not point at the newer one.* Version 2.0.0 was published on 7 June 2026, but keepachangelog.com still links "Continue to Keep a Changelog" to `/en/1.1.0/`. Quote the format safely; quote a version number carefully. https://keepachangelog.com/en/1.1.0/[1.1.0] -- https://keepachangelog.com/en/2.0.0/[2.0.0]. Created and maintained by Olivier Lacan, designed by Tyler Fortune.
+* *The format itself did not drift.* The six change types, the `[Unreleased]` section, `YYYY-MM-DD` dates and latest-version-first are identical in 1.1.0 and 2.0.0. What 2.0.0 adds is the explicit stance on automation.
+* *The anchor buys correctness, not recall.* Two of four no-anchor baselines on `claude-haiku-4-5` named the convention unprompted -- and then listed the wrong sections; one produced "Breaking Changes, New Features, Fixed, Deprecated", which is not the standard's set. Naming the term produced all six canonical types plus `[Unreleased]`. This is a dense prior whose details are commonly misremembered, which is exactly where naming pays.

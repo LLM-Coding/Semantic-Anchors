@@ -1,0 +1,66 @@
+= Connextra User Story Format
+:categories: requirements-engineering
+:proponents: Connextra team, Mike Cohn
+:roles: product-owner, business-analyst, requirements-engineer, team-lead
+:tags: Connextra, Connextra User Story Format, User-Story-Schablone, Story-Template, Als ich möchte damit, Rolle Ziel Nutzen, dreiteilige Schablone, Rachel Davies, Mike Cohn, User Story, Story Card
+:related: invest, user-story-mapping, jobs-to-be-done, bdd-given-when-then, cockburn-use-cases
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Connextra User Story Format -- die dreiteilige User-Story-Schablone, entstanden bei Connextra in London
+
+Auch bekannt als:: die User-Story-Schablone, das dreiteilige Story-Template, das „As a … I want … so that …"-Format, Rolle-Ziel-Nutzen
+
+[discrete]
+== *Kernkonzepte*:
+
+Immer den qualifizierten Namen nennen:: Verwende „Connextra User Story Format", nie den bloßen Firmennamen. Der bloße Name löst in schwächeren Modellen nicht auf dieses Konzept auf -- die Messung steht unter Aktueller Stand. Der qualifizierte String ist der Anchor; „Connextra" allein ist eine Falle.
+
+Drei Felder, ein Satz:: *As a* `<role>`, *I want* `<goal or capability>`, *so that* `<benefit>`. Mike Cohn schreibt das Gerüst als "As a …, I … so that …." -- wer, was, warum. Das dritte Feld fällt am häufigsten weg und ist das einzige, das den Grund trägt, warum die Arbeit sich lohnt.
+
+Eine Form, kein Qualitätsmaßstab:: `invest` beurteilt, ob eine Story gut ist -- independent, negotiable, valuable, estimable, small, testable. Dieser Anchor benennt die *Gestalt* des Satzes. Eine Story kann alle drei Felder füllen und an jedem INVEST-Buchstaben scheitern.
+
+Der Satz ist das Versprechen eines Gesprächs, nicht die Anforderung:: Die Karte existiert, damit darüber geredet wird. Genau auf diesen Punkt drücken die Kritiker der Schablone am stärksten -- er gehört zum Konzept, er ist kein Einwand dagegen.
+
+Platz unter den Nachbarn:: Die Connextra-Form schreibt die Story; `bdd-given-when-then` schreibt ihre Akzeptanzkriterien; `user-story-mapping` ordnet viele Stories entlang der Nutzerreise; `jobs-to-be-done` und die Job Story bieten einen anderen Satz mit anderer Analyseeinheit.
+
+Der zitierfähige Name:: Die meisten Praktiker kennen die Schablone ohne Namen. „Connextra" macht sie belegbar -- ein bestimmtes Team in einer bestimmten Londoner Firma in den frühen 2000ern statt anonymer Agile-Folklore.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Wenn Stakeholder-Notizen zu Backlog-Einträgen werden und das Nutzen-Feld prüft, ob überhaupt jemand weiß, warum der Eintrag existiert
+* Bei der Durchsicht eines Backlogs nach Stories, deren Rollenfeld „System" oder „Entwickler" sagt -- ein verlässliches Zeichen, dass der Eintrag eine Aufgabe ist
+* Beim Einführen der Form in ein Team, das neu mit Stories arbeitet: als Lernhilfe mit ausdrücklichem Ausstieg (siehe Kritik)
+* Wenn ein LLM Backlog-Einträge entwerfen soll: der qualifizierte Begriff erzwingt die dreiteilige Gestalt. In einer Maintainer-Backlog-Aufgabe ohne jede User Story legte das Benennen die Schablone über die Antwort
+* Wenn bewusst zwischen dieser Form und einer Job Story entschieden werden soll, statt per Voreinstellung
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Connextra ist ein Coding-Kata" -- es ist eine Londoner Softwarefirma; genau diese Konfabulation erzeugen schwächere Modelle aus dem bloßen Namen
+* ❌ „Connextra-Format und INVEST sind dasselbe" -- das eine ist die Form des Satzes, das andere eine Qualitätsprüfung am Ergebnis
+* ❌ „Eine Story ist der Satz auf der Karte" -- die Karte steht für ein Gespräch; genau auf diese Lesart zielt Jeff Pattons Einwand
+* ❌ „Alles im Backlog muss in die Schablone passen" -- Mike Cohn, der sie bekannt gemacht hat, sagt ausdrücklich das Gegenteil (siehe Kritik)
+* ❌ „Als System möchte ich …" -- kein Begünstigter, also kein Nutzen, der sich lohnt zu schreiben; der Eintrag ist eine Aufgabe
+* ✓ „Es ist die übliche dreiteilige Form einer User Story, und ihr Urheber ist belegbar" -- trifft zu und erklärt, warum sie neben `invest` gehört und nicht hinein
+====
+
+== *Kritik*:
+
+* *Jeff Patton: Die Schablone hat Stories zu Anforderungen gemacht.* Zur Veröffentlichung von _User Story Mapping_ beschreibt Patton den Zweck des Buches als "saving stories from the template zombies (that have turned them into yet another annoying way to express software requirements), and instead having really high-fidelity conversations about how our product helps people." https://jpattonassociates.com/jeff-pattons-book-released-user-story-mapping/[Patton, "Jeff Patton's Book Released: User Story Mapping"] (30. Januar 2015). Der Einwand lautet nicht, die Form sei falsch, sondern das Ausfüllen habe das Gespräch ersetzt, das sie auslösen sollte.
+* *Alan Klement und Intercom: drei strukturelle Mängel und ein anderer Satz.* Klement nennt als Probleme des User-Story-Formats "They use Personas.", "They couple implementation with motivations and outcomes." und "They ignore context, situations, and anxieties." Zur Kopplung: Scheitert ein Feature, dann "because implementation was coupled with motivations and outcomes. Because of the coupling, how can anyone know what was wrong?" Sein Ersatz ist die Job Story, "When [situation]…[motivation]…[expected outcome]." https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/[Klement, "Designing Features Using Job Stories", Inside Intercom] (23. Dezember 2013). Siehe `jobs-to-be-done`.
+* *Chris Matts: den Wert nach vorn.* Matts' Feature Injection dreht die Reihenfolge, sodass der Geschäftsnutzen den Satz eröffnet -- Liz Keogh druckt seine Schablone als "In order to <deliver some business benefit> <these people> will need <these features>." Der Einwand betrifft die Betonung: Die Connextra-Form beginnt beim Stakeholder, der Nutzen kommt zuletzt und ist das Feld, das am leichtesten leer bleibt. https://lizkeogh.com/2008/09/10/feature-injection-and-handling-technical-stories/[Keogh, "Feature Injection and handling technical stories"] (10. September 2008).
+* *Mike Cohn, der die Schablone bekannt gemacht hat, begrenzt sie selbst.* "When expressing something in the standard user story template doesn't make sense, don't use that template." Er warnt, "too many stories are written as just 'as a user…'", was auf ein System hindeuten könne, das für User Stories schlecht geeignet ist, und zum Zwang zur Konformität: "The last thing I need would be a Scrum Master insisting I write it to follow a template." https://www.mountaingoatsoftware.com/agile/why-the-three-part-user-story-template-works-so-well[Cohn, "User Story Template: What It Is and Why It Works So Well", Mountain Goat Software].
+* *Die deutschsprachige Kritik trifft denselben Punkt.* Die Produktwerker: „Aber wer alles in das Format „Als (Nutzer) möchte ich…, damit …" zwängt, läuft Gefahr, das Denken zu verengen." https://produktwerker.de/fehler-bei-der-arbeit-mit-user-stories/[Die Produktwerker, „Die fünf größten Fehler bei der Arbeit mit User Stories"] (Juli 2025).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Der bloße Firmenname konfabuliert, und zwar ohne jede Absicherung.* Auf die Frage „What is Connextra?" antwortete `claude-haiku-4-5` im Reinraum, es sei "a software development kata (coding exercise) created by Emily Bache", und beschrieb anschließend eine Refactoring-Übung, die es nicht gibt. Eine erfundene Antwort unter selbstsicherer Überschrift. Also die qualifizierte Form verwenden.
+* *Die qualifizierte Form erreicht das Konzept.* „The Connextra user story format" erzeugte auf derselben schwachen Stufe die richtige Schablone, datierte sie auf 2001 und schrieb sie dem Connextra-Team zu.
+* *Team und Firma sind belegbar, das Jahr ist weniger fest, als es gedruckt wird.* Mike Cohn schreibt, die Schablone "originated with agile coach Rachel Davies at a UK company, Connextra, in the early 2000s". Seb Rose nennt dieselbe Person und denselben Ort: "The challenges teams had writing user stories led to the creation of the _Connextra template_ by Rachel Davies in the early 2000s." https://cucumber.io/blog/bdd/user-stories-are-not-the-same-as-features/[Rose, "User stories and BDD (part #1)"] (31. Oktober 2019). Beide Quellen sagen „early 2000s"; das vielfach wiederholte Jahr 2001 stand in keiner von beiden, und Davies schreibt die Erfindung dem Connextra-Team zu, nicht sich selbst. Also dem Team zuschreiben und „um 2001" sagen, statt es zu behaupten.
+* *Bekannt gemacht, nicht erfunden, von Cohn.* _User Stories Applied_ (2004) und _Agile Estimating and Planning_ sind der Grund, warum die Form fast überall gilt.

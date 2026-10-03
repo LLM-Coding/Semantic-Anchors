@@ -1,0 +1,67 @@
+= Railway Oriented Programming
+:categories: design-principles
+:proponents: Scott Wlaschin
+:roles: software-developer, software-architect
+:tags: ROP, railway oriented programming, two-track, success track, failure track, Result, Either, errors as values, bind, flatMap, map, mapError, short-circuiting, F#, Rust, Wlaschin
+:related: design-by-contract, domain-driven-design, postels-law, code-smells
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Railway Oriented Programming, Scott Wlaschin's metaphor for composing functions that can fail — NDC talk and _F# for Fun and Profit_ article, 2014, extended in _Domain Modeling Made Functional_ (2018)
+
+Also known as:: ROP, two-track programming, the railway metaphor, Result-based error handling, errors as values
+
+[discrete]
+== *Core Concepts*:
+
+A Composition Style, Not a Library:: ROP names the shape of the code: two tracks, a switch at every step, and a composition operator that keeps them connected. It is not a package you install. Naming ROP in a Java or TypeScript codebase asks for that shape, implemented with whatever Either-style type is already there.
+
+Two Tracks and a Switch:: One track carries success, one carries failure. Each step is a railway switch: it either keeps the value on the happy path or diverts it to the error track. Once on the failure track, later steps are bypassed — short-circuiting — so the pipeline reads top to bottom with no nested conditionals counting failure cases.
+
+Errors Are Values, Not Control Flow:: Failures become part of the return type instead of an invisible second exit from the function. A signature that returns `Result` tells the caller that failure is expected and has to be handled; a signature that throws tells the caller nothing.
+
+The Combinators Are the Vocabulary:: `bind` (also `flatMap`, `andThen`) lifts a switch function into a two-track function. `map` lifts an ordinary one-track function onto the success track. `mapError` transforms the failure track. Naming these is usually the fastest way to get a pipeline instead of a cascade of early returns.
+
+Cross-Language Equivalents:: F# `Result<'Success, 'Failure>`; Rust `Result<T, E>` with `?` for the short-circuit; Scala `Either` and `Try`, Vavr's `Either` and `Try` in Java, `fp-ts` and `neverthrow` in TypeScript, `Arrow` in Kotlin, Go's explicit `(value, err)` pair as the non-monadic cousin. The metaphor is F#-born, so the translation has to be named explicitly in other languages.
+
+Short-Circuit Versus Accumulate:: Pipeline steps short-circuit — the first failure wins, which is right when step two depends on step one. Validation usually wants the opposite: collect every error and report them together. That is an applicative, not a monadic bind, and conflating the two produces forms that report one field at a time.
+
+Domain Errors Are Modelled, Not Stringified:: The failure track carries a designed type — typically a discriminated union of the failures this operation can actually have — not a string. This is where ROP meets `domain-driven-design`: the error cases are part of the domain model.
+
+Boundaries, Not Everywhere:: The style belongs where failure is expected and part of the contract — parsing, validation, use-case orchestration (`postels-law` at the inbound edge). Inside a pure calculation that cannot fail, a `Result` adds ceremony and nothing else.
+
+[discrete]
+== *When to Use*:
+
+* Use-case orchestration where several fallible steps compose in sequence: validate, check uniqueness, persist, notify
+* Parsing and validation at a boundary, where the caller must be told what was wrong
+* Replacing a chain of try/catch blocks whose only purpose is to translate one exception into another
+* Making expected failure visible in signatures, so a reviewer or a model can see which calls need handling
+* Naming the style across languages when the team's type is `Either`, `Try` or a hand-rolled `Result`, and you want the two-track shape rather than that library's idioms
+* Alongside `design-by-contract`: contracts push failure to pre-conditions, ROP carries it in the return type — the choice between them is worth making deliberately
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Railway Oriented Programming is an F# library" — it is a composition style; `Result` is a type, and the style predates and outlives any one package
+* ❌ "Use Result for every error" — Wlaschin wrote a whole post against exactly that; infrastructure failures and programmer bugs are not domain errors
+* ❌ "ROP replaces exceptions" — it replaces exceptions for *expected* failures only; panics and unrecoverable faults stay outside the two tracks
+* ❌ "The failure track is for error messages" — it carries a modelled type; a string failure track throws away the information the caller needs to branch on
+* ❌ "Bind and applicative are interchangeable" — bind short-circuits, applicative accumulates; validation usually needs the second
+* ✓ "Two tracks, a switch per step, and a modelled failure type at the boundaries" — that is the anchor, and it transfers across languages
+====
+
+== *Criticism*:
+
+* *Wlaschin wrote the counterweight himself, and it is the sharpest criticism available.* Five years after the talk that popularised the metaphor, he published "Against Railway-Oriented Programming" (20 December 2019). His opening concession: "I do think it is often used thoughtlessly, especially if it's a shiny new technique that you've just added to your toolbox." He rules out the substitution most readers make: "Don't reinvent 'try-catch'!" He draws the boundary by purpose — "Result is only for expected control-flow, not for unexpected situations" — which excludes the cases where you want a stack trace. And he rejects the reflex use inside a module: "If you are doing some complex control flow but the logic is hidden from the outside world, don't use Result just for the sake of it." https://fsharpforfunandprofit.com/posts/against-railway-oriented-programming/[Wlaschin, "Against Railway-Oriented Programming"].
+* *No second named critic found in English or German.* Searched both languages for documented objections by a named author. What exists in German is advocacy rather than criticism: Stefan Macke, https://www.heise.de/ratgeber/Railway-Oriented-Programming-in-Java-3598438.html["Railway Oriented Programming in Java"], heise (20 January 2017), presents the style for Java, and the critical pages of that article sit behind the heise+ paywall, so no passage from them is quoted here. The widely repeated objections — nested containers when a second monad is already in play, verbosity in languages without `do`-notation or `?` — circulate in forum threads without a citable author, so they are left out rather than attributed to nobody.
+
+[discrete]
+== *Current Status*:
+
+* *Wlaschin's own caveats are now part of the canon.* The 2014 talk and the 2019 "Against ROP" post are both current on _F# for Fun and Profit_, which means the term's definitive source carries its own limits. Citing ROP without those limits quotes half of it.
+* *Host languages have made room for it, on their own schedule.* Kotlin is the documented case: "In versions before Kotlin 1.5 `Result<T>` cannot be used as a direct result type of Kotlin functions, properties of `Result` type are also restricted", because "future versions of Kotlin might wish to expand and/or change semantics of functions that return `Result` type" — followed by "**UPDATE**: These limitations are lifted since Kotlin 1.5." https://github.com/Kotlin/KEEP/blob/master/proposals/stdlib/result.md[Kotlin KEEP, `proposals/stdlib/result.md`]. Rust's `?` operator and the Either-style libraries in Java and TypeScript are the other half of the picture: the style is available everywhere now, with different ergonomics.
+* *Naming the term produces the type; one baseline reached for it unprompted.* Measured on `claude-haiku-4-5` in a clean room on 2026-10-03: on a 900-line data job whose only failure signal was a log line reading `None`, one of two baselines reached for `Either` on its own. Naming the term produced an explicit `Result` type and the success/failure track. Wlaschin 2014 is attributed correctly on the weak tier with high confidence.
