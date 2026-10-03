@@ -46,5 +46,13 @@
     "width": 24,
     "height": 24,
     "imgClass": "h-6 w-auto rounded"
+  },
+  {
+    "id": "ccug",
+    "kind": "adoption",
+    "href": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide",
+    "alt": "Claude Code Ultimate Guide",
+    "label": "Claude Code Ultimate Guide (EN)",
+    "titleKey": "footer.ccugAlt"
   }
 ]

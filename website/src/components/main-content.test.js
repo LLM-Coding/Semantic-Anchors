@@ -21,7 +21,10 @@ describe('renderMain — appearances strip', () => {
     const html = renderMain()
     for (const { href, logo } of APPEARANCES) {
       expect(html).toContain(`href="${href}"`)
-      expect(html).toContain(logo)
+      // The logo is optional: an adoption entry points at a project whose
+      // mark we are not licensed to show. Every entry still has to appear by
+      // href, so adding one to the JSON cannot leave it out of the strip.
+      if (logo) expect(html).toContain(logo)
     }
   })
 

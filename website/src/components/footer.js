@@ -73,6 +73,10 @@ export function renderFooter(version) {
             <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.featuredIn">${i18n.t('footer.featuredIn')}</span>
             ${renderAppearances('press', import.meta.env.BASE_URL, (k) => i18n.t(k))}
           </div>
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+            <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.adaptedIn">${i18n.t('footer.adaptedIn')}</span>
+            ${renderAppearances('adoption', import.meta.env.BASE_URL, (k) => i18n.t(k))}
+          </div>
         </div>
       </div>
     </footer>

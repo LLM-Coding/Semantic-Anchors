@@ -636,7 +636,9 @@ function buildAppearancesMarkup(tr) {
       <section class="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
         <p>${escapeHtml(tr['footer.featuredIn'] || '')}: ${group('press')}. ${escapeHtml(
           tr['footer.asSeenOn'] || ''
-        )}: ${group('appearance')}.</p>
+        )}: ${group('appearance')}. ${escapeHtml(
+          tr['footer.adaptedIn'] || ''
+        )}: ${group('adoption')}.</p>
       </section>`
 }
 
