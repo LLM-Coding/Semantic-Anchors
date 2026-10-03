@@ -626,17 +626,24 @@ function buildAppearancesMarkup(tr) {
     APPEARANCES.filter((entry) => entry.kind === kind)
       .map(
         (entry) =>
+          // The description rides along as sr-only text, exactly as the app
+          // renders it. Emitting only the label would make the static page
+          // the poorer of the two for a screen reader.
           `<a href="${entry.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(
             entry.label
-          )}</a>`
+          )}<span class="sr-only"> — ${escapeHtml(tr[entry.titleKey] || '')}</span></a>`
       )
       .join(', ')
 
   return `
-      <section class="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+      <section class="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8" aria-label="${escapeHtml(
+        tr['footer.appearancesLabel'] || ''
+      )}">
         <p>${escapeHtml(tr['footer.featuredIn'] || '')}: ${group('press')}. ${escapeHtml(
           tr['footer.asSeenOn'] || ''
-        )}: ${group('appearance')}.</p>
+        )}: ${group('appearance')}. ${escapeHtml(
+          tr['footer.adaptedIn'] || ''
+        )}: ${group('adoption')}.</p>
       </section>`
 }
 

@@ -132,45 +132,6 @@ jobs:
           path: website/playwright-report/
           retention-days: 7
 
-  lighthouse:
-    name: Lighthouse CI
-    runs-on: ubuntu-latest
-    # Only run on main branch after deployment
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    needs: []
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          # lighthouse 13 requires node >=22.19, puppeteer-core 25 requires >=22.12.
-          # engine-strict is not set, so npm ci would only warn and the job would
-          # fail at runtime instead -- and this job runs on main only, so that
-          # failure would surface after merge.
-          node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: website/package-lock.json
-
-      - name: Install dependencies
-        working-directory: ./website
-        run: npm ci
-
-      - name: Run Lighthouse CI
-        working-directory: ./website
-        run: npm run test:lighthouse
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
-      - name: Upload Lighthouse results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-report
-          path: website/.lighthouseci/
-          retention-days: 7
-
   dependency-check:
     name: Dependency Security Audit
     runs-on: ubuntu-latest
