@@ -229,16 +229,45 @@ html {
 }
 
 .anchor-card:hover,
-.anchor-card:focus {
+.anchor-card:focus-within {
   @apply border-blue-500 dark:border-blue-400;
   @apply shadow-lg;
   @apply transform -translate-y-1;
   @apply outline-none;
 }
 
-.anchor-card:focus-visible {
+.anchor-card:has(.anchor-card-open:focus-visible) {
   @apply ring-2 ring-blue-500 ring-offset-2;
   @apply dark:ring-blue-400 dark:ring-offset-gray-900;
+}
+
+/* #791: the card is no longer role="button" -- it contains the copy buttons
+   and the edit link, and a button role would expose them as presentational.
+   The title is the single primary control instead, stretched over the card
+   by a pseudo-element so the whole surface still opens the anchor. */
+.anchor-card-open {
+  @apply text-left bg-transparent border-0 p-0 m-0;
+  @apply cursor-pointer;
+  /* The button must not restyle the heading it sits in. */
+  font: inherit;
+  color: inherit;
+}
+
+.anchor-card-open::after {
+  content: '';
+  @apply absolute inset-0 z-0;
+}
+
+.anchor-card-open:focus {
+  @apply outline-none;
+}
+
+/* Above the stretched pseudo-element, so they remain clickable. */
+.anchor-card-header .flex,
+.anchor-card .anchor-edit-btn,
+.anchor-card .anchor-copy-keyword-btn,
+.anchor-card .anchor-copy-link-btn {
+  @apply relative z-10;
 }
 
 .anchor-card-header {

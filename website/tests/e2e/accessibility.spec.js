@@ -14,11 +14,7 @@ test.beforeEach(async ({ page }) => {
 
 // Known violations, each excluded for one rule on one selector only and
 // tracked in an issue. Remove the entry when the issue is fixed.
-const KNOWN_VIOLATIONS = [
-  // Cards are role="button" and contain copy buttons and the edit link.
-  // https://github.com/LLM-Coding/Semantic-Anchors/issues/791
-  { rule: 'nested-interactive', selector: '.anchor-card' },
-]
+const KNOWN_VIOLATIONS = []
 
 // Drops nodes covered by KNOWN_VIOLATIONS and reports which entries matched.
 // Matching runs in one page round trip, because the catalog yields one node
