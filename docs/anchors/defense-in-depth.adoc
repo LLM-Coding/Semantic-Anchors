@@ -1,0 +1,63 @@
+= Defense in Depth
+:categories: software-architecture, testing-quality
+:proponents: US National Security Agency
+:roles: software-architect, devops-engineer
+:tags: defense in depth, defence in depth, layered security, layered defense, independent layers, diversity of defense, assume breach, Swiss cheese model, blast radius, compartmentalization, people technology operations
+:related: stride, owasp-top-10, fmea, poka-yoke, least-privilege
+:tier: 2
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Defense in Depth -- military doctrine adapted to information security; the reference text for the information-assurance reading is the NSA paper "Defense in Depth: A practical strategy for achieving Information Assurance in today's highly networked environments"
+
+Also known as:: layered security, layered defense, the castle model, defence in depth
+
+[discrete]
+== *Core Concepts*:
+
+Independence, Diversity, Assumed Failure:: Three conditions decide whether a set of controls is defence in depth or just a pile. *Independence*: a layer must not fail for the same reason as its neighbour. *Diversity*: different mechanisms, so one exploit does not pass through all of them. *Assumed failure*: every layer is designed on the premise that the one in front of it has already been breached. A set of correlated controls -- same vendor, same parser, same identity provider, same misconfiguration -- is one layer wearing several names. This is the part of the idea the term does not reliably carry (see Current Status), so state it rather than assume it.
+
+Nobody Owns the Phrase:: This is weaker attribution than most entries in this catalog. The concept is military doctrine -- trade space for time, make the attacker spend resources rather than stopping them at a single line -- adapted to information security. The NSA paper is the citable information-assurance formulation; the safety-engineering counterpart is James Reason's Swiss cheese model of accident causation, where the holes in individual layers only matter when they line up. This entry quotes no primary Reason text, having verified none, so it gives neither year nor page for the model.
+
+The NSA Formulation Is Not a Stack of Boxes:: The paper's organising claim is that information assurance "requires a balanced focus on three primary elements: People, Technology and Operations" -- so training, policy and incident response are layers in the same sense as a firewall. Its first recommended principle is "Defense in Multiple Places", on the reasoning that "adversaries can attack a target from multiple points using either insiders or outsiders". It calls itself a "best practices" strategy that "recommends a balance between the protection capability and cost, performance, and operational considerations".
+
+Layers Are Weighted, Not Uniform:: The same paper tells you to "specify the security robustness (strength and assurance) of each Information Assurance component as a function of the value of what's it is protecting and the threat at the point of application", with the example that "it's often more effective and operationally suitable to deploy stronger mechanisms at the network boundaries than at the user desktop". Defence in depth is therefore a budgeting argument, not an instruction to harden everything equally.
+
+Detection and Recovery Are Layers Too:: If every layer may fail, something must notice. Monitoring, alerting, incident response and backups belong in the decomposition, not as an afterthought to prevention.
+
+Relation to Least Privilege:: `least-privilege` is what makes a layer's failure survivable -- it bounds what the attacker reaches after the breach. Defence in depth is the arrangement; least privilege sizes each compartment.
+
+[discrete]
+== *When to Use*:
+
+* Designing a control set for a single risky operation -- file upload, document rendering, deserialisation, arbitrary code execution
+* Reviewing a security design for correlated failure: which two layers die to the same bug
+* Sandboxing and isolation decisions, where the question is what the next layer assumes
+* Bridging security and safety thinking next to `fmea` and `poka-yoke`
+* After a `stride` threat model, to decide how many independent controls each high-rated threat gets
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "More controls means more depth" -- correlated controls are one layer; the count is of *independent* failures required, not of products
+* ❌ "Defence in depth is about the network perimeter" -- the NSA formulation puts People and Operations alongside Technology
+* ❌ "It is only prevention" -- detection, response and recovery are layers
+* ❌ "Zero Trust replaced it" -- Zero Trust removes trust in network location; it does not say how many independent controls a given operation needs
+* ✓ "Name each layer, say what it catches when the previous one fails, and show the two are not correlated" -- the form that makes the term mean something
+====
+
+== *Criticism*:
+
+* *The sharpest charge is that the strategy fails against an adversary who cannot be removed.* Prescott Small, in a SANS/GIAC paper, argues from the breaches of RSA, HBGary and others that "Defense in Depth, as practiced, is unsustainable and the examples show that the enemy cannot be eliminated permanently", and goes further: "Knowing that Defense in Depth, as practiced, actually renders the organization more vulnerable is vital to understanding that there must be a shift in attitudes and thinking to better address the risks faced in a more effective manner." His replacement is a posture he calls Sustained Cyber-Siege Defense. https://www.sans.org/white-papers/33896/[Small, "Defense in Depth: An Impractical Strategy for a Cyber World"] (SANS Institute, 20 February 2012). The paper attacks the practice rather than the principle -- which is the same move the independence requirement above makes, arrived at from the other side.
+* *The literature defines it and then stops.* Phil Venables, writing on his own site, charges that the body of guidance offers no design principles at all: "There is a huge number of possible arrangements of controls to achieve defense in depth with little in the way of principles to guide us in how controls should be arrayed." On the standard texts: "Most of the content is essentially a variant of the definition I just gave, together with examples of the need to deploy multiple controls...Most of the examples are given without much discussion of why they are effective." He also finds the Swiss cheese model too flat -- it "does not support defense in depth working at multiple dimensions from policy and governance to technical controls" -- and warns that the linear reading "leads to viewing risk and risk mitigation as a simple chain of events without being able to look at the wider system which induced the design factors that led to the event." https://www.philvenables.com/post/defense-in-depth[Venables, "Defense in Depth"] (21 May 2022).
+* *Read as a shopping list, it produces the opposite of security.* Armin Recha names the failure mode directly: "Der zentrale Denkfehler vieler Security-Strategien liegt darin, Defense in Depth als Einkaufsliste zu betrachten" -- the central error is treating defence in depth as a shopping list. And on what that yields: "Im schlimmsten Fall entsteht eine trügerische Sicherheit. Formal sind alle notwendigen Komponenten vorhanden, operativ fehlt jedoch die Fähigkeit, Angriffe sauber einzuordnen und kontrolliert zu reagieren" -- at worst a deceptive sense of security, every required component formally present while the ability to classify and answer an attack is missing. https://www.security-insider.de/defense-in-depth-integration-resilienz-security-architekturen-a-21c61d9d2fe7f7a10fc504d970587f5c/[Recha, "Defense in Depth: Integration statt Einkaufsliste für Resilienz", _Security-Insider_] (8 April 2026). Recha is Regional Vice President DACH at Fastly, so read the piece as a vendor's argument -- the objection stands on its own, the framing is interested.
+* *The staffing cost is the practical objection.* Jochen Koehler argues the strategy is unreachable for most organisations as practised: "Ohne massiven personellen Aufwand können die allerwenigsten Unternehmen diesen Ansatz praktisch und vor allem erfolgreich umsetzen", and "Unternehmen müssen begreifen, dass mehr Tools nicht zwangsläufig mehr Sicherheit bedeuten" -- without massive staffing very few organisations can run the approach successfully, and more tools do not automatically mean more security. https://www.iavcworld.de/security/9443-defense-in-depth-klingt-gut-aber-ist-es-das-auch.html[Koehler, "Defense in depth: Klingt gut, aber ist es das auch?", _iavcworld_] (21 November 2023). Koehler is VP EMEA Sales at Ontinue; same caveat.
+
+[discrete]
+== *Current Status*:
+
+* *The NSA paper survives only in the Internet Archive, and it carries no date.* The nsa.gov URL it was published under is dead; the five-page document is retrievable through a Wayback Machine snapshot captured on 11 April 2016 (`web.archive.org/web/20160411062620/https://www.nsa.gov/ia/_files/support/defenseindepth.pdf`). The quotations above come from that file. The commonly repeated date of "around 2000" is a secondary claim: the document itself prints no date, version or revision. Anyone citing it as a dated standard is citing something the paper does not say.
+* *Naming it adds layers the baseline omits.* Measured on `claude-haiku-4-5` on 3 October 2026 against a document-rendering task: with the anchor named, two of two runs produced sandboxed preview rendering and an explicitly layered decomposition; without it, zero of two did.
+* *The premise does not come with the name.* In the same measurement, "assume breach" appeared in only one of the two anchored runs. The independence and assumed-failure requirement is therefore not reliable in the prior, which is why this entry states it in Core Concepts instead of leaving it to the model.

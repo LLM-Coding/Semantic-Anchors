@@ -4,6 +4,21 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ## Testing & Quality
 
+### Arrange-Act-Assert (AAA)
+- **Also known as:** 3A, Setup-Exercise-Verify, Build-Operate-Check
+- **Proponents:** Bill Wake, Gerard Meszaros
+- **Core:** Three blocks in one unit test: build the fixture, perform exactly one action, then check. Where Given-When-Then shapes an acceptance scenario in domain language, this shapes the body of a single test in code. Use the written-out name: the bare acronym "AAA" anchors Authentication, Authorization and Accounting instead
+
+### Test Data Builder (Pryce)
+- **Also known as:** test builder, builder-based fixture; successor to Object Mother
+- **Proponents:** Nat Pryce, Steve Freeman
+- **Core:** A builder with safe defaults and fluent `with…()` overrides, so a test states only the field it cares about and a changed constructor breaks the builder instead of two hundred tests. Introduced as the answer to Object Mother's variant explosion
+
+### OWASP ASVS (Application Security Verification Standard)
+- **Also known as:** ASVS, usually spoken with its level ("ASVS L2")
+- **Proponents:** OWASP Foundation
+- **Core:** Numbered, verifiable security requirements at three assurance levels — the testable counterpart to the Top 10's awareness list. Always name the level and the version: v5.0 (May 2025) renumbered requirements, so v4 IDs no longer match
+
 ### FMEA
 - **Also known as:** Failure Mode and Effects Analysis; FMECA with criticality analysis
 - **Proponents:** US Armed Forces (MIL-P-1629, 1949), NASA, AIAG, VDA
@@ -113,6 +128,31 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** A place where behavior can be altered without editing at that place; each seam has an enabling point (constructor parameter, classpath entry, preprocessor define) that selects which behavior executes; three types — Object (polymorphism/DI), Link (linker/classpath), Preprocessing (macros) — used to break hard dependencies and get legacy code under test without modifying production logic
 
 ## Software Architecture
+
+### 4+1 View Model according to Kruchten
+- **Also known as:** Kruchten's 4+1, the RUP architecture views
+- **Proponents:** Philippe Kruchten
+- **Core:** Logical, process, physical and development views, each written for a named stakeholder group, plus scenarios as the cross-check that keeps the four consistent. The stakeholder-per-view mapping is what distinguishes it from arc42 and C4; the view/viewpoint idea was generalised by IEEE/ISO/IEC 42010
+
+### Richardson Maturity Model
+- **Also known as:** RMM, the REST maturity levels; Richardson's own term was *Maturity Heuristic*
+- **Proponents:** Leonard Richardson, Martin Fowler
+- **Core:** A ladder from one endpoint for everything, through resources and HTTP verbs, to hypermedia controls. Useful as a design target ("build this to Level 2"), not as a score: Fowler, who named and numbered it, says it is "not something that should be used in some kind of assessment mechanism"
+
+### Enterprise Integration Patterns (Hohpe/Woolf)
+- **Also known as:** EIP, the messaging pattern language
+- **Proponents:** Gregor Hohpe, Bobby Woolf
+- **Core:** Sixty-five named patterns for messaging — channels, routers, translators, endpoints — with an icon notation that carried the vocabulary into Camel and Spring Integration. Event-driven architecture is the style; this is the vocabulary any messaging solution is built from
+
+### Bulkhead Pattern
+- **Also known as:** resource isolation, pool isolation; cell-based architecture at infrastructure scale
+- **Proponents:** Michael T. Nygard
+- **Core:** Cap how much of the system any one dependency can consume, so a slow partner cannot exhaust the shared pool. A circuit breaker stops calls to a failing dependency; a bulkhead limits the damage while they still run
+
+### Defense in Depth
+- **Also known as:** layered security, defence in depth; Swiss cheese model in safety engineering
+- **Proponents:** US National Security Agency
+- **Core:** Independent layers that are each assumed to fail, so a breach of one is contained by the next. The conditions are what matter and what the name does not supply on its own: independence, diversity, and assumed failure. Correlated controls stacked together are not defence in depth
 
 ### Conway's Law
 - **Also known as:** The Mirroring Hypothesis
@@ -237,6 +277,26 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Twelve principles for portable, scalable cloud-native/SaaS apps — config in env, stateless disposable processes, backing services as attached resources, strict build-release-run separation, port binding, horizontal concurrency, dev/prod parity, and logs as event streams
 
 ## Design Principles
+
+### Refactoring Catalog according to Fowler
+- **Also known as:** Fowler's refactorings, named refactorings, or one entry by name (*Extract Function*, *Move Field*)
+- **Proponents:** Martin Fowler, Kent Beck, William Opdyke
+- **Core:** Named, behaviour-preserving transformations with written mechanics, each small enough to keep the tests green. Code smells say why a change is needed; the catalog says how. Use the qualified form — the bare verb "refactor" covers any code change, including one that alters behaviour
+
+### CQS (Command-Query Separation)
+- **Also known as:** CQS; Fowler prefers "modifiers" over "commands"
+- **Proponents:** Bertrand Meyer
+- **Core:** A method either returns a value and changes nothing, or changes state and returns nothing. Asking a question must not change the answer. This is a rule for every single method, including in code that will never have two models — that is what separates it from CQRS
+
+### Railway Oriented Programming
+- **Also known as:** ROP, two-track programming, errors as values
+- **Proponents:** Scott Wlaschin
+- **Core:** Compose steps on two tracks, success and failure, so a failure short-circuits the rest instead of being thrown. Names the composition style, not a library: `Result` in F# and Rust, Either-style types elsewhere. Wlaschin wrote the counterweight himself — it is a domain-modelling tool, not a default
+
+### Principle of Least Privilege (Saltzer & Schroeder)
+- **Also known as:** PoLP, least authority (POLA), need-to-know
+- **Proponents:** Jerome H. Saltzer, Michael D. Schroeder
+- **Core:** "Every program and every user of the system should operate using the least set of privileges necessary to complete the job" (1975). It earns its keep on the artifacts nobody thinks to scope — CI tokens, IAM policies, agent tool permissions — not on questions that already name the problem
 
 ### DRY (Don't Repeat Yourself)
 - **Also known as:** DRY Principle; antonym WET ("Write Everything Twice" / "We Enjoy Typing")
@@ -586,6 +646,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Fritz B. Simon, Humberto Maturana, Gregory Bateson
 - **Core:** Introduction to systems theory and constructivism — viability vs. truth, trivial vs. non-trivial machines, second-order cybernetics (the observer is part of the observed), information as "differences that make a difference", perturbation instead of instruction
 
+### The Spectrum of Semantic Anchors
+- **Also known as:** What Qualifies as a Semantic Anchor, anchor quality criteria
+- **Proponents:** Ralf D. Müller (Semantic Anchors project)
+- **Core:** The four criteria a term must meet to work as an anchor — precise, rich, consistent, attributable — with definition depth, not subject matter, as the differentiator; use it to judge whether a candidate term will activate a framework or merely instruct
+
 ### Systemic Consulting (Heidelberg School)
 - **Also known as:** Systemische Beratung, Heidelberg Model
 - **Proponents:** Fritz B. Simon, Helm Stierlin, Gunthard Weber, Paul Watzlawick
@@ -607,6 +672,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Follow a consequence into the next consequence rather than listing more effects at the same level; first-order effects are immediate and visible, second-order effects are delayed, behavioural and often dominant; applies to inaction too
 
 ## Requirements Engineering
+
+### Connextra User Story Format
+- **Also known as:** the user story template, role-goal-benefit, "As a … I want … so that …"
+- **Proponents:** Rachel Davies, Connextra team, Mike Cohn
+- **Core:** Three parts that force a story to name who wants it and why, not just what to build. INVEST judges a story's quality; this names its form. Always say "Connextra user story format" — the bare company name is not a reliable anchor
 
 ### QFD
 - **Also known as:** Quality Function Deployment; Blitz QFD
@@ -770,6 +840,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Open with honest appreciation, raise the problem second, point out mistakes indirectly and let the other person keep their standing; ask rather than order, argue from the other person's interest, and never criticise the person in place of the work
 
 ## Documentation
+
+### Keep a Changelog
+- **Also known as:** the `CHANGELOG.md` convention, the Added/Changed/Fixed format
+- **Proponents:** Olivier Lacan
+- **Core:** A curated, human-readable release history: an `[Unreleased]` section, latest version first, ISO 8601 dates, and six change types — Added, Changed, Deprecated, Removed, Fixed, Security. Deliberately not generated from the commit log, which is the tension with Conventional Commits
 
 ### P.A.R.A. Method
 - **Also known as:** PARA Framework, Second Brain Organization System

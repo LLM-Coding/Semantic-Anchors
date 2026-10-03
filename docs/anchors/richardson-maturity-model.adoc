@@ -1,0 +1,60 @@
+= Richardson Maturity Model
+:categories: software-architecture, design-principles
+:proponents: Leonard Richardson, Martin Fowler
+:roles: software-architect, software-developer
+:tags: RMM, Richardson Maturity Model, REST, HATEOAS, hypermedia, resources, HTTP verbs, status codes, level 0, level 1, level 2, level 3, API design, maturity heuristic
+:related: postels-law, twelve-factor-app, c4-diagrams
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Richardson Maturity Model -- four levels of REST maturity for HTTP APIs. Presented by Leonard Richardson in "Justice Will Take Us Millions Of Intricate Moves", QCon San Francisco, 20 November 2008, and named and popularised by Martin Fowler, "Richardson Maturity Model: steps toward the glory of REST", 18 March 2010
+
+Also known as:: RMM, Richardson's levels, the REST maturity levels; Richardson's own talk calls it the *Maturity Heuristic*
+
+[discrete]
+== *Core Concepts*:
+
+The Four Levels:: *Level 0* -- HTTP as a transport tunnel: one endpoint, one verb, the operation named in the payload. Fowler's own description of the starting point: "The starting point for the model is using HTTP as a transport". *Level 1* -- resources: each thing gets its own URI. Richardson's phrasing in the talk: "They give each individual thing in their universe a URI." *Level 2* -- HTTP verbs and status codes used with their defined meaning: GET is safe and cacheable, PUT is idempotent, DELETE removes, and the response code carries the outcome (201, 404, 409). *Level 3* -- hypermedia controls: responses carry links to the next available actions, so the client follows links instead of constructing URIs from documentation.
+
+Use It as a Target, Not as a Label:: The model is a classification, and a classification on its own changes nothing. Two formulations make it operational. As a *target*: "design this API to Richardson Maturity Model Level 2" -- that is a concrete instruction about URI design, verb choice and status codes. As a *gap statement*: "this API sits at Level 1; name what Level 2 would change." The level number is shorthand for a set of design decisions, which is why it compresses well in a prompt.
+
+Each Level Is a Separate Design Technique:: Fowler reports Ian Robinson's reading, which is the most useful part of the model: Level 1 is divide and conquer applied to one large endpoint, Level 2 removes unnecessary variation by using a standard set of verbs, and "Level 3 introduces discoverability, providing a way of making a protocol more self-documenting." The levels are not degrees of the same thing; they are three different problems, which is why a team can genuinely want Level 2 and not Level 3.
+
+Level 2 Is Where Almost Everything Stops:: Richardson said why in the talk itself: "A lot of people settle for level two because hypermedia is difficult to understand and its value in the web service domain isn't as clear." The model's main practical value is therefore as a precise way to say what an API already does and does not do, rather than as a ladder anyone intends to climb to the top.
+
+[discrete]
+== *When to Use*:
+
+* Setting an explicit API design target before implementation -- "Level 2, and here is why not Level 3"
+* Describing an existing HTTP API in one word to another engineer or to a model, instead of listing its URI and verb conventions
+* Reviewing an API for the specific Level 2 defects: POST used for reads, 200 returned with an error body, verbs encoded in the path
+* Deciding whether hypermedia is worth its cost for a given client population, with the tradeoff named rather than implied
+* Reading REST literature, where Level 0 to Level 3 is assumed vocabulary
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Level 3 is the goal for every API" -- Richardson's own talk explains why most teams stop at Level 2, and the cost falls on clients that do not need discoverability
+* ❌ "Level 2 means RESTful" -- Roy Fielding's position is that hypertext is a precondition, not a finishing touch; on that reading Levels 0 to 2 are simply not REST
+* ❌ "Higher level means better API" -- the levels rank conformance to REST constraints, not fitness for purpose; an internal RPC-style service can be the right design at Level 0
+* ❌ "RMM is an assessment framework" -- Fowler explicitly rejects that use (see Criticism)
+* ✓ "RMM is a vocabulary for naming where an API sits and where you want it" -- accurate, and the form in which it is actionable
+====
+
+== *Criticism*:
+
+* *One critic disputes that the thing exists under that name.* Mike Ralphson, in a post titled "Why there is no such thing as the Richardson Maturity Model", faults the popularised version for the pejorative "Swamp of POX" and for conflating resources with representations, and reports that Richardson himself called the whole thing "very embarrassing" at a RESTFest talk, adding that climbing the heuristic needs "either a technical reason or a political reason to do so". https://dev.to/mikeralphson/why-there-is-no-such-thing-as-the-richardson-maturity-model-3b4[Ralphson] (13 December 2018). The quotation is printed as Ralphson reports it: the primary talk page for the year he names carries a different title, so Richardson's own words could not be confirmed at source.
+* *Roy Fielding's constraint leaves no ladder to climb.* Fielding never wrote about the Richardson Maturity Model in the piece usually cited against it; what he wrote is the constraint that makes the model's lower levels not-REST at all: "if the engine of application state (and hence the API) is not being driven by hypertext, then it cannot be RESTful", and "A REST API should be entered with no prior knowledge beyond the initial URI (bookmark) and set of standardized media types". Of the API he was reviewing he wrote: "That is RPC. It screams RPC." The word "maturity" does not appear in that post -- the application to RMM is Fowler's: "Roy Fielding has made it clear that level 3 RMM is a pre-condition of REST." Read that way, the model is not a maturity scale at all: Levels 0 through 2 are one category (not REST) and Level 3 is the other. https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[Fielding, "REST APIs must be hypertext-driven", 20 October 2008]
+* *Fowler rules out the assessment use, in the article that made the model famous.* Two sentences from his own write-up: "I should stress that the RMM, while a good way to think about what the elements of REST, is not a definition of levels of REST itself." And: "As such I see it as tool to help us learn about the concepts and not something that should be used in some kind of assessment mechanism." A team that scores its APIs on the RMM is using it against its popularising author's stated intent. Use it as a design target and a shared vocabulary; do not put it in a scorecard. https://martinfowler.com/articles/richardsonMaturityModel.html[Fowler, "Richardson Maturity Model", 18 March 2010]
+* *The name promises more than the original claimed.* Richardson's talk calls its third act "The Maturity Heuristic" -- a heuristic, not a model, and not a maturity model. The term "Richardson Maturity Model" comes from Fowler's 2010 title, two years later. The upgrade from heuristic to model is where the implication of a ladder enters, and the implication is the part both authors later qualify. https://www.crummy.com/writing/speaking/2008-QCon/[Richardson, "Justice Will Take Us Millions Of Intricate Moves", QCon San Francisco, 20 November 2008]
+* *What we did not find, and where we looked.* No named German-language critique of the model turned up; German results are tutorials and translations of the four levels, not argument. Languages searched: English, German. The substantive criticism is in English and comes from Fielding, from Fowler himself, and from Ralphson.
+
+[discrete]
+== *Current Status*:
+
+* *The prior holds, and it diagnoses.* In a clean-room test on `claude-haiku-4-5` (2026-10-03), a neutral logistics-platform brief produced an API discussion with no notion of maturity or hypermedia at all. Naming the Richardson Maturity Model made the weak tier diagnose the current state -- "likely stuck at Level 0-1" -- and then prescribe the migration, with HTTP verb semantics and status codes given per resource. Attribution lands on Richardson 2008-2009, with medium confidence; the year is sometimes given as 2009 or as Fowler's 2010.
+* *"The swamp of POX" is not in Fowler's text.* The phrase travels with Level 0 everywhere in secondary writing and in model output, but Fowler's article heads that section simply "Level 0". Treat the label as folklore, not as a quotation.
+* *Fowler's own Level 3 example has aged out.* In 2010 he wrote of link relations: "As I write these are confined to what's done by ATOM, which is generally seen as a leader in level 3 restfulness." Today the hypermedia discussion runs through JSON:API, HAL and JSON Hypertext Application Language rather than Atom, while the levels themselves are unchanged. Level 3 remains rare in production APIs, which is the honest reason the model is used descriptively more often than as a plan.

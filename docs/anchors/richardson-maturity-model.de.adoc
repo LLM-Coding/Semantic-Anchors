@@ -1,0 +1,60 @@
+= Richardson Maturity Model
+:categories: software-architecture, design-principles
+:proponents: Leonard Richardson, Martin Fowler
+:roles: software-architect, software-developer
+:tags: RMM, Richardson Maturity Model, Reifegradmodell, REST, HATEOAS, Hypermedia, Ressourcen, HTTP-Verben, Statuscodes, Level 0, Level 1, Level 2, Level 3, API-Entwurf, Maturity Heuristic
+:related: postels-law, twelve-factor-app, c4-diagrams
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Richardson Maturity Model -- vier Stufen der REST-Reife für HTTP-APIs. Vorgestellt von Leonard Richardson in „Justice Will Take Us Millions Of Intricate Moves“, QCon San Francisco, 20. November 2008; benannt und bekannt gemacht durch Martin Fowler, „Richardson Maturity Model: steps toward the glory of REST“, 18. März 2010
+
+Auch bekannt als:: RMM, Richardsons Stufen, die REST-Reifegrade; Richardsons eigener Vortrag nennt es *Maturity Heuristic*
+
+[discrete]
+== *Kernkonzepte*:
+
+Die vier Stufen:: *Level 0* -- HTTP als Transporttunnel: ein Endpoint, ein Verb, die Operation steht im Payload. Fowler beschreibt den Ausgangspunkt so: "The starting point for the model is using HTTP as a transport". *Level 1* -- Ressourcen: Jedes Ding bekommt seine eigene URI. Richardson im Vortrag: "They give each individual thing in their universe a URI." *Level 2* -- HTTP-Verben und Statuscodes in ihrer definierten Bedeutung: GET ist sicher und cachebar, PUT idempotent, DELETE löscht, und der Statuscode trägt das Ergebnis (201, 404, 409). *Level 3* -- Hypermedia Controls: Die Response enthält Links auf die nächsten möglichen Aktionen, der Client folgt Links statt URIs aus der Dokumentation zusammenzusetzen.
+
+Als Ziel benutzen, nicht als Etikett:: Das Modell ist eine Klassifikation, und eine Klassifikation allein ändert nichts. Zwei Formulierungen machen es handlungsfähig. Als *Ziel*: „Entwirf diese API auf Richardson Maturity Model Level 2“ -- das ist eine konkrete Vorgabe zu URI-Entwurf, Verbwahl und Statuscodes. Als *Lückenaussage*: „Diese API liegt auf Level 1; benenne, was Level 2 ändern würde.“ Die Stufennummer ist Kurzschrift für ein Bündel von Entwurfsentscheidungen -- deshalb komprimiert sie im Prompt so gut.
+
+Jede Stufe ist eine eigene Entwurfstechnik:: Fowler gibt Ian Robinsons Lesart wieder, den nützlichsten Teil des Modells: Level 1 wendet Teile und herrsche auf einen großen Endpoint an, Level 2 beseitigt unnötige Varianz durch einen festen Satz Verben, und "Level 3 introduces discoverability, providing a way of making a protocol more self-documenting." Die Stufen sind keine Grade derselben Sache, sondern drei verschiedene Probleme. Deshalb kann ein Team Level 2 ernsthaft wollen und Level 3 nicht.
+
+Auf Level 2 bleibt fast alles stehen:: Richardson hat den Grund im Vortrag selbst genannt: "A lot of people settle for level two because hypermedia is difficult to understand and its value in the web service domain isn't as clear." Der praktische Wert des Modells liegt also darin, präzise zu sagen, was eine API tut und was nicht -- nicht in einer Leiter, die jemand bis oben steigen will.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Um vor der Implementierung ein ausdrückliches API-Entwurfsziel zu setzen -- „Level 2, und hier steht, warum nicht Level 3“
+* Um eine bestehende HTTP-API einem Kollegen oder einem Modell in einem Wort zu beschreiben, statt ihre URI- und Verbkonventionen aufzuzählen
+* Für Reviews auf die typischen Level-2-Mängel: POST für Lesezugriffe, 200 mit Fehler im Body, Verben im Pfad
+* Für die Entscheidung, ob Hypermedia seinen Preis wert ist, mit benanntem statt unterstelltem Tradeoff
+* Beim Lesen von REST-Literatur, in der Level 0 bis Level 3 als Vokabular vorausgesetzt wird
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Level 3 ist das Ziel jeder API“ -- Richardsons eigener Vortrag erklärt, warum die meisten Teams auf Level 2 bleiben, und die Kosten trägt jeder Client, der keine Discoverability braucht
+* ❌ „Level 2 heißt RESTful“ -- Roy Fieldings Position ist, dass Hypertext Voraussetzung ist, nicht Zierde; so gelesen sind Level 0 bis 2 einfach kein REST
+* ❌ „Höhere Stufe heißt bessere API“ -- die Stufen messen Konformität zu den REST-Constraints, nicht Eignung; ein interner RPC-Dienst kann auf Level 0 richtig entworfen sein
+* ❌ „RMM ist ein Bewertungsrahmen“ -- Fowler lehnt genau diese Verwendung ab (siehe Kritik)
+* ✓ „RMM ist Vokabular dafür, wo eine API steht und wo sie hin soll“ -- trifft zu und ist die Form, in der es handlungsfähig wird
+====
+
+== *Kritik*:
+
+* *Ein Kritiker bestreitet, dass die Sache unter diesem Namen existiert.* Mike Ralphson hält in „Why there is no such thing as the Richardson Maturity Model“ der popularisierten Fassung das abwertende „Swamp of POX“ vor und dass sie Ressourcen mit Repräsentationen vermischt. Er berichtet außerdem, Richardson selbst habe das Ganze auf einem RESTFest-Vortrag „very embarrassing“ genannt und ergänzt, für den Aufstieg in der Heuristik brauche es „either a technical reason or a political reason to do so“. https://dev.to/mikeralphson/why-there-is-no-such-thing-as-the-richardson-maturity-model-3b4[Ralphson] (13.12.2018). Das Zitat steht hier so, wie Ralphson es berichtet: Die Primärseite des von ihm genannten Jahres trägt einen anderen Titel, Richardsons eigener Wortlaut war also nicht an der Quelle zu bestätigen.
+* *Roy Fieldings Constraint lässt keine Leiter übrig.* Fielding hat in dem Text, der üblicherweise gegen das Modell zitiert wird, nie über das Richardson Maturity Model geschrieben. Geschrieben hat er das Constraint, das die unteren Stufen zu Nicht-REST macht: "if the engine of application state (and hence the API) is not being driven by hypertext, then it cannot be RESTful", und "A REST API should be entered with no prior knowledge beyond the initial URI (bookmark) and set of standardized media types". Über die geprüfte API schrieb er: "That is RPC. It screams RPC." Das Wort „maturity“ kommt in dem Beitrag nicht vor -- die Übertragung auf RMM stammt von Fowler: "Roy Fielding has made it clear that level 3 RMM is a pre-condition of REST." So gelesen ist das Modell gar keine Reifeskala: Level 0 bis 2 sind eine Kategorie (kein REST), Level 3 die andere. https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[Fielding, „REST APIs must be hypertext-driven“, 20. Oktober 2008]
+* *Fowler schließt die Bewertungsnutzung aus -- in dem Artikel, der das Modell bekannt gemacht hat.* Zwei Sätze aus seinem Text: "I should stress that the RMM, while a good way to think about what the elements of REST, is not a definition of levels of REST itself." Und: "As such I see it as tool to help us learn about the concepts and not something that should be used in some kind of assessment mechanism." Ein Team, das seine APIs nach RMM bepunktet, benutzt das Modell gegen die erklärte Absicht seines Popularisierers. Als Entwurfsziel und gemeinsames Vokabular ja, in der Scorecard nein. https://martinfowler.com/articles/richardsonMaturityModel.html[Fowler, „Richardson Maturity Model“, 18. März 2010]
+* *Der Name verspricht mehr als das Original behauptet hat.* Richardsons Vortrag nennt seinen dritten Akt „The Maturity Heuristic“ -- eine Heuristik, kein Modell, und kein Reifegradmodell. Der Name „Richardson Maturity Model“ stammt aus Fowlers Titel von 2010, zwei Jahre später. Mit der Beförderung von der Heuristik zum Modell kommt die Unterstellung der Leiter herein -- und genau diese Unterstellung schränken beide Autoren später ein. https://www.crummy.com/writing/speaking/2008-QCon/[Richardson, „Justice Will Take Us Millions Of Intricate Moves“, QCon San Francisco, 20. November 2008]
+* *Was wir nicht gefunden haben, und wo wir gesucht haben.* Eine namentlich zurechenbare deutschsprachige Kritik am Modell fand sich nicht; deutsche Treffer sind Tutorials und Übersetzungen der vier Stufen, keine Argumente. Gesuchte Sprachen: Englisch, Deutsch. Die inhaltliche Kritik steht auf Englisch und kommt von Fielding und von Fowler selbst.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Der Prior trägt, und er diagnostiziert.* In einem Clean-Room-Test auf `claude-haiku-4-5` (03.10.2026) erzeugte ein neutraler Auftrag zu einer Logistikplattform eine API-Diskussion ohne jeden Begriff von Reife oder Hypermedia. Die Nennung des Richardson Maturity Model brachte die schwache Stufe dazu, den Ist-Zustand zu diagnostizieren -- „likely stuck at Level 0-1“ -- und dann die Migration vorzuschreiben, mit HTTP-Verb-Semantik und Statuscodes je Ressource. Die Zuordnung landet bei Richardson 2008-2009, mit mittlerer Sicherheit; als Jahr erscheinen auch 2009 oder Fowlers 2010.
+* *„The swamp of POX“ steht nicht bei Fowler.* Die Wendung begleitet Level 0 in Sekundärtexten und in Modellausgaben überall, Fowlers Artikel überschreibt den Abschnitt aber schlicht mit „Level 0“. Also Folklore, kein Zitat.
+* *Fowlers eigenes Level-3-Beispiel ist überholt.* 2010 schrieb er über Link Relations: "As I write these are confined to what's done by ATOM, which is generally seen as a leader in level 3 restfulness." Heute läuft die Hypermedia-Diskussion über JSON:API, HAL und JSON Hypertext Application Language statt über Atom, während die Stufen selbst unverändert sind. Level 3 bleibt in produktiven APIs selten -- das ist der ehrliche Grund, warum das Modell häufiger beschreibend als planend benutzt wird.

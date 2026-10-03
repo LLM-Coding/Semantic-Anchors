@@ -1,0 +1,63 @@
+= Enterprise Integration Patterns (Hohpe/Woolf)
+:categories: software-architecture
+:proponents: Gregor Hohpe, Bobby Woolf
+:roles: software-architect, software-developer
+:tags: EIP, enterprise integration patterns, messaging, integration styles, Message Channel, Message Router, Message Translator, Competing Consumers, Dead Letter Channel, Canonical Data Model, pipes and filters, Apache Camel, Spring Integration, pattern language
+:related: event-driven-architecture, circuit-breaker, domain-driven-design, cqrs
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: _Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions_ -- Gregor Hohpe and Bobby Woolf, Addison-Wesley Signature Series, 2003. The catalog lives at https://www.enterpriseintegrationpatterns.com/patterns/messaging/[enterpriseintegrationpatterns.com]
+
+Also known as:: EIP, the Hohpe/Woolf patterns, the messaging pattern language
+
+[discrete]
+== *Core Concepts*:
+
+The Four Integration Styles Come Before Any Pattern:: The book opens by comparing *File Transfer*, *Shared Database*, *Remote Procedure Invocation* and *Messaging*, and argues for messaging on the grounds of coupling -- in time, in location and in data format. That comparison is part of the anchor: naming EIP should produce the choice of style, not only a list of patterns. A design that never considered the other three styles has skipped the book's first chapter.
+
+Sixty-Five Patterns in Six Categories:: The catalog states its own size: "This pattern catalog includes 65 integration patterns that we collected from integration projects and updated over two decades." The categories follow a message's journey -- *Messaging Channels*, *Message Construction*, *Message Routing*, *Message Transformation*, *Messaging Endpoints*, *System Management*. The categories are the usable abstraction; the full list of sixty-five is a reference, not something to recite.
+
+The Handful That Carries Most Designs:: *Message Channel* -- the named pipe a sender writes to without knowing the receiver. *Message Router* -- a component that decides a message's destination from its content, keeping the decision out of both endpoints. *Message Translator* -- the seam where one system's format becomes another's. *Competing Consumers* -- several consumers on one channel, which is how messaging buys throughput and failover. *Dead Letter Channel* -- where a message goes when it cannot be delivered, so a failure becomes an inspectable object instead of a loss. *Canonical Data Model* -- one shared format at the boundary, so _n_ systems need _n_ translators and not _n²_.
+
+Pipes and Filters Is the Base Metaphor:: Every routing and transformation pattern is a filter wired into a pipe. This is what makes the patterns composable: a Content Enricher followed by a Content-Based Router followed by a Splitter is a legitimate design, and each piece can be tested on its own.
+
+Not the Same Anchor as `event-driven-architecture`:: Both entries name Hohpe and Woolf, and the split matters. Event-driven architecture is an architectural *style*: the system reacts to events, state is distributed, consistency is eventual. EIP is the named *vocabulary* for building any messaging solution -- request/reply integration between a shop and an invoicing system is EIP territory and is not event-driven at all. Reach for EDA to decide how a system should behave; reach for EIP to name the parts once it does.
+
+The Icon Language Is Part of Why It Travels:: Each pattern has a drawn symbol, and the site still distributes them: "You can create design documents using our icon language by downloading the Visio stencil or using the OmniGraffle stencil created by one of our readers." A pattern language with a notation gets drawn on whiteboards, and the names survive because the pictures do.
+
+[discrete]
+== *When to Use*:
+
+* Designing integration between systems you do not own, where the vocabulary has to be shared with another team
+* Naming the parts of an existing messaging flow before changing it -- most undocumented integrations turn out to be a router plus two translators
+* Error design: `Dead Letter Channel`, Invalid Message Channel and Idempotent Receiver answer questions that otherwise surface in production
+* Deciding integration style at all, by making File Transfer, Shared Database and RPC explicit alternatives instead of defaults
+* Reading Apache Camel or Spring Integration code and configuration, which use the pattern names as API
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "EIP means build an ESB" -- the patterns say nothing about where they run; the same Message Router can be a Camel route, a Lambda, a Kafka Streams stage or a `switch` statement
+* ❌ "EIP is event-driven architecture" -- EIP covers request/reply and batch integration too; EDA is one style you can build with it
+* ❌ "You need all 65" -- six categories and roughly six patterns carry most designs; the rest is a reference catalog
+* ❌ "It is a 2003 book, so it is obsolete" -- the names map directly onto today's platforms; what aged are the code examples, not the patterns
+* ✓ "EIP is the vocabulary for messaging design; EDA is a style" -- accurate, and the reason both entries exist
+====
+
+== *Criticism*:
+
+* *The microservices community rejected the architecture the patterns were usually implemented in.* James Lewis and Martin Fowler open their definition of microservices with exactly this target: "When building communication structures between different processes, we've seen many products and approaches that stress putting significant smarts into the communication mechanism itself. A good example of this is the Enterprise Service Bus (ESB), where ESB products often include sophisticated facilities for message routing, choreography, transformation, and applying business rules." Their alternative is "smart endpoints and dumb pipes", and their footnote is blunter: "We can't resist mentioning Jim Webber's statement that ESB stands for 'Erroneous Spaghetti Box'." Note what the objection does and does not hit. Routing, transformation and choreography are EIP patterns; the criticism is of putting them in central middleware, not of the patterns themselves. But the 2003 pattern language is what the ESB vendors sold, and a model that reaches for EIP will suggest middleware-resident routing unless told otherwise. https://martinfowler.com/articles/microservices.html[Lewis and Fowler, "Microservices", 25 March 2014]
+* *Hohpe's own follow-up names the gap: the patterns describe single messages, not conversations.* His _Conversation Patterns_ work states the limitation directly: "Asynchronous Messaging is a great way for distributed systems to communicate while maintaining loose coupling. Sending a single message isn't always enough for a meaningful exchange, though: a request expects a response; a certificate exchange may be needed for initial authentication; an order message is supposed to lead to a payment message, and if something goes wrong, additional messages may be needed to handle or correct errors." Request-Response with Retry, Lease Renewal, Compensating Action and Tentative Operation live in that second language, not in the 2003 book. The page is also still labelled "Work in progress. Last update: Jan 2017", so the acknowledged gap has stayed open for roughly two decades. https://www.enterpriseintegrationpatterns.com/patterns/conversation/[Hohpe, "Conversation Patterns"]
+* *What we did not find, and where we looked.* No named German-language critique of the pattern language turned up; German-language results are book reviews and introductions. Languages searched: English, German. The substantive criticism is English and architectural -- it concerns centralised middleware, not the pattern catalog.
+
+[discrete]
+== *Current Status*:
+
+* *The prior produces the vocabulary unprompted, and cites its source.* In a clean-room test on `claude-haiku-4-5` (2026-10-03), naming Enterprise Integration Patterns on a neutral logistics-platform brief produced Request/Reply, Publish/Subscribe, Canonical Message Format and Message Translator without being asked for patterns, and the model referred to "Hohpe and Woolf's notation" without being asked for a source. The no-anchor baseline named none of them. This is the strongest of the three priors tested that day.
+* *There is no second edition, and saying so is not a quibble.* The 2003 Addison-Wesley edition is still the only one. The _Conversation Patterns_ work is announced as Volume 2 of the series and remains unpublished, work in progress on the site rather than a shipped book (checked 2026-10-03). Cite "the 2003 edition" or "the online catalog"; never "the second edition".
+* *The pattern count is confirmed, and the catalog is not the 2003 book.* The site states 65 patterns and carries the copyright line "© 2003, 2023" together with "updated over two decades" (checked 2026-10-03). A citation of "the 2003 book, 65 patterns" is correct about the count; it is not safe to assume the printed edition and today's online catalog say the same thing about any individual pattern.
+* *The names outlived the platforms.* Apache Camel and Spring Integration expose EIP pattern names as API, which is why the vocabulary still resolves for anyone reading integration code. The infrastructure under it has turned over -- message brokers, Kafka, serverless functions, managed queues -- while the pattern names did not change, which is the usual sign of a pattern language that was written at the right level.

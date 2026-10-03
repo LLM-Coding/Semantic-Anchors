@@ -510,3 +510,62 @@ ____
 That second half is what separates the anchor from a licence for inertia, and it fires without being asked for.
 
 *The overlap risk was measured, not assumed.* The proposal's own test output named "second-order effects", and `second-order-thinking` is already an anchor -- "fully covered by an existing anchor" is a rejection criterion. Given the identical task, `Apply Second-Order Thinking` produced a different shape: organised by artifact and consequence chain, closing on the second-order effect on the team, where the Chesterton run organised by fence and closed on an exit rule. Two lenses, not one.
+
+== Run 2026-10-03
+
+[cols="1,3"]
+|===
+|Candidates |14 terms proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/775[#775] to https://github.com/LLM-Coding/Semantic-Anchors/issues/788[#788], each because it appears in Florian Bruniaux's `claude-code-ultimate-guide`
+|Models |`claude-haiku-4-5` (weak). Strong-tier activation was run per candidate on `claude-opus-5-5` by the proposer and is recorded in each issue, not repeated here
+|Runs |14 bare-name probes, 14 attribution probes, 33 baseline runs across fourteen scenarios, 25 anchored runs. 86 probes in total
+|Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN`, each probe in its own empty directory outside the repository. Verified once against the custom-instructions probe, which answered "none"
+|Not tested |`claude-sonnet-5` was skipped again. Findings are a lower bound
+|===
+
+=== A task may not state the violation either
+
+The 2026-09-30 run produced the rule that a viability task must not be drawn from the anchor's own _When to Use_ section. This run hit the narrower cousin of that defect, and it cost two scenario sets.
+
+The first set described technical symptoms. "Reviewers say they can never tell from a call site what a function will do to the rest of the system" is Command-Query Separation's own diagnosis in paraphrase. "A single admin role that most staff hold, API tokens that carry full account scope, one filtering appliance in front of everything" is a least-privilege audit finding written as a situation. The baselines answered accordingly: *both* code baselines produced "Result type", "pure function" and "side effect" with no anchor named, and the security baseline produced token scoping, an RBAC plan and an admin inventory. Measured against that, CQS, Railway Oriented Programming, Least Privilege and Defense in Depth are all decorative -- and the measurement is void, because the task handed the model the method's checklist as input.
+
+The second set corrected too far. Management-level scenarios -- "the team spends about half of each cycle on bug reports instead of the features the product owner is asking for" -- gave a genuinely clean baseline: none of six runs named any of the fourteen candidates. But the anchored answers were thin, because the task sits too far from the method for the method to act on it.
+
+*The rule this produces: a viability task must sit inside the method's domain and carry none of the method's vocabulary.* "A developer who joined last week asks how they are supposed to know, before calling one of twelve methods, whether calling it is reversible" contains no query, no command and no side effect, and it separated the two conditions cleanly. The scenario is the instrument, and an instrument can be wrong in two directions.
+
+=== Two name traps
+
+*Arrange-Act-Assert survives; "AAA" does not.* The bare acronym answers from a different field, without hesitation: "AAA stands for *Authentication, Authorization, and Accounting*, a security framework commonly used in networking and access control." The answer continues through RADIUS and TACACS+ and reaches the American Automobile Association before any testing sense appears. The written-out name is registered; the acronym alone is recorded as unusable.
+
+*"Connextra" confabulates, and that is the more serious finding.* Asked "What is Connextra?", the weak tier answered: "Connextra is a software development kata (coding exercise) created by Emily Bache." It then described a refactoring and TDD exercise in detail. None of it exists. There is no hedge, no "I am not sure", and the probe's own self-report reads `recognized=yes`. This is the silent-substitution signature the battery exists to catch, and it is worse than the Kanban collision of the previous run: Kanban returned a real concept under a contested name, while Connextra returns an invention under a confident heading. The qualified form, "the Connextra user story format", reaches the right concept, dates it to around 2001 and credits the Connextra team. The entry documents the qualified string and warns against the bare name.
+
+=== The fourteen candidates
+
+[cols="2,1,4"]
+|===
+|Term |Verdict |Note
+
+|Principle of Least Privilege |★★★ |The decisive result of the run -- see below
+|Command-Query Separation |★★★ |Correct even on the bare acronym, with no CQRS drift. Where the baseline answered with JavaDoc and a naming convention, the anchor partitioned twelve methods into queries and commands with the void-return constraint
+|4+1 View Model |★★★ |All five views with their audiences; the baseline carried no view vocabulary at all
+|Enterprise Integration Patterns |★★★ |Produced Request/Reply, Publish/Subscribe, Canonical Message Format and Message Translator, and cited "Hohpe and Woolf's notation" without being asked for a source
+|Richardson Maturity Model |★★★ |Diagnosed the level ("likely stuck at Level 0-1") and prescribed the migration. The baseline discussed the same API with no notion of maturity
+|Railway Oriented Programming |★★★ |Produced a `Result` type and an explicit failure track. One of two baselines reached `Either` on its own
+|Bulkhead Pattern |★★★ |Named unprompted in one of three baselines, so it does not reproduce and the delta is real. Attribution does not survive the weak tier: it answers `creator=Netflix (collective); year=2011`, not Nygard 2007
+|Keep a Changelog |★★★ |The delta is correctness, not choice. Two of four baselines named the convention unprompted and then listed the wrong sections -- one produced "Breaking Changes, New Features, Fixed, Deprecated". The anchored run produced all six canonical types plus `[Unreleased]`
+|Arrange-Act-Assert |★★★ |Under the written-out name only -- see above. Reached unprompted in two of four in-domain baselines
+|Test Data Builder |★★★ |The densest prior in the batch: proposed unprompted in three of four baselines, once with the mechanism spelled out as `new UserBuilder().withEmail("test@x.com").build()`. Its steering delta on that task is therefore near zero, which is a fact about the task. Attribution is the weak spot: `creator=<agile-testing-community>`, `confidence=low` -- it does not know Nat Pryce
+|Connextra User Story Format |★★★ |Qualified form only -- see above
+|Refactoring Catalog |★★☆ |Produced named catalog entries -- Extract Method, Separate Query from Modifier, Introduce Parameter Object, Replace Conditional with Polymorphism -- where the baseline said "extract a pure function, move rules to data". ★★☆ because the bare verb carries any code change
+|OWASP ASVS |★★☆ |Worked at L2 and cited chapters V4, V6 and V13 against concrete work items, where the baseline reached for SOC 2 and ISO 27001. Needs a level and a version. The weak tier also misattributes the lead to `Mike Goodwin`; the institution is right, the person is not
+|Defense in Depth |★★☆ |Added independent layers and sandboxed preview rendering in two of two runs against zero of two in the baseline. But "assume breach" appeared in only one of two anchored runs, so the premise that separates the practice from "more controls" is not reliably carried by the name and is stated in the entry instead
+|===
+
+=== Least Privilege: the delta was zero until the task changed
+
+Least Privilege failed its first two measurements and passed the third, and the difference was entirely in the task.
+
+On the scenario that described the violation, the anchored answer and the baseline were the same answer under different headings -- remove local admin, segment the network, scope the tokens -- and the only run that used the phrase "blast radius" was the baseline. A reader could reasonably conclude the term is decorative.
+
+Then the task changed to one where the principle is not the obvious answer: "write a GitHub Actions workflow for a Node.js service: install dependencies, run the test suite, build a container image, push it to Amazon ECR and deploy it to a staging ECS cluster. Give the YAML." Both no-anchor runs produced long-lived `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` secrets and no `permissions:` block at all. Both anchored runs produced a `permissions:` block, OIDC through `role-to-assume` with `id-token`, and no static keys anywhere. Reproduced twice in each condition.
+
+The general lesson is the mirror of the one the previous run recorded. There, a task where the method was the obvious default produced a delta of zero. Here, a task that *states the problem the principle names* produces a delta of zero for the same reason -- and the anchor's real value sits on the artifacts nobody thinks to scope: build pipelines, IAM policies, agent tool permissions. *An anchor has no single delta. It has a delta per task, and a measurement that reports one number has chosen a task.*

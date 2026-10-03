@@ -1,0 +1,69 @@
+= Refactoring Catalog according to Fowler
+:categories: design-principles, development-workflow
+:proponents: Martin Fowler, Kent Beck, William Opdyke
+:roles: software-developer, software-architect, team-lead
+:tags: refactoring, refactoring catalog, named refactorings, Extract Function, Extract Method, Replace Conditional with Polymorphism, Introduce Parameter Object, Separate Query from Modifier, behaviour-preserving transformation, mechanics, Two Hats, preparatory refactoring
+:related: code-smells, mikado-method, boy-scout-rule, red-green-tdd, test-seam
+:tier: 2
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: The catalog of named refactorings in Martin Fowler's _Refactoring: Improving the Design of Existing Code_ (1999, with Kent Beck, John Brant, William Opdyke and Don Roberts; 2nd edition 2018), maintained online as https://refactoring.com/catalog/[the online catalog of refactorings]: "This is the online catalog of refactorings, to support my book Refactoring 2nd Edition."
+
+Also known as:: Fowler's refactorings, the refactoring catalog, named refactorings — or a single entry by name, such as *Extract Function*, *Move Field*, *Replace Conditional with Polymorphism*
+
+[discrete]
+== *Core Concepts*:
+
+Use the Qualified Name, Never the Bare Verb:: "Refactor" is an everyday word for any code change, including changes that alter behaviour, so the bare verb carries almost nothing. The form that works is the qualified one — "Fowler's refactoring catalog" — or a named entry, *Extract Function*. Fowler himself polices the distinction: "If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring."
+
+Behaviour Preservation Is the Definition, Not a Side Condition:: A refactoring changes internal structure and leaves observable behaviour unchanged. A change that also fixes a bug or adds a feature is not a refactoring; it is two changes wearing one name. The restriction is what makes the steps safe to apply without re-reading the whole system.
+
+An Entry Is a Name Plus Mechanics:: Each catalog entry has a name, a sketch of the before and after, a motivation, and numbered mechanics — the step order that keeps the code working between steps. The mechanics are the part that distinguishes the catalog from a list of good intentions: they tell you where to run the tests.
+
+The Smell Says Why, the Catalog Says How:: `code-smells` names the symptom — Long Function, Feature Envy, Primitive Obsession. The catalog names the treatment and its step order. Pairing them is the intended use: a smell without a named transformation produces a rewrite, and a transformation without a smell produces churn.
+
+Two Hats:: Fowler's rule for staying honest: you are either adding function or refactoring, and you may switch hats often, but never wear both at once. This is the discipline that keeps the behaviour-preservation claim true commit by commit.
+
+Named Steps Are a Shared Vocabulary:: The catalog does for restructuring what the pattern catalogs did for design. "Extract a parameter object here" is a complete instruction between two people — or between a developer and a model — because the name carries the mechanics with it.
+
+Preparatory Refactoring:: Making the change easy before making the change. The refactoring is not cleanup for its own sake; it buys a cheaper next commit, which is also the argument that convinces a manager.
+
+Not _Patterns of Enterprise Application Architecture_:: `fowler-patterns` covers PEAA — Repository, Unit of Work, Active Record. Same author, different book, different catalog. Naming the wrong one gets you architecture patterns when you wanted code transformations.
+
+[discrete]
+== *When to Use*:
+
+* Restructuring legacy code where you want named, reversible steps instead of one large rewrite
+* Immediately after `code-smells` has identified a symptom and you need the matching treatment
+* Reviewing a pull request: ask which named refactoring the diff claims to be, and whether behaviour really stayed put
+* Preparatory work before a feature, to separate the structural commit from the behavioural one
+* Driving a model: "refactor using Fowler's catalog and name each refactoring you apply" yields a step sequence you can review, not a rewrite you have to re-read
+* Alongside `mikado-method` when the refactoring will not complete in one step, and `test-seam` when the safety net does not exist yet
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Refactoring means cleaning up the code" — it means a behaviour-preserving transformation; cleanup that changes behaviour is a rewrite with a flattering label
+* ❌ "A big restructuring is a big refactoring" — Fowler calls the long broken build the tell: that is restructuring, not refactoring
+* ❌ "The catalog is the smell list" — the smells are the diagnosis chapter; the catalog is the remedy, and most of the book
+* ❌ "Fowler's catalog is Repository and Unit of Work" — those are `fowler-patterns`, a different book
+* ❌ "The names are fixed" — the 2nd edition renamed entries (Extract Method became *Extract Function*), so a name alone can date a conversation
+* ✓ "Name the refactoring, then run the tests at the step the mechanics say" — the mechanics are the reason the catalog is more than vocabulary
+====
+
+== *Criticism*:
+
+* *The first public attack came from outside the community, and only Fowler's reply survives.* Robert X. Cringely used his PBS column to argue that most refactoring is wasted effort managers should stop paying for. Fowler answered on 3 June 2003: "A recent piece by Robert Cringely caused a small stir in the refactoring community recently, as he criticized refactoring." https://martinfowler.com/bliki/RefactoringCringely.html[Fowler, "RefactoringCringely"] (3 June 2003). The PBS original is gone -- the page now serves a rights-retirement notice -- so Cringely's own wording is only reachable through Fowler's rendering of it, and this entry does not quote him directly.
+* *Measured against software metrics, refactoring looks like it makes things worse.* Stefan Burger and Oliver Hummel ran established metrics over refactorings of Fowler's own Video-Store example and over Lucene, and report "dass bekannte Softwaremetriken Code-Verbesserungen durch Refactoring nicht erkennen können, bzw. umgekehrt betrachtet, Refactoring die Codequalität verschlechtert". https://dl.gi.de/items/e5bfb9c5-1305-4736-b2ed-2cf5ba4cae2c[Burger and Hummel, "Über die Auswirkungen von Refactoring auf Softwaremetriken", GI] (2013). The finding cuts against the metrics rather than against the practice -- which is the point worth carrying into any conversation where a dashboard is the arbiter of code quality.
+* *The word outran the definition, and its own author says so.* Fowler's bliki entry on refactoring malapropism is a complaint about the term's dilution: "If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring." He adds the second half of the problem: "If someone talks about refactoring a document, then that's not refactoring." https://martinfowler.com/bliki/RefactoringMalapropism.html[Fowler, "Refactoring Malapropism"] (3 January 2004). Read as criticism of the anchor rather than of the book: the bare verb has drifted so far that the qualified form is now mandatory.
+* *Measured in industry, the practice does not match the definition, and practitioners price in the risk.* Miryung Kim, Thomas Zimmermann and Nachiappan Nagappan surveyed and interviewed Microsoft engineers and analysed Windows 7 version history: "Our survey finds that the refactoring definition in practice is not confined to a rigorous definition of semantics-preserving code transformations and that developers perceive that refactoring involves substantial cost and risks." Their quantitative result refuses a one-line verdict: "the top 5% of preferentially refactored modules experience higher reduction in the number of inter-module dependencies and several complexity measures but increase size more than the bottom 95%. This indicates that measuring the impact of refactoring requires multidimensional assessment." https://www.microsoft.com/en-us/research/publication/an-empirical-study-of-refactoring-challenges-and-benefits-at-microsoft/[Kim, Zimmermann, Nagappan, "An Empirical Study of Refactoring Challenges and Benefits at Microsoft", _IEEE Transactions on Software Engineering_ 40(7), July 2014].
+* *The test suite is a check, not a proof.* Ralf Reißing, in the Gesellschaft für Informatik's Informatiklexikon, names the central danger plainly: "Eine große Gefahr beim Refactoring ist es, durch die Änderungen an der Struktur neue Fehler in die Software hineinzubringen." On the usual answer — run the tests before and after — he is blunt: "Dieses Vorgehen ist aber nur eine Kontrolle, die keinerlei Sicherheit bietet, daß wirklich nichts verändert wurde." Only Opdyke-style refactorings with checked preconditions are "semantikerhaltende Refactorings, die beweisbar das Programmverhalten nicht verändern, sofern ihre Vorbedingungen erfüllt sind", and that is a formal argument, not a green bar. He also names the non-technical obstacle: the project manager has to be convinced "daß es sinnvoll und notwendig ist". https://gi.de/informatiklexikon/refactoring[Reißing, "Refactoring", GI-Informatiklexikon].
+
+[discrete]
+== *Current Status*:
+
+* *The catalog is maintained and the names moved.* The online catalog supports the 2nd edition (2018) and lists entries such as *Extract Function*, *Change Function Declaration*, *Move Field*, *Replace Conditional with Polymorphism* and *Split Phase*. The first-edition names — Extract Method, Rename Method, Add Parameter — still live in IDE menus and in older team vocabulary, so both naming generations circulate at once. https://refactoring.com/catalog/[refactoring.com/catalog].
+* *Naming the catalog turns advice into named transformations.* Measured on `claude-haiku-4-5` in a clean room on 2026-10-03: on a task that described a hard-to-change 400-line pricing module without naming any method, the no-anchor baseline answered "extract the calculation as a pure function, move rules to data". Naming Fowler's catalog produced named entries instead — *Extract Method*, *Separate Query from Modifier*, *Introduce Parameter Object*, *Replace Conditional with Polymorphism*. The named transformation is what the anchor buys.

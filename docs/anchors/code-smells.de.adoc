@@ -1,7 +1,7 @@
 = Code Smells
 :categories: design-principles
 :roles: software-developer, software-architect, educator, team-lead
-:related: fowler-patterns, cohesion-criteria, solid-principles, solid-srp, kiss-principle
+:related: fowler-patterns, cohesion-criteria, solid-principles, solid-srp, kiss-principle, refactoring-catalog
 :proponents: Kent Beck, Martin Fowler, Robert C. Martin
 :tags: refactoring, code-qualität, clean-code, wartbarkeit, smells
 :tier: 2

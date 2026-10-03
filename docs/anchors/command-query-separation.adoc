@@ -1,0 +1,66 @@
+= CQS (Command-Query Separation)
+:categories: design-principles
+:proponents: Bertrand Meyer
+:roles: software-developer, software-architect
+:tags: CQS, command-query separation, command, query, modifier, mutator, side-effect free, referential transparency, Eiffel, Meyer, asking a question should not change the answer
+:related: cqrs, design-by-contract, vertical-slice-architecture, code-smells
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Command-Query Separation, from Bertrand Meyer's _Object-Oriented Software Construction_ (1988), developed alongside Eiffel
+
+Also known as:: CQS, command-query separation; Fowler prefers "modifiers" over "commands", and the term "mutators" is also current
+
+[discrete]
+== *Core Concepts*:
+
+One Rule, Applied Per Method:: Every method is either a command, which changes state and returns nothing, or a query, which returns a value and changes no observable state. Never both. Fowler states the two halves: "Queries: Return a result and do not change the observable state of the system (are free of side effects). Commands: Change the state of a system but do not return a value."
+
+Asking a Question Does Not Change the Answer:: The payoff is that a query can be called twice, in any order, from a logger or a debugger or an assertion, without moving the system. Reading a signature tells you whether the call is safe to repeat — which is exactly the property a reader cannot otherwise recover without reading the body.
+
+This Is Not CQRS:: `cqrs` is an architectural pattern: separate read and write models, often separate stores, usually eventual consistency between them. CQS is a rule about a single method signature, and it applies in a 300-line codebase that will never have two models. Greg Young and Udi Dahan lifted Meyer's method-level rule to architecture; the lift does not replace the original.
+
+The Design-by-Contract Motivation:: `design-by-contract` is the same author's work and the reason CQS exists. Pre-conditions, post-conditions and invariants call queries. If a query mutated, writing a contract would change the thing the contract describes, and assertions could not be compiled out of a release build.
+
+Side Effects Versus Observable Side Effects:: A query may fill a cache, increment a hit counter or open a connection. CQS asks about *observable* state — what a caller can detect through the object's own interface. Memoisation is therefore compatible with the rule, not an exception to it.
+
+Where the Rule Bends:: `pop()`, `next()` on an iterator and atomic compare-and-set all mutate and return, deliberately. Fowler: "Popping a stack is a good example of a query that modifies state. Meyer correctly says that you can avoid having this method, but it is a useful idiom. So I prefer to follow this principle when I can, but I'm prepared to break it to get my pop." Concurrency makes the case stronger: splitting compare-and-set into a query plus a command introduces the race the atomic operation exists to close.
+
+The Diagnostic Use:: CQS is a reading tool as much as a writing rule. Go through an interface and sort the methods into commands and queries; the ones that resist sorting are where the design is unclear, which makes it a specific lens on `code-smells`.
+
+[discrete]
+== *When to Use*:
+
+* Designing or reviewing a class or module API, when a reader must see from the signature whether a call is safe to repeat
+* Sorting an existing interface: any method that both mutates and returns is a question to answer, not automatically a defect
+* Wherever assertions, contracts or invariants will call into the code (`design-by-contract`)
+* Writing code a model will extend: a command/query split survives being read out of context better than a convention in the docstring
+* Naming the deliberate exceptions, so `pop()` is a decision in the record and not an oversight
+* Per slice in `vertical-slice-architecture`, where the command/query split is the natural seam before any CQRS-scale separation
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "CQS and CQRS are the same thing, one is just the abbreviation" — CQS is Meyer's per-method rule from 1988; CQRS is the architectural pattern with two models
+* ❌ "CQS means you need separate read and write databases" — that is CQRS; CQS costs nothing architecturally and needs no second store
+* ❌ "A query must have no side effects at all" — it must have no *observable* ones; caching and counters are fine
+* ❌ "The rule is absolute" — Fowler breaks it for `pop()` on purpose, and atomic compare-and-set cannot obey it without reintroducing a race
+* ❌ "A command may return a status code" — returning an error or a status is the usual, defensible bend; returning the created entity's ID is the contested one
+* ✓ "Every method is a command or a query, and the exceptions are named" — the rule plus its named exceptions is the whole practice
+====
+
+== *Criticism*:
+
+* *The author of the best-known modern write-up refuses to follow it absolutely.* Martin Fowler's bliki entry credits Meyer — "The term 'command query separation' was coined by Bertrand Meyer in his book 'Object Oriented Software Construction'" — endorses the value, "it's extremely handy if you can clearly separate methods that change state from those that don't", and then declines the pure position: "So I prefer to follow this principle when I can, but I'm prepared to break it to get my pop." https://martinfowler.com/bliki/CommandQuerySeparation.html[Fowler, "CommandQuerySeparation"] (5 December 2005).
+* *The database-generated ID is the standing counterexample, and it has a cost either way.* Mark Seemann names the collision: a repository method that saves a new entity and returns the ID the database assigned. "The problem with this design, obviously, is that it violates CQS. The Create method ought to be a Command, but it returns a value." His fix is to pass the ID in — `void Create(Guid id, T item)` — and he concedes the price: "Most software design decisions involve trade-offs, and so does this one. You gain better encapsulation for potentially worse performance." https://blog.ploeh.dk/2014/08/11/cqs-versus-server-generated-ids/[Seemann, "CQS versus server generated IDs"] (11 August 2014).
+* *Vladimir Khorikov answered that the price is too high.* Replying to Seemann directly: "While this solution clearly solves the problem of violation CQS, it does it at a high cost." His concrete objection is not aesthetic: "Besides the fact that this design results in two calls instead of one, GUIDs hurt performance of inserts." https://enterprisecraftsmanship.com/posts/cqs-with-database-generated-ids/[Khorikov, "CQS with Database-Generated Ids"] (15 November 2014). The exchange is the most useful criticism available, because both sides accept the rule and disagree only about what obeying it costs.
+* *No named German-language critic found.* Searched in English and German for documented objections to CQS as a method-level rule. The German-language material that surfaces is introductory or translated — definitions and tutorials, no citable critic. Treat this as a search result with its frame attached, not as evidence that none exists; the term is normally discussed in English.
+
+[discrete]
+== *Current Status*:
+
+* *CQS stayed a method-level rule while CQRS took the attention.* The acronym most teams meet first is CQRS, and the method-level original is often assumed to be its abbreviation. Fowler's 2005 entry remains the common modern reference for the original rule, and the 2014 Seemann/Khorikov exchange is still where the hard case is argued.
+* *The bare acronym is safe, and naming it partitions an interface.* Measured on `claude-haiku-4-5` in a clean room on 2026-10-03: asked how a developer should know, before calling one of twelve methods, whether the call is reversible — a task carrying none of CQS's vocabulary — the baseline answered with JavaDoc annotations and a naming convention. Naming CQS partitioned the twelve into queries that change nothing and commands that return void. The bare acronym also holds: asked "What is CQS?", the weak tier returned Meyer's rule without drifting to CQRS.

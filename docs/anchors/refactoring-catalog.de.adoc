@@ -1,0 +1,69 @@
+= Refactoring Catalog according to Fowler
+:categories: design-principles, development-workflow
+:proponents: Martin Fowler, Kent Beck, William Opdyke
+:roles: software-developer, software-architect, team-lead
+:tags: Refactoring, Refactoring-Katalog, benannte Refactorings, Extract Function, Extract Method, Replace Conditional with Polymorphism, Introduce Parameter Object, verhaltenserhaltende Transformation, Mechanik, Zwei Hüte, vorbereitendes Refactoring, Code Smells
+:related: code-smells, mikado-method, boy-scout-rule, red-green-tdd, test-seam
+:tier: 2
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Der Katalog benannter Refactorings aus Martin Fowlers _Refactoring: Improving the Design of Existing Code_ (1999, mit Kent Beck, John Brant, William Opdyke und Don Roberts; 2. Auflage 2018), gepflegt als https://refactoring.com/catalog/[Online-Katalog]: „This is the online catalog of refactorings, to support my book Refactoring 2nd Edition.“
+
+Auch bekannt als:: Fowlers Refactorings, der Refactoring-Katalog, benannte Refactorings -- oder ein einzelner Eintrag beim Namen: *Extract Function*, *Move Field*, *Replace Conditional with Polymorphism*
+
+[discrete]
+== *Kernkonzepte*:
+
+Den qualifizierten Namen nennen, nie das nackte Verb:: „Refactoring“ ist im Alltag das Wort für jede Codeänderung, auch für solche, die das Verhalten ändern -- das nackte Verb trägt deshalb fast nichts. Was trägt, ist die qualifizierte Form „Fowlers Refactoring-Katalog“ oder ein benannter Eintrag, etwa *Extract Function*. Fowler selbst bewacht die Grenze: „If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring.“
+
+Verhaltenserhaltung ist die Definition, keine Nebenbedingung:: Ein Refactoring ändert die innere Struktur und lässt das beobachtbare Verhalten unverändert. Eine Änderung, die zugleich einen Fehler behebt oder eine Funktion ergänzt, ist kein Refactoring, sondern zwei Änderungen unter einem Namen. Genau diese Einschränkung macht die Schritte sicher, ohne das ganze System neu zu lesen.
+
+Ein Eintrag ist ein Name plus Mechanik:: Jeder Eintrag hat einen Namen, eine Skizze von Vorher und Nachher, eine Motivation und eine nummerierte Mechanik -- die Schrittfolge, die den Code zwischen den Schritten lauffähig hält. Die Mechanik unterscheidet den Katalog von einer Liste guter Absichten: Sie sagt, wann die Tests laufen.
+
+Der Smell sagt warum, der Katalog sagt wie:: `code-smells` benennt das Symptom -- Long Function, Feature Envy, Primitive Obsession. Der Katalog benennt die Behandlung und ihre Schrittfolge. Zusammen sind sie gemeint: Ein Smell ohne benannte Transformation erzeugt einen Rewrite, eine Transformation ohne Smell erzeugt Betrieb ohne Nutzen.
+
+Zwei Hüte:: Fowlers Regel gegen Selbstbetrug: Du erweiterst entweder die Funktionalität oder du refactorst. Den Hut darfst du oft wechseln, nie beide gleichzeitig tragen. Diese Disziplin hält die Behauptung der Verhaltenserhaltung Commit für Commit wahr.
+
+Benannte Schritte sind geteiltes Vokabular:: Der Katalog leistet für Umbauten, was die Pattern-Kataloge für den Entwurf geleistet haben. „Hier ein Parameter-Objekt einführen“ ist eine vollständige Anweisung zwischen zwei Menschen -- oder zwischen Entwickler und Modell --, weil der Name die Mechanik mitbringt.
+
+Vorbereitendes Refactoring:: Die Änderung leicht machen, bevor man sie macht. Das Refactoring ist kein Aufräumen um seiner selbst willen, es kauft den nächsten Commit billiger ein -- und das ist auch das Argument, das eine Projektleitung überzeugt.
+
+Nicht _Patterns of Enterprise Application Architecture_:: `fowler-patterns` behandelt PEAA -- Repository, Unit of Work, Active Record. Gleicher Autor, anderes Buch, anderer Katalog. Wer den falschen nennt, bekommt Architekturmuster statt Codetransformationen.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Beim Umbau von Legacy-Code, wenn benannte, umkehrbare Schritte statt eines großen Rewrites gewünscht sind
+* Direkt nachdem `code-smells` ein Symptom benannt hat und die passende Behandlung fehlt
+* Im Review: fragen, welches benannte Refactoring der Diff zu sein behauptet -- und ob das Verhalten wirklich stehen geblieben ist
+* Für vorbereitende Arbeit vor einem Feature, um den strukturellen Commit vom verhaltensändernden zu trennen
+* Zur Steuerung eines Modells: „refactor using Fowler's catalog and name each refactoring you apply“ liefert eine prüfbare Schrittfolge statt eines Rewrites, den man neu lesen muss
+* Gemeinsam mit `mikado-method`, wenn das Refactoring nicht in einem Schritt fertig wird, und mit `test-seam`, wenn das Sicherheitsnetz noch fehlt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Refactoring heißt Code aufräumen“ -- es heißt verhaltenserhaltende Transformation; Aufräumen, das Verhalten ändert, ist ein Rewrite mit schönerem Etikett
+* ❌ „Ein großer Umbau ist ein großes Refactoring“ -- Fowler nennt den lange roten Build das Erkennungszeichen: das ist Restructuring, nicht Refactoring
+* ❌ „Der Katalog ist die Smell-Liste“ -- die Smells sind das Diagnosekapitel, der Katalog ist die Therapie und der größte Teil des Buchs
+* ❌ „Fowlers Katalog sind Repository und Unit of Work“ -- das sind `fowler-patterns`, ein anderes Buch
+* ❌ „Die Namen stehen fest“ -- die 2. Auflage hat umbenannt (aus Extract Method wurde *Extract Function*), ein Name allein datiert also ein Gespräch
+* ✓ „Das Refactoring benennen und die Tests dort laufen lassen, wo die Mechanik es sagt“ -- die Mechanik ist der Grund, warum der Katalog mehr ist als Vokabular
+====
+
+== *Kritik*:
+
+* *Der erste öffentliche Angriff kam von außen, und erhalten ist nur Fowlers Antwort.* Robert X. Cringely argumentierte in seiner PBS-Kolumne, Refactoring sei größtenteils vergeudete Mühe, die Manager abstellen sollten. Fowler antwortete am 03.06.2003: "A recent piece by Robert Cringely caused a small stir in the refactoring community recently, as he criticized refactoring." https://martinfowler.com/bliki/RefactoringCringely.html[Fowler, „RefactoringCringely“] (03.06.2003). Das PBS-Original ist weg -- die Seite liefert heute einen Rechtehinweis --, Cringelys eigener Wortlaut ist also nur über Fowlers Wiedergabe erreichbar, und dieser Eintrag zitiert ihn nicht direkt.
+* *An Softwaremetriken gemessen sieht Refactoring wie eine Verschlechterung aus.* Stefan Burger und Oliver Hummel haben etablierte Metriken auf Refactorings von Fowlers eigenem Video-Store-Beispiel und auf Lucene angewendet. Ihr Befund: „dass bekannte Softwaremetriken Code-Verbesserungen durch Refactoring nicht erkennen können, bzw. umgekehrt betrachtet, Refactoring die Codequalität verschlechtert“. https://dl.gi.de/items/e5bfb9c5-1305-4736-b2ed-2cf5ba4cae2c[Burger und Hummel, „Über die Auswirkungen von Refactoring auf Softwaremetriken“, GI] (2013). Der Befund trifft die Metriken, nicht die Praxis -- und das ist der Punkt, der in jedes Gespräch gehört, in dem ein Dashboard über Codequalität entscheidet.
+* *Das Wort ist der Definition davongelaufen -- und sein Autor sagt es selbst.* Fowlers Bliki-Eintrag zum „Refactoring Malapropism“ ist eine Klage über die Verwässerung des Begriffs: „If somebody talks about a system being broken for a couple of days while they are refactoring, you can be pretty sure they are not refactoring.“ Die zweite Hälfte des Problems nennt er gleich mit: „If someone talks about refactoring a document, then that's not refactoring.“ https://martinfowler.com/bliki/RefactoringMalapropism.html[Fowler, „Refactoring Malapropism“] (3. Januar 2004). Als Kritik am Anker gelesen, nicht am Buch: Das nackte Verb ist so weit gewandert, dass die qualifizierte Form Pflicht ist.
+* *In der Industrie gemessen, folgt die Praxis der Definition nicht -- und die Beteiligten rechnen das Risiko ein.* Miryung Kim, Thomas Zimmermann und Nachiappan Nagappan haben Microsoft-Entwickler befragt, interviewt und die Versionshistorie von Windows 7 analysiert: „Our survey finds that the refactoring definition in practice is not confined to a rigorous definition of semantics-preserving code transformations and that developers perceive that refactoring involves substantial cost and risks.“ Ihr quantitatives Ergebnis verweigert das einzeilige Urteil: „the top 5% of preferentially refactored modules experience higher reduction in the number of inter-module dependencies and several complexity measures but increase size more than the bottom 95%. This indicates that measuring the impact of refactoring requires multidimensional assessment.“ https://www.microsoft.com/en-us/research/publication/an-empirical-study-of-refactoring-challenges-and-benefits-at-microsoft/[Kim, Zimmermann, Nagappan, „An Empirical Study of Refactoring Challenges and Benefits at Microsoft“, _IEEE Transactions on Software Engineering_ 40(7), Juli 2014].
+* *Die Testsuite ist eine Kontrolle, kein Beweis.* Ralf Reißing benennt im Informatiklexikon der Gesellschaft für Informatik die zentrale Gefahr unverblümt: „Eine große Gefahr beim Refactoring ist es, durch die Änderungen an der Struktur neue Fehler in die Software hineinzubringen.“ Zur üblichen Antwort -- Tests vorher und nachher laufen lassen -- schreibt er: „Dieses Vorgehen ist aber nur eine Kontrolle, die keinerlei Sicherheit bietet, daß wirklich nichts verändert wurde.“ Nur Refactorings nach Opdyke mit geprüften Vorbedingungen sind „semantikerhaltende Refactorings, die beweisbar das Programmverhalten nicht verändern, sofern ihre Vorbedingungen erfüllt sind“ -- und das ist ein formales Argument, kein grüner Balken. Das nichttechnische Hindernis nennt er ebenfalls: Die Projektleitung muss überzeugt sein, „daß es sinnvoll und notwendig ist“. https://gi.de/informatiklexikon/refactoring[Reißing, „Refactoring“, GI-Informatiklexikon].
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Der Katalog wird gepflegt, und die Namen sind gewandert.* Der Online-Katalog begleitet die 2. Auflage (2018) und führt Einträge wie *Extract Function*, *Change Function Declaration*, *Move Field*, *Replace Conditional with Polymorphism* und *Split Phase*. Die Namen der ersten Auflage -- Extract Method, Rename Method, Add Parameter -- leben in IDE-Menüs und älterem Teamvokabular weiter; beide Namensgenerationen sind also gleichzeitig im Umlauf. https://refactoring.com/catalog/[refactoring.com/catalog].
+* *Den Katalog zu nennen, macht aus Ratschlägen benannte Transformationen.* Gemessen auf `claude-haiku-4-5` im Clean Room am 3. Oktober 2026: Bei einer Aufgabe, die ein schwer änderbares Preismodul mit 400 Zeilen beschrieb, ohne eine Methode zu nennen, antwortete die Baseline ohne Anker mit „extract the calculation as a pure function, move rules to data“. Mit Fowlers Katalog benannt, kamen stattdessen benannte Einträge: *Extract Method*, *Separate Query from Modifier*, *Introduce Parameter Object*, *Replace Conditional with Polymorphism*. Die benannte Transformation ist das, was der Anker kauft.

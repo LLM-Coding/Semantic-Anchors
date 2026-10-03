@@ -1,0 +1,60 @@
+= 4+1 View Model according to Kruchten
+:categories: software-architecture, documentation
+:proponents: Philippe Kruchten
+:roles: software-architect, technical-writer, team-lead
+:tags: 4+1, 4+1 view model, Kruchten, logical view, process view, development view, physical view, scenarios, use case view, views and viewpoints, RUP, ISO 42010, IEEE 1471, architecture description
+:related: arc42, c4-diagrams, cockburn-use-cases, domain-driven-design
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: The "4+1" View Model of Software Architecture -- Philippe Kruchten, "Architectural Blueprints -- The '4+1' View Model of Software Architecture", _IEEE Software_ 12(6), November 1995, pp. 42-50 (https://doi.org/10.1109/52.469759[doi:10.1109/52.469759])
+
+Also known as:: Kruchten's 4+1, the 4+1 views, the RUP architecture views, 4+1-Sichtenmodell
+
+[discrete]
+== *Core Concepts*:
+
+One View, One Named Audience:: Each view exists because a specific group asks a specific question. The *logical view* answers the end user's question about functionality. The *development view* (also implementation view) answers the programmer's question about code organisation -- modules, packages, layers, build. The *process view* answers the integrator's question about runtime: concurrency, distribution, performance, fault tolerance. The *physical view* (also deployment view) answers the system engineer's question about which hardware runs what. The audience is part of the model, not an afterthought.
+
+The "+1" Is the Cross-Check, Not a Fifth Topic:: The scenarios -- a small set of key use cases -- are deliberately redundant with the four views. They are used twice: to *discover* architectural elements while the architecture is being designed, and to *validate* the four views against each other afterwards. A scenario that cannot be walked through all four views has found an inconsistency. This is the mechanism that makes 4+1 more than a filing system.
+
+What Separates It From `arc42` and `c4-diagrams`:: All three describe a system through several views, and the three overlap heavily in content. Two things are 4+1's own. First, the explicit stakeholder-per-view mapping: the model names who each view is for, so a view with no reader is a defect. Second, the scenarios as the consistency check *between* views. `c4-diagrams` instead supplies one zoom hierarchy with a fixed notation; `arc42` supplies a twelve-chapter document structure in which the building block, runtime and deployment views descend from the same idea.
+
+Lineage -- RUP, Then the Standard:: 4+1 came out of Kruchten's work at Rational and became the architecture description of the Rational Unified Process. The idea of describing a system through stakeholder-specific views was then generalised in IEEE 1471-2000 and its successor ISO/IEC/IEEE 42010 as the *view / viewpoint* distinction: a viewpoint is the reusable template, a view is one application of it. Rozanski and Woods state the move plainly: "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint."
+
+The Diagram Vocabulary Is UML-Era:: The paper and all its teaching material speak UML: class and sequence diagrams for the logical view, component and package diagrams for the development view, activity diagrams for the process view, deployment diagrams for the physical view, use case diagrams for the scenarios. Naming the anchor therefore pulls UML with it. That is the vocabulary of the model, not a defect in it, but it is worth knowing before a model picks notation on your behalf.
+
+[discrete]
+== *When to Use*:
+
+* Structuring a first architecture description when the team has no agreed view set, and the stakeholders are known
+* Auditing an existing architecture document for a missing audience -- a document with no process view usually means nobody asked the integrator
+* Forcing consistency between views: write the scenarios, then walk each one through all four views
+* Teaching why multiple views exist at all, before introducing `arc42` or `c4-diagrams` as the modern container
+* Reading older architecture documents, RUP artefacts and ISO 42010 wording, where the vocabulary is already in use
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "4+1 means five documents" -- it means five *views* of one architecture; they may live in five chapters of one document, and a view without a reader should be dropped
+* ❌ "The scenarios are the use case chapter" -- they are the cross-check; their job is to expose contradictions between the other four views
+* ❌ "4+1 is the same as arc42 or C4" -- arc42 is a document structure and C4 a notation hierarchy; 4+1 is a stakeholder-to-view mapping plus a consistency mechanism
+* ❌ "Physical view means the server diagram" -- it is the mapping of software elements onto nodes, which includes availability and installation, not a network drawing
+* ✓ "4+1 is a view set; ISO 42010 is the grammar for view sets" -- accurate, and the reason the model survives as vocabulary even where its UML diagrams do not
+====
+
+== *Criticism*:
+
+* *The standard that formalised the idea declined to keep the view set.* IEEE 1471 and ISO/IEC/IEEE 42010 adopted Kruchten's central move -- stakeholder-driven views -- and then deliberately refused to prescribe which views. Rozanski and Woods, authors of _Software Systems Architecture_, describe the sequence directly: "In his introductory paper, Kruchten defined four standard views, namely, Logical, Process, Physical, and Development," after which "The IEEE standard makes this idea generic (and does not specify one set of views or another) by proposing the concept of a viewpoint." A fixed set of four is exactly what the standard treats as the part not to generalise. https://www.viewpoints-and-perspectives.info/home/viewpoints/[Rozanski and Woods, "Views and Viewpoints", viewpoints-and-perspectives.info]
+* *Two concerns the four views do not carry: data and operations.* The Rozanski and Woods catalog answers 4+1 with seven viewpoints -- Context, Functional, Information, Concurrency, Development, Deployment, Operational. Information and Operational have no counterpart among Kruchten's four: there is no view that owns the data model, and none that owns running the system in production. Teams using 4+1 on information systems add these themselves, which is the practical argument for the newer catalogs. Same source as above.
+* *What we did not find, and where we looked.* No named, published critique of 4+1 with a verifiable quotation turned up in English or German searching -- not from Philippe Kruchten in retrospect, not from Simon Brown, not from the arc42 authors (Stefan Zörner's embarc comparison of arc42 against alternatives discusses Simon Brown's C4 and Software Guidebook, and does not treat 4+1). The criticism of 4+1 is structural rather than polemical: it is carried by what the successors changed. Languages searched: English, German. Other languages were not searched, so this is a frame, not a proof of absence.
+
+[discrete]
+== *Current Status*:
+
+* *The prior is strong and correctly attributed.* In a clean-room test on `claude-haiku-4-5` (2026-10-03) a neutral logistics-platform brief that named no method produced no view vocabulary at all; naming the 4+1 View Model produced all five views together with their audiences. The weak tier attributes Kruchten 1995 correctly and with high confidence. The model is one of the rare cases where the term alone restructures the answer.
+* *The citation itself has drifted.* Crossref's record for `doi:10.1109/52.469759` gives _IEEE Software_ 12(6), 1995, pp. 42-50, matching the German Wikipedia entry's "Band 12, Nr. 6, November 1995, S. 42-50". Kruchten's own bibliography lists the same DOI as "pp. 45-50" (https://philippe.kruchten.com/architecture/[philippe.kruchten.com/architecture]). Use 42-50.
+* *It lives on as vocabulary, not as a template.* The stakeholder-per-view idea is now standard through ISO/IEC/IEEE 42010, and the views themselves reappear inside `arc42` (building block, runtime, deployment) and `c4-diagrams`. What has aged is the notation layer: a model naming 4+1 today still reaches for UML diagram types, which may not be what the project uses.

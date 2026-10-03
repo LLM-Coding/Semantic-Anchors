@@ -1,0 +1,105 @@
+= Test Data Builder (Pryce)
+:categories: testing-quality
+:proponents: Nat Pryce, Steve Freeman
+:roles: software-developer, qa-engineer
+:tags: Test Data Builder, Object Mother, test fixture, safe defaults, fluent interface, with methods, but method, nested builders, Arrange phase, GOOS, Growing Object-Oriented Software, brittle tests, Make It Easy
+:related: gof-builder-pattern, test-double-meszaros, tdd-london-school, arrange-act-assert, code-smells
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Test Data Builder — the Builder pattern applied to the Arrange phase of a test, named by Nat Pryce in http://www.natpryce.com/articles/000714.html["Test Data Builders: an alternative to the Object Mother pattern"] (27 August 2007) and carried into _Growing Object-Oriented Software, Guided by Tests_ (Steve Freeman and Nat Pryce, 2009)
+
+Also known as:: test builder, builder-based fixture, `anOrder()…build()`; successor to the *Object Mother* pattern. Peter Schuh and Stephanie Punke wrote the paper on it ("ObjectMother: Easing Test Object Creation in XP", XP Universe 2001), but they did not coin the name -- Fowler records that it "was coined on a Thoughtworks project at the turn of the century"
+
+[discrete]
+== *Core Concepts*:
+
+The Problem Is Constructor Noise:: Pryce starts from a test that has to name every field of an object graph to get one valid instance, and states the damage: "The code to create all those objects makes tests messy and hard to read and fills the tests with lots of unnecessary information that has nothing to do with the behaviour being tested. It also makes tests brittle: changes to the constructor arguments or the structure of the objects will break many tests."
+
+Object Mother Is the Predecessor, and Its Failure Mode Is Variant Explosion:: An Object Mother is a class of named factory methods — `TestInvoices.newDeerstalkerAndCapeInvoice()`. Pryce's objection: "the Object Mother pattern does not cope at all well with variation in the test data. Every time programmers need some slightly different test data they add another factory method to the Object Mother." The end state is a dilemma: "Over time, the Object Mother becomes bloated, messy and hard to maintain. Either programmers add new factory methods without refactoring, in which case the Object Mother becomes full of duplicated code, or programmers refactor diligently, in which case the Object Mother becomes full of many, many fine-grained methods that each contain little more than a single new statement." Martin Fowler names the same fault from the other side: "Object Mothers do have their faults. In particular there's a heavy coupling in that many tests will depend on the exact data in the mothers."
+
+Four Rules Define the Builder:: Pryce's recipe, for each class you want in a test — a builder that "Has an instance variable for each constructor parameter", "Initialises its instance variables to commonly used or safe values", "Has a `build` method that creates a new object using the values in its instance variables", and "Has 'chainable' public methods for overriding the values in its instance variables."
+
+Safe Defaults Plus Explicit Overrides:: The defaults carry everything the test does not care about; the `with…()` calls name exactly what the test does care about. A test therefore reads as its own specification, because only the significant values appear in it.
+
+`but()` for Variants, Builders Inside Builders:: Pryce's own list of what a complete builder needs: "declare the properties of a Banana; specify the default values of those properties; write a method to build a Banana with the property values collected by the builder; define a static factory function to act as syntactic sugar; make the constructor private to enforce use of the factory function; write chained 'with…' methods that capture properties explicitly defined by tests; and write a 'but' method so that tests can define builders relative to the properties of other builders." Nesting comes from the defaults themselves being built: in his `InvoiceBuilder`, `Recipient recipient = new RecipientBuilder().build();`.
+
+[source,java]
+----
+public class BananaBuilder implements Builder<Banana> {
+    private double ripeness = 0.0;
+    private double curve = 0.5;
+
+    private BananaBuilder() {}
+
+    public static BananaBuilder aBanana() {
+        return new BananaBuilder();
+    }
+
+    public Banana build() {
+        Banana banana = new Banana(curve);
+        banana.ripen(ripeness);
+        return banana;
+    }
+
+    public BananaBuilder withRipeness(double ripeness) {
+        this.ripeness = ripeness;
+        return this;
+    }
+
+    public BananaBuilder withCurve(double curve) {
+        this.curve = curve;
+        return this;
+    }
+
+    public BananaBuilder but() {
+        return new BananaBuilder()
+                .withRipeness(ripeness)
+                .withCurve(curve);
+    }
+}
+----
+
+The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pryce's comparison sets a positional factory call against a builder chain and then makes the point about the positional one: "Nothing in the first example will tell you that 'London' has been accidentally passed as the second street line instead of the city name." The builder turns an ordering bug into a compile-time-visible label.
+
+Sometimes They Escape Into Production:: "In some cases, Builders have so improved the code that they ended up being used in the production code as well."
+
+Where It Sits:: The builder is a tool for the *Arrange* step (`arrange-act-assert`). It is the GoF Builder (`gof-builder-pattern`) aimed at a different goal, and its source text is the London-School book (`tdd-london-school`).
+
+[discrete]
+== *When to Use*:
+
+* Tests littered with long constructor calls whose arguments have nothing to do with the behaviour under test
+* An Object Mother that has grown past a dozen factory methods, or that tests now depend on field by field
+* Immutable value objects with mandatory constructor parameters, where there is no setter to reach for
+* Writing the Arrange step of many tests over the same aggregate, each varying one field
+* Reviewing a test suite for the `code-smells` of irrelevant setup data and fixtures shared by accident
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Test Data Builder and Object Mother are two names for the same idea" — the builder was introduced as the answer to the Object Mother's variant explosion
+* ❌ "It is just the GoF Builder" — same mechanics, different purpose: GoF separates constructing a complex object from its representation; the test builder exists to make irrelevant data invisible and relevant data explicit
+* ❌ "Reuse one builder instance to make several objects" — that aliases shared state between them; `but()` exists precisely to derive a fresh builder from an existing one
+* ❌ "Every test should spell out every field, for clarity" — then the defaults carry nothing and the noise is back
+* ❌ "Defaults should be realistic production data" — Pryce says "commonly used or safe values"; a default whose value a test silently depends on couples the suite to the builder
+* ✓ "A builder lets the Arrange step say only what the test depends on" — accurate, and the whole point
+====
+
+== *Criticism*:
+
+* *Pryce himself is not satisfied with the implementation cost.* Three years after naming the pattern he wrote: "However, I've never been satisfied with the way of implementing Test Data Builders that I described previously on this site and in our book. There is far too much repetitive boilerplate code and duplication. All that code has to be written and then maintained as the system's domain classes evolve. Overall, I think Test Data Builders have a positive effect, but a lot can be done to reduce the overheads of using them." His remedy is a library rather than a retraction: Make It Easy, "a tiny framework to simplify writing Test Data Builders in Java, cutting down on duplicate and boilerplate code", with a .NET port by Graeme Foster. http://www.natpryce.com/articles/000769.html[Pryce, "Writing Test Data Builders: Make It Easy on Yourself", 30 January 2010].
+* *Mark Seemann argues the pattern is a workaround for a missing language feature.* His conclusion after working the pattern through C#, Haskell and F#: "The Test Data Builder design pattern truly is a recipe that addresses deficiencies in particular languages." His recommendation is a ladder away from it: "1. For mutable object models, use Test Data Builders. 2. Consider, however, modelling your domain with Value Objects and 'copy and update' instance methods. 3. Even better, consider using a programming language with built-in 'copy and update' expressions." Where records with copy-and-update syntax exist, the builder's job is already done by the language. https://blog.ploeh.dk/2017/09/11/test-data-without-builders/[Seemann, "Test data without Builders", 11 September 2017].
+* *From the practitioner side, the boilerplate charge stands, and generated builders do not fix the defaults.* Arho Huttunen: "While the test data builder pattern provides a lot of benefits, there is also one major drawback. That is, we end up writing a lot of boilerplate code." He reaches for Lombok's `@Builder` to cut the volume and reports the remaining gap: "There are no safe default values for our fields" — that is, the generated builder removes the typing but not the part that made Pryce's builder valuable. https://www.arhohuttunen.com/test-data-builders/[Huttunen, "How to Create a Test Data Builder"] (last updated 27 February 2021).
+* *The predecessor's criticism carries over if the defaults are abused.* Fowler's objection to Object Mothers — "a heavy coupling in that many tests will depend on the exact data in the mothers" — reappears whenever tests assert against values the builder supplied by default rather than values they set themselves. https://martinfowler.com/bliki/ObjectMother.html[Fowler, "ObjectMother", 24 October 2006].
+
+[discrete]
+== *Current Status*:
+
+* *This is the densest prior measured in its batch.* On a task about an unreadable test suite (`claude-haiku-4-5`, clean room, 2026-10-03), three of four no-anchor baselines proposed test data builders unprompted, one of them with the mechanism spelled out: `+new UserBuilder().withEmail("test@x.com").build()+` instead of a long constructor call. Naming the term therefore changes little on that task — which is a fact about the task, not about the term.
+* *The weak spot is attribution, not recognition.* Asked who created the pattern, the weak tier returned `creator=<agile-testing-community>` with `confidence=low`. It does not know Nat Pryce. The names, dates and venues in this entry are what the model cannot supply: Pryce 2007, _Growing Object-Oriented Software, Guided by Tests_ 2009, and Schuh and Punke's Object Mother paper at XP Universe 2001.
+* *The primary source has no HTTPS.* `natpryce.com` answers on port 80 and refuses port 443 (checked 2026-10-03), so the links above are deliberately `http://`. Treat a fetch failure there as a transport problem, not a dead source.
+* *The name is stable and the attribution is not contested.* Pryce's 2007 article is still the canonical reference, the pattern entered the mainstream through the 2009 GOOS book, and Seemann's 2017 critique is an argument about language choice rather than about what the pattern means. Nothing in the literature has renamed it.

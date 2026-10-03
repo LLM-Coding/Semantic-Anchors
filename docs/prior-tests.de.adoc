@@ -510,3 +510,62 @@ ____
 Diese zweite Hälfte trennt den Anker von einem Freibrief für Stillstand -- und sie greift, ohne dass man danach fragt.
 
 *Das Überschneidungsrisiko wurde gemessen, nicht unterstellt.* Das Testergebnis des Vorschlags nannte selbst „second-order effects", und `second-order-thinking` ist bereits ein Anker -- „vollständig durch einen bestehenden Anker abgedeckt" ist ein Ablehnungsgrund. Auf derselben Aufgabe erzeugte `Apply Second-Order Thinking` eine andere Gliederung: nach Artefakten und Folgeketten, endend bei der Zweitwirkung auf das Team, während der Chesterton-Lauf nach Zäunen gliederte und mit einer Ausstiegsregel schloss. Zwei Linsen, nicht eine.
+
+== Lauf vom 03.10.2026
+
+[cols="1,3"]
+|===
+|Kandidaten |14 Begriffe, vorgeschlagen in https://github.com/LLM-Coding/Semantic-Anchors/issues/775[#775] bis https://github.com/LLM-Coding/Semantic-Anchors/issues/788[#788], jeder davon, weil er in Florian Bruniaux' `claude-code-ultimate-guide` auftaucht
+|Modelle |`claude-haiku-4-5` (schwach). Die Aktivierung auf dem starken Tier lief je Kandidat auf `claude-opus-5-5` beim Einreicher und steht in den Issues; hier nicht wiederholt
+|Läufe |14 Proben auf den nackten Namen, 14 auf die Attribution, 33 Baselines über vierzehn Szenarien, 25 Läufe mit Anker. Zusammen 86 Proben
+|Clean Room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` mit `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN`, jede Probe in einem eigenen leeren Verzeichnis außerhalb des Repositories. Einmal gegen die Probe auf eigene Instruktionen geprüft, Antwort „none"
+|Nicht getestet |`claude-sonnet-5` wurde erneut übersprungen. Die Befunde sind eine Untergrenze
+|===
+
+=== Eine Aufgabe darf auch den Verstoß nicht nennen
+
+Der Lauf vom 30.09.2026 brachte die Regel hervor, dass eine Viability-Aufgabe nicht aus dem Abschnitt _Wann zu verwenden_ des Kandidaten stammen darf. Dieser Lauf traf den engeren Verwandten desselben Defekts, und er kostete zwei Szenariosätze.
+
+Der erste Satz beschrieb technische Symptome. „Reviewer sagen, sie könnten an der Aufrufstelle nie erkennen, was eine Funktion mit dem Rest des Systems macht" ist die Diagnose von Command-Query Separation in Paraphrase. „Eine Admin-Rolle, die die meisten Mitarbeiter haben, API-Tokens mit Vollzugriff in der CI, ein Filtergerät vor allem" ist ein Least-Privilege-Auditbefund, als Lage formuliert. Die Baselines antworteten entsprechend: *Beide* Code-Baselines nannten „Result type", „pure function" und „side effect", ohne dass ein Anker genannt war, und die Sicherheits-Baseline lieferte Token-Scoping, einen RBAC-Plan und eine Admin-Inventur. So gemessen sind CQS, Railway Oriented Programming, Least Privilege und Defense in Depth alle dekorativ -- und die Messung ist wertlos, weil die Aufgabe dem Modell die Checkliste der Methode als Eingabe mitgegeben hat.
+
+Der zweite Satz korrigierte zu weit. Szenarien auf Managementebene -- „das Team verbringt etwa die Hälfte jedes Zyklus mit Fehlermeldungen statt mit den Features, die der Product Owner verlangt" -- ergaben eine wirklich saubere Baseline: Keiner von sechs Läufen nannte einen der vierzehn Kandidaten. Dafür waren die Antworten mit Anker dünn, weil die Aufgabe zu weit von der Methode entfernt liegt, als dass die Methode daran arbeiten könnte.
+
+*Die Regel daraus: Eine Viability-Aufgabe muss im Feld der Methode liegen und darf kein Wort aus dem Vokabular der Methode tragen.* „Ein Entwickler, der letzte Woche angefangen hat, fragt, woran er vor dem Aufruf einer von zwölf Methoden erkennen soll, ob der Aufruf umkehrbar ist" enthält kein Query, kein Command und keinen Side Effect -- und es trennte die beiden Bedingungen klar. Das Szenario ist das Messgerät, und ein Messgerät kann in zwei Richtungen falsch stehen.
+
+=== Zwei Namensfallen
+
+*Arrange-Act-Assert besteht; „AAA" nicht.* Das nackte Akronym antwortet aus einem anderen Feld, und zwar ohne Zögern: „AAA stands for *Authentication, Authorization, and Accounting*, a security framework commonly used in networking and access control." Die Antwort läuft weiter über RADIUS und TACACS+ und erreicht den American Automobile Association, bevor überhaupt ein Testbezug auftaucht. Registriert ist der ausgeschriebene Name; das Akronym allein ist als unbrauchbar vermerkt.
+
+*„Connextra" konfabuliert, und das ist der schwerere Befund.* Auf die Frage „What is Connextra?" antwortete das schwache Tier: „Connextra is a software development kata (coding exercise) created by Emily Bache." Danach beschrieb es ausführlich eine Refactoring- und TDD-Übung. Nichts davon existiert. Es gibt keine Absicherung, kein „ich bin nicht sicher", und die Selbstauskunft der Probe lautet `recognized=yes`. Das ist die Signatur der stillen Substitution, für die die Batterie gebaut ist, und sie ist schlimmer als die Kanban-Kollision des letzten Laufs: Kanban lieferte ein echtes Konzept unter einem umstrittenen Namen, Connextra liefert eine Erfindung unter einer selbstsicheren Überschrift. Die qualifizierte Form, „the Connextra user story format", erreicht das richtige Konzept, datiert es auf etwa 2001 und schreibt es dem Team bei Connextra zu. Der Eintrag dokumentiert die qualifizierte Zeichenkette und warnt vor dem nackten Namen.
+
+=== Die vierzehn Kandidaten
+
+[cols="2,1,4"]
+|===
+|Begriff |Urteil |Anmerkung
+
+|Principle of Least Privilege |★★★ |Das entscheidende Ergebnis des Laufs -- siehe unten
+|Command-Query Separation |★★★ |Trifft schon als nacktes Akronym, ohne Abdrift zu CQRS. Wo die Baseline mit JavaDoc und einer Namenskonvention antwortete, zerlegte der Anker zwölf Methoden in Queries und Commands mit der `void`-Bedingung
+|4+1 View Model |★★★ |Alle fünf Sichten samt Zielgruppen; die Baseline trug überhaupt kein Sichten-Vokabular
+|Enterprise Integration Patterns |★★★ |Lieferte Request/Reply, Publish/Subscribe, Canonical Message Format und Message Translator und nannte „Hohpe and Woolf's notation", ohne nach einer Quelle gefragt zu sein
+|Richardson Maturity Model |★★★ |Diagnostizierte die Stufe („likely stuck at Level 0-1") und verordnete die Migration. Die Baseline besprach dieselbe API ohne jeden Reifebegriff
+|Railway Oriented Programming |★★★ |Erzeugte einen `Result`-Typ und eine ausdrückliche Fehlerspur. Eine von zwei Baselines griff selbst zu `Either`
+|Bulkhead Pattern |★★★ |In einer von drei Baselines ungefragt genannt, reproduziert also nicht -- der Delta ist echt. Die Attribution übersteht das schwache Tier nicht: Es antwortet `creator=Netflix (collective); year=2011`, nicht Nygard 2007
+|Keep a Changelog |★★★ |Der Delta liegt in der Korrektheit, nicht in der Wahl. Zwei von vier Baselines nannten die Konvention ungefragt und listeten dann die falschen Abschnitte -- eine produzierte „Breaking Changes, New Features, Fixed, Deprecated". Mit Anker kamen alle sechs kanonischen Typen plus `[Unreleased]`
+|Arrange-Act-Assert |★★★ |Nur unter dem ausgeschriebenen Namen -- siehe oben. In zwei von vier fachnahen Baselines ungefragt erreicht
+|Test Data Builder |★★★ |Der dichteste Prior des Schwungs: in drei von vier Baselines ungefragt vorgeschlagen, einmal mit ausgeschriebener Mechanik als `new UserBuilder().withEmail("test@x.com").build()`. Der Steering-Delta auf dieser Aufgabe ist daher nahe null, und das ist eine Aussage über die Aufgabe. Schwachstelle ist die Attribution: `creator=<agile-testing-community>`, `confidence=low` -- Nat Pryce ist unbekannt
+|Connextra User Story Format |★★★ |Nur in der qualifizierten Form -- siehe oben
+|Refactoring Catalog |★★☆ |Lieferte benannte Katalogeinträge -- Extract Method, Separate Query from Modifier, Introduce Parameter Object, Replace Conditional with Polymorphism -- wo die Baseline „extract a pure function, move rules to data" sagte. ★★☆, weil das nackte Verb jede Codeänderung deckt
+|OWASP ASVS |★★☆ |Arbeitete auf L2 und belegte die Kapitel V4, V6 und V13 mit konkreten Arbeitspaketen, wo die Baseline zu SOC 2 und ISO 27001 griff. Braucht Level und Version. Das schwache Tier schreibt die Leitung außerdem `Mike Goodwin` zu; die Institution stimmt, die Person nicht
+|Defense in Depth |★★☆ |Fügte in zwei von zwei Läufen unabhängige Schichten und ein sandboxed Rendering der Vorschau hinzu, gegen null von zwei in der Baseline. „assume breach" erschien aber nur in einem von zwei Ankerläufen; die Annahme, die die Praxis von „mehr Kontrollen" trennt, trägt der Name also nicht zuverlässig und steht deshalb im Eintrag selbst
+|===
+
+=== Least Privilege: Der Delta war null, bis die Aufgabe wechselte
+
+Least Privilege fiel in den ersten zwei Messungen durch und bestand in der dritten, und der Unterschied lag vollständig in der Aufgabe.
+
+Auf dem Szenario, das den Verstoß beschrieb, waren Ankerantwort und Baseline dieselbe Antwort unter anderen Überschriften -- lokale Admin-Rechte entfernen, Netz segmentieren, Tokens eingrenzen -- und der einzige Lauf, der „blast radius" verwendete, war die Baseline. Ein Leser dürfte daraus schließen, der Begriff sei dekorativ.
+
+Dann wechselte die Aufgabe auf eine, bei der das Prinzip nicht die naheliegende Antwort ist: „Schreibe einen GitHub-Actions-Workflow für einen Node.js-Service: Abhängigkeiten installieren, Testsuite laufen lassen, ein Container-Image bauen, nach Amazon ECR schieben und auf einen Staging-ECS-Cluster ausrollen. Gib das YAML aus." Beide Läufe ohne Anker erzeugten langlebige `AWS_ACCESS_KEY_ID`- und `AWS_SECRET_ACCESS_KEY`-Secrets und überhaupt keinen `permissions:`-Block. Beide Läufe mit Anker erzeugten einen `permissions:`-Block, OIDC über `role-to-assume` mit `id-token` und nirgends statische Keys. Je Bedingung zweimal reproduziert.
+
+Die allgemeine Lehre spiegelt die des vorigen Laufs. Dort ergab eine Aufgabe, bei der die Methode die naheliegende Antwort war, einen Delta von null. Hier ergibt eine Aufgabe, die *das Problem benennt, für das das Prinzip steht*, aus demselben Grund einen Delta von null -- und der eigentliche Wert des Ankers liegt auf den Artefakten, bei denen niemand an Eingrenzung denkt: Build-Pipelines, IAM-Policies, Werkzeugrechte von Agenten. *Ein Anker hat keinen einzelnen Delta. Er hat einen Delta je Aufgabe, und eine Messung, die eine Zahl berichtet, hat eine Aufgabe gewählt.*

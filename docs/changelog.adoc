@@ -4,6 +4,44 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-10-03
 
+*Fourteen new anchors, and the vocabulary they came from belongs to someone else.* Every term in this batch was proposed because it appears in https://github.com/FlorianBruniaux/claude-code-ultimate-guide[Florian Bruniaux's Claude Code Ultimate Guide] (CC-BY-SA-4.0), whose own anchor catalog is adapted from this one and names this repository as its source. Only the terms were taken; no text was copied, so the proposals stay compatible with this repository's Apache-2.0 licence. Fourteen were measured, and all fourteen were accepted.
+
+*Code and design:*
+
+* *link:#/anchor/refactoring-catalog[Refactoring Catalog according to Fowler]* (Martin Fowler, Kent Beck, William Opdyke) -- design-principles + development-workflow: named, behaviour-preserving transformations with written mechanics. link:#/anchor/code-smells[Code Smells] says why; the catalog says how. Tier ★★☆, because the bare verb "refactor" covers any code change -- the qualified form is the anchor. #775.
+* *link:#/anchor/command-query-separation[CQS (Command-Query Separation)]* (Bertrand Meyer) -- design-principles: a method either answers a question or changes something, never both. A rule for every single method, which is what separates it from link:#/anchor/cqrs[CQRS]. Tier ★★★, #776.
+* *link:#/anchor/railway-oriented-programming[Railway Oriented Programming]* (Scott Wlaschin) -- design-principles: two-track composition where a failure short-circuits the rest. Names the style, not a library. Wlaschin wrote the counterweight himself in 2019. Tier ★★★, #780.
+* *link:#/anchor/least-privilege[Principle of Least Privilege]* (Jerome H. Saltzer, Michael D. Schroeder) -- design-principles + testing-quality: the 1975 principle, measured here on the artifacts nobody thinks to scope. Tier ★★★, #784.
+
+*Testing:*
+
+* *link:#/anchor/arrange-act-assert[Arrange-Act-Assert (AAA)]* (Bill Wake, Gerard Meszaros) -- testing-quality: three blocks, one action per test. Registered under the written-out name, because the bare acronym anchors Authentication, Authorization and Accounting. Tier ★★★, #778.
+* *link:#/anchor/test-data-builder[Test Data Builder]* (Nat Pryce, Steve Freeman) -- testing-quality: safe defaults and fluent overrides, so a changed constructor breaks the builder instead of two hundred tests. The densest prior in the batch. Tier ★★★, #779.
+* *link:#/anchor/owasp-asvs[OWASP ASVS]* (OWASP Foundation) -- testing-quality: numbered, verifiable requirements at three assurance levels, the testable counterpart to link:#/anchor/owasp-top-10[OWASP Top 10]. Tier ★★☆; name the level and the version, because v5.0 renumbered everything. #783.
+
+*Architecture and integration:*
+
+* *link:#/anchor/four-plus-one-view-model[4+1 View Model according to Kruchten]* (Philippe Kruchten) -- software-architecture + documentation: four views, each written for a named stakeholder group, plus scenarios as the cross-check. The stakeholder mapping is what link:#/anchor/arc42[arc42] and link:#/anchor/c4-diagrams[C4] do not carry. Tier ★★★, #777.
+* *link:#/anchor/enterprise-integration-patterns[Enterprise Integration Patterns]* (Gregor Hohpe, Bobby Woolf) -- software-architecture: 65 named messaging patterns with an icon notation. link:#/anchor/event-driven-architecture[Event-Driven Architecture] is the style; this is the vocabulary. Tier ★★★, #786.
+* *link:#/anchor/bulkhead[Bulkhead Pattern]* (Michael T. Nygard) -- software-architecture: cap what one dependency may consume. link:#/anchor/circuit-breaker[Circuit Breaker] stops the calls; the bulkhead limits the damage while they still run. Tier ★★★, #781.
+* *link:#/anchor/richardson-maturity-model[Richardson Maturity Model]* (Leonard Richardson, Martin Fowler) -- software-architecture + design-principles: a design target, not a score. Tier ★★★, #782.
+* *link:#/anchor/defense-in-depth[Defense in Depth]* (US National Security Agency, James Reason) -- software-architecture + testing-quality: independent layers, each assumed to fail. Tier ★★☆, and the entry states the independence requirement explicitly because the name does not carry it. #785.
+
+*Process and requirements:*
+
+* *link:#/anchor/keep-a-changelog[Keep a Changelog]* (Olivier Lacan) -- documentation + development-workflow: a curated release history with six change types and an `[Unreleased]` section, deliberately not generated from the commit log. Tier ★★★, #787.
+* *link:#/anchor/connextra-user-story[Connextra User Story Format]* (Connextra team, Mike Cohn) -- requirements-engineering: the three-part template that forces a story to name who wants it and why. link:#/anchor/invest[INVEST] judges quality, this names the form. Tier ★★★ in its qualified form only. #788.
+
+*The measurement found two name traps that would have shipped as anchors.*
+
+*"AAA" anchors the wrong field.* Asked what AAA is, the weak tier answered "Authentication, Authorization, and Accounting", worked through RADIUS and TACACS+, and reached the American Automobile Association before any testing sense. The written-out name is the anchor.
+
+*"Connextra" invents an answer.* Asked what Connextra is, the weak tier replied, with no hedging whatsoever, that it is "a software development kata (coding exercise) created by Emily Bache" and went on to describe an exercise that does not exist. A confident answer with nothing behind it is the signature the prior test exists to catch. The qualified form reaches the right concept; the bare company name must never be the documented string.
+
+*And one scenario defect of our own, which is the narrower cousin of last run's.* The 30 September run established that a viability task must not be drawn from the anchor's own description. This run found that a task may also not state the *violation* the method exists to fix. The first scenario set described symptoms in the methods' own diagnoses -- "reviewers can never tell what a function will do to the rest of the system", "API tokens that carry full account scope" -- and the no-anchor baselines duly answered with the methods: both code baselines reached "Result type", "pure function" and "side effect" unprompted, and the security baseline produced token scoping and an admin inventory. Measured that way, CQS, Railway Oriented Programming, Least Privilege and Defense in Depth all look decorative. Replacing those tasks with management-level scenarios produced the opposite error -- a clean baseline, but too far from the method for the anchor to act. What measured something was a task *inside* the method's domain, phrased without any of its vocabulary. Full detail in the link:#/prior-tests[prior-test register].
+
+*Least Privilege is the result worth reading.* On every task that already described the violation, naming the principle changed nothing -- and the baseline, not the anchored run, was the one that used the phrase "blast radius". On a task where the principle is not the obvious answer, "write the GitHub Actions workflow that builds this service and deploys it to staging", both no-anchor runs produced long-lived `AWS_ACCESS_KEY_ID` secrets and no `permissions:` block at all, while both anchored runs produced a `permissions:` block, OIDC `role-to-assume` and no static keys. Reproduced twice in each condition. An anchor's measurable delta depends on the task as much as on the term.
+
 *Lighthouse now measures the published site.* The performance and accessibility check moved out of the pull-request run, where it graded whatever happened to be live, and into the deploy, where it grades what was just published. Nothing changes for readers of the catalog; the thresholds are unchanged.
 
 == 2026-09-30

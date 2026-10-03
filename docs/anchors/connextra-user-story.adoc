@@ -1,0 +1,66 @@
+= Connextra User Story Format
+:categories: requirements-engineering
+:proponents: Rachel Davies, Connextra team, Mike Cohn
+:roles: product-owner, business-analyst, requirements-engineer, team-lead
+:tags: Connextra, Connextra user story format, user story template, As a I want so that, role goal benefit, three-part template, Rachel Davies, Mike Cohn, user story, story card
+:related: invest, user-story-mapping, jobs-to-be-done, bdd-given-when-then, cockburn-use-cases
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Connextra user story format -- the three-part user story template devised at Connextra, London
+
+Also known as:: the user story template, the three-part story template, the "As a … I want … so that …" format, role-goal-benefit
+
+[discrete]
+== *Core Concepts*:
+
+Always Say the Qualified Name:: Use "the Connextra user story format", never the bare company name. The bare name does not resolve to this concept in weaker models -- see Current Status for the measurement. The qualified string is the anchor; "Connextra" alone is a trap.
+
+Three Slots, One Sentence:: *As a* `<role>`, *I want* `<goal or capability>`, *so that* `<benefit>`. Mike Cohn writes the skeleton as "As a …, I … so that …." -- who, what, why. The third slot is the one most often dropped and the only one that carries the reason the work is worth doing.
+
+A Form, Not a Quality Standard:: `invest` judges whether a story is any good -- independent, negotiable, valuable, estimable, small, testable. This anchor names the *shape* the sentence takes. A story can fill all three slots and still fail every INVEST letter.
+
+The Sentence Is the Promise of a Conversation, Not the Requirement:: The card exists to be talked about. This is the point the template's own critics press hardest, and it is part of the concept rather than an objection to it.
+
+Where It Sits Among the Neighbours:: The Connextra form writes the story; `bdd-given-when-then` writes its acceptance criteria; `user-story-mapping` arranges many stories along a user's journey; `jobs-to-be-done` and the job story offer a different sentence with a different unit of analysis.
+
+The Attributable Name:: Most practitioners know the template with no name at all. "Connextra" is what makes it citable -- a specific team at a specific London company in the early 2000s, rather than anonymous agile folklore.
+
+[discrete]
+== *When to Use*:
+
+* Turning stakeholder notes into backlog items, where the benefit clause is the test of whether anyone knows why the item exists
+* Reviewing a backlog for stories whose role slot says "system" or "developer", a reliable sign the item is a task
+* Teaching the form to a team new to stories, as a learning aid with an explicit exit -- see the Criticism section
+* Asking an LLM to draft backlog items, where naming the qualified form imposes the three-part shape; on a maintainer-backlog task that contained no user story at all, naming it imposed the template on the answer
+* Deciding deliberately between this form and a job story, rather than defaulting
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Connextra is a coding kata" -- it is a London software company; this specific confabulation is what weaker models produce from the bare name
+* ❌ "Connextra format and INVEST are the same thing" -- one is the sentence's form, the other is a quality check on the result
+* ❌ "A story is the sentence on the card" -- the card is a token for a conversation; Jeff Patton's whole objection is aimed at this reading
+* ❌ "Everything in the backlog must fit the template" -- Mike Cohn, who popularised it, says otherwise in plain words (see Criticism)
+* ❌ "As a system, I want …" -- no beneficiary, therefore no benefit clause worth writing; that item is a task
+* ✓ "It is the standard three-part form for a user story, and its author is attributable" -- accurate, and the reason it belongs next to `invest` rather than inside it
+====
+
+== *Criticism*:
+
+* *Jeff Patton: the template turned stories into requirements.* Announcing _User Story Mapping_, Patton describes the book's purpose as "saving stories from the template zombies (that have turned them into yet another annoying way to express software requirements), and instead having really high-fidelity conversations about how our product helps people." https://jpattonassociates.com/jeff-pattons-book-released-user-story-mapping/[Patton, "Jeff Patton's Book Released: User Story Mapping"] (30 January 2015). The objection is not that the form is wrong but that filling it in has replaced the conversation it was meant to start.
+* *Alan Klement and Intercom: three structural defects, and a different sentence.* Klement lists the problems with the user story format as "They use Personas.", "They couple implementation with motivations and outcomes." and "They ignore context, situations, and anxieties." On the coupling: when a feature fails, "because implementation was coupled with motivations and outcomes. Because of the coupling, how can anyone know what was wrong?" His replacement is the job story, "When [situation]…[motivation]…[expected outcome]." https://www.intercom.com/blog/using-job-stories-design-features-ui-ux/[Klement, "Designing Features Using Job Stories", Inside Intercom] (23 December 2013). See `jobs-to-be-done`.
+* *Chris Matts: put the value first.* Matts' Feature Injection reverses the order so the business benefit opens the sentence -- Liz Keogh prints his template as "In order to <deliver some business benefit> <these people> will need <these features>." The objection is about emphasis: the Connextra form opens with the stakeholder, so the benefit arrives last and is the easiest slot to leave empty. https://lizkeogh.com/2008/09/10/feature-injection-and-handling-technical-stories/[Keogh, "Feature Injection and handling technical stories"] (10 September 2008).
+* *Mike Cohn, who popularised the template, limits it himself.* "When expressing something in the standard user story template doesn't make sense, don't use that template." He warns that "too many stories are written as just 'as a user…'", which may "indicate a system not well suited to user stories", and on being made to comply: "The last thing I need would be a Scrum Master insisting I write it to follow a template." https://www.mountaingoatsoftware.com/agile/why-the-three-part-user-story-template-works-so-well[Cohn, "User Story Template: What It Is and Why It Works So Well", Mountain Goat Software].
+* *German-language criticism makes the same point about narrowed thinking.* Die Produktwerker: "Aber wer alles in das Format „Als (Nutzer) möchte ich…, damit …" zwängt, läuft Gefahr, das Denken zu verengen." https://produktwerker.de/fehler-bei-der-arbeit-mit-user-stories/[Die Produktwerker, "Die fünf größten Fehler bei der Arbeit mit User Stories"] (July 2025).
+
+[discrete]
+== *Current Status*:
+
+* *The bare company name confabulates, with no hedging.* Asked "What is Connextra?", `claude-haiku-4-5` in a clean room answered that it is "a software development kata (coding exercise) created by Emily Bache" and went on to describe a refactoring exercise that does not exist. An invented answer under a confident heading. Use the qualified form.
+* *The qualified form reaches the concept.* "The Connextra user story format" produced the right template, dated it to 2001 and credited the Connextra team on the same weak tier.
+* *The origin is attributable to a team and a company; the exact year is not as firm as it is usually printed.* Mike Cohn writes that the template "originated with agile coach Rachel Davies at a UK company, Connextra, in the early 2000s". Seb Rose's account agrees on the person and place: "The challenges teams had writing user stories led to the creation of the _Connextra template_ by Rachel Davies in the early 2000s." https://cucumber.io/blog/bdd/user-stories-are-not-the-same-as-features/[Rose, "User stories and BDD (part #1)"] (31 October 2019). Both sources say "early 2000s"; the widely repeated date of 2001 did not appear in either, and Davies is reported to credit the Connextra team rather than herself. Credit the team, and say "around 2001" rather than asserting it.
+* *Popularised, not authored, by Cohn.* _User Stories Applied_ (2004) and _Agile Estimating and Planning_ are why the form is near-universal.

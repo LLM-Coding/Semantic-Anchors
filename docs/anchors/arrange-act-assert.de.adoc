@@ -1,0 +1,65 @@
+= Arrange-Act-Assert (AAA)
+:categories: testing-quality
+:proponents: Bill Wake, Gerard Meszaros
+:roles: software-developer, qa-engineer
+:tags: Arrange-Act-Assert, 3A, AAA-Muster, Teststruktur, Unit-Test-Aufbau, Lesbarkeit von Tests, Four-Phase Test, Fixture, Teardown, eine Assertion pro Test, Given-When-Then, Build-Operate-Check
+:related: bdd-given-when-then, gherkin, test-double-meszaros, red-green-tdd, test-data-builder
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Arrange-Act-Assert -- drei benannte Phasen für den Rumpf eines einzelnen Unit-Tests, von seinem Namensgeber als „3A“ abgekürzt
+
+Auch bekannt als:: 3A, AAA-Muster, Setup-Exercise-Verify (die ersten drei Phasen von Gerard Meszaros' Four-Phase Test), Build-Operate-Check (dieselbe Dreiteilung unter anderen Namen in Robert C. Martins _Clean Code_)
+
+[discrete]
+== *Kernkonzepte*:
+
+Den Namen ausschreiben -- das Kürzel zeigt woandershin:: Der Anker ist „Arrange-Act-Assert“. „AAA“ ist er nicht: Das Kürzel steht standardmäßig für Authentication, Authorization und Accounting in der Netzwerk-Zugangskontrolle, und genau das holt ein Modell aus den drei Buchstaben (siehe *Aktueller Stand*). Also ausschreiben -- im Prompt, im Testkommentar, im Teamvokabular.
+
+Drei Phasen, eine Handlung:: Bill Wakes eigene Definitionen. *Arrange*: „Set up the object to be tested. We may need to surround the object with collaborators.“ *Act*: „Act on the object (through some mutator). You may need to give it parameters.“ *Assert*: „Make claims about the object, its collaborators, its parameters, and possibly (rarely!!) global state.“ Das entscheidende Wort ist *eine*: Ein zweites Act im selben Test heißt, es braucht einen zweiten Test.
+
+Der Ursprung, datiert vom Autor selbst:: Wakes Beitrag https://xp123.com/3a-arrange-act-assert/[„3A – Arrange, Act, Assert“] ist auf den 26. April 2011 datiert und sagt: „I (Bill Wake) observed and named the pattern in 2001.“ Das Jahr 2001 ist damit die Erinnerung des Autors, zehn Jahre später aufgeschrieben, kein zeitgenössischer Beleg.
+
+Die vierte Phase ist die, die AAA weglässt:: Meszaros' Four-Phase Test nennt „fixture setup, exercise SUT, result verification and fixture teardown“. AAA benennt die ersten drei neu und lässt die vierte offen -- „In the fourth phase, we tear down the test fixture to put the world back into the state in which you found it.“ Bei Tests, die Dateien, Datenbanken, Uhren oder globalen Zustand berühren, bleibt diese Lücke Ihre Aufgabe; AAA erinnert nicht daran.
+
+Nicht auf derselben Höhe wie Given-When-Then:: Given-When-Then formt ein *Akzeptanzszenario* in der Sprache der Domäne, geschrieben für Leser, die keinen Code lesen (`gherkin`, `bdd-given-when-then`). Arrange-Act-Assert formt den *Rumpf eines Unit-Tests* im Code. Die Strukturen sind parallel; Publikum, Artefakt und Abstraktionsebene sind es nicht. Given-When-Then klärt das Verhalten, Arrange-Act-Assert ordnet den Test, der es prüft.
+
+Ein aufgeblähtes Arrange ist eine Diagnose:: Wenn der Arrange-Block Act und Assert erdrückt, sagt der Test etwas über den Entwurf: zu viele Kollaborateure, ein Konstruktor, der irrelevante Daten verlangt, verdeckte Abhängigkeiten. Die beiden Standardmittel sind Test Doubles (`test-double-meszaros`) und Builder, die sichere Defaults verstecken (`test-data-builder`).
+
+Die Phasen zu markieren ist Disziplin, keine Dekoration:: Meszaros' Begründung, die Phasen hinzuschreiben: „Using comments to mark the phases of a Four-Phase Test is a good source of self-discipline in that it makes it very obvious when our tests are not Single Condition Tests.“
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Wenn Unit-Tests entstehen sollen, die je ein Verhalten prüfen, statt einer Methode, die sechs Dinge aufruft und auf alle prüft
+* Im Review: Die drei Phasen zeigen, woher ein Fehlschlag kommt -- falsches Setup, falscher Aufruf oder falsche Erwartung
+* In der Lehre, wo die benannten Phasen Anfängern eine Form zum Ausfüllen geben
+* Beim Aufräumen einer Testsuite, deren Arrange-Abschnitte außer Kontrolle geraten sind -- als Einstieg zu Buildern und Test Doubles
+* Neben `bdd-given-when-then`, wenn ein Team beide Ebenen braucht und sie regelmäßig verwechselt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „AAA“ -- das nackte Kürzel holt Authentication, Authorization und Accounting, nicht Testen; der Anker ist der ausgeschriebene Name
+* ❌ „Arrange-Act-Assert heißt genau eine Assertion pro Test“ -- umstritten, und Wake selbst schreibt über diese Regel: „I don't follow that guideline too closely.“ Siehe *Kritik*
+* ❌ „Das ist nur Given-When-Then für Programmierer“ -- gleiche Form, andere Ebene, anderes Publikum
+* ❌ „Drei Phasen genügen für jeden Test“ -- Teardown fehlt von Bauart her, und gemeinsames Setup wie mehrstufige Szenarien brauchen Anpassungen
+* ❌ „Die Kommentare sind das Muster“ -- das Muster ist das einzelne Act; die Kommentare machen seinen Verstoß nur sichtbar
+* ✓ „Eine Handlung pro Test, mit sichtbar getrenntem Setup und Erwartung“ -- trifft zu und ist der Teil, auf dem man bestehen sollte
+====
+
+== *Kritik*:
+
+* *Die strenge Lesart -- eine Assertion pro Test -- ist umstritten, und der Namensgeber selbst steht auf der nachsichtigen Seite.* Dave Astels begründete die Regel in „One Assertion Per Test“ (23. Februar 2004): Tests seien Spezifikationen von Verhalten, und die Regel halte einen in „the smallest steps possible, both for the finest-grained long-term verification, and for the most flexible design evolution“; wo ein Test mehrere Assertions will, zerlegt er ihn in getrennte Fixtures. Wake antwortet elf Jahre später in „Multiple Asserts Are OK“: „I first heard the 'one assert per test' idea years ago from Dave Astels, and others have picked it up since then“, und „Multiple assertions can be a sign of trouble in tests. But as you'll see by the end, some situations make good use of groups of assertions.“ https://www.artima.com/weblogs/viewpost.jsp?thread=35578[Astels, „One Assertion Per Test“, Artima, 23. Februar 2004] und https://www.industriallogic.com/blog/multiple-asserts-are-ok/[Wake, „Multiple Asserts Are OK“, Industrial Logic, 29. September 2015]. Wer „AAA“ als Autorität für eine harte Ein-Assertion-Regel zitiert, beruft sich auf eine Position, die ihr Autor ausdrücklich nicht einnimmt.
+* *Die drei Phasen passen nicht auf jede Testform, und die Lehrliteratur sagt das.* Die AG Software Engineering der Freien Universität Berlin nennt im Material zum Programmierpraktikum (Sommersemester 2026) zwei Fälle, in denen die einfache Struktur bricht: „Viele Tests teilen dasselbe aufwändige Setup -- Kopieren kostet Zeit und erzeugt Fehlerquellen“, und „Ein Testszenario besteht aus mehreren aufeinander aufbauenden Schritten, deren Zwischenzustände jeweils überprüft werden sollen.“ Ihre Mittel: Hilfsfunktionen für das gemeinsame Arrange und eine A-AA-AA-Form mit mehreren Act/Assert-Zyklen. Die Seite stellt das als Anpassung dar, nicht als Grund, das Muster aufzugeben. https://www.inf.fu-berlin.de/inst/ag-se/teaching/K-ProPra-2026-04/pytest_aaa.html[AG Software Engineering, FU Berlin, „Das AAA-Muster: Strukturierte Unit-Tests“].
+* *Die Vorbedingung vor dem Act zu prüfen ist der zweite ständige Flicken.* „Arrange-Assert-Act-Assert“ fügt eine Prüfung ein, ob das Setup den Zustand wirklich hergestellt hat, den der Test voraussetzt -- damit ein Fehlschlag nicht stillschweigend der Handlung zugeschrieben wird. Wake zeigt die Form selbst in „Multiple Asserts Are OK“: „// arrange / set up something hairy / // assert on setup / assert setup looks right / // act / probe a behavior / // assert / verify its consequences“. Der Preis: Im Test stehen nun zwei Arten von Assertion, und der Leser muss sie unterscheiden.
+* *Teardown ist eine echte Lücke, keine Vereinfachung.* Meszaros behält die vierte Phase aus gutem Grund -- ein Test, der die Welt nicht zurücksetzt, zerstört den nächsten -- und AAAs drei Namen bieten keinen Ort dafür. http://xunitpatterns.com/Four%20Phase%20Test.html[Meszaros, „Four-Phase Test“, xunitpatterns.com] (die Seite liefert nur reines HTTP).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Das nackte Kürzel ankert ein ganz anderes Feld.* Auf die Frage „What is AAA?“ antwortete die schwache Stufe (`claude-haiku-4-5`, Clean Room, 2026-10-03): „AAA stands for *Authentication, Authorization, and Accounting*, a security framework commonly used in networking and access control“, führte weiter über RADIUS und TACACS+ und erwähnte den American Automobile Association, bevor irgendein Testbezug kam. Der Anker ist damit der ausgeschriebene Name; das Kürzel allein ist keiner.
+* *Der Prior hinter dem vollen Namen ist dicht genug, um unaufgefordert aufzutauchen.* In einer Aufgabe zur Lesbarkeit von Tests, am selben Tag gemessen, kam die Nulllinie ohne Anker in zwei von vier Durchläufen selbst auf Arrange-Act-Assert. Den Namen zu nennen macht die Struktur ausdrücklich und entscheidet die Ein-Assertion-Frage; eine unbekannte Idee bringt er nicht ein.

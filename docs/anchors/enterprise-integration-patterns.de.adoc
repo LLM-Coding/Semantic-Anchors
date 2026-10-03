@@ -1,0 +1,63 @@
+= Enterprise Integration Patterns (Hohpe/Woolf)
+:categories: software-architecture
+:proponents: Gregor Hohpe, Bobby Woolf
+:roles: software-architect, software-developer
+:tags: EIP, Enterprise Integration Patterns, Messaging, Integrationsstile, Message Channel, Message Router, Message Translator, Competing Consumers, Dead Letter Channel, Canonical Data Model, Pipes and Filters, Mustersprache, Apache Camel, Spring Integration
+:related: event-driven-architecture, circuit-breaker, domain-driven-design, cqrs
+:tier: 3
+:prior-test: 2026-10-03
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: _Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions_ -- Gregor Hohpe und Bobby Woolf, Addison-Wesley Signature Series, 2003. Der Katalog steht unter https://www.enterpriseintegrationpatterns.com/patterns/messaging/[enterpriseintegrationpatterns.com]
+
+Auch bekannt als:: EIP, die Hohpe/Woolf-Muster, die Mustersprache des Messaging
+
+[discrete]
+== *Kernkonzepte*:
+
+Die vier Integrationsstile kommen vor jedem Muster:: Das Buch beginnt mit dem Vergleich von *File Transfer*, *Shared Database*, *Remote Procedure Invocation* und *Messaging* und begründet Messaging über Kopplung -- zeitlich, örtlich und im Datenformat. Dieser Vergleich gehört zum Anker: Wer EIP nennt, soll die Stilwahl bekommen, nicht nur eine Musterliste. Ein Entwurf, der die anderen drei Stile nie erwogen hat, hat das erste Kapitel übersprungen.
+
+65 Muster in sechs Kategorien:: Der Katalog nennt seine Größe selbst: "This pattern catalog includes 65 integration patterns that we collected from integration projects and updated over two decades." Die Kategorien folgen dem Weg einer Message -- *Messaging Channels*, *Message Construction*, *Message Routing*, *Message Transformation*, *Messaging Endpoints*, *System Management*. Brauchbar sind die Kategorien; die vollen 65 sind Nachschlagewerk, nichts zum Aufzählen.
+
+Die Handvoll, die die meisten Entwürfe trägt:: *Message Channel* -- die benannte Leitung, in die ein Sender schreibt, ohne den Empfänger zu kennen. *Message Router* -- entscheidet anhand des Inhalts über das Ziel und hält diese Entscheidung aus beiden Endpoints heraus. *Message Translator* -- die Nahtstelle, an der das Format des einen Systems zu dem des anderen wird. *Competing Consumers* -- mehrere Verbraucher an einem Channel; so kauft Messaging Durchsatz und Ausfallsicherheit. *Dead Letter Channel* -- wohin eine unzustellbare Message geht, damit ein Fehler ein prüfbares Objekt wird und kein Verlust. *Canonical Data Model* -- ein gemeinsames Format an der Grenze, damit _n_ Systeme _n_ Übersetzer brauchen und nicht _n²_.
+
+Pipes and Filters ist die Grundmetapher:: Jedes Routing- und Transformationsmuster ist ein Filter in einer Leitung. Das macht die Muster kombinierbar: Content Enricher, dann Content-Based Router, dann Splitter ist ein legitimer Entwurf -- und jedes Stück ist einzeln testbar.
+
+Nicht derselbe Anker wie `event-driven-architecture`:: Beide Einträge nennen Hohpe und Woolf, und die Trennung zählt. Event-Driven Architecture ist ein Architektur*stil*: Das System reagiert auf Events, Zustand ist verteilt, Konsistenz ist eventual. EIP ist das benannte *Vokabular*, mit dem sich jede Messaging-Lösung bauen lässt -- eine Request/Reply-Integration zwischen Shop und Fakturierung ist EIP-Gebiet und gar nicht event-getrieben. EDA entscheidet, wie ein System sich verhalten soll; EIP benennt die Teile, wenn es sich so verhält.
+
+Die Icon-Sprache ist ein Grund, warum es reist:: Jedes Muster hat ein gezeichnetes Symbol, und die Website verteilt die Symbole weiter: "You can create design documents using our icon language by downloading the Visio stencil or using the OmniGraffle stencil created by one of our readers." Eine Mustersprache mit Notation wird aufs Whiteboard gemalt, und die Namen überleben, weil die Bilder überleben.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Beim Entwurf von Integrationen zwischen Systemen, die einem nicht gehören -- das Vokabular muss mit dem anderen Team geteilt werden
+* Um die Teile eines bestehenden Messaging-Flusses zu benennen, bevor er geändert wird; die meisten undokumentierten Integrationen sind ein Router und zwei Translator
+* Für den Fehlerentwurf: `Dead Letter Channel`, Invalid Message Channel und Idempotent Receiver beantworten Fragen, die sonst erst in Produktion auftauchen
+* Für die Stilwahl überhaupt, indem File Transfer, Shared Database und RPC ausdrückliche Alternativen statt Vorgaben werden
+* Beim Lesen von Apache Camel oder Spring Integration, die die Musternamen als API führen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „EIP heißt, einen ESB zu bauen“ -- die Muster sagen nichts darüber, wo sie laufen; derselbe Message Router kann eine Camel-Route, eine Lambda, eine Kafka-Streams-Stufe oder ein `switch` sein
+* ❌ „EIP ist Event-Driven Architecture“ -- EIP deckt auch Request/Reply und Batch-Integration ab; EDA ist einer der Stile, die man damit baut
+* ❌ „Man braucht alle 65“ -- sechs Kategorien und etwa sechs Muster tragen die meisten Entwürfe, der Rest ist Nachschlagewerk
+* ❌ „Buch von 2003, also veraltet“ -- die Namen passen direkt auf heutige Plattformen; gealtert sind die Codebeispiele, nicht die Muster
+* ✓ „EIP ist das Vokabular für Messaging-Entwürfe, EDA ist ein Stil“ -- trifft zu und ist der Grund, warum es beide Einträge gibt
+====
+
+== *Kritik*:
+
+* *Die Microservices-Gemeinde hat die Architektur verworfen, in der die Muster üblicherweise implementiert wurden.* James Lewis und Martin Fowler beginnen ihre Definition von Microservices genau damit: "When building communication structures between different processes, we've seen many products and approaches that stress putting significant smarts into the communication mechanism itself. A good example of this is the Enterprise Service Bus (ESB), where ESB products often include sophisticated facilities for message routing, choreography, transformation, and applying business rules." Ihre Alternative heißt "smart endpoints and dumb pipes", ihre Fußnote wird deutlicher: "We can't resist mentioning Jim Webber's statement that ESB stands for 'Erroneous Spaghetti Box'." Wichtig ist, was der Einwand trifft und was nicht. Routing, Transformation und Choreographie sind EIP-Muster; kritisiert wird, sie in zentrale Middleware zu legen, nicht die Muster selbst. Verkauft haben die ESB-Hersteller aber genau diese Mustersprache von 2003 -- und ein Modell, das zu EIP greift, schlägt Routing in der Middleware vor, solange man nichts anderes sagt. https://martinfowler.com/articles/microservices.html[Lewis und Fowler, „Microservices“, 25. März 2014]
+* *Hohpes eigene Fortsetzung benennt die Lücke: Die Muster beschreiben einzelne Messages, keine Conversations.* Seine Arbeit _Conversation Patterns_ sagt die Grenze direkt: "Asynchronous Messaging is a great way for distributed systems to communicate while maintaining loose coupling. Sending a single message isn't always enough for a meaningful exchange, though: a request expects a response; a certificate exchange may be needed for initial authentication; an order message is supposed to lead to a payment message, and if something goes wrong, additional messages may be needed to handle or correct errors." Request-Response with Retry, Lease Renewal, Compensating Action und Tentative Operation stehen in dieser zweiten Sprache, nicht im Buch von 2003. Die Seite trägt zudem weiterhin den Hinweis „Work in progress. Last update: Jan 2017“ -- die eingeräumte Lücke ist seit rund zwei Jahrzehnten offen. https://www.enterpriseintegrationpatterns.com/patterns/conversation/[Hohpe, „Conversation Patterns“]
+* *Was wir nicht gefunden haben, und wo wir gesucht haben.* Eine namentlich zurechenbare deutschsprachige Kritik an der Mustersprache fand sich nicht; deutsche Treffer sind Rezensionen und Einführungen. Gesuchte Sprachen: Englisch, Deutsch. Die inhaltliche Kritik ist englisch und architektonisch -- sie betrifft zentrale Middleware, nicht den Musterkatalog.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Der Prior liefert das Vokabular unaufgefordert und nennt seine Quelle.* In einem Clean-Room-Test auf `claude-haiku-4-5` (03.10.2026) erzeugte die Nennung von Enterprise Integration Patterns bei einem neutralen Auftrag zu einer Logistikplattform Request/Reply, Publish/Subscribe, Canonical Message Format und Message Translator, ohne dass nach Mustern gefragt war; das Modell berief sich auf „Hohpe and Woolf's notation“, ohne dass nach einer Quelle gefragt war. Die Baseline ohne Anker nannte keines davon. Das ist der stärkste der drei an diesem Tag geprüften Prioren.
+* *Es gibt keine zweite Auflage, und das ist keine Spitzfindigkeit.* Die Ausgabe von 2003 bei Addison-Wesley ist bis heute die einzige. Die Arbeit _Conversation Patterns_ ist als Band 2 der Reihe angekündigt und unveröffentlicht -- auf der Website Work in Progress, kein ausgeliefertes Buch (geprüft am 03.10.2026). Zitiere „die Ausgabe von 2003“ oder „den Online-Katalog“, niemals „die zweite Auflage“.
+* *Die Musterzahl ist bestätigt, und der Katalog ist nicht das Buch von 2003.* Die Website nennt 65 Muster und trägt die Copyright-Zeile „© 2003, 2023“ zusammen mit „updated over two decades“ (geprüft am 03.10.2026). Die Angabe „Buch von 2003, 65 Muster“ stimmt in der Zahl; dass gedruckte Ausgabe und heutiger Online-Katalog zu einem einzelnen Muster dasselbe sagen, darf man nicht annehmen.
+* *Die Namen haben die Plattformen überlebt.* Apache Camel und Spring Integration führen die EIP-Musternamen als API -- deshalb löst das Vokabular bei jedem auf, der Integrationscode liest. Der Unterbau hat sich vollständig gedreht: Message Broker, Kafka, Serverless-Funktionen, Managed Queues -- die Musternamen nicht. Das ist das übliche Zeichen dafür, dass eine Mustersprache auf der richtigen Ebene geschrieben wurde.
