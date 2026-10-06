@@ -2,6 +2,13 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-06
+
+*Writing Style contract — stumble test:*
+
+* The _Writing Style_ contract now ends with a stumble test (EN + DE): eight checks for the sentences an expert reader stops at. The trigger was a program chair's verdict on an AI-written abstract -- "rhetorically polished, strangely empty" -- and the observation that experts stumble over unearned claims, not over jargon. The checks cover unresolved contrasts, announced instead of shown differences, references the reader has to hunt for, absolute promises, terms that are named but not used, half-introduced terms and empty rhetorical figures. The last check hands the text to a fresh context without background, because the author never stumbles over their own sentences.
+* It also gains a rule for English text: write it as English, not translated from German -- no German sentence patterns with English words, no literal idioms; contractions where a native speaker would use them, full forms for formal instructions.
+
 == 2026-10-03
 
 *Fourteen new anchors, and the vocabulary they came from belongs to someone else.* Every term in this batch was proposed because it appears in https://github.com/FlorianBruniaux/claude-code-ultimate-guide[Florian Bruniaux's Claude Code Ultimate Guide] (CC-BY-SA-4.0), whose own anchor catalog is adapted from this one and names this repository as its source. Only the terms were taken; no text was copied, so the proposals stay compatible with this repository's Apache-2.0 licence. Fourteen were measured, and all fourteen were accepted.
