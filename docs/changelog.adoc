@@ -7,6 +7,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 *Writing Style contract — stumble test:*
 
 * The _Writing Style_ contract now ends with a stumble test (EN + DE): eight checks for the sentences an expert reader stops at. The trigger was a program chair's verdict on an AI-written abstract -- "rhetorically polished, strangely empty" -- and the observation that experts stumble over unearned claims, not over jargon. The checks cover unresolved contrasts, announced instead of shown differences, references the reader has to hunt for, absolute promises, terms that are named but not used, half-introduced terms and empty rhetorical figures. The last check hands the text to a fresh context without background, because the author never stumbles over their own sentences.
+* It also gains a rule for English text: write it as English, not translated from German -- no German sentence patterns with English words, no dropped contractions, no literal idioms.
 
 == 2026-10-03
 
