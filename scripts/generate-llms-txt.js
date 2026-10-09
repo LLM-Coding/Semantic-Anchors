@@ -180,16 +180,17 @@ function generateAllAnchorsAdoc() {
     for (const anchorId of category.anchors) {
       const filepath = path.join(ROOT, 'docs/anchors', `${anchorId}.adoc`)
       if (fs.existsSync(filepath)) {
-        // Explicit block anchor so each anchor section gets its stable
-        // catalog ID (e.g. #mece) instead of a title-derived one — the
-        // static home catalog links to /all-anchors#<anchor-id> (#595).
-        // AsciiDoc anchors must start with a letter; digit-leading IDs
-        // (4mat) already match their title-derived ID, so skip those.
-        // Multi-category anchors are included once per category — only
-        // the first occurrence gets the ID to avoid duplicate-id warnings.
-        if (/^[a-z]/.test(anchorId) && !anchoredIds.has(anchorId)) {
+        // Explicit ID so each anchor section can be reached as
+        // all-anchors#<anchor-id> (e.g. #mece) rather than by a
+        // title-derived ID ("50/72 Rule" derives 5072-rule, #715).
+        // The [[id]] form only parses when the ID starts with a letter,
+        // `_` or `:`; for digit-leading IDs (4mat, 50-72-rule) the
+        // [#id] shorthand sets the same ID. Multi-category anchors are
+        // included once per category — only the first occurrence gets
+        // the ID to avoid duplicate-id warnings.
+        if (!anchoredIds.has(anchorId)) {
           anchoredIds.add(anchorId)
-          lines.push(`[[${anchorId}]]`)
+          lines.push(/^[a-z]/.test(anchorId) ? `[[${anchorId}]]` : `[#${anchorId}]`)
         }
         lines.push(`include::anchors/${anchorId}.adoc[leveloffset=+2]`)
         lines.push('')
