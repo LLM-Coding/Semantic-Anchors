@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 269 well-defined terms, methodologies, and frameworks
+> 273 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -1751,6 +1751,44 @@ Herbert H. Clark & Susan E. Brennan (https://en.wikipedia.org/wiki/Grounding_in_
 
 ## Design Principles & Patterns
 
+### BlinkWithoutDelay
+
+***Full Name***: BlinkWithoutDelay, the built-in Arduino example sketch (File > Examples > 02.Digital > BlinkWithoutDelay) that blinks an LED by comparing `millis()` timestamps instead of calling `delay()`. Its header reads "created 2005 by David A. Mellis", with later changes by Paul Stoffregen, Scott Fitzgerald and Arturo Guadalupi; documented at https://docs.arduino.cc/built-in-examples/digital/BlinkWithoutDelay/[docs.arduino.cc].
+
+***Also known as***: Blink without Delay; the `millis()` pattern; non-blocking timing in a superloop
+
+[discrete]
+## **Core Concepts**:
+
+***Never Block the Loop***: `delay()` stops the whole program, including button reads, serial input and every other task. The sketch keeps `loop()` running freely and decides on every pass whether anything is due.
+
+***Timestamp Plus Interval***: Store when something last happened, and on each pass check whether the interval has elapsed: `if (currentMillis - previousMillis >= interval)`. When it has, act and update the timestamp. The state that has to survive between passes -- the timestamp, the LED level -- lives in globals or `static` variables.
+
+***Overflow-Safe Subtraction***: `millis()` returns an `unsigned long` that wraps to zero after about 49.7 days. Subtracting the old timestamp from the new one gives the right elapsed time even across the wrap, because unsigned arithmetic is modular. Comparing `millis() >= previousMillis + interval` breaks at the wrap.
+
+***One Timer per Task***: Each independent job -- blink, debounce a button, poll a sensor -- gets its own timestamp and interval. Several of them run side by side in one `loop()`, which is cooperative multitasking without an operating system.
+
+***The Step to a State Machine***: As soon as a task has more than "on" and "off", the timestamp check drives a `finite-state-machine`: each state waits for its interval or event and then moves on. BlinkWithoutDelay is the smallest case of that structure.
+
+***Platform Idiom, General Idea***: The name belongs to Arduino, the technique does not. The same pattern appears on any bare-metal superloop with a tick counter, which is why the name works as an anchor beyond the LED it blinks.
+
+[discrete]
+## **When to Use**:
+
+* Arduino and other microcontroller code that has to react to input while something else is timed
+* Rewriting a sketch that uses `delay()` before adding a second task to it
+* Teaching the step from a single blocking loop to cooperative multitasking and state machines
+* Driving a model: "add the button, BlinkWithoutDelay style" removes every `delay()` and keeps the input responsive, where "add the button" tends to keep the `delay()` calls
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "BlinkWithoutDelay is about blinking LEDs" -- the LED is the demonstration; the subject is not blocking the loop
+* ❌ "`millis() >= previousMillis + interval` is equivalent" -- it fails when `millis()` wraps; subtract, then compare
+* ❌ "This is an interrupt-based timer" -- it is polling in the main loop; interrupts and hardware timers are a different technique
+* ❌ "It replaces an RTOS" -- it covers cooperative tasks that finish quickly; long-running or preemptive work needs more
+* ✓ "Every task checks its own elapsed time on every pass, and nothing ever waits"
+
 ### Boy Scout Rule
 
 ***Full Name***: The Boy Scout Rule
@@ -2084,6 +2122,50 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 * Andrey Lebedev, https://andremoniy.medium.com/not-my-philosophy-of-software-design-13d9f1e09451["Not My Philosophy of Software Design"] (Medium) — argues that forcing depth into a single class violates the Single Responsibility Principle; the Java I/O example conflates file reading with buffering, two genuinely separate concerns; deep general-purpose classes also resist composition and create coupling that contradicts domain-driven design practice
 * https://softengbook.org/articles/deep-modules["Modules Should Be Deep!"] (Software Engineering: A Modern Approach) — adds nuance: `String.isEmpty()` provides semantic clarity and safe encapsulation despite its trivial implementation, challenging a purely quantitative interpretation of depth; Bertrand Meyer's iceberg metaphor — small visible tip over large submerged base — is cited as a complementary framing
 
+### Defensive Programming according to McConnell
+
+***Full Name***: Defensive Programming as set out in Steve McConnell's _Code Complete_ (2nd edition, Microsoft Press 2004), chapter 8, "Defensive Programming"
+
+***Also known as***: defensive coding
+
+[discrete]
+## **Core Concepts**:
+
+***Protect the Program from Invalid Input***: Data from outside the program -- files, users, the network, other systems -- is checked before it is used. Bad input gets a defined answer: a rejection, an error code, a logged and handled fault. It never gets a quiet wrong result.
+
+***The Barricade***: McConnell draws one line through the program. Outside it, data is untrusted and every public interface validates. Inside it, data is assumed clean, so internal routines do not repeat the checks. The barricade is what keeps defensive programming from turning into null checks in every helper.
+
+***Error Handling Outside, Assertions Inside***: Conditions that can occur in production -- a missing file, a malformed record -- get error handling at the barricade. Conditions that must never occur if the code is correct -- a helper called with a null buffer -- get an assertion inside it. An assertion documents an assumption and fails loudly during development; it is not a substitute for validating input.
+
+***Robustness Versus Correctness***: Some systems should keep running with a degraded answer, others must stop rather than give a wrong one. A text editor may substitute a default; a radiation-therapy controller must not. Choosing which one the system needs is part of the practice, not an afterthought.
+
+***Being Defensive About Defensive Programming***: McConnell's chapter ends with a warning against overdoing it. Checks everywhere make the code slower, longer and harder to read, and error handling that hides faults makes them harder to find. Debug-only aids are removed or switched off for production; checks that guard real inputs stay.
+
+***Not Design by Contract, but Reconcilable With It***: `design-by-contract` assigns each check to exactly one party and rejects double-checking on both sides. Defensive programming starts from the opposite instinct: check wherever a bad value could arrive. The barricade reconciles the two -- validate once at the boundary, then reason by contract and assertion inside. Name which one you want: weak models blend them, and one tested model attributed defensive programming to Bertrand Meyer.
+
+[discrete]
+## **When to Use**:
+
+* Code that reads input it does not control: parsers, file importers, API handlers, device drivers
+* Deciding where validation lives in a module, so it happens once at the public interface and not in every private helper
+* Choosing between robustness and correctness for a system, and writing the choice down
+* Reviewing error handling that swallows exceptions or returns plausible defaults for impossible states
+* Driving a model: "apply defensive programming according to McConnell, with a barricade at the public API and assertions inside" asks for a placement, not just for more checks
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Defensive means wrapping everything in try/catch" -- swallowing errors is the opposite of the practice; a hidden fault is harder to find than a crash
+* ❌ "Check every argument in every function" -- the barricade exists so that internal code does not repeat boundary checks
+* ❌ "Assertions are input validation" -- assertions catch programmer errors and may be compiled out; user input needs real error handling
+* ❌ "Defensive programming and fail-fast are opposites" -- assertions that stop the program at the first broken assumption are part of the practice
+* ❌ "Defensive programming is a security architecture" -- that is `defense-in-depth`; this is a coding practice inside one program
+* ✓ "Validate at the boundary, assert inside, and decide whether this system prefers robustness or correctness"
+
+## **Criticism**:
+
+* **Working around problems makes software fail slowly.** Jim Shore's IEEE Software column argues against the robustness half of the practice: "Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'" His remedy is assertions that stop at the first broken assumption -- which McConnell's assertion and barricade advice already contains, so the critique lands on the everyday "catch it and carry on" reading of the term, not on the chapter. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, "Fail Fast", _IEEE Software_ 21(5), September/October 2004, Design column].
+
 ### Design by Contract
 
 ***Also known as***: DbC, Programming by Contract
@@ -2125,6 +2207,7 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 * SOLID Principles — DbC reinforces the substitutability guarantee SOLID depends on
 * Postel's Law — opposing stance on input strictness; reconciled by boundary scope
 * EARS Requirements — pre/postconditions express requirements as checkable assertions
+* Defensive Programming according to McConnell — the opposite instinct, checking wherever bad data could arrive; McConnell's barricade reconciles the two by validating once at the boundary
 
 [discrete]
 ## **Criticism**:
@@ -2187,6 +2270,48 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 * Sandi Metz, https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction["The Wrong Abstraction"] (2016) — overzealous DRY produces abstractions that later requirements don't fit: "duplication is far cheaper than the wrong abstraction"; her advice is to re-introduce the duplication until the right abstraction reveals itself
 * The authors themselves concede the principle is widely misread: in the 20th Anniversary Edition (2019), Thomas & Hunt write they "did a poor job of explaining" DRY — it targets duplication of **knowledge and intent**; code deduplication is "a tiny and fairly trivial part" (https://media.pragprog.com/titles/tpp20/dry.pdf[official chapter extract])
 * The corollary both critiques share: two pieces of code that look alike but encode different business knowledge are not a DRY violation — merging them creates coupling, not clarity
+
+### Finite State Machine
+
+***Full Name***: Finite State Machine (finite-state automaton), with the two classic output models from George H. Mealy, "A Method for Synthesizing Sequential Circuits" (_Bell System Technical Journal_, 1955), and Edward F. Moore, "Gedanken-experiments on Sequential Machines" (_Automata Studies_, 1956). David Harel's statecharts ("Statecharts: A Visual Formalism for Complex Systems", _Science of Computer Programming_, 1987) add hierarchy and concurrency and underlie UML state machines.
+
+***Also known as***: FSM, finite automaton, state machine, finite-state automaton
+
+[discrete]
+## **Core Concepts**:
+
+***A Finite, Named Set of States***: A flat machine is in exactly one state at a time -- with orthogonal regions, one per region -- and every state has a name. A status field whose values nobody has listed is not a state machine; the list is the point.
+
+***Events, Transitions and the Transition Table***: In a deterministic machine, an event in a given state leads to at most one next state; where guards split a transition, their conditions must not overlap. Writing this down as a table -- states as rows, events as columns -- shows every combination, including the ones nobody thought about.
+
+***Every Cell Is a Decision***: For each state and event, the table says either "go there" or "this event is not allowed here, and this is what happens instead": ignore, reject, log, fault state. An empty cell is a missing requirement, not a default.
+
+***Guards and Actions***: A guard is a condition that must hold for a transition to fire. Actions run on a transition or on entering and leaving a state. Keeping them attached to transitions keeps the behaviour readable from the table.
+
+***Mealy Versus Moore***: In a Moore machine, the output depends only on the current state; in a Mealy machine, on the state and the input. The distinction decides where an action belongs: in the state or on the transition.
+
+***State Explosion and Statecharts***: Flat machines grow multiplicatively when independent concerns are combined. Harel's statecharts answer with nested states, orthogonal regions and history, which is what UML state machines and libraries such as XState implement.
+
+***The Model, Not an Implementation***: An FSM can be coded as a switch over an enum, as a data-driven transition table, as the `gof-state-pattern` with one class per state, or with a library. The State pattern is one of these codings; the FSM is what all of them encode.
+
+[discrete]
+## **When to Use**:
+
+* Logic that depends on a history of events: protocols, device controllers, UI flows, order and document lifecycles
+* Replacing a tangle of boolean flags whose combinations include impossible ones
+* Writing requirements and tests: every row of the table is a test case, and every empty cell is a question for the product owner
+* Embedded control loops where a task must advance step by step without blocking, as in `blink-without-delay`
+* Driving a model: "model this as a finite state machine with an explicit transition table, and say what happens for each invalid event" asks for the table, not just for an enum
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "A status field makes it a state machine" -- without a finite list of states and defined transitions, it is just a variable
+* ❌ "FSM means the GoF State pattern" -- the pattern is one object-oriented way to code the model
+* ❌ "Unhandled events can be ignored silently" -- ignoring is a valid choice only if the table says so
+* ❌ "Booleans are simpler" -- three booleans give eight combinations, and the code has to rule out the impossible ones by hand
+* ❌ "An FSM can count" -- a finite machine has no unbounded memory; counters and stacks are extended state
+* ✓ "Name the states, list the events, fill every cell of the table"
 
 ### Patterns of Enterprise Application Architecture (PEAA)
 
@@ -2695,6 +2820,7 @@ Allow an object to alter its behavior when its internal state changes. The objec
 [discrete]
 ## **Related Anchors**:
 * GoF Design Patterns (Umbrella)
+* Finite State Machine -- the model this pattern implements; the pattern is one way to code it
 
 ### GoF-Strategy Pattern
 
@@ -11842,6 +11968,55 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * The methodology is stable (held-out benchmarks, harnesses, holistic suites); any concrete benchmark list is cutoff-bound — MMLU was already superseded by https://arxiv.org/abs/2406.01574[MMLU-Pro] and https://arxiv.org/abs/2311.12022[GPQA] by 2024, and those will saturate too
 * Never trust a model's memorised benchmark numbers or "current leading benchmark" claims: point it at living sources — https://github.com/EleutherAI/lm-evaluation-harness[lm-evaluation-harness] and https://crfm.stanford.edu/helm/[HELM] — and date every score you quote
 
+### MISRA C
+
+***Full Name***: MISRA C -- _Guidelines for the use of the C language in critical systems_, published by MISRA, originally the Motor Industry Software Reliability Association. First edition 1998, then aimed at vehicle-based software; the title above dates from MISRA C:2004, which was followed by MISRA C:2012, the consolidated MISRA C:2023 and the incremental update MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
+
+***Also known as***: the MISRA guidelines, MISRA rules; editions by year, such as MISRA C:2012
+
+[discrete]
+## **Core Concepts**:
+
+***A Safe Subset of C***: MISRA C does not add anything to the language. It removes or restricts the parts whose behaviour is undefined or unspecified, or that experience shows are easy to get wrong. Implementation-defined behaviour is not banned outright; where the program depends on it, it has to be documented. What remains is a C that a reviewer and a static analyser can reason about.
+
+***Mandatory, Required, Advisory***: Every guideline carries a category. Mandatory guidelines admit no exception. Required ones may be broken only through a formal, documented deviation. Advisory ones are recommendations that a project may relax.
+
+***Directives and Rules***: Rules are stated precisely enough to be checked against the source code. Directives concern the process and the surrounding documentation and cannot be fully checked from the code alone. A tool report covers the rules -- completely only for the decidable ones -- and at best parts of the directives.
+
+***Deviation Instead of Silence***: Breaking a required guideline is allowed, but only with a written deviation that names the guideline, the reason, the scope and the approval. Compliance means "every violation is either fixed or justified", not "zero warnings".
+
+***The Essential Type Model***: MISRA C reasons about the type a value really has -- Boolean, character, signed, unsigned, enum, floating -- instead of C's integer promotions. Implicit conversions between these categories, especially narrowing and mixing signedness, are what the model exists to stop.
+
+***Typical Themes***: No dynamic memory allocation, no recursion, restricted pointer arithmetic, a `default` in every `switch`, braces on every body, every return value checked or explicitly discarded, no unreachable or unused code, a restricted preprocessor and standard library.
+
+***Rule Texts Belong to MISRA***: The guideline texts are copyrighted and sold by MISRA. Name themes and categories freely; for an individual rule number and its wording, the licensed document and a qualified checker are the references -- not a model's memory.
+
+[discrete]
+## **When to Use**:
+
+* Embedded C for automotive, rail, medical, aerospace or industrial control, where a functional-safety standard such as `iec-61508-sil-levels` expects a coding standard
+* Reviewing or rewriting C so that a static analyser's MISRA report becomes the review checklist
+* Deciding a project's compliance policy: which edition, which advisory guidelines are relaxed, who approves deviations
+* Driving a model: "make this MISRA C compliant and list every deviation with its reason" asks for the subset and for the paper trail, not only for safer code
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "MISRA compliance means zero warnings" -- it means every violation is fixed or covered by an approved deviation
+* ❌ "MISRA is only for cars" -- the name has outgrown its origin; the guidelines are used wherever C runs in critical systems
+* ❌ "A model's rule numbers can be trusted" -- in the 2026-10-09 measurement a model cited a "Rule 34.1" that MISRA C does not have; check numbers against the licensed document or a checker
+* ❌ "MISRA C makes C safe" -- it removes known hazards; it does not prove the program correct
+* ✓ "Use the edition the project has committed to, check it with a tool, and write down every deviation"
+
+## **Criticism**:
+
+* **Applied as a compliance checklist, the rules can cause more faults than they prevent.** Les Hatton measured MISRA C:1998 and MISRA C:2004 against the same body of code and found that the ratio of real to false positives "is unacceptably low in both". His conclusion goes further: the most fundamental problem of MISRA C:1998 is still unsolved in the 2004 edition, namely "that its unadulterated use as a compliance document is likely to lead to more faults and not less because of the fault re-injection phenomenon" -- every change made only to silence a rule carries a chance of introducing a new defect. https://www.leshatton.org/Documents/MISRA_comp_1105.pdf[Hatton, "Language subsetting in an industrial context: a comparison of MISRA C 1998 and MISRA C 2004" (preprint dated 20 November 2005; published in _Information and Software Technology_ 49(5), 2007)]. The critique predates MISRA C:2012, so read it as a warning about how rules are applied, not as a verdict on the current edition.
+
+[discrete]
+## **Current Status**:
+
+* **The edition a model has in mind is probably MISRA C:2012.** MISRA lists MISRA C:2012 as published on 18 March 2013, MISRA C:2023 as published in April 2023 to consolidate the work since and to extend support to C11 and C18, and MISRA C:2025 as published in March 2025 as an incremental update. https://misra.org.uk/misra-c/[MISRA, "MISRA C"]. Name the edition the project uses; guideline numbers differ between editions.
+
 ### Mutation Testing
 
 ***Also known as***: Mutation Analysis, Fault-Based Testing
@@ -12839,6 +13014,16 @@ Additionally:
 - First sentence says what the paragraph is about
 - Show code and prompts, don't just claim things work
 - Conclusions make a clear statement — never end with 'it remains exciting'
+- English text is written as English, not translated from German: no German sentence patterns with English words, no literal idioms. Use contractions where a native speaker would (don't, it's); keep full forms for formal instructions. Test: would a native speaker phrase it this way?
+- Stumble test — expert readers stop at unearned claims, not at jargon (a program chair's verdict on an AI-written abstract: "rhetorically polished, strangely empty"). Before handing a text over:
+  1. Resolve every claim: a contrast ("works, but wrong") is explained in the next sentence.
+  2. Show the difference, don't announce it: describe what happens in each case.
+  3. No references the reader must hunt for ("this principle" when none was stated).
+  4. No absolute promises ("exactly", "always", "one word is enough").
+  5. Naming a term is not content: say what the text shows about it.
+  6. Introduce a new term fully or drop it.
+  7. Rhetorical figures (antithesis, triads, closing punchline) only when substance follows.
+  8. Let a fresh context without background flag every sentence it has to guess at — the author never stumbles, because they know what they meant.
 
 *Referenced anchors: gutes-deutsch-wolf-schneider, plain-english-strunk-white*
 

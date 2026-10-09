@@ -1,0 +1,52 @@
+= Finite State Machine
+:categories: design-principles
+:proponents: George H. Mealy, Edward F. Moore, David Harel
+:roles: software-developer, software-architect, qa-engineer
+:tags: Finite State Machine, FSM, endlicher Automat, Zustandsautomat, Zustandsmaschine, Zustand, Ereignis, Transition, Zustandsübergangstabelle, Guard, Mealy-Automat, Moore-Automat, Statecharts, UML-Zustandsdiagramm, Zustandsexplosion
+:related: gof-state-pattern, blink-without-delay, ears-requirements
+:tier: 3
+:prior-test: 2026-10-09
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Finite State Machine (endlicher Automat) mit den beiden klassischen Ausgabemodellen von George H. Mealy, „A Method for Synthesizing Sequential Circuits“ (_Bell System Technical Journal_, 1955), und Edward F. Moore, „Gedanken-experiments on Sequential Machines“ (_Automata Studies_, 1956). David Harels Statecharts („Statecharts: A Visual Formalism for Complex Systems“, _Science of Computer Programming_, 1987) ergänzen Hierarchie und Nebenläufigkeit und liegen den UML-Zustandsautomaten zugrunde.
+
+Auch bekannt als:: FSM, endlicher Automat, Zustandsautomat, State Machine
+
+[discrete]
+== *Kernkonzepte*:
+
+Eine endliche, benannte Menge von Zuständen:: Ein flacher Automat ist immer in genau einem Zustand -- mit orthogonalen Regionen in einem je Region --, und jeder Zustand hat einen Namen. Ein Statusfeld, dessen Werte niemand aufgelistet hat, ist kein Zustandsautomat; die Liste ist der Kern.
+
+Ereignisse, Übergänge und die Übergangstabelle:: In einem deterministischen Automaten führt ein Ereignis in einem gegebenen Zustand zu höchstens einem Folgezustand; teilen Guards einen Übergang auf, dürfen sich ihre Bedingungen nicht überschneiden. Als Tabelle aufgeschrieben -- Zustände als Zeilen, Ereignisse als Spalten -- zeigt sie jede Kombination, auch die, an die niemand gedacht hat.
+
+Jede Zelle ist eine Entscheidung:: Für jeden Zustand und jedes Ereignis sagt die Tabelle entweder „dorthin“ oder „dieses Ereignis ist hier nicht erlaubt, und stattdessen passiert Folgendes“: ignorieren, ablehnen, protokollieren, Fehlerzustand. Eine leere Zelle ist eine fehlende Anforderung, kein Standardverhalten.
+
+Guards und Aktionen:: Ein Guard ist eine Bedingung, die gelten muss, damit ein Übergang feuert. Aktionen laufen auf einem Übergang oder beim Betreten und Verlassen eines Zustands. Hängen sie an den Übergängen, bleibt das Verhalten aus der Tabelle ablesbar.
+
+Mealy gegen Moore:: Beim Moore-Automaten hängt die Ausgabe nur vom aktuellen Zustand ab, beim Mealy-Automaten von Zustand und Eingabe. Die Unterscheidung entscheidet, wohin eine Aktion gehört: in den Zustand oder auf den Übergang.
+
+Zustandsexplosion und Statecharts:: Flache Automaten wachsen multiplikativ, wenn unabhängige Belange kombiniert werden. Harels Statecharts antworten mit verschachtelten Zuständen, orthogonalen Regionen und History -- das setzen UML-Zustandsautomaten und Bibliotheken wie XState um.
+
+Das Modell, nicht eine Implementierung:: Eine FSM lässt sich als switch über ein Enum codieren, als datengetriebene Übergangstabelle, als `gof-state-pattern` mit einer Klasse pro Zustand oder mit einer Bibliothek. Das State Pattern ist eine dieser Codierungen; die FSM ist das, was alle codieren.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Logik, die von einer Folge von Ereignissen abhängt: Protokolle, Gerätesteuerungen, UI-Abläufe, Lebenszyklen von Bestellungen und Dokumenten
+* Ein Knäuel boolescher Flags ersetzen, deren Kombinationen auch unmögliche einschließen
+* Anforderungen und Tests schreiben: jede Zeile der Tabelle ist ein Testfall, jede leere Zelle eine Frage an den Product Owner
+* Eingebettete Steuerschleifen, in denen eine Aufgabe Schritt für Schritt vorankommen muss, ohne zu blockieren, wie bei `blink-without-delay`
+* Ein Modell steuern: „modelliere das als Finite State Machine mit expliziter Übergangstabelle und sag, was bei jedem ungültigen Ereignis passiert“ verlangt die Tabelle, nicht nur ein Enum
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Ein Statusfeld macht es zum Zustandsautomaten“ -- ohne endliche Liste von Zuständen und definierte Übergänge ist es nur eine Variable
+* ❌ „FSM heißt GoF State Pattern“ -- das Pattern ist eine objektorientierte Art, das Modell zu codieren
+* ❌ „Unbehandelte Ereignisse darf man still ignorieren“ -- Ignorieren ist nur dann richtig, wenn die Tabelle es so festlegt
+* ❌ „Booleans sind einfacher“ -- drei Booleans ergeben acht Kombinationen, und der Code muss die unmöglichen von Hand ausschließen
+* ❌ „Eine FSM kann zählen“ -- ein endlicher Automat hat keinen unbegrenzten Speicher; Zähler und Stacks sind erweiterter Zustand
+* ✓ „Zustände benennen, Ereignisse auflisten, jede Zelle der Tabelle füllen“
+====

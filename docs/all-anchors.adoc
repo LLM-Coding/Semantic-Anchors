@@ -104,6 +104,9 @@ include::anchors/three-act-structure.adoc[leveloffset=+2]
 
 == Design Principles & Patterns
 
+[[blink-without-delay]]
+include::anchors/blink-without-delay.adoc[leveloffset=+2]
+
 [[boy-scout-rule]]
 include::anchors/boy-scout-rule.adoc[leveloffset=+2]
 
@@ -125,11 +128,17 @@ include::anchors/cupid-properties.adoc[leveloffset=+2]
 [[deep-modules]]
 include::anchors/deep-modules.adoc[leveloffset=+2]
 
+[[defensive-programming]]
+include::anchors/defensive-programming.adoc[leveloffset=+2]
+
 [[design-by-contract]]
 include::anchors/design-by-contract.adoc[leveloffset=+2]
 
 [[dry]]
 include::anchors/dry.adoc[leveloffset=+2]
+
+[[finite-state-machine]]
+include::anchors/finite-state-machine.adoc[leveloffset=+2]
 
 [[fowler-patterns]]
 include::anchors/fowler-patterns.adoc[leveloffset=+2]
@@ -775,6 +784,9 @@ include::anchors/linddun.adoc[leveloffset=+2]
 
 [[llm-evaluations]]
 include::anchors/llm-evaluations.adoc[leveloffset=+2]
+
+[[misra-c]]
+include::anchors/misra-c.adoc[leveloffset=+2]
 
 [[mutation-testing]]
 include::anchors/mutation-testing.adoc[leveloffset=+2]

@@ -1,7 +1,7 @@
 = Design by Contract
 :categories: design-principles
 :roles: software-developer, software-architect
-:related: solid-lsp, solid-principles, postels-law, ears-requirements
+:related: solid-lsp, solid-principles, postels-law, ears-requirements, defensive-programming
 :proponents: Bertrand Meyer
 :tags: preconditions, postconditions, invariants, correctness, eiffel
 :tier: 2
@@ -47,6 +47,7 @@ Schlüsselvertreter:: Bertrand Meyer, der den Begriff für die Sprache https://w
 * <<solid-principles,SOLID-Prinzipien>> — DbC stärkt die Austauschbarkeitsgarantie, auf die SOLID baut
 * <<postels-law,Postels Gesetz>> — gegensätzliche Haltung zur Eingabestriktheit; über die Grenzenscope versöhnt
 * <<ears-requirements,EARS Requirements>> — Vor-/Nachbedingungen formulieren Anforderungen als prüfbare Zusicherungen
+* <<defensive-programming,Defensive Programming according to McConnell>> — der umgekehrte Reflex, überall zu prüfen, wo schlechte Daten ankommen könnten; McConnells Barrikade versöhnt beides, indem sie einmal an der Grenze validiert
 
 [discrete]
 == *Kritik*:

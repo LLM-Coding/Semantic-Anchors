@@ -569,3 +569,35 @@ On the scenario that described the violation, the anchored answer and the baseli
 Then the task changed to one where the principle is not the obvious answer: "write a GitHub Actions workflow for a Node.js service: install dependencies, run the test suite, build a container image, push it to Amazon ECR and deploy it to a staging ECS cluster. Give the YAML." Both no-anchor runs produced long-lived `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` secrets and no `permissions:` block at all. Both anchored runs produced a `permissions:` block, OIDC through `role-to-assume` with `id-token`, and no static keys anywhere. Reproduced twice in each condition.
 
 The general lesson is the mirror of the one the previous run recorded. There, a task where the method was the obvious default produced a delta of zero. Here, a task that *states the problem the principle names* produces a delta of zero for the same reason -- and the anchor's real value sits on the artifacts nobody thinks to scope: build pipelines, IAM policies, agent tool permissions. *An anchor has no single delta. It has a delta per task, and a measurement that reports one number has chosen a task.*
+
+== Run 2026-10-09
+
+[cols="1,3"]
+|===
+|Candidates |4 terms proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/797[#797] to https://github.com/LLM-Coding/Semantic-Anchors/issues/800[#800]: Defensive Programming, Finite State Machine, MISRA C, BlinkWithoutDelay. Each appears as, or names what is asked for by, a prompt toggle in Nikolai Radke's AI.duino plugin for the Arduino IDE
+|Models |`claude-haiku-4-5`, resolved to `claude-haiku-4-5-20251001` (weak; resolution checked the same day with a probe that reports the model ID). Strong-tier activation was run per candidate on `claude-opus-5-5` by the proposer and is recorded in each issue, not repeated here
+|Runs |8 recognition probes (two per term), 4 attribution probes, 3 bare-name probes, 8 baseline and 8 anchored action runs. 31 probes in total
+|Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN` and `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, each probe in its own empty git repository outside this one
+|Not tested |`claude-sonnet-5` was skipped. Findings are a lower bound
+|Criticism research |2026-10-09, English only. Found and fetched: Jim Shore, "Fail Fast" (_IEEE Software_, 2004) for Defensive Programming; Les Hatton's 2005 comparison of MISRA C:1998 and MISRA C:2004; MISRA's own edition list. Nothing citable was found for Finite State Machine or BlinkWithoutDelay, so those entries carry no criticism section
+|===
+
+=== Two of four tasks stated the method
+
+The action tasks were taken from the viability suggestions in the issues, and two of them repeat the defect the 2026-10-03 run named: they describe the violation the method exists to fix. The Defensive Programming task said that every helper "currently has no checks"; the Finite State Machine task handed over three booleans and nested if/else in an event handler. Both baselines answered with the method anyway -- validation at the public function plus assertions in the helpers, and a state enum -- so the measured delta for these two terms is zero. That is a fact about the tasks. Recognition, not steering, carries their tier.
+
+=== The four candidates
+
+[cols="2,1,4"]
+|===
+|Term |Verdict |Note
+
+|BlinkWithoutDelay |★★★ |The clearest delta of the run. Asked to add a button to a sketch that blinks with `delay(1000)`, both baselines kept the `delay()` calls -- one added a `millis()` debounce next to them. Both anchored runs removed every `delay()` and used `millis()` subtraction. Attribution fails: the weak tier answers `creator=Paul Badger`, while the sketch header says "created 2005 by David A. Mellis"
+|Finite State Machine |★★★ |Rich and consistent in both recognition runs: states, transitions, DFA/NFA, Mealy and Moore. The bare acronym "FSM" resolves to the right field. Attribution is distributed but correct (McCulloch-Pitts, Kleene, Mealy, Moore). No steering delta on the task used, see above
+|MISRA C |★★★ |Recognised in both runs, and the bare "MISRA" resolves to safety-critical software. The anchored rewrites cited rule numbers in both runs, and one of them does not exist: "Added null pointer check – Validates input before use (MISRA Rule 34.1)." Neither condition produced a deviation record, although both baselines claimed one in their self-report. The entry therefore tells readers to check rule numbers against the licensed text or a checker
+|Defensive Programming |★★☆ |Rich in both recognition runs; the anchored runs placed validation at the boundary and assertions inside and named McConnell's reasoning. But the weak tier's attribution leads with the neighbouring method: "Bertrand Meyer (late 1980s-1990s) - prominently associated with defensive programming through his Design by Contract methodology". Registered as "Defensive Programming according to McConnell" so the name carries the boundary the issue asked for
+|===
+
+=== BlinkWithoutDelay is registered under its own name
+
+The issue offered a middle path: an anchor for the general concept, with BlinkWithoutDelay as its Arduino alias. The catalog registers the string that activates, and keeps other names under _Also known as_ -- Arrange-Act-Assert rather than "AAA", the Connextra format only in its qualified form. The general concept has no established name of its own; "non-blocking timing in a superloop" is a description, and it would need the `Community` sentinel for want of a proponent. The sketch name, by contrast, reached the full technique on the weak tier, including the overflow-safe subtraction. So the anchor is "BlinkWithoutDelay", and the general description is its alias.

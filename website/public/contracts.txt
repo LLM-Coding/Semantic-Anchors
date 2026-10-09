@@ -257,6 +257,16 @@ Additionally:
 - First sentence says what the paragraph is about
 - Show code and prompts, don't just claim things work
 - Conclusions make a clear statement — never end with 'it remains exciting'
+- English text is written as English, not translated from German: no German sentence patterns with English words, no literal idioms. Use contractions where a native speaker would (don't, it's); keep full forms for formal instructions. Test: would a native speaker phrase it this way?
+- Stumble test — expert readers stop at unearned claims, not at jargon (a program chair's verdict on an AI-written abstract: "rhetorically polished, strangely empty"). Before handing a text over:
+  1. Resolve every claim: a contrast ("works, but wrong") is explained in the next sentence.
+  2. Show the difference, don't announce it: describe what happens in each case.
+  3. No references the reader must hunt for ("this principle" when none was stated).
+  4. No absolute promises ("exactly", "always", "one word is enough").
+  5. Naming a term is not content: say what the text shows about it.
+  6. Introduce a new term fully or drop it.
+  7. Rhetorical figures (antithesis, triads, closing punchline) only when substance follows.
+  8. Let a fresh context without background flag every sentence it has to guess at — the author never stumbles, because they know what they meant.
 
 *Referenced anchors: gutes-deutsch-wolf-schneider, plain-english-strunk-white*
 

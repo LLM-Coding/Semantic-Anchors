@@ -478,6 +478,53 @@
     "addedAt": "2026-07-06T23:02:34+02:00"
   },
   {
+    "id": "blink-without-delay",
+    "title": "BlinkWithoutDelay",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "educator"
+    ],
+    "related": [
+      "finite-state-machine",
+      "misra-c"
+    ],
+    "proponents": [
+      "David A. Mellis",
+      "Arduino"
+    ],
+    "tags": [
+      "BlinkWithoutDelay",
+      "Arduino",
+      "millis",
+      "non-blocking",
+      "delay",
+      "superloop",
+      "cooperative multitasking",
+      "timing",
+      "embedded",
+      "unsigned overflow",
+      "rollover",
+      "microcontroller"
+    ],
+    "filePath": "docs/anchors/blink-without-delay.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-09",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-09T10:51:36+02:00"
+  },
+  {
     "id": "blooms-taxonomy",
     "title": "Bloom’s Taxonomy",
     "categories": [
@@ -1581,6 +1628,54 @@
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
+    "id": "defensive-programming",
+    "title": "Defensive Programming according to McConnell",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer"
+    ],
+    "related": [
+      "design-by-contract",
+      "defense-in-depth",
+      "postels-law",
+      "poka-yoke"
+    ],
+    "proponents": [
+      "Steve McConnell"
+    ],
+    "tags": [
+      "defensive programming",
+      "barricade",
+      "assertions",
+      "input validation",
+      "error handling",
+      "fail fast",
+      "robustness",
+      "correctness",
+      "garbage in",
+      "trust boundary",
+      "guard clause"
+    ],
+    "filePath": "docs/anchors/defensive-programming.adoc",
+    "tier": 2,
+    "priorTest": "2026-10-09",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-09T10:51:36+02:00"
+  },
+  {
     "id": "definition-of-done",
     "title": "Definition of Done",
     "categories": [
@@ -1629,7 +1724,8 @@
       "solid-lsp",
       "solid-principles",
       "postels-law",
-      "ears-requirements"
+      "ears-requirements",
+      "defensive-programming"
     ],
     "proponents": [
       "Bertrand Meyer"
@@ -2425,6 +2521,58 @@
     "filePath": "docs/anchors/fichtean-curve.adoc",
     "tier": 3,
     "addedAt": "2026-03-29T15:18:24+00:00"
+  },
+  {
+    "id": "finite-state-machine",
+    "title": "Finite State Machine",
+    "categories": [
+      "design-principles"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer"
+    ],
+    "related": [
+      "gof-state-pattern",
+      "blink-without-delay",
+      "ears-requirements"
+    ],
+    "proponents": [
+      "George H. Mealy",
+      "Edward F. Moore",
+      "David Harel"
+    ],
+    "tags": [
+      "finite state machine",
+      "FSM",
+      "state machine",
+      "finite automaton",
+      "state",
+      "event",
+      "transition",
+      "transition table",
+      "guard",
+      "Mealy machine",
+      "Moore machine",
+      "statecharts",
+      "UML state machine",
+      "state explosion"
+    ],
+    "filePath": "docs/anchors/finite-state-machine.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-09",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-09T10:51:36+02:00"
   },
   {
     "id": "first-principles-thinking",
@@ -3552,7 +3700,8 @@
     "related": [
       "gof-design-patterns",
       "gof-strategy-pattern",
-      "gof-memento-pattern"
+      "gof-memento-pattern",
+      "finite-state-machine"
     ],
     "proponents": [
       "Erich Gamma",
@@ -5068,6 +5217,55 @@
     ],
     "filePath": "docs/anchors/mikado-method.adoc",
     "addedAt": "2026-03-11T15:45:43+00:00"
+  },
+  {
+    "id": "misra-c",
+    "title": "MISRA C",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "software-developer",
+      "software-architect",
+      "qa-engineer"
+    ],
+    "related": [
+      "iec-61508-sil-levels",
+      "defensive-programming",
+      "poka-yoke"
+    ],
+    "proponents": [
+      "MISRA (originally the Motor Industry Software Reliability Association)"
+    ],
+    "tags": [
+      "MISRA C",
+      "MISRA",
+      "coding standard",
+      "coding guidelines",
+      "safe subset",
+      "embedded C",
+      "safety-critical",
+      "automotive",
+      "essential type model",
+      "deviation",
+      "compliance",
+      "static analysis",
+      "mandatory required advisory"
+    ],
+    "filePath": "docs/anchors/misra-c.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-09",
+    "testedOn": [
+      {
+        "model": "haiku-4.5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-09T10:51:36+02:00"
   },
   {
     "id": "morphological-box",
