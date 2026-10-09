@@ -575,7 +575,7 @@ Die allgemeine Lehre spiegelt die des vorigen Laufs. Dort ergab eine Aufgabe, be
 [cols="1,3"]
 |===
 |Kandidaten |4 Begriffe, vorgeschlagen in https://github.com/LLM-Coding/Semantic-Anchors/issues/797[#797] bis https://github.com/LLM-Coding/Semantic-Anchors/issues/800[#800]: Defensive Programming, Finite State Machine, MISRA C, BlinkWithoutDelay. Jeder erscheint als Prompt-Schalter in Nikolai Radkes AI.duino-Plugin für die Arduino IDE oder benennt, was ein solcher Schalter verlangt
-|Modelle |`claude-haiku-4-5` (schwach). Die Aktivierung auf der starken Stufe hat der Vorschlagende je Kandidat auf `claude-opus-5-5` gemessen; sie steht im jeweiligen Issue und wird hier nicht wiederholt
+|Modelle |`claude-haiku-4-5`, aufgelöst zu `claude-haiku-4-5-20251001` (schwach; die Auflösung wurde am selben Tag mit einer Probe geprüft, die die Modell-ID ausgibt). Die Aktivierung auf der starken Stufe hat der Vorschlagende je Kandidat auf `claude-opus-5-5` gemessen; sie steht im jeweiligen Issue und wird hier nicht wiederholt
 |Läufe |8 Erkennungsproben (zwei je Begriff), 4 Attributionsproben, 3 Proben mit dem nackten Namen, je 8 Baseline- und Anker-Läufe. 31 Proben insgesamt
 |Reinraum |`claude -p --strict-mcp-config --setting-sources "" --tools ""` mit `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN` und `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, jede Probe in einem eigenen leeren Git-Repository außerhalb dieses Repositorys
 |Nicht getestet |`claude-sonnet-5` wurde ausgelassen. Die Befunde sind eine Untergrenze

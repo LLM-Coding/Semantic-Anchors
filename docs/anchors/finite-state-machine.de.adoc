@@ -17,7 +17,7 @@ Auch bekannt als:: FSM, endlicher Automat, Zustandsautomat, State Machine
 [discrete]
 == *Kernkonzepte*:
 
-Eine endliche, benannte Menge von Zuständen:: Der Automat ist immer in genau einem Zustand, und jeder Zustand hat einen Namen. Ein Statusfeld, dessen Werte niemand aufgelistet hat, ist kein Zustandsautomat; die Liste ist der Kern.
+Eine endliche, benannte Menge von Zuständen:: Ein flacher Automat ist immer in genau einem Zustand -- mit orthogonalen Regionen in einem je Region --, und jeder Zustand hat einen Namen. Ein Statusfeld, dessen Werte niemand aufgelistet hat, ist kein Zustandsautomat; die Liste ist der Kern.
 
 Ereignisse, Übergänge und die Übergangstabelle:: In einem deterministischen Automaten führt ein Ereignis in einem gegebenen Zustand zu höchstens einem Folgezustand; teilen Guards einen Übergang auf, dürfen sich ihre Bedingungen nicht überschneiden. Als Tabelle aufgeschrieben -- Zustände als Zeilen, Ereignisse als Spalten -- zeigt sie jede Kombination, auch die, an die niemand gedacht hat.
 

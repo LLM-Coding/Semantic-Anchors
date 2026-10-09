@@ -10,18 +10,18 @@
 
 [%collapsible]
 ====
-Full Name:: MISRA C -- _Guidelines for the use of the C language in critical systems_, published by MISRA, originally the Motor Industry Software Reliability Association. First edition 1998, then aimed at vehicle-based software; the title above dates from MISRA C:2004, which was followed by MISRA C:2012 and the consolidated editions MISRA C:2023 and MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
+Full Name:: MISRA C -- _Guidelines for the use of the C language in critical systems_, published by MISRA, originally the Motor Industry Software Reliability Association. First edition 1998, then aimed at vehicle-based software; the title above dates from MISRA C:2004, which was followed by MISRA C:2012, the consolidated MISRA C:2023 and the incremental update MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
 
 Also known as:: the MISRA guidelines, MISRA rules; editions by year, such as MISRA C:2012
 
 [discrete]
 == *Core Concepts*:
 
-A Safe Subset of C:: MISRA C does not add anything to the language. It removes the parts whose behaviour is undefined, unspecified or implementation-defined, or that experience shows are easy to get wrong. What remains is a C that a reviewer and a static analyser can reason about.
+A Safe Subset of C:: MISRA C does not add anything to the language. It removes or restricts the parts whose behaviour is undefined or unspecified, or that experience shows are easy to get wrong. Implementation-defined behaviour is not banned outright; where the program depends on it, it has to be documented. What remains is a C that a reviewer and a static analyser can reason about.
 
 Mandatory, Required, Advisory:: Every guideline carries a category. Mandatory guidelines admit no exception. Required ones may be broken only through a formal, documented deviation. Advisory ones are recommendations that a project may relax.
 
-Directives and Rules:: Rules are stated precisely enough to be checked against the source code. Directives concern the process and the surrounding documentation and cannot be fully checked from the code alone. A tool report covers the rules and at best parts of the directives.
+Directives and Rules:: Rules are stated precisely enough to be checked against the source code. Directives concern the process and the surrounding documentation and cannot be fully checked from the code alone. A tool report covers the rules -- completely only for the decidable ones -- and at best parts of the directives.
 
 Deviation Instead of Silence:: Breaking a required guideline is allowed, but only with a written deviation that names the guideline, the reason, the scope and the approval. Compliance means "every violation is either fixed or justified", not "zero warnings".
 

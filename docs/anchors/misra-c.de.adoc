@@ -10,18 +10,18 @@
 
 [%collapsible]
 ====
-Vollständiger Name:: MISRA C -- _Guidelines for the use of the C language in critical systems_, herausgegeben von MISRA, ursprünglich der Motor Industry Software Reliability Association. Erste Ausgabe 1998, damals für Software in Fahrzeugen; der obige Titel gilt seit MISRA C:2004, danach folgten MISRA C:2012 und die konsolidierten Ausgaben MISRA C:2023 und MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
+Vollständiger Name:: MISRA C -- _Guidelines for the use of the C language in critical systems_, herausgegeben von MISRA, ursprünglich der Motor Industry Software Reliability Association. Erste Ausgabe 1998, damals für Software in Fahrzeugen; der obige Titel gilt seit MISRA C:2004, danach folgten MISRA C:2012, die konsolidierte Ausgabe MISRA C:2023 und die inkrementelle Aktualisierung MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
 
 Auch bekannt als:: die MISRA-Richtlinien, MISRA-Regeln; Ausgaben nach Jahr, etwa MISRA C:2012
 
 [discrete]
 == *Kernkonzepte*:
 
-Eine sichere Teilmenge von C:: MISRA C fügt der Sprache nichts hinzu. Es streicht die Teile, deren Verhalten undefiniert, unspezifiziert oder implementierungsabhängig ist oder die sich in der Praxis als fehleranfällig erwiesen haben. Übrig bleibt ein C, über das ein Reviewer und ein statischer Analysator verlässlich urteilen können.
+Eine sichere Teilmenge von C:: MISRA C fügt der Sprache nichts hinzu. Es streicht oder beschränkt die Teile, deren Verhalten undefiniert oder unspezifiziert ist oder die sich in der Praxis als fehleranfällig erwiesen haben. Implementierungsabhängiges Verhalten ist nicht pauschal verboten; wo das Programm davon abhängt, muss es dokumentiert sein. Übrig bleibt ein C, über das ein Reviewer und ein statischer Analysator verlässlich urteilen können.
 
 Mandatory, Required, Advisory:: Jede Richtlinie trägt eine Kategorie. Mandatory-Richtlinien lassen keine Ausnahme zu. Required-Richtlinien dürfen nur über eine formale, dokumentierte Abweichung verletzt werden. Advisory-Richtlinien sind Empfehlungen, die ein Projekt lockern darf.
 
-Directives und Rules:: Rules sind so genau formuliert, dass man sie am Quellcode prüfen kann. Directives betreffen den Prozess und die begleitende Dokumentation und lassen sich am Code allein nicht vollständig prüfen. Ein Werkzeugbericht deckt die Rules ab und die Directives bestenfalls teilweise.
+Directives und Rules:: Rules sind so genau formuliert, dass man sie am Quellcode prüfen kann. Directives betreffen den Prozess und die begleitende Dokumentation und lassen sich am Code allein nicht vollständig prüfen. Ein Werkzeugbericht deckt die Rules ab -- vollständig nur die entscheidbaren -- und die Directives bestenfalls teilweise.
 
 Abweichung statt Schweigen:: Eine Required-Richtlinie zu verletzen ist erlaubt, aber nur mit einer schriftlichen Abweichung (Deviation), die Richtlinie, Grund, Geltungsbereich und Freigabe nennt. Compliance heißt „jede Verletzung ist behoben oder begründet“, nicht „null Warnungen“.
 

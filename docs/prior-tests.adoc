@@ -575,7 +575,7 @@ The general lesson is the mirror of the one the previous run recorded. There, a 
 [cols="1,3"]
 |===
 |Candidates |4 terms proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/797[#797] to https://github.com/LLM-Coding/Semantic-Anchors/issues/800[#800]: Defensive Programming, Finite State Machine, MISRA C, BlinkWithoutDelay. Each appears as, or names what is asked for by, a prompt toggle in Nikolai Radke's AI.duino plugin for the Arduino IDE
-|Models |`claude-haiku-4-5` (weak). Strong-tier activation was run per candidate on `claude-opus-5-5` by the proposer and is recorded in each issue, not repeated here
+|Models |`claude-haiku-4-5`, resolved to `claude-haiku-4-5-20251001` (weak; resolution checked the same day with a probe that reports the model ID). Strong-tier activation was run per candidate on `claude-opus-5-5` by the proposer and is recorded in each issue, not repeated here
 |Runs |8 recognition probes (two per term), 4 attribution probes, 3 bare-name probes, 8 baseline and 8 anchored action runs. 31 probes in total
 |Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN` and `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, each probe in its own empty git repository outside this one
 |Not tested |`claude-sonnet-5` was skipped. Findings are a lower bound
