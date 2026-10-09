@@ -9,6 +9,7 @@ include::about.adoc[leveloffset=+1]
 
 == Communication & Presentation
 
+[#4mat]
 include::anchors/4mat.adoc[leveloffset=+2]
 
 [[aida-model]]
@@ -280,6 +281,7 @@ include::anchors/yagni.adoc[leveloffset=+2]
 
 == Development Workflow
 
+[#50-72-rule]
 include::anchors/50-72-rule.adoc[leveloffset=+2]
 
 [[andon]]
