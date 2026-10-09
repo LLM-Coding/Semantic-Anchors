@@ -1784,7 +1784,7 @@ Herbert H. Clark & Susan E. Brennan (https://en.wikipedia.org/wiki/Grounding_in_
 ## **Common Misunderstandings**:
 
 * ❌ "BlinkWithoutDelay is about blinking LEDs" -- the LED is the demonstration; the subject is not blocking the loop
-* ❌ "`millis() > previousMillis + interval` is equivalent" -- it fails when `millis()` wraps; subtract, then compare
+* ❌ "`millis() >= previousMillis + interval` is equivalent" -- it fails when `millis()` wraps; subtract, then compare
 * ❌ "This is an interrupt-based timer" -- it is polling in the main loop; interrupts and hardware timers are a different technique
 * ❌ "It replaces an RTOS" -- it covers cooperative tasks that finish quickly; long-running or preemptive work needs more
 * ✓ "Every task checks its own elapsed time on every pass, and nothing ever waits"
@@ -2126,7 +2126,7 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 
 ***Full Name***: Defensive Programming as set out in Steve McConnell's _Code Complete_ (2nd edition, Microsoft Press 2004), chapter 8, "Defensive Programming"
 
-***Also known as***: defensive coding; McConnell's barricade
+***Also known as***: defensive coding
 
 [discrete]
 ## **Core Concepts**:
@@ -2164,7 +2164,7 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 
 ## **Criticism**:
 
-* **Working around problems makes software fail slowly.** Jim Shore's IEEE Software column argues against the robustness half of the practice: "Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'" His remedy is assertions that stop at the first broken assumption -- which McConnell's assertion and barricade advice already contains, so the critique lands on the everyday "catch it and carry on" reading of the term, not on the chapter. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, "Fail Fast", _IEEE Software_, Design column (2004)].
+* **Working around problems makes software fail slowly.** Jim Shore's IEEE Software column argues against the robustness half of the practice: "Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'" His remedy is assertions that stop at the first broken assumption -- which McConnell's assertion and barricade advice already contains, so the critique lands on the everyday "catch it and carry on" reading of the term, not on the chapter. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, "Fail Fast", _IEEE Software_ 21(5), September/October 2004, Design column].
 
 ### Design by Contract
 
@@ -2282,7 +2282,7 @@ Seven levels of cohesion, ranked from worst (1) to best (7):
 
 ***A Finite, Named Set of States***: The machine is in exactly one state at a time, and every state has a name. A status field whose values nobody has listed is not a state machine; the list is the point.
 
-***Events, Transitions and the Transition Table***: An event in a given state leads to exactly one next state. Writing this down as a table -- states as rows, events as columns -- shows every combination, including the ones nobody thought about.
+***Events, Transitions and the Transition Table***: In a deterministic machine, an event in a given state leads to at most one next state; where guards split a transition, their conditions must not overlap. Writing this down as a table -- states as rows, events as columns -- shows every combination, including the ones nobody thought about.
 
 ***Every Cell Is a Decision***: For each state and event, the table says either "go there" or "this event is not allowed here, and this is what happens instead": ignore, reject, log, fault state. An empty cell is a missing requirement, not a default.
 
@@ -11970,7 +11970,7 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 
 ### MISRA C
 
-***Full Name***: MISRA C -- _Guidelines for the use of the C language in critical systems_, published by MISRA, originally the Motor Industry Software Reliability Association. First edition 1998, followed by MISRA C:2004, MISRA C:2012 and the consolidated editions MISRA C:2023 and MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
+***Full Name***: MISRA C -- _Guidelines for the use of the C language in critical systems_, published by MISRA, originally the Motor Industry Software Reliability Association. First edition 1998, then aimed at vehicle-based software; the title above dates from MISRA C:2004, which was followed by MISRA C:2012 and the consolidated editions MISRA C:2023 and MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
 
 ***Also known as***: the MISRA guidelines, MISRA rules; editions by year, such as MISRA C:2012
 
@@ -11981,13 +11981,13 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 
 ***Mandatory, Required, Advisory***: Every guideline carries a category. Mandatory guidelines admit no exception. Required ones may be broken only through a formal, documented deviation. Advisory ones are recommendations that a project may relax.
 
-***Directives and Rules***: Rules are stated precisely enough to be checked against the source code. Directives concern the process and the surrounding documentation and cannot be fully checked from the code alone. A tool report covers the rules; nobody's tool covers the directives.
+***Directives and Rules***: Rules are stated precisely enough to be checked against the source code. Directives concern the process and the surrounding documentation and cannot be fully checked from the code alone. A tool report covers the rules and at best parts of the directives.
 
 ***Deviation Instead of Silence***: Breaking a required guideline is allowed, but only with a written deviation that names the guideline, the reason, the scope and the approval. Compliance means "every violation is either fixed or justified", not "zero warnings".
 
 ***The Essential Type Model***: MISRA C reasons about the type a value really has -- Boolean, character, signed, unsigned, enum, floating -- instead of C's integer promotions. Implicit conversions between these categories, especially narrowing and mixing signedness, are what the model exists to stop.
 
-***Typical Themes***: No dynamic memory allocation after start-up, no recursion, restricted pointer arithmetic, a `default` in every `switch`, braces on every body, every return value checked or explicitly discarded, no unreachable or unused code, a restricted preprocessor and standard library.
+***Typical Themes***: No dynamic memory allocation, no recursion, restricted pointer arithmetic, a `default` in every `switch`, braces on every body, every return value checked or explicitly discarded, no unreachable or unused code, a restricted preprocessor and standard library.
 
 ***Rule Texts Belong to MISRA***: The guideline texts are copyrighted and sold by MISRA. Name themes and categories freely; for an individual rule number and its wording, the licensed document and a qualified checker are the references -- not a model's memory.
 
@@ -12010,7 +12010,7 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 
 ## **Criticism**:
 
-* **Applied as a compliance checklist, the rules can cause more faults than they prevent.** Les Hatton measured MISRA C:1998 and MISRA C:2004 against the same body of code and found that the ratio of real to false positives "is unacceptably low in both". His conclusion goes further: the most fundamental problem of MISRA C:1998 is still unsolved in the 2004 edition, namely "that its unadulterated use as a compliance document is likely to lead to more faults and not less because of the fault re-injection phenomenon" -- every change made only to silence a rule carries a chance of introducing a new defect. https://www.leshatton.org/Documents/MISRA_comp_1105.pdf[Hatton, "Language subsetting in an industrial context: a comparison of MISRA C 1998 and MISRA C 2004" (paper dated 20 November 2005)]. The critique predates MISRA C:2012, so read it as a warning about how rules are applied, not as a verdict on the current edition.
+* **Applied as a compliance checklist, the rules can cause more faults than they prevent.** Les Hatton measured MISRA C:1998 and MISRA C:2004 against the same body of code and found that the ratio of real to false positives "is unacceptably low in both". His conclusion goes further: the most fundamental problem of MISRA C:1998 is still unsolved in the 2004 edition, namely "that its unadulterated use as a compliance document is likely to lead to more faults and not less because of the fault re-injection phenomenon" -- every change made only to silence a rule carries a chance of introducing a new defect. https://www.leshatton.org/Documents/MISRA_comp_1105.pdf[Hatton, "Language subsetting in an industrial context: a comparison of MISRA C 1998 and MISRA C 2004" (preprint dated 20 November 2005; published in _Information and Software Technology_ 49(5), 2007)]. The critique predates MISRA C:2012, so read it as a warning about how rules are applied, not as a verdict on the current edition.
 
 [discrete]
 ## **Current Status**:
