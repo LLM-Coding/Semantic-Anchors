@@ -1,0 +1,54 @@
+= Defensive Programming according to McConnell
+:categories: design-principles
+:proponents: Steve McConnell
+:roles: software-developer, software-architect, qa-engineer
+:tags: defensive programming, barricade, assertions, input validation, error handling, fail fast, robustness, correctness, garbage in, trust boundary, guard clause
+:related: design-by-contract, defense-in-depth, postels-law, poka-yoke
+:tier: 2
+:prior-test: 2026-10-09
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Defensive Programming as set out in Steve McConnell's _Code Complete_ (2nd edition, Microsoft Press 2004), chapter 8, "Defensive Programming"
+
+Also known as:: defensive coding; McConnell's barricade
+
+[discrete]
+== *Core Concepts*:
+
+Protect the Program from Invalid Input:: Data from outside the program -- files, users, the network, other systems -- is checked before it is used. Bad input gets a defined answer: a rejection, an error code, a logged and handled fault. It never gets a quiet wrong result.
+
+The Barricade:: McConnell draws one line through the program. Outside it, data is untrusted and every public interface validates. Inside it, data is assumed clean, so internal routines do not repeat the checks. The barricade is what keeps defensive programming from turning into null checks in every helper.
+
+Error Handling Outside, Assertions Inside:: Conditions that can occur in production -- a missing file, a malformed record -- get error handling at the barricade. Conditions that must never occur if the code is correct -- a helper called with a null buffer -- get an assertion inside it. An assertion documents an assumption and fails loudly during development; it is not a substitute for validating input.
+
+Robustness Versus Correctness:: Some systems should keep running with a degraded answer, others must stop rather than give a wrong one. A text editor may substitute a default; a radiation-therapy controller must not. Choosing which one the system needs is part of the practice, not an afterthought.
+
+Being Defensive About Defensive Programming:: McConnell's chapter ends with a warning against overdoing it. Checks everywhere make the code slower, longer and harder to read, and error handling that hides faults makes them harder to find. Debug-only aids are removed or switched off for production; checks that guard real inputs stay.
+
+Not Design by Contract, but Reconcilable With It:: `design-by-contract` assigns each check to exactly one party and rejects double-checking on both sides. Defensive programming starts from the opposite instinct: check wherever a bad value could arrive. The barricade reconciles the two -- validate once at the boundary, then reason by contract and assertion inside. Name which one you want: weak models blend them, and one tested model attributed defensive programming to Bertrand Meyer.
+
+[discrete]
+== *When to Use*:
+
+* Code that reads input it does not control: parsers, file importers, API handlers, device drivers
+* Deciding where validation lives in a module, so it happens once at the public interface and not in every private helper
+* Choosing between robustness and correctness for a system, and writing the choice down
+* Reviewing error handling that swallows exceptions or returns plausible defaults for impossible states
+* Driving a model: "apply defensive programming according to McConnell, with a barricade at the public API and assertions inside" asks for a placement, not just for more checks
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Defensive means wrapping everything in try/catch" -- swallowing errors is the opposite of the practice; a hidden fault is harder to find than a crash
+* ❌ "Check every argument in every function" -- the barricade exists so that internal code does not repeat boundary checks
+* ❌ "Assertions are input validation" -- assertions catch programmer errors and may be compiled out; user input needs real error handling
+* ❌ "Defensive programming and fail-fast are opposites" -- assertions that stop the program at the first broken assumption are part of the practice
+* ❌ "Defensive programming is a security architecture" -- that is `defense-in-depth`; this is a coding practice inside one program
+* ✓ "Validate at the boundary, assert inside, and decide whether this system prefers robustness or correctness"
+====
+
+== *Criticism*:
+
+* *Working around problems makes software fail slowly.* Jim Shore's IEEE Software column argues against the robustness half of the practice: "Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'" His remedy is assertions that stop at the first broken assumption -- which McConnell's assertion and barricade advice already contains, so the critique lands on the everyday "catch it and carry on" reading of the term, not on the chapter. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, "Fail Fast", _IEEE Software_, Design column (2004)].

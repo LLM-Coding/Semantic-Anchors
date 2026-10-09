@@ -1,7 +1,7 @@
 = Design by Contract
 :categories: design-principles
 :roles: software-developer, software-architect
-:related: solid-lsp, solid-principles, postels-law, ears-requirements
+:related: solid-lsp, solid-principles, postels-law, ears-requirements, defensive-programming
 :proponents: Bertrand Meyer
 :tags: preconditions, postconditions, invariants, correctness, eiffel
 :tier: 2
@@ -47,6 +47,7 @@ Key Proponent:: Bertrand Meyer, who coined the term for the https://www.eiffel.c
 * <<solid-principles,SOLID Principles>> — DbC reinforces the substitutability guarantee SOLID depends on
 * <<postels-law,Postel's Law>> — opposing stance on input strictness; reconciled by boundary scope
 * <<ears-requirements,EARS Requirements>> — pre/postconditions express requirements as checkable assertions
+* <<defensive-programming,Defensive Programming according to McConnell>> — the opposite instinct, checking wherever bad data could arrive; McConnell's barricade reconciles the two by validating once at the boundary
 
 [discrete]
 == *Criticism*:

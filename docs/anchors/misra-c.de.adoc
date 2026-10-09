@@ -1,0 +1,59 @@
+= MISRA C
+:categories: testing-quality
+:proponents: MISRA (originally the Motor Industry Software Reliability Association)
+:roles: software-developer, software-architect, qa-engineer
+:tags: MISRA C, MISRA, Programmierrichtlinie, Codierstandard, sichere Teilmenge, Embedded C, sicherheitskritisch, Automotive, Essential Type Model, Abweichung, Deviation, Compliance, statische Analyse, mandatory required advisory
+:related: iec-61508-sil-levels, defensive-programming, poka-yoke
+:tier: 3
+:prior-test: 2026-10-09
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: MISRA C -- _Guidelines for the use of the C language in critical systems_, herausgegeben von MISRA, ursprünglich der Motor Industry Software Reliability Association. Erste Ausgabe 1998, danach MISRA C:2004, MISRA C:2012 und die konsolidierten Ausgaben MISRA C:2023 und MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
+
+Auch bekannt als:: die MISRA-Richtlinien, MISRA-Regeln; Ausgaben nach Jahr, etwa MISRA C:2012
+
+[discrete]
+== *Kernkonzepte*:
+
+Eine sichere Teilmenge von C:: MISRA C fügt der Sprache nichts hinzu. Es streicht die Teile, deren Verhalten undefiniert, unspezifiziert oder implementierungsabhängig ist oder die sich in der Praxis als fehleranfällig erwiesen haben. Übrig bleibt ein C, über das ein Reviewer und ein statischer Analysator verlässlich urteilen können.
+
+Mandatory, Required, Advisory:: Jede Richtlinie trägt eine Kategorie. Mandatory-Richtlinien lassen keine Ausnahme zu. Required-Richtlinien dürfen nur über eine formale, dokumentierte Abweichung verletzt werden. Advisory-Richtlinien sind Empfehlungen, die ein Projekt lockern darf.
+
+Directives und Rules:: Rules sind so genau formuliert, dass man sie am Quellcode prüfen kann. Directives betreffen den Prozess und die begleitende Dokumentation und lassen sich am Code allein nicht vollständig prüfen. Ein Werkzeugbericht deckt die Rules ab; die Directives deckt kein Werkzeug ab.
+
+Abweichung statt Schweigen:: Eine Required-Richtlinie zu verletzen ist erlaubt, aber nur mit einer schriftlichen Abweichung (Deviation), die Richtlinie, Grund, Geltungsbereich und Freigabe nennt. Compliance heißt „jede Verletzung ist behoben oder begründet“, nicht „null Warnungen“.
+
+Das Essential Type Model:: MISRA C argumentiert über den Typ, den ein Wert wirklich hat -- Boolean, Zeichen, vorzeichenbehaftet, vorzeichenlos, Enum, Gleitkomma -- statt über Cs Integer-Promotions. Implizite Umwandlungen zwischen diesen Kategorien, vor allem einengende und solche, die Vorzeichen mischen, soll das Modell verhindern.
+
+Typische Themen:: keine dynamische Speicherverwaltung nach dem Start, keine Rekursion, eingeschränkte Zeigerarithmetik, ein `default` in jedem `switch`, geschweifte Klammern um jeden Rumpf, jeder Rückgabewert geprüft oder ausdrücklich verworfen, kein unerreichbarer oder ungenutzter Code, eingeschränkter Präprozessor und eingeschränkte Standardbibliothek.
+
+Die Regeltexte gehören MISRA:: Die Texte der Richtlinien sind urheberrechtlich geschützt und werden von MISRA verkauft. Themen und Kategorien darf man frei nennen; für eine einzelne Regelnummer und ihren Wortlaut sind das lizenzierte Dokument und ein qualifizierter Checker die Referenz -- nicht das Gedächtnis eines Modells.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Embedded C für Automotive, Bahn, Medizintechnik, Luftfahrt oder Industriesteuerung, wo eine Norm zur funktionalen Sicherheit wie `iec-61508-sil-levels` einen Codierstandard erwartet
+* C-Code so reviewen oder umschreiben, dass der MISRA-Bericht eines statischen Analysators zur Review-Checkliste wird
+* Die Compliance-Politik eines Projekts festlegen: welche Ausgabe, welche Advisory-Richtlinien gelockert werden, wer Abweichungen freigibt
+* Ein Modell steuern: „mach das MISRA-C-konform und liste jede Abweichung mit Begründung auf“ verlangt die Teilmenge und die Dokumentation, nicht nur sichereren Code
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „MISRA-Compliance heißt null Warnungen“ -- sie heißt, dass jede Verletzung behoben oder durch eine freigegebene Abweichung gedeckt ist
+* ❌ „MISRA ist nur etwas für Autos“ -- der Name ist seiner Herkunft entwachsen; die Richtlinien gelten überall, wo C in kritischen Systemen läuft
+* ❌ „Regelnummern aus einem Modell kann man übernehmen“ -- in der Messung vom 2026-10-09 nannte ein Modell eine „Rule 34.1“, die es in MISRA C nicht gibt; Nummern gegen das lizenzierte Dokument oder einen Checker prüfen
+* ❌ „MISRA C macht C sicher“ -- es beseitigt bekannte Gefahrenquellen; es beweist nicht, dass das Programm korrekt ist
+* ✓ „Die Ausgabe verwenden, auf die sich das Projekt festgelegt hat, mit einem Werkzeug prüfen und jede Abweichung aufschreiben“
+====
+
+== *Kritik*:
+
+* *Als Compliance-Checkliste angewandt, können die Regeln mehr Fehler verursachen, als sie verhindern.* Les Hatton hat MISRA C:1998 und MISRA C:2004 an derselben Codebasis gemessen und fand das Verhältnis echter zu falschen Befunden „unacceptably low in both“. Sein Schluss geht weiter: Das grundlegendste Problem von MISRA C:1998 sei auch in der Ausgabe 2004 ungelöst, nämlich „that its unadulterated use as a compliance document is likely to lead to more faults and not less because of the fault re-injection phenomenon“ -- jede Änderung, die nur eine Regel zum Schweigen bringt, kann einen neuen Fehler einschleppen. https://www.leshatton.org/Documents/MISRA_comp_1105.pdf[Hatton, „Language subsetting in an industrial context: a comparison of MISRA C 1998 and MISRA C 2004“ (Papier vom 20. November 2005)]. Die Kritik ist älter als MISRA C:2012; sie warnt davor, wie Regeln angewandt werden, und ist kein Urteil über die aktuelle Ausgabe.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Ein Modell hat vermutlich MISRA C:2012 im Kopf.* MISRA nennt MISRA C:2012 als am 18. März 2013 erschienen, MISRA C:2023 als im April 2023 erschienen, um die Arbeit der Zwischenjahre zu konsolidieren und C11 und C18 zu unterstützen, und MISRA C:2025 als im März 2025 erschienene inkrementelle Aktualisierung. https://misra.org.uk/misra-c/[MISRA, „MISRA C“]. Die Ausgabe nennen, die das Projekt verwendet; die Nummern der Richtlinien unterscheiden sich zwischen den Ausgaben.

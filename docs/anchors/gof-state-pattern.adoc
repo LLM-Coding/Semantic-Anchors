@@ -5,7 +5,7 @@
 :tier: 3
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, state, state machine, finite automaton, context
-:related: gof-design-patterns, gof-strategy-pattern, gof-memento-pattern
+:related: gof-design-patterns, gof-strategy-pattern, gof-memento-pattern, finite-state-machine
 
 [%collapsible]
 ====
@@ -29,4 +29,5 @@ Allow an object to alter its behavior when its internal state changes. The objec
 [discrete]
 == *Related Anchors*:
 * <<gof-design-patterns,GoF Design Patterns>> (Umbrella)
+* <<finite-state-machine,Finite State Machine>> -- the model this pattern implements; the pattern is one way to code it
 ====

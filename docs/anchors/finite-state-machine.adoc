@@ -1,0 +1,52 @@
+= Finite State Machine
+:categories: design-principles
+:proponents: George H. Mealy, Edward F. Moore, David Harel
+:roles: software-developer, software-architect, qa-engineer
+:tags: finite state machine, FSM, state machine, finite automaton, state, event, transition, transition table, guard, Mealy machine, Moore machine, statecharts, UML state machine, state explosion
+:related: gof-state-pattern, blink-without-delay, ears-requirements
+:tier: 3
+:prior-test: 2026-10-09
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Finite State Machine (finite-state automaton), with the two classic output models from George H. Mealy, "A Method for Synthesizing Sequential Circuits" (_Bell System Technical Journal_, 1955), and Edward F. Moore, "Gedanken-experiments on Sequential Machines" (_Automata Studies_, 1956). David Harel's statecharts ("Statecharts: A Visual Formalism for Complex Systems", _Science of Computer Programming_, 1987) add hierarchy and concurrency and underlie UML state machines.
+
+Also known as:: FSM, finite automaton, state machine, finite-state automaton
+
+[discrete]
+== *Core Concepts*:
+
+A Finite, Named Set of States:: The machine is in exactly one state at a time, and every state has a name. A status field whose values nobody has listed is not a state machine; the list is the point.
+
+Events, Transitions and the Transition Table:: An event in a given state leads to exactly one next state. Writing this down as a table -- states as rows, events as columns -- shows every combination, including the ones nobody thought about.
+
+Every Cell Is a Decision:: For each state and event, the table says either "go there" or "this event is not allowed here, and this is what happens instead": ignore, reject, log, fault state. An empty cell is a missing requirement, not a default.
+
+Guards and Actions:: A guard is a condition that must hold for a transition to fire. Actions run on a transition or on entering and leaving a state. Keeping them attached to transitions keeps the behaviour readable from the table.
+
+Mealy Versus Moore:: In a Moore machine, the output depends only on the current state; in a Mealy machine, on the state and the input. The distinction decides where an action belongs: in the state or on the transition.
+
+State Explosion and Statecharts:: Flat machines grow multiplicatively when independent concerns are combined. Harel's statecharts answer with nested states, orthogonal regions and history, which is what UML state machines and libraries such as XState implement.
+
+The Model, Not an Implementation:: An FSM can be coded as a switch over an enum, as a data-driven transition table, as the `gof-state-pattern` with one class per state, or with a library. The State pattern is one of these codings; the FSM is what all of them encode.
+
+[discrete]
+== *When to Use*:
+
+* Logic that depends on a history of events: protocols, device controllers, UI flows, order and document lifecycles
+* Replacing a tangle of boolean flags whose combinations include impossible ones
+* Writing requirements and tests: every row of the table is a test case, and every empty cell is a question for the product owner
+* Embedded control loops where a task must advance step by step without blocking, as in `blink-without-delay`
+* Driving a model: "model this as a finite state machine with an explicit transition table, and say what happens for each invalid event" asks for the table, not just for an enum
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "A status field makes it a state machine" -- without a finite list of states and defined transitions, it is just a variable
+* ❌ "FSM means the GoF State pattern" -- the pattern is one object-oriented way to code the model
+* ❌ "Unhandled events can be ignored silently" -- ignoring is a valid choice only if the table says so
+* ❌ "Booleans are simpler" -- three booleans give eight combinations, and the code has to rule out the impossible ones by hand
+* ❌ "An FSM can count" -- a finite machine has no unbounded memory; counters and stacks are extended state
+* ✓ "Name the states, list the events, fill every cell of the table"
+====

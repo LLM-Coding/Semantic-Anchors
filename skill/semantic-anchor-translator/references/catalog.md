@@ -103,6 +103,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** International Electrotechnical Commission
 - **Core:** Safety integrity levels for safety-critical systems
 
+### MISRA C
+- **Also known as:** MISRA guidelines; by edition, e.g. MISRA C:2012
+- **Proponents:** MISRA (originally the Motor Industry Software Reliability Association)
+- **Core:** A safe subset of C for critical embedded systems: guidelines classed as mandatory, required or advisory, rules checkable from source versus process directives, the essential type model, no dynamic memory or recursion, and documented deviations instead of silent violations. Name the edition; never trust a model's rule numbers without the licensed text or a checker
+
 ### LINDDUN
 - **Also known as:** LINDDUN GO, Privacy Threat Modeling, Privacy STRIDE
 - **Proponents:** Kim Wuyts, Riccardo Scandariato, Wouter Joosen (KU Leuven)
@@ -477,6 +482,16 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 - **Core:** Allow an object to alter its behavior when its internal state changes; the object will appear to change its class (Behavioral)
 
+### Finite State Machine
+- **Also known as:** FSM, finite automaton, state machine
+- **Proponents:** George H. Mealy, Edward F. Moore, David Harel
+- **Core:** A finite, named set of states, events and a complete transition table in which every state/event cell is a decision, including what happens on an invalid event. Mealy versus Moore output, guards and actions, and Harel statecharts against state explosion. The model behind the GoF State pattern, which is one way to code it
+
+### BlinkWithoutDelay
+- **Also known as:** Blink without Delay, the `millis()` pattern, non-blocking timing in a superloop
+- **Proponents:** David A. Mellis, Arduino
+- **Core:** The Arduino example that never calls `delay()`: each task stores a timestamp and checks `now - last >= interval` on every pass of `loop()`, which stays correct across the `millis()` wrap. One timer per task gives cooperative multitasking without an OS; the next step is a finite state machine
+
 ### GoF-Strategy Pattern
 - **Proponents:** Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 - **Core:** Define a family of algorithms, encapsulate each one, and make them interchangeable (Behavioral)
@@ -506,6 +521,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** DbC, Programming by Contract
 - **Proponents:** Bertrand Meyer
 - **Core:** Specifies software correctness as enforceable preconditions (caller's obligation), postconditions (supplier's guarantee), and class invariants — assigning blame on violation, formalizing behavioural subtyping (LSP), and coined for Eiffel by Bertrand Meyer
+
+### Defensive Programming according to McConnell
+- **Also known as:** defensive coding, McConnell's barricade
+- **Proponents:** Steve McConnell (Code Complete, 2nd ed., chapter 8)
+- **Core:** Protect the program from invalid input with a barricade: validate untrusted data once at the public interface, use assertions for conditions that must never occur inside, and choose robustness or correctness per system. Not "try/catch everywhere" and not double-checking in every helper; the barricade is what reconciles it with Design by Contract
 
 ### Deep Modules
 - **Also known as:** Module Depth, Deep Classes

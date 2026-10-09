@@ -2,6 +2,17 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-09
+
+*Four new anchors, and with them two scope decisions: embedded and safety-critical C, and platform idioms.* All four terms were proposed because they appear as prompt toggles -- or name what a toggle asks for -- in https://github.com/NikolaiRadke/AI.duino[Nikolai Radke's AI.duino plugin] for the Arduino IDE (Apache-2.0). Only the terms were taken; no text was copied.
+
+* *link:#/anchor/defensive-programming[Defensive Programming according to McConnell]* (Steve McConnell) -- design-principles: validate untrusted input once at a barricade, assert inside, and choose robustness or correctness per system. Registered with McConnell's name because the weak tier attributes the practice to Bertrand Meyer, and link:#/anchor/design-by-contract[Design by Contract] argues against defensive double-checking. The barricade reconciles the two, and both entries now point at each other. Tier ★★☆, #797.
+* *link:#/anchor/finite-state-machine[Finite State Machine]* (George H. Mealy, Edward F. Moore, David Harel) -- design-principles: a finite set of named states and a transition table in which every cell is a decision. The model behind the link:#/anchor/gof-state-pattern[GoF State pattern], which now names it as such; the pattern is one way to code it. Tier ★★★, #798.
+* *link:#/anchor/misra-c[MISRA C]* (MISRA) -- testing-quality: the safe subset of C for critical systems, with mandatory, required and advisory guidelines and documented deviations. The first coding standard for embedded safety in the catalog, next to link:#/anchor/iec-61508-sil-levels[IEC 61508 SIL Levels]. The entry describes themes only and quotes no rule text, because the texts belong to MISRA. Tier ★★★, #799.
+* *link:#/anchor/blink-without-delay[BlinkWithoutDelay]* (David A. Mellis, Arduino) -- design-principles: never block the loop; one timestamp per task and `now - last >= interval`, which survives the `millis()` wrap. The first platform idiom in the catalog, registered under the sketch name because that is the string that activates. Tier ★★★, #800.
+
+*The measurement caught a model inventing a MISRA rule.* Asked to make a C function MISRA C compliant, the weak tier justified a null check with "MISRA Rule 34.1", which does not exist. The anchor works -- it pulls in the right themes -- but rule numbers from a model's memory need the licensed text or a checker. Full detail in the link:#/prior-tests[prior-test register].
+
 == 2026-10-06
 
 *Writing Style contract — stumble test:*

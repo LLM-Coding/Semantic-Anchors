@@ -1,0 +1,48 @@
+= BlinkWithoutDelay
+:categories: design-principles
+:proponents: David A. Mellis, Arduino
+:roles: software-developer, educator
+:tags: BlinkWithoutDelay, Arduino, millis, nicht blockierend, delay, Superloop, kooperatives Multitasking, Timing, Embedded, Überlauf, Rollover, Mikrocontroller
+:related: finite-state-machine, misra-c
+:tier: 3
+:prior-test: 2026-10-09
+:tested-on: haiku-4.5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: BlinkWithoutDelay, der mitgelieferte Arduino-Beispielsketch (File > Examples > 02.Digital > BlinkWithoutDelay), der eine LED blinken lässt, indem er `millis()`-Zeitstempel vergleicht, statt `delay()` aufzurufen. Sein Kopf lautet „created 2005 by David A. Mellis“, spätere Änderungen stammen von Paul Stoffregen, Scott Fitzgerald und Arturo Guadalupi; dokumentiert unter https://docs.arduino.cc/built-in-examples/digital/BlinkWithoutDelay/[docs.arduino.cc].
+
+Auch bekannt als:: Blink without Delay; das `millis()`-Muster; nicht blockierendes Timing in einer Superloop
+
+[discrete]
+== *Kernkonzepte*:
+
+Die Schleife nie blockieren:: `delay()` hält das ganze Programm an, auch das Lesen von Tastern, serielle Eingaben und jede andere Aufgabe. Der Sketch lässt `loop()` frei laufen und entscheidet bei jedem Durchlauf, ob etwas fällig ist.
+
+Zeitstempel plus Intervall:: Merken, wann etwas zuletzt passiert ist, und bei jedem Durchlauf prüfen, ob das Intervall verstrichen ist: `if (currentMillis - previousMillis >= interval)`. Wenn ja, handeln und den Zeitstempel aktualisieren. Was zwischen den Durchläufen überleben muss -- der Zeitstempel, der LED-Pegel --, liegt in globalen oder `static`-Variablen.
+
+Überlaufsichere Subtraktion:: `millis()` liefert einen `unsigned long`, der nach etwa 49,7 Tagen auf null zurückspringt. Zieht man den alten Zeitstempel vom neuen ab, stimmt die verstrichene Zeit auch über den Überlauf hinweg, weil vorzeichenlose Arithmetik modular rechnet. Der Vergleich `millis() >= previousMillis + interval` bricht beim Überlauf.
+
+Ein Timer pro Aufgabe:: Jede unabhängige Aufgabe -- blinken, einen Taster entprellen, einen Sensor abfragen -- bekommt eigenen Zeitstempel und eigenes Intervall. Mehrere davon laufen nebeneinander in einem `loop()`: kooperatives Multitasking ohne Betriebssystem.
+
+Der Schritt zum Zustandsautomaten:: Sobald eine Aufgabe mehr kennt als „an“ und „aus“, treibt die Zeitprüfung eine `finite-state-machine`: Jeder Zustand wartet auf sein Intervall oder Ereignis und geht dann weiter. BlinkWithoutDelay ist der kleinste Fall dieser Struktur.
+
+Plattform-Idiom, allgemeine Idee:: Der Name gehört Arduino, die Technik nicht. Dasselbe Muster findet sich in jeder Bare-Metal-Superloop mit einem Tick-Zähler; deshalb trägt der Name als Anker über die LED hinaus, die er blinken lässt.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Arduino- und andere Mikrocontroller-Programme, die auf Eingaben reagieren müssen, während etwas anderes getaktet läuft
+* Einen Sketch mit `delay()` umschreiben, bevor eine zweite Aufgabe dazukommt
+* Den Schritt von der blockierenden Schleife zu kooperativem Multitasking und Zustandsautomaten lehren
+* Ein Modell steuern: „füge den Taster hinzu, im BlinkWithoutDelay-Stil“ entfernt jedes `delay()` und hält die Eingabe reaktionsfähig, während „füge den Taster hinzu“ die `delay()`-Aufrufe meist stehen lässt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Bei BlinkWithoutDelay geht es ums LED-Blinken“ -- die LED ist die Vorführung; das Thema ist, die Schleife nicht zu blockieren
+* ❌ „`millis() > previousMillis + interval` ist gleichwertig“ -- das bricht, wenn `millis()` überläuft; erst subtrahieren, dann vergleichen
+* ❌ „Das ist ein interruptgesteuerter Timer“ -- es ist Polling in der Hauptschleife; Interrupts und Hardware-Timer sind eine andere Technik
+* ❌ „Es ersetzt ein RTOS“ -- es trägt kooperative Aufgaben, die schnell fertig sind; lange oder präemptive Arbeit braucht mehr
+* ✓ „Jede Aufgabe prüft bei jedem Durchlauf ihre eigene verstrichene Zeit, und nichts wartet je“
+====

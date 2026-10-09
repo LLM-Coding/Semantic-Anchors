@@ -569,3 +569,35 @@ Auf dem Szenario, das den Verstoß beschrieb, waren Ankerantwort und Baseline di
 Dann wechselte die Aufgabe auf eine, bei der das Prinzip nicht die naheliegende Antwort ist: „Schreibe einen GitHub-Actions-Workflow für einen Node.js-Service: Abhängigkeiten installieren, Testsuite laufen lassen, ein Container-Image bauen, nach Amazon ECR schieben und auf einen Staging-ECS-Cluster ausrollen. Gib das YAML aus." Beide Läufe ohne Anker erzeugten langlebige `AWS_ACCESS_KEY_ID`- und `AWS_SECRET_ACCESS_KEY`-Secrets und überhaupt keinen `permissions:`-Block. Beide Läufe mit Anker erzeugten einen `permissions:`-Block, OIDC über `role-to-assume` mit `id-token` und nirgends statische Keys. Je Bedingung zweimal reproduziert.
 
 Die allgemeine Lehre spiegelt die des vorigen Laufs. Dort ergab eine Aufgabe, bei der die Methode die naheliegende Antwort war, einen Delta von null. Hier ergibt eine Aufgabe, die *das Problem benennt, für das das Prinzip steht*, aus demselben Grund einen Delta von null -- und der eigentliche Wert des Ankers liegt auf den Artefakten, bei denen niemand an Eingrenzung denkt: Build-Pipelines, IAM-Policies, Werkzeugrechte von Agenten. *Ein Anker hat keinen einzelnen Delta. Er hat einen Delta je Aufgabe, und eine Messung, die eine Zahl berichtet, hat eine Aufgabe gewählt.*
+
+== Lauf vom 09.10.2026
+
+[cols="1,3"]
+|===
+|Kandidaten |4 Begriffe, vorgeschlagen in https://github.com/LLM-Coding/Semantic-Anchors/issues/797[#797] bis https://github.com/LLM-Coding/Semantic-Anchors/issues/800[#800]: Defensive Programming, Finite State Machine, MISRA C, BlinkWithoutDelay. Jeder erscheint als Prompt-Schalter in Nikolai Radkes AI.duino-Plugin für die Arduino IDE oder benennt, was ein solcher Schalter verlangt
+|Modelle |`claude-haiku-4-5` (schwach). Die Aktivierung auf der starken Stufe hat der Vorschlagende je Kandidat auf `claude-opus-5-5` gemessen; sie steht im jeweiligen Issue und wird hier nicht wiederholt
+|Läufe |8 Erkennungsproben (zwei je Begriff), 4 Attributionsproben, 3 Proben mit dem nackten Namen, je 8 Baseline- und Anker-Läufe. 31 Proben insgesamt
+|Reinraum |`claude -p --strict-mcp-config --setting-sources "" --tools ""` mit `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN` und `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, jede Probe in einem eigenen leeren Git-Repository außerhalb dieses Repositorys
+|Nicht getestet |`claude-sonnet-5` wurde ausgelassen. Die Befunde sind eine Untergrenze
+|Kritik-Recherche |09.10.2026, nur Englisch. Gefunden und abgerufen: Jim Shore, „Fail Fast“ (_IEEE Software_, 2004) zu Defensive Programming; Les Hattons Vergleich von MISRA C:1998 und MISRA C:2004 aus dem Jahr 2005; MISRAs eigene Liste der Ausgaben. Zu Finite State Machine und BlinkWithoutDelay fand sich nichts Zitierfähiges, deshalb tragen diese Einträge keinen Kritik-Abschnitt
+|===
+
+=== Zwei von vier Aufgaben nannten die Methode schon
+
+Die Aufgaben stammen aus den Viability-Vorschlägen der Issues, und zwei davon wiederholen den Fehler, den der Lauf vom 03.10.2026 benannt hat: Sie beschreiben die Verletzung, die die Methode beheben soll. Die Aufgabe zu Defensive Programming sagte über die Hilfsfunktionen: „Every helper currently has no checks.“; die Aufgabe zur Finite State Machine übergab drei Booleans und verschachtelte if/else in einem Event-Handler. Beide Baselines antworteten trotzdem mit der Methode -- Validierung an der öffentlichen Funktion plus Assertions in den Hilfsfunktionen, und ein Zustands-Enum --, das gemessene Delta für diese beiden Begriffe ist also null. Das ist eine Aussage über die Aufgaben. Ihr Tier trägt die Erkennung, nicht die Steuerung.
+
+=== Die vier Kandidaten
+
+[cols="2,1,4"]
+|===
+|Begriff |Urteil |Anmerkung
+
+|BlinkWithoutDelay |★★★ |Das deutlichste Delta des Laufs. Sollte ein Taster zu einem Sketch hinzukommen, der mit `delay(1000)` blinkt, behielten beide Baselines die `delay()`-Aufrufe -- eine setzte eine `millis()`-Entprellung daneben. Beide Anker-Läufe entfernten jedes `delay()` und rechneten mit `millis()`-Subtraktion. Die Attribution scheitert: Die schwache Stufe antwortet `creator=Paul Badger`, der Kopf des Sketches sagt „created 2005 by David A. Mellis“
+|Finite State Machine |★★★ |Reich und konsistent in beiden Erkennungsläufen: Zustände, Übergänge, DFA/NFA, Mealy und Moore. Das nackte Akronym „FSM“ landet im richtigen Feld. Die Attribution ist verteilt, aber richtig (McCulloch-Pitts, Kleene, Mealy, Moore). Kein Steuerungs-Delta auf der verwendeten Aufgabe, siehe oben
+|MISRA C |★★★ |In beiden Läufen erkannt, und das nackte „MISRA“ landet bei sicherheitskritischer Software. Die Anker-Läufe zitierten in beiden Fällen Regelnummern, und eine davon gibt es nicht: „Added null pointer check – Validates input before use (MISRA Rule 34.1).“ Keine Bedingung lieferte eine dokumentierte Abweichung, obwohl beide Baselines in ihrer Selbstauskunft eine behaupteten. Der Eintrag rät deshalb, Regelnummern gegen den lizenzierten Text oder einen Checker zu prüfen
+|Defensive Programming |★★☆ |Reich in beiden Erkennungsläufen; die Anker-Läufe legten die Validierung an die Grenze, die Assertions nach innen und begründeten das mit McConnell. Die Attribution der schwachen Stufe beginnt aber mit der Nachbarmethode: „Bertrand Meyer (late 1980s-1990s) - prominently associated with defensive programming through his Design by Contract methodology“. Registriert als „Defensive Programming according to McConnell“, damit der Name die Grenze trägt, die das Issue verlangt
+|===
+
+=== BlinkWithoutDelay steht unter eigenem Namen
+
+Das Issue schlug einen Mittelweg vor: einen Anker für das allgemeine Konzept mit BlinkWithoutDelay als Arduino-Alias. Der Katalog registriert die Zeichenfolge, die aktiviert, und führt andere Namen unter _Auch bekannt als_ -- Arrange-Act-Assert statt „AAA“, das Connextra-Format nur in qualifizierter Form. Das allgemeine Konzept hat keinen etablierten eigenen Namen; „nicht blockierendes Timing in einer Superloop“ ist eine Beschreibung und bräuchte mangels Urheber den Platzhalter `Community`. Der Sketch-Name dagegen erreichte auf der schwachen Stufe die ganze Technik, einschließlich der überlaufsicheren Subtraktion. Der Anker heißt also „BlinkWithoutDelay“, und die allgemeine Beschreibung ist sein Alias.
