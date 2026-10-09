@@ -12,7 +12,7 @@
 ====
 Vollständiger Name:: Defensive Programming, wie Steve McConnell es in _Code Complete_ (2. Auflage, Microsoft Press 2004), Kapitel 8 „Defensive Programming“, beschreibt
 
-Auch bekannt als:: defensives Programmieren; McConnells Barrikade
+Auch bekannt als:: defensives Programmieren, defensive coding
 
 [discrete]
 == *Kernkonzepte*:
@@ -23,11 +23,11 @@ Die Barrikade:: McConnell zieht eine Linie durch das Programm. Außerhalb gelten
 
 Fehlerbehandlung außen, Assertions innen:: Was im Betrieb vorkommen kann -- eine fehlende Datei, ein kaputter Datensatz --, bekommt Fehlerbehandlung an der Barrikade. Was bei korrektem Code nie vorkommen darf -- eine Hilfsfunktion, die einen Null-Puffer erhält --, bekommt innen eine Assertion. Eine Assertion dokumentiert eine Annahme und schlägt während der Entwicklung laut fehl; sie ersetzt keine Eingabevalidierung.
 
-Robustheit gegen Korrektheit:: Manche Systeme sollen mit einer schlechteren Antwort weiterlaufen, andere müssen anhalten, statt eine falsche zu geben. Ein Texteditor darf einen Standardwert einsetzen, eine Strahlentherapie-Steuerung nicht. Die Wahl gehört zur Praxis und ist kein Nachgedanke.
+Robustheit gegen Korrektheit:: Manche Systeme sollen mit einer schlechteren Antwort weiterlaufen, andere müssen anhalten, statt eine falsche zu geben. Ein Texteditor darf einen Standardwert einsetzen, eine Strahlentherapie-Steuerung nicht. Die Wahl gehört zur Praxis und ist keine Nebensache.
 
 Defensiv gegenüber dem defensiven Programmieren:: McConnells Kapitel endet mit einer Warnung vor dem Übertreiben. Prüfungen überall machen den Code langsamer, länger und schwerer lesbar, und Fehlerbehandlung, die Fehler versteckt, macht sie schwerer auffindbar. Reine Debug-Hilfen werden für die Produktion entfernt oder abgeschaltet; Prüfungen echter Eingaben bleiben.
 
-Nicht Design by Contract, aber damit vereinbar:: `design-by-contract` weist jede Prüfung genau einer Partei zu und lehnt doppelte Prüfungen auf beiden Seiten ab. Defensive Programming startet vom umgekehrten Reflex: prüfen, wo immer ein schlechter Wert ankommen könnte. Die Barrikade versöhnt beides -- einmal an der Grenze validieren, innen mit Vertrag und Assertion argumentieren. Sagen Sie, welches von beiden Sie meinen: schwächere Modelle vermischen sie, und ein getestetes Modell schrieb Defensive Programming Bertrand Meyer zu.
+Nicht Design by Contract, aber damit vereinbar:: `design-by-contract` weist jede Prüfung genau einer Partei zu und lehnt doppelte Prüfungen auf beiden Seiten ab. Defensive Programming startet vom umgekehrten Reflex: prüfen, wo immer ein schlechter Wert ankommen könnte. Die Barrikade versöhnt beides -- einmal an der Grenze validieren, innen mit Vertrag und Assertion argumentieren. Benennen, welches von beiden gemeint ist: schwächere Modelle vermischen sie, und ein getestetes Modell schrieb Defensive Programming Bertrand Meyer zu.
 
 [discrete]
 == *Wann zu verwenden*:
@@ -51,4 +51,4 @@ Nicht Design by Contract, aber damit vereinbar:: `design-by-contract` weist jede
 
 == *Kritik*:
 
-* *Probleme zu umgehen lässt Software langsam scheitern.* Jim Shores Kolumne in IEEE Software richtet sich gegen die Robustheits-Hälfte der Praxis: „Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'“ Sein Gegenmittel sind Assertions, die bei der ersten verletzten Annahme anhalten -- und genau das enthalten McConnells Ratschläge zu Assertions und Barrikade bereits. Die Kritik trifft also die Alltagslesart „abfangen und weitermachen“, nicht das Kapitel. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, „Fail Fast“, _IEEE Software_, Design-Kolumne (2004)].
+* *Probleme zu umgehen lässt Software langsam scheitern.* Jim Shores Kolumne in IEEE Software richtet sich gegen die Robustheits-Hälfte der Praxis: „Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'“ Sein Gegenmittel sind Assertions, die bei der ersten verletzten Annahme anhalten -- und genau das enthalten McConnells Ratschläge zu Assertions und Barrikade bereits. Die Kritik trifft also die Alltagslesart „abfangen und weitermachen“, nicht das Kapitel. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, „Fail Fast“, _IEEE Software_ 21(5), September/Oktober 2004, Design-Kolumne].

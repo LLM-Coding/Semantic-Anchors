@@ -47,7 +47,7 @@ Schlüsselvertreter:: Bertrand Meyer, der den Begriff für die Sprache https://w
 * <<solid-principles,SOLID-Prinzipien>> — DbC stärkt die Austauschbarkeitsgarantie, auf die SOLID baut
 * <<postels-law,Postels Gesetz>> — gegensätzliche Haltung zur Eingabestriktheit; über die Grenzenscope versöhnt
 * <<ears-requirements,EARS Requirements>> — Vor-/Nachbedingungen formulieren Anforderungen als prüfbare Zusicherungen
-* <<defensive-programming,Defensive Programming nach McConnell>> — der umgekehrte Reflex, überall zu prüfen, wo schlechte Daten ankommen könnten; McConnells Barrikade versöhnt beides, indem sie einmal an der Grenze validiert
+* <<defensive-programming,Defensive Programming according to McConnell>> — der umgekehrte Reflex, überall zu prüfen, wo schlechte Daten ankommen könnten; McConnells Barrikade versöhnt beides, indem sie einmal an der Grenze validiert
 
 [discrete]
 == *Kritik*:

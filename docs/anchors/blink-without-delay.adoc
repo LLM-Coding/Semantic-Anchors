@@ -41,7 +41,7 @@ Platform Idiom, General Idea:: The name belongs to Arduino, the technique does n
 == *Common Misunderstandings*:
 
 * ❌ "BlinkWithoutDelay is about blinking LEDs" -- the LED is the demonstration; the subject is not blocking the loop
-* ❌ "`millis() > previousMillis + interval` is equivalent" -- it fails when `millis()` wraps; subtract, then compare
+* ❌ "`millis() >= previousMillis + interval` is equivalent" -- it fails when `millis()` wraps; subtract, then compare
 * ❌ "This is an interrupt-based timer" -- it is polling in the main loop; interrupts and hardware timers are a different technique
 * ❌ "It replaces an RTOS" -- it covers cooperative tasks that finish quickly; long-running or preemptive work needs more
 * ✓ "Every task checks its own elapsed time on every pass, and nothing ever waits"

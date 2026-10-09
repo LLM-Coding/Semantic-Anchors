@@ -19,7 +19,7 @@ Also known as:: FSM, finite automaton, state machine, finite-state automaton
 
 A Finite, Named Set of States:: The machine is in exactly one state at a time, and every state has a name. A status field whose values nobody has listed is not a state machine; the list is the point.
 
-Events, Transitions and the Transition Table:: An event in a given state leads to exactly one next state. Writing this down as a table -- states as rows, events as columns -- shows every combination, including the ones nobody thought about.
+Events, Transitions and the Transition Table:: In a deterministic machine, an event in a given state leads to at most one next state; where guards split a transition, their conditions must not overlap. Writing this down as a table -- states as rows, events as columns -- shows every combination, including the ones nobody thought about.
 
 Every Cell Is a Decision:: For each state and event, the table says either "go there" or "this event is not allowed here, and this is what happens instead": ignore, reject, log, fault state. An empty cell is a missing requirement, not a default.
 

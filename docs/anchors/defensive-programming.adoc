@@ -12,7 +12,7 @@
 ====
 Full Name:: Defensive Programming as set out in Steve McConnell's _Code Complete_ (2nd edition, Microsoft Press 2004), chapter 8, "Defensive Programming"
 
-Also known as:: defensive coding; McConnell's barricade
+Also known as:: defensive coding
 
 [discrete]
 == *Core Concepts*:
@@ -51,4 +51,4 @@ Not Design by Contract, but Reconcilable With It:: `design-by-contract` assigns 
 
 == *Criticism*:
 
-* *Working around problems makes software fail slowly.* Jim Shore's IEEE Software column argues against the robustness half of the practice: "Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'" His remedy is assertions that stop at the first broken assumption -- which McConnell's assertion and barricade advice already contains, so the critique lands on the everyday "catch it and carry on" reading of the term, not on the chapter. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, "Fail Fast", _IEEE Software_, Design column (2004)].
+* *Working around problems makes software fail slowly.* Jim Shore's IEEE Software column argues against the robustness half of the practice: "Some people recommend making your software robust by working around problems automatically. This results in the software 'failing slowly.'" His remedy is assertions that stop at the first broken assumption -- which McConnell's assertion and barricade advice already contains, so the critique lands on the everyday "catch it and carry on" reading of the term, not on the chapter. https://www.martinfowler.com/ieeeSoftware/failFast.pdf[Shore, "Fail Fast", _IEEE Software_ 21(5), September/October 2004, Design column].

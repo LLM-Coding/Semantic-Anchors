@@ -27,7 +27,7 @@ Ein Timer pro Aufgabe:: Jede unabhängige Aufgabe -- blinken, einen Taster entpr
 
 Der Schritt zum Zustandsautomaten:: Sobald eine Aufgabe mehr kennt als „an“ und „aus“, treibt die Zeitprüfung eine `finite-state-machine`: Jeder Zustand wartet auf sein Intervall oder Ereignis und geht dann weiter. BlinkWithoutDelay ist der kleinste Fall dieser Struktur.
 
-Plattform-Idiom, allgemeine Idee:: Der Name gehört Arduino, die Technik nicht. Dasselbe Muster findet sich in jeder Bare-Metal-Superloop mit einem Tick-Zähler; deshalb trägt der Name als Anker über die LED hinaus, die er blinken lässt.
+Plattform-Idiom, allgemeine Idee:: Der Name gehört Arduino, die Technik nicht. Dasselbe Muster findet sich in jeder Bare-Metal-Superloop mit einem Tick-Zähler; deshalb wirkt der Name als Anker weit über die blinkende LED hinaus.
 
 [discrete]
 == *Wann zu verwenden*:
@@ -41,7 +41,7 @@ Plattform-Idiom, allgemeine Idee:: Der Name gehört Arduino, die Technik nicht. 
 == *Häufige Missverständnisse*:
 
 * ❌ „Bei BlinkWithoutDelay geht es ums LED-Blinken“ -- die LED ist die Vorführung; das Thema ist, die Schleife nicht zu blockieren
-* ❌ „`millis() > previousMillis + interval` ist gleichwertig“ -- das bricht, wenn `millis()` überläuft; erst subtrahieren, dann vergleichen
+* ❌ „`millis() >= previousMillis + interval` ist gleichwertig“ -- das bricht, wenn `millis()` überläuft; erst subtrahieren, dann vergleichen
 * ❌ „Das ist ein interruptgesteuerter Timer“ -- es ist Polling in der Hauptschleife; Interrupts und Hardware-Timer sind eine andere Technik
 * ❌ „Es ersetzt ein RTOS“ -- es trägt kooperative Aufgaben, die schnell fertig sind; lange oder präemptive Arbeit braucht mehr
 * ✓ „Jede Aufgabe prüft bei jedem Durchlauf ihre eigene verstrichene Zeit, und nichts wartet je“

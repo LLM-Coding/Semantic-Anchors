@@ -10,7 +10,7 @@
 
 [%collapsible]
 ====
-Vollständiger Name:: MISRA C -- _Guidelines for the use of the C language in critical systems_, herausgegeben von MISRA, ursprünglich der Motor Industry Software Reliability Association. Erste Ausgabe 1998, danach MISRA C:2004, MISRA C:2012 und die konsolidierten Ausgaben MISRA C:2023 und MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
+Vollständiger Name:: MISRA C -- _Guidelines for the use of the C language in critical systems_, herausgegeben von MISRA, ursprünglich der Motor Industry Software Reliability Association. Erste Ausgabe 1998, damals für Software in Fahrzeugen; der obige Titel gilt seit MISRA C:2004, danach folgten MISRA C:2012 und die konsolidierten Ausgaben MISRA C:2023 und MISRA C:2025 (https://misra.org.uk/misra-c/[misra.org.uk]).
 
 Auch bekannt als:: die MISRA-Richtlinien, MISRA-Regeln; Ausgaben nach Jahr, etwa MISRA C:2012
 
@@ -21,13 +21,13 @@ Eine sichere Teilmenge von C:: MISRA C fügt der Sprache nichts hinzu. Es streic
 
 Mandatory, Required, Advisory:: Jede Richtlinie trägt eine Kategorie. Mandatory-Richtlinien lassen keine Ausnahme zu. Required-Richtlinien dürfen nur über eine formale, dokumentierte Abweichung verletzt werden. Advisory-Richtlinien sind Empfehlungen, die ein Projekt lockern darf.
 
-Directives und Rules:: Rules sind so genau formuliert, dass man sie am Quellcode prüfen kann. Directives betreffen den Prozess und die begleitende Dokumentation und lassen sich am Code allein nicht vollständig prüfen. Ein Werkzeugbericht deckt die Rules ab; die Directives deckt kein Werkzeug ab.
+Directives und Rules:: Rules sind so genau formuliert, dass man sie am Quellcode prüfen kann. Directives betreffen den Prozess und die begleitende Dokumentation und lassen sich am Code allein nicht vollständig prüfen. Ein Werkzeugbericht deckt die Rules ab und die Directives bestenfalls teilweise.
 
 Abweichung statt Schweigen:: Eine Required-Richtlinie zu verletzen ist erlaubt, aber nur mit einer schriftlichen Abweichung (Deviation), die Richtlinie, Grund, Geltungsbereich und Freigabe nennt. Compliance heißt „jede Verletzung ist behoben oder begründet“, nicht „null Warnungen“.
 
 Das Essential Type Model:: MISRA C argumentiert über den Typ, den ein Wert wirklich hat -- Boolean, Zeichen, vorzeichenbehaftet, vorzeichenlos, Enum, Gleitkomma -- statt über Cs Integer-Promotions. Implizite Umwandlungen zwischen diesen Kategorien, vor allem einengende und solche, die Vorzeichen mischen, soll das Modell verhindern.
 
-Typische Themen:: keine dynamische Speicherverwaltung nach dem Start, keine Rekursion, eingeschränkte Zeigerarithmetik, ein `default` in jedem `switch`, geschweifte Klammern um jeden Rumpf, jeder Rückgabewert geprüft oder ausdrücklich verworfen, kein unerreichbarer oder ungenutzter Code, eingeschränkter Präprozessor und eingeschränkte Standardbibliothek.
+Typische Themen:: keine dynamische Speicherverwaltung, keine Rekursion, eingeschränkte Zeigerarithmetik, ein `default` in jedem `switch`, geschweifte Klammern um jeden Rumpf, jeder Rückgabewert geprüft oder ausdrücklich verworfen, kein unerreichbarer oder ungenutzter Code, eingeschränkter Präprozessor und eingeschränkte Standardbibliothek.
 
 Die Regeltexte gehören MISRA:: Die Texte der Richtlinien sind urheberrechtlich geschützt und werden von MISRA verkauft. Themen und Kategorien darf man frei nennen; für eine einzelne Regelnummer und ihren Wortlaut sind das lizenzierte Dokument und ein qualifizierter Checker die Referenz -- nicht das Gedächtnis eines Modells.
 
@@ -51,7 +51,7 @@ Die Regeltexte gehören MISRA:: Die Texte der Richtlinien sind urheberrechtlich 
 
 == *Kritik*:
 
-* *Als Compliance-Checkliste angewandt, können die Regeln mehr Fehler verursachen, als sie verhindern.* Les Hatton hat MISRA C:1998 und MISRA C:2004 an derselben Codebasis gemessen und fand das Verhältnis echter zu falschen Befunden „unacceptably low in both“. Sein Schluss geht weiter: Das grundlegendste Problem von MISRA C:1998 sei auch in der Ausgabe 2004 ungelöst, nämlich „that its unadulterated use as a compliance document is likely to lead to more faults and not less because of the fault re-injection phenomenon“ -- jede Änderung, die nur eine Regel zum Schweigen bringt, kann einen neuen Fehler einschleppen. https://www.leshatton.org/Documents/MISRA_comp_1105.pdf[Hatton, „Language subsetting in an industrial context: a comparison of MISRA C 1998 and MISRA C 2004“ (Papier vom 20. November 2005)]. Die Kritik ist älter als MISRA C:2012; sie warnt davor, wie Regeln angewandt werden, und ist kein Urteil über die aktuelle Ausgabe.
+* *Als Compliance-Checkliste angewandt, können die Regeln mehr Fehler verursachen, als sie verhindern.* Les Hatton hat MISRA C:1998 und MISRA C:2004 an derselben Codebasis gemessen und fand das Verhältnis echter zu falschen Befunden „unacceptably low in both“. Sein Schluss geht weiter: Das grundlegendste Problem von MISRA C:1998 sei auch in der Ausgabe 2004 ungelöst, nämlich „that its unadulterated use as a compliance document is likely to lead to more faults and not less because of the fault re-injection phenomenon“ -- jede Änderung, die nur eine Regel zum Schweigen bringt, kann einen neuen Fehler einschleppen. https://www.leshatton.org/Documents/MISRA_comp_1105.pdf[Hatton, „Language subsetting in an industrial context: a comparison of MISRA C 1998 and MISRA C 2004“ (Preprint vom 20. November 2005; erschienen in _Information and Software Technology_ 49(5), 2007)]. Die Kritik ist älter als MISRA C:2012; sie warnt davor, wie Regeln angewandt werden, und ist kein Urteil über die aktuelle Ausgabe.
 
 [discrete]
 == *Aktueller Stand*:

@@ -584,7 +584,7 @@ Die allgemeine Lehre spiegelt die des vorigen Laufs. Dort ergab eine Aufgabe, be
 
 === Zwei von vier Aufgaben nannten die Methode schon
 
-Die Aufgaben stammen aus den Viability-Vorschlägen der Issues, und zwei davon wiederholen den Fehler, den der Lauf vom 03.10.2026 benannt hat: Sie beschreiben die Verletzung, die die Methode beheben soll. Die Aufgabe zu Defensive Programming sagte über die Hilfsfunktionen: „Every helper currently has no checks.“; die Aufgabe zur Finite State Machine übergab drei Booleans und verschachtelte if/else in einem Event-Handler. Beide Baselines antworteten trotzdem mit der Methode -- Validierung an der öffentlichen Funktion plus Assertions in den Hilfsfunktionen, und ein Zustands-Enum --, das gemessene Delta für diese beiden Begriffe ist also null. Das ist eine Aussage über die Aufgaben. Ihr Tier trägt die Erkennung, nicht die Steuerung.
+Die Aufgaben stammen aus den Viability-Vorschlägen der Issues, und zwei davon wiederholen den Fehler, den der Lauf vom 03.10.2026 benannt hat: Sie beschreiben die Verletzung, die die Methode beheben soll. Die Aufgabe zu Defensive Programming sagte über die Hilfsfunktionen: „Every helper currently has no checks.“; die Aufgabe zur Finite State Machine übergab drei Booleans und verschachtelte if/else in einem Event-Handler. Beide Baselines antworteten trotzdem mit der Methode -- Validierung an der öffentlichen Funktion plus Assertions in den Hilfsfunktionen, und ein Zustands-Enum --, das gemessene Delta für diese beiden Begriffe ist also null. Das ist eine Aussage über die Aufgaben. Ihr Tier stützt sich auf die Erkennung, nicht auf die Steuerung.
 
 === Die vier Kandidaten
 

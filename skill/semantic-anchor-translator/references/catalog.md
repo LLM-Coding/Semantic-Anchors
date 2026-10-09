@@ -523,7 +523,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** Specifies software correctness as enforceable preconditions (caller's obligation), postconditions (supplier's guarantee), and class invariants — assigning blame on violation, formalizing behavioural subtyping (LSP), and coined for Eiffel by Bertrand Meyer
 
 ### Defensive Programming according to McConnell
-- **Also known as:** defensive coding, McConnell's barricade
+- **Also known as:** defensive coding
 - **Proponents:** Steve McConnell (Code Complete, 2nd ed., chapter 8)
 - **Core:** Protect the program from invalid input with a barricade: validate untrusted data once at the public interface, use assertions for conditions that must never occur inside, and choose robustness or correctness per system. Not "try/catch everywhere" and not double-checking in every helper; the barricade is what reconciles it with Design by Contract
 
