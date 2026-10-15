@@ -4681,7 +4681,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-15T11:06:33+02:00"
   },
   {
     "id": "keep-a-changelog",

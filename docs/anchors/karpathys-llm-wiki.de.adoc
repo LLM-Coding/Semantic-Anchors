@@ -21,15 +21,15 @@ Einmal kompilieren statt jedes Mal suchen:: Retrieval-Augmented Generation liest
 
 Drei Schichten:: *Rohquellen* sind kuratierte, unveränderliche Dokumente; das LLM liest sie und ändert sie nie. *Das Wiki* ist vom LLM erzeugtes Markdown -- Zusammenfassungen der Quellen, Seiten zu Entitäten und Konzepten, Vergleiche, ein Überblick --, und „the LLM owns this layer entirely“. *Das Schema* ist ein Konfigurationsdokument wie `CLAUDE.md` oder `AGENTS.md`, das Struktur, Konventionen und Abläufe festlegt; Mensch und Modell verfeinern es gemeinsam.
 
-Ingest:: Eine neue Quelle kommt in die Rohschicht. Das LLM fasst sie zusammen, aktualisiert die betroffenen Seiten -- der Gist nennt zehn bis fünfzehn für eine einzige Quelle --, ergänzt Querverweise, markiert Widersprüche zu dem, was das Wiki schon sagt, und vermerkt den Schritt in Index und Log.
+Ingest:: Eine neue Quelle kommt in die Rohschicht. Das LLM fasst sie zusammen, aktualisiert die betroffenen Seiten (der Gist spricht von zehn bis fünfzehn für eine einzige Quelle), ergänzt Querverweise, markiert Widersprüche zu dem, was das Wiki schon sagt, und vermerkt den Schritt in Index und Log.
 
 Index und Log:: `index.md` ist ein Katalog aller Seiten mit Link und einzeiliger Zusammenfassung, nach Kategorien gruppiert; das LLM liest ihn zuerst, wenn es antwortet. `log.md` ist ein fortlaufendes, nur ergänztes Protokoll von Ingests, Abfragen und Lint-Läufen, mit grep-baren Präfixen wie `## [date] ingest | Title`.
 
-Abfragen und zurücklegen:: Das LLM antwortet aus dem Wiki mit Belegen, in der passenden Form -- Text, Tabelle, Folien, Diagramm. Eine gute Antwort verschwindet nicht im Chat: Sie kommt als neue Seite ins Wiki, sodass sich Erkundungen ansammeln wie eingelesene Quellen.
+Abfragen und ins Wiki zurückschreiben:: Das LLM antwortet aus dem Wiki mit Belegen, in der passenden Form -- Text, Tabelle, Folien, Diagramm. Eine gute Antwort verschwindet nicht im Chat: Sie kommt als neue Seite ins Wiki, sodass sich Erkundungen ansammeln wie eingelesene Quellen.
 
 Lint:: Eine regelmäßige Gesundheitsprüfung über das ganze Wiki: Widersprüche, veraltete Aussagen, verwaiste Seiten, fehlende Konzepte und Querverweise, Lücken, die nach einer neuen Quelle verlangen.
 
-Die Arbeitsteilung:: Von Menschen gepflegte Wikis verfallen, weil die Buchhaltung -- Querverweise, aktualisierte Zusammenfassungen, aufgelöste Widersprüche -- mehr kostet, als sie scheinbar bringt. Das LLM erledigt diese Buchhaltung fast umsonst. Im Gist heißt es: „The human's job is to curate sources, direct the analysis, ask good questions, and think about what it all means.“
+Die Arbeitsteilung:: Von Menschen gepflegte Wikis verfallen, weil die Buchhaltung -- Querverweise, aktualisierte Zusammenfassungen, aufgelöste Widersprüche -- mehr kostet, als sie scheinbar bringt. Das LLM erledigt diese Buchhaltung fast ohne Kosten. Im Gist heißt es: „The human's job is to curate sources, direct the analysis, ask good questions, and think about what it all means.“
 
 Bewusst abstrakt:: Der Gist ist eine Idea File, gedacht zum Einfügen in einen Coding-Agent, kein Werkzeug. Verzeichnisaufbau, Seitentypen und Werkzeuge bleiben der Domäne überlassen. Er nennt Obsidian als Betrachter, Git für die Historie und ein optionales Such-CLI und sagt, bei mittlerer Größe -- etwa hundert Quellen und einige hundert Seiten -- reiche eine Indexdatei ohne Embedding-basiertes Retrieval.
 
@@ -49,7 +49,7 @@ Wichtigster Vertreter:: Andrej Karpathy, der die Idee lose mit Vannevar Bushs Me
 
 * ❌ „Das ist RAG mit Markdown-Dateien“ -- Retrieval sucht zur Fragezeit; das Wiki leistet die Synthese beim Einlesen und behält sie.
 * ❌ „Das LLM darf die Quellen bearbeiten“ -- die Rohschicht ist unveränderlich. Gegen sie prüft ein Lint-Lauf das Wiki.
-* ❌ „Index und Log sind optionale Extras“ -- über den Index findet das Modell Seiten ohne Vektorspeicher, über das Log sehen Mensch und Modell, was sich geändert hat.
+* ❌ „Ohne Vektorspeicher findet das Modell keine Seiten“ -- bei mittlerer Größe verlässt sich der Gist allein auf `index.md`. Über das Log sehen Mensch und Modell, was sich geändert hat.
 * ❌ „Antworten leben im Chat“ -- eine Antwort, die sich zu behalten lohnt, wird eine Seite; sonst wächst das Wiki nicht mehr.
 * ❌ „Karpathy hat ein Werkzeug veröffentlicht“ -- er hat ein Muster beschrieben. Die Implementierungen der Community sind die Entscheidungen anderer.
 
@@ -71,5 +71,5 @@ Wichtigster Vertreter:: Andrej Karpathy, der die Idee lose mit Vannevar Bushs Me
 [discrete]
 == *Aktueller Stand*:
 
-* *Das Muster ist jung, und der Prior auch.* Es erschien im April 2026. Ein Prior-Test am 15.10.2026 fand es auf allen drei Claude-5.5-Stufen: Beim Entwurf eines Support-Assistenten über 400 Dokumente baute jede Baseline Retrieval mit Chunks und Vektorindex, und jeder Lauf, der „Karpathy's LLM Wiki“ nannte, baute Rohschicht, Wiki, `index.md`, `log.md` und einen Lint-Lauf. Modelle, die vor April 2026 trainiert wurden, können es nicht kennen. Siehe link:#/prior-tests[Prior-Test-Register].
-* *Den qualifizierten Namen verwenden.* Das nackte „LLM Wiki“ wirkt auf der mittleren und starken Stufe; die schwache Stufe macht Vorbehalte, lässt Log oder Zurücklegen weg und kann den Urheber nicht nennen.
+* *Das Muster ist jung, und der Prior auch.* Es erschien im April 2026. Ein Prior-Test am 15.10.2026 fand es auf allen drei Claude-5.5-Stufen: Beim Entwurf eines Support-Assistenten über 400 Dokumente baute jede Baseline Retrieval mit Chunks und Vektorindex, und jeder Lauf, der „Karpathy's LLM Wiki“ nannte, baute Rohschicht, Wiki, `index.md`, `log.md` und einen Lint-Lauf und schrieb gute Antworten ins Wiki zurück. Modelle, die vor April 2026 trainiert wurden, können es nicht kennen. Siehe link:#/prior-tests[Prior-Test-Register].
+* *Den qualifizierten Namen verwenden.* Das nackte „LLM Wiki“ wirkt auf der mittleren und starken Stufe. Die schwache Stufe macht Vorbehalte und lässt Log oder Zurückschreiben weg; direkt nach dem Urheber gefragt, nannte sie niemanden, auf die Frage, was ein LLM Wiki ist, aber Karpathy.

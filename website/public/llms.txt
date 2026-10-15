@@ -5513,7 +5513,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 ***Three layers***: **Raw sources** are curated, immutable documents; the LLM reads them and never edits them. **The wiki** is LLM-generated markdown -- source summaries, entity and concept pages, comparisons, an overview -- and "the LLM owns this layer entirely". **The schema** is a configuration document such as `CLAUDE.md` or `AGENTS.md` that fixes structure, conventions and workflows; human and model refine it together.
 
-***Ingest***: A new source goes into the raw layer. The LLM summarises it, updates the pages it touches -- the gist names ten to fifteen for a single source --, adds cross-references, flags contradictions with what the wiki already says, and records the step in the index and the log.
+***Ingest***: A new source goes into the raw layer. The LLM summarises it, updates the pages it touches (the gist puts it at ten to fifteen for one source), adds cross-references, flags contradictions with what the wiki already says, and records the step in the index and the log.
 
 ***Index and log***: `index.md` is a catalog of every page with a link and a one-line summary, grouped by category; the LLM reads it first when it answers. `log.md` is an append-only, chronological record of ingests, queries and lint passes, with greppable prefixes such as `## [date] ingest | Title`.
 
@@ -5541,7 +5541,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 * ❌ "It is RAG with markdown files" -- retrieval looks things up at question time; the wiki does the synthesis at ingest time and keeps it.
 * ❌ "The LLM may edit the sources" -- the raw layer is immutable. It is what a lint pass checks the wiki against.
-* ❌ "Index and log are optional extras" -- the index is how the model finds pages without a vector store, and the log is how human and model see what changed.
+* ❌ "You need a vector store to find pages" -- at moderate scale the gist relies on `index.md` alone. The log is what lets human and model see what changed.
 * ❌ "Answers live in the chat" -- an answer worth keeping becomes a page; otherwise the wiki stops compounding.
 * ❌ "Karpathy published a tool" -- he published a pattern. The community implementations are someone else's choices.
 
@@ -5562,8 +5562,8 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 [discrete]
 ## **Current Status**:
 
-* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
-* **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers; the weak tier hedges, drops the log or the filing-back, and cannot name the author.
+* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
+* **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers. The weak tier hedges and drops the log or the filing-back; asked directly who created the pattern, it declined to name anyone, though it named Karpathy when asked what an LLM Wiki is.
 
 ### Keep a Changelog
 
@@ -5921,7 +5921,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 ***Three layers***: **Raw sources** are curated, immutable documents; the LLM reads them and never edits them. **The wiki** is LLM-generated markdown -- source summaries, entity and concept pages, comparisons, an overview -- and "the LLM owns this layer entirely". **The schema** is a configuration document such as `CLAUDE.md` or `AGENTS.md` that fixes structure, conventions and workflows; human and model refine it together.
 
-***Ingest***: A new source goes into the raw layer. The LLM summarises it, updates the pages it touches -- the gist names ten to fifteen for a single source --, adds cross-references, flags contradictions with what the wiki already says, and records the step in the index and the log.
+***Ingest***: A new source goes into the raw layer. The LLM summarises it, updates the pages it touches (the gist puts it at ten to fifteen for one source), adds cross-references, flags contradictions with what the wiki already says, and records the step in the index and the log.
 
 ***Index and log***: `index.md` is a catalog of every page with a link and a one-line summary, grouped by category; the LLM reads it first when it answers. `log.md` is an append-only, chronological record of ingests, queries and lint passes, with greppable prefixes such as `## [date] ingest | Title`.
 
@@ -5949,7 +5949,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 * ❌ "It is RAG with markdown files" -- retrieval looks things up at question time; the wiki does the synthesis at ingest time and keeps it.
 * ❌ "The LLM may edit the sources" -- the raw layer is immutable. It is what a lint pass checks the wiki against.
-* ❌ "Index and log are optional extras" -- the index is how the model finds pages without a vector store, and the log is how human and model see what changed.
+* ❌ "You need a vector store to find pages" -- at moderate scale the gist relies on `index.md` alone. The log is what lets human and model see what changed.
 * ❌ "Answers live in the chat" -- an answer worth keeping becomes a page; otherwise the wiki stops compounding.
 * ❌ "Karpathy published a tool" -- he published a pattern. The community implementations are someone else's choices.
 
@@ -5970,8 +5970,8 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 [discrete]
 ## **Current Status**:
 
-* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
-* **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers; the weak tier hedges, drops the log or the filing-back, and cannot name the author.
+* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
+* **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers. The weak tier hedges and drops the log or the filing-back; asked directly who created the pattern, it declined to name anyone, though it named Karpathy when asked what an LLM Wiki is.
 
 ### P.A.R.A. Method
 
