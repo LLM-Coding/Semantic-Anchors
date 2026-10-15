@@ -750,7 +750,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### req42
 - **Proponents:** Peter Hruschka, Markus Meuten
-- **Core:** Free, open-source AsciiDoc template for pragmatic agile requirements documentation — the requirements companion to arc42, covering goals, stakeholders, scope, backlog, quality requirements, constraints, and risks; goals written as PAM (Purpose, Advantage, Metric), organised top-down from vision and goals to epics, features and user stories
+- **Core:** Free, open-source AsciiDoc template for pragmatic agile requirements documentation — the requirements companion to arc42, covering goals, stakeholders, scope, backlog, quality requirements, constraints, and risks; goals written as PAM (Purpose, Advantage, Metric), presented top-down from vision and goals to a backlog of epics, features and user stories
 
 ### Twin Peaks Model according to Nuseibeh
 - **Also known as:** Twin Peaks of requirements and architecture

@@ -7932,7 +7932,7 @@ Cockburn's format is deliberately **prose-based and notation-agnostic**. It does
 [discrete]
 ## **Current Status**:
 
-* Thoughtworks Technology Radar placed Domain Storytelling in _Trial_ (October 2024), as an alternative or companion to Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
+* Thoughtworks Technology Radar placed Domain Storytelling in _Trial_ in October 2024 (not carried into later editions), as an alternative or companion to Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
 * The book is published in English, German (dpunkt), Portuguese, Korean and both Chinese scripts; the authors' site cites the English edition as 2022, retailer listings give September 2021 (https://domainstorytelling.org/book).
 
 ### Double Diamond
@@ -8440,9 +8440,9 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 
 ***12 Risks / Assumptions***: Open risks and the assumptions the plan rests on
 
-***Goals in PAM form***: The template recommends writing each business goal as **PAM**: **Purpose** (what the product should achieve), **Advantage** (the benefit for stakeholders -- "at least as important as the P"), and **Metric** (how you know the goal is reached; the tips also say "Measure"). A goal that is not measurable is not a goal. Keep to a handful of goals, one to five. If writing all three is too much, write down at least the purpose and talk through advantage and metric with the stakeholders and the team. Sources: chapter 1 of the template, tips A-1-03, A-1-10, A-1-11 and B-05 at https://docs.req42.de.
+***Goals in PAM form***: The template recommends writing each business goal as **PAM**: **Purpose** (what the product should achieve), **Advantage** (the benefit for stakeholders -- "at least as important as the P"), and **Metric** (how you know the goal is reached; the tips also say "Measure"). A goal that is not measurable is not a goal. Keep to a handful of goals, one to five. If writing all three is too much, write down at least the purpose and talk through advantage and metric with the stakeholders and the team. Sources: chapter 1 of the template; tips https://docs.req42.de/tips/A-1-3/[A-1-03], https://docs.req42.de/tips/A-1-10/[A-1-10], https://docs.req42.de/tips/A-1-11/[A-1-11] and https://docs.req42.de/tips/B-5/[B-05].
 
-***Top-down from vision to story***: req42 organises requirements strictly top-down: vision and goals in chapter 1, scope in chapter 3, and a product backlog of epics that contain features that contain user stories (tip B-04). Separate vision from goals only in large projects, where a long-range vision is refined into measurable goals per year and per release (tips A-1-06, A-1-07). Without goals, a team risks finding out too late that its individual activities were not goal-oriented (tip A-1-01).
+***Top-down from vision to story***: req42 presents requirements top-down: vision and goals in chapter 1, scope in chapter 3, and in chapter 4 a product backlog of epics that contain features that contain user stories. Explain and communicate top-down, but work in whatever order the situation needs (https://docs.req42.de/tips/B-4/[tip B-04]). Separate vision from goals only in large projects, where a long-range vision is refined into measurable goals per year and per release (https://docs.req42.de/tips/A-1-6/[A-1-06], https://docs.req42.de/tips/A-1-7/[A-1-07]). Without goals, a team risks finding out too late that its individual activities were not goal-oriented (https://docs.req42.de/tips/A-1-1/[A-1-01]).
 
 ***Pairs with arc42***: req42 documents the requirements (the "what" and "why"); arc42 documents the architecture (the "how"). The two share authorship, structure, and tooling, so they combine seamlessly.
 
@@ -8542,13 +8542,13 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 
 ***Equal Status***: The name reflects that both peaks are equally high: the requirements specification and the architecture carry the same weight. Requirements do not simply "flow down" into an architecture.
 
-***Against Frozen Requirements***: Nuseibeh's starting point is the waterfall habit of picking one side as the starting point, which produces artificially frozen requirements documents for the next phase, and architectures that resist the requirement changes they meet later.
+***Against Frozen Requirements***: Nuseibeh argues against a waterfall-like process that produces artificially frozen requirements documents for the next phase, and against architectures so constrained that they resist the requirement changes they meet later.
 
 ***A Partial Spiral***: The model is a simplified, finer-grained form of the spiral life cycle. Each turn refines the requirements and the architecture a little further, in alternation.
 
 ***Architecture Feeds Back Into Requirements***: Architectural decisions make requirements more concrete or force their re-evaluation. An option can make a requirement cheap, expensive or impossible, so the feedback runs in both directions.
 
-***Stable Yet Adaptable***: The aim is an architecture that stays stable while the requirements around it keep changing, because the decisions that matter were made with the requirements in view.
+***Stable Yet Adaptable***: The aim is an architecture that stays stable yet adapts as the requirements around it keep changing.
 
 [discrete]
 ## **When to Use**:
@@ -9234,7 +9234,7 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 [discrete]
 ## **Current Status**:
 
-* Thoughtworks Technology Radar placed Domain Storytelling in _Trial_ (October 2024), as an alternative or companion to Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
+* Thoughtworks Technology Radar placed Domain Storytelling in _Trial_ in October 2024 (not carried into later editions), as an alternative or companion to Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
 * The book is published in English, German (dpunkt), Portuguese, Korean and both Chinese scripts; the authors' site cites the English edition as 2022, retailer listings give September 2021 (https://domainstorytelling.org/book).
 
 ### Enterprise Integration Patterns (Hohpe/Woolf)
@@ -10106,13 +10106,13 @@ For reliable activation, name the method **and its first step** — "apply Resid
 
 ***Equal Status***: The name reflects that both peaks are equally high: the requirements specification and the architecture carry the same weight. Requirements do not simply "flow down" into an architecture.
 
-***Against Frozen Requirements***: Nuseibeh's starting point is the waterfall habit of picking one side as the starting point, which produces artificially frozen requirements documents for the next phase, and architectures that resist the requirement changes they meet later.
+***Against Frozen Requirements***: Nuseibeh argues against a waterfall-like process that produces artificially frozen requirements documents for the next phase, and against architectures so constrained that they resist the requirement changes they meet later.
 
 ***A Partial Spiral***: The model is a simplified, finer-grained form of the spiral life cycle. Each turn refines the requirements and the architecture a little further, in alternation.
 
 ***Architecture Feeds Back Into Requirements***: Architectural decisions make requirements more concrete or force their re-evaluation. An option can make a requirement cheap, expensive or impossible, so the feedback runs in both directions.
 
-***Stable Yet Adaptable***: The aim is an architecture that stays stable while the requirements around it keep changing, because the decisions that matter were made with the requirements in view.
+***Stable Yet Adaptable***: The aim is an architecture that stays stable yet adapts as the requirements around it keep changing.
 
 [discrete]
 ## **When to Use**:

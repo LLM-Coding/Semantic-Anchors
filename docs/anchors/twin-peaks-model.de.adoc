@@ -19,13 +19,13 @@ Zwei Gipfel, gemeinsam entwickelt:: Requirements Engineering und Architekturentw
 
 Gleicher Rang:: Der Name sagt, dass beide Gipfel gleich hoch sind: Anforderungsspezifikation und Architektur haben dasselbe Gewicht. Anforderungen „fließen“ nicht einfach in eine Architektur hinab.
 
-Gegen eingefrorene Anforderungen:: Nuseibehs Ausgangspunkt ist die Wasserfall-Gewohnheit, eine Seite als Startpunkt zu wählen. Das erzeugt künstlich eingefrorene Anforderungsdokumente für die nächste Phase und Architekturen, die sich gegen spätere Änderungen der Anforderungen sperren.
+Gegen eingefrorene Anforderungen:: Nuseibeh wendet sich gegen einen wasserfallartigen Prozess, der künstlich eingefrorene Anforderungsdokumente für die nächste Phase erzeugt, und gegen Architekturen, die so eingeengt sind, dass sie sich gegen spätere Änderungen der Anforderungen sperren.
 
 Eine partielle Spirale:: Das Modell ist eine vereinfachte, feinkörnigere Form des Spiralmodells. Jede Runde verfeinert Anforderungen und Architektur ein Stück weiter, im Wechsel.
 
 Die Architektur wirkt auf die Anforderungen zurück:: Architekturentscheidungen machen Anforderungen konkreter oder zwingen dazu, sie neu zu bewerten. Eine Option kann eine Anforderung billig, teuer oder unmöglich machen; die Rückkopplung läuft in beide Richtungen.
 
-Stabil und doch anpassbar:: Ziel ist eine Architektur, die stabil bleibt, während sich die Anforderungen um sie herum weiter ändern, weil die wichtigen Entscheidungen mit Blick auf die Anforderungen gefallen sind.
+Stabil und doch anpassbar:: Ziel ist eine Architektur, die stabil bleibt und sich doch anpassen lässt, während sich die Anforderungen um sie herum weiter ändern.
 
 [discrete]
 == *Wann zu verwenden*:

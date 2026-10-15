@@ -19,13 +19,13 @@ Two Peaks, Developed Together:: Requirements engineering and architectural desig
 
 Equal Status:: The name reflects that both peaks are equally high: the requirements specification and the architecture carry the same weight. Requirements do not simply "flow down" into an architecture.
 
-Against Frozen Requirements:: Nuseibeh's starting point is the waterfall habit of picking one side as the starting point, which produces artificially frozen requirements documents for the next phase, and architectures that resist the requirement changes they meet later.
+Against Frozen Requirements:: Nuseibeh argues against a waterfall-like process that produces artificially frozen requirements documents for the next phase, and against architectures so constrained that they resist the requirement changes they meet later.
 
 A Partial Spiral:: The model is a simplified, finer-grained form of the spiral life cycle. Each turn refines the requirements and the architecture a little further, in alternation.
 
 Architecture Feeds Back Into Requirements:: Architectural decisions make requirements more concrete or force their re-evaluation. An option can make a requirement cheap, expensive or impossible, so the feedback runs in both directions.
 
-Stable Yet Adaptable:: The aim is an architecture that stays stable while the requirements around it keep changing, because the decisions that matter were made with the requirements in view.
+Stable Yet Adaptable:: The aim is an architecture that stays stable yet adapts as the requirements around it keep changing.
 
 [discrete]
 == *When to Use*:

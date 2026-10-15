@@ -51,6 +51,6 @@ Bridge to DDD:: Domain stories help find boundaries between subdomains and bound
 [discrete]
 == *Current Status*:
 
-* Thoughtworks Technology Radar placed Domain Storytelling in _Trial_ (October 2024), as an alternative or companion to Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
+* Thoughtworks Technology Radar placed Domain Storytelling in _Trial_ in October 2024 (not carried into later editions), as an alternative or companion to Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
 * The book is published in English, German (dpunkt), Portuguese, Korean and both Chinese scripts; the authors' site cites the English edition as 2022, retailer listings give September 2021 (https://domainstorytelling.org/book).
 ====

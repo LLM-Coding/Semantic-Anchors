@@ -8,7 +8,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 * *link:#/anchor/twin-peaks-model[Twin Peaks Model according to Nuseibeh]* (Bashar Nuseibeh) -- requirements-engineering + software-architecture: requirements and architecture refined concurrently, with equal status, instead of frozen requirements handed to design. Registered with Nuseibeh's name because "Twin Peaks" alone is the TV series. Tier ★★☆.
 * *link:#/anchor/domain-storytelling[Domain Storytelling according to Hofer and Schwentner]* (Stefan Hofer, Henning Schwentner) -- requirements-engineering + software-architecture: actors, work objects and numbered activity arrows, one concrete story per diagram. link:#/anchor/event-storming[Event Storming] and link:#/anchor/domain-driven-design[Domain-Driven Design] now point at it. Tier ★★★.
-* *link:#/anchor/req42[req42]* gains its goal notation PAM (Purpose, Advantage, Metric) and its top-down order from vision and goals to epics, features and stories, each cited to the template and the req42 tips.
+* *link:#/anchor/req42[req42]* gains its goal notation PAM (Purpose, Advantage, Metric) and its top-down presentation from vision and goals to a backlog of epics, features and stories, each cited to the template and the req42 tips.
 
 == 2026-10-09
 

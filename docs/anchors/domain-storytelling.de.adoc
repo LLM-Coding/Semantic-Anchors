@@ -8,7 +8,7 @@
 
 [%collapsible]
 ====
-Vollständiger Name:: Domain Storytelling, beschrieben von Stefan Hofer und Henning Schwentner in _Domain Storytelling: A Collaborative, Visual, and Agile Way to Build Domain-Driven Software_ (Addison-Wesley, Vaughn Vernon Signature Series, 2021; ISBN 978-0-13-745891-2); deutsche Ausgabe bei dpunkt, von den Autoren übersetzt. Methodenseite: https://domainstorytelling.org
+Vollständiger Name:: Domain Storytelling, beschrieben von Stefan Hofer und Henning Schwentner in _Domain Storytelling: A Collaborative, Visual, and Agile Way to Build Domain-Driven Software_ (Addison-Wesley, Vaughn Vernon Signature Series, 2021; ISBN 978-0-13-745891-2). Methodenseite: https://domainstorytelling.org
 
 Auch bekannt als:: Domain Stories
 
@@ -51,6 +51,6 @@ Brücke zu DDD:: Domain Stories helfen, Grenzen zwischen Subdomänen und Bounded
 [discrete]
 == *Aktueller Status*:
 
-* Der Thoughtworks Technology Radar führt Domain Storytelling im Ring _Trial_ (Oktober 2024), als Alternative oder Begleiter zu Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
+* Der Thoughtworks Technology Radar nahm Domain Storytelling im Oktober 2024 in den Ring _Trial_ auf (in späteren Ausgaben nicht mehr enthalten), als Alternative oder Begleiter zu Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
 * Das Buch erscheint auf Englisch, Deutsch (dpunkt), Portugiesisch, Koreanisch sowie in vereinfachtem und traditionellem Chinesisch; die Website der Autoren nennt für die englische Ausgabe 2022, Händlerangaben September 2021 (https://domainstorytelling.org/book).
 ====
