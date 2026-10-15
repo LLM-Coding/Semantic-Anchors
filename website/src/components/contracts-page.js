@@ -47,6 +47,8 @@ const ANCHOR_ALIASES = {
   bluf: ['BLUF'],
   'plain-english-strunk-white': ['Strunk & White', 'Plain English'],
   'blooms-taxonomy': ["Bloom's", 'Blooms'],
+  'karpathys-llm-wiki': ["Karpathy's LLM Wiki"], // anchor title uses a typographic apostrophe
+  'docs-as-code': ['docToolchain'],
 }
 
 // Highlight mentions of a contract's declared anchors, linked to the anchor.
