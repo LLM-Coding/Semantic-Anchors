@@ -8472,6 +8472,7 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 
 * Far less widely known than its sibling arc42. An LLM recognizes "req42" mainly **because** of arc42's name and structure; the training-data prior on req42's own twelve-section content is thin, so the model may extrapolate from arc42 rather than recall req42 accurately. Verify section names against the source (https://docs.req42.de, https://github.com/Hruschka/req42-framework) rather than trusting recall.
 * Actively maintained as a free, open-source template (CC BY-SA 4.0) on https://github.com/Hruschka/req42-framework[GitHub], with section-level guidance at https://docs.req42.de — the same docs-as-code model as arc42.
+* **A prior test on 2026-10-15 confirmed the thin prior and lowered the tier to ★★☆.** The weak tier does not recognise "req42" and names no creator; a mid-tier model credits Hruschka and Gernot Starke, the arc42 pair. Only the strong tier turned "use req42" into goals in PAM form. The bare acronym "PAM" returns Privileged Access Management on every tier, so write Purpose / Advantage / Metric out in prompts. See the [prior-test register](#/prior-tests).
 
 ### SIPOC
 
