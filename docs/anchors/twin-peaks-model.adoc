@@ -5,6 +5,7 @@
 :tags: twin peaks, requirements and architecture, concurrent development, iterative refinement, spiral model, architecturally significant requirements, co-evolution, frozen requirements
 :related: req42, arc42, quality-attribute-scenario, atam
 :tier: 2
+:tested-on: sonnet-5-5=yes
 
 [%collapsible]
 ====

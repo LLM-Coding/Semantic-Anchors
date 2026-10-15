@@ -4,7 +4,7 @@
 :proponents: Gernot Starke, Peter Hruschka
 :tier: 3
 :tags: arc42, architecture documentation, software architecture, documentation template, Starke, Hruschka
-:related: c4-diagrams, adr-according-to-nygard, quality-attribute-scenario
+:related: c4-diagrams, adr-according-to-nygard, quality-attribute-scenario, twin-peaks-model
 
 [%collapsible]
 ====

@@ -273,7 +273,8 @@
     "related": [
       "c4-diagrams",
       "adr-according-to-nygard",
-      "quality-attribute-scenario"
+      "quality-attribute-scenario",
+      "twin-peaks-model"
     ],
     "proponents": [
       "Gernot Starke",
@@ -2034,6 +2035,12 @@
     ],
     "filePath": "docs/anchors/domain-storytelling.adoc",
     "tier": 3,
+    "testedOn": [
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      }
+    ],
     "addedAt": "2026-10-15T08:05:43+02:00"
   },
   {
@@ -8223,6 +8230,12 @@
     ],
     "filePath": "docs/anchors/twin-peaks-model.adoc",
     "tier": 2,
+    "testedOn": [
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      }
+    ],
     "addedAt": "2026-10-15T08:05:43+02:00"
   },
   {
