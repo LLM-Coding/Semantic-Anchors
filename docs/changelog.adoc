@@ -6,7 +6,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New contract -- LLM-Wiki Documentation:*
 
-* The *link:#/contracts[LLM-Wiki Documentation]* contract (category Documentation, EN + DE) applies *link:#/anchor/karpathys-llm-wiki[Karpathy's LLM Wiki]* to project documentation and names only where it departs from the pattern: the wiki's pages are the *link:#/anchor/arc42[arc42]* chapters, ADRs and glossary in AsciiDoc, built by docToolchain (*link:#/anchor/docs-as-code[Docs-as-Code]*); every statement cites its source, and an unsupported one becomes an issue for the role that can answer it; changes reach the documentation only through pull-request review. The contract stays this short on purpose: a prior test the same day showed that the anchor alone makes Haiku, Sonnet and Opus 5.5 build the raw layer, index, log, lint pass and filing back of good answers.
+* The *link:#/contracts[LLM-Wiki Documentation]* contract (category Documentation, EN + DE) applies *link:#/anchor/karpathys-llm-wiki[Karpathy's LLM Wiki]* to project documentation and names only where it departs from the pattern: the wiki's pages are the *link:#/anchor/arc42[arc42]* chapters, ADRs and glossary in AsciiDoc, built by docToolchain (*link:#/anchor/docs-as-code[Docs-as-Code]*); every statement cites its source, and an unsupported one becomes an issue for the role that can answer it; changes reach the documentation only through pull-request review. The contract stays this short on purpose: a prior test the same day (link:#/prior-tests[prior-test register], run 2026-10-15) showed that the anchor alone makes Haiku, Sonnet and Opus 5.5 build the raw layer, index, log, lint pass and filing back of good answers.
 
 *New anchor -- Karpathy's LLM Wiki:*
 
