@@ -1,6 +1,6 @@
 # Semantic Contracts
 
-> 21 composable contracts that define what terms mean in your project —
+> 22 composable contracts that define what terms mean in your project —
 > by composing established Semantic Anchors or by providing custom team definitions.
 > Add them to your AGENTS.md or CLAUDE.md.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
@@ -209,6 +209,14 @@ Verify the documentation against the code, in both directions.
 - Run the verification again after the bug-fix loop, before release: fixes change behaviour, and changed behaviour is what makes a correct claim stale
 
 *Referenced anchors: docs-as-code, mental-model-according-to-naur, fagan-inspection*
+
+## LLM-Wiki Documentation
+
+_Karpathy's LLM Wiki as project documentation: arc42 pages, cited statements, changes only through review_
+
+Maintain the documentation as Karpathy's LLM Wiki, with three changes: the arc42 chapters, ADRs and glossary are the wiki's pages, written in AsciiDoc and built by docToolchain; every statement cites its source (`file:line`, ADR, issue, or raw file with timestamp), and what no source supports becomes an issue naming the role that can answer it; the agent maintains the wiki, but changes reach the documentation only through pull-request review.
+
+*Referenced anchors: karpathys-llm-wiki, arc42, docs-as-code*
 
 ## Concise Response (TLDR)
 

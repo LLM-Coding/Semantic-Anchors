@@ -653,6 +653,10 @@ Verify the documentation against the code, in both directions.
 - A structural claim that no test can verify does not belong in the documentation. Either make it verifiable or delete it
 - Run the verification again after the bug-fix loop, before release: fixes change behaviour, and changed behaviour is what makes a correct claim stale
 
+## LLM-Wiki Documentation
+
+Maintain the documentation as Karpathy's LLM Wiki, with three changes: the arc42 chapters, ADRs and glossary are the wiki's pages, written in AsciiDoc and built by docToolchain; every statement cites its source (`file:line`, ADR, issue, or raw file with timestamp), and what no source supports becomes an issue naming the role that can answer it; the agent maintains the wiki, but changes reach the documentation only through pull-request review.
+
 ## Concise Response (TLDR)
 
 Responses lead with the conclusion first (BLUF). Keep to essential points. No filler, no preamble. Use short sentences, active voice, and no unnecessary words (Strunk & White).

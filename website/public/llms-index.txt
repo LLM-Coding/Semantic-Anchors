@@ -1,7 +1,7 @@
 # Semantic Anchors — Index of this site
 
 > This site publishes three kinds of thing, and all of them are listed below:
-> 18 documentation pages, 21 semantic contracts, and
+> 18 documentation pages, 22 semantic contracts, and
 > 237 anchors in 14 categories — the anchors both
 > one by one and bundled into 25 files that hold a whole category.
 >
@@ -38,7 +38,7 @@
 - [Changelog](https://llm-coding.github.io/Semantic-Anchors/changelog/): Chronological record of all semantic anchors added to the catalog.
 - [Contributing](https://llm-coding.github.io/Semantic-Anchors/contributing/): How to propose new semantic anchors, quality criteria, and the contribution workflow.
 
-## Semantic Contracts — 21 ready-made definitions to drop into a project
+## Semantic Contracts — 22 ready-made definitions to drop into a project
 
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
