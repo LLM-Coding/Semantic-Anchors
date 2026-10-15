@@ -30,4 +30,19 @@ describe('renderContractCard', () => {
     expect(html).toContain(`href="${import.meta.env.BASE_URL}contract/specification"`)
     expect(html).toMatch(/<a [^>]*contract\/specification[^>]*>Specification<\/a>/)
   })
+
+  it('links the LLM Wiki and docToolchain mentions in the LLM-Wiki Documentation contract', () => {
+    const html = renderContractCard(
+      {
+        id: 'llm-wiki-documentation',
+        title: 'LLM-Wiki Documentation',
+        description: 'd',
+        template: "Maintain the documentation as Karpathy's LLM Wiki, built by docToolchain.",
+        anchors: ['karpathys-llm-wiki', 'docs-as-code'],
+      },
+      false
+    )
+    expect(html).toMatch(/<a href="#\/anchor\/karpathys-llm-wiki"[^>]*>Karpathy's LLM Wiki<\/a>/)
+    expect(html).toMatch(/<a href="#\/anchor\/docs-as-code"[^>]*>docToolchain<\/a>/)
+  })
 })

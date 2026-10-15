@@ -4,6 +4,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-10-15
 
+*New contract -- LLM-Wiki Documentation:*
+
+* The *link:#/contracts[LLM-Wiki Documentation]* contract (category Documentation, EN + DE) applies *link:#/anchor/karpathys-llm-wiki[Karpathy's LLM Wiki]* to project documentation and names only where it departs from the pattern: the wiki's pages are the *link:#/anchor/arc42[arc42]* chapters, ADRs and glossary in AsciiDoc, built by docToolchain (*link:#/anchor/docs-as-code[Docs-as-Code]*); every statement cites its source, and an unsupported one becomes an issue for the role that can answer it; changes reach the documentation only through pull-request review. The contract stays this short on purpose: a prior test the same day (link:#/prior-tests[prior-test register], run 2026-10-15) showed that the anchor alone makes Haiku, Sonnet and Opus 5.5 build the raw layer, index, log, lint pass and filing back of good answers.
+
 *New anchor -- Karpathy's LLM Wiki:*
 
 * *link:#/anchor/karpathys-llm-wiki[Karpathy's LLM Wiki]* (Andrej Karpathy) -- knowledge-management + documentation: the LLM compiles immutable raw sources into interlinked markdown pages, keeps `index.md` and `log.md`, files good answers back and lints the whole wiki for contradictions and gaps. Published in April 2026 and already dense on all three Claude 5.5 tiers: on a support-assistant task every baseline built chunked retrieval with a vector index, every anchored run built the wiki, index, log and lint pass and filed good answers back. Registered under the qualified name because the weak tier hedges on the bare "LLM Wiki" and drops parts of the pattern. Tier ★★☆. The criticism section carries Michael Tuszynski's report of what broke after six months at three hundred pages.

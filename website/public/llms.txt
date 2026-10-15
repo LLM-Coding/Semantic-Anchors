@@ -13294,6 +13294,12 @@ Verify the documentation against the code, in both directions.
 
 *Referenced anchors: docs-as-code, mental-model-according-to-naur, fagan-inspection*
 
+## LLM-Wiki Documentation
+
+Maintain the documentation as Karpathy's LLM Wiki, with three changes: the arc42 chapters, ADRs and glossary are the wiki's pages, written in AsciiDoc and built by docToolchain; every statement cites its source (`file:line`, ADR, issue, or raw file with timestamp), and what no source supports becomes an issue naming the role that can answer it; the agent maintains the wiki, but changes reach the documentation only through pull-request review.
+
+*Referenced anchors: karpathys-llm-wiki, arc42, docs-as-code*
+
 ## Concise Response (TLDR)
 
 Responses lead with the conclusion first (BLUF). Keep to essential points. No filler, no preamble. Use short sentences, active voice, and no unnecessary words (Strunk & White).
