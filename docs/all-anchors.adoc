@@ -394,6 +394,9 @@ include::anchors/docs-as-code.adoc[leveloffset=+2]
 [[four-plus-one-view-model]]
 include::anchors/four-plus-one-view-model.adoc[leveloffset=+2]
 
+[[karpathys-llm-wiki]]
+include::anchors/karpathys-llm-wiki.adoc[leveloffset=+2]
+
 include::anchors/keep-a-changelog.adoc[leveloffset=+2]
 
 [[simplified-technical-english]]
@@ -417,6 +420,8 @@ include::anchors/gtd.adoc[leveloffset=+2]
 
 [[hemingway-bridge]]
 include::anchors/hemingway-bridge.adoc[leveloffset=+2]
+
+include::anchors/karpathys-llm-wiki.adoc[leveloffset=+2]
 
 [[para-method]]
 include::anchors/para-method.adoc[leveloffset=+2]

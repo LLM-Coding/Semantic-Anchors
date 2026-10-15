@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 277 well-defined terms, methodologies, and frameworks
+> 279 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -5500,6 +5500,71 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 * **The citation itself has drifted.** Crossref's record for `doi:10.1109/52.469759` gives _IEEE Software_ 12(6), 1995, pp. 42-50, matching the German Wikipedia entry's "Band 12, Nr. 6, November 1995, S. 42-50". Kruchten's own bibliography lists the same DOI as "pp. 45-50" (https://philippe.kruchten.com/architecture/[philippe.kruchten.com/architecture]). Use 42-50.
 * **It lives on as vocabulary, not as a template.** The stakeholder-per-view idea is now standard through ISO/IEC/IEEE 42010, and the views themselves reappear inside `arc42` (building block, runtime, deployment) and `c4-diagrams`. What has aged is the notation layer: a model naming 4+1 today still reaches for UML diagram types, which may not be what the project uses.
 
+### Karpathy's LLM Wiki
+
+***Full Name***: LLM Wiki, from Andrej Karpathy's post "LLM Knowledge Bases" (https://x.com/karpathy/status/2039805659525644595[X, 2 April 2026]) and the follow-up "idea file" `llm-wiki.md` (https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f[GitHub Gist, 4 April 2026]).
+
+***Also known as***: LLM Knowledge Base, the LLM Wiki pattern
+
+[discrete]
+## **Core Concepts**:
+
+***Compile once instead of retrieving every time***: Retrieval-augmented generation re-reads raw chunks for every question, so nothing accumulates. In the LLM Wiki the model reads each source once and writes what it learned into a persistent set of interlinked markdown pages. The gist calls the result "a persistent, compounding artifact".
+
+***Three layers***: **Raw sources** are curated, immutable documents; the LLM reads them and never edits them. **The wiki** is LLM-generated markdown -- source summaries, entity and concept pages, comparisons, an overview -- and "the LLM owns this layer entirely". **The schema** is a configuration document such as `CLAUDE.md` or `AGENTS.md` that fixes structure, conventions and workflows; human and model refine it together.
+
+***Ingest***: A new source goes into the raw layer. The LLM summarises it, updates the pages it touches (the gist puts it at ten to fifteen for one source), adds cross-references, flags contradictions with what the wiki already says, and records the step in the index and the log.
+
+***Index and log***: `index.md` is a catalog of every page with a link and a one-line summary, grouped by category; the LLM reads it first when it answers. `log.md` is an append-only, chronological record of ingests, queries and lint passes, with greppable prefixes such as `## [date] ingest | Title`.
+
+***Query and file back***: The LLM answers from the wiki with citations, in whatever form fits -- prose, a table, slides, a chart. A good answer does not vanish into the chat: it is filed back into the wiki as a new page, so explorations compound like ingested sources.
+
+***Lint***: A periodic health check over the whole wiki: contradictions, stale claims, orphan pages, missing concepts and cross-references, and gaps that call for a new source.
+
+***The division of labour***: Wikis kept by people decay because the bookkeeping -- cross-references, updated summaries, reconciled contradictions -- costs more than it seems to return. The LLM does that bookkeeping at almost no cost. In the gist's words: "The human's job is to curate sources, direct the analysis, ask good questions, and think about what it all means."
+
+***Deliberately abstract***: The gist is an idea file meant to be pasted into a coding agent, not a tool. Directory layout, page types and tooling are left to the domain. It mentions Obsidian as a viewer, git for history and an optional search CLI, and says an index file is enough at moderate scale -- about a hundred sources and hundreds of pages -- without embedding-based retrieval.
+
+***Key Proponent***: Andrej Karpathy, who links the idea loosely to Vannevar Bush's Memex.
+
+[discrete]
+## **When to Use**:
+
+* A body of documents -- papers, notes, design docs, chat exports -- that keeps growing and is asked about repeatedly
+* Research on one topic over weeks or months, where answers should build on earlier answers
+* Team knowledge that people stopped maintaining because cross-referencing was too much work
+* As the knowledge layer of a coding agent: the schema file is the agent's instructions, the wiki its memory
+* When a retrieval pipeline keeps re-deriving the same synthesis and never reconciles contradicting sources
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "It is RAG with markdown files" -- retrieval looks things up at question time; the wiki does the synthesis at ingest time and keeps it.
+* ❌ "The LLM may edit the sources" -- the raw layer is immutable. It is what a lint pass checks the wiki against.
+* ❌ "You need a vector store to find pages" -- at moderate scale the gist relies on `index.md` alone. The log is what lets human and model see what changed.
+* ❌ "Answers live in the chat" -- an answer worth keeping becomes a page; otherwise the wiki stops compounding.
+* ❌ "Karpathy published a tool" -- he published a pattern. The community implementations are someone else's choices.
+
+[discrete]
+## **Related Anchors**:
+
+* P.A.R.A. Method
+* Docs-as-Code
+* Diátaxis Framework
+* arc42
+* req42 Requirements Framework
+
+## **Criticism**:
+
+* **Lint does not keep up at scale.** Michael Tuszynski ran the pattern for six months and reports three failure modes the gist does not mention: drift between a page's changelog and its reference section, "the reference section below still describing the dead system as current"; silent contradictions, where "two pages both exist, both are internally consistent, and neither knows about the other"; and orphans and dead links, because "at three hundred pages, 'occasionally' is not a frequency — it's a hope". His additions are a drift linter, per-domain sub-schemas, a vector index next to the wiki once it no longer fits in context, and lockfiles when several agents write. https://www.mpt.solutions/karpathys-llm-wiki-works-heres-what-broke-when-i-ran-it-at-real-scale/[Tuszynski, "Karpathy's LLM Wiki Works. Here's What Broke When I Ran It at Real Scale."] (13 August 2026).
+* **Search frame.** English, German and Chinese searches on 2026-10-15. Two further critical pieces were found but not read: a Towards AI article asking whether the pattern really replaces RAG returned HTTP 403, and a dev.to post on its token cost was found only as a listing. Japanese and Korean were not searched.
+
+[discrete]
+## **Current Status**:
+
+* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
+* **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers. The weak tier hedges and drops the log or the filing-back; asked directly who created the pattern, it declined to name anyone, though it named Karpathy when asked what an LLM Wiki is.
+
 ### Keep a Changelog
 
 ***Full Name***: Keep a Changelog, the changelog convention published at keepachangelog.com
@@ -5843,6 +5908,71 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 * P.A.R.A. Method
 * todo.txt-flavoured Markdown
 
+### Karpathy's LLM Wiki
+
+***Full Name***: LLM Wiki, from Andrej Karpathy's post "LLM Knowledge Bases" (https://x.com/karpathy/status/2039805659525644595[X, 2 April 2026]) and the follow-up "idea file" `llm-wiki.md` (https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f[GitHub Gist, 4 April 2026]).
+
+***Also known as***: LLM Knowledge Base, the LLM Wiki pattern
+
+[discrete]
+## **Core Concepts**:
+
+***Compile once instead of retrieving every time***: Retrieval-augmented generation re-reads raw chunks for every question, so nothing accumulates. In the LLM Wiki the model reads each source once and writes what it learned into a persistent set of interlinked markdown pages. The gist calls the result "a persistent, compounding artifact".
+
+***Three layers***: **Raw sources** are curated, immutable documents; the LLM reads them and never edits them. **The wiki** is LLM-generated markdown -- source summaries, entity and concept pages, comparisons, an overview -- and "the LLM owns this layer entirely". **The schema** is a configuration document such as `CLAUDE.md` or `AGENTS.md` that fixes structure, conventions and workflows; human and model refine it together.
+
+***Ingest***: A new source goes into the raw layer. The LLM summarises it, updates the pages it touches (the gist puts it at ten to fifteen for one source), adds cross-references, flags contradictions with what the wiki already says, and records the step in the index and the log.
+
+***Index and log***: `index.md` is a catalog of every page with a link and a one-line summary, grouped by category; the LLM reads it first when it answers. `log.md` is an append-only, chronological record of ingests, queries and lint passes, with greppable prefixes such as `## [date] ingest | Title`.
+
+***Query and file back***: The LLM answers from the wiki with citations, in whatever form fits -- prose, a table, slides, a chart. A good answer does not vanish into the chat: it is filed back into the wiki as a new page, so explorations compound like ingested sources.
+
+***Lint***: A periodic health check over the whole wiki: contradictions, stale claims, orphan pages, missing concepts and cross-references, and gaps that call for a new source.
+
+***The division of labour***: Wikis kept by people decay because the bookkeeping -- cross-references, updated summaries, reconciled contradictions -- costs more than it seems to return. The LLM does that bookkeeping at almost no cost. In the gist's words: "The human's job is to curate sources, direct the analysis, ask good questions, and think about what it all means."
+
+***Deliberately abstract***: The gist is an idea file meant to be pasted into a coding agent, not a tool. Directory layout, page types and tooling are left to the domain. It mentions Obsidian as a viewer, git for history and an optional search CLI, and says an index file is enough at moderate scale -- about a hundred sources and hundreds of pages -- without embedding-based retrieval.
+
+***Key Proponent***: Andrej Karpathy, who links the idea loosely to Vannevar Bush's Memex.
+
+[discrete]
+## **When to Use**:
+
+* A body of documents -- papers, notes, design docs, chat exports -- that keeps growing and is asked about repeatedly
+* Research on one topic over weeks or months, where answers should build on earlier answers
+* Team knowledge that people stopped maintaining because cross-referencing was too much work
+* As the knowledge layer of a coding agent: the schema file is the agent's instructions, the wiki its memory
+* When a retrieval pipeline keeps re-deriving the same synthesis and never reconciles contradicting sources
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "It is RAG with markdown files" -- retrieval looks things up at question time; the wiki does the synthesis at ingest time and keeps it.
+* ❌ "The LLM may edit the sources" -- the raw layer is immutable. It is what a lint pass checks the wiki against.
+* ❌ "You need a vector store to find pages" -- at moderate scale the gist relies on `index.md` alone. The log is what lets human and model see what changed.
+* ❌ "Answers live in the chat" -- an answer worth keeping becomes a page; otherwise the wiki stops compounding.
+* ❌ "Karpathy published a tool" -- he published a pattern. The community implementations are someone else's choices.
+
+[discrete]
+## **Related Anchors**:
+
+* P.A.R.A. Method
+* Docs-as-Code
+* Diátaxis Framework
+* arc42
+* req42 Requirements Framework
+
+## **Criticism**:
+
+* **Lint does not keep up at scale.** Michael Tuszynski ran the pattern for six months and reports three failure modes the gist does not mention: drift between a page's changelog and its reference section, "the reference section below still describing the dead system as current"; silent contradictions, where "two pages both exist, both are internally consistent, and neither knows about the other"; and orphans and dead links, because "at three hundred pages, 'occasionally' is not a frequency — it's a hope". His additions are a drift linter, per-domain sub-schemas, a vector index next to the wiki once it no longer fits in context, and lockfiles when several agents write. https://www.mpt.solutions/karpathys-llm-wiki-works-heres-what-broke-when-i-ran-it-at-real-scale/[Tuszynski, "Karpathy's LLM Wiki Works. Here's What Broke When I Ran It at Real Scale."] (13 August 2026).
+* **Search frame.** English, German and Chinese searches on 2026-10-15. Two further critical pieces were found but not read: a Towards AI article asking whether the pattern really replaces RAG returned HTTP 403, and a dev.to post on its token cost was found only as a listing. Japanese and Korean were not searched.
+
+[discrete]
+## **Current Status**:
+
+* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
+* **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers. The weak tier hedges and drops the log or the filing-back; asked directly who created the pattern, it declined to name anyone, though it named Karpathy when asked what an LLM Wiki is.
+
 ### P.A.R.A. Method
 
 ***Full Name***: P.A.R.A. Method (Projects, Areas, Resources, Archive)
@@ -5884,6 +6014,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 * Diátaxis Framework
 * todo.txt-flavoured Markdown
+* Karpathy's LLM Wiki
 
 ### todo.txt-flavoured Markdown
 

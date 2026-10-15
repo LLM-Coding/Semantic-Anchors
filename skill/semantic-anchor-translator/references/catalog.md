@@ -1073,6 +1073,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Florida State University; Robert Maribe Branch
 - **Core:** Five-phase instructional-design process — Analysis, Design, Development, Implementation, Evaluation (formative + summative, often paired with Kirkpatrick) — modern usage iterative rather than strict waterfall
 
+### Karpathy's LLM Wiki
+- **Also known as:** LLM Knowledge Base, the LLM Wiki pattern
+- **Proponents:** Andrej Karpathy (X post and gist `llm-wiki.md`, April 2026)
+- **Core:** The LLM compiles immutable raw sources once into a persistent wiki of interlinked markdown pages instead of retrieving raw chunks per question; a schema file (`CLAUDE.md`/`AGENTS.md`) fixes the conventions; ingest updates the touched pages, `index.md` (catalog the model reads first) and `log.md` (append-only record); good answers are filed back as pages; a periodic lint pass looks for contradictions, stale claims, orphans and gaps. Use the qualified name -- the bare "LLM Wiki" is weaker on small models
+
 ## Creative Writing & Storytelling
 
 ### Three-Act Structure

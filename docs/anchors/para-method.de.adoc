@@ -1,7 +1,7 @@
 = P.A.R.A. Method
 :categories: knowledge-management
 :roles: software-developer, team-lead, technical-writer, educator
-:related: diataxis-framework, todotxt-flavoured-markdown
+:related: diataxis-framework, todotxt-flavoured-markdown, karpathys-llm-wiki
 :proponents: Tiago Forte
 :tags: knowledge-management, personal-productivity, note-taking, organization, second-brain
 :tier: 3
@@ -47,4 +47,5 @@ Schlüsselvertreter:: Tiago Forte („Building a Second Brain")
 
 * <<diataxis-framework,Diátaxis Framework>>
 * <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
+* <<karpathys-llm-wiki,Karpathy's LLM Wiki>>
 ====

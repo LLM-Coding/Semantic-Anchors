@@ -4630,6 +4630,70 @@
     "addedAt": "2026-05-08T10:13:27+02:00"
   },
   {
+    "id": "karpathys-llm-wiki",
+    "title": "Karpathy’s LLM Wiki",
+    "categories": [
+      "knowledge-management",
+      "documentation"
+    ],
+    "roles": [
+      "software-developer",
+      "technical-writer",
+      "team-lead",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "para-method",
+      "docs-as-code",
+      "diataxis-framework",
+      "arc42",
+      "req42"
+    ],
+    "proponents": [
+      "Andrej Karpathy"
+    ],
+    "tags": [
+      "LLM Wiki",
+      "LLM knowledge base",
+      "Karpathy",
+      "idea file",
+      "raw sources",
+      "compiled knowledge",
+      "interlinked markdown",
+      "index.md",
+      "log.md",
+      "ingest",
+      "query",
+      "lint",
+      "schema",
+      "CLAUDE.md",
+      "AGENTS.md",
+      "Obsidian",
+      "RAG alternative",
+      "second brain",
+      "Memex"
+    ],
+    "filePath": "docs/anchors/karpathys-llm-wiki.adoc",
+    "tier": 2,
+    "priorTest": "2026-10-15",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-15T11:06:33+02:00"
+  },
+  {
     "id": "keep-a-changelog",
     "title": "Keep a Changelog",
     "categories": [
@@ -5728,7 +5792,8 @@
     ],
     "related": [
       "diataxis-framework",
-      "todotxt-flavoured-markdown"
+      "todotxt-flavoured-markdown",
+      "karpathys-llm-wiki"
     ],
     "proponents": [
       "Tiago Forte"

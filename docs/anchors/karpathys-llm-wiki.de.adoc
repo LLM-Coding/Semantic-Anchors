@@ -1,0 +1,75 @@
+= Karpathy's LLM Wiki
+:categories: knowledge-management, documentation
+:roles: software-developer, technical-writer, team-lead, consultant, educator
+:proponents: Andrej Karpathy
+:tags: LLM Wiki, LLM-Wissensbasis, Karpathy, Idea File, Rohquellen, kompiliertes Wissen, verlinktes Markdown, index.md, log.md, Ingest, Query, Lint, Schema, CLAUDE.md, AGENTS.md, Obsidian, RAG-Alternative, Second Brain, Memex
+:related: para-method, docs-as-code, diataxis-framework, arc42, req42
+:tier: 2
+:prior-test: 2026-10-15
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: LLM Wiki, aus Andrej Karpathys Post „LLM Knowledge Bases“ (https://x.com/karpathy/status/2039805659525644595[X, 2. April 2026]) und der nachgereichten „Idea File“ `llm-wiki.md` (https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f[GitHub Gist, 4. April 2026]).
+
+Auch bekannt als:: LLM Knowledge Base, das LLM-Wiki-Muster
+
+[discrete]
+== *Kernkonzepte*:
+
+Einmal kompilieren statt jedes Mal suchen:: Retrieval-Augmented Generation liest für jede Frage erneut rohe Chunks; nichts sammelt sich an. Im LLM Wiki liest das Modell jede Quelle einmal und schreibt, was es gelernt hat, in eine dauerhafte Sammlung verlinkter Markdown-Seiten. Der Gist nennt das Ergebnis „a persistent, compounding artifact“.
+
+Drei Schichten:: *Rohquellen* sind kuratierte, unveränderliche Dokumente; das LLM liest sie und ändert sie nie. *Das Wiki* ist vom LLM erzeugtes Markdown -- Zusammenfassungen der Quellen, Seiten zu Entitäten und Konzepten, Vergleiche, ein Überblick --, und „the LLM owns this layer entirely“. *Das Schema* ist ein Konfigurationsdokument wie `CLAUDE.md` oder `AGENTS.md`, das Struktur, Konventionen und Abläufe festlegt; Mensch und Modell verfeinern es gemeinsam.
+
+Ingest:: Eine neue Quelle kommt in die Rohschicht. Das LLM fasst sie zusammen, aktualisiert die betroffenen Seiten (der Gist spricht von zehn bis fünfzehn für eine einzige Quelle), ergänzt Querverweise, markiert Widersprüche zu dem, was das Wiki schon sagt, und vermerkt den Schritt in Index und Log.
+
+Index und Log:: `index.md` ist ein Katalog aller Seiten mit Link und einzeiliger Zusammenfassung, nach Kategorien gruppiert; das LLM liest ihn zuerst, wenn es antwortet. `log.md` ist ein fortlaufendes, nur ergänztes Protokoll von Ingests, Abfragen und Lint-Läufen, mit grep-baren Präfixen wie `## [date] ingest | Title`.
+
+Abfragen und ins Wiki zurückschreiben:: Das LLM antwortet aus dem Wiki mit Belegen, in der passenden Form -- Text, Tabelle, Folien, Diagramm. Eine gute Antwort verschwindet nicht im Chat: Sie kommt als neue Seite ins Wiki, sodass sich Erkundungen ansammeln wie eingelesene Quellen.
+
+Lint:: Eine regelmäßige Gesundheitsprüfung über das ganze Wiki: Widersprüche, veraltete Aussagen, verwaiste Seiten, fehlende Konzepte und Querverweise, Lücken, die nach einer neuen Quelle verlangen.
+
+Die Arbeitsteilung:: Von Menschen gepflegte Wikis verfallen, weil die Buchhaltung -- Querverweise, aktualisierte Zusammenfassungen, aufgelöste Widersprüche -- mehr kostet, als sie scheinbar bringt. Das LLM erledigt diese Buchhaltung fast ohne Kosten. Im Gist heißt es: „The human's job is to curate sources, direct the analysis, ask good questions, and think about what it all means.“
+
+Bewusst abstrakt:: Der Gist ist eine Idea File, gedacht zum Einfügen in einen Coding-Agent, kein Werkzeug. Verzeichnisaufbau, Seitentypen und Werkzeuge bleiben der Domäne überlassen. Er nennt Obsidian als Betrachter, Git für die Historie und ein optionales Such-CLI und sagt, bei mittlerer Größe -- etwa hundert Quellen und einige hundert Seiten -- reiche eine Indexdatei ohne Embedding-basiertes Retrieval.
+
+Wichtigster Vertreter:: Andrej Karpathy, der die Idee lose mit Vannevar Bushs Memex verbindet.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Ein Bestand an Dokumenten -- Papers, Notizen, Design-Dokumente, Chat-Exporte --, der weiter wächst und immer wieder befragt wird
+* Recherche zu einem Thema über Wochen oder Monate, bei der Antworten auf früheren Antworten aufbauen sollen
+* Team-Wissen, das niemand mehr pflegt, weil das Querverweisen zu aufwendig war
+* Als Wissensschicht eines Coding-Agents: Die Schema-Datei ist seine Anweisung, das Wiki sein Gedächtnis
+* Wenn eine Retrieval-Pipeline dieselbe Synthese immer neu herleitet und widersprüchliche Quellen nie auflöst
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Das ist RAG mit Markdown-Dateien“ -- Retrieval sucht zur Fragezeit; das Wiki leistet die Synthese beim Einlesen und behält sie.
+* ❌ „Das LLM darf die Quellen bearbeiten“ -- die Rohschicht ist unveränderlich. Gegen sie prüft ein Lint-Lauf das Wiki.
+* ❌ „Ohne Vektorspeicher findet das Modell keine Seiten“ -- bei mittlerer Größe verlässt sich der Gist allein auf `index.md`. Über das Log sehen Mensch und Modell, was sich geändert hat.
+* ❌ „Antworten leben im Chat“ -- eine Antwort, die sich zu behalten lohnt, wird eine Seite; sonst wächst das Wiki nicht mehr.
+* ❌ „Karpathy hat ein Werkzeug veröffentlicht“ -- er hat ein Muster beschrieben. Die Implementierungen der Community sind die Entscheidungen anderer.
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<para-method,P.A.R.A. Method>>
+* <<docs-as-code,Docs-as-Code>>
+* <<diataxis-framework,Diátaxis Framework>>
+* <<arc42,arc42>>
+* <<req42,req42 Requirements Framework>>
+====
+
+== *Kritik*:
+
+* *Lint hält bei wachsender Größe nicht Schritt.* Michael Tuszynski hat das Muster sechs Monate betrieben und berichtet drei Fehlerbilder, die der Gist nicht erwähnt: Drift zwischen dem Changelog einer Seite und ihrem Referenzteil, „the reference section below still describing the dead system as current“; stille Widersprüche, bei denen „two pages both exist, both are internally consistent, and neither knows about the other“; und verwaiste Seiten und tote Links, denn „at three hundred pages, 'occasionally' is not a frequency — it's a hope“. Seine Ergänzungen sind ein Drift-Linter, Sub-Schemata je Domäne, ein Vektorindex neben dem Wiki, sobald es nicht mehr in den Kontext passt, und Lockfiles, wenn mehrere Agents schreiben. https://www.mpt.solutions/karpathys-llm-wiki-works-heres-what-broke-when-i-ran-it-at-real-scale/[Tuszynski, „Karpathy's LLM Wiki Works. Here's What Broke When I Ran It at Real Scale.“] (13. August 2026).
+* *Suchrahmen.* Suchen auf Englisch, Deutsch und Chinesisch am 15.10.2026. Zwei weitere kritische Texte wurden gefunden, aber nicht gelesen: Ein Towards-AI-Artikel, der fragt, ob das Muster RAG wirklich ersetzt, lieferte HTTP 403, und ein dev.to-Beitrag zu den Token-Kosten fand sich nur als Listeneintrag. Japanisch und Koreanisch wurden nicht durchsucht.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Das Muster ist jung, und der Prior auch.* Es erschien im April 2026. Ein Prior-Test am 15.10.2026 fand es auf allen drei Claude-5.5-Stufen: Beim Entwurf eines Support-Assistenten über 400 Dokumente baute jede Baseline Retrieval mit Chunks und Vektorindex, und jeder Lauf, der „Karpathy's LLM Wiki“ nannte, baute Rohschicht, Wiki, `index.md`, `log.md` und einen Lint-Lauf und schrieb gute Antworten ins Wiki zurück. Modelle, die vor April 2026 trainiert wurden, können es nicht kennen. Siehe link:#/prior-tests[Prior-Test-Register].
+* *Den qualifizierten Namen verwenden.* Das nackte „LLM Wiki“ wirkt auf der mittleren und starken Stufe. Die schwache Stufe macht Vorbehalte und lässt Log oder Zurückschreiben weg; direkt nach dem Urheber gefragt, nannte sie niemanden, auf die Frage, was ein LLM Wiki ist, aber Karpathy.
