@@ -2,8 +2,8 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 21 semantic contracts, and
-> 234 anchors in 14 categories — the anchors both
-> one by one and bundled into 23 files that hold a whole category.
+> 236 anchors in 14 categories — the anchors both
+> one by one and bundled into 25 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
 > question about a workflow, a method or this project is usually answered by a
@@ -43,7 +43,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 234 terms in full, 23 files
+## Anchor bundles — the same 236 terms in full, 25 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -63,16 +63,18 @@
 - [Problem Solving (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 13 anchors in full.
 - [Problem Solving (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 10 anchors in full.
 - [Problem Solving (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-3.txt): 8 anchors in full.
-- [Requirements Engineering](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering.txt): 16 anchors in full.
-- [Software Architecture (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-1.txt): 17 anchors in full.
-- [Software Architecture (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 16 anchors in full.
+- [Requirements Engineering (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering-1.txt): 16 anchors in full.
+- [Requirements Engineering (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering-2.txt): 2 anchors in full.
+- [Software Architecture (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-1.txt): 17 anchors in full.
+- [Software Architecture (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 17 anchors in full.
+- [Software Architecture (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-3.txt): 1 anchors in full.
 - [Statistical Methods & Process Monitoring](https://llm-coding.github.io/Semantic-Anchors/bundles/statistical-methods.txt): 5 anchors in full.
 - [Strategic Planning (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-1.txt): 17 anchors in full.
 - [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 5 anchors in full.
 - [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 
-## Anchors — 234 named terms, grouped by category
+## Anchors — 236 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -271,6 +273,7 @@
 
 - [Cockburn Use Cases](https://llm-coding.github.io/Semantic-Anchors/anchors/cockburn-use-cases.txt)
 - [Connextra User Story Format](https://llm-coding.github.io/Semantic-Anchors/anchors/connextra-user-story.txt)
+- [Domain Storytelling according to Hofer and Schwentner](https://llm-coding.github.io/Semantic-Anchors/anchors/domain-storytelling.txt)
 - [Double Diamond](https://llm-coding.github.io/Semantic-Anchors/anchors/double-diamond.txt)
 - [EARS-Requirements](https://llm-coding.github.io/Semantic-Anchors/anchors/ears-requirements.txt)
 - [Event Storming according to Alberto Brandolini](https://llm-coding.github.io/Semantic-Anchors/anchors/event-storming.txt)
@@ -284,6 +287,7 @@
 - [Quality Attribute Scenario](https://llm-coding.github.io/Semantic-Anchors/anchors/quality-attribute-scenario.txt)
 - [req42 Requirements Framework](https://llm-coding.github.io/Semantic-Anchors/anchors/req42.txt)
 - [SIPOC](https://llm-coding.github.io/Semantic-Anchors/anchors/sipoc.txt)
+- [Twin Peaks Model according to Nuseibeh](https://llm-coding.github.io/Semantic-Anchors/anchors/twin-peaks-model.txt)
 - [User Story Mapping](https://llm-coding.github.io/Semantic-Anchors/anchors/user-story-mapping.txt)
 
 ### Software Architecture
@@ -301,6 +305,7 @@
 - [CUPID Properties](https://llm-coding.github.io/Semantic-Anchors/anchors/cupid-properties.txt)
 - [Defense in Depth](https://llm-coding.github.io/Semantic-Anchors/anchors/defense-in-depth.txt)
 - [Domain-Driven Design according to Evans](https://llm-coding.github.io/Semantic-Anchors/anchors/domain-driven-design.txt)
+- [Domain Storytelling according to Hofer and Schwentner](https://llm-coding.github.io/Semantic-Anchors/anchors/domain-storytelling.txt)
 - [Enterprise Integration Patterns (Hohpe/Woolf)](https://llm-coding.github.io/Semantic-Anchors/anchors/enterprise-integration-patterns.txt)
 - [Event-Driven Architecture](https://llm-coding.github.io/Semantic-Anchors/anchors/event-driven-architecture.txt)
 - [Event Storming according to Alberto Brandolini](https://llm-coding.github.io/Semantic-Anchors/anchors/event-storming.txt)
@@ -319,6 +324,7 @@
 - [Team Topologies](https://llm-coding.github.io/Semantic-Anchors/anchors/team-topologies.txt)
 - [Tracer Bullet](https://llm-coding.github.io/Semantic-Anchors/anchors/tracer-bullet.txt)
 - [Twelve-Factor App](https://llm-coding.github.io/Semantic-Anchors/anchors/twelve-factor-app.txt)
+- [Twin Peaks Model according to Nuseibeh](https://llm-coding.github.io/Semantic-Anchors/anchors/twin-peaks-model.txt)
 - [Vertical Slice Architecture (VSA)](https://llm-coding.github.io/Semantic-Anchors/anchors/vertical-slice-architecture.txt)
 - [Walking Skeleton](https://llm-coding.github.io/Semantic-Anchors/anchors/walking-skeleton.txt)
 

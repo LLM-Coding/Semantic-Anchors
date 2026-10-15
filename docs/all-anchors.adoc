@@ -533,6 +533,9 @@ include::anchors/cockburn-use-cases.adoc[leveloffset=+2]
 [[connextra-user-story]]
 include::anchors/connextra-user-story.adoc[leveloffset=+2]
 
+[[domain-storytelling]]
+include::anchors/domain-storytelling.adoc[leveloffset=+2]
+
 include::anchors/double-diamond.adoc[leveloffset=+2]
 
 [[ears-requirements]]
@@ -568,6 +571,9 @@ include::anchors/quality-attribute-scenario.adoc[leveloffset=+2]
 include::anchors/req42.adoc[leveloffset=+2]
 
 include::anchors/sipoc.adoc[leveloffset=+2]
+
+[[twin-peaks-model]]
+include::anchors/twin-peaks-model.adoc[leveloffset=+2]
 
 [[user-story-mapping]]
 include::anchors/user-story-mapping.adoc[leveloffset=+2]
@@ -613,6 +619,8 @@ include::anchors/defense-in-depth.adoc[leveloffset=+2]
 
 [[domain-driven-design]]
 include::anchors/domain-driven-design.adoc[leveloffset=+2]
+
+include::anchors/domain-storytelling.adoc[leveloffset=+2]
 
 [[enterprise-integration-patterns]]
 include::anchors/enterprise-integration-patterns.adoc[leveloffset=+2]
@@ -663,6 +671,8 @@ include::anchors/tracer-bullet.adoc[leveloffset=+2]
 
 [[twelve-factor-app]]
 include::anchors/twelve-factor-app.adoc[leveloffset=+2]
+
+include::anchors/twin-peaks-model.adoc[leveloffset=+2]
 
 [[vertical-slice-architecture]]
 include::anchors/vertical-slice-architecture.adoc[leveloffset=+2]

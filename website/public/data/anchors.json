@@ -1974,7 +1974,8 @@
       "hexagonal-architecture",
       "clean-architecture",
       "event-storming",
-      "residuality-theory"
+      "residuality-theory",
+      "domain-storytelling"
     ],
     "proponents": [
       "Eric Evans"
@@ -1991,6 +1992,49 @@
     "tier": 3,
     "definition": "Domain-Driven Design, introduced by Eric Evans, tackles complex software by centring the design on the business domain. A shared Ubiquitous Language unites developers and domain experts, Bounded Contexts delimit models, and tactical patterns — entities, value objects, aggregates, repositories — express the domain directly in code.",
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "domain-storytelling",
+    "title": "Domain Storytelling according to Hofer and Schwentner",
+    "categories": [
+      "requirements-engineering",
+      "software-architecture"
+    ],
+    "roles": [
+      "business-analyst",
+      "software-architect",
+      "product-owner",
+      "software-developer",
+      "consultant"
+    ],
+    "related": [
+      "event-storming",
+      "domain-driven-design",
+      "user-story-mapping"
+    ],
+    "proponents": [
+      "Stefan Hofer",
+      "Henning Schwentner"
+    ],
+    "tags": [
+      "domain storytelling",
+      "domain story",
+      "pictographic language",
+      "actor",
+      "work object",
+      "activity",
+      "sequence number",
+      "collaborative modeling",
+      "workshop",
+      "egon.io",
+      "ddd",
+      "bounded contexts",
+      "as-is",
+      "to-be"
+    ],
+    "filePath": "docs/anchors/domain-storytelling.adoc",
+    "tier": 3,
+    "addedAt": "2026-10-15T08:05:43+02:00"
   },
   {
     "id": "double-diamond",
@@ -2343,7 +2387,8 @@
       "domain-driven-design",
       "user-story-mapping",
       "cqrs",
-      "event-driven-architecture"
+      "event-driven-architecture",
+      "domain-storytelling"
     ],
     "proponents": [
       "Alberto Brandolini"
@@ -6418,7 +6463,8 @@
       "arc42",
       "ears-requirements",
       "cockburn-use-cases",
-      "docs-as-code"
+      "docs-as-code",
+      "twin-peaks-model"
     ],
     "proponents": [
       "Peter Hruschka",
@@ -6429,7 +6475,14 @@
       "framework",
       "agile",
       "docs-as-code",
-      "arc42"
+      "arc42",
+      "PAM",
+      "purpose advantage metric",
+      "business goals",
+      "vision",
+      "epics",
+      "features",
+      "user stories"
     ],
     "filePath": "docs/anchors/req42.adoc",
     "tier": 3,
@@ -8136,6 +8189,41 @@
     "filePath": "docs/anchors/twelve-factor-app.adoc",
     "tier": 2,
     "addedAt": "2026-06-26T20:19:59+00:00"
+  },
+  {
+    "id": "twin-peaks-model",
+    "title": "Twin Peaks Model according to Nuseibeh",
+    "categories": [
+      "requirements-engineering",
+      "software-architecture"
+    ],
+    "roles": [
+      "software-architect",
+      "business-analyst",
+      "product-owner"
+    ],
+    "related": [
+      "req42",
+      "arc42",
+      "quality-attribute-scenario",
+      "atam"
+    ],
+    "proponents": [
+      "Bashar Nuseibeh"
+    ],
+    "tags": [
+      "twin peaks",
+      "requirements and architecture",
+      "concurrent development",
+      "iterative refinement",
+      "spiral model",
+      "architecturally significant requirements",
+      "co-evolution",
+      "frozen requirements"
+    ],
+    "filePath": "docs/anchors/twin-peaks-model.adoc",
+    "tier": 2,
+    "addedAt": "2026-10-15T08:05:43+02:00"
   },
   {
     "id": "unix-philosophy",
