@@ -5,7 +5,8 @@
 :tags: domain storytelling, domain story, pictographic language, actor, work object, activity, sequence number, collaborative modeling, workshop, egon.io, ddd, bounded contexts, as-is, to-be
 :related: event-storming, domain-driven-design, user-story-mapping
 :tier: 3
-:tested-on: sonnet-5-5=yes
+:prior-test: 2026-10-15
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 
 [%collapsible]
 ====

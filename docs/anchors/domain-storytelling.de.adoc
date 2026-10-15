@@ -5,7 +5,8 @@
 :tags: Domain Storytelling, Domain Story, piktografische Sprache, Akteur, Arbeitsgegenstand, Aktivität, Sequenznummer, kollaborative Modellierung, Workshop, Egon.io, DDD, Bounded Contexts, Ist-Zustand, Soll-Zustand
 :related: event-storming, domain-driven-design, user-story-mapping
 :tier: 3
-:tested-on: sonnet-5-5=yes
+:prior-test: 2026-10-15
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 
 [%collapsible]
 ====
