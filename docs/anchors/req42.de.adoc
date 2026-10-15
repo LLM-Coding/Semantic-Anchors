@@ -4,7 +4,9 @@
 :related: arc42, ears-requirements, cockburn-use-cases, docs-as-code, twin-peaks-model
 :proponents: Peter Hruschka, Markus Meuten
 :tags: requirements, framework, agile, docs-as-code, arc42, PAM, Purpose Advantage Metric, Geschäftsziele, Vision, Epics, Features, User Stories
-:tier: 3
+:tier: 2
+:prior-test: 2026-10-15
+:tested-on: haiku-5-5=no, sonnet-5-5=yes, opus-5-5=yes
 
 [%collapsible]
 ====
@@ -73,4 +75,5 @@ Schlüsselvertreter:: Dr. Peter Hruschka und Markus Meuten (https://req42.de). H
 
 * Deutlich weniger bekannt als das Schwester-Framework arc42. Ein LLM erkennt "req42" vor allem *wegen* des Namens und der Struktur von arc42; der Trainingsdaten-Prior zu req42s eigenem Inhalt der zwölf Abschnitte ist dünn, sodass das Modell eher von arc42 extrapoliert als req42 korrekt abruft. Abschnittsnamen gegen die Quelle (https://docs.req42.de, https://github.com/Hruschka/req42-framework) prüfen, statt auf das Gedächtnis zu vertrauen.
 * Aktiv gepflegt als freies, quelloffenes Template (CC BY-SA 4.0) auf https://github.com/Hruschka/req42-framework[GitHub], mit Hinweisen auf Abschnittsebene unter https://docs.req42.de — dasselbe Docs-as-Code-Modell wie arc42.
+* *Ein Prior-Test am 15.10.2026 bestätigte den dünnen Prior und senkte das Tier auf ★★☆.* Die schwache Stufe erkennt "req42" nicht und nennt keinen Urheber; ein Modell der mittleren Stufe nennt Hruschka und Gernot Starke, das arc42-Paar. Nur die starke Stufe machte aus "use req42" Ziele in PAM-Form. Das nackte Akronym "PAM" liefert auf jeder Stufe Privileged Access Management; in Prompts deshalb Purpose / Advantage / Metric ausschreiben. Siehe link:#/prior-tests[Prior-Test-Register].
 ====

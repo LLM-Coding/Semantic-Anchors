@@ -601,3 +601,45 @@ Die Aufgaben stammen aus den Viability-Vorschlägen der Issues, und zwei davon w
 === BlinkWithoutDelay steht unter eigenem Namen
 
 Das Issue schlug einen Mittelweg vor: einen Anker für das allgemeine Konzept mit BlinkWithoutDelay als Arduino-Alias. Der Katalog registriert die Zeichenfolge, die aktiviert, und führt andere Namen unter _Auch bekannt als_ -- Arrange-Act-Assert statt „AAA“, das Connextra-Format nur in qualifizierter Form. Das allgemeine Konzept hat keinen etablierten eigenen Namen; „nicht blockierendes Timing in einer Superloop“ ist eine Beschreibung und bräuchte mangels Urheber den Platzhalter `Community`. Der Sketch-Name dagegen erreichte auf der schwachen Stufe die ganze Technik, einschließlich der überlaufsicheren Subtraktion. Der Anker heißt also „BlinkWithoutDelay“, und die allgemeine Beschreibung ist sein Alias.
+
+== Lauf vom 15.10.2026
+
+[cols="1,3"]
+|===
+|Kandidaten |Twin Peaks Model according to Nuseibeh und Domain Storytelling, beide in https://github.com/LLM-Coding/Semantic-Anchors/pull/806[#806] aufgenommen; req42 und seine Zielform Purpose / Advantage / Metric (PAM), im selben Pull Request erweitert; Karpathy's LLM Wiki als neuer Kandidat
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark). Die aufgelösten Bezeichner stammen aus dem Feld `modelUsage` jeder Antwort
+|Verfahren |`anchor-prior-test` v1.0
+|Läufe |P1 zweimal je Begriff und Stufe, P2 und P4 einmal je Stufe, jede Aktionsbedingung zweimal je Stufe. Zwei Runden Aktionsaufgaben; die zweite, nachdem sich zeigte, dass die erste die Methoden nannte. 180 Proben insgesamt, 4,58 USD (Haiku 0,07, Sonnet 1,29, Opus 3,18)
+|Reinraum |`claude -p --strict-mcp-config --setting-sources "" --tools ""` mit `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN` und `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, jede Probe in einem eigenen leeren Git-Repository außerhalb dieses Repositorys. Auf allen drei Stufen mit der Probe nach eigenen Anweisungen geprüft; sie antwortete „none“
+|Ersetzt |Das `sonnet-5-5=yes`, das #806 für Twin Peaks und Domain Storytelling eingetragen hatte. Es stammte von einem Sub-Agent, der die Anweisungen und das Gedächtnis der Sitzung erbt; ein Reinraum-Ergebnis war es also nicht
+|Kritik-Recherche |Nicht Teil dieses Laufs
+|===
+
+=== Die erste Aufgabenrunde nannte die Methoden
+
+Die ersten Aktionsaufgaben wiederholten den Fehler, den der Lauf vom 03.10.2026 beschrieben hat: Jede trug das Vokabular ihrer Methode. „Lay out how the requirements work and the architecture work should proceed, and how they relate to each other“ ist die These von Twin Peaks als Frage, und vier von vier Baselines auf Sonnet und Opus antworteten ohne Anker „Approach: the 'Twin Peaks' model“. „Plan a two-hour session with the clinic staff“ lud zu einem Modellierungs-Workshop ein, und vier von vier Baselines auf Sonnet und Opus nannten Domain Storytelling. „Knowledge that stays usable and grows“ ist die Werbezeile des LLM Wiki selbst, und die Baselines bauten eines: Rohquellen, `index.md`, `log.md` und einen Lint-Lauf, ohne Anker.
+
+Die zweite Runde entfernte das Vokabular. „Draft the plan for the first three months“ ersetzte die Frage nach Anforderungen und Architektur. „Nobody on our team knows how a vet clinic works. What should we do in the first two weeks?“ ersetzte den Workshop. Ein KI-Assistent für ein Support-Team ersetzte das wachsende Wissen. Die Tier-Urteile unten stützen sich auf die zweite Runde.
+
+=== Die fünf Begriffe
+
+[cols="2,1,4"]
+|===
+|Begriff |Urteil |Anmerkung
+
+|Twin Peaks Model according to Nuseibeh |★★☆ |Keine der sechs Baselines lieferte das Modell; sie planten Walking Skeletons und vertikale Schnitte. Sechs von sechs Anker-Läufen führten Anforderungen und Architektur als gemeinsam wachsende Gipfel, auf Haiku: „Each iteration refines the requirements peak, proposes or revises an architectural option, tests the option against the requirements, and feeds the resulting constraints back into the requirements.“ Die Attribution hält auf allen Stufen: Nuseibeh, 2001, `confidence=high`. ★★☆, weil der nackte Name zu einem anderen Feld gehört -- siehe unten
+|Domain Storytelling |★★★ |In der neutralen Aufgabe lieferte keine Baseline auf Haiku oder Sonnet Akteure, Arbeitsgegenstände und nummerierte Aktivitäten; sechs von sechs Anker-Läufen taten es, auf Haiku mit Piktogrammen, Egon und ganzen Sätzen: „The receptionist books an appointment in the calendar for the patient.“ Opus nannte Domain Storytelling in beiden Baselines ungefragt, neben EventStorming; auf der starken Stufe ist der Begriff also schon der Normalfall. Attribution: Hofer und Schwentner auf allen Stufen, `confidence=med`, das Startjahr streut zwischen 2014 und 2019
+|req42 |★★☆ |Herabgestuft von ★★★. Haiku kennt den Begriff in keinem der beiden Erkennungsläufe: „I don't recognize 'req42' as a specific named standard, product, or well-known entity“, und nennt keinen Urheber. Sonnet und Opus erkennen ihn mit mittlerer Dichte. Sonnet nennt „Peter Hruschka and Gernot Starke“ -- das arc42-Paar, nicht Hruschka und Meuten. Mit „use req42“ nach Geschäftszielen gefragt, lieferte nur Opus die PAM-Form, zwei von zwei
+|Purpose / Advantage / Metric (PAM) |kein Anker |Keine Stufe erkennt es als benannte Methode; Sonnet: „I don't firmly recognize PAM as an established, named framework, so some of these are inferred from the three words.“ Die ausgeschriebene Form wirkt nur, weil die drei Wörter sich selbst erklären. Das nackte Akronym scheitert: „PAM“ liefert auf allen Stufen Privileged Access Management, und „write them as PAM goals“ erzeugte die Struktur auf Opus zwei von zwei, auf Sonnet und Haiku null von vier. Alle vier sagten, sie kennten das Format nicht, und ein Sonnet-Lauf erfand ein eigenes: „I assumed three parts per goal: Purpose (what we want to achieve), Audience (who benefits), and Measure“. Opus schreibt PAM Volere zu (Suzanne und James Robertson). PAM bleibt deshalb, wo #806 es hingestellt hat: ausgeschrieben im req42-Anker, der seine Bedeutung im Text mitliefert
+|Karpathy's LLM Wiki |★★☆ |Alle sechs Baselines für den Support-Assistenten bauten Retrieval-Augmented Generation mit Chunking und Vektorindex, keine baute ein Wiki. Sechs von sechs Läufen mit „Karpathy's LLM Wiki“ bauten das Muster auf jeder Stufe: unveränderliche Rohquellen, vom LLM gepflegte Markdown-Seiten, `index.md`, `log.md` und einen Lint-Lauf; vier der sechs legten auch gute Antworten ins Wiki zurück. Das nackte „LLM Wiki“ leistet auf Sonnet und Opus dasselbe. Haiku baut den Kern, beginnt aber beide Läufe mit einem Vorbehalt („I may not have the exact original definition“), lässt in einem Lauf das Log weg und in beiden das Zurücklegen. Die Attribution braucht den Namen: Nach dem Urheber von „the 'LLM Wiki' pattern“ gefragt, antwortet Haiku „I don't have a reliable record“, Sonnet und Opus antworten Karpathy, 2026. Als neuer Anker unter dem qualifizierten Namen vorgeschlagen
+|===
+
+=== Twin Peaks: Der Name braucht seinen Urheber
+
+Auf „What is 'Twin Peaks'?“ antworten alle drei Stufen mit der Fernsehserie. Haiku tut das, ohne Software überhaupt zu erwähnen: „_Twin Peaks_ is an American television drama created by David Lynch and Mark Frost.“ Sonnet und Opus nennen die Bedeutung aus dem Requirements Engineering als zweiten Sinn. Innerhalb einer Engineering-Aufgabe erreichte der nackte Name das Modell auf allen Stufen, aber der Katalog registriert die Zeichenfolge, die ohne diese Hilfe wirkt: „Twin Peaks Model according to Nuseibeh“.
+
+=== Haiku kennt das LLM Wiki und sagt, es kenne es nicht
+
+Die Erkennungsprobe der schwachen Stufe für „Karpathy's LLM Wiki“ antwortete in einem von zwei Läufen `recognized=no` und begann: „I don't have a reliable memory of a specific artifact called 'Karpathy's LLM Wiki.'“ Dieselbe Antwort zählte dann Rohquellen auf, die zu einem verlinkten Markdown-Wiki kompiliert werden, Index- und Log-Dateien, zurückgelegte Antworten und regelmäßige Lint-Läufe -- das Muster, Element für Element. Die Selbstauskunft unterschätzte den Prior. Selbstauskünfte waren in diesem Lauf in beide Richtungen unzuverlässig: Mehrere Anker-Läufe meldeten `produced_llm_maintained_markdown_wiki=no` unter einem vollständigen Wiki-Entwurf. Jedes Urteil oben wurde deshalb nach Merkmalen im Antworttext bewertet, nicht nach den `SELF:`-Zeilen.
+
+Das Muster erschien im April 2026. Die hier getesteten Modelle kennen es; Modelle, die vor diesem Datum trainiert wurden, können es nicht kennen. Das Urteil gilt für die 5.5-Generation und ist keine Untergrenze für ältere Modelle.

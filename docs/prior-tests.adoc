@@ -601,3 +601,45 @@ The action tasks were taken from the viability suggestions in the issues, and tw
 === BlinkWithoutDelay is registered under its own name
 
 The issue offered a middle path: an anchor for the general concept, with BlinkWithoutDelay as its Arduino alias. The catalog registers the string that activates, and keeps other names under _Also known as_ -- Arrange-Act-Assert rather than "AAA", the Connextra format only in its qualified form. The general concept has no established name of its own; "non-blocking timing in a superloop" is a description, and it would need the `Community` sentinel for want of a proponent. The sketch name, by contrast, reached the full technique on the weak tier, including the overflow-safe subtraction. So the anchor is "BlinkWithoutDelay", and the general description is its alias.
+
+== Run 2026-10-15
+
+[cols="1,3"]
+|===
+|Candidates |Twin Peaks Model according to Nuseibeh and Domain Storytelling, both added in https://github.com/LLM-Coding/Semantic-Anchors/pull/806[#806]; req42 and its goal form Purpose / Advantage / Metric (PAM), extended in the same pull request; Karpathy's LLM Wiki as a new candidate
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
+|Procedure |`anchor-prior-test` v1.0
+|Runs |P1 twice per term and tier, P2 and P4 once per tier, every action condition twice per tier. Two rounds of action tasks, the second after the first was found to name the methods. 180 probes in total, USD 4.58 (Haiku 0.07, Sonnet 1.29, Opus 3.18)
+|Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN` and `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, each probe in its own empty git repository outside this one. Verified on all three tiers against the custom-instructions probe, which answered "none"
+|Replaces |The `sonnet-5-5=yes` that #806 recorded for Twin Peaks and Domain Storytelling. It came from a sub-agent, which inherits the session's instructions and memory, so it was not a clean-room result
+|Criticism research |Not part of this run
+|===
+
+=== The first round of tasks named the methods
+
+The first action tasks repeated the defect the 2026-10-03 run described: each one carried the method's own vocabulary. "Lay out how the requirements work and the architecture work should proceed, and how they relate to each other" is Twin Peaks' thesis as a question, and four of four Sonnet and Opus baselines answered "Approach: the 'Twin Peaks' model" with no anchor given. "Plan a two-hour session with the clinic staff" invited a collaborative modelling workshop, and four of four Sonnet and Opus baselines named Domain Storytelling. "Knowledge that stays usable and grows" is the LLM Wiki's own pitch, and the baselines built one: raw sources, `index.md`, `log.md` and a lint pass, with no anchor given.
+
+The second round removed the vocabulary. "Draft the plan for the first three months" replaced the question about requirements and architecture. "Nobody on our team knows how a vet clinic works. What should we do in the first two weeks?" replaced the workshop. An AI assistant for a support team replaced the growing knowledge. The tier verdicts below rest on the second round.
+
+=== The five terms
+
+[cols="2,1,4"]
+|===
+|Term |Verdict |Note
+
+|Twin Peaks Model according to Nuseibeh |★★☆ |None of six baselines produced the model: they planned walking skeletons and vertical slices. Six of six anchored runs ran requirements and architecture as co-evolving peaks; on Haiku: "Each iteration refines the requirements peak, proposes or revises an architectural option, tests the option against the requirements, and feeds the resulting constraints back into the requirements." Attribution holds on all tiers: Nuseibeh, 2001, `confidence=high`. ★★☆ because the bare name belongs to a different field -- see below
+|Domain Storytelling |★★★ |In the neutral task, no Haiku or Sonnet baseline produced actors, work objects and numbered activities; six of six anchored runs did, on Haiku with icons, Egon and full sentences: "The receptionist books an appointment in the calendar for the patient." Opus named Domain Storytelling unprompted in both baselines, next to EventStorming, so on the strong tier the term is already the default. Attribution: Hofer and Schwentner on all tiers, `confidence=med`, with the start year scattered between 2014 and 2019
+|req42 |★★☆ |Lowered from ★★★. Haiku does not know the term in either recognition run: "I don't recognize 'req42' as a specific named standard, product, or well-known entity", and it names no creator. Sonnet and Opus recognise it with moderate richness. Sonnet credits "Peter Hruschka and Gernot Starke" -- the arc42 pair, not Hruschka and Meuten. Asked to "use req42" for business goals, only Opus produced the PAM form, two of two
+|Purpose / Advantage / Metric (PAM) |not an anchor |No tier recognises it as a named method; Sonnet: "I don't firmly recognize PAM as an established, named framework, so some of these are inferred from the three words." The written-out form works only because the three words describe themselves. The bare acronym fails: "PAM" returns Privileged Access Management on all tiers, and "write them as PAM goals" produced the structure on Opus two of two, on Sonnet and Haiku zero of four. All four said they did not know the format, and one Sonnet run invented its own: "I assumed three parts per goal: Purpose (what we want to achieve), Audience (who benefits), and Measure". Opus attributes PAM to Volere (Suzanne and James Robertson). PAM therefore stays where #806 put it: spelled out inside the req42 anchor, which supplies its meaning in text
+|Karpathy's LLM Wiki |★★☆ |All six baselines for the support assistant built retrieval-augmented generation with chunking and a vector index, and none built a wiki. Six of six runs anchored with "Karpathy's LLM Wiki" built the pattern on every tier: immutable raw sources, LLM-maintained markdown pages, `index.md`, `log.md` and a lint pass; four of the six also filed good answers back into the wiki. The bare "LLM Wiki" does the same on Sonnet and Opus. Haiku builds the core but opens both runs with a hedge ("I may not have the exact original definition"), drops the log in one run and the filing-back in both. Attribution needs the name: asked who created "the 'LLM Wiki' pattern", Haiku answers "I don't have a reliable record", Sonnet and Opus answer Karpathy, 2026. Proposed as a new anchor under the qualified name
+|===
+
+=== Twin Peaks: the name needs its proponent
+
+Asked "What is 'Twin Peaks'?", all three tiers answer with the television series. Haiku does so without mentioning software at all: "_Twin Peaks_ is an American television drama created by David Lynch and Mark Frost." Sonnet and Opus add the requirements meaning as a secondary sense. Inside an engineering task the bare name did reach the model on all tiers, but the catalog registers the string that works without that help: "Twin Peaks Model according to Nuseibeh".
+
+=== Haiku knows the LLM Wiki and says it does not
+
+The weak tier's recognition probe for "Karpathy's LLM Wiki" answered `recognized=no` in one of two runs and opened: "I don't have a reliable memory of a specific artifact called 'Karpathy's LLM Wiki.'" The same answer then listed raw sources compiled into an interlinked markdown wiki, index and log files, answers filed back, and periodic lint passes -- the pattern, element by element. The self-report understated the prior. Self-reports were unreliable in this run in both directions: several anchored action runs reported `produced_llm_maintained_markdown_wiki=no` above a complete wiki design, so every verdict above was scored from markers in the answer text, not from the `SELF:` lines.
+
+The pattern was published in April 2026. The models tested here know it; models trained before that date cannot. The verdict holds for the 5.5 generation and is not a lower bound for older models.

@@ -5,7 +5,8 @@
 :tags: Twin Peaks, Anforderungen und Architektur, parallele Entwicklung, iterative Verfeinerung, Spiralmodell, architekturrelevante Anforderungen, Ko-Evolution, eingefrorene Anforderungen
 :related: req42, arc42, quality-attribute-scenario, atam
 :tier: 2
-:tested-on: sonnet-5-5=yes
+:prior-test: 2026-10-15
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 
 [%collapsible]
 ====
