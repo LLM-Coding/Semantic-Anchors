@@ -183,7 +183,7 @@
     "descriptionDe": "Karpathy's LLM Wiki als Projektdokumentation: arc42-Seiten, belegte Aussagen, Änderungen nur per Review",
     "anchors": ["karpathys-llm-wiki", "arc42", "docs-as-code"],
     "template": "Maintain the documentation as Karpathy's LLM Wiki, with three changes: the arc42 chapters, ADRs and glossary are the wiki's pages, written in AsciiDoc and built by docToolchain; every statement cites its source (`file:line`, ADR, issue, or raw file with timestamp), and what no source supports becomes an issue naming the role that can answer it; the agent maintains the wiki, but changes reach the documentation only through pull-request review.",
-    "templateDe": "Die Dokumentation wird als Karpathy's LLM Wiki gepflegt, mit drei Abweichungen: Die Seiten des Wikis sind die arc42-Kapitel, die ADRs und das Glossar, geschrieben in AsciiDoc und gebaut von docToolchain. Jede Aussage nennt ihre Quelle (`file:line`, ADR, Issue oder Rohdatei mit Zeitstempel); was keine Quelle belegt, wird zum Issue, das die Rolle nennt, die es beantworten kann. Der Agent pflegt das Wiki, in die Dokumentation gelangen Änderungen aber nur über ein Review im Pull Request.",
+    "templateDe": "Die Dokumentation als Karpathy's LLM Wiki pflegen, mit drei Abweichungen: Die Seiten des Wikis sind die arc42-Kapitel, die ADRs und das Glossar, geschrieben in AsciiDoc und gebaut von docToolchain. Jede Aussage nennt ihre Quelle (`file:line`, ADR, Issue oder Rohdatei mit Zeitstempel); was keine Quelle belegt, wird zum Issue an die Rolle, die die Frage beantworten kann. Der Agent pflegt das Wiki; in die Dokumentation gelangen seine Änderungen aber nur über ein Review im Pull Request.",
     "category": "documentation"
   },
   {

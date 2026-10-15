@@ -47,7 +47,7 @@ const ANCHOR_ALIASES = {
   bluf: ['BLUF'],
   'plain-english-strunk-white': ['Strunk & White', 'Plain English'],
   'blooms-taxonomy': ["Bloom's", 'Blooms'],
-  'karpathys-llm-wiki': ["Karpathy's LLM Wiki"], // anchor title uses a typographic apostrophe
+  'karpathys-llm-wiki': ["Karpathy's LLM Wiki"], // rendered title in anchors.json uses a typographic apostrophe
   'docs-as-code': ['docToolchain'],
 }
 
