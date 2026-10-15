@@ -1,0 +1,51 @@
+= Twin Peaks Model according to Nuseibeh
+:categories: requirements-engineering, software-architecture
+:proponents: Bashar Nuseibeh
+:roles: software-architect, business-analyst, product-owner
+:tags: Twin Peaks, Anforderungen und Architektur, parallele Entwicklung, iterative Verfeinerung, Spiralmodell, architekturrelevante Anforderungen, Ko-Evolution, eingefrorene Anforderungen
+:related: req42, arc42, quality-attribute-scenario, atam
+:tier: 2
+:tested-on: sonnet-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Twin-Peaks-Modell, aus Bashar Nuseibeh, „Weaving Together Requirements and Architectures“ (_IEEE Computer_ 34(3), März 2001, S. 115--119, https://doi.org/10.1109/2.910904[doi:10.1109/2.910904]).
+
+Auch bekannt als:: Twin Peaks, die Twin Peaks von Anforderungen und Architektur
+
+[discrete]
+== *Kernkonzepte*:
+
+Zwei Gipfel, gemeinsam entwickelt:: Requirements Engineering und Architekturentwurf sind getrennte Tätigkeiten, laufen aber gleichzeitig und speisen sich gegenseitig. Keine ist fertig, bevor die andere beginnt.
+
+Gleicher Rang:: Der Name sagt, dass beide Gipfel gleich hoch sind: Anforderungsspezifikation und Architektur haben dasselbe Gewicht. Anforderungen „fließen“ nicht einfach in eine Architektur hinab.
+
+Gegen eingefrorene Anforderungen:: Nuseibeh wendet sich gegen einen wasserfallartigen Prozess, der künstlich eingefrorene Anforderungsdokumente für die nächste Phase erzeugt, und gegen Architekturen, die so eingeengt sind, dass sie sich gegen spätere Änderungen der Anforderungen sperren.
+
+Eine partielle Spirale:: Das Modell ist eine vereinfachte, feinkörnigere Form des Spiralmodells. Jede Runde verfeinert Anforderungen und Architektur ein Stück weiter, im Wechsel.
+
+Die Architektur wirkt auf die Anforderungen zurück:: Architekturentscheidungen machen Anforderungen konkreter oder zwingen dazu, sie neu zu bewerten. Eine Option kann eine Anforderung billig, teuer oder unmöglich machen; die Rückkopplung läuft in beide Richtungen.
+
+Stabil und doch anpassbar:: Ziel ist eine Architektur, die stabil bleibt und sich doch anpassen lässt, während sich die Anforderungen um sie herum weiter ändern.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Projekte, in denen sich die Anforderungen noch bewegen, während die Architektur schon beginnen muss
+* Gegenhalten, wenn ein Plan oder der Workflow eines KI-Agenten „erst die Spec fertig, dann der Entwurf“ vorsieht
+* Qualitätsanforderungen und Architekturentscheidungen verknüpfen, etwa ein `req42`-Ziel oder Qualitätsszenario mit einer `arc42`-Entscheidung
+* Ein Modell steuern: „Arbeite im Twin-Peaks-Stil -- nenne nach jeder Anforderung die Folge für die Architektur und nach jeder Architekturoption die Anforderung, die sie gefährdet“ verlangt den Wechsel, kein Dokument in zwei Phasen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Twin Peaks“ allein -- ohne „Model“ oder „Nuseibeh“ ist der Begriff mit der Fernsehserie verwechselbar; die qualifizierte Form verwenden
+* ❌ „Erst Anforderungen, dann Architektur, aber iterativ“ -- das Modell verlangt gleichzeitige Arbeit, keine abwechselnden Phasen mit Übergaben
+* ❌ „Die Architektur folgt aus den Anforderungen“ -- bei Twin Peaks verändert die Architektur auch die Anforderungen
+* ✓ „Anforderungen und Architektur gemeinsam verfeinern und jede die andere begrenzen lassen“
+
+[discrete]
+== *Aktueller Status*:
+
+* Der Artikel von 2001 ist eine kurze Kolumne, keine ausgearbeitete Methode; die Folgeliteratur liefert die Praktiken. Jane Cleland-Huang, Robert S. Hanmer, Sam Supakkul und Mehdi Mirakhorli, „The Twin Peaks of Requirements and Architecture“ (_IEEE Software_ 30(2), 2013, https://doi.org/10.1109/MS.2013.39[doi:10.1109/MS.2013.39]), und die IEEE-Workshopreihe TwinPeaks (ab 2012) führen die Idee weiter.
+====

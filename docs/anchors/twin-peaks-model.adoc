@@ -1,0 +1,51 @@
+= Twin Peaks Model according to Nuseibeh
+:categories: requirements-engineering, software-architecture
+:proponents: Bashar Nuseibeh
+:roles: software-architect, business-analyst, product-owner
+:tags: twin peaks, requirements and architecture, concurrent development, iterative refinement, spiral model, architecturally significant requirements, co-evolution, frozen requirements
+:related: req42, arc42, quality-attribute-scenario, atam
+:tier: 2
+:tested-on: sonnet-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Twin Peaks model, from Bashar Nuseibeh, "Weaving Together Requirements and Architectures" (_IEEE Computer_ 34(3), March 2001, pp. 115--119, https://doi.org/10.1109/2.910904[doi:10.1109/2.910904]).
+
+Also known as:: Twin Peaks, the Twin Peaks of requirements and architecture
+
+[discrete]
+== *Core Concepts*:
+
+Two Peaks, Developed Together:: Requirements engineering and architectural design are separate activities, but they run concurrently and feed each other. Neither is finished before the other starts.
+
+Equal Status:: The name reflects that both peaks are equally high: the requirements specification and the architecture carry the same weight. Requirements do not simply "flow down" into an architecture.
+
+Against Frozen Requirements:: Nuseibeh argues against a waterfall-like process that produces artificially frozen requirements documents for the next phase, and against architectures so constrained that they resist the requirement changes they meet later.
+
+A Partial Spiral:: The model is a simplified, finer-grained form of the spiral life cycle. Each turn refines the requirements and the architecture a little further, in alternation.
+
+Architecture Feeds Back Into Requirements:: Architectural decisions make requirements more concrete or force their re-evaluation. An option can make a requirement cheap, expensive or impossible, so the feedback runs in both directions.
+
+Stable Yet Adaptable:: The aim is an architecture that stays stable yet adapts as the requirements around it keep changing.
+
+[discrete]
+== *When to Use*:
+
+* Projects where requirements are still moving while the architecture has to start
+* Pushing back on "finish the spec first, then design" in a plan or in an AI agent's workflow
+* Linking quality requirements and architectural decisions, e.g. a `req42` goal or quality scenario to an `arc42` decision
+* Driving a model: "work in Twin Peaks style -- after each requirement, name the architectural consequence, and after each architectural option, name the requirement it puts at risk" asks for the alternation, not a two-phase document
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "Twin Peaks" alone -- without "model" or "Nuseibeh", the term is ambiguous with the TV series; use the qualified form
+* ❌ "Requirements first, then architecture, but iterate" -- the model asks for concurrent work, not alternating phases with hand-overs
+* ❌ "Architecture follows from the requirements" -- in Twin Peaks the architecture also changes the requirements
+* ✓ "Refine requirements and architecture together, and let each constrain the other"
+
+[discrete]
+== *Current Status*:
+
+* The 2001 article is a short column, not a full method; the follow-up literature fills in practices. Jane Cleland-Huang, Robert S. Hanmer, Sam Supakkul and Mehdi Mirakhorli, "The Twin Peaks of Requirements and Architecture" (_IEEE Software_ 30(2), 2013, https://doi.org/10.1109/MS.2013.39[doi:10.1109/MS.2013.39]), and the IEEE TwinPeaks workshop series (from 2012) carry the idea forward.
+====

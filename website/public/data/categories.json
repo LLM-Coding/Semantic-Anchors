@@ -225,6 +225,7 @@
     "anchors": [
       "cockburn-use-cases",
       "connextra-user-story",
+      "domain-storytelling",
       "double-diamond",
       "ears-requirements",
       "event-storming",
@@ -238,6 +239,7 @@
       "quality-attribute-scenario",
       "req42",
       "sipoc",
+      "twin-peaks-model",
       "user-story-mapping"
     ]
   },
@@ -258,6 +260,7 @@
       "cupid-properties",
       "defense-in-depth",
       "domain-driven-design",
+      "domain-storytelling",
       "enterprise-integration-patterns",
       "event-driven-architecture",
       "event-storming",
@@ -276,6 +279,7 @@
       "team-topologies",
       "tracer-bullet",
       "twelve-factor-app",
+      "twin-peaks-model",
       "vertical-slice-architecture",
       "walking-skeleton"
     ]

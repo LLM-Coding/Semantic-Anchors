@@ -750,7 +750,17 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### req42
 - **Proponents:** Peter Hruschka, Markus Meuten
-- **Core:** Free, open-source AsciiDoc template for pragmatic agile requirements documentation — the requirements companion to arc42, covering goals, stakeholders, scope, backlog, quality requirements, constraints, and risks
+- **Core:** Free, open-source AsciiDoc template for pragmatic agile requirements documentation — the requirements companion to arc42, covering goals, stakeholders, scope, backlog, quality requirements, constraints, and risks; goals written as PAM (Purpose, Advantage, Metric), presented top-down from vision and goals to a backlog of epics, features and user stories
+
+### Twin Peaks Model according to Nuseibeh
+- **Also known as:** Twin Peaks of requirements and architecture
+- **Proponents:** Bashar Nuseibeh (IEEE Computer, 2001)
+- **Core:** Requirements and architecture are developed concurrently and refined iteratively, with equal status, as a partial spiral; architectural decisions feed back into requirements instead of requirements being frozen before design starts
+
+### Domain Storytelling according to Hofer and Schwentner
+- **Also known as:** Domain Stories
+- **Proponents:** Stefan Hofer, Henning Schwentner (2021)
+- **Core:** Collaborative workshop technique with a pictographic language — actors and work objects as icons, activities as verb-labelled arrows with sequence numbers — telling one concrete story per diagram (no branches; alternatives become separate stories); scope factors coarse/fine, as-is/to-be, pure/digitalized; modeler Egon.io; finds subdomain and bounded-context boundaries for DDD
 
 ## Communication & Presentation
 

@@ -1,0 +1,57 @@
+= Domain Storytelling according to Hofer and Schwentner
+:categories: requirements-engineering, software-architecture
+:proponents: Stefan Hofer, Henning Schwentner
+:roles: business-analyst, software-architect, product-owner, software-developer, consultant
+:tags: Domain Storytelling, Domain Story, piktografische Sprache, Akteur, Arbeitsgegenstand, Aktivität, Sequenznummer, kollaborative Modellierung, Workshop, Egon.io, DDD, Bounded Contexts, Ist-Zustand, Soll-Zustand
+:related: event-storming, domain-driven-design, user-story-mapping
+:tier: 3
+:tested-on: sonnet-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Domain Storytelling, beschrieben von Stefan Hofer und Henning Schwentner in _Domain Storytelling: A Collaborative, Visual, and Agile Way to Build Domain-Driven Software_ (Addison-Wesley, Vaughn Vernon Signature Series, 2021; ISBN 978-0-13-745891-2). Methodenseite: https://domainstorytelling.org
+
+Auch bekannt als:: Domain Stories
+
+[discrete]
+== *Kernkonzepte*:
+
+Eine piktografische Sprache:: Eine Domain Story besteht aus drei Bausteinen: *Akteure* (eine Person, eine Gruppe oder ein Softwaresystem) als Icons, *Arbeitsgegenstände* (Dokumente, physische Dinge, digitale Objekte) als Icons und *Aktivitäten* als Pfeile, beschriftet mit Verben aus der Fachsprache. Akteure und Arbeitsgegenstände sind Substantive, Aktivitäten sind Verben.
+
+Nummerierte Sätze:: Jede Aktivität ist ein Satz -- wer (Akteur) macht was (Aktivität) womit (Arbeitsgegenstand) mit wem (weiterer Akteur). Eine Sequenznummer am Anfang des Pfeils bringt die Sätze in eine Reihenfolge, sodass sich das Bild als Geschichte vorlesen lässt.
+
+Eine konkrete Geschichte pro Diagramm:: Die Notation kennt keine Symbole für Bedingungen, Varianten oder Alternativen. Eine Domain Story ist ein konkretes, aussagekräftiges Beispiel: Man beginnt mit dem häufigsten Fall und dem Happy Path, hält kleine Varianten als Anmerkungen fest und modelliert wichtige Alternativen als eigene Geschichten.
+
+Keine verfrühte Abstraktion:: Erst typische Fälle verstehen, indem man Geschichten erzählt, dann die Regeln sammeln. Zu früh gezeichnete, verallgemeinerte Prozessmodelle sind oft falsch.
+
+Scope-Faktoren:: Jede Geschichte hat einen gewählten Scope: *grobgranular* oder *feingranular*; *Ist* oder *Soll*; *rein* (ohne Software) oder *digitalisiert* (mit Softwaresystemen als Akteuren).
+
+Ein Workshop, kein Diagramm:: Fachexperten erzählen, eine Moderatorin oder ein Moderator zeichnet Schritt für Schritt für alle sichtbar mit und fragt „Was passiert als Nächstes?“. Am Ende wird die Geschichte von vorn nacherzählt, um Zustimmung einzuholen. Das Bild dient zuerst den Erzählenden, danach als Gedächtnisstütze.
+
+Egon.io:: Quelloffener, browserbasierter Modellierer für Domain Stories, gepflegt von WPS (https://egon.io, https://github.com/WPS/egon.io).
+
+Brücke zu DDD:: Domain Stories helfen, Grenzen zwischen Subdomänen und Bounded Contexts zu finden, die Fachsprache zu sammeln, aus der eine Ubiquitous Language wird, und zu entscheiden, welche Konzepte zu welchen DDD-Bausteinen werden.
+
+[discrete]
+== *Wann zu verwenden*:
+
+* Eine Domäne von ihren Experten lernen, bevor Anforderungen oder Code entstehen
+* Eine gemeinsame Sprache zwischen Fachexperten und Entwicklern aufbauen
+* Grenzen von Subdomänen und Bounded Contexts in einem `domain-driven-design`-Vorhaben finden
+* Einen Ist-Prozess mit einem Soll-Prozess vergleichen, mit und ohne die geplante Software
+* Ein Modell steuern: „Schreib das als Domain Story: nummerierte Sätze der Form Akteur -- Aktivität -- Arbeitsgegenstand -- Akteur, ein konkreter Fall, Varianten als Anmerkungen“ verlangt die Notation, kein Flussdiagramm
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Domain Storytelling ist ein Flussdiagramm mit Icons“ -- es gibt keine Verzweigungen; jede Alternative ist eine eigene Geschichte
+* ❌ „Alles zeichnen, was passieren kann“ -- eine Geschichte beschreibt einen Fall; die Regeln kommen, wenn die typischen Fälle verstanden sind
+* ❌ „Domain Storytelling und Event Storming sind Konkurrenten“ -- die Autoren nennen `event-storming` als Technik zum Weitermachen; Event Storming beginnt mit Ereignissen auf einer Zeitachse, Domain Storytelling mit Akteuren und ihrer Arbeit
+* ✓ „Eine konkrete Geschichte, von den Experten erzählt, in nummerierten Sätzen zurückgelesen“
+
+[discrete]
+== *Aktueller Status*:
+
+* Der Thoughtworks Technology Radar nahm Domain Storytelling im Oktober 2024 in den Ring _Trial_ auf (in späteren Ausgaben nicht mehr enthalten), als Alternative oder Begleiter zu Event Storming (https://www.thoughtworks.com/radar/techniques/domain-storytelling).
+* Das Buch erscheint auf Englisch, Deutsch (dpunkt), Portugiesisch, Koreanisch sowie in vereinfachtem und traditionellem Chinesisch; die Website der Autoren nennt für die englische Ausgabe 2022, Händlerangaben September 2021 (https://domainstorytelling.org/book).
+====
