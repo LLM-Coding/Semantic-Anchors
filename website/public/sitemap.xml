@@ -2065,6 +2065,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Karpathy’s LLM Wiki -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/karpathys-llm-wiki</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/karpathys-llm-wiki</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Keep a Changelog -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/keep-a-changelog</loc>

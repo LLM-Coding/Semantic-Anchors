@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 21 semantic contracts, and
-> 236 anchors in 14 categories — the anchors both
+> 237 anchors in 14 categories — the anchors both
 > one by one and bundled into 25 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -43,7 +43,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 236 terms in full, 25 files
+## Anchor bundles — the same 237 terms in full, 25 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -57,8 +57,8 @@
 - [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 15 anchors in full.
 - [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 10 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
-- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 6 anchors in full.
-- [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 7 anchors in full.
+- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 7 anchors in full.
+- [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 8 anchors in full.
 - [Meta](https://llm-coding.github.io/Semantic-Anchors/bundles/meta.txt): 3 anchors in full.
 - [Problem Solving (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 13 anchors in full.
 - [Problem Solving (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 10 anchors in full.
@@ -74,7 +74,7 @@
 - [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 
-## Anchors — 236 named terms, grouped by category
+## Anchors — 237 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -216,6 +216,7 @@
 - [Diátaxis Framework](https://llm-coding.github.io/Semantic-Anchors/anchors/diataxis-framework.txt)
 - [Docs-as-Code according to Ralf D. Müller](https://llm-coding.github.io/Semantic-Anchors/anchors/docs-as-code.txt)
 - [4+1 View Model according to Kruchten](https://llm-coding.github.io/Semantic-Anchors/anchors/four-plus-one-view-model.txt)
+- [Karpathy's LLM Wiki](https://llm-coding.github.io/Semantic-Anchors/anchors/karpathys-llm-wiki.txt)
 - [Keep a Changelog](https://llm-coding.github.io/Semantic-Anchors/anchors/keep-a-changelog.txt)
 - [Simplified Technical English (ASD-STE100)](https://llm-coding.github.io/Semantic-Anchors/anchors/simplified-technical-english.txt)
 
@@ -226,6 +227,7 @@
 - [Genchi Genbutsu](https://llm-coding.github.io/Semantic-Anchors/anchors/genchi-genbutsu.txt)
 - [GTD — Getting Things Done](https://llm-coding.github.io/Semantic-Anchors/anchors/gtd.txt)
 - [Hemingway Bridge](https://llm-coding.github.io/Semantic-Anchors/anchors/hemingway-bridge.txt)
+- [Karpathy's LLM Wiki](https://llm-coding.github.io/Semantic-Anchors/anchors/karpathys-llm-wiki.txt)
 - [P.A.R.A. Method](https://llm-coding.github.io/Semantic-Anchors/anchors/para-method.txt)
 - [todo.txt-flavoured Markdown](https://llm-coding.github.io/Semantic-Anchors/anchors/todotxt-flavoured-markdown.txt)
 
