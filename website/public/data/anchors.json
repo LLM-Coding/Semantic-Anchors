@@ -2035,9 +2035,18 @@
     ],
     "filePath": "docs/anchors/domain-storytelling.adoc",
     "tier": 3,
+    "priorTest": "2026-10-15",
     "testedOn": [
       {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
         "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
         "works": true
       }
     ],
@@ -6557,7 +6566,22 @@
       "user stories"
     ],
     "filePath": "docs/anchors/req42.adoc",
-    "tier": 3,
+    "tier": 2,
+    "priorTest": "2026-10-15",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": false
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -8295,9 +8319,18 @@
     ],
     "filePath": "docs/anchors/twin-peaks-model.adoc",
     "tier": 2,
+    "priorTest": "2026-10-15",
     "testedOn": [
       {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
         "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
         "works": true
       }
     ],
