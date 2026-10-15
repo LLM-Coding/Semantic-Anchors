@@ -1,9 +1,9 @@
 = req42 Requirements Framework
 :categories: requirements-engineering
 :roles: business-analyst, software-architect, product-owner
-:related: arc42, ears-requirements, cockburn-use-cases, docs-as-code
+:related: arc42, ears-requirements, cockburn-use-cases, docs-as-code, twin-peaks-model
 :proponents: Peter Hruschka, Markus Meuten
-:tags: requirements, framework, agile, docs-as-code, arc42
+:tags: requirements, framework, agile, docs-as-code, arc42, PAM, purpose advantage metric, business goals, vision, epics, features, user stories
 :tier: 3
 
 [%collapsible]
@@ -41,6 +41,10 @@ Twelve "drawers":: A lightweight template of twelve sections, deliberately mirro
 
 12 Risks / Assumptions:: Open risks and the assumptions the plan rests on
 
+Goals in PAM form:: The template recommends writing each business goal as *PAM*: *Purpose* (what the product should achieve), *Advantage* (the benefit for stakeholders -- "at least as important as the P"), and *Metric* (how you know the goal is reached; the tips also say "Measure"). A goal that is not measurable is not a goal. Keep to a handful of goals, one to five. If writing all three is too much, write down at least the purpose and talk through advantage and metric with the stakeholders and the team. Sources: chapter 1 of the template, tips A-1-03, A-1-10, A-1-11 and B-05 at https://docs.req42.de.
+
+Top-down from vision to story:: req42 organises requirements strictly top-down: vision and goals in chapter 1, scope in chapter 3, and a product backlog of epics that contain features that contain user stories (tip B-04). Separate vision from goals only in large projects, where a long-range vision is refined into measurable goals per year and per release (tips A-1-06, A-1-07). Without goals, a team risks finding out too late that its individual activities were not goal-oriented (tip A-1-01).
+
 Pairs with arc42:: req42 documents the requirements (the "what" and "why"); arc42 documents the architecture (the "how"). The two share authorship, structure, and tooling, so they combine seamlessly.
 
 Docs-as-code:: Distributed as an AsciiDoc template built with the arc42 generator; version-controllable, diffable, and toolchain-friendly. Licensed CC BY-SA 4.0 (free and open source).
@@ -62,6 +66,7 @@ Key Proponents:: Dr. Peter Hruschka and Markus Meuten (https://req42.de). Hrusch
 * <<ears-requirements,EARS Requirements Syntax>>
 * <<cockburn-use-cases,Cockburn Use Cases>>
 * <<docs-as-code,Docs-as-Code>>
+* <<twin-peaks-model,Twin Peaks Model according to Nuseibeh>>
 
 [discrete]
 == *Current Status*:

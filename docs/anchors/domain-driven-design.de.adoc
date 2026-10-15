@@ -4,7 +4,7 @@
 :proponents: Eric Evans
 :tier: 3
 :tags: DDD, domain-driven design, bounded context, ubiquitous language, aggregates, Eric Evans
-:related: hexagonal-architecture, clean-architecture, event-storming, residuality-theory
+:related: hexagonal-architecture, clean-architecture, event-storming, residuality-theory, domain-storytelling
 
 [%collapsible]
 ====

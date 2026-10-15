@@ -1,7 +1,7 @@
 = Event Storming according to Alberto Brandolini
 :categories: requirements-engineering, software-architecture
 :roles: software-architect, business-analyst, product-owner, consultant, team-lead
-:related: domain-driven-design, user-story-mapping, cqrs, event-driven-architecture
+:related: domain-driven-design, user-story-mapping, cqrs, event-driven-architecture, domain-storytelling
 :proponents: Alberto Brandolini
 :tags: event-storming, ddd, domain-events, collaborative-workshop, bounded-contexts, aggregates, big-picture, design-level, process-modeling
 :tier: 3
@@ -50,4 +50,5 @@ Key Proponents:: Alberto Brandolini (first run 2012, "Introducing EventStorming"
 * <<user-story-mapping,User Story Mapping>> — activity-centric mapping vs. event-centric discovery
 * <<cqrs,CQRS>> — commands and read models found on the wall feed a later CQRS decision
 * <<event-driven-architecture,Event-Driven Architecture>> — the modeling step that precedes deciding how events are routed
+* <<domain-storytelling,Domain Storytelling>> — actor-centric stories of one concrete case vs. event-centric discovery on a timeline; often used as a companion
 ====
