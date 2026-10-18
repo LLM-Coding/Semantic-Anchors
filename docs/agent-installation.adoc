@@ -82,24 +82,30 @@ Windsurf supports `AGENTS.md` alongside Windsurf Rules.
 * Use Windsurf Rules only when you need editor-specific or scoped behavior.
 
 === link:https://opencode.ai[OpenCode]
-OpenCode supports `AGENTS.md` for project-level instructions and a plugin system for runtime enforcement.
+OpenCode supports `AGENTS.md` for project-level instructions and per-agent configuration in `opencode.json`.
 
 * *Static Context*: Use `AGENTS.md` as the shared baseline — OpenCode reads it automatically.
-* *Runtime Enforcement*: Install the link:https://github.com/JensGrote/opencode-semantic-anchors[opencode-semantic-anchors] plugin to enforce anchors as runtime contracts via plugin hooks (BLOCK/WARN modes, step confirmation, source verification):
+* *Enforcement*: Use the agent configuration. `steps` sets a hard step limit — when it is reached, OpenCode disables tools until the next user input. `permission` blocks or asks before tool calls. Put the anchors and rules such as step confirmation into the agent `prompt`:
 +
-[source,bash]
-----
-npm install opencode-semantic-anchors
-----
-+
-Then add to `opencode.jsonc`:
-+
-[source,jsonc]
+[source,json]
 ----
 {
-  "plugin": "opencode-semantic-anchors",
-  "config": "opencode-semantic-anchors.yaml"
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "agent": {
+    "anchored": {
+      "description": "Step-by-step agent with Semantic Anchors",
+      "prompt": "After each completed logical step, show the result and ask 'Continue?'. Back every factual claim with a quoted source (Source Anchor).",
+      "steps": 8,
+      "permission": {
+        "edit": "ask",
+        "bash": { "*": "ask", "git status*": "allow", "git push *": "ask" }
+      }
+    }
+  }
 }
 ----
 +
-This enforces anchors at runtime without consuming LLM context tokens. See the link:https://github.com/JensGrote/opencode-semantic-anchors[plugin documentation] for configuration details.
+See the link:https://opencode.ai/docs/agents/[OpenCode agents documentation] for `steps` and `permission`.
++
+NOTE: The former link:https://github.com/JensGrote/opencode-semantic-anchors[opencode-semantic-anchors] plugin is deprecated (2026-10-18). OpenCode V2 covers its enforcement with the agent configuration above. Rationale: link:https://github.com/JensGrote/opencode-semantic-anchors/blob/main/docs/en/09-ADRs/ADR-014-discontinue-in-favour-of-v2-agent-config.md[ADR-014].

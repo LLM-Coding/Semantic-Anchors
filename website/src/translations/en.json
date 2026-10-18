@@ -102,7 +102,7 @@
   "footer.adaptedIn": "Adapted in",
   "footer.appearancesLabel": "Coverage, appearances and references",
   "footer.ccugAlt": "Claude Code Ultimate Guide by Florian Bruniaux — adapts this catalog for Claude Code workflows (English, CC-BY-SA-4.0)",
-  "footer.ocsaAlt": "opencode-semantic-anchors by Jens Grote — an opencode plugin and npm package that enforces anchors and contracts (English)",
+  "footer.ocsaAlt": "opencode-semantic-anchors by Jens Grote — an opencode plugin that enforced anchors and contracts; deprecated in 2026 in favour of OpenCode agent configuration (English)",
   "footer.speqAlt": "speq-skill by marconae — carries a Semantic Anchors documentation page linking this catalog (English)",
   "footer.novaAlt": "wandelbots-nova by Wandelbots — ADR convention informed by MADR and this catalog (English)",
   "categories.communication-presentation": "Communication & Presentation",
