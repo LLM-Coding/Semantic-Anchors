@@ -27,7 +27,7 @@ import {
 } from './components/onboarding-modal.js'
 import { renderContractsPage, initContractsPage } from './components/contracts-page.js'
 
-const APP_VERSION = '0.8.4'
+const APP_VERSION = '0.8.5'
 
 window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${import.meta.env.BASE_URL}anchor/${anchorId}`
@@ -640,6 +640,10 @@ function handleLanguageChange() {
     loadDocContent('docs/brownfield-experiment-report.adoc')
   } else if (currentRoute === '/brownfield-fair-comparison') {
     loadDocContent('docs/brownfield-fair-comparison.adoc')
+  } else if (currentRoute === '/socratic-recovery-skill') {
+    loadDocContent('docs/socratic-recovery-skill.adoc')
+  } else if (currentRoute === '/arc42-documentation-skill') {
+    loadDocContent('docs/arc42-documentation-skill.adoc')
   } else if (currentRoute === '/anchor-prior-test') {
     loadDocContent('docs/anchor-prior-test.adoc')
   } else if (currentRoute === '/prior-tests') {
