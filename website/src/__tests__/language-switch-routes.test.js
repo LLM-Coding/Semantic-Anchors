@@ -19,17 +19,23 @@ function functionBody(name) {
 // such as CONTRIBUTING.adoc (render-docs writes both to the same place).
 function hasGermanVersion(docPath) {
   const de = docPath.replace(/\.adoc$/, '.de.adoc')
-  return existsSync(path.join(root, de)) || existsSync(path.join(root, 'docs', path.basename(de)))
+  if (existsSync(path.join(root, de))) return true
+  return path.dirname(de) === '.' && existsSync(path.join(root, 'docs', de))
 }
 
-// Routes registered with addRoute whose handler loads a doc with a German version.
-function bilingualDocRoutes() {
+// Routes registered with addRoute whose handler calls loadDocContent.
+function docRoutes() {
   return [...mainSource.matchAll(/addRoute\(['"`]([^'"`]+)['"`],\s*(\w+)\)/g)]
-    .map(([, route, handler]) => ({
+    .map(([, route, handler]) => ({ route, body: functionBody(handler) }))
+    .filter(({ body }) => body.includes('loadDocContent('))
+    .map(({ route, body }) => ({
       route,
-      doc: functionBody(handler).match(/loadDocContent\(['"`]([^'"`]+)['"`]\)/)?.[1],
+      doc: body.match(/loadDocContent\(['"`]([^'"`]+)['"`]\)/)?.[1],
     }))
-    .filter(({ doc }) => doc && hasGermanVersion(doc))
+}
+
+function bilingualDocRoutes() {
+  return docRoutes().filter(({ doc }) => doc && hasGermanVersion(doc))
 }
 
 // Doc reloads triggered by the language toggle, keyed by route.
@@ -51,6 +57,12 @@ describe('language switch reloads every bilingual doc page', () => {
    */
   it('finds the bilingual doc routes', () => {
     expect(bilingualDocRoutes().length).toBeGreaterThan(5)
+  })
+
+  // A handler refactored to a computed doc path would otherwise drop out of
+  // the check below without failing.
+  it.each(docRoutes())('$route loads a literal doc path', ({ doc }) => {
+    expect(doc).toMatch(/\.adoc$/)
   })
 
   it.each(bilingualDocRoutes())('$route reloads $doc on language change', ({ route, doc }) => {

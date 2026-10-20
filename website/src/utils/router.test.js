@@ -19,6 +19,11 @@ describe('router', () => {
     expect(getCurrentRoute()).toBe('/about')
   })
 
+  it('strips the trailing slash of legacy hash URLs', () => {
+    window.location.hash = '#/about/'
+    expect(getCurrentRoute()).toBe('/about')
+  })
+
   it('keeps the bare root route as /', () => {
     history.replaceState(null, '', '/')
     expect(getCurrentRoute()).toBe('/')
