@@ -15,9 +15,9 @@
 
 == 🚀 Explore the Catalog
 
-Browse the full catalog of 180+ semantic anchors with interactive visualization, search, and role-based filtering:
+Browse the full catalog of 230+ semantic anchors with interactive visualization, search, and role-based filtering:
 
-🌐 *https://raifdmueller.github.io/Semantic-Anchors/[Visit Semantic Anchors Website]*
+🌐 *https://llm-coding.github.io/Semantic-Anchors/[Visit Semantic Anchors Website]*
 
 == What are Semantic Anchors?
 
@@ -46,7 +46,7 @@ A good semantic anchor is:
 * *Consistent*: Different users get similar conceptual activation
 * *Attributable*: Can be traced to key proponents or publications
 
-Learn more in our link:https://raifdmueller.github.io/Semantic-Anchors/#/about[About page].
+Learn more in our link:https://llm-coding.github.io/Semantic-Anchors/about/[About page].
 
 == Contributing
 
@@ -58,7 +58,7 @@ We welcome proposals for new semantic anchors! Our automated workflow with GitHu
 4. If accepted, Copilot enriches and creates the anchor
 5. Maintainers review and merge the PR
 
-See the full link:CONTRIBUTING.adoc[Contributing Guide] or read it on the link:https://raifdmueller.github.io/Semantic-Anchors/#/contributing[website].
+See the full link:CONTRIBUTING.adoc[Contributing Guide] or read it on the link:https://llm-coding.github.io/Semantic-Anchors/contributing/[website].
 
 == Categories
 
@@ -107,7 +107,7 @@ Filter anchors by role (see link:docs/roles/[`docs/roles/`] for detailed descrip
 ----
 Semantic-Anchors/
 ├── docs/
-│   ├── anchors/          # Individual anchor files (180+)
+│   ├── anchors/          # Individual anchor files (230+)
 │   ├── about.adoc        # About page content
 │   ├── PRD.md            # Product Requirements
 │   ├── specs/            # Specifications & ADRs
@@ -159,7 +159,7 @@ npm run build
 
 The website is automatically deployed to GitHub Pages on push to `main`:
 
-* *Production*: https://raifdmueller.github.io/Semantic-Anchors/
+* *Production*: https://llm-coding.github.io/Semantic-Anchors/
 * *Workflow*: `.github/workflows/deploy.yml`
 
 == Technology Stack
@@ -188,8 +188,8 @@ All major decisions documented with Pugh matrices:
 
 == Documentation
 
-* link:https://raifdmueller.github.io/Semantic-Anchors/#/about[About Semantic Anchors]
-* link:https://raifdmueller.github.io/Semantic-Anchors/#/contributing[Contributing Guide]
+* link:https://llm-coding.github.io/Semantic-Anchors/about/[About Semantic Anchors]
+* link:https://llm-coding.github.io/Semantic-Anchors/contributing/[Contributing Guide]
 * link:docs/PRD.md[Product Requirements Document]
 * link:docs/arc42/arc42.adoc[Architecture Documentation (arc42)]
 * link:PROJECT_STATUS.md[Project Status & Roadmap]
@@ -204,10 +204,10 @@ This project is maintained by the link:https://github.com/LLM-Coding[LLM Coding]
 
 == Questions or Feedback?
 
-* Browse the link:https://raifdmueller.github.io/Semantic-Anchors/[website]
+* Browse the link:https://llm-coding.github.io/Semantic-Anchors/[website]
 * Read the link:CONTRIBUTING.adoc[Contributing Guide]
 * Open an link:https://github.com/LLM-Coding/Semantic-Anchors/issues[issue]
 
 ---
 
-*Start exploring:* https://raifdmueller.github.io/Semantic-Anchors/
+*Start exploring:* https://llm-coding.github.io/Semantic-Anchors/

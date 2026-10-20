@@ -81,7 +81,7 @@ The anchor can be *traced to key proponents, publications, or documented standar
 - ✓ "Hexagonal Architecture" (Alistair Cockburn, 2005)
 - ✗ "Best practices" - no specific source or authority
 
-> **Tip:** Not sure if your proposal qualifies? Check our [Rejected Proposals](https://raifdmueller.github.io/Semantic-Anchors/#/rejected-proposals) page to see previously evaluated terms that didn't meet the criteria — and why.
+> **Tip:** Not sure if your proposal qualifies? Check our [Rejected Proposals](https://llm-coding.github.io/Semantic-Anchors/rejected-proposals/) page to see previously evaluated terms that didn't meet the criteria — and why.
 
 ## Testing Your Semantic Anchor
 
@@ -158,7 +158,7 @@ We use an **automated workflow with GitHub Copilot** to validate and enrich prop
 
 ### Step 1: Create an Issue
 
-Click the [Propose New Anchor](https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml) button on the [website](https://raifdmueller.github.io/Semantic-Anchors/) or create an issue using our proposal template.
+Click the [Propose New Anchor](https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml) button on the [website](https://llm-coding.github.io/Semantic-Anchors/) or create an issue using our proposal template.
 
 **All you need to provide:**
 
@@ -397,7 +397,7 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 
 ## Questions?
 
-- Browse existing anchors on the [website](https://raifdmueller.github.io/Semantic-Anchors/)
+- Browse existing anchors on the [website](https://llm-coding.github.io/Semantic-Anchors/)
 - Check the [README](README.adoc) for project overview
 - Open a [GitHub issue](https://github.com/LLM-Coding/Semantic-Anchors/issues) for questions
 
