@@ -6,6 +6,8 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *Proposing an anchor now asks only for the term.* The link:https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[proposal form] asks only for the term, plus an optional sentence or link on where you use it. The required LLM activation test and the checklist are gone: we run the link:#/anchor-prior-test[Anchor Prior Test] on every proposal ourselves and report the result in the issue. The contributing guide (EN + DE) now describes these tests as our review, not as homework for the proposer.
 
+*Requirements discovery now ends on a stop condition you can check.* The link:#/contracts[Requirements Discovery] contract (EN + DE) and the Socratic prompt in Step 2 of link:#/spec-driven-development[Spec-Driven Development] keep a list of open questions, update it after each answer and stop when the list is empty and the user confirms. Before, they said "keep asking until you fully understand the requirements", which only the model could judge.
+
 == 2026-10-15
 
 *New contract -- LLM-Wiki Documentation:*
