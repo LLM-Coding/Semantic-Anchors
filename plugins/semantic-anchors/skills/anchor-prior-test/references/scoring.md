@@ -23,7 +23,7 @@ Add a fifth, decisive judgement:
 
 ## Route the term
 
-- **Strong prior + matches intended use → anchor.** Emit the `propose-anchor.yml` activation-test section, pre-filled with the matrix and verbatim quotes.
+- **Strong prior + matches intended use → anchor.** Emit a verdict comment for the proposal issue, with the matrix and verbatim quotes.
 - **Weak prior but the team uses the vocabulary → contract.** A contract supplies meaning in text and does not depend on the prior. Note this in the verdict.
 - **Weak prior and not used → reject.** Emit a `rejected-proposals.adoc` entry naming the failed criterion and the substitution observed.
 

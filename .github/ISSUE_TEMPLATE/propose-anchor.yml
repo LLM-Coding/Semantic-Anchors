@@ -23,7 +23,7 @@ body:
     id: context
     attributes:
       label: Context (Optional)
-      description: One or two sentences on where you use it or what for, or a link
+      description: A sentence or two on where or how you use it, or a link to a source
       placeholder: e.g., "I use it to ask for code reviews" or a link to a source
     validations:
       required: false

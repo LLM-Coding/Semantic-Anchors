@@ -205,7 +205,7 @@ Think of semantic anchors as *nouns* (methodologies, frameworks, principles) rat
 
 === Testing a Potential Anchor
 
-Before proposing a new semantic anchor, ask an LLM:
+To see whether a term could work as an anchor, ask an LLM:
 
 [source]
 ----

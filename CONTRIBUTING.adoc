@@ -93,7 +93,7 @@ Then we evaluate the response:
 
 == Viability Test (Does the anchor deliver?)
 
-We run this test as part of our review, too. Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice] article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
+We also run a viability test in our review. Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice] article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
 
 . *Before/After test.* Give a model a task *without* the anchor term, then the same task *with* it. Does the output structure change? If not, the term is decorative, not functional.
 . *Substitution check.* Ask "What is [term]?" on a weaker model (Haiku-class). If it hedges, silently substitutes, or confabulates, the prior is too thin for an anchor — it belongs in a *Contract* (which supplies its own meaning), per the thin-prior rule in _Artifact Types_ above.
@@ -148,7 +148,7 @@ NOTE: Local build artifacts (e.g. `website/dist/`, generated files in `website/p
 
 == How to Propose a New Anchor
 
-We use an *automated workflow with GitHub Copilot* to validate and enrich proposals:
+We test proposals ourselves and use an *automated workflow with GitHub Copilot* to enrich accepted ones:
 
 === Step 1: Create an Issue
 
@@ -157,18 +157,16 @@ Click the btn:[Propose New Anchor] button on the https://llm-coding.github.io/Se
 *All you need to provide:*
 
 * The term or phrase
-* (Optional) One or two sentences on where you use it or what for, or a link
+* (Optional) A sentence or two on where or how you use it, or a link to a source
 
 We run the tests ourselves and report back in the issue.
 
-=== Step 2: Copilot Validation
+=== Step 2: Validation
 
-GitHub Copilot automatically:
-
-. Tests the anchor against the four quality criteria
-. Either accepts or rejects the proposal
-. If rejected: Explains why it doesn't meet criteria
-. If accepted: Enriches the issue with detailed information
+. We run the link:#/anchor-prior-test[Anchor Prior Test] on the term and check it against the four quality criteria
+. We accept or reject the proposal
+. If rejected: we explain in the issue why the term doesn't meet the criteria
+. If accepted: GitHub Copilot enriches the issue with detailed information
 
 === Step 3: Copilot Creates the Anchor
 

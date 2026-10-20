@@ -186,7 +186,7 @@ Think of semantic anchors as **nouns** (methodologies, frameworks, principles) r
 
 ### Testing a Potential Anchor
 
-Before proposing a new semantic anchor, ask an LLM:
+To see whether a term could work as an anchor, ask an LLM:
 
 ```
 What concepts do you associate with '<your term>'?
