@@ -640,6 +640,10 @@ function handleLanguageChange() {
     loadDocContent('docs/brownfield-experiment-report.adoc')
   } else if (currentRoute === '/brownfield-fair-comparison') {
     loadDocContent('docs/brownfield-fair-comparison.adoc')
+  } else if (currentRoute === '/anchor-prior-test') {
+    loadDocContent('docs/anchor-prior-test.adoc')
+  } else if (currentRoute === '/prior-tests') {
+    loadDocContent('docs/prior-tests.adoc')
   } else if (currentRoute === '/harness-inventory') {
     loadDocContent('docs/harness-inventory.adoc')
   } else if (currentRoute === '/training-data-vs-practice') {
