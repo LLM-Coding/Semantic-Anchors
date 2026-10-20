@@ -14,6 +14,21 @@ describe('router', () => {
     expect(getCurrentRoute()).toBe('/about')
   })
 
+  it('strips the trailing slash of pre-rendered directory URLs', () => {
+    history.replaceState(null, '', '/about/')
+    expect(getCurrentRoute()).toBe('/about')
+  })
+
+  it('strips the trailing slash of legacy hash URLs', () => {
+    window.location.hash = '#/about/'
+    expect(getCurrentRoute()).toBe('/about')
+  })
+
+  it('keeps the bare root route as /', () => {
+    history.replaceState(null, '', '/')
+    expect(getCurrentRoute()).toBe('/')
+  })
+
   it('supports legacy hash URLs for backward compatibility', () => {
     window.location.hash = '#/about'
     expect(getCurrentRoute()).toBe('/about')
@@ -62,6 +77,11 @@ describe('router language prefix (/de)', () => {
 
   it('strips the /de prefix from the current route', () => {
     history.replaceState(null, '', '/de/about')
+    expect(getCurrentRoute()).toBe('/about')
+  })
+
+  it('strips the /de prefix and the trailing slash together', () => {
+    history.replaceState(null, '', '/de/about/')
     expect(getCurrentRoute()).toBe('/about')
   })
 

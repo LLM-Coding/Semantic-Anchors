@@ -113,10 +113,12 @@ export function navigate(path, { replace = false } = {}) {
  */
 export function getCurrentRoute() {
   // Support legacy hash URLs for backward compatibility
-  if (window.location.hash.startsWith('#/')) {
-    return window.location.hash.slice(1)
-  }
-  return splitLangPrefix(stripBase(window.location.pathname)).path
+  const path = window.location.hash.startsWith('#/')
+    ? window.location.hash.slice(1)
+    : splitLangPrefix(stripBase(window.location.pathname)).path
+  // Normalize trailing slash: the pre-rendered pages are served as directory
+  // indexes (/about/), but route keys and route comparisons use /about.
+  return path.length > 1 && path.endsWith('/') ? path.slice(0, -1) : path
 }
 
 /**
@@ -225,14 +227,7 @@ function handleRoute() {
   const { lang } = splitLangPrefix(stripBase(window.location.pathname))
   if (lang) i18n.setLang(lang)
 
-  let path = getCurrentRoute()
-
-  // Normalize trailing slash: GitHub Pages 301-redirects routes like
-  // /spec-driven-development to /spec-driven-development/ when served as a
-  // directory index. Without this, the trailing slash misses the route key.
-  if (path.length > 1 && path.endsWith('/')) {
-    path = path.slice(0, -1)
-  }
+  const path = getCurrentRoute()
 
   // Check for anchor route (/anchor/:id)
   if (path.startsWith('/anchor/')) {
