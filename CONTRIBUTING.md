@@ -7,7 +7,7 @@ Thank you for your interest in contributing to the Semantic Anchors catalog! Thi
 - [What are Semantic Anchors?](#what-are-semantic-anchors)
 - [Artifact Types: Anchor, Contract, Skill](#artifact-types-anchor-contract-skill)
 - [Quality Criteria](#quality-criteria)
-- [Testing Your Semantic Anchor](#testing-your-semantic-anchor)
+- [How We Test a Proposal](#how-we-test-a-proposal)
 - [Viability Test (Does the anchor deliver?)](#viability-test-does-the-anchor-deliver)
 - [Developer Setup](#developer-setup)
 - [How to Propose a New Anchor](#how-to-propose-a-new-anchor)
@@ -51,7 +51,7 @@ The catalog ships three artifact types. Knowing which one you are proposing deci
 
 ## Quality Criteria
 
-Before proposing a new semantic anchor, ensure it meets these four criteria:
+We check every proposal against these four criteria. You don't have to check them yourself before you propose a term:
 
 ### ✅ Precise
 
@@ -83,17 +83,17 @@ The anchor can be *traced to key proponents, publications, or documented standar
 
 > **Tip:** Not sure if your proposal qualifies? Check our [Rejected Proposals](https://llm-coding.github.io/Semantic-Anchors/rejected-proposals/) page to see previously evaluated terms that didn't meet the criteria — and why.
 
-## Testing Your Semantic Anchor
+## How We Test a Proposal
 
-Before proposing, test the anchor with this prompt in an LLM:
+We test every proposal ourselves with the [Anchor Prior Test](https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test/) and post the result in the proposal issue. You don't need to run any test before you submit.
+
+The first step is an activation test. We ask a model:
 
 ```text
-What concepts do you associate with '<your semantic anchor name>'?
+What concepts do you associate with '<proposed term>'?
 ```
 
-> **Note:** The proposal template includes a required **LLM Activation Test Result** field. Paste your test output there — it front-loads the Precise/Rich/Consistent signal for reviewers.
-
-Evaluate the response:
+Then we evaluate the response:
 
 - **Recognition**: Does the LLM recognize the term?
 - **Accuracy**: Is the explanation correct?
@@ -102,7 +102,7 @@ Evaluate the response:
 
 ## Viability Test (Does the anchor deliver?)
 
-Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The [training-data-vs-practice](https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice) article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
+We also run a viability test in our review. Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The [training-data-vs-practice](https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice) article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
 
 1. **Before/After test.** Give a model a task *without* the anchor term, then the same task *with* it. Does the output structure change? If not, the term is decorative, not functional.
 2. **Substitution check.** Ask "What is [term]?" on a weaker model (Haiku-class). If it hedges, silently substitutes, or confabulates, the prior is too thin for an anchor — it belongs in a **Contract** (which supplies its own meaning), per the thin-prior rule in _Artifact Types_ above.
@@ -154,7 +154,7 @@ pre-commit run asciidoc-linter --all-files
 
 ## How to Propose a New Anchor
 
-We use an **automated workflow with GitHub Copilot** to validate and enrich proposals:
+We test proposals ourselves and use an **automated workflow with GitHub Copilot** to enrich accepted ones:
 
 ### Step 1: Create an Issue
 
@@ -162,18 +162,17 @@ Click the [Propose New Anchor](https://github.com/LLM-Coding/Semantic-Anchors/is
 
 **All you need to provide:**
 
-- The term or concept name
-- An LLM activation test result (required)
-- (Optional) Why you think it would be valuable
+- The term or phrase
+- (Optional) A sentence or two on where or how you use it, or a link to a source
 
-### Step 2: Copilot Validation
+We run the tests ourselves and report back in the issue.
 
-GitHub Copilot automatically:
+### Step 2: Validation
 
-1. Tests the anchor against the four quality criteria
-2. Either accepts or rejects the proposal
-3. If rejected: Explains why it doesn't meet criteria
-4. If accepted: Enriches the issue with detailed information
+1. We run the [Anchor Prior Test](https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test/) on the term and check it against the four quality criteria
+2. We accept or reject the proposal
+3. If rejected: we explain in the issue why the term doesn't meet the criteria
+4. If accepted: GitHub Copilot enriches the issue with detailed information
 
 ### Step 3: Copilot Creates the Anchor
 
@@ -333,7 +332,7 @@ For **new semantic anchors**:
 1. Quality criteria met (Precise, Rich, Consistent, Attributable)
 2. All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`, `:tier:`)
 3. AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
-4. Anchor tested with LLM prompt (see [Testing Your Semantic Anchor](#testing-your-semantic-anchor))
+4. Anchor tested with LLM prompt (see [How We Test a Proposal](#how-we-test-a-proposal))
 5. Documented criticism / edition drift researched — and captured in a _Criticism_ or _Current Status_ section with named, fetch-verified sources where found
 
 For **code changes**:

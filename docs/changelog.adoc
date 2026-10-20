@@ -2,6 +2,10 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-20
+
+*Proposing an anchor now asks only for the term.* The link:https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[proposal form] asks only for the term, plus an optional sentence or link on where you use it. The required LLM activation test and the checklist are gone: we run the link:#/anchor-prior-test[Anchor Prior Test] on every proposal ourselves and report the result in the issue. The contributing guide (EN + DE) now describes these tests as our review, not as homework for the proposer.
+
 == 2026-10-15
 
 *New contract -- LLM-Wiki Documentation:*

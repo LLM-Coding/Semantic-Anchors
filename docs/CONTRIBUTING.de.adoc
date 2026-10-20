@@ -37,7 +37,7 @@ Der Katalog kennt drei Artefakttypen. Welchen Sie vorschlagen, entscheidet, wohi
 
 == Qualitätskriterien
 
-Bevor Sie einen neuen semantischen Anker vorschlagen, stellen Sie sicher, dass er diese vier Kriterien erfüllt:
+Wir prüfen jeden Vorschlag anhand dieser vier Kriterien. Sie müssen sie vor dem Vorschlag nicht selbst prüfen:
 
 [%collapsible]
 ====
@@ -70,18 +70,19 @@ Der Anker kann *zu Schlüsselvertretern, Publikationen oder dokumentierten Stand
 *Schlecht:* "Best Practices" - keine spezifische Quelle oder Autorität
 ====
 
-== Testen Ihres semantischen Ankers
+[[testing-anchor]]
+== So testen wir einen Vorschlag
 
-Bevor Sie einen Vorschlag machen, testen Sie den Anker mit diesem Prompt in einem LLM:
+Wir testen jeden Vorschlag selbst mit dem link:#/anchor-prior-test[Anchor Prior Test] und schreiben das Ergebnis in das Issue. Sie müssen vorher keinen Test durchführen.
+
+Der erste Schritt ist ein Aktivierungstest. Wir fragen ein Modell:
 
 [source]
 ----
-Welche Konzepte verbindest du mit '<Name Ihres semantischen Ankers>'?
+Welche Konzepte verbindest du mit '<vorgeschlagener Begriff>'?
 ----
 
-NOTE: Die Vorlagsvorlage enthält ein Pflichtfeld *LLM Activation Test Result*. Fügen Sie dort Ihre Testausgabe ein — es liefert Reviewern vorab das Precise/Rich/Consistent-Signal.
-
-Bewerten Sie die Antwort:
+Dann bewerten wir die Antwort:
 
 * *Erkennung:* Erkennt das LLM den Begriff?
 * *Genauigkeit:* Ist die Erklärung korrekt?
@@ -90,7 +91,7 @@ Bewerten Sie die Antwort:
 
 == Viability-Test (Liefert der Anker?)
 
-Erkennung ist nicht Aktivierung. Ein Modell kann flüssig *über* einen Begriff reden, während sein Benennen an der Ausgabe nichts ändert — oder schlimmer: still ein älteres Konzept substituiert oder ein plausibel klingendes, aber erfundenes konfabuliert. Der link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice]-Artikel dokumentiert diese Failure-Modes über Modellfamilien hinweg. Der Aktivierungstest oben fängt die Erkennung; der Viability-Test unten fängt die Lieferung.
+Auch einen Viability-Test führen wir im Review selbst durch. Erkennung ist nicht Aktivierung. Ein Modell kann flüssig *über* einen Begriff reden, während sein Benennen an der Ausgabe nichts ändert — oder schlimmer: still ein älteres Konzept substituiert oder ein plausibel klingendes, aber erfundenes konfabuliert. Der link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice]-Artikel dokumentiert diese Failure-Modes über Modellfamilien hinweg. Der Aktivierungstest oben fängt die Erkennung; der Viability-Test unten fängt die Lieferung.
 
 . *Before/After-Test.* Dem Modell eine Aufgabe *ohne* den Anker-Term geben, dann dieselbe Aufgabe *mit* ihm. Ändert sich die Ausgabestruktur? Wenn nicht, ist der Term dekorativ, nicht funktional.
 . *Substitutions-Check.* "Was ist [Term]?" auf einem schwächeren Modell (Haiku-Klasse) fragen. Hedgt es, substituiert still oder konfabuliert es, ist der Prior zu dünn für einen Anchor — er gehört in einen *Contract* (der seine eigene Bedeutung mitliefert), gemäß der Thin-Prior-Regel unter _Artefakttypen_.
@@ -102,26 +103,25 @@ Ein Term, der die vier Qualitätskriterien besteht, aber den Viability-Test nich
 
 == Wie man einen neuen Anker vorschlägt
 
-Wir verwenden einen *automatisierten Workflow mit GitHub Copilot* zur Validierung und Anreicherung von Vorschlägen:
+Wir testen Vorschläge selbst und nutzen einen *automatisierten Workflow mit GitHub Copilot*, um angenommene Vorschläge anzureichern:
 
 === Schritt 1: Issue erstellen
 
-Klicken Sie auf die btn:[Neuen Anker vorschlagen] Schaltfläche auf der https://llm-coding.github.io/Semantic-Anchors/[Website] oder erstellen Sie ein Issue mit unserer https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[Vorlagsvorlage].
+Klicken Sie auf die btn:[Neuen Anker vorschlagen] Schaltfläche auf der https://llm-coding.github.io/Semantic-Anchors/[Website] oder erstellen Sie ein Issue mit unserer https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[Vorlage für Vorschläge].
 
 *Alles, was Sie angeben müssen:*
 
-* Der Begriff oder Konzeptname
-* Ein LLM-Aktivierungstestergebnis (Pflichtfeld)
-* (Optional) Warum Sie denken, dass es wertvoll wäre
+* Den Begriff oder die Phrase
+* (Optional) Ein, zwei Sätze, wo oder wie Sie ihn nutzen, oder einen Link zu einer Quelle
 
-=== Schritt 2: Copilot-Validierung
+Die Tests führen wir selbst durch und melden uns im Issue.
 
-GitHub Copilot führt automatisch folgendes aus:
+=== Schritt 2: Prüfung
 
-. Testet den Anker gegen die vier Qualitätskriterien
-. Akzeptiert oder lehnt den Vorschlag ab
-. Bei Ablehnung: Erklärt, warum die Kriterien nicht erfüllt werden
-. Bei Akzeptierung: Reichert das Issue mit detaillierten Informationen an
+. Wir führen den link:#/anchor-prior-test[Anchor Prior Test] für den Begriff durch und prüfen ihn anhand der vier Qualitätskriterien
+. Wir nehmen den Vorschlag an oder lehnen ihn ab
+. Bei Ablehnung: Wir erklären im Issue, welche Kriterien der Begriff nicht erfüllt
+. Bei Annahme: GitHub Copilot reichert das Issue mit detaillierten Informationen an
 
 === Schritt 3: Copilot erstellt den Anker
 
@@ -334,7 +334,7 @@ Für *neue semantische Anker*:
 . Qualitätskriterien erfüllt (Präzise, Reichhaltig, Konsistent, Zuordenbar)
 . Alle erforderlichen Metadaten-Attribute vorhanden (`:categories:`, `:roles:`, `:proponents:`, `:tier:`)
 . AsciiDoc-Format korrekt (`[%collapsible]`-Block, korrekte Attribut-Syntax)
-. Anker mit LLM-Prompt getestet (siehe <<Testen Ihres semantischen Ankers>>)
+. Anker mit LLM-Prompt getestet (siehe <<testing-anchor,So testen wir einen Vorschlag>>)
 . Dokumentierte Kritik / Editions-Drift recherchiert — und in einem _Criticism_- oder _Current Status_-Abschnitt mit benannten, fetch-verifizierten Quellen festgehalten, sofern vorhanden
 
 Für *Code-Änderungen*:

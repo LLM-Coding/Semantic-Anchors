@@ -50,11 +50,11 @@ Learn more in our link:https://llm-coding.github.io/Semantic-Anchors/about/[Abou
 
 == Contributing
 
-We welcome proposals for new semantic anchors! Our automated workflow with GitHub Copilot makes contributing easy:
+We welcome proposals for new semantic anchors! You only name the term. We test it ourselves, and GitHub Copilot helps with the rest:
 
 1. Click link:https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[Propose New Anchor]
 2. Provide the term and optional context
-3. Copilot validates against quality criteria
+3. We run the link:https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test/[Anchor Prior Test] against the quality criteria
 4. If accepted, Copilot enriches and creates the anchor
 5. Maintainers review and merge the PR
 

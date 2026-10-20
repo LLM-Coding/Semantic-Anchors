@@ -3,7 +3,7 @@ name: anchor-prior-test
 description: Empirically test whether a candidate term qualifies as a semantic anchor by probing how densely it sits in LLM training data — across several model tiers in a clean room — before proposing it. Use when triaging an anchor proposal, deciding anchor vs contract, or vetting a rename. Produces a verdict against the four criteria (Precise, Rich, Consistent, Attributable), a tier rating, and a ready-to-paste proposal or rejection.
 metadata:
   author: LLM-Coding
-  version: "1.0"
+  version: "1.1"
   source: https://github.com/LLM-Coding/Semantic-Anchors
 license: MIT
 ---
@@ -33,7 +33,7 @@ Two facts drive the whole method:
 2. **Open a clean room.** Run a *fresh* `claude -p` process — **never a sub-agent** (sub-agents inherit this project's `CLAUDE.md` and memory and will give circular results). See `references/clean-room.md`.
 3. **Run the probe battery.** Four probe types across at least two model tiers (weak + strong), with at least two runs of the decisive probe. See `references/probe-battery.md`.
 4. **Score.** Map results to the four criteria, prior density, and a tier (★). See `references/scoring.md`.
-5. **Emit.** A verdict plus either a ready-to-paste `propose-anchor.yml` activation-test section, or a `rejected-proposals.adoc` entry with the reason.
+5. **Emit.** A verdict plus either a ready-to-post verdict comment for the proposal issue, or a `rejected-proposals.adoc` entry with the reason.
 
 ## Critical gotchas — do not skip
 
