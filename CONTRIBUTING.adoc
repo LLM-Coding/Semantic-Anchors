@@ -151,7 +151,7 @@ We use an *automated workflow with GitHub Copilot* to validate and enrich propos
 
 === Step 1: Create an Issue
 
-Click the btn:[Propose New Anchor] button on the https://raifdmueller.github.io/Semantic-Anchors/[website] or create an issue using our https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[proposal template].
+Click the btn:[Propose New Anchor] button on the https://llm-coding.github.io/Semantic-Anchors/[website] or create an issue using our https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[proposal template].
 
 *All you need to provide:*
 
@@ -387,7 +387,7 @@ All issues should follow a consistent `[Type]: <Name>` title format. This makes 
 
 == Questions?
 
-* Browse existing anchors on the https://raifdmueller.github.io/Semantic-Anchors/[website]
+* Browse existing anchors on the https://llm-coding.github.io/Semantic-Anchors/[website]
 * Check the https://github.com/LLM-Coding/Semantic-Anchors/blob/main/README.adoc[README] for project overview
 * Open a https://github.com/LLM-Coding/Semantic-Anchors/issues[GitHub issue] for questions
 

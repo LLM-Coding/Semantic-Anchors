@@ -106,7 +106,7 @@ Wir verwenden einen *automatisierten Workflow mit GitHub Copilot* zur Validierun
 
 === Schritt 1: Issue erstellen
 
-Klicken Sie auf die btn:[Neuen Anker vorschlagen] Schaltfläche auf der https://raifdmueller.github.io/Semantic-Anchors/[Website] oder erstellen Sie ein Issue mit unserer https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[Vorlagsvorlage].
+Klicken Sie auf die btn:[Neuen Anker vorschlagen] Schaltfläche auf der https://llm-coding.github.io/Semantic-Anchors/[Website] oder erstellen Sie ein Issue mit unserer https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[Vorlagsvorlage].
 
 *Alles, was Sie angeben müssen:*
 
@@ -423,7 +423,7 @@ Fälle von missbräuchlichem, belästigendem oder anderweitig inakzeptablem Verh
 
 == Fragen?
 
-* Durchsuchen Sie existierende Anker auf der https://raifdmueller.github.io/Semantic-Anchors/[Website]
+* Durchsuchen Sie existierende Anker auf der https://llm-coding.github.io/Semantic-Anchors/[Website]
 * Prüfen Sie die https://github.com/LLM-Coding/Semantic-Anchors/blob/main/README.adoc[README] für eine Projektübersicht
 * Öffnen Sie ein https://github.com/LLM-Coding/Semantic-Anchors/issues[GitHub Issue] für Fragen
 
