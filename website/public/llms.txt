@@ -13137,7 +13137,8 @@ When we talk about a "specification" or "spec", we mean:
 Clarify requirements using the Socratic Method:
 - Ask at most 3 questions at a time, challenge assumptions
 - Use MECE to ensure questions cover all areas without overlap
-- Keep asking until you fully understand the requirements
+- Keep a list of open questions; after each answer, update it and add any new question it raises
+- Stop when the list is empty and the user confirms it
 
 Frame the scope before writing it down:
 - Impact Mapping connects deliverables to business goals and actors — so you build what moves a goal, not just what was asked.
