@@ -37,7 +37,7 @@ The catalog ships three artifact types. Knowing which one you are proposing deci
 
 == Quality Criteria
 
-Before proposing a new semantic anchor, ensure it meets these four criteria:
+We check every proposal against these four criteria. You don't have to check them yourself before you propose a term:
 
 [%collapsible]
 ====
@@ -72,18 +72,19 @@ The anchor can be *traced to key proponents, publications, or documented standar
 
 TIP: Not sure if your proposal qualifies? Check our link:#/rejected-proposals[Rejected Proposals] page to see previously evaluated terms that didn't meet the criteria — and why.
 
-== Testing Your Semantic Anchor
+[[testing-anchor]]
+== How We Test a Proposal
 
-Before proposing, test the anchor with this prompt in an LLM:
+We test every proposal ourselves with the link:#/anchor-prior-test[Anchor Prior Test] and post the result in the proposal issue. You don't need to run any test before you submit.
+
+The first step is an activation test. We ask a model:
 
 [source]
 ----
-What concepts do you associate with '<your semantic anchor name>'?
+What concepts do you associate with '<proposed term>'?
 ----
 
-NOTE: The proposal template includes a required *LLM Activation Test Result* field. Paste your test output there — it front-loads the Precise/Rich/Consistent signal for reviewers.
-
-Evaluate the response:
+Then we evaluate the response:
 
 * *Recognition:* Does the LLM recognize the term?
 * *Accuracy:* Is the explanation correct?
@@ -92,7 +93,7 @@ Evaluate the response:
 
 == Viability Test (Does the anchor deliver?)
 
-Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice] article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
+We run this test as part of our review, too. Recognition is not activation. A model can talk fluently *about* a term while naming it changes nothing in the output — or worse, silently substitutes an older concept or confabulates a plausible-but-fictitious one. The link:https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice[training-data-vs-practice] article documents these failure modes across model families. The activation test above catches recognition; the viability test below catches delivery.
 
 . *Before/After test.* Give a model a task *without* the anchor term, then the same task *with* it. Does the output structure change? If not, the term is decorative, not functional.
 . *Substitution check.* Ask "What is [term]?" on a weaker model (Haiku-class). If it hedges, silently substitutes, or confabulates, the prior is too thin for an anchor — it belongs in a *Contract* (which supplies its own meaning), per the thin-prior rule in _Artifact Types_ above.
@@ -155,9 +156,10 @@ Click the btn:[Propose New Anchor] button on the https://llm-coding.github.io/Se
 
 *All you need to provide:*
 
-* The term or concept name
-* An LLM activation test result (required)
-* (Optional) Why you think it would be valuable
+* The term or phrase
+* (Optional) One or two sentences on where you use it or what for, or a link
+
+We run the tests ourselves and report back in the issue.
 
 === Step 2: Copilot Validation
 
@@ -316,7 +318,7 @@ For *new semantic anchors*:
 . Quality criteria met (Precise, Rich, Consistent, Attributable)
 . All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`, `:tier:`)
 . AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
-. Anchor tested with LLM prompt (see <<testing-anchor,Testing Your Semantic Anchor>>)
+. Anchor tested with LLM prompt (see <<testing-anchor,How We Test a Proposal>>)
 . Documented criticism / edition drift researched — and captured in a _Criticism_ or _Current Status_ section with named, fetch-verified sources where found
 
 For *code changes*:

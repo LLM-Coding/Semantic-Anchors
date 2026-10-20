@@ -6,44 +6,15 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## How This Works
+        Thank you for proposing a new semantic anchor!
 
-        Thank you for proposing a new semantic anchor! Here's the workflow:
-
-        1. **You provide a term or concept** that you believe would make a good semantic anchor
-        2. **The review agent validates** whether it meets the quality criteria (see below)
-        3. **If accepted**: The agent enriches this issue with detailed information (proponents, categories, related concepts) and assigns a quality tier
-        4. **If rejected**: The agent explains why it doesn't meet the criteria
-        5. **After enrichment**: The agent creates the anchor file and submits a PR
-
-        ### Quality Criteria
-
-        A semantic anchor must be **precise**, **rich**, **consistent**, and **attributable**.
-
-        ### Tier Rating (★)
-
-        The review agent assigns one of three tiers based on how reliably the anchor improves LLM communication:
-
-        - **★★★ Self-standing**: Saying the anchor name alone reliably activates the correct behavior in the LLM. Clear, actionable, deterministic output. Examples: arc42, SOLID, Gherkin, MECE, Chain of Thought.
-        - **★★☆ Needs qualification**: The concept is known but requires a qualifier for reliable results. The anchor documentation must specify the recommended qualified form. Examples: "ADR according to Nygard", "3-point Pugh Matrix".
-        - **★☆☆ Descriptive only**: The term describes a concept but does not give the LLM clear instructions. These are **rejected** unless the proposer can demonstrate a concrete, actionable prompt pattern.
-
-        ### Rejection Criteria
-
-        The review agent **rejects** proposals that are:
-        - Pure philosophy without actionable instructions (e.g., "TIMTOWTDI")
-        - Recognition-only terms that fail the viability test — naming them does not change output structure. This gate is topic-neutral: personality/assessment frameworks (MBTI, DISC, Big Five, HEXACO) are judged by utility, not topic (see ADR-008)
-        - Fully covered by an existing anchor (e.g., "Rubber Duck Debugging" ≈ Socratic Method)
-        - Too vague to produce consistent LLM output (e.g., "Keep it simple")
-        - Not an established concept (invented by the proposer)
-
-        **Just provide the term below - the review agent handles the rest!**
+        **Just name the term.** We test every proposal ourselves ([Anchor Prior Test](https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test/)) and report back in this issue.
 
   - type: input
     id: term
     attributes:
       label: Proposed Term
-      description: The semantic anchor term or concept you want to propose
+      description: The term or phrase you want to propose
       placeholder: e.g., "SOLID Principles", "Behavior-Driven Development", "Domain-Driven Design"
     validations:
       required: true
@@ -52,49 +23,7 @@ body:
     id: context
     attributes:
       label: Context (Optional)
-      description: Why do you think this would be a useful semantic anchor? Any additional context?
-      placeholder: Briefly explain why this term would be valuable for LLM communication
+      description: One or two sentences on where you use it or what for, or a link
+      placeholder: e.g., "I use it to ask for code reviews" or a link to a source
     validations:
       required: false
-
-  - type: textarea
-    id: activation-test
-    attributes:
-      label: LLM Activation Test Result
-      description: |
-        Paste the LLM's response to: "What concepts do you associate with '<your term>'?"
-        This front-loads the Precise/Rich/Consistent signal for reviewers.
-      placeholder: |
-        Model: [e.g., Claude, GPT-4, Gemini]
-        Prompt: "What concepts do you associate with '<term>'?"
-        Response: ...
-    validations:
-      required: true
-
-  - type: textarea
-    id: viability-test
-    attributes:
-      label: Viability Test (Optional but encouraged)
-      description: |
-        Recognition is not activation. Does naming this anchor actually change the
-        LLM's output structure? Compare: (A) the task without the anchor term vs.
-        (B) the same task with it. See the training-data-vs-practice article for the
-        methodology.
-      placeholder: |
-        Task: "..."
-        Without anchor: [brief description of output structure]
-        With anchor: [brief description of output structure]
-        Structural difference: [what changed]
-        Weak model tested: [model name, result]
-    validations:
-      required: false
-
-  - type: checkboxes
-    id: checklist
-    attributes:
-      label: Pre-submission Checklist
-      options:
-        - label: I have searched existing anchors and this term is not already included
-          required: true
-        - label: This term refers to a well-established concept (not something I invented)
-          required: true
