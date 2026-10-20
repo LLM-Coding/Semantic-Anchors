@@ -27,7 +27,7 @@ import {
 } from './components/onboarding-modal.js'
 import { renderContractsPage, initContractsPage } from './components/contracts-page.js'
 
-const APP_VERSION = '0.8.3'
+const APP_VERSION = '0.8.4'
 
 window.copyAnchorLink = async function copyAnchorLink(anchorId) {
   const url = `${window.location.origin}${import.meta.env.BASE_URL}anchor/${anchorId}`
@@ -162,6 +162,8 @@ function initApp() {
   addRoute('/brownfield-fair-comparison', renderBrownfieldFairComparisonPage)
   addRoute('/socratic-recovery-skill', renderSocraticRecoverySkillPage)
   addRoute('/arc42-documentation-skill', renderArc42DocumentationSkillPage)
+  addRoute('/anchor-prior-test', renderAnchorPriorTestPage)
+  addRoute('/prior-tests', renderPriorTestsPage)
   addRoute('/harness-inventory', renderHarnessInventoryPage)
   addRoute('/training-data-vs-practice', renderTrainingDataPage)
   addRoute('/contracts', renderContractsPageHandler)
@@ -335,6 +337,24 @@ function renderArc42DocumentationSkillPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/arc42-documentation-skill.adoc')
+}
+
+function renderAnchorPriorTestPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/anchor-prior-test.adoc')
+}
+
+function renderPriorTestsPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/prior-tests.adoc')
 }
 
 function renderHarnessInventoryPage() {
