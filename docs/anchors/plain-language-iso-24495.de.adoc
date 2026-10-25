@@ -38,7 +38,7 @@ Wichtige Vertreter:: ISO Technical Committee 37, Working Group 11; 2019 von der 
 [discrete]
 == *Häufige Missverständnisse*:
 
-* *Sie als „einfache Wörter“ lesen.* Die Wortwahl ist eine Leitlinie unter vielen. Eine Überarbeitung, die nur Sätze kürzt und Wörter tauscht, verfehlt die Prinzipien auffindbar und nutzbar. In unserem Prior-Test lieferten die bloßen Worte „plain language“ genau das: kürzere Prosa ohne Struktur. Erst der Name der Norm brachte Überschriften, Handlungsschritte für den Leser und Platzhalter für fehlende Angaben.
+* *Sie als „einfache Wörter“ lesen.* Die Wortwahl ist eine Leitlinie unter vielen. Eine Überarbeitung, die nur Sätze kürzt und Wörter tauscht, verfehlt die Prinzipien auffindbar und nutzbar. In unserem Prior-Test lieferten die bloßen Worte „plain language“ genau das: kürzere Prosa ohne Struktur. Erst der Name der Norm brachte auf allen getesteten Modellstufen Überschriften und Handlungsschritte für den Leser.
 * *Sie mit Plain English nach Strunk & White verwechseln.* <<plain-english-strunk-white,Strunk & White>> ist ein Stilhandbuch für englische Prosa. ISO 24495 ist eine Ergebnisnorm für jede Sprache und endet mit dem Test des Dokuments an seinen Lesern.
 * *Sie mit Simplified Technical English verwechseln.* <<simplified-technical-english,ASD-STE100>> ist eine kontrollierte Sprache mit geschlossener Wortliste. ISO 24495 arbeitet mit Prinzipien und schreibt kein Vokabular vor.
 * *Einfache mit Leichter Sprache verwechseln.* Im Deutschen entspricht ISO 24495 der _Einfachen Sprache_. _Leichte Sprache_ für Menschen mit kognitiven Beeinträchtigungen ist ein anderes Konzept; DIN 8581-1 schließt sie ausdrücklich aus.

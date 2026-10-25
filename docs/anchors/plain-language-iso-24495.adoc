@@ -38,7 +38,7 @@ Key Proponents:: ISO Technical Committee 37, Working Group 11; proposed by the I
 [discrete]
 == *Common Misunderstandings*:
 
-* *Reading it as "simple words".* Word choice is one guideline among many. A rewrite that only shortens sentences and swaps words fails the findable and usable principles. In our prior test the bare words "plain language" produced exactly that: shorter prose without structure. Naming the standard produced headings, reader actions and placeholders for missing facts.
+* *Reading it as "simple words".* Word choice is one guideline among many. A rewrite that only shortens sentences and swaps words fails the findable and usable principles. In our prior test the bare words "plain language" produced exactly that: shorter prose without structure. Naming the standard produced headings and steps for the reader on every tier we tested.
 * *Confusing it with Plain English according to Strunk & White.* <<plain-english-strunk-white,Strunk & White>> is a style manual for English prose. ISO 24495 is an outcome standard for any language, and it ends with testing the document on its readers.
 * *Confusing it with Simplified Technical English.* <<simplified-technical-english,ASD-STE100>> is a controlled language with a closed word list. ISO 24495 is principle-based and prescribes no vocabulary.
 * *Confusing it with Easy Language.* In German, ISO 24495 corresponds to _Einfache Sprache_. _Leichte Sprache_, for readers with cognitive impairments, is a different concept; DIN 8581-1 explicitly excludes it.
