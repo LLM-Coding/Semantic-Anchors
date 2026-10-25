@@ -48,8 +48,8 @@
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
 
-- [Communication & Presentation (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-1.txt): 17 anchors in full.
-- [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 6 anchors in full.
+- [Communication & Presentation (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-1.txt): 16 anchors in full.
+- [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 7 anchors in full.
 - [Creative Writing](https://llm-coding.github.io/Semantic-Anchors/bundles/creative-writing.txt): 7 anchors in full.
 - [Design Principles & Patterns (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 21 anchors in full.
 - [Design Principles & Patterns (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 26 anchors in full.

@@ -12,7 +12,7 @@
 ====
 Vollständiger Name:: ISO 24495-1:2023, Plain language -- Part 1: Governing principles and guidelines
 
-Auch bekannt als:: Die ISO-Norm für Einfache Sprache; ISO 24495-1. Teil 2 behandelt Rechtskommunikation.
+Auch bekannt als:: Die ISO-Norm für Einfache Sprache; ISO 24495-1. Teil 2 und 3 behandeln Rechtskommunikation und Wissenschaftskommunikation.
 
 [discrete]
 == *Kernkonzepte*:
@@ -39,7 +39,7 @@ Wichtige Vertreter:: ISO Technical Committee 37, Working Group 11; 2019 von der 
 == *Häufige Missverständnisse*:
 
 * *Sie als „einfache Wörter“ lesen.* Die Wortwahl ist eine Leitlinie unter vielen. Eine Überarbeitung, die nur Sätze kürzt und Wörter tauscht, verfehlt die Prinzipien Auffindbarkeit und Nutzbarkeit. In unserem Prior-Test lieferten die bloßen Worte „plain language“ genau das: kürzere Prosa ohne Struktur. Erst der Name der Norm brachte auf allen getesteten Modellstufen Überschriften und Handlungsschritte für den Leser.
-* *Sie mit Plain English nach Strunk & White verwechseln.* <<plain-english-strunk-white,Strunk & White>> ist ein Stilhandbuch für englische Prosa. ISO 24495 ist eine Ergebnisnorm für jede Sprache und endet mit dem Test des Dokuments an seinen Lesern.
+* *Sie mit Plain English nach Strunk & White verwechseln.* <<plain-english-strunk-white,Strunk & White>> ist ein Stilhandbuch für englische Prosa. ISO 24495 ist eine Ergebnisnorm für die meisten geschriebenen Sprachen und verlangt die Prüfung mit Lesern durchgehend, nicht erst am Ende.
 * *Sie mit Simplified Technical English verwechseln.* <<simplified-technical-english,ASD-STE100>> ist eine kontrollierte Sprache mit geschlossener Wortliste. ISO 24495 arbeitet mit Prinzipien und schreibt kein Vokabular vor.
 * *Einfache mit Leichter Sprache verwechseln.* Im Deutschen entspricht ISO 24495 der _Einfachen Sprache_. _Leichte Sprache_ für Menschen mit kognitiven Beeinträchtigungen ist ein anderes Konzept; DIN 8581-1 schließt sie ausdrücklich aus.
 * *Einen Lesbarkeitsindex erwarten.* Die Norm setzt keinen; Nutzbarkeit wird mit Lesern geprüft.
@@ -52,5 +52,5 @@ Wichtige Vertreter:: ISO Technical Committee 37, Working Group 11; 2019 von der 
 [discrete]
 == *Aktueller Stand*:
 
-* *Eine junge Norm, die noch wächst.* Teil 1 wurde am https://www.sis.se/en/produkter/standardization/information-sciences-publishing/writing-and-transliteration/iso-24495-12023/[20. Juni 2023] verabschiedet; die https://www.iplfederation.org/timeline/[Chronik der International Plain Language Federation] verfolgt den Weg von einem Antrag 2007 über die Definition von 2014 bis zum ISO TC 37 im Jahr 2019. Teil 2, Rechtskommunikation, folgte: IIID meldete im August 2025 seine Veröffentlichung und dass https://www.iiid.net/iso-plain-language-standard-part-2-published/[ein weiterer Teil zur Dokumentgestaltung] in Arbeit ist. Der Prior für den bloßen Begriff „plain language“ zeigt auf die ältere Bewegung und ihre Stilratgeber; erst der ISO-Name erreicht die vier Prinzipien.
+* *Eine junge Norm, die noch wächst.* Teil 1 wurde am https://www.sis.se/en/produkter/standardization/information-sciences-publishing/writing-and-transliteration/iso-24495-12023/[20. Juni 2023] verabschiedet; die https://www.iplfederation.org/timeline/[Chronik der International Plain Language Federation] verfolgt den Weg von einem Antrag 2007 über die Definition von 2014 bis zum ISO TC 37 im Jahr 2019. https://dgsm.gso.org.sa/store/standards/iso:pub:std:IS:85774/ISO%2024495-2:2025?lang=en[Teil 2, Rechtskommunikation], wurde am 25. August 2025 verabschiedet, https://store.sfs.fi/en/iso-24495-3-2026-3[Teil 3, Wissenschaftskommunikation], erschien am 12. Mai 2026; beide bauen auf den vier Prinzipien von Teil 1 auf. IIID berichtet, dass https://www.iiid.net/iso-plain-language-standard-part-2-published/[ein weiterer Teil zur Dokumentgestaltung] in Arbeit ist. Der Prior für den bloßen Begriff „plain language“ zeigt auf die ältere Bewegung und ihre Stilratgeber; erst der ISO-Name erreicht die vier Prinzipien.
 ====
