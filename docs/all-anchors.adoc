@@ -72,6 +72,9 @@ include::anchors/pyramid-principle.adoc[leveloffset=+2]
 [[sender-receiver-discrepancy]]
 include::anchors/sender-receiver-discrepancy.adoc[leveloffset=+2]
 
+[[swiss-style]]
+include::anchors/swiss-style.adoc[leveloffset=+2]
+
 [[tufte-style]]
 include::anchors/tufte-style.adoc[leveloffset=+2]
 
@@ -280,6 +283,8 @@ include::anchors/solid-srp.adoc[leveloffset=+2]
 
 [[ssot-principle]]
 include::anchors/ssot-principle.adoc[leveloffset=+2]
+
+include::anchors/swiss-style.adoc[leveloffset=+2]
 
 include::anchors/tufte-style.adoc[leveloffset=+2]
 

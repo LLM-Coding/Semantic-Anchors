@@ -3235,6 +3235,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Swiss Style (International Typographic Style) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/swiss-style</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/swiss-style</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: SWOT -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/swot</loc>

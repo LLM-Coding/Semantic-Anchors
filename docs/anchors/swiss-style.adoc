@@ -1,0 +1,49 @@
+= Swiss Style (International Typographic Style)
+:categories: design-principles, communication-presentation
+:roles: ux-designer, technical-writer, software-developer, consultant
+:proponents: Ernst Keller, Josef Müller-Brockmann, Armin Hofmann, Emil Ruder
+:tags: Swiss Style, International Typographic Style, Swiss design, grid system, modular grid, Josef Müller-Brockmann, Armin Hofmann, Emil Ruder, Akzidenz-Grotesk, Helvetica, flush left ragged right, asymmetric layout, poster design, typography, graphic design
+:related: tufte-style, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-25
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Swiss Style, also called the International Typographic Style -- the grid-based graphic design that came out of the Zurich and Basel schools of design in the 1950s
+
+Also known as:: International Typographic Style, Swiss design, Swiss typography
+
+[discrete]
+== *Core Concepts*:
+
+* *The grid comes first.* A modular grid of columns and rows is set before any element is placed, and every element sits on it. Josef Müller-Brockmann's _Grid Systems in Graphic Design_ (1981) works through grids from 8 to 32 fields.
+* *Sans-serif type, and little of it.* Akzidenz-Grotesk, later Helvetica, in few sizes and weights. Hierarchy comes from scale, weight and position, not from ornament or a change of typeface.
+* *Flush left, ragged right.* Text is aligned to one edge and never justified, so word spacing stays even.
+* *Asymmetric composition.* Elements are balanced against each other and against empty space rather than centred on an axis. The white space is part of the composition, not what is left over.
+* *Objective imagery.* Photography or abstract geometric forms instead of illustration; the picture shows the subject, it does not interpret it.
+* *Clarity over expression.* The designer's job is to make the message legible and ordered, ideally across languages. This is why the style became the default for signage, corporate identities and public information.
+
+Key Proponents:: Ernst Keller (taught at the Kunstgewerbeschule Zürich from 1918); Josef Müller-Brockmann (_Grid Systems in Graphic Design_, 1981; concert posters for the Zurich Tonhalle); Armin Hofmann (_Graphic Design Manual_, 1965) and Emil Ruder (_Typographie_, 1967), both at the Basel School of Design; the Zurich journal _Neue Grafik_, co-edited by Müller-Brockmann
+
+[discrete]
+== *When to Use*:
+
+* Posters, flyers, menus and event material that have to be read at a glance
+* Signage, wayfinding and information graphics
+* Layout systems for websites, slide templates and reports, where a grid keeps many pages consistent
+* As a counter-instruction when generated designs drift towards centred layouts, decorative fonts and stock illustration
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Reading it as minimalism.* A Swiss Style layout can be dense; what defines it is the grid and the order, not the amount of empty space.
+* *Reducing it to Helvetica.* The typeface is the most visible trace, but a centred, symmetric poster in Helvetica is not Swiss Style.
+* *Confusing it with Bauhaus.* The Bauhaus and Jan Tschichold's _Die neue Typographie_ (1928) are its precursors; the Swiss schools turned their ideas into a teachable system in the 1950s.
+* *Using the bare name outside a design context.* "Swiss style" also names food and products. Asked "What is 'Swiss Style'?" without context, every tier we tested answered with graphic design. The alias "International Typographic Style" does the same work: in a follow-up test on 2026-10-25 with the same poster task, six of six runs set a modular grid and Helvetica or Akzidenz-Grotesk, built the poster from type and geometric forms without illustration, and five of six named flush-left, ragged-right text.
+
+[discrete]
+== *Criticism*:
+
+* *Cold, formal, dogmatic -- the post-1968 charge, and a Basel teacher led the opposition.* The Swiss National Library writes in https://www.nb.admin.ch/en/postmodern-posters-1970-to-today["Postmodern posters, 1970 to today"] that after 1968, with the criticism of consumer society, the International Style "came under fire as its cold, formal, dogmatic aesthetic was questioned". Wolfgang Weingart, who taught in Basel alongside Armin Hofmann, "led the opposition to the International Style".
+====

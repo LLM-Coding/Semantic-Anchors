@@ -25,15 +25,15 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^10.0.1",
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/vite": "^4.2.1",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.1",
-    "vite": "^7.3.1",
-    "vitest": "^4.1.8"
+    "vite": "^7.3.7",
+    "vitest": "^4.1.12"
   },
   "dependencies": {
     "@asciidoctor/core": "^3.0.4",
