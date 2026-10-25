@@ -1,0 +1,56 @@
+= Plain Language (ISO 24495)
+:categories: communication-presentation, documentation
+:roles: technical-writer, business-analyst, product-owner, legal-compliance, ux-designer, consultant, educator
+:proponents: ISO/TC 37 Working Group 11, International Plain Language Federation
+:tags: plain language, ISO 24495, ISO 24495-1, ISO 24495-2, plain language standard, relevant, findable, understandable, usable, reader-centred writing, public communication, legal writing, Einfache Sprache, DIN 8581-1
+:related: plain-english-strunk-white, gutes-deutsch-wolf-schneider, simplified-technical-english, bluf, progressive-disclosure
+:tier: 2
+:prior-test: 2026-10-25
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: ISO 24495-1:2023, Plain language -- Part 1: Governing principles and guidelines
+
+Also known as:: The ISO plain language standard; ISO 24495-1. Parts 2 and 3 cover legal communication and science writing.
+
+[discrete]
+== *Core Concepts*:
+
+* *Plain language is defined by what the reader can do, not by how the text looks.* The standard builds on the definition the International Plain Language Federation adopted in 2014: a communication is in plain language if its wording, structure and design are so clear that the intended readers can easily find what they need, understand what they find, and use that information.
+* *Four governing principles, each with guidelines.* Readers get what they need (*relevant*); readers can easily find what they need (*findable*); readers can easily understand what they find (*understandable*); readers can easily use the information (*usable*).
+* *Relevant starts before the first sentence.* Identify the readers, their purpose and the context in which they read, then choose the document type and only the content they need.
+* *Findable is about structure.* Headings, a logical order, information design, and supplementary material kept apart from what most readers need.
+* *Understandable covers more than word choice.* Familiar words, clear sentences and paragraphs, cohesion, tone and supporting images.
+* *Usable means evaluating with readers.* The document is checked during development, with real readers, and after release -- not just with a readability score.
+* *For most languages.* The principles are language- and culture-neutral; national bodies add language-specific rules, such as https://www.dinmedia.de/de/norm/din-8581-1/377238273[DIN 8581-1] (2024) for German.
+
+Key Proponents:: ISO Technical Committee 37, Working Group 11; proposed by the International Plain Language Federation through Standards Australia in 2019; published June 2023
+
+[discrete]
+== *When to Use*:
+
+* Letters, notices, forms and web pages for the public, especially from government, insurers, banks and health services
+* Terms and conditions, privacy notices and other legal texts that readers must act on
+* Reviewing a document against an outcome ("can the reader find, understand and use this?") rather than a style rule
+* Product and API documentation for readers outside the team that wrote it
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Reading it as "simple words".* Word choice is one guideline among many. A rewrite that only shortens sentences and swaps words fails the findable and usable principles. In our prior test the bare words "plain language" produced exactly that: shorter prose without structure. Naming the standard produced headings and steps for the reader on every tier we tested.
+* *Confusing it with Plain English according to Strunk & White.* <<plain-english-strunk-white,Strunk & White>> is a style manual for English prose. ISO 24495 is an outcome standard for most written languages, and it asks for evaluation with readers throughout, not only at the end.
+* *Confusing it with Simplified Technical English.* <<simplified-technical-english,ASD-STE100>> is a controlled language with a closed word list. ISO 24495 is principle-based and prescribes no vocabulary.
+* *Confusing it with Easy Language.* In German, ISO 24495 corresponds to _Einfache Sprache_. _Leichte Sprache_, for readers with cognitive impairments, is a different concept; DIN 8581-1 explicitly excludes it.
+* *Expecting a readability score.* The standard does not set one; usability is checked with readers.
+
+[discrete]
+== *Criticism*:
+
+* *The plain language movement's premise is contested by data.* Yonathan Arbel, https://scholarship.law.ua.edu/fac_articles/829["The Readability of Contracts: Big Data Analysis"] (_Journal of Empirical Legal Studies_ 21, 2024), analysed about two million contracts. He writes that the study "challenges fundamental tenets of the plain language movement": consumer agreements "have median reading scores almost indistinguishable from those of daily news articles", and readability tools give large grade-level differences for identical texts. The critique targets readability-score arguments, which ISO 24495 itself does not rely on.
+
+[discrete]
+== *Current Status*:
+
+* *A young standard, still growing.* Part 1 was approved on https://www.sis.se/en/produkter/standardization/information-sciences-publishing/writing-and-transliteration/iso-24495-12023/[20 June 2023]; the https://www.iplfederation.org/timeline/[International Plain Language Federation's timeline] traces it from a 2007 motion through the 2014 definition to ISO TC 37 in 2019. https://dgsm.gso.org.sa/store/standards/iso:pub:std:IS:85774/ISO%2024495-2:2025?lang=en[Part 2, Legal communication], was approved on 25 August 2025, and https://store.sfs.fi/en/iso-24495-3-2026-3[Part 3, Science writing], was published on 12 May 2026; both build on Part 1's four principles. IIID reports that https://www.iiid.net/iso-plain-language-standard-part-2-published/[a further part on document design] is in preparation. The training-data prior for the bare term "plain language" points to the older movement and its style guides; the ISO name is what reaches the four principles.
+====

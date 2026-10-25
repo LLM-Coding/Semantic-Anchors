@@ -297,8 +297,8 @@ For each system interface (API endpoint, CLI command, event, file format):
 - Output: response format, status codes, payload schema
 - Error responses: codes, messages, recovery hints
 - Non-functional: performance budget, rate limits, timeouts
-Use EARS syntax (When/While/If/Shall) for individual requirements
-where applicable. Save as src/docs/specs/system-use-cases.adoc.
+Write rules in EARS patterns (shall/When/While/If … then/Where), one list
+with BR-IDs. Save as src/docs/specs/system-use-cases.adoc.
 ----
 
 System Use Cases schließen die Lücke zwischen stakeholder-orientierten Persona Use Cases und der Implementierung.
@@ -620,7 +620,7 @@ Die wichtigsten Einzeiler pro Phase mit den Semantic Anchors, die sie aktivieren
 |link:#/anchor/cockburn-use-cases[Cockburn], link:#/anchor/gherkin[Gherkin]
 
 |System Use Cases
-|`Derive System Use Cases from Persona Use Cases. For each interface: input/validation, processing, output/status codes, error responses. EARS syntax where applicable.`
+|`Derive System Use Cases from Persona Use Cases. For each interface: input/validation, processing, output/status codes, error responses. Rules in EARS patterns, one list with BR-IDs.`
 |link:#/anchor/ears-requirements[EARS]
 
 |Ergänzende Specs

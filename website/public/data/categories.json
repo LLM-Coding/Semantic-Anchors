@@ -19,10 +19,12 @@
       "mece",
       "myers-briggs-type-indicator",
       "plain-english-strunk-white",
+      "plain-language-iso-24495",
       "problem-space-nvc",
       "progressive-disclosure",
       "pyramid-principle",
       "sender-receiver-discrepancy",
+      "swiss-style",
       "tufte-style",
       "zone-of-proximal-development"
     ]
@@ -102,6 +104,7 @@
       "solid-principles",
       "solid-srp",
       "ssot-principle",
+      "swiss-style",
       "tufte-style",
       "unix-philosophy",
       "yagni"
@@ -158,6 +161,7 @@
       "four-plus-one-view-model",
       "karpathys-llm-wiki",
       "keep-a-changelog",
+      "plain-language-iso-24495",
       "simplified-technical-english"
     ]
   },

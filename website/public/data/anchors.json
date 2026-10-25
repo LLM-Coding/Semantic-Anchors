@@ -5934,6 +5934,68 @@
     "addedAt": "2026-03-12T10:36:40+00:00"
   },
   {
+    "id": "plain-language-iso-24495",
+    "title": "Plain Language (ISO 24495)",
+    "categories": [
+      "communication-presentation",
+      "documentation"
+    ],
+    "roles": [
+      "technical-writer",
+      "business-analyst",
+      "product-owner",
+      "legal-compliance",
+      "ux-designer",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "plain-english-strunk-white",
+      "gutes-deutsch-wolf-schneider",
+      "simplified-technical-english",
+      "bluf",
+      "progressive-disclosure"
+    ],
+    "proponents": [
+      "ISO/TC 37 Working Group 11",
+      "International Plain Language Federation"
+    ],
+    "tags": [
+      "plain language",
+      "ISO 24495",
+      "ISO 24495-1",
+      "ISO 24495-2",
+      "plain language standard",
+      "relevant",
+      "findable",
+      "understandable",
+      "usable",
+      "reader-centred writing",
+      "public communication",
+      "legal writing",
+      "Einfache Sprache",
+      "DIN 8581-1"
+    ],
+    "filePath": "docs/anchors/plain-language-iso-24495.adoc",
+    "tier": 2,
+    "priorTest": "2026-10-25",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-25T08:50:31+01:00"
+  },
+  {
     "id": "poka-yoke",
     "title": "Poka-Yoke",
     "categories": [
@@ -7513,6 +7575,64 @@
     "filePath": "docs/anchors/stride.adoc",
     "tier": 3,
     "addedAt": "2026-03-17T19:16:00+00:00"
+  },
+  {
+    "id": "swiss-style",
+    "title": "Swiss Style (International Typographic Style)",
+    "categories": [
+      "design-principles",
+      "communication-presentation"
+    ],
+    "roles": [
+      "ux-designer",
+      "technical-writer",
+      "software-developer",
+      "consultant"
+    ],
+    "related": [
+      "tufte-style",
+      "progressive-disclosure"
+    ],
+    "proponents": [
+      "Ernst Keller",
+      "Josef Müller-Brockmann",
+      "Armin Hofmann",
+      "Emil Ruder"
+    ],
+    "tags": [
+      "Swiss Style",
+      "International Typographic Style",
+      "Swiss design",
+      "grid system",
+      "modular grid",
+      "Josef Müller-Brockmann",
+      "Armin Hofmann",
+      "Emil Ruder",
+      "Akzidenz-Grotesk",
+      "Helvetica",
+      "flush left ragged right",
+      "asymmetric layout",
+      "poster design",
+      "typography",
+      "graphic design"
+    ],
+    "filePath": "docs/anchors/swiss-style.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-25",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ]
   },
   {
     "id": "swot",

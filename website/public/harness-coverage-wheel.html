@@ -235,7 +235,13 @@
             check inventory (supply chain only); and the
             <a href="https://en.wikipedia.org/wiki/Swiss_cheese_model" target="_blank" rel="noopener">Swiss cheese
             model</a> is the underlying theory of layered error correction. This wheel wires them together for
-            agentic coding: one broad layer inventory, full ISO 25010 coverage, explicit blind spots, a risk-tier dial.</p>
+            agentic coding: one broad layer inventory, full ISO 25010 coverage, explicit blind spots, a risk-tier dial.
+            <b>Evidence from practice:</b> the Claude Code team describes
+            <a href="https://claude.dev/blog/solving-code-review-at-anthropic/" target="_blank" rel="noopener">such a
+            layering</a> (local verification, required CI, AI review, security review, human approval scaled by risk,
+            merge queue and feature flags, fast rollback), uses revert and incident rates as the
+            guardrail, and reports that from June to September merged PRs more than doubled while
+            the share that had to be reverted fell by more than 40 percent.</p>
         </details>
       </div>
     </div>
