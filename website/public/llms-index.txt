@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 22 semantic contracts, and
-> 237 anchors in 14 categories — the anchors both
+> 238 anchors in 14 categories — the anchors both
 > one by one and bundled into 25 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -43,17 +43,17 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 237 terms in full, 25 files
+## Anchor bundles — the same 238 terms in full, 25 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
 
 - [Communication & Presentation (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-1.txt): 18 anchors in full.
-- [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 4 anchors in full.
+- [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 5 anchors in full.
 - [Creative Writing](https://llm-coding.github.io/Semantic-Anchors/bundles/creative-writing.txt): 7 anchors in full.
 - [Design Principles & Patterns (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 21 anchors in full.
 - [Design Principles & Patterns (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 26 anchors in full.
-- [Design Principles & Patterns (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-3.txt): 14 anchors in full.
+- [Design Principles & Patterns (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-3.txt): 15 anchors in full.
 - [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 15 anchors in full.
 - [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 10 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
@@ -74,7 +74,7 @@
 - [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 
-## Anchors — 237 named terms, grouped by category
+## Anchors — 238 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -98,6 +98,7 @@
 - [Progressive Disclosure](https://llm-coding.github.io/Semantic-Anchors/anchors/progressive-disclosure.txt)
 - [Pyramid Principle according to Barbara Minto](https://llm-coding.github.io/Semantic-Anchors/anchors/pyramid-principle.txt)
 - [Sender-Receiver Discrepancy](https://llm-coding.github.io/Semantic-Anchors/anchors/sender-receiver-discrepancy.txt)
+- [Swiss Style (International Typographic Style)](https://llm-coding.github.io/Semantic-Anchors/anchors/swiss-style.txt)
 - [Tufte Style](https://llm-coding.github.io/Semantic-Anchors/anchors/tufte-style.txt)
 - [Zone of Proximal Development](https://llm-coding.github.io/Semantic-Anchors/anchors/zone-of-proximal-development.txt)
 
@@ -171,6 +172,7 @@
 - [SOLID Principles](https://llm-coding.github.io/Semantic-Anchors/anchors/solid-principles.txt)
 - [SOLID-Single Responsibility Principle](https://llm-coding.github.io/Semantic-Anchors/anchors/solid-srp.txt)
 - [SSOT (Single Source of Truth)](https://llm-coding.github.io/Semantic-Anchors/anchors/ssot-principle.txt)
+- [Swiss Style (International Typographic Style)](https://llm-coding.github.io/Semantic-Anchors/anchors/swiss-style.txt)
 - [Tufte Style](https://llm-coding.github.io/Semantic-Anchors/anchors/tufte-style.txt)
 - [Unix Philosophy](https://llm-coding.github.io/Semantic-Anchors/anchors/unix-philosophy.txt)
 - [YAGNI (You Aren't Gonna Need It)](https://llm-coding.github.io/Semantic-Anchors/anchors/yagni.txt)
