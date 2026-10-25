@@ -793,6 +793,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** William Strunk Jr., E.B. White
 - **Core:** Omit needless words, use active voice, prefer concrete language, write with nouns and verbs — clarity-first principles for English writing ("The Elements of Style")
 
+### Plain Language (ISO 24495)
+- **Also known as:** ISO 24495-1:2023 (Governing principles and guidelines), the ISO plain language standard; Part 2 (2025) covers legal communication; German application DIN 8581-1 (Einfache Sprache)
+- **Proponents:** ISO/TC 37 Working Group 11, International Plain Language Federation
+- **Core:** Outcome definition — intended readers can easily find what they need, understand what they find, and use it — with four principles: relevant (identify readers, purpose, context; select content), findable (structure, headings, information design), understandable (words, sentences, cohesion, images), usable (evaluate with readers); language-neutral, no readability score, no word list. Name the standard: bare "plain language" tends to yield only shorter prose
+
 ### 4MAT
 - **Also known as:** 4MAT System of Instruction, McCarthy's 4MAT, 4MAT Learning Cycle
 - **Proponents:** Bernice McCarthy
