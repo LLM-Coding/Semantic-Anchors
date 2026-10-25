@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 22 semantic contracts, and
-> 238 anchors in 14 categories — the anchors both
+> 239 anchors in 14 categories — the anchors both
 > one by one and bundled into 25 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -43,13 +43,13 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 238 terms in full, 25 files
+## Anchor bundles — the same 239 terms in full, 25 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
 
-- [Communication & Presentation (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-1.txt): 18 anchors in full.
-- [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 5 anchors in full.
+- [Communication & Presentation (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-1.txt): 16 anchors in full.
+- [Communication & Presentation (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/communication-presentation-2.txt): 8 anchors in full.
 - [Creative Writing](https://llm-coding.github.io/Semantic-Anchors/bundles/creative-writing.txt): 7 anchors in full.
 - [Design Principles & Patterns (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-1.txt): 21 anchors in full.
 - [Design Principles & Patterns (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 26 anchors in full.
@@ -57,7 +57,7 @@
 - [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 15 anchors in full.
 - [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 10 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
-- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 7 anchors in full.
+- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 8 anchors in full.
 - [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 8 anchors in full.
 - [Meta](https://llm-coding.github.io/Semantic-Anchors/bundles/meta.txt): 3 anchors in full.
 - [Problem Solving (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 13 anchors in full.
@@ -74,7 +74,7 @@
 - [Testing & Quality Practices (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 
-## Anchors — 238 named terms, grouped by category
+## Anchors — 239 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -94,6 +94,7 @@
 - [MECE Principle](https://llm-coding.github.io/Semantic-Anchors/anchors/mece.txt)
 - [Myers-Briggs Type Indicator (MBTI)](https://llm-coding.github.io/Semantic-Anchors/anchors/myers-briggs-type-indicator.txt)
 - [Plain English according to Strunk & White](https://llm-coding.github.io/Semantic-Anchors/anchors/plain-english-strunk-white.txt)
+- [Plain Language (ISO 24495)](https://llm-coding.github.io/Semantic-Anchors/anchors/plain-language-iso-24495.txt)
 - [Nonviolent Communication (Rosenberg)](https://llm-coding.github.io/Semantic-Anchors/anchors/problem-space-nvc.txt)
 - [Progressive Disclosure](https://llm-coding.github.io/Semantic-Anchors/anchors/progressive-disclosure.txt)
 - [Pyramid Principle according to Barbara Minto](https://llm-coding.github.io/Semantic-Anchors/anchors/pyramid-principle.txt)
@@ -220,6 +221,7 @@
 - [4+1 View Model according to Kruchten](https://llm-coding.github.io/Semantic-Anchors/anchors/four-plus-one-view-model.txt)
 - [Karpathy's LLM Wiki](https://llm-coding.github.io/Semantic-Anchors/anchors/karpathys-llm-wiki.txt)
 - [Keep a Changelog](https://llm-coding.github.io/Semantic-Anchors/anchors/keep-a-changelog.txt)
+- [Plain Language (ISO 24495)](https://llm-coding.github.io/Semantic-Anchors/anchors/plain-language-iso-24495.txt)
 - [Simplified Technical English (ASD-STE100)](https://llm-coding.github.io/Semantic-Anchors/anchors/simplified-technical-english.txt)
 
 ### Knowledge Management

@@ -2590,6 +2590,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Plain Language (ISO 24495) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/plain-language-iso-24495</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/plain-language-iso-24495</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Poka-Yoke -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/poka-yoke</loc>

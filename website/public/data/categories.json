@@ -19,6 +19,7 @@
       "mece",
       "myers-briggs-type-indicator",
       "plain-english-strunk-white",
+      "plain-language-iso-24495",
       "problem-space-nvc",
       "progressive-disclosure",
       "pyramid-principle",
@@ -160,6 +161,7 @@
       "four-plus-one-view-model",
       "karpathys-llm-wiki",
       "keep-a-changelog",
+      "plain-language-iso-24495",
       "simplified-technical-english"
     ]
   },

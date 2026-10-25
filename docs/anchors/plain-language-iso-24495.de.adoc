@@ -1,0 +1,56 @@
+= Plain Language (ISO 24495)
+:categories: communication-presentation, documentation
+:roles: technical-writer, business-analyst, product-owner, legal-compliance, ux-designer, consultant, educator
+:proponents: ISO/TC 37 Working Group 11, International Plain Language Federation
+:tags: Plain Language, Einfache Sprache, ISO 24495, ISO 24495-1, ISO 24495-2, DIN ISO 24495-1, DIN 8581-1, verständliche Sprache, relevant, auffindbar, verständlich, nutzbar, leserorientiertes Schreiben, Behördenkommunikation, Rechtssprache
+:related: plain-english-strunk-white, gutes-deutsch-wolf-schneider, simplified-technical-english, bluf, progressive-disclosure
+:tier: 2
+:prior-test: 2026-10-25
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: ISO 24495-1:2023, Plain language -- Part 1: Governing principles and guidelines
+
+Auch bekannt als:: Die ISO-Norm für Einfache Sprache; ISO 24495-1. Teil 2 und 3 behandeln Rechtskommunikation und Wissenschaftskommunikation.
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Einfache Sprache bemisst sich daran, was der Leser tun kann, nicht daran, wie der Text aussieht.* Die Norm baut auf der Definition auf, die die International Plain Language Federation 2014 beschlossen hat: Eine Mitteilung ist in Einfacher Sprache verfasst, wenn Wortwahl, Struktur und Gestaltung so klar sind, dass die vorgesehenen Leser leicht finden, was sie brauchen, verstehen, was sie finden, und diese Information nutzen können.
+* *Vier Leitprinzipien, jedes mit Leitlinien.* Leser bekommen, was sie brauchen (*relevant*); Leser finden leicht, was sie brauchen (*auffindbar*); Leser verstehen leicht, was sie finden (*verständlich*); Leser können die Information leicht nutzen (*nutzbar*).
+* *Relevanz beginnt vor dem ersten Satz.* Erst die Leser bestimmen, ihren Zweck und die Situation, in der sie lesen; dann die Dokumentart wählen und nur die Inhalte, die sie brauchen.
+* *Auffindbarkeit ist eine Frage der Struktur.* Überschriften, eine logische Reihenfolge, Informationsdesign; Ergänzendes getrennt von dem, was die meisten Leser brauchen.
+* *Verständlichkeit umfasst mehr als die Wortwahl.* Vertraute Wörter, klare Sätze und Absätze, Zusammenhang, Ton und unterstützende Bilder.
+* *Nutzbarkeit heißt: mit Lesern prüfen.* Das Dokument wird während der Entstehung geprüft, mit echten Lesern und nach der Veröffentlichung -- nicht bloß mit einem Lesbarkeitsindex.
+* *Für die meisten Sprachen.* Die Prinzipien sind sprach- und kulturneutral gefasst; nationale Normungsgremien ergänzen sprachspezifische Regeln, für das Deutsche https://www.dinmedia.de/de/norm/din-8581-1/377238273[DIN 8581-1] (2024).
+
+Wichtige Vertreter:: ISO Technical Committee 37, Working Group 11; 2019 von der International Plain Language Federation über Standards Australia eingebracht; veröffentlicht im Juni 2023
+
+[discrete]
+== *Wann verwenden*:
+
+* Briefe, Bescheide, Formulare und Webseiten für die Öffentlichkeit, besonders von Behörden, Versicherungen, Banken und Gesundheitsdiensten
+* AGB, Datenschutzhinweise und andere Rechtstexte, nach denen Leser handeln müssen
+* Ein Dokument an einem Ergebnis prüfen („Kann der Leser das finden, verstehen und nutzen?“) statt an einer Stilregel
+* Produkt- und API-Dokumentation für Leser außerhalb des Teams, das sie geschrieben hat
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Sie als „einfache Wörter“ lesen.* Die Wortwahl ist eine Leitlinie unter vielen. Eine Überarbeitung, die nur Sätze kürzt und Wörter tauscht, verfehlt die Prinzipien Auffindbarkeit und Nutzbarkeit. In unserem Prior-Test lieferten die bloßen Worte „plain language“ genau das: kürzere Prosa ohne Struktur. Erst der Name der Norm brachte auf allen getesteten Modellstufen Überschriften und Handlungsschritte für den Leser.
+* *Sie mit Plain English nach Strunk & White verwechseln.* <<plain-english-strunk-white,Strunk & White>> ist ein Stilhandbuch für englische Prosa. ISO 24495 ist eine Ergebnisnorm für die meisten geschriebenen Sprachen und verlangt die Prüfung mit Lesern durchgehend, nicht erst am Ende.
+* *Sie mit Simplified Technical English verwechseln.* <<simplified-technical-english,ASD-STE100>> ist eine kontrollierte Sprache mit geschlossener Wortliste. ISO 24495 arbeitet mit Prinzipien und schreibt kein Vokabular vor.
+* *Einfache mit Leichter Sprache verwechseln.* Im Deutschen entspricht ISO 24495 der _Einfachen Sprache_. _Leichte Sprache_ für Menschen mit kognitiven Beeinträchtigungen ist ein anderes Konzept; DIN 8581-1 schließt sie ausdrücklich aus.
+* *Einen Lesbarkeitsindex erwarten.* Die Norm setzt keinen; Nutzbarkeit wird mit Lesern geprüft.
+
+[discrete]
+== *Kritik*:
+
+* *Die Prämisse der Plain-Language-Bewegung wird mit Daten bestritten.* Yonathan Arbel hat in https://scholarship.law.ua.edu/fac_articles/829["The Readability of Contracts: Big Data Analysis"] (_Journal of Empirical Legal Studies_ 21, 2024) rund zwei Millionen Verträge ausgewertet. Die Studie stelle grundlegende Annahmen der Plain-Language-Bewegung in Frage ("challenges fundamental tenets of the plain language movement"): Verbraucherverträge hätten Lesbarkeitswerte im Median, die von Tageszeitungsartikeln kaum zu unterscheiden seien, und Lesbarkeitswerkzeuge lieferten für identische Texte stark abweichende Schulstufen. Die Kritik zielt auf Argumente mit Lesbarkeitsindizes, auf die sich ISO 24495 selbst nicht stützt.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Eine junge Norm, die noch wächst.* Teil 1 wurde am https://www.sis.se/en/produkter/standardization/information-sciences-publishing/writing-and-transliteration/iso-24495-12023/[20. Juni 2023] verabschiedet; die https://www.iplfederation.org/timeline/[Chronik der International Plain Language Federation] verfolgt den Weg von einem Antrag 2007 über die Definition von 2014 bis zum ISO TC 37 im Jahr 2019. https://dgsm.gso.org.sa/store/standards/iso:pub:std:IS:85774/ISO%2024495-2:2025?lang=en[Teil 2, Rechtskommunikation], wurde am 25. August 2025 verabschiedet, https://store.sfs.fi/en/iso-24495-3-2026-3[Teil 3, Wissenschaftskommunikation], erschien am 12. Mai 2026; beide bauen auf den vier Prinzipien von Teil 1 auf. IIID berichtet, dass https://www.iiid.net/iso-plain-language-standard-part-2-published/[ein weiterer Teil zur Dokumentgestaltung] in Arbeit ist. Der Prior für den bloßen Begriff „plain language“ zeigt auf die ältere Bewegung und ihre Stilratgeber; erst der ISO-Name erreicht die vier Prinzipien.
+====
