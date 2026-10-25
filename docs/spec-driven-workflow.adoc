@@ -182,11 +182,13 @@ Prompt the AI to use the ⚓ link:#/anchor/socratic-method[*Socratic Method*] to
 ----
 Use the Socratic Method to help me clarify requirements for [your project].
 Ask me at most 3 questions at a time. Challenge my assumptions.
-Keep asking until you fully understand the requirements.
+Keep a list of open questions. After each answer, update the list and add any new question it raises.
+Stop when the list is empty and I confirm it.
 ----
 
 This activates targeted questioning, assumption challenging, and productive use of not-knowing.
 The constraint "at most 3 questions" prevents question overload.
+The list of open questions makes the not-knowing visible and gives the dialogue a stop condition you can check.
 
 You can layer additional anchors for structured coverage:
 
@@ -197,7 +199,7 @@ Use the Socratic Method combined with MECE to clarify requirements.
 
 ⚓ link:#/anchor/mece[*MECE*] (Mutually Exclusive, Collectively Exhaustive) ensures questions cover all areas without overlap.
 
-Continue the dialogue until both you and the AI are satisfied that the requirements are clear.
+Continue the dialogue until the list of open questions is empty and you confirm that the requirements are clear.
 
 === Step 3: Document as PRD
 
@@ -589,7 +591,7 @@ The essential one-liners for each phase, with the Semantic Anchors they activate
 |Phase |Prompt |Anchors
 
 |Requirements
-|`Use the Socratic Method combined with MECE to clarify requirements for [project]. Max 3 questions at a time.`
+|`Use the Socratic Method combined with MECE to clarify requirements for [project]. Max 3 questions at a time. Keep a list of open questions; stop when it is empty and I confirm.`
 |link:#/anchor/socratic-method[Socratic Method], link:#/anchor/mece[MECE]
 
 |PRD

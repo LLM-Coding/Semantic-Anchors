@@ -192,11 +192,13 @@ Die KI auffordern, die ⚓ link:#/anchor/socratic-method[*Sokratische Methode*] 
 ----
 Use the Socratic Method to help me clarify requirements for [your project].
 Ask me at most 3 questions at a time. Challenge my assumptions.
-Keep asking until you fully understand the requirements.
+Keep a list of open questions. After each answer, update the list and add any new question it raises.
+Stop when the list is empty and I confirm it.
 ----
 
 Das aktiviert gezieltes Fragen, Hinterfragen von Annahmen und produktiven Umgang mit Nicht-Wissen.
 Die Einschränkung "höchstens 3 Fragen" verhindert Fragen-Überflutung.
+Die Liste offener Fragen macht das Nicht-Wissen sichtbar und gibt dem Dialog eine Abbruchbedingung, die man prüfen kann.
 
 Zusätzliche Anker für strukturierte Abdeckung:
 
@@ -207,7 +209,7 @@ Use the Socratic Method combined with MECE to clarify requirements.
 
 ⚓ link:#/anchor/mece[*MECE*] (Mutually Exclusive, Collectively Exhaustive) stellt sicher, dass die Fragen alle Bereiche überlappungsfrei abdecken.
 
-Den Dialog fortführen, bis man mit der KI zufrieden ist, dass die Anforderungen klar sind.
+Den Dialog fortführen, bis die Liste offener Fragen leer ist und man bestätigt, dass die Anforderungen klar sind.
 
 === Schritt 3: Als PRD dokumentieren
 
@@ -606,7 +608,7 @@ Die wichtigsten Einzeiler pro Phase mit den Semantic Anchors, die sie aktivieren
 |Phase |Prompt |Anker
 
 |Anforderungen
-|`Use the Socratic Method combined with MECE to clarify requirements for [project]. Max 3 questions at a time.`
+|`Use the Socratic Method combined with MECE to clarify requirements for [project]. Max 3 questions at a time. Keep a list of open questions; stop when it is empty and I confirm.`
 |link:#/anchor/socratic-method[Socratic Method], link:#/anchor/mece[MECE]
 
 |PRD
