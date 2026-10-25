@@ -859,6 +859,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Edward R. Tufte
 - **Core:** Information-design principles for charts, dashboards and reports — maximize the data-ink ratio, remove chartjunk, keep graphical integrity (lie factor ≈ 1), use small multiples on shared axes, sparklines inline in text, and direct labels instead of legends; density is the goal, not emptiness (remove waste, then spend the space on more information); the name also covers the sidenote page layout of Tufte CSS/tufte-latex, so say which you mean
 
+### Swiss Style (International Typographic Style)
+- **Also known as:** International Typographic Style, Swiss design, Swiss typography
+- **Proponents:** Ernst Keller, Josef Müller-Brockmann (Grid Systems in Graphic Design, 1981), Armin Hofmann, Emil Ruder (Zurich and Basel schools, 1950s)
+- **Core:** Grid-based graphic design — a modular grid set before anything is placed, sans-serif type (Akzidenz-Grotesk, Helvetica) in few sizes, flush-left ragged-right text, asymmetric composition with active white space, objective photography or geometric forms instead of illustration, hierarchy from scale and position rather than ornament; not minimalism and not just Helvetica
+
 ### Crisis and Emergency Risk Communication (CERC)
 - **Also known as:** CERC -- but the bare acronym does not carry the meaning; spell it out
 - **Proponents:** Barbara Reynolds and Matthew W. Seeger (Journal of Health Communication, 2005); US CDC as institutional owner of the manual

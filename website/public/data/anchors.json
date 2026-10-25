@@ -7515,6 +7515,65 @@
     "addedAt": "2026-03-17T19:16:00+00:00"
   },
   {
+    "id": "swiss-style",
+    "title": "Swiss Style (International Typographic Style)",
+    "categories": [
+      "design-principles",
+      "communication-presentation"
+    ],
+    "roles": [
+      "ux-designer",
+      "technical-writer",
+      "software-developer",
+      "consultant"
+    ],
+    "related": [
+      "tufte-style",
+      "progressive-disclosure"
+    ],
+    "proponents": [
+      "Ernst Keller",
+      "Josef Müller-Brockmann",
+      "Armin Hofmann",
+      "Emil Ruder"
+    ],
+    "tags": [
+      "Swiss Style",
+      "International Typographic Style",
+      "Swiss design",
+      "grid system",
+      "modular grid",
+      "Josef Müller-Brockmann",
+      "Armin Hofmann",
+      "Emil Ruder",
+      "Akzidenz-Grotesk",
+      "Helvetica",
+      "flush left ragged right",
+      "asymmetric layout",
+      "poster design",
+      "typography",
+      "graphic design"
+    ],
+    "filePath": "docs/anchors/swiss-style.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-25",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-25T08:47:44+01:00"
+  },
+  {
     "id": "swot",
     "title": "SWOT",
     "categories": [
