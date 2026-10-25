@@ -57,6 +57,9 @@ include::anchors/myers-briggs-type-indicator.adoc[leveloffset=+2]
 [[plain-english-strunk-white]]
 include::anchors/plain-english-strunk-white.adoc[leveloffset=+2]
 
+[[plain-language-iso-24495]]
+include::anchors/plain-language-iso-24495.adoc[leveloffset=+2]
+
 [[problem-space-nvc]]
 include::anchors/problem-space-nvc.adoc[leveloffset=+2]
 
@@ -398,6 +401,8 @@ include::anchors/four-plus-one-view-model.adoc[leveloffset=+2]
 include::anchors/karpathys-llm-wiki.adoc[leveloffset=+2]
 
 include::anchors/keep-a-changelog.adoc[leveloffset=+2]
+
+include::anchors/plain-language-iso-24495.adoc[leveloffset=+2]
 
 [[simplified-technical-english]]
 include::anchors/simplified-technical-english.adoc[leveloffset=+2]
