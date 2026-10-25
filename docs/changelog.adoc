@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-25
+
+*New anchor -- Swiss Style:*
+
+* *link:#/anchor/swiss-style[Swiss Style (International Typographic Style)]* (Ernst Keller, Josef Müller-Brockmann, Armin Hofmann, Emil Ruder) -- design-principles + communication-presentation: a modular grid set before anything is placed, sans-serif type in few sizes, flush-left ragged-right text, asymmetric composition and objective imagery. Proposed by https://github.com/shuhne[@shuhne] in https://github.com/LLM-Coding/Semantic-Anchors/issues/821[#821] -- thank you. Asked for a jazz poster without the name, the baselines reached for illustrated silhouettes and condensed display faces; with "Swiss Style" every run on Haiku, Sonnet and Opus 5.5 set the poster on a modular grid in Helvetica or Akzidenz-Grotesk. The bare name resolves to graphic design on all three tiers. Tier ★★★. The criticism section carries the post-1968 charge of a cold, dogmatic style and Wolfgang Weingart's opposition from inside Basel. Full detail in the link:#/prior-tests[prior-test register], run 2026-10-25.
+
 == 2026-10-20
 
 *Proposing an anchor now asks only for the term.* The link:https://github.com/LLM-Coding/Semantic-Anchors/issues/new?template=propose-anchor.yml[proposal form] asks only for the term, plus an optional sentence or link on where you use it. The required LLM activation test and the checklist are gone: we run the link:#/anchor-prior-test[Anchor Prior Test] on every proposal ourselves and report the result in the issue. The contributing guide (EN + DE) now describes these tests as our review, not as homework for the proposer.

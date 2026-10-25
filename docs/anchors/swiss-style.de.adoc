@@ -1,0 +1,49 @@
+= Swiss Style (International Typographic Style)
+:categories: design-principles, communication-presentation
+:roles: ux-designer, technical-writer, software-developer, consultant
+:proponents: Ernst Keller, Josef Müller-Brockmann, Armin Hofmann, Emil Ruder
+:tags: Swiss Style, Schweizer Stil, International Typographic Style, Schweizer Typografie, Gestaltungsraster, Rastersystem, Josef Müller-Brockmann, Armin Hofmann, Emil Ruder, Akzidenz-Grotesk, Helvetica, Flattersatz, asymmetrisches Layout, Plakatgestaltung, Typografie, Grafikdesign
+:related: tufte-style, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-25
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Swiss Style, auch International Typographic Style -- das rasterbasierte Grafikdesign der Zürcher und Basler Gestaltungsschulen der 1950er-Jahre
+
+Auch bekannt als:: International Typographic Style, Schweizer Stil, Schweizer Typografie
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Zuerst das Raster.* Ein modulares Raster aus Spalten und Zeilen steht fest, bevor das erste Element gesetzt wird, und jedes Element sitzt darauf. Josef Müller-Brockmanns _Rastersysteme für die visuelle Gestaltung_ (1981) behandelt Raster von 8 bis 32 Feldern.
+* *Serifenlose Schrift, und wenig davon.* Akzidenz-Grotesk, später Helvetica, in wenigen Größen und Schnitten. Hierarchie entsteht durch Größe, Gewicht und Position, nicht durch Schmuck oder einen Schriftwechsel.
+* *Linksbündiger Flattersatz.* Text richtet sich an einer Kante aus und steht nie im Blocksatz, damit die Wortabstände gleich bleiben.
+* *Asymmetrische Komposition.* Elemente halten sich gegenseitig und mit der Leerfläche die Waage, statt auf einer Mittelachse zu stehen. Der Weißraum gehört zur Komposition; er ist kein Rest.
+* *Sachliche Bilder.* Fotografie oder abstrakte geometrische Formen statt Illustration; das Bild zeigt den Gegenstand, es deutet ihn nicht.
+* *Klarheit vor Ausdruck.* Gestaltung soll die Botschaft lesbar und geordnet machen, möglichst über Sprachgrenzen hinweg. Deshalb wurde der Stil zum Standard für Leitsysteme, Erscheinungsbilder von Unternehmen und öffentliche Information.
+
+Wichtige Vertreter:: Ernst Keller (lehrte ab 1918 an der Kunstgewerbeschule Zürich); Josef Müller-Brockmann (_Rastersysteme für die visuelle Gestaltung_, 1981; Konzertplakate für die Tonhalle Zürich); Armin Hofmann (_Methodik der Form- und Bildgestaltung_, 1965) und Emil Ruder (_Typographie_, 1967), beide an der Basler Schule für Gestaltung; die Zürcher Zeitschrift _Neue Grafik_, die Müller-Brockmann mit herausgab
+
+[discrete]
+== *Wann verwenden*:
+
+* Plakate, Flyer, Speisekarten und Veranstaltungsmaterial, das man im Vorbeigehen lesen muss
+* Beschilderung, Leitsysteme und Informationsgrafik
+* Layoutsysteme für Websites, Folienvorlagen und Berichte, in denen ein Raster viele Seiten einheitlich hält
+* Als Gegenanweisung, wenn generierte Entwürfe zu zentrierten Layouts, Zierschriften und Stock-Illustrationen abdriften
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Ihn als Minimalismus lesen.* Ein Layout im Swiss Style darf dicht sein; ihn bestimmen Raster und Ordnung, nicht die Menge an Leerraum.
+* *Ihn auf Helvetica verkürzen.* Die Schrift ist die sichtbarste Spur, aber ein zentriertes, symmetrisches Plakat in Helvetica ist kein Swiss Style.
+* *Ihn mit dem Bauhaus verwechseln.* Das Bauhaus und Jan Tschicholds _Die neue Typographie_ (1928) sind Vorläufer; die Schweizer Schulen machten daraus in den 1950er-Jahren ein lehrbares System.
+* *Den bloßen Namen außerhalb der Gestaltung verwenden.* „Swiss style“ bezeichnet auch Speisen und Produkte. In einer Gestaltungsaufgabe trifft der bloße Name auf allen getesteten Modellstufen das Richtige; anderswo „International Typographic Style“ ergänzen.
+
+[discrete]
+== *Kritik*:
+
+* *Kalt, formal und dogmatisch -- der Vorwurf kam aus Basel selbst.* Die Schweizerische Nationalbibliothek schreibt in https://www.nb.admin.ch/en/postmodern-posters-1970-to-today["Postmodern posters, 1970 to today"], der International Style sei nach 1968 unter Beschuss geraten, weil man seine „kalte, formale, dogmatische Ästhetik“ in Frage stellte („came under fire as its cold, formal, dogmatic aesthetic was questioned“). Wolfgang Weingart, Lehrer an der Basler Schule für Gestaltung, habe die Opposition dagegen angeführt („led the opposition to the International Style“). Die Gegenbewegung, später New Wave Typography genannt, nahm das Raster als Ausgangspunkt und brach es bewusst auf: mit Schichtungen, Texturen und Collagen.
+====
