@@ -2,6 +2,10 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-26
+
+*Requirements discovery asks in order, looks facts up itself and recommends only where you can choose.* The link:#/contracts[Requirements Discovery] contract (EN + DE) and the Socratic prompt in Step 2 of link:#/spec-driven-development[Spec-Driven Development] gain three rules: ask only questions whose prerequisites are settled; look facts up in the code and environment instead of asking for them; recommend an answer for solution and design questions, but ask about the problem, goals, personas and success criteria openly, because a suggestion there anchors the answer. The rules come from Matt Pocock's link:https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling[grilling skill] (MIT).
+
 == 2026-10-25
 
 *New anchor -- Swiss Style:*

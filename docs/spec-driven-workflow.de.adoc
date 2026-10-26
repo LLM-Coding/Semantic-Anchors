@@ -192,6 +192,9 @@ Die KI auffordern, die ⚓ link:#/anchor/socratic-method[*Sokratische Methode*] 
 ----
 Use the Socratic Method to help me clarify requirements for [your project].
 Ask me at most 3 questions at a time. Challenge my assumptions.
+Ask only questions whose prerequisites are already settled; a question that depends on an open answer waits for a later round.
+Look up facts from the code and environment yourself; put only decisions to me.
+Give a recommended answer for solution and design questions only. Ask about problem, goals, personas and success criteria openly, without a suggestion.
 Keep a list of open questions. After each answer, update the list and add any new question it raises.
 Stop when the list is empty and I confirm it.
 ----
@@ -199,6 +202,8 @@ Stop when the list is empty and I confirm it.
 Das aktiviert gezieltes Fragen, Hinterfragen von Annahmen und produktiven Umgang mit Nicht-Wissen.
 Die Einschränkung "höchstens 3 Fragen" verhindert Fragen-Überflutung.
 Die Liste offener Fragen macht das Nicht-Wissen sichtbar und gibt dem Dialog eine Abbruchbedingung, die man prüfen kann.
+Die Fragen kommen in einer Reihenfolge, die ihre Abhängigkeiten achtet, und man beantwortet nur, was der Code der KI nicht verrät.
+Bei Designfragen empfiehlt die KI eine Antwort, bei Problem und Zielen nicht: Dort ist man selbst die einzige Quelle, und ein Vorschlag lenkt die Antwort.
 
 Zusätzliche Anker für strukturierte Abdeckung:
 
