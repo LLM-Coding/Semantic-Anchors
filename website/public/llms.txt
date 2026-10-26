@@ -13306,7 +13306,10 @@ When we talk about a "specification" or "spec", we mean:
 
 Clarify requirements using the Socratic Method:
 - Ask at most 3 questions at a time, challenge assumptions
+- Ask only questions whose prerequisites are already settled; a question that depends on an open answer waits for a later round
 - Use MECE to ensure questions cover all areas without overlap
+- Look up facts from the code and environment yourself; put only decisions to the user
+- Give a recommended answer for solution and design questions only. Ask about problem, goals, personas and success criteria openly, without a suggestion: there the user is the only source, and a suggestion anchors the answer
 - Keep a list of open questions; after each answer, update it and add any new question it raises
 - Stop when the list is empty and the user confirms it
 

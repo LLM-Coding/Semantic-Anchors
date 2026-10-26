@@ -182,6 +182,9 @@ Prompt the AI to use the ⚓ link:#/anchor/socratic-method[*Socratic Method*] to
 ----
 Use the Socratic Method to help me clarify requirements for [your project].
 Ask me at most 3 questions at a time. Challenge my assumptions.
+Ask only questions whose prerequisites are already settled; a question that depends on an open answer waits for a later round.
+Look up facts from the code and environment yourself; put only decisions to me.
+Give a recommended answer for solution and design questions only. Ask about problem, goals, personas and success criteria openly, without a suggestion.
 Keep a list of open questions. After each answer, update the list and add any new question it raises.
 Stop when the list is empty and I confirm it.
 ----
@@ -189,6 +192,8 @@ Stop when the list is empty and I confirm it.
 This activates targeted questioning, assumption challenging, and productive use of not-knowing.
 The constraint "at most 3 questions" prevents question overload.
 The list of open questions makes the not-knowing visible and gives the dialogue a stop condition you can check.
+Questions come in an order that respects their dependencies, and you only answer what the code can't tell the AI.
+The AI recommends an answer for design questions, but not for the problem or the goals: there you are the only source, and a suggestion anchors your answer.
 
 You can layer additional anchors for structured coverage:
 
