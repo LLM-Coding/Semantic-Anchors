@@ -7,10 +7,11 @@
  * CommonJS — reads the same JSON to emit the static home page. A .js module
  * could not serve both without an async refactor of that script.
  *
- * `kind` splits the list into the three groups the site labels differently:
+ * `kind` splits the list into the four groups the site labels differently:
  * 'press' is coverage written about us, 'appearance' is a conversation we
- * took part in, and 'adoption' is someone else's project referring to this
- * catalog. They are not the same claim and are not merged.
+ * took part in, 'adoption' is someone else's project referring to this
+ * catalog, and 'listing' is a directory or ranking that includes the repository
+ * by its own inclusion criteria. They are not the same claim and are not merged.
  *
  * The row says "Adapted in", and the entries are kept narrow enough for that
  * to be true: one rebuilt the catalog, one enforces it as a plugin, two took
@@ -19,8 +20,14 @@
  * not belong here — it would make the label overstate the rest. That is the
  * test to apply before adding one.
  *
- * `logo` is optional. An adoption entry usually has no mark we are licensed
- * to show, so it renders as a label alone rather than as a broken image.
+ * The same test holds for "Listed on": an entry belongs there only if a
+ * directory or ranking with stated inclusion criteria lists the repository
+ * itself (Good AI List, for instance, takes AI repositories from 500 GitHub
+ * stars up). A link roundup, a blog post or a passing mention is not a
+ * listing.
+ *
+ * `logo` is optional. An adoption or listing entry usually has no mark we are
+ * licensed to show, so it renders as a label alone rather than as a broken image.
  *
  * `titleKey` is rendered twice on purpose: as `title` for a mouse, and as
  * sr-only text inside the link for everyone else. A tooltip is invisible to

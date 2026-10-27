@@ -105,6 +105,8 @@
   "footer.ocsaAlt": "opencode-semantic-anchors by Jens Grote — an opencode plugin that enforced anchors and contracts; deprecated in 2026 in favour of OpenCode agent configuration (English)",
   "footer.speqAlt": "speq-skill by marconae — carries a Semantic Anchors documentation page linking this catalog (English)",
   "footer.novaAlt": "wandelbots-nova by Wandelbots — ADR convention informed by MADR and this catalog (English)",
+  "footer.listedOn": "Listed on",
+  "footer.goodailistAlt": "Good AI List by Chip Huyen — a daily-updated directory of open-source AI repositories with 500+ GitHub stars, listing this catalog since October 2026 (English)",
   "categories.communication-presentation": "Communication & Presentation",
   "categories.creative-writing": "Creative Writing & Storytelling",
   "categories.design-principles": "Design Principles & Patterns",

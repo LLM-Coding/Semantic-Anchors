@@ -49,6 +49,13 @@ describe('renderMain — appearances strip', () => {
     expect(strip).toContain('footer.featuredIn')
     expect(strip).toContain('footer.asSeenOn')
   })
+
+  it('gives directory listings their own labelled group', () => {
+    const html = renderMain()
+    const strip = html.slice(html.indexOf('id="appearances"'), html.indexOf('id="filters"'))
+    expect(strip).toContain('footer.listedOn')
+    expect(strip).toContain('href="https://goodailist.com/repos?search=Semantic-Anchors"')
+  })
 })
 
 describe('renderMain — TalkItOver catalog button', () => {

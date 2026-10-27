@@ -78,5 +78,13 @@
     "alt": "wandelbots-nova",
     "label": "wandelbots-nova (EN)",
     "titleKey": "footer.novaAlt"
+  },
+  {
+    "id": "goodailist",
+    "kind": "listing",
+    "href": "https://goodailist.com/repos?search=Semantic-Anchors",
+    "alt": "Good AI List",
+    "label": "Good AI List (EN)",
+    "titleKey": "footer.goodailistAlt"
   }
 ]

@@ -61,9 +61,10 @@ export function renderMain() {
 
           <!-- Third-party coverage belongs where people actually look. In the
                footer it sat below ~200 anchor cards, which nobody scrolls to.
-               The three groups stay separately labelled: press is written
-               about us, an appearance is a conversation we joined, and a
-               reference is someone else's project pointing here. -->
+               The four groups stay separately labelled: press is written
+               about us, an appearance is a conversation we joined, a
+               reference is someone else's project pointing here, and a
+               listing is a directory or ranking that includes us. -->
           <section
             id="appearances"
             class="mb-8 border-y border-[var(--color-border)] py-3"
@@ -84,6 +85,12 @@ export function renderMain() {
             ></span>
               <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.adaptedIn">${i18n.t('footer.adaptedIn')}</span>
               ${renderAppearances('adoption', import.meta.env.BASE_URL, (k) => i18n.t(k))}
+              <span
+              class="w-full sm:mx-1 sm:h-4 sm:w-px sm:bg-[var(--color-border)]"
+              aria-hidden="true"
+            ></span>
+              <span class="text-xs text-[var(--color-text-secondary)]" data-i18n="footer.listedOn">${i18n.t('footer.listedOn')}</span>
+              ${renderAppearances('listing', import.meta.env.BASE_URL, (k) => i18n.t(k))}
             </div>
           </section>
 
