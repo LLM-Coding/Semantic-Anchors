@@ -116,3 +116,44 @@ describe('renderFooter — "adapted in" row', () => {
     }
   })
 })
+
+describe('renderFooter — "listed on" row', () => {
+  // A directory or ranking that lists the repository is neither press,
+  // nor a conversation, nor someone adapting the catalog. It gets its own row,
+  // so "Listed on" never has to cover an entry it does not describe.
+  const LISTINGS = APPEARANCES.filter((entry) => entry.kind === 'listing')
+
+  const anchorFor = (html, href) => {
+    const start = html.indexOf(`href="${href}"`)
+    expect(start).toBeGreaterThan(-1)
+    const open = html.lastIndexOf('<a', start)
+    const close = html.indexOf('</a>', start)
+    return html.slice(open, close)
+  }
+
+  it('gives the group its own label', () => {
+    expect(renderFooter('1.2.3')).toContain('footer.listedOn')
+  })
+
+  it('lists Good AI List, filtered to this repository', () => {
+    const anchor = anchorFor(
+      renderFooter('1.2.3'),
+      'https://goodailist.com/repos?search=Semantic-Anchors'
+    )
+    expect(anchor).toContain('Good AI List')
+  })
+
+  // We hold no licence to the directory's mark, so the entry is a label only.
+  it('renders every entry as a label with no image, described in the markup', () => {
+    const html = renderFooter('1.2.3')
+    expect(LISTINGS.length).toBeGreaterThan(0)
+    for (const entry of LISTINGS) {
+      const anchor = anchorFor(html, entry.href)
+      expect(anchor).not.toContain('<img')
+      expect(anchor).toContain('sr-only')
+      expect(anchor).toContain(entry.titleKey)
+      expect(anchor).toContain('target="_blank"')
+      expect(anchor).toContain('rel="noopener noreferrer"')
+    }
+  })
+})
