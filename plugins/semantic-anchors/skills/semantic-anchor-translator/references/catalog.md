@@ -1207,3 +1207,8 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Mobile-first design
 - **Proponents:** Luke Wroblewski (2009; book, A Book Apart 2011)
 - **Core:** Design for the smallest screen first — constraints force focus on what matters, then progressive enhancement for larger screens; in CSS base styles for small screens and `min-width` media queries, never `max-width` overrides; a strategy of priorities, not "mobile only"
+
+### Neo-Brutalism
+- **Also known as:** Neobrutalism, neubrutalism
+- **Proponents:** No single originator (community trend); defined by Nielsen Norman Group (Hayat Sheikh, 2025)
+- **Core:** Web/UI style — thick black outlines, hard offset shadows without blur, flat saturated colours, blocky visible structure, heavy grotesque or monospace type, but with a grid and clear hierarchy (unlike raw brutalist web design); say "neo-brutalism", because the bare "brutalism" resolves to architecture

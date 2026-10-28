@@ -1,0 +1,49 @@
+= Neo-Brutalism
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Community design trend (no single originator), Nielsen Norman Group (definition, 2025)
+:tags: Neo-Brutalism, Neobrutalismus, Neubrutalism, Brutalismus im Webdesign, dicke Rahmen, harter Schatten, versetzter Schatten, flache Farben, hoher Kontrast, Blocklayout, Gumroad, Webdesign-Trend, visueller Stil
+:related: swiss-style, bauhaus, wcag-22-aa
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Neo-Brutalism -- ein visueller Stil für Web- und UI-Design mit dicken schwarzen Rahmen, harten versetzten Schatten, flachen satten Farben und blockhaften Layouts
+
+Auch bekannt als:: Neobrutalism, Neubrutalism, Neobrutalismus
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Dicke schwarze Konturen.* Karten, Buttons und Bilder tragen einen massiven schwarzen Rahmen von zwei bis vier Pixeln. Die Kontur, nicht ein weicher Schatten, trennt das Element vom Hintergrund.
+* *Harte versetzte Schatten.* Schatten sind massive schwarze oder dunkle Blöcke, ein paar Pixel nach rechts unten verschoben, ohne Unschärfe. Beim Hover rückt ein Element oft in seinen Schatten und wirkt gedrückt.
+* *Flache, satte Farbe.* Große Flächen in kräftigen Farben -- Gelb, Pink, Mint, Blau -- ohne Verläufe. Darauf steht schwarzer Text.
+* *Blockhafte, sichtbare Struktur.* Layouts bestehen aus Rechtecken mit scharfen oder leicht gerundeten Ecken. Das Raster bleibt sichtbar; nichts verbirgt, dass die Seite aus Kästen besteht.
+* *Kräftige, schlichte Schrift.* Fette Grotesk- oder Monospace-Schriften, große Überschriften, oft in Versalien.
+* *Ordnung unter dem Lärm.* Anders als der rohe brutalistische Webdesign-Stil behält Neo-Brutalism ein Raster, eine klare Hierarchie und übliche Navigation. Die Nielsen Norman Group beschreibt ihn als bunteren und geordneteren Nachfahren des Brutalismus und als Reaktion auf glatten Minimalismus.
+
+Wichtige Vertreter:: Kein einzelner Urheber. Der Stil verbreitete sich als Community-Trend im Produkt- und Webdesign; die Nielsen Norman Group definiert ihn in https://www.nngroup.com/articles/neobrutalism/[„Neobrutalism: Definition and Best Practices“] (Hayat Sheikh, 2025) und nennt Gumroad und die Markenauffrischung von Figma als Beispiele
+
+[discrete]
+== *Wann verwenden*:
+
+* Landingpages, Portfolios und Marketing-Seiten, die laut, verspielt oder bewusst ungeschliffen wirken sollen
+* Produkte für Designer, Entwickler und kreatives Publikum, zu denen ein lockerer Ton passt
+* Als Gegenanweisung, wenn generierte Entwürfe zu weichen Verläufen, gerundeten Karten und unscharfen Schatten abdriften
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Ihn mit brutalistischem Webdesign verwechseln.* Roher Brutalismus bricht Konventionen mit Absicht. Neo-Brutalism behält Ordnung, Raster und klare Hierarchie.
+* *Hohen Kontrast für barrierefrei halten.* Schwarze Konturen sind kontrastreich, aber satte Farbpaare können die Kontrastprüfung für Text trotzdem verfehlen.
+* *Ihn überall einsetzen.* Der verspielte Look passt nicht zu Kontexten, die von Vertrauen leben, etwa Banken oder Gesundheit.
+* *Das bloße „brutalism“ verwenden.* In unserem Prior-Test am 28.10.2026 führte „What is brutalism?“ auf allen Modellstufen zur Architektur. Mit „Use neo-brutalism.“ bekam eine Bäckerei-Landingpage in sechs von sechs Läufen schwarze Rahmen und harte versetzte Schatten; keine der sechs Baselines nutzte eines davon. Erst das Präfix erreicht den Webstil.
+
+[discrete]
+== *Kritik*:
+
+* *Lautes Styling kann die Bedienbarkeit kosten.* Hayat Sheikh warnt in https://www.nngroup.com/articles/neobrutalism/[„Neobrutalism: Definition and Best Practices“] (Nielsen Norman Group, 2025), der Stil könne ohne Ausgleich Nutzer überfordern und die Barrierefreiheit behindern („without balance, it can overwhelm users and hinder accessibility“). Sie rät zu zwei oder drei Farben und neutralen Schriften für Fließtext.
+* *Der Vorläufer tauscht Bedienbarkeit gegen Haltung.* Kate Moran hält in https://www.nngroup.com/articles/brutalism-antidesign/[„Brutalism and Antidesign“] (Nielsen Norman Group, 2017) bewusst schwer lesbare Layouts für unvereinbar mit dem Erledigen von Aufgaben: Niemand beschwere sich, eine Website sei zu leicht verständlich („nobody ever complains that a site is too easy to understand.“).
+====
