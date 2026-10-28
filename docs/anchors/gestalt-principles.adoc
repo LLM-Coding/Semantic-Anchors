@@ -1,0 +1,50 @@
+= Gestalt Principles
+:categories: ux-visual-design
+:roles: ux-designer, educator, software-developer, technical-writer
+:proponents: Max Wertheimer, Kurt Koffka, Wolfgang Köhler
+:tags: Gestalt principles, Gestalt laws, laws of perceptual organization, perceptual grouping, Max Wertheimer, Berlin school, proximity, similarity, common fate, closure, good curve, good Gestalt, common region, figure-ground, visual hierarchy, visual design
+:related: swiss-style, laws-of-ux, nielsen-usability-heuristics
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: The Gestalt principles of perceptual grouping -- the factors by which people see separate elements as belonging together, described by Max Wertheimer in 1923 and applied today in visual and interface design
+
+Also known as:: Gestalt laws, laws of perceptual organization, principles of grouping
+
+[discrete]
+== *Core Concepts*:
+
+* *We see wholes before parts.* The eye groups elements into units without effort. Design either works with this grouping or fights it.
+* *Wertheimer's factors.* In "Untersuchungen zur Lehre von der Gestalt II" (1923) Max Wertheimer named proximity, similarity, uniform destiny (common fate), objective set, direction, closure, good curve, good Gestalt and past experience.
+* *Proximity.* Elements close to each other read as a group. In interfaces, spacing alone can tie a label to its field.
+* *Similarity.* Elements that share colour, shape or size read as related.
+* *Closure and common fate.* The eye completes incomplete shapes, and elements that move together read as one unit.
+* *The factors compete.* Aurora Harley of NN/g notes that proximity often overrides similarity. A design reads correctly only when the factors agree.
+* *The list grew in design practice.* The NN/g study guide also covers common region -- elements inside a shared border read as a group -- which is not among Wertheimer's original factors.
+
+Key Proponents:: Max Wertheimer ("Untersuchungen zur Lehre von der Gestalt II", _Psychologische Forschung_ 4, 1923, pp. 301–350; English: https://psychclassics.yorku.ca/Wertheimer/Forms/forms["Laws of Organization in Perceptual Forms"], translated by W. Ellis in _A Source Book of Gestalt Psychology_, 1938); Kurt Koffka and Wolfgang Köhler as co-founders of the Berlin school; in UX practice the Nielsen Norman Group (https://www.nngroup.com/articles/visual-design-in-ux-study-guide/[visual design study guide], 2022; Aurora Harley, https://www.nngroup.com/articles/gestalt-proximity/["Proximity Principle in Visual Design"], 2020)
+
+[discrete]
+== *When to Use*:
+
+* Reviewing a form or screen where labels, fields and buttons do not visibly belong together
+* Explaining why a layout feels confusing, in terms that point at a fix: more space here, a shared border there
+* Teaching visual hierarchy to developers and writers
+* Asking a model to review a UI: with the anchor, it explains defects through named grouping laws, proximity first
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Expecting one canonical list.* Wertheimer's factors differ from the lists in design books; common region, for instance, came later.
+* *Applying the principles as independent rules.* They compete, and proximity often wins over similarity.
+* *Reading them as explanations.* They describe grouping tendencies; they do not explain why perception works that way.
+* *Dropping "Principles" from the name.* In our prior test on 2026-10-28, the bare "Gestalt" resolved to psychology on every tier and brought up Gestalt therapy. With "Gestalt Principles", six of six runs explained the defects of a signup form through at least three laws, proximity in all six; no baseline named one.
+
+[discrete]
+== *Criticism*:
+
+* *Laws with little precision.* Wagemans, Elder, Kubovy, Palmer, Peterson, Singh and von der Heydt review a century of research in https://ruccs.sas.rutgers.edu/images/archive/personal-manish-singh/papers/Wagemans_etal_2012_I.pdf["A century of Gestalt psychology in visual perception: I. Perceptual grouping and figure–ground organization"] (_Psychological Bulletin_ 138(6), 2012). They report the long-standing charge that classic Gestalt work offered demonstrations instead of explanations, "formulating laws with little precision".
+====

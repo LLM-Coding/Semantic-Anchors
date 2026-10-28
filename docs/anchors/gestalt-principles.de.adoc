@@ -1,0 +1,50 @@
+= Gestalt Principles (Gestaltgesetze)
+:categories: ux-visual-design
+:roles: ux-designer, educator, software-developer, technical-writer
+:proponents: Max Wertheimer, Kurt Koffka, Wolfgang Köhler
+:tags: Gestaltgesetze, Gestalt Principles, Gestaltpsychologie, Wahrnehmungsorganisation, Gruppierung, Max Wertheimer, Berliner Schule, Nähe, Ähnlichkeit, gemeinsames Schicksal, Geschlossenheit, gute Kurve, gute Gestalt, gemeinsame Region, Figur-Grund, visuelle Hierarchie, visuelles Design
+:related: swiss-style, laws-of-ux, nielsen-usability-heuristics
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Die Gestaltgesetze der Wahrnehmung -- die Faktoren, nach denen Menschen getrennte Elemente als zusammengehörig sehen, 1923 von Max Wertheimer beschrieben und heute im visuellen und im Interface-Design angewandt
+
+Auch bekannt als:: Gestaltgesetze, Gesetze der Wahrnehmungsorganisation, Gruppierungsprinzipien
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Wir sehen das Ganze vor den Teilen.* Das Auge fasst Elemente mühelos zu Einheiten zusammen. Gestaltung arbeitet entweder mit dieser Gruppierung oder gegen sie.
+* *Wertheimers Faktoren.* In „Untersuchungen zur Lehre von der Gestalt II“ (1923) nannte Max Wertheimer Nähe, Gleichheit, gemeinsames Schicksal, objektive Einstellung, Richtung, Geschlossenheit, gute Kurve, gute Gestalt und Erfahrung.
+* *Nähe.* Elemente, die nah beieinander stehen, wirken als Gruppe. In Oberflächen kann allein der Abstand ein Label an sein Feld binden.
+* *Ähnlichkeit.* Elemente mit gleicher Farbe, Form oder Größe wirken verwandt.
+* *Geschlossenheit und gemeinsames Schicksal.* Das Auge ergänzt unvollständige Formen, und Elemente, die sich gemeinsam bewegen, wirken als eine Einheit.
+* *Die Faktoren konkurrieren.* Aurora Harley von NN/g stellt fest, dass Nähe oft Ähnlichkeit übertrumpft. Ein Entwurf liest sich nur dann richtig, wenn die Faktoren übereinstimmen.
+* *Die Liste wuchs in der Designpraxis.* Der NN/g-Studienleitfaden behandelt auch die gemeinsame Region -- Elemente innerhalb eines gemeinsamen Rahmens wirken als Gruppe --, die nicht zu Wertheimers ursprünglichen Faktoren gehört.
+
+Wichtige Vertreter:: Max Wertheimer („Untersuchungen zur Lehre von der Gestalt II“, _Psychologische Forschung_ 4, 1923, S. 301–350; englisch: https://psychclassics.yorku.ca/Wertheimer/Forms/forms["Laws of Organization in Perceptual Forms"], übersetzt von W. Ellis in _A Source Book of Gestalt Psychology_, 1938); Kurt Koffka und Wolfgang Köhler als Mitbegründer der Berliner Schule; in der UX-Praxis die Nielsen Norman Group (https://www.nngroup.com/articles/visual-design-in-ux-study-guide/[Studienleitfaden zu visuellem Design], 2022; Aurora Harley, https://www.nngroup.com/articles/gestalt-proximity/["Proximity Principle in Visual Design"], 2020)
+
+[discrete]
+== *Wann verwenden*:
+
+* Ein Formular oder einen Bildschirm prüfen, auf dem Labels, Felder und Buttons nicht sichtbar zusammengehören
+* Erklären, warum ein Layout verwirrt, und zwar so, dass die Erklärung auf eine Lösung zeigt: hier mehr Abstand, dort ein gemeinsamer Rahmen
+* Entwicklern und Autoren visuelle Hierarchie beibringen
+* Ein Modell eine Oberfläche prüfen lassen: Mit dem Anker erklärt es Mängel über benannte Gestaltgesetze, allen voran die Nähe
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Eine kanonische Liste erwarten.* Wertheimers Faktoren weichen von den Listen in Designbüchern ab; die gemeinsame Region etwa kam später hinzu.
+* *Die Gesetze als unabhängige Regeln anwenden.* Sie konkurrieren, und Nähe schlägt oft Ähnlichkeit.
+* *Sie als Erklärungen lesen.* Sie beschreiben Gruppierungstendenzen; warum die Wahrnehmung so arbeitet, erklären sie nicht.
+* *„Principles“ im Namen weglassen.* In unserem Prior-Test am 28.10.2026 führte das bloße „Gestalt“ auf allen Modellstufen zur Psychologie und brachte die Gestalttherapie ins Spiel. Mit „Gestalt Principles“ erklärten sechs von sechs Läufen die Mängel eines Anmeldeformulars über mindestens drei Gesetze, alle sechs über die Nähe; keine Baseline nannte eines.
+
+[discrete]
+== *Kritik*:
+
+* *Gesetze mit wenig Präzision.* Wagemans, Elder, Kubovy, Palmer, Peterson, Singh und von der Heydt blicken in https://ruccs.sas.rutgers.edu/images/archive/personal-manish-singh/papers/Wagemans_etal_2012_I.pdf["A century of Gestalt psychology in visual perception: I. Perceptual grouping and figure–ground organization"] (_Psychological Bulletin_ 138(6), 2012) auf ein Jahrhundert Forschung zurück. Sie berichten vom alten Vorwurf, die klassische Gestaltpsychologie habe Demonstrationen statt Erklärungen geliefert und Gesetze mit wenig Präzision formuliert ("formulating laws with little precision").
+====
