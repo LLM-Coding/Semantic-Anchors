@@ -62,7 +62,7 @@ See the full link:CONTRIBUTING.adoc[Contributing Guide] or read it on the link:h
 
 == Categories
 
-The catalog is organized into 15 MECE (Mutually Exclusive, Collectively Exhaustive) categories:
+The catalog is organized into 15 categories. Their scopes are MECE (Mutually Exclusive, Collectively Exhaustive); a single anchor may still belong to more than one category:
 
 * Communication & Presentation
 * Creative Writing & Storytelling
