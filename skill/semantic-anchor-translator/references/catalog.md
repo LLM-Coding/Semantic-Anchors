@@ -39,7 +39,6 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Taiichi Ohno, Toyota Motor Corporation
 - **Core:** A signal nobody can miss, a cord anyone may pull, and a guaranteed response. The radical part is the authority, not the hardware; a rising pull count early on signals that problems are surfacing rather than hiding
 
-
 ### TDD, London School
 - **Also known as:** Mockist TDD, Outside-In TDD
 - **Proponents:** Steve Freeman, Nat Pryce
@@ -554,7 +553,6 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** G.K. Chesterton (*The Thing*, 1929, "The Drift from Domesticity")
 - **Core:** Before removing something whose purpose you cannot see, establish why it is there — the odd-looking check is the one most likely to be load-bearing. Not a veto: once a timeboxed, good-faith search turns up nothing, removal is earned, provided it is reversible and observed. Runs *backwards* from an artifact already standing, where Second-Order Thinking runs forwards from a change you are about to make
 
-
 ### DMADV
 - **Also known as:** DFSS, Design for Six Sigma
 - **Proponents:** Motorola, General Electric
@@ -603,7 +601,6 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** continuous improvement; kaizen event, kaizen blitz; contrast kaikaku
 - **Proponents:** Masaaki Imai (1986), Taiichi Ohno, Toyota Motor Corporation
 - **Core:** Small, frequent, low-risk changes by the people doing the work; standardise the gain, then improve from the new standard. Kaikaku is the deliberate contrast — radical, discontinuous change
-
 
 ### First Principles Thinking
 - **Also known as:** Reasoning from First Principles, Reasoning from Fundamentals
@@ -702,7 +699,6 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Quality Function Deployment; Blitz QFD
 - **Proponents:** Yoji Akao, Shigeru Mizuno, Glenn Mazur
 - **Core:** A method that deploys customer needs through design, process and production decisions. Its best-known *tool* — not a second name for it — is the House of Quality, a matrix mapping needs (WHATs) to technical characteristics (HOWs) with a correlation "roof" showing where two characteristics reinforce or conflict; that conflict view is what neither Pugh Matrix nor Kano Model carries. Mazur calls HoQ-only QFD "a most common myth"; in Blitz QFD the House may be skipped entirely. Standardised as ISO 16355
-
 
 ### Cockburn Use Cases
 - **Also known as:** Fully Dressed Use Cases, Goal-Level Use Cases
@@ -858,16 +854,6 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Communication Gap, Encoding-Decoding Gap, Sender-Empfänger-Diskrepanz
 - **Proponents:** Claude Shannon & Warren Weaver, Friedemann Schulz von Thun, Stuart Hall, Herbert H. Clark & Susan E. Brennan (umbrella — no single proponent)
 - **Core:** Intended meaning ≠ received meaning; the sender encodes and the receiver decodes through independent cognitive processes, so the reconstructed meaning is not guaranteed to match the intent. Cause-agnostic umbrella over Shannon-Weaver (noise in channel), Schulz von Thun (four-sides mismatched ears), Hall (active decoding positions), and Clark (insufficient common ground); names the phenomenon before choosing a diagnostic framework. Candidate contract rather than single-proponent anchor.
-
-### Tufte Style
-- **Also known as:** Tufte's principles of information design; shipped as `theme_tufte` (ggthemes), Tufte CSS, tufte-latex, matplotlib-tufte
-- **Proponents:** Edward R. Tufte
-- **Core:** Information-design principles for charts, dashboards and reports — maximize the data-ink ratio, remove chartjunk, keep graphical integrity (lie factor ≈ 1), use small multiples on shared axes, sparklines inline in text, and direct labels instead of legends; density is the goal, not emptiness (remove waste, then spend the space on more information); the name also covers the sidenote page layout of Tufte CSS/tufte-latex, so say which you mean
-
-### Swiss Style (International Typographic Style)
-- **Also known as:** International Typographic Style, Swiss design, Swiss typography
-- **Proponents:** Ernst Keller, Josef Müller-Brockmann (Grid Systems in Graphic Design, 1981), Armin Hofmann, Emil Ruder (Zurich and Basel schools, 1950s)
-- **Core:** Grid-based graphic design — a modular grid set before anything is placed, sans-serif type (Akzidenz-Grotesk, Helvetica) in few sizes, flush-left ragged-right text, asymmetric composition with active white space, objective photography or geometric forms instead of illustration, hierarchy from scale and position rather than ornament; not minimalism and not just Helvetica
 
 ### Crisis and Emergency Risk Communication (CERC)
 - **Also known as:** CERC -- but the bare acronym does not carry the meaning; spell it out
@@ -1124,3 +1110,15 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** 起承転結, Four-Act Eastern Structure, Ki-Shō-Ten-Ketsu
 - **Proponents:** Classical Chinese and Japanese narrative tradition, Tzvetan Todorov
 - **Core:** Ki (introduce) → Shō (develop) → Ten (twist/recontextualise) → Ketsu (reconcile); no protagonist-antagonist conflict required; tension arises from juxtaposition and revelation; used in manga, haiku, and Nintendo game design
+
+## UX & Visual Design
+
+### Swiss Style (International Typographic Style)
+- **Also known as:** International Typographic Style, Swiss design, Swiss typography
+- **Proponents:** Ernst Keller, Josef Müller-Brockmann (Grid Systems in Graphic Design, 1981), Armin Hofmann, Emil Ruder (Zurich and Basel schools, 1950s)
+- **Core:** Grid-based graphic design — a modular grid set before anything is placed, sans-serif type (Akzidenz-Grotesk, Helvetica) in few sizes, flush-left ragged-right text, asymmetric composition with active white space, objective photography or geometric forms instead of illustration, hierarchy from scale and position rather than ornament; not minimalism and not just Helvetica
+
+### Tufte Style
+- **Also known as:** Tufte's principles of information design; shipped as `theme_tufte` (ggthemes), Tufte CSS, tufte-latex, matplotlib-tufte
+- **Proponents:** Edward R. Tufte
+- **Core:** Information-design principles for charts, dashboards and reports — maximize the data-ink ratio, remove chartjunk, keep graphical integrity (lie factor ≈ 1), use small multiples on shared axes, sparklines inline in text, and direct labels instead of legends; density is the goal, not emptiness (remove waste, then spend the space on more information); the name also covers the sidenote page layout of Tufte CSS/tufte-latex, so say which you mean

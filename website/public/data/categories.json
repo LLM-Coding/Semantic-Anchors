@@ -24,7 +24,6 @@
       "progressive-disclosure",
       "pyramid-principle",
       "sender-receiver-discrepancy",
-      "swiss-style",
       "tufte-style",
       "zone-of-proximal-development"
     ]
@@ -104,8 +103,6 @@
       "solid-principles",
       "solid-srp",
       "ssot-principle",
-      "swiss-style",
-      "tufte-style",
       "unix-philosophy",
       "yagni"
     ]
@@ -364,6 +361,14 @@
       "test-double-stub",
       "test-seam",
       "testing-pyramid"
+    ]
+  },
+  {
+    "id": "ux-visual-design",
+    "name": "UX & Visual Design",
+    "anchors": [
+      "swiss-style",
+      "tufte-style"
     ]
   }
 ]

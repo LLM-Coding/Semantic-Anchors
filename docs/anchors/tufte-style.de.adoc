@@ -1,5 +1,5 @@
 = Tufte Style
-:categories: communication-presentation, design-principles
+:categories: ux-visual-design, communication-presentation
 :roles: technical-writer, ux-designer, data-scientist, software-developer, consultant
 :proponents: Edward R. Tufte
 :tags: Tufte Style, Edward Tufte, Data-Ink-Ratio, Chartjunk, Small Multiples, Sparklines, Lie Factor, grafische Integrität, Informationsdesign, Datenvisualisierung, Direktbeschriftung, Tufte CSS, Seitennoten, Dashboard-Design

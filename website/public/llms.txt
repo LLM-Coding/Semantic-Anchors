@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 283 well-defined terms, methodologies, and frameworks
+> 282 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -213,13 +213,15 @@ If the response is:
 
 ### Browse by Category
 
-The catalog is organized into 12 categories:
+The catalog is organized into 15 categories:
 
 * Communication & Presentation
+* Creative Writing & Storytelling
 * Design Principles & Patterns
 * Development Workflow
 * Dialogue & Interaction Patterns
 * Documentation Practices
+* Knowledge Management
 * Meta (about this catalog itself)
 * Problem-Solving Methodologies
 * Requirements Engineering
@@ -227,6 +229,7 @@ The catalog is organized into 12 categories:
 * Statistical Methods & Process Monitoring
 * Strategic Planning & Decision Making
 * Testing & Quality Practices
+* UX & Visual Design
 
 ### Filter by Role
 
@@ -1373,45 +1376,6 @@ Herbert H. Clark & Susan E. Brennan (https://en.wikipedia.org/wiki/Grounding_in_
 * Problem Space NVC
 * Plain English (Strunk & White)
 * BLUF
-
-### Swiss Style (International Typographic Style)
-
-***Full Name***: Swiss Style, also called the International Typographic Style -- the grid-based graphic design that came out of the Zurich and Basel schools of design in the 1950s
-
-***Also known as***: International Typographic Style, Swiss design, Swiss typography
-
-[discrete]
-## **Core Concepts**:
-
-* **The grid comes first.** A modular grid of columns and rows is set before any element is placed, and every element sits on it. Josef Müller-Brockmann's _Grid Systems in Graphic Design_ (1981) works through grids from 8 to 32 fields.
-* **Sans-serif type, and little of it.** Akzidenz-Grotesk, later Helvetica, in few sizes and weights. Hierarchy comes from scale, weight and position, not from ornament or a change of typeface.
-* **Flush left, ragged right.** Text is aligned to one edge and never justified, so word spacing stays even.
-* **Asymmetric composition.** Elements are balanced against each other and against empty space rather than centred on an axis. The white space is part of the composition, not what is left over.
-* **Objective imagery.** Photography or abstract geometric forms instead of illustration; the picture shows the subject, it does not interpret it.
-* **Clarity over expression.** The designer's job is to make the message legible and ordered, ideally across languages. This is why the style became the default for signage, corporate identities and public information.
-
-***Key Proponents***: Ernst Keller (taught at the Kunstgewerbeschule Zürich from 1918); Josef Müller-Brockmann (_Grid Systems in Graphic Design_, 1981; concert posters for the Zurich Tonhalle); Armin Hofmann (_Graphic Design Manual_, 1965) and Emil Ruder (_Typographie_, 1967), both at the Basel School of Design; the Zurich journal _Neue Grafik_, co-edited by Müller-Brockmann
-
-[discrete]
-## **When to Use**:
-
-* Posters, flyers, menus and event material that have to be read at a glance
-* Signage, wayfinding and information graphics
-* Layout systems for websites, slide templates and reports, where a grid keeps many pages consistent
-* As a counter-instruction when generated designs drift towards centred layouts, decorative fonts and stock illustration
-
-[discrete]
-## **Common Misunderstandings**:
-
-* **Reading it as minimalism.** A Swiss Style layout can be dense; what defines it is the grid and the order, not the amount of empty space.
-* **Reducing it to Helvetica.** The typeface is the most visible trace, but a centred, symmetric poster in Helvetica is not Swiss Style.
-* **Confusing it with Bauhaus.** The Bauhaus and Jan Tschichold's _Die neue Typographie_ (1928) are its precursors; the Swiss schools turned their ideas into a teachable system in the 1950s.
-* **Using the bare name outside a design context.** "Swiss style" also names food and products. Asked "What is 'Swiss Style'?" without context, every tier we tested answered with graphic design. The alias "International Typographic Style" does the same work: in a follow-up test on 2026-10-25 with the same poster task, six of six runs set a modular grid and Helvetica or Akzidenz-Grotesk, built the poster from type and geometric forms without illustration, and five of six named flush-left, ragged-right text.
-
-[discrete]
-## **Criticism**:
-
-* **Cold, formal, dogmatic -- the post-1968 charge, and a Basel teacher led the opposition.** The Swiss National Library writes in https://www.nb.admin.ch/en/postmodern-posters-1970-to-today["Postmodern posters, 1970 to today"] that after 1968, with the criticism of consumer society, the International Style "came under fire as its cold, formal, dogmatic aesthetic was questioned". Wolfgang Weingart, who taught in Basel alongside Armin Hofmann, "led the opposition to the International Style".
 
 ### Tufte Style
 
@@ -3841,96 +3805,6 @@ A class should have only one reason to change. Each module or class should be re
 ***Difference from SPOT***: SSOT emphasizes the authoritative, trusted nature of a data source and is used at the architecture/organizational level, while SPOT focuses on the implementation pattern
 
 ***Related Concepts***: DRY, SPOT, Event sourcing, Data lakes, Master data management
-
-### Swiss Style (International Typographic Style)
-
-***Full Name***: Swiss Style, also called the International Typographic Style -- the grid-based graphic design that came out of the Zurich and Basel schools of design in the 1950s
-
-***Also known as***: International Typographic Style, Swiss design, Swiss typography
-
-[discrete]
-## **Core Concepts**:
-
-* **The grid comes first.** A modular grid of columns and rows is set before any element is placed, and every element sits on it. Josef Müller-Brockmann's _Grid Systems in Graphic Design_ (1981) works through grids from 8 to 32 fields.
-* **Sans-serif type, and little of it.** Akzidenz-Grotesk, later Helvetica, in few sizes and weights. Hierarchy comes from scale, weight and position, not from ornament or a change of typeface.
-* **Flush left, ragged right.** Text is aligned to one edge and never justified, so word spacing stays even.
-* **Asymmetric composition.** Elements are balanced against each other and against empty space rather than centred on an axis. The white space is part of the composition, not what is left over.
-* **Objective imagery.** Photography or abstract geometric forms instead of illustration; the picture shows the subject, it does not interpret it.
-* **Clarity over expression.** The designer's job is to make the message legible and ordered, ideally across languages. This is why the style became the default for signage, corporate identities and public information.
-
-***Key Proponents***: Ernst Keller (taught at the Kunstgewerbeschule Zürich from 1918); Josef Müller-Brockmann (_Grid Systems in Graphic Design_, 1981; concert posters for the Zurich Tonhalle); Armin Hofmann (_Graphic Design Manual_, 1965) and Emil Ruder (_Typographie_, 1967), both at the Basel School of Design; the Zurich journal _Neue Grafik_, co-edited by Müller-Brockmann
-
-[discrete]
-## **When to Use**:
-
-* Posters, flyers, menus and event material that have to be read at a glance
-* Signage, wayfinding and information graphics
-* Layout systems for websites, slide templates and reports, where a grid keeps many pages consistent
-* As a counter-instruction when generated designs drift towards centred layouts, decorative fonts and stock illustration
-
-[discrete]
-## **Common Misunderstandings**:
-
-* **Reading it as minimalism.** A Swiss Style layout can be dense; what defines it is the grid and the order, not the amount of empty space.
-* **Reducing it to Helvetica.** The typeface is the most visible trace, but a centred, symmetric poster in Helvetica is not Swiss Style.
-* **Confusing it with Bauhaus.** The Bauhaus and Jan Tschichold's _Die neue Typographie_ (1928) are its precursors; the Swiss schools turned their ideas into a teachable system in the 1950s.
-* **Using the bare name outside a design context.** "Swiss style" also names food and products. Asked "What is 'Swiss Style'?" without context, every tier we tested answered with graphic design. The alias "International Typographic Style" does the same work: in a follow-up test on 2026-10-25 with the same poster task, six of six runs set a modular grid and Helvetica or Akzidenz-Grotesk, built the poster from type and geometric forms without illustration, and five of six named flush-left, ragged-right text.
-
-[discrete]
-## **Criticism**:
-
-* **Cold, formal, dogmatic -- the post-1968 charge, and a Basel teacher led the opposition.** The Swiss National Library writes in https://www.nb.admin.ch/en/postmodern-posters-1970-to-today["Postmodern posters, 1970 to today"] that after 1968, with the criticism of consumer society, the International Style "came under fire as its cold, formal, dogmatic aesthetic was questioned". Wolfgang Weingart, who taught in Basel alongside Armin Hofmann, "led the opposition to the International Style".
-
-### Tufte Style
-
-***Full Name***: Tufte Style -- the information-design principles of Edward R. Tufte
-
-***Also known as***: Tufte's principles of information design. In tooling the eponym is already a style token: `theme_tufte` in R's ggthemes, https://edwardtufte.github.io/tufte-css/[Tufte CSS], the https://ctan.org/pkg/tufte-latex[tufte-latex] document classes, `matplotlib-tufte`.
-
-[discrete]
-## **Core Concepts**:
-
-* **Data-ink ratio.** Of all the ink on the page, the share that encodes data should be as large as it usefully can be. Gridlines, frames, fills, shadows and 3-D effects encode no data; at best they help the eye find its way. They are therefore the first candidates for removal, not automatic deletions: a gridline that lets the eye read a value off the chart is doing work, and muting it usually beats deleting it.
-* **Chartjunk.** The name for decoration that competes with the evidence -- moiré patterns, ornamental icons, gratuitous colour. Naming it as a defect is what makes it removable.
-* **Graphical integrity, measured by the lie factor.** The size of the effect shown should equal the size of the effect in the data. A distorted axis or a scaled-area icon is a quantitative error, not a matter of taste.
-* **Small multiples.** Repeat one compact panel across subsets on identical axes. The comparison then happens in the eye rather than in the reader's memory.
-* **Sparklines.** A word-sized graphic set inside the sentence it belongs to, so the number and its history occupy the same line.
-* **Direct labelling instead of legends.** Put the name on the line. A legend forces the reader to hold a colour in memory and look it up again for every mark.
-* **Density is the point, not emptiness.** This is the distinction that decides whether the term was understood: remove what carries no information, then spend the reclaimed space on more information. A Tufte-style page usually contains **more** than the one it replaces.
-* **Words, numbers and images belong together.** Caption, annotation and graphic sit in one place rather than in three. The sidenote layout that carries Tufte's name is this principle applied to running text.
-
-[discrete]
-## **When to Use**:
-
-* Designing a dashboard or a status report, especially where the default is large KPI tiles, gauges and traffic lights
-* Reviewing a chart before it goes into documentation, a slide deck or a paper
-* Anywhere a graphic has to survive being printed in black and white, or read at a glance
-* When a report has grown to several pages because each number was given its own panel
-
-[discrete]
-## **Common Misunderstandings**:
-
-* **Reading it as minimalism.** A minimalist chart contains little; a Tufte-style chart often contains a great deal and merely wastes no ink. Stripping detail to look clean inverts the principle.
-* **Treating it as a visual skin.** It is a set of decisions about evidence -- what is compared, at what scale, against what baseline -- not a palette and a font.
-* **Taking the data-ink ratio for a law.** It is a heuristic, and experiment has put some of its premises in question. See _Criticism_.
-* **Confusing the two things the name covers.** "Tufte style" names both the chart principles and the sidenote page layout of Tufte CSS and tufte-latex. They share an author and a motive, but a request for one does not deliver the other; say which you mean.
-
-## **Criticism**:
-
-* **The data-ink position was tested empirically, and it did not survive intact.** Bateman, Mandryk, Gutwin, Genest, McDine and Brooks put embellished charts against plain ones in https://sites.stat.columbia.edu/gelman/communication/Bateman2010.pdf["Useful Junk?"] (CHI 2010) and report: "people's accuracy in describing the embellished charts was no worse than for plain charts, and their recall after a two-to-three-week gap was significantly better. Although we are cautious about recommending that all charts be produced in this style, our results question some of the premises of the minimalist approach to chart design." Decoration that aids memory is not junk by Tufte's own criterion of usefulness.
-* **Readers do not want the minimum either.** Inbar, Tractinsky and Meyer, https://cris.bgu.ac.il/en/publications/minimalism-in-information-visualization-attitudes-towards-maximiz/["Minimalism in information visualization"] (ECCE 2007): "The results indicate a clear preference of non-minimalist bar-graphs, suggesting low acceptance of minimalist design principles such as high data-ink ratio." This measures preference, not comprehension -- a weaker claim than Bateman's, and worth keeping separate.
-* **The debate is live, not settled, and it has defenders on Tufte's side.** Stephen Few, writing from the same minimalist position, takes Bateman's conclusion apart in https://www.perceptualedge.com/articles/visual_business_intelligence/the_chartjunk_debate.pdf["The Chartjunk Debate"] (Perceptual Edge, 2011), objecting to the claim that "many examples exist of embellished charts that seem to be successful" with a flat "Many examples?" Harvard's own summary of Borkin et al.'s https://seas.harvard.edu/news/what-makes-data-visualization-memorable[memorability study] frames the field the same way: researchers teaming up "to settle a debate over 'chart junk'" that "still rages among visualization experts".
-* **The Challenger analysis is contested by one of the engineers in it.** Wade Robison, **Roger Boisjoly**, David Hoeker and Stefan Young published "Representation and misrepresentation: Tufte and the Morton Thiokol engineers on the Challenger" in _Science and Engineering Ethics_ 8(1), January 2002, 59-81 -- and Boisjoly was one of the Thiokol engineers who argued against the launch. The paper "examines the role of the Morton Thiokol engineers in the decisions surrounding the launch of the Challenger, particularly with reference to an analysis of this event by Edward Tufte", and concludes "that the engineers thus did what they were ethically as well as professionally obligated to do" -- against Tufte's reading that a better graphic would have prevented the launch decision.
-* **Don Norman attacks the PowerPoint essay, and the attack lands on the method.** In https://jnd.org/in-defense-of-powerpoint/["In Defense of PowerPoint"], responding to Tufte's _The Cognitive Style of PowerPoint_, Norman writes: "Just because Tufte, in hindsight (when he already knows the answers), can look back and show they were wrong, and then point to discrepancies in their presentation, does not mean the fault lies in the presentation, nor in the tool used to present it." He adds that on the slide in question, "the slide should have had less information on it -- Tufte wants more information."
-* **Keep the three targets apart.** Bateman, Inbar and Borkin test the **principles**; Robison and colleagues dispute the **Challenger analysis**; Norman argues with the **PowerPoint essay** and the Columbia slide reading inside it. None of them is a rebuttal of the others, and the Columbia shuttle is not the Challenger.
-
-[discrete]
-## **Current Status**:
-
-* **The four books, as the publisher lists them.** https://www.edwardtufte.com/books/[Graphics Press] gives _The Visual Display of Quantitative Information_ as "1983 / 2nd Edition 2001" -- the same book under two years, and the second edition is the one in print. Then _Envisioning Information_ (1990), _Visual Explanations_ (1996, widely miscited as 1997) and _Beautiful Evidence_ (2006). A fifth, _Seeing with Fresh Eyes_, followed in 2020, so "his four books" is no longer accurate.
-* **The name is baked into tooling, which is why it holds as an anchor.** `theme_tufte` in R's https://jrnold.github.io/ggthemes/reference/theme_tufte.html[ggthemes] cites the data-ink chapter by name: "No border, no axis lines, no grids." https://edwardtufte.github.io/tufte-css/[Tufte CSS] and the https://ctan.org/pkg/tufte-latex[tufte-latex] classes carry the sidenote layout; https://pypi.org/project/matplotlib-tufte/[matplotlib-tufte] carries the chart rules into Python. A term that ships as an installable default is one a model has seen in code as well as in prose.
-* **The typographic branch is stable to the point of dormancy.** CTAN lists tufte-latex at 3.5.2 with its most recent announcement in 2015. That is not decay -- the layout was finished -- but it means the second meaning of the name lives on in copies rather than in active development.
-* **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](#/prior-tests) for the terms searched.
 
 ### Unix Philosophy
 
@@ -13277,6 +13151,100 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * Kent C. Dodds, https://kentcdodds.com/blog/write-tests["Write tests. Not too many. Mostly integration."] (2019) — proposes the **Testing Trophy**: integration tests give the best confidence per cost, so the pyramid's unit-heavy base optimises for the wrong metric
 * Spotify Engineering, https://engineering.atspotify.com/2018/01/testing-of-microservices/["Testing of Microservices"] (2018) — proposes the **honeycomb** shape for microservices: unit-heavy suites couple tests to implementation details and break under refactoring
 * The layer boundaries blur in modern stacks — fast in-memory "integration" tests undermine the pyramid's core assumption that higher-level tests are necessarily slow and expensive
+
+---
+
+## UX & Visual Design
+
+### Swiss Style (International Typographic Style)
+
+***Full Name***: Swiss Style, also called the International Typographic Style -- the grid-based graphic design that came out of the Zurich and Basel schools of design in the 1950s
+
+***Also known as***: International Typographic Style, Swiss design, Swiss typography
+
+[discrete]
+## **Core Concepts**:
+
+* **The grid comes first.** A modular grid of columns and rows is set before any element is placed, and every element sits on it. Josef Müller-Brockmann's _Grid Systems in Graphic Design_ (1981) works through grids from 8 to 32 fields.
+* **Sans-serif type, and little of it.** Akzidenz-Grotesk, later Helvetica, in few sizes and weights. Hierarchy comes from scale, weight and position, not from ornament or a change of typeface.
+* **Flush left, ragged right.** Text is aligned to one edge and never justified, so word spacing stays even.
+* **Asymmetric composition.** Elements are balanced against each other and against empty space rather than centred on an axis. The white space is part of the composition, not what is left over.
+* **Objective imagery.** Photography or abstract geometric forms instead of illustration; the picture shows the subject, it does not interpret it.
+* **Clarity over expression.** The designer's job is to make the message legible and ordered, ideally across languages. This is why the style became the default for signage, corporate identities and public information.
+
+***Key Proponents***: Ernst Keller (taught at the Kunstgewerbeschule Zürich from 1918); Josef Müller-Brockmann (_Grid Systems in Graphic Design_, 1981; concert posters for the Zurich Tonhalle); Armin Hofmann (_Graphic Design Manual_, 1965) and Emil Ruder (_Typographie_, 1967), both at the Basel School of Design; the Zurich journal _Neue Grafik_, co-edited by Müller-Brockmann
+
+[discrete]
+## **When to Use**:
+
+* Posters, flyers, menus and event material that have to be read at a glance
+* Signage, wayfinding and information graphics
+* Layout systems for websites, slide templates and reports, where a grid keeps many pages consistent
+* As a counter-instruction when generated designs drift towards centred layouts, decorative fonts and stock illustration
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Reading it as minimalism.** A Swiss Style layout can be dense; what defines it is the grid and the order, not the amount of empty space.
+* **Reducing it to Helvetica.** The typeface is the most visible trace, but a centred, symmetric poster in Helvetica is not Swiss Style.
+* **Confusing it with Bauhaus.** The Bauhaus and Jan Tschichold's _Die neue Typographie_ (1928) are its precursors; the Swiss schools turned their ideas into a teachable system in the 1950s.
+* **Using the bare name outside a design context.** "Swiss style" also names food and products. Asked "What is 'Swiss Style'?" without context, every tier we tested answered with graphic design. The alias "International Typographic Style" does the same work: in a follow-up test on 2026-10-25 with the same poster task, six of six runs set a modular grid and Helvetica or Akzidenz-Grotesk, built the poster from type and geometric forms without illustration, and five of six named flush-left, ragged-right text.
+
+[discrete]
+## **Criticism**:
+
+* **Cold, formal, dogmatic -- the post-1968 charge, and a Basel teacher led the opposition.** The Swiss National Library writes in https://www.nb.admin.ch/en/postmodern-posters-1970-to-today["Postmodern posters, 1970 to today"] that after 1968, with the criticism of consumer society, the International Style "came under fire as its cold, formal, dogmatic aesthetic was questioned". Wolfgang Weingart, who taught in Basel alongside Armin Hofmann, "led the opposition to the International Style".
+
+### Tufte Style
+
+***Full Name***: Tufte Style -- the information-design principles of Edward R. Tufte
+
+***Also known as***: Tufte's principles of information design. In tooling the eponym is already a style token: `theme_tufte` in R's ggthemes, https://edwardtufte.github.io/tufte-css/[Tufte CSS], the https://ctan.org/pkg/tufte-latex[tufte-latex] document classes, `matplotlib-tufte`.
+
+[discrete]
+## **Core Concepts**:
+
+* **Data-ink ratio.** Of all the ink on the page, the share that encodes data should be as large as it usefully can be. Gridlines, frames, fills, shadows and 3-D effects encode no data; at best they help the eye find its way. They are therefore the first candidates for removal, not automatic deletions: a gridline that lets the eye read a value off the chart is doing work, and muting it usually beats deleting it.
+* **Chartjunk.** The name for decoration that competes with the evidence -- moiré patterns, ornamental icons, gratuitous colour. Naming it as a defect is what makes it removable.
+* **Graphical integrity, measured by the lie factor.** The size of the effect shown should equal the size of the effect in the data. A distorted axis or a scaled-area icon is a quantitative error, not a matter of taste.
+* **Small multiples.** Repeat one compact panel across subsets on identical axes. The comparison then happens in the eye rather than in the reader's memory.
+* **Sparklines.** A word-sized graphic set inside the sentence it belongs to, so the number and its history occupy the same line.
+* **Direct labelling instead of legends.** Put the name on the line. A legend forces the reader to hold a colour in memory and look it up again for every mark.
+* **Density is the point, not emptiness.** This is the distinction that decides whether the term was understood: remove what carries no information, then spend the reclaimed space on more information. A Tufte-style page usually contains **more** than the one it replaces.
+* **Words, numbers and images belong together.** Caption, annotation and graphic sit in one place rather than in three. The sidenote layout that carries Tufte's name is this principle applied to running text.
+
+[discrete]
+## **When to Use**:
+
+* Designing a dashboard or a status report, especially where the default is large KPI tiles, gauges and traffic lights
+* Reviewing a chart before it goes into documentation, a slide deck or a paper
+* Anywhere a graphic has to survive being printed in black and white, or read at a glance
+* When a report has grown to several pages because each number was given its own panel
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Reading it as minimalism.** A minimalist chart contains little; a Tufte-style chart often contains a great deal and merely wastes no ink. Stripping detail to look clean inverts the principle.
+* **Treating it as a visual skin.** It is a set of decisions about evidence -- what is compared, at what scale, against what baseline -- not a palette and a font.
+* **Taking the data-ink ratio for a law.** It is a heuristic, and experiment has put some of its premises in question. See _Criticism_.
+* **Confusing the two things the name covers.** "Tufte style" names both the chart principles and the sidenote page layout of Tufte CSS and tufte-latex. They share an author and a motive, but a request for one does not deliver the other; say which you mean.
+
+## **Criticism**:
+
+* **The data-ink position was tested empirically, and it did not survive intact.** Bateman, Mandryk, Gutwin, Genest, McDine and Brooks put embellished charts against plain ones in https://sites.stat.columbia.edu/gelman/communication/Bateman2010.pdf["Useful Junk?"] (CHI 2010) and report: "people's accuracy in describing the embellished charts was no worse than for plain charts, and their recall after a two-to-three-week gap was significantly better. Although we are cautious about recommending that all charts be produced in this style, our results question some of the premises of the minimalist approach to chart design." Decoration that aids memory is not junk by Tufte's own criterion of usefulness.
+* **Readers do not want the minimum either.** Inbar, Tractinsky and Meyer, https://cris.bgu.ac.il/en/publications/minimalism-in-information-visualization-attitudes-towards-maximiz/["Minimalism in information visualization"] (ECCE 2007): "The results indicate a clear preference of non-minimalist bar-graphs, suggesting low acceptance of minimalist design principles such as high data-ink ratio." This measures preference, not comprehension -- a weaker claim than Bateman's, and worth keeping separate.
+* **The debate is live, not settled, and it has defenders on Tufte's side.** Stephen Few, writing from the same minimalist position, takes Bateman's conclusion apart in https://www.perceptualedge.com/articles/visual_business_intelligence/the_chartjunk_debate.pdf["The Chartjunk Debate"] (Perceptual Edge, 2011), objecting to the claim that "many examples exist of embellished charts that seem to be successful" with a flat "Many examples?" Harvard's own summary of Borkin et al.'s https://seas.harvard.edu/news/what-makes-data-visualization-memorable[memorability study] frames the field the same way: researchers teaming up "to settle a debate over 'chart junk'" that "still rages among visualization experts".
+* **The Challenger analysis is contested by one of the engineers in it.** Wade Robison, **Roger Boisjoly**, David Hoeker and Stefan Young published "Representation and misrepresentation: Tufte and the Morton Thiokol engineers on the Challenger" in _Science and Engineering Ethics_ 8(1), January 2002, 59-81 -- and Boisjoly was one of the Thiokol engineers who argued against the launch. The paper "examines the role of the Morton Thiokol engineers in the decisions surrounding the launch of the Challenger, particularly with reference to an analysis of this event by Edward Tufte", and concludes "that the engineers thus did what they were ethically as well as professionally obligated to do" -- against Tufte's reading that a better graphic would have prevented the launch decision.
+* **Don Norman attacks the PowerPoint essay, and the attack lands on the method.** In https://jnd.org/in-defense-of-powerpoint/["In Defense of PowerPoint"], responding to Tufte's _The Cognitive Style of PowerPoint_, Norman writes: "Just because Tufte, in hindsight (when he already knows the answers), can look back and show they were wrong, and then point to discrepancies in their presentation, does not mean the fault lies in the presentation, nor in the tool used to present it." He adds that on the slide in question, "the slide should have had less information on it -- Tufte wants more information."
+* **Keep the three targets apart.** Bateman, Inbar and Borkin test the **principles**; Robison and colleagues dispute the **Challenger analysis**; Norman argues with the **PowerPoint essay** and the Columbia slide reading inside it. None of them is a rebuttal of the others, and the Columbia shuttle is not the Challenger.
+
+[discrete]
+## **Current Status**:
+
+* **The four books, as the publisher lists them.** https://www.edwardtufte.com/books/[Graphics Press] gives _The Visual Display of Quantitative Information_ as "1983 / 2nd Edition 2001" -- the same book under two years, and the second edition is the one in print. Then _Envisioning Information_ (1990), _Visual Explanations_ (1996, widely miscited as 1997) and _Beautiful Evidence_ (2006). A fifth, _Seeing with Fresh Eyes_, followed in 2020, so "his four books" is no longer accurate.
+* **The name is baked into tooling, which is why it holds as an anchor.** `theme_tufte` in R's https://jrnold.github.io/ggthemes/reference/theme_tufte.html[ggthemes] cites the data-ink chapter by name: "No border, no axis lines, no grids." https://edwardtufte.github.io/tufte-css/[Tufte CSS] and the https://ctan.org/pkg/tufte-latex[tufte-latex] classes carry the sidenote layout; https://pypi.org/project/matplotlib-tufte/[matplotlib-tufte] carries the chart rules into Python. A term that ships as an installable default is one a model has seen in code as well as in prose.
+* **The typographic branch is stable to the point of dormancy.** CTAN lists tufte-latex at 3.5.2 with its most recent announcement in 2015. That is not decay -- the layout was finished -- but it means the second meaning of the name lives on in copies rather than in active development.
+* **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](#/prior-tests) for the terms searched.
 
 ---
 

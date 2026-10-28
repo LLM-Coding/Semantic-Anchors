@@ -28,7 +28,7 @@
     ],
     "filePath": "docs/anchors/4mat.adoc",
     "tier": 3,
-    "addedAt": "2026-04-12T13:39:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "50-72-rule",
@@ -57,7 +57,7 @@
     ],
     "filePath": "docs/anchors/50-72-rule.adoc",
     "tier": 3,
-    "addedAt": "2026-07-01T09:57:48+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "a3-problem-solving",
@@ -111,7 +111,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "addie-model",
@@ -142,7 +142,7 @@
     ],
     "filePath": "docs/anchors/addie-model.adoc",
     "tier": 3,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "adr-according-to-nygard",
@@ -173,7 +173,7 @@
     ],
     "filePath": "docs/anchors/adr-according-to-nygard.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "aida-model",
@@ -205,7 +205,7 @@
       "attention-interest-desire-action"
     ],
     "filePath": "docs/anchors/aida-model.adoc",
-    "addedAt": "2026-06-03T22:41:27+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "andon",
@@ -256,7 +256,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "arc42",
@@ -291,7 +291,7 @@
     "filePath": "docs/anchors/arc42.adoc",
     "tier": 3,
     "definition": "arc42 is a template for documenting software architecture, created by Gernot Starke and Peter Hruschka. It organises an architecture into twelve standardised sections — from goals, constraints, and context through building blocks, runtime, and deployment to decisions, quality, and risks — so teams document consistently and completely.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "arrange-act-assert",
@@ -342,7 +342,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "atam",
@@ -375,7 +375,7 @@
     ],
     "filePath": "docs/anchors/atam.adoc",
     "tier": 3,
-    "addedAt": "2026-03-06T17:48:13+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "bdd-given-when-then",
@@ -408,7 +408,7 @@
     ],
     "filePath": "docs/anchors/bdd-given-when-then.adoc",
     "tier": 3,
-    "addedAt": "2026-03-09T09:49:49+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "bem-methodology",
@@ -439,7 +439,7 @@
     ],
     "filePath": "docs/anchors/bem-methodology.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "big-five",
@@ -476,7 +476,7 @@
     ],
     "filePath": "docs/anchors/big-five.adoc",
     "tier": 2,
-    "addedAt": "2026-07-06T23:02:34+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "blink-without-delay",
@@ -523,7 +523,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-09T10:51:36+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "blooms-taxonomy",
@@ -559,7 +559,7 @@
     ],
     "filePath": "docs/anchors/blooms-taxonomy.adoc",
     "tier": 3,
-    "addedAt": "2026-06-02T15:41:12+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "bluf",
@@ -593,7 +593,7 @@
     "filePath": "docs/anchors/bluf.adoc",
     "tier": 3,
     "definition": "BLUF — Bottom Line Up Front — is a communication structure from US military practice: state the conclusion, decision, or key request in the very first sentence, then give the supporting detail. The reader gets the essential takeaway immediately instead of reading to the end to find it.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "boy-scout-rule",
@@ -641,7 +641,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-24T14:26:26+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "bulkhead",
@@ -690,7 +690,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "c4-diagrams",
@@ -723,7 +723,7 @@
     ],
     "filePath": "docs/anchors/c4-diagrams.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "cap-theorem",
@@ -756,7 +756,7 @@
     ],
     "filePath": "docs/anchors/cap-theorem.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "chain-of-thought",
@@ -790,7 +790,7 @@
     "filePath": "docs/anchors/chain-of-thought.adoc",
     "tier": 3,
     "definition": "Chain of Thought (CoT) is a prompting technique for large language models that asks the model to reason step by step before stating a final answer. Making the intermediate steps explicit improves accuracy on multi-step arithmetic, logic, and reasoning tasks compared with answering directly.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "chestertons-fence",
@@ -841,7 +841,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T17:48:53+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "circuit-breaker",
@@ -875,7 +875,7 @@
     ],
     "filePath": "docs/anchors/circuit-breaker.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "clean-architecture",
@@ -905,7 +905,7 @@
     "filePath": "docs/anchors/clean-architecture.adoc",
     "tier": 3,
     "definition": "Clean Architecture, formulated by Robert C. Martin, organises code into concentric layers whose dependencies point only inward toward the domain. Business rules sit at the centre, independent of frameworks, UI, and databases at the outer edges. The Dependency Rule keeps the core testable and insulated from external change.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "cockburn-use-cases",
@@ -938,7 +938,7 @@
     ],
     "filePath": "docs/anchors/cockburn-use-cases.adoc",
     "tier": 3,
-    "addedAt": "2026-05-02T09:48:41+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "code-smells",
@@ -974,7 +974,7 @@
     ],
     "filePath": "docs/anchors/code-smells.adoc",
     "tier": 2,
-    "addedAt": "2026-04-20T11:43:59+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "cohesion-criteria",
@@ -1007,7 +1007,7 @@
     ],
     "filePath": "docs/anchors/cohesion-criteria.adoc",
     "tier": 2,
-    "addedAt": "2026-04-07T16:00:53+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "command-query-separation",
@@ -1054,7 +1054,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "connextra-user-story",
@@ -1105,7 +1105,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "consent-vs-consensus",
@@ -1136,7 +1136,7 @@
     ],
     "filePath": "docs/anchors/consent-vs-consensus.adoc",
     "tier": 3,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "control-chart-shewhart",
@@ -1167,7 +1167,7 @@
     ],
     "filePath": "docs/anchors/control-chart-shewhart.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "conventional-commits",
@@ -1198,7 +1198,7 @@
     ],
     "filePath": "docs/anchors/conventional-commits.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "conways-law",
@@ -1231,7 +1231,7 @@
     ],
     "filePath": "docs/anchors/conways-law.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "cqrs",
@@ -1264,7 +1264,7 @@
     ],
     "filePath": "docs/anchors/cqrs.adoc",
     "tier": 3,
-    "addedAt": "2026-03-07T20:13:29+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "crc-cards",
@@ -1297,7 +1297,7 @@
     ],
     "filePath": "docs/anchors/crc-cards.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:12:41+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "crisis-and-emergency-risk-communication",
@@ -1351,7 +1351,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-24T14:26:26+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "cupid-properties",
@@ -1399,7 +1399,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-24T14:26:26+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "curse-of-knowledge",
@@ -1434,7 +1434,7 @@
     ],
     "filePath": "docs/anchors/curse-of-knowledge.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "cynefin-framework",
@@ -1466,7 +1466,7 @@
     "filePath": "docs/anchors/cynefin-framework.adoc",
     "tier": 3,
     "definition": "Cynefin, created by Dave Snowden, is a sense-making framework that sorts situations into five domains — Clear, Complicated, Complex, Chaotic, and Disorder — each with a different cause-and-effect relationship. It helps choose the right response, from applying best practice in ordered domains to probing and experimenting in the complex one.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "dale-carnegie-principles",
@@ -1515,7 +1515,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-24T14:26:26+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "decisional-balance-sheet",
@@ -1547,7 +1547,7 @@
     ],
     "filePath": "docs/anchors/decisional-balance-sheet.adoc",
     "tier": 3,
-    "addedAt": "2026-05-13T21:12:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "deep-modules",
@@ -1577,7 +1577,7 @@
     ],
     "filePath": "docs/anchors/deep-modules.adoc",
     "tier": 2,
-    "addedAt": "2026-07-01T09:57:48+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "defense-in-depth",
@@ -1626,7 +1626,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "defensive-programming",
@@ -1674,7 +1674,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-09T10:51:36+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "definition-of-done",
@@ -1709,7 +1709,7 @@
     ],
     "filePath": "docs/anchors/definition-of-done.adoc",
     "tier": 3,
-    "addedAt": "2026-03-13T20:35:53+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "design-by-contract",
@@ -1740,7 +1740,7 @@
     ],
     "filePath": "docs/anchors/design-by-contract.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "devils-advocate",
@@ -1771,7 +1771,7 @@
     ],
     "filePath": "docs/anchors/devils-advocate.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "diataxis-framework",
@@ -1802,7 +1802,7 @@
     ],
     "filePath": "docs/anchors/diataxis-framework.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "disc-model",
@@ -1836,7 +1836,7 @@
     "filePath": "docs/anchors/disc-model.adoc",
     "tier": 1,
     "advisory": "Classified as pseudoscience with no demonstrated predictive validity — use for reflection and dialogue, not selection (see Criticism)",
-    "addedAt": "2026-07-07T06:48:54+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "dmadv",
@@ -1889,7 +1889,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "dmaic",
@@ -1926,7 +1926,7 @@
     ],
     "filePath": "docs/anchors/dmaic.adoc",
     "tier": 3,
-    "addedAt": "2026-07-24T20:50:56+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "docs-as-code",
@@ -1957,7 +1957,7 @@
     ],
     "filePath": "docs/anchors/docs-as-code.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "domain-driven-design",
@@ -1992,7 +1992,7 @@
     "filePath": "docs/anchors/domain-driven-design.adoc",
     "tier": 3,
     "definition": "Domain-Driven Design, introduced by Eric Evans, tackles complex software by centring the design on the business domain. A shared Ubiquitous Language unites developers and domain experts, Bounded Contexts delimit models, and tactical patterns — entities, value objects, aggregates, repositories — express the domain directly in code.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "domain-storytelling",
@@ -2050,7 +2050,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-15T08:05:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "double-diamond",
@@ -2083,7 +2083,7 @@
     ],
     "filePath": "docs/anchors/double-diamond.adoc",
     "tier": 3,
-    "addedAt": "2026-05-13T21:12:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "dreyfus-skill-acquisition",
@@ -2114,7 +2114,7 @@
     ],
     "filePath": "docs/anchors/dreyfus-skill-acquisition.adoc",
     "tier": 3,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "dry",
@@ -2147,7 +2147,7 @@
     ],
     "filePath": "docs/anchors/dry.adoc",
     "tier": 3,
-    "addedAt": "2026-06-02T14:49:26+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "ears-requirements",
@@ -2177,7 +2177,7 @@
     ],
     "filePath": "docs/anchors/ears-requirements.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "effective-go",
@@ -2205,7 +2205,7 @@
     ],
     "filePath": "docs/anchors/effective-go.adoc",
     "tier": 3,
-    "addedAt": "2026-03-31T16:15:17+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "effective-java",
@@ -2234,7 +2234,7 @@
     ],
     "filePath": "docs/anchors/effective-java.adoc",
     "tier": 3,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "effective-python",
@@ -2263,7 +2263,7 @@
     ],
     "filePath": "docs/anchors/effective-python.adoc",
     "tier": 3,
-    "addedAt": "2026-07-14T11:34:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "eisenhower-matrix",
@@ -2295,7 +2295,7 @@
     "filePath": "docs/anchors/eisenhower-matrix.adoc",
     "tier": 2,
     "advisory": "Activates an urgency-first framing its own field cautions against (see Criticism)",
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "enterprise-integration-patterns",
@@ -2346,7 +2346,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "event-driven-architecture",
@@ -2383,7 +2383,7 @@
     ],
     "filePath": "docs/anchors/event-driven-architecture.adoc",
     "tier": 3,
-    "addedAt": "2026-03-07T20:24:13+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "event-storming",
@@ -2422,7 +2422,7 @@
     ],
     "filePath": "docs/anchors/event-storming.adoc",
     "tier": 3,
-    "addedAt": "2026-06-02T14:49:26+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "fagan-inspection",
@@ -2452,7 +2452,7 @@
     ],
     "filePath": "docs/anchors/fagan-inspection.adoc",
     "tier": 3,
-    "addedAt": "2026-03-13T20:34:53+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "fallacies-of-distributed-computing",
@@ -2484,7 +2484,7 @@
     ],
     "filePath": "docs/anchors/fallacies-of-distributed-computing.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "fermi-estimation",
@@ -2515,7 +2515,7 @@
     ],
     "filePath": "docs/anchors/fermi-estimation.adoc",
     "tier": 3,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "feynman-technique",
@@ -2546,7 +2546,7 @@
     ],
     "filePath": "docs/anchors/feynman-technique.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "fichtean-curve",
@@ -2581,7 +2581,7 @@
     ],
     "filePath": "docs/anchors/fichtean-curve.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:18:24+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "finite-state-machine",
@@ -2633,7 +2633,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-09T10:51:36+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "first-principles-thinking",
@@ -2665,7 +2665,7 @@
     ],
     "filePath": "docs/anchors/first-principles-thinking.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "five-whys",
@@ -2699,7 +2699,7 @@
     ],
     "filePath": "docs/anchors/five-whys.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "fmea",
@@ -2753,7 +2753,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "four-plus-one-view-model",
@@ -2805,7 +2805,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "four-sides-model",
@@ -2835,7 +2835,7 @@
     ],
     "filePath": "docs/anchors/four-sides-model.adoc",
     "tier": 3,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "fowler-patterns",
@@ -2865,7 +2865,7 @@
     ],
     "filePath": "docs/anchors/fowler-patterns.adoc",
     "tier": 3,
-    "addedAt": "2026-02-16T07:35:37+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "freytags-pyramid",
@@ -2905,7 +2905,7 @@
     ],
     "filePath": "docs/anchors/freytags-pyramid.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:18:24+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "genchi-genbutsu",
@@ -2957,7 +2957,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gherkin",
@@ -2992,7 +2992,7 @@
     "filePath": "docs/anchors/gherkin.adoc",
     "tier": 3,
     "definition": "Gherkin is the structured, plain-language syntax used by Behaviour-Driven Development tools such as Cucumber to write executable specifications. Scenarios follow a Given/When/Then form — context, action, outcome — so the same text serves as readable acceptance criteria for stakeholders and as automated tests.",
-    "addedAt": "2026-03-11T11:07:57+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "github-flow",
@@ -3024,7 +3024,7 @@
     ],
     "filePath": "docs/anchors/github-flow.adoc",
     "tier": 3,
-    "addedAt": "2026-03-13T12:59:50+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-abstract-factory-pattern",
@@ -3058,7 +3058,7 @@
     "filePath": "docs/anchors/gof-abstract-factory-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-adapter-pattern",
@@ -3093,7 +3093,7 @@
     "filePath": "docs/anchors/gof-adapter-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-bridge-pattern",
@@ -3128,7 +3128,7 @@
     "filePath": "docs/anchors/gof-bridge-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-builder-pattern",
@@ -3163,7 +3163,7 @@
     "filePath": "docs/anchors/gof-builder-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-chain-of-responsibility-pattern",
@@ -3198,7 +3198,7 @@
     "filePath": "docs/anchors/gof-chain-of-responsibility-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-command-pattern",
@@ -3234,7 +3234,7 @@
     "filePath": "docs/anchors/gof-command-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-composite-pattern",
@@ -3269,7 +3269,7 @@
     "filePath": "docs/anchors/gof-composite-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-decorator-pattern",
@@ -3304,7 +3304,7 @@
     "filePath": "docs/anchors/gof-decorator-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-design-patterns",
@@ -3363,7 +3363,7 @@
       "gof-visitor-pattern"
     ],
     "tier": 3,
-    "addedAt": "2026-03-07T20:17:32+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-facade-pattern",
@@ -3398,7 +3398,7 @@
     "filePath": "docs/anchors/gof-facade-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-factory-method-pattern",
@@ -3432,7 +3432,7 @@
     "filePath": "docs/anchors/gof-factory-method-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-flyweight-pattern",
@@ -3466,7 +3466,7 @@
     "filePath": "docs/anchors/gof-flyweight-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-interpreter-pattern",
@@ -3501,7 +3501,7 @@
     "filePath": "docs/anchors/gof-interpreter-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-iterator-pattern",
@@ -3536,7 +3536,7 @@
     "filePath": "docs/anchors/gof-iterator-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-mediator-pattern",
@@ -3571,7 +3571,7 @@
     "filePath": "docs/anchors/gof-mediator-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-memento-pattern",
@@ -3606,7 +3606,7 @@
     "filePath": "docs/anchors/gof-memento-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-observer-pattern",
@@ -3642,7 +3642,7 @@
     "filePath": "docs/anchors/gof-observer-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-prototype-pattern",
@@ -3677,7 +3677,7 @@
     "filePath": "docs/anchors/gof-prototype-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-proxy-pattern",
@@ -3713,7 +3713,7 @@
     "filePath": "docs/anchors/gof-proxy-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-singleton-pattern",
@@ -3746,7 +3746,7 @@
     "filePath": "docs/anchors/gof-singleton-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-state-pattern",
@@ -3782,7 +3782,7 @@
     "filePath": "docs/anchors/gof-state-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-strategy-pattern",
@@ -3814,7 +3814,7 @@
     "filePath": "docs/anchors/gof-strategy-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:03:57+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-template-method-pattern",
@@ -3849,7 +3849,7 @@
     "filePath": "docs/anchors/gof-template-method-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gof-visitor-pattern",
@@ -3884,7 +3884,7 @@
     "filePath": "docs/anchors/gof-visitor-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "addedAt": "2026-03-09T15:07:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gom",
@@ -3918,7 +3918,7 @@
     ],
     "filePath": "docs/anchors/gom.adoc",
     "tier": 2,
-    "addedAt": "2026-03-01T22:49:28+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "goodharts-law",
@@ -3951,7 +3951,7 @@
     ],
     "filePath": "docs/anchors/goodharts-law.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "grasp",
@@ -3983,7 +3983,7 @@
     ],
     "filePath": "docs/anchors/grasp.adoc",
     "tier": 3,
-    "addedAt": "2026-03-26T09:40:28+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gtd",
@@ -4014,7 +4014,7 @@
     ],
     "filePath": "docs/anchors/gtd.adoc",
     "tier": 3,
-    "addedAt": "2026-03-27T08:37:19+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "gutes-deutsch-wolf-schneider",
@@ -4045,7 +4045,7 @@
     ],
     "filePath": "docs/anchors/gutes-deutsch-wolf-schneider.adoc",
     "tier": 3,
-    "addedAt": "2026-03-12T10:10:57+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "hemingway-bridge",
@@ -4077,7 +4077,7 @@
     ],
     "filePath": "docs/anchors/hemingway-bridge.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T21:24:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "heros-journey",
@@ -4113,7 +4113,7 @@
     ],
     "filePath": "docs/anchors/heros-journey.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:18:24+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "hexaco",
@@ -4148,7 +4148,7 @@
     ],
     "filePath": "docs/anchors/hexaco.adoc",
     "tier": 2,
-    "addedAt": "2026-07-06T23:15:11+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "hexagonal-architecture",
@@ -4177,7 +4177,7 @@
     ],
     "filePath": "docs/anchors/hexagonal-architecture.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "hoshin-kanri",
@@ -4208,7 +4208,7 @@
     ],
     "filePath": "docs/anchors/hoshin-kanri.adoc",
     "tier": 3,
-    "addedAt": "2026-05-13T21:12:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "iec-61508-sil-levels",
@@ -4242,7 +4242,7 @@
     ],
     "filePath": "docs/anchors/iec-61508-sil-levels.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T15:45:20+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "impact-mapping",
@@ -4274,7 +4274,7 @@
     ],
     "filePath": "docs/anchors/impact-mapping.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "inverted-pyramid-style",
@@ -4304,7 +4304,7 @@
     ],
     "filePath": "docs/anchors/inverted-pyramid-style.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "invest",
@@ -4334,7 +4334,7 @@
     ],
     "filePath": "docs/anchors/invest.adoc",
     "tier": 3,
-    "addedAt": "2026-03-13T20:36:17+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "iosp",
@@ -4373,7 +4373,7 @@
     ],
     "filePath": "docs/anchors/iosp.adoc",
     "tier": 2,
-    "addedAt": "2026-06-03T09:46:39+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "ishikawa-diagram",
@@ -4422,7 +4422,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "iso-25010",
@@ -4457,7 +4457,7 @@
     ],
     "filePath": "docs/anchors/iso-25010.adoc",
     "tier": 3,
-    "addedAt": "2026-03-23T13:51:39+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "jidoka",
@@ -4510,7 +4510,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "jobs-to-be-done",
@@ -4543,7 +4543,7 @@
     ],
     "filePath": "docs/anchors/jobs-to-be-done.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "kaizen",
@@ -4596,7 +4596,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "kano-model",
@@ -4627,7 +4627,7 @@
     ],
     "filePath": "docs/anchors/kano-model.adoc",
     "tier": 3,
-    "addedAt": "2026-05-08T10:13:27+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "karpathys-llm-wiki",
@@ -4691,7 +4691,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-15T11:06:33+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "keep-a-changelog",
@@ -4738,7 +4738,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "kishotenketsu",
@@ -4775,7 +4775,7 @@
     ],
     "filePath": "docs/anchors/kishotenketsu.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:18:24+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "kiss-principle",
@@ -4807,7 +4807,7 @@
     ],
     "filePath": "docs/anchors/kiss-principle.adoc",
     "tier": 1,
-    "addedAt": "2026-03-26T09:33:10+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "kotter-8-step-change-model",
@@ -4837,7 +4837,7 @@
     ],
     "filePath": "docs/anchors/kotter-8-step-change-model.adoc",
     "tier": 3,
-    "addedAt": "2026-05-08T10:21:31+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "laddering",
@@ -4869,7 +4869,7 @@
     ],
     "filePath": "docs/anchors/laddering.adoc",
     "tier": 3,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "lasr",
@@ -4903,7 +4903,7 @@
     ],
     "filePath": "docs/anchors/lasr.adoc",
     "tier": 3,
-    "addedAt": "2026-03-06T17:54:58+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "law-of-demeter",
@@ -4934,7 +4934,7 @@
     ],
     "filePath": "docs/anchors/law-of-demeter.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "least-privilege",
@@ -4987,7 +4987,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "lehmans-classification",
@@ -5019,7 +5019,7 @@
     ],
     "filePath": "docs/anchors/lehmans-classification.adoc",
     "tier": 2,
-    "addedAt": "2026-04-15T11:24:12+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "linddun",
@@ -5056,7 +5056,7 @@
     ],
     "filePath": "docs/anchors/linddun.adoc",
     "tier": 3,
-    "addedAt": "2026-03-17T19:17:27+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "llm-evaluations",
@@ -5091,7 +5091,7 @@
     ],
     "filePath": "docs/anchors/llm-evaluations.adoc",
     "tier": 3,
-    "addedAt": "2026-03-18T09:46:17+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "locality-of-behaviour",
@@ -5141,7 +5141,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-08-14T10:36:08+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "luhmann-system-theory",
@@ -5175,7 +5175,7 @@
     ],
     "filePath": "docs/anchors/luhmann-system-theory.adoc",
     "tier": 3,
-    "addedAt": "2026-05-21T07:45:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "madr",
@@ -5204,7 +5204,7 @@
     ],
     "filePath": "docs/anchors/madr.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "meaningful-human-control",
@@ -5249,7 +5249,7 @@
     ],
     "filePath": "docs/anchors/meaningful-human-control.adoc",
     "tier": 2,
-    "addedAt": "2026-05-29T13:25:44+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "mece",
@@ -5281,7 +5281,7 @@
     "filePath": "docs/anchors/mece.adoc",
     "tier": 3,
     "definition": "MECE — Mutually Exclusive, Collectively Exhaustive — is a grouping principle from Barbara Minto’s Pyramid Principle: split a topic into categories that do not overlap and together cover everything. It yields clean, gap-free, duplication-free structures for analysis, communication, and problem decomposition.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "mental-model-according-to-naur",
@@ -5312,7 +5312,7 @@
     ],
     "filePath": "docs/anchors/mental-model-according-to-naur.adoc",
     "tier": 2,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "mikado-method",
@@ -5341,7 +5341,7 @@
       "reversible steps"
     ],
     "filePath": "docs/anchors/mikado-method.adoc",
-    "addedAt": "2026-03-11T15:45:43+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "misra-c",
@@ -5390,7 +5390,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-09T10:51:36+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "morphological-box",
@@ -5420,7 +5420,7 @@
     ],
     "filePath": "docs/anchors/morphological-box.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T15:34:15+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "moscow",
@@ -5449,7 +5449,7 @@
     ],
     "filePath": "docs/anchors/moscow.adoc",
     "tier": 3,
-    "addedAt": "2026-02-22T07:45:12+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "muda-mura-muri",
@@ -5503,7 +5503,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "mutation-testing",
@@ -5534,7 +5534,7 @@
     ],
     "filePath": "docs/anchors/mutation-testing.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "mvp",
@@ -5566,7 +5566,7 @@
     ],
     "filePath": "docs/anchors/mvp.adoc",
     "tier": 3,
-    "addedAt": "2026-04-12T13:39:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "myers-briggs-type-indicator",
@@ -5602,7 +5602,7 @@
     "filePath": "docs/anchors/myers-briggs-type-indicator.adoc",
     "tier": 1,
     "advisory": "Widely regarded as pseudoscience with low test-retest reliability — use for reflection and dialogue, not selection (see Criticism)",
-    "addedAt": "2026-03-09T15:17:08+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "nelson-rules",
@@ -5631,7 +5631,7 @@
     ],
     "filePath": "docs/anchors/nelson-rules.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "occams-razor",
@@ -5664,7 +5664,7 @@
     ],
     "filePath": "docs/anchors/occams-razor.adoc",
     "tier": 2,
-    "addedAt": "2026-04-20T11:42:39+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "okr",
@@ -5693,7 +5693,7 @@
     ],
     "filePath": "docs/anchors/okr.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "owasp-asvs",
@@ -5742,7 +5742,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "owasp-top-10",
@@ -5776,7 +5776,7 @@
     ],
     "filePath": "docs/anchors/owasp-top-10.adoc",
     "tier": 3,
-    "addedAt": "2026-03-04T13:00:35+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "para-method",
@@ -5807,7 +5807,7 @@
     ],
     "filePath": "docs/anchors/para-method.adoc",
     "tier": 3,
-    "addedAt": "2026-03-26T09:24:39+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "pdca",
@@ -5858,7 +5858,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "pert",
@@ -5896,7 +5896,7 @@
     ],
     "filePath": "docs/anchors/pert.adoc",
     "tier": 2,
-    "addedAt": "2026-03-26T09:25:15+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "plain-english-strunk-white",
@@ -5931,7 +5931,7 @@
     ],
     "filePath": "docs/anchors/plain-english-strunk-white.adoc",
     "tier": 3,
-    "addedAt": "2026-03-12T10:36:40+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "plain-language-iso-24495",
@@ -5993,7 +5993,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-25T08:50:31+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "poka-yoke",
@@ -6045,7 +6045,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "postels-law",
@@ -6074,7 +6074,7 @@
     ],
     "filePath": "docs/anchors/postels-law.adoc",
     "tier": 3,
-    "addedAt": "2026-06-01T21:31:00+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "prd",
@@ -6107,7 +6107,7 @@
     ],
     "filePath": "docs/anchors/prd.adoc",
     "tier": 3,
-    "addedAt": "2026-03-13T20:35:23+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "premortem",
@@ -6159,7 +6159,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-08-14T08:31:54+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "problem-space-nvc",
@@ -6192,7 +6192,7 @@
     ],
     "filePath": "docs/anchors/problem-space-nvc.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "progressive-disclosure",
@@ -6225,7 +6225,7 @@
     ],
     "filePath": "docs/anchors/progressive-disclosure.adoc",
     "tier": 2,
-    "addedAt": "2026-07-01T09:57:48+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "property-based-testing",
@@ -6254,7 +6254,7 @@
     ],
     "filePath": "docs/anchors/property-based-testing.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "pugh-matrix",
@@ -6284,7 +6284,7 @@
     ],
     "filePath": "docs/anchors/pugh-matrix.adoc",
     "tier": 2,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "pyramid-principle",
@@ -6315,7 +6315,7 @@
     ],
     "filePath": "docs/anchors/pyramid-principle.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "qfd",
@@ -6369,7 +6369,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "quality-attribute-scenario",
@@ -6407,7 +6407,7 @@
     ],
     "filePath": "docs/anchors/quality-attribute-scenario.adoc",
     "tier": 3,
-    "addedAt": "2026-05-21T22:39:21+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "railway-oriented-programming",
@@ -6459,7 +6459,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "red-green-tdd",
@@ -6489,7 +6489,7 @@
     ],
     "filePath": "docs/anchors/red-green-tdd.adoc",
     "tier": 3,
-    "addedAt": "2026-04-12T13:39:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "refactoring-catalog",
@@ -6542,7 +6542,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "regulated-environment",
@@ -6589,7 +6589,7 @@
     ],
     "filePath": "docs/anchors/regulated-environment.adoc",
     "tier": 2,
-    "addedAt": "2026-02-23T11:18:02+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "req42",
@@ -6644,7 +6644,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "residuality-theory",
@@ -6680,7 +6680,7 @@
     ],
     "filePath": "docs/anchors/residuality-theory.adoc",
     "tier": 2,
-    "addedAt": "2026-07-24T20:57:14+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "richardson-maturity-model",
@@ -6731,7 +6731,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "save-the-cat",
@@ -6766,7 +6766,7 @@
     ],
     "filePath": "docs/anchors/save-the-cat.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:18:24+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "second-order-thinking",
@@ -6820,7 +6820,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-08-14T08:31:54+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "semantic-versioning",
@@ -6849,7 +6849,7 @@
     ],
     "filePath": "docs/anchors/semantic-versioning.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "sender-receiver-discrepancy",
@@ -6886,7 +6886,7 @@
     ],
     "filePath": "docs/anchors/sender-receiver-discrepancy.adoc",
     "tier": 2,
-    "addedAt": "2026-07-01T09:57:48+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "separation-of-concerns",
@@ -6917,7 +6917,7 @@
     ],
     "filePath": "docs/anchors/separation-of-concerns.adoc",
     "tier": 1,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "simon-constructivism",
@@ -6951,7 +6951,7 @@
     ],
     "filePath": "docs/anchors/simon-constructivism.adoc",
     "tier": 3,
-    "addedAt": "2026-05-21T07:45:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "simplified-technical-english",
@@ -7000,7 +7000,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-08-14T11:05:06+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "single-level-of-abstraction-principle",
@@ -7032,7 +7032,7 @@
     ],
     "filePath": "docs/anchors/single-level-of-abstraction-principle.adoc",
     "tier": 2,
-    "addedAt": "2026-04-20T11:41:01+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "sipoc",
@@ -7082,7 +7082,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "site-reliability-engineering",
@@ -7123,7 +7123,7 @@
     ],
     "filePath": "docs/anchors/site-reliability-engineering.adoc",
     "tier": 3,
-    "addedAt": "2026-06-02T09:36:59+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "socratic-method",
@@ -7156,7 +7156,7 @@
     "filePath": "docs/anchors/socratic-method.adoc",
     "tier": 3,
     "definition": "The Socratic Method is a form of cooperative inquiry, attributed to Socrates, that advances understanding through disciplined questioning rather than assertion. By probing assumptions, definitions, and consequences, it surfaces contradictions and gaps, helping participants refine their own reasoning instead of being handed the answer.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "solid-dip",
@@ -7187,7 +7187,7 @@
     "filePath": "docs/anchors/solid-dip.adoc",
     "umbrella": "solid-principles",
     "tier": 3,
-    "addedAt": "2026-03-09T16:56:48+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "solid-isp",
@@ -7216,7 +7216,7 @@
     "filePath": "docs/anchors/solid-isp.adoc",
     "umbrella": "solid-principles",
     "tier": 3,
-    "addedAt": "2026-03-09T16:56:48+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "solid-lsp",
@@ -7247,7 +7247,7 @@
     "filePath": "docs/anchors/solid-lsp.adoc",
     "umbrella": "solid-principles",
     "tier": 3,
-    "addedAt": "2026-03-09T16:56:48+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "solid-ocp",
@@ -7277,7 +7277,7 @@
     "filePath": "docs/anchors/solid-ocp.adoc",
     "umbrella": "solid-principles",
     "tier": 3,
-    "addedAt": "2026-03-09T16:56:48+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "solid-principles",
@@ -7314,7 +7314,7 @@
     ],
     "tier": 3,
     "definition": "SOLID is a set of five object-oriented design principles popularised by Robert C. Martin: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. Together they steer code toward loose coupling and high cohesion, reducing rigidity and fragility as a system grows.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "solid-srp",
@@ -7343,7 +7343,7 @@
     "filePath": "docs/anchors/solid-srp.adoc",
     "umbrella": "solid-principles",
     "tier": 3,
-    "addedAt": "2026-03-09T16:56:48+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "sota",
@@ -7372,7 +7372,7 @@
     ],
     "filePath": "docs/anchors/sota.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "spc",
@@ -7410,7 +7410,7 @@
       "nelson-rules"
     ],
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "spike-solution",
@@ -7441,7 +7441,7 @@
     ],
     "filePath": "docs/anchors/spike-solution.adoc",
     "tier": 3,
-    "addedAt": "2026-04-12T13:39:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "ssot-principle",
@@ -7471,7 +7471,7 @@
     ],
     "filePath": "docs/anchors/ssot-principle.adoc",
     "tier": 1,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "story-circle-dan-harmon",
@@ -7507,7 +7507,7 @@
     ],
     "filePath": "docs/anchors/story-circle-dan-harmon.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:18:24+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "strangler-fig",
@@ -7539,7 +7539,7 @@
     ],
     "filePath": "docs/anchors/strangler-fig.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "stride",
@@ -7574,14 +7574,13 @@
     ],
     "filePath": "docs/anchors/stride.adoc",
     "tier": 3,
-    "addedAt": "2026-03-17T19:16:00+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "swiss-style",
     "title": "Swiss Style (International Typographic Style)",
     "categories": [
-      "design-principles",
-      "communication-presentation"
+      "ux-visual-design"
     ],
     "roles": [
       "ux-designer",
@@ -7632,7 +7631,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "swot",
@@ -7667,7 +7667,7 @@
     ],
     "filePath": "docs/anchors/swot.adoc",
     "tier": 3,
-    "addedAt": "2026-03-11T08:44:49+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "systemic-consulting",
@@ -7704,7 +7704,7 @@
     ],
     "filePath": "docs/anchors/systemic-consulting.adoc",
     "tier": 3,
-    "addedAt": "2026-05-21T07:45:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "tdd-chicago-school",
@@ -7736,7 +7736,7 @@
     ],
     "filePath": "docs/anchors/tdd-chicago-school.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "tdd-london-school",
@@ -7772,7 +7772,7 @@
     "filePath": "docs/anchors/tdd-london-school.adoc",
     "tier": 3,
     "definition": "TDD London School — also called mockist or outside-in TDD (Steve Freeman and Nat Pryce) — drives design from the outside in: start at the system boundary, mock collaborators to specify their interactions, and let the required interfaces emerge. It emphasises object roles and message-passing over verifying state.",
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "team-topologies",
@@ -7804,7 +7804,7 @@
     ],
     "filePath": "docs/anchors/team-topologies.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-data-builder",
@@ -7855,7 +7855,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-03T14:33:13+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-double-dummy",
@@ -7882,7 +7882,7 @@
     ],
     "filePath": "docs/anchors/test-double-dummy.adoc",
     "tier": 3,
-    "addedAt": "2026-03-14T18:16:20+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-double-fake",
@@ -7910,7 +7910,7 @@
     ],
     "filePath": "docs/anchors/test-double-fake.adoc",
     "tier": 3,
-    "addedAt": "2026-03-14T18:16:20+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-double-meszaros",
@@ -7951,7 +7951,7 @@
       "test-double-fake"
     ],
     "tier": 3,
-    "addedAt": "2026-03-07T20:23:25+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-double-mock",
@@ -7981,7 +7981,7 @@
     ],
     "filePath": "docs/anchors/test-double-mock.adoc",
     "tier": 3,
-    "addedAt": "2026-03-14T18:16:20+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-double-spy",
@@ -8010,7 +8010,7 @@
     ],
     "filePath": "docs/anchors/test-double-spy.adoc",
     "tier": 3,
-    "addedAt": "2026-03-14T18:16:20+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-double-stub",
@@ -8039,7 +8039,7 @@
     ],
     "filePath": "docs/anchors/test-double-stub.adoc",
     "tier": 3,
-    "addedAt": "2026-03-14T18:16:20+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "test-seam",
@@ -8068,7 +8068,7 @@
     ],
     "filePath": "docs/anchors/test-seam.adoc",
     "tier": 2,
-    "addedAt": "2026-07-01T09:57:48+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "testing-pyramid",
@@ -8101,7 +8101,7 @@
     ],
     "filePath": "docs/anchors/testing-pyramid.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "thin-vertical-slice",
@@ -8133,7 +8133,7 @@
     ],
     "filePath": "docs/anchors/thin-vertical-slice.adoc",
     "tier": 3,
-    "addedAt": "2026-04-12T13:39:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "three-act-structure",
@@ -8172,7 +8172,7 @@
     ],
     "filePath": "docs/anchors/three-act-structure.adoc",
     "tier": 3,
-    "addedAt": "2026-03-29T15:18:24+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "timtowtdi",
@@ -8203,7 +8203,7 @@
     ],
     "filePath": "docs/anchors/timtowtdi.adoc",
     "tier": 1,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "todotxt-flavoured-markdown",
@@ -8233,7 +8233,7 @@
     ],
     "filePath": "docs/anchors/todotxt-flavoured-markdown.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "toyota-kata",
@@ -8284,7 +8284,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "tracer-bullet",
@@ -8314,14 +8314,14 @@
     ],
     "filePath": "docs/anchors/tracer-bullet.adoc",
     "tier": 3,
-    "addedAt": "2026-04-12T13:39:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "tufte-style",
     "title": "Tufte Style",
     "categories": [
-      "communication-presentation",
-      "design-principles"
+      "ux-visual-design",
+      "communication-presentation"
     ],
     "roles": [
       "technical-writer",
@@ -8372,7 +8372,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-08-25T09:12:59+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "twelve-factor-app",
@@ -8404,7 +8404,7 @@
     ],
     "filePath": "docs/anchors/twelve-factor-app.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "twin-peaks-model",
@@ -8454,7 +8454,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-10-15T08:05:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "unix-philosophy",
@@ -8485,7 +8485,7 @@
     ],
     "filePath": "docs/anchors/unix-philosophy.adoc",
     "tier": 2,
-    "addedAt": "2026-06-26T20:19:59+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "user-story-mapping",
@@ -8517,7 +8517,7 @@
     ],
     "filePath": "docs/anchors/user-story-mapping.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "value-stream-mapping",
@@ -8571,7 +8571,7 @@
         "works": true
       }
     ],
-    "addedAt": "2026-09-30T16:32:07+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "vertical-slice-architecture",
@@ -8600,7 +8600,7 @@
     ],
     "filePath": "docs/anchors/vertical-slice-architecture.adoc",
     "tier": 3,
-    "addedAt": "2026-03-26T09:31:58+00:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "walking-skeleton",
@@ -8631,7 +8631,7 @@
     ],
     "filePath": "docs/anchors/walking-skeleton.adoc",
     "tier": 3,
-    "addedAt": "2026-04-12T13:39:43+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "wardley-mapping",
@@ -8662,7 +8662,7 @@
     ],
     "filePath": "docs/anchors/wardley-mapping.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "what-qualifies-as-a-semantic-anchor",
@@ -8688,7 +8688,7 @@
     ],
     "filePath": "docs/anchors/what-qualifies-as-a-semantic-anchor.adoc",
     "tier": 3,
-    "addedAt": "2026-02-13T11:15:38+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "what-would-chuck-norris-do",
@@ -8721,7 +8721,7 @@
     ],
     "filePath": "docs/anchors/what-would-chuck-norris-do.adoc",
     "tier": 3,
-    "addedAt": "2026-04-20T12:52:55+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "xy-problem",
@@ -8754,7 +8754,7 @@
     ],
     "filePath": "docs/anchors/xy-problem.adoc",
     "tier": 3,
-    "addedAt": "2026-05-08T09:30:59+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "yagni",
@@ -8786,7 +8786,7 @@
     ],
     "filePath": "docs/anchors/yagni.adoc",
     "tier": 1,
-    "addedAt": "2026-03-09T09:49:49+01:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   },
   {
     "id": "zone-of-proximal-development",
@@ -8816,6 +8816,6 @@
     ],
     "filePath": "docs/anchors/zone-of-proximal-development.adoc",
     "tier": 2,
-    "addedAt": "2026-07-01T09:57:48+02:00"
+    "addedAt": "2026-10-27T12:19:07+01:00"
   }
 ]
