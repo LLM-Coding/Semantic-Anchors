@@ -1,0 +1,51 @@
+= Laws of UX
+:categories: ux-visual-design
+:roles: ux-designer, product-owner, software-developer
+:proponents: Jon Yablonski
+:tags: Laws of UX, UX-Gesetze, Jon Yablonski, Fitts's Law, Fittssches Gesetz, Hick's Law, Hick-Hyman-Gesetz, Jakob's Law, Miller's Law, Doherty Threshold, Tesler's Law, Von-Restorff-Effekt, Peak-End-Regel, Aesthetic-Usability-Effekt, Postel's Law, Goal-Gradient-Effekt, Zeigarnik-Effekt, serieller Positionseffekt, kognitive Last, UX-Psychologie
+:related: nielsen-usability-heuristics, gestalt-principles, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Laws of UX -- Jon Yablonskis Sammlung psychologischer Prinzipien für die Gestaltung von Oberflächen, 2018 als Website und 2020 als Buch bei O'Reilly erschienen
+
+Auch bekannt als:: lawsofux.com; Yablonskis _Laws of UX_
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Eine kuratierte Sammlung, keine neue Theorie.* Yablonski sammelt bekannte Befunde aus Psychologie und HCI und formuliert jeden als Gestaltungsregel. Er startete die Website Mitte Januar 2018 mit zehn Gesetzen ("with 10 laws").
+* *Gesetze über Bewegung und Wahl.* Fitts's Law: Die Zeit, ein Ziel zu treffen, hängt von seiner Größe und Entfernung ab. Hick's Law: Die Entscheidungszeit wächst mit der Zahl der Optionen.
+* *Gesetze über Gedächtnis und Aufmerksamkeit.* Miller's Law, der serielle Positionseffekt, der Von-Restorff-Effekt, der Zeigarnik-Effekt und die kognitive Last beschreiben, was Nutzer im Kopf behalten können und was heraussticht.
+* *Gesetze über Erwartungen.* Jakob's Law: Nutzer erwarten, dass eine Website so funktioniert wie die, die sie schon kennen. Der Aesthetic-Usability-Effekt: Nutzer halten ansprechende Entwürfe für leichter bedienbar.
+* *Gesetze über das Erleben in der Zeit.* Die Peak-End-Regel, der Goal-Gradient-Effekt und die Doherty Threshold betreffen, wie Nutzer ein Erlebnis erinnern, wie sie kurz vor dem Ziel schneller werden und wie schnell ein System antworten muss.
+* *Gesetze über Komplexität.* Tesler's Law: Jedes System hat Komplexität, die sich nicht beseitigen, nur verschieben lässt. Postel's Law: Großzügig bei dem, was man annimmt, streng bei dem, was man sendet.
+* *Gruppierungsgesetze aus der Gestaltpsychologie.* Die Sammlung enthält das Gesetz der Nähe und das Gesetz der gemeinsamen Region.
+
+Wichtige Vertreter:: Jon Yablonski (https://oreilly.com/library/view/laws-of-ux/9781492055303[_Laws of UX_], O'Reilly, April 2020; https://oreilly.com/library/view/laws-of-ux/9781098146955[2. Auflage], Januar 2024); den Start der Website schildert er in einem https://blog.adobe.com/en/publish/2018/04/17/ux-designers-need-check-laws-ux[Interview im Adobe Blog] mit Sheena Lyonnais, 17. April 2018
+
+[discrete]
+== *Wann verwenden*:
+
+* Ein Formular oder einen Bildschirm prüfen, wenn die Befunde einen Mechanismus nennen sollen: Zielgröße, Zahl der Optionen, Gedächtnislast
+* Eine Designentscheidung gegenüber Stakeholdern mit bekannten Effekten begründen
+* Antwortzeiten, Onboarding-Schritte und Fortschrittsanzeigen planen
+* Ein Modell eine Oberfläche prüfen lassen: Mit dem Anker zitiert es regelmäßig Fitts's und Hick's Law und auf den stärkeren Modellstufen zehn und mehr Gesetze
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Sie für Naturgesetze halten.* Die Sammlung mischt Modelle, Effekte und Heuristiken sehr unterschiedlicher Stärke.
+* *Miller's Law als Obergrenze für Menüpunkte lesen.* Es betrifft das Kurzzeitgedächtnis, nicht die Zahl der Einträge in einer Navigation.
+* *Ein Gesetz isoliert anwenden.* Die Gesetze wirken zusammen und können in verschiedene Richtungen ziehen; ein Gesetz allein entscheidet selten eine Designfrage.
+* *Erwarten, dass die Baseline sie nennt.* In unserem Prior-Test am 28.10.2026 zitierte keine Baseline-Prüfung eines Anmeldeformulars auch nur ein Gesetz. Mit „Laws of UX“ zitierten sechs von sechs Läufen Fitts's und Hick's Law, fünf von sechs Miller's Law; Sonnet und Opus zitierten zehn bis zwölf Gesetze pro Antwort.
+
+[discrete]
+== *Kritik*:
+
+* *Keine Gesetze, und eine willkürliche Auswahl.* Marcin Wichary argumentiert in https://unsung.aresluna.org/book-review-laws-of-ux-2nd-ed/["Book review: Laws of UX (2nd ed.)"] (Unsung-Blog), die „Gesetze“ seien keine Gesetze im wissenschaftlichen Sinn und die Auswahl sei willkürlich; das Buch verstehe nicht ganz, wie Gestaltung funktioniert ("the book doesn't fully understand how design works.").
+* *Eine veraltete Lesart von Miller.* D. Ben Woods merkt in seiner https://uxmatters.com/mt/archives/2020/11/book-review-laws-of-ux.php[Rezension bei UXmatters] (23. November 2020) an, dass das Kapitel zu Miller's Law noch mit der alten Zahl sieben plus/minus zwei arbeitet.
+====
