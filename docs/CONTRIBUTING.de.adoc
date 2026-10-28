@@ -195,13 +195,15 @@ Dies sind *KEINE* semantischen Anker:
 
 == Kategorien
 
-Anker sind in 12 MECE (Mutually Exclusive, Collectively Exhaustive) Kategorien organisiert:
+Anker sind in 15 MECE (Mutually Exclusive, Collectively Exhaustive) Kategorien organisiert:
 
 . Kommunikation & Präsentation
+. Kreatives Schreiben & Storytelling
 . Design-Prinzipien & Muster
 . Entwicklungs-Workflow
 . Dialog & Interaktionsmuster
 . Dokumentationspraktiken
+. Wissensmanagement
 . Meta (Repository- und Katalogkonzepte)
 . Problemlösungsmethoden
 . Requirements Engineering
@@ -209,6 +211,7 @@ Anker sind in 12 MECE (Mutually Exclusive, Collectively Exhaustive) Kategorien o
 . Statistische Methoden & Prozessüberwachung
 . Strategische Planung & Entscheidungsfindung
 . Testing & Qualitätssicherung
+. UX & visuelles Design
 
 Siehe die Website für vollständige Kategorienbeschreibungen.
 
