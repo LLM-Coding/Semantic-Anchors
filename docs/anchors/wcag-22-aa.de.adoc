@@ -20,7 +20,7 @@ Auch bekannt als:: WCAG 2.2 Level AA
 * *Vier Prinzipien: POUR.* Inhalte müssen wahrnehmbar (Perceivable), bedienbar (Operable), verständlich (Understandable) und robust (Robust) sein. Unter jedem Prinzip stehen Richtlinien, unter jeder Richtlinie prüfbare Erfolgskriterien.
 * *Drei Stufen; AA schließt A ein.* Jedes Erfolgskriterium hat die Stufe A, AA oder AAA. Konformität auf Stufe AA heißt: Alle A- und alle AA-Kriterien sind erfüllt.
 * *Kontrast wird gemessen.* 1.4.3 verlangt 4,5:1 für Text und 3:1 für großen Text; 1.4.11 verlangt 3:1 für Nicht-Text-Elemente.
-* *Auch Struktur und Interaktion sind prüfbar.* Zu den AA-Kriterien gehören 1.3.1 Info and Relationships, 1.4.10 Reflow, 2.4.7 Focus Visible, 3.3.1 Error Identification und 3.3.2 Labels or Instructions.
+* *Auch Struktur und Interaktion sind prüfbar.* AA-Konformität verlangt unter anderem 1.3.1 Info and Relationships, 3.3.1 Error Identification und 3.3.2 Labels or Instructions (Level A) sowie 1.4.10 Reflow und 2.4.7 Focus Visible (Level AA).
 * *Version 2.2 ergänzt Kriterien für Touch, Fokus und Kognition.* Neu auf A und AA: 2.4.11 Focus Not Obscured (Minimum), 2.5.7 Dragging Movements, 2.5.8 Target Size (Minimum) mit 24×24 CSS-Pixeln, 3.2.6 Consistent Help, 3.3.7 Redundant Entry und 3.3.8 Accessible Authentication (Minimum). Drei weitere neue Kriterien liegen auf AAA.
 * *Ein Kriterium fiel weg.* 4.1.1 Parsing ist überholt und gehört nicht mehr zu WCAG 2.2.
 
