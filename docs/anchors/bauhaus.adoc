@@ -1,0 +1,49 @@
+= Bauhaus
+:categories: ux-visual-design
+:roles: ux-designer, educator, consultant, software-developer
+:proponents: Walter Gropius, Hannes Meyer, Ludwig Mies van der Rohe
+:tags: Bauhaus, Staatliches Bauhaus, Bauhaus Manifesto, Walter Gropius, Hannes Meyer, Ludwig Mies van der Rohe, Weimar, Dessau, Berlin, design school, modernism, workshops, geometric forms, primary colours, graphic design
+:related: swiss-style, dieter-rams-ten-principles
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Staatliches Bauhaus -- the German school of art, craft and design that ran from 1919 to 1933 in Weimar, Dessau and Berlin
+
+Also known as:: Staatliches Bauhaus in Weimar, Bauhaus Dessau, Bauhaus design
+
+[discrete]
+== *Core Concepts*:
+
+* *A school, not a style.* Walter Gropius became director of the "Staatliches Bauhaus in Weimar" in March 1919 and published the Bauhaus Manifesto in April. The name stands for an institution with a teaching programme, not for one look.
+* *Three directors, three programmes.* Gropius led the school until he resigned in 1928. Hannes Meyer followed in April 1928, Ludwig Mies van der Rohe in 1930. Each changed what the school taught.
+* *Three cities.* Dessau took the school over in 1925 and approved a new building in June that year. In 1932 the Dessau council dissolved it, and Mies reopened it privately in Berlin-Steglitz in October.
+* *Craft before industry.* The early Weimar years were craft-based and expressionist. The functional, industrial image came later and covers only part of the school's history.
+* *Teaching through workshops.* Students worked in workshops such as the weaving workshop. Which workshop a student entered shaped what they made -- and, as critics note, who was allowed where.
+* *A forced end.* Police searched the Berlin school in April 1933. In July 1933 Mies dissolved it with the faculty's consent.
+
+Key Proponents:: Walter Gropius (founder and director 1919–1928, author of the Bauhaus Manifesto); Hannes Meyer (director 1928–1930); Ludwig Mies van der Rohe (director 1930–1933, reopened the school in Berlin and dissolved it in 1933). Chronology after the catalogue _50 Jahre Bauhaus_ (Stuttgart 1968), as given by https://bauhaus-bookshelf.org/timeline_chronology_1919_1933.html[bauhaus-bookshelf.org]
+
+[discrete]
+== *When to Use*:
+
+* Landing pages, posters and brand work that should be built from geometric forms, primary colours and a geometric sans instead of photography and hand-drawn elements
+* As a counter-instruction when generated designs drift towards stock photos and script fonts
+* Design history and teaching, when the topic is the school itself: its directors, its workshops, its moves from Weimar to Dessau to Berlin
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Treating it as one visual style.* The Bauhaus was a school with three directors and changing programmes. "Bauhaus style" names a later reading of part of its work.
+* *Assuming it was purely functionalist and industrial.* The early Weimar years were craft-based and expressionist.
+* *Equating it with the International Style.* The International Style is a later movement; the Bauhaus was one school with its own history.
+* *Using the bare name.* In our prior test on 2026-10-28, the bare "Bauhaus" resolved to art and design history on every tier; Opus also mentioned the band and the DIY chain. "Bauhaus design" changed the output: all six baselines built a bakery page around photography with hand-drawn or script elements, while all six anchor runs used geometric forms, a geometric sans and the primary colours.
+
+[discrete]
+== *Criticism*:
+
+* *Progressive image, segregated practice.* Theresia Enzensberger writes in https://www.goethe.de/ins/gb/en/kul/past/tech/bhs/21385384.html["The 'Bauhaus women'"] (Goethe-Institut, October 2018, translated by Jo Beckett) that the school steered women into the weaving workshop and their numbers fell: "Gropius' segregation was showing its effects".
+* *An aesthetic imposed on the people it claimed to serve.* Scott Alexander, in https://www.astralcodexten.com/p/book-review-from-bauhaus-to-our-house["Book Review: From Bauhaus to Our House"] (Astral Codex Ten, 4 December 2024), follows Tom Wolfe's polemic: modernism forced its taste on workers who did not share it. "Ironically, real workers hated the modernist styles."
+====

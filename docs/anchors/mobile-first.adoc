@@ -1,0 +1,50 @@
+= Mobile First
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, product-owner
+:proponents: Luke Wroblewski
+:tags: Mobile First, mobile-first design, Luke Wroblewski, A Book Apart, responsive web design, min-width media query, progressive enhancement, small screen first, constraints, focus, prioritisation, content priority
+:related: every-layout, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Mobile First -- designing for the small screen first and adding to it for larger screens, as defined by Luke Wroblewski
+
+Also known as:: Mobile-first design, mobile-first CSS
+
+[discrete]
+== *Core Concepts*:
+
+* *Design the small screen first.* The mobile version is the starting point, not a shrunken copy of the desktop page.
+* *Growth means opportunity.* Wroblewski's first reason: the growth of mobile use is an opportunity to reach more people.
+* *Constraints force focus.* A small screen leaves room only for what matters most. Deciding that first sharpens the product on every screen.
+* *Capabilities enable innovation.* Designing for what mobile devices can do opens room for new ideas.
+* *A strategy of priorities.* Mobile First decides what content and which actions come first. The CSS technique follows from that decision.
+* *In CSS: base styles, then `min-width`.* Base styles serve the small screen; `min-width` media queries add layout for wider viewports. This is progressive enhancement.
+
+Key Proponents:: Luke Wroblewski, who first defined the concept in 2009 and named three reasons -- growth, focus, innovation (https://www.webdesignerdepot.com/?p=29528[interview with Webdesigner Depot], 2013; https://static.lukew.com/MobileFirst_LukeW.pdf[slides]); his book https://lukew.com/resources/mobile_first.asp[_Mobile First_] (A Book Apart, October 2011) has a foreword by Jeffrey Zeldman
+
+[discrete]
+== *When to Use*:
+
+* Writing responsive CSS, so the base styles serve the phone and wider layouts build on them
+* Deciding the content and action priorities of a page or a product
+* Reviewing a stylesheet for desktop-first patterns
+* As a counter-instruction when generated CSS starts from the desktop layout and overrides it with `max-width` queries
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Reducing it to `min-width` media queries.* The queries are the technique. The idea is a strategy of priorities.
+* *Expecting the default to be mobile first.* In our prior test on 2026-10-28 (CSS for a responsive list of product cards), all six baselines wrote a `max-width` media query, the desktop-first pattern. With "Mobile First", all six runs wrote `min-width` queries and none wrote `max-width`.
+* *Reading it as "mobile only" or "native app first".* Mobile First is about the order of design for the web, not about building only for phones or starting with an app.
+* *Removing features for mobile.* The constraint decides priorities. It does not mean mobile users get less.
+
+[discrete]
+== *Criticism*:
+
+* *The term means too many things.* Brad Frost observes in https://bradfrost.com/blog/post/the-many-faces-of-mobile-first/["The Many Faces of 'Mobile First'"] (13 August 2012) that "we're seeing it used in myriad different ways". The term became a catch-all and was often confused with "native app first".
+* *"Mobile" is the wrong frame.* Adam Sedwick asks in https://uxdesign.cc/is-mobile-first-as-an-idea-dead-8b526826e163["Is 'Mobile-First' as an idea dead?"] (UX Collective) whether the idea still holds. He argues that "mobile" suggests a phone with touch and a slow connection, and proposes an approach that is device-agnostic and focused on performance.
+====

@@ -1,0 +1,55 @@
+= Apple Human Interface Guidelines
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Apple
+:tags: Apple Human Interface Guidelines, HIG, Apple, iOS, iPadOS, macOS, watchOS, tvOS, Liquid Glass, Klarheit, Zurückhaltung, Tiefe, Hierarchie, Harmonie, Konsistenz, 44 pt Trefferfläche, SF Pro, SF Symbols, Dynamic Type, Large Titles, Navigation Bar, Tab Bar, Inset Grouped List, Safe Area, Dark Mode, VoiceOver, Bewegung reduzieren, Barrierefreiheit
+:related: material-design-3, wcag-22-aa
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Apple Human Interface Guidelines -- Apples Gestaltungsrichtlinien für Apps auf seinen Plattformen, seit 2022 ein Dokument für alle
+
+Auch bekannt als:: HIG, Apple HIG
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Leitthemen.* Die klassischen iOS-Richtlinien nannten Klarheit, Zurückhaltung und Tiefe (clarity, deference, depth). Die Fassung von 2025 spricht von Hierarchie, Harmonie und Konsistenz.
+* *Ziele, die ein Finger trifft.* Bedienelemente brauchen eine Trefferfläche von mindestens 44 × 44 Punkt.
+* *Systemschrift und Symbole.* SF Pro und SF Symbols; Dynamic Type lässt Text der vom Nutzer gewählten Größe folgen.
+* *Vertraute Navigation.* Large Titles, Navigation Bars, Tab Bars und Inset Grouped Lists geben Apps eine gemeinsame Struktur.
+* *Das Gerät respektieren.* Layouts bleiben in den Safe Areas; Systemfarben passen sich dem Dark Mode an.
+* *Barrierefreiheit eingebaut.* VoiceOver, Bewegung reduzieren und Dynamic Type gehören zur Gestaltung, nicht obendrauf.
+
+Wichtige Vertreter:: Apple. Die Richtlinien gehen auf _Human Interface Guidelines: The Apple Desktop Interface_ zurück (Apple Computer / Addison-Wesley, 1987; https://www.computerhistory.org/collections/catalog/102679991[Computer History Museum]). Am 7. Juni 2022 führte Apple die Leitfäden der einzelnen Plattformen zu einer HIG mit Änderungsprotokoll zusammen (https://developer.apple.com/news/?id=v8a3aetj[Apple Developer News])
+
+[discrete]
+== *Wann verwenden*:
+
+* iPhone-, iPad- oder Mac-Apps gestalten, die sich nativ anfühlen sollen. In unserem Prior-Test setzte mit dem Anker jeder Lauf für einen Einstellungsbildschirm Trefferflächen von 44 Punkt; die meisten ergänzten einen Large Title, Dynamic Type und Inset Grouped Lists.
+* Die Bedienelemente einer App auf Trefferfläche, Schriftskalierung und Dark Mode prüfen
+* Eine Android-App auf Apple-Plattformen portieren, als Gegenstück zu <<material-design-3,Material Design 3>>
+* Zusammen mit <<wcag-22-aa,WCAG 2.2 AA>>, wenn Barrierefreiheit auch an einer Norm geprüft werden muss
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Sie mit den App-Store-Regeln verwechseln.* Die App Review Guidelines sind ein eigenes Dokument. Die HIG leitet die Gestaltung; über die Zulassung entscheidet sie nicht.
+* *Liquid Glass als durchscheinenden Inhalt lesen.* Das Material ist für die Ebene der Bedienelemente und der Navigation gedacht, nicht für den Inhalt selbst.
+* *Sie für reines iOS halten.* Seit 2022 ist sie ein Dokument für alle Plattformen von Apple.
+* *Die Details von der Baseline erwarten.* In unserem Prior-Test am 28.10.2026 wählten vier von sechs Baselines bereits SF Pro, aber keine setzte eine Trefferfläche von 44 Punkt. Mit dem Anker setzten sechs von sechs Läufen Trefferflächen von 44 Punkt, und fünf von sechs nutzten einen Large Title, Dynamic Type und Inset Grouped Lists.
+
+[discrete]
+== *Kritik*:
+
+* *Spektakel vor Gebrauchstauglichkeit.* Raluca Budiu urteilt in https://www.nngroup.com/articles/liquid-glass/["Liquid Glass Is Cracked, and Usability Suffers in iOS 26"] (Nielsen Norman Group, 2025), Apple stelle das Spektakel über die Gebrauchstauglichkeit („Apple is prioritizing spectacle over usability“). Durchscheinende Bedienelemente schadeten der Lesbarkeit; dazu kämen ablenkende Bewegung, enge Trefferflächen und versteckte Funktionen.
+* *Gegen die eigenen Regeln.* Michal Langmajer fragt in https://uxdesign.cc/did-apple-abandoned-its-own-design-heuristics-accessibility-principles-2d616ed7ace5["Did Apple abandon its own design heuristics & accessibility principles?"] (UX Collective), ob Apple seine eigenen Design-Heuristiken aufgegeben hat; er hält Liquid Glass für unvereinbar mit dem Klarheitsprinzip der HIG und mit den Kontrastvorgaben der WCAG.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Liquid Glass ist die aktuelle Designsprache.* Apple stellte sie am 9. Juni 2025 für iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26 und tvOS 26 vor: ein durchscheinendes Material, das seine Umgebung spiegelt und bricht („reflects and refracts its surroundings“; https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/[Apple Newsroom]). Apples https://developer.apple.com/design/whats-new/[Änderungsprotokoll] zeigt Verfeinerungen im Dezember 2025 und Juni 2026. Auf der WWDC26 am 8. Juni 2026 brachte Apple eine Seite „Design principles“ zurück und veröffentlichte Kits für iOS, iPadOS und macOS 27; der jüngste Eintrag stammt vom 13. Oktober 2026. Der Prior aus den Trainingsdaten bedient am ehesten den flachen iOS-Look vor 2025. Wer Liquid Glass will, sollte es beim Namen nennen.
+====

@@ -1,0 +1,49 @@
+= 8-Point Grid
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Bryn Jackson, Google Material Design
+:tags: 8-Point Grid, 8pt Grid, 8dp Grid, 8-Punkt-Raster, Grundlinienraster, Abstandssystem, Abstandsskala, 4-Point Grid, Soft Grid, Hard Grid, Material Design, Bryn Jackson, spec.fm, Layout, CSS-Abstände, Design Tokens
+:related: modular-scale, material-design-3, design-tokens-dtcg
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: 8-Point Grid -- ein Abstandssystem, in dem Größen, Außen- und Innenabstände Vielfache von acht sind, um 2016 bekannt geworden durch Bryn Jacksons Leitfaden auf spec.fm und durch das 8dp-Raster von Material Design
+
+Auch bekannt als:: 8pt Grid, 8dp Grid, 8-Punkt-Raster
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Eine Grundeinheit für alle Abstände.* Außenabstände, Innenabstände, Komponentenhöhen und Lücken sind Vielfache von 8: 8, 16, 24, 32 und so weiter.
+* *Weniger Entscheidungen, mehr Einheitlichkeit.* Wenige erlaubte Werte beenden den Streit um 13 oder 15 Pixel und halten Bildschirme verschiedener Autoren in einer Flucht.
+* *Material Design machte es zur Plattformregel.* Material Design 1 legt fest: „All components align to an 8dp square baseline grid for mobile, tablet, and desktop.“
+* *Ein 4-Punkt-Halbschritt für feine Details.* In Material Design 1 richten sich Icons und Schrift an einem 4dp-Raster aus. Vier ist ein gängiger Halbschritt für kleine Lücken.
+* *Soft Grid und Hard Grid.* Ein Soft Grid setzt Abstände zwischen Elementen in Vielfachen von 8; ein Hard Grid legt jedes Element auf ein 8-Punkt-Gitter. Teams müssen klären, welches sie meinen.
+* *Ein Abstandssystem, kein Spaltenraster.* Das 8-Point Grid bestimmt den Rhythmus der Abstände. Wie viele Spalten ein Layout hat, ist eine eigene Entscheidung.
+
+Wichtige Vertreter:: Bryn Jackson (Leitfaden auf spec.fm; der Artikel https://blogs.vmware.com/tanzu/intro-to-the-8-point-grid-system-2/["Intro to The 8-Point Grid System"], Pivotal, 14. Dezember 2016, nennt ihn den umfassendsten); Google Material Design (https://m1.material.io/layout/metrics-keylines.html[Material Design 1, Metrics & keylines])
+
+[discrete]
+== *Wann verwenden*:
+
+* CSS für Komponenten, Karten und Listen, wenn Abstände aus einer Skala kommen sollen statt aus spontanen Pixelwerten
+* Abstands-Tokens in einem Design-System festlegen
+* Entwürfe an Entwickler übergeben, damit beide Seiten dieselben Werte nutzen
+* Als Gegenanweisung, wenn generiertes CSS Werte wie 13px, 18px und 22px mischt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Jeder Wert muss ein Vielfaches von 8 sein.* Material nutzt 4 für Schrift und Icons, und 4 ist ein gängiger Halbschritt.
+* *Soft Grid und Hard Grid verwechseln.* Das eine regelt die Abstände zwischen Elementen, das andere die Lage jedes Elements auf einem Gitter.
+* *Es für ein Spaltenraster halten.* Über die Zahl der Spalten sagt es nichts.
+* *Annehmen, die Baseline kenne keine Abstandsskala.* In unserem Prior-Test am 28.10.2026 neigten die Baselines schon zu runden Zahlen: 58 Prozent ihrer Pixelwerte in einer responsiven Kartenliste waren Vielfache von acht. „Use an 8-point grid“ hob den Anteil auf allen Modellstufen auf 88 Prozent. Schwach war die Zuordnung: Sonnet und Opus nannten keinen einzelnen Urheber und verwiesen auf Material Design, Opus ergänzte Bryn Jackson, Haiku nannte Samantha Warren mit mittlerer Sicherheit.
+
+[discrete]
+== *Kritik*:
+
+* *Zu grob für dichte Oberflächen.* Darin Dimitroff erklärt in https://webflow.com/blog/why-were-using-a-4-point-grid-in-webflow["Why we're using a 4-point grid in Webflow"] (Webflow Blog, aktualisiert am 16. Januar 2019), warum Webflow ein 4-Punkt-Raster nutzt: Für eine dichte Oberfläche biete eine 8-Punkt-Skala schlicht nicht genug Feinheit ("an 8pt scale simply doesn't provide enough granularity").
+====

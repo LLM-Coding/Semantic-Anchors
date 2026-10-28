@@ -344,6 +344,7 @@
       "llm-evaluations",
       "misra-c",
       "mutation-testing",
+      "nielsen-usability-heuristics",
       "owasp-asvs",
       "owasp-top-10",
       "poka-yoke",
@@ -360,15 +361,33 @@
       "test-double-spy",
       "test-double-stub",
       "test-seam",
-      "testing-pyramid"
+      "testing-pyramid",
+      "wcag-22-aa"
     ]
   },
   {
     "id": "ux-visual-design",
     "name": "UX & Visual Design",
     "anchors": [
+      "apple-human-interface-guidelines",
+      "atomic-design",
+      "bauhaus",
+      "design-tokens-dtcg",
+      "dieter-rams-ten-principles",
+      "eight-point-grid",
+      "elements-of-typographic-style",
+      "every-layout",
+      "gestalt-principles",
+      "gov-uk-design-system",
+      "laws-of-ux",
+      "material-design-3",
+      "mobile-first",
+      "modular-scale",
+      "nielsen-usability-heuristics",
+      "refactoring-ui",
       "swiss-style",
-      "tufte-style"
+      "tufte-style",
+      "wcag-22-aa"
     ]
   }
 ]

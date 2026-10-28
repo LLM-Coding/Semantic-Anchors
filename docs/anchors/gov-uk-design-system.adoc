@@ -1,0 +1,49 @@
+= GOV.UK Design System
+:categories: ux-visual-design
+:roles: ux-designer, product-owner, technical-writer, software-developer
+:proponents: Government Digital Service
+:tags: GOV.UK Design System, GOV.UK Frontend, Government Digital Service, GDS, one thing per page, one question per page, start page, question pages, check answers, confirmation page, error summary, public services, government design, plain English, form design, service design
+:related: plain-language-iso-24495, wcag-22-aa, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: GOV.UK Design System -- the styles, components and patterns of the UK Government Digital Service for building public services on GOV.UK
+
+Also known as:: GOV.UK Frontend (its code), the GDS design system
+
+[discrete]
+== *Core Concepts*:
+
+* *Styles, components and patterns in one place.* The system bundles visual styles, coded components and patterns for common tasks. Its code is GOV.UK Frontend. It replaced GOV.UK Elements and took over the patterns from the Service Manual.
+* *One thing per page.* Each page asks one question. Tim Paul of GDS argued that this helps users with low confidence, works on mobile, and makes error handling and branching simpler.
+* *A service is a sequence of known pages.* A start page with a green "Start now" button, question pages, a page to check answers before submitting, and a confirmation page with a reference number.
+* *Errors are shown twice.* An error summary at the top of the page links to each faulty field, and an inline message sits at the field itself.
+* *Forms follow fixed conventions.* Labels sit above fields, and the content is written in plain English.
+* *A restricted visual identity.* The GDS Transport typeface and the GOV.UK brand are reserved for GOV.UK services.
+
+Key Proponents:: Government Digital Service (GDS), which introduced the system on https://gds.blog.gov.uk/2018/06/22/introducing-the-gov-uk-design-system/[22 June 2018] in a post by Alice Noakes and Amy Hupe; Tim Paul, author of https://designnotes.blog.gov.uk/2015/07/03/one-thing-per-page/["One thing per page"] (3 July 2015)
+
+[discrete]
+== *When to Use*:
+
+* Online services for citizens: applications, permits, registrations, claims
+* Long forms that branch, where users must not get lost or give up
+* Reviewing a form flow for error handling, page order and the check-answers step
+* As a counter-instruction when a generated form crams every question onto one long page
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Treating "one thing per page" as an absolute rule.* Its author framed it as a starting point: "start with everything on its own page", then adjust.
+* *Confusing it with the Service Manual and the Service Standard.* Those set the process and the assessments a service must pass. The Design System supplies the styles, components and patterns.
+* *Reusing it as-is outside UK government.* The Crown, the typeface and the brand are restricted. The NHS wrote, when adapting it, "Sometimes we had to adapt parts of the GOV.UK Design System" (https://gds.blog.gov.uk/2019/06/04/guest-post-adapting-the-gov-uk-design-system-for-the-nhs/["Adapting the GOV.UK Design System for the NHS"], 4 June 2019).
+* *Expecting the name to add what the model already does.* In our prior test on 2026-10-28 (a residents' parking permit service), both Opus baselines already had a start page and a check-answers page. What the name added on every tier was the pattern no baseline used: one question per page, in six of six runs.
+
+[discrete]
+== *Current Status*:
+
+* *A new major version and a new brand.* GOV.UK Frontend v6.0.0 came out in February 2026 with breaking changes; the latest release is v6.6.0 from October 2026 (https://design-system.service.gov.uk/community/whats-new["What's new"]). https://frontend.design-system.service.gov.uk/changes-to-govuk-frontend-v6[Version 6] moves the colours to the GOV.UK brand palette, brings a new type scale and removes deprecated APIs. GDS unveiled the brand refresh, with a blue logo background and a turquoise dot, in https://www.publictechnology.net/2025/06/30/society-and-welfare/gds-unveils-colourful-500k-refresh-of-gov-uk/[June 2025]. The training-data prior most likely shows the look from before 2025, with the black header.
+====

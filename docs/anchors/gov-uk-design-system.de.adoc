@@ -1,0 +1,49 @@
+= GOV.UK Design System
+:categories: ux-visual-design
+:roles: ux-designer, product-owner, technical-writer, software-developer
+:proponents: Government Digital Service
+:tags: GOV.UK Design System, GOV.UK Frontend, Government Digital Service, GDS, one thing per page, eine Frage pro Seite, Startseite, Fragenseiten, Antworten prüfen, Bestätigungsseite, Fehlerzusammenfassung, öffentliche Dienste, Behörden-Design, Verwaltungsdigitalisierung, Formulargestaltung, Service Design
+:related: plain-language-iso-24495, wcag-22-aa, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: GOV.UK Design System -- die Styles, Komponenten und Muster des britischen Government Digital Service für öffentliche Dienste auf GOV.UK
+
+Auch bekannt als:: GOV.UK Frontend (sein Code), das GDS-Designsystem
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Styles, Komponenten und Muster an einem Ort.* Das System bündelt visuelle Styles, fertig programmierte Komponenten und Muster für häufige Aufgaben. Sein Code heißt GOV.UK Frontend. Es löste GOV.UK Elements ab und übernahm die Muster aus dem Service Manual.
+* *Eine Sache pro Seite.* Jede Seite stellt eine Frage. Tim Paul vom GDS begründete das so: Es hilft unsicheren Nutzern, funktioniert auf dem Smartphone und vereinfacht Fehlerbehandlung und Verzweigungen.
+* *Ein Dienst ist eine Folge bekannter Seiten.* Eine Startseite mit grünem „Start now“-Button, Fragenseiten, eine Seite zum Prüfen der Antworten vor dem Absenden und eine Bestätigungsseite mit Vorgangsnummer.
+* *Fehler erscheinen zweimal.* Eine Fehlerzusammenfassung oben auf der Seite verlinkt jedes fehlerhafte Feld, und eine Meldung steht direkt am Feld.
+* *Formulare folgen festen Konventionen.* Labels stehen über den Feldern, und die Texte sind in einfachem Englisch geschrieben.
+* *Eine geschützte visuelle Identität.* Die Schrift GDS Transport und die Marke GOV.UK sind Diensten auf GOV.UK vorbehalten.
+
+Wichtige Vertreter:: Government Digital Service (GDS), der das System am https://gds.blog.gov.uk/2018/06/22/introducing-the-gov-uk-design-system/[22. Juni 2018] in einem Beitrag von Alice Noakes und Amy Hupe vorstellte; Tim Paul, Autor von https://designnotes.blog.gov.uk/2015/07/03/one-thing-per-page/["One thing per page"] (3. Juli 2015)
+
+[discrete]
+== *Wann verwenden*:
+
+* Online-Dienste für Bürger: Anträge, Genehmigungen, Anmeldungen, Leistungsanträge
+* Lange, verzweigte Formulare, in denen sich Nutzer nicht verirren und nicht aufgeben sollen
+* Einen Formularablauf auf Fehlerbehandlung, Seitenfolge und den Schritt „Antworten prüfen“ durchsehen
+* Als Gegenanweisung, wenn ein generiertes Formular alle Fragen auf eine lange Seite packt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *„One thing per page“ als absolute Regel lesen.* Der Autor nannte es einen Ausgangspunkt: Zunächst steht alles auf einer eigenen Seite, danach passt man an.
+* *Es mit dem Service Manual und dem Service Standard verwechseln.* Diese legen den Prozess und die Prüfungen fest, die ein Dienst bestehen muss. Das Design System liefert Styles, Komponenten und Muster.
+* *Es unverändert außerhalb der britischen Verwaltung einsetzen.* Krone, Schrift und Marke sind geschützt. Der NHS schrieb über seine Anpassung: „Sometimes we had to adapt parts of the GOV.UK Design System“ (https://gds.blog.gov.uk/2019/06/04/guest-post-adapting-the-gov-uk-design-system-for-the-nhs/["Adapting the GOV.UK Design System for the NHS"], 4. Juni 2019).
+* *Erwarten, dass der Name hinzufügt, was das Modell schon tut.* In unserem Prior-Test am 28.10.2026 (ein Dienst für Anwohnerparkausweise) hatten beide Opus-Baselines bereits eine Startseite und eine Seite zum Prüfen der Antworten. Der Name fügte auf jeder Modellstufe das Muster hinzu, das keine Baseline nutzte: eine Frage pro Seite, in sechs von sechs Läufen.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Eine neue Hauptversion und eine neue Marke.* GOV.UK Frontend v6.0.0 erschien im Februar 2026 mit Breaking Changes; die neueste Version ist v6.6.0 vom Oktober 2026 (https://design-system.service.gov.uk/community/whats-new["What's new"]). https://frontend.design-system.service.gov.uk/changes-to-govuk-frontend-v6[Version 6] stellt die Farben auf die Markenpalette von GOV.UK um, bringt eine neue Schriftgrößenskala und entfernt veraltete APIs. Den Marken-Relaunch mit blauem Logo-Hintergrund und türkisfarbenem Punkt stellte der GDS im https://www.publictechnology.net/2025/06/30/society-and-welfare/gds-unveils-colourful-500k-refresh-of-gov-uk/[Juni 2025] vor. Der Prior aus den Trainingsdaten zeigt am ehesten das Erscheinungsbild vor 2025 mit schwarzem Header.
+====

@@ -1,0 +1,46 @@
+= Refactoring UI
+:categories: ux-visual-design
+:roles: software-developer, ux-designer
+:proponents: Adam Wathan, Steve Schoger
+:tags: Refactoring UI, Adam Wathan, Steve Schoger, UI-Design für Entwickler, visuelle Hierarchie, Schriftstärke, Zurücknehmen, Abstandssystem, Schriftgrößenskala, Weißraum, weniger Rahmen, Farbpalette, HSL, Farbabstufungen, Schatten, Elevation, Tailwind CSS
+:related: eight-point-grid, gestalt-principles, modular-scale
+:tier: 2
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=no, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Refactoring UI -- ein Praxisbuch über visuelles Design für Entwickler, von Adam Wathan und Steve Schoger
+
+Auch bekannt als:: Das Buch Refactoring UI
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Mit einem Feature beginnen, nicht mit dem Layout.* Zuerst gestaltet man ein konkretes Stück Funktion; der Seitenrahmen kommt später.
+* *Hierarchie entsteht durch Schriftstärke und Farbe, nicht nur durch Größe.* Hauptinhalte bekommen einen kräftigeren Schnitt und eine dunklere Farbe. Nebensächliches tritt mit grauer Schrift und leichterem Schnitt zurück.
+* *Kein grauer Text auf farbigem Hintergrund.* Grau gehört auf weiße oder neutrale Flächen.
+* *Aus einem festen System wählen.* Abstände und Größen stammen aus einer festen Wertemenge, Schriftgrößen aus einer begrenzten Skala. Man wählt aus der Liste, statt jedes Mal einen Wert zu erfinden.
+* *Mit zu viel Weißraum beginnen.* Großzügige Abstände sind der Ausgangspunkt, kein Nachgedanke.
+* *Weniger Rahmen verwenden.* Elemente trennt man durch Abstand, Hintergrundfarben oder Schatten statt durch Linien. Schatten zeigen zugleich die Elevation.
+* *Vorab eine vollständige Palette festlegen.* Jeder Farbton bekommt neun bis zehn Abstufungen, definiert in HSL.
+* *Beschriftungen sind das letzte Mittel.* Erst sollen Format und Kontext zeigen, was ein Wert bedeutet; dann erst kommt ein Label.
+
+Wichtige Vertreter:: Adam Wathan (Entwickler) und Steve Schoger (UI-Designer); https://www.refactoringui.com/[_Refactoring UI_], ein PDF von etwa 218 Seiten in kurzen Kapiteln mit Komponentengalerie, Farbpaletten, Schriften und Icons, erschienen am 11. Dezember 2018 (https://www.goodreads.com/book/show/43190966[Goodreads]). Die Autoren schufen auch Tailwind CSS, dessen Standardpalette das Buch aufgreift.
+
+[discrete]
+== *Wann verwenden*:
+
+* Entwickler, die einen Bildschirm selbst gestalten müssen, ohne Designer
+* Einstellungsseiten, Dashboards und Admin-Seiten, die überladen oder flach wirken
+* Eine Oberfläche auf Hierarchie, Abstände und Farbe prüfen statt auf Usability
+* Als Gegenanweisung, wenn generierte Bildschirme jede Zeile mit einer Trennlinie absetzen und Hierarchie nur über die Schriftgröße herstellen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Es als Tailwind-Handbuch lesen.* Die Taktiken sind unabhängig vom Framework. Die Standardwerte von Tailwind greifen sie auf, aber das Buch setzt Tailwind nicht voraus.
+* *Die Taktiken als allgemeingültige Regeln behandeln.* Es sind Faustregeln, mit denen Entwickler schnell zu einem ordentlichen Entwurf kommen.
+* *Es statt Nutzerforschung einsetzen.* Das Buch behandelt den visuellen Schliff. Ob das Feature das Problem des Nutzers löst, beantwortet es nicht.
+* *Auf jeder Modellstufe dieselbe Wirkung erwarten.* In unserem Prior-Test am 28.10.2026 (eine Einstellungsseite für eine Notiz-App) ersetzten Sonnet und Opus in vier von vier Läufen Trennlinien durch Abstände und nutzten die Grau- und Indigo-Palette aus dem Tailwind der Autoren. Haiku tat das in einem von zwei Läufen und nutzte eine eigene Palette: Auf der schwachen Stufe ist der bloße Name ein sanfterer Anstoß. Die Modelle schrieben das Buch mit hoher Sicherheit Adam Wathan und Steve Schoger zu; ob die Autorennamen die Wirkung verstärken, wurde nicht getestet.
+====

@@ -1,0 +1,51 @@
+= Atomic Design
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, software-architect
+:proponents: Brad Frost
+:tags: Atomic Design, Brad Frost, atoms, molecules, organisms, templates, pages, design systems, pattern library, component library, Pattern Lab, Dave Olsen, UI components, component hierarchy
+:related: design-tokens-dtcg, bem-methodology, material-design-3
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Atomic Design -- Brad Frost's method for building interface design systems in five stages: atoms, molecules, organisms, templates and pages
+
+Also known as:: Atomic web design
+
+[discrete]
+== *Core Concepts*:
+
+* *Five stages, borrowed from chemistry.* Atoms, molecules, organisms, templates and pages. Frost introduced them in a blog post on 10 June 2013 (https://articles.centercentre.com/?p=350[republished by Center Centre]).
+* *Atoms are the smallest parts.* Labels, inputs, buttons -- elements that cannot be broken down further and stay useful.
+* *Molecules combine atoms.* A label, an input and a button form a search field with one job.
+* *Organisms are distinct sections.* Molecules and atoms group into a header, a product grid or a footer.
+* *Templates show structure.* A template places organisms in a layout and shows the page's skeleton without final content.
+* *Pages test the system.* A page is a template filled with real content. It shows whether the patterns hold up.
+* *A mental model, not a sequence.* Frost stresses moving back and forth between the stages instead of working through them in order.
+
+Key Proponents:: Brad Frost (blog post 2013; book _Atomic Design_, 2016, foreword by Josh Clark and Dan Mall, https://atomicdesign.bradfrost.com/foreword[free online]); Pattern Lab, the tool Frost built with Dave Olsen to work this way
+
+[discrete]
+== *When to Use*:
+
+* Structuring a component library for a product such as an analytics dashboard. In our prior test the anchor made every run sort components into atoms, molecules, organisms, templates and pages.
+* Starting a design system and giving designers and developers a shared vocabulary for component size
+* Auditing an existing UI for duplicated components
+* Together with <<design-tokens-dtcg,Design Tokens>> for the values below the atoms
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Treating the stages as a mandatory folder structure.* The five names help people talk about the system. Many teams sort their code differently.
+* *Reading it as a linear process.* Frost describes moving back and forth, not building all atoms first.
+* *Taking "pages" literally.* Pages are templates with real content, used to test the system -- not a list of the site's web pages.
+* *Expecting the levels without the name.* In our prior test on 2026-10-28, the baselines sorted components into primitives plus folders by feature. One Sonnet baseline called its structure "atomic-design inspired" but used none of the levels. With "Atomic Design", six of six used all five stages.
+
+[discrete]
+== *Criticism*:
+
+* *Hard to classify in practice.* Trent Walton, https://trentwalton.com/2016/02/26/atomic-classification["Atomic Classification"] (2016), reports that "the team struggled to map components to an atomic classification". The chemistry names slowed discussions, and the team moved to a simpler two-tier system. He also cites FutureLearn's team, who could not agree when a molecule becomes an organism.
+* *The labels matter less than the idea.* Peter Rohles, https://www.qt.io/blog/atomic-design-systems-why-the-labels-dont-matter["Atomic Design Systems: Why the Labels Don't Matter"] (Qt blog, 2025), argues that the five names are not what makes the method useful: "The chemistry labels were never the point."
+====

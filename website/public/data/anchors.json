@@ -259,6 +259,72 @@
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
+    "id": "apple-human-interface-guidelines",
+    "title": "Apple Human Interface Guidelines",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "material-design-3",
+      "wcag-22-aa"
+    ],
+    "proponents": [
+      "Apple"
+    ],
+    "tags": [
+      "Apple Human Interface Guidelines",
+      "HIG",
+      "Apple",
+      "iOS",
+      "iPadOS",
+      "macOS",
+      "watchOS",
+      "tvOS",
+      "Liquid Glass",
+      "clarity",
+      "deference",
+      "depth",
+      "hierarchy",
+      "harmony",
+      "consistency",
+      "44 pt hit target",
+      "SF Pro",
+      "SF Symbols",
+      "Dynamic Type",
+      "large titles",
+      "navigation bar",
+      "tab bar",
+      "inset grouped list",
+      "safe area",
+      "dark mode",
+      "VoiceOver",
+      "Reduce Motion",
+      "accessibility"
+    ],
+    "filePath": "docs/anchors/apple-human-interface-guidelines.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
+  },
+  {
     "id": "arc42",
     "title": "arc42 Architecture Documentation",
     "categories": [
@@ -376,6 +442,117 @@
     "filePath": "docs/anchors/atam.adoc",
     "tier": 3,
     "addedAt": "2026-03-06T17:48:13+00:00"
+  },
+  {
+    "id": "atomic-design",
+    "title": "Atomic Design",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "bem-methodology",
+      "material-design-3"
+    ],
+    "proponents": [
+      "Brad Frost"
+    ],
+    "tags": [
+      "Atomic Design",
+      "Brad Frost",
+      "atoms",
+      "molecules",
+      "organisms",
+      "templates",
+      "pages",
+      "design systems",
+      "pattern library",
+      "component library",
+      "Pattern Lab",
+      "Dave Olsen",
+      "UI components",
+      "component hierarchy"
+    ],
+    "filePath": "docs/anchors/atomic-design.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
+  },
+  {
+    "id": "bauhaus",
+    "title": "Bauhaus",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "educator",
+      "consultant",
+      "software-developer"
+    ],
+    "related": [
+      "swiss-style",
+      "dieter-rams-ten-principles"
+    ],
+    "proponents": [
+      "Walter Gropius",
+      "Hannes Meyer",
+      "Ludwig Mies van der Rohe"
+    ],
+    "tags": [
+      "Bauhaus",
+      "Staatliches Bauhaus",
+      "Bauhaus Manifesto",
+      "Walter Gropius",
+      "Hannes Meyer",
+      "Ludwig Mies van der Rohe",
+      "Weimar",
+      "Dessau",
+      "Berlin",
+      "design school",
+      "modernism",
+      "workshops",
+      "geometric forms",
+      "primary colours",
+      "graphic design"
+    ],
+    "filePath": "docs/anchors/bauhaus.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:32+01:00"
   },
   {
     "id": "bdd-given-when-then",
@@ -1743,6 +1920,63 @@
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
+    "id": "design-tokens-dtcg",
+    "title": "Design Tokens (W3C DTCG)",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer",
+      "software-architect"
+    ],
+    "related": [
+      "atomic-design",
+      "material-design-3",
+      "eight-point-grid"
+    ],
+    "proponents": [
+      "Jina Anne",
+      "Jon Levine",
+      "W3C Design Tokens Community Group"
+    ],
+    "tags": [
+      "design tokens",
+      "DTCG",
+      "W3C Design Tokens Community Group",
+      "Design Tokens Format Module",
+      "tokens.json",
+      "$value",
+      "$type",
+      "alias",
+      "token reference",
+      "Style Dictionary",
+      "Tokens Studio",
+      "Terrazzo",
+      "theming",
+      "design systems",
+      "Salesforce Lightning Design System"
+    ],
+    "filePath": "docs/anchors/design-tokens-dtcg.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
+  },
+  {
     "id": "devils-advocate",
     "title": "Devil’s Advocate",
     "categories": [
@@ -1803,6 +2037,64 @@
     "filePath": "docs/anchors/diataxis-framework.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "dieter-rams-ten-principles",
+    "title": "Dieter Rams' 10 Principles of Good Design",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "product-owner",
+      "software-developer",
+      "consultant"
+    ],
+    "related": [
+      "bauhaus",
+      "kiss-principle",
+      "refactoring-ui"
+    ],
+    "proponents": [
+      "Dieter Rams"
+    ],
+    "tags": [
+      "Dieter Rams",
+      "ten principles",
+      "good design",
+      "Less but better",
+      "Weniger aber besser",
+      "innovative",
+      "useful",
+      "aesthetic",
+      "understandable",
+      "unobtrusive",
+      "honest",
+      "long-lasting",
+      "thorough",
+      "environmentally friendly",
+      "as little design as possible",
+      "product design",
+      "Vitsoe"
+    ],
+    "filePath": "docs/anchors/dieter-rams-ten-principles.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:32+01:00"
   },
   {
     "id": "disc-model",
@@ -2266,6 +2558,61 @@
     "addedAt": "2026-07-14T11:34:13+02:00"
   },
   {
+    "id": "eight-point-grid",
+    "title": "8-Point Grid",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "modular-scale",
+      "material-design-3",
+      "design-tokens-dtcg"
+    ],
+    "proponents": [
+      "Bryn Jackson",
+      "Google Material Design"
+    ],
+    "tags": [
+      "8-point grid",
+      "8pt grid",
+      "8dp grid",
+      "baseline grid",
+      "spacing system",
+      "spacing scale",
+      "4-point grid",
+      "soft grid",
+      "hard grid",
+      "Material Design",
+      "Bryn Jackson",
+      "spec.fm",
+      "layout",
+      "CSS spacing",
+      "design tokens"
+    ],
+    "filePath": "docs/anchors/eight-point-grid.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
+  },
+  {
     "id": "eisenhower-matrix",
     "title": "Eisenhower Matrix",
     "categories": [
@@ -2296,6 +2643,60 @@
     "tier": 2,
     "advisory": "Activates an urgency-first framing its own field cautions against (see Criticism)",
     "addedAt": "2026-06-26T20:19:59+00:00"
+  },
+  {
+    "id": "elements-of-typographic-style",
+    "title": "The Elements of Typographic Style (Bringhurst)",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "technical-writer",
+      "software-developer"
+    ],
+    "related": [
+      "modular-scale",
+      "swiss-style"
+    ],
+    "proponents": [
+      "Robert Bringhurst"
+    ],
+    "tags": [
+      "The Elements of Typographic Style",
+      "Bringhurst",
+      "Robert Bringhurst",
+      "typography",
+      "book typography",
+      "measure",
+      "line length",
+      "old-style figures",
+      "small caps",
+      "paragraph indent",
+      "hanging punctuation",
+      "letterspacing",
+      "scale of sizes",
+      "Hartley &amp; Marks",
+      "long-form text"
+    ],
+    "filePath": "docs/anchors/elements-of-typographic-style.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "enterprise-integration-patterns",
@@ -2423,6 +2824,72 @@
     "filePath": "docs/anchors/event-storming.adoc",
     "tier": 3,
     "addedAt": "2026-06-02T14:49:26+02:00"
+  },
+  {
+    "id": "every-layout",
+    "title": "Every Layout",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "software-developer",
+      "ux-designer"
+    ],
+    "related": [
+      "mobile-first",
+      "modular-scale",
+      "bem-methodology"
+    ],
+    "proponents": [
+      "Heydon Pickering",
+      "Andy Bell"
+    ],
+    "tags": [
+      "Every Layout",
+      "Heydon Pickering",
+      "Andy Bell",
+      "intrinsic layout",
+      "layout primitives",
+      "Stack",
+      "Box",
+      "Center",
+      "Cluster",
+      "Sidebar",
+      "Switcher",
+      "Cover",
+      "Grid",
+      "Frame",
+      "Reel",
+      "Imposter",
+      "Icon",
+      "Container",
+      "owl selector",
+      "flexbox",
+      "CSS grid",
+      "container queries",
+      "logical properties",
+      "custom properties",
+      "no media queries",
+      "CSS"
+    ],
+    "filePath": "docs/anchors/every-layout.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "fagan-inspection",
@@ -2958,6 +3425,65 @@
       }
     ],
     "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
+    "id": "gestalt-principles",
+    "title": "Gestalt Principles",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "educator",
+      "software-developer",
+      "technical-writer"
+    ],
+    "related": [
+      "swiss-style",
+      "laws-of-ux",
+      "nielsen-usability-heuristics"
+    ],
+    "proponents": [
+      "Max Wertheimer",
+      "Kurt Koffka",
+      "Wolfgang Köhler"
+    ],
+    "tags": [
+      "Gestalt principles",
+      "Gestalt laws",
+      "laws of perceptual organization",
+      "perceptual grouping",
+      "Max Wertheimer",
+      "Berlin school",
+      "proximity",
+      "similarity",
+      "common fate",
+      "closure",
+      "good curve",
+      "good Gestalt",
+      "common region",
+      "figure-ground",
+      "visual hierarchy",
+      "visual design"
+    ],
+    "filePath": "docs/anchors/gestalt-principles.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "gherkin",
@@ -3954,6 +4480,63 @@
     "addedAt": "2026-06-01T21:31:00+02:00"
   },
   {
+    "id": "gov-uk-design-system",
+    "title": "GOV.UK Design System",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "product-owner",
+      "technical-writer",
+      "software-developer"
+    ],
+    "related": [
+      "plain-language-iso-24495",
+      "wcag-22-aa",
+      "progressive-disclosure"
+    ],
+    "proponents": [
+      "Government Digital Service"
+    ],
+    "tags": [
+      "GOV.UK Design System",
+      "GOV.UK Frontend",
+      "Government Digital Service",
+      "GDS",
+      "one thing per page",
+      "one question per page",
+      "start page",
+      "question pages",
+      "check answers",
+      "confirmation page",
+      "error summary",
+      "public services",
+      "government design",
+      "plain English",
+      "form design",
+      "service design"
+    ],
+    "filePath": "docs/anchors/gov-uk-design-system.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
+  },
+  {
     "id": "grasp",
     "title": "GRASP",
     "categories": [
@@ -4937,6 +5520,63 @@
     "addedAt": "2026-06-01T21:31:00+02:00"
   },
   {
+    "id": "laws-of-ux",
+    "title": "Laws of UX",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "product-owner",
+      "software-developer"
+    ],
+    "related": [
+      "nielsen-usability-heuristics",
+      "gestalt-principles",
+      "progressive-disclosure"
+    ],
+    "proponents": [
+      "Jon Yablonski"
+    ],
+    "tags": [
+      "Laws of UX",
+      "Jon Yablonski",
+      "Fitts's Law",
+      "Hick's Law",
+      "Jakob's Law",
+      "Miller's Law",
+      "Doherty Threshold",
+      "Tesler's Law",
+      "Von Restorff Effect",
+      "Peak-End Rule",
+      "Aesthetic-Usability Effect",
+      "Postel's Law",
+      "Goal-Gradient Effect",
+      "Zeigarnik Effect",
+      "Serial Position Effect",
+      "cognitive load",
+      "UX psychology"
+    ],
+    "filePath": "docs/anchors/laws-of-ux.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
+  },
+  {
     "id": "least-privilege",
     "title": "Principle of Least Privilege (Saltzer & Schroeder)",
     "categories": [
@@ -5207,6 +5847,69 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "material-design-3",
+    "title": "Material Design 3",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "apple-human-interface-guidelines",
+      "design-tokens-dtcg",
+      "eight-point-grid"
+    ],
+    "proponents": [
+      "Google"
+    ],
+    "tags": [
+      "Material Design 3",
+      "Material 3",
+      "M3",
+      "Material You",
+      "Material 3 Expressive",
+      "Google",
+      "Android",
+      "dynamic color",
+      "colour roles",
+      "tonal palette",
+      "HCT",
+      "surface",
+      "surface container",
+      "on-surface",
+      "design tokens",
+      "type scale",
+      "shape scale",
+      "elevation",
+      "top app bar",
+      "navigation bar",
+      "FAB",
+      "cards",
+      "chips",
+      "Matías Duarte"
+    ],
+    "filePath": "docs/anchors/material-design-3.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
+  },
+  {
     "id": "meaningful-human-control",
     "title": "Meaningful Human Control (MHC)",
     "categories": [
@@ -5391,6 +6094,115 @@
       }
     ],
     "addedAt": "2026-10-09T10:51:36+02:00"
+  },
+  {
+    "id": "mobile-first",
+    "title": "Mobile First",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer",
+      "product-owner"
+    ],
+    "related": [
+      "every-layout",
+      "progressive-disclosure"
+    ],
+    "proponents": [
+      "Luke Wroblewski"
+    ],
+    "tags": [
+      "Mobile First",
+      "mobile-first design",
+      "Luke Wroblewski",
+      "A Book Apart",
+      "responsive web design",
+      "min-width media query",
+      "progressive enhancement",
+      "small screen first",
+      "constraints",
+      "focus",
+      "prioritisation",
+      "content priority"
+    ],
+    "filePath": "docs/anchors/mobile-first.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
+  },
+  {
+    "id": "modular-scale",
+    "title": "Modular Scale",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer",
+      "technical-writer"
+    ],
+    "related": [
+      "elements-of-typographic-style",
+      "eight-point-grid",
+      "every-layout"
+    ],
+    "proponents": [
+      "Tim Brown",
+      "Robert Bringhurst"
+    ],
+    "tags": [
+      "modular scale",
+      "type scale",
+      "typographic scale",
+      "ratio",
+      "base size",
+      "major third",
+      "perfect fourth",
+      "golden section",
+      "golden ratio",
+      "musical intervals",
+      "font sizes",
+      "heading sizes",
+      "CSS custom properties",
+      "Tim Brown",
+      "Scott Kellum",
+      "Robert Bringhurst",
+      "typography"
+    ],
+    "filePath": "docs/anchors/modular-scale.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "morphological-box",
@@ -5632,6 +6444,63 @@
     "filePath": "docs/anchors/nelson-rules.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "nielsen-usability-heuristics",
+    "title": "Nielsen’s 10 Usability Heuristics",
+    "categories": [
+      "ux-visual-design",
+      "testing-quality"
+    ],
+    "roles": [
+      "ux-designer",
+      "qa-engineer",
+      "product-owner",
+      "software-developer"
+    ],
+    "related": [
+      "laws-of-ux",
+      "gestalt-principles",
+      "wcag-22-aa"
+    ],
+    "proponents": [
+      "Jakob Nielsen",
+      "Rolf Molich"
+    ],
+    "tags": [
+      "Nielsen heuristics",
+      "usability heuristics",
+      "heuristic evaluation",
+      "Jakob Nielsen",
+      "Rolf Molich",
+      "Nielsen Norman Group",
+      "visibility of system status",
+      "user control and freedom",
+      "consistency and standards",
+      "error prevention",
+      "recognition rather than recall",
+      "aesthetic and minimalist design",
+      "usability inspection",
+      "UX review"
+    ],
+    "filePath": "docs/anchors/nielsen-usability-heuristics.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "occams-razor",
@@ -6543,6 +7412,63 @@
       }
     ],
     "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
+    "id": "refactoring-ui",
+    "title": "Refactoring UI",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "software-developer",
+      "ux-designer"
+    ],
+    "related": [
+      "eight-point-grid",
+      "gestalt-principles",
+      "modular-scale"
+    ],
+    "proponents": [
+      "Adam Wathan",
+      "Steve Schoger"
+    ],
+    "tags": [
+      "Refactoring UI",
+      "Adam Wathan",
+      "Steve Schoger",
+      "UI design for developers",
+      "visual hierarchy",
+      "font weight",
+      "de-emphasis",
+      "spacing system",
+      "type scale",
+      "white space",
+      "fewer borders",
+      "colour palette",
+      "HSL",
+      "shades",
+      "shadows",
+      "elevation",
+      "Tailwind CSS"
+    ],
+    "filePath": "docs/anchors/refactoring-ui.adoc",
+    "tier": 2,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": false
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "regulated-environment",
@@ -8663,6 +9589,67 @@
     "filePath": "docs/anchors/wardley-mapping.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "wcag-22-aa",
+    "title": "WCAG 2.2 AA",
+    "categories": [
+      "ux-visual-design",
+      "testing-quality"
+    ],
+    "roles": [
+      "ux-designer",
+      "qa-engineer",
+      "software-developer",
+      "legal-compliance"
+    ],
+    "related": [
+      "gov-uk-design-system",
+      "nielsen-usability-heuristics",
+      "plain-language-iso-24495"
+    ],
+    "proponents": [
+      "W3C Web Accessibility Initiative"
+    ],
+    "tags": [
+      "WCAG",
+      "WCAG 2.2",
+      "WCAG 2.2 AA",
+      "Web Content Accessibility Guidelines",
+      "accessibility",
+      "a11y",
+      "POUR",
+      "success criteria",
+      "conformance level AA",
+      "contrast ratio",
+      "4.5:1",
+      "target size",
+      "2.5.8",
+      "focus not obscured",
+      "2.4.11",
+      "accessible authentication",
+      "European Accessibility Act",
+      "EN 301 549",
+      "W3C WAI"
+    ],
+    "filePath": "docs/anchors/wcag-22-aa.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "what-qualifies-as-a-semantic-anchor",

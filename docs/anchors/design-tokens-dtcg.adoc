@@ -1,0 +1,53 @@
+= Design Tokens (W3C DTCG)
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, software-architect
+:proponents: Jina Anne, Jon Levine, W3C Design Tokens Community Group
+:tags: design tokens, DTCG, W3C Design Tokens Community Group, Design Tokens Format Module, tokens.json, $value, $type, alias, token reference, Style Dictionary, Tokens Studio, Terrazzo, theming, design systems, Salesforce Lightning Design System
+:related: atomic-design, material-design-3, eight-point-grid
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Design Tokens in the format of the W3C Design Tokens Community Group (DTCG) -- design decisions such as colours, spacing and type stored as tool-neutral data
+
+Also known as:: DTCG format, Design Tokens Format Module, `.tokens.json`
+
+[discrete]
+== *Core Concepts*:
+
+* *A token is a named design decision.* Colour, spacing, font or duration is stored once, under a name, and every platform reads it from there.
+* *Tokens are objects with `$value` and `$type`.* The format is JSON. Types include `color`, `dimension`, `fontFamily`, `fontWeight`, `duration`, `cubicBezier` and `number`, plus composite types such as `typography`, `shadow` and `border`.
+* *Groups give tokens a hierarchy.* Nested objects group related tokens; the path through the groups forms the token's name.
+* *Aliases reference other tokens.* A value written as `{group.token}` points to another token, so one change carries through every token that refers to it.
+* *Descriptions travel with the data.* `$description` documents a token where it is defined.
+* *Data first, code later.* Files use the extension `.tokens.json`. Tools such as Style Dictionary, Tokens Studio and Terrazzo turn them into CSS, iOS, Android or other outputs.
+
+Key Proponents:: Jina Anne, who https://www.w3.org/community/design-tokens/2026/06/17/thank-you-jina-and-val/[coined the term "design tokens" with Jon Levine at Salesforce], formerly co-chair of the W3C Design Tokens Community Group and its chair emerita since 17 June 2026; Andy Bell credits her work on the Lightning Design System in https://piccalil.li/blog/what-are-design-tokens["What are design tokens?"] (2020); the editors of version 2025.10: Louis Chenais, Mike Kamminga, Kathleen McMahon, Drew Powers, Matthew Ström-Awn, Donna Vitan
+
+[discrete]
+== *When to Use*:
+
+* Writing colour, spacing and type values as a file that design tools and code share
+* Setting up themes and modes (light, dark, brand variants) from one source
+* Handing design decisions to several platforms through a build tool such as Style Dictionary
+* As a format instruction when a generated "token file" comes back as CSS custom properties or ad-hoc JSON
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Equating tokens with CSS variables.* Tokens are tool-neutral data. CSS custom properties are one output among many. In our prior test on 2026-10-28 the baselines returned exactly that: CSS custom properties or plain JSON. With the DTCG name, six of six runs wrote `$value` and `$type`, and four of six used alias references in braces. The bare "design tokens" resolves to design systems on all tiers.
+* *Calling DTCG a W3C Recommendation.* Version 2025.10 is a Final Community Group Report. It did not go through the W3C Recommendation track.
+* *Assuming more tiers are always better.* Aliases make it possible to stack layers of tokens. Each layer adds indirection that someone has to understand and maintain.
+
+[discrete]
+== *Criticism*:
+
+* *Too many layers turn tokens against their purpose.* Shaunak Bhanarkar argues in https://uxplanet.org/design-tokens-a-double-edged-sword-in-design-systems-bae2ed1769c3["Design tokens: A double-edged sword in design systems"] (UX Planet) that "Too many layers of abstraction can make tokens difficult to use." He describes how stacked layers, duplicate tokens and drifting names push teams back to hard-coded values.
+
+[discrete]
+== *Current Status*:
+
+* *The first stable version is out.* Version 2025.10, published on https://www.w3.org/community/design-tokens/2025/10/28/design-tokens-specification-reaches-first-stable-version/[28 October 2025], is the first stable release. It has https://www.designtokens.org/tr/2025.10/[three modules]: Format, Color and Resolver. The Color module supports modern colour spaces such as Display P3 and Oklch; the Resolver handles themes and modes. Style Dictionary, Tokens Studio and Terrazzo implement it. The training-data prior most likely serves the earlier drafts: they wrote a colour value as a hex string, while the 2025.10 Color module describes colours as objects with a colour space.
+====

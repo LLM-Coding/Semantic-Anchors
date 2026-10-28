@@ -1,0 +1,55 @@
+= WCAG 2.2 AA
+:categories: ux-visual-design, testing-quality
+:roles: ux-designer, qa-engineer, software-developer, legal-compliance
+:proponents: W3C Web Accessibility Initiative
+:tags: WCAG, WCAG 2.2, WCAG 2.2 AA, Web Content Accessibility Guidelines, accessibility, a11y, POUR, success criteria, conformance level AA, contrast ratio, 4.5:1, target size, 2.5.8, focus not obscured, 2.4.11, accessible authentication, European Accessibility Act, EN 301 549, W3C WAI
+:related: gov-uk-design-system, nielsen-usability-heuristics, plain-language-iso-24495
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Web Content Accessibility Guidelines 2.2, conformance level AA
+
+Also known as:: WCAG 2.2 Level AA
+
+[discrete]
+== *Core Concepts*:
+
+* *Four principles: POUR.* Content must be Perceivable, Operable, Understandable and Robust. Guidelines sit under each principle, and testable success criteria sit under each guideline.
+* *Three levels; AA includes A.* Each success criterion has level A, AA or AAA. Conformance at AA means meeting every A and every AA criterion.
+* *Contrast is measured.* 1.4.3 asks for 4.5:1 for text and 3:1 for large text; 1.4.11 asks for 3:1 for non-text elements.
+* *Structure and interaction are testable too.* Among the AA criteria: 1.3.1 Info and Relationships, 1.4.10 Reflow, 2.4.7 Focus Visible, 3.3.1 Error Identification and 3.3.2 Labels or Instructions.
+* *Version 2.2 adds criteria for touch, focus and cognition.* New at A and AA: 2.4.11 Focus Not Obscured (Minimum), 2.5.7 Dragging Movements, 2.5.8 Target Size (Minimum) of 24×24 CSS pixels, 3.2.6 Consistent Help, 3.3.7 Redundant Entry and 3.3.8 Accessible Authentication (Minimum). Three more new criteria are AAA.
+* *One criterion was removed.* 4.1.1 Parsing is obsolete and no longer part of WCAG 2.2.
+
+Key Proponents:: W3C Web Accessibility Initiative (WAI); WCAG 2.2 became a W3C Recommendation on 5 October 2023 (https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/["What's New in WCAG 2.2"])
+
+[discrete]
+== *When to Use*:
+
+* Reviewing a form, page or component and naming each defect by success criterion
+* Setting an accessibility acceptance criterion for a project or a contract
+* Checking touch targets, focus visibility and login flows against the 2.2 additions
+* Preparing for legal requirements such as the European Accessibility Act
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Equating AA conformance with accessibility.* AA is a testable minimum. A page can conform and still be hard to use for disabled people.
+* *Trusting automated tools or overlays to certify conformance.* Most criteria need human judgement.
+* *Expecting WCAG 3 to replace 2.2 soon.* WCAG 3 is still a Working Draft, and WCAG 2 stays in force for years after WCAG 3 is final.
+* *Asking for "accessibility" instead of naming the standard.* In our prior test on 2026-10-28 (a signup form with eight known defects), all six baselines already named the 4.5:1 contrast ratio, but no success criterion by number. With "WCAG 2.2 AA", six of six runs cited at least ten success criteria, and six of six caught the two 2.2 additions the form violated: 2.5.8 Target Size (Minimum) and 2.4.11 Focus Not Obscured.
+
+[discrete]
+== *Criticism*:
+
+* *The wording is a swamp to audit against.* Adrian Roselli argues in his Paris Web 2023 talk https://www.paris-web.fr/2023/conference/wcagmire["WCAGmire"] that WCAG "can be a bit of a quagmire": dense wording, loopholes and differing interpretations confuse audits.
+* *Conformance can coexist with hostility.* In his https://adrianroselli.com/tag/adversarial[Adversarial Conformance] series, Roselli builds demos that meet 2.4.11 and 2.5.8 while being hostile to use.
+
+[discrete]
+== *Current Status*:
+
+* *2.2 is the current standard; 3 is still a draft.* https://www.w3.org/WAI/WCAG3[WCAG 3] remains a Working Draft (latest September 2026). The W3C does not expect it to become a standard for a few more years and will not deprecate WCAG 2 until several years after WCAG 3 is final. The European Accessibility Act has applied since 28 June 2025; its harmonised standard EN 301 549 incorporates WCAG and is still under revision (https://www.fieldfisher.com/en/insights/harmonised-standards-under-the-european-accessibility-act-an-introduction[Fieldfisher]). The training-data prior serves WCAG 2.2 well: in our prior test every tier cited the two new criteria the test form violated, 2.5.8 and 2.4.11, by number.
+====

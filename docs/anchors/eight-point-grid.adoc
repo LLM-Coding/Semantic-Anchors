@@ -1,0 +1,49 @@
+= 8-Point Grid
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Bryn Jackson, Google Material Design
+:tags: 8-point grid, 8pt grid, 8dp grid, baseline grid, spacing system, spacing scale, 4-point grid, soft grid, hard grid, Material Design, Bryn Jackson, spec.fm, layout, CSS spacing, design tokens
+:related: modular-scale, material-design-3, design-tokens-dtcg
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: 8-Point Grid -- a spacing system in which sizes, margins and paddings are multiples of eight, popularised around 2016 by Bryn Jackson's guide on spec.fm and by Material Design's 8dp grid
+
+Also known as:: 8pt grid, 8dp grid, 8-point grid system
+
+[discrete]
+== *Core Concepts*:
+
+* *One base unit for all spacing.* Margins, paddings, component heights and gaps are multiples of 8: 8, 16, 24, 32 and so on.
+* *Fewer decisions, more consistency.* A small set of allowed values ends the debate over 13 or 15 pixels and keeps screens built by different people aligned.
+* *Material Design made it a platform rule.* Material Design 1 states: "All components align to an 8dp square baseline grid for mobile, tablet, and desktop."
+* *A 4-point half-step for fine detail.* In Material Design 1, iconography and type align to a 4dp grid. Four is a common half-step for small gaps.
+* *Soft grid and hard grid.* A soft grid spaces elements by multiples of 8; a hard grid places every element on an 8-point lattice. Teams need to agree which one they mean.
+* *A spacing system, not a column grid.* The 8-point grid sets the rhythm of space. How many columns a layout has is a separate decision.
+
+Key Proponents:: Bryn Jackson (guide on spec.fm, called the most comprehensive guide in https://blogs.vmware.com/tanzu/intro-to-the-8-point-grid-system-2/["Intro to The 8-Point Grid System"], Pivotal, 14 December 2016); Google Material Design (https://m1.material.io/layout/metrics-keylines.html[Material Design 1, Metrics & keylines])
+
+[discrete]
+== *When to Use*:
+
+* CSS for components, cards and lists, when spacing should come from one scale instead of ad-hoc pixel values
+* Defining spacing tokens in a design system
+* Handing designs to developers, so both sides use the same values
+* As a counter-instruction when generated CSS mixes values such as 13px, 18px and 22px
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Every value must be a multiple of 8.* Material uses 4 for type and icons, and 4 is a common half-step.
+* *Confusing the soft grid with the hard grid.* One governs the spacing between elements, the other the position of every element on a lattice.
+* *Mistaking it for a column grid.* It says nothing about the number of columns.
+* *Assuming the baseline ignores spacing scales.* In our prior test on 2026-10-28, the baselines already leaned towards round numbers: 58 per cent of their pixel values in a responsive card list were multiples of eight. "Use an 8-point grid" raised the share to 88 per cent on every tier. Attribution was the weak point: Sonnet and Opus named no single creator and pointed to Material Design, Opus added Bryn Jackson, and Haiku named Samantha Warren with medium confidence.
+
+[discrete]
+== *Criticism*:
+
+* *Too coarse for dense interfaces.* Darin Dimitroff explains in https://webflow.com/blog/why-were-using-a-4-point-grid-in-webflow["Why we're using a 4-point grid in Webflow"] (Webflow Blog, updated 16 January 2019) why Webflow uses a 4-point grid: for a dense interface "an 8pt scale simply doesn't provide enough granularity".
+====

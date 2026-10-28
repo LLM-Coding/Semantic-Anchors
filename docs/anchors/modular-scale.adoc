@@ -1,0 +1,50 @@
+= Modular Scale
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, technical-writer
+:proponents: Tim Brown, Robert Bringhurst
+:tags: modular scale, type scale, typographic scale, ratio, base size, major third, perfect fourth, golden section, golden ratio, musical intervals, font sizes, heading sizes, CSS custom properties, Tim Brown, Scott Kellum, Robert Bringhurst, typography
+:related: elements-of-typographic-style, eight-point-grid, every-layout
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Modular Scale -- a sequence of sizes derived from one base size and one ratio, used to set type and spacing in proportion
+
+Also known as:: Type scale, typographic scale
+
+[discrete]
+== *Core Concepts*:
+
+* *A sequence of related numbers.* Tim Brown defines it in https://www.alistapart.com/article/more-meaningful-typography["More Meaningful Typography"] (A List Apart, 2011) as "a sequence of numbers that relate to one another in a meaningful way".
+* *Base times ratio.* Pick a base, usually the body text size, and a ratio. Multiply up for larger steps and divide down for smaller ones.
+* *Ratios borrowed from music and geometry.* https://modularscale.com/[modularscale.com] offers ratios from 15:16 (minor second) to 1:4 (double octave), including the golden section 1:1.618 and 1:√2.
+* *A pool to choose from.* The scale gives candidate sizes. Headings, body text and captions take the steps they need; the rest stay unused.
+* *Beyond font size.* The same steps can set line height, margins and spacing, so type and layout share one proportion.
+* *Older than the web.* Brown builds on Robert Bringhurst, who treats the scale of sizes in _The Elements of Typographic Style_ and compares it to a musical scale.
+
+Key Proponents:: Tim Brown (Type Manager at Adobe Typekit when he wrote "More Meaningful Typography", A List Apart No. 327, 3 May 2011); Scott Kellum and Tim Brown, who build and maintain modularscale.com; Robert Bringhurst as the source Brown cites
+
+[discrete]
+== *When to Use*:
+
+* CSS for body text and headings, when heading sizes should follow one rule instead of hand-picked values. In our prior test the anchor made every run define the ratio as a custom property and derive the sizes from it.
+* Design systems that need a type ramp and a spacing ramp from the same proportion
+* Reviewing a stylesheet whose font sizes have grown at random
+* Together with <<elements-of-typographic-style,Bringhurst>> for long-form text
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Using every step.* The scale is a pool. A page that uses all steps loses the contrast the scale was meant to create.
+* *Trusting the musical names.* "Major third" or "perfect fourth" label a ratio. They do not make type harmonious by themselves.
+* *One fixed scale for every screen.* A ratio that works on a wide screen can give headings that are too large on a phone. See the criticism below.
+* *Expecting the model to do it unasked.* In our prior test on 2026-10-28, all six baseline runs set heading sizes by hand, mostly with `clamp()`. With "Modular Scale" in the prompt, all six defined a base and a ratio, for example "base 1.125rem, ratio 1.25 (major third)" on Haiku. The bare term resolves to typography and design on all tiers.
+
+[discrete]
+== *Criticism*:
+
+* *Large ratios leave too few sizes on small screens.* Zell Liew, https://zellwk.com/blog/responsive-modular-scale/["Responsive Modular Scale"] (2016), notes that with a large ratio "there aren't any smaller sizes you can use in the scale". The usual fixes, a second base or a ratio per breakpoint, weaken the consistency the scale promised.
+* *Easy to overdo.* Chris Krycho, https://v3.chriskrycho.com/web/modular-scales-fantastic-but-dont-overdo-it/index.html["Modular scales: fantastic, but don't overdo it"] (2013), likes the method but warns that "the modular scale can get away from you pretty easily". Applied to every value, it stops serving the design.
+====

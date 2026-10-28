@@ -1,0 +1,50 @@
+= Nielsen's 10 Usability Heuristics
+:categories: ux-visual-design, testing-quality
+:roles: ux-designer, qa-engineer, product-owner, software-developer
+:proponents: Jakob Nielsen, Rolf Molich
+:tags: Nielsen heuristics, usability heuristics, heuristic evaluation, Jakob Nielsen, Rolf Molich, Nielsen Norman Group, visibility of system status, user control and freedom, consistency and standards, error prevention, recognition rather than recall, aesthetic and minimalist design, usability inspection, UX review
+:related: laws-of-ux, gestalt-principles, wcag-22-aa
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Jakob Nielsen's ten usability heuristics for user interface design -- the rules of thumb behind heuristic evaluation, first published with Rolf Molich in 1990 and revised by Nielsen in 1994
+
+Also known as:: Nielsen's heuristics, the ten usability heuristics
+
+[discrete]
+== *Core Concepts*:
+
+* *Rules of thumb, not guidelines.* The Nielsen Norman Group calls them in its https://www.nngroup.com/videos/heuristic-evaluation/[video on heuristic evaluation] "broad rules of thumb and not specific usability guidelines". They point at kinds of problems; they do not prescribe solutions.
+* *Ten heuristics.* Visibility of system status; match between system and the real world; user control and freedom; consistency and standards; error prevention; recognition rather than recall; flexibility and efficiency of use; aesthetic and minimalist design; help users recognize, diagnose, and recover from errors; help and documentation.
+* *The basis of heuristic evaluation.* Evaluators inspect an interface and map each problem they find to a heuristic. Nielsen and Molich introduced the method in "Heuristic evaluation of user interfaces" (Proc. ACM CHI'90).
+* *Several evaluators, not one.* The method assumes several evaluators who inspect independently and then pool their findings.
+* *A revised set from 1994.* Nielsen's "Enhancing the explanatory power of usability heuristics" (Proc. CHI'94) produced the set of ten in use today. In https://jakobnielsenphd.substack.com/p/heuristics-haiku["Jakob Nielsen's 10 Usability Heuristics as Haikus"] (11 October 2023) Nielsen noted that the set turns 30 in 2024.
+* *A cheap inspection, not a user test.* Heuristic evaluation finds likely problems without recruiting users. It complements testing with real users; it does not replace it.
+
+Key Proponents:: Jakob Nielsen and Rolf Molich ("Heuristic evaluation of user interfaces", Proc. ACM CHI'90, pp. 249–256); Rolf Molich and Jakob Nielsen ("Improving a human-computer dialogue", _Communications of the ACM_ 33(3), 1990); Jakob Nielsen ("Enhancing the explanatory power of usability heuristics", Proc. CHI'94, pp. 152–158); the Nielsen Norman Group. Sources listed in https://en.wikipedia.org/wiki/Heuristic_evaluation[Wikipedia: Heuristic evaluation]
+
+[discrete]
+== *When to Use*:
+
+* Reviewing a form, screen or flow when the findings should be named and sorted, not just listed
+* Expert reviews early in a project, before a usability test is affordable
+* Writing review checklists for designers, developers and QA
+* Asking a model to review a UI: with the anchor, its findings map to named heuristics
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Running it with one evaluator.* The method assumes several. A single reviewer tends to flag problems that real users never hit.
+* *Replacing user testing.* The heuristics predict problems; only users confirm them.
+* *Treating heuristics as specific guidelines.* They are broad categories. "Consistency and standards" does not say which standard to follow.
+* *Expecting the defects to be found only with the anchor.* In our prior test on 2026-10-28, the baselines found the defects of a signup form but named no heuristic. With the anchor, six of six runs mapped the defects to at least five of the ten heuristics by name, Sonnet to nine and ten. The bare "heuristic evaluation" resolved to HCI on every tier.
+
+[discrete]
+== *Criticism*:
+
+* *Oversimplified and rooted in the desktop era.* A. Ballav argues in https://oldmagazine.uxpa.org/?p=11227["Nielsen's Heuristic Evaluation: Limitations in Principles and Practice"] (_User Experience Magazine_ 17(4), 2017) that the heuristics are generic and shaped by desktop software: "heuristic evaluations suffer from oversimplification."
+* *False positives.* Todd Zazelenchuk notes on https://userfocus.co.uk/articles/heuristics.html[Userfocus] that evaluations are often done by a single evaluator and flag problems real users never encounter. The method is "capable of generating a lot of 'false positives'".
+====

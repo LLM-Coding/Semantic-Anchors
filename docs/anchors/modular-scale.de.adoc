@@ -1,0 +1,50 @@
+= Modular Scale
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, technical-writer
+:proponents: Tim Brown, Robert Bringhurst
+:tags: Modular Scale, modulare Skala, Type Scale, Schriftgrößenskala, typografische Skala, Verhältnis, Grundgröße, große Terz, Quarte, Goldener Schnitt, musikalische Intervalle, Schriftgrößen, Überschriftengrößen, CSS Custom Properties, Tim Brown, Scott Kellum, Robert Bringhurst, Typografie
+:related: elements-of-typographic-style, eight-point-grid, every-layout
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Modular Scale -- eine Folge von Größen aus einer Grundgröße und einem Verhältnis, mit der man Schrift und Abstände in Proportion setzt
+
+Auch bekannt als:: Type Scale, typografische Skala, Schriftgrößenskala
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Eine Folge verwandter Zahlen.* Tim Brown definiert sie in https://www.alistapart.com/article/more-meaningful-typography["More Meaningful Typography"] (A List Apart, 2011) als Zahlenfolge, deren Glieder sinnvoll zueinander stehen („a sequence of numbers that relate to one another in a meaningful way“).
+* *Grundgröße mal Verhältnis.* Man wählt eine Grundgröße, meist die Größe des Fließtexts, und ein Verhältnis. Multiplizieren ergibt die größeren Stufen, Dividieren die kleineren.
+* *Verhältnisse aus Musik und Geometrie.* https://modularscale.com/[modularscale.com] bietet Verhältnisse von 15:16 (kleine Sekunde) bis 1:4 (Doppeloktave), darunter den Goldenen Schnitt 1:1,618 und 1:√2.
+* *Ein Vorrat zur Auswahl.* Die Skala liefert Kandidaten. Überschriften, Fließtext und Bildunterschriften nehmen die Stufen, die sie brauchen; der Rest bleibt ungenutzt.
+* *Mehr als Schriftgröße.* Dieselben Stufen können Zeilenhöhe, Ränder und Abstände bestimmen. So teilen Schrift und Layout eine Proportion.
+* *Älter als das Web.* Brown baut auf Robert Bringhurst auf, der die Größenskala in _The Elements of Typographic Style_ behandelt und mit einer Tonleiter vergleicht.
+
+Wichtige Vertreter:: Tim Brown (Type Manager bei Adobe Typekit, als er „More Meaningful Typography“ schrieb, A List Apart Nr. 327, 3. Mai 2011); Scott Kellum und Tim Brown, die modularscale.com bauen und pflegen; Robert Bringhurst als Quelle, auf die Brown sich beruft
+
+[discrete]
+== *Wann verwenden*:
+
+* CSS für Fließtext und Überschriften, wenn die Überschriftengrößen einer Regel folgen sollen statt handverlesener Werte. In unserem Prior-Test definierte mit dem Anker jeder Lauf das Verhältnis als Custom Property und leitete die Größen daraus ab.
+* Design-Systeme, die eine Schriftskala und eine Abstandsskala aus derselben Proportion brauchen
+* Ein Stylesheet prüfen, dessen Schriftgrößen wild gewachsen sind
+* Zusammen mit <<elements-of-typographic-style,Bringhurst>> für lange Texte
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Jede Stufe verwenden.* Die Skala ist ein Vorrat. Eine Seite mit allen Stufen verliert den Kontrast, den die Skala schaffen sollte.
+* *Den musikalischen Namen trauen.* „Große Terz“ oder „Quarte“ benennen ein Verhältnis. Sie machen Schrift nicht von selbst harmonisch.
+* *Eine feste Skala für jeden Bildschirm.* Ein Verhältnis, das auf einem breiten Bildschirm passt, kann auf dem Smartphone zu große Überschriften ergeben. Siehe die Kritik unten.
+* *Erwarten, dass das Modell es ungefragt tut.* In unserem Prior-Test am 28.10.2026 setzten alle sechs Baseline-Läufe die Überschriftengrößen von Hand, meist mit `clamp()`. Mit „Modular Scale“ im Prompt definierten alle sechs eine Grundgröße und ein Verhältnis, auf Haiku etwa „base 1.125rem, ratio 1.25 (major third)“. Der bloße Begriff führt auf allen Modellstufen zu Typografie und Gestaltung.
+
+[discrete]
+== *Kritik*:
+
+* *Große Verhältnisse lassen auf kleinen Bildschirmen zu wenige Größen übrig.* Zell Liew stellt in https://zellwk.com/blog/responsive-modular-scale/["Responsive Modular Scale"] (2016) fest, dass bei großem Verhältnis keine kleineren Stufen mehr bleiben („there aren't any smaller sizes you can use in the scale“). Die üblichen Auswege, eine zweite Grundgröße oder ein Verhältnis je Breakpoint, schwächen die versprochene Einheitlichkeit.
+* *Leicht zu übertreiben.* Chris Krycho schätzt die Methode in https://v3.chriskrycho.com/web/modular-scales-fantastic-but-dont-overdo-it/index.html["Modular scales: fantastic, but don't overdo it"] (2013), warnt aber, sie entgleite einem leicht („the modular scale can get away from you pretty easily“). Wer sie auf jeden Wert anwendet, dient nicht mehr der Gestaltung.
+====

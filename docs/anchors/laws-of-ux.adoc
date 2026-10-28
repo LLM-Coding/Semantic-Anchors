@@ -1,0 +1,51 @@
+= Laws of UX
+:categories: ux-visual-design
+:roles: ux-designer, product-owner, software-developer
+:proponents: Jon Yablonski
+:tags: Laws of UX, Jon Yablonski, Fitts's Law, Hick's Law, Jakob's Law, Miller's Law, Doherty Threshold, Tesler's Law, Von Restorff Effect, Peak-End Rule, Aesthetic-Usability Effect, Postel's Law, Goal-Gradient Effect, Zeigarnik Effect, Serial Position Effect, cognitive load, UX psychology
+:related: nielsen-usability-heuristics, gestalt-principles, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Laws of UX -- Jon Yablonski's collection of psychological principles for interface design, published as a website in 2018 and as an O'Reilly book in 2020
+
+Also known as:: lawsofux.com; Yablonski's _Laws of UX_
+
+[discrete]
+== *Core Concepts*:
+
+* *A curated collection, not a new theory.* Yablonski gathers known findings from psychology and HCI and restates each as a design rule. He launched the site in mid-January 2018 "with 10 laws".
+* *Laws about movement and choice.* Fitts's Law: the time to hit a target depends on its size and distance. Hick's Law: decision time grows with the number of choices.
+* *Laws about memory and attention.* Miller's Law, the Serial Position Effect, the Von Restorff Effect, the Zeigarnik Effect and cognitive load describe what users can hold in mind and what stands out.
+* *Laws about expectations.* Jakob's Law: users expect your site to work like the sites they already know. The Aesthetic-Usability Effect: users judge attractive designs as easier to use.
+* *Laws about experience over time.* The Peak-End Rule, the Goal-Gradient Effect and the Doherty Threshold concern how users remember an experience, how they speed up near a goal, and how fast a system must respond.
+* *Laws about complexity.* Tesler's Law: every system has complexity that cannot be removed, only moved. Postel's Law: be liberal in what you accept, conservative in what you send.
+* *Grouping laws from Gestalt psychology.* The collection includes the Law of Proximity and the Law of Common Region.
+
+Key Proponents:: Jon Yablonski (https://oreilly.com/library/view/laws-of-ux/9781492055303[_Laws of UX_], O'Reilly, April 2020; https://oreilly.com/library/view/laws-of-ux/9781098146955[2nd edition], January 2024); site launch as told in an https://blog.adobe.com/en/publish/2018/04/17/ux-designers-need-check-laws-ux[Adobe Blog interview] with Sheena Lyonnais, 17 April 2018
+
+[discrete]
+== *When to Use*:
+
+* Reviewing a form or screen when the findings should cite a mechanism: target size, number of choices, memory load
+* Arguing a design decision with stakeholders in terms of known effects
+* Planning response times, onboarding steps and progress indicators
+* Asking a model to review a UI: with the anchor, it cites Fitts's and Hick's Law as a rule and, on the stronger tiers, ten or more laws
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Taking them for laws of nature.* The collection mixes models, effects and heuristics of very different strength.
+* *Reading Miller's Law as a cap on menu items.* It concerns short-term memory, not how many entries a navigation may have.
+* *Applying one law in isolation.* The laws interact and can pull in different directions; one law alone rarely settles a design question.
+* *Expecting the baseline to name them.* In our prior test on 2026-10-28, no baseline review of a signup form cited a single law. With "Laws of UX", six of six runs cited Fitts's and Hick's Law, five of six Miller's Law; Sonnet and Opus cited ten to twelve laws per answer.
+
+[discrete]
+== *Criticism*:
+
+* *Not laws, and an arbitrary selection.* Marcin Wichary argues in https://unsung.aresluna.org/book-review-laws-of-ux-2nd-ed/["Book review: Laws of UX (2nd ed.)"] (Unsung blog) that the "laws" are not laws in a scientific sense and that the choice of entries is arbitrary: "the book doesn't fully understand how design works."
+* *An outdated reading of Miller.* D. Ben Woods notes in his https://uxmatters.com/mt/archives/2020/11/book-review-laws-of-ux.php[UXmatters review] (23 November 2020) that the Miller's Law chapter still relies on the old figure of seven plus or minus two.
+====

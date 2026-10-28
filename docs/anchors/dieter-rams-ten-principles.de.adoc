@@ -1,0 +1,49 @@
+= Dieter Rams' 10 Principles of Good Design (10 Thesen für gutes Design)
+:categories: ux-visual-design
+:roles: ux-designer, product-owner, software-developer, consultant
+:proponents: Dieter Rams
+:tags: Dieter Rams, zehn Thesen, gutes Design, Weniger aber besser, Less but better, innovativ, brauchbar, ästhetisch, verständlich, unaufdringlich, ehrlich, langlebig, konsequent bis ins letzte Detail, umweltfreundlich, so wenig Design wie möglich, Produktdesign, Industriedesign, Vitsoe
+:related: bauhaus, kiss-principle, refactoring-ui
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Dieter Rams' zehn Thesen für gutes Design -- die Grundsätze, die der deutsche Industriedesigner ab den späten 1970er-Jahren für seine eigene Arbeit formulierte
+
+Auch bekannt als:: Zehn Thesen für gutes Design; Rams' Prinzipien; verbunden mit seinem Motto „Weniger, aber besser“ („Less, but better“)
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Zehn Thesen aus Sorge.* Vitsœ schreibt, Rams habe sich in den späten 1970er-Jahren zunehmend um den Zustand der Welt gesorgt ("was becoming increasingly concerned by the state of the world around him"). Rams selbst sagt, er habe in zehn Thesen die Grundüberlegungen ausgedrückt, die seine Arbeit als Designer bestimmen ("the basic considerations that determine my work as a designer").
+* *Gutes Design ist innovativ, brauchbar und ästhetisch.* Die ersten drei Thesen fragen, was das Produkt Neues bringt, ob es seinen Zweck erfüllt und ob es stimmig aussieht.
+* *Gutes Design ist verständlich, unaufdringlich und ehrlich.* Das Produkt macht seinen Gebrauch klar, tritt in den Hintergrund und verspricht nicht mehr, als es hält.
+* *Gutes Design ist langlebig und umweltfreundlich.* Haltbarkeit und Umwelt gehören zur Liste selbst; sie sind keine Zugabe.
+* *Gutes Design ist konsequent bis ins letzte Detail.* Nichts ist willkürlich oder dem Zufall überlassen.
+* *Gutes Design ist so wenig Design wie möglich.* Die zehnte These, nah am Motto „Weniger, aber besser“: Weg mit allem, was das Produkt nicht braucht.
+
+Wichtige Vertreter:: Dieter Rams; die Liste, wie sie https://vitsoe.com/us/about/good-design[Vitsœ] und die https://rams-foundation.org/?p=5147[Rams Foundation] veröffentlichen
+
+[discrete]
+== *Wann verwenden*:
+
+* Ein physisches oder digitales Produkt gestalten, bei dem Haltbarkeit, Reparatur und Zurückhaltung zählen: ein Wecker, eine Fernbedienung, ein Einstellungsbildschirm
+* Eine Feature-Liste mit der Frage „Ist das nötig?“ prüfen, bevor weitere Bedienelemente dazukommen
+* Als Gegenanweisung, wenn generierte Entwürfe Funktionen, Apps und Logos anhäufen
+* Reparierbarkeit und Recycling als Designanforderung begründen, nicht als nachträgliche Zugabe
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *„So wenig Design wie möglich“ als visuellen Minimalismus lesen.* Gemeint ist, das Unnötige zu entfernen, nicht, die Dinge karg aussehen zu lassen.
+* *Den Look kopieren und den Rest weglassen.* Ein Produkt in Rams' Formensprache, das schnell verschleißt oder sich nicht reparieren lässt, verletzt „langlebig“ und „umweltfreundlich“.
+* *Die Liste als festen Kanon behandeln.* Rams sagte Paul Makovsky in einem https://metropolismag.com/programs/dieters-top-ten/[Metropolis-Interview] (1. Februar 2004), diese Punkte seien nicht in Stein gemeißelt ("these points cannot be set in stone.").
+* *Erwarten, dass die Thesen beim Namen genannt werden.* In unserem Prior-Test am 28.10.2026 nannte kein Baseline-Wecker eine These oder erwähnte Reparatur. Fünf von sechs Anker-Läufen nannten mindestens vier Thesen, alle sechs machten den Wecker reparierbar oder recycelbar. Ein Opus-Lauf nannte keine und wandte sie einfach an: eine Neuerung, drei Bedienelemente, keine Apps, kein Radio, kein Logo auf der Front.
+
+[discrete]
+== *Kritik*:
+
+* *Einfacher ist nicht immer besser, und der Rahmen ist westliches modernistisches Produktdesign.* Pascal Barry argumentiert in https://uxplanet.org/deconstructing-dieter-rams-ten-principles-for-good-design-part-3-6be4e9336a19["Deconstructing Dieter Rams' Ten Principles For Good Design – Part 3"] (UX Planet), die Thesen stammten aus dem westlichen modernistischen Produktdesign und ließen sich nur unvollkommen auf digitale Arbeit übertragen. Auf die Spitze getrieben, werde Minimalismus beliebig: Einfacher sei nicht unbedingt besser ("Simpler is not necessarily better.").
+====
