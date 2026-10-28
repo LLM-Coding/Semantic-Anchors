@@ -6446,6 +6446,60 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "neo-brutalism",
+    "title": "Neo-Brutalism",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "swiss-style",
+      "bauhaus",
+      "wcag-22-aa"
+    ],
+    "proponents": [
+      "Community design trend (no single originator)",
+      "Nielsen Norman Group (definition",
+      "2025)"
+    ],
+    "tags": [
+      "neo-brutalism",
+      "neobrutalism",
+      "neubrutalism",
+      "brutalist web design",
+      "thick borders",
+      "hard shadow",
+      "offset shadow",
+      "flat colours",
+      "high contrast",
+      "blocky layout",
+      "Gumroad",
+      "web design trend",
+      "visual style"
+    ],
+    "filePath": "docs/anchors/neo-brutalism.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-28",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-28T23:56:47+01:00"
+  },
+  {
     "id": "nielsen-usability-heuristics",
     "title": "Nielsen’s 10 Usability Heuristics",
     "categories": [
