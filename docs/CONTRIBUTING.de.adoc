@@ -195,7 +195,7 @@ Dies sind *KEINE* semantischen Anker:
 
 == Kategorien
 
-Anker sind in 15 MECE (Mutually Exclusive, Collectively Exhaustive) Kategorien organisiert:
+Anker sind in 15 Kategorien organisiert. Ihre Zuschnitte sind MECE (Mutually Exclusive, Collectively Exhaustive); ein einzelner Anker kann trotzdem mehreren Kategorien angehören:
 
 . Kommunikation & Präsentation
 . Kreatives Schreiben & Storytelling

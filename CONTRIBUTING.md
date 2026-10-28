@@ -253,7 +253,7 @@ These are **NOT** semantic anchors:
 
 ## Categories
 
-Anchors are organized into 15 MECE (Mutually Exclusive, Collectively Exhaustive) categories:
+Anchors are organized into 15 categories. Their scopes are MECE (Mutually Exclusive, Collectively Exhaustive); a single anchor may still belong to more than one category:
 
 1. Communication & Presentation
 2. Creative Writing & Storytelling
