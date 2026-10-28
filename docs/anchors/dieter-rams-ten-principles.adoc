@@ -1,0 +1,49 @@
+= Dieter Rams' 10 Principles of Good Design
+:categories: ux-visual-design
+:roles: ux-designer, product-owner, software-developer, consultant
+:proponents: Dieter Rams
+:tags: Dieter Rams, ten principles, good design, Less but better, Weniger aber besser, innovative, useful, aesthetic, understandable, unobtrusive, honest, long-lasting, thorough, environmentally friendly, as little design as possible, product design, Vitsoe
+:related: bauhaus, kiss-principle, refactoring-ui
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Dieter Rams' ten principles of good design -- the considerations the German industrial designer set down for his own work, from the late 1970s onward
+
+Also known as:: Ten principles for good design; Rams' principles; associated with his motto "Less, but better" ("Weniger, aber besser")
+
+[discrete]
+== *Core Concepts*:
+
+* *Ten principles, born of concern.* Vitsœ writes that in the late 1970s Rams "was becoming increasingly concerned by the state of the world around him". Rams himself says he expressed in ten principles "the basic considerations that determine my work as a designer".
+* *Good design is innovative, useful and aesthetic.* The first three principles ask what the product adds, whether it serves its purpose, and whether it looks right.
+* *Good design is understandable, unobtrusive and honest.* The product makes its use clear, stays in the background and claims no more than it does.
+* *Good design is long-lasting and environmentally friendly.* Durability and the environment belong to the list itself; they are not extras.
+* *Good design is thorough down to the last detail.* Nothing is arbitrary or left to chance.
+* *Good design is as little design as possible.* The tenth principle, close to the motto "Less, but better": remove what the product does not need.
+
+Key Proponents:: Dieter Rams; the list as published by https://vitsoe.com/us/about/good-design[Vitsœ] and the https://rams-foundation.org/?p=5147[Rams Foundation]
+
+[discrete]
+== *When to Use*:
+
+* Designing a physical or digital product where durability, repair and restraint matter: an alarm clock, a remote, a settings screen
+* Reviewing a feature list against "is this necessary?" before adding controls
+* As a counter-instruction when generated designs pile on features, apps and logos
+* Arguing for repairability and recycling as design requirements, not afterthoughts
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Reading "as little design as possible" as visual minimalism.* It means removing the unnecessary, not making things look sparse.
+* *Copying the look and dropping the rest.* A product in Rams' visual idiom that wears out quickly or cannot be repaired violates "long-lasting" and "environmentally friendly".
+* *Treating the list as fixed canon.* Rams told Paul Makovsky in a https://metropolismag.com/programs/dieters-top-ten/[Metropolis interview] (1 February 2004) that "these points cannot be set in stone."
+* *Expecting the principles to be cited by name.* In our prior test on 2026-10-28, no baseline alarm clock named a principle or mentioned repair. Five of six anchor runs named at least four principles, and all six made the clock repairable or recyclable. One Opus run named none and simply applied them: one innovation, three controls, no apps, no radio, no logo on the front.
+
+[discrete]
+== *Criticism*:
+
+* *Simpler is not always better, and the frame is Western modernist product design.* Pascal Barry argues in https://uxplanet.org/deconstructing-dieter-rams-ten-principles-for-good-design-part-3-6be4e9336a19["Deconstructing Dieter Rams' Ten Principles For Good Design – Part 3"] (UX Planet) that the principles come from Western modernist product design and transfer imperfectly to digital work. Pushed to extremes, minimalism turns generic: "Simpler is not necessarily better."
+====
