@@ -1,0 +1,56 @@
+= Material Design 3
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Google
+:tags: Material Design 3, Material 3, M3, Material You, Material 3 Expressive, Google, Android, Dynamic Color, dynamische Farben, Farbrollen, Tonpalette, HCT, Surface, Surface Container, On-Surface, Design Tokens, Typografieskala, Formskala, Elevation, Top App Bar, Navigation Bar, FAB, Cards, Chips, Matías Duarte
+:related: apple-human-interface-guidelines, design-tokens-dtcg, eight-point-grid
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Material Design 3 -- die dritte Generation von Googles Design-System, 2021 als Material You eingeführt und 2025 um Material 3 Expressive erweitert
+
+Auch bekannt als:: Material 3, M3, Material You
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Farbrollen statt fester Farben.* Primary, Secondary, Tertiary, Surface und die Surface-Container-Stufen haben je eine passende On-Farbe für Inhalte darauf, etwa On-Surface.
+* *Tonpaletten aus einer Quellfarbe.* Das System leitet die Paletten aus einer einzigen Quellfarbe im Farbraum HCT ab.
+* *Dynamic Color.* Unter Android kann das Theme aus dem Hintergrundbild des Nutzers stammen; so passen Apps zum Gerät.
+* *Design Tokens.* Werte stehen in benannten Tokens wie `md.sys.*`; Themes lassen sich tauschen, ohne Komponenten anzufassen.
+* *Typografie- und Formskala.* Display, Headline, Title, Body und Label, jeweils in Large, Medium und Small; eine Formskala legt die Eckenradien fest.
+* *Elevation durch Tönung.* Erhöhte Flächen bekommen eine Tönung statt eines schweren Schattens.
+* *Standardkomponenten auf einem 4dp/8dp-Raster.* Top App Bar, Navigation Bar, Floating Action Button, Cards und Chips.
+
+Wichtige Vertreter:: Google. Material Design wurde am 25. Juni 2014 auf der Google I/O vorgestellt, mit Matías Duarte als leitendem Designer; 2018 folgte Material Theming; Material You, die erste Fassung von Material 3, kam im Mai 2021 auf der Google I/O mit Android 12 (https://en.wikipedia.org/wiki/Material_Design[Wikipedia]; https://9to5google.com/2021/05/18/google-material-you-design-language/[9to5Google])
+
+[discrete]
+== *Wann verwenden*:
+
+* Android-Apps oder Web-Apps gestalten, die sich unter Android zu Hause fühlen sollen. In unserem Prior-Test nutzte mit dem Anker jeder Lauf für einen Einstellungsbildschirm mindestens drei Begriffe aus Material 3, etwa Surface-Rollen, On-Surface-Farben und die Top App Bar.
+* Ein Theme aus einer Markenfarbe mit Tonpaletten aufbauen
+* Farb-, Schrift- und Formwerte in einem Design-System als Tokens benennen
+* Als Gegenstück zu <<apple-human-interface-guidelines,Apples HIG>>, wenn eine App auf beiden Plattformen erscheint
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Material You und Material 3 für zwei Systeme halten.* Material You ist der Marketingname für Material 3 und seine Dynamic Color.
+* *Expressive „Material 4“ nennen.* Material 3 Expressive ist eine Schicht auf Material 3, keine neue Generation.
+* *Dynamic Color geschenkt erwarten.* Es ist eine Funktion der Plattform, und Apps müssen sie übernehmen.
+* *„Material Design“ sagen und Version 3 meinen.* In unserem Prior-Test am 28.10.2026 verwendete keine Baseline mehr als einen Begriff aus Material 3. Mit „Material Design 3“ verwendeten sechs von sechs Läufen mindestens drei, und fünf von sechs nannten Tonpaletten oder Dynamic Color. Der bloße Name „Material Design“ führt auf allen Modellstufen zu UI-Design, legt aber die Version nicht fest.
+
+[discrete]
+== *Kritik*:
+
+* *Flat Design ließ Apps gleich aussehen.* Benjamin C.J. Walker argumentiert in https://uxdesign.cc/material-3-expressive-building-on-the-failures-of-flat-design-d7a9bb627298["Material 3 Expressive: Building on the failures of flat design"] (UX Collective, 2025), Material sei im Kern flach gewesen und habe Signifier entfernt. Das habe Einheitsbrei erzeugt und Unsicherheit, was klickbar ist. Er zitiert Googles eigenes Team mit der Frage, warum all diese Apps so ähnlich und langweilig aussahen („Why did all these apps look so similar? So boring?“). Expressive soll das beheben.
+* *Einheitlichkeit auf Kosten der Identität.* Ein Artikel bei Android Police, https://www.androidpolice.com/everything-i-hate-about-material-you/["Everything I hate about Material You"], wendet ein, Themed Icons schwächten die Identität der einzelnen App zugunsten einer halbgaren Einheitlichkeit („in favor of a half-baked uniformity“); zudem sei die Informationsdichte gering.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Material 3 Expressive ist die aktuelle Schicht.* Google kündigte sie im Mai 2025 für Android 16 und Wear OS 6 an; Pixel-Geräte erhielten sie ab September 2025. Laut Fast Company stützt sie sich auf 46 Studien mit mehr als 18.000 Teilnehmern (https://www.fastcompany.com/91333562/google-maximalist-new-material-design-kit[Mark Wilson, Fast Company, 2025]). Der Prior aus den Trainingsdaten bedient am ehesten Material 3 aus der Zeit von Material You; Neuerungen von Expressive wie mehr Formen, Bewegung und Betonung fallen womöglich dünn aus, wenn man sie nicht ausdrücklich verlangt.
+====
