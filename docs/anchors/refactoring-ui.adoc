@@ -1,0 +1,46 @@
+= Refactoring UI
+:categories: ux-visual-design
+:roles: software-developer, ux-designer
+:proponents: Adam Wathan, Steve Schoger
+:tags: Refactoring UI, Adam Wathan, Steve Schoger, UI design for developers, visual hierarchy, font weight, de-emphasis, spacing system, type scale, white space, fewer borders, colour palette, HSL, shades, shadows, elevation, Tailwind CSS
+:related: eight-point-grid, gestalt-principles, modular-scale
+:tier: 2
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=no, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Refactoring UI -- a book of practical visual design tactics for developers by Adam Wathan and Steve Schoger
+
+Also known as:: The Refactoring UI book
+
+[discrete]
+== *Core Concepts*:
+
+* *Start with a feature, not the layout.* Design one concrete piece of functionality first; the page shell comes later.
+* *Hierarchy comes from weight and colour, not size alone.* Primary content gets a heavier weight and a darker colour. Secondary content is de-emphasised with grey text and a lighter weight.
+* *No grey text on coloured backgrounds.* Grey belongs on white or neutral surfaces.
+* *Choose from a predefined system.* Spacing and sizing come from a fixed set of values, and type sizes from a constrained scale. You pick from the list instead of inventing a value each time.
+* *Start with too much white space.* Generous spacing is the starting point, not an afterthought.
+* *Use fewer borders.* Separate elements with spacing, background colours or shadows instead of lines. Shadows also convey elevation.
+* *Define a full palette up front.* Each hue gets nine to ten shades, defined in HSL.
+* *Labels are a last resort.* Let format and context show what a piece of data is before adding a label.
+
+Key Proponents:: Adam Wathan (developer) and Steve Schoger (UI designer); https://www.refactoringui.com/[_Refactoring UI_], a PDF of about 218 pages in short chapters with a component gallery, colour palettes, fonts and icons, published on 11 December 2018 (https://www.goodreads.com/book/show/43190966[Goodreads]). The authors also created Tailwind CSS, whose default palette echoes the book.
+
+[discrete]
+== *When to Use*:
+
+* Developers who have to design a screen themselves, without a designer
+* Settings screens, dashboards and admin pages that look cluttered or flat
+* Reviewing a UI for hierarchy, spacing and colour rather than for usability
+* As a counter-instruction when generated screens separate every row with a divider and rely on font size for hierarchy
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Reading it as a Tailwind manual.* The tactics are framework-neutral. Tailwind's defaults echo them, but the book does not require Tailwind.
+* *Treating the tactics as universal rules.* They are rules of thumb that help developers get to a decent design quickly.
+* *Using it instead of user research.* The book covers visual polish. It says nothing about whether the feature solves the user's problem.
+* *Expecting the same effect on every tier.* In our prior test on 2026-10-28 (a settings screen for a note-taking app), Sonnet and Opus four of four replaced dividers with spacing and used the grey and indigo palette from the authors' Tailwind. Haiku did so in one of two runs and used its own palette: on the weak tier the bare name is a softer nudge. The models attributed the book to Adam Wathan and Steve Schoger with high confidence; whether naming the authors strengthens the action was not tested.
+====
