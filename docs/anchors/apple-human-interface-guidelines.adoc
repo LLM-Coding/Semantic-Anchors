@@ -1,0 +1,55 @@
+= Apple Human Interface Guidelines
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Apple
+:tags: Apple Human Interface Guidelines, HIG, Apple, iOS, iPadOS, macOS, watchOS, tvOS, Liquid Glass, clarity, deference, depth, hierarchy, harmony, consistency, 44 pt hit target, SF Pro, SF Symbols, Dynamic Type, large titles, navigation bar, tab bar, inset grouped list, safe area, dark mode, VoiceOver, Reduce Motion, accessibility
+:related: material-design-3, wcag-22-aa
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Apple Human Interface Guidelines -- Apple's design guidance for apps on its platforms, one document for all of them since 2022
+
+Also known as:: HIG, Apple HIG
+
+[discrete]
+== *Core Concepts*:
+
+* *Guiding themes.* Classic iOS guidance named clarity, deference and depth. The 2025 framing speaks of hierarchy, harmony and consistency.
+* *Targets a finger can hit.* Controls need a minimum hit target of 44 × 44 points.
+* *System type and symbols.* SF Pro and SF Symbols; Dynamic Type lets text follow the user's chosen size.
+* *Familiar navigation.* Large titles, navigation bars, tab bars and inset grouped lists give apps a shared structure.
+* *Respect the device.* Layouts stay inside safe areas; system colours adapt to dark mode.
+* *Accessibility built in.* VoiceOver, Reduce Motion and Dynamic Type are part of the design, not an add-on.
+
+Key Proponents:: Apple. The guidance goes back to _Human Interface Guidelines: The Apple Desktop Interface_ (Apple Computer / Addison-Wesley, 1987; https://www.computerhistory.org/collections/catalog/102679991[Computer History Museum]). On 7 June 2022 Apple merged the per-platform guides into one HIG with a change log (https://developer.apple.com/news/?id=v8a3aetj[Apple Developer News])
+
+[discrete]
+== *When to Use*:
+
+* Designing iPhone, iPad or Mac apps that should feel native. In our prior test the anchor made every run set 44-point targets for a settings screen, and most added a large title, Dynamic Type and inset grouped lists.
+* Reviewing an app's controls for hit size, type scaling and dark mode
+* Porting an Android app to Apple platforms, as a contrast to <<material-design-3,Material Design 3>>
+* Together with <<wcag-22-aa,WCAG 2.2 AA>> when accessibility must also be checked against a standard
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Mixing it up with the App Store rules.* The App Review Guidelines are a separate document. The HIG guides design; it does not decide approval.
+* *Reading Liquid Glass as translucent content.* The material is meant for the layer of controls and navigation, not for the content itself.
+* *Treating it as iOS-only.* Since 2022 it is one document for all of Apple's platforms.
+* *Expecting the details from the baseline.* In our prior test on 2026-10-28, four of six baselines already chose SF Pro, but none set a 44-point target. With the anchor, six of six set 44-point targets, and five of six used a large title, Dynamic Type and inset grouped lists.
+
+[discrete]
+== *Criticism*:
+
+* *Spectacle over usability.* Raluca Budiu, https://www.nngroup.com/articles/liquid-glass/["Liquid Glass Is Cracked, and Usability Suffers in iOS 26"] (Nielsen Norman Group, 2025), finds that "Apple is prioritizing spectacle over usability". She reports that translucent controls hurt legibility, and points to distracting motion, cramped targets and hidden features.
+* *Breaking its own rules.* Michal Langmajer asks in https://uxdesign.cc/did-apple-abandoned-its-own-design-heuristics-accessibility-principles-2d616ed7ace5["Did Apple abandon its own design heuristics & accessibility principles?"] (UX Collective) whether Apple has abandoned its own design heuristics; he argues that Liquid Glass contradicts the clarity-first principles of the HIG and WCAG contrast guidance.
+
+[discrete]
+== *Current Status*:
+
+* *Liquid Glass is the current design language.* Apple announced it on 9 June 2025 for iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26 and tvOS 26: a translucent material that "reflects and refracts its surroundings" (https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/[Apple Newsroom]). Apple's https://developer.apple.com/design/whats-new/[change log] shows refinements in December 2025 and June 2026. At WWDC26 on 8 June 2026 Apple brought back a "Design principles" page and published kits for iOS, iPadOS and macOS 27; the latest entry is dated 13 October 2026. The training-data prior most likely serves the flat iOS look from before 2025. Ask for Liquid Glass by name if you want it.
+====
