@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 282 well-defined terms, methodologies, and frameworks
+> 301 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -12455,6 +12455,46 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 
 ***Fault injection***: Similar concept applied to production systems
 
+### Nielsen's 10 Usability Heuristics
+
+***Full Name***: Jakob Nielsen's ten usability heuristics for user interface design -- the rules of thumb behind heuristic evaluation, first published with Rolf Molich in 1990 and revised by Nielsen in 1994
+
+***Also known as***: Nielsen's heuristics, the ten usability heuristics
+
+[discrete]
+## **Core Concepts**:
+
+* **Rules of thumb, not guidelines.** The Nielsen Norman Group calls them in its https://www.nngroup.com/videos/heuristic-evaluation/[video on heuristic evaluation] "broad rules of thumb and not specific usability guidelines". They point at kinds of problems; they do not prescribe solutions.
+* **Ten heuristics.** Visibility of system status; match between system and the real world; user control and freedom; consistency and standards; error prevention; recognition rather than recall; flexibility and efficiency of use; aesthetic and minimalist design; help users recognize, diagnose, and recover from errors; help and documentation.
+* **The basis of heuristic evaluation.** Evaluators inspect an interface and map each problem they find to a heuristic. Nielsen and Molich introduced the method in "Heuristic evaluation of user interfaces" (Proc. ACM CHI'90).
+* **Several evaluators, not one.** The method assumes several evaluators who inspect independently and then pool their findings.
+* **A revised set from 1994.** Nielsen's "Enhancing the explanatory power of usability heuristics" (Proc. CHI'94) produced the set of ten in use today. In https://jakobnielsenphd.substack.com/p/heuristics-haiku["Jakob Nielsen's 10 Usability Heuristics as Haikus"] (11 October 2023) Nielsen noted that the set turns 30 in 2024.
+* **A cheap inspection, not a user test.** Heuristic evaluation finds likely problems without recruiting users. It complements testing with real users; it does not replace it.
+
+***Key Proponents***: Jakob Nielsen and Rolf Molich ("Heuristic evaluation of user interfaces", Proc. ACM CHI'90, pp. 249–256); Rolf Molich and Jakob Nielsen ("Improving a human-computer dialogue", _Communications of the ACM_ 33(3), 1990); Jakob Nielsen ("Enhancing the explanatory power of usability heuristics", Proc. CHI'94, pp. 152–158); the Nielsen Norman Group. Sources listed in https://en.wikipedia.org/wiki/Heuristic_evaluation[Wikipedia: Heuristic evaluation]
+
+[discrete]
+## **When to Use**:
+
+* Reviewing a form, screen or flow when the findings should be named and sorted, not just listed
+* Expert reviews early in a project, before a usability test is affordable
+* Writing review checklists for designers, developers and QA
+* Asking a model to review a UI: with the anchor, its findings map to named heuristics
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Running it with one evaluator.** The method assumes several. A single reviewer tends to flag problems that real users never hit.
+* **Replacing user testing.** The heuristics predict problems; only users confirm them.
+* **Treating heuristics as specific guidelines.** They are broad categories. "Consistency and standards" does not say which standard to follow.
+* **Expecting the defects to be found only with the anchor.** In our prior test on 2026-10-28, the baselines found the defects of a signup form but named no heuristic. With the anchor, six of six runs mapped the defects to at least five of the ten heuristics by name, Sonnet to nine and ten. The bare "heuristic evaluation" resolved to HCI on every tier.
+
+[discrete]
+## **Criticism**:
+
+* **Oversimplified and rooted in the desktop era.** A. Ballav argues in https://oldmagazine.uxpa.org/?p=11227["Nielsen's Heuristic Evaluation: Limitations in Principles and Practice"] (_User Experience Magazine_ 17(4), 2017) that the heuristics are generic and shaped by desktop software: "heuristic evaluations suffer from oversimplification."
+* **False positives.** Todd Zazelenchuk notes on https://userfocus.co.uk/articles/heuristics.html[Userfocus] that evaluations are often done by a single evaluator and flag problems real users never encounter. The method is "capable of generating a lot of 'false positives'".
+
 ### OWASP ASVS (Application Security Verification Standard)
 
 ***Full Name***: OWASP Application Security Verification Standard
@@ -13152,9 +13192,700 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * Spotify Engineering, https://engineering.atspotify.com/2018/01/testing-of-microservices/["Testing of Microservices"] (2018) — proposes the **honeycomb** shape for microservices: unit-heavy suites couple tests to implementation details and break under refactoring
 * The layer boundaries blur in modern stacks — fast in-memory "integration" tests undermine the pyramid's core assumption that higher-level tests are necessarily slow and expensive
 
+### WCAG 2.2 AA
+
+***Full Name***: Web Content Accessibility Guidelines 2.2, conformance level AA
+
+***Also known as***: WCAG 2.2 Level AA
+
+[discrete]
+## **Core Concepts**:
+
+* **Four principles: POUR.** Content must be Perceivable, Operable, Understandable and Robust. Guidelines sit under each principle, and testable success criteria sit under each guideline.
+* **Three levels; AA includes A.** Each success criterion has level A, AA or AAA. Conformance at AA means meeting every A and every AA criterion.
+* **Contrast is measured.** 1.4.3 asks for 4.5:1 for text and 3:1 for large text; 1.4.11 asks for 3:1 for non-text elements.
+* **Structure and interaction are testable too.** Among the AA criteria: 1.3.1 Info and Relationships, 1.4.10 Reflow, 2.4.7 Focus Visible, 3.3.1 Error Identification and 3.3.2 Labels or Instructions.
+* **Version 2.2 adds criteria for touch, focus and cognition.** New at A and AA: 2.4.11 Focus Not Obscured (Minimum), 2.5.7 Dragging Movements, 2.5.8 Target Size (Minimum) of 24×24 CSS pixels, 3.2.6 Consistent Help, 3.3.7 Redundant Entry and 3.3.8 Accessible Authentication (Minimum). Three more new criteria are AAA.
+* **One criterion was removed.** 4.1.1 Parsing is obsolete and no longer part of WCAG 2.2.
+
+***Key Proponents***: W3C Web Accessibility Initiative (WAI); WCAG 2.2 became a W3C Recommendation on 5 October 2023 (https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/["What's New in WCAG 2.2"])
+
+[discrete]
+## **When to Use**:
+
+* Reviewing a form, page or component and naming each defect by success criterion
+* Setting an accessibility acceptance criterion for a project or a contract
+* Checking touch targets, focus visibility and login flows against the 2.2 additions
+* Preparing for legal requirements such as the European Accessibility Act
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Equating AA conformance with accessibility.** AA is a testable minimum. A page can conform and still be hard to use for disabled people.
+* **Trusting automated tools or overlays to certify conformance.** Most criteria need human judgement.
+* **Expecting WCAG 3 to replace 2.2 soon.** WCAG 3 is still a Working Draft, and WCAG 2 stays in force for years after WCAG 3 is final.
+* **Asking for "accessibility" instead of naming the standard.** In our prior test on 2026-10-28 (a signup form with eight known defects), all six baselines already named the 4.5:1 contrast ratio, but no success criterion by number. With "WCAG 2.2 AA", six of six runs cited at least ten success criteria, and six of six caught the two 2.2 additions the form violated: 2.5.8 Target Size (Minimum) and 2.4.11 Focus Not Obscured.
+
+[discrete]
+## **Criticism**:
+
+* **The wording is a swamp to audit against.** Adrian Roselli argues in his Paris Web 2023 talk https://www.paris-web.fr/2023/conference/wcagmire["WCAGmire"] that WCAG "can be a bit of a quagmire": dense wording, loopholes and differing interpretations confuse audits.
+* **Conformance can coexist with hostility.** In his https://adrianroselli.com/tag/adversarial[Adversarial Conformance] series, Roselli builds demos that meet 2.4.11 and 2.5.8 while being hostile to use.
+
+[discrete]
+## **Current Status**:
+
+* **2.2 is the current standard; 3 is still a draft.** https://www.w3.org/WAI/WCAG3[WCAG 3] remains a Working Draft (latest September 2026). The W3C does not expect it to become a standard for a few more years and will not deprecate WCAG 2 until several years after WCAG 3 is final. The European Accessibility Act has applied since 28 June 2025; its harmonised standard EN 301 549 incorporates WCAG and is still under revision (https://www.fieldfisher.com/en/insights/harmonised-standards-under-the-european-accessibility-act-an-introduction[Fieldfisher]). The training-data prior serves WCAG 2.2 well: in our prior test every tier cited the two new criteria the test form violated, 2.5.8 and 2.4.11, by number.
+
 ---
 
 ## UX & Visual Design
+
+### Apple Human Interface Guidelines
+
+***Full Name***: Apple Human Interface Guidelines -- Apple's design guidance for apps on its platforms, one document for all of them since 2022
+
+***Also known as***: HIG, Apple HIG
+
+[discrete]
+## **Core Concepts**:
+
+* **Guiding themes.** Classic iOS guidance named clarity, deference and depth. The 2025 framing speaks of hierarchy, harmony and consistency.
+* **Targets a finger can hit.** Controls need a minimum hit target of 44 × 44 points.
+* **System type and symbols.** SF Pro and SF Symbols; Dynamic Type lets text follow the user's chosen size.
+* **Familiar navigation.** Large titles, navigation bars, tab bars and inset grouped lists give apps a shared structure.
+* **Respect the device.** Layouts stay inside safe areas; system colours adapt to dark mode.
+* **Accessibility built in.** VoiceOver, Reduce Motion and Dynamic Type are part of the design, not an add-on.
+
+***Key Proponents***: Apple. The guidance goes back to _Human Interface Guidelines: The Apple Desktop Interface_ (Apple Computer / Addison-Wesley, 1987; https://www.computerhistory.org/collections/catalog/102679991[Computer History Museum]). On 7 June 2022 Apple merged the per-platform guides into one HIG with a change log (https://developer.apple.com/news/?id=v8a3aetj[Apple Developer News])
+
+[discrete]
+## **When to Use**:
+
+* Designing iPhone, iPad or Mac apps that should feel native. In our prior test the anchor made every run set 44-point targets for a settings screen, and most added a large title, Dynamic Type and inset grouped lists.
+* Reviewing an app's controls for hit size, type scaling and dark mode
+* Porting an Android app to Apple platforms, as a contrast to Material Design 3
+* Together with WCAG 2.2 AA when accessibility must also be checked against a standard
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Mixing it up with the App Store rules.** The App Review Guidelines are a separate document. The HIG guides design; it does not decide approval.
+* **Reading Liquid Glass as translucent content.** The material is meant for the layer of controls and navigation, not for the content itself.
+* **Treating it as iOS-only.** Since 2022 it is one document for all of Apple's platforms.
+* **Expecting the details from the baseline.** In our prior test on 2026-10-28, four of six baselines already chose SF Pro, but none set a 44-point target. With the anchor, six of six set 44-point targets, and five of six used a large title, Dynamic Type and inset grouped lists.
+
+[discrete]
+## **Criticism**:
+
+* **Spectacle over usability.** Raluca Budiu, https://www.nngroup.com/articles/liquid-glass/["Liquid Glass Is Cracked, and Usability Suffers in iOS 26"] (Nielsen Norman Group, 2025), finds that "Apple is prioritizing spectacle over usability". She reports that translucent controls hurt legibility, and points to distracting motion, cramped targets and hidden features.
+* **Breaking its own rules.** Michal Langmajer asks in https://uxdesign.cc/did-apple-abandoned-its-own-design-heuristics-accessibility-principles-2d616ed7ace5["Did Apple abandon its own design heuristics & accessibility principles?"] (UX Collective) whether Apple has abandoned its own design heuristics; he argues that Liquid Glass contradicts the clarity-first principles of the HIG and WCAG contrast guidance.
+
+[discrete]
+## **Current Status**:
+
+* **Liquid Glass is the current design language.** Apple announced it on 9 June 2025 for iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26 and tvOS 26: a translucent material that "reflects and refracts its surroundings" (https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/[Apple Newsroom]). Apple's https://developer.apple.com/design/whats-new/[change log] shows refinements in December 2025 and June 2026. At WWDC26 on 8 June 2026 Apple brought back a "Design principles" page and published kits for iOS, iPadOS and macOS 27; the latest entry is dated 13 October 2026. The training-data prior most likely serves the flat iOS look from before 2025. Ask for Liquid Glass by name if you want it.
+
+### Atomic Design
+
+***Full Name***: Atomic Design -- Brad Frost's method for building interface design systems in five stages: atoms, molecules, organisms, templates and pages
+
+***Also known as***: Atomic web design
+
+[discrete]
+## **Core Concepts**:
+
+* **Five stages, borrowed from chemistry.** Atoms, molecules, organisms, templates and pages. Frost introduced them in a blog post on 10 June 2013 (https://articles.centercentre.com/?p=350[republished by Center Centre]).
+* **Atoms are the smallest parts.** Labels, inputs, buttons -- elements that cannot be broken down further and stay useful.
+* **Molecules combine atoms.** A label, an input and a button form a search field with one job.
+* **Organisms are distinct sections.** Molecules and atoms group into a header, a product grid or a footer.
+* **Templates show structure.** A template places organisms in a layout and shows the page's skeleton without final content.
+* **Pages test the system.** A page is a template filled with real content. It shows whether the patterns hold up.
+* **A mental model, not a sequence.** Frost stresses moving back and forth between the stages instead of working through them in order.
+
+***Key Proponents***: Brad Frost (blog post 2013; book _Atomic Design_, 2016, foreword by Josh Clark and Dan Mall, https://atomicdesign.bradfrost.com/foreword[free online]); Pattern Lab, the tool Frost built with Dave Olsen to work this way
+
+[discrete]
+## **When to Use**:
+
+* Structuring a component library for a product such as an analytics dashboard. In our prior test the anchor made every run sort components into atoms, molecules, organisms, templates and pages.
+* Starting a design system and giving designers and developers a shared vocabulary for component size
+* Auditing an existing UI for duplicated components
+* Together with Design Tokens for the values below the atoms
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating the stages as a mandatory folder structure.** The five names help people talk about the system. Many teams sort their code differently.
+* **Reading it as a linear process.** Frost describes moving back and forth, not building all atoms first.
+* **Taking "pages" literally.** Pages are templates with real content, used to test the system -- not a list of the site's web pages.
+* **Expecting the levels without the name.** In our prior test on 2026-10-28, the baselines sorted components into primitives plus folders by feature. One Sonnet baseline called its structure "atomic-design inspired" but used none of the levels. With "Atomic Design", six of six used all five stages.
+
+[discrete]
+## **Criticism**:
+
+* **Hard to classify in practice.** Trent Walton, https://trentwalton.com/2016/02/26/atomic-classification["Atomic Classification"] (2016), reports that "the team struggled to map components to an atomic classification". The chemistry names slowed discussions, and the team moved to a simpler two-tier system. He also cites FutureLearn's team, who could not agree when a molecule becomes an organism.
+* **The labels matter less than the idea.** Peter Rohles, https://www.qt.io/blog/atomic-design-systems-why-the-labels-dont-matter["Atomic Design Systems: Why the Labels Don't Matter"] (Qt blog, 2025), argues that the five names are not what makes the method useful: "The chemistry labels were never the point."
+
+### Bauhaus
+
+***Full Name***: Staatliches Bauhaus -- the German school of art, craft and design that ran from 1919 to 1933 in Weimar, Dessau and Berlin
+
+***Also known as***: Staatliches Bauhaus in Weimar, Bauhaus Dessau, Bauhaus design
+
+[discrete]
+## **Core Concepts**:
+
+* **A school, not a style.** Walter Gropius became director of the "Staatliches Bauhaus in Weimar" in March 1919 and published the Bauhaus Manifesto in April. The name stands for an institution with a teaching programme, not for one look.
+* **Three directors, three programmes.** Gropius led the school until he resigned in 1928. Hannes Meyer followed in April 1928, Ludwig Mies van der Rohe in 1930. Each changed what the school taught.
+* **Three cities.** Dessau took the school over in 1925 and approved a new building in June that year. In 1932 the Dessau council dissolved it, and Mies reopened it privately in Berlin-Steglitz in October.
+* **Craft before industry.** The early Weimar years were craft-based and expressionist. The functional, industrial image came later and covers only part of the school's history.
+* **Teaching through workshops.** Students worked in workshops such as the weaving workshop. Which workshop a student entered shaped what they made -- and, as critics note, who was allowed where.
+* **A forced end.** Police searched the Berlin school in April 1933. In July 1933 Mies dissolved it with the faculty's consent.
+
+***Key Proponents***: Walter Gropius (founder and director 1919–1928, author of the Bauhaus Manifesto); Hannes Meyer (director 1928–1930); Ludwig Mies van der Rohe (director 1930–1933, reopened the school in Berlin and dissolved it in 1933). Chronology after the catalogue _50 Jahre Bauhaus_ (Stuttgart 1968), as given by https://bauhaus-bookshelf.org/timeline_chronology_1919_1933.html[bauhaus-bookshelf.org]
+
+[discrete]
+## **When to Use**:
+
+* Landing pages, posters and brand work that should be built from geometric forms, primary colours and a geometric sans instead of photography and hand-drawn elements
+* As a counter-instruction when generated designs drift towards stock photos and script fonts
+* Design history and teaching, when the topic is the school itself: its directors, its workshops, its moves from Weimar to Dessau to Berlin
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating it as one visual style.** The Bauhaus was a school with three directors and changing programmes. "Bauhaus style" names a later reading of part of its work.
+* **Assuming it was purely functionalist and industrial.** The early Weimar years were craft-based and expressionist.
+* **Equating it with the International Style.** The International Style is a later movement; the Bauhaus was one school with its own history.
+* **Using the bare name.** In our prior test on 2026-10-28, the bare "Bauhaus" resolved to art and design history on every tier; Opus also mentioned the band and the DIY chain. "Bauhaus design" changed the output: all six baselines built a bakery page around photography with hand-drawn or script elements, while all six anchor runs used geometric forms, a geometric sans and the primary colours.
+
+[discrete]
+## **Criticism**:
+
+* **Progressive image, segregated practice.** Theresia Enzensberger writes in https://www.goethe.de/ins/gb/en/kul/past/tech/bhs/21385384.html["The 'Bauhaus women'"] (Goethe-Institut, October 2018, translated by Jo Beckett) that the school steered women into the weaving workshop and their numbers fell: "Gropius' segregation was showing its effects".
+* **An aesthetic imposed on the people it claimed to serve.** Scott Alexander, in https://www.astralcodexten.com/p/book-review-from-bauhaus-to-our-house["Book Review: From Bauhaus to Our House"] (Astral Codex Ten, 4 December 2024), follows Tom Wolfe's polemic: modernism forced its taste on workers who did not share it. "Ironically, real workers hated the modernist styles."
+
+### Design Tokens (W3C DTCG)
+
+***Full Name***: Design Tokens in the format of the W3C Design Tokens Community Group (DTCG) -- design decisions such as colours, spacing and type stored as tool-neutral data
+
+***Also known as***: DTCG format, Design Tokens Format Module, `.tokens.json`
+
+[discrete]
+## **Core Concepts**:
+
+* **A token is a named design decision.** Colour, spacing, font or duration is stored once, under a name, and every platform reads it from there.
+* **Tokens are objects with `$value` and `$type`.** The format is JSON. Types include `color`, `dimension`, `fontFamily`, `fontWeight`, `duration`, `cubicBezier` and `number`, plus composite types such as `typography`, `shadow` and `border`.
+* **Groups give tokens a hierarchy.** Nested objects group related tokens; the path through the groups forms the token's name.
+* **Aliases reference other tokens.** A value written as `{group.token}` points to another token, so one change carries through every token that refers to it.
+* **Descriptions travel with the data.** `$description` documents a token where it is defined.
+* **Data first, code later.** Files use the extension `.tokens.json`. Tools such as Style Dictionary, Tokens Studio and Terrazzo turn them into CSS, iOS, Android or other outputs.
+
+***Key Proponents***: Jina Anne, who https://www.w3.org/community/design-tokens/2026/06/17/thank-you-jina-and-val/[coined the term "design tokens" with Jon Levine at Salesforce], formerly co-chair of the W3C Design Tokens Community Group and its chair emerita since 17 June 2026; Andy Bell credits her work on the Lightning Design System in https://piccalil.li/blog/what-are-design-tokens["What are design tokens?"] (2020); the editors of version 2025.10: Louis Chenais, Mike Kamminga, Kathleen McMahon, Drew Powers, Matthew Ström-Awn, Donna Vitan
+
+[discrete]
+## **When to Use**:
+
+* Writing colour, spacing and type values as a file that design tools and code share
+* Setting up themes and modes (light, dark, brand variants) from one source
+* Handing design decisions to several platforms through a build tool such as Style Dictionary
+* As a format instruction when a generated "token file" comes back as CSS custom properties or ad-hoc JSON
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Equating tokens with CSS variables.** Tokens are tool-neutral data. CSS custom properties are one output among many. In our prior test on 2026-10-28 the baselines returned exactly that: CSS custom properties or plain JSON. With the DTCG name, six of six runs wrote `$value` and `$type`, and four of six used alias references in braces. The bare "design tokens" resolves to design systems on all tiers.
+* **Calling DTCG a W3C Recommendation.** Version 2025.10 is a Final Community Group Report. It did not go through the W3C Recommendation track.
+* **Assuming more tiers are always better.** Aliases make it possible to stack layers of tokens. Each layer adds indirection that someone has to understand and maintain.
+
+[discrete]
+## **Criticism**:
+
+* **Too many layers turn tokens against their purpose.** Shaunak Bhanarkar argues in https://uxplanet.org/design-tokens-a-double-edged-sword-in-design-systems-bae2ed1769c3["Design tokens: A double-edged sword in design systems"] (UX Planet) that "Too many layers of abstraction can make tokens difficult to use." He describes how stacked layers, duplicate tokens and drifting names push teams back to hard-coded values.
+
+[discrete]
+## **Current Status**:
+
+* **The first stable version is out.** Version 2025.10, published on https://www.w3.org/community/design-tokens/2025/10/28/design-tokens-specification-reaches-first-stable-version/[28 October 2025], is the first stable release. It has https://www.designtokens.org/tr/2025.10/[three modules]: Format, Color and Resolver. The Color module supports modern colour spaces such as Display P3 and Oklch; the Resolver handles themes and modes. Style Dictionary, Tokens Studio and Terrazzo implement it. The training-data prior most likely serves the earlier drafts: they wrote a colour value as a hex string, while the 2025.10 Color module describes colours as objects with a colour space.
+
+### Dieter Rams' 10 Principles of Good Design
+
+***Full Name***: Dieter Rams' ten principles of good design -- the considerations the German industrial designer set down for his own work, from the late 1970s onward
+
+***Also known as***: Ten principles for good design; Rams' principles; associated with his motto "Less, but better" ("Weniger, aber besser")
+
+[discrete]
+## **Core Concepts**:
+
+* **Ten principles, born of concern.** Vitsœ writes that in the late 1970s Rams "was becoming increasingly concerned by the state of the world around him". Rams himself says he expressed in ten principles "the basic considerations that determine my work as a designer".
+* **Good design is innovative, useful and aesthetic.** The first three principles ask what the product adds, whether it serves its purpose, and whether it looks right.
+* **Good design is understandable, unobtrusive and honest.** The product makes its use clear, stays in the background and claims no more than it does.
+* **Good design is long-lasting and environmentally friendly.** Durability and the environment belong to the list itself; they are not extras.
+* **Good design is thorough down to the last detail.** Nothing is arbitrary or left to chance.
+* **Good design is as little design as possible.** The tenth principle, close to the motto "Less, but better": remove what the product does not need.
+
+***Key Proponents***: Dieter Rams; the list as published by https://vitsoe.com/us/about/good-design[Vitsœ] and the https://rams-foundation.org/?p=5147[Rams Foundation]
+
+[discrete]
+## **When to Use**:
+
+* Designing a physical or digital product where durability, repair and restraint matter: an alarm clock, a remote, a settings screen
+* Reviewing a feature list against "is this necessary?" before adding controls
+* As a counter-instruction when generated designs pile on features, apps and logos
+* Arguing for repairability and recycling as design requirements, not afterthoughts
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Reading "as little design as possible" as visual minimalism.** It means removing the unnecessary, not making things look sparse.
+* **Copying the look and dropping the rest.** A product in Rams' visual idiom that wears out quickly or cannot be repaired violates "long-lasting" and "environmentally friendly".
+* **Treating the list as fixed canon.** Rams told Paul Makovsky in a https://metropolismag.com/programs/dieters-top-ten/[Metropolis interview] (1 February 2004) that "these points cannot be set in stone."
+* **Expecting the principles to be cited by name.** In our prior test on 2026-10-28, no baseline alarm clock named a principle or mentioned repair. Five of six anchor runs named at least four principles, and all six made the clock repairable or recyclable. One Opus run named none and simply applied them: one innovation, three controls, no apps, no radio, no logo on the front.
+
+[discrete]
+## **Criticism**:
+
+* **Simpler is not always better, and the frame is Western modernist product design.** Pascal Barry argues in https://uxplanet.org/deconstructing-dieter-rams-ten-principles-for-good-design-part-3-6be4e9336a19["Deconstructing Dieter Rams' Ten Principles For Good Design – Part 3"] (UX Planet) that the principles come from Western modernist product design and transfer imperfectly to digital work. Pushed to extremes, minimalism turns generic: "Simpler is not necessarily better."
+
+### 8-Point Grid
+
+***Full Name***: 8-Point Grid -- a spacing system in which sizes, margins and paddings are multiples of eight, popularised around 2016 by Bryn Jackson's guide on spec.fm and by Material Design's 8dp grid
+
+***Also known as***: 8pt grid, 8dp grid, 8-point grid system
+
+[discrete]
+## **Core Concepts**:
+
+* **One base unit for all spacing.** Margins, paddings, component heights and gaps are multiples of 8: 8, 16, 24, 32 and so on.
+* **Fewer decisions, more consistency.** A small set of allowed values ends the debate over 13 or 15 pixels and keeps screens built by different people aligned.
+* **Material Design made it a platform rule.** Material Design 1 states: "All components align to an 8dp square baseline grid for mobile, tablet, and desktop."
+* **A 4-point half-step for fine detail.** In Material Design 1, iconography and type align to a 4dp grid. Four is a common half-step for small gaps.
+* **Soft grid and hard grid.** A soft grid spaces elements by multiples of 8; a hard grid places every element on an 8-point lattice. Teams need to agree which one they mean.
+* **A spacing system, not a column grid.** The 8-point grid sets the rhythm of space. How many columns a layout has is a separate decision.
+
+***Key Proponents***: Bryn Jackson (guide on spec.fm, called the most comprehensive guide in https://blogs.vmware.com/tanzu/intro-to-the-8-point-grid-system-2/["Intro to The 8-Point Grid System"], Pivotal, 14 December 2016); Google Material Design (https://m1.material.io/layout/metrics-keylines.html[Material Design 1, Metrics & keylines])
+
+[discrete]
+## **When to Use**:
+
+* CSS for components, cards and lists, when spacing should come from one scale instead of ad-hoc pixel values
+* Defining spacing tokens in a design system
+* Handing designs to developers, so both sides use the same values
+* As a counter-instruction when generated CSS mixes values such as 13px, 18px and 22px
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Every value must be a multiple of 8.** Material uses 4 for type and icons, and 4 is a common half-step.
+* **Confusing the soft grid with the hard grid.** One governs the spacing between elements, the other the position of every element on a lattice.
+* **Mistaking it for a column grid.** It says nothing about the number of columns.
+* **Assuming the baseline ignores spacing scales.** In our prior test on 2026-10-28, the baselines already leaned towards round numbers: 58 per cent of their pixel values in a responsive card list were multiples of eight. "Use an 8-point grid" raised the share to 88 per cent on every tier. Attribution was the weak point: Sonnet and Opus named no single creator and pointed to Material Design, Opus added Bryn Jackson, and Haiku named Samantha Warren with medium confidence.
+
+[discrete]
+## **Criticism**:
+
+* **Too coarse for dense interfaces.** Darin Dimitroff explains in https://webflow.com/blog/why-were-using-a-4-point-grid-in-webflow["Why we're using a 4-point grid in Webflow"] (Webflow Blog, updated 16 January 2019) why Webflow uses a 4-point grid: for a dense interface "an 8pt scale simply doesn't provide enough granularity".
+
+### The Elements of Typographic Style (Bringhurst)
+
+***Full Name***: _The Elements of Typographic Style_ by Robert Bringhurst, published by Hartley & Marks; first edition 1992, latest version 4.0 (2012)
+
+***Also known as***: Bringhurst
+
+[discrete]
+## **Core Concepts**:
+
+* **A comfortable measure.** Single-column text runs 45 to 75 characters per line; Bringhurst calls 66 ideal.
+* **Figures that sit in the text.** Running text uses old-style figures, which blend with lowercase letters.
+* **Small caps for abbreviations.** Acronyms and abbreviations in running text are set in small caps, so they do not shout.
+* **Indent or space, not both.** Mark a new paragraph with an indent or with space between paragraphs. Do not indent the first paragraph after a heading.
+* **Optical alignment.** Hanging punctuation keeps the text edge straight to the eye; capitals and small caps get extra letterspacing.
+* **A chosen scale of sizes.** Sizes come from a deliberate scale, not from chance. The book's chapter on this is a source for the Modular Scale.
+* **Rules with reasons.** Each rule is a reasoned convention from centuries of book typography, to be applied with judgment.
+
+***Key Proponents***: Robert Bringhurst, Canadian typographer, poet and translator. Editions: 1992; 1996; version 2.4 (2001) and 2.5 (2002); version 3.0 (2004), 3.1 (2005) and 3.2 (2008); version 4.0 (2012). Hermann Zapf hoped it would become the typographers' bible (https://en.wikipedia.org/wiki/The_Elements_of_Typographic_Style[Wikipedia])
+
+[discrete]
+## **When to Use**:
+
+* CSS for articles, documentation and other long-form text. In our prior test the book's name added old-style figures and indented paragraphs in every run, and small caps and hanging punctuation in most.
+* Reviewing the typography of reports, books and PDFs
+* Together with the Modular Scale when heading sizes also need a rule
+* As a counter-instruction when generated text styles stop at font size and line height
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating it as a UI rulebook.** The book is about book typography. Its rules fit running text better than buttons, forms and dashboards.
+* **Reading the rules as law.** They are conventions with reasons. Bringhurst explains why each one exists, so a reader can judge when it does not apply.
+* **Quoting "66 characters" without the range.** The ideal sits inside a range of 45 to 75 characters for single-column text.
+* **Expecting the baseline to reach the details.** In our prior test on 2026-10-28, the baselines set a measure and a line height and stopped there. With the book's name, six of six set old-style figures and indented paragraphs instead of spacing them; four of six added small caps and hanging punctuation, Sonnet and Opus in all four runs.
+
+[discrete]
+## **Criticism**:
+
+* **Tied to print.** Maurice Meilleur reviews version 4.0 in https://typographica.org/typography-books/the-elements-of-typographic-style-4th-edition/["The Elements of Typographic Style, Version 4.0"] (Typographica, 2013). He finds that the book "has an easier time thinking backwards": screen typography gets two pages, and display type is mostly missing. He notes that it reads like holy writ and advises students to read it, but not first and not alone.
+
+### Every Layout
+
+***Full Name***: Every Layout -- a book and website by Heydon Pickering and Andy Bell on composing responsive layouts from small CSS primitives
+
+[discrete]
+## **Core Concepts**:
+
+* **Let the browser decide.** Layouts rely on the browser's own algorithms -- flexbox wrapping, grid auto-fit, `min()` -- instead of fixed breakpoints. The authors aim to avoid breakpoints and "magic numbers".
+* **Intrinsic, content-driven layout.** An element's layout follows from its content and the space available, not from the viewport width.
+* **A small set of primitives.** Stack, Box, Center, Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, Icon and the newer Container. Each solves one layout problem and they nest.
+* **Spacing from a modular scale.** Custom properties such as `--s1` hold the steps of a spacing scale.
+* **The owl selector.** The Stack spaces its children with `* + *`, so margin sits only between siblings.
+* **Measure as an axiom.** Line length is capped in `ch`, so text stays readable at every width.
+* **Layouts as custom elements.** Each primitive can be written as a custom element with attributes for its settings.
+
+***Key Proponents***: Heydon Pickering and Andy Bell; the full version came out on 29 July 2019 as an EPUB book and a website (https://heydonworks.com/article/every-layout-is-released:-some-facts/[release notes])
+
+[discrete]
+## **When to Use**:
+
+* Responsive CSS for lists, card grids and page regions. In our prior test every anchor run built the layout with no media query and used a Stack.
+* Component libraries whose parts must work in any container width
+* Replacing a tangle of breakpoints with a few nested primitives
+* Together with a Modular Scale for spacing values
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Calling it a component library.** Every Layout teaches CSS reasoning. It ships no buttons or cards.
+* **Reading "no media queries" as a ban.** The goal is to need fewer breakpoints. Media queries remain a tool where intrinsic layout cannot do the job.
+* **Treating primitives as styled components.** A primitive handles layout only. Colour, type and decoration belong elsewhere.
+* **Expecting intrinsic layout by default.** In our prior test on 2026-10-28, all six baseline runs for a responsive card list used a media query. With "Every Layout", all six used none and built a Stack; Opus named Grid, Stack, Frame and Box and explained that the grid reflows by itself.
+
+[discrete]
+## **Current Status**:
+
+* **Third edition, with a Container layout.** The https://every-layout.dev/[home page] lists the third edition. The https://every-layout.dev/editions/[editions page] records the changes: the second edition moved to the `gap` property (https://every-layout.dev/blog/second-edition/[announced 29 June 2021]); the third uses logical properties and `aspect-ratio` for the Frame; the latest version adds the Container layout as a starting point for container queries. The training-data prior may predate the newer editions; name `gap`, logical properties or container queries if you need them.
+
+### Gestalt Principles
+
+***Full Name***: The Gestalt principles of perceptual grouping -- the factors by which people see separate elements as belonging together, described by Max Wertheimer in 1923 and applied today in visual and interface design
+
+***Also known as***: Gestalt laws, laws of perceptual organization, principles of grouping
+
+[discrete]
+## **Core Concepts**:
+
+* **We see wholes before parts.** The eye groups elements into units without effort. Design either works with this grouping or fights it.
+* **Wertheimer's factors.** In "Untersuchungen zur Lehre von der Gestalt II" (1923) Max Wertheimer named proximity, similarity, uniform destiny (common fate), objective set, direction, closure, good curve, good Gestalt and past experience.
+* **Proximity.** Elements close to each other read as a group. In interfaces, spacing alone can tie a label to its field.
+* **Similarity.** Elements that share colour, shape or size read as related.
+* **Closure and common fate.** The eye completes incomplete shapes, and elements that move together read as one unit.
+* **The factors compete.** Aurora Harley of NN/g notes that proximity often overrides similarity. A design reads correctly only when the factors agree.
+* **The list grew in design practice.** The NN/g study guide also covers common region -- elements inside a shared border read as a group -- which is not among Wertheimer's original factors.
+
+***Key Proponents***: Max Wertheimer ("Untersuchungen zur Lehre von der Gestalt II", _Psychologische Forschung_ 4, 1923, pp. 301–350; English: https://psychclassics.yorku.ca/Wertheimer/Forms/forms["Laws of Organization in Perceptual Forms"], translated by W. Ellis in _A Source Book of Gestalt Psychology_, 1938); Kurt Koffka and Wolfgang Köhler as co-founders of the Berlin school; in UX practice the Nielsen Norman Group (https://www.nngroup.com/articles/visual-design-in-ux-study-guide/[visual design study guide], 2022; Aurora Harley, https://www.nngroup.com/articles/gestalt-proximity/["Proximity Principle in Visual Design"], 2020)
+
+[discrete]
+## **When to Use**:
+
+* Reviewing a form or screen where labels, fields and buttons do not visibly belong together
+* Explaining why a layout feels confusing, in terms that point at a fix: more space here, a shared border there
+* Teaching visual hierarchy to developers and writers
+* Asking a model to review a UI: with the anchor, it explains defects through named grouping laws, proximity first
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Expecting one canonical list.** Wertheimer's factors differ from the lists in design books; common region, for instance, came later.
+* **Applying the principles as independent rules.** They compete, and proximity often wins over similarity.
+* **Reading them as explanations.** They describe grouping tendencies; they do not explain why perception works that way.
+* **Dropping "Principles" from the name.** In our prior test on 2026-10-28, the bare "Gestalt" resolved to psychology on every tier and brought up Gestalt therapy. With "Gestalt Principles", six of six runs explained the defects of a signup form through at least three laws, proximity in all six; no baseline named one.
+
+[discrete]
+## **Criticism**:
+
+* **Laws with little precision.** Wagemans, Elder, Kubovy, Palmer, Peterson, Singh and von der Heydt review a century of research in https://ruccs.sas.rutgers.edu/images/archive/personal-manish-singh/papers/Wagemans_etal_2012_I.pdf["A century of Gestalt psychology in visual perception: I. Perceptual grouping and figure–ground organization"] (_Psychological Bulletin_ 138(6), 2012). They report the long-standing charge that classic Gestalt work offered demonstrations instead of explanations, "formulating laws with little precision".
+
+### GOV.UK Design System
+
+***Full Name***: GOV.UK Design System -- the styles, components and patterns of the UK Government Digital Service for building public services on GOV.UK
+
+***Also known as***: GOV.UK Frontend (its code), the GDS design system
+
+[discrete]
+## **Core Concepts**:
+
+* **Styles, components and patterns in one place.** The system bundles visual styles, coded components and patterns for common tasks. Its code is GOV.UK Frontend. It replaced GOV.UK Elements and took over the patterns from the Service Manual.
+* **One thing per page.** Each page asks one question. Tim Paul of GDS argued that this helps users with low confidence, works on mobile, and makes error handling and branching simpler.
+* **A service is a sequence of known pages.** A start page with a green "Start now" button, question pages, a page to check answers before submitting, and a confirmation page with a reference number.
+* **Errors are shown twice.** An error summary at the top of the page links to each faulty field, and an inline message sits at the field itself.
+* **Forms follow fixed conventions.** Labels sit above fields, and the content is written in plain English.
+* **A restricted visual identity.** The GDS Transport typeface and the GOV.UK brand are reserved for GOV.UK services.
+
+***Key Proponents***: Government Digital Service (GDS), which introduced the system on https://gds.blog.gov.uk/2018/06/22/introducing-the-gov-uk-design-system/[22 June 2018] in a post by Alice Noakes and Amy Hupe; Tim Paul, author of https://designnotes.blog.gov.uk/2015/07/03/one-thing-per-page/["One thing per page"] (3 July 2015)
+
+[discrete]
+## **When to Use**:
+
+* Online services for citizens: applications, permits, registrations, claims
+* Long forms that branch, where users must not get lost or give up
+* Reviewing a form flow for error handling, page order and the check-answers step
+* As a counter-instruction when a generated form crams every question onto one long page
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating "one thing per page" as an absolute rule.** Its author framed it as a starting point: "start with everything on its own page", then adjust.
+* **Confusing it with the Service Manual and the Service Standard.** Those set the process and the assessments a service must pass. The Design System supplies the styles, components and patterns.
+* **Reusing it as-is outside UK government.** The Crown, the typeface and the brand are restricted. The NHS wrote, when adapting it, "Sometimes we had to adapt parts of the GOV.UK Design System" (https://gds.blog.gov.uk/2019/06/04/guest-post-adapting-the-gov-uk-design-system-for-the-nhs/["Adapting the GOV.UK Design System for the NHS"], 4 June 2019).
+* **Expecting the name to add what the model already does.** In our prior test on 2026-10-28 (a residents' parking permit service), both Opus baselines already had a start page and a check-answers page. What the name added on every tier was the pattern no baseline used: one question per page, in six of six runs.
+
+[discrete]
+## **Current Status**:
+
+* **A new major version and a new brand.** GOV.UK Frontend v6.0.0 came out in February 2026 with breaking changes; the latest release is v6.6.0 from October 2026 (https://design-system.service.gov.uk/community/whats-new["What's new"]). https://frontend.design-system.service.gov.uk/changes-to-govuk-frontend-v6[Version 6] moves the colours to the GOV.UK brand palette, brings a new type scale and removes deprecated APIs. GDS unveiled the brand refresh, with a blue logo background and a turquoise dot, in https://www.publictechnology.net/2025/06/30/society-and-welfare/gds-unveils-colourful-500k-refresh-of-gov-uk/[June 2025]. The training-data prior most likely shows the look from before 2025, with the black header.
+
+### Laws of UX
+
+***Full Name***: Laws of UX -- Jon Yablonski's collection of psychological principles for interface design, published as a website in 2018 and as an O'Reilly book in 2020
+
+***Also known as***: lawsofux.com; Yablonski's _Laws of UX_
+
+[discrete]
+## **Core Concepts**:
+
+* **A curated collection, not a new theory.** Yablonski gathers known findings from psychology and HCI and restates each as a design rule. He launched the site in mid-January 2018 "with 10 laws".
+* **Laws about movement and choice.** Fitts's Law: the time to hit a target depends on its size and distance. Hick's Law: decision time grows with the number of choices.
+* **Laws about memory and attention.** Miller's Law, the Serial Position Effect, the Von Restorff Effect, the Zeigarnik Effect and cognitive load describe what users can hold in mind and what stands out.
+* **Laws about expectations.** Jakob's Law: users expect your site to work like the sites they already know. The Aesthetic-Usability Effect: users judge attractive designs as easier to use.
+* **Laws about experience over time.** The Peak-End Rule, the Goal-Gradient Effect and the Doherty Threshold concern how users remember an experience, how they speed up near a goal, and how fast a system must respond.
+* **Laws about complexity.** Tesler's Law: every system has complexity that cannot be removed, only moved. Postel's Law: be liberal in what you accept, conservative in what you send.
+* **Grouping laws from Gestalt psychology.** The collection includes the Law of Proximity and the Law of Common Region.
+
+***Key Proponents***: Jon Yablonski (https://oreilly.com/library/view/laws-of-ux/9781492055303[_Laws of UX_], O'Reilly, April 2020; https://oreilly.com/library/view/laws-of-ux/9781098146955[2nd edition], January 2024); site launch as told in an https://blog.adobe.com/en/publish/2018/04/17/ux-designers-need-check-laws-ux[Adobe Blog interview] with Sheena Lyonnais, 17 April 2018
+
+[discrete]
+## **When to Use**:
+
+* Reviewing a form or screen when the findings should cite a mechanism: target size, number of choices, memory load
+* Arguing a design decision with stakeholders in terms of known effects
+* Planning response times, onboarding steps and progress indicators
+* Asking a model to review a UI: with the anchor, it cites Fitts's and Hick's Law as a rule and, on the stronger tiers, ten or more laws
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Taking them for laws of nature.** The collection mixes models, effects and heuristics of very different strength.
+* **Reading Miller's Law as a cap on menu items.** It concerns short-term memory, not how many entries a navigation may have.
+* **Applying one law in isolation.** The laws interact and can pull in different directions; one law alone rarely settles a design question.
+* **Expecting the baseline to name them.** In our prior test on 2026-10-28, no baseline review of a signup form cited a single law. With "Laws of UX", six of six runs cited Fitts's and Hick's Law, five of six Miller's Law; Sonnet and Opus cited ten to twelve laws per answer.
+
+[discrete]
+## **Criticism**:
+
+* **Not laws, and an arbitrary selection.** Marcin Wichary argues in https://unsung.aresluna.org/book-review-laws-of-ux-2nd-ed/["Book review: Laws of UX (2nd ed.)"] (Unsung blog) that the "laws" are not laws in a scientific sense and that the choice of entries is arbitrary: "the book doesn't fully understand how design works."
+* **An outdated reading of Miller.** D. Ben Woods notes in his https://uxmatters.com/mt/archives/2020/11/book-review-laws-of-ux.php[UXmatters review] (23 November 2020) that the Miller's Law chapter still relies on the old figure of seven plus or minus two.
+
+### Material Design 3
+
+***Full Name***: Material Design 3 -- the third generation of Google's design system, introduced as Material You in 2021 and extended by Material 3 Expressive in 2025
+
+***Also known as***: Material 3, M3, Material You
+
+[discrete]
+## **Core Concepts**:
+
+* **Colour roles instead of fixed colours.** Primary, secondary, tertiary, surface and the surface container levels each have a matching on-colour for content placed on them, such as on-surface.
+* **Tonal palettes from one source colour.** The system derives palettes from a single source colour in the HCT colour space.
+* **Dynamic color.** On Android the theme can come from the user's wallpaper, so apps match the device.
+* **Design tokens.** Values live in named tokens such as `md.sys.*`, so themes swap without touching components.
+* **Type and shape scales.** Display, Headline, Title, Body and Label, each in Large, Medium and Small; a shape scale sets corner radii.
+* **Elevation through tone.** Raised surfaces get a tonal tint rather than a heavy shadow.
+* **Standard components on a 4dp/8dp grid.** Top app bar, navigation bar, floating action button, cards and chips.
+
+***Key Proponents***: Google. Material Design was introduced at Google I/O on 25 June 2014 with Matías Duarte as head designer; Material Theming followed in 2018; Material You, the first version of Material 3, came at Google I/O in May 2021 with Android 12 (https://en.wikipedia.org/wiki/Material_Design[Wikipedia]; https://9to5google.com/2021/05/18/google-material-you-design-language/[9to5Google])
+
+[discrete]
+## **When to Use**:
+
+* Designing Android apps or web apps that should feel at home on Android. In our prior test the anchor made every run use at least three Material 3 terms for a settings screen, such as surface roles, on-surface colours and the top app bar.
+* Building a theme from a brand colour with tonal palettes
+* Naming colour, type and shape values as tokens in a design system
+* As a contrast to Apple's HIG when an app ships on both platforms
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating Material You and Material 3 as two systems.** Material You is the marketing name for Material 3 and its dynamic color.
+* **Calling Expressive "Material 4".** Material 3 Expressive is a layer on top of Material 3, not a new generation.
+* **Expecting dynamic color for free.** It is a platform feature, and apps must adopt it.
+* **Saying "Material Design" when you mean version 3.** In our prior test on 2026-10-28, no baseline used more than one Material 3 term. With "Material Design 3", six of six used at least three, and five of six named tonal or dynamic colour. The bare "Material Design" resolves to UI design on all tiers but does not pin the version.
+
+[discrete]
+## **Criticism**:
+
+* **Flat design left apps looking alike.** Benjamin C.J. Walker, https://uxdesign.cc/material-3-expressive-building-on-the-failures-of-flat-design-d7a9bb627298["Material 3 Expressive: Building on the failures of flat design"] (UX Collective, 2025), argues that Material was basically flat and removed signifiers. That caused sameness and uncertainty about what is clickable. He quotes Google's own team asking: "Why did all these apps look so similar? So boring?" Expressive is the attempt to fix it.
+* **Uniformity at the cost of identity.** An Android Police article, https://www.androidpolice.com/everything-i-hate-about-material-you/["Everything I hate about Material You"], objects that themed icons weaken each app's identity "in favor of a half-baked uniformity", and that information density is low.
+
+[discrete]
+## **Current Status**:
+
+* **Material 3 Expressive is the current layer.** Google announced it in May 2025 for Android 16 and Wear OS 6, and Pixel devices received it from September 2025. Fast Company reports that it rests on 46 studies with more than 18,000 participants (https://www.fastcompany.com/91333562/google-maximalist-new-material-design-kit[Mark Wilson, Fast Company, 2025]). The training-data prior most likely serves the Material You era of M3; Expressive changes such as more shapes, motion and emphasis may come out thin unless you ask for them.
+
+### Mobile First
+
+***Full Name***: Mobile First -- designing for the small screen first and adding to it for larger screens, as defined by Luke Wroblewski
+
+***Also known as***: Mobile-first design, mobile-first CSS
+
+[discrete]
+## **Core Concepts**:
+
+* **Design the small screen first.** The mobile version is the starting point, not a shrunken copy of the desktop page.
+* **Growth means opportunity.** Wroblewski's first reason: the growth of mobile use is an opportunity to reach more people.
+* **Constraints force focus.** A small screen leaves room only for what matters most. Deciding that first sharpens the product on every screen.
+* **Capabilities enable innovation.** Designing for what mobile devices can do opens room for new ideas.
+* **A strategy of priorities.** Mobile First decides what content and which actions come first. The CSS technique follows from that decision.
+* **In CSS: base styles, then `min-width`.** Base styles serve the small screen; `min-width` media queries add layout for wider viewports. This is progressive enhancement.
+
+***Key Proponents***: Luke Wroblewski, who first defined the concept in 2009 and named three reasons -- growth, focus, innovation (https://www.webdesignerdepot.com/?p=29528[interview with Webdesigner Depot], 2013; https://static.lukew.com/MobileFirst_LukeW.pdf[slides]); his book https://lukew.com/resources/mobile_first.asp[_Mobile First_] (A Book Apart, October 2011) has a foreword by Jeffrey Zeldman
+
+[discrete]
+## **When to Use**:
+
+* Writing responsive CSS, so the base styles serve the phone and wider layouts build on them
+* Deciding the content and action priorities of a page or a product
+* Reviewing a stylesheet for desktop-first patterns
+* As a counter-instruction when generated CSS starts from the desktop layout and overrides it with `max-width` queries
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Reducing it to `min-width` media queries.** The queries are the technique. The idea is a strategy of priorities.
+* **Expecting the default to be mobile first.** In our prior test on 2026-10-28 (CSS for a responsive list of product cards), all six baselines wrote a `max-width` media query, the desktop-first pattern. With "Mobile First", all six runs wrote `min-width` queries and none wrote `max-width`.
+* **Reading it as "mobile only" or "native app first".** Mobile First is about the order of design for the web, not about building only for phones or starting with an app.
+* **Removing features for mobile.** The constraint decides priorities. It does not mean mobile users get less.
+
+[discrete]
+## **Criticism**:
+
+* **The term means too many things.** Brad Frost observes in https://bradfrost.com/blog/post/the-many-faces-of-mobile-first/["The Many Faces of 'Mobile First'"] (13 August 2012) that "we're seeing it used in myriad different ways". The term became a catch-all and was often confused with "native app first".
+* **"Mobile" is the wrong frame.** Adam Sedwick asks in https://uxdesign.cc/is-mobile-first-as-an-idea-dead-8b526826e163["Is 'Mobile-First' as an idea dead?"] (UX Collective) whether the idea still holds. He argues that "mobile" suggests a phone with touch and a slow connection, and proposes an approach that is device-agnostic and focused on performance.
+
+### Modular Scale
+
+***Full Name***: Modular Scale -- a sequence of sizes derived from one base size and one ratio, used to set type and spacing in proportion
+
+***Also known as***: Type scale, typographic scale
+
+[discrete]
+## **Core Concepts**:
+
+* **A sequence of related numbers.** Tim Brown defines it in https://www.alistapart.com/article/more-meaningful-typography["More Meaningful Typography"] (A List Apart, 2011) as "a sequence of numbers that relate to one another in a meaningful way".
+* **Base times ratio.** Pick a base, usually the body text size, and a ratio. Multiply up for larger steps and divide down for smaller ones.
+* **Ratios borrowed from music and geometry.** https://modularscale.com/[modularscale.com] offers ratios from 15:16 (minor second) to 1:4 (double octave), including the golden section 1:1.618 and 1:√2.
+* **A pool to choose from.** The scale gives candidate sizes. Headings, body text and captions take the steps they need; the rest stay unused.
+* **Beyond font size.** The same steps can set line height, margins and spacing, so type and layout share one proportion.
+* **Older than the web.** Brown builds on Robert Bringhurst, who treats the scale of sizes in _The Elements of Typographic Style_ and compares it to a musical scale.
+
+***Key Proponents***: Tim Brown (Type Manager at Adobe Typekit when he wrote "More Meaningful Typography", A List Apart No. 327, 3 May 2011); Scott Kellum and Tim Brown, who build and maintain modularscale.com; Robert Bringhurst as the source Brown cites
+
+[discrete]
+## **When to Use**:
+
+* CSS for body text and headings, when heading sizes should follow one rule instead of hand-picked values. In our prior test the anchor made every run define the ratio as a custom property and derive the sizes from it.
+* Design systems that need a type ramp and a spacing ramp from the same proportion
+* Reviewing a stylesheet whose font sizes have grown at random
+* Together with Bringhurst for long-form text
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Using every step.** The scale is a pool. A page that uses all steps loses the contrast the scale was meant to create.
+* **Trusting the musical names.** "Major third" or "perfect fourth" label a ratio. They do not make type harmonious by themselves.
+* **One fixed scale for every screen.** A ratio that works on a wide screen can give headings that are too large on a phone. See the criticism below.
+* **Expecting the model to do it unasked.** In our prior test on 2026-10-28, all six baseline runs set heading sizes by hand, mostly with `clamp()`. With "Modular Scale" in the prompt, all six defined a base and a ratio, for example "base 1.125rem, ratio 1.25 (major third)" on Haiku. The bare term resolves to typography and design on all tiers.
+
+[discrete]
+## **Criticism**:
+
+* **Large ratios leave too few sizes on small screens.** Zell Liew, https://zellwk.com/blog/responsive-modular-scale/["Responsive Modular Scale"] (2016), notes that with a large ratio "there aren't any smaller sizes you can use in the scale". The usual fixes, a second base or a ratio per breakpoint, weaken the consistency the scale promised.
+* **Easy to overdo.** Chris Krycho, https://v3.chriskrycho.com/web/modular-scales-fantastic-but-dont-overdo-it/index.html["Modular scales: fantastic, but don't overdo it"] (2013), likes the method but warns that "the modular scale can get away from you pretty easily". Applied to every value, it stops serving the design.
+
+### Nielsen's 10 Usability Heuristics
+
+***Full Name***: Jakob Nielsen's ten usability heuristics for user interface design -- the rules of thumb behind heuristic evaluation, first published with Rolf Molich in 1990 and revised by Nielsen in 1994
+
+***Also known as***: Nielsen's heuristics, the ten usability heuristics
+
+[discrete]
+## **Core Concepts**:
+
+* **Rules of thumb, not guidelines.** The Nielsen Norman Group calls them in its https://www.nngroup.com/videos/heuristic-evaluation/[video on heuristic evaluation] "broad rules of thumb and not specific usability guidelines". They point at kinds of problems; they do not prescribe solutions.
+* **Ten heuristics.** Visibility of system status; match between system and the real world; user control and freedom; consistency and standards; error prevention; recognition rather than recall; flexibility and efficiency of use; aesthetic and minimalist design; help users recognize, diagnose, and recover from errors; help and documentation.
+* **The basis of heuristic evaluation.** Evaluators inspect an interface and map each problem they find to a heuristic. Nielsen and Molich introduced the method in "Heuristic evaluation of user interfaces" (Proc. ACM CHI'90).
+* **Several evaluators, not one.** The method assumes several evaluators who inspect independently and then pool their findings.
+* **A revised set from 1994.** Nielsen's "Enhancing the explanatory power of usability heuristics" (Proc. CHI'94) produced the set of ten in use today. In https://jakobnielsenphd.substack.com/p/heuristics-haiku["Jakob Nielsen's 10 Usability Heuristics as Haikus"] (11 October 2023) Nielsen noted that the set turns 30 in 2024.
+* **A cheap inspection, not a user test.** Heuristic evaluation finds likely problems without recruiting users. It complements testing with real users; it does not replace it.
+
+***Key Proponents***: Jakob Nielsen and Rolf Molich ("Heuristic evaluation of user interfaces", Proc. ACM CHI'90, pp. 249–256); Rolf Molich and Jakob Nielsen ("Improving a human-computer dialogue", _Communications of the ACM_ 33(3), 1990); Jakob Nielsen ("Enhancing the explanatory power of usability heuristics", Proc. CHI'94, pp. 152–158); the Nielsen Norman Group. Sources listed in https://en.wikipedia.org/wiki/Heuristic_evaluation[Wikipedia: Heuristic evaluation]
+
+[discrete]
+## **When to Use**:
+
+* Reviewing a form, screen or flow when the findings should be named and sorted, not just listed
+* Expert reviews early in a project, before a usability test is affordable
+* Writing review checklists for designers, developers and QA
+* Asking a model to review a UI: with the anchor, its findings map to named heuristics
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Running it with one evaluator.** The method assumes several. A single reviewer tends to flag problems that real users never hit.
+* **Replacing user testing.** The heuristics predict problems; only users confirm them.
+* **Treating heuristics as specific guidelines.** They are broad categories. "Consistency and standards" does not say which standard to follow.
+* **Expecting the defects to be found only with the anchor.** In our prior test on 2026-10-28, the baselines found the defects of a signup form but named no heuristic. With the anchor, six of six runs mapped the defects to at least five of the ten heuristics by name, Sonnet to nine and ten. The bare "heuristic evaluation" resolved to HCI on every tier.
+
+[discrete]
+## **Criticism**:
+
+* **Oversimplified and rooted in the desktop era.** A. Ballav argues in https://oldmagazine.uxpa.org/?p=11227["Nielsen's Heuristic Evaluation: Limitations in Principles and Practice"] (_User Experience Magazine_ 17(4), 2017) that the heuristics are generic and shaped by desktop software: "heuristic evaluations suffer from oversimplification."
+* **False positives.** Todd Zazelenchuk notes on https://userfocus.co.uk/articles/heuristics.html[Userfocus] that evaluations are often done by a single evaluator and flag problems real users never encounter. The method is "capable of generating a lot of 'false positives'".
+
+### Refactoring UI
+
+***Full Name***: Refactoring UI -- a book of practical visual design tactics for developers by Adam Wathan and Steve Schoger
+
+***Also known as***: The Refactoring UI book
+
+[discrete]
+## **Core Concepts**:
+
+* **Start with a feature, not the layout.** Design one concrete piece of functionality first; the page shell comes later.
+* **Hierarchy comes from weight and colour, not size alone.** Primary content gets a heavier weight and a darker colour. Secondary content is de-emphasised with grey text and a lighter weight.
+* **No grey text on coloured backgrounds.** Grey belongs on white or neutral surfaces.
+* **Choose from a predefined system.** Spacing and sizing come from a fixed set of values, and type sizes from a constrained scale. You pick from the list instead of inventing a value each time.
+* **Start with too much white space.** Generous spacing is the starting point, not an afterthought.
+* **Use fewer borders.** Separate elements with spacing, background colours or shadows instead of lines. Shadows also convey elevation.
+* **Define a full palette up front.** Each hue gets nine to ten shades, defined in HSL.
+* **Labels are a last resort.** Let format and context show what a piece of data is before adding a label.
+
+***Key Proponents***: Adam Wathan (developer) and Steve Schoger (UI designer); https://www.refactoringui.com/[_Refactoring UI_], a PDF of about 218 pages in short chapters with a component gallery, colour palettes, fonts and icons, published on 11 December 2018 (https://www.goodreads.com/book/show/43190966[Goodreads]). The authors also created Tailwind CSS, whose default palette echoes the book.
+
+[discrete]
+## **When to Use**:
+
+* Developers who have to design a screen themselves, without a designer
+* Settings screens, dashboards and admin pages that look cluttered or flat
+* Reviewing a UI for hierarchy, spacing and colour rather than for usability
+* As a counter-instruction when generated screens separate every row with a divider and rely on font size for hierarchy
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Reading it as a Tailwind manual.** The tactics are framework-neutral. Tailwind's defaults echo them, but the book does not require Tailwind.
+* **Treating the tactics as universal rules.** They are rules of thumb that help developers get to a decent design quickly.
+* **Using it instead of user research.** The book covers visual polish. It says nothing about whether the feature solves the user's problem.
+* **Expecting the same effect on every tier.** In our prior test on 2026-10-28 (a settings screen for a note-taking app), Sonnet and Opus four of four replaced dividers with spacing and used the grey and indigo palette from the authors' Tailwind. Haiku did so in one of two runs and used its own palette: on the weak tier the bare name is a softer nudge. The models attributed the book to Adam Wathan and Steve Schoger with high confidence; whether naming the authors strengthens the action was not tested.
 
 ### Swiss Style (International Typographic Style)
 
@@ -13245,6 +13976,51 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **The name is baked into tooling, which is why it holds as an anchor.** `theme_tufte` in R's https://jrnold.github.io/ggthemes/reference/theme_tufte.html[ggthemes] cites the data-ink chapter by name: "No border, no axis lines, no grids." https://edwardtufte.github.io/tufte-css/[Tufte CSS] and the https://ctan.org/pkg/tufte-latex[tufte-latex] classes carry the sidenote layout; https://pypi.org/project/matplotlib-tufte/[matplotlib-tufte] carries the chart rules into Python. A term that ships as an installable default is one a model has seen in code as well as in prose.
 * **The typographic branch is stable to the point of dormancy.** CTAN lists tufte-latex at 3.5.2 with its most recent announcement in 2015. That is not decay -- the layout was finished -- but it means the second meaning of the name lives on in copies rather than in active development.
 * **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](#/prior-tests) for the terms searched.
+
+### WCAG 2.2 AA
+
+***Full Name***: Web Content Accessibility Guidelines 2.2, conformance level AA
+
+***Also known as***: WCAG 2.2 Level AA
+
+[discrete]
+## **Core Concepts**:
+
+* **Four principles: POUR.** Content must be Perceivable, Operable, Understandable and Robust. Guidelines sit under each principle, and testable success criteria sit under each guideline.
+* **Three levels; AA includes A.** Each success criterion has level A, AA or AAA. Conformance at AA means meeting every A and every AA criterion.
+* **Contrast is measured.** 1.4.3 asks for 4.5:1 for text and 3:1 for large text; 1.4.11 asks for 3:1 for non-text elements.
+* **Structure and interaction are testable too.** Among the AA criteria: 1.3.1 Info and Relationships, 1.4.10 Reflow, 2.4.7 Focus Visible, 3.3.1 Error Identification and 3.3.2 Labels or Instructions.
+* **Version 2.2 adds criteria for touch, focus and cognition.** New at A and AA: 2.4.11 Focus Not Obscured (Minimum), 2.5.7 Dragging Movements, 2.5.8 Target Size (Minimum) of 24×24 CSS pixels, 3.2.6 Consistent Help, 3.3.7 Redundant Entry and 3.3.8 Accessible Authentication (Minimum). Three more new criteria are AAA.
+* **One criterion was removed.** 4.1.1 Parsing is obsolete and no longer part of WCAG 2.2.
+
+***Key Proponents***: W3C Web Accessibility Initiative (WAI); WCAG 2.2 became a W3C Recommendation on 5 October 2023 (https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/["What's New in WCAG 2.2"])
+
+[discrete]
+## **When to Use**:
+
+* Reviewing a form, page or component and naming each defect by success criterion
+* Setting an accessibility acceptance criterion for a project or a contract
+* Checking touch targets, focus visibility and login flows against the 2.2 additions
+* Preparing for legal requirements such as the European Accessibility Act
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Equating AA conformance with accessibility.** AA is a testable minimum. A page can conform and still be hard to use for disabled people.
+* **Trusting automated tools or overlays to certify conformance.** Most criteria need human judgement.
+* **Expecting WCAG 3 to replace 2.2 soon.** WCAG 3 is still a Working Draft, and WCAG 2 stays in force for years after WCAG 3 is final.
+* **Asking for "accessibility" instead of naming the standard.** In our prior test on 2026-10-28 (a signup form with eight known defects), all six baselines already named the 4.5:1 contrast ratio, but no success criterion by number. With "WCAG 2.2 AA", six of six runs cited at least ten success criteria, and six of six caught the two 2.2 additions the form violated: 2.5.8 Target Size (Minimum) and 2.4.11 Focus Not Obscured.
+
+[discrete]
+## **Criticism**:
+
+* **The wording is a swamp to audit against.** Adrian Roselli argues in his Paris Web 2023 talk https://www.paris-web.fr/2023/conference/wcagmire["WCAGmire"] that WCAG "can be a bit of a quagmire": dense wording, loopholes and differing interpretations confuse audits.
+* **Conformance can coexist with hostility.** In his https://adrianroselli.com/tag/adversarial[Adversarial Conformance] series, Roselli builds demos that meet 2.4.11 and 2.5.8 while being hostile to use.
+
+[discrete]
+## **Current Status**:
+
+* **2.2 is the current standard; 3 is still a draft.** https://www.w3.org/WAI/WCAG3[WCAG 3] remains a Working Draft (latest September 2026). The W3C does not expect it to become a standard for a few more years and will not deprecate WCAG 2 until several years after WCAG 3 is final. The European Accessibility Act has applied since 28 June 2025; its harmonised standard EN 301 549 incorporates WCAG and is still under revision (https://www.fieldfisher.com/en/insights/harmonised-standards-under-the-european-accessibility-act-an-introduction[Fieldfisher]). The training-data prior serves WCAG 2.2 well: in our prior test every tier cited the two new criteria the test form violated, 2.5.8 and 2.4.11, by number.
 
 ---
 

@@ -809,6 +809,9 @@ include::anchors/misra-c.adoc[leveloffset=+2]
 [[mutation-testing]]
 include::anchors/mutation-testing.adoc[leveloffset=+2]
 
+[[nielsen-usability-heuristics]]
+include::anchors/nielsen-usability-heuristics.adoc[leveloffset=+2]
+
 [[owasp-asvs]]
 include::anchors/owasp-asvs.adoc[leveloffset=+2]
 
@@ -859,13 +862,65 @@ include::anchors/test-seam.adoc[leveloffset=+2]
 [[testing-pyramid]]
 include::anchors/testing-pyramid.adoc[leveloffset=+2]
 
+[[wcag-22-aa]]
+include::anchors/wcag-22-aa.adoc[leveloffset=+2]
+
 <<<
 
 == UX & Visual Design
+
+[[apple-human-interface-guidelines]]
+include::anchors/apple-human-interface-guidelines.adoc[leveloffset=+2]
+
+[[atomic-design]]
+include::anchors/atomic-design.adoc[leveloffset=+2]
+
+[[bauhaus]]
+include::anchors/bauhaus.adoc[leveloffset=+2]
+
+[[design-tokens-dtcg]]
+include::anchors/design-tokens-dtcg.adoc[leveloffset=+2]
+
+[[dieter-rams-ten-principles]]
+include::anchors/dieter-rams-ten-principles.adoc[leveloffset=+2]
+
+[[eight-point-grid]]
+include::anchors/eight-point-grid.adoc[leveloffset=+2]
+
+[[elements-of-typographic-style]]
+include::anchors/elements-of-typographic-style.adoc[leveloffset=+2]
+
+[[every-layout]]
+include::anchors/every-layout.adoc[leveloffset=+2]
+
+[[gestalt-principles]]
+include::anchors/gestalt-principles.adoc[leveloffset=+2]
+
+[[gov-uk-design-system]]
+include::anchors/gov-uk-design-system.adoc[leveloffset=+2]
+
+[[laws-of-ux]]
+include::anchors/laws-of-ux.adoc[leveloffset=+2]
+
+[[material-design-3]]
+include::anchors/material-design-3.adoc[leveloffset=+2]
+
+[[mobile-first]]
+include::anchors/mobile-first.adoc[leveloffset=+2]
+
+[[modular-scale]]
+include::anchors/modular-scale.adoc[leveloffset=+2]
+
+include::anchors/nielsen-usability-heuristics.adoc[leveloffset=+2]
+
+[[refactoring-ui]]
+include::anchors/refactoring-ui.adoc[leveloffset=+2]
 
 [[swiss-style]]
 include::anchors/swiss-style.adoc[leveloffset=+2]
 
 include::anchors/tufte-style.adoc[leveloffset=+2]
+
+include::anchors/wcag-22-aa.adoc[leveloffset=+2]
 
 <<<

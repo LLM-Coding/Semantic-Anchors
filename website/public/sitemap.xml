@@ -280,6 +280,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Apple Human Interface Guidelines -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/apple-human-interface-guidelines</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/apple-human-interface-guidelines</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: arc42 Architecture Documentation -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/arc42</loc>
@@ -320,6 +335,36 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/atam</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Atomic Design -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/atomic-design</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/atomic-design</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Bauhaus -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/bauhaus</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/bauhaus</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -865,6 +910,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Design Tokens (W3C DTCG) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/design-tokens-dtcg</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/design-tokens-dtcg</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Devil’s Advocate -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/devils-advocate</loc>
@@ -890,6 +950,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/diataxis-framework</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Dieter Rams' 10 Principles of Good Design -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/dieter-rams-ten-principles</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/dieter-rams-ten-principles</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1090,6 +1165,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: 8-Point Grid -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/eight-point-grid</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/eight-point-grid</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Eisenhower Matrix -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/eisenhower-matrix</loc>
@@ -1100,6 +1190,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/eisenhower-matrix</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: The Elements of Typographic Style (Bringhurst) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/elements-of-typographic-style</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/elements-of-typographic-style</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1145,6 +1250,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/event-storming</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Every Layout -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/every-layout</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/every-layout</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1355,6 +1475,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/genchi-genbutsu</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Gestalt Principles -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gestalt-principles</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/gestalt-principles</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1780,6 +1915,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: GOV.UK Design System -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/gov-uk-design-system</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/gov-uk-design-system</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: GRASP -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/grasp</loc>
@@ -2185,6 +2335,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Laws of UX -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/laws-of-ux</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/laws-of-ux</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Principle of Least Privilege (Saltzer & Schroeder) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/least-privilege</loc>
@@ -2290,6 +2455,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Material Design 3 -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/material-design-3</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/material-design-3</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Meaningful Human Control (MHC) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/meaningful-human-control</loc>
@@ -2360,6 +2540,36 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/misra-c</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Mobile First -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/mobile-first</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/mobile-first</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Modular Scale -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/modular-scale</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/modular-scale</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2465,6 +2675,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/nelson-rules</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Nielsen’s 10 Usability Heuristics -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/nielsen-usability-heuristics</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/nielsen-usability-heuristics</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2810,6 +3035,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/refactoring-catalog</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Refactoring UI -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/refactoring-ui</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/refactoring-ui</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3680,6 +3920,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/wardley-mapping</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: WCAG 2.2 AA -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/wcag-22-aa</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/wcag-22-aa</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
