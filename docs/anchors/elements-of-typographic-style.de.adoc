@@ -1,0 +1,50 @@
+= The Elements of Typographic Style (Bringhurst)
+:categories: ux-visual-design
+:roles: ux-designer, technical-writer, software-developer
+:proponents: Robert Bringhurst
+:tags: The Elements of Typographic Style, Bringhurst, Robert Bringhurst, Typografie, Buchtypografie, Zeilenlänge, Satzbreite, Mediävalziffern, Kapitälchen, Einzug, hängende Interpunktion, Sperren, Größenskala, Hartley & Marks, Lesetext
+:related: modular-scale, swiss-style
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: _The Elements of Typographic Style_ von Robert Bringhurst, erschienen bei Hartley & Marks; erste Auflage 1992, neueste Version 4.0 (2012)
+
+Auch bekannt als:: Bringhurst
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Eine bequeme Zeilenlänge.* Einspaltiger Text läuft mit 45 bis 75 Zeichen pro Zeile; Bringhurst nennt 66 ideal.
+* *Ziffern, die im Text sitzen.* Lesetext verwendet Mediävalziffern, die sich in die Kleinbuchstaben einfügen.
+* *Kapitälchen für Abkürzungen.* Akronyme und Abkürzungen im Lesetext stehen in Kapitälchen, damit sie nicht schreien.
+* *Einzug oder Abstand, nicht beides.* Einen neuen Absatz markiert ein Einzug oder ein Abstand zwischen den Absätzen. Der erste Absatz nach einer Überschrift bekommt keinen Einzug.
+* *Optischer Randausgleich.* Hängende Interpunktion hält die Satzkante fürs Auge gerade; Versalien und Kapitälchen werden gesperrt.
+* *Eine gewählte Größenskala.* Die Größen stammen aus einer bewusst gewählten Skala, nicht aus dem Zufall. Das Kapitel dazu ist eine Quelle der <<modular-scale,Modular Scale>>.
+* *Regeln mit Gründen.* Jede Regel ist eine begründete Konvention aus Jahrhunderten Buchtypografie und will mit Urteilskraft angewendet werden.
+
+Wichtige Vertreter:: Robert Bringhurst, kanadischer Typograf, Dichter und Übersetzer. Ausgaben: 1992; 1996; Version 2.4 (2001) und 2.5 (2002); Version 3.0 (2004), 3.1 (2005) und 3.2 (2008); Version 4.0 (2012). Hermann Zapf hoffte, es werde die Bibel der Typografen (https://en.wikipedia.org/wiki/The_Elements_of_Typographic_Style[Wikipedia])
+
+[discrete]
+== *Wann verwenden*:
+
+* CSS für Artikel, Dokumentation und andere lange Texte. In unserem Prior-Test brachte der Buchtitel in jedem Lauf Mediävalziffern und Absatzeinzüge, in den meisten auch Kapitälchen und hängende Interpunktion.
+* Die Typografie von Berichten, Büchern und PDFs prüfen
+* Zusammen mit der <<modular-scale,Modular Scale>>, wenn auch die Überschriftengrößen eine Regel brauchen
+* Als Gegenanweisung, wenn generierte Textstile bei Schriftgröße und Zeilenhöhe stehen bleiben
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Es als Regelwerk für Benutzeroberflächen behandeln.* Das Buch handelt von Buchtypografie. Seine Regeln passen besser zu Lesetext als zu Buttons, Formularen und Dashboards.
+* *Die Regeln als Gesetz lesen.* Es sind Konventionen mit Gründen. Bringhurst erklärt, warum jede existiert; so kann der Leser beurteilen, wann sie nicht passt.
+* *„66 Zeichen“ ohne die Spanne zitieren.* Der Idealwert liegt in einer Spanne von 45 bis 75 Zeichen für einspaltigen Text.
+* *Erwarten, dass die Baseline die Details erreicht.* In unserem Prior-Test am 28.10.2026 setzten die Baselines eine Zeilenlänge und eine Zeilenhöhe und hörten dann auf. Mit dem Buchtitel setzten sechs von sechs Läufen Mediävalziffern und rückten Absätze ein, statt sie mit Abstand zu trennen; vier von sechs ergänzten Kapitälchen und hängende Interpunktion, Sonnet und Opus in allen vier Läufen.
+
+[discrete]
+== *Kritik*:
+
+* *Dem Druck verhaftet.* Maurice Meilleur bespricht Version 4.0 in https://typographica.org/typography-books/the-elements-of-typographic-style-4th-edition/["The Elements of Typographic Style, Version 4.0"] (Typographica, 2013). Das Buch denke leichter rückwärts („has an easier time thinking backwards“): Bildschirmtypografie bekommt zwei Seiten, Displayschrift fehlt weitgehend. Es lese sich wie eine heilige Schrift; Studierende sollten es lesen, aber nicht als Erstes und nicht allein.
+====
