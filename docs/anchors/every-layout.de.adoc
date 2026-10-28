@@ -1,0 +1,48 @@
+= Every Layout
+:categories: ux-visual-design
+:roles: software-developer, ux-designer
+:proponents: Heydon Pickering, Andy Bell
+:tags: Every Layout, Heydon Pickering, Andy Bell, intrinsisches Layout, Layout-Primitive, Layout-Bausteine, Stack, Box, Center, Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, Icon, Container, Owl Selector, Flexbox, CSS Grid, Container Queries, logische Eigenschaften, Custom Properties, ohne Media Queries, CSS
+:related: mobile-first, modular-scale, bem-methodology
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Every Layout -- ein Buch und eine Website von Heydon Pickering und Andy Bell darüber, wie man responsive Layouts aus kleinen CSS-Primitiven zusammensetzt
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Der Browser entscheidet.* Die Layouts nutzen die Algorithmen des Browsers -- Umbruch in Flexbox, Auto-Fit im Grid, `min()` -- statt fester Breakpoints. Die Autoren wollen Breakpoints und „magische Zahlen“ vermeiden.
+* *Intrinsisches Layout, vom Inhalt bestimmt.* Das Layout eines Elements folgt aus seinem Inhalt und dem verfügbaren Platz, nicht aus der Breite des Viewports.
+* *Wenige Primitive.* Stack, Box, Center, Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, Icon und der neuere Container. Jedes löst ein Layoutproblem, und sie lassen sich verschachteln.
+* *Abstände aus einer modularen Skala.* Custom Properties wie `--s1` halten die Stufen einer Abstandsskala.
+* *Der Owl Selector.* Der Stack setzt Abstände mit `* + *`, sodass Margin nur zwischen Geschwistern steht.
+* *Die Zeilenlänge als Axiom.* Die Zeilenlänge wird in `ch` begrenzt; so bleibt Text bei jeder Breite lesbar.
+* *Layouts als Custom Elements.* Jedes Primitiv lässt sich als Custom Element schreiben, dessen Attribute die Einstellungen tragen.
+
+Wichtige Vertreter:: Heydon Pickering und Andy Bell; die Vollversion erschien am 29. Juli 2019 als EPUB-Buch und Website (https://heydonworks.com/article/every-layout-is-released:-some-facts/[Veröffentlichungsnotiz])
+
+[discrete]
+== *Wann verwenden*:
+
+* Responsives CSS für Listen, Kartenraster und Seitenbereiche. In unserem Prior-Test baute jeder Lauf mit dem Anker das Layout ohne Media Query und verwendete einen Stack.
+* Komponentenbibliotheken, deren Teile in jeder Containerbreite funktionieren müssen
+* Ein Gewirr aus Breakpoints durch wenige verschachtelte Primitive ersetzen
+* Zusammen mit einer <<modular-scale,Modular Scale>> für die Abstandswerte
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Es für eine Komponentenbibliothek halten.* Every Layout lehrt, wie man über CSS nachdenkt. Es liefert keine Buttons und keine Karten.
+* *„Keine Media Queries“ als Verbot lesen.* Ziel ist, weniger Breakpoints zu brauchen. Media Queries bleiben ein Werkzeug, wo intrinsisches Layout nicht reicht.
+* *Primitive als gestaltete Komponenten behandeln.* Ein Primitiv regelt nur das Layout. Farbe, Schrift und Schmuck gehören woanders hin.
+* *Intrinsisches Layout als Standard erwarten.* In unserem Prior-Test am 28.10.2026 verwendeten alle sechs Baseline-Läufe für eine responsive Kartenliste eine Media Query. Mit „Every Layout“ verwendeten alle sechs keine und bauten einen Stack; Opus nannte Grid, Stack, Frame und Box und erklärte, dass das Raster von selbst umbricht.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Dritte Auflage, mit einem Container-Layout.* Die https://every-layout.dev/[Startseite] nennt die dritte Auflage. Die https://every-layout.dev/editions/[Seite zu den Auflagen] verzeichnet die Änderungen: Die zweite Auflage wechselte zur Eigenschaft `gap` (https://every-layout.dev/blog/second-edition/[angekündigt am 29. Juni 2021]); die dritte nutzt logische Eigenschaften und `aspect-ratio` für den Frame; die neueste Version ergänzt das Container-Layout als Ausgangspunkt für Container Queries. Der Prior aus den Trainingsdaten ist womöglich älter als die neueren Auflagen; wer `gap`, logische Eigenschaften oder Container Queries braucht, sollte sie nennen.
+====

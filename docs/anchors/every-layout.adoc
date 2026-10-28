@@ -1,0 +1,48 @@
+= Every Layout
+:categories: ux-visual-design
+:roles: software-developer, ux-designer
+:proponents: Heydon Pickering, Andy Bell
+:tags: Every Layout, Heydon Pickering, Andy Bell, intrinsic layout, layout primitives, Stack, Box, Center, Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, Icon, Container, owl selector, flexbox, CSS grid, container queries, logical properties, custom properties, no media queries, CSS
+:related: mobile-first, modular-scale, bem-methodology
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Every Layout -- a book and website by Heydon Pickering and Andy Bell on composing responsive layouts from small CSS primitives
+
+[discrete]
+== *Core Concepts*:
+
+* *Let the browser decide.* Layouts rely on the browser's own algorithms -- flexbox wrapping, grid auto-fit, `min()` -- instead of fixed breakpoints. The authors aim to avoid breakpoints and "magic numbers".
+* *Intrinsic, content-driven layout.* An element's layout follows from its content and the space available, not from the viewport width.
+* *A small set of primitives.* Stack, Box, Center, Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, Icon and the newer Container. Each solves one layout problem and they nest.
+* *Spacing from a modular scale.* Custom properties such as `--s1` hold the steps of a spacing scale.
+* *The owl selector.* The Stack spaces its children with `* + *`, so margin sits only between siblings.
+* *Measure as an axiom.* Line length is capped in `ch`, so text stays readable at every width.
+* *Layouts as custom elements.* Each primitive can be written as a custom element with attributes for its settings.
+
+Key Proponents:: Heydon Pickering and Andy Bell; the full version came out on 29 July 2019 as an EPUB book and a website (https://heydonworks.com/article/every-layout-is-released:-some-facts/[release notes])
+
+[discrete]
+== *When to Use*:
+
+* Responsive CSS for lists, card grids and page regions. In our prior test every anchor run built the layout with no media query and used a Stack.
+* Component libraries whose parts must work in any container width
+* Replacing a tangle of breakpoints with a few nested primitives
+* Together with a <<modular-scale,Modular Scale>> for spacing values
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Calling it a component library.* Every Layout teaches CSS reasoning. It ships no buttons or cards.
+* *Reading "no media queries" as a ban.* The goal is to need fewer breakpoints. Media queries remain a tool where intrinsic layout cannot do the job.
+* *Treating primitives as styled components.* A primitive handles layout only. Colour, type and decoration belong elsewhere.
+* *Expecting intrinsic layout by default.* In our prior test on 2026-10-28, all six baseline runs for a responsive card list used a media query. With "Every Layout", all six used none and built a Stack; Opus named Grid, Stack, Frame and Box and explained that the grid reflows by itself.
+
+[discrete]
+== *Current Status*:
+
+* *Third edition, with a Container layout.* The https://every-layout.dev/[home page] lists the third edition. The https://every-layout.dev/editions/[editions page] records the changes: the second edition moved to the `gap` property (https://every-layout.dev/blog/second-edition/[announced 29 June 2021]); the third uses logical properties and `aspect-ratio` for the Frame; the latest version adds the Container layout as a starting point for container queries. The training-data prior may predate the newer editions; name `gap`, logical properties or container queries if you need them.
+====
