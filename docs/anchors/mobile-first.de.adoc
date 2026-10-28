@@ -1,0 +1,50 @@
+= Mobile First
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, product-owner
+:proponents: Luke Wroblewski
+:tags: Mobile First, Mobile-First-Design, Luke Wroblewski, A Book Apart, Responsive Webdesign, min-width Media Query, Progressive Enhancement, kleiner Bildschirm zuerst, Beschränkung, Fokus, Priorisierung, Inhaltspriorität
+:related: every-layout, progressive-disclosure
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Mobile First -- zuerst für den kleinen Bildschirm gestalten und für größere Bildschirme ergänzen, wie Luke Wroblewski es definiert hat
+
+Auch bekannt als:: Mobile-First-Design, Mobile-First-CSS
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Zuerst den kleinen Bildschirm gestalten.* Die mobile Fassung ist der Ausgangspunkt, keine geschrumpfte Kopie der Desktop-Seite.
+* *Wachstum heißt Chance.* Wroblewskis erster Grund: Die wachsende mobile Nutzung ist eine Chance, mehr Menschen zu erreichen.
+* *Beschränkung erzwingt Fokus.* Ein kleiner Bildschirm lässt nur Platz für das Wichtigste. Wer das zuerst entscheidet, schärft das Produkt auf jedem Bildschirm.
+* *Fähigkeiten ermöglichen Innovation.* Wer für die Fähigkeiten von Mobilgeräten gestaltet, schafft Raum für neue Ideen.
+* *Eine Strategie der Prioritäten.* Mobile First entscheidet, welche Inhalte und Aktionen zuerst kommen. Die CSS-Technik folgt aus dieser Entscheidung.
+* *In CSS: Basis-Styles, dann `min-width`.* Die Basis-Styles bedienen den kleinen Bildschirm; `min-width`-Media-Queries ergänzen das Layout für breitere Viewports. Das ist Progressive Enhancement.
+
+Wichtige Vertreter:: Luke Wroblewski, der das Konzept 2009 erstmals definierte und drei Gründe nannte -- Wachstum, Fokus, Innovation (https://www.webdesignerdepot.com/?p=29528[Interview mit Webdesigner Depot], 2013; https://static.lukew.com/MobileFirst_LukeW.pdf[Folien]); sein Buch https://lukew.com/resources/mobile_first.asp[_Mobile First_] (A Book Apart, Oktober 2011) hat ein Vorwort von Jeffrey Zeldman
+
+[discrete]
+== *Wann verwenden*:
+
+* Responsives CSS schreiben, damit die Basis-Styles das Smartphone bedienen und breitere Layouts darauf aufbauen
+* Die Prioritäten von Inhalten und Aktionen einer Seite oder eines Produkts festlegen
+* Ein Stylesheet auf Desktop-First-Muster prüfen
+* Als Gegenanweisung, wenn generiertes CSS vom Desktop-Layout ausgeht und es mit `max-width`-Queries überschreibt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Es auf `min-width`-Media-Queries verkürzen.* Die Queries sind die Technik. Die Idee ist eine Strategie der Prioritäten.
+* *Erwarten, dass Mobile First der Normalfall ist.* In unserem Prior-Test am 28.10.2026 (CSS für eine responsive Liste von Produktkarten) schrieben alle sechs Baselines eine `max-width`-Media-Query, das Desktop-First-Muster. Mit „Mobile First“ schrieben alle sechs Läufe `min-width`-Queries und keiner `max-width`.
+* *Es als „nur mobil“ oder „native App zuerst“ lesen.* Mobile First betrifft die Reihenfolge der Gestaltung im Web. Es heißt weder, nur für Smartphones zu bauen, noch mit einer App zu beginnen.
+* *Für mobile Nutzer Funktionen streichen.* Die Beschränkung legt Prioritäten fest. Sie heißt nicht, dass mobile Nutzer weniger bekommen.
+
+[discrete]
+== *Kritik*:
+
+* *Der Begriff bedeutet zu viel.* Brad Frost stellt in https://bradfrost.com/blog/post/the-many-faces-of-mobile-first/["The Many Faces of 'Mobile First'"] (13. August 2012) fest, der Begriff werde auf unzählige Arten verwendet („we're seeing it used in myriad different ways“). Er wurde zum Sammelbegriff und oft mit „native App zuerst“ verwechselt.
+* *„Mobil“ ist der falsche Rahmen.* Adam Sedwick fragt in https://uxdesign.cc/is-mobile-first-as-an-idea-dead-8b526826e163["Is 'Mobile-First' as an idea dead?"] (UX Collective), ob die Idee noch trägt. „Mobil“ lasse an ein Smartphone mit Touch und langsamer Verbindung denken. Er schlägt einen Ansatz vor, der vom Gerät unabhängig ist und sich auf Performance konzentriert.
+====
