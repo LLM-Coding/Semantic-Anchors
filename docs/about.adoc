@@ -234,13 +234,15 @@ If the response is:
 
 === Browse by Category
 
-The catalog is organized into 12 categories:
+The catalog is organized into 15 categories:
 
 * Communication & Presentation
+* Creative Writing & Storytelling
 * Design Principles & Patterns
 * Development Workflow
 * Dialogue & Interaction Patterns
 * Documentation Practices
+* Knowledge Management
 * Meta (about this catalog itself)
 * Problem-Solving Methodologies
 * Requirements Engineering
@@ -248,6 +250,7 @@ The catalog is organized into 12 categories:
 * Statistical Methods & Process Monitoring
 * Strategic Planning & Decision Making
 * Testing & Quality Practices
+* UX & Visual Design
 
 === Filter by Role
 
