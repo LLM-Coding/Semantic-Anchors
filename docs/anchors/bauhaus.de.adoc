@@ -1,0 +1,49 @@
+= Bauhaus
+:categories: ux-visual-design
+:roles: ux-designer, educator, consultant, software-developer
+:proponents: Walter Gropius, Hannes Meyer, Ludwig Mies van der Rohe
+:tags: Bauhaus, Staatliches Bauhaus, Bauhaus-Manifest, Walter Gropius, Hannes Meyer, Ludwig Mies van der Rohe, Weimar, Dessau, Berlin, Kunstschule, Gestaltungsschule, Moderne, Werkstätten, geometrische Formen, Grundfarben, Grafikdesign
+:related: swiss-style, dieter-rams-ten-principles
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Staatliches Bauhaus -- die deutsche Schule für Kunst, Handwerk und Gestaltung, die von 1919 bis 1933 in Weimar, Dessau und Berlin bestand
+
+Auch bekannt als:: Staatliches Bauhaus in Weimar, Bauhaus Dessau, Bauhaus-Design
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Eine Schule, kein Stil.* Walter Gropius übernahm im März 1919 die Leitung des „Staatlichen Bauhauses in Weimar“ und veröffentlichte im April das Bauhaus-Manifest. Der Name steht für eine Institution mit Lehrprogramm, nicht für ein bestimmtes Aussehen.
+* *Drei Direktoren, drei Programme.* Gropius leitete die Schule, bis er 1928 zurücktrat. Hannes Meyer folgte im April 1928, Ludwig Mies van der Rohe 1930. Jeder änderte, was die Schule lehrte.
+* *Drei Städte.* Dessau übernahm die Schule 1925 und genehmigte im Juni desselben Jahres einen Neubau. 1932 löste der Dessauer Gemeinderat sie auf; Mies eröffnete sie im Oktober privat in Berlin-Steglitz neu.
+* *Erst Handwerk, dann Industrie.* Die frühen Weimarer Jahre waren handwerklich und expressionistisch. Das funktionale, industrielle Bild kam später und deckt nur einen Teil der Geschichte ab.
+* *Lehre in Werkstätten.* Die Studierenden arbeiteten in Werkstätten, etwa in der Weberei. In welche Werkstatt jemand kam, bestimmte, was er schuf -- und, wie Kritiker anmerken, wer wohin durfte.
+* *Ein erzwungenes Ende.* Im April 1933 durchsuchte die Polizei die Berliner Schule. Im Juli 1933 löste Mies sie mit Zustimmung des Kollegiums auf.
+
+Wichtige Vertreter:: Walter Gropius (Gründer und Direktor 1919–1928, Verfasser des Bauhaus-Manifests); Hannes Meyer (Direktor 1928–1930); Ludwig Mies van der Rohe (Direktor 1930–1933, eröffnete die Schule in Berlin neu und löste sie 1933 auf). Chronologie nach dem Katalog _50 Jahre Bauhaus_ (Stuttgart 1968), wiedergegeben auf https://bauhaus-bookshelf.org/timeline_chronology_1919_1933.html[bauhaus-bookshelf.org]
+
+[discrete]
+== *Wann verwenden*:
+
+* Landingpages, Plakate und Markenauftritte, die aus geometrischen Formen, Grundfarben und einer geometrischen Grotesk entstehen sollen statt aus Fotos und handgezeichneten Elementen
+* Als Gegenanweisung, wenn generierte Entwürfe zu Stockfotos und Schreibschriften abdriften
+* Designgeschichte und Lehre, wenn es um die Schule selbst geht: ihre Direktoren, ihre Werkstätten, ihre Umzüge von Weimar über Dessau nach Berlin
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Es als einen visuellen Stil behandeln.* Das Bauhaus war eine Schule mit drei Direktoren und wechselnden Programmen. „Bauhaus-Stil“ bezeichnet eine spätere Lesart eines Teils seiner Arbeit.
+* *Es für rein funktionalistisch und industriell halten.* Die frühen Weimarer Jahre waren handwerklich und expressionistisch.
+* *Es mit dem International Style gleichsetzen.* Der International Style ist eine spätere Bewegung; das Bauhaus war eine Schule mit eigener Geschichte.
+* *Den bloßen Namen verwenden.* In unserem Prior-Test am 28.10.2026 führte das bloße „Bauhaus“ auf allen Modellstufen zu Kunst- und Designgeschichte; Opus erwähnte auch die Band und die Baumarktkette. „Bauhaus design“ veränderte das Ergebnis: Alle sechs Baselines bauten eine Bäckerei-Seite um Fotos mit handgezeichneten Elementen oder Schreibschriften, alle sechs Anker-Läufe nutzten geometrische Formen, eine geometrische Grotesk und die Grundfarben.
+
+[discrete]
+== *Kritik*:
+
+* *Fortschrittliches Image, getrennte Praxis.* Theresia Enzensberger schreibt in https://www.goethe.de/ins/gb/en/kul/past/tech/bhs/21385384.html["The 'Bauhaus women'"] (Goethe-Institut, Oktober 2018, übersetzt von Jo Beckett), die Schule habe Frauen in die Weberei gelenkt, und ihre Zahl sei gesunken: Gropius' Trennung habe Wirkung gezeigt ("Gropius' segregation was showing its effects").
+* *Eine Ästhetik gegen die, denen sie dienen sollte.* Scott Alexander folgt in https://www.astralcodexten.com/p/book-review-from-bauhaus-to-our-house["Book Review: From Bauhaus to Our House"] (Astral Codex Ten, 4. Dezember 2024) Tom Wolfes Polemik: Die Moderne habe Arbeitern einen Geschmack aufgedrängt, den sie nicht teilten. Ironischerweise hätten echte Arbeiter die modernistischen Stile gehasst ("Ironically, real workers hated the modernist styles.").
+====
