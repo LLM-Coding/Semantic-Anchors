@@ -74,8 +74,8 @@
 - [Testing & Quality Practices (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 - [Testing & Quality Practices (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-3.txt): 2 anchors in full.
-- [UX & Visual Design (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 17 anchors in full.
-- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 2 anchors in full.
+- [UX & Visual Design (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 16 anchors in full.
+- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 3 anchors in full.
 
 ## Anchors — 256 named terms, grouped by category
 
