@@ -146,13 +146,15 @@ Kann *zu Schlüsselvertretern, Publikationen oder dokumentierten Standards zurü
 
 === Nach Kategorie browsen
 
-Der Katalog ist in 12 Kategorien organisiert:
+Der Katalog ist in 15 Kategorien organisiert:
 
 * Kommunikation & Präsentation
+* Kreatives Schreiben & Storytelling
 * Design-Prinzipien & Muster
 * Entwicklungs-Workflow
 * Dialog & Interaktionsmuster
 * Dokumentationspraktiken
+* Wissensmanagement
 * Meta (über diesen Katalog selbst)
 * Problemlösungsmethoden
 * Requirements Engineering
@@ -160,6 +162,7 @@ Der Katalog ist in 12 Kategorien organisiert:
 * Statistische Methoden & Prozessüberwachung
 * Strategische Planung & Entscheidungsfindung
 * Testing & Qualitätssicherung
+* UX & visuelles Design
 
 === Nach Rolle filtern
 

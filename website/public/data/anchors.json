@@ -7580,8 +7580,7 @@
     "id": "swiss-style",
     "title": "Swiss Style (International Typographic Style)",
     "categories": [
-      "design-principles",
-      "communication-presentation"
+      "ux-visual-design"
     ],
     "roles": [
       "ux-designer",
@@ -7632,7 +7631,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-25T08:47:44+01:00"
   },
   {
     "id": "swot",
@@ -8320,8 +8320,8 @@
     "id": "tufte-style",
     "title": "Tufte Style",
     "categories": [
-      "communication-presentation",
-      "design-principles"
+      "ux-visual-design",
+      "communication-presentation"
     ],
     "roles": [
       "technical-writer",

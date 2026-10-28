@@ -62,13 +62,15 @@ See the full link:CONTRIBUTING.adoc[Contributing Guide] or read it on the link:h
 
 == Categories
 
-The catalog is organized into 12 MECE (Mutually Exclusive, Collectively Exhaustive) categories:
+The catalog is organized into 15 categories. Their scopes are MECE (Mutually Exclusive, Collectively Exhaustive); a single anchor may still belong to more than one category:
 
 * Communication & Presentation
+* Creative Writing & Storytelling
 * Design Principles & Patterns
 * Development Workflow
 * Dialogue & Interaction Patterns
 * Documentation Practices
+* Knowledge Management
 * Meta
 * Problem-Solving Methodologies
 * Requirements Engineering
@@ -76,6 +78,7 @@ The catalog is organized into 12 MECE (Mutually Exclusive, Collectively Exhausti
 * Statistical Methods & Process Monitoring
 * Strategic Planning & Decision Making
 * Testing & Quality Practices
+* UX & Visual Design
 
 == Professional Roles
 

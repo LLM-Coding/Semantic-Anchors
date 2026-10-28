@@ -61,6 +61,7 @@ const CATEGORY_COLORS = {
   'statistical-methods': '#48b8d0',
   'strategic-planning': '#c23531',
   'testing-quality': '#5470c6',
+  'ux-visual-design': '#e8684a',
 }
 
 /**
@@ -81,6 +82,7 @@ const CATEGORY_ICONS = {
   'statistical-methods': '📊',
   'strategic-planning': '♟️',
   'testing-quality': '🧪',
+  'ux-visual-design': '🎨',
 }
 
 let feedbackData = {}

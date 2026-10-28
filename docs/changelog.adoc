@@ -2,6 +2,10 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-28
+
+*New category -- UX & Visual Design.* The catalog gets a category for visual styles, usability heuristics, perception, typography, layout systems, design systems and accessibility. Until now these anchors sat in Design Principles & Patterns, which holds software design -- SOLID, the GoF patterns, the Law of Demeter -- so "design" meant two things in one category. link:#/anchor/swiss-style[Swiss Style] moves to the new category; link:#/anchor/tufte-style[Tufte Style] moves there and keeps Communication & Presentation as its second category. Tracked in https://github.com/LLM-Coding/Semantic-Anchors/issues/851[#851].
+
 == 2026-10-26
 
 *Requirements discovery asks in order, looks facts up itself and recommends only where you can choose.* The link:#/contracts[Requirements Discovery] contract (EN + DE) and the Socratic prompt in Step 2 of link:#/spec-driven-development[Spec-Driven Development] gain three rules: ask only questions whose prerequisites are settled; look facts up in the code and environment instead of asking for them; recommend an answer for solution and design questions, but ask about the problem, goals, personas and success criteria openly, because a suggestion there anchors the answer. The rules come from Matt Pocock's link:https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling[grilling skill] (MIT).

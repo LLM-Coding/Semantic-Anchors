@@ -253,20 +253,23 @@ These are **NOT** semantic anchors:
 
 ## Categories
 
-Anchors are organized into 12 MECE (Mutually Exclusive, Collectively Exhaustive) categories:
+Anchors are organized into 15 categories. Their scopes are MECE (Mutually Exclusive, Collectively Exhaustive); a single anchor may still belong to more than one category:
 
 1. Communication & Presentation
-2. Design Principles & Patterns
-3. Development Workflow
-4. Dialogue & Interaction Patterns
-5. Documentation Practices
-6. Meta (repository and catalog concepts)
-7. Problem-Solving Methodologies
-8. Requirements Engineering
-9. Software Architecture
-10. Statistical Methods & Process Monitoring
-11. Strategic Planning & Decision Making
-12. Testing & Quality Practices
+2. Creative Writing & Storytelling
+3. Design Principles & Patterns
+4. Development Workflow
+5. Dialogue & Interaction Patterns
+6. Documentation Practices
+7. Knowledge Management
+8. Meta (repository and catalog concepts)
+9. Problem-Solving Methodologies
+10. Requirements Engineering
+11. Software Architecture
+12. Statistical Methods & Process Monitoring
+13. Strategic Planning & Decision Making
+14. Testing & Quality Practices
+15. UX & Visual Design
 
 See the website for full category descriptions.
 

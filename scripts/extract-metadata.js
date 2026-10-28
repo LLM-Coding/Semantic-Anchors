@@ -251,6 +251,7 @@ function categoryIdToName(id) {
     'development-practices': 'Development Practices',
     'statistical-methods': 'Statistical Methods & Process Monitoring',
     'interaction-reasoning': 'Interaction & Reasoning Patterns',
+    'ux-visual-design': 'UX & Visual Design',
     uncategorized: 'Uncategorized',
   }
   return (
