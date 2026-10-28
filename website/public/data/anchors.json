@@ -321,7 +321,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "arc42",
@@ -493,7 +494,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "bauhaus",
@@ -549,7 +551,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:32+01:00"
   },
   {
     "id": "bdd-given-when-then",
@@ -1970,7 +1973,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "devils-advocate",
@@ -2089,7 +2093,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:32+01:00"
   },
   {
     "id": "disc-model",
@@ -2604,7 +2609,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "eisenhower-matrix",
@@ -2689,7 +2695,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "enterprise-integration-patterns",
@@ -2881,7 +2888,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "fagan-inspection",
@@ -3474,7 +3482,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "gherkin",
@@ -4524,7 +4533,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "grasp",
@@ -5563,7 +5573,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "least-privilege",
@@ -5895,7 +5906,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "meaningful-human-control",
@@ -6131,7 +6143,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "modular-scale",
@@ -6188,7 +6201,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "morphological-box",
@@ -6485,7 +6499,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
     "id": "occams-razor",
@@ -7452,7 +7467,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "regulated-environment",
@@ -9632,7 +9648,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
     "id": "what-qualifies-as-a-semantic-anchor",
