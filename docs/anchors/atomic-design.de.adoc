@@ -1,0 +1,51 @@
+= Atomic Design
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, software-architect
+:proponents: Brad Frost
+:tags: Atomic Design, Brad Frost, Atome, Moleküle, Organismen, Templates, Seiten, Design-System, Pattern Library, Komponentenbibliothek, Pattern Lab, Dave Olsen, UI-Komponenten, Komponentenhierarchie
+:related: design-tokens-dtcg, bem-methodology, material-design-3
+:tier: 3
+:prior-test: 2026-10-28
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Atomic Design -- Brad Frosts Methode, Design-Systeme für Benutzeroberflächen in fünf Stufen aufzubauen: Atome, Moleküle, Organismen, Templates und Seiten
+
+Auch bekannt als:: Atomic Web Design
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Fünf Stufen, aus der Chemie entlehnt.* Atome, Moleküle, Organismen, Templates und Seiten. Frost stellte sie am 10. Juni 2013 in einem Blogbeitrag vor (https://articles.centercentre.com/?p=350[bei Center Centre neu veröffentlicht]).
+* *Atome sind die kleinsten Teile.* Labels, Eingabefelder, Buttons -- Elemente, die sich nicht weiter zerlegen lassen, ohne nutzlos zu werden.
+* *Moleküle verbinden Atome.* Ein Label, ein Eingabefeld und ein Button bilden ein Suchfeld mit einer Aufgabe.
+* *Organismen sind eigenständige Bereiche.* Moleküle und Atome bilden zusammen einen Header, ein Produktraster oder einen Footer.
+* *Templates zeigen die Struktur.* Ein Template ordnet Organismen in einem Layout an und zeigt das Gerüst der Seite ohne endgültige Inhalte.
+* *Seiten prüfen das System.* Eine Seite ist ein Template mit echten Inhalten. Sie zeigt, ob die Muster tragen.
+* *Ein Denkmodell, keine Abfolge.* Frost betont, dass man zwischen den Stufen hin- und herwechselt, statt sie der Reihe nach abzuarbeiten.
+
+Wichtige Vertreter:: Brad Frost (Blogbeitrag 2013; Buch _Atomic Design_, 2016, Vorwort von Josh Clark und Dan Mall, https://atomicdesign.bradfrost.com/foreword[kostenlos online]); Pattern Lab, das Werkzeug, das Frost mit Dave Olsen für diese Arbeitsweise baute
+
+[discrete]
+== *Wann verwenden*:
+
+* Eine Komponentenbibliothek für ein Produkt wie ein Analytics-Dashboard gliedern. In unserem Prior-Test sortierte mit dem Anker jeder Lauf die Komponenten in Atome, Moleküle, Organismen, Templates und Seiten.
+* Ein Design-System beginnen und Designern wie Entwicklern ein gemeinsames Vokabular für die Größe von Komponenten geben
+* Eine bestehende Oberfläche auf doppelte Komponenten prüfen
+* Zusammen mit <<design-tokens-dtcg,Design Tokens>> für die Werte unterhalb der Atome
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Die Stufen als Pflicht-Ordnerstruktur behandeln.* Die fünf Namen helfen, über das System zu sprechen. Viele Teams ordnen ihren Code anders.
+* *Es als linearen Prozess lesen.* Frost beschreibt ein Hin und Her, nicht: erst alle Atome bauen.
+* *„Seiten“ wörtlich nehmen.* Seiten sind Templates mit echten Inhalten, die das System prüfen -- keine Liste der Webseiten einer Site.
+* *Die Stufen ohne den Namen erwarten.* In unserem Prior-Test am 28.10.2026 sortierten die Baselines Komponenten in Grundbausteine und Ordner nach Feature. Eine Sonnet-Baseline nannte ihre Struktur „atomic-design inspired“, nutzte aber keine einzige Stufe. Mit „Atomic Design“ verwendeten sechs von sechs Läufen alle fünf Stufen.
+
+[discrete]
+== *Kritik*:
+
+* *In der Praxis schwer einzuordnen.* Trent Walton berichtet in https://trentwalton.com/2016/02/26/atomic-classification["Atomic Classification"] (2016), das Team habe sich schwergetan, Komponenten den atomaren Stufen zuzuordnen („the team struggled to map components to an atomic classification“). Die Chemie-Namen bremsten Diskussionen, und das Team wechselte zu einem einfacheren System mit zwei Stufen. Er verweist auch auf das Team von FutureLearn, das sich nicht einigen konnte, wann ein Molekül zum Organismus wird.
+* *Die Etiketten zählen weniger als die Idee.* Peter Rohles schreibt in https://www.qt.io/blog/atomic-design-systems-why-the-labels-dont-matter["Atomic Design Systems: Why the Labels Don't Matter"] (Qt-Blog, 2025), nicht die fünf Namen machten die Methode nützlich; auf die Chemie-Etiketten sei es nie angekommen („The chemistry labels were never the point.“).
+====
