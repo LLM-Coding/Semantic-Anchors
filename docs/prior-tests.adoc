@@ -670,3 +670,66 @@ The pattern was published in April 2026. The models tested here know it; models 
 === The bare term and the standard number do different work
 
 "Plain language" and "ISO 24495-1" sound like the same instruction, and the models know they are related: asked what plain language is, all three tiers mention ISO 24495. As an instruction they diverge. The bare term reaches the older prior -- short sentences, everyday words, active voice -- and stops at the sentence. The standard number reaches the reader-centred structure: what changes, who is affected, what to do, what happens otherwise. That is the difference between the understandable principle alone and all four, and it is why the entry carries the number in its name.
+
+== Run 2026-10-28
+
+[cols="1,3"]
+|===
+|Candidates |Eighteen design proposals, https://github.com/LLM-Coding/Semantic-Anchors/issues/833[#833] to https://github.com/LLM-Coding/Semantic-Anchors/issues/850[#850], for the new category UX & Visual Design (https://github.com/LLM-Coding/Semantic-Anchors/issues/851[#851])
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
+|Procedure |`anchor-prior-test` v1.1
+|Runs |P1 and the action probe twice per term and tier, P4 once per tier, P2 once per tier for the eleven terms with a bare or ambiguous form. Nine action tasks, each with a no-anchor baseline that ran twice per tier; candidates that share a task share its baseline. 357 probes plus three clean-room checks, USD 5.22 (Haiku 0.12, Sonnet 1.63, Opus 3.47)
+|Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN` and `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`, each probe in its own empty git repository outside this one. Verified on all three tiers against the custom-instructions probe, which answered "none"; the harness still attached its commit-attribution and account reminders, which carry no catalog content
+|Criticism research |2026-10-28, English. Found and fetched, one or two per term: Theresia Enzensberger on the Bauhaus women (Goethe-Institut, 2018); Pascal Barry on Rams' principles (UX Planet); A. Ballav, "Nielsen's Heuristic Evaluation: Limitations in Principles and Practice" (_User Experience Magazine_, 2017); Wagemans et al., "A century of Gestalt psychology in visual perception" (_Psychological Bulletin_, 2012); Marcin Wichary's review of _Laws of UX_ (2nd ed.); Darin Dimitroff on the 4-point grid at Webflow (2019); Zell Liew, "Responsive Modular Scale" (2016); Maurice Meilleur's review of Bringhurst 4.0 (_Typographica_, 2013); Trent Walton, "Atomic Classification" (2016); Benjamin C.J. Walker on Material 3 Expressive (UX Collective, 2025); Raluca Budiu, "Liquid Glass Is Cracked" (Nielsen Norman Group, 2025); Shaunak Bhanarkar on design-token abstraction (UX Planet); Adrian Roselli, "WCAGmire" (Paris Web, 2023); Brad Frost, "The Many Faces of 'Mobile First'" (2012). Nothing citable against the method itself for Every Layout (positive reviews and Hacker News comments only), the GOV.UK Design System (the published items concern the 2025 brand refresh and the NHS adaptation, not the system) and Refactoring UI (one review of the price and the bonus files); those entries carry no Criticism section. Not reachable through the fetch tool: the NN/g heuristics article, Wikipedia on the Bauhaus and Gestalt psychology, spec.fm, Brad Frost's atomic-design post, lukew.com/ff and the GOV.UK check-answers pattern; facts from them were taken only where a second, fetched page confirmed them. No criticism research was done for Neo-Brutalism, because no entry is proposed
+|===
+
+=== The nine tasks
+
+The action probes compare a task without the anchor to the same task with one sentence added ("Use Bauhaus design.", "Check it against WCAG 2.2 AA."). Every number below is out of six runs: two per tier.
+
+[cols="1,4,3"]
+|===
+|Task |Prompt (shortened) |Candidates
+
+|A |Visual design of a landing page for a neighbourhood bakery |Bauhaus, Neo-Brutalism
+|B |Settings screen of a mobile note-taking app |Material Design 3, Apple HIG, Refactoring UI
+|C |Review a signup form with eight known defects |Nielsen's heuristics, Gestalt Principles, Laws of UX, WCAG 2.2 AA
+|D |CSS for a responsive list of product cards |8-Point Grid, Every Layout, Mobile First
+|E |CSS for body text and headings of an article page |Modular Scale, Bringhurst
+|F |Component library structure for an analytics dashboard |Atomic Design
+|G |Design of a bedside alarm clock |Dieter Rams' 10 Principles
+|H |Online service for a residents' parking permit |GOV.UK Design System
+|I |Colour, spacing and typography values as a file |Design Tokens (W3C DTCG)
+|===
+
+=== The eighteen terms
+
+All eighteen were recognised as rich on all tiers in both P1 runs. Haiku again reported `reaching=yes` in at least one run for sixteen of them over answers that named the right people, parts and numbers; as in earlier runs, the verdicts are scored from the text, not from the self-report.
+
+[cols="2,1,4"]
+|===
+|Term |Verdict |Note
+
+|Bauhaus |★★★ |All six baselines built the bakery page around photography with hand-drawn or script elements. With "Bauhaus design", six of six set circle, square and triangle, a geometric sans such as Futura, and the primary colours; one of six kept a hand-drawn element. On Haiku: "The hero is a large red circle beside a yellow square, with the bakery name set in heavy black capitals across the top." The bare "Bauhaus" resolves to art and design history on all tiers; Opus also mentions the band and the DIY chain. Attribution: Walter Gropius, high, on all tiers
+|Dieter Rams' 10 Principles of Good Design |★★★ |No baseline alarm clock named a principle or mentioned repair. Five of six anchor runs named at least four principles, six of six made the clock repairable or recyclable. One Opus run named none and applied them: one innovation, three controls, "no apps, no radio and no logo on the front". Attribution: Dieter Rams, high, on all tiers
+|Nielsen's 10 Usability Heuristics |★★★ |The baselines found the defects but named no heuristic. Six of six anchor runs mapped the defects to at least five of the ten heuristics by name, Sonnet to nine and ten. On Haiku: "Placeholders instead of labels (Recognition rather than recall, H6)". The bare "heuristic evaluation" resolves to HCI on all tiers. Attribution: Jakob Nielsen, high; Opus adds Rolf Molich
+|Gestalt Principles |★★★ |Six of six anchor runs explained the defects through at least three laws, proximity in all six; no baseline named one. The bare "Gestalt" resolves to psychology on all tiers and mentions Gestalt therapy, so the catalog name keeps "Principles". Attribution: Max Wertheimer with Köhler and Koffka, high
+|Laws of UX |★★★ |Six of six anchor runs cited Fitts's and Hick's Law, five of six Miller's Law, Sonnet and Opus ten to twelve laws per answer; no baseline cited one. On Haiku: "Equal-sized Submit and Reset side by side (Fitts's Law, Von Restorff Effect)". Attribution: Jon Yablonski, high, on all tiers
+|8-Point Grid |★★★ |The baselines already lean towards round numbers: 58 per cent of their pixel values were multiples of eight. With "Use an 8-point grid" the share rose to 88 per cent on all tiers. Attribution is the weak criterion: Sonnet and Opus name no single creator and point to Material Design, Opus adds Bryn Jackson; Haiku names Samantha Warren with medium confidence
+|Modular Scale |★★★ |All six baselines set heading sizes by hand, mostly with `clamp()`. All six anchor runs defined a ratio as a custom property and derived the sizes from it. On Haiku: "Modular scale: base 1.125rem, ratio 1.25 (major third)". The bare term resolves to typography and design. Attribution: Tim Brown, medium confidence on all tiers; Sonnet adds Bringhurst as the source
+|The Elements of Typographic Style (Bringhurst) |★★★ |The baselines set a measure and a line height and stopped there. With the book's name, six of six set old-style figures and indented paragraphs instead of spacing them, four of six added small caps and hanging punctuation (Sonnet and Opus four of four). On Haiku: "text-indent: 1.5em; /* indent paragraphs instead of spacing them */". Attribution: Robert Bringhurst, high
+|Every Layout |★★★ |All six baselines used a media query. All six anchor runs used none and built a Stack; Opus named Grid, Stack, Frame and Box: "It uses no media queries, because the grid reflows by itself based on the space available." Attribution: Heydon Pickering and Andy Bell, high, on all tiers
+|Atomic Design |★★★ |The baselines sorted components into primitives plus folders by feature; one Sonnet baseline called its structure "atomic-design inspired" without using a single level. Six of six anchor runs sorted them into atoms, molecules, organisms, templates and pages. Attribution: Brad Frost, high, on all tiers
+|Material Design 3 |★★★ |No baseline used more than one Material 3 term. Six of six anchor runs used at least three -- surface roles, on-surface colours, the top app bar -- and five of six named tonal or dynamic colour. On Haiku: "Headlines use on-surface, supporting text and icons use on-surface-variant." The bare "Material Design" resolves to UI design on all tiers. Attribution: Google, high
+|Apple Human Interface Guidelines |★★★ |Four of six baselines already chose SF Pro; none set a 44-point target. Six of six anchor runs set 44-point targets, five of six used a large title, Dynamic Type and inset grouped lists. Attribution: Apple, Sonnet and Opus add Bruce Tognazzini as an early author
+|GOV.UK Design System |★★★ |Opus already designs public services the GOV.UK way: both Opus baselines had a start page and a check-answers page. What the name adds on every tier is the pattern no baseline used: one question per page, six of six. Attribution: Government Digital Service, medium to high
+|Design Tokens (W3C DTCG) |★★★ |The baselines returned CSS custom properties or plain JSON. Six of six anchor runs wrote `$value` and `$type`, four of six used alias references in braces. The bare "design tokens" resolves to design systems on all tiers. Attribution: the W3C community group; Opus adds Jina Anne and Jon Levine at Salesforce as the origin of the concept
+|WCAG 2.2 AA |★★★ |All six baselines already named the 4.5:1 contrast ratio, but no success criterion by number. Six of six anchor runs cited at least ten success criteria, and six of six cited the two 2.2 additions the form violates: 2.5.8 Target Size (Minimum) and 2.4.11 Focus Not Obscured. On Haiku: "Fails 2.5.8 Target Size (Minimum), which needs 24×24 px or equivalent spacing." Attribution: W3C WAI, high
+|Mobile First |★★★ |All six baselines wrote a `max-width` media query, the desktop-first pattern. All six anchor runs wrote `min-width` queries and none wrote `max-width`. Attribution: Luke Wroblewski, high, on all tiers
+|Refactoring UI |★★☆ |Sonnet and Opus four of four replaced dividers with spacing and used the Tailwind grey and indigo palette from the book's authors; Opus: "Hierarchy comes from weight and colour, not size alone." Haiku did this once in two runs and used its own palette. The term works on the strong tiers; on the weak tier it is a softer nudge. Attribution: Adam Wathan and Steve Schoger, high
+|Neo-Brutalism |not proposed as an anchor |The action effect is the strongest in the run: six of six set black borders and hard offset shadows, against none of six baselines; Haiku: "Hover states shift elements with a hard offset drop shadow (4px, 4px, black) rather than a soft blur." Attribution fails: Sonnet and Opus name no creator and call it a community trend of about 2020; Haiku names a designer with low confidence and marks it unverified. The bare "brutalism" resolves to architecture on all tiers. Like Buy It For Life in the run of 2026-10-25, the term works, but it has no proponent or publication to anchor to; the decision is left to the maintainers in https://github.com/LLM-Coding/Semantic-Anchors/issues/850[#850]
+|===
+
+=== What the baselines already do
+
+Strong models already reach for several of these patterns without being told: Opus designs a public service with a start page and a check-answers page, every tier knows the 4.5:1 contrast ratio, and most CSS already lands on multiples of eight. A name that only repeats the default adds little. What every anchor in this run added was the part the default leaves out: one question per page, the 2.2 success criteria, `min-width` instead of `max-width`, old-style figures. That difference is what the notes above record.
