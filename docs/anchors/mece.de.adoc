@@ -3,6 +3,7 @@
 :roles: business-analyst, consultant, software-architect, data-scientist
 :proponents: Barbara Minto
 :tier: 3
+:definition: MECE – Mutually Exclusive, Collectively Exhaustive – ist ein Gliederungsprinzip aus Barbara Mintos Pyramid Principle: Ein Thema wird in Kategorien geteilt, die sich nicht überschneiden und zusammen alles abdecken. So entstehen saubere Strukturen ohne Lücken und Doppelungen für Analyse, Kommunikation und Problemzerlegung.
 :tags: MECE, mutually exclusive collectively exhaustive, Barbara Minto, structuring, McKinsey
 :related: pyramid-principle, bluf, morphological-box
 

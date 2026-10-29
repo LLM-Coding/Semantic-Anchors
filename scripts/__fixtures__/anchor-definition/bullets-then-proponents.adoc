@@ -1,0 +1,18 @@
+= Sample Anchor
+:categories: testing-quality
+:roles: software-developer
+:proponents: Jane Doe
+
+[%collapsible]
+====
+Full Name:: Sample Anchor -- an anchor used only in tests
+
+Also known as:: Example anchor
+
+[discrete]
+== *Core Concepts*:
+
+* *First idea.* Bullet-style concepts carry no definition-list entry.
+
+Key Proponents:: Jane Doe, who wrote the reference book on the sample anchor.
+====

@@ -1,0 +1,14 @@
+= Beispielanker
+:categories: testing-quality
+:roles: software-developer
+:proponents: Jane Doe
+
+[%collapsible]
+====
+Vollständiger Name:: Beispielanker -- ein Anker nur für Tests
+
+[discrete]
+== *Kernkonzepte*:
+
+Erster Begriff:: Ein abgeleiteter deutscher Definitionstext, lang genug für den Antwortblock.
+====

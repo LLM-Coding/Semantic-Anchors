@@ -5,6 +5,7 @@
 :tags: design-principles, oop, solid, uncle-bob
 :related: gof-design-patterns, clean-architecture
 :tier: 3
+:definition: SOLID sind fünf Prinzipien objektorientierten Entwurfs, bekannt gemacht von Robert C. Martin: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation und Dependency Inversion. Zusammen lenken sie Code zu loser Kopplung und hoher Kohäsion und mindern Starrheit und Zerbrechlichkeit, wenn ein System wächst.
 
 [%collapsible]
 ====

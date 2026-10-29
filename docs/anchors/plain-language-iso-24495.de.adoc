@@ -5,6 +5,7 @@
 :tags: Plain Language, Einfache Sprache, ISO 24495, ISO 24495-1, ISO 24495-2, DIN ISO 24495-1, DIN 8581-1, verständliche Sprache, relevant, auffindbar, verständlich, nutzbar, leserorientiertes Schreiben, Behördenkommunikation, Rechtssprache
 :related: plain-english-strunk-white, gutes-deutsch-wolf-schneider, simplified-technical-english, bluf, progressive-disclosure
 :tier: 2
+:definition: Einfache Sprache nach ISO 24495-1:2023 ist Kommunikation, deren Wortwahl, Struktur und Gestaltung so klar sind, dass die vorgesehenen Leser leicht finden, was sie brauchen, verstehen, was sie finden, und diese Information nutzen können. Die Norm setzt vier Grundprinzipien: relevant, auffindbar, verständlich und nutzbar.
 :prior-test: 2026-10-25
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

@@ -5,6 +5,7 @@
 :tags: Material Design 3, Material 3, M3, Material You, Material 3 Expressive, Google, Android, Dynamic Color, dynamische Farben, Farbrollen, Tonpalette, HCT, Surface, Surface Container, On-Surface, Design Tokens, Typografieskala, Formskala, Elevation, Top App Bar, Navigation Bar, FAB, Cards, Chips, Matías Duarte
 :related: apple-human-interface-guidelines, design-tokens-dtcg, eight-point-grid
 :tier: 3
+:definition: Material Design 3 ist Googles Design-System für Android und das Web, 2021 als Material You eingeführt und 2025 um Material 3 Expressive erweitert. Es definiert Farbrollen und dynamische Farbe aus einer Ausgangsfarbe, Design Tokens, eine Schrift- und Formskala, tonale Erhebung und Standardkomponenten.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

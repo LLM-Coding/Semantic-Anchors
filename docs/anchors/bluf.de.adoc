@@ -3,6 +3,7 @@
 :roles: business-analyst, team-lead, technical-writer, consultant
 :proponents: US-Militär (Army writing standards), weithin in Wirtschaft und Regierung übernommen
 :tier: 3
+:definition: BLUF – Bottom Line Up Front – ist eine Kommunikationsstruktur aus der Praxis des US-Militärs: Schlussfolgerung, Entscheidung oder zentrale Bitte stehen im allerersten Satz, die Begründung folgt danach. Der Leser erfährt das Wesentliche sofort, statt bis zum Ende lesen zu müssen.
 :tags: BLUF, bottom line up front, concise communication, executive summary, clarity
 :related: pyramid-principle, mece, inverted-pyramid-style, plain-english-strunk-white
 
