@@ -57,8 +57,8 @@ const CORE_CONCEPTS = /Core Concepts|Kernkonzepte/i
 const METADATA_TERM = new RegExp(
   '^[\\s*_]*(' +
     [
-      'Key Proponents',
-      'Wichtige Vertreter',
+      'Key Proponents?',
+      'Wichtige[rn]? Vertreter(in)?',
       'Schlüsselvertreter(in)?',
       'Hauptvertreter',
       'Wichtige Proponenten',

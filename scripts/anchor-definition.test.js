@@ -36,12 +36,13 @@ describe('getAnchorDefinition', () => {
 
   // #861: bullet-style Core Concepts have no definition-list entry, so the
   // first `Term::` line after the heading is metadata. No answer beats a wrong one.
-  it.each(['bullets-then-proponents.adoc', 'bullets-then-proponents.de.adoc'])(
-    'never derives a definition from a metadata term (%s)',
-    (file) => {
-      expect(getAnchorDefinition(`${FIXTURES}/${file}`)).toBeNull()
-    }
-  )
+  it.each([
+    'bullets-then-proponents.adoc',
+    'bullets-then-proponent-singular.adoc',
+    'bullets-then-proponents.de.adoc',
+  ])('never derives a definition from a metadata term (%s)', (file) => {
+    expect(getAnchorDefinition(`${FIXTURES}/${file}`)).toBeNull()
+  })
 
   it('derives a German definition wherever the English twin derives one', () => {
     // Invariant over the real catalog: a German file derives a definition
