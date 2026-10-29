@@ -322,6 +322,7 @@
         "works": true
       }
     ],
+    "exampleImage": "apple-human-interface-guidelines.webp",
     "definition": "The Apple Human Interface Guidelines are Apple's design guidance for iOS, iPadOS, macOS, watchOS, tvOS and visionOS. They cover hit regions of at least 44 by 44 points as a general rule and 60 by 60 in visionOS, SF Pro and SF Symbols, Dynamic Type, navigation patterns, system colours and accessibility, and since 2025 the Liquid Glass material.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
@@ -554,6 +555,7 @@
         "works": true
       }
     ],
+    "exampleImage": "bauhaus.webp",
     "definition": "Bauhaus was the German school of design founded by Walter Gropius in Weimar in 1919 and closed in Berlin in 1933. As a design instruction, the name evokes the style later drawn from it: form follows function, basic geometric shapes such as circle, square and triangle, primary colours, geometric sans-serif type and the unity of art, craft and industry.",
     "addedAt": "2026-10-28T23:45:32+01:00"
   },
@@ -673,6 +675,7 @@
         "works": true
       }
     ],
+    "exampleImage": "bento-grid.webp",
     "definition": "A bento grid is a layout of rounded tiles in different sizes on one grid, each tile holding one feature, figure or image. Size carries the hierarchy, usually with one large hero tile and smaller tiles around it; the layout became popular through Apple's product presentations.",
     "addedAt": "2026-10-29T08:34:15+01:00"
   },
@@ -2153,6 +2156,7 @@
         "works": true
       }
     ],
+    "exampleImage": "dieter-rams-ten-principles.webp",
     "definition": "Dieter Rams' ten principles of good design say that good design is innovative, useful, aesthetic, understandable, unobtrusive, honest, long-lasting, thorough down to the last detail, environmentally friendly, and as little design as possible. The Braun designer summed them up as \"less, but better\": remove the unnecessary rather than imitate a minimal look.",
     "addedAt": "2026-10-28T23:45:32+01:00"
   },
@@ -3665,6 +3669,7 @@
         "works": true
       }
     ],
+    "exampleImage": "glassmorphism.webp",
     "definition": "Glassmorphism is a UI style of translucent, frosted-glass panels that blur the colourful background behind them, float on separate layers and carry a subtle light border. Michał Malewicz named it in 2020; in CSS it rests on semi-transparent fills and backdrop-filter blur.",
     "addedAt": "2026-10-29T08:34:15+01:00"
   },
@@ -4650,6 +4655,7 @@
         "works": true
       }
     ],
+    "exampleImage": "gov-uk-design-system.webp",
     "definition": "The GOV.UK Design System is the UK Government Digital Service's library of styles, components and patterns for public services, launched in 2018. It is known for one question per page, a start page, a check-answers page, clear error summaries and plain English, all tested with real users.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
@@ -6025,6 +6031,7 @@
         "works": true
       }
     ],
+    "exampleImage": "material-design-3.webp",
     "definition": "Material Design 3 is Google's design system for Android and the web, introduced as Material You in 2021 and extended by Material 3 Expressive in 2025. It defines colour roles and dynamic colour from a source colour, design tokens, a type and shape scale, tonal elevation and standard components.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
@@ -6617,6 +6624,7 @@
         "works": true
       }
     ],
+    "exampleImage": "neo-brutalism.webp",
     "definition": "Neo-Brutalism is a web and UI design style with thick black outlines, hard offset shadows without blur, flat saturated colours, blocky visible structure and heavy plain type. Unlike raw brutalist web design it keeps a grid and a clear hierarchy; it spread as a community trend.",
     "addedAt": "2026-10-28T23:56:47+01:00"
   },
@@ -8736,6 +8744,7 @@
         "works": true
       }
     ],
+    "exampleImage": "swiss-style.webp",
     "definition": "Swiss Style, also called the International Typographic Style, is the grid-based graphic design of the Zurich and Basel schools from the 1950s. It sets a modular grid first, uses sans-serif type such as Akzidenz-Grotesk or Helvetica flush left, ragged right, balances elements asymmetrically and puts clarity before expression.",
     "addedAt": "2026-10-25T08:47:44+01:00"
   },
@@ -9477,6 +9486,7 @@
         "works": true
       }
     ],
+    "exampleImage": "tufte-style.webp",
     "definition": "Tufte Style means the information-design principles of Edward R. Tufte: maximise the data-ink ratio, remove chartjunk, keep graphical integrity, use small multiples, sparklines and direct labels instead of legends. The point is density, not emptiness: the space freed from decoration carries more information.",
     "addedAt": "2026-08-25T09:12:59+02:00"
   },

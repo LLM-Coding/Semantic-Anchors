@@ -8,6 +8,7 @@
 :definition: Neo-Brutalism ist ein Web- und UI-Stil mit dicken schwarzen Umrissen, harten versetzten Schatten ohne Unschärfe, flachen gesättigten Farben, blockiger sichtbarer Struktur und kräftiger schlichter Schrift. Anders als rohes brutalistisches Webdesign behält er ein Raster und eine klare Hierarchie; er verbreitete sich als Trend in der Community.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: neo-brutalism.webp
 
 [%collapsible]
 ====

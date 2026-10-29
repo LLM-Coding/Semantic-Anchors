@@ -8,6 +8,7 @@
 :definition: Swiss Style, auch International Typographic Style genannt, ist das rasterbasierte Grafikdesign der Zürcher und Basler Schulen aus den 1950er-Jahren. Es legt zuerst ein Modulraster fest, setzt serifenlose Schrift wie Akzidenz-Grotesk oder Helvetica linksbündig im Flattersatz, ordnet Elemente asymmetrisch und stellt Klarheit über Ausdruck.
 :prior-test: 2026-10-25
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: swiss-style.webp
 
 [%collapsible]
 ====

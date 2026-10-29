@@ -8,6 +8,7 @@
 :definition: Das Bauhaus war die deutsche Gestaltungsschule, die Walter Gropius 1919 in Weimar gründete und die 1933 in Berlin schloss. Als Gestaltungsanweisung ruft der Name den daraus abgeleiteten Stil auf: Die Form folgt der Funktion, geometrische Grundformen wie Kreis, Quadrat und Dreieck, Primärfarben, geometrische serifenlose Schrift und die Einheit von Kunst, Handwerk und Industrie.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: bauhaus.webp
 
 [%collapsible]
 ====

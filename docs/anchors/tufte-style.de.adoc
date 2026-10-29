@@ -8,6 +8,7 @@
 :definition: Tufte Style meint die Prinzipien der Informationsgestaltung von Edward R. Tufte: das Data-Ink-Verhältnis maximieren, Chartjunk entfernen, grafische Integrität wahren, Small Multiples, Sparklines und direkte Beschriftung statt Legenden verwenden. Es geht um Dichte, nicht um Leere: Der von Dekoration befreite Platz trägt mehr Information.
 :prior-test: 2026-08-25
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
+:example-screenshot: tufte-style.webp
 
 [%collapsible]
 ====

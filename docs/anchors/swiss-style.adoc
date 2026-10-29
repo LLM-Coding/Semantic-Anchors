@@ -8,6 +8,7 @@
 :definition: Swiss Style, also called the International Typographic Style, is the grid-based graphic design of the Zurich and Basel schools from the 1950s. It sets a modular grid first, uses sans-serif type such as Akzidenz-Grotesk or Helvetica flush left, ragged right, balances elements asymmetrically and puts clarity before expression.
 :prior-test: 2026-10-25
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: swiss-style.webp
 
 [%collapsible]
 ====

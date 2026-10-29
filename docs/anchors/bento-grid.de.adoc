@@ -8,6 +8,7 @@
 :definition: Ein Bento Grid ist ein Layout aus abgerundeten Kacheln unterschiedlicher Größe auf einem Raster; jede Kachel trägt ein Feature, eine Zahl oder ein Bild. Die Größe trägt die Hierarchie, meist mit einer großen Hauptkachel und kleineren Kacheln darum; bekannt wurde das Layout durch Apples Produktpräsentationen.
 :prior-test: 2026-10-29
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: bento-grid.webp
 
 [%collapsible]
 ====

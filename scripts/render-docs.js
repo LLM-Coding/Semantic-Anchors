@@ -23,6 +23,7 @@ const Asciidoctor = require('@asciidoctor/core')
 const { getAnchorDefinition } = require('./lib/anchor-definition')
 const { injectByline } = require('./lib/byline')
 const { hideSectionAnchors } = require('./lib/section-anchors')
+const { exampleImageHtml, exampleImageFor } = require('./lib/example-image')
 const { rewriteAnchorXrefs } = require('./lib/anchor-xrefs')
 
 const asciidoctor = Asciidoctor()
@@ -116,7 +117,14 @@ function rewriteLegacyHashLinks(html) {
   return html.replace(/href="#\//g, 'href="/Semantic-Anchors/')
 }
 
-function renderFile(srcPath, destPath, quiet = false, prependHtml = '', transform = (h) => h) {
+function renderFile(
+  srcPath,
+  destPath,
+  quiet = false,
+  prependHtml = '',
+  transform = (h) => h,
+  appendHtml = () => ''
+) {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
@@ -129,7 +137,7 @@ function renderFile(srcPath, destPath, quiet = false, prependHtml = '', transfor
     const revdate = String(doc.getRevisionDate() || '').trim()
     const html = hideSectionAnchors(injectByline(String(doc.convert()), author, revdate))
     const { toc, body } = extractToc(transform(rewriteLegacyHashLinks(html)))
-    fs.writeFileSync(destPath, prependHtml + body, 'utf-8')
+    fs.writeFileSync(destPath, prependHtml + body + appendHtml(doc), 'utf-8')
     if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
     const tocPath = destPath.replace(/\.html$/, '.toc.html')
     if (toc) {
@@ -274,7 +282,15 @@ for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
     path.join(ANCHORS_OUT, file.replace(/\.adoc$/, '.html')),
     true,
     answerBlockHtml(`docs/anchors/${file}`),
-    (html) => rewriteAnchorXrefs(html, { lang, anchorIds, germanIds })
+    (html) => rewriteAnchorXrefs(html, { lang, anchorIds, germanIds }),
+    // Example image below the anchor text, like in the modal; '' without one.
+    // The file name comes from the English anchor (validated by extract-metadata).
+    (doc) =>
+      exampleImageHtml(
+        exampleImageFor(path.join(ANCHORS_SRC, file)),
+        String(doc.getDocumentTitle({ sanitize: true }) || ''),
+        lang
+      )
   )
   anchorFragments++
 }

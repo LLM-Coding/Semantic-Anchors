@@ -8,6 +8,7 @@
 :definition: Tufte Style means the information-design principles of Edward R. Tufte: maximise the data-ink ratio, remove chartjunk, keep graphical integrity, use small multiples, sparklines and direct labels instead of legends. The point is density, not emptiness: the space freed from decoration carries more information.
 :prior-test: 2026-08-25
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
+:example-screenshot: tufte-style.webp
 
 [%collapsible]
 ====

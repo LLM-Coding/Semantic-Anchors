@@ -8,6 +8,7 @@
 :definition: Glassmorphism ist ein UI-Stil aus durchscheinenden Milchglas-Flächen, die den farbigen Hintergrund dahinter unscharf zeigen, auf eigenen Ebenen schweben und einen feinen hellen Rand tragen. Michał Malewicz benannte ihn 2020; in CSS beruht er auf halbtransparenten Füllungen und backdrop-filter mit Unschärfe.
 :prior-test: 2026-10-29
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: glassmorphism.webp
 
 [%collapsible]
 ====

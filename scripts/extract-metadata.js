@@ -13,6 +13,7 @@ const path = require('path')
 const { execFileSync } = require('child_process')
 const asciidoctor = require('@asciidoctor/core')()
 const { getAnchorDefinition } = require('./lib/anchor-definition')
+const { isSafeExampleImage } = require('./lib/example-image')
 
 // Paths
 const REPO_ROOT = path.join(__dirname, '..')
@@ -160,6 +161,13 @@ function parseAnchorFile(filePath) {
   const advisoryAttr = attributes.advisory
   if (advisoryAttr) anchor.advisory = decodeHtmlEntities(advisoryAttr.trim())
 
+  // Optional example image for the detail view: a plain file name inside
+  // website/public/examples/. Validated below so a typo fails the build instead
+  // of shipping a broken image. Not called `:example-image:`: the AsciiDoc linter
+  // reads `image: <file>` inside that name as an inline image macro.
+  const exampleImageAttr = attributes['example-screenshot']
+  if (exampleImageAttr) anchor.exampleImage = exampleImageAttr.trim()
+
   // Curated direct-answer definition (#580): a standalone "What is X?" sentence.
   // Use the shared resolver so the cleaning/validation matches the crawlable
   // answer block and the JSON-LD exactly — but keep only the *curated* value, so
@@ -182,6 +190,21 @@ function parseAnchorFile(filePath) {
   }
   if (anchor.proponents.length === 0) {
     warnings.push(`Missing :proponents: attribute`)
+  }
+  if (anchor.exampleImage) {
+    if (!isSafeExampleImage(anchor.exampleImage)) {
+      errors.push(
+        `Invalid :example-screenshot: "${anchor.exampleImage}" (plain file name expected)`
+      )
+    } else if (
+      !fs.existsSync(
+        path.join(__dirname, '..', 'website', 'public', 'examples', anchor.exampleImage)
+      )
+    ) {
+      errors.push(
+        `:example-screenshot: file website/public/examples/${anchor.exampleImage} not found`
+      )
+    }
   }
 
   if (errors.length > 0) {
