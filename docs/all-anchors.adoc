@@ -911,6 +911,9 @@ include::anchors/mobile-first.adoc[leveloffset=+2]
 [[modular-scale]]
 include::anchors/modular-scale.adoc[leveloffset=+2]
 
+[[neo-brutalism]]
+include::anchors/neo-brutalism.adoc[leveloffset=+2]
+
 include::anchors/nielsen-usability-heuristics.adoc[leveloffset=+2]
 
 [[refactoring-ui]]
