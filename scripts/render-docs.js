@@ -23,7 +23,7 @@ const Asciidoctor = require('@asciidoctor/core')
 const { getAnchorDefinition } = require('./lib/anchor-definition')
 const { injectByline } = require('./lib/byline')
 const { hideSectionAnchors } = require('./lib/section-anchors')
-const { exampleImageHtml } = require('./lib/example-image')
+const { exampleImageHtml, exampleImageFor } = require('./lib/example-image')
 
 const asciidoctor = Asciidoctor()
 const ROOT = path.join(__dirname, '..')
@@ -264,9 +264,10 @@ for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
     true,
     answerBlockHtml(`docs/anchors/${file}`),
     // Example image below the anchor text, like in the modal; '' without one.
+    // The file name comes from the English anchor (validated by extract-metadata).
     (doc) =>
       exampleImageHtml(
-        doc.getAttribute('example-screenshot'),
+        exampleImageFor(path.join(ANCHORS_SRC, file)),
         String(doc.getDocumentTitle({ sanitize: true }) || ''),
         file.endsWith('.de.adoc') ? 'de' : 'en'
       )

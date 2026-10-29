@@ -342,7 +342,8 @@ export async function loadAnchorContent(anchorId) {
       figure.className = 'anchor-example-image'
       const img = document.createElement('img')
       img.src = `${import.meta.env.BASE_URL}examples/${currentAnchor.exampleImage}`
-      img.alt = i18n.t('anchor.exampleImageAlt').replace('{title}', currentAnchor.title || title)
+      // The rendered heading, so the German alt text matches the static page.
+      img.alt = i18n.t('anchor.exampleImageAlt').replace('{title}', title)
       img.setAttribute('width', '720')
       img.setAttribute('height', '900')
       img.setAttribute('loading', 'lazy')

@@ -379,6 +379,38 @@ describe('anchor-modal', () => {
       expect(figure.compareDocumentPosition(note) & 4).toBeTruthy()
     })
 
+    it('should show the German caption and use the rendered (German) title in the alt text', async () => {
+      const { i18n } = await import('../i18n.js')
+      global.localStorage = window.localStorage
+      i18n.setLang('de')
+      try {
+        global.fetch.mockResolvedValue({
+          ok: true,
+          text: async () => '= Schweizer Stil\n\nInhalt',
+        })
+
+        await showAnchorDetails('swiss-style')
+
+        const figure = document.querySelector('#modal-content figure.anchor-example-image')
+        expect(figure.querySelector('figcaption').textContent).toContain('Claude Opus 5.5')
+        expect(figure.querySelector('figcaption').textContent).toContain('Stil')
+        expect(figure.querySelector('img').getAttribute('alt')).toContain('Schweizer Stil')
+      } finally {
+        i18n.setLang('en')
+        delete global.localStorage
+      }
+    })
+
+    it('should name the model in the caption', async () => {
+      global.fetch.mockResolvedValue({ ok: true, text: async () => '= Swiss Style\n\nContent' })
+
+      await showAnchorDetails('swiss-style')
+
+      expect(document.querySelector('.anchor-example-image figcaption').textContent).toContain(
+        'Claude Opus 5.5'
+      )
+    })
+
     it('should render no image for an anchor without one', async () => {
       global.fetch.mockResolvedValue({ ok: true, text: async () => '= Plain\n\nContent' })
 

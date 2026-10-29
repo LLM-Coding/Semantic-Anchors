@@ -41,18 +41,36 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;')
 }
 
+// Out-of-range entities stay as written instead of throwing a RangeError.
+function codePoint(n, original) {
+  return n <= 0x10ffff ? String.fromCodePoint(n) : original
+}
+
 /**
  * Asciidoctor hands out document titles with entities (`&amp;`, `&#8217;`).
  * Decode them before escaping, so the alt text never shows `&amp;amp;`.
  */
 function decodeEntities(s) {
   return String(s)
-    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&#(\d+);/g, (m, n) => codePoint(Number(n), m))
+    .replace(/&#x([0-9a-f]+);/gi, (m, n) => codePoint(parseInt(n, 16), m))
     .replace(/&quot;/g, '"')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&amp;/g, '&')
+}
+
+/**
+ * The image an anchor file shows. Always read from the English file, for the
+ * German page too: extract-metadata validates only the English files, and the
+ * modal takes the value from anchors.json, which is built from them. The
+ * mirrored attribute in the .de.adoc is ignored, so a typo there cannot break
+ * or hide the image on one language only.
+ */
+function exampleImageFor(adocPath) {
+  const enPath = adocPath.replace(/\.de\.adoc$/, '.adoc')
+  const match = fs.readFileSync(enPath, 'utf-8').match(/^:example-screenshot:[ \t]*(\S+)/m)
+  return match ? match[1] : ''
 }
 
 function isSafeExampleImage(name) {
@@ -76,4 +94,4 @@ function exampleImageHtml(name, title, lang) {
   )
 }
 
-module.exports = { exampleImageHtml, isSafeExampleImage, BLOG_URL }
+module.exports = { exampleImageHtml, exampleImageFor, isSafeExampleImage, BLOG_URL }

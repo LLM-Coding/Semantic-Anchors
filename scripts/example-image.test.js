@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest'
-import { exampleImageHtml, isSafeExampleImage } from './lib/example-image.js'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { exampleImageHtml, isSafeExampleImage, exampleImageFor } from './lib/example-image.js'
+
+const ANCHORS = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs', 'anchors')
 
 describe('exampleImageHtml', () => {
   it('renders a figure with image, alt text and a caption linking to the blog post', () => {
@@ -41,5 +45,21 @@ describe('exampleImageHtml', () => {
     expect(isSafeExampleImage('a/b.webp')).toBe(false)
     expect(isSafeExampleImage('x.svg')).toBe(false)
     expect(exampleImageHtml('../x.webp', 'X', 'en')).toBe('')
+  })
+
+  it('survives a numeric entity outside the Unicode range', () => {
+    expect(() => exampleImageHtml('swiss-style.webp', 'X &#99999999; Y', 'en')).not.toThrow()
+  })
+})
+
+describe('exampleImageFor', () => {
+  it('reads the image from the English anchor, also for the German page', () => {
+    expect(exampleImageFor(path.join(ANCHORS, 'swiss-style.adoc'))).toBe('swiss-style.webp')
+    expect(exampleImageFor(path.join(ANCHORS, 'swiss-style.de.adoc'))).toBe('swiss-style.webp')
+  })
+
+  it('returns an empty string for an anchor without an image', () => {
+    expect(exampleImageFor(path.join(ANCHORS, 'tdd-london-school.adoc'))).toBe('')
+    expect(exampleImageFor(path.join(ANCHORS, 'tdd-london-school.de.adoc'))).toBe('')
   })
 })
