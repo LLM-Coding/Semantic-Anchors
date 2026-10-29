@@ -5,6 +5,7 @@
 :tags: Atomic Design, Brad Frost, atoms, molecules, organisms, templates, pages, design systems, pattern library, component library, Pattern Lab, Dave Olsen, UI components, component hierarchy
 :related: design-tokens-dtcg, bem-methodology, material-design-3
 :tier: 3
+:definition: Atomic Design is Brad Frost's methodology for building design systems from five levels: atoms, molecules, organisms, templates and pages. Small elements combine into larger components and finally into pages with real content, which gives component libraries a shared structure.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

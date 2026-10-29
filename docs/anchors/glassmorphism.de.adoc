@@ -1,0 +1,52 @@
+= Glassmorphism
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Michał Malewicz
+:tags: Glassmorphism, Milchglas, Glass UI, backdrop-filter, Hintergrundunschärfe, durchscheinende Flächen, halbtransparent, heller Rahmen, Ebenen, UI-Trend, Liquid Glass, Neumorphismus
+:related: apple-human-interface-guidelines, neo-brutalism, wcag-22-aa
+:tier: 3
+:prior-test: 2026-10-29
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Glassmorphism -- ein UI-Stil aus durchscheinenden Milchglas-Flächen mit Hintergrundunschärfe und feinem hellem Rand, über einen farbigen Hintergrund gelegt
+
+Auch bekannt als:: Milchglas-UI, Glass UI
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Milchglas-Transparenz.* Flächen sind halbtransparent, meist eine weiße oder dunkle Füllung mit geringer Deckkraft, und zeichnen alles dahinter unscharf. In CSS ist das `backdrop-filter` mit einem Unschärferadius, etwa `backdrop-filter: blur(16px)`.
+* *Schwebende Ebenen.* Flächen liegen auf eigenen Ebenen über dem Hintergrund und übereinander; Tiefe entsteht durch Transparenz, nicht durch schwere Schatten.
+* *Ein kräftiger Hintergrund zum Verwischen.* Der Effekt braucht etwas, das durchscheint: Verläufe, farbige Flecken oder Fotos hinter dem Glas.
+* *Ein feiner heller Rand.* Eine dünne, halbtransparente weiße Kante fängt das Licht und trennt die Fläche vom Hintergrund.
+* *Weiche Schatten und runde Ecken.* Flächen haben großzügige Radien und höchstens einen weichen Schatten darunter.
+
+Wichtige Vertreter:: Michał Malewicz, der den Stil in https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9[„Glassmorphism in user interfaces“] (UX Collective, 22. November 2020) benannte und seine vier Merkmale aufzählte: Milchglas-Transparenz, schwebende Ebenen, kräftige Farben und ein feiner heller Rand.
+
+[discrete]
+== *Wann verwenden*:
+
+* Overlays, Karten und Bedienfelder, die über Bildern oder farbigen Verläufen liegen
+* Marketing-Seiten, Musik- und Medien-Apps, Dashboards, die leicht und geschichtet wirken sollen
+* Als Gegenanweisung, wenn generierte Entwürfe flache, deckende Karten nutzen und du Tiefe ohne schwere Schatten willst
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Den Stil aus einer verwandten Aufgabe erwarten.* In unserem Prior-Test am 29.10.2026 bekam der Wiedergabe-Bildschirm eines Musik-Players schon in allen sechs Baselines einen unscharfen Hintergrund. Bei einer neutralen Aufgabe -- dem Preisbereich einer SaaS-Landingpage -- machte keine Baseline ihre Karten durchscheinend oder nutzte `backdrop-filter`; mit „Use glassmorphism.“ taten sechs von sechs Läufen beides.
+* *Den Hintergrund vergessen.* Glas über einer schlichten weißen Seite zeigt nichts. Der Stil braucht Farbe oder Bilder dahinter.
+* *Durchscheinend für lesbar halten.* Text auf Glas liegt über einem wechselnden Hintergrund; den Kontrast muss man gegen die unruhigste Stelle dahinter prüfen.
+* *Den Stil mit Neumorphismus verwechseln.* Neumorphismus formt weiche Erhebungen aus einer festen Fläche; Glassmorphism schichtet durchsichtige Scheiben.
+
+[discrete]
+== *Kritik*:
+
+* *Schwer für Menschen mit Behinderungen.* Nicko Syropoulos schreibt in https://axesslab.com/?p=5111[„Glassmorphism Meets Accessibility: Can Glass Be Inclusive?“] (Axess Lab, 2025), der Stil stelle große Herausforderungen, auch wenn er ästhetisch gefalle („this style offers great challenges even if it is aesthetically pleasing“). Er nennt schwachen Textkontrast über farbigen Bildern, ablenkende Hintergründe, Unschärfe und Bewegung, die die Augen anstrengen können, und verwischte Grenzen, die Bedienelemente verbergen.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Mit Liquid Glass zurück im Mainstream.* Apples Designsprache von 2025 für iOS 26 und die anderen Plattformen nutzt ein durchscheinendes Material, das nach Apples Worten seine Umgebung spiegelt und bricht (https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/[„reflects and refracts its surroundings“]). Ohne weiteren Kontext meint „glassmorphism“ am ehesten den Stil aus Malewiczs Artikel von 2020; für Apples Fassung nenne Liquid Glass und die <<apple-human-interface-guidelines,Apple Human Interface Guidelines>>.
+====

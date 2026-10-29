@@ -1,0 +1,48 @@
+= Bento Grid
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, product-owner
+:proponents: Community design trend (no single originator), Apple (product and keynote summary slides)
+:tags: Bento Grid, Bento-Box-Layout, Bento UI, Kachel-Layout, Kartenraster, unterschiedliche Kachelgrößen, CSS Grid, Feature-Bereich, Landingpage, Apple Keynote, Metro-Design, Dashboard-Layout
+:related: eight-point-grid, gestalt-principles, swiss-style
+:tier: 3
+:prior-test: 2026-10-29
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Bento Grid -- ein Layout aus abgerundeten Kacheln unterschiedlicher Größe auf einem Raster, jede Kachel mit genau einem Inhalt
+
+Auch bekannt als:: Bento-Box-Layout, Bento UI
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Ein Raster, Kacheln in verschiedenen Größen.* Kacheln überspannen eine oder mehrere Spalten und Zeilen -- 2 × 2, 2 × 1, 1 × 1 --, sodass das Layout ungleichmäßig wirkt und trotzdem ausgerichtet bleibt.
+* *Die Größe trägt die Hierarchie.* Der wichtigste Inhalt bekommt die größte Kachel; Nebensächliches füllt die kleineren darum herum.
+* *Eine Idee pro Kachel.* Jedes Fach enthält ein Feature, eine Zahl, ein Bild oder eine kurze Aussage -- so wie eine Bento-Box ein Gericht pro Fach.
+* *Abgerundete Karten mit gleichen Abständen.* Kacheln haben großzügige Eckenradien und rundum denselben Abstand; dadurch wirken die ungleichen Größen wie ein System.
+* *Reicher Kachelinhalt.* Kacheln zeigen oft einen Produkt-Screenshot, eine große Zahl oder ein Icon statt nur Text.
+* *Gebaut auf CSS Grid.* Spalten und Zeilen zu überspannen ist genau das, was CSS Grid kann; auf schmalen Bildschirmen fallen die Kacheln in ein oder zwei Spalten zusammen.
+
+Wichtige Vertreter:: Kein einzelner Urheber. Viele führen es auf Apples Werbevideos und die Zusammenfassungsfolien seiner Keynotes zurück; andere sehen den Vorläufer im Kachel-Layout von Microsofts Metro-Design in Windows Phone 7 (https://bootcamp.uxdesign.cc/web-design-trend-bento-box-95814d99ac62[„Web design trend: bento box“], UX Collective Bootcamp). Der Name stammt von der japanischen Bento-Box mit ihren getrennten Fächern.
+
+[discrete]
+== *Wann verwenden*:
+
+* Feature-Bereiche auf Produkt-Landingpages, wenn eine Handvoll unterschiedlich wichtiger Features auf einen Bildschirm passen soll
+* Portfolios, Dashboards und Übersichten „auf einen Blick“
+* Als Gegenanweisung, wenn generierte Layouts auf ein gleichförmiges Raster identischer Karten zurückfallen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Jedes Kartenraster für ein Bento Grid halten.* Ein Raster identischer Karten ist nur ein Kartenraster. Erst die unterschiedlichen Kachelgrößen machen es zum Bento Grid.
+* *Das bloße „bento“ verwenden.* In unserem Prior-Test am 29.10.2026 führte „What is bento?“ auf allen drei Modellstufen zum japanischen Essen. Sag „bento grid“.
+* *Es als Standard erwarten.* Im selben Test legten fünf von sechs Baselines sechs Features als gleichförmiges Raster aus drei mal zwei Karten an. Mit „Use a bento grid.“ mischten sechs von sechs Läufen die Kachelgrößen, meist mit einer Hauptkachel von 2 × 2 und kleineren Kacheln darum.
+* *Den schmalen Bildschirm vergessen.* Die Komposition hängt von der Breite ab; auf dem Handy wird daraus ein Stapel, und die Hierarchie muss das überstehen.
+
+[discrete]
+== *Kritik*:
+
+* *Zu viel auf einem Bildschirm.* David Jaja warnt in https://www.freecodecamp.org/news/bento-grids-in-web-design/[„Bento Grids in Web Design“] (freeCodeCamp, 2024) vor der Gefahr, zu viel Information auf einen einzigen Bildschirm zu packen („there's a risk of cramming too much information into a single screen“). Er nennt außerdem schwache Hierarchie, wenn die Kacheln gleich aussehen, Entscheidungsüberlastung und Eintönigkeit, wenn das Raster überstrapaziert wird.
+====

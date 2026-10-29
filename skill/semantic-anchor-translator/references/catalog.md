@@ -1212,3 +1212,13 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Neobrutalism, neubrutalism
 - **Proponents:** No single originator (community trend); defined by Nielsen Norman Group (Hayat Sheikh, 2025)
 - **Core:** Web/UI style — thick black outlines, hard offset shadows without blur, flat saturated colours, blocky visible structure, heavy grotesque or monospace type, but with a grid and clear hierarchy (unlike raw brutalist web design); say "neo-brutalism", because the bare "brutalism" resolves to architecture
+
+### Bento Grid
+- **Also known as:** Bento box layout, bento UI
+- **Proponents:** No single originator; often attributed to Apple's promotional videos and keynote summary slides (Microsoft Metro tiles as precursor)
+- **Core:** Rounded tiles of different sizes on one grid (2×2 hero tile, 2×1 and 1×1 tiles), one idea per tile, size carries the hierarchy, even gaps, built on CSS Grid and collapsing to a stack on phones; say "bento grid", because the bare "bento" resolves to food
+
+### Glassmorphism
+- **Also known as:** Frosted glass UI, glass UI
+- **Proponents:** Michał Malewicz (named it, UX Collective, 2020)
+- **Core:** Translucent panels with background blur (`backdrop-filter`), floating layers, a vivid background to show through, a subtle light border, soft shadows and rounded corners; check text contrast against the busiest area behind the glass; Apple's Liquid Glass (2025) is a later, distinct variant

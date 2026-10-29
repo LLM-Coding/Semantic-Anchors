@@ -5,6 +5,7 @@
 :tags: modular scale, type scale, typographic scale, ratio, base size, major third, perfect fourth, golden section, golden ratio, musical intervals, font sizes, heading sizes, CSS custom properties, Tim Brown, Scott Kellum, Robert Bringhurst, typography
 :related: elements-of-typographic-style, eight-point-grid, every-layout
 :tier: 3
+:definition: A modular scale is a sequence of type sizes derived from one base size and one ratio, such as 1.25 (major third) or 1.618 (golden section). Popularised for the web by Tim Brown in 2011, it replaces hand-picked heading sizes with a consistent progression.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

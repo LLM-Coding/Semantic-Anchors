@@ -400,6 +400,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Bento Grid -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/bento-grid</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/bento-grid</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Big Five (OCEAN) Personality Traits -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/big-five</loc>
@@ -1520,6 +1535,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/github-flow</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Glassmorphism -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/glassmorphism</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/glassmorphism</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

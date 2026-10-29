@@ -5,6 +5,7 @@
 :tags: 8-point grid, 8pt grid, 8dp grid, baseline grid, spacing system, spacing scale, 4-point grid, soft grid, hard grid, Material Design, Bryn Jackson, spec.fm, layout, CSS spacing, design tokens
 :related: modular-scale, material-design-3, design-tokens-dtcg
 :tier: 3
+:definition: The 8-point grid is a spacing system for user interfaces in which all margins, paddings and component sizes are multiples of eight, with four as a half-step for type and icons. Popularised by Material Design's 8dp baseline grid and Bryn Jackson's guide, it keeps spacing consistent across screens.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

@@ -2,6 +2,15 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-29
+
+*Two new anchors -- Bento Grid and Glassmorphism:*
+
+* *link:#/anchor/bento-grid[Bento Grid]* (community trend, often attributed to Apple) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/857[#857]: a features section moves from a uniform three-by-two card grid (five of six baselines) to mixed tile sizes on one grid (six of six). Say "bento grid": the bare "bento" resolves to food. Tier ★★★.
+* *link:#/anchor/glassmorphism[Glassmorphism]* (Michał Malewicz, 2020) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/858[#858]: pricing cards become translucent with `backdrop-filter` blur in six of six runs, none of six baselines. Current Status points to Apple's Liquid Glass. Tier ★★★.
+
+Both were left out on 2026-10-28 as trend terms; after the Neo-Brutalism decision (#850) they were tested and added. Full detail in the link:#/prior-tests[prior-test register], run 2026-10-29.
+
 == 2026-10-28
 
 *New category -- UX & Visual Design.* The catalog gets a category for visual styles, usability heuristics, perception, typography, layout systems, design systems and accessibility. Until now these anchors sat in Design Principles & Patterns, which holds software design -- SOLID, the GoF patterns, the Law of Demeter -- so "design" meant two things in one category. link:#/anchor/swiss-style[Swiss Style] moves to the new category; link:#/anchor/tufte-style[Tufte Style] moves there and keeps Communication & Presentation as its second category. Tracked in https://github.com/LLM-Coding/Semantic-Anchors/issues/851[#851].

@@ -5,6 +5,7 @@
 :tags: Apple Human Interface Guidelines, HIG, Apple, iOS, iPadOS, macOS, watchOS, tvOS, Liquid Glass, clarity, deference, depth, hierarchy, harmony, consistency, 44 pt hit target, SF Pro, SF Symbols, Dynamic Type, large titles, navigation bar, tab bar, inset grouped list, safe area, dark mode, VoiceOver, Reduce Motion, accessibility
 :related: material-design-3, wcag-22-aa
 :tier: 3
+:definition: The Apple Human Interface Guidelines are Apple's design guidance for iOS, iPadOS, macOS, watchOS, tvOS and visionOS. They cover hit regions of at least 44 by 44 points as a general rule and 60 by 60 in visionOS, SF Pro and SF Symbols, Dynamic Type, navigation patterns, system colours and accessibility, and since 2025 the Liquid Glass material.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

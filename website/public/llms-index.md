@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 22 semantic contracts, and
-> 257 anchors in 15 categories — the anchors both
+> 259 anchors in 15 categories — the anchors both
 > one by one and bundled into 28 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -43,7 +43,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 257 terms in full, 28 files
+## Anchor bundles — the same 259 terms in full, 28 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -75,9 +75,9 @@
 - [Testing & Quality Practices (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 - [Testing & Quality Practices (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-3.txt): 2 anchors in full.
 - [UX & Visual Design (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 17 anchors in full.
-- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 3 anchors in full.
+- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 5 anchors in full.
 
-## Anchors — 257 named terms, grouped by category
+## Anchors — 259 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -408,12 +408,14 @@
 - [Apple Human Interface Guidelines](https://llm-coding.github.io/Semantic-Anchors/anchors/apple-human-interface-guidelines.txt)
 - [Atomic Design](https://llm-coding.github.io/Semantic-Anchors/anchors/atomic-design.txt)
 - [Bauhaus](https://llm-coding.github.io/Semantic-Anchors/anchors/bauhaus.txt)
+- [Bento Grid](https://llm-coding.github.io/Semantic-Anchors/anchors/bento-grid.txt)
 - [Design Tokens (W3C DTCG)](https://llm-coding.github.io/Semantic-Anchors/anchors/design-tokens-dtcg.txt)
 - [Dieter Rams' 10 Principles of Good Design](https://llm-coding.github.io/Semantic-Anchors/anchors/dieter-rams-ten-principles.txt)
 - [8-Point Grid](https://llm-coding.github.io/Semantic-Anchors/anchors/eight-point-grid.txt)
 - [The Elements of Typographic Style (Bringhurst)](https://llm-coding.github.io/Semantic-Anchors/anchors/elements-of-typographic-style.txt)
 - [Every Layout](https://llm-coding.github.io/Semantic-Anchors/anchors/every-layout.txt)
 - [Gestalt Principles](https://llm-coding.github.io/Semantic-Anchors/anchors/gestalt-principles.txt)
+- [Glassmorphism](https://llm-coding.github.io/Semantic-Anchors/anchors/glassmorphism.txt)
 - [GOV.UK Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/gov-uk-design-system.txt)
 - [Laws of UX](https://llm-coding.github.io/Semantic-Anchors/anchors/laws-of-ux.txt)
 - [Material Design 3](https://llm-coding.github.io/Semantic-Anchors/anchors/material-design-3.txt)

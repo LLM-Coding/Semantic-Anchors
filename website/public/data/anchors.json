@@ -322,6 +322,7 @@
         "works": true
       }
     ],
+    "definition": "The Apple Human Interface Guidelines are Apple's design guidance for iOS, iPadOS, macOS, watchOS, tvOS and visionOS. They cover hit regions of at least 44 by 44 points as a general rule and 60 by 60 in visionOS, SF Pro and SF Symbols, Dynamic Type, navigation patterns, system colours and accessibility, and since 2025 the Liquid Glass material.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -495,6 +496,7 @@
         "works": true
       }
     ],
+    "definition": "Atomic Design is Brad Frost's methodology for building design systems from five levels: atoms, molecules, organisms, templates and pages. Small elements combine into larger components and finally into pages with real content, which gives component libraries a shared structure.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -552,6 +554,7 @@
         "works": true
       }
     ],
+    "definition": "Bauhaus was the German school of design founded by Walter Gropius in Weimar in 1919 and closed in Berlin in 1933. As a design instruction, the name evokes the style later drawn from it: form follows function, basic geometric shapes such as circle, square and triangle, primary colours, geometric sans-serif type and the unity of art, craft and industry.",
     "addedAt": "2026-10-28T23:45:32+01:00"
   },
   {
@@ -617,6 +620,61 @@
     "filePath": "docs/anchors/bem-methodology.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "bento-grid",
+    "title": "Bento Grid",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer",
+      "product-owner"
+    ],
+    "related": [
+      "eight-point-grid",
+      "gestalt-principles",
+      "swiss-style"
+    ],
+    "proponents": [
+      "Community design trend (no single originator)",
+      "Apple (product and keynote summary slides)"
+    ],
+    "tags": [
+      "bento grid",
+      "bento box layout",
+      "bento UI",
+      "tile layout",
+      "card grid",
+      "mixed tile sizes",
+      "CSS grid",
+      "spanning tiles",
+      "feature section",
+      "landing page",
+      "Apple keynote",
+      "Metro design",
+      "dashboard layout"
+    ],
+    "filePath": "docs/anchors/bento-grid.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-29",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "A bento grid is a layout of rounded tiles in different sizes on one grid, each tile holding one feature, figure or image. Size carries the hierarchy, usually with one large hero tile and smaller tiles around it; the layout became popular through Apple's product presentations.",
+    "addedAt": "2026-10-29T08:34:15+01:00"
   },
   {
     "id": "big-five",
@@ -1974,6 +2032,7 @@
         "works": true
       }
     ],
+    "definition": "Design tokens in the W3C DTCG format store design decisions such as colours, spacing and type as platform-neutral JSON, with $value and $type per token and aliases in braces. The Design Tokens Community Group published its first stable version, 2025.10; tools convert the tokens into CSS, iOS and Android code.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -2094,6 +2153,7 @@
         "works": true
       }
     ],
+    "definition": "Dieter Rams' ten principles of good design say that good design is innovative, useful, aesthetic, understandable, unobtrusive, honest, long-lasting, thorough down to the last detail, environmentally friendly, and as little design as possible. The Braun designer summed them up as \"less, but better\": remove the unnecessary rather than imitate a minimal look.",
     "addedAt": "2026-10-28T23:45:32+01:00"
   },
   {
@@ -2610,6 +2670,7 @@
         "works": true
       }
     ],
+    "definition": "The 8-point grid is a spacing system for user interfaces in which all margins, paddings and component sizes are multiples of eight, with four as a half-step for type and icons. Popularised by Material Design's 8dp baseline grid and Bryn Jackson's guide, it keeps spacing consistent across screens.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
@@ -2696,6 +2757,7 @@
         "works": true
       }
     ],
+    "definition": "The Elements of Typographic Style is Robert Bringhurst's 1992 reference work on book typography, now in version 4.0. As an instruction it brings a comfortable measure, careful leading, old-style figures in running text, small caps for abbreviations, indented paragraphs and hanging punctuation.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
@@ -2889,6 +2951,7 @@
         "works": true
       }
     ],
+    "definition": "Every Layout is a book and website by Heydon Pickering and Andy Bell that builds responsive CSS layouts from small primitives such as Stack, Cluster, Sidebar, Switcher and Grid. The primitives adapt to their content and container, so most layouts need no media queries and no magic numbers.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
@@ -3483,6 +3546,7 @@
         "works": true
       }
     ],
+    "definition": "The Gestalt principles describe how people group what they see: elements that are close, similar, enclosed, connected or moving together are perceived as one unit, and figures separate from their ground. Formulated by Max Wertheimer in 1923, they explain why a layout reads as grouped or scattered.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
@@ -3551,6 +3615,58 @@
     "filePath": "docs/anchors/github-flow.adoc",
     "tier": 3,
     "addedAt": "2026-03-13T12:59:50+00:00"
+  },
+  {
+    "id": "glassmorphism",
+    "title": "Glassmorphism",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "apple-human-interface-guidelines",
+      "neo-brutalism",
+      "wcag-22-aa"
+    ],
+    "proponents": [
+      "Michał Malewicz"
+    ],
+    "tags": [
+      "glassmorphism",
+      "frosted glass",
+      "glass UI",
+      "backdrop-filter",
+      "background blur",
+      "translucent panels",
+      "semi-transparent",
+      "light border",
+      "layered UI",
+      "UI trend",
+      "Liquid Glass",
+      "neumorphism"
+    ],
+    "filePath": "docs/anchors/glassmorphism.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-29",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Glassmorphism is a UI style of translucent, frosted-glass panels that blur the colourful background behind them, float on separate layers and carry a subtle light border. Michał Malewicz named it in 2020; in CSS it rests on semi-transparent fills and backdrop-filter blur.",
+    "addedAt": "2026-10-29T08:34:15+01:00"
   },
   {
     "id": "gof-abstract-factory-pattern",
@@ -4534,6 +4650,7 @@
         "works": true
       }
     ],
+    "definition": "The GOV.UK Design System is the UK Government Digital Service's library of styles, components and patterns for public services, launched in 2018. It is known for one question per page, a start page, a check-answers page, clear error summaries and plain English, all tested with real users.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -5574,6 +5691,7 @@
         "works": true
       }
     ],
+    "definition": "Laws of UX is Jon Yablonski's collection of psychological principles for interface design, published as a website in 2018 and as an O'Reilly book. It names effects such as Fitts's Law, Hick's Law, Jakob's Law, Miller's Law and the Doherty Threshold, so design decisions can cite a known principle.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
@@ -5907,6 +6025,7 @@
         "works": true
       }
     ],
+    "definition": "Material Design 3 is Google's design system for Android and the web, introduced as Material You in 2021 and extended by Material 3 Expressive in 2025. It defines colour roles and dynamic colour from a source colour, design tokens, a type and shape scale, tonal elevation and standard components.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -6144,6 +6263,7 @@
         "works": true
       }
     ],
+    "definition": "Mobile First is Luke Wroblewski's approach of designing for the smallest screen first and enhancing the design for larger screens afterwards. The constraints of the phone force focus on what matters; in CSS it means base styles for small screens and min-width media queries for wider ones.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -6202,6 +6322,7 @@
         "works": true
       }
     ],
+    "definition": "A modular scale is a sequence of type sizes derived from one base size and one ratio, such as 1.25 (major third) or 1.618 (golden section). Popularised for the web by Tim Brown in 2011, it replaces hand-picked heading sizes with a consistent progression.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
@@ -6495,7 +6616,9 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "definition": "Neo-Brutalism is a web and UI design style with thick black outlines, hard offset shadows without blur, flat saturated colours, blocky visible structure and heavy plain type. Unlike raw brutalist web design it keeps a grid and a clear hierarchy; it spread as a community trend.",
+    "addedAt": "2026-10-28T23:56:47+01:00"
   },
   {
     "id": "nielsen-usability-heuristics",
@@ -6552,6 +6675,7 @@
         "works": true
       }
     ],
+    "definition": "Nielsen's 10 usability heuristics are broad rules of thumb for evaluating user interfaces, published by Jakob Nielsen and Rolf Molich in 1990 and revised by Nielsen in 1994. They cover system status, real-world match, user control, consistency, error prevention, recognition over recall, efficiency, minimalist design, error recovery and help.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
   {
@@ -7520,6 +7644,7 @@
         "works": true
       }
     ],
+    "definition": "Refactoring UI is a book by Adam Wathan and Steve Schoger with practical visual design tactics for developers. It teaches hierarchy through weight and colour instead of size alone, a predefined spacing and type scale, fewer borders, full colour palettes and shadows that convey elevation.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -9701,6 +9826,7 @@
         "works": true
       }
     ],
+    "definition": "WCAG 2.2 AA is conformance level AA of the Web Content Accessibility Guidelines 2.2, a W3C Recommendation since October 2023. It requires every Level A and AA success criterion, including 4.5:1 text contrast, visible focus, reflow, labels and error identification, and the 2.2 additions such as 2.5.8 Target Size (Minimum), 24 by 24 CSS pixels with its exceptions.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {

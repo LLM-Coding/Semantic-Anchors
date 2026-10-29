@@ -5,6 +5,7 @@
 :tags: GOV.UK Design System, GOV.UK Frontend, Government Digital Service, GDS, one thing per page, one question per page, start page, question pages, check answers, confirmation page, error summary, public services, government design, plain English, form design, service design
 :related: plain-language-iso-24495, wcag-22-aa, progressive-disclosure
 :tier: 3
+:definition: The GOV.UK Design System is the UK Government Digital Service's library of styles, components and patterns for public services, launched in 2018. It is known for one question per page, a start page, a check-answers page, clear error summaries and plain English, all tested with real users.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 
