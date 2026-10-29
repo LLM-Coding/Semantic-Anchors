@@ -17,7 +17,7 @@ Auch bekannt als:: Milchglas-UI, Glass UI
 [discrete]
 == *Kernkonzepte*:
 
-* *Milchglas-Transparenz.* Flächen sind halbtransparent, meist eine weiße oder dunkle Füllung mit geringer Deckkraft, und zeichnen alles dahinter unscharf. In CSS ist das `backdrop-filter: blur()`.
+* *Milchglas-Transparenz.* Flächen sind halbtransparent, meist eine weiße oder dunkle Füllung mit geringer Deckkraft, und zeichnen alles dahinter unscharf. In CSS ist das `backdrop-filter` mit einem Unschärferadius, etwa `backdrop-filter: blur(16px)`.
 * *Schwebende Ebenen.* Flächen liegen auf eigenen Ebenen über dem Hintergrund und übereinander; Tiefe entsteht durch Transparenz, nicht durch schwere Schatten.
 * *Ein kräftiger Hintergrund zum Verwischen.* Der Effekt braucht etwas, das durchscheint: Verläufe, farbige Flecken oder Fotos hinter dem Glas.
 * *Ein feiner heller Rand.* Eine dünne, halbtransparente weiße Kante fängt das Licht und trennt die Fläche vom Hintergrund.

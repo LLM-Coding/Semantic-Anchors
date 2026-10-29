@@ -17,7 +17,7 @@ Also known as:: Frosted glass UI, glass UI
 [discrete]
 == *Core Concepts*:
 
-* *Frosted transparency.* Panels are semi-transparent, typically a white or dark fill at low opacity, and blur whatever lies behind them. In CSS this is `backdrop-filter: blur()`.
+* *Frosted transparency.* Panels are semi-transparent, typically a white or dark fill at low opacity, and blur whatever lies behind them. In CSS this is `backdrop-filter` with a blur radius, for example `backdrop-filter: blur(16px)`.
 * *Layers that float.* Panels sit on separate planes above the background and above each other, so depth comes from transparency, not from heavy shadows.
 * *A vivid background to blur.* The effect needs something to show through: gradients, coloured blobs or photos behind the glass.
 * *A subtle light border.* A thin, semi-transparent white edge catches the light and separates the panel from the background.
