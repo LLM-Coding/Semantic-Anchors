@@ -54,8 +54,29 @@ function readDefinitionAttribute(lines) {
 const CORE_CONCEPTS = /Core Concepts|Kernkonzepte/i
 
 /** Definition-list terms that carry metadata, never a definition (EN + DE). */
-const METADATA_TERM =
-  /^[\s*_]*(Key Proponents|Wichtige Vertreter|Also known as|Auch bekannt als|Full Name|Vollständiger Name)\b/i
+const METADATA_TERM = new RegExp(
+  '^[\\s*_]*(' +
+    [
+      'Key Proponents',
+      'Wichtige Vertreter',
+      'Schlüsselvertreter(in)?',
+      'Hauptvertreter',
+      'Wichtige Proponenten',
+      'Also known as',
+      'Auch bekannt als',
+      'Full Name',
+      'Vollständiger Name',
+      'Voller Name',
+      'Historical Context',
+      'Historischer Kontext',
+      'Origin',
+      'Ursprung',
+      'Original Work',
+      'Originalwerk',
+    ].join('|') +
+    ')\\b',
+  'i'
+)
 
 /** Derive a description from the first "Core Concepts" definition-list entry. */
 function extractDescription(filePathRel) {
