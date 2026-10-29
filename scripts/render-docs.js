@@ -23,6 +23,7 @@ const Asciidoctor = require('@asciidoctor/core')
 const { getAnchorDefinition } = require('./lib/anchor-definition')
 const { injectByline } = require('./lib/byline')
 const { hideSectionAnchors } = require('./lib/section-anchors')
+const { rewriteAnchorXrefs } = require('./lib/anchor-xrefs')
 
 const asciidoctor = Asciidoctor()
 const ROOT = path.join(__dirname, '..')
@@ -115,7 +116,7 @@ function rewriteLegacyHashLinks(html) {
   return html.replace(/href="#\//g, 'href="/Semantic-Anchors/')
 }
 
-function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
+function renderFile(srcPath, destPath, quiet = false, prependHtml = '', transform = (h) => h) {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
@@ -127,7 +128,7 @@ function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
     const author = String(doc.getAuthor() || '').trim()
     const revdate = String(doc.getRevisionDate() || '').trim()
     const html = hideSectionAnchors(injectByline(String(doc.convert()), author, revdate))
-    const { toc, body } = extractToc(rewriteLegacyHashLinks(html))
+    const { toc, body } = extractToc(transform(rewriteLegacyHashLinks(html)))
     fs.writeFileSync(destPath, prependHtml + body, 'utf-8')
     if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
     const tocPath = destPath.replace(/\.html$/, '.toc.html')
@@ -254,14 +255,26 @@ renderFile(
 // logged as a single summary line to keep the build output readable.
 const ANCHORS_SRC = path.join(ROOT, 'docs/anchors')
 const ANCHORS_OUT = path.join(WEB_DOCS, 'anchors')
+const anchorSources = fs
+  .readdirSync(ANCHORS_SRC)
+  .filter((f) => f.endsWith('.adoc') && !f.startsWith('_'))
+const anchorIds = new Set(
+  anchorSources.filter((f) => !f.endsWith('.de.adoc')).map((f) => f.replace(/\.adoc$/, ''))
+)
+const germanIds = new Set(
+  anchorSources.filter((f) => f.endsWith('.de.adoc')).map((f) => f.replace(/\.de\.adoc$/, ''))
+)
 let anchorFragments = 0
 for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
   if (!file.endsWith('.adoc')) continue
+  // Cross-references <<id,text>> point at the pre-rendered anchor pages (#860).
+  const lang = file.endsWith('.de.adoc') ? 'de' : 'en'
   renderFile(
     path.join(ANCHORS_SRC, file),
     path.join(ANCHORS_OUT, file.replace(/\.adoc$/, '.html')),
     true,
-    answerBlockHtml(`docs/anchors/${file}`)
+    answerBlockHtml(`docs/anchors/${file}`),
+    (html) => rewriteAnchorXrefs(html, { lang, anchorIds, germanIds })
   )
   anchorFragments++
 }
