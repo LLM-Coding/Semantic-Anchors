@@ -3,7 +3,7 @@
 :roles: team-lead, consultant, product-owner, software-architect
 :proponents: Dave Snowden
 :tier: 3
-:definition: Cynefin, entwickelt von Dave Snowden, ist ein Sense-Making-Framework, das Situationen in fünf Domänen einordnet – Clear, Complicated, Complex, Chaotic und Disorder –, jede mit einem anderen Verhältnis von Ursache und Wirkung. Es hilft, die passende Reaktion zu wählen, von Best Practice in geordneten Domänen bis zum Ausprobieren und Experimentieren in der komplexen.
+:definition: Cynefin, entwickelt von Dave Snowden, ist ein Sense-Making-Framework, das Situationen in fünf Domänen einordnet – Klar, Kompliziert, Komplex, Chaotisch und Verwirrt –, jede mit einem anderen Verhältnis von Ursache und Wirkung. Es hilft, die passende Reaktion zu wählen, von Best Practice in geordneten Domänen bis zum Ausprobieren und Experimentieren in der komplexen.
 :related: wardley-mapping, residuality-theory
 :tags: complexity, decision-making, sensemaking, strategy, domains, emergence
 
