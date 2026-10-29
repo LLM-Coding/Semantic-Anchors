@@ -4,7 +4,9 @@
  * Precedence:
  *   1. a curated `:definition:` AsciiDoc attribute (a standalone ~40-60 word
  *      "What is X?" answer), when the anchor author has written one;
- *   2. otherwise the first "Core Concepts" definition-list entry, derived.
+ *   2. otherwise the first "Core Concepts" (German: "Kernkonzepte")
+ *      definition-list entry, derived. Metadata terms such as "Key
+ *      Proponents" end the search: they are metadata, not a definition (#861).
  *
  * One source of truth so the rendered answer block (render-docs.js), the
  * DefinedTerm JSON-LD (generate-jsonld.js), and any data consumer agree.
@@ -48,19 +50,27 @@ function readDefinitionAttribute(lines) {
   return null
 }
 
+/** Section heading that opens the concept list, in English and German. */
+const CORE_CONCEPTS = /Core Concepts|Kernkonzepte/i
+
+/** Definition-list terms that carry metadata, never a definition (EN + DE). */
+const METADATA_TERM =
+  /^[\s*_]*(Key Proponents|Wichtige Vertreter|Also known as|Auch bekannt als|Full Name|Vollständiger Name)\b/i
+
 /** Derive a description from the first "Core Concepts" definition-list entry. */
 function extractDescription(filePathRel) {
   const abs = path.join(ROOT, filePathRel)
   if (!fs.existsSync(abs)) return null
   const lines = fs.readFileSync(abs, 'utf-8').split('\n')
 
-  const ccIndex = lines.findIndex((l) => /Core Concepts/i.test(l))
+  const ccIndex = lines.findIndex((l) => CORE_CONCEPTS.test(l))
   if (ccIndex === -1) return null
 
   for (let i = ccIndex + 1; i < lines.length && i < ccIndex + 12; i++) {
-    const m = lines[i].match(/^.+?::\s+(.+)$/)
+    const m = lines[i].match(/^(.+?)::\s+(.+)$/)
+    if (m && METADATA_TERM.test(m[1])) break
     if (m) {
-      const cleaned = cleanAdoc(m[1])
+      const cleaned = cleanAdoc(m[2])
       return cleaned.length >= 20 ? capLength(cleaned, 220) : null
     }
   }
