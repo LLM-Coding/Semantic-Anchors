@@ -322,7 +322,7 @@
         "works": true
       }
     ],
-    "definition": "The Apple Human Interface Guidelines are Apple's design guidance for iOS, iPadOS, macOS, watchOS, tvOS and visionOS. They cover hit regions of at least 44 by 44 points, SF Pro and SF Symbols, Dynamic Type, navigation patterns, system colours and accessibility, and since 2025 the Liquid Glass material.",
+    "definition": "The Apple Human Interface Guidelines are Apple's design guidance for iOS, iPadOS, macOS, watchOS, tvOS and visionOS. They cover hit regions of at least 44 by 44 points as a general rule and 60 by 60 in visionOS, SF Pro and SF Symbols, Dynamic Type, navigation patterns, system colours and accessibility, and since 2025 the Liquid Glass material.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {
@@ -554,7 +554,7 @@
         "works": true
       }
     ],
-    "definition": "Bauhaus is the German school of design founded by Walter Gropius in Weimar in 1919 and closed in Berlin in 1933. As a design instruction it means form follows function, basic geometric shapes such as circle, square and triangle, primary colours, geometric sans-serif type and the unity of art, craft and industry.",
+    "definition": "Bauhaus was the German school of design founded by Walter Gropius in Weimar in 1919 and closed in Berlin in 1933. As a design instruction, the name evokes the style later drawn from it: form follows function, basic geometric shapes such as circle, square and triangle, primary colours, geometric sans-serif type and the unity of art, craft and industry.",
     "addedAt": "2026-10-28T23:45:32+01:00"
   },
   {
@@ -9826,7 +9826,7 @@
         "works": true
       }
     ],
-    "definition": "WCAG 2.2 AA is conformance level AA of the Web Content Accessibility Guidelines 2.2, a W3C Recommendation since October 2023. It requires every Level A and AA success criterion, including 4.5:1 text contrast, visible focus, reflow, labels and error identification, and the 2.2 additions such as 24-pixel target size.",
+    "definition": "WCAG 2.2 AA is conformance level AA of the Web Content Accessibility Guidelines 2.2, a W3C Recommendation since October 2023. It requires every Level A and AA success criterion, including 4.5:1 text contrast, visible focus, reflow, labels and error identification, and the 2.2 additions such as 2.5.8 Target Size (Minimum), 24 by 24 CSS pixels with its exceptions.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
   {

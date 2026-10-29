@@ -5,7 +5,7 @@
 :tags: WCAG, WCAG 2.2, WCAG 2.2 AA, Web Content Accessibility Guidelines, accessibility, a11y, POUR, success criteria, conformance level AA, contrast ratio, 4.5:1, target size, 2.5.8, focus not obscured, 2.4.11, accessible authentication, European Accessibility Act, EN 301 549, W3C WAI
 :related: gov-uk-design-system, nielsen-usability-heuristics, plain-language-iso-24495
 :tier: 3
-:definition: WCAG 2.2 AA is conformance level AA of the Web Content Accessibility Guidelines 2.2, a W3C Recommendation since October 2023. It requires every Level A and AA success criterion, including 4.5:1 text contrast, visible focus, reflow, labels and error identification, and the 2.2 additions such as 24-pixel target size.
+:definition: WCAG 2.2 AA is conformance level AA of the Web Content Accessibility Guidelines 2.2, a W3C Recommendation since October 2023. It requires every Level A and AA success criterion, including 4.5:1 text contrast, visible focus, reflow, labels and error identification, and the 2.2 additions such as 2.5.8 Target Size (Minimum), 24 by 24 CSS pixels with its exceptions.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 
