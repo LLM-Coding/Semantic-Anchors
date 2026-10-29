@@ -56,4 +56,32 @@ describe('extract-metadata', () => {
     expect(withoutAdvisory).toBeDefined()
     expect(withoutAdvisory.advisory).toBeUndefined()
   })
+
+  it('should extract the optional :example-image: attribute', () => {
+    execFileSync('node', ['scripts/extract-metadata.js'], {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'pipe',
+    })
+
+    const anchors = JSON.parse(
+      fs.readFileSync(
+        path.join(__dirname, '..', 'website', 'public', 'data', 'anchors.json'),
+        'utf-8'
+      )
+    )
+
+    const swiss = anchors.find((a) => a.id === 'swiss-style')
+    expect(swiss).toBeDefined()
+    expect(swiss.exampleImage).toBe('swiss-style.webp')
+
+    // Anchors without the attribute must not carry an empty field.
+    const withoutImage = anchors.find((a) => a.id === 'gof-design-patterns')
+    expect(withoutImage.exampleImage).toBeUndefined()
+
+    // Every referenced image must ship with the site.
+    for (const anchor of anchors.filter((a) => a.exampleImage)) {
+      const file = path.join(__dirname, '..', 'website', 'public', 'examples', anchor.exampleImage)
+      expect(fs.existsSync(file), `${anchor.id}: ${anchor.exampleImage}`).toBe(true)
+    }
+  })
 })

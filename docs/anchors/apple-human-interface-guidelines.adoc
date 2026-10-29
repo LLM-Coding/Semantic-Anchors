@@ -8,6 +8,7 @@
 :definition: The Apple Human Interface Guidelines are Apple's design guidance for iOS, iPadOS, macOS, watchOS, tvOS and visionOS. They cover hit regions of at least 44 by 44 points as a general rule and 60 by 60 in visionOS, SF Pro and SF Symbols, Dynamic Type, navigation patterns, system colours and accessibility, and since 2025 the Liquid Glass material.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-image: apple-human-interface-guidelines.webp
 
 [%collapsible]
 ====
