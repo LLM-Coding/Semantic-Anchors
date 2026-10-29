@@ -5,6 +5,7 @@
 :tags: Dieter Rams, zehn Thesen, gutes Design, Weniger aber besser, Less but better, innovativ, brauchbar, ästhetisch, verständlich, unaufdringlich, ehrlich, langlebig, konsequent bis ins letzte Detail, umweltfreundlich, so wenig Design wie möglich, Produktdesign, Industriedesign, Vitsoe
 :related: bauhaus, kiss-principle, refactoring-ui
 :tier: 3
+:definition: Dieter Rams' zehn Thesen für gutes Design besagen: Gutes Design ist innovativ, brauchbar, ästhetisch, verständlich, unaufdringlich, ehrlich, langlebig, konsequent bis ins letzte Detail, umweltfreundlich und so wenig Design wie möglich. Der Braun-Designer fasste sie in „Weniger, aber besser“ zusammen: Unnötiges weglassen, statt einen minimalistischen Look nachzuahmen.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 :example-screenshot: dieter-rams-ten-principles.webp

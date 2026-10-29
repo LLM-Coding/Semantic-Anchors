@@ -5,6 +5,7 @@
 :tags: plain language, ISO 24495, ISO 24495-1, ISO 24495-2, plain language standard, relevant, findable, understandable, usable, reader-centred writing, public communication, legal writing, Einfache Sprache, DIN 8581-1
 :related: plain-english-strunk-white, gutes-deutsch-wolf-schneider, simplified-technical-english, bluf, progressive-disclosure
 :tier: 2
+:definition: Plain language according to ISO 24495-1:2023 is communication whose wording, structure and design are so clear that the intended readers can easily find what they need, understand what they find and use that information. The standard sets four governing principles: relevant, findable, understandable and usable.
 :prior-test: 2026-10-25
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

@@ -3,6 +3,7 @@
 :roles: software-architect, technical-writer, team-lead, legal-compliance
 :proponents: Gernot Starke, Peter Hruschka
 :tier: 3
+:definition: arc42 ist eine Vorlage zur Dokumentation von Softwarearchitektur, entwickelt von Gernot Starke und Peter Hruschka. Sie gliedert eine Architektur in zwölf standardisierte Abschnitte – von Zielen, Randbedingungen und Kontext über Bausteine, Laufzeit und Verteilung bis zu Entscheidungen, Qualität und Risiken –, damit Teams einheitlich und vollständig dokumentieren.
 :tags: arc42, architecture documentation, software architecture, documentation template, Starke, Hruschka
 :related: c4-diagrams, adr-according-to-nygard, quality-attribute-scenario, twin-peaks-model
 

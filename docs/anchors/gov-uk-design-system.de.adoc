@@ -5,6 +5,7 @@
 :tags: GOV.UK Design System, GOV.UK Frontend, Government Digital Service, GDS, one thing per page, eine Frage pro Seite, Startseite, Fragenseiten, Antworten prüfen, Bestätigungsseite, Fehlerzusammenfassung, öffentliche Dienste, Behörden-Design, Verwaltungsdigitalisierung, Formulargestaltung, Service Design
 :related: plain-language-iso-24495, wcag-22-aa, progressive-disclosure
 :tier: 3
+:definition: Das GOV.UK Design System ist die Bibliothek aus Stilen, Komponenten und Mustern des britischen Government Digital Service für öffentliche Dienste, gestartet 2018. Bekannt ist es für eine Frage pro Seite, eine Startseite, eine Seite zum Prüfen der Antworten, klare Fehlerzusammenfassungen und einfache Sprache, alles mit echten Nutzern getestet.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 :example-screenshot: gov-uk-design-system.webp

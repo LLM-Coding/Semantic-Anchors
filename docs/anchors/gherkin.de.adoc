@@ -4,6 +4,7 @@
 :related: bdd-given-when-then, ears-requirements, tdd-london-school
 :proponents: Aslak Hellesøy
 :tier: 3
+:definition: Gherkin ist die strukturierte, natürlichsprachliche Syntax, mit der Werkzeuge für Behaviour-Driven Development wie Cucumber ausführbare Spezifikationen schreiben. Szenarien folgen der Form Given/When/Then – Kontext, Aktion, Ergebnis –, sodass derselbe Text als lesbares Akzeptanzkriterium für Stakeholder und als automatisierter Test dient.
 :tags: gherkin, bdd, cucumber, given-when-then, specification-by-example, dsl, acceptance-testing, living-documentation
 
 [%collapsible]

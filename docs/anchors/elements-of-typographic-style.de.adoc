@@ -5,6 +5,7 @@
 :tags: The Elements of Typographic Style, Bringhurst, Robert Bringhurst, Typografie, Buchtypografie, Zeilenlänge, Satzbreite, Mediävalziffern, Kapitälchen, Einzug, hängende Interpunktion, Sperren, Größenskala, Hartley & Marks, Lesetext
 :related: modular-scale, swiss-style
 :tier: 3
+:definition: The Elements of Typographic Style ist Robert Bringhursts Standardwerk zur Buchtypografie von 1992, heute in Version 4.0. Als Anweisung bringt es eine angenehme Zeilenlänge, sorgfältigen Zeilenabstand, Mediävalziffern im Fließtext, Kapitälchen für Abkürzungen, Einzüge statt Leerzeilen und hängende Interpunktion.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

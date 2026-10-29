@@ -5,6 +5,7 @@
 :tags: WCAG, WCAG 2.2, WCAG 2.2 AA, Web Content Accessibility Guidelines, Barrierefreiheit, Accessibility, a11y, POUR, Erfolgskriterien, Konformitätsstufe AA, Kontrastverhältnis, 4.5:1, Zielgröße, 2.5.8, Focus Not Obscured, 2.4.11, barrierefreie Authentifizierung, European Accessibility Act, Barrierefreiheitsstärkungsgesetz, EN 301 549, W3C WAI
 :related: gov-uk-design-system, nielsen-usability-heuristics, plain-language-iso-24495
 :tier: 3
+:definition: WCAG 2.2 AA ist die Konformitätsstufe AA der Web Content Accessibility Guidelines 2.2, seit Oktober 2023 eine W3C-Empfehlung. Sie verlangt alle Erfolgskriterien der Stufen A und AA, darunter 4,5:1 Textkontrast, sichtbaren Fokus, Reflow, Beschriftungen und Fehlererkennung, sowie die Neuerungen von 2.2 wie 2.5.8 Target Size (Minimum), 24 × 24 CSS-Pixel mit ihren Ausnahmen.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

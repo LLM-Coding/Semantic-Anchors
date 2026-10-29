@@ -5,6 +5,7 @@
 :tags: Gestaltgesetze, Gestalt Principles, Gestaltpsychologie, Wahrnehmungsorganisation, Gruppierung, Max Wertheimer, Berliner Schule, Nähe, Ähnlichkeit, gemeinsames Schicksal, Geschlossenheit, gute Kurve, gute Gestalt, gemeinsame Region, Figur-Grund, visuelle Hierarchie, visuelles Design
 :related: swiss-style, laws-of-ux, nielsen-usability-heuristics
 :tier: 3
+:definition: Die Gestaltgesetze beschreiben, wie Menschen Gesehenes gruppieren: Elemente, die nah beieinander liegen, sich ähneln, gemeinsam umschlossen, verbunden oder gemeinsam bewegt sind, nehmen wir als Einheit wahr, und Figuren lösen sich vom Grund. Max Wertheimer formulierte sie 1923; sie erklären, warum ein Layout gegliedert oder zerstreut wirkt.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

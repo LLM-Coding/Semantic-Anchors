@@ -5,6 +5,7 @@
 :tags: Every Layout, Heydon Pickering, Andy Bell, intrinsisches Layout, Layout-Primitive, Layout-Bausteine, Stack, Box, Center, Cluster, Sidebar, Switcher, Cover, Grid, Frame, Reel, Imposter, Icon, Container, Owl Selector, Flexbox, CSS Grid, Container Queries, logische Eigenschaften, Custom Properties, ohne Media Queries, CSS
 :related: mobile-first, modular-scale, bem-methodology
 :tier: 3
+:definition: Every Layout ist ein Buch und eine Website von Heydon Pickering und Andy Bell, die responsive CSS-Layouts aus kleinen Primitiven wie Stack, Cluster, Sidebar, Switcher und Grid aufbaut. Die Primitive passen sich Inhalt und Container an; die meisten Layouts brauchen daher keine Media Queries und keine magischen Zahlen.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

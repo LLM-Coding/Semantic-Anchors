@@ -5,6 +5,7 @@
 :tags: 8-Point Grid, 8pt Grid, 8dp Grid, 8-Punkt-Raster, Grundlinienraster, Abstandssystem, Abstandsskala, 4-Point Grid, Soft Grid, Hard Grid, Material Design, Bryn Jackson, spec.fm, Layout, CSS-Abstände, Design Tokens
 :related: modular-scale, material-design-3, design-tokens-dtcg
 :tier: 3
+:definition: Das 8-Punkt-Raster ist ein Abstandssystem für Benutzeroberflächen, in dem alle Ränder, Innenabstände und Komponentengrößen Vielfache von acht sind, mit vier als Halbschritt für Schrift und Icons. Bekannt gemacht durch das 8dp-Grundlinienraster von Material Design und den Leitfaden von Bryn Jackson, hält es Abstände über alle Bildschirme hinweg einheitlich.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

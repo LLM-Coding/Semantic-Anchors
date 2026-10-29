@@ -5,6 +5,7 @@
 :tags: Atomic Design, Brad Frost, Atome, Moleküle, Organismen, Templates, Seiten, Design-System, Pattern Library, Komponentenbibliothek, Pattern Lab, Dave Olsen, UI-Komponenten, Komponentenhierarchie
 :related: design-tokens-dtcg, bem-methodology, material-design-3
 :tier: 3
+:definition: Atomic Design ist Brad Frosts Methode, Design-Systeme aus fünf Ebenen aufzubauen: Atome, Moleküle, Organismen, Templates und Seiten. Kleine Elemente verbinden sich zu größeren Komponenten und schließlich zu Seiten mit echtem Inhalt; das gibt Komponentenbibliotheken eine gemeinsame Struktur.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

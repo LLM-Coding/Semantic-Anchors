@@ -1,0 +1,18 @@
+= Beispielanker
+:categories: testing-quality
+:roles: software-developer
+:proponents: Jane Doe
+
+[%collapsible]
+====
+Vollständiger Name:: Beispielanker -- ein Anker nur für Tests
+
+Auch bekannt als:: Testanker
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Erste Idee.* Kernkonzepte als Aufzählung haben keinen Eintrag in einer Definitionsliste.
+
+Schlüsselvertreter:: Jane Doe, die das Standardwerk über den Beispielanker schrieb.
+====
