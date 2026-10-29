@@ -2680,6 +2680,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Neo-Brutalism -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/neo-brutalism</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/neo-brutalism</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Nielsen’s 10 Usability Heuristics -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/nielsen-usability-heuristics</loc>

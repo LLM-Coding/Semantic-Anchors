@@ -26,7 +26,11 @@ A chronological record of all semantic anchors added to the catalog. Community c
 * *link:#/anchor/wcag-22-aa[WCAG 2.2 AA]* (W3C Web Accessibility Initiative) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/848[#848]: the form review cites at least ten success criteria, among them the 2.2 additions 2.5.8 and 2.4.11, in six of six runs.
 * *link:#/anchor/mobile-first[Mobile First]* (Luke Wroblewski) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/849[#849]: the card-list CSS switches from a `max-width` to `min-width` media queries in six of six runs.
 
-All seventeen were measured on Haiku, Sonnet and Opus 5.5 against shared no-anchor baselines; sixteen reach ★★★. Neo-Brutalism (https://github.com/LLM-Coding/Semantic-Anchors/issues/850[#850]) works as an instruction but has no proponent or publication and was not added. Full detail in the link:#/prior-tests[prior-test register], run 2026-10-28.
+All seventeen were measured on Haiku, Sonnet and Opus 5.5 against shared no-anchor baselines; sixteen reach ★★★. Neo-Brutalism followed on the same day; see below. Full detail in the link:#/prior-tests[prior-test register], run 2026-10-28.
+
+*New anchor -- Neo-Brutalism:*
+
+* *link:#/anchor/neo-brutalism[Neo-Brutalism]* (community trend; defined by Nielsen Norman Group, 2025) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/850[#850]: the strongest action effect of the run -- black borders and hard offset shadows in six of six runs, none in the baselines. The term has no single originator; the maintainers decided that a reliable effect is enough and waived the Attributable criterion for this entry. Use the prefix: the bare "brutalism" resolves to architecture. Tier ★★★.
 
 == 2026-10-26
 
