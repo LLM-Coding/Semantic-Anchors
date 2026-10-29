@@ -145,6 +145,9 @@ export function closeModal() {
 
 const SAFE_ANCHOR_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 const SAFE_LANG = /^[a-z]{2}$/
+// Mirrors scripts/lib/example-image.js: a bare file name in public/examples/.
+const SAFE_EXAMPLE_IMAGE = /^[a-z0-9][a-z0-9-]*\.(webp|jpg|jpeg|png)$/
+const EXAMPLE_IMAGES_BLOG_URL = 'https://rdmueller.github.io/pages/blog/design-anchors.html'
 
 function renderSubAnchorList(subAnchorIds, allAnchors) {
   if (!subAnchorIds || subAnchorIds.length === 0) return ''
@@ -328,6 +331,29 @@ export async function loadAnchorContent(anchorId) {
           loadAnchorContent(subId)
         })
       })
+    }
+
+    // Example image (`:example-image:`): what a model makes of the anchor name
+    // alone. Sits below the anchor text and above the tested-on note. Only plain
+    // file names are accepted, so the attribute can never point elsewhere. Built
+    // with DOM APIs and textContent, no HTML sink.
+    if (currentAnchor?.exampleImage && SAFE_EXAMPLE_IMAGE.test(currentAnchor.exampleImage)) {
+      const figure = document.createElement('figure')
+      figure.className = 'anchor-example-image'
+      const img = document.createElement('img')
+      img.src = `${import.meta.env.BASE_URL}examples/${currentAnchor.exampleImage}`
+      img.alt = i18n.t('anchor.exampleImageAlt').replace('{title}', currentAnchor.title || title)
+      img.setAttribute('width', '720')
+      img.setAttribute('height', '900')
+      img.setAttribute('loading', 'lazy')
+      img.setAttribute('decoding', 'async')
+      const caption = document.createElement('figcaption')
+      const link = document.createElement('a')
+      link.href = EXAMPLE_IMAGES_BLOG_URL
+      link.textContent = i18n.t('anchor.exampleImageLink')
+      caption.append(`${i18n.t('anchor.exampleImageCaption')} `, link)
+      figure.append(img, caption)
+      contentEl.append(figure)
     }
 
     // Tested-on note: every model the anchor was measured against, each with its

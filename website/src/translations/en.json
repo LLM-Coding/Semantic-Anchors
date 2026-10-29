@@ -156,6 +156,9 @@
   "anchor.testedWorks": "the anchor changed the result on this model",
   "anchor.testedNoEffect": "tested, but the result was not distinguishable from a prompt without the anchor",
   "anchor.testedMeasured": "measured",
+  "anchor.exampleImageAlt": "Example: a homepage redesigned in the style of {title}",
+  "anchor.exampleImageCaption": "What a model makes of the name alone: Claude redesigned a homepage in this style from a prompt that named only the style. No description, no reference images, one run.",
+  "anchor.exampleImageLink": "All examples and the prompt",
   "hero.talkCatalogTitle": "Or talk this site over",
   "hero.talkCatalogHint": "Hands an index of everything here — documentation, contracts, all anchors — to your own LLM. It fetches what your question needs."
 }

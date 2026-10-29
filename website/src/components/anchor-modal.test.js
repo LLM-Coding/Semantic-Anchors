@@ -325,6 +325,77 @@ describe('anchor-modal', () => {
     })
   })
 
+  describe('example image', () => {
+    beforeEach(async () => {
+      global.fetch = vi.fn()
+      createModal()
+
+      const { fetchAnchorsData } = await import('../utils/data-loader.js')
+      fetchAnchorsData.mockResolvedValue([
+        {
+          id: 'swiss-style',
+          title: 'Swiss Style',
+          exampleImage: 'swiss-style.webp',
+          priorTest: '2026-10-25',
+          testedOn: [{ model: 'opus-5-5', works: true }],
+        },
+        { id: 'plain-anchor', title: 'Plain Anchor' },
+        { id: 'evil-anchor', title: 'Evil Anchor', exampleImage: '../evil.webp' },
+      ])
+    })
+
+    afterEach(() => {
+      delete global.fetch
+    })
+
+    it('should show the example image with alt text and a caption linking to the blog post', async () => {
+      global.fetch.mockResolvedValue({ ok: true, text: async () => '= Swiss Style\n\nContent' })
+
+      await showAnchorDetails('swiss-style')
+
+      const figure = document.querySelector('#modal-content figure.anchor-example-image')
+      expect(figure).not.toBeNull()
+      const img = figure.querySelector('img')
+      expect(img.getAttribute('src')).toMatch(/examples\/swiss-style\.webp$/)
+      expect(img.getAttribute('alt')).toContain('Swiss Style')
+      expect(img.getAttribute('loading')).toBe('lazy')
+      const link = figure.querySelector('figcaption a')
+      expect(link.getAttribute('href')).toBe(
+        'https://rdmueller.github.io/pages/blog/design-anchors.html'
+      )
+    })
+
+    it('should place the image below the description and above the tested-on note', async () => {
+      global.fetch.mockResolvedValue({ ok: true, text: async () => '= Swiss Style\n\nContent' })
+
+      await showAnchorDetails('swiss-style')
+
+      const content = document.getElementById('modal-content')
+      const figure = content.querySelector('figure.anchor-example-image')
+      const note = content.querySelector('.anchor-tested-on')
+      const paragraph = content.querySelector('.paragraph')
+      // DOCUMENT_POSITION_FOLLOWING = 4
+      expect(paragraph.compareDocumentPosition(figure) & 4).toBeTruthy()
+      expect(figure.compareDocumentPosition(note) & 4).toBeTruthy()
+    })
+
+    it('should render no image for an anchor without one', async () => {
+      global.fetch.mockResolvedValue({ ok: true, text: async () => '= Plain\n\nContent' })
+
+      await showAnchorDetails('plain-anchor')
+
+      expect(document.querySelector('.anchor-example-image')).toBeNull()
+    })
+
+    it('should ignore an image name that points outside the examples directory', async () => {
+      global.fetch.mockResolvedValue({ ok: true, text: async () => '= Evil\n\nContent' })
+
+      await showAnchorDetails('evil-anchor')
+
+      expect(document.querySelector('.anchor-example-image')).toBeNull()
+    })
+  })
+
   describe('umbrella anchors', () => {
     beforeEach(async () => {
       global.fetch = vi.fn()

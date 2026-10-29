@@ -23,6 +23,7 @@ const Asciidoctor = require('@asciidoctor/core')
 const { getAnchorDefinition } = require('./lib/anchor-definition')
 const { injectByline } = require('./lib/byline')
 const { hideSectionAnchors } = require('./lib/section-anchors')
+const { exampleImageHtml } = require('./lib/example-image')
 
 const asciidoctor = Asciidoctor()
 const ROOT = path.join(__dirname, '..')
@@ -115,7 +116,7 @@ function rewriteLegacyHashLinks(html) {
   return html.replace(/href="#\//g, 'href="/Semantic-Anchors/')
 }
 
-function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
+function renderFile(srcPath, destPath, quiet = false, prependHtml = '', appendHtml = () => '') {
   if (!fs.existsSync(srcPath)) return
   try {
     fs.mkdirSync(path.dirname(destPath), { recursive: true })
@@ -128,7 +129,7 @@ function renderFile(srcPath, destPath, quiet = false, prependHtml = '') {
     const revdate = String(doc.getRevisionDate() || '').trim()
     const html = hideSectionAnchors(injectByline(String(doc.convert()), author, revdate))
     const { toc, body } = extractToc(rewriteLegacyHashLinks(html))
-    fs.writeFileSync(destPath, prependHtml + body, 'utf-8')
+    fs.writeFileSync(destPath, prependHtml + body + appendHtml(doc), 'utf-8')
     if (!quiet) console.log(`Rendered: ${path.relative(ROOT, destPath)}`)
     const tocPath = destPath.replace(/\.html$/, '.toc.html')
     if (toc) {
@@ -261,7 +262,14 @@ for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
     path.join(ANCHORS_SRC, file),
     path.join(ANCHORS_OUT, file.replace(/\.adoc$/, '.html')),
     true,
-    answerBlockHtml(`docs/anchors/${file}`)
+    answerBlockHtml(`docs/anchors/${file}`),
+    // Example image below the anchor text, like in the modal; '' without one.
+    (doc) =>
+      exampleImageHtml(
+        doc.getAttribute('example-image'),
+        String(doc.getDocumentTitle({ sanitize: true }) || ''),
+        file.endsWith('.de.adoc') ? 'de' : 'en'
+      )
   )
   anchorFragments++
 }

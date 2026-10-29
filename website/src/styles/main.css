@@ -337,6 +337,24 @@ html {
   @apply underline underline-offset-2;
 }
 
+/* Example image (`:example-image:`): what a model makes of the anchor name alone.
+   Shown below the anchor text in the modal and on the pre-rendered page. */
+.anchor-example-image {
+  @apply mt-8 max-w-md;
+}
+
+.anchor-example-image img {
+  @apply w-full h-auto rounded-lg border border-[var(--color-border)];
+}
+
+.anchor-example-image figcaption {
+  @apply mt-2 text-sm text-[var(--color-text-secondary)];
+}
+
+.anchor-example-image figcaption a {
+  @apply underline underline-offset-2;
+}
+
 /* Direct-answer block (#580): a standalone "What is X?" definition for crawlers
    and as the modal lead-in. .anchor-answer wraps the crawlable fragment block;
    .anchor-answer-lead is the curated lead paragraph in the modal. */

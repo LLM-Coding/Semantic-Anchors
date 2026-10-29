@@ -156,6 +156,9 @@
   "anchor.testedWorks": "der Anker hat das Ergebnis auf diesem Modell verändert",
   "anchor.testedNoEffect": "getestet, aber das Ergebnis war nicht von einem Prompt ohne den Anker zu unterscheiden",
   "anchor.testedMeasured": "gemessen am",
+  "anchor.exampleImageAlt": "Beispiel: eine Homepage, neu gestaltet im Stil von {title}",
+  "anchor.exampleImageCaption": "Was ein Modell allein aus dem Namen macht: Claude hat eine Homepage in diesem Stil neu gestaltet, der Prompt nannte nur den Stil. Keine Beschreibung, keine Referenzbilder, ein Durchlauf.",
+  "anchor.exampleImageLink": "Alle Beispiele und der Prompt",
   "hero.talkCatalogTitle": "Oder besprich diese Site",
   "hero.talkCatalogHint": "Übergibt einen Index von allem hier — Doku, Contracts, alle Anchors — an deinen eigenen LLM. Er holt sich, was deine Frage braucht."
 }
