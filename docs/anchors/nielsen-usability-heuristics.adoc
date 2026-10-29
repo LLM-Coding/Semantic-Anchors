@@ -5,6 +5,7 @@
 :tags: Nielsen heuristics, usability heuristics, heuristic evaluation, Jakob Nielsen, Rolf Molich, Nielsen Norman Group, visibility of system status, user control and freedom, consistency and standards, error prevention, recognition rather than recall, aesthetic and minimalist design, usability inspection, UX review
 :related: laws-of-ux, gestalt-principles, wcag-22-aa
 :tier: 3
+:definition: Nielsen's 10 usability heuristics are broad rules of thumb for evaluating user interfaces, published by Jakob Nielsen and Rolf Molich in 1990 and revised by Nielsen in 1994. They cover system status, real-world match, user control, consistency, error prevention, recognition over recall, efficiency, minimalist design, error recovery and help.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

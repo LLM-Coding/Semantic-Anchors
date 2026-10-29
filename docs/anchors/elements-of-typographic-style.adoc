@@ -5,6 +5,7 @@
 :tags: The Elements of Typographic Style, Bringhurst, Robert Bringhurst, typography, book typography, measure, line length, old-style figures, small caps, paragraph indent, hanging punctuation, letterspacing, scale of sizes, Hartley & Marks, long-form text
 :related: modular-scale, swiss-style
 :tier: 3
+:definition: The Elements of Typographic Style is Robert Bringhurst's 1992 reference work on book typography, now in version 4.0. As an instruction it brings a comfortable measure, careful leading, old-style figures in running text, small caps for abbreviations, indented paragraphs and hanging punctuation.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

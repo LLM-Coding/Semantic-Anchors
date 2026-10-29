@@ -5,6 +5,7 @@
 :tags: Bauhaus, Staatliches Bauhaus, Bauhaus Manifesto, Walter Gropius, Hannes Meyer, Ludwig Mies van der Rohe, Weimar, Dessau, Berlin, design school, modernism, workshops, geometric forms, primary colours, graphic design
 :related: swiss-style, dieter-rams-ten-principles
 :tier: 3
+:definition: Bauhaus is the German school of design founded by Walter Gropius in Weimar in 1919 and closed in Berlin in 1933. As a design instruction it means form follows function, basic geometric shapes such as circle, square and triangle, primary colours, geometric sans-serif type and the unity of art, craft and industry.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

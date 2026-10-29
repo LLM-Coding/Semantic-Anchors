@@ -5,6 +5,7 @@
 :tags: bento grid, bento box layout, bento UI, tile layout, card grid, mixed tile sizes, CSS grid, spanning tiles, feature section, landing page, Apple keynote, Metro design, dashboard layout
 :related: eight-point-grid, gestalt-principles, swiss-style
 :tier: 3
+:definition: A bento grid is a layout of rounded tiles in different sizes on one grid, each tile holding one feature, figure or image. Size carries the hierarchy, usually with one large hero tile and smaller tiles around it; the layout became popular through Apple's product presentations.
 :prior-test: 2026-10-29
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

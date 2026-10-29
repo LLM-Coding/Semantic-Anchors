@@ -5,6 +5,7 @@
 :tags: glassmorphism, frosted glass, glass UI, backdrop-filter, background blur, translucent panels, semi-transparent, light border, layered UI, UI trend, Liquid Glass, neumorphism
 :related: apple-human-interface-guidelines, neo-brutalism, wcag-22-aa
 :tier: 3
+:definition: Glassmorphism is a UI style of translucent, frosted-glass panels that blur the colourful background behind them, float on separate layers and carry a subtle light border. Michał Malewicz named it in 2020; in CSS it rests on semi-transparent fills and backdrop-filter blur.
 :prior-test: 2026-10-29
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

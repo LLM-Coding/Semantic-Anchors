@@ -5,6 +5,7 @@
 :tags: Mobile First, mobile-first design, Luke Wroblewski, A Book Apart, responsive web design, min-width media query, progressive enhancement, small screen first, constraints, focus, prioritisation, content priority
 :related: every-layout, progressive-disclosure
 :tier: 3
+:definition: Mobile First is Luke Wroblewski's approach of designing for the smallest screen first and enhancing the design for larger screens afterwards. The constraints of the phone force focus on what matters; in CSS it means base styles for small screens and min-width media queries for wider ones.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

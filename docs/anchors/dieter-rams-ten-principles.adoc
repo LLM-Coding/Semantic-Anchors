@@ -5,6 +5,7 @@
 :tags: Dieter Rams, ten principles, good design, Less but better, Weniger aber besser, innovative, useful, aesthetic, understandable, unobtrusive, honest, long-lasting, thorough, environmentally friendly, as little design as possible, product design, Vitsoe
 :related: bauhaus, kiss-principle, refactoring-ui
 :tier: 3
+:definition: Dieter Rams' ten principles of good design say that good design is innovative, useful, aesthetic, understandable, unobtrusive, honest, long-lasting, thorough down to the last detail, environmentally friendly, and as little design as possible. The Braun designer summed them up as "less, but better": remove the unnecessary rather than imitate a minimal look.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

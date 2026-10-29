@@ -5,6 +5,7 @@
 :tags: Gestalt principles, Gestalt laws, laws of perceptual organization, perceptual grouping, Max Wertheimer, Berlin school, proximity, similarity, common fate, closure, good curve, good Gestalt, common region, figure-ground, visual hierarchy, visual design
 :related: swiss-style, laws-of-ux, nielsen-usability-heuristics
 :tier: 3
+:definition: The Gestalt principles describe how people group what they see: elements that are close, similar, enclosed, connected or moving together are perceived as one unit, and figures separate from their ground. Formulated by Max Wertheimer in 1923, they explain why a layout reads as grouped or scattered.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

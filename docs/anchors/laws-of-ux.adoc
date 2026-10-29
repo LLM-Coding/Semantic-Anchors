@@ -5,6 +5,7 @@
 :tags: Laws of UX, Jon Yablonski, Fitts's Law, Hick's Law, Jakob's Law, Miller's Law, Doherty Threshold, Tesler's Law, Von Restorff Effect, Peak-End Rule, Aesthetic-Usability Effect, Postel's Law, Goal-Gradient Effect, Zeigarnik Effect, Serial Position Effect, cognitive load, UX psychology
 :related: nielsen-usability-heuristics, gestalt-principles, progressive-disclosure
 :tier: 3
+:definition: Laws of UX is Jon Yablonski's collection of psychological principles for interface design, published as a website in 2018 and as an O'Reilly book. It names effects such as Fitts's Law, Hick's Law, Jakob's Law, Miller's Law and the Doherty Threshold, so design decisions can cite a known principle.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 
