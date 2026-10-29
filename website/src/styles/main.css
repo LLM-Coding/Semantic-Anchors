@@ -337,7 +337,7 @@ html {
   @apply underline underline-offset-2;
 }
 
-/* Example image (`:example-image:`): what a model makes of the anchor name alone.
+/* Example image (`:example-screenshot:`): what a model makes of the anchor name alone.
    Shown below the anchor text in the modal and on the pre-rendered page. */
 .anchor-example-image {
   @apply mt-8 max-w-md;

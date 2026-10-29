@@ -7,7 +7,7 @@
 :tier: 3
 :prior-test: 2026-08-25
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
-:example-image: tufte-style.webp
+:example-screenshot: tufte-style.webp
 
 [%collapsible]
 ====

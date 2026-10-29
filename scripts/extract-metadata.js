@@ -163,8 +163,9 @@ function parseAnchorFile(filePath) {
 
   // Optional example image for the detail view: a plain file name inside
   // website/public/examples/. Validated below so a typo fails the build instead
-  // of shipping a broken image.
-  const exampleImageAttr = attributes['example-image']
+  // of shipping a broken image. Not called `:example-image:`: the AsciiDoc linter
+  // reads `image: <file>` inside that name as an inline image macro.
+  const exampleImageAttr = attributes['example-screenshot']
   if (exampleImageAttr) anchor.exampleImage = exampleImageAttr.trim()
 
   // Curated direct-answer definition (#580): a standalone "What is X?" sentence.
@@ -192,13 +193,17 @@ function parseAnchorFile(filePath) {
   }
   if (anchor.exampleImage) {
     if (!isSafeExampleImage(anchor.exampleImage)) {
-      errors.push(`Invalid :example-image: "${anchor.exampleImage}" (plain file name expected)`)
+      errors.push(
+        `Invalid :example-screenshot: "${anchor.exampleImage}" (plain file name expected)`
+      )
     } else if (
       !fs.existsSync(
         path.join(__dirname, '..', 'website', 'public', 'examples', anchor.exampleImage)
       )
     ) {
-      errors.push(`:example-image: file website/public/examples/${anchor.exampleImage} not found`)
+      errors.push(
+        `:example-screenshot: file website/public/examples/${anchor.exampleImage} not found`
+      )
     }
   }
 

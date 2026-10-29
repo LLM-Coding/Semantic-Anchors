@@ -8,7 +8,7 @@
 :definition: Material Design 3 is Google's design system for Android and the web, introduced as Material You in 2021 and extended by Material 3 Expressive in 2025. It defines colour roles and dynamic colour from a source colour, design tokens, a type and shape scale, tonal elevation and standard components.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
-:example-image: material-design-3.webp
+:example-screenshot: material-design-3.webp
 
 [%collapsible]
 ====

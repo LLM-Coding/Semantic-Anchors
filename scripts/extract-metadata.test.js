@@ -57,7 +57,7 @@ describe('extract-metadata', () => {
     expect(withoutAdvisory.advisory).toBeUndefined()
   })
 
-  it('should extract the optional :example-image: attribute', () => {
+  it('should extract the optional :example-screenshot: attribute', () => {
     execFileSync('node', ['scripts/extract-metadata.js'], {
       cwd: path.join(__dirname, '..'),
       stdio: 'pipe',
@@ -82,6 +82,16 @@ describe('extract-metadata', () => {
     for (const anchor of anchors.filter((a) => a.exampleImage)) {
       const file = path.join(__dirname, '..', 'website', 'public', 'examples', anchor.exampleImage)
       expect(fs.existsSync(file), `${anchor.id}: ${anchor.exampleImage}`).toBe(true)
+    }
+  })
+
+  it('never names an attribute so that it reads as an inline image macro', () => {
+    // `:example-image: x.webp` contains `image: x.webp`, which the AsciiDoc
+    // linter reports as a missing image without alt text.
+    const dir = path.join(__dirname, '..', 'docs', 'anchors')
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.adoc'))) {
+      const header = fs.readFileSync(path.join(dir, file), 'utf-8').split('\n[')[0]
+      expect(header, file).not.toMatch(/^:[\w-]*image:/m)
     }
   })
 })

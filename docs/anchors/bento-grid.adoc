@@ -8,7 +8,7 @@
 :definition: A bento grid is a layout of rounded tiles in different sizes on one grid, each tile holding one feature, figure or image. Size carries the hierarchy, usually with one large hero tile and smaller tiles around it; the layout became popular through Apple's product presentations.
 :prior-test: 2026-10-29
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
-:example-image: bento-grid.webp
+:example-screenshot: bento-grid.webp
 
 [%collapsible]
 ====

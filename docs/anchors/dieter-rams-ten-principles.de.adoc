@@ -7,7 +7,7 @@
 :tier: 3
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
-:example-image: dieter-rams-ten-principles.webp
+:example-screenshot: dieter-rams-ten-principles.webp
 
 [%collapsible]
 ====

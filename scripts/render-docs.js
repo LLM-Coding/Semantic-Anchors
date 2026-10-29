@@ -266,7 +266,7 @@ for (const file of fs.readdirSync(ANCHORS_SRC).sort()) {
     // Example image below the anchor text, like in the modal; '' without one.
     (doc) =>
       exampleImageHtml(
-        doc.getAttribute('example-image'),
+        doc.getAttribute('example-screenshot'),
         String(doc.getDocumentTitle({ sanitize: true }) || ''),
         file.endsWith('.de.adoc') ? 'de' : 'en'
       )

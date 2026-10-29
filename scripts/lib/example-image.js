@@ -1,5 +1,5 @@
 /**
- * Example image for an anchor's detail view (`:example-image:` attribute).
+ * Example image for an anchor's detail view (`:example-screenshot:` attribute).
  *
  * Some visual-design anchors carry a screenshot that shows what a model makes of
  * the anchor name alone. The modal renders it client-side; this module renders the

@@ -333,7 +333,7 @@ export async function loadAnchorContent(anchorId) {
       })
     }
 
-    // Example image (`:example-image:`): what a model makes of the anchor name
+    // Example image (`:example-screenshot:`): what a model makes of the anchor name
     // alone. Sits below the anchor text and above the tested-on note. Only plain
     // file names are accepted, so the attribute can never point elsewhere. Built
     // with DOM APIs and textContent, no HTML sink.

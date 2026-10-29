@@ -8,7 +8,7 @@
 :definition: The GOV.UK Design System is the UK Government Digital Service's library of styles, components and patterns for public services, launched in 2018. It is known for one question per page, a start page, a check-answers page, clear error summaries and plain English, all tested with real users.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
-:example-image: gov-uk-design-system.webp
+:example-screenshot: gov-uk-design-system.webp
 
 [%collapsible]
 ====
