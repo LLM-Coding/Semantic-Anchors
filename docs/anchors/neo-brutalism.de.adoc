@@ -5,6 +5,7 @@
 :tags: Neo-Brutalism, Neobrutalismus, Neubrutalism, Brutalismus im Webdesign, dicke Rahmen, harter Schatten, versetzter Schatten, flache Farben, hoher Kontrast, Blocklayout, Gumroad, Webdesign-Trend, visueller Stil
 :related: swiss-style, bauhaus, wcag-22-aa
 :tier: 3
+:definition: Neo-Brutalism ist ein Web- und UI-Stil mit dicken schwarzen Umrissen, harten versetzten Schatten ohne Unschärfe, flachen gesättigten Farben, blockiger sichtbarer Struktur und kräftiger schlichter Schrift. Anders als rohes brutalistisches Webdesign behält er ein Raster und eine klare Hierarchie; er verbreitete sich als Trend in der Community.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

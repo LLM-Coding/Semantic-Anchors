@@ -3,6 +3,7 @@
 :roles: software-developer, qa-engineer, software-architect
 :proponents: Steve Freeman, Nat Pryce ("Growing Object-Oriented Software, Guided by Tests")
 :tier: 3
+:definition: TDD London School – auch Mockist- oder Outside-in-TDD genannt (Steve Freeman und Nat Pryce) – treibt den Entwurf von außen nach innen: Man beginnt an der Systemgrenze, mockt Kollaborateure, um ihre Interaktionen festzulegen, und lässt die benötigten Schnittstellen entstehen. Im Vordergrund stehen Objektrollen und Nachrichten, nicht die Prüfung von Zuständen.
 :tags: TDD, London school, mockist, outside-in, Freeman, Pryce, interaction testing, mocks
 :related: tdd-chicago-school, red-green-tdd, test-double-mock
 

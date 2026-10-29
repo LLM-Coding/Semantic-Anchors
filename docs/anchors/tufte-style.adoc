@@ -5,6 +5,7 @@
 :tags: Tufte style, Edward Tufte, data-ink ratio, chartjunk, small multiples, sparklines, lie factor, graphical integrity, information design, data visualization, direct labeling, Tufte CSS, sidenotes, dashboard design
 :related: progressive-disclosure, c4-diagrams, plain-english-strunk-white, bluf
 :tier: 3
+:definition: Tufte Style means the information-design principles of Edward R. Tufte: maximise the data-ink ratio, remove chartjunk, keep graphical integrity, use small multiples, sparklines and direct labels instead of legends. The point is density, not emptiness: the space freed from decoration carries more information.
 :prior-test: 2026-08-25
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
 

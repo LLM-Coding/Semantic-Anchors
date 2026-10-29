@@ -5,6 +5,7 @@
 :tags: Refactoring UI, Adam Wathan, Steve Schoger, UI-Design für Entwickler, visuelle Hierarchie, Schriftstärke, Zurücknehmen, Abstandssystem, Schriftgrößenskala, Weißraum, weniger Rahmen, Farbpalette, HSL, Farbabstufungen, Schatten, Elevation, Tailwind CSS
 :related: eight-point-grid, gestalt-principles, modular-scale
 :tier: 2
+:definition: Refactoring UI ist ein Buch von Adam Wathan und Steve Schoger mit praktischen Gestaltungstaktiken für Entwickler. Es lehrt Hierarchie über Schriftstärke und Farbe statt nur über Größe, vorab festgelegte Abstands- und Schriftskalen, weniger Rahmen, vollständige Farbpaletten und Schatten, die Erhebung ausdrücken.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=no, sonnet-5-5=yes, opus-5-5=yes
 

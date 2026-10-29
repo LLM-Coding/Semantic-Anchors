@@ -5,6 +5,7 @@
 :tags: Design Tokens, DTCG, W3C Design Tokens Community Group, Design Tokens Format Module, tokens.json, $value, $type, Alias, Token-Referenz, Style Dictionary, Tokens Studio, Terrazzo, Theming, Designsystem, Gestaltungsvariablen, Salesforce Lightning Design System
 :related: atomic-design, material-design-3, eight-point-grid
 :tier: 3
+:definition: Design Tokens im W3C-DTCG-Format speichern Gestaltungsentscheidungen wie Farben, Abstände und Schrift als plattformneutrales JSON, mit `$value` und `$type` je Token und Aliasen in geschweiften Klammern. Die Design Tokens Community Group veröffentlichte die erste stabile Fassung 2025.10; Werkzeuge erzeugen daraus CSS-, iOS- und Android-Code.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

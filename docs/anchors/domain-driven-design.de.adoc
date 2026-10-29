@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer, business-analyst, team-lead
 :proponents: Eric Evans
 :tier: 3
+:definition: Domain-Driven Design, eingeführt von Eric Evans, begegnet komplexer Software, indem es den Entwurf auf die Fachdomäne ausrichtet. Eine gemeinsame Ubiquitous Language verbindet Entwickler und Fachexperten, Bounded Contexts grenzen Modelle ab, und taktische Muster – Entities, Value Objects, Aggregates, Repositories – bilden die Domäne direkt im Code ab.
 :tags: DDD, domain-driven design, bounded context, ubiquitous language, aggregates, Eric Evans
 :related: hexagonal-architecture, clean-architecture, event-storming, residuality-theory, domain-storytelling
 

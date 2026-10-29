@@ -5,6 +5,7 @@
 :tags: Nielsen-Heuristiken, Usability-Heuristiken, heuristische Evaluation, Heuristic Evaluation, Jakob Nielsen, Rolf Molich, Nielsen Norman Group, Sichtbarkeit des Systemstatus, Nutzerkontrolle und Freiheit, Konsistenz und Standards, Fehlervermeidung, Wiedererkennen statt Erinnern, ästhetisches und minimalistisches Design, Usability-Inspektion, UX-Review
 :related: laws-of-ux, gestalt-principles, wcag-22-aa
 :tier: 3
+:definition: Nielsens 10 Usability-Heuristiken sind allgemeine Faustregeln zur Bewertung von Benutzeroberflächen, 1990 von Jakob Nielsen und Rolf Molich veröffentlicht und 1994 von Nielsen überarbeitet. Sie umfassen Systemstatus, Bezug zur realen Welt, Kontrolle durch den Nutzer, Konsistenz, Fehlervermeidung, Erkennen statt Erinnern, Effizienz, minimalistisches Design, Fehlerbehebung und Hilfe.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

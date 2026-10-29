@@ -7038,6 +7038,7 @@
         "works": true
       }
     ],
+    "definition": "Plain language according to ISO 24495-1:2023 is communication whose wording, structure and design are so clear that the intended readers can easily find what they need, understand what they find and use that information. The standard sets four governing principles: relevant, findable, understandable and usable.",
     "addedAt": "2026-10-25T08:50:31+01:00"
   },
   {
@@ -8735,6 +8736,7 @@
         "works": true
       }
     ],
+    "definition": "Swiss Style, also called the International Typographic Style, is the grid-based graphic design of the Zurich and Basel schools from the 1950s. It sets a modular grid first, uses sans-serif type such as Akzidenz-Grotesk or Helvetica flush left, ragged right, balances elements asymmetrically and puts clarity before expression.",
     "addedAt": "2026-10-25T08:47:44+01:00"
   },
   {
@@ -9475,6 +9477,7 @@
         "works": true
       }
     ],
+    "definition": "Tufte Style means the information-design principles of Edward R. Tufte: maximise the data-ink ratio, remove chartjunk, keep graphical integrity, use small multiples, sparklines and direct labels instead of legends. The point is density, not emptiness: the space freed from decoration carries more information.",
     "addedAt": "2026-08-25T09:12:59+02:00"
   },
   {

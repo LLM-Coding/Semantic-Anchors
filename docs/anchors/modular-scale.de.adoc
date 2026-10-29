@@ -5,6 +5,7 @@
 :tags: Modular Scale, modulare Skala, Type Scale, Schriftgrößenskala, typografische Skala, Verhältnis, Grundgröße, große Terz, Quarte, Goldener Schnitt, musikalische Intervalle, Schriftgrößen, Überschriftengrößen, CSS Custom Properties, Tim Brown, Scott Kellum, Robert Bringhurst, Typografie
 :related: elements-of-typographic-style, eight-point-grid, every-layout
 :tier: 3
+:definition: Eine modulare Skala ist eine Folge von Schriftgrößen, abgeleitet aus einer Grundgröße und einem Verhältnis wie 1,25 (große Terz) oder 1,618 (Goldener Schnitt). Tim Brown machte sie 2011 im Web bekannt; sie ersetzt von Hand gewählte Überschriftengrößen durch eine stimmige Progression.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 
