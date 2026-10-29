@@ -42,6 +42,6 @@ Schlüsselvertreter:: Kelly Johnson (Lockheed Skunk Works, 1960er), Robert C. Ma
 == *Verwandte Anker*:
 
 * <<yagni,YAGNI>> - Nicht implementieren, was noch nicht benötigt wird (komplementäres Einfachheitsprinzip)
-* <<dry-principle,DRY>> - Redundanz eliminieren, um Codebasen einfach und konsistent zu halten
+* <<dry,DRY>> - Redundanz eliminieren, um Codebasen einfach und konsistent zu halten
 * <<solid-principles,SOLID Principles>> - Strukturierte Richtlinien, die saubere, einfache Designs fördern
 ====

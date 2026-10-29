@@ -41,8 +41,8 @@ Key Proponents:: Ron Jeffries (coined the phrase), Kent Beck ("Extreme Programmi
 [discrete]
 == *Related Anchors*:
 
-* <<dry-principle,DRY>> - Eliminates duplication of existing knowledge (complementary but distinct)
-* <<spot-principle,SPOT>> - Single Point of Truth, related simplicity principle
+* <<dry,DRY>> - Eliminates duplication of existing knowledge (complementary but distinct)
+* SPOT - Single Point of Truth, related simplicity principle
 * <<tdd-chicago-school,TDD, Chicago School>> - YAGNI is a core principle of classicist TDD
 * <<kiss-principle,KISS Principle>> - Keep systems as simple as possible (complementary simplicity principle)
 ====

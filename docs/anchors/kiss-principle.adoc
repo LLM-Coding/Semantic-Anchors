@@ -42,6 +42,6 @@ Key Proponents:: Kelly Johnson (Lockheed Skunk Works, 1960s), Robert C. Martin (
 == *Related Anchors*:
 
 * <<yagni,YAGNI>> - Don't implement what you don't need yet (complementary simplicity principle)
-* <<dry-principle,DRY>> - Eliminate redundancy to keep codebases simple and consistent
+* <<dry,DRY>> - Eliminate redundancy to keep codebases simple and consistent
 * <<solid-principles,SOLID Principles>> - Structured guidelines that reinforce clean, simple designs
 ====
