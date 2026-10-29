@@ -1,4 +1,8 @@
 import { describe, it, expect } from 'vitest'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import Asciidoctor from '@asciidoctor/core'
 import { rewriteAnchorXrefs } from './lib/anchor-xrefs.js'
 
 // #860: <<id,text>> renders as href="#id", which points nowhere on the
@@ -39,5 +43,30 @@ describe('rewriteAnchorXrefs', () => {
     const out = rewriteAnchorXrefs(html, { lang: 'en', anchorIds, germanIds })
     expect(out.match(/href="#/g)).toBeNull()
     expect(out.match(/href="\/Semantic-Anchors\/anchor\//g)).toHaveLength(2)
+  })
+})
+
+describe('anchor cross-references in the catalog', () => {
+  // Invariant: every <<id>> in an anchor source resolves, either to another
+  // anchor (rewritten to its page) or to a section of the same document.
+  // A target that is neither is a dead link on every surface, modal included.
+  it('resolve to an anchor or to a section of the same document', () => {
+    const dir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs', 'anchors')
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith('.adoc') && !f.startsWith('_'))
+    const ids = new Set(files.map((f) => f.replace(/(\.de)?\.adoc$/, '')))
+    const asciidoctor = Asciidoctor()
+    const dangling = []
+    for (const file of files) {
+      const src = fs.readFileSync(path.join(dir, file), 'utf-8')
+      const targets = [...src.matchAll(/<<([^,>]+)(?:,[^>]*)?>>/g)].map((m) => m[1].trim())
+      if (targets.length === 0) continue
+      const refs = asciidoctor
+        .load(src, { safe: 'safe', attributes: { idprefix: '', idseparator: '-' } })
+        .getRefs()
+      for (const t of targets) {
+        if (!ids.has(t) && !(t in refs)) dangling.push(`${file}: <<${t}>>`)
+      }
+    }
+    expect(dangling).toEqual([])
   })
 })

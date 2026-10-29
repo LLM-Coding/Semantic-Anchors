@@ -55,7 +55,7 @@ Historical Context:: Feynman was renowned for his teaching ability and his belie
 [discrete]
 == *Related Concepts*:
 
-* <<rubber-duck-debugging,Rubber Duck Debugging>> (explaining to understand)
+* Rubber Duck Debugging (explaining to understand)
 * Learning by teaching
 * Active recall
 * Elaborative interrogation
