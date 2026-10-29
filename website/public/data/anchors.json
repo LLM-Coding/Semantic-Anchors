@@ -619,6 +619,60 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "bento-grid",
+    "title": "Bento Grid",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer",
+      "product-owner"
+    ],
+    "related": [
+      "eight-point-grid",
+      "gestalt-principles",
+      "swiss-style"
+    ],
+    "proponents": [
+      "Community design trend (no single originator)",
+      "Apple (product and keynote summary slides)"
+    ],
+    "tags": [
+      "bento grid",
+      "bento box layout",
+      "bento UI",
+      "tile layout",
+      "card grid",
+      "mixed tile sizes",
+      "CSS grid",
+      "spanning tiles",
+      "feature section",
+      "landing page",
+      "Apple keynote",
+      "Metro design",
+      "dashboard layout"
+    ],
+    "filePath": "docs/anchors/bento-grid.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-29",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-29T08:34:15+01:00"
+  },
+  {
     "id": "big-five",
     "title": "Big Five (OCEAN) Personality Traits",
     "categories": [
@@ -3551,6 +3605,57 @@
     "filePath": "docs/anchors/github-flow.adoc",
     "tier": 3,
     "addedAt": "2026-03-13T12:59:50+00:00"
+  },
+  {
+    "id": "glassmorphism",
+    "title": "Glassmorphism",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "apple-human-interface-guidelines",
+      "neo-brutalism",
+      "wcag-22-aa"
+    ],
+    "proponents": [
+      "Michał Malewicz"
+    ],
+    "tags": [
+      "glassmorphism",
+      "frosted glass",
+      "glass UI",
+      "backdrop-filter",
+      "background blur",
+      "translucent panels",
+      "semi-transparent",
+      "light border",
+      "layered UI",
+      "UI trend",
+      "Liquid Glass",
+      "neumorphism"
+    ],
+    "filePath": "docs/anchors/glassmorphism.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-29",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "addedAt": "2026-10-29T08:34:15+01:00"
   },
   {
     "id": "gof-abstract-factory-pattern",
@@ -6495,7 +6600,8 @@
         "model": "opus-5-5",
         "works": true
       }
-    ]
+    ],
+    "addedAt": "2026-10-28T23:56:47+01:00"
   },
   {
     "id": "nielsen-usability-heuristics",

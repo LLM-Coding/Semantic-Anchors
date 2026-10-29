@@ -878,6 +878,9 @@ include::anchors/atomic-design.adoc[leveloffset=+2]
 [[bauhaus]]
 include::anchors/bauhaus.adoc[leveloffset=+2]
 
+[[bento-grid]]
+include::anchors/bento-grid.adoc[leveloffset=+2]
+
 [[design-tokens-dtcg]]
 include::anchors/design-tokens-dtcg.adoc[leveloffset=+2]
 
@@ -895,6 +898,9 @@ include::anchors/every-layout.adoc[leveloffset=+2]
 
 [[gestalt-principles]]
 include::anchors/gestalt-principles.adoc[leveloffset=+2]
+
+[[glassmorphism]]
+include::anchors/glassmorphism.adoc[leveloffset=+2]
 
 [[gov-uk-design-system]]
 include::anchors/gov-uk-design-system.adoc[leveloffset=+2]

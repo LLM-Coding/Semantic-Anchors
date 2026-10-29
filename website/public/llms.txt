@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 302 well-defined terms, methodologies, and frameworks
+> 304 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -13366,6 +13366,44 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **Progressive image, segregated practice.** Theresia Enzensberger writes in https://www.goethe.de/ins/gb/en/kul/past/tech/bhs/21385384.html["The 'Bauhaus women'"] (Goethe-Institut, October 2018, translated by Jo Beckett) that the school steered women into the weaving workshop and their numbers fell: "Gropius' segregation was showing its effects".
 * **An aesthetic imposed on the people it claimed to serve.** Scott Alexander, in https://www.astralcodexten.com/p/book-review-from-bauhaus-to-our-house["Book Review: From Bauhaus to Our House"] (Astral Codex Ten, 4 December 2024), follows Tom Wolfe's polemic: modernism forced its taste on workers who did not share it. "Ironically, real workers hated the modernist styles."
 
+### Bento Grid
+
+***Full Name***: Bento Grid -- a layout of rounded tiles in different sizes on one grid, each tile holding one piece of content
+
+***Also known as***: Bento box layout, bento UI
+
+[discrete]
+## **Core Concepts**:
+
+* **One grid, tiles of different sizes.** Tiles span one or more columns and rows -- 2 × 2, 2 × 1, 1 × 1 -- so the layout is uneven but still aligned.
+* **Size carries the hierarchy.** The most important item gets the largest tile; secondary items fill smaller ones around it.
+* **One idea per tile.** Each compartment holds one feature, number, image or short statement, the way a bento box holds one dish per compartment.
+* **Rounded cards with even gaps.** Tiles have generous corner radii and the same gap on every side, which makes the uneven sizes read as one system.
+* **Rich tile content.** Tiles often show a product screenshot, a large figure or an icon rather than only text.
+* **Built on CSS Grid.** Spanning columns and rows is what CSS Grid does natively; on narrow screens the tiles collapse into one or two columns.
+
+***Key Proponents***: No single originator. Many attribute it to Apple's promotional videos and keynote summary slides; some trace it further back to the tile layout of Microsoft's Metro design in Windows Phone 7 (https://bootcamp.uxdesign.cc/web-design-trend-bento-box-95814d99ac62["Web design trend: bento box"], UX Collective Bootcamp). The name comes from the Japanese bento lunch box with its divided compartments.
+
+[discrete]
+## **When to Use**:
+
+* Feature sections on product landing pages, where a handful of features of unequal weight must fit one screen
+* Portfolios, dashboards and "at a glance" summaries
+* As a counter-instruction when generated layouts fall back on a uniform grid of identical cards
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating any card grid as a bento grid.** A grid of identical cards is just a card grid. The varied tile sizes are what make it bento.
+* **Using the bare "bento".** In our prior test on 2026-10-29, "What is bento?" resolved to Japanese food on all three tiers. Say "bento grid".
+* **Expecting it by default.** In the same test, five of six baselines laid six features out as a uniform three-by-two grid. With "Use a bento grid." six of six runs mixed tile sizes, typically a 2 × 2 hero tile with smaller tiles around it.
+* **Ignoring the narrow screen.** The composition depends on width; on a phone it becomes a stack, and the hierarchy has to survive that.
+
+[discrete]
+## **Criticism**:
+
+* **Too much in one screen.** David Jaja warns in https://www.freecodecamp.org/news/bento-grids-in-web-design/["Bento Grids in Web Design"] (freeCodeCamp, 2024) that "there's a risk of cramming too much information into a single screen". He also names weak hierarchy when tiles look alike, choice overload and monotony when the grid is overused.
+
 ### Design Tokens (W3C DTCG)
 
 ***Full Name***: Design Tokens in the format of the W3C Design Tokens Community Group (DTCG) -- design decisions such as colours, spacing and type stored as tool-neutral data
@@ -13604,6 +13642,48 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **Criticism**:
 
 * **Laws with little precision.** Wagemans, Elder, Kubovy, Palmer, Peterson, Singh and von der Heydt review a century of research in https://ruccs.sas.rutgers.edu/images/archive/personal-manish-singh/papers/Wagemans_etal_2012_I.pdf["A century of Gestalt psychology in visual perception: I. Perceptual grouping and figure–ground organization"] (_Psychological Bulletin_ 138(6), 2012). They report the long-standing charge that classic Gestalt work offered demonstrations instead of explanations, "formulating laws with little precision".
+
+### Glassmorphism
+
+***Full Name***: Glassmorphism -- a UI style of translucent, frosted-glass panels with background blur and a subtle light border, layered over a colourful background
+
+***Also known as***: Frosted glass UI, glass UI
+
+[discrete]
+## **Core Concepts**:
+
+* **Frosted transparency.** Panels are semi-transparent, typically a white or dark fill at low opacity, and blur whatever lies behind them. In CSS this is `backdrop-filter: blur()`.
+* **Layers that float.** Panels sit on separate planes above the background and above each other, so depth comes from transparency, not from heavy shadows.
+* **A vivid background to blur.** The effect needs something to show through: gradients, coloured blobs or photos behind the glass.
+* **A subtle light border.** A thin, semi-transparent white edge catches the light and separates the panel from the background.
+* **Soft shadows and rounded corners.** Panels have generous radii and, at most, a soft shadow beneath them.
+
+***Key Proponents***: Michał Malewicz, who named the style in https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9["Glassmorphism in user interfaces"] (UX Collective, 22 November 2020) and listed its four traits: frosted transparency, floating layers, vivid colours and a subtle light border.
+
+[discrete]
+## **When to Use**:
+
+* Overlays, cards and control panels that sit on top of imagery or colourful gradients
+* Marketing pages, music and media apps, dashboards that should feel light and layered
+* As a counter-instruction when generated designs use flat opaque cards and you want depth without heavy shadows
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Expecting it from a related task.** In our prior test on 2026-10-29, a music player's now-playing screen already got a blurred background in all six baselines. On a neutral task -- the pricing section of a SaaS landing page -- no baseline made its cards translucent or used `backdrop-filter`; with "Use glassmorphism." six of six runs did both.
+* **Forgetting the background.** Glass over a plain white page shows nothing. The style needs colour or imagery behind it.
+* **Reading translucent as legible.** Text on glass sits on a shifting background; contrast has to be checked against the busiest area behind it.
+* **Confusing it with neumorphism.** Neumorphism extrudes soft shapes from a solid surface; glassmorphism layers transparent panes.
+
+[discrete]
+## **Criticism**:
+
+* **Hard on people with disabilities.** Nicko Syropoulos writes in https://axesslab.com/?p=5111["Glassmorphism Meets Accessibility: Can Glass Be Inclusive?"] (Axess Lab, 2025) that "this style offers great challenges even if it is aesthetically pleasing". He names weak text contrast over colourful images, distracting backgrounds, blur and motion that can cause eye strain, and blurred boundaries that hide controls.
+
+[discrete]
+## **Current Status**:
+
+* **Back in the mainstream with Liquid Glass.** Apple's 2025 design language for iOS 26 and its other platforms uses a translucent material that, in Apple's words, https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/["reflects and refracts its surroundings"]. Without further context, "glassmorphism" most likely means the 2020 style of Malewicz's article; for Apple's version, name Liquid Glass and the Apple Human Interface Guidelines.
 
 ### GOV.UK Design System
 

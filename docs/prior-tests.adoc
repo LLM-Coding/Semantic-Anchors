@@ -733,3 +733,23 @@ All eighteen were recognised as rich on all tiers in both P1 runs. Haiku again r
 === What the baselines already do
 
 Strong models already reach for several of these patterns without being told: Opus designs a public service with a start page and a check-answers page, every tier knows the 4.5:1 contrast ratio, and most CSS already lands on multiples of eight. A name that only repeats the default adds little. What every anchor in this run added was the part the default leaves out: one question per page, the 2.2 success criteria, `min-width` instead of `max-width`, old-style figures. That difference is what the notes above record.
+
+== Run 2026-10-29
+
+[cols="1,3"]
+|===
+|Candidates |Bento Grid (https://github.com/LLM-Coding/Semantic-Anchors/issues/857[#857]) and Glassmorphism (https://github.com/LLM-Coding/Semantic-Anchors/issues/858[#858]), first left out of the run of 2026-10-28 as trend terms without an originator, and tested after the maintainers decided in #850 that a reliable effect is enough
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
+|Procedure |`anchor-prior-test` v1.1
+|Runs |P1 and the action probe twice per term and tier, P2 and P4 once per tier, each action task with its own no-anchor baseline twice per tier. Glassmorphism ran a second action task after the first one proved too close to the style. 60 probes plus three clean-room checks, USD 0.79
+|Clean room |As in the run of 2026-10-28; verified on all three tiers against the custom-instructions probe, which answered "none"
+|Criticism research |2026-10-29, English. Found and fetched: David Jaja, "Bento Grids in Web Design" (freeCodeCamp, 2024); Nicko Syropoulos, "Glassmorphism Meets Accessibility: Can Glass Be Inclusive?" (Axess Lab, 2025). Origin sources fetched: Michał Malewicz, "Glassmorphism in user interfaces" (UX Collective, 2020); "Web design trend: bento box" (UX Collective Bootcamp) for the Apple and Metro origins of the bento layout
+|===
+
+[cols="2,1,4"]
+|===
+|Term |Verdict |Note
+
+|Bento Grid |★★★ |The task: lay out the features section of a landing page with six features. Five of six baselines chose a uniform three-by-two grid of identical cards. With "Use a bento grid." six of six runs mixed tile sizes on one grid, typically a 2 × 2 hero tile with smaller tiles around it; on Haiku: "Top-left, large (2 columns × 2 rows): Primary feature". The bare "bento" resolves to Japanese food on all tiers, so the catalog name keeps "Grid". Attribution: no single originator; Opus names Apple as the popular source and Microsoft's Metro tiles as a precursor, Sonnet names a designer with low confidence, Haiku says unknown. Added under the rule of #850
+|Glassmorphism |★★★ |The first task, the now-playing screen of a music player, was too close to the style: all six baselines already blurred the background. On a neutral task, the pricing section of a SaaS landing page, no baseline made its cards translucent or used `backdrop-filter`, one mentioned blur; with "Use glassmorphism." six of six runs used translucent cards, background blur and `backdrop-filter`. On Haiku: "The three plan cards are translucent panels, roughly 10–15% white fill, with a backdrop-filter blur". The bare term resolves to UI design. Attribution: Michał Malewicz on all tiers, medium confidence, confirmed by his article of November 2020, which proposes the name
+|===
