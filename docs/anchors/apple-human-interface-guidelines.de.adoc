@@ -18,7 +18,7 @@ Auch bekannt als:: HIG, Apple HIG
 == *Kernkonzepte*:
 
 * *Leitthemen.* Die klassischen iOS-Richtlinien nannten Klarheit, Zurückhaltung und Tiefe (clarity, deference, depth). Die Fassung von 2025 spricht von Hierarchie, Harmonie und Konsistenz.
-* *Ziele, die ein Finger trifft.* Bedienelemente brauchen eine Trefferfläche von mindestens 44 × 44 Punkt.
+* *Ziele, die ein Finger trifft.* Als Faustregel braucht ein Button eine https://developer.apple.com/design/human-interface-guidelines/buttons[Trefferfläche] von mindestens 44 × 44 Punkt; visionOS verlangt 60 × 60.
 * *Systemschrift und Symbole.* SF Pro und SF Symbols; Dynamic Type lässt Text der vom Nutzer gewählten Größe folgen.
 * *Vertraute Navigation.* Large Titles, Navigation Bars, Tab Bars und Inset Grouped Lists geben Apps eine gemeinsame Struktur.
 * *Das Gerät respektieren.* Layouts bleiben in den Safe Areas; Systemfarben passen sich dem Dark Mode an.

@@ -1181,7 +1181,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Apple Human Interface Guidelines
 - **Also known as:** HIG, Apple HIG
 - **Proponents:** Apple (since 1987; one cross-platform document since 2022; Liquid Glass since 2025)
-- **Core:** Apple's platform design guidance — 44×44 pt minimum hit targets, SF Pro and SF Symbols, Dynamic Type, large titles, navigation and tab bars, inset grouped lists, safe areas, system colours and dark mode, accessibility; the prior serves the pre-2025 flat look, so ask for Liquid Glass explicitly if wanted
+- **Core:** Apple's platform design guidance — 44×44 pt minimum hit regions (60×60 pt in visionOS), SF Pro and SF Symbols, Dynamic Type, large titles, navigation and tab bars, inset grouped lists, safe areas, system colours and dark mode, accessibility; the prior serves the pre-2025 flat look, so ask for Liquid Glass explicitly if wanted
 
 ### GOV.UK Design System
 - **Also known as:** GDS design system, GOV.UK Frontend

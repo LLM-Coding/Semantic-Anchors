@@ -13204,7 +13204,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **Four principles: POUR.** Content must be Perceivable, Operable, Understandable and Robust. Guidelines sit under each principle, and testable success criteria sit under each guideline.
 * **Three levels; AA includes A.** Each success criterion has level A, AA or AAA. Conformance at AA means meeting every A and every AA criterion.
 * **Contrast is measured.** 1.4.3 asks for 4.5:1 for text and 3:1 for large text; 1.4.11 asks for 3:1 for non-text elements.
-* **Structure and interaction are testable too.** Among the AA criteria: 1.3.1 Info and Relationships, 1.4.10 Reflow, 2.4.7 Focus Visible, 3.3.1 Error Identification and 3.3.2 Labels or Instructions.
+* **Structure and interaction are testable too.** AA conformance requires, among others, 1.3.1 Info and Relationships, 3.3.1 Error Identification and 3.3.2 Labels or Instructions (Level A) and 1.4.10 Reflow and 2.4.7 Focus Visible (Level AA).
 * **Version 2.2 adds criteria for touch, focus and cognition.** New at A and AA: 2.4.11 Focus Not Obscured (Minimum), 2.5.7 Dragging Movements, 2.5.8 Target Size (Minimum) of 24×24 CSS pixels, 3.2.6 Consistent Help, 3.3.7 Redundant Entry and 3.3.8 Accessible Authentication (Minimum). Three more new criteria are AAA.
 * **One criterion was removed.** 4.1.1 Parsing is obsolete and no longer part of WCAG 2.2.
 
@@ -13251,7 +13251,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **Core Concepts**:
 
 * **Guiding themes.** Classic iOS guidance named clarity, deference and depth. The 2025 framing speaks of hierarchy, harmony and consistency.
-* **Targets a finger can hit.** Controls need a minimum hit target of 44 × 44 points.
+* **Targets a finger can hit.** As a general rule, a button needs a https://developer.apple.com/design/human-interface-guidelines/buttons[hit region] of at least 44 × 44 points; visionOS asks for 60 × 60.
 * **System type and symbols.** SF Pro and SF Symbols; Dynamic Type lets text follow the user's chosen size.
 * **Familiar navigation.** Large titles, navigation bars, tab bars and inset grouped lists give apps a shared structure.
 * **Respect the device.** Layouts stay inside safe areas; system colours adapt to dark mode.
@@ -14028,7 +14028,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **Four principles: POUR.** Content must be Perceivable, Operable, Understandable and Robust. Guidelines sit under each principle, and testable success criteria sit under each guideline.
 * **Three levels; AA includes A.** Each success criterion has level A, AA or AAA. Conformance at AA means meeting every A and every AA criterion.
 * **Contrast is measured.** 1.4.3 asks for 4.5:1 for text and 3:1 for large text; 1.4.11 asks for 3:1 for non-text elements.
-* **Structure and interaction are testable too.** Among the AA criteria: 1.3.1 Info and Relationships, 1.4.10 Reflow, 2.4.7 Focus Visible, 3.3.1 Error Identification and 3.3.2 Labels or Instructions.
+* **Structure and interaction are testable too.** AA conformance requires, among others, 1.3.1 Info and Relationships, 3.3.1 Error Identification and 3.3.2 Labels or Instructions (Level A) and 1.4.10 Reflow and 2.4.7 Focus Visible (Level AA).
 * **Version 2.2 adds criteria for touch, focus and cognition.** New at A and AA: 2.4.11 Focus Not Obscured (Minimum), 2.5.7 Dragging Movements, 2.5.8 Target Size (Minimum) of 24×24 CSS pixels, 3.2.6 Consistent Help, 3.3.7 Redundant Entry and 3.3.8 Accessible Authentication (Minimum). Three more new criteria are AAA.
 * **One criterion was removed.** 4.1.1 Parsing is obsolete and no longer part of WCAG 2.2.
 

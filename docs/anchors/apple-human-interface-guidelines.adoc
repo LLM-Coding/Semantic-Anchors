@@ -18,7 +18,7 @@ Also known as:: HIG, Apple HIG
 == *Core Concepts*:
 
 * *Guiding themes.* Classic iOS guidance named clarity, deference and depth. The 2025 framing speaks of hierarchy, harmony and consistency.
-* *Targets a finger can hit.* Controls need a minimum hit target of 44 × 44 points.
+* *Targets a finger can hit.* As a general rule, a button needs a https://developer.apple.com/design/human-interface-guidelines/buttons[hit region] of at least 44 × 44 points; visionOS asks for 60 × 60.
 * *System type and symbols.* SF Pro and SF Symbols; Dynamic Type lets text follow the user's chosen size.
 * *Familiar navigation.* Large titles, navigation bars, tab bars and inset grouped lists give apps a shared structure.
 * *Respect the device.* Layouts stay inside safe areas; system colours adapt to dark mode.
