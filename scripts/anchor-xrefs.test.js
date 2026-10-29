@@ -34,7 +34,14 @@ describe('rewriteAnchorXrefs', () => {
 
   it('leaves in-page section links and unknown ids alone', () => {
     const html =
-      '<a href="#_core_concepts">Core</a> <a href="#no-such-anchor">?</a> <a href="#/about">a</a>'
+      '<a href="#core-concepts">Core</a> <a href="#no-such-anchor">?</a> <a href="#/about">a</a>'
+    expect(rewriteAnchorXrefs(html, { lang: 'en', anchorIds, germanIds })).toBe(html)
+  })
+
+  it('keeps a link whose anchor id is also a section id on the same page', () => {
+    // Sections get unprefixed ids (idprefix: ''), so a heading can collide
+    // with an anchor id; then the fragment has a target and the TOC uses it.
+    const html = '<h2 id="swiss-style">Swiss Style</h2><a href="#swiss-style">x</a>'
     expect(rewriteAnchorXrefs(html, { lang: 'en', anchorIds, germanIds })).toBe(html)
   })
 

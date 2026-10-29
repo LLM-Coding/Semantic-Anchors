@@ -7,7 +7,9 @@
  * that fragment; on the pre-rendered /anchor/<id> pages no element carries
  * the id, so the link goes nowhere without JavaScript and crawlers see no
  * link at all. Known anchor ids therefore become clean routes. In-page
- * section links (#_core_concepts) and unknown ids stay untouched.
+ * section links (#core-concepts) and unknown ids stay untouched; so does an
+ * anchor id that the page itself defines as a section id, because then the
+ * fragment does have a target.
  */
 
 const BASE = '/Semantic-Anchors'
@@ -18,8 +20,9 @@ const BASE = '/Semantic-Anchors'
  *   anchorIds: every anchor id; germanIds: ids that have a German version
  */
 function rewriteAnchorXrefs(html, { lang, anchorIds, germanIds }) {
+  const pageIds = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))
   return html.replace(/href="#([a-z0-9][a-z0-9-]*)"/g, (match, id) => {
-    if (!anchorIds.has(id)) return match
+    if (!anchorIds.has(id) || pageIds.has(id)) return match
     const prefix = lang === 'de' && germanIds.has(id) ? `${BASE}/de` : BASE
     return `href="${prefix}/anchor/${id}"`
   })
