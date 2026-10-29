@@ -41,8 +41,8 @@ Schlüsselvertreter:: Ron Jeffries (prägte den Begriff), Kent Beck ("Extreme Pr
 [discrete]
 == *Verwandte Anker*:
 
-* <<dry-principle,DRY>> - Eliminiert Duplizierung vorhandenen Wissens (komplementär, aber verschieden)
-* <<spot-principle,SPOT>> - Single Point of Truth, verwandtes Einfachheitsprinzip
+* <<dry,DRY>> - Eliminiert Duplizierung vorhandenen Wissens (komplementär, aber verschieden)
+* SPOT - Single Point of Truth, verwandtes Einfachheitsprinzip
 * <<tdd-chicago-school,TDD, Chicago School>> - YAGNI ist ein Kernprinzip des klassischen TDD
 * <<kiss-principle,KISS Principle>> - Systeme so einfach wie möglich halten (komplementäres Einfachheitsprinzip)
 ====
