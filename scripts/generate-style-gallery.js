@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
  * Generate docs/style-gallery.adoc and docs/style-gallery.de.adoc (#872) from the
- * anchors that carry an `:example-screenshot:`. Run by `npm run build` before
- * render-docs; the committed files are checked against this output by a test.
+ * anchors that carry an `:example-screenshot:`. Run by `npm run build` and by the
+ * deploy workflow before render-docs; a test checks the committed files against
+ * this output, so a contributor who adds a screenshot also commits the update.
  */
 const fs = require('fs')
 const path = require('path')

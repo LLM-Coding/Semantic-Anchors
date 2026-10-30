@@ -43,6 +43,7 @@ jobs:
           node extract-metadata.js
           node generate-sitemap.js
           node generate-llms-txt.js
+          node generate-style-gallery.js
 
       - name: Copy anchor files to public directory
         run: |

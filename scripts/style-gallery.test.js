@@ -25,7 +25,8 @@ describe('galleryEntries', () => {
   it('uses the German anchor title on the German page', () => {
     const de = galleryEntries('de').find((e) => e.id === 'dieter-rams-ten-principles')
     const en = galleryEntries('en').find((e) => e.id === 'dieter-rams-ten-principles')
-    expect(de.title).toBeTruthy()
+    expect(de.title).toMatch(/Thesen/)
+    expect(de.title).not.toBe(en.title)
     expect(en.title).toMatch(/Rams/)
   })
 
@@ -94,9 +95,21 @@ describe('tile', () => {
   // escape the closing bracket or quote. Character references carry no escapes.
   it('keeps brackets and backslashes in a title from breaking the link macro', () => {
     const out = tile('A [b] c\\', 'x.webp', 'alt', '/Semantic-Anchors/anchor/x')
-    expect(out.split('\n')[0]).toBe('.link:/Semantic-Anchors/anchor/x[A [b&#93; c&#92;]')
+    expect(out.split('\n')[0]).toBe('.link:/Semantic-Anchors/anchor/x[A &#91;b&#93; c&#92;]')
     const html = Asciidoctor().convert(out)
-    expect(html).toContain('<a href="/Semantic-Anchors/anchor/x">A [b&#93; c&#92;</a>')
+    expect(html).toContain('<a href="/Semantic-Anchors/anchor/x">A &#91;b&#93; c&#92;</a>')
+  })
+
+  it('keeps commas, equals signs, carets and markup in a title literal', () => {
+    const out = tile('Foo a=b, c *x* _y_^', 'x.webp', 'alt', '/Semantic-Anchors/anchor/x')
+    const html = Asciidoctor().convert(out)
+    const link = html.match(/<a [^>]*>.*?<\/a>/)[0]
+    expect(link).toMatch(/^<a href="\/Semantic-Anchors\/anchor\/x">/)
+    expect(link).not.toMatch(/target=|<strong>|<em>/)
+    const text = link
+      .replace(/<[^>]+>/g, '')
+      .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(n))
+    expect(text).toBe('Foo a=b, c *x* _y_^')
   })
 
   it('keeps quotes and backslashes in the alt text from breaking the image macro', () => {

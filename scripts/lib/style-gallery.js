@@ -28,7 +28,7 @@ const TEXT = {
     intro: [
       'One homepage, redesigned once per anchor name. Each version comes from a separate Claude Opus 5.5 session that got the same prompt with only the style name changed:',
       'The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No style description, no reference images, one run per anchor, no rerolls; each session checked its own screenshots. The first tile is the original, https://rdmueller.github.io/[rdmueller.github.io] as of 28 October 2026.',
-      `How the examples came about, and what stood out in each: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Each tile links to its anchor.`,
+      `How the examples came about, and what stood out in each: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Each style tile links to its anchor.`,
       'One run per style shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.',
     ],
     originalTitle: 'Original',
@@ -40,7 +40,7 @@ const TEXT = {
     intro: [
       'Eine Homepage, einmal pro Ankername neu gestaltet. Jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam; nur der Stilname änderte sich:',
       'Keine Stilbeschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihre eigenen Screenshots. Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026.',
-      `Wie die Beispiele entstanden sind und was jeweils auffiel: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Jede Kachel verlinkt ihren Anker.`,
+      `Wie die Beispiele entstanden sind und was jeweils auffiel: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Jede Stil-Kachel verlinkt ihren Anker.`,
       'Ein Lauf pro Stil zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.',
     ],
     originalTitle: 'Original',
@@ -77,11 +77,13 @@ function galleryEntries(lang) {
 }
 
 /**
- * Link text for an AsciiDoc `link:` macro. `]` would end the macro, and a `\`
- * before `]` escapes it; character references carry neither meaning.
+ * Link text for an AsciiDoc `link:` macro. Besides `]` (ends the macro) and `\`
+ * (escapes it), `,` and `=` start attributes, a trailing `^` means "new tab" and
+ * `*`, `_`, `` ` ``, `#`, `+`, `~` format text. Every character outside a small
+ * safe set becomes a character reference, which carries no AsciiDoc meaning.
  */
 function linkText(s) {
-  return String(s).replace(/\\/g, '&#92;').replace(/]/g, '&#93;')
+  return String(s).replace(/[^\p{L}\p{N} .'()-]/gu, (c) => `&#${c.codePointAt(0)};`)
 }
 
 /** Quote-safe text for an AsciiDoc attribute value in double quotes. */

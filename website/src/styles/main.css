@@ -873,9 +873,16 @@ html {
 }
 
 .asciidoc-content .style-gallery .imageblock:has(a):hover,
-.asciidoc-content .style-gallery .imageblock:focus-within {
+.asciidoc-content .style-gallery .imageblock:has(a:focus-visible) {
   box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
   transform: translateY(-2px);
+}
+
+/* A black shadow vanishes on the dark background; lighten the border instead. */
+.dark .asciidoc-content .style-gallery .imageblock:has(a):hover,
+.dark .asciidoc-content .style-gallery .imageblock:has(a:focus-visible) {
+  border-color: rgb(255 255 255 / 0.45);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.5);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -883,7 +890,7 @@ html {
     transition: none;
   }
   .asciidoc-content .style-gallery .imageblock:has(a):hover,
-  .asciidoc-content .style-gallery .imageblock:focus-within {
+  .asciidoc-content .style-gallery .imageblock:has(a:focus-visible) {
     transform: none;
   }
 }
@@ -914,7 +921,7 @@ html {
 }
 
 .asciidoc-content .style-gallery .imageblock:hover .title a,
-.asciidoc-content .style-gallery .imageblock:focus-within .title a {
+.asciidoc-content .style-gallery .imageblock:has(a:focus-visible) .title a {
   text-decoration: underline;
 }
 
@@ -928,7 +935,8 @@ html {
   outline: none;
 }
 
-.asciidoc-content .style-gallery .imageblock:focus-within {
+/* Keyboard focus only, like the anchor cards: no ring left behind by a click. */
+.asciidoc-content .style-gallery .imageblock:has(a:focus-visible) {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }

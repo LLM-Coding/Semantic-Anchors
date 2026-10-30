@@ -13,7 +13,7 @@ ____
 
 The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No style description, no reference images, one run per anchor, no rerolls; each session checked its own screenshots. The first tile is the original, https://rdmueller.github.io/[rdmueller.github.io] as of 28 October 2026.
 
-How the examples came about, and what stood out in each: https://rdmueller.github.io/pages/blog/design-anchors.html[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Each tile links to its anchor.
+How the examples came about, and what stood out in each: https://rdmueller.github.io/pages/blog/design-anchors.html[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Each style tile links to its anchor.
 
 One run per style shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.
 

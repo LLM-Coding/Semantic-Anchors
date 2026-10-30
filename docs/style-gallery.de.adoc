@@ -13,7 +13,7 @@ ____
 
 Keine Stilbeschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihre eigenen Screenshots. Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026.
 
-Wie die Beispiele entstanden sind und was jeweils auffiel: https://rdmueller.github.io/pages/blog/design-anchors.html[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Jede Kachel verlinkt ihren Anker.
+Wie die Beispiele entstanden sind und was jeweils auffiel: https://rdmueller.github.io/pages/blog/design-anchors.html[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Jede Stil-Kachel verlinkt ihren Anker.
 
 Ein Lauf pro Stil zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.
 

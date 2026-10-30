@@ -395,6 +395,8 @@ describe('anchor-modal', () => {
         expect(figure.querySelector('figcaption').textContent).toContain('Claude Opus 5.5')
         expect(figure.querySelector('figcaption').textContent).toContain('Stil')
         expect(figure.querySelector('img').getAttribute('alt')).toContain('Schweizer Stil')
+        const link = figure.querySelector('figcaption a')
+        expect(link.getAttribute('href')).toMatch(/\/de\/style-gallery$/)
       } finally {
         i18n.setLang('en')
         delete global.localStorage
