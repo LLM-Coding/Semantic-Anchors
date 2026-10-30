@@ -5,6 +5,7 @@
 :proponents: Alistair Cockburn, Mike Cohn
 :tags: delivery, incremental, end-to-end, iteration, value-slicing
 :tier: 3
+:definition: A Thin Vertical Slice is an agile delivery technique, associated with Alistair Cockburn and Mike Cohn, in which each increment implements one small feature end to end through every technical layer. A slice is small in scope but complete in depth and produces a user-observable change, so the system stays releasable after every slice. Unlike horizontal, layer-by-layer work, it surfaces integration problems early and often.
 
 [%collapsible]
 ====

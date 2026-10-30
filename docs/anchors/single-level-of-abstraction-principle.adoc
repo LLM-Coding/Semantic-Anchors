@@ -5,6 +5,7 @@
 :proponents: Kent Beck, Robert C. Martin
 :tags: clean-code, abstraction, function-design, readability, composed-method
 :tier: 2
+:definition: The Single Level of Abstraction Principle (SLAP) is a function-design rule, rooted in Kent Beck's Composed Method (1996) and formalised by Robert C. Martin in Clean Code (2008), stating that all statements in a function should sit at the same level of abstraction. Low-level details move into well-named helper functions, so the top-level function reads like a table of contents. This keeps small functions readable rather than fragmented.
 
 [%collapsible]
 ====

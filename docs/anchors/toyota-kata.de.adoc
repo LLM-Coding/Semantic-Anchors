@@ -5,6 +5,7 @@
 :tags: Toyota Kata, Verbesserungskata, Coaching-Kata, Zielzustand, Ist-Zustand, wissenschaftliches Denken, PDCA, Fünf Fragen, Starter-Kata, Hindernis
 :related: kaizen, genchi-genbutsu, pdca, dmaic, okr
 :tier: 3
+:definition: Toyota Kata ist Mike Rothers Name, aus seinem Buch von 2009, für ein Paar von Übungsroutinen, die er aus der Beobachtung Toyotas ableitete: die Verbesserungskata für den Lernenden und die Coaching-Kata für den Coach. Der Lernende klärt die Richtung, erfasst den Ist-Zustand, legt den nächsten Zielzustand als beschriebenen Prozesszustand mit Termin fest und experimentiert sich Hindernis für Hindernis dorthin. Der Coach stellt fünf Fragen und entwickelt so wissenschaftliches Denken.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

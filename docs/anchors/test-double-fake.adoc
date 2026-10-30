@@ -5,6 +5,7 @@
 :related: test-double-meszaros, test-double-stub
 :tags: test-double, fake, testing, isolation, in-memory
 :tier: 3
+:definition: A Fake is a test double in Gerard Meszaros' taxonomy from xUnit Test Patterns (2007): a working but simplified implementation that is unsuitable for production. Unlike a Stub, which returns canned data, a Fake has real logic and actually processes inputs, only with shortcuts. Typical examples are an in-memory database or file system, which keep tests fast and predictable without external infrastructure.
 :parent-anchor: test-double-meszaros
 
 [%collapsible]

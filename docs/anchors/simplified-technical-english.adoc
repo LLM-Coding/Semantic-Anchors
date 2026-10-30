@@ -5,6 +5,7 @@
 :tags: Simplified Technical English, ASD-STE100, STE, controlled language, controlled natural language, technical documentation, approved words, AECMA
 :related: plain-english-strunk-white, gutes-deutsch-wolf-schneider, docs-as-code
 :tier: 2
+:definition: Simplified Technical English (ASD-STE100) is a controlled-language specification published by the AeroSpace and Defence Industries Association of Europe and maintained by STEMG, first issued in 1986 as AECMA Simplified English. It combines 53 writing rules with a dictionary of approved words, each admitted in one sense only, and treats procedures and descriptions as different text types. It serves non-native readers, translators and machines, above all in maintenance and safety documentation.
 :prior-test: 2026-08-14
 :tested-on: haiku-4.5=no, sonnet-5=yes, opus-5=yes
 

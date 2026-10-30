@@ -5,6 +5,7 @@
 :proponents: Peter Naur
 :tags: theory building, Naur, programming as theory building, mental model, tacit knowledge, software maintenance
 :tier: 2
+:definition: Programming as Theory Building is Peter Naur's view, set out in his 1985 essay, that programming means building a mental model: a theory of why the program works and how it fits its domain. The real program lives in the developers' minds, not in the code. When the original developers leave, the theory decays, and code alone cannot reconstruct it, so knowledge transfer and documenting the why matter as much as the code.
 
 [%collapsible]
 ====
@@ -23,7 +24,7 @@ Complement to ADRs:: ADRs document individual architectural decisions. Theory Bu
 
 Communication is key:: Theory must be shared through collaboration, conversation, and documentation that captures intent, not just structure.
 
-Key Proponent:: Peter Naur (Turing Award winner, 1978)
+Key Proponent:: Peter Naur (Turing Award winner, 2005)
 
 Original Work:: "Programming as Theory Building" (1985)
 

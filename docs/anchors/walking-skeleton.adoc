@@ -5,6 +5,7 @@
 :proponents: Alistair Cockburn
 :tags: architecture, inception, end-to-end, deployment, risk-reduction
 :tier: 3
+:definition: A Walking Skeleton, a term from Alistair Cockburn's collaboration with Ralph Hodgson, is a minimal end-to-end implementation that touches every architectural layer and the deployment pipeline before significant feature work begins. A single trivial user journey proves the structure: it builds, deploys, serves a request and logs an event. Unlike a prototype, it is production-capable code that is grown, not discarded, so integration risks surface on day one.
 
 [%collapsible]
 ====

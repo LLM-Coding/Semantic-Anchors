@@ -5,6 +5,7 @@
 :proponents: Claude Shannon, Warren Weaver, Friedemann Schulz von Thun, Stuart Hall, Herbert H. Clark
 :tags: communication, encoding-decoding, audience, misunderstanding, shared-understanding
 :tier: 2
+:definition: Sender-Receiver Discrepancy ist ein Oberbegriff für die Lücke zwischen der Bedeutung, die ein Sender meint, und der Bedeutung, die ein Empfänger rekonstruiert; er stützt sich auf Claude Shannon und Warren Weaver, Friedemann Schulz von Thun, Stuart Hall und Herbert H. Clark. Kodierung und Dekodierung sind getrennte Akte, deshalb wird Bedeutung rekonstruiert, nicht übertragen. Der Begriff benennt das Phänomen ursachenneutral; Rauschen, die vier Seiten einer Nachricht, aktive Dekodierungspositionen oder fehlender Common Ground dienen dann als diagnostische Linsen.
 
 [%collapsible]
 ====

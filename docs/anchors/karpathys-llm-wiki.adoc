@@ -5,6 +5,7 @@
 :tags: LLM Wiki, LLM knowledge base, Karpathy, idea file, raw sources, compiled knowledge, interlinked markdown, index.md, log.md, ingest, query, lint, schema, CLAUDE.md, AGENTS.md, Obsidian, RAG alternative, second brain, Memex
 :related: para-method, docs-as-code, diataxis-framework, arc42, req42
 :tier: 2
+:definition: Karpathy's LLM Wiki is a knowledge-base pattern Andrej Karpathy published in April 2026, in which an LLM reads each source once and compiles what it learns into a persistent set of interlinked markdown pages, instead of retrieving raw chunks for every question. It has three layers: immutable raw sources, the LLM-owned wiki, and a schema file such as CLAUDE.md. Ingest, query with filing back, and periodic lint passes keep the wiki compounding, with index.md and log.md for orientation.
 :prior-test: 2026-10-15
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

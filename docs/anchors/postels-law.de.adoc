@@ -5,6 +5,7 @@
 :proponents: Jon Postel
 :tags: postels-law, robustness-principle, interface-design, validation, interoperability
 :tier: 3
+:definition: Postel's Law, auch Robustness Principle, ist Jon Postels Interoperabilitätsregel aus RFC 760/761 (1980) für TCP/IP: „Be conservative in what you send, be liberal in what you accept.“ Systeme senden nur spezifikationskonformen Output, tolerieren beim Input aber kleine Abweichungen und ignorierbare Felder; das hilft langlebigen Protokollen, APIs und Schemas bei der Weiterentwicklung. Kritiker, darunter RFC 9413, warnen, dass pauschale Toleranz Mehrdeutigkeit und Sicherheitslücken erzeugt, und bevorzugen striktes Parsing mit expliziter Versionierung.
 
 [%collapsible]
 ====

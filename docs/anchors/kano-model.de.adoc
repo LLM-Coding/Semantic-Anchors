@@ -5,6 +5,7 @@
 :proponents: Noriaki Kano
 :tags: customer-satisfaction, feature-prioritization, product-management, requirements
 :tier: 3
+:definition: Das Kano-Modell ist Noriaki Kanos Kundenzufriedenheitsmodell, 1984 erstmals im japanischen Journal Hinshitsu veröffentlicht, das die Kundenzufriedenheit gegen den Erfüllungsgrad eines Merkmals aufträgt, statt Zufriedenheit als bloßes Gegenteil von Unzufriedenheit zu behandeln. Ein Fragebogen mit gepaarten funktionalen und dysfunktionalen Fragen ordnet jedes Feature einer von fünf Kategorien zu: Basis-, Leistungs-, Begeisterungs-, unerhebliche und rückweisende Faktoren. Die Kategorien verfallen mit der Zeit, denn aus dem Delighter von heute wird der Basisfaktor von morgen, und das Modell hilft, ein Backlog jenseits des reinen Business-Werts zu priorisieren.
 
 [%collapsible]
 ====

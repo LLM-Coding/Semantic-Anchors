@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect, consultant
 :proponents: Ron Jeffries, Kent Beck
 :tier: 1
+:definition: YAGNI (You Aren't Gonna Need It) ist ein Prinzip aus Extreme Programming, geprägt von Ron Jeffries und verbreitet durch Kent Becks Extreme Programming Explained (1999): Funktionalität wird erst gebaut, wenn sie tatsächlich gebraucht wird, nicht wenn man sie vermutet. Es lehnt spekulative Verallgemeinerung ab, denn ungenutzter Code kostet Wartung und kognitive Last. Design entsteht inkrementell aus konkreten Anforderungen, und toter Code wird gelöscht.
 :related: dry, ssot-principle, tdd-chicago-school, kiss-principle
 :tags: yagni, extreme-programming, simplicity, incremental-design, over-engineering
 

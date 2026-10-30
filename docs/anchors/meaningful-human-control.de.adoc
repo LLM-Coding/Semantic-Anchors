@@ -5,6 +5,7 @@
 :proponents: Article 36, Noel Sharkey, ICRC, UN CCW GGE, IEEE Global Initiative
 :tags: ethik, menschliche-kontrolle, autonomie, waffen, ki-governance, verantwortlichkeit, menschenrechte
 :tier: 2
+:definition: Meaningful Human Control ist das Prinzip, dessen Begriff Article 36 im Jahr 2013 prägte: Menschen müssen echte, substanzielle Kontrolle über autonome Systeme behalten, die folgenreiche Entscheidungen treffen, statt nur formelhafter Human-in-the-Loop-Aufsicht. Dazu gehören Situationsbewusstsein, eine klare Verantwortungskette, die nicht auf Maschinen übergeht, aktive menschliche Autorisierung kritischer Aktionen und die Fähigkeit zum rechtzeitigen Eingreifen. Noel Sharkeys fünf Stufen ordnen ein, wie viel Autonomie ein System in jeder kritischen Funktion hat.
 
 [%collapsible]
 ====

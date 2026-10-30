@@ -5,6 +5,7 @@
 :proponents: Martin Fowler
 :tags: legacy-modernization, migration, refactoring, incremental, facade, resilience
 :tier: 2
+:definition: Die Strangler Fig Application ist Martin Fowlers Muster, ein Legacy-System schrittweise statt per Big-Bang-Rewrite abzulösen. Eine Routing-Facade fängt Requests ab und leitet jeden entweder an das alte System oder an seinen neuen Ersatz, während Funktionalität und Daten Stück für Stück umziehen. Wie die namensgebende Würgefeige ihren Wirtsbaum umschließt, wächst das neue System um das alte herum, bis der Legacy-Host stillgelegt werden kann.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: Charles Goodhart, Marilyn Strathern
 :tags: goodharts-law, metrics, kpi, incentives, measurement, gaming
 :tier: 3
+:definition: Goodhart's Law ist die Beobachtung von Charles Goodhart (1975), die Marilyn Strathern 1997 allgemein fasste: Wird eine Kennzahl zum Ziel, taugt sie nicht mehr als Maß. Sobald eine Metrik an Anreize gekoppelt ist, optimieren Menschen die Metrik statt des Ziels dahinter; Gaming und Surrogation folgen. Dagegen helfen balancierte Gegen-Metriken, Maße nur zum Lernen und qualitative Signale.
 
 [%collapsible]
 ====

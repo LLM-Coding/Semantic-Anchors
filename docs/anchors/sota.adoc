@@ -5,6 +5,7 @@
 :tags: SOTA, state of the art, benchmark, current best, research
 :related: llm-evaluations, first-principles-thinking
 :tier: 3
+:definition: SOTA (State-of-the-Art) is a term widely used in the ML and AI research community for the most current, best-performing methods in a field, as shown by recent research, benchmarks and empirical results. As a prompt it triggers research behaviour: comparing new approaches with earlier ones and backing claims with evidence. Because any SOTA claim is a timestamp, it needs an explicit date and source, ideally a live leaderboard rather than a model's memory.
 
 [%collapsible]
 ====

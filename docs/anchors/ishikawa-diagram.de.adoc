@@ -5,6 +5,7 @@
 :tags: Ishikawa-Diagramm, Fischgrätendiagramm, Ursache-Wirkungs-Diagramm, 6M, sieben elementare Qualitätswerkzeuge, Ursachenanalyse, Kaizen, Kawasaki, Qualität
 :related: five-whys, dmaic, fmea, sipoc, mece
 :tier: 3
+:definition: Das Ishikawa-Diagramm, auch Fischgrätendiagramm, ist ein Ursache-Wirkungs-Diagramm, das Kaoru Ishikawa in den 1960er-Jahren auf den Kawasaki-Werften populär machte; es zählt zu den sieben elementaren Qualitätswerkzeugen. Die Wirkung sitzt am Kopf des Fisches, beschriftete Gräten wie die 5 M tragen parallele Ursachen und Nebenursachen. Es ist strukturiertes Brainstorming: Es liefert eine Verdächtigenliste, die erst Daten bestätigen oder verwerfen.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

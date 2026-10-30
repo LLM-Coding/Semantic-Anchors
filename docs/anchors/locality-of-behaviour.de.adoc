@@ -5,6 +5,7 @@
 :tags: Locality of Behaviour, Locality of Behavior, LoB, htmx, Ko-Lokation, Action at a Distance, Lesbarkeit, Hypermedia, Separation of Concerns
 :related: separation-of-concerns, dry, deep-modules, solid-srp
 :tier: 3
+:definition: Locality of Behaviour ist ein Entwurfsprinzip, das Carson Gross 2020 in einem htmx-Essay benannte: Das Verhalten einer Code-Einheit soll möglichst offensichtlich sein, wenn man nur diese Einheit betrachtet. Lesekosten zählen mehr als Schreibkosten; Verhalten auf Distanz gilt als Fehlermodus, Ko-Lokation von Markup, Handlern und Styling als Gegenmittel. Das Prinzip tauscht offen gegen DRY und Separation of Concerns, wo diese ein Feature über viele Dateien verstreuen.
 :prior-test: 2026-08-14
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
 

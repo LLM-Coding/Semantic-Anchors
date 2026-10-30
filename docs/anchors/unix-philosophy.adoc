@@ -5,6 +5,7 @@
 :proponents: Doug McIlroy, Eric S. Raymond
 :tags: modularity, composability, simplicity, pipes, kiss
 :tier: 2
+:definition: The Unix Philosophy is a software design tradition, summarised by Doug McIlroy in 1978 and codified by Eric S. Raymond in 17 rules in 2003, that favours small programs which each do one thing well. Programs compose through pipes, with text streams as the universal interface, and each program's output is expected to become another program's input. Modularity, composition and quiet success keep tools simple and chainable.
 
 [%collapsible]
 ====

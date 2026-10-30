@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: solid-principles
 :tier: 3
+:definition: Das Dependency Inversion Principle (DIP) ist das SOLID-Prinzip von Robert C. Martin, nach dem High-Level-Module nicht von Low-Level-Modulen abhängen sollen; beide hängen von Abstraktionen ab, und Details hängen von Abstraktionen ab, nicht umgekehrt. In der Praxis werden Abhängigkeiten über Interfaces injiziert. So übersteht die Geschäftslogik den Wechsel von Datenbank oder Framework und lässt sich ohne echte externe Dienste per Unit-Test prüfen.
 :proponents: Robert C. Martin
 :tags: SOLID, design principle, DIP, dependency inversion
 :related: solid-principles, solid-srp, solid-ocp, solid-lsp, solid-isp

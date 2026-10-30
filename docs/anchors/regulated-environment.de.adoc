@@ -4,6 +4,7 @@
 :related: iec-61508-sil-levels, docs-as-code, conventional-commits, semantic-versioning
 :proponents: FDA (21 CFR Part 11), EMA (GMP Annex 11), ISO 9001, IEC 62304, GAMP 5
 :tier: 2
+:definition: Ein Reguliertes Umfeld ist ein Kontext der Softwareentwicklung, den Vorschriften und Normen wie FDA 21 CFR Part 11, EU GMP Annex 11, GAMP 5 und IEC 62304 bestimmen und in dem externe Behördenprüfungen zu erwarten sind. Es verlangt lückenlose Rückverfolgbarkeit, formale Validierung und Verifizierung, unveränderliche Audit-Trails, formale Änderungskontrolle, getrennte Umgebungen und reproduzierbare Builds. Aufwand und Sorgfalt richten sich nach dem Risiko des Systems.
 :tags: compliance, validation, traceability, audit-trail, change-control, documentation, GxP, FDA, IEC, ISO
 
 [%collapsible]

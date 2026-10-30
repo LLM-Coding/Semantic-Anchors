@@ -5,6 +5,7 @@
 :tags: premortem, pre-mortem, prospective hindsight, project risk, planning, failure analysis, decision making, Klein
 :related: five-whys, second-order-thinking, devils-advocate, cynefin-framework
 :tier: 3
+:definition: The Premortem is Gary Klein's planning technique, first formally described in the Harvard Business Review in 2007, in which a group is told that a plan has already failed and must explain why. This prospective hindsight produces more concrete reasons than asking what could go wrong. Run before commitment, with everyone writing reasons independently and then sharing them round-robin, it surfaces quiet objections while the plan can still change.
 :prior-test: 2026-08-14
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
 

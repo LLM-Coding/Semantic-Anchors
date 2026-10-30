@@ -5,6 +5,7 @@
 :proponents: Claude Shannon, Warren Weaver, Friedemann Schulz von Thun, Stuart Hall, Herbert H. Clark
 :tags: communication, encoding-decoding, audience, misunderstanding, shared-understanding
 :tier: 2
+:definition: Sender-Receiver Discrepancy is an umbrella term for the gap between the meaning a sender intends and the meaning a receiver reconstructs, drawing on Claude Shannon and Warren Weaver, Friedemann Schulz von Thun, Stuart Hall and Herbert H. Clark. Because encoding and decoding are separate acts, meaning is reconstructed, not transmitted. The term names the phenomenon without fixing a cause; noise, the four sides of a message, active decoding positions or missing common ground then serve as diagnostic lenses.
 
 [%collapsible]
 ====

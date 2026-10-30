@@ -5,6 +5,7 @@
 :tags: impact mapping, Gojko Adzic, strategic planning, goals, deliverables, product
 :related: user-story-mapping, wardley-mapping, okr
 :tier: 3
+:definition: Impact Mapping is Gojko Adzic's collaborative planning technique, described in his 2012 book, that links what a team builds to a business goal across four levels: Goal, Actors, Impacts and Deliverables, answering Why, Who, How and What. Drawn as a mind map, it makes assumptions explicit, prevents scope creep by tying every deliverable to a goal, and serves as a goal-oriented alternative to feature roadmaps.
 
 [%collapsible]
 ====

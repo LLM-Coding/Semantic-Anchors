@@ -5,6 +5,7 @@
 :tags: mutation testing, test quality, fault injection, test effectiveness, coverage
 :related: property-based-testing, testing-pyramid
 :tier: 3
+:definition: Mutation Testing is a technique for assessing test-suite quality, founded theoretically by Richard Lipton in 1971 and developed by Richard DeMillo and Timothy Budd, that deliberately injects small syntactic changes, called mutants, into source code. A failing test kills a mutant; mutants that survive point to weak tests, unless they are equivalent mutants that do not change program behavior. The mutation score, the share of killed non-equivalent mutants, asks whether tests are good enough rather than whether coverage is high enough.
 
 [%collapsible]
 ====

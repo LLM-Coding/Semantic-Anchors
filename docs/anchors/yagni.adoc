@@ -5,6 +5,7 @@
 :related: dry, ssot-principle, tdd-chicago-school, kiss-principle
 :tags: yagni, extreme-programming, simplicity, incremental-design, over-engineering
 :tier: 1
+:definition: YAGNI (You Aren't Gonna Need It) is an Extreme Programming principle, coined by Ron Jeffries and spread through Kent Beck's Extreme Programming Explained (1999), that functionality should be built only when it is actually needed, not when it is foreseen. It rejects speculative generality, because unused code carries maintenance and cognitive cost. Design emerges incrementally from concrete requirements, and dead code is removed.
 
 [%collapsible]
 ====

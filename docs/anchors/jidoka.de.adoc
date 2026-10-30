@@ -5,6 +5,7 @@
 :tags: Jidoka, Autonomation, Automation mit menschlichem Antlitz, Toyota-Produktionssystem, Andon, Band anhalten, Sakichi Toyoda, Webstuhl, Fail Fast, eingebaute Qualität
 :related: poka-yoke, andon, circuit-breaker, site-reliability-engineering, five-whys
 :tier: 3
+:definition: Jidoka, auch Autonomation, ist das Prinzip des Toyota-Produktionssystems für Automation mit menschlichem Antlitz: Maschine oder Mensch hält das Band an, sobald eine Abweichung auftritt, statt Defekte weiterzureichen. Es geht auf die selbst anhaltenden Webstühle von Sakichi Toyoda zurück; Taiichi Ohno machte es neben Just-in-Time zu einer der beiden Säulen des TPS. Jeder Halt folgt vier Schritten: erkennen, anhalten, beheben oder eingrenzen, Ursache untersuchen.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -5,6 +5,7 @@
 :tags: SIPOC, COPIS, suppliers inputs process outputs customers, Prozessabgrenzung, grobe Prozesslandkarte, Define-Phase, Six Sigma, Kaizen, Systemgrenze
 :related: dmaic, dmadv, ishikawa-diagram, event-storming, mece
 :tier: 3
+:definition: SIPOC ist eine einseitige Scoping-Tabelle aus der Praxis des Total Quality Management, ohne einzelnen Urheber, die Suppliers, Inputs, Process, Outputs und Customers eines Prozesses benennt. Die Process-Spalte umfasst fünf bis sieben Schritte und wird meist zuerst gefüllt, danach geht es nach außen zu Outputs, Customers, Inputs und Suppliers. SIPOC zieht die Prozessgrenze, bevor die Verbesserung beginnt, typisch in der Define-Phase von DMAIC; COPIS liest dieselbe Tabelle vom Kunden her.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

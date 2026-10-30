@@ -5,6 +5,7 @@
 :proponents: William of Ockham
 :tags: heuristic, parsimony, epistemology, simplicity, hypothesis-selection
 :tier: 2
+:definition: Occam's Razor, or the Law of Parsimony, is the heuristic named after William of Ockham that, among hypotheses explaining the same observations equally well, you should prefer the one with the fewest assumptions. It works on explanations rather than solutions and guides which hypothesis to investigate first in debugging, diagnosis or architecture review. It is a prior, not a proof that the simpler answer is true, and belongs paired with evidence.
 
 [%collapsible]
 ====

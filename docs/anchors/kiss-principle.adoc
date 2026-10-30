@@ -5,6 +5,7 @@
 :related: yagni, dry, solid-principles
 :tags: kiss, simplicity, design-principles, over-engineering, readability
 :tier: 1
+:definition: The KISS principle, Keep It Simple, Stupid, is a design principle associated with Kelly Johnson of Lockheed Skunk Works in the 1960s and later Robert C. Martin, holding that systems work best when kept simple. It favours the simplest working solution, readability over cleverness, and no complexity beyond what the current problem requires. Simpler designs reduce the cognitive load of understanding, maintaining and extending a system, and the principle pairs with YAGNI.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: Charles Goodhart, Marilyn Strathern
 :tags: goodharts-law, metrics, kpi, incentives, measurement, gaming
 :tier: 3
+:definition: Goodhart's Law is the observation by Charles Goodhart (1975), generalised by Marilyn Strathern in 1997, that when a measure becomes a target, it ceases to be a good measure. Once a metric is tied to incentives, people optimise the metric instead of the goal it stands for, which invites gaming and surrogation. Balanced counter-metrics, measures kept for learning, and qualitative signals guard against this.
 
 [%collapsible]
 ====

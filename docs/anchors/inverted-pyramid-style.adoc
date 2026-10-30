@@ -5,6 +5,7 @@
 :proponents: Journalistic tradition (American wire-service press)
 :tags: inverted-pyramid, journalism, writing, progressive-disclosure, news-style
 :tier: 3
+:definition: The Inverted Pyramid Style is a journalistic writing convention, attributed to late-19th-century American wire-service reporting, that puts the most newsworthy facts first and supporting detail in decreasing order of importance. Readers can stop anywhere and still have the essentials, and editors can cut from the bottom. Unlike BLUF it allows a long optional tail, and unlike the Pyramid Principle it optimises for skimming rather than a complete argument.
 
 [%collapsible]
 ====

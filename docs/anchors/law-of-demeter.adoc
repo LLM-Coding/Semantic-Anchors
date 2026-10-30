@@ -5,6 +5,7 @@
 :proponents: Ian Holland, Karl Lieberherr
 :tags: law-of-demeter, coupling, encapsulation, oop, principle-of-least-knowledge
 :tier: 3
+:definition: The Law of Demeter, or Principle of Least Knowledge, is a design heuristic from Ian Holland and Karl Lieberherr's Demeter Project at Northeastern University (1987): a method should only talk to its immediate friends. It may call methods on itself, its parameters, objects it creates and its direct components, but not on objects those calls return. Avoiding such train-wreck chains limits coupling and keeps an object's internal structure encapsulated.
 
 [%collapsible]
 ====

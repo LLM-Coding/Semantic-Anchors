@@ -3,6 +3,7 @@
 :roles: educator, consultant
 :proponents: Ralf D. Müller (Semantic Anchors project)
 :tier: 3
+:definition: Das Spektrum semantischer Anker ist die Definition des Semantic-Anchors-Projekts von Ralf D. Müller, was als semantischer Anker gilt: ein Begriff, der ein reichhaltiges, wohldefiniertes konzeptionelles Framework in den Trainingsdaten eines LLM aktiviert. Ein guter Anker ist präzise, reichhaltig, konsistent und zuordenbar, und Anker reichen von domänenlastig wie arc42 bis interaktionslastig wie der Socratic Method. Begriffe wie TLDR oder ELI5 fallen durch, weil ihnen Definitionstiefe fehlt.
 :tags: semantic anchor, meta, criteria, quality, anchor definition, activation
 
 == Was qualifiziert als semantischer Anker

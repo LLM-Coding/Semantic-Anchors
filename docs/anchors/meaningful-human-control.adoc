@@ -5,6 +5,7 @@
 :proponents: Article 36, Noel Sharkey, ICRC, UN CCW GGE, IEEE Global Initiative
 :tags: ethics, human-control, autonomy, weapons, ai-governance, accountability, human-rights
 :tier: 2
+:definition: Meaningful Human Control is the principle, named by Article 36 in 2013, that humans must keep genuine, substantive control over autonomous systems making high-stakes decisions, not merely formulaic human-in-the-loop oversight. It requires situational awareness, a clear accountability chain that cannot pass to machines, positive human authorisation of critical actions, and the capability for timely intervention. Noel Sharkey's five levels grade how much autonomy a system holds in each critical function.
 
 [%collapsible]
 ====

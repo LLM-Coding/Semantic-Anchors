@@ -4,6 +4,7 @@
 :proponents: Ralf D. Müller (Semantic Anchors project)
 :tags: semantic anchor, meta, criteria, quality, anchor definition, activation
 :tier: 3
+:definition: The Spectrum of Semantic Anchors is the Semantic Anchors project's definition, by Ralf D. Müller, of what qualifies as a semantic anchor: a term that activates a rich, well-defined conceptual framework in an LLM's training data. A good anchor is precise, rich, consistent and attributable, and anchors range from domain-heavy, such as arc42, to interaction-heavy, such as the Socratic Method. Terms like TLDR or ELI5 fail because they lack definition depth.
 
 == What Qualifies as a Semantic Anchor
 
