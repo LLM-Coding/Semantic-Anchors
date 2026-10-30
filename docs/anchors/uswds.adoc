@@ -31,7 +31,7 @@ Key Proponents:: 18F and the U.S. Digital Service, which created it in 2015; mai
 [discrete]
 == *When to Use*:
 
-* Building US federal, state or city government services. In our prior test, every anchor run of a parking-permit service set the government banner, a step indicator and `usa-` form components; Opus did this even without the name in two of two baselines, Haiku and Sonnet did not.
+* Building US federal, state or city government services. In our prior test, every anchor run of a parking-permit service set the government banner, a step indicator and `usa-` form components. Both Opus baselines used `usa-` classes even without the name, one of them with the banner; the Haiku and Sonnet baselines did not.
 * As the US counterpart to the <<gov-uk-design-system,GOV.UK Design System>> when a service must look and behave like government
 * Meeting the federal website standards: agencies must follow GSA's standards under the 21st Century IDEA Act, and USWDS is how the standards are met (https://designsystem.digital.gov/website-standards/[Website standards])
 

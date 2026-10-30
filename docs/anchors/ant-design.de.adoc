@@ -44,7 +44,7 @@ Wichtige Vertreter:: Ant Group (früher Ant Financial) mit afc163 als langjähri
 [discrete]
 == *Kritik*:
 
-* *Das Weihnachts-Easter-Egg.* 2018 ließ ein nicht angekündigter Commit antd 3.9.3 bis 3.11.5 am 25. Dezember in Produktions-Apps Schnee auf Buttons zeigen. Der Maintainer entschuldigte sich in https://www.github.com/ant-design/ant-design/issues/13849[Issue #13849]: „It is a complete stupid decision of my own and very sorry to everyone that get involved.“ Das chinesische Tech-Medium TMTPost fasste die Reaktion zusammen: Ein Easter Egg von Entwicklern an Nutzer ist eine Überraschung, eines von einem Framework an Entwickler ein Schrecken (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
+* *Das Weihnachts-Easter-Egg.* 2018 ließ ein nicht angekündigter Commit antd 3.9.3 bis 3.11.5 am 25. Dezember in Produktions-Apps Schnee auf Buttons zeigen. Der Maintainer entschuldigte sich in https://github.com/ant-design/ant-design/issues/13849[Issue #13849]: „It is a complete stupid decision of my own and very sorry to everyone that get involved.“ Das chinesische Tech-Medium TMTPost fasste die Reaktion zusammen: Ein Easter Egg von Entwicklern an Nutzer ist eine Überraschung, eines von einem Framework an Entwickler ein Schrecken (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
 * *Gewicht.* Elijah Asaolu warnt in https://dev.to/logrocket/ant-design-adoption-guide-overview-examples-and-alternatives-3003[„Ant Design adoption guide“] (LogRocket, 2024): „keep in mind that Ant Design components can be heavy.“
 
 [discrete]

@@ -1,11 +1,11 @@
 /**
- * Style gallery (#872): one homepage, redesigned once per anchor name.
+ * Style gallery (#872): one starting page per section, redesigned once per anchor.
  *
- * Every anchor with an `:example-screenshot:` gets a tile; the original homepage
- * comes first, so the reader sees the starting point before the variations. The
- * page is generated, never hand-edited: a new screenshot shows up by itself.
- * Output is AsciiDoc, so render-docs and the pre-renderer treat it like any other
- * doc page.
+ * Every anchor with an `:example-screenshot:` gets a tile in the section of its
+ * starting page (`:example-page:`, default homepage); each section opens with
+ * its original. The page is generated, never hand-edited: a new screenshot
+ * shows up by itself. Output is AsciiDoc, so render-docs and the pre-renderer
+ * treat it like any other doc page.
  */
 const fs = require('fs')
 const path = require('path')
@@ -50,7 +50,7 @@ const TEXT = {
         heading: 'Design systems: one app page',
         intro: [
           'Design systems are made for product interfaces. Their differences show in tables, status labels, page headers and density, and a homepage has little of that. So the design systems redesign an app page instead: the "Team members" settings page of a fictional admin console, written for this gallery in a deliberately plain style. The first tile is that page.',
-          'These sessions ran on 30 October 2026 in a cloud workspace without web access. For the screenshots, fonts from Google Fonts and stylesheets from jsDelivr were served from the same npm packages; licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.',
+          'These sessions ran on 30 October 2026 in a cloud workspace without web access. For the screenshots, the fonts and stylesheets the pages request from Google Fonts and jsDelivr were served locally from the same npm packages; licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.',
         ],
         originalAlt: 'The neutral starting page, a team-members settings page, before any redesign',
         alt: (t) => `The settings page redesigned in the style of ${t}`,
@@ -63,7 +63,7 @@ const TEXT = {
     intro: [
       'Eine Ausgangsseite, einmal pro Ankername neu gestaltet. Jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam; nur der Name änderte sich:',
       'Keine Beschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihr Ergebnis im Browser. Jede Stil-Kachel verlinkt ihren Anker.',
-      'Ein Lauf pro Stil zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.',
+      'Ein Lauf zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.',
     ],
     sections: {
       homepage: {
@@ -78,7 +78,7 @@ const TEXT = {
         heading: 'Design-Systeme: eine App-Seite',
         intro: [
           'Design-Systeme sind für Produktoberflächen gemacht. Ihre Unterschiede zeigen sich in Tabellen, Status-Labels, Seitenköpfen und Dichte, und davon hat eine Homepage wenig. Deshalb gestalten die Design-Systeme stattdessen eine App-Seite neu: die Einstellungsseite „Team members“ einer erfundenen Admin-Konsole, für diese Galerie bewusst schlicht geschrieben. Die erste Kachel ist diese Seite.',
-          'Diese Sessions liefen am 30. Oktober 2026 in einer Cloud-Umgebung ohne Webzugriff. Für die Screenshots kamen Schriften von Google Fonts und Stylesheets von jsDelivr aus denselben npm-Paketen; lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.',
+          'Diese Sessions liefen am 30. Oktober 2026 in einer Cloud-Umgebung ohne Webzugriff. Für die Screenshots wurden die Schriften und Stylesheets, die die Seiten bei Google Fonts und jsDelivr anfordern, lokal aus denselben npm-Paketen ausgeliefert; lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.',
         ],
         originalAlt:
           'Die neutrale Ausgangsseite, eine Einstellungsseite für Teammitglieder, vor der Neugestaltung',
@@ -89,10 +89,17 @@ const TEXT = {
   },
 }
 
-/** The starting page an anchor's example redesigns (`:example-page:`). */
+/**
+ * The starting page an anchor's example redesigns (`:example-page:`). An unknown
+ * value throws: a typo would otherwise move the tile into the wrong section.
+ */
 function examplePageFor(file) {
   const m = fs.readFileSync(file, 'utf-8').match(/^:example-page:[ \t]*(\S+)/m)
-  return m && PAGES.includes(m[1]) ? m[1] : DEFAULT_PAGE
+  if (!m) return DEFAULT_PAGE
+  if (!PAGES.includes(m[1])) {
+    throw new Error(`${file}: unknown :example-page: "${m[1]}" (expected ${PAGES.join(' or ')})`)
+  }
+  return m[1]
 }
 
 /** The anchor title from the first line (`= Title`) of an anchor file. */
@@ -190,4 +197,4 @@ function buildStyleGallery(lang) {
   ].join('\n')
 }
 
-module.exports = { galleryEntries, buildStyleGallery, tile, PAGES, originalImage }
+module.exports = { galleryEntries, buildStyleGallery, tile, examplePageFor, PAGES, originalImage }

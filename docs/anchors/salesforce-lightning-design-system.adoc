@@ -32,7 +32,7 @@ Key Proponents:: Salesforce. The work began in 2013; the system launched in 2015
 == *When to Use*:
 
 * Building Salesforce apps, Lightning pages or external tools that should look native in Salesforce. In our prior test, every anchor run of a team-settings page wrote `slds-` markup with `slds-page-header`, `slds-table` and `slds-button`.
-* As the classic reference for design tokens and BEM-named enterprise CSS
+* As the reference where design tokens began, and for BEM-named enterprise CSS
 * Name Lightning Web Components as well when you want platform components: in our test no run used them unprompted
 
 [discrete]

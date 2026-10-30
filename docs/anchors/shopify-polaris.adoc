@@ -44,7 +44,7 @@ Key Proponents:: Shopify. Polaris was made available to partners at Shopify Unit
 [discrete]
 == *Criticism*:
 
-* *A forced migration.* Daniel Curtis, https://infoq.com/news/2026/10/shopify-web-components["Shopify Upgrades Checkout Blocks to Polaris Web Components"] (InfoQ, 2026), reports that after a year, with the 2026-01 version mandatory, "sentiment has been more mixed": developers called the unversioned CDN script a risk for stability and the components incomplete, while bundles shrank by 40 to 85 per cent.
+* *A forced migration.* Daniel Curtis, https://infoq.com/news/2026/10/shopify-web-components["Shopify Upgrades Checkout Blocks to Polaris Web Components"] (InfoQ, 2026), reports for checkout UI extensions that after a year, with the 2026-01 version mandatory, "sentiment has been more mixed": developers called the unversioned CDN script a risk for stability and the components incomplete, while bundles shrank by 40 to 85 per cent.
 
 [discrete]
 == *Current Status*:

@@ -32,13 +32,13 @@ Wichtige Vertreter:: Atlassian. Jürgen Spangl, damals Head of Design, begann di
 == *Wann verwenden*:
 
 * Jira- oder Confluence-Apps, Forge-Apps oder Werkzeuge bauen, die sich wie ein Teil von Atlassians Produkten anfühlen sollen. In unserem Prior-Test importierte jeder Lauf mit Anker für eine Team-Einstellungsseite Atlaskit-Pakete, baute eine `DynamicTable` und markierte Rollen mit einer `Lozenge`.
-* Eine ausgereifte Token-Architektur mit semantischen Namen für Farbe, Erhebung und Abstand kennenlernen
+* Eine Token-Architektur mit semantischen Namen für Farbe, Erhebung und Abstand kennenlernen
 * Als Referenz für dichte, aufgabenorientierte Oberflächen für Zusammenarbeit
 
 [discrete]
 == *Häufige Missverständnisse*:
 
-* *Das Aussehen von vor 2024 erwarten.* Atlassian erneuerte sein visuelles System ab Dezember 2022 mit Pentagram und zeigte es auf der Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); neue Icons, Farben und die Schriftskala folgten 2025. Modelle mit älteren Trainingsdaten schreiben das alte Aussehen, wenn man nichts anderes sagt.
+* *Das Aussehen von vor 2024 erwarten.* Atlassian begann im Dezember 2022, sein visuelles System zu erfassen, arbeitete später mit Pentagram an der Erneuerung und zeigte sie auf der Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); neue Icons, Farben und die Schriftskala folgten 2025. Modelle mit älteren Trainingsdaten schreiben das alte Aussehen, wenn man nichts anderes sagt.
 * *Charlie für die UI-Schrift halten.* Charlie ist Atlassians Markenschrift; die Produktoberfläche nutzt Atlassian Sans, früher Systemschriften.
 
 [discrete]

@@ -44,7 +44,7 @@ Wichtige Vertreter:: Shopify. Polaris stand Partnern ab Shopify Unite 2017 zur V
 [discrete]
 == *Kritik*:
 
-* *Eine erzwungene Migration.* Daniel Curtis berichtet in https://infoq.com/news/2026/10/shopify-web-components[„Shopify Upgrades Checkout Blocks to Polaris Web Components“] (InfoQ, 2026), dass nach einem Jahr, mit der Pflichtversion 2026-01, „sentiment has been more mixed“: Entwickler nannten das unversionierte CDN-Skript ein Stabilitätsrisiko und die Komponenten unvollständig, während die Bundles um 40 bis 85 Prozent schrumpften.
+* *Eine erzwungene Migration.* Daniel Curtis berichtet in https://infoq.com/news/2026/10/shopify-web-components[„Shopify Upgrades Checkout Blocks to Polaris Web Components“] (InfoQ, 2026) für Checkout-UI-Erweiterungen, dass nach einem Jahr, mit der Pflichtversion 2026-01, „sentiment has been more mixed“: Entwickler nannten das unversionierte CDN-Skript ein Stabilitätsrisiko und die Komponenten unvollständig, während die Bundles um 40 bis 85 Prozent schrumpften.
 
 [discrete]
 == *Aktueller Stand*:

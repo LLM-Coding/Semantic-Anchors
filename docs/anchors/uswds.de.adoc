@@ -31,7 +31,7 @@ Wichtige Vertreter:: 18F und der U.S. Digital Service, die es 2015 schufen; gepf
 [discrete]
 == *Wann verwenden*:
 
-* Dienste von US-Bundes-, Landes- oder Stadtverwaltungen bauen. In unserem Prior-Test setzte jeder Lauf mit Anker für einen Anwohnerparkausweis den Regierungs-Banner, einen Step Indicator und `usa-`-Formularkomponenten; Opus tat das in zwei von zwei Baselines auch ohne den Namen, Haiku und Sonnet nicht.
+* Dienste von US-Bundes-, Landes- oder Stadtverwaltungen bauen. In unserem Prior-Test setzte jeder Lauf mit Anker für einen Anwohnerparkausweis den Regierungs-Banner, einen Step Indicator und `usa-`-Formularkomponenten. Beide Opus-Baselines nutzten auch ohne den Namen `usa-`-Klassen, eine davon mit dem Banner; die Baselines von Haiku und Sonnet nicht.
 * Als US-Gegenstück zum <<gov-uk-design-system,GOV.UK Design System>>, wenn ein Dienst wie eine Behörde aussehen und sich so verhalten muss
 * Die Website-Standards des Bundes erfüllen: Behörden müssen nach dem 21st Century IDEA Act den Standards der GSA folgen, und USWDS ist der Weg dorthin (https://designsystem.digital.gov/website-standards/[Website standards])
 

@@ -32,7 +32,7 @@ Wichtige Vertreter:: Salesforce. Die Arbeit begann 2013; das System startete 201
 == *Wann verwenden*:
 
 * Salesforce-Apps, Lightning-Seiten oder externe Werkzeuge bauen, die in Salesforce nativ aussehen sollen. In unserem Prior-Test schrieb jeder Lauf mit Anker für eine Team-Einstellungsseite `slds-`-Markup mit `slds-page-header`, `slds-table` und `slds-button`.
-* Als klassische Referenz für Design Tokens und BEM-benanntes Enterprise-CSS
+* Als Referenz dort, wo Design Tokens entstanden, und für BEM-benanntes Enterprise-CSS
 * Lightning Web Components zusätzlich nennen, wenn du Plattform-Komponenten willst: In unserem Test nutzte sie kein Lauf ungefragt
 
 [discrete]

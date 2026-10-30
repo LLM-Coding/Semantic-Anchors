@@ -39,7 +39,7 @@ Wichtige Vertreter:: shadcn, Design Engineer bei Vercel (https://shadcn.com[shad
 == *Häufige Missverständnisse*:
 
 * *Es für eine npm-Bibliothek halten.* Es gibt kein Paket `shadcn-ui`, das man aktualisiert. Der Code gehört dir, und damit auch seine Updates.
-* *Erwarten, dass das Modell den aktuellen Stack kennt.* In unserem Prior-Test schrieben die Modelle das klassische Setup: Radix-Primitive und die Komponente `Form` mit `react-hook-form` und `zod`. Seit 2025 und 2026 ist das Projekt weiter: Base UI ist der Standard, die Formularseite bietet React Hook Form, TanStack Form und Formisch an, und `cn` ist ein eigenes Paket. Wenn das wichtig ist, nenne die Version oder gib den Link zur Dokumentation mit.
+* *Erwarten, dass das Modell den aktuellen Stack kennt.* In unserem Prior-Test bauten drei von sechs Läufen das Formular mit `react-hook-form` und `zod`, dem klassischen Setup. Seit 2025 ist das Projekt weiter: Base UI ist der Standard, die Formularseite bietet React Hook Form, TanStack Form und Formisch an, und `cn` ist ein eigenes Paket. Wenn das wichtig ist, nenne die Version oder gib den Link zur Dokumentation mit.
 * *Es für einen visuellen Stil halten.* Die Voreinstellungen sind neutrale Grautöne mit leichter Rundung; das Aussehen kommt aus den Theme-Variablen, die man setzt.
 
 [discrete]

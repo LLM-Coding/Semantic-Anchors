@@ -1,9 +1,16 @@
 import { describe, it, expect } from 'vitest'
 import fs from 'fs'
+import os from 'os'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import AsciidoctorFactory from '@asciidoctor/core'
-import { galleryEntries, buildStyleGallery, tile } from './lib/style-gallery.js'
+import {
+  galleryEntries,
+  buildStyleGallery,
+  tile,
+  examplePageFor,
+  PAGES,
+} from './lib/style-gallery.js'
 
 // #872: one homepage, many anchor names — the gallery puts the examples side by side.
 const Asciidoctor = () => AsciidoctorFactory()
@@ -143,5 +150,23 @@ describe('tile', () => {
     const out = tile('T', 'x.webp', 'say "hi" \\', '')
     const html = Asciidoctor().convert(out)
     expect(html).toContain('alt="say &quot;hi&quot; &#92;" width="720"')
+  })
+})
+
+describe('examplePageFor', () => {
+  it('knows every :example-page: value used by an anchor', () => {
+    for (const f of fs.readdirSync(ANCHORS).filter((n) => n.endsWith('.adoc'))) {
+      const m = fs.readFileSync(path.join(ANCHORS, f), 'utf-8').match(/^:example-page:[ \t]*(\S+)/m)
+      if (m) expect(PAGES, f).toContain(m[1])
+    }
+  })
+
+  it('rejects an unknown starting page instead of falling back silently', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'gallery-'))
+    const file = path.join(dir, 'x.adoc')
+    fs.writeFileSync(file, '= X\n:example-page: team-setings\n')
+    expect(() => examplePageFor(file)).toThrow(/team-setings/)
+    fs.writeFileSync(file, '= X\n')
+    expect(examplePageFor(file)).toBe('homepage')
   })
 })

@@ -20,7 +20,7 @@ Also known as:: Bootstrap, Twitter Bootstrap (originally "Twitter Blueprint"), B
 [discrete]
 == *Core Concepts*:
 
-* *A 12-column grid on flexbox.* Containers, rows and columns with six breakpoints: xs below 576 px, then sm, md, lg, xl and xxl from 576, 768, 992, 1200 and 1400 px (https://getbootstrap.com//docs/5.0/layout/grid/[Grid]).
+* *A 12-column grid on flexbox.* Containers, rows and columns with six breakpoints: xs below 576 px, then sm, md, lg, xl and xxl from 576, 768, 992, 1200 and 1400 px (https://getbootstrap.com/docs/5.0/layout/grid/[Grid]).
 * *Components by class name.* `btn btn-primary`, `card`, `navbar`, `modal`; forms use `form-label`, `form-control`, `form-check` and the validation states `is-invalid` with `invalid-feedback`.
 * *Utilities from a utility API.* Spacing, display and flex classes such as `mb-3`, `d-flex` and `gap-2`, generated from a Sass map that projects can extend.
 * *No jQuery.* Version 5 dropped jQuery and Internet Explorer; JavaScript plugins are configured through `data-bs-` attributes (https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/[v5 alpha announcement]).

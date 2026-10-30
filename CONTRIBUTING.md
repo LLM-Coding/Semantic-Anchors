@@ -229,6 +229,7 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 - `:related:` — Related anchor IDs (optional)
 - `:tier:` — Activation tier: `1` (frontier-only), `2` (needs qualification), `3` (broadly recognized)
 - `:example-screenshot:` — File name of an example image in `website/public/examples/` (optional; e.g. `swiss-style.webp`). Shown with a caption below the anchor text in the modal and on the pre-rendered anchor page, not in `llms.txt` or the text exports. Use it for visual styles, where a picture of what a model produces from the name says more than a description. WebP, 720×900 px. The build fails if the file is missing. Read from the English file; the German file mirrors it.
+- `:example-page:` — The starting page the example redesigns, which sets its section in the style gallery (optional): `homepage` (default) for visual styles, `team-settings` for design systems, which show their differences on an app page rather than a homepage. Any other value fails the gallery build.
 - `:advisory:` — Short caution label (optional). Use only for *counter-consensus framing*: the anchor activates reliably but its framing conflicts with its own field's documented consensus. Renders as a visible badge in the card/modal; keep the detail and the cited source in the `== Criticism` / `== Current Status` section (single source of truth). See `eisenhower-matrix.adoc`.
 
 ### Criticism and Current Status (research required, include when found)

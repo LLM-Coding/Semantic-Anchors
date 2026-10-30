@@ -13,7 +13,7 @@ ____
 
 Keine Beschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihr Ergebnis im Browser. Jede Stil-Kachel verlinkt ihren Anker.
 
-Ein Lauf pro Stil zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.
+Ein Lauf zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.
 
 == Stile: eine Homepage
 
@@ -60,7 +60,7 @@ image::/Semantic-Anchors/examples/tufte-style.webp["Die Homepage, neu gestaltet 
 
 Design-Systeme sind für Produktoberflächen gemacht. Ihre Unterschiede zeigen sich in Tabellen, Status-Labels, Seitenköpfen und Dichte, und davon hat eine Homepage wenig. Deshalb gestalten die Design-Systeme stattdessen eine App-Seite neu: die Einstellungsseite „Team members“ einer erfundenen Admin-Konsole, für diese Galerie bewusst schlicht geschrieben. Die erste Kachel ist diese Seite.
 
-Diese Sessions liefen am 30. Oktober 2026 in einer Cloud-Umgebung ohne Webzugriff. Für die Screenshots kamen Schriften von Google Fonts und Stylesheets von jsDelivr aus denselben npm-Paketen; lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.
+Diese Sessions liefen am 30. Oktober 2026 in einer Cloud-Umgebung ohne Webzugriff. Für die Screenshots wurden die Schriften und Stylesheets, die die Seiten bei Google Fonts und jsDelivr anfordern, lokal aus denselben npm-Paketen ausgeliefert; lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.
 
 [.style-gallery]
 --

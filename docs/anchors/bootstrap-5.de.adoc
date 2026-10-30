@@ -20,7 +20,7 @@ Auch bekannt als:: Bootstrap, Twitter Bootstrap (ursprünglich „Twitter Bluepr
 [discrete]
 == *Kernkonzepte*:
 
-* *Ein 12-Spalten-Raster auf Flexbox.* Container, Zeilen und Spalten mit sechs Breakpoints: xs unter 576 px, dann sm, md, lg, xl und xxl ab 576, 768, 992, 1200 und 1400 px (https://getbootstrap.com//docs/5.0/layout/grid/[Grid]).
+* *Ein 12-Spalten-Raster auf Flexbox.* Container, Zeilen und Spalten mit sechs Breakpoints: xs unter 576 px, dann sm, md, lg, xl und xxl ab 576, 768, 992, 1200 und 1400 px (https://getbootstrap.com/docs/5.0/layout/grid/[Grid]).
 * *Komponenten über Klassennamen.* `btn btn-primary`, `card`, `navbar`, `modal`; Formulare nutzen `form-label`, `form-control`, `form-check` und die Validierungszustände `is-invalid` mit `invalid-feedback`.
 * *Utilities aus einer Utility API.* Klassen für Abstände, Anzeige und Flex wie `mb-3`, `d-flex` und `gap-2`, erzeugt aus einer Sass-Map, die Projekte erweitern können.
 * *Kein jQuery.* Version 5 strich jQuery und den Internet Explorer; JavaScript-Plugins werden über `data-bs-`-Attribute konfiguriert (https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/[Ankündigung der v5-Alpha]).

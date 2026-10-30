@@ -1260,7 +1260,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 
 ### Salesforce Lightning Design System (SLDS)
 - **Also known as:** SLDS, SLDS 2, Lightning Design System
-- **Proponents:** Salesforce (2015; Jina Anne coined design tokens there)
+- **Proponents:** Salesforce (2015; design tokens originated in Jina Anne's team there)
 - **Core:** Salesforce's enterprise design system — BEM CSS with the `slds-` prefix (`slds-page-header`, `slds-table`, `slds-button_brand`), component blueprints, design tokens (origin of the term), Lightning Web Components; SLDS 2 (GA Winter '26) replaces tokens with styling hooks (`--slds-g-*`) and the Cosmos theme — models write SLDS 1
 
 ### shadcn/ui

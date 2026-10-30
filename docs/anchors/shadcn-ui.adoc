@@ -39,7 +39,7 @@ Key Proponents:: shadcn, a design engineer at Vercel (https://shadcn.com[shadcn.
 == *Common Misunderstandings*:
 
 * *Treating it as an npm library.* There is no `shadcn-ui` package to upgrade. The code is yours, and so are its updates.
-* *Expecting the model to know the current stack.* In our prior test the models wrote the classic setup: Radix primitives and the `Form` component with `react-hook-form` and `zod`. Since 2025 and 2026 the project has moved on: Base UI is the default, the forms page offers React Hook Form, TanStack Form and Formisch, and `cn` is its own package. Name the version or give the docs link when that matters.
+* *Expecting the model to know the current stack.* In our prior test three of six runs built the form with `react-hook-form` and `zod`, the classic setup. Since 2025 the project has moved on: Base UI is the default, the forms page offers React Hook Form, TanStack Form and Formisch, and `cn` is its own package. Name the version or give the docs link when that matters.
 * *Thinking it is a visual style.* The defaults are neutral greys with a slight radius; the look comes from the theme variables you set.
 
 [discrete]

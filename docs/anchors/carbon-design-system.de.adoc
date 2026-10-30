@@ -31,7 +31,7 @@ Wichtige Vertreter:: IBM. Die öffentliche Entwicklung begann am 10. Juni 2015 u
 [discrete]
 == *Wann verwenden*:
 
-* Enterprise- und datenlastige Oberflächen bauen -- Admin-Konsolen, Dashboards, Entwicklerwerkzeuge --, die nüchtern und dicht wirken sollen. In unserem Prior-Test importierte jeder Lauf mit Anker für eine Team-Einstellungsseite `@carbon/react` und baute eine `DataTable`; fünf von sechs nannten ein Carbon-Theme.
+* Enterprise- und datenlastige Oberflächen bauen -- Admin-Konsolen, Dashboards, Entwicklerwerkzeuge -- mit dichten Daten. In unserem Prior-Test importierte jeder Lauf mit Anker für eine Team-Einstellungsseite `@carbon/react` und baute eine `DataTable`; fünf von sechs nannten ein Carbon-Theme.
 * Mit geschichteten Flächen-Tokens und dem dunklen Theme Gray 100 gestalten
 * KI-erzeugte Inhalte mit den Mustern von Carbon for AI kennzeichnen
 

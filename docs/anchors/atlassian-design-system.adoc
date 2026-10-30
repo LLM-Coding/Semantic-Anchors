@@ -32,13 +32,13 @@ Key Proponents:: Atlassian. Jürgen Spangl, then Head of Design, started the gui
 == *When to Use*:
 
 * Building Jira or Confluence apps, Forge apps or tools that should feel like part of Atlassian's products. In our prior test, every anchor run of a team-settings page imported Atlaskit packages, built a `DynamicTable` and marked roles with a `Lozenge`.
-* Learning a mature token architecture with semantic names for colour, elevation and space
+* Learning a token architecture with semantic names for colour, elevation and space
 * As a reference for dense, task-oriented collaboration interfaces
 
 [discrete]
 == *Common Misunderstandings*:
 
-* *Expecting the pre-2024 look.* Atlassian refreshed its visual system with Pentagram from December 2022 and showed it at Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); new icons, colours and the type scale followed in 2025. Models trained before that write the older look unless told otherwise.
+* *Expecting the pre-2024 look.* Atlassian began mapping its visual system in December 2022, later worked with Pentagram on the refresh and showed it at Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); new icons, colours and the type scale followed in 2025. Models trained before that write the older look unless told otherwise.
 * *Treating Charlie as the UI font.* Charlie is Atlassian's brand typeface; the product UI uses Atlassian Sans, formerly system fonts.
 
 [discrete]

@@ -44,7 +44,7 @@ Key Proponents:: Ant Group (formerly Ant Financial), with afc163 as its long-tim
 [discrete]
 == *Criticism*:
 
-* *The Christmas easter egg.* In 2018 an unannounced commit made antd 3.9.3 to 3.11.5 show snow on buttons on 25 December in production apps. The maintainer apologised in https://www.github.com/ant-design/ant-design/issues/13849[issue #13849]: "It is a complete stupid decision of my own and very sorry to everyone that get involved." The Chinese tech outlet TMTPost summed up the reaction: an easter egg from developers to users is a surprise, one from a framework to developers is a scare (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
+* *The Christmas easter egg.* In 2018 an unannounced commit made antd 3.9.3 to 3.11.5 show snow on buttons on 25 December in production apps. The maintainer apologised in https://github.com/ant-design/ant-design/issues/13849[issue #13849]: "It is a complete stupid decision of my own and very sorry to everyone that get involved." The Chinese tech outlet TMTPost summed up the reaction: an easter egg from developers to users is a surprise, one from a framework to developers is a scare (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
 * *Weight.* Elijah Asaolu, https://dev.to/logrocket/ant-design-adoption-guide-overview-examples-and-alternatives-3003["Ant Design adoption guide"] (LogRocket, 2024), cautions: "keep in mind that Ant Design components can be heavy."
 
 [discrete]

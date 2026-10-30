@@ -576,15 +576,20 @@ test.describe('Category quick-nav', () => {
 })
 
 test.describe('Style gallery (#872)', () => {
-  test('shows the original plus one tile per style, one link per style tile', async ({ page }) => {
+  test('opens every section with an unlinked original, one link per style tile', async ({
+    page,
+  }) => {
     await page.goto('/Semantic-Anchors/style-gallery/')
-    const tiles = page.locator('.style-gallery .imageblock')
-    await expect(tiles.first()).toBeVisible()
-    const count = await tiles.count()
-    expect(count).toBeGreaterThan(1)
-    // The original has no link; every other tile has exactly one.
-    await expect(tiles.first().locator('a')).toHaveCount(0)
-    await expect(page.locator('.style-gallery a')).toHaveCount(count - 1)
+    const sections = page.locator('.style-gallery')
+    // Two starting pages: styles on a homepage, design systems on an app page.
+    await expect(sections).toHaveCount(2)
+    for (const section of await sections.all()) {
+      const tiles = section.locator('.imageblock')
+      const count = await tiles.count()
+      expect(count).toBeGreaterThan(1)
+      await expect(tiles.first().locator('a')).toHaveCount(0)
+      await expect(section.locator('a')).toHaveCount(count - 1)
+    }
   })
 
   test('the whole tile opens its anchor', async ({ page }) => {

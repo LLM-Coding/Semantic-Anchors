@@ -13315,7 +13315,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 [discrete]
 ## **Criticism**:
 
-* **The Christmas easter egg.** In 2018 an unannounced commit made antd 3.9.3 to 3.11.5 show snow on buttons on 25 December in production apps. The maintainer apologised in https://www.github.com/ant-design/ant-design/issues/13849[issue #13849]: "It is a complete stupid decision of my own and very sorry to everyone that get involved." The Chinese tech outlet TMTPost summed up the reaction: an easter egg from developers to users is a surprise, one from a framework to developers is a scare (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
+* **The Christmas easter egg.** In 2018 an unannounced commit made antd 3.9.3 to 3.11.5 show snow on buttons on 25 December in production apps. The maintainer apologised in https://github.com/ant-design/ant-design/issues/13849[issue #13849]: "It is a complete stupid decision of my own and very sorry to everyone that get involved." The Chinese tech outlet TMTPost summed up the reaction: an easter egg from developers to users is a surprise, one from a framework to developers is a scare (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
 * **Weight.** Elijah Asaolu, https://dev.to/logrocket/ant-design-adoption-guide-overview-examples-and-alternatives-3003["Ant Design adoption guide"] (LogRocket, 2024), cautions: "keep in mind that Ant Design components can be heavy."
 
 [discrete]
@@ -13389,13 +13389,13 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **When to Use**:
 
 * Building Jira or Confluence apps, Forge apps or tools that should feel like part of Atlassian's products. In our prior test, every anchor run of a team-settings page imported Atlaskit packages, built a `DynamicTable` and marked roles with a `Lozenge`.
-* Learning a mature token architecture with semantic names for colour, elevation and space
+* Learning a token architecture with semantic names for colour, elevation and space
 * As a reference for dense, task-oriented collaboration interfaces
 
 [discrete]
 ## **Common Misunderstandings**:
 
-* **Expecting the pre-2024 look.** Atlassian refreshed its visual system with Pentagram from December 2022 and showed it at Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); new icons, colours and the type scale followed in 2025. Models trained before that write the older look unless told otherwise.
+* **Expecting the pre-2024 look.** Atlassian began mapping its visual system in December 2022, later worked with Pentagram on the refresh and showed it at Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); new icons, colours and the type scale followed in 2025. Models trained before that write the older look unless told otherwise.
 * **Treating Charlie as the UI font.** Charlie is Atlassian's brand typeface; the product UI uses Atlassian Sans, formerly system fonts.
 
 [discrete]
@@ -13535,7 +13535,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 [discrete]
 ## **Core Concepts**:
 
-* **A 12-column grid on flexbox.** Containers, rows and columns with six breakpoints: xs below 576 px, then sm, md, lg, xl and xxl from 576, 768, 992, 1200 and 1400 px (https://getbootstrap.com//docs/5.0/layout/grid/[Grid]).
+* **A 12-column grid on flexbox.** Containers, rows and columns with six breakpoints: xs below 576 px, then sm, md, lg, xl and xxl from 576, 768, 992, 1200 and 1400 px (https://getbootstrap.com/docs/5.0/layout/grid/[Grid]).
 * **Components by class name.** `btn btn-primary`, `card`, `navbar`, `modal`; forms use `form-label`, `form-control`, `form-check` and the validation states `is-invalid` with `invalid-feedback`.
 * **Utilities from a utility API.** Spacing, display and flex classes such as `mb-3`, `d-flex` and `gap-2`, generated from a Sass map that projects can extend.
 * **No jQuery.** Version 5 dropped jQuery and Internet Explorer; JavaScript plugins are configured through `data-bs-` attributes (https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/[v5 alpha announcement]).
@@ -13587,7 +13587,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 [discrete]
 ## **When to Use**:
 
-* Building enterprise and data-heavy interfaces -- admin consoles, dashboards, developer tools -- that should look sober and dense. In our prior test, every anchor run of a team-settings page imported `@carbon/react` and built a `DataTable`; five of six named a Carbon theme.
+* Building enterprise and data-heavy interfaces -- admin consoles, dashboards, developer tools -- with dense data. In our prior test, every anchor run of a team-settings page imported `@carbon/react` and built a `DataTable`; five of six named a Carbon theme.
 * Theming with layered surface tokens and a dark Gray 100 theme
 * Marking AI-generated content with the Carbon for AI patterns
 
@@ -13821,7 +13821,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **Components per platform.** React and Web Components for the web, WinUI for Windows, and native libraries for iOS and Android (https://fluent2.microsoft.design/get-started/develop[Develop]).
 * **Light, depth, motion, material, scale.** The five properties of the original Fluent Design System of 2017, whose materials Acrylic and Mica still shape Windows.
 
-***Key Proponents***: Microsoft. The Fluent Design System was unveiled at Build on 11 May 2017, codename Project Neon (https://thenextweb.com/microsoft/2017/05/11/windows-10-gets-a-ui-refresh-with-the-fluent-design-system-aka-project-neon/[The Next Web]); Fluent 2 followed in May 2023 with Teams as its first adopter (https://sdtimes.com/msft/microsoft-releases-fluent-2-to-enable-more-creativity-in-design/[SD Times])
+***Key Proponents***: Microsoft. The Fluent Design System was unveiled at Build on 11 May 2017, codename Project Neon (https://thenextweb.com/microsoft/2017/05/11/windows-10-gets-a-ui-refresh-with-the-fluent-design-system-aka-project-neon/[The Next Web]); Fluent 2 followed in May 2023, with Teams already redesigned in it (https://sdtimes.com/msft/microsoft-releases-fluent-2-to-enable-more-creativity-in-design/[SD Times])
 
 [discrete]
 ## **When to Use**:
@@ -14313,7 +14313,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **When to Use**:
 
 * Building Salesforce apps, Lightning pages or external tools that should look native in Salesforce. In our prior test, every anchor run of a team-settings page wrote `slds-` markup with `slds-page-header`, `slds-table` and `slds-button`.
-* As the classic reference for design tokens and BEM-named enterprise CSS
+* As the reference where design tokens began, and for BEM-named enterprise CSS
 * Name Lightning Web Components as well when you want platform components: in our test no run used them unprompted
 
 [discrete]
@@ -14362,7 +14362,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **Common Misunderstandings**:
 
 * **Treating it as an npm library.** There is no `shadcn-ui` package to upgrade. The code is yours, and so are its updates.
-* **Expecting the model to know the current stack.** In our prior test the models wrote the classic setup: Radix primitives and the `Form` component with `react-hook-form` and `zod`. Since 2025 and 2026 the project has moved on: Base UI is the default, the forms page offers React Hook Form, TanStack Form and Formisch, and `cn` is its own package. Name the version or give the docs link when that matters.
+* **Expecting the model to know the current stack.** In our prior test three of six runs built the form with `react-hook-form` and `zod`, the classic setup. Since 2025 the project has moved on: Base UI is the default, the forms page offers React Hook Form, TanStack Form and Formisch, and `cn` is its own package. Name the version or give the docs link when that matters.
 * **Thinking it is a visual style.** The defaults are neutral greys with a slight radius; the look comes from the theme variables you set.
 
 [discrete]
@@ -14409,7 +14409,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 [discrete]
 ## **Criticism**:
 
-* **A forced migration.** Daniel Curtis, https://infoq.com/news/2026/10/shopify-web-components["Shopify Upgrades Checkout Blocks to Polaris Web Components"] (InfoQ, 2026), reports that after a year, with the 2026-01 version mandatory, "sentiment has been more mixed": developers called the unversioned CDN script a risk for stability and the components incomplete, while bundles shrank by 40 to 85 per cent.
+* **A forced migration.** Daniel Curtis, https://infoq.com/news/2026/10/shopify-web-components["Shopify Upgrades Checkout Blocks to Polaris Web Components"] (InfoQ, 2026), reports for checkout UI extensions that after a year, with the 2026-01 version mandatory, "sentiment has been more mixed": developers called the unversioned CDN script a risk for stability and the components incomplete, while bundles shrank by 40 to 85 per cent.
 
 [discrete]
 ## **Current Status**:
@@ -14526,7 +14526,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 [discrete]
 ## **When to Use**:
 
-* Building US federal, state or city government services. In our prior test, every anchor run of a parking-permit service set the government banner, a step indicator and `usa-` form components; Opus did this even without the name in two of two baselines, Haiku and Sonnet did not.
+* Building US federal, state or city government services. In our prior test, every anchor run of a parking-permit service set the government banner, a step indicator and `usa-` form components. Both Opus baselines used `usa-` classes even without the name, one of them with the banner; the Haiku and Sonnet baselines did not.
 * As the US counterpart to the GOV.UK Design System when a service must look and behave like government
 * Meeting the federal website standards: agencies must follow GSA's standards under the 21st Century IDEA Act, and USWDS is how the standards are met (https://designsystem.digital.gov/website-standards/[Website standards])
 

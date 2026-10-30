@@ -31,7 +31,7 @@ Key Proponents:: IBM. Public development began on 10 June 2015 under the Apache 
 [discrete]
 == *When to Use*:
 
-* Building enterprise and data-heavy interfaces -- admin consoles, dashboards, developer tools -- that should look sober and dense. In our prior test, every anchor run of a team-settings page imported `@carbon/react` and built a `DataTable`; five of six named a Carbon theme.
+* Building enterprise and data-heavy interfaces -- admin consoles, dashboards, developer tools -- with dense data. In our prior test, every anchor run of a team-settings page imported `@carbon/react` and built a `DataTable`; five of six named a Carbon theme.
 * Theming with layered surface tokens and a dark Gray 100 theme
 * Marking AI-generated content with the Carbon for AI patterns
 

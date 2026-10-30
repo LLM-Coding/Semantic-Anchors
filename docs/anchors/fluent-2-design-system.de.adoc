@@ -26,7 +26,7 @@ Auch bekannt als:: Fluent 2, Fluent UI (die Code-Bibliotheken), Fluent UI React 
 * *Komponenten je Plattform.* React und Web Components fürs Web, WinUI für Windows und native Bibliotheken für iOS und Android (https://fluent2.microsoft.design/get-started/develop[Develop]).
 * *Licht, Tiefe, Bewegung, Material, Maßstab.* Die fünf Eigenschaften des ursprünglichen Fluent Design System von 2017, dessen Materialien Acrylic und Mica Windows bis heute prägen.
 
-Wichtige Vertreter:: Microsoft. Das Fluent Design System wurde am 11. Mai 2017 auf der Build vorgestellt, Codename Project Neon (https://thenextweb.com/microsoft/2017/05/11/windows-10-gets-a-ui-refresh-with-the-fluent-design-system-aka-project-neon/[The Next Web]); Fluent 2 folgte im Mai 2023 mit Teams als erstem Anwender (https://sdtimes.com/msft/microsoft-releases-fluent-2-to-enable-more-creativity-in-design/[SD Times])
+Wichtige Vertreter:: Microsoft. Das Fluent Design System wurde am 11. Mai 2017 auf der Build vorgestellt, Codename Project Neon (https://thenextweb.com/microsoft/2017/05/11/windows-10-gets-a-ui-refresh-with-the-fluent-design-system-aka-project-neon/[The Next Web]); Fluent 2 folgte im Mai 2023; Teams war damals schon damit neu gestaltet (https://sdtimes.com/msft/microsoft-releases-fluent-2-to-enable-more-creativity-in-design/[SD Times])
 
 [discrete]
 == *Wann verwenden*:
