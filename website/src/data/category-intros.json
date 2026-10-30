@@ -1,0 +1,62 @@
+{
+  "communication-presentation": {
+    "en": "Anchors for how a text or talk is built and pitched: structure (Pyramid Principle, BLUF, Inverted Pyramid), style (Strunk & White, Gutes Deutsch, Plain Language) and the audience (Curse of Knowledge, Four-Sides Model). Combine one structure anchor with one style anchor; two structures in one prompt pull against each other.",
+    "de": "Anker dafür, wie ein Text oder Vortrag aufgebaut und ausgerichtet ist: Struktur (Pyramid Principle, BLUF, umgekehrte Pyramide), Stil (Strunk & White, Gutes Deutsch, einfache Sprache) und Publikum (Curse of Knowledge, Vier-Seiten-Modell). Kombiniere einen Struktur-Anker mit einem Stil-Anker; zwei Strukturen in einem Prompt ziehen gegeneinander."
+  },
+  "creative-writing": {
+    "en": "Story structures from screenwriting and narrative theory. Each one fixes where the turning points sit, so naming one shapes the plot of a story, talk or case study. Pick one; mixing structures blurs the arc.",
+    "de": "Erzählstrukturen aus Drehbuch und Erzähltheorie. Jede legt fest, wo die Wendepunkte liegen; wer eine nennt, formt damit die Handlung einer Geschichte, eines Vortrags oder einer Fallstudie. Wähle eine; gemischte Strukturen verwischen den Bogen."
+  },
+  "design-principles": {
+    "en": "Principles and patterns for designing code: SOLID, the GoF patterns, coupling and cohesion. Name the pattern and the model applies its known structure and roles; name the principle and it reviews code against it. For visual and interface design, see UX & Visual Design.",
+    "de": "Prinzipien und Muster für den Entwurf von Code: SOLID, die GoF-Patterns, Kopplung und Kohäsion. Nennst du das Pattern, wendet das Modell dessen bekannte Struktur und Rollen an; nennst du das Prinzip, prüft es Code daran. Für visuelles Design und Oberflächen siehe UX & visuelles Design."
+  },
+  "development-workflow": {
+    "en": "Conventions for the daily work around the code: commits, branches, versions, changelogs and the steps of a change. These anchors are cheap to name and easy to check, which makes them a good fit for a CLAUDE.md or AGENTS.md.",
+    "de": "Konventionen für die tägliche Arbeit rund um den Code: Commits, Branches, Versionen, Changelogs und die Schritte einer Änderung. Diese Anker sind schnell genannt und leicht zu prüfen; darum passen sie gut in eine CLAUDE.md oder AGENTS.md."
+  },
+  "dialogue-interaction": {
+    "en": "Anchors that change how the model talks with you rather than what it produces: asking instead of answering, uncovering the real problem behind a question. Useful in a system prompt or at the start of a session.",
+    "de": "Anker, die ändern, wie das Modell mit dir spricht, nicht was es liefert: fragen statt antworten, das eigentliche Problem hinter einer Frage aufdecken. Nützlich im System-Prompt oder zu Beginn einer Sitzung."
+  },
+  "documentation": {
+    "en": "Anchors for structuring and maintaining documentation: what kind of document to write (Diátaxis), how to build and review it (Docs-as-Code) and how to word it (Plain Language, Simplified Technical English).",
+    "de": "Anker für Aufbau und Pflege von Dokumentation: welche Art Dokument entsteht (Diátaxis), wie es gebaut und geprüft wird (Docs-as-Code) und wie es formuliert ist (einfache Sprache, Simplified Technical English)."
+  },
+  "knowledge-management": {
+    "en": "Methods for capturing, organising and passing on knowledge, from personal task systems to an LLM-maintained wiki. Name the method and the model sorts notes, tasks or learning material by its rules.",
+    "de": "Methoden, um Wissen festzuhalten, zu ordnen und weiterzugeben, vom persönlichen Aufgabensystem bis zum Wiki, das ein LLM pflegt. Nennst du die Methode, sortiert das Modell Notizen, Aufgaben oder Lernstoff nach ihren Regeln."
+  },
+  "meta": {
+    "en": "Anchors about semantic anchors themselves: the theory behind them and the spectrum from loose term to precise method. Read these to understand why naming works and where it stops working.",
+    "de": "Anker über semantische Anker selbst: die Theorie dahinter und das Spektrum vom losen Begriff bis zur präzisen Methode. Lies diese, um zu verstehen, warum Benennen wirkt und wo es aufhört zu wirken."
+  },
+  "problem-solving": {
+    "en": "Thinking tools for analysing a problem and its causes before solving it. Each anchor brings a fixed procedure, so the model works through it step by step instead of jumping to an answer.",
+    "de": "Denkwerkzeuge, um ein Problem und seine Ursachen zu analysieren, bevor man es löst. Jeder Anker bringt ein festes Vorgehen mit; das Modell arbeitet es Schritt für Schritt ab, statt gleich zu antworten."
+  },
+  "requirements-engineering": {
+    "en": "Formats and techniques for eliciting and writing down requirements: user stories, use cases, EARS and the workshops that find them. A named format gives the model a template and a checklist at once.",
+    "de": "Formate und Techniken, um Anforderungen zu erheben und aufzuschreiben: User Stories, Use Cases, EARS und die Workshops, die sie finden. Ein benanntes Format gibt dem Modell Vorlage und Checkliste zugleich."
+  },
+  "software-architecture": {
+    "en": "Styles, patterns and documentation methods for software architecture. Name a method (arc42, C4, ADR) for the structure of the documents, and a style or pattern for the structure of the system.",
+    "de": "Stile, Muster und Dokumentationsmethoden für Softwarearchitektur. Nenne eine Methode (arc42, C4, ADR) für die Struktur der Dokumente und einen Stil oder ein Muster für die Struktur des Systems."
+  },
+  "statistical-methods": {
+    "en": "Methods for monitoring processes with data: control charts, the rules for reading them, and improvement cycles built on them. Useful for metrics dashboards and incident analysis.",
+    "de": "Methoden, um Prozesse mit Daten zu überwachen: Regelkarten, die Regeln, sie zu lesen, und darauf aufbauende Verbesserungszyklen. Nützlich für Kennzahlen-Dashboards und Störungsanalysen."
+  },
+  "strategic-planning": {
+    "en": "Frameworks for setting goals, prioritising and making decisions under uncertainty. Many of them classify the situation first (Cynefin, Wardley Mapping) and then suggest a fitting response.",
+    "de": "Frameworks, um Ziele zu setzen, Prioritäten zu ordnen und unter Unsicherheit zu entscheiden. Viele ordnen zuerst die Lage ein (Cynefin, Wardley Mapping) und schlagen dann eine passende Reaktion vor."
+  },
+  "testing-quality": {
+    "en": "Testing styles, test doubles, reviews and security and safety standards. Naming the style (Chicago or London School TDD) decides how tests are written; naming the standard (OWASP, WCAG) decides what a review checks.",
+    "de": "Teststile, Test Doubles, Reviews sowie Standards für Security und Safety. Der benannte Stil (TDD Chicago oder London School) entscheidet, wie Tests entstehen; der benannte Standard (OWASP, WCAG) entscheidet, was ein Review prüft."
+  },
+  "ux-visual-design": {
+    "en": "Visual styles, design systems, layout and typography rules, usability heuristics and accessibility. Combine one style or design system with rules for the details and with WCAG 2.2 AA. Name controls by their common name, which [The Component Gallery](https://component.gallery/) lists with its aliases, and fix how they behave with the [WAI-ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/). Not every design system is an anchor: of the [95 design systems in the Component Gallery](https://component.gallery/design-systems/) only a few are in this catalog. For one that is not, give the LLM a link to its documentation, or better its design tokens or MCP server.",
+    "de": "Visuelle Stile, Design-Systeme, Regeln für Layout und Typografie, Usability-Heuristiken und Barrierefreiheit. Kombiniere einen Stil oder ein Design-System mit Regeln für die Details und mit WCAG 2.2 AA. Nenne Bedienelemente beim gängigen Namen, den [The Component Gallery](https://component.gallery/) samt Synonymen listet, und lege ihr Verhalten mit dem [WAI-ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/) fest. Nicht jedes Design-System ist ein Anker: Von den [95 Design-Systemen der Component Gallery](https://component.gallery/design-systems/) stehen nur wenige in diesem Katalog. Für eines, das fehlt, gib dem LLM einen Link auf seine Dokumentation mit, besser noch seine Design Tokens oder seinen MCP-Server."
+  }
+}

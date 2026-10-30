@@ -28,6 +28,11 @@ const fs = require('fs')
 const path = require('path')
 const { extractDescription } = require('./generate-jsonld.js')
 const APPEARANCES = require('../website/src/data/appearances.json')
+const CATEGORY_INTROS = require('../website/src/data/category-intros.json')
+const { pathToFileURL } = require('url')
+
+// Shared with the SPA (#869); an ES module, so main() imports it before rendering.
+let getCategoryIntroHtml = () => ''
 
 const DIST = path.join(__dirname, '..', 'website', 'dist')
 const SHELL = path.join(DIST, 'index.html')
@@ -518,9 +523,13 @@ function buildCatalogMarkup(lang, translations) {
         .join('')
       if (!items) return ''
       const name = translations[`categories.${category.id}`] || category.name
+      const introHtml = getCategoryIntroHtml(CATEGORY_INTROS, category.id, lang)
+      const intro = introHtml
+        ? `\n          <p class="category-intro text-sm mb-2 max-w-3xl">${introHtml}</p>`
+        : ''
       return `
         <section class="mb-3">
-          <h3 class="text-lg font-semibold mb-2">${escapeHtml(name)}</h3>
+          <h3 class="text-lg font-semibold mb-2">${escapeHtml(name)}</h3>${intro}
           <ul class="flex flex-wrap gap-2">${items}</ul>
         </section>`
     })
@@ -771,7 +780,10 @@ function prerenderContractPages(shell) {
   )
 }
 
-function main() {
+async function main() {
+  ;({ getCategoryIntroHtml } = await import(
+    pathToFileURL(path.join(__dirname, '..', 'website', 'src', 'utils', 'category-intro.js')).href
+  ))
   const shell = readShell()
   for (const route of ROUTES) {
     prerenderRoute(shell, route)
@@ -785,4 +797,7 @@ function main() {
   )
 }
 
-main()
+main().catch((err) => {
+  console.error(err)
+  process.exit(1)
+})

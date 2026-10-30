@@ -509,3 +509,31 @@ describe('card structure — one primary control per card (#791)', () => {
     expect(seen).toEqual([])
   })
 })
+
+describe('category intro (#869)', () => {
+  const anchors = [
+    {
+      id: 'swiss-style',
+      title: 'Swiss Style',
+      categories: ['ux-visual-design'],
+      roles: ['ux-designer'],
+      tags: [],
+      proponents: [],
+    },
+  ]
+
+  it('renders the intro under the category heading with its links', () => {
+    const html = renderCardGrid([{ id: 'ux-visual-design', name: 'UX' }], anchors)
+    const section = html.slice(html.indexOf('id="category-ux-visual-design"'))
+    expect(section).toMatch(/<\/h2>\s*<p class="category-intro"/)
+    expect(section).toContain('href="https://component.gallery/design-systems/"')
+  })
+
+  it('renders no intro element for a category without one', () => {
+    const html = renderCardGrid(
+      [{ id: 'no-intro', name: 'None' }],
+      [{ ...anchors[0], categories: ['no-intro'] }]
+    )
+    expect(html).not.toContain('category-intro')
+  })
+})

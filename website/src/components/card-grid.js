@@ -1,5 +1,7 @@
 import { i18n } from '../i18n.js'
 import { search as performFullTextSearch, isIndexReady } from '../utils/search-index.js'
+import { getCategoryIntroHtml } from '../utils/category-intro.js'
+import categoryIntros from '../data/category-intros.json'
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -203,6 +205,9 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
   const color = CATEGORY_COLORS[category.id] || '#5470c6'
   const icon = CATEGORY_ICONS[category.id] || '📌'
   const categoryName = i18n.t(`categories.${category.id}`) || category.name
+  const lang = typeof i18n.currentLang === 'function' ? i18n.currentLang() : 'en'
+  const introHtml = getCategoryIntroHtml(categoryIntros, category.id, lang)
+  const intro = introHtml ? `<p class="category-intro">${introHtml}</p>` : ''
 
   return `
     <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">
@@ -210,6 +215,7 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
         <span class="category-icon" style="background-color: ${color}">${icon}</span>
         <span data-i18n="categories.${escapeHtml(category.id)}">${escapeHtml(categoryName)}</span>
       </h2>
+      ${intro}
 
       <div class="anchor-cards-grid">
         ${categoryAnchors.map((anchor) => renderAnchorCard(anchor, color, category.id, recent.has(anchor.id))).join('')}

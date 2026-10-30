@@ -62,7 +62,8 @@ body {
 .anchor-card-title,
 .anchor-card-meta,
 .anchor-card-proponents,
-.category-heading {
+.category-heading,
+.category-intro {
   font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -200,6 +201,22 @@ html {
 
 .category-heading {
   @apply text-2xl font-bold mb-6 flex items-center gap-3;
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+/* Short intro under each category heading (#869) */
+.category-intro {
+  @apply -mt-3 mb-6 max-w-3xl text-sm leading-relaxed;
+  color: var(--color-text-secondary);
+}
+
+.category-intro a {
+  @apply underline underline-offset-2;
+  color: inherit;
+}
+
+.category-intro a:hover,
+.category-intro a:focus-visible {
   @apply text-gray-900 dark:text-gray-100;
 }
 
