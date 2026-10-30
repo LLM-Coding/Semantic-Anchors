@@ -5,6 +5,7 @@
 :tags: TDD, classicist TDD, Detroit School, Chicago School, state-based testing, inside-out, Kent Beck
 :related: tdd-london-school, red-green-tdd, testing-pyramid
 :tier: 3
+:definition: TDD, Chicago School – auch klassisches TDD oder Detroit School – ist ein Stil der testgetriebenen Entwicklung, verbunden mit Kent Beck und Martin Fowler. Er prüft den Zustand von Objekten nach Operationen, verwendet wo immer möglich echte Objekte, mockt nur externe Abhängigkeiten und baut von der Kern-Domänenlogik nach außen. Das Design entsteht durch Refactoring im Red-Green-Refactor-Zyklus.
 
 [%collapsible]
 ====

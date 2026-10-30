@@ -3,6 +3,7 @@
 :roles: data-scientist, devops-engineer, team-lead
 :proponents: Walter A. Shewhart
 :tier: 3
+:definition: Die Shewhart-Regelkarte ist ein Zeitreihendiagramm, das Walter A. Shewhart bei Bell Labs und Western Electric entwickelte, und das zentrale Werkzeug der statistischen Prozesskontrolle. Sie trägt einen Messwert um eine Mittellinie mit oberer und unterer Kontrollgrenze auf, typischerweise bei ±3σ. So trennt sie die natürliche Schwankung eines stabilen Prozesses von zuordenbaren, besonderen Ursachen.
 :tags: control chart, Shewhart, SPC, statistical process control, quality, variation
 :related: spc, nelson-rules, dmaic
 

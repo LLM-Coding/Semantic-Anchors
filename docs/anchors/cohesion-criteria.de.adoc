@@ -5,6 +5,7 @@
 :proponents: Larry Constantine, Edward Yourdon
 :tags: cohesion, coupling, module design, structured design, code quality
 :tier: 2
+:definition: Die Kohäsionskriterien sind eine siebenstufige Skala von Larry Constantine und Edward Yourdon, die bewertet, wie eng die Elemente eines Moduls zusammengehören. Sie reicht von zufälliger Kohäsion, der schlechtesten, über logische, temporale, prozedurale, kommunikative und sequentielle bis zur funktionalen Kohäsion, dem Ideal. So lässt sich Modulqualität mit konkreten Kriterien statt mit Bauchgefühl beurteilen.
 
 [%collapsible]
 ====

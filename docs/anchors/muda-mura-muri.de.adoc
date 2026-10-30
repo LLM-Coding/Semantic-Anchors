@@ -5,6 +5,7 @@
 :tags: Muda, Mura, Muri, sieben Verschwendungsarten, TIMWOOD, TIMWOODS, Verschwendung, Unausgeglichenheit, Überlastung, achte Verschwendung, die drei Mu
 :related: kaizen, andon, genchi-genbutsu, dmaic, spc
 :tier: 3
+:definition: Muda, Mura, Muri — Verschwendung, Unausgeglichenheit und Überlastung — sind die „drei Mu“ des Toyota-Produktionssystems; Muda umfasst Taiichi Ohnos sieben Verschwendungsarten. Der Anker benennt das Trio, nicht die Verschwendung allein. Nach James P. Womack läuft die Ursachenkette Mura → Muri → Muda: Unausgeglichenheit, die das System selbst erzeugt, führt zu Überlastung, und diese bringt die Verschwendung zurück, die frühere Aufräumaktionen beseitigt hatten.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

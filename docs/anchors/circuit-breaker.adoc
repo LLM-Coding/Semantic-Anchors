@@ -5,6 +5,7 @@
 :proponents: Michael Nygard, Martin Fowler
 :tags: resilience, fault-tolerance, stability-pattern, microservices, fail-fast, feedback
 :tier: 2
+:definition: The Circuit Breaker is a stability pattern introduced by Michael Nygard in Release It! and popularized further by Martin Fowler. It guards calls to a protected resource and trips once failures cross a threshold, so further calls fail fast instead of blocking; after a reset timeout it lets a trial call through to test recovery. This prevents resource exhaustion and cascading failure.
 
 [%collapsible]
 ====

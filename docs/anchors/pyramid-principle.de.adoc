@@ -3,6 +3,7 @@
 :roles: business-analyst, consultant, team-lead, technical-writer
 :proponents: Barbara Minto
 :tier: 3
+:definition: Das Pyramid Principle ist Barbara Mintos Methode, Kommunikation top-down zu strukturieren, dargelegt in „The Minto Pyramid Principle“ (1987). An der Spitze steht ein einzelner Leitgedanke, gestützt von MECE-Gruppen von Argumenten, und jede Ebene beantwortet das „Warum?“ der Ebene darüber. Die Schlussfolgerung kommt zuerst, und das SCQ-Framework (Situation, Komplikation, Frage) liefert den Kontext.
 :tags: pyramid principle, Barbara Minto, structured communication, top-down, writing
 :related: mece, bluf, inverted-pyramid-style
 

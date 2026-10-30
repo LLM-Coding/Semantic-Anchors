@@ -5,6 +5,7 @@
 :proponents: The Go Authors
 :tags: go, golang, best-practices, idiomatic, style-guide
 :tier: 3
+:definition: Effective Go ist der Leitfaden der Go Authors für idiomatisches Go, geschrieben zur Veröffentlichung der Sprache 2009. Er behandelt Formatierung mit gofmt, Paketnamen, defer, Goroutinen und Channels („teile Speicher durch Kommunikation“), implizit erfüllte Interfaces, Fehler als Werte und Komposition durch Embedding. Für den Sprachkern taugt er weiter, wird aber nicht aktiv gepflegt und behandelt weder Modules noch Generics.
 
 [%collapsible]
 ====

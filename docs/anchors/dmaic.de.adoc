@@ -5,6 +5,7 @@
 :tags: DMAIC, Six Sigma, Prozessverbesserung, define measure analyze improve control, Ursachenanalyse, Control Plan, Qualität
 :related: spc, control-chart-shewhart, nelson-rules, five-whys
 :tier: 3
+:definition: DMAIC – Define, Measure, Analyze, Improve, Control – ist der Six-Sigma-Verbesserungszyklus für bestehende Prozesse, normiert in ISO 13053-1:2011. Seine fünf Phasen laufen in fester Reihenfolge, getrennt durch formale Tollgates: das Problem definieren, eine gemessene Baseline schaffen, Ursachen an den Daten validieren, Lösungen pilotieren und den Gewinn mit einem Control Plan halten. Sein Kennzeichen: Das Halten der Verbesserung ist eine eigene Phase.
 
 [%collapsible]
 ====

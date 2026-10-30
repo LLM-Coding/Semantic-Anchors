@@ -5,6 +5,7 @@
 :tags: Arrange-Act-Assert, 3A, AAA-Muster, Teststruktur, Unit-Test-Aufbau, Lesbarkeit von Tests, Four-Phase Test, Fixture, Teardown, eine Assertion pro Test, Given-When-Then, Build-Operate-Check
 :related: bdd-given-when-then, gherkin, test-double-meszaros, red-green-tdd, test-data-builder
 :tier: 3
+:definition: Arrange-Act-Assert ist eine Struktur für den Rumpf eines einzelnen Unit-Tests, benannt von Bill Wake: das zu testende Objekt aufsetzen, genau eine Handlung darauf ausführen, dann Aussagen über das Ergebnis treffen. Es entspricht den ersten drei Phasen von Gerard Meszaros' Four-Phase Test und lässt das Teardown offen; eine zweite Handlung heißt ein zweiter Test.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

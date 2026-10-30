@@ -5,6 +5,7 @@
 :proponents: Loren Kohnfelder, Praerit Garg, Adam Shostack
 :tags: security, threat-modeling, appsec, risk, threats
 :tier: 3
+:definition: STRIDE is a threat modeling framework created by Loren Kohnfelder and Praerit Garg at Microsoft in 1999 and popularized by Adam Shostack. Its name lists six threat categories: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. Each category pairs with typical mitigations, so teams can find and classify threats systematically during design and share a vocabulary for discussing them.
 
 [%collapsible]
 ====

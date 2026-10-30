@@ -4,6 +4,7 @@
 :related: moscow, user-story-mapping, impact-mapping
 :proponents: D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
 :tier: 2
+:definition: PERT (Program Evaluation and Review Technique) ist eine probabilistische Methode der Terminplanung. D.G. Malcolm, J.H. Roseboom, C.E. Clark und W. Fazar entwickelten sie 1958 bei Booz Allen Hamilton für das Polaris-Programm der US Navy. Jede Aktivität erhält eine optimistische, eine wahrscheinlichste und eine pessimistische Schätzung, verrechnet als E = (O + 4M + P) / 6. Ein Netzplan der Abhängigkeiten zeigt dann den kritischen Pfad und Konfidenzintervalle für den Abschlusstermin.
 :tags: pert, project-planning, estimation, schedule, uncertainty, three-point-estimation, critical-path, network-diagram
 
 [%collapsible]

@@ -5,6 +5,7 @@
 :tags: Connextra, Connextra User Story Format, User-Story-Schablone, Story-Template, Als ich möchte damit, Rolle Ziel Nutzen, dreiteilige Schablone, Rachel Davies, Mike Cohn, User Story, Story Card
 :related: invest, user-story-mapping, jobs-to-be-done, bdd-given-when-then, cockburn-use-cases
 :tier: 3
+:definition: Das Connextra User Story Format ist die dreiteilige User-Story-Schablone, entstanden bei Connextra in London und von Mike Cohn bekannt gemacht: „As a …, I want …, so that …“. Ihre drei Felder benennen wer, was und warum. Sie legt die Gestalt des Satzes fest, nicht die Qualität der Story, und die Karte steht für ein Gespräch, nicht für die Anforderung selbst.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

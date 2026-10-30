@@ -4,6 +4,7 @@
 :related: arc42, c4-diagrams, morphological-box
 :proponents: Jörg Becker, Michael Rosemann, Rolf Schütte
 :tier: 2
+:definition: GoM – Grundsätze ordnungsmäßiger Modellierung – sind Qualitätsgrundsätze für Modelle, 1995 veröffentlicht von Jörg Becker, Michael Rosemann und Rolf Schütte. Die sechs Grundsätze lauten Richtigkeit, Relevanz, Wirtschaftlichkeit, Klarheit, Vergleichbarkeit und systematischer Aufbau. Mit ihnen lässt sich prüfen, ob ein Modell, etwa ein Geschäftsprozessmodell, seinem beabsichtigten Zweck gerecht wird.
 :tags: modeling, enterprise-architecture, business-process, bpm, principles, quality
 
 [%collapsible]

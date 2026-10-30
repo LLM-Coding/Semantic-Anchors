@@ -5,6 +5,7 @@
 :proponents: Florida State University (origin); Robert Maribe Branch (codification)
 :tags: instructional-design, training, learning-design, evaluation, education
 :tier: 3
+:definition: Das ADDIE Model ist ein generischer Prozess für Instructional Design, entstanden an der Florida State University und von Robert Maribe Branch kodifiziert. Sein Name steht für die fünf Phasen Analysis, Design, Development, Implementation und Evaluation. Es führt von der Klärung des Lernbedarfs bis zu Durchführung und Bewertung der Schulung; moderne Fassungen zeichnen es als Zyklus, in dem die Evaluation in jede Phase zurückwirkt.
 
 [%collapsible]
 ====

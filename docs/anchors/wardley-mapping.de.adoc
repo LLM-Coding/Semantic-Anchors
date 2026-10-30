@@ -3,6 +3,7 @@
 :roles: product-owner, software-architect, consultant, team-lead
 :proponents: Simon Wardley
 :tier: 3
+:definition: Wardley Mapping ist Simon Wardleys visueller Ansatz zur Strategie. Eine Karte ordnet Komponenten in einer Wertkette an, die von Nutzerbedürfnissen abwärts führt, und entlang einer Evolutionsachse von Genesis über Custom und Product bis Commodity. Die Bewegung der Komponenten schafft, zusammen mit klimatischen Mustern, Gameplay-Mustern und Doktrin, Situationsbewusstsein und stützt Entscheidungen wie Build, Buy oder Partner.
 :tags: Wardley mapping, value chain, strategy, evolution, Simon Wardley
 :related: cynefin-framework, impact-mapping, swot
 

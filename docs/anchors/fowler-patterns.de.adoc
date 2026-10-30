@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer, team-lead
 :proponents: Martin Fowler
 :tier: 3
+:definition: Patterns of Enterprise Application Architecture (PEAA) ist Martin Fowlers Katalog von Mustern für Unternehmensanwendungen aus dem Jahr 2002. Er gliedert sie in Domain-Logic-, Data-Source-, objektrelationale, Web-Presentation-, Distribution-, Offline-Concurrency-, Session-State- und Base-Muster, darunter Transaction Script, Domain Model, Active Record, Data Mapper, Unit of Work und Repository. Viele dieser Muster sind heute in gängigen Frameworks implementiert.
 :related: domain-driven-design, hexagonal-architecture, clean-architecture
 :tags: enterprise, architecture, patterns, design-patterns, orm
 

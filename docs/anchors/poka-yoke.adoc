@@ -5,6 +5,7 @@
 :tags: Poka-Yoke, mistake-proofing, error-proofing, baka-yoke, Shingo, zero quality control, source inspection, defect prevention, forcing function, fail-safe
 :related: jidoka, design-by-contract, red-green-tdd, five-whys, dmaic
 :tier: 3
+:definition: Poka-Yoke (mistake-proofing) is a quality technique named and systematised by Shigeo Shingo and set out in his book Zero Quality Control. It accepts that human errors are inevitable and changes the process or artefact so that an error cannot become a defect. Prevention, which makes the mistake impossible, beats warning, which only signals it; the devices are cheap, simple and installed at the source.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

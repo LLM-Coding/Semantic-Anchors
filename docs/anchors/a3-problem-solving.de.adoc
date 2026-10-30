@@ -5,6 +5,7 @@
 :tags: A3 Problem Solving, A3-Denken, A3-Report, Managing to Learn, Shook, PDCA, Ursachenanalyse, Gegenmaßnahme, eine Seite, Toyota
 :related: five-whys, pdca, dmaic, hoshin-kanri, value-stream-mapping
 :tier: 3
+:definition: A3 Problem Solving ist eine Problemlösungsmethode von Toyota, beschrieben von John Shook in Managing to Learn. Sie erzählt die Geschichte eines Problems in fester Folge auf einem einzigen Bogen: von Hintergrund und Ist-Zustand über Ziel, Ursachenanalyse und Gegenmaßnahmen bis zu Umsetzungsplan und Nachverfolgung. Das ist PDCA auf einer Seite, im Gespräch mit einem Mentor immer wieder neu geschrieben.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -5,6 +5,7 @@
 :tags: nvc, communication, empathy, conflict-resolution, requirements
 :related: jobs-to-be-done, impact-mapping, user-story-mapping
 :tier: 3
+:definition: Nonviolent Communication (NVC) is Marshall Rosenberg's communication method: it separates concrete observations from judgment and expresses feelings, the universal human needs beneath them, and specific requests rather than demands. Applied to the problem space, it uncovers the real needs behind complaints and feature requests, which supports requirements elicitation and conflict resolution in teams.
 
 [%collapsible]
 ====

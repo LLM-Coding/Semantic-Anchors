@@ -5,6 +5,7 @@
 :tags: SSOT, single source of truth, data consistency, canonical source, DRY
 :related: dry, single-level-of-abstraction-principle, separation-of-concerns
 :tier: 1
+:definition: SSOT (Single Source of Truth) is a design principle that gives each piece of data one canonical, authoritative location. All consumers reference that source, other representations are derived from it, and it is the definitive version when conflicts arise. Unlike SPOT (Single Point of Truth), which focuses on the implementation pattern, SSOT applies at the architecture and organizational level.
 
 [%collapsible]
 ====

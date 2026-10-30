@@ -5,6 +5,7 @@
 :tags: Refactoring, Refactoring-Katalog, benannte Refactorings, Extract Function, Extract Method, Replace Conditional with Polymorphism, Introduce Parameter Object, verhaltenserhaltende Transformation, Mechanik, Zwei Hüte, vorbereitendes Refactoring, Code Smells
 :related: code-smells, mikado-method, boy-scout-rule, red-green-tdd, test-seam
 :tier: 2
+:definition: Der Refactoring-Katalog ist die Sammlung benannter, verhaltenserhaltender Codetransformationen aus Martin Fowlers „Refactoring: Improving the Design of Existing Code“ (1999, 2. Auflage 2018), online gepflegt auf refactoring.com. Jeder Eintrag — etwa Extract Function oder Replace Conditional with Polymorphism — hat einen Namen, eine Skizze von Vorher und Nachher, eine Motivation und eine nummerierte Mechanik, die den Code zwischen den Schritten lauffähig hält. Die Namen geben Entwicklern ein geteiltes Vokabular für Umbauten.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

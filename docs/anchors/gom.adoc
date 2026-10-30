@@ -5,6 +5,7 @@
 :proponents: Jörg Becker, Michael Rosemann, Rolf Schütte
 :tags: modeling, enterprise-architecture, business-process, bpm, principles, quality
 :tier: 2
+:definition: GoM — Grundsätze ordnungsmäßiger Modellierung, the Principles of Proper Modeling — is a set of quality principles for models, published by Jörg Becker, Michael Rosemann, and Rolf Schütte in 1995. Its six principles are correctness, relevance, economic efficiency, clarity, comparability, and systematic design. They help assess whether a model, such as a business process model, is fit for its intended purpose.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: Ward Cunningham, Kent Beck
 :tags: crc-cards, oop, object-oriented-design, brainstorming, collaborative-design, class-responsibility-collaboration
 :tier: 3
+:definition: CRC Cards — Class-Responsibility-Collaboration Cards — are a low-tech object-oriented design technique by Ward Cunningham and Kent Beck that puts one class on each index card, with its responsibilities on the left and its collaborators on the right. Teams walk through scenarios by role-playing the cards and so discover and refine classes before writing code.
 
 [%collapsible]
 ====

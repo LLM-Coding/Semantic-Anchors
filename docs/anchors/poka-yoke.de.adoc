@@ -5,6 +5,7 @@
 :tags: Poka-Yoke, Fehlervermeidung, Mistake-Proofing, Baka-Yoke, Shingo, Null-Fehler, Quellprüfung, Fehler und Defekt, Forcing Function, narrensicher
 :related: jidoka, design-by-contract, red-green-tdd, five-whys, dmaic
 :tier: 3
+:definition: Poka-Yoke (Fehlervermeidung) ist eine Qualitätstechnik, die Shigeo Shingo benannt und geordnet und in seinem Buch Zero Quality Control dargelegt hat. Sie nimmt menschliche Fehler als unvermeidlich hin und ändert Prozess oder Artefakt so, dass ein Fehler nicht zum Defekt werden kann. Verhindern, das den Fehler unmöglich macht, schlägt Warnen, das ihn nur meldet; die Mechanismen sind billig, einfach und an der Quelle eingebaut.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

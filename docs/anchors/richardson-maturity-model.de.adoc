@@ -5,6 +5,7 @@
 :tags: RMM, Richardson Maturity Model, Reifegradmodell, REST, HATEOAS, Hypermedia, Ressourcen, HTTP-Verben, Statuscodes, Level 0, Level 1, Level 2, Level 3, API-Entwurf, Maturity Heuristic
 :related: postels-law, twelve-factor-app, c4-diagrams
 :tier: 3
+:definition: Das Richardson Maturity Model ordnet HTTP-APIs in vier Stufen der REST-Reife ein. Leonard Richardson stellte es 2008 vor, Martin Fowler benannte es 2010 und machte es bekannt. Level 0 tunnelt alles durch einen Endpoint, Level 1 gibt jeder Ressource eine eigene URI, Level 2 nutzt HTTP-Verben und Statuscodes in ihrer definierten Bedeutung, und Level 3 ergänzt Hypermedia Controls. Es dient als Entwurfsziel, nicht als Bewertungsmaßstab.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

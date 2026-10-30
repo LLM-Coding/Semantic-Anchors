@@ -3,6 +3,7 @@
 :roles: software-developer, qa-engineer
 :proponents: Koen Claessen, John Hughes (QuickCheck)
 :tier: 3
+:definition: Property-Based Testing ist ein Testansatz, der auf QuickCheck von Koen Claessen und John Hughes zurückgeht: Man formuliert Invarianten, die für alle Eingaben gelten sollen, und lässt Generatoren die Testdaten automatisch erzeugen. Schlägt eine Property fehl, reduziert Shrinking den Fall auf seine einfachste Form. So findet der Ansatz Edge Cases, an die niemand gedacht hat, und ergänzt beispielbasierte Unit-Tests.
 :tags: property-based testing, QuickCheck, invariants, generative testing, Hypothesis
 :related: mutation-testing, testing-pyramid
 

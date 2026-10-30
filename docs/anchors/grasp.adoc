@@ -5,6 +5,7 @@
 :proponents: Craig Larman
 :tags: grasp, oop, responsibility-assignment, object-oriented-design, patterns
 :tier: 3
+:definition: GRASP — General Responsibility Assignment Software Patterns — is a set of nine principles, described by Craig Larman in “Applying UML and Patterns”, for deciding which class takes which responsibility in object-oriented design. They are Information Expert, Creator, Controller, Low Coupling, High Cohesion, Polymorphism, Pure Fabrication, Indirection, and Protected Variations. Applied together, they keep classes focused and loosely coupled.
 
 [%collapsible]
 ====

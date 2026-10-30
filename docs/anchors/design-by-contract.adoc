@@ -5,6 +5,7 @@
 :proponents: Bertrand Meyer
 :tags: preconditions, postconditions, invariants, correctness, eiffel
 :tier: 2
+:definition: Design by Contract is a design approach by Bertrand Meyer, coined for the Eiffel language, that treats each routine as a contract between caller and implementation. Preconditions state the caller's obligations, postconditions the routine's guarantees, and class invariants the conditions every instance keeps; a violated clause shows which side holds the bug.
 
 [%collapsible]
 ====
