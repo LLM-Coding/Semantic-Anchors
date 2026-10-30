@@ -125,9 +125,10 @@ function countCategoryAnchors(category, allAnchors) {
 
 /**
  * Render the sticky category quick-nav: one jump link per non-empty category,
- * shown as a category icon plus a live anchor count. The category name is the
- * accessible label (title + aria-label) since there is no visible text — the
- * icon itself is decorative (aria-hidden). Links are plain in-page anchors
+ * shown as a category icon, a short text label and a live anchor count. The
+ * full category name is the accessible label (title + aria-label); the icon and
+ * the short label are decorative (aria-hidden), and the theme decides which of
+ * the two is visible. Links are plain in-page anchors
  * (`#category-<id>`) so they work without JavaScript; the count badges are kept
  * in sync with the active search/role filter by applyCardFilters().
  */
@@ -155,6 +156,7 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             data-i18n-aria="categories.${id}"
           >
             <span class="category-nav-icon" aria-hidden="true">${icon}</span>
+            <span class="category-nav-label" aria-hidden="true" data-i18n="categoryShort.${id}">${escapeHtml(i18n.t(`categoryShort.${category.id}`))}</span>
             <span class="category-nav-count">${count}</span>
           </a>
         </li>`
@@ -176,6 +178,7 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             data-i18n-aria="nav.recentlyAdded"
           >
             <span class="category-nav-icon" aria-hidden="true">\u2728</span>
+            <span class="category-nav-label" aria-hidden="true" data-i18n="nav.recentShort">${escapeHtml(i18n.t('nav.recentShort'))}</span>
             <span class="category-nav-count">${recent.size}</span>
           </button>
         </li>`
