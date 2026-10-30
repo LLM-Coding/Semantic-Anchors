@@ -1,0 +1,208 @@
+= Ein Design-Prompt wirkt, wenn er pro Ebene einen Anker nennt
+Ralf D. Müller
+2026-10-30
+:toc:
+:toc-placement: preamble
+:toc-title: Inhalt
+
+_Wie man UX- und UI-Design promptet -- belegt durch die Prior-Tests des Katalogs, mit Prompts zum Kopieren._
+
+[NOTE]
+====
+*Kurz gesagt.* Ohne Namen im Prompt gestaltet ein Modell nach seinen Voreinstellungen. „Modern“ oder „clean“ geben ihm keine Regel; ein Name gibt ihm einen ganzen Satz davon. Nenne pro Ebene einen Anker -- Stil oder Design-System, Layout und Schrift, Regeln für die Details, Verhalten der Bedienelemente, Barrierefreiheit -- und prüfe, ob die Ebenen zusammenpassen. Jede Aussage unten darüber, was Modelle tun, stammt aus einem Lauf im link:#/prior-tests[Prior-Test-Register]; jeder Lauf ging über Claude Haiku 5.5, Sonnet 5.5 und Opus 5.5 und verglich mit einer Baseline ohne den Anker.
+====
+
+== Das Modell hat schon ein Design
+
+Du promptest nie auf ein leeres Blatt. Ohne Namen im Prompt gestaltet das Modell so, wie die meisten seiner Trainingsdaten gestalten. Die Baselines unserer Prior-Tests zeigen, wie das aussieht:
+
+* *Eine Landingpage für eine Bäckerei* bekommt Fotos und handgezeichnete oder Schreibschrift-Elemente -- sechs von sechs Baselines (Lauf vom 28.10.2026).
+* *Ein Feature-Abschnitt* wird ein gleichförmiges Raster aus drei mal zwei gleichen Karten -- fünf von sechs Baselines (Lauf vom 29.10.2026).
+* *Responsives CSS* entsteht Desktop-first, mit `max-width`-Media-Queries -- sechs von sechs Baselines (Lauf vom 28.10.2026).
+* *Abstände* tendieren schon zu runden Zahlen: 58 Prozent der Pixelwerte der Baselines waren Vielfache von acht (Lauf vom 28.10.2026).
+* *Barrierefreiheit* endet beim Kontrastverhältnis 4,5:1: Jede Baseline kannte es, keine nannte ein WCAG-Erfolgskriterium mit Nummer (Lauf vom 28.10.2026).
+
+Keine dieser Voreinstellungen ist falsch. Sie sind das, was herauskommt, wenn der Prompt nichts nennt, dem das Modell folgen könnte. Wörter wie „modern“, „clean“ oder „professionell“ fügen keine Regel hinzu; ein Name bringt eine ganze Sammlung davon mit -- ein Raster, eine Schriftskala, Komponenten, Vorgaben.
+
+== Pro Ebene ein Anker
+
+Eine Design-Entscheidung hat mehrere Ebenen, und jede Ebene hat Anker, die das Modell messbar bewegen. Die Tabelle nennt pro Ebene ein Testergebnis; den Rest enthalten die Einträge der Anker.
+
+[cols="1,2,3"]
+|===
+|Ebene |Anker |Was der Name im Prior-Test änderte
+
+|Stil
+|link:#/anchor/swiss-style[Swiss Style], link:#/anchor/bauhaus[Bauhaus], link:#/anchor/neo-brutalism[Neo-Brutalism], link:#/anchor/glassmorphism[Glassmorphism], link:#/anchor/bento-grid[Bento Grid]
+|„Use Bauhaus design.“ ersetzte Fotos und Schreibschrift in sechs von sechs Läufen durch Kreis, Quadrat, Dreieck, eine geometrische Grotesk und die Primärfarben (28.10.2026)
+
+|Design-System
+|link:#/anchor/material-design-3[Material Design 3], link:#/anchor/apple-human-interface-guidelines[Apple HIG], link:#/anchor/gov-uk-design-system[GOV.UK Design System], link:#/anchor/carbon-design-system[Carbon], link:#/anchor/fluent-2-design-system[Fluent 2], link:#/anchor/shadcn-ui[shadcn/ui] und weitere
+|Jeder der 66 Läufe mit Anker über elf Design-Systeme baute mit den echten Paketen und Komponenten des Systems; keine Baseline tat das (30.10.2026, Design-Systeme)
+
+|Layout und Schrift
+|link:#/anchor/eight-point-grid[8-Point Grid], link:#/anchor/modular-scale[Modular Scale], link:#/anchor/every-layout[Every Layout], link:#/anchor/mobile-first[Mobile First], link:#/anchor/elements-of-typographic-style[Bringhurst]
+|„Use an 8-point grid“ hob den Anteil der Abstände auf Vielfachen von acht von 58 auf 88 Prozent; „Mobile First“ machte aus sechs von sechs `max-width`-Queries `min-width` (28.10.2026)
+
+|Regeln für die Details
+|link:#/anchor/refactoring-ui[Refactoring UI], link:#/anchor/gestalt-principles[Gestalt Principles], link:#/anchor/dieter-rams-ten-principles[Dieter Rams]
+|Refactoring UI ersetzte Trennlinien durch Abstände auf Sonnet und Opus in vier von vier Läufen, auf Haiku in einem von zwei -- auf der schwachen Stufe ein sanfterer Schubs (28.10.2026)
+
+|Verhalten der Bedienelemente
+|link:#/anchor/wai-aria-apg[WAI-ARIA Authoring Practices Guide (APG)]
+|Ein Account-Menü bekam in sechs von sechs Läufen Pos1, Ende und Type-ahead; eine Website-Navigation nutzte in sechs von sechs das Disclosure-Pattern (30.10.2026)
+
+|Barrierefreiheit
+|link:#/anchor/wcag-22-aa[WCAG 2.2 AA]
+|Sechs von sechs Läufen nannten die beiden Neuerungen von 2.2, gegen die das Testformular verstieß: 2.5.8 Target Size und 2.4.11 Focus Not Obscured (28.10.2026)
+|===
+
+Alle sechs brauchst du selten. Eine Landingpage braucht einen Stil, ein Raster und Barrierefreiheit; eine Admin-Maske ein Design-System, das Verhalten der Bedienelemente und Barrierefreiheit. Wähle die Ebenen, die die Aufgabe hat, und nenne für jede einen Anker.
+
+[source,text]
+----
+Design the pricing page of a SaaS product.
+Use Swiss Style, an 8-point grid and a modular scale.
+Check it against WCAG 2.2 AA.
+----
+
+Die link:#/style-gallery[Stil-Galerie] zeigt, was ein einzelner Name mit einer ganzen Seite macht: eine Homepage pro Stil neu gestaltet, eine App-Seite pro Design-System.
+
+== Ein Bedienelement beim Namen nennen, sein Verhalten über den APG festlegen
+
+Namen wie „Burger Menu“, „Datepicker“ oder „Accordion“ sagen dem Modell, was es bauen soll, nicht wie sich das Element verhält. https://component.gallery/[The Component Gallery] listet den gängigen Namen von 60 Bedienelementen und ihre Synonyme aus 95 Design-Systemen; der WAI-ARIA Authoring Practices Guide legt Tastaturbedienung und Rollen fest.
+
+Der Prior-Test vom 30.10.2026 zeigt, warum der zweite Schritt zählt. Alle sechs Baselines eines Account-Menüs nutzten bereits `role="menu"` und Pfeiltasten -- aber nur eine unterstützte Type-ahead. Mit „Follow the WAI-ARIA Authoring Practices Guide (APG).“ taten es sechs von sechs. Bei einer Website-Navigation mit zwei Dropdowns setzte eine Baseline Menü-Rollen ein, von denen der APG für Website-Navigation abrät; mit dem Anker wählten sechs von sechs das Disclosure-Pattern und nannten es.
+
+[source,text]
+----
+Main navigation with two dropdowns of links.
+Follow the APG Disclosure Navigation Menu example, not the menu pattern.
+----
+
+== Den vollen Namen verwenden, nicht den kurzen
+
+Viele Design-Begriffe haben eine Kurzform, die etwas anderes bedeutet. Die Prior-Tests fragten jedes Modell, was das bloße Wort bedeutet, und die Antwort lag oft außerhalb des Designs:
+
+[cols="1,2,1"]
+|===
+|Bloßes Wort |Führte zu |Stattdessen sagen
+
+|brutalism |Architektur, auf allen Stufen |Neo-Brutalism
+|bento |japanischem Essen, auf allen Stufen |Bento Grid
+|Gestalt |Psychologie, mit Erwähnung der Gestalttherapie |Gestalt Principles
+|Carbon |Chemie, auf Haiku Googles Sprache Carbon |Carbon Design System
+|Polaris |dem Polarstern, auf allen Stufen |Shopify Polaris
+|Spectrum |Physik, auf allen Stufen |Adobe Spectrum
+|Lightning |Wetter, auf allen Stufen |Salesforce Lightning Design System (SLDS)
+|===
+
+Die Quellen sind die Läufe vom 28.10.2026, 29.10.2026 und 30.10.2026 (Design-Systeme). Ein Name, der woandershin führt, funktioniert in einem Design-Prompt meist trotzdem, weil die Aufgabe Kontext liefert. Aber der volle Name kostet zwei Wörter und räumt den Zweifel aus.
+
+== Eine Aufgabe wählen, die der Stil nicht schon beantwortet
+
+Ein Anker kann nur ändern, was das Modell ohnehin nicht täte. Als wir Glassmorphism an der Now-Playing-Ansicht eines Musikplayers testeten, machten schon alle sechs Baselines den Hintergrund unscharf -- die Aufgabe zog den Stil selbst herbei, und dem Anker blieb nichts hinzuzufügen. Bei einer neutralen Aufgabe, einem Preisabschnitt, nutzte keine Baseline durchscheinende Karten, und mit „Use glassmorphism.“ taten es sechs von sechs (Lauf vom 29.10.2026).
+
+Für Design-Systeme gilt dasselbe. Opus baut einen US-Behördendienst schon ungefragt mit USWDS-Klassen und gibt einem britischen Behördendienst eine Startseite und eine Check-Answers-Seite (Läufe vom 30.10.2026 und 28.10.2026). Der Name hilft dort trotzdem: Er bringt Haiku und Sonnet dazu, dasselbe zu tun, und er ergänzt, was die Voreinstellung auslässt, etwa eine Frage pro Seite.
+
+== Zwei Anker auf einer Ebene: sagen, wie sie sich die Arbeit teilen
+
+Was passiert, wenn ein Prompt zwei Anker für dieselbe Ebene nennt? Wir haben es an den Aufgaben des Laufs vom 28.10.2026 getestet, jedes Paar gegen jeden Anker allein, zwei Läufe je Stufe (Lauf vom 30.10.2026, kombinierte Anker). Die Modelle lieferten keinen Brei. Sie lösten den Konflikt auf, und wie sie ihn auflösten, hängt von der Art der Anker ab.
+
+*Zwei Stile werden zu einer Mischung.* Mit „Use Neo-Brutalism and glassmorphism.“ trugen alle sechs Bäckerei-Seiten die Merkmale beider: schwarze Konturen und harte versetzte Schatten, dazu durchscheinende Flächen mit `backdrop-filter`. Die Modelle gaben jedem Stil eine Aufgabe. Auf Haiku:
+
+[quote]
+____
+Loud, tactile neo-brutalism for the structure, with glassmorphism for the layered surfaces.
+____
+
+*Zwei Design-Systeme werden zu zwei Plattformen.* Mit „Use Material Design 3 and the Apple Human Interface Guidelines.“ wurden alle sechs Einstellungsseiten zweigeteilt: eine Fassung in Jetpack Compose für Android und eine in SwiftUI für iOS. Allein erzeugte Material 3 in sechs von sechs Läufen Android-Code und die HIG in sechs von sechs iOS-Code. Das Paar wurde als „beide Plattformen“ gelesen, nicht als eine gemischte Seite.
+
+Beides kann gewollt sein -- oder auch nicht. Das Modell rät, wie sich die beiden Anker die Arbeit teilen, also sag es ihm:
+
+[source,text]
+----
+Use Neo-Brutalism for layout, borders and buttons; use glassmorphism
+only for the navigation bar.
+----
+
+[source,text]
+----
+One cross-platform screen in Flutter. Follow Material Design 3 for the
+components; adopt the Apple HIG's 44-point touch targets.
+----
+
+== Auch das Review mit Ankern führen
+
+„Mach es besser“ ist kein Review. Nenne den Maßstab, und das Modell prüft dagegen. Im Prior-Test vom 28.10.2026 wurde ein Registrierungsformular mit acht bekannten Mängeln viermal geprüft:
+
+* Mit *Nielsen's 10 Usability Heuristics* ordneten sechs von sechs Läufen die Mängel mindestens fünf Heuristiken mit Namen zu; keine Baseline nannte eine.
+* Mit den *Laws of UX* nannten sechs von sechs Läufen Fitts's und Hick's Law.
+* Mit *WCAG 2.2 AA* nannten sechs von sechs mindestens zehn Erfolgskriterien.
+* Mit den *Gestalt Principles* erklärten sechs von sechs die Mängel über Nähe und mindestens zwei weitere Gesetze.
+
+[source,text]
+----
+Review this signup form against Nielsen's 10 Usability Heuristics.
+For each problem, name the heuristic and propose a fix.
+----
+
+== Wo der Name nicht reicht, das System mitgeben
+
+Ein Name liefert dem Modell, was seine Trainingsdaten kennen, und Design-Systeme bewegen sich schneller als Trainingsdaten. Im Lauf zu den Design-Systemen vom 30.10.2026 schrieben die Modelle Polaris React, das Shopify zugunsten der Polaris Web Components abgekündigt hat; sie gestalteten Primer-Komponenten mit der Prop `sx`, die Primer React entfernt hat; und sie schrieben Klassen von SLDS 1, nicht die Styling Hooks von SLDS 2. Der Abschnitt „Aktueller Stand“ jedes Ankers sagt, wohin sich das System bewegt hat.
+
+Zwei Wege schließen die Lücke:
+
+* *Den Link mitgeben.* Für ein System, das nicht im Katalog steht, oder eine Version, die neuer ist als die Trainingsdaten, gib einen Link zur Dokumentation mit und sag, auf welcher Version du aufbaust.
+* *Die Werte mitgeben.* link:#/anchor/design-tokens-dtcg[Design Tokens im Format des W3C DTCG] übergeben genaue Farben, Abstände und Schriften. Mit dem Namen schrieben sechs von sechs Läufen `$value` und `$type`, vier von sechs nutzten Alias-Referenzen (Lauf vom 28.10.2026). Manche Design-Systeme liefern zusätzlich einen MCP-Server, der einem Agenten ihre Komponenten direkt gibt: Der https://www.npmjs.com/package/@db-ux/mcp-server[`@db-ux/mcp-server`] der Deutschen Bahn „gives LLMs access to UI components and code examples“ des DB UX Design System.
+
+== Prompts zum Kopieren
+
+Die Prompts stehen auf Englisch, in der Sprache, in der die Tests liefen.
+
+*Landingpage:*
+
+[source,text]
+----
+Design the landing page of a neighbourhood bakery: hero, three product
+highlights, opening hours, contact. Use Bauhaus design, an 8-point grid
+and Mobile First. Check it against WCAG 2.2 AA.
+----
+
+*Formular in einem Behördendienst:*
+
+[source,text]
+----
+Build the online application for a residents' parking permit.
+Use the GOV.UK Design System patterns. Check it against WCAG 2.2 AA.
+----
+
+*Admin-Maske:*
+
+[source,text]
+----
+Build the "Team members" settings page of our admin console in React:
+member list with role, invite button, remove action. Use the Carbon Design
+System (v11, @carbon/react). Follow the WAI-ARIA Authoring Practices Guide
+(APG) for the role menu.
+----
+
+*Dashboard mit Komponentenbibliothek:*
+
+[source,text]
+----
+Build the analytics dashboard with shadcn/ui on Base UI. Structure the
+components with Atomic Design. Use our tokens from tokens.json (W3C DTCG).
+----
+
+*Review:*
+
+[source,text]
+----
+Review this screen against Nielsen's 10 Usability Heuristics and WCAG 2.2 AA.
+List each problem with the heuristic or success criterion it violates.
+----
+
+== Ein Name verweist das Modell auf das, was es schon weiß
+
+Ein Design-Prompt ist kurz, wenn jedes Wort arbeitet. Ein Adjektiv lässt das Modell raten; ein Name verweist es auf ein Wissen, das es schon hat -- Raster, Schrift, Komponenten, Regeln --, und die Prior-Tests zeigen, dass es folgt. Das Handwerk besteht darin, die Ebenen zu wählen, die vollen Namen zu nutzen und dort die Dokumentation mitzugeben, wo der Name endet.

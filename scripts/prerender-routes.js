@@ -162,6 +162,17 @@ const ROUTES = [
       "A semantic anchor's power depends on how densely the concept sits in an LLM's training data. A reproducible clean-room experiment across Claude Haiku 4.5, Sonnet 4.6, Opus 4.8 and Fable 5 on the Cockburn use-cases anchor.",
   },
   {
+    path: '/prompting-ux-design',
+    fragment: 'docs/prompting-ux-design.html',
+    title: 'A Design Prompt Works When It Names One Anchor per Layer — Semantic Anchors',
+    description:
+      'How to prompt UX and UI design: name one anchor per layer -- style or design system, layout and type, details, control behaviour, accessibility -- with evidence from clean-room prior tests and prompts to copy.',
+    fragmentDe: 'docs/prompting-ux-design.de.html',
+    titleDe: 'Ein Design-Prompt wirkt, wenn er pro Ebene einen Anker nennt — Semantic Anchors',
+    descriptionDe:
+      'Wie man UX- und UI-Design promptet: pro Ebene einen Anker nennen -- Stil oder Design-System, Layout und Schrift, Details, Verhalten der Bedienelemente, Barrierefreiheit --, belegt durch Prior-Tests im Reinraum, mit Prompts zum Kopieren.',
+  },
+  {
     path: '/style-gallery',
     fragment: 'docs/style-gallery.html',
     title: 'Design Styles Compared — Semantic Anchors',

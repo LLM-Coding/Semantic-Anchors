@@ -251,6 +251,12 @@ const DOC_PAGES = [
       'What a pull request about "use cases" taught us about the limits of anchors: the term fires, the practice behind it does not follow. Includes an experiment you can rerun.',
   },
   {
+    title: 'A Design Prompt Works When It Names One Anchor per Layer',
+    url: 'https://llm-coding.github.io/Semantic-Anchors/prompting-ux-design',
+    summary:
+      'How to prompt UX and UI design: name one anchor per layer (style or design system, layout and type, rules for the details, control behaviour, accessibility), use full names, and say how two anchors on one layer divide the work. Every behaviour claim cites a prior-test run; the prompts are verbatim.',
+  },
+  {
     title: 'Design Styles Compared',
     url: 'https://llm-coding.github.io/Semantic-Anchors/style-gallery',
     summary:

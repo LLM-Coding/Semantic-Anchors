@@ -821,3 +821,24 @@ All eleven were recognised as rich on all tiers in both P1 runs. Haiku reported 
 === A name is enough for these systems
 
 The intro to UX & Visual Design advises giving the model a link for a design system that is not in the catalog. For these eleven, the run shows the link is not needed for a first draft: the name alone produces the system's components, class names and tokens on every tier. A link still helps where currency matters. The models write the APIs of their training data -- Fluent's `makeStyles`, Polaris's React components, SLDS classes without Lightning Web Components -- and each entry's Current Status says where the system has moved since.
+
+== Run 2026-10-30, anchor stacking
+
+[cols="1,3"]
+|===
+|Question |What happens when a prompt names two anchors for the same layer? Asked for the article on prompting UX design (https://github.com/LLM-Coding/Semantic-Anchors/issues/867[#867]), whose first outline claimed that conflicting anchors "give mush"
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong)
+|Procedure |Action probes only, no P1, P2 or P4: the anchors were tested on 2026-10-28. Task A of that run (bakery landing page) with Neo-Brutalism, glassmorphism and both; task B (settings screen of a mobile note-taking app) with Material Design 3, the Apple HIG and both. Two runs per case and tier, 36 probes, USD 1.35
+|Clean room |As in the runs of 2026-10-30
+|Scoring |Three markers per anchor: for Neo-Brutalism black borders, hard offset shadows without blur and the name; for glassmorphism `backdrop-filter`, translucent white fills and the name; for Material 3 surface roles, surface containers and tonal or dynamic colour; for the HIG 44-point targets, SF Pro or SF Symbols, and large titles, Dynamic Type or inset grouped lists. Platform: Android or Compose, iOS or SwiftUI in the answer
+|===
+
+[cols="2,4"]
+|===
+|Pair |Result
+
+|Neo-Brutalism and glassmorphism |Alone, each style showed its three markers and none of the other's in six of six runs. Together, six of six runs showed both: at least two Neo-Brutalism markers and at least two glassmorphism markers. The models gave each style a role; on Haiku: "Loud, tactile neo-brutalism for the structure, with glassmorphism for the layered surfaces."
+|Material Design 3 and Apple HIG |Alone, Material 3 produced Android code and the HIG iOS code in six of six runs each. Together, six of six runs wrote two versions, Jetpack Compose for Android and SwiftUI for iOS, each following its own system. The pair was read as a request for both platforms
+|===
+
+The first outline of #867 expected a muddle. The models resolved the conflict instead, by role for two styles and by platform for two design systems. The article therefore advises saying how two anchors divide the work, because otherwise the model chooses.

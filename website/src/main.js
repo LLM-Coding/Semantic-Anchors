@@ -168,6 +168,7 @@ function initApp() {
   addRoute('/harness-inventory', renderHarnessInventoryPage)
   addRoute('/training-data-vs-practice', renderTrainingDataPage)
   addRoute('/style-gallery', renderStyleGalleryPage)
+  addRoute('/prompting-ux-design', renderPromptingUxPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -375,6 +376,15 @@ function renderTrainingDataPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/training-data-vs-practice.adoc')
+}
+
+function renderPromptingUxPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/prompting-ux-design.adoc')
 }
 
 function renderStyleGalleryPage() {
@@ -668,6 +678,8 @@ function handleLanguageChange() {
     loadDocContent('docs/training-data-vs-practice.adoc')
   } else if (currentRoute === '/style-gallery') {
     loadDocContent('docs/style-gallery.adoc')
+  } else if (currentRoute === '/prompting-ux-design') {
+    loadDocContent('docs/prompting-ux-design.adoc')
   } else if (currentRoute === '/contracts') {
     renderContractsPageHandler()
   } else if (currentRoute === '/') {
