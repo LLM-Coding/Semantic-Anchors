@@ -2,9 +2,11 @@ import { describe, it, expect } from 'vitest'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { galleryEntries, buildStyleGallery } from './lib/style-gallery.js'
+import AsciidoctorFactory from '@asciidoctor/core'
+import { galleryEntries, buildStyleGallery, tile } from './lib/style-gallery.js'
 
 // #872: one homepage, many anchor names — the gallery puts the examples side by side.
+const Asciidoctor = () => AsciidoctorFactory()
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const ANCHORS = path.join(ROOT, 'docs', 'anchors')
 
@@ -84,5 +86,22 @@ describe('buildStyleGallery', () => {
   it('matches the committed files, so the build output never drifts', () => {
     expect(fs.readFileSync(path.join(ROOT, 'docs', 'style-gallery.adoc'), 'utf-8')).toBe(en)
     expect(fs.readFileSync(path.join(ROOT, 'docs', 'style-gallery.de.adoc'), 'utf-8')).toBe(de)
+  })
+})
+
+describe('tile', () => {
+  // CodeQL: escaping only `]` with a backslash leaves a `\` in the text free to
+  // escape the closing bracket or quote. Character references carry no escapes.
+  it('keeps brackets and backslashes in a title from breaking the link macro', () => {
+    const out = tile('A [b] c\\', 'x.webp', 'alt', '/Semantic-Anchors/anchor/x')
+    expect(out.split('\n')[0]).toBe('.link:/Semantic-Anchors/anchor/x[A [b&#93; c&#92;]')
+    const html = Asciidoctor().convert(out)
+    expect(html).toContain('<a href="/Semantic-Anchors/anchor/x">A [b&#93; c&#92;</a>')
+  })
+
+  it('keeps quotes and backslashes in the alt text from breaking the image macro', () => {
+    const out = tile('T', 'x.webp', 'say "hi" \\', '')
+    const html = Asciidoctor().convert(out)
+    expect(html).toContain('alt="say &quot;hi&quot; &#92;" width="720"')
   })
 })

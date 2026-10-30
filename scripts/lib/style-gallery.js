@@ -76,9 +76,17 @@ function galleryEntries(lang) {
     .sort((a, b) => a.title.localeCompare(b.title, lang))
 }
 
+/**
+ * Link text for an AsciiDoc `link:` macro. `]` would end the macro, and a `\`
+ * before `]` escapes it; character references carry neither meaning.
+ */
+function linkText(s) {
+  return String(s).replace(/\\/g, '&#92;').replace(/]/g, '&#93;')
+}
+
 /** Quote-safe text for an AsciiDoc attribute value in double quotes. */
 function attr(s) {
-  return String(s).replace(/"/g, '&quot;').replace(/]/g, '&#93;')
+  return String(s).replace(/\\/g, '&#92;').replace(/"/g, '&quot;').replace(/]/g, '&#93;')
 }
 
 /**
@@ -87,7 +95,7 @@ function attr(s) {
  * link over the whole tile instead.
  */
 function tile(title, image, alt, link) {
-  const heading = link ? `.link:${link}[${String(title).replace(/]/g, '\\]')}]` : `.${title}`
+  const heading = link ? `.link:${link}[${linkText(title)}]` : `.${title}`
   return `${heading}\nimage::${BASE}examples/${image}["${attr(alt)}",720,900]\n`
 }
 
@@ -124,4 +132,4 @@ function buildStyleGallery(lang) {
   ].join('\n')
 }
 
-module.exports = { galleryEntries, buildStyleGallery, ORIGINAL }
+module.exports = { galleryEntries, buildStyleGallery, tile, ORIGINAL }
