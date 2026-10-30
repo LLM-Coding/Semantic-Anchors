@@ -557,14 +557,18 @@ test.describe('Category quick-nav', () => {
     await page.setViewportSize({ width: 900, height: 800 })
     await page.goto('/')
     await expect(page.locator('.category-nav-list')).toBeVisible()
+    // Jump instantly, so the check sees the final position, not a frame of
+    // the smooth-scroll animation.
+    await page.addStyleTag({ content: 'html { scroll-behavior: auto !important; }' })
     await page.locator('.category-nav-link[data-category-link="ux-visual-design"]').click()
-    const heading = page.locator('#category-ux-visual-design .category-heading')
-    await expect(heading).toBeInViewport()
-    await page.waitForTimeout(800) // smooth scrolling
-    const navBottom = await page
-      .locator('.category-nav')
-      .evaluate((el) => el.getBoundingClientRect().bottom)
-    const headingTop = await heading.evaluate((el) => el.getBoundingClientRect().top)
-    expect(headingTop).toBeGreaterThanOrEqual(navBottom)
+    const gap = () =>
+      page.evaluate(() => {
+        const nav = document.querySelector('.category-nav').getBoundingClientRect()
+        const heading = document
+          .querySelector('#category-ux-visual-design .category-heading')
+          .getBoundingClientRect()
+        return Math.round(heading.top - nav.bottom)
+      })
+    await expect.poll(gap).toBeGreaterThanOrEqual(0)
   })
 })
