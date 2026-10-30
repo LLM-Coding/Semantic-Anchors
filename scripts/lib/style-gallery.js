@@ -33,7 +33,7 @@ const TEXT = {
   en: {
     title: 'Design Styles Compared',
     intro: [
-      'One starting page, redesigned once per anchor name. Each version comes from a separate Claude Opus 5.5 session that got the same prompt with only the name changed:',
+      'Two comparisons, each on its own starting page: visual styles redesign a homepage, design systems an app page. Each page is redesigned once per anchor name, and each version comes from a separate Claude Opus 5.5 session that got the same prompt with only the name changed:',
       'The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No description, no reference images, one run per anchor, no rerolls; each session checked its own result in a browser. Each style tile links to its anchor.',
       'One run shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.',
     ],
@@ -61,7 +61,7 @@ const TEXT = {
   de: {
     title: 'Design-Stile im Vergleich',
     intro: [
-      'Eine Ausgangsseite, einmal pro Ankername neu gestaltet. Jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam; nur der Name änderte sich:',
+      'Zwei Vergleiche, jeder auf einer eigenen Ausgangsseite: Visuelle Stile gestalten eine Homepage neu, Design-Systeme eine App-Seite. Jede Seite wird einmal pro Ankername neu gestaltet; jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam, nur der Name änderte sich:',
       'Keine Beschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihr Ergebnis im Browser. Jede Stil-Kachel verlinkt ihren Anker.',
       'Ein Lauf zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.',
     ],
