@@ -251,6 +251,12 @@ const DOC_PAGES = [
       'What a pull request about "use cases" taught us about the limits of anchors: the term fires, the practice behind it does not follow. Includes an experiment you can rerun.',
   },
   {
+    title: 'Design Styles Compared',
+    url: 'https://llm-coding.github.io/Semantic-Anchors/style-gallery',
+    summary:
+      'Screenshots, not text: one homepage redesigned once per design-style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism, Bento Grid, Material Design 3 and others) from the style name alone. Read it to see what a style name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.',
+  },
+  {
     title: 'Anchor Prior Test Skill',
     url: 'https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test',
     summary:

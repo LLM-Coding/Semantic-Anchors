@@ -6,13 +6,19 @@ import { exampleImageHtml, isSafeExampleImage, exampleImageFor } from './lib/exa
 const ANCHORS = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs', 'anchors')
 
 describe('exampleImageHtml', () => {
-  it('renders a figure with image, alt text and a caption linking to the blog post', () => {
+  it('renders a figure with image, alt text and a caption linking to the style gallery', () => {
     const html = exampleImageHtml('swiss-style.webp', 'Swiss Style', 'en')
     expect(html).toContain('<figure class="anchor-example-image"')
     expect(html).toContain('src="/Semantic-Anchors/examples/swiss-style.webp"')
     expect(html).toMatch(/alt="[^"]*Swiss Style[^"]*"/)
     expect(html).toContain('<figcaption')
-    expect(html).toContain('href="https://rdmueller.github.io/pages/blog/design-anchors.html"')
+    expect(html).toContain('href="/Semantic-Anchors/style-gallery"')
+  })
+
+  it('links German pages to the German gallery (#872)', () => {
+    expect(exampleImageHtml('swiss-style.webp', 'Swiss Style', 'de')).toContain(
+      'href="/Semantic-Anchors/de/style-gallery"'
+    )
   })
 
   it('uses the German caption for German pages', () => {

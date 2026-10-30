@@ -1,7 +1,7 @@
 # Semantic Anchors — Index of this site
 
 > This site publishes three kinds of thing, and all of them are listed below:
-> 18 documentation pages, 22 semantic contracts, and
+> 19 documentation pages, 22 semantic contracts, and
 > 260 anchors in 15 categories — the anchors both
 > one by one and bundled into 28 files that hold a whole category.
 >
@@ -17,7 +17,7 @@
 > Page for a human reader: https://llm-coding.github.io/Semantic-Anchors/anchor/<id>, where <id> is the file
 > name without .txt. Give that one when someone asks for a link.
 
-## Documentation — 18 pages about this project and how to work with it
+## Documentation — 19 pages about this project and how to work with it
 
 - [About](https://llm-coding.github.io/Semantic-Anchors/about/): What semantic anchors are, why they matter for LLM communication, and how the catalog is curated.
 - [Spec-Driven Development](https://llm-coding.github.io/Semantic-Anchors/spec-driven-development/): Greenfield workflow — from requirements to specification to implementation, powered by semantic anchors.
@@ -26,6 +26,7 @@
 - [Brownfield Fair Comparison](https://llm-coding.github.io/Semantic-Anchors/brownfield-fair-comparison/): Three approaches (Direct, Socratic, Two-Phase) compared with identical team answers. Measures the structural value of the Question Tree, not the answers.
 - [The Harness Inventory](https://llm-coding.github.io/Semantic-Anchors/harness-inventory/): Layers of error correction for agentic coding — a categorised inventory of harness checks, sorted by how much project work each one costs to add.
 - [An Anchor Delivers Only as Far as the Prior Reaches](https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice/): What a pull request about "use cases" taught us about the limits of anchors: the term fires, the practice behind it does not follow. Includes an experiment you can rerun.
+- [Design Styles Compared](https://llm-coding.github.io/Semantic-Anchors/style-gallery/): Screenshots, not text: one homepage redesigned once per design-style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism, Bento Grid, Material Design 3 and others) from the style name alone. Read it to see what a style name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.
 - [Anchor Prior Test Skill](https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test/): Installable Claude Code Skill that measures whether naming a term actually triggers the concept in a model you do not control. Clean-room probe battery across model tiers, then a tier rating and a route to anchor, contract or rejection.
 - [Prior-Test Register](https://llm-coding.github.io/Semantic-Anchors/prior-tests/): The evidence behind each anchor’s measured tier — resolved model identifiers, procedure version, run counts, criteria matrices and verbatim quotes. An anchor without a prior-test date was not tested; that is a statement about our records, not the term.
 - [arc42 Documentation Authoring Skill](https://llm-coding.github.io/Semantic-Anchors/arc42-documentation-skill/): Installable Claude Code Skill carrying the procedure for authoring an arc42 document — the cross-section rules arc42’s own templates do not enforce. The how-to companion to the Architecture Documentation contract.

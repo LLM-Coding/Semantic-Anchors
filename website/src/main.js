@@ -167,6 +167,7 @@ function initApp() {
   addRoute('/prior-tests', renderPriorTestsPage)
   addRoute('/harness-inventory', renderHarnessInventoryPage)
   addRoute('/training-data-vs-practice', renderTrainingDataPage)
+  addRoute('/style-gallery', renderStyleGalleryPage)
   addRoute('/contracts', renderContractsPageHandler)
   addRoute('/evaluations', renderEvaluationsPage)
 
@@ -374,6 +375,15 @@ function renderTrainingDataPage() {
   pageContent.innerHTML = renderDocPage()
   updateActiveNavLink()
   loadDocContent('docs/training-data-vs-practice.adoc')
+}
+
+function renderStyleGalleryPage() {
+  const pageContent = document.getElementById('page-content')
+  if (!pageContent) return
+
+  pageContent.innerHTML = renderDocPage()
+  updateActiveNavLink()
+  loadDocContent('docs/style-gallery.adoc')
 }
 
 function renderContractsPageHandler() {
@@ -656,6 +666,8 @@ function handleLanguageChange() {
     loadDocContent('docs/harness-inventory.adoc')
   } else if (currentRoute === '/training-data-vs-practice') {
     loadDocContent('docs/training-data-vs-practice.adoc')
+  } else if (currentRoute === '/style-gallery') {
+    loadDocContent('docs/style-gallery.adoc')
   } else if (currentRoute === '/contracts') {
     renderContractsPageHandler()
   } else if (currentRoute === '/') {

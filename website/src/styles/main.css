@@ -844,3 +844,91 @@ html {
   color: var(--color-link, #2563eb);
   text-decoration: none;
 }
+
+/* Style gallery (#872): one tile per design-style anchor, the original first.
+   The title link is stretched over the tile, so the whole tile is clickable
+   with a single tab stop. */
+.asciidoc-content .style-gallery > .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.asciidoc-content .style-gallery .imageblock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition:
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.dark .asciidoc-content .style-gallery .imageblock {
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+.asciidoc-content .style-gallery .imageblock:has(a):hover,
+.asciidoc-content .style-gallery .imageblock:focus-within {
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asciidoc-content .style-gallery .imageblock {
+    transition: none;
+  }
+  .asciidoc-content .style-gallery .imageblock:has(a):hover,
+  .asciidoc-content .style-gallery .imageblock:focus-within {
+    transform: none;
+  }
+}
+
+.asciidoc-content .style-gallery .imageblock .content {
+  margin: 0;
+}
+
+.asciidoc-content .style-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+}
+
+.asciidoc-content .style-gallery .imageblock .title {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.asciidoc-content .style-gallery .imageblock .title a {
+  text-decoration: none;
+}
+
+.asciidoc-content .style-gallery .imageblock:hover .title a,
+.asciidoc-content .style-gallery .imageblock:focus-within .title a {
+  text-decoration: underline;
+}
+
+.asciidoc-content .style-gallery .imageblock .title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.asciidoc-content .style-gallery .imageblock .title a:focus-visible {
+  outline: none;
+}
+
+.asciidoc-content .style-gallery .imageblock:focus-within {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}

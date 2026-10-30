@@ -119,6 +119,12 @@ test.describe('Accessibility (axe)', () => {
     await expectNoViolations(page)
   })
 
+  test('style gallery (#872)', async ({ page }) => {
+    await page.goto('/Semantic-Anchors/style-gallery/')
+    await page.waitForSelector('.style-gallery img')
+    await expectNoViolations(page)
+  })
+
   test('German catalog', async ({ page }) => {
     await openCatalog(page, '/Semantic-Anchors/de/')
     await expect(page.locator('html')).toHaveAttribute('lang', 'de')

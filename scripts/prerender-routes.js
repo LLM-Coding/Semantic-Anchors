@@ -162,6 +162,17 @@ const ROUTES = [
       "A semantic anchor's power depends on how densely the concept sits in an LLM's training data. A reproducible clean-room experiment across Claude Haiku 4.5, Sonnet 4.6, Opus 4.8 and Fable 5 on the Cockburn use-cases anchor.",
   },
   {
+    path: '/style-gallery',
+    fragment: 'docs/style-gallery.html',
+    title: 'Design Styles Compared — Semantic Anchors',
+    description:
+      'One homepage, redesigned once per design-style anchor: Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism, Bento Grid, Material Design 3 and more, side by side, each from the style name alone.',
+    fragmentDe: 'docs/style-gallery.de.html',
+    titleDe: 'Design-Stile im Vergleich — Semantic Anchors',
+    descriptionDe:
+      'Eine Homepage, einmal pro Design-Stil-Anker neu gestaltet: Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism, Bento Grid, Material Design 3 und mehr, nebeneinander, jede allein aus dem Stilnamen.',
+  },
+  {
     path: '/contracts',
     fragment: 'docs/contracts.html',
     title: 'Semantic Contracts — Semantic Anchors',

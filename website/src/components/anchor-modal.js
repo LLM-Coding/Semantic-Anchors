@@ -147,7 +147,8 @@ const SAFE_ANCHOR_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 const SAFE_LANG = /^[a-z]{2}$/
 // Mirrors scripts/lib/example-image.js: a bare file name in public/examples/.
 const SAFE_EXAMPLE_IMAGE = /^[a-z0-9][a-z0-9-]*\.(webp|jpg|jpeg|png)$/
-const EXAMPLE_IMAGES_BLOG_URL = 'https://rdmueller.github.io/pages/blog/design-anchors.html'
+// The style gallery (#872) shows all examples side by side and links the blog post.
+const EXAMPLE_GALLERY_PATH = 'style-gallery'
 
 function renderSubAnchorList(subAnchorIds, allAnchors) {
   if (!subAnchorIds || subAnchorIds.length === 0) return ''
@@ -350,7 +351,8 @@ export async function loadAnchorContent(anchorId) {
       img.setAttribute('decoding', 'async')
       const caption = document.createElement('figcaption')
       const link = document.createElement('a')
-      link.href = EXAMPLE_IMAGES_BLOG_URL
+      const lang = typeof i18n.currentLang === 'function' ? i18n.currentLang() : 'en'
+      link.href = `${import.meta.env.BASE_URL}${lang === 'de' ? 'de/' : ''}${EXAMPLE_GALLERY_PATH}`
       link.textContent = i18n.t('anchor.exampleImageLink')
       caption.append(`${i18n.t('anchor.exampleImageCaption')} `, link)
       figure.append(img, caption)

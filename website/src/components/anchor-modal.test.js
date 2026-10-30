@@ -348,7 +348,7 @@ describe('anchor-modal', () => {
       delete global.fetch
     })
 
-    it('should show the example image with alt text and a caption linking to the blog post', async () => {
+    it('should show the example image with alt text and a caption linking to the style gallery', async () => {
       global.fetch.mockResolvedValue({ ok: true, text: async () => '= Swiss Style\n\nContent' })
 
       await showAnchorDetails('swiss-style')
@@ -360,9 +360,9 @@ describe('anchor-modal', () => {
       expect(img.getAttribute('alt')).toContain('Swiss Style')
       expect(img.getAttribute('loading')).toBe('lazy')
       const link = figure.querySelector('figcaption a')
-      expect(link.getAttribute('href')).toBe(
-        'https://rdmueller.github.io/pages/blog/design-anchors.html'
-      )
+      // The gallery (#872) shows all examples side by side and links the blog post.
+      expect(link.getAttribute('href')).toMatch(/\/style-gallery$/)
+      expect(link.getAttribute('href')).not.toContain('/de/')
     })
 
     it('should place the image below the description and above the tested-on note', async () => {

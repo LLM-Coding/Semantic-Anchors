@@ -64,6 +64,13 @@
   </url>
 
   <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/style-gallery</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/contracts</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -149,6 +156,13 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/arc42-documentation-skill</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/style-gallery</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
