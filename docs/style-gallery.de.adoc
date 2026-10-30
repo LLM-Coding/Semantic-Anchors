@@ -19,7 +19,7 @@ Ein Lauf zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein 
 
 Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026. Wie diese Beispiele entstanden sind und was jeweils auffiel: https://rdmueller.github.io/pages/blog/design-anchors.html[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Material Design 3, Apples Human Interface Guidelines und das GOV.UK Design System sind Design-Systeme, ihre Beispiele stammen aber aus diesem Lauf und bleiben hier.
 
-Refactoring UI und Bringhursts The Elements of Typographic Style sind Regelwerke, keine Stile. Ihre Kacheln kamen am 30. Oktober 2026 mit demselben Prompt hinzu, je ein Lauf, und zeigen, was die Regeln an derselben Homepage ändern: Bringhursts Regeln sieht man sofort an der Schrift, die von Refactoring UI leiser, an Hierarchie, Abständen und Farbe. Die Session zu Refactoring UI prüfte ihr Ergebnis im Browser; die Session zu Bringhurst verglich den Text jeder Seite mit dem Original, sagt aber nicht, dass sie sich das Ergebnis angesehen hat.
+Refactoring UI und Bringhursts The Elements of Typographic Style sind Regelwerke, keine Stile. Ihre Kacheln kamen am 30. Oktober 2026 mit demselben Prompt hinzu, je ein Lauf, und zeigen, was die Regeln an derselben Homepage ändern: Bringhursts Regeln sieht man sofort an der Schrift; die von Refactoring UI zeigen sich leiser, in Hierarchie, Abständen und Farbe. Die Session zu Refactoring UI prüfte ihr Ergebnis im Browser; die Session zu Bringhurst verglich den Text jeder Seite mit dem Original, sagt aber nicht, dass sie sich das Ergebnis angesehen hat.
 
 [.style-gallery]
 --
