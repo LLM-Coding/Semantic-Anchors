@@ -1203,6 +1203,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** W3C Web Accessibility Initiative (Recommendation, October 2023)
 - **Core:** POUR principles and testable success criteria; AA = all A and AA criteria — 1.4.3 contrast 4.5:1, 1.4.11 non-text contrast, 1.4.10 reflow, 2.4.7 focus visible, 3.3.1/3.3.2 errors and labels; new in 2.2: 2.4.11 Focus Not Obscured, 2.5.7 Dragging Movements, 2.5.8 Target Size (24×24 px), 3.2.6 Consistent Help, 3.3.7 Redundant Entry, 3.3.8 Accessible Authentication; naming the version makes models cite criteria by number
 
+### WAI-ARIA Authoring Practices Guide (APG)
+- **Also known as:** ARIA Authoring Practices, WAI-ARIA Authoring Practices (formerly W3C Notes 1.1/1.2)
+- **Proponents:** W3C Web Accessibility Initiative, ARIA Authoring Practices Task Force (living guide since 2022)
+- **Core:** 30 named UI patterns (Accordion, Combobox, Dialog, Disclosure, Menu Button, Listbox, Tabs, Tree View, …), each fixing keyboard interaction, ARIA roles/states/properties and focus management with a working example; composite widgets take one Tab stop, arrows/Home/End inside (roving tabindex); informative, not normative, not production-ready code; native HTML first; pair with a style anchor and WCAG 2.2 AA — the APG fixes behaviour, not look; for site navigation choose the Disclosure Navigation Menu over menu roles
+
 ### Mobile First
 - **Also known as:** Mobile-first design
 - **Proponents:** Luke Wroblewski (2009; book, A Book Apart 2011)

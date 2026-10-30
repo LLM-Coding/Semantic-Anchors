@@ -1,0 +1,69 @@
+= WAI-ARIA Authoring Practices Guide (APG)
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, qa-engineer
+:proponents: W3C Web Accessibility Initiative, ARIA Authoring Practices Task Force
+:tags: APG, ARIA Authoring Practices, WAI-ARIA, ARIA patterns, accessible components, UI controls, widgets, keyboard interaction, roving tabindex, aria-expanded, menu button, disclosure, combobox, listbox, tabs, dialog, accordion, tree view, Component Gallery
+:related: wcag-22-aa, gov-uk-design-system, atomic-design
+:tier: 3
+:definition: The WAI-ARIA Authoring Practices Guide (APG) is the W3C's informative catalogue of 30 UI patterns, such as Accordion, Combobox, Dialog, Disclosure, Menu Button, Listbox and Tabs. For each pattern it fixes one name, the keyboard interaction, the ARIA roles, states and properties, and a working example, so a prompt that names a pattern also specifies how the control behaves.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: ARIA Authoring Practices Guide (APG), published by the W3C Web Accessibility Initiative
+
+Also known as:: WAI-ARIA Authoring Practices, ARIA Authoring Practices; earlier published as the W3C Notes "WAI-ARIA Authoring Practices 1.1" and "1.2"
+
+[discrete]
+== *Core Concepts*:
+
+* *One name per control.* The guide names 30 patterns: Accordion, Alert, Alert and Message Dialogs, Breadcrumb, Button, Carousel, Checkbox, Combobox, Dialog (Modal), Disclosure, Feed, Grid, Landmarks, Link, Listbox, Menu and Menubar, Menu Button, Meter, Radio Group, Slider, Slider (Multi-Thumb), Spinbutton, Switch, Table, Tabs, Toolbar, Tooltip, Tree View, Treegrid and Window Splitter. Where design systems call the same control "collapse", "expander" or "accordion", the APG name is one fixed reference.
+* *Each pattern fixes the behaviour, not the look.* A pattern page specifies the keyboard interaction (which keys do what), the roles, states and properties (`role="menu"`, `aria-expanded`, `aria-controls`) and the focus management (where focus goes on open and close).
+* *Composite widgets use arrow keys inside, Tab between.* Menus, listboxes, tabs, toolbars and trees take one Tab stop; arrow keys, Home and End move within, often through a roving `tabindex` or `aria-activedescendant`.
+* *Working examples.* Every pattern links to example implementations in HTML, CSS and JavaScript, for instance the Disclosure Navigation Menu or the Action Menu Button.
+* *Informative, not normative.* The APG does not specify requirements and has no conformance model. It shows how to meet the requirements that WCAG and the ARIA specification set.
+* *Native HTML first.* Where a native element covers the pattern -- `<button>`, `<details>`, `<dialog>`, `<select>` -- it beats a hand-built ARIA widget. ARIA adds semantics and promises behaviour; it does not add the behaviour itself.
+
+Key Proponents:: W3C Web Accessibility Initiative; the guide is developed by the ARIA Authoring Practices Task Force of the ARIA Working Group (https://www.w3.org/WAI/ARIA/apg/about/introduction["Introduction to the APG"]). It was redesigned as a multi-page resource at w3.org/WAI/ARIA/apg in May 2022 (https://www.w3.org/WAI/news/2022-05-19/ARIA-APG-redesign[W3C news, 2022-05-19])
+
+[discrete]
+== *When to Use*:
+
+* Specifying or generating an interactive control -- menu, combobox, tabs, dialog, tree -- so that keyboard and screen-reader behaviour come with it
+* Writing acceptance criteria for a component: the pattern's keyboard table is a ready-made checklist
+* Reviewing a component library or generated UI code for wrong roles and missing keys
+* Settling naming disputes in a design system: which control is a "menu" and which a "disclosure"
+
+[discrete]
+== *How to Prompt*:
+
+* *Name the guide, then let the model pick the pattern, or name the pattern yourself.* "Follow the WAI-ARIA Authoring Practices Guide (APG)." is enough for the model to choose a fitting pattern. Naming it ("Use the APG Menu Button pattern.") removes the choice.
+* *Call the control by its common name, fix its behaviour with the APG.* The common name tells the model what to build; the pattern tells it how the control behaves. https://component.gallery/[The Component Gallery] lists the common name and aliases of 60 controls across 95 design systems.
+* *Combine with a style or system anchor, not instead of one.* The APG says nothing about the look. "Swiss Style, WCAG 2.2 AA, APG patterns" covers look, accessibility requirement and control behaviour.
+* *Use the full name.* "WAI-ARIA Authoring Practices Guide (APG)" or "ARIA Authoring Practices". The bare "APG" has other meanings outside web development.
+* *Example prompts:*
+** "Build the account menu in the top bar: an avatar button that opens Profile, Settings and Sign out. Follow the WAI-ARIA Authoring Practices Guide (APG)."
+** "Main navigation with two dropdowns of links. Follow the APG Disclosure Navigation Menu example, not the menu pattern."
+** "Review this combobox against the APG Combobox pattern. List every key from the pattern's keyboard table that the code does not handle."
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Expecting accessible behaviour without asking for it.* Partly right: in our prior test on 2026-10-30, all six baselines of an account menu already used `role="menu"`, `aria-expanded` and arrow keys. Only one of six handled type-ahead and four of six Home and End. With "Follow the WAI-ARIA Authoring Practices Guide (APG)." six of six runs did both. The anchor fills in the parts of the pattern the model leaves out.
+* *Turning site navigation into an application menu.* The APG offers two navigation examples, a Disclosure Navigation Menu and a Navigation Menubar. Practitioners argue that menu roles do not fit ordinary site navigation, because screen-reader users then expect arrow-key behaviour (see Criticism). In our prior test, one of six baselines for a university site navigation used `role="menu"`; with the anchor, six of six chose the disclosure pattern and named it.
+* *Claiming the APG forbids menu roles for navigation.* It does not; it shows a navigation menubar too. In the same test, two Opus runs wrote that the APG says not to use `role="menu"` for site navigation. That is the practitioners' advice, not the guide's text.
+* *Copying the examples into production.* The guide's own objectives "do not include providing a comprehensive design system or production-ready code". The examples teach the pattern; test them with real assistive technology before shipping.
+* *Using ARIA where HTML would do.* A `<div role="button">` needs focus handling, Enter and Space that a `<button>` brings for free.
+
+[discrete]
+== *Criticism*:
+
+* *Broken patterns in real projects.* Adrian Roselli, in https://adrianroselli.com/2023/04/no-apgs-support-charts-are-not-can-i-use-for-aria.html["No, APG's Support Charts Are Not 'Can I Use' for ARIA"] (2023), writes: "Yet I have spent years tearing broken APG patterns out of client projects". He warns against reading APG's support tables as general ARIA support data; they cover only APG's own examples with a few screen readers and browsers.
+* *Menu roles do not belong in site navigation.* Elle Smith argues in https://blog.pope.tech/2026/02/10/does-your-navigation-need-an-aria-menu-probably-not/["Does your navigation need an ARIA menu? Probably not"] (Pope Tech, 2026) that "ARIA menu roles are meant for true menus": site navigation should use landmarks and links.
+
+[discrete]
+== *Current Status*:
+
+* *A living guide, not a numbered Note.* Since May 2022 the APG has been a multi-page resource at https://www.w3.org/WAI/ARIA/apg/[w3.org/WAI/ARIA/apg] that is updated continuously; the numbered Notes 1.1 and 1.2 are its predecessors. The prior serves the current guide well: in our prior test all tiers listed the patterns, the keyboard models and roving `tabindex` without prompting.
+====
