@@ -1,0 +1,1321 @@
+/*
+ * Material Design 3 theme (proof of concept).
+ *
+ * One seed colour -- the teal of the anchor logo (#4B9AAD) -- expanded into
+ * the M3 tonal colour roles for a light and a dark scheme. Everything below
+ * consumes roles (primary, surface-container-high, on-surface-variant ...),
+ * never raw colours, so swapping the scheme re-themes the whole site.
+ *
+ * Unlayered on purpose: it beats Tailwind's layered utilities, and the
+ * existing --color-* variables are re-pointed at M3 roles so that every
+ * component that already uses them follows along.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Tokens: md.sys.color.* (light), shape, type, elevation, state
+ * ------------------------------------------------------------------------- */
+:root {
+  --md-primary: #1b6a7d;
+  --md-on-primary: #ffffff;
+  --md-primary-container: #b5ebff;
+  --md-on-primary-container: #001f27;
+  --md-secondary: #4b6269;
+  --md-on-secondary: #ffffff;
+  --md-secondary-container: #cee7ef;
+  --md-on-secondary-container: #061f24;
+  --md-tertiary: #575c7e;
+  --md-on-tertiary: #ffffff;
+  --md-tertiary-container: #dee0ff;
+  --md-on-tertiary-container: #141937;
+  --md-error: #ba1a1a;
+  --md-error-container: #ffdad6;
+  --md-on-error-container: #410002;
+  /* Custom "warning" colour, harmonised towards the seed like an M3 custom colour */
+  --md-warning-container: #ffdea6;
+  --md-on-warning-container: #271900;
+  --md-success: #1f6c37;
+
+  --md-surface: #f5fafc;
+  --md-on-surface: #171c1e;
+  --md-on-surface-variant: #3f484b;
+  --md-surface-container-lowest: #ffffff;
+  --md-surface-container-low: #eff4f7;
+  --md-surface-container: #e9eff1;
+  --md-surface-container-high: #e3e9eb;
+  --md-surface-container-highest: #dee3e6;
+  --md-outline: #6f797c;
+  --md-outline-variant: #bfc8cb;
+  --md-inverse-surface: #2c3133;
+  --md-inverse-on-surface: #ecf2f4;
+  --md-inverse-primary: #8ed0e7;
+  --md-scrim: rgb(0 0 0 / 0.32);
+
+  /* Shape scale */
+  --md-shape-xs: 4px;
+  --md-shape-sm: 8px;
+  --md-shape-md: 12px;
+  --md-shape-lg: 16px;
+  --md-shape-xl: 28px;
+  --md-shape-full: 9999px;
+
+  /* Elevation (shadow part; tone does the rest) */
+  --md-elev-1: 0 1px 2px rgb(0 0 0 / 0.3), 0 1px 3px 1px rgb(0 0 0 / 0.15);
+  --md-elev-2: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 6px 2px rgb(0 0 0 / 0.15);
+  --md-elev-3: 0 4px 8px 3px rgb(0 0 0 / 0.15), 0 1px 3px rgb(0 0 0 / 0.3);
+
+  /* State layer opacities */
+  --md-state-hover: 8%;
+  --md-state-focus: 10%;
+  --md-state-pressed: 10%;
+
+  --md-font: Roboto, 'Roboto Flex', Inter, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --md-easing: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Re-point the site's existing variables at M3 roles */
+  --color-primary: var(--md-primary);
+  --color-primary-dark: var(--md-primary);
+  --color-bg: var(--md-surface);
+  --color-bg-secondary: var(--md-surface-container);
+  --color-text: var(--md-on-surface);
+  --color-text-secondary: var(--md-on-surface-variant);
+  --color-border: var(--md-outline-variant);
+  --color-link: var(--md-primary);
+
+  color-scheme: light;
+}
+
+/* M3 dark scheme from the same seed */
+.dark {
+  --md-primary: #8ed0e7;
+  --md-on-primary: #003641;
+  --md-primary-container: #004e5e;
+  --md-on-primary-container: #b5ebff;
+  --md-secondary: #b2cbd3;
+  --md-on-secondary: #1d343a;
+  --md-secondary-container: #344a51;
+  --md-on-secondary-container: #cee7ef;
+  --md-tertiary: #c0c4eb;
+  --md-on-tertiary: #292e4d;
+  --md-tertiary-container: #404565;
+  --md-on-tertiary-container: #dee0ff;
+  --md-error: #ffb4ab;
+  --md-error-container: #93000a;
+  --md-on-error-container: #ffdad6;
+  --md-warning-container: #5c4200;
+  --md-on-warning-container: #ffdea6;
+  --md-success: #8bd79a;
+
+  --md-surface: #0f1416;
+  --md-on-surface: #dee3e5;
+  --md-on-surface-variant: #bfc8cb;
+  --md-surface-container-lowest: #0a0f11;
+  --md-surface-container-low: #171c1e;
+  --md-surface-container: #1b2022;
+  --md-surface-container-high: #252b2d;
+  --md-surface-container-highest: #303638;
+  --md-outline: #899295;
+  --md-outline-variant: #3f484b;
+  --md-inverse-surface: #dee3e5;
+  --md-inverse-on-surface: #2c3133;
+  --md-inverse-primary: #1b6a7d;
+  --md-scrim: rgb(0 0 0 / 0.5);
+
+  --md-elev-1: 0 1px 2px rgb(0 0 0 / 0.5), 0 1px 3px 1px rgb(0 0 0 / 0.3);
+  --md-elev-2: 0 1px 2px rgb(0 0 0 / 0.5), 0 2px 6px 2px rgb(0 0 0 / 0.3);
+  --md-elev-3: 0 4px 8px 3px rgb(0 0 0 / 0.3), 0 1px 3px rgb(0 0 0 / 0.5);
+
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. Base: typeface, surface, focus indicator, Tailwind colour remaps
+ * ------------------------------------------------------------------------- */
+body {
+  font-family: var(--md-font);
+  background-color: var(--md-surface);
+  color: var(--md-on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* main.css forces Inter with !important on the catalog; use the M3 stack */
+#page-content,
+#main-content,
+.anchor-card,
+.anchor-card *,
+.card-grid-container,
+.card-grid-container *,
+.anchor-cards-grid,
+.anchor-cards-grid * {
+  font-family: var(--md-font) !important;
+}
+
+::selection {
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+}
+
+/* M3 focus indicator: 3dp, secondary colour, 2dp offset */
+:focus-visible {
+  outline: 3px solid var(--md-secondary);
+  outline-offset: 2px;
+}
+
+/* Tailwind palette utilities used in markup, mapped onto roles */
+.text-blue-500,
+.text-blue-600,
+.text-blue-700 {
+  color: var(--md-primary);
+}
+.text-gray-900,
+.text-gray-800 {
+  color: var(--md-on-surface);
+}
+.text-gray-700,
+.text-gray-600,
+.text-gray-500,
+.text-gray-400 {
+  color: var(--md-on-surface-variant);
+}
+.text-gray-300 {
+  color: var(--md-outline-variant);
+}
+.bg-white {
+  background-color: var(--md-surface-container-lowest);
+}
+.bg-gray-50,
+.bg-gray-100 {
+  background-color: var(--md-surface-container);
+}
+.dark .dark\:bg-gray-800,
+.dark .dark\:bg-gray-900 {
+  background-color: var(--md-surface-container);
+}
+.bg-blue-600,
+.bg-\[var\(--color-primary\)\] {
+  background-color: var(--md-primary);
+  color: var(--md-on-primary);
+}
+.bg-blue-600:hover,
+.bg-\[var\(--color-primary\)\]:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-on-primary) var(--md-state-hover),
+    var(--md-primary)
+  );
+  box-shadow: var(--md-elev-1);
+}
+.text-white.bg-\[var\(--color-primary\)\],
+.text-white.bg-blue-600 {
+  color: var(--md-on-primary);
+}
+
+/* Snackbar (the toast created in main.js) */
+.fixed.bg-green-600 {
+  background: var(--md-inverse-surface);
+  color: var(--md-inverse-on-surface);
+  border-radius: var(--md-shape-xs);
+  padding: 14px 16px;
+  font-size: 0.875rem;
+  letter-spacing: 0.016em;
+  box-shadow: var(--md-elev-3);
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. Top app bar
+ * ------------------------------------------------------------------------- */
+#app > header,
+body header:first-of-type {
+  background: var(--md-surface-container);
+  border-bottom: 0;
+}
+
+header img[src$='logo.png'] {
+  height: 64px;
+  width: auto;
+}
+
+header .nav-link {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--md-on-surface-variant);
+  padding: 8px 16px;
+  border-radius: var(--md-shape-full);
+  text-decoration: none;
+  transition:
+    background-color 200ms var(--md-easing),
+    color 200ms var(--md-easing);
+}
+
+header .flex.items-center.gap-6.text-2xl {
+  gap: 4px;
+  font-size: 1rem;
+}
+
+header .nav-link:hover {
+  color: var(--md-on-surface);
+  background-color: color-mix(in srgb, var(--md-on-surface) var(--md-state-hover), transparent);
+}
+
+/* Active destination: the M3 pill-shaped active indicator */
+header .nav-link.font-semibold {
+  background-color: var(--md-secondary-container);
+  color: var(--md-on-secondary-container);
+  font-weight: 600;
+}
+
+/* More menu: M3 menu on surface-container */
+#more-menu-dropdown {
+  background: var(--md-surface-container);
+  border: 0;
+  border-radius: var(--md-shape-lg);
+  box-shadow: var(--md-elev-2);
+  padding: 8px 0;
+  min-width: 220px;
+}
+
+#more-menu-dropdown .nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+#more-menu-dropdown .nav-link.font-semibold {
+  background-color: var(--md-secondary-container);
+}
+
+#mobile-menu {
+  border-top: 0;
+}
+
+#mobile-menu .nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 24px;
+  font-size: 0.875rem;
+}
+
+/* Standard icon buttons: 40dp circle with a state layer */
+#onboarding-info-btn,
+#onboarding-info-btn-mobile,
+#theme-toggle,
+#theme-toggle-mobile,
+#mobile-menu-toggle,
+#lang-toggle,
+#lang-toggle-mobile,
+#modal-share,
+#modal-close,
+#modal-copy-keyword {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  border-radius: var(--md-shape-full);
+  color: var(--md-on-surface-variant);
+  background: transparent;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  transition: background-color 200ms var(--md-easing);
+}
+
+#onboarding-info-btn {
+  margin-top: 0;
+  align-self: center;
+}
+
+#onboarding-info-btn:hover,
+#onboarding-info-btn-mobile:hover,
+#theme-toggle:hover,
+#theme-toggle-mobile:hover,
+#mobile-menu-toggle:hover,
+#lang-toggle:hover,
+#lang-toggle-mobile:hover,
+#modal-share:hover,
+#modal-close:hover,
+#modal-copy-keyword:hover {
+  color: var(--md-on-surface);
+  background-color: color-mix(in srgb, var(--md-on-surface) var(--md-state-hover), transparent);
+}
+
+/* Search bar: full-pill, surface-container-high, leading search icon */
+#header-search-input,
+#search-input {
+  height: 48px;
+  border: 0;
+  border-radius: var(--md-shape-full);
+  background-color: var(--md-surface-container-highest);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233f484b' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='M20 20l-4.2-4.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  background-size: 20px;
+  padding: 0 20px 0 48px;
+  color: var(--md-on-surface);
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  box-shadow: none;
+  transition: box-shadow 200ms var(--md-easing);
+}
+
+.dark #header-search-input,
+.dark #search-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23bfc8cb' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='M20 20l-4.2-4.2'/%3E%3C/svg%3E");
+}
+
+#header-search-input {
+  width: 20rem;
+}
+
+#header-search-input::placeholder,
+#search-input::placeholder {
+  color: var(--md-on-surface-variant);
+  opacity: 1;
+}
+
+#header-search-input:hover,
+#search-input:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--md-on-surface) var(--md-state-hover),
+    var(--md-surface-container-highest)
+  );
+}
+
+#header-search-input:focus,
+#search-input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--md-primary);
+}
+
+/* Role filter: an outlined chip-with-menu, same height as the search bar */
+#header-role-filter,
+#role-filter {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 48px;
+  border: 1px solid var(--md-outline);
+  border-radius: var(--md-shape-full);
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233f484b'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 24px;
+  padding: 0 44px 0 20px;
+  color: var(--md-on-surface);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.dark #header-role-filter,
+.dark #role-filter {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bfc8cb'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+#header-role-filter option,
+#role-filter option {
+  background: var(--md-surface-container);
+  color: var(--md-on-surface);
+}
+
+#header-role-filter:hover,
+#role-filter:hover {
+  background-color: color-mix(in srgb, var(--md-on-surface) var(--md-state-hover), transparent);
+}
+
+#header-role-filter:focus,
+#role-filter:focus {
+  outline: none;
+  border-color: var(--md-primary);
+  box-shadow: inset 0 0 0 1px var(--md-primary);
+}
+
+/* Anchor counter as a small tonal badge */
+#anchor-count,
+#anchor-count-mobile {
+  padding: 6px 12px;
+  border-radius: var(--md-shape-sm);
+  background: var(--md-secondary-container);
+  color: var(--md-on-secondary-container);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------------------
+ * 4. Hero
+ * ------------------------------------------------------------------------- */
+#hero {
+  margin-bottom: 16px;
+}
+
+#hero h1 {
+  font-size: 2.8125rem; /* display-medium */
+  line-height: 3.25rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--md-on-surface);
+  margin-bottom: 16px;
+}
+
+#hero h1 + p {
+  font-size: 1.125rem; /* body-large+ */
+  line-height: 1.75rem;
+  letter-spacing: 0.01em;
+  color: var(--md-on-surface-variant);
+}
+
+#hero p[data-i18n='hero.introEmphasis'] {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--md-primary);
+}
+
+/* Prompt comparison: a quiet surface card next to a primary-container card */
+#hero .grid.sm\:grid-cols-2 {
+  gap: 12px;
+}
+
+#hero .grid.sm\:grid-cols-2 > div {
+  border: 0;
+  border-radius: var(--md-shape-xl);
+  padding: 24px;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:first-child {
+  background: var(--md-surface-container);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:nth-child(2) {
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+  display: flex;
+  flex-direction: column;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:nth-child(2) * {
+  color: var(--md-on-primary-container);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:nth-child(2) p {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:nth-child(2) strong {
+  background: var(--md-surface-container-lowest);
+  color: var(--md-primary);
+  padding: 1px 8px;
+  border-radius: var(--md-shape-sm);
+}
+
+#hero .grid.sm\:grid-cols-2 > div > div:first-child {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+#hero p[data-i18n^='hero.example'][data-i18n$='.expansion'] {
+  font-style: normal;
+  color: var(--md-on-surface-variant);
+  padding-left: 8px;
+}
+
+/* Press / appearances band: a low-emphasis tonal strip */
+#appearances {
+  border: 0;
+  border-radius: var(--md-shape-lg);
+  background: var(--md-surface-container-low);
+  padding: 12px 16px;
+}
+
+#appearances .sm\:bg-\[var\(--color-border\)\] {
+  background: var(--md-outline-variant);
+}
+
+#appearances a {
+  border-radius: var(--md-shape-sm);
+}
+
+/* How to use: three numbered tonal cards */
+#hero h2[data-i18n='hero.howToUseTitle'] {
+  font-size: 1.375rem; /* title-large */
+  line-height: 1.75rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+#hero ol > li {
+  border-radius: var(--md-shape-lg);
+  background: var(--md-surface-container-low);
+  padding: 16px;
+  align-items: center;
+}
+
+#hero ol > li > span:first-child {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--md-shape-md);
+  background: var(--md-tertiary-container);
+  color: var(--md-on-tertiary-container);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+#hero ol > li > span:last-child {
+  font-size: 0.9375rem;
+  color: var(--md-on-surface-variant);
+}
+
+#hero ol > li strong {
+  color: var(--md-on-surface);
+  font-weight: 600;
+}
+
+/* Hero links as M3 buttons: filled (primary action), outlined, text */
+#hero a[data-i18n^='main.'],
+#hero a[data-i18n='hero.skipToCatalog'] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px 0 16px;
+  border-radius: var(--md-shape-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition:
+    background-color 200ms var(--md-easing),
+    box-shadow 200ms var(--md-easing);
+}
+
+#hero a[data-i18n^='main.'] svg {
+  width: 18px;
+  height: 18px;
+}
+
+#hero a[data-i18n='main.proposeAnchor'] {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+}
+
+#hero a[data-i18n='main.proposeAnchor']:hover {
+  background: color-mix(in srgb, var(--md-on-primary) var(--md-state-hover), var(--md-primary));
+  box-shadow: var(--md-elev-1);
+}
+
+#hero a[data-i18n='main.aboutLink'],
+#hero a[data-i18n='main.starGithub'] {
+  border: 1px solid var(--md-outline);
+  color: var(--md-primary);
+}
+
+#hero a[data-i18n='main.aboutLink']:hover,
+#hero a[data-i18n='main.starGithub']:hover,
+#hero a[data-i18n='hero.skipToCatalog']:hover {
+  background: color-mix(in srgb, var(--md-primary) var(--md-state-hover), transparent);
+}
+
+#hero a[data-i18n='hero.skipToCatalog'] {
+  padding: 0 12px;
+  color: var(--md-primary);
+}
+
+/* The "|" separators between those links are redundant once they are buttons */
+#hero a[data-i18n^='main.'] + span {
+  display: none;
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm {
+  gap: 8px;
+}
+
+/* ---------------------------------------------------------------------------
+ * 5. Category quick-nav: a floating toolbar of filter chips
+ * ------------------------------------------------------------------------- */
+:root .category-nav {
+  top: 8px;
+  background: var(--md-surface-container);
+  border-bottom: 0;
+  border-radius: var(--md-shape-lg);
+  padding: 8px;
+  box-shadow: var(--md-elev-2);
+  margin-bottom: 40px;
+}
+
+:root .category-section {
+  scroll-margin-top: calc(var(--category-nav-height, 3rem) + 1.5rem);
+}
+
+/* One scrollable row keeps the sticky toolbar a single chip high; the
+   scrollbar stays visible and the trailing fade says "more this way". */
+:root .category-nav-list {
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 4px;
+  margin: -4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-outline-variant) transparent;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+}
+
+:root .category-nav-list > li:last-child {
+  padding-right: 40px;
+}
+
+:root .category-nav-link {
+  height: 32px;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--md-shape-sm);
+  background: transparent;
+  color: var(--md-on-surface-variant);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition:
+    background-color 200ms var(--md-easing),
+    border-color 200ms var(--md-easing);
+}
+
+:root .category-nav-link:hover {
+  color: var(--md-on-surface);
+  border-color: var(--md-outline-variant);
+  background-color: color-mix(
+    in srgb,
+    var(--md-on-surface-variant) var(--md-state-hover),
+    transparent
+  );
+}
+
+:root .category-nav-link:focus-visible {
+  color: var(--md-on-surface);
+  border-color: var(--md-outline-variant);
+  outline: 3px solid var(--md-secondary);
+  outline-offset: 2px;
+}
+
+/* Text labels carry the meaning; the emoji would compete with them */
+:root .category-nav-icon {
+  display: none;
+}
+
+:root .category-nav-count {
+  padding: 0;
+  background: transparent;
+  color: var(--md-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The recency filter chip: dashed in the old design, an M3 filter chip here */
+:root .category-nav-toggle {
+  border-style: solid;
+}
+
+:root .category-nav-toggle::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  margin-left: -4px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+:root .category-nav-toggle-active,
+:root .category-nav-toggle[aria-pressed='true'] {
+  background: var(--md-secondary-container);
+  border-color: var(--md-secondary-container);
+  color: var(--md-on-secondary-container);
+}
+
+:root .category-nav-toggle-active::before,
+:root .category-nav-toggle[aria-pressed='true']::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E");
+}
+
+:root .category-nav-toggle-active .category-nav-count {
+  background: transparent;
+  color: var(--md-on-secondary-container);
+}
+
+/* ---------------------------------------------------------------------------
+ * 6. Category sections and anchor cards
+ * ------------------------------------------------------------------------- */
+:root .category-heading {
+  font-size: 1.75rem; /* headline-medium */
+  line-height: 2.25rem;
+  font-weight: 400;
+  color: var(--md-on-surface);
+  gap: 16px;
+}
+
+:root .category-heading span[data-i18n^='categories.'] {
+  color: var(--md-on-surface);
+}
+
+/* Category badge in an M3 Expressive "cookie" shape, cycling the three
+   accent container roles instead of the old hard-coded category colours. */
+:root .category-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 1.625rem;
+  background-color: var(--md-primary-container) !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24.0 0.4L25.2 0.6L26.4 1.3L27.4 2.3L28.4 3.4L29.2 4.4L30.1 5.2L31.1 5.6L32.2 5.7L33.4 5.5L34.8 5.2L36.3 5.1L37.7 5.2L38.8 5.7L39.7 6.5L40.3 7.7L40.5 9.1L40.6 10.6L40.6 11.9L40.7 13.2L41.1 14.1L41.7 15.0L42.7 15.7L43.9 16.4L45.2 17.1L46.2 18.0L47.0 19.1L47.3 20.3L47.1 21.6L46.5 22.8L45.7 24.0L44.7 25.1L44.0 26.1L43.5 27.1L43.4 28.1L43.6 29.2L44.0 30.5L44.5 31.9L44.8 33.3L44.8 34.6L44.4 35.8L43.6 36.7L42.4 37.4L41.1 37.8L39.6 38.1L38.3 38.3L37.2 38.7L36.4 39.3L35.8 40.2L35.3 41.4L34.8 42.8L34.2 44.1L33.4 45.2L32.4 46.0L31.3 46.4L30.0 46.2L28.6 45.8L27.3 45.1L26.1 44.4L25.0 43.9L24.0 43.7L23.0 43.9L21.9 44.4L20.7 45.1L19.4 45.8L18.0 46.2L16.7 46.4L15.6 46.0L14.6 45.2L13.8 44.1L13.2 42.8L12.7 41.4L12.2 40.2L11.6 39.3L10.8 38.7L9.7 38.3L8.4 38.1L6.9 37.8L5.6 37.4L4.4 36.7L3.6 35.8L3.2 34.6L3.2 33.3L3.5 31.9L4.0 30.5L4.4 29.2L4.6 28.1L4.5 27.1L4.0 26.1L3.3 25.1L2.3 24.0L1.5 22.8L0.9 21.6L0.7 20.3L1.0 19.1L1.8 18.0L2.8 17.1L4.1 16.4L5.3 15.7L6.3 15.0L6.9 14.1L7.3 13.2L7.4 11.9L7.4 10.6L7.5 9.1L7.7 7.7L8.3 6.5L9.2 5.7L10.3 5.2L11.7 5.1L13.2 5.2L14.6 5.5L15.8 5.7L16.9 5.6L17.9 5.2L18.8 4.4L19.6 3.4L20.6 2.3L21.6 1.3L22.8 0.6Z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24.0 0.4L25.2 0.6L26.4 1.3L27.4 2.3L28.4 3.4L29.2 4.4L30.1 5.2L31.1 5.6L32.2 5.7L33.4 5.5L34.8 5.2L36.3 5.1L37.7 5.2L38.8 5.7L39.7 6.5L40.3 7.7L40.5 9.1L40.6 10.6L40.6 11.9L40.7 13.2L41.1 14.1L41.7 15.0L42.7 15.7L43.9 16.4L45.2 17.1L46.2 18.0L47.0 19.1L47.3 20.3L47.1 21.6L46.5 22.8L45.7 24.0L44.7 25.1L44.0 26.1L43.5 27.1L43.4 28.1L43.6 29.2L44.0 30.5L44.5 31.9L44.8 33.3L44.8 34.6L44.4 35.8L43.6 36.7L42.4 37.4L41.1 37.8L39.6 38.1L38.3 38.3L37.2 38.7L36.4 39.3L35.8 40.2L35.3 41.4L34.8 42.8L34.2 44.1L33.4 45.2L32.4 46.0L31.3 46.4L30.0 46.2L28.6 45.8L27.3 45.1L26.1 44.4L25.0 43.9L24.0 43.7L23.0 43.9L21.9 44.4L20.7 45.1L19.4 45.8L18.0 46.2L16.7 46.4L15.6 46.0L14.6 45.2L13.8 44.1L13.2 42.8L12.7 41.4L12.2 40.2L11.6 39.3L10.8 38.7L9.7 38.3L8.4 38.1L6.9 37.8L5.6 37.4L4.4 36.7L3.6 35.8L3.2 34.6L3.2 33.3L3.5 31.9L4.0 30.5L4.4 29.2L4.6 28.1L4.5 27.1L4.0 26.1L3.3 25.1L2.3 24.0L1.5 22.8L0.9 21.6L0.7 20.3L1.0 19.1L1.8 18.0L2.8 17.1L4.1 16.4L5.3 15.7L6.3 15.0L6.9 14.1L7.3 13.2L7.4 11.9L7.4 10.6L7.5 9.1L7.7 7.7L8.3 6.5L9.2 5.7L10.3 5.2L11.7 5.1L13.2 5.2L14.6 5.5L15.8 5.7L16.9 5.6L17.9 5.2L18.8 4.4L19.6 3.4L20.6 2.3L21.6 1.3L22.8 0.6Z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+:root .category-section:nth-of-type(3n + 2) .category-icon {
+  background-color: var(--md-tertiary-container) !important;
+}
+
+:root .category-section:nth-of-type(3n + 3) .category-icon {
+  background-color: var(--md-secondary-container) !important;
+}
+
+:root .category-intro {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  color: var(--md-on-surface-variant);
+}
+
+:root .category-heading + .category-intro {
+  margin-top: -8px;
+  margin-bottom: 24px;
+  padding-left: 72px;
+}
+
+:root .category-intro a:hover,
+:root .category-intro a:focus-visible {
+  color: var(--md-primary);
+}
+
+:root .anchor-cards-grid {
+  gap: 12px;
+}
+
+/* Elevated card: surface-container-low, shape medium-large, state layer on hover */
+:root .anchor-card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 14px 20px;
+  border: 0;
+  border-radius: var(--md-shape-lg);
+  background-color: var(--md-surface-container-low);
+  box-shadow: var(--md-elev-1);
+  transition:
+    background-color 200ms var(--md-easing),
+    box-shadow 200ms var(--md-easing);
+}
+
+:root.dark .anchor-card {
+  background-color: var(--md-surface-container);
+  box-shadow: none;
+}
+
+:root .anchor-card:hover,
+:root .anchor-card:focus-within {
+  transform: none;
+  border: 0;
+  background-color: color-mix(
+    in srgb,
+    var(--md-on-surface) var(--md-state-hover),
+    var(--md-surface-container-low)
+  );
+  box-shadow: var(--md-elev-2);
+}
+
+:root.dark .anchor-card:hover,
+:root.dark .anchor-card:focus-within {
+  background-color: var(--md-surface-container-high);
+  box-shadow: none;
+}
+
+:root .anchor-card:has(.anchor-card-open:focus-visible) {
+  outline: 3px solid var(--md-secondary);
+  outline-offset: 2px;
+  box-shadow: var(--md-elev-2);
+}
+
+:root.dark .anchor-card:has(.anchor-card-open:focus-visible) {
+  box-shadow: none;
+}
+
+:root .anchor-card-title {
+  font-size: 1.0625rem; /* title-medium, nudged */
+  line-height: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: var(--md-on-surface);
+}
+
+:root .anchor-card-proponents {
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.016em;
+  color: var(--md-on-surface-variant);
+}
+
+:root .anchor-card-meta {
+  margin-top: auto;
+  gap: 8px;
+}
+
+/* Meta badges as assist chips */
+:root .meta-badge {
+  height: 28px;
+  padding: 0 10px 0 8px;
+  gap: 6px;
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--md-shape-sm);
+  background: transparent;
+  color: var(--md-on-surface-variant);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+:root .meta-badge svg {
+  color: var(--md-primary);
+}
+
+:root .feedback-badge:hover {
+  background: color-mix(in srgb, var(--md-on-surface-variant) var(--md-state-hover), transparent);
+}
+
+/* Small icon buttons in the card header */
+:root .anchor-edit-btn,
+:root .anchor-copy-link-btn,
+:root .anchor-copy-keyword-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: var(--md-shape-full);
+  color: var(--md-on-surface-variant);
+  background: transparent;
+}
+
+:root .anchor-edit-btn:hover,
+:root .anchor-copy-link-btn:hover,
+:root .anchor-copy-keyword-btn:hover {
+  transform: none;
+  color: var(--md-primary);
+  background-color: color-mix(in srgb, var(--md-primary) var(--md-state-hover), transparent);
+}
+
+:root .anchor-card-header .flex {
+  gap: 0;
+  margin-right: -6px;
+  margin-top: -4px;
+}
+
+/* The category colour strip is replaced by tone; hide it */
+:root .anchor-card-indicator {
+  display: none;
+}
+
+/* Badges */
+:root .anchor-new-badge {
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: var(--md-shape-full);
+  background: var(--md-tertiary-container);
+  color: var(--md-on-tertiary-container);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+:root .anchor-advisory-badge,
+:root .anchor-advisory-banner {
+  border: 0;
+  border-radius: var(--md-shape-md);
+  background: var(--md-warning-container);
+  color: var(--md-on-warning-container);
+}
+
+:root .anchor-advisory-badge {
+  padding: 8px 10px;
+  line-height: 1.35;
+}
+
+/* ---------------------------------------------------------------------------
+ * 7. Anchor dialog
+ * ------------------------------------------------------------------------- */
+:root #anchor-modal {
+  background: var(--md-scrim);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+:root #anchor-modal > div {
+  background: var(--md-surface-container-high);
+  border: 0;
+  border-radius: var(--md-shape-xl);
+  box-shadow: var(--md-elev-3);
+}
+
+:root #anchor-modal > div > div:first-child {
+  border-bottom: 1px solid var(--md-outline-variant);
+  padding: 20px 16px 16px 24px;
+}
+
+:root #modal-title {
+  font-size: 1.5rem; /* headline-small */
+  line-height: 2rem;
+  font-weight: 400;
+  color: var(--md-on-surface);
+}
+
+:root #modal-content {
+  padding: 24px;
+}
+
+:root #anchor-modal .modal-feedback-bar {
+  background: var(--md-surface-container-high);
+  border-top: 1px solid var(--md-outline-variant);
+  padding: 12px 24px;
+}
+
+:root .modal-feedback-cta {
+  color: var(--md-on-surface-variant);
+}
+
+:root .feedback-actions {
+  gap: 8px;
+}
+
+:root .feedback-btn {
+  height: 40px;
+  padding: 0 24px 0 16px;
+  gap: 8px;
+  border-radius: var(--md-shape-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+:root .feedback-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+:root .feedback-btn-vote {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+}
+
+:root .feedback-btn-vote:hover {
+  background: color-mix(in srgb, var(--md-on-primary) var(--md-state-hover), var(--md-primary));
+  box-shadow: var(--md-elev-1);
+}
+
+:root .feedback-btn-discuss {
+  background: transparent;
+  border: 1px solid var(--md-outline);
+  color: var(--md-primary);
+}
+
+:root .feedback-btn-discuss:hover {
+  background: color-mix(in srgb, var(--md-primary) var(--md-state-hover), transparent);
+}
+
+:root .feedback-section {
+  border: 0;
+  border-radius: var(--md-shape-lg);
+  background: var(--md-surface-container);
+}
+
+:root .feedback-heading,
+:root .feedback-hint {
+  color: var(--md-on-surface-variant);
+}
+
+/* Lead definition: a secondary-container card */
+:root .anchor-answer,
+:root .anchor-answer-lead {
+  border: 0;
+  border-radius: var(--md-shape-lg);
+  padding: 16px 20px;
+  background: var(--md-secondary-container);
+  color: var(--md-on-secondary-container);
+}
+
+:root .anchor-tested-on .tested-yes {
+  color: var(--md-success);
+}
+
+:root .anchor-example-image img {
+  border-radius: var(--md-shape-lg);
+  border-color: var(--md-outline-variant);
+}
+
+/* ---------------------------------------------------------------------------
+ * 8. AsciiDoc content (modal body and documentation pages)
+ *    `:root` prefix matches the specificity of main.css's `.dark` overrides.
+ * ------------------------------------------------------------------------- */
+:root .asciidoc-content {
+  background: transparent;
+  color: var(--md-on-surface);
+  font-family: var(--md-font);
+}
+
+:root .asciidoc-content h1,
+:root .asciidoc-content h2,
+:root .asciidoc-content h3,
+:root .asciidoc-content h4,
+:root .asciidoc-content h5,
+:root .asciidoc-content h6 {
+  font-family: var(--md-font);
+  color: var(--md-on-surface);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+:root .asciidoc-content h1 {
+  font-size: 2.25rem; /* headline-large+ */
+  line-height: 2.75rem;
+}
+
+:root .asciidoc-content h2 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  color: var(--md-primary);
+}
+
+:root .asciidoc-content h3 {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+:root .asciidoc-content h4,
+:root .asciidoc-content h5,
+:root .asciidoc-content h6 {
+  font-weight: 500;
+}
+
+:root .asciidoc-content h2 strong,
+:root .asciidoc-content h3 strong {
+  font-weight: 500;
+}
+
+:root .asciidoc-content a {
+  color: var(--md-primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+:root .asciidoc-content a:hover,
+:root .asciidoc-content a:focus {
+  color: var(--md-primary);
+  text-decoration-thickness: 2px;
+}
+
+:root .asciidoc-content code {
+  background: var(--md-surface-container-highest);
+  color: var(--md-on-surface);
+  border-radius: var(--md-shape-xs);
+  padding: 0.1em 0.35em;
+}
+
+:root .asciidoc-content pre,
+:root .asciidoc-content .listingblock pre {
+  background: var(--md-surface-container);
+  color: var(--md-on-surface);
+  border-radius: var(--md-shape-md);
+  border: 0;
+}
+
+:root .asciidoc-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+:root .asciidoc-content blockquote,
+:root .asciidoc-content .quoteblock blockquote {
+  background: var(--md-surface-container-low);
+  color: var(--md-on-surface-variant);
+  border-left: 4px solid var(--md-primary);
+  border-radius: 0 var(--md-shape-md) var(--md-shape-md) 0;
+}
+
+:root .asciidoc-content table,
+:root .asciidoc-content td,
+:root .asciidoc-content th {
+  border-color: var(--md-outline-variant);
+}
+
+:root .asciidoc-content th {
+  background: var(--md-surface-container);
+  color: var(--md-on-surface);
+}
+
+:root .asciidoc-content .admonitionblock {
+  background: var(--md-surface-container);
+  border-radius: var(--md-shape-lg);
+}
+
+:root .asciidoc-content .admonitionblock > table td.content {
+  color: var(--md-on-surface);
+  border-left-color: var(--md-outline-variant);
+}
+
+:root .asciidoc-content hr {
+  border-color: var(--md-outline-variant);
+}
+
+:root .asciidoc-content details > summary {
+  color: var(--md-on-surface-variant);
+  font-weight: 500;
+}
+
+:root .asciidoc-content dt,
+:root .asciidoc-content .dlist dt {
+  color: var(--md-on-surface);
+  font-weight: 500;
+}
+
+/* Documentation page table of contents: navigation-drawer items */
+.doc-toc {
+  border-color: transparent;
+  background: var(--md-surface-container-low);
+  border-radius: var(--md-shape-lg);
+  padding: 16px 12px;
+}
+
+.doc-toc #toctitle {
+  padding: 0 12px 12px;
+  margin-bottom: 8px;
+  border-bottom-color: var(--md-outline-variant);
+  color: var(--md-on-surface-variant);
+  letter-spacing: 0.1em;
+}
+
+.doc-toc ul ul {
+  margin-left: 12px;
+  border-left-color: var(--md-outline-variant);
+}
+
+.doc-toc a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: var(--md-shape-full);
+  color: var(--md-on-surface-variant);
+  text-decoration: none;
+}
+
+.doc-toc a:hover {
+  color: var(--md-on-surface);
+  background: color-mix(in srgb, var(--md-on-surface) var(--md-state-hover), transparent);
+}
+
+/* ---------------------------------------------------------------------------
+ * 9. Footer
+ * ------------------------------------------------------------------------- */
+footer {
+  background: var(--md-surface-container);
+  border-top: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * 10. Phones
+ * ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  :root #hero h1 {
+    font-size: 2.25rem; /* display-small */
+    line-height: 2.75rem;
+  }
+
+  :root #hero h1 + p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  :root #hero .grid.sm\:grid-cols-2 > div {
+    border-radius: var(--md-shape-lg);
+    padding: 16px 20px;
+  }
+
+  :root #search-input {
+    flex: 1 1 100%;
+  }
+
+  :root #role-filter {
+    flex: 1 1 auto;
+  }
+
+  :root .category-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    gap: 12px;
+  }
+
+  :root .category-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  :root .category-heading + .category-intro {
+    padding-left: 0;
+  }
+
+  :root .anchor-card {
+    padding: 14px 12px 12px 16px;
+  }
+
+  :root .anchor-edit-btn,
+  :root .anchor-copy-link-btn,
+  :root .anchor-copy-keyword-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  :root #anchor-modal > div {
+    border-radius: var(--md-shape-xl) var(--md-shape-xl) var(--md-shape-lg) var(--md-shape-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root .anchor-card,
+  :root .category-nav-link,
+  header .nav-link {
+    transition: none;
+  }
+}
+
+/* Tighten the gap between the hero and the chip toolbar */
+.card-grid-container {
+  padding-top: 0;
+}

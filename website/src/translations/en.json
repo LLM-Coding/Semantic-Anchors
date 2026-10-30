@@ -19,6 +19,7 @@
   "nav.contracts": "Contracts",
   "nav.categoryJump": "Jump to category",
   "nav.recentlyAdded": "Show only the most recently added anchors",
+  "nav.recentlyAddedShort": "Recently added",
   "contracts.title": "Semantic Contracts",
   "contracts.explanation": "Semantic Anchors reference public knowledge that LLMs already understand. But your team's conventions, templates, and definitions? Those need Semantic Contracts. A contract defines what a term means in your project — either by composing established anchors or by providing custom definitions that only exist within your team. Select the ones that fit and download them for your AGENTS.md or CLAUDE.md.",
   "contracts.linkedinLink": "Read the full story behind Semantic Contracts on LinkedIn →",

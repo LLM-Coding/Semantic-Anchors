@@ -1,4 +1,5 @@
 import './styles/main.css'
+import './styles/material3.css'
 import { i18n, applyTranslations } from './i18n.js'
 import { initTheme, toggleTheme, currentTheme } from './theme.js'
 import { renderHeader } from './components/header.js'
