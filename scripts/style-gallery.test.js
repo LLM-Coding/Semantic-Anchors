@@ -156,7 +156,9 @@ describe('tile', () => {
 describe('examplePageFor', () => {
   it('knows every :example-page: value used by an anchor', () => {
     for (const f of fs.readdirSync(ANCHORS).filter((n) => n.endsWith('.adoc'))) {
-      const m = fs.readFileSync(path.join(ANCHORS, f), 'utf-8').match(/^:example-page:[ \t]*(.*?)[ \t]*$/m)
+      const m = fs
+        .readFileSync(path.join(ANCHORS, f), 'utf-8')
+        .match(/^:example-page:[ \t]*(.*?)[ \t]*$/m)
       if (m) expect(PAGES, f).toContain(m[1])
     }
   })
