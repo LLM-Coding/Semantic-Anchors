@@ -521,3 +521,56 @@ test.describe('Umbrella Anchors', () => {
     }
   })
 })
+
+test.describe('Category quick-nav', () => {
+  // The quick-nav once had one chip per category in a single scrolling row.
+  // With 16 chips it no longer fit even at full width, so the row wraps
+  // instead of scrolling, and fits on one line on a desktop screen.
+  for (const width of [768, 1024, 1280]) {
+    test(`never scrolls horizontally at ${width}px`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 800 })
+      await page.goto('/')
+      const list = page.locator('.category-nav-list')
+      await expect(list).toBeVisible()
+      const { scrollWidth, clientWidth } = await list.evaluate((el) => ({
+        scrollWidth: el.scrollWidth,
+        clientWidth: el.clientWidth,
+      }))
+      expect(scrollWidth).toBeLessThanOrEqual(clientWidth)
+    })
+  }
+
+  test('fits on one line on a desktop screen', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.goto('/')
+    await expect(page.locator('.category-nav-list')).toBeVisible()
+    const tops = await page
+      .locator('.category-nav-list > li')
+      .evaluateAll((items) => [
+        ...new Set(items.map((li) => Math.round(li.getBoundingClientRect().top))),
+      ])
+    expect(tops).toHaveLength(1)
+  })
+
+  test('a jump keeps the category heading below the two-row nav', async ({ page }) => {
+    // At 900px the chips wrap to two rows, taller than a fixed scroll margin.
+    await page.setViewportSize({ width: 900, height: 800 })
+    await page.goto('/')
+    await expect(page.locator('.category-nav-list')).toBeVisible()
+    // Jump instantly, so the check sees the final position, not a frame of
+    // the smooth-scroll animation.
+    await page.addStyleTag({ content: 'html { scroll-behavior: auto !important; }' })
+    await page.locator('.category-nav-link[data-category-link="ux-visual-design"]').click()
+    const gap = () =>
+      page.evaluate(() => {
+        const nav = document.querySelector('.category-nav').getBoundingClientRect()
+        const heading = document
+          .querySelector('#category-ux-visual-design .category-heading')
+          .getBoundingClientRect()
+        return Math.round(heading.top - nav.bottom)
+      })
+    await expect.poll(gap).toBeGreaterThanOrEqual(0)
+    // A missing jump would also leave a positive gap; the heading must be on screen.
+    await expect(page.locator('#category-ux-visual-design .category-heading')).toBeInViewport()
+  })
+})
