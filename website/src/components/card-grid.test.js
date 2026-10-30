@@ -1,5 +1,10 @@
 import { describe, it, expect, vi } from 'vitest'
-import { renderCardGrid, initCardGrid, updateCategoryIntros } from './card-grid.js'
+import {
+  renderCardGrid,
+  initCardGrid,
+  updateCategoryIntros,
+  syncCategoryNavHeight,
+} from './card-grid.js'
 
 // Mock i18n module
 vi.mock('../i18n.js', () => ({
@@ -546,5 +551,14 @@ describe('updateCategoryIntros (#869)', () => {
     const p = document.querySelector('[data-category-intro]')
     expect(p.innerHTML).toContain('Bedienelemente')
     expect(p.innerHTML).not.toContain('stale')
+  })
+})
+
+describe('syncCategoryNavHeight (#871)', () => {
+  it('publishes the nav height as --category-nav-height for scroll-margin-top', () => {
+    const nav = document.createElement('nav')
+    nav.getBoundingClientRect = () => ({ height: 75 })
+    syncCategoryNavHeight(nav)
+    expect(document.documentElement.style.getPropertyValue('--category-nav-height')).toBe('75px')
   })
 })

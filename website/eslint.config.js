@@ -26,6 +26,7 @@ const browserGlobals = {
   PopStateEvent: 'readonly',
   MutationObserver: 'readonly',
   IntersectionObserver: 'readonly',
+  ResizeObserver: 'readonly',
   requestAnimationFrame: 'readonly',
   performance: 'readonly',
   Blob: 'readonly',

@@ -394,6 +394,26 @@ let clickHandler = null
 /**
  * Initialize card grid event handlers
  */
+let navResizeObserver = null
+
+/**
+ * Publish the sticky quick-nav's height as --category-nav-height (#871).
+ * The nav wraps to more rows on narrow screens, so a fixed scroll-margin-top
+ * would hide a jumped-to category heading behind it.
+ */
+export function syncCategoryNavHeight(nav) {
+  const height = Math.ceil(nav.getBoundingClientRect().height)
+  document.documentElement.style.setProperty('--category-nav-height', `${height}px`)
+}
+
+function observeCategoryNav() {
+  if (navResizeObserver) navResizeObserver.disconnect()
+  const nav = document.querySelector('.category-nav')
+  if (!nav || typeof ResizeObserver === 'undefined') return
+  navResizeObserver = new ResizeObserver(() => syncCategoryNavHeight(nav))
+  navResizeObserver.observe(nav)
+}
+
 export function initCardGrid() {
   const container = document.getElementById('main-content')
   if (!container) return
@@ -402,6 +422,7 @@ export function initCardGrid() {
   // comes back unpressed. Without this reset the flag would survive the markup
   // that shows it, and the grid would filter with the chip looking inactive.
   recentOnly = false
+  observeCategoryNav()
 
   // Remove existing listeners if any
   if (clickHandler) {

@@ -123,8 +123,10 @@ body {
 
 .category-section {
   @apply mb-12;
-  /* Clear the sticky category quick-nav when jumped to via #category-<id> */
-  scroll-margin-top: 3.5rem;
+  /* Clear the sticky category quick-nav when jumped to via #category-<id>.
+     Its height changes with the number of chip rows; card-grid.js keeps
+     --category-nav-height current (#871). */
+  scroll-margin-top: calc(var(--category-nav-height, 3rem) + 0.5rem);
 }
 
 .category-section[style*='display: none'] {

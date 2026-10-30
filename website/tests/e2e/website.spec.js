@@ -543,11 +543,28 @@ test.describe('Category quick-nav', () => {
   test('fits on one line on a desktop screen', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto('/')
+    await expect(page.locator('.category-nav-list')).toBeVisible()
     const tops = await page
       .locator('.category-nav-list > li')
       .evaluateAll((items) => [
         ...new Set(items.map((li) => Math.round(li.getBoundingClientRect().top))),
       ])
     expect(tops).toHaveLength(1)
+  })
+
+  test('a jump keeps the category heading below the two-row nav', async ({ page }) => {
+    // At 900px the chips wrap to two rows, taller than a fixed scroll margin.
+    await page.setViewportSize({ width: 900, height: 800 })
+    await page.goto('/')
+    await expect(page.locator('.category-nav-list')).toBeVisible()
+    await page.locator('.category-nav-link[data-category-link="ux-visual-design"]').click()
+    const heading = page.locator('#category-ux-visual-design .category-heading')
+    await expect(heading).toBeInViewport()
+    await page.waitForTimeout(800) // smooth scrolling
+    const navBottom = await page
+      .locator('.category-nav')
+      .evaluate((el) => el.getBoundingClientRect().bottom)
+    const headingTop = await heading.evaluate((el) => el.getBoundingClientRect().top)
+    expect(headingTop).toBeGreaterThanOrEqual(navBottom)
   })
 })
