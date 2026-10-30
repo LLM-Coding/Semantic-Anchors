@@ -5,6 +5,7 @@
 :tags: CQS, command-query separation, command, query, modifier, mutator, side-effect free, referential transparency, Eiffel, Meyer, asking a question should not change the answer
 :related: cqrs, design-by-contract, vertical-slice-architecture, code-smells
 :tier: 3
+:definition: Command-Query Separation (CQS) is Bertrand Meyer's design rule from Object-Oriented Software Construction (1988): every method is either a command, which changes state and returns nothing, or a query, which returns a value and changes no observable state, never both. Asking a question then does not change the answer, so queries are safe to repeat and to call from contracts and assertions. It is a per-method rule, distinct from the architectural pattern CQRS.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

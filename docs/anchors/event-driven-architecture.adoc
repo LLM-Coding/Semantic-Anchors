@@ -5,6 +5,7 @@
 :related: domain-driven-design, hexagonal-architecture, clean-architecture, enterprise-integration-patterns
 :tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency, feedback, emergence
 :tier: 3
+:definition: Event-Driven Architecture is an architectural style in which components communicate by emitting and reacting to events instead of calling each other directly, with Gregor Hohpe and Bobby Woolf (2003) and Martin Fowler (2017) as key proponents. Producers publish events without knowing their consumers, and message queues decouple both sides in time. Most messaging systems deliver at least once, which requires idempotent consumers, and state becomes eventually consistent; workflows run by choreography or orchestration.
 
 [%collapsible]
 ====

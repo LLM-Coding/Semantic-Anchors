@@ -5,6 +5,7 @@
 :tags: Chesterton's Fence, Chestertons Zaun, Legacy Code, Code-Archäologie, sicheres Löschen, institutionelles Gedächtnis, Warum steht das hier, Status quo, Bestandsaufnahme, Modernisierung
 :related: second-order-thinking, five-whys, lehmans-classification, boy-scout-rule, residuality-theory
 :tier: 3
+:definition: Chesterton's Fence ist ein Prinzip nach G.K. Chestertons Gleichnis in The Thing (1929): Reiß keinen Zaun auf der Straße ein, bevor du weißt, warum er dort steht. Es legt die Beweislast auf den, der etwas entfernen will, und behandelt ein unerklärtes Artefakt als Beleg eines früheren Fehlers. In der Software verlangt es eine zeitlich begrenzte Untersuchung von Legacy Code vor dem Löschen; danach ist ein umkehrbares Entfernen erlaubt.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

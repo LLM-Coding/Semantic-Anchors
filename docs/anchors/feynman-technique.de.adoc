@@ -3,6 +3,7 @@
 :roles: software-developer, educator, consultant, team-lead
 :proponents: Richard Feynman
 :tier: 3
+:definition: Die Feynman-Technik ist eine nach dem Physiker Richard Feynman benannte Lernmethode, die Verständnis prüft, indem man ein Konzept in einfacher Sprache erklärt, als ob für einen Anfänger. Ihre vier Schritte sind: ein Konzept wählen, es einfach erklären, die Lücken finden, an denen die Erklärung scheitert, und zum Quellmaterial zurückkehren, dann mit Analogien vereinfachen und wiederholen, bis die Erklärung klar und frei von Jargon ist.
 :tags: Feynman technique, learning, teaching, explain simply, understanding
 :related: blooms-taxonomy, curse-of-knowledge, zone-of-proximal-development
 

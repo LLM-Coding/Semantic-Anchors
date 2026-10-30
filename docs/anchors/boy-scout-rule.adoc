@@ -5,6 +5,7 @@
 :tags: boy scout rule, code cleanliness, refactoring, technical debt, code rot, opportunistic refactoring, Clean Code, Martin
 :related: code-smells, red-green-tdd, conventional-commits, mikado-method, lehmans-classification
 :tier: 3
+:definition: The Boy Scout Rule is Robert C. Martin's transfer to code of the Boy Scouts' rule to leave the campground cleaner than you found it: check a module in cleaner than you checked it out. The cleanup stays small and limited to code the current task already touches, such as renaming an unclear variable or deleting dead code. It counters the slow decay of a codebase and assumes a green test suite.
 :prior-test: 2026-09-24
 :tested-on: haiku-4.5=yes, opus-5=yes
 

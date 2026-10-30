@@ -5,6 +5,7 @@
 :tags: Feynman technique, learning, teaching, explain simply, understanding
 :related: blooms-taxonomy, curse-of-knowledge, zone-of-proximal-development
 :tier: 3
+:definition: The Feynman Technique is a learning method named after the physicist Richard Feynman that tests understanding by explaining a concept in simple language, as if to a beginner. Its four steps are to choose a concept, teach it in plain terms, find the gaps where the explanation fails and return to the source material, then simplify with analogies and repeat until the explanation is clear and free of jargon.
 
 [%collapsible]
 ====

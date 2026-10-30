@@ -5,6 +5,7 @@
 :tags: docs as code, documentation, AsciiDoc, version control, technical writing, Mueller
 :related: diataxis-framework, arc42, conventional-commits
 :tier: 3
+:definition: Docs-as-Code according to Ralf D. Müller, the creator of docToolchain, treats documentation like code: written in plain-text formats such as AsciiDoc, kept in Git alongside the code, reviewed through pull requests and built by automated toolchains. Diagrams are written as code too, for example in PlantUML, and one source generates multiple output formats such as HTML and PDF. This keeps the documentation synchronized with the code it describes.
 
 [%collapsible]
 ====

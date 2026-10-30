@@ -5,6 +5,7 @@
 :tags: Bulkhead, Schott, Schottenprinzip, Ressourcenisolation, Thread-Pool-Isolation, Semaphore-Bulkhead, Blast Radius, Fehlereingrenzung, zellbasierte Architektur, Ressourcenerschöpfung, Stability Pattern, Hystrix, Resilience4j
 :related: circuit-breaker, site-reliability-engineering, fallacies-of-distributed-computing, residuality-theory
 :tier: 3
+:definition: Das Bulkhead Pattern ist ein Stability Pattern aus Michael T. Nygards Release It!, das eine endliche Ressource wie Threads, Connections oder Instanzen so aufteilt, dass jede Dependency, jeder Mandant und jeder Workload einen eigenen Anteil erhält. Benannt nach den Schotten eines Schiffsrumpfs, lässt es einen langsamen oder ausfallenden Konsumenten nur seinen eigenen Anteil erschöpfen, während der Rest weiterarbeitet. Umgesetzt wird es als Thread-Pool- oder Semaphore-Bulkhead, kombiniert mit Timeouts und Circuit Breaker.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

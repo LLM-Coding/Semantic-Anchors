@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Factory Method pattern, also known as Virtual Constructor, is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines an interface for creating an object but lets subclasses decide which class to instantiate. It suits a class that cannot anticipate which objects it must create, and it allows new types to be added without changing existing code.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, factory, polymorphism, instantiation
 :related: gof-design-patterns, gof-abstract-factory-pattern, gof-template-method-pattern

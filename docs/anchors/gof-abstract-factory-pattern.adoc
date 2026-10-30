@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Abstract Factory pattern, also known as Kit, is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that provides an interface for creating families of related or dependent objects without specifying their concrete classes. A system configured with one factory gets products from one family only, which keeps it independent of how products are created and enforces that related products are used together.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, abstract factory, family, platform independence
 :related: gof-design-patterns, gof-factory-method-pattern, gof-builder-pattern

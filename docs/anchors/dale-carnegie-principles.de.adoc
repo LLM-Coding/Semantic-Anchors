@@ -5,6 +5,7 @@
 :tags: Dale Carnegie, Wie man Freunde gewinnt, zwischenmenschliche Kommunikation, Anerkennung, Kritik, Überzeugen, Feedback, Carnegie
 :related: problem-space-nvc, four-sides-model, sender-receiver-discrepancy, curse-of-knowledge, socratic-method
 :tier: 3
+:definition: Die Dale Carnegie Principles sind die Regeln für den Umgang mit Menschen aus Dale Carnegies How to Win Friends and Influence People (1936), deutsch Wie man Freunde gewinnt. Dazu gehören: nicht kritisieren, verurteilen oder sich beschweren, ehrliche Anerkennung geben, aus dem Interesse des anderen argumentieren, indirekt auf Fehler hinweisen, damit der andere das Gesicht wahrt, und Fragen stellen statt Befehle geben. Sie regeln, wie eine Korrektur überbracht wird, nicht ob sie stattfindet.
 :prior-test: 2026-09-24
 :tested-on: haiku-4.5=yes, opus-5=yes
 

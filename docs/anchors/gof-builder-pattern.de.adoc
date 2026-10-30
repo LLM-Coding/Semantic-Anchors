@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das Builder Pattern ist ein Erzeugungsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides, das die Konstruktion eines komplexen Objekts von seiner Repräsentation trennt, sodass derselbe Konstruktionsprozess verschiedene Repräsentationen erzeugen kann. Der Algorithmus, der das Objekt zusammensetzt, bleibt unabhängig von den Teilen und ihrer Zusammensetzung, was zu schrittweisem Aufbau passt, etwa einer Fluent API für ein Query-Objekt.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, builder, construction, fluent interface, complex objects
 :related: gof-design-patterns, gof-abstract-factory-pattern, gof-factory-method-pattern

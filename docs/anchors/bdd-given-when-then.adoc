@@ -5,6 +5,7 @@
 :related: tdd-london-school, tdd-chicago-school, user-story-mapping
 :tags: bdd, gherkin, cucumber, specification-by-example, three-amigos, given-when-then, living-documentation
 :tier: 3
+:definition: Behavior-Driven Development (BDD) is Dan North's practice, introduced in 2006, of specifying system behavior through concrete examples that double as executable tests. Scenarios follow the Given-When-Then format, often written in Gherkin syntax, in a ubiquitous language that developers, testers and business representatives can work out together, for example in Three Amigos sessions. The scenarios serve as executable acceptance criteria and as living documentation that stays current with the system.
 
 [%collapsible]
 ====

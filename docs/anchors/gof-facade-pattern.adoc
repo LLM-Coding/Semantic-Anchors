@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Facade pattern is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that provides a unified interface to a set of interfaces in a subsystem. The facade defines a higher-level interface that makes the subsystem easier to use and reduces the many dependencies between clients and implementation classes, for example by hiding validation, authorization and billing behind one simple payment interface.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, facade, simplification, subsystem, unified interface
 :related: gof-design-patterns, gof-adapter-pattern, gof-mediator-pattern

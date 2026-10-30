@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das Visitor Pattern ist ein Verhaltensmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides, das eine Operation repräsentiert, die auf den Elementen einer Objektstruktur ausgeführt wird. Damit lässt sich eine neue Operation definieren, ohne die Klassen der Elemente zu ändern, auf denen sie operiert.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, visitor, double dispatch, operations, traversal
 :related: gof-design-patterns, gof-iterator-pattern, gof-interpreter-pattern

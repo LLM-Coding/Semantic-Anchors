@@ -5,6 +5,7 @@
 :tags: defensive programming, barricade, assertions, input validation, error handling, fail fast, robustness, correctness, garbage in, trust boundary, guard clause
 :related: design-by-contract, defense-in-depth, postels-law, poka-yoke
 :tier: 2
+:definition: Defensive Programming according to McConnell is the coding practice set out in chapter 8 of Steve McConnell's Code Complete (2nd edition, 2004): protect a program from invalid input so that bad data never yields a quiet wrong result. A barricade divides the code; public interfaces outside it validate input and handle errors, while code inside assumes clean data and uses assertions for conditions that must never occur. Each system also chooses between robustness and correctness.
 :prior-test: 2026-10-09
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

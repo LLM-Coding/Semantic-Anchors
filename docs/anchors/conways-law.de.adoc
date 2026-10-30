@@ -5,6 +5,7 @@
 :proponents: Melvin E. Conway
 :tags: conways-law, organization, architecture, team-topologies, communication-structure, sociotechnical, feedback
 :tier: 3
+:definition: Conway's Law ist Melvin E. Conways 1968 in Datamation veröffentlichte Beobachtung, dass jede Organisation, die ein System entwirft, einen Entwurf hervorbringt, dessen Struktur ihre Kommunikationsstruktur abbildet. Schnittstellen in der Software entstehen dort, wo Teams sich abstimmen müssen, daher sind Organisations- und Systemdesign zwei Seiten derselben Entscheidung. Das Inverse Conway Maneuver nutzt das Gesetz gezielt und schneidet Teams nach der gewünschten Architektur.
 
 [%collapsible]
 ====

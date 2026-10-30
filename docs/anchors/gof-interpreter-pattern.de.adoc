@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das Interpreter Pattern ist ein Behavioral-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es definiert für eine gegebene Sprache eine Repräsentation ihrer Grammatik und dazu einen Interpreter, der mit dieser Repräsentation Sätze der Sprache interpretiert. Es passt zu kleinen Grammatiken und domänenspezifischen Sprachen (DSL), bei denen jede Grammatikregel Teil der Repräsentation wird, die der Interpreter auswertet.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, interpreter, grammar, DSL, parsing
 :related: gof-design-patterns, gof-visitor-pattern, gof-composite-pattern

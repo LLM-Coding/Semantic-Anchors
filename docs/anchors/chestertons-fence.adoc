@@ -5,6 +5,7 @@
 :tags: Chesterton's Fence, legacy code, code archaeology, safe deletion, institutional memory, why does this exist, status quo, epistemic humility, The Drift from Domesticity, modernisation
 :related: second-order-thinking, five-whys, lehmans-classification, boy-scout-rule, residuality-theory
 :tier: 3
+:definition: Chesterton's Fence is a principle based on G.K. Chesterton's parable in The Thing (1929): do not clear away a fence across a road until you know why it was put up. It moves the burden of proof onto whoever wants to remove something and treats an unexplained artifact as evidence of a past failure. In software it asks for a timeboxed investigation of legacy code before deletion, after which a reversible removal is allowed.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

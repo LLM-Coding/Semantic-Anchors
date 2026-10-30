@@ -5,6 +5,7 @@
 :tags: BEM, Block Element Modifier, CSS, SCSS, naming convention, frontend, stylesheets
 :related: separation-of-concerns, kiss-principle, unix-philosophy
 :tier: 3
+:definition: BEM (Block Element Modifier) is a naming methodology for CSS and SCSS from the Yandex development team. Class names follow the block__element--modifier structure, where element and modifier are optional: a block is a standalone component, an element is a part of a block with no meaning on its own, and a modifier is a flag that changes appearance or behavior. Flat selectors and explicit names avoid specificity wars and naming conflicts in large codebases.
 
 [%collapsible]
 ====

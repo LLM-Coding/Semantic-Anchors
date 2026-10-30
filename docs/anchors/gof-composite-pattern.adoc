@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Composite pattern is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that composes objects into tree structures to represent part-whole hierarchies. Individual objects and compositions share one interface, so clients treat them uniformly and can ignore the difference between a single object and a group, as when files and folders in a file system are handled the same way.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, composite, tree, hierarchy, part-whole
 :related: gof-design-patterns, gof-decorator-pattern, gof-iterator-pattern

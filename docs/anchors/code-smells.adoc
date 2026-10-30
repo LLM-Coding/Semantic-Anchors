@@ -5,6 +5,7 @@
 :proponents: Kent Beck, Martin Fowler, Robert C. Martin
 :tags: refactoring, code-quality, clean-code, maintainability, smells
 :tier: 2
+:definition: Code smells are surface indications in code that usually point to a deeper design problem; Kent Beck coined the term, and Martin Fowler's Refactoring (1999, 2nd ed. 2018) made it standard vocabulary. Each smell, such as Long Method, Shotgun Surgery or Feature Envy, is a heuristic that shows where to look and is paired with a refactoring that typically resolves it. Robert C. Martin's Clean Code (2008) extends the catalogue with about 65 heuristics.
 
 [%collapsible]
 ====

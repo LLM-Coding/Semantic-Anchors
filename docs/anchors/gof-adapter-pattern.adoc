@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Adapter pattern, also known as Wrapper, is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that converts the interface of a class into another interface clients expect. The adapter sits between client and existing class and translates calls, so a class whose interface does not match can be reused, for example to map a legacy API onto a new interface without changing existing code.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, adapter, wrapper, interface conversion, compatibility
 :related: gof-design-patterns, gof-facade-pattern, gof-bridge-pattern

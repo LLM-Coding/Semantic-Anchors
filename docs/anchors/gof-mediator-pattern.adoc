@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Mediator pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines an object which encapsulates how a set of objects interact. The objects no longer refer to each other explicitly but communicate through the mediator, which promotes loose coupling, makes each object easier to reuse and centralizes complex coordination, for example between form, list and filter components in a UI.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, mediator, loose coupling, coordination, hub
 :related: gof-design-patterns, gof-observer-pattern, gof-facade-pattern

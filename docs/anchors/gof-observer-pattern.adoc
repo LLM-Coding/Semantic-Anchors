@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Observer pattern, also known as Publish-Subscribe or Event-Listener, is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines a one-to-many dependency between objects. When one object changes state, all its dependents are notified and updated automatically. The subject does not need to know who its observers are or how many there are, as when a data model updates the UI through events.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, observer, publish-subscribe, event, notification, reactive
 :related: gof-design-patterns, gof-mediator-pattern, gof-strategy-pattern

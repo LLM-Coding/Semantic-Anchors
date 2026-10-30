@@ -5,6 +5,7 @@
 :proponents: Ken Schwaber, Jeff Sutherland
 :tags: dod, acceptance criteria, scrum, agile, quality gates, done, sprint, increment
 :tier: 3
+:definition: The Definition of Done is a formal, team-wide checklist of quality criteria that every increment must satisfy before it counts as done, as described by Ken Schwaber and Jeff Sutherland in The Scrum Guide (2020). Typical gates are code reviewed, tests passing, documentation updated and no known defects. It makes the meaning of done transparent to all stakeholders, work that misses it returns to the Product Backlog, and the team tightens it as it matures.
 
 [%collapsible]
 ====

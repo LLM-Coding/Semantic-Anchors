@@ -5,6 +5,7 @@
 :proponents: Michael Fagan
 :tags: code-review, inspection, defect-detection, formal-review, static-analysis
 :tier: 3
+:definition: Die Fagan-Inspektion ist der formale Prüfprozess für Software-Artefakte, den Michael Fagan 1976 im IBM Systems Journal beschrieb und der mit verteilten Rollen, definierten Phasen und gemessenen Defektdaten arbeitet. Moderator, Autor, Inspektoren und Protokollant durchlaufen sechs Phasen, Planung, Übersicht, Vorbereitung, Inspektionssitzung, Nachbearbeitung und Nachverfolgung, jede mit Ein- und Ausstiegskriterien. Defekte werden nach Typ und Schweregrad klassifiziert, und die gesammelten Kennzahlen verbessern das Produkt und den Inspektionsprozess selbst.
 
 [%collapsible]
 ====

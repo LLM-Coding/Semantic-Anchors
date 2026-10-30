@@ -5,6 +5,7 @@
 :tags: CERC, crisis communication, risk communication, incident communication, be first, be right, be credible, uncertainty, Reynolds, Seeger, CDC
 :related: bluf, inverted-pyramid-style, plain-english-strunk-white, site-reliability-engineering, four-sides-model
 :tier: 1
+:definition: Crisis and Emergency Risk Communication (CERC) is a framework for communicating before the facts are in, set out as an integrative model by Barbara Reynolds and Matthew W. Seeger and taught by the US Centers for Disease Control and Prevention. Its six principles are Be First, Be Right, Be Credible, Express Empathy, Promote Action and Show Respect. Messages follow the crisis lifecycle from preparation through initial reaction, maintenance and resolution to evaluation.
 :prior-test: 2026-09-24
 :tested-on: haiku-4.5=no, opus-5=yes
 
