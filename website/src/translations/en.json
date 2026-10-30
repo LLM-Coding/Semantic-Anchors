@@ -158,7 +158,7 @@
   "anchor.testedNoEffect": "tested, but the result was not distinguishable from a prompt without the anchor",
   "anchor.testedMeasured": "measured",
   "anchor.exampleImageAlt": "Example: a page redesigned in the style of {title}",
-  "anchor.exampleImageCaption": "What Claude Opus 5.5 makes of the name alone. It got an existing page and a prompt that named only the style: no description, no reference images. One session, which checked its own screenshots; no rerolls.",
+  "anchor.exampleImageCaption": "What Claude Opus 5.5 makes of the name alone. It got an existing page and a prompt that named only the anchor: no description, no reference images. One session, no rerolls.",
   "anchor.exampleImageLink": "All examples and the prompt",
   "hero.talkCatalogTitle": "Or talk this site over",
   "hero.talkCatalogHint": "Hands an index of everything here — documentation, contracts, all anchors — to your own LLM. It fetches what your question needs."

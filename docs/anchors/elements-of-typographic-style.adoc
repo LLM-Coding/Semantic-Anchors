@@ -8,6 +8,7 @@
 :definition: The Elements of Typographic Style is Robert Bringhurst's 1992 reference work on book typography, now in version 4.0. As an instruction it brings a comfortable measure, careful leading, old-style figures in running text, small caps for abbreviations, indented paragraphs and hanging punctuation.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: elements-of-typographic-style.webp
 
 [%collapsible]
 ====

@@ -8,6 +8,7 @@
 :definition: Refactoring UI is a book by Adam Wathan and Steve Schoger with practical visual design tactics for developers. It teaches hierarchy through weight and colour instead of size alone, a predefined spacing and type scale, fewer borders, full colour palettes and shadows that convey elevation.
 :prior-test: 2026-10-28
 :tested-on: haiku-5-5=no, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: refactoring-ui.webp
 
 [%collapsible]
 ====

@@ -158,7 +158,7 @@
   "anchor.testedNoEffect": "getestet, aber das Ergebnis war nicht von einem Prompt ohne den Anker zu unterscheiden",
   "anchor.testedMeasured": "gemessen am",
   "anchor.exampleImageAlt": "Beispiel: eine Seite, neu gestaltet im Stil von {title}",
-  "anchor.exampleImageCaption": "Was Claude Opus 5.5 allein aus dem Namen macht. Es bekam eine bestehende Seite und einen Prompt, der nur den Stil nannte: keine Beschreibung, keine Referenzbilder. Eine Session, die ihre eigenen Screenshots prüfte; keine Neuversuche.",
+  "anchor.exampleImageCaption": "Was Claude Opus 5.5 allein aus dem Namen macht. Es bekam eine bestehende Seite und einen Prompt, der nur den Anker nannte: keine Beschreibung, keine Referenzbilder. Eine Session, keine Neuversuche.",
   "anchor.exampleImageLink": "Alle Beispiele und der Prompt",
   "hero.talkCatalogTitle": "Oder besprich diese Site",
   "hero.talkCatalogHint": "Übergibt einen Index von allem hier — Doku, Contracts, alle Anchors — an deinen eigenen LLM. Er holt sich, was deine Frage braucht."

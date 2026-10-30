@@ -34,14 +34,15 @@ const TEXT = {
     title: 'Design Styles Compared',
     intro: [
       'Two comparisons, each on its own starting page: visual styles redesign a homepage, design systems an app page. Each page is redesigned once per anchor name, and each version comes from a separate Claude Opus 5.5 session that got the same prompt with only the name changed:',
-      'The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No description, no reference images, one run per anchor, no rerolls; each session checked its own result in a browser. Each style tile links to its anchor.',
+      'The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No description, no reference images, one run per anchor, no rerolls; each session checked its own result in a browser, with one exception noted below. Each style tile links to its anchor.',
       'One run shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.',
     ],
     sections: {
       homepage: {
-        heading: 'Styles: one homepage',
+        heading: 'Styles and rule sets: one homepage',
         intro: [
           `The first tile is the original, https://rdmueller.github.io/[rdmueller.github.io] as of 28 October 2026. How these examples came about, and what stood out in each: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Material Design 3, Apple's Human Interface Guidelines and the GOV.UK Design System are design systems, but their examples come from that run and stay here.`,
+          "Refactoring UI and Bringhurst's The Elements of Typographic Style are rule sets, not styles. Their tiles were added on 30 October 2026 with the same prompt, one run each, and show what the rules change on the same homepage: Bringhurst's rules show in the type at first glance; Refactoring UI's show more quietly, in hierarchy, spacing and colour. The Refactoring UI session checked its result in a browser; the Bringhurst session compared the text of every page with the original but does not say it looked at the result.",
         ],
         originalAlt: 'The original homepage before any redesign',
         alt: (t) => `The homepage redesigned in the style of ${t}`,
@@ -62,14 +63,15 @@ const TEXT = {
     title: 'Design-Stile im Vergleich',
     intro: [
       'Zwei Vergleiche, jeder auf einer eigenen Ausgangsseite: Visuelle Stile gestalten eine Homepage neu, Design-Systeme eine App-Seite. Jede Seite wird einmal pro Ankername neu gestaltet; jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam, nur der Name änderte sich:',
-      'Keine Beschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihr Ergebnis im Browser. Jede Stil-Kachel verlinkt ihren Anker.',
+      'Keine Beschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihr Ergebnis im Browser, mit einer unten genannten Ausnahme. Jede Stil-Kachel verlinkt ihren Anker.',
       'Ein Lauf zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.',
     ],
     sections: {
       homepage: {
-        heading: 'Stile: eine Homepage',
+        heading: 'Stile und Regelwerke: eine Homepage',
         intro: [
           `Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026. Wie diese Beispiele entstanden sind und was jeweils auffiel: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Material Design 3, Apples Human Interface Guidelines und das GOV.UK Design System sind Design-Systeme, ihre Beispiele stammen aber aus diesem Lauf und bleiben hier.`,
+          'Refactoring UI und Bringhursts The Elements of Typographic Style sind Regelwerke, keine Stile. Ihre Kacheln kamen am 30. Oktober 2026 mit demselben Prompt hinzu, je ein Lauf, und zeigen, was die Regeln an derselben Homepage ändern: Bringhursts Regeln sieht man sofort an der Schrift; die von Refactoring UI zeigen sich leiser, in Hierarchie, Abständen und Farbe. Die Session zu Refactoring UI prüfte ihr Ergebnis im Browser; die Session zu Bringhurst verglich den Text jeder Seite mit dem Original, sagt aber nicht, dass sie sich das Ergebnis angesehen hat.',
         ],
         originalAlt: 'Die ursprüngliche Homepage vor der Neugestaltung',
         alt: (t) => `Die Homepage, neu gestaltet im Stil von ${t}`,

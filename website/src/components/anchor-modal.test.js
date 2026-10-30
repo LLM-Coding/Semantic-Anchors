@@ -393,7 +393,7 @@ describe('anchor-modal', () => {
 
         const figure = document.querySelector('#modal-content figure.anchor-example-image')
         expect(figure.querySelector('figcaption').textContent).toContain('Claude Opus 5.5')
-        expect(figure.querySelector('figcaption').textContent).toContain('Stil')
+        expect(figure.querySelector('figcaption').textContent).toContain('Referenzbilder')
         expect(figure.querySelector('img').getAttribute('alt')).toContain('Schweizer Stil')
         const link = figure.querySelector('figcaption a')
         expect(link.getAttribute('href')).toMatch(/\/de\/style-gallery$/)
