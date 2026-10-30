@@ -3,7 +3,7 @@
 :roles: software-developer
 :proponents: Community
 :tier: 3
-:definition: Long Sample Anchor is a fixture whose curated definition runs well past the length a search result shows, so the meta description has to be cut at a word boundary. The second sentence only exists to push the text over the limit, and the third sentence makes sure of it.
+:definition: Long Sample Anchor is a fixture whose curated definition runs well past the length a search result shows, so the meta description has to be cut. The second sentence only exists to push the text over the limit, and the third sentence makes sure of it.
 
 [%collapsible]
 ====

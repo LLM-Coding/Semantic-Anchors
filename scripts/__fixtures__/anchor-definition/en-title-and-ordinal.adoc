@@ -1,0 +1,11 @@
+= Title Sample Anchor
+:categories: testing-quality
+:roles: software-developer
+:proponents: Michael Nygard
+:tier: 3
+:definition: Title Sample Anchor is a fixture from Michael Nygard's Release It! and from Code Complete (2. Auflage, 2004), whose first sentence keeps going so that a cut at either mark would leave a stub. It ends here, after a second sentence that pushes the text past the limit of the description.
+
+[%collapsible]
+====
+Also known as:: Title Sample
+====

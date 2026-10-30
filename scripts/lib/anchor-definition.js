@@ -67,13 +67,37 @@ function getAnchorDefinition(filePathRel) {
 /** Longest meta description we emit; search results show less, but cut later. */
 const META_DESCRIPTION_MAX = 220
 
+/** A sentence that a full sentence after it may follow, if it is not this short. */
+const MIN_SENTENCE = 80
+
 /**
- * The anchor's meta description: its curated definition, cut at a word boundary
- * when longer than META_DESCRIPTION_MAX. Null without a definition.
+ * Sentence ends: `.`, `!` or `?` before a space and a capital letter, but not
+ * after an initial ("E. St. Elmo"), a common abbreviation ("e.g.", "St.") or a
+ * digit (German ordinals: "2. Auflage"). The capital keeps titles such as
+ * "Release It! and" whole.
+ */
+const SENTENCE_END =
+  /(?<!\b[A-Z])(?<!\d)(?<!\b(?:e\.g|i\.e|vs|St|Dr|Mr|Ms|Mrs|No|etc|ca|bzw|z\.B|d\.h|u\.a))[.!?](?=\s+[A-ZÄÖÜ„"“])/g
+
+/** Cut text to max: after the last full sentence that fits, else at a word boundary. */
+function cutAtSentence(text, max) {
+  if (text.length <= max) return text
+  let end = -1
+  for (const m of text.matchAll(SENTENCE_END)) {
+    if (m.index + 1 > max) break
+    end = m.index + 1
+  }
+  return end >= MIN_SENTENCE ? text.slice(0, end) : capLength(text, max)
+}
+
+/**
+ * The anchor's meta description: its curated definition, cut to at most
+ * META_DESCRIPTION_MAX characters (plus an ellipsis when cut mid-sentence).
+ * Null without a definition.
  */
 function getAnchorMetaDescription(filePathRel) {
   const def = getAnchorDefinition(filePathRel)
-  return def ? capLength(def.text, META_DESCRIPTION_MAX) : null
+  return def ? cutAtSentence(def.text, META_DESCRIPTION_MAX) : null
 }
 
 module.exports = { getAnchorDefinition, getAnchorMetaDescription, cleanAdoc, capLength }

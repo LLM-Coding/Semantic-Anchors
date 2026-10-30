@@ -45,11 +45,30 @@ describe('getAnchorMetaDescription', () => {
     )
   })
 
-  it('cuts a long definition at a word boundary within 220 characters', () => {
-    const meta = getAnchorMetaDescription(`${FIXTURES}/en-long-definition.adoc`)
-    expect(meta.length).toBeLessThanOrEqual(221)
+  it('ends a long definition after the last full sentence that fits', () => {
+    expect(getAnchorMetaDescription(`${FIXTURES}/en-long-definition.adoc`)).toBe(
+      'Long Sample Anchor is a fixture whose curated definition runs well past the length a search result shows, so the meta description has to be cut.'
+    )
+  })
+
+  it.each([
+    ['a title with an exclamation mark', 'Release It! and'],
+    ['a German ordinal', '(2. Auflage'],
+  ])('does not end a sentence at %s', (_, phrase) => {
+    const meta = getAnchorMetaDescription(`${FIXTURES}/en-title-and-ordinal.adoc`)
+    expect(meta).toContain(phrase)
+  })
+
+  it('does not end a sentence at an initial or an abbreviation', () => {
+    const meta = getAnchorMetaDescription(`${FIXTURES}/en-initials.adoc`)
     expect(meta.endsWith('…')).toBe(true)
-    expect(meta.startsWith('Long Sample Anchor is a fixture')).toBe(true)
+    expect(meta).not.toMatch(/ (E|St|e\.g)\.$/)
+  })
+
+  it('cuts at a word boundary when no sentence ends within 220 characters', () => {
+    const meta = getAnchorMetaDescription(`${FIXTURES}/en-initials.adoc`)
+    expect(meta.length).toBeLessThanOrEqual(221)
+    expect(meta.startsWith('Initials Sample Anchor is a fixture')).toBe(true)
     expect(meta).not.toMatch(/\s…$/)
   })
 

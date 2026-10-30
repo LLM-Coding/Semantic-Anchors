@@ -1,0 +1,11 @@
+= Initials Sample Anchor
+:categories: testing-quality
+:roles: software-developer
+:proponents: E. St. Elmo Lewis
+:tier: 3
+:definition: Initials Sample Anchor is a fixture attributed to E. St. Elmo Lewis whose first sentence, e.g. this one, keeps running with clause after clause and never reaches its end within the limit, because it lists one more item, and another, and yet another one after that. It ends here.
+
+[%collapsible]
+====
+Also known as:: Initials Sample
+====
