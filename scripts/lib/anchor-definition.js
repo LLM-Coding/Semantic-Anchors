@@ -23,7 +23,8 @@ function cleanAdoc(s) {
     .replace(/link:[^[]*\[([^\]]*)\]/g, '$1') // link:url[text] -> text
     .replace(/<<[^,>]+,\s*([^>]+)>>/g, '$1') // <<id,text>> -> text
     .replace(/<<([^>]+)>>/g, '$1') // <<id>> -> id
-    .replace(/[*_`]/g, '') // bold/italic/mono markers
+    .replace(/[*`]/g, '') // bold/mono markers
+    .replace(/(?<!\w)_+|_+(?!\w)/g, '') // italic markers, not underscores inside identifiers
     .replace(/\s+/g, ' ')
     .trim()
 }

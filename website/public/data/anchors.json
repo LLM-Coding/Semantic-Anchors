@@ -810,7 +810,7 @@
     ],
     "filePath": "docs/anchors/bem-methodology.adoc",
     "tier": 3,
-    "definition": "BEM (Block Element Modifier) is a naming methodology for CSS and SCSS from the Yandex development team. Each class name follows the blockelement--modifier structure: a block is a standalone component, an element is a part of a block with no meaning on its own, and a modifier is a flag that changes appearance or behavior. Flat selectors and explicit names avoid specificity wars and naming conflicts in large codebases.",
+    "definition": "BEM (Block Element Modifier) is a naming methodology for CSS and SCSS from the Yandex development team. Each class name follows the block__element--modifier structure: a block is a standalone component, an element is a part of a block with no meaning on its own, and a modifier is a flag that changes appearance or behavior. Flat selectors and explicit names avoid specificity wars and naming conflicts in large codebases.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {

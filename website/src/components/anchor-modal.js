@@ -180,6 +180,16 @@ function renderSubAnchorList(subAnchorIds, allAnchors) {
 }
 
 /**
+ * The curated `:definition:` attribute from an anchor file's header, or null.
+ * The header ends at the first blank line.
+ */
+export function definitionOf(adocContent) {
+  const header = String(adocContent).split(/\r?\n\s*\r?\n/, 1)[0]
+  const match = header.match(/^:definition:[ \t]+(.+)$/m)
+  return match ? match[1].trim() : null
+}
+
+/**
  * Every call to loadAnchorContent takes the next number; only the newest call is
  * allowed to touch the DOM. Without that, two quick clicks race: the slower
  * earlier fetch finishes last and writes its anchor over the one the reader is
@@ -297,10 +307,13 @@ export async function loadAnchorContent(anchorId) {
     // Direct-answer lead (#580): a curated standalone definition, shown above the
     // content as the "What is X?" answer. Only curated definitions land here, so it
     // never duplicates the Core-Concept text rendered below. textContent, no sink.
-    if (currentAnchor?.definition) {
+    // The lead is the :definition: of the file just loaded, so it is always in
+    // the language of the content below it (#865).
+    const definition = definitionOf(adocContent)
+    if (definition) {
       const lead = document.createElement('p')
       lead.className = 'anchor-answer-lead'
-      lead.textContent = currentAnchor.definition
+      lead.textContent = definition
       contentEl.insertBefore(lead, contentEl.firstChild)
     }
 

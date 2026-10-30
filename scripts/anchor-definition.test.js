@@ -2,7 +2,11 @@ import { describe, it, expect } from 'vitest'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { getAnchorDefinition, getAnchorMetaDescription } from './lib/anchor-definition.js'
+import {
+  getAnchorDefinition,
+  getAnchorMetaDescription,
+  cleanAdoc,
+} from './lib/anchor-definition.js'
 
 const FIXTURES = 'scripts/__fixtures__/anchor-definition'
 const ANCHORS_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs', 'anchors')
@@ -35,6 +39,19 @@ describe('getAnchorDefinition', () => {
       (f) => getAnchorDefinition(`docs/anchors/${f}`)?.source !== 'curated'
     )
     expect(missing).toEqual([])
+  })
+})
+
+describe('cleanAdoc', () => {
+  it('strips bold, italic and monospace markers', () => {
+    expect(cleanAdoc('*Bold*, _italic_ and `mono` text')).toBe('Bold, italic and mono text')
+  })
+
+  // CodeRabbit on #889: BEM's block__element--modifier lost its underscores.
+  it('keeps underscores inside identifiers', () => {
+    expect(cleanAdoc('the block__element--modifier structure and snake_case names')).toBe(
+      'the block__element--modifier structure and snake_case names'
+    )
   })
 })
 
