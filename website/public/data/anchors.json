@@ -3063,6 +3063,7 @@
         "works": true
       }
     ],
+    "exampleImage": "elements-of-typographic-style.webp",
     "definition": "The Elements of Typographic Style is Robert Bringhurst's 1992 reference work on book typography, now in version 4.0. As an instruction it brings a comfortable measure, careful leading, old-style figures in running text, small caps for abbreviations, indented paragraphs and hanging punctuation.",
     "addedAt": "2026-10-28T23:45:33+01:00"
   },
@@ -8081,6 +8082,7 @@
         "works": true
       }
     ],
+    "exampleImage": "refactoring-ui.webp",
     "definition": "Refactoring UI is a book by Adam Wathan and Steve Schoger with practical visual design tactics for developers. It teaches hierarchy through weight and colour instead of size alone, a predefined spacing and type scale, fewer borders, full colour palettes and shadows that convey elevation.",
     "addedAt": "2026-10-28T23:45:34+01:00"
   },
