@@ -3,7 +3,7 @@
 :roles: software-developer
 :proponents: Community
 :tier: 3
-:definition: End Quote Anchor ist ein Fixture, dessen erster Satz eine ganze Weile läuft und mit einem Zitat endet: „Sei streng in dem, was du sendest, und großzügig in dem, was du annimmst.“ Danach folgt ein zweiter Satz, der den Text über die Grenze schiebt.
+:definition: End Quote Anchor endet mit einem Zitat: „Sei streng in dem, was du sendest, und großzügig in dem, was du annimmst.“ Danach folgt ein zweiter Satz, der den Text über die Grenze schiebt.
 
 [%collapsible]
 ====

@@ -81,11 +81,11 @@ describe('getAnchorMetaDescription', () => {
     const meta = getAnchorMetaDescription(`${FIXTURES}/${fixture}.adoc`)
     expect(meta).toContain(phrase)
     expect(meta.endsWith('…')).toBe(true)
-    expect(meta.length).toBeLessThanOrEqual(221)
+    expect(meta.length).toBeLessThanOrEqual(160)
     expect(meta).not.toMatch(/\s…$/)
   })
 
-  it('cuts at a word boundary rather than end on a first sentence under 80 characters', () => {
+  it('cuts at a word boundary rather than end on a first sentence under 40 characters', () => {
     const meta = getAnchorMetaDescription(`${FIXTURES}/short-first.adoc`)
     expect(meta.startsWith('Short First Anchor is a fixture. Its second sentence')).toBe(true)
     expect(meta.endsWith('…')).toBe(true)
@@ -99,9 +99,9 @@ describe('getAnchorMetaDescription', () => {
     expect(getAnchorMetaDescription(`${FIXTURES}/end-quote.adoc`)).toMatch(/annimmst\.“$/)
   })
 
-  it('stays within 221 characters for every anchor file', () => {
+  it('stays within the 160 characters prerender-routes.js allows, for every anchor file', () => {
     const tooLong = anchorFiles().filter(
-      (f) => (getAnchorMetaDescription(`docs/anchors/${f}`) || '').length > 221
+      (f) => (getAnchorMetaDescription(`docs/anchors/${f}`) || '').length > 160
     )
     expect(tooLong).toEqual([])
   })

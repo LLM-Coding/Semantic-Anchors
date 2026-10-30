@@ -65,11 +65,15 @@ function getAnchorDefinition(filePathRel) {
   return curated ? { text: curated, source: 'curated' } : null
 }
 
-/** Longest meta description we emit; search results show less, but cut later. */
-const META_DESCRIPTION_MAX = 220
+/**
+ * Longest meta description we emit. prerender-routes.js caps at the same 160
+ * characters (Google truncates around there), so a text cut here passes through
+ * unchanged and keeps its sentence end.
+ */
+const META_DESCRIPTION_MAX = 160
 
 /** Shortest first sentence we end on; a shorter one falls back to a word cut. */
-const MIN_SENTENCE = 80
+const MIN_SENTENCE = 40
 
 /**
  * Sentence ends: `.`, `!` or `?`, optionally followed by a closing quotation
@@ -94,7 +98,8 @@ function cutAtSentence(text, max) {
     if (stop > max) break
     end = stop
   }
-  return end >= MIN_SENTENCE ? text.slice(0, end) : capLength(text, max)
+  // max - 1 leaves room for the ellipsis, so the result never exceeds max.
+  return end >= MIN_SENTENCE ? text.slice(0, end) : capLength(text, max - 1)
 }
 
 /**
