@@ -5,6 +5,7 @@
 :tags: second-order thinking, second-level thinking, consequences of consequences, unintended consequences, decision making, mental models, Marks, Dalio
 :related: first-principles-thinking, premortem, five-whys, cynefin-framework
 :tier: 3
+:definition: Second-Order Thinking is the decision-making habit of asking “and then what?”: following a decision past its intended first-order effect to what happens once people adapt to it. Howard Marks calls it second-level thinking, and Ray Dalio speaks of second- and third-order consequences. The technique follows one consequence into the next instead of listing more effects at the same level; the decisive effects are usually delayed and behavioural, and inaction gets the same analysis.
 :prior-test: 2026-08-14
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
 

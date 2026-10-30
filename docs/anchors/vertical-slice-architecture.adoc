@@ -5,6 +5,7 @@
 :proponents: Jimmy Bogard
 :tags: feature slices, vertical slices, VSA, feature cohesion, CQRS
 :tier: 3
+:definition: Vertical Slice Architecture (VSA) is Jimmy Bogard's approach to organising code by feature instead of by horizontal technical layer. Each feature forms an end-to-end slice spanning request, validation, domain logic, persistence and API, with only a thin shared layer underneath. Slices pair naturally with command/query separation, evolve independently and reduce coupling between features.
 
 [%collapsible]
 ====

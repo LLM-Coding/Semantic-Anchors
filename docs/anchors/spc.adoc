@@ -5,6 +5,7 @@
 :tags: SPC, statistical process control, control charts, Shewhart, quality, variation
 :related: control-chart-shewhart, nelson-rules, dmaic
 :tier: 3
+:definition: Statistical Process Control (SPC) is a quality method, founded by Walter A. Shewhart and disseminated by W. Edwards Deming, for the systematic statistical monitoring of running processes. Using control charts and detection rules such as the Nelson Rules, it separates inherent, predictable common cause variation from assignable special cause variation that calls for intervention. A process showing only common causes is in control, and SPC secures improvements in the Control phase of DMAIC.
 :sub-anchors: control-chart-shewhart, nelson-rules
 
 [%collapsible]

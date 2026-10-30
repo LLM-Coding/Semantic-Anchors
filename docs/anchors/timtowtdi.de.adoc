@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect, consultant, educator
 :proponents: Larry Wall
 :tier: 1
+:definition: TIMTOWTDI (There Is More Than One Way To Do It, auch Tim Toady) ist die Designphilosophie von Larry Walls Programmiersprache Perl. Sie geht davon aus, dass Probleme mehrere gleichermaßen valide Lösungen haben und die beste von Rahmenbedingungen, Team und Situation abhängt. Sie stellt Flexibilität, Ausdruckskraft und Trade-off-Bewusstsein über erzwungene Einheitlichkeit und bildet damit den Gegenpol zum Zen von Python mit seinem einen offensichtlichen Weg.
 :tags: TIMTOWTDI, there is more than one way to do it, Perl, Larry Wall, flexibility
 :related: unix-philosophy, effective-go, kiss-principle
 

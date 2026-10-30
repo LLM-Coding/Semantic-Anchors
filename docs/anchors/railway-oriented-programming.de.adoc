@@ -5,6 +5,7 @@
 :tags: ROP, Railway Oriented Programming, Zweispur-Modell, Erfolgsspur, Fehlerspur, Result, Either, Fehler als Werte, bind, flatMap, map, mapError, Kurzschluss, F#, Rust, Wlaschin
 :related: design-by-contract, domain-driven-design, postels-law, code-smells
 :tier: 3
+:definition: Railway Oriented Programming ist Scott Wlaschins Metapher aus den Jahren 2013 und 2014 für das Komponieren fehlbarer Funktionen: eine Erfolgsspur und eine Fehlerspur, an jedem Schritt eine Weiche dazwischen. Fehler werden zu Werten in einem Result-artigen Rückgabetyp, Kombinatoren wie bind, map und mapError verbinden die Schritte, und der erste Fehler überspringt alle weiteren. Wlaschin selbst begrenzt den Stil auf erwartete Fehlschläge an den Rändern, nicht auf jeden Fehler.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

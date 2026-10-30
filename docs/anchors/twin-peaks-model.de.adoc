@@ -5,6 +5,7 @@
 :tags: Twin Peaks, Anforderungen und Architektur, parallele Entwicklung, iterative Verfeinerung, Spiralmodell, architekturrelevante Anforderungen, Ko-Evolution, eingefrorene Anforderungen
 :related: req42, arc42, quality-attribute-scenario, atam
 :tier: 2
+:definition: Das Twin-Peaks-Modell ist Bashar Nuseibehs Sicht aus einem Artikel in IEEE Computer von 2001: Requirements Engineering und Architekturentwurf laufen gleichzeitig und haben gleichen Rang. Als feinkörnigere, partielle Spirale verfeinert es Anforderungen und Architektur im Wechsel, und Architekturentscheidungen wirken auf die Anforderungen zurück. Es wendet sich gegen eingefrorene Anforderungsdokumente und zielt auf eine Architektur, die stabil bleibt und sich doch an wechselnde Anforderungen anpasst.
 :prior-test: 2026-10-15
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

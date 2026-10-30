@@ -3,6 +3,7 @@
 :roles: software-developer, team-lead, technical-writer
 :proponents: Combines GitHub-flavoured Markdown task lists with Gina Trapani's todo.txt format
 :tier: 3
+:definition: todo.txt-flavoured Markdown ist eine Konvention für Aufgabenlisten, die die Checkboxen von GitHub-flavoured Markdown mit Gina Trapanis todo.txt-Format verbindet. Jede Aufgabenzeile trägt todo.txt-Prioritäten wie (A), Projekt-Tags mit Plus-Präfix, Kontext-Tags mit At-Präfix, Key-Value-Metadaten wie Fälligkeitsdaten sowie Erstellungs- und Abschlussdaten im ISO-Format. Das Ergebnis bleibt als Klartext lesbar, rendert in Markdown-Viewern und lässt sich mit todo.txt-Tools oder grep filtern.
 :tags: todo.txt, task management, markdown, Gina Trapani, plain text, task lists
 :related: gtd, para-method
 

@@ -5,6 +5,7 @@
 :related: test-double-meszaros, test-double-spy, test-double-mock
 :tags: test-double, stub, testing, isolation, canned-response
 :tier: 3
+:definition: A Stub is a test double in Gerard Meszaros' taxonomy from xUnit Test Patterns (2007) that supplies predefined, canned responses to calls made during a test. It returns fixed values regardless of input and never verifies interactions, so it never fails a test. Stubs isolate the system under test from external dependencies such as databases or APIs and suit state-based Chicago School TDD.
 :parent-anchor: test-double-meszaros
 
 [%collapsible]

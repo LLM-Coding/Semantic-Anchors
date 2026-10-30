@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: solid-principles
 :tier: 3
+:definition: The Open/Closed Principle (OCP) is the SOLID design principle, associated with Bertrand Meyer and Robert C. Martin, that software entities should be open for extension but closed for modification. New behaviour comes from adding new code, not from changing existing working code. Plugin or strategy-based extension mechanisms, such as the GoF Strategy pattern, are common ways to achieve this.
 :proponents: Robert C. Martin, Bertrand Meyer
 :tags: SOLID, design principle, OCP, open closed
 :related: solid-principles, solid-lsp, solid-srp

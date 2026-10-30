@@ -5,6 +5,7 @@
 :tags: MISRA C, MISRA, Programmierrichtlinie, Codierstandard, sichere Teilmenge, Embedded C, sicherheitskritisch, Automotive, Essential Type Model, Abweichung, Deviation, Compliance, statische Analyse, mandatory required advisory
 :related: iec-61508-sil-levels, defensive-programming, poka-yoke
 :tier: 3
+:definition: MISRA C ist ein Codierstandard von MISRA, ursprünglich der Motor Industry Software Reliability Association, der eine sichere Teilmenge von C für kritische Systeme definiert; die erste Ausgabe erschien 1998 für Software in Fahrzeugen. Er streicht oder beschränkt Sprachteile mit undefiniertem oder unspezifiziertem Verhalten und ordnet jede Richtlinie als Mandatory, Required oder Advisory ein. Compliance heißt, dass jede Verletzung behoben oder durch eine dokumentierte Abweichung gedeckt ist, nicht null Warnungen.
 :prior-test: 2026-10-09
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

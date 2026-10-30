@@ -4,6 +4,7 @@
 :related: arc42, cohesion-criteria
 :proponents: Meir M. Lehman
 :tier: 2
+:definition: Lehmans Software-Klassifikation ist Meir M. Lehmans 1980 veröffentlichte Taxonomie, die Software nach ihrer Beziehung zur realen Welt ordnet: S-Type ist vollständig spezifizierbar, P-Type nähert ein reales Problem an, und E-Type wird Teil der Welt, die es verändert. Weil der Einsatz eines E-Type-Systems seine eigenen Anforderungen ändert, leitete Lehman acht Gesetze der Software-Evolution ab, etwa Continuing Change und Increasing Complexity. Die Klassifikation erklärt, warum fertige Business-Software laufende Investitionen braucht.
 :tags: klassifikation, software-evolution, requirements, wartung, s-type, p-type, e-type
 
 [%collapsible]

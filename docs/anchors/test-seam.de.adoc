@@ -5,6 +5,7 @@
 :proponents: Michael Feathers
 :tags: legacy-code, seams, testability, refactoring, dependency-breaking
 :tier: 2
+:definition: Ein Test Seam (Naht) ist nach Michael Feathers in Working Effectively with Legacy Code (2004) eine Stelle im Programm, an der sich das Verhalten ändern lässt, ohne den Code genau dort zu bearbeiten. Zu jeder Naht gehört ein Enabling Point, an dem das Ersatzverhalten gewählt wird; Feathers unterscheidet Object, Link und Preprocessing Seams. Nähte lösen fest verdrahtete Abhängigkeiten und bringen Legacy-Code unter Test, ohne die Produktionslogik vorab umzubauen.
 
 [%collapsible]
 ====

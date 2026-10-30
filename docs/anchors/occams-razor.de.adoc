@@ -5,6 +5,7 @@
 :proponents: William of Ockham
 :tags: heuristik, sparsamkeit, epistemologie, einfachheit, hypothesenauswahl
 :tier: 2
+:definition: Occams Rasiermesser, auch Sparsamkeitsprinzip, ist die nach Wilhelm von Ockham benannte Heuristik: Von Hypothesen, die dieselben Beobachtungen gleich gut erklären, bevorzugt man die mit den wenigsten Annahmen. Sie arbeitet auf der Ebene der Erklärungen, nicht der Lösungen, und zeigt beim Debugging, bei der Diagnose oder im Architektur-Review, welche Hypothese zuerst zu prüfen ist. Sie ist ein Prior, kein Beweis, dass die einfachere Antwort wahr ist, und gehört mit Evidenz gepaart.
 
 [%collapsible]
 ====

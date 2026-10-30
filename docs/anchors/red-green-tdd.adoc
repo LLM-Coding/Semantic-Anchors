@@ -5,6 +5,7 @@
 :proponents: Kent Beck
 :tags: tdd, testing, red-green-refactor, test-first, classical
 :tier: 3
+:definition: Red/Green TDD is Kent Beck's classical test-driven development cycle, described in Test-Driven Development: By Example (2002): write a failing test first (red), write the minimum code that makes it pass (green), then refactor with the tests as a safety net. Cycles are deliberately small, only one test fails at a time, and generalisation happens during refactoring. Simon Willison popularised the cycle as an instruction for LLM coding agents.
 
 [%collapsible]
 ====

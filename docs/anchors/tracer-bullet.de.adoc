@@ -5,6 +5,7 @@
 :proponents: Andy Hunt, David Thomas
 :tags: architecture, validation, end-to-end, iterative, direction-finding
 :tier: 3
+:definition: Tracer-Bullet-Entwicklung aus The Pragmatic Programmer (1999) von Andrew Hunt und David Thomas baut eine dünne, absichtlich unvollständige Scheibe, die alle Teile des endgültigen Systems auf echter Infrastruktur berührt. Sie zeigt früh, ob Architektur, Tech-Stack und Service-Grenzen tatsächlich zusammenarbeiten. Anders als bei Spike oder Prototyp wird Tracer-Code behalten und verfeinert, und jeder weitere Tracer justiert das Ziel nach.
 
 [%collapsible]
 ====

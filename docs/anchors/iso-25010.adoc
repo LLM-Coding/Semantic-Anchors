@@ -5,6 +5,7 @@
 :proponents: ISO/IEC JTC 1/SC 7
 :tags: quality model, software quality, quality attributes, product quality, quality in use, assessment, ISO, IEC
 :tier: 3
+:definition: ISO/IEC 25010 is the SQuaRE product quality model from ISO/IEC JTC 1/SC 7, which replaced ISO/IEC 9126 and gives stakeholders a shared vocabulary for software quality. The 2011 edition defines eight characteristics, from Functional Suitability to Portability, each with sub-characteristics, plus a Quality in Use model with five characteristics. The current 2023 edition has nine characteristics and adds Safety, so name the edition when the difference matters.
 
 [%collapsible]
 ====

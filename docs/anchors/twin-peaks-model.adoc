@@ -5,6 +5,7 @@
 :tags: twin peaks, requirements and architecture, concurrent development, iterative refinement, spiral model, architecturally significant requirements, co-evolution, frozen requirements
 :related: req42, arc42, quality-attribute-scenario, atam
 :tier: 2
+:definition: The Twin Peaks model is Bashar Nuseibeh's view, from a 2001 IEEE Computer article, that requirements engineering and architectural design proceed concurrently and with equal status. As a finer-grained partial spiral, it refines requirements and architecture in alternation, with architectural decisions feeding back into the requirements. It rejects frozen requirements documents and aims for an architecture that stays stable yet adapts as requirements change.
 :prior-test: 2026-10-15
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

@@ -5,6 +5,7 @@
 :related: test-double-meszaros, test-double-spy, test-double-stub, tdd-london-school
 :tags: test-double, mock, testing, isolation, interaction-verification
 :tier: 3
+:definition: A Mock is a test double in Gerard Meszaros' taxonomy from xUnit Test Patterns (2007) that is pre-programmed with expectations about which calls the system under test should make. Its built-in assertions fail the test immediately on a wrong method, wrong arguments or wrong order. Unlike a Stub it actively verifies behaviour, and unlike a Spy it enforces expectations during execution, which suits interaction-based London School TDD.
 :parent-anchor: test-double-meszaros
 
 [%collapsible]

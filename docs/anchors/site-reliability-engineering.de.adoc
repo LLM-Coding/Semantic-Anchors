@@ -5,6 +5,7 @@
 :proponents: Ben Treynor Sloss, Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy
 :tags: sre, reliability, slo, error-budget, observability, devops, incident-response, toil, resilience, feedback
 :tier: 3
+:definition: Site Reliability Engineering (SRE) ist die Disziplin, die Betrieb als Softwareproblem behandelt; Ben Treynor Sloss prägte den Begriff bei Google. Service Level Indicators und Objectives messen die Zuverlässigkeit, und das Fehlerbudget, also die Unzuverlässigkeit, die ein SLO erlaubt, wird für Entwicklungsgeschwindigkeit und Risiko ausgegeben. Dazu kommen Toil eliminieren, schuldlose Postmortems, die vier goldenen Signale sowie automatisiertes Release- und Kapazitäts-Engineering, wie es das O'Reilly-Buch von 2016 von Beyer, Jones, Petoff und Murphy beschreibt.
 
 [%collapsible]
 ====

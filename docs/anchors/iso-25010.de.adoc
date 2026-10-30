@@ -4,6 +4,7 @@
 :related: atam, arc42, adr-according-to-nygard
 :proponents: ISO/IEC JTC 1/SC 7
 :tier: 3
+:definition: ISO/IEC 25010 ist das SQuaRE-Produktqualitätsmodell von ISO/IEC JTC 1/SC 7. Es ersetzt ISO/IEC 9126 und gibt Stakeholdern ein gemeinsames Vokabular für Softwarequalität. Die Ausgabe von 2011 definiert acht Merkmale von Funktionaler Eignung bis Übertragbarkeit, jeweils mit Teilmerkmalen, dazu ein Gebrauchsqualitätsmodell mit fünf Merkmalen. Die aktuelle Ausgabe von 2023 hat neun Merkmale und ergänzt Safety; wo der Unterschied zählt, gehört die Ausgabe genannt.
 :tags: quality model, software quality, quality attributes, product quality, quality in use, assessment, ISO, IEC
 
 [%collapsible]

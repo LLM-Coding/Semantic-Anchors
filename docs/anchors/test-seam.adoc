@@ -5,6 +5,7 @@
 :proponents: Michael Feathers
 :tags: legacy-code, seams, testability, refactoring, dependency-breaking
 :tier: 2
+:definition: A test seam, as defined by Michael Feathers in Working Effectively with Legacy Code (2004), is a place where you can alter a program's behaviour without editing in that place. Each seam has a paired enabling point where the substitute behaviour is chosen, and Feathers distinguishes object, link and preprocessing seams. Seams let developers break hard-wired dependencies and put legacy code under test without first restructuring the production logic.
 
 [%collapsible]
 ====

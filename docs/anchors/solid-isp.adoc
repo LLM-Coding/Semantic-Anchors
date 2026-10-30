@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: solid-principles
 :tier: 3
+:definition: The Interface Segregation Principle (ISP) is the SOLID design principle, attributed to Robert C. Martin, that clients should not be forced to depend on interfaces they do not use. It prefers many specific, client-specific interfaces over one general-purpose interface. This spares classes from implementing methods they do not need and keeps changes to an interface from affecting clients that never call the changed methods.
 :proponents: Robert C. Martin
 :tags: SOLID, design principle, ISP, interface segregation
 :related: solid-principles, solid-dip, solid-srp

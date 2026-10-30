@@ -4,6 +4,7 @@
 :proponents: Peter Naur
 :related: adr-according-to-nygard, docs-as-code
 :tier: 2
+:definition: Programming as Theory Building, das Mental Model nach Peter Naur, beschreibt Programmieren als Aufbau eines mentalen Modells: einer Theorie, warum das Programm funktioniert und wie es zur Problemdomäne passt. Nach Naurs Essay von 1985 existiert das echte Programm in den Köpfen der Entwickler, nicht im Code. Gehen die ursprünglichen Entwickler, zerfällt die Theorie, und Code allein kann sie nicht wiederherstellen; darum zählen Wissenstransfer und die Dokumentation des Warum so viel wie der Code.
 :tags: theory building, Naur, programming as theory building, mental model, tacit knowledge, software maintenance
 
 [%collapsible]
@@ -32,7 +33,7 @@ Ramp-up-Zeit:: Neue Teammitglieder brauchen Zeit, um die Theorie aufzubauen
 Code als Artefakt:: Code ist nur eine Repräsentation der zugrundeliegenden Theorie
 
 
-Schlüsselvertreter:: Peter Naur (Turing Award Gewinner, 1978)
+Schlüsselvertreter:: Peter Naur (Turing-Award-Gewinner, 2005)
 
 Originalwerk:: "Programming as Theory Building" (1985)
 

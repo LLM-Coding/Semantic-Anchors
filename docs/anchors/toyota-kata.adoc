@@ -5,6 +5,7 @@
 :tags: Toyota Kata, Improvement Kata, Coaching Kata, target condition, current condition, scientific thinking, PDCA, five questions, starter kata, obstacle parking lot
 :related: kaizen, genchi-genbutsu, pdca, dmaic, okr
 :tier: 3
+:definition: Toyota Kata is Mike Rother's name, from his 2009 book, for a pair of practice routines derived from observing Toyota: the Improvement Kata for the learner and the Coaching Kata for the coach. The learner sets a direction, grasps the current condition, defines the next target condition as a described process state with a date, and experiments toward it one obstacle at a time. The coach asks five questions, building scientific thinking.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -5,6 +5,7 @@
 :tags: locality of behaviour, locality of behavior, LoB, htmx, co-location, action at a distance, readability, hypermedia, separation of concerns
 :related: separation-of-concerns, dry, deep-modules, solid-srp
 :tier: 3
+:definition: Locality of Behaviour is a design principle named by Carson Gross in a 2020 htmx essay: the behaviour of a unit of code should be as obvious as possible by looking only at that unit of code. It weighs read-time cost over write-time cost, treats behaviour at a distance as the failure mode, and co-locates markup, handlers and styling as the remedy. It openly trades against DRY and Separation of Concerns where those scatter one feature across files.
 :prior-test: 2026-08-14
 :tested-on: haiku-4.5=yes, sonnet-5=yes, opus-5=yes
 

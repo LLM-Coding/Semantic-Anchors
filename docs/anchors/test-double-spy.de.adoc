@@ -5,6 +5,7 @@
 :related: test-double-meszaros, test-double-stub, test-double-mock
 :tags: test-double, spy, testing, isolation, call-recording
 :tier: 3
+:definition: Ein Spy ist ein Test Double in Gerard Meszaros' Taxonomie aus xUnit Test Patterns (2007): ein Stub, der zusätzlich aufzeichnet, wie er aufgerufen wurde, also welche Methoden, mit welchen Argumenten und wie oft. Er gibt vorgefertigte Antworten zurück und protokolliert jede Interaktion stillschweigend zur späteren Prüfung. Die Assertions folgen nach der Aktion im Testkörper, anders als beim Mock, dessen vorprogrammierte Erwartungen sofort fehlschlagen.
 :parent-anchor: test-double-meszaros
 
 [%collapsible]

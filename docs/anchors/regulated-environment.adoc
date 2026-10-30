@@ -5,6 +5,7 @@
 :proponents: FDA (21 CFR Part 11), EMA (GMP Annex 11), ISO 9001, IEC 62304, GAMP 5
 :tags: compliance, validation, traceability, audit-trail, change-control, documentation, GxP, FDA, IEC, ISO
 :tier: 2
+:definition: A Regulated Environment is a software development context governed by regulations and standards such as FDA 21 CFR Part 11, EU GMP Annex 11, GAMP 5 and IEC 62304, where audits by an external authority are expected. It demands end-to-end traceability, formal validation and verification, immutable audit trails, formal change control, separated environments and reproducible builds. Effort and rigour scale with the risk the system poses.
 
 [%collapsible]
 ====

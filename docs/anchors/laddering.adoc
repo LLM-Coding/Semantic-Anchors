@@ -5,6 +5,7 @@
 :proponents: George Kelly, Dennis Hinkle, Thomas Reynolds, Jonathan Gutman
 :tags: interview, elicitation, means-end, user-research, requirements
 :tier: 3
+:definition: Laddering is an interview technique, originated by George Kelly and Dennis Hinkle in Personal Construct Psychology and adapted for marketing research by Thomas J. Reynolds and Jonathan Gutman in 1988, that reconstructs means-end chains from product attributes through consequences to personal values. The interviewer probes upward with why and downward with how, mapping the respondent's value hierarchy in both directions. Unlike Five Whys, it surfaces motivations, not a single root cause.
 
 [%collapsible]
 ====

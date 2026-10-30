@@ -5,6 +5,7 @@
 :tags: SIPOC, COPIS, suppliers inputs process outputs customers, process scoping, high-level process map, define phase, Six Sigma, kaizen, process boundaries
 :related: dmaic, dmadv, ishikawa-diagram, event-storming, mece
 :tier: 3
+:definition: SIPOC is a one-page scoping table from Total Quality Management practice, with no single originator, that names the Suppliers, Inputs, Process, Outputs and Customers of a process. The Process column holds five to seven steps and is usually filled first, then outward to outputs, customers, inputs and suppliers. Its job is to draw the process boundary before improvement starts, typically in the Define phase of DMAIC; COPIS reads the same table customer-first.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 
