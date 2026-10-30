@@ -5,7 +5,7 @@
 :tags: MISRA C, MISRA, coding standard, coding guidelines, safe subset, embedded C, safety-critical, automotive, essential type model, deviation, compliance, static analysis, mandatory required advisory
 :related: iec-61508-sil-levels, defensive-programming, poka-yoke
 :tier: 3
-:definition: MISRA C is a coding standard from MISRA, originally the Motor Industry Software Reliability Association, that defines a safe subset of C for critical systems; its first edition appeared in 1998 for vehicle software. It removes or restricts the parts of the language whose behaviour is undefined or unspecified, and it classifies every guideline as mandatory, required or advisory. Compliance means every violation is either fixed or covered by a documented deviation, not zero warnings.
+:definition: MISRA C is a coding standard from MISRA, originally the Motor Industry Software Reliability Association, that defines a safe subset of C for critical systems; its first edition appeared in 1998 for vehicle software. It removes or restricts the parts of the language whose behaviour is undefined or unspecified, and it classifies every guideline as mandatory, required or advisory. Mandatory guidelines admit no exception, required ones only a formal documented deviation, and advisory ones a project may relax; compliance means every violation is fixed or justified, not zero warnings.
 :prior-test: 2026-10-09
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

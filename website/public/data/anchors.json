@@ -5817,7 +5817,7 @@
     ],
     "filePath": "docs/anchors/kano-model.adoc",
     "tier": 3,
-    "definition": "The Kano Model is Noriaki Kano's customer satisfaction model, first published in 1984 in the Japanese journal Hinshitsu, which treats satisfaction and dissatisfaction as two separate axes. A paired functional and dysfunctional questionnaire sorts each feature into one of five categories: Must-be, One-dimensional, Attractive, Indifferent and Reverse. Categories decay over time, as today's delighter becomes tomorrow's must-be, and the model helps prioritise a backlog beyond raw business value.",
+    "definition": "The Kano Model is Noriaki Kano's customer satisfaction model, first published in 1984 in the Japanese journal Hinshitsu, which plots customer satisfaction against how fully a feature is present instead of treating satisfaction as the simple inverse of dissatisfaction. A paired functional and dysfunctional questionnaire sorts each feature into one of five categories: Must-be, One-dimensional, Attractive, Indifferent and Reverse. Categories decay over time, as today's delighter becomes tomorrow's must-be, and the model helps prioritise a backlog beyond raw business value.",
     "addedAt": "2026-05-08T10:13:27+02:00"
   },
   {
@@ -6722,7 +6722,7 @@
         "works": true
       }
     ],
-    "definition": "MISRA C is a coding standard from MISRA, originally the Motor Industry Software Reliability Association, that defines a safe subset of C for critical systems; its first edition appeared in 1998 for vehicle software. It removes or restricts the parts of the language whose behaviour is undefined or unspecified, and it classifies every guideline as mandatory, required or advisory. Compliance means every violation is either fixed or covered by a documented deviation, not zero warnings.",
+    "definition": "MISRA C is a coding standard from MISRA, originally the Motor Industry Software Reliability Association, that defines a safe subset of C for critical systems; its first edition appeared in 1998 for vehicle software. It removes or restricts the parts of the language whose behaviour is undefined or unspecified, and it classifies every guideline as mandatory, required or advisory. Mandatory guidelines admit no exception, required ones only a formal documented deviation, and advisory ones a project may relax; compliance means every violation is fixed or justified, not zero warnings.",
     "addedAt": "2026-10-09T10:51:36+02:00"
   },
   {
@@ -6981,7 +6981,7 @@
     ],
     "filePath": "docs/anchors/mutation-testing.adoc",
     "tier": 3,
-    "definition": "Mutation Testing is a technique for assessing test-suite quality, founded theoretically by Richard Lipton in 1971 and developed by Richard DeMillo and Timothy Budd, that deliberately injects small syntactic changes, called mutants, into source code. A failing test kills a mutant; mutants that survive reveal weak assertions. The mutation score, the share of killed non-equivalent mutants, asks whether tests are good enough rather than whether coverage is high enough.",
+    "definition": "Mutation Testing is a technique for assessing test-suite quality, founded theoretically by Richard Lipton in 1971 and developed by Richard DeMillo and Timothy Budd, that deliberately injects small syntactic changes, called mutants, into source code. A failing test kills a mutant; mutants that survive point to weak tests, unless they are equivalent mutants that do not change program behavior. The mutation score, the share of killed non-equivalent mutants, asks whether tests are good enough rather than whether coverage is high enough.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -10166,7 +10166,7 @@
     ],
     "filePath": "docs/anchors/todotxt-flavoured-markdown.adoc",
     "tier": 3,
-    "definition": "todo.txt-flavoured Markdown is a task-list convention that combines GitHub-flavoured Markdown checkboxes with Gina Trapani's todo.txt format. Each task line adds todo.txt priorities such as (A), plus-prefixed project tags, at-prefixed context tags, key-value metadata such as due dates, and ISO creation and completion dates. The result stays readable as plain text, renders in Markdown viewers and can be filtered with todo.txt tools or grep.",
+    "definition": "todo.txt-flavoured Markdown is a task-list convention that combines GitHub-flavoured Markdown checkboxes with Gina Trapani's todo.txt format. Each task line adds todo.txt priorities such as (A), plus-prefixed project tags, at-prefixed context tags, key-value metadata such as due dates, and ISO creation and completion dates. The result stays readable as plain text, renders in Markdown viewers, and its tags can be filtered with todo.txt tools or grep.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
