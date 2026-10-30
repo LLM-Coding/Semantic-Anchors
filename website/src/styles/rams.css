@@ -1,0 +1,453 @@
+/*
+ * PoC: the site redesigned after Dieter Rams' ten principles of good design.
+ * "Less, but better" — remove what the reader does not need, keep what helps.
+ *
+ * Loaded after main.css, unlayered, so it overrides Tailwind utilities and
+ * the component rules without touching them. Deleting this file and its import
+ * restores the current design.
+ *
+ * What the principles changed here:
+ * - Unobtrusive: one warm grey surface, black type, hairlines instead of
+ *   shadows, no hover lift, no colour bars, no emoji, no motion.
+ * - Understandable: category chips carry their names, not icons to decode.
+ * - Honest: one accent colour (Braun orange), used only where something acts
+ *   or is selected; warnings stay visible.
+ * - Thorough: one type family, one radius, one border weight everywhere.
+ */
+
+:root {
+  --rams-bg: #f4f3ef;
+  --rams-surface: #fbfaf7;
+  --rams-text: #1c1c1a;
+  --rams-text-2: #5c5b56;
+  --rams-line: #d9d7d0;
+  --rams-line-strong: #1c1c1a;
+  --rams-accent: #c94f0f;
+  --rams-radius: 2px;
+  --rams-font: 'Helvetica Neue', Helvetica, Inter, Arial, sans-serif;
+
+  --color-primary: var(--rams-accent);
+  --color-primary-dark: #a8410b;
+  --color-bg: var(--rams-bg);
+  --color-bg-secondary: var(--rams-surface);
+  --color-text: var(--rams-text);
+  --color-text-secondary: var(--rams-text-2);
+  --color-border: var(--rams-line);
+}
+
+.dark {
+  --rams-bg: #1a1a19;
+  --rams-surface: #222221;
+  --rams-text: #ecebe6;
+  --rams-text-2: #a8a7a1;
+  --rams-line: #3a3936;
+  --rams-line-strong: #ecebe6;
+  --rams-accent: #f07a38;
+
+  --color-primary: var(--rams-accent);
+  --color-primary-dark: #f39a62;
+  --color-bg: var(--rams-bg);
+  --color-bg-secondary: var(--rams-surface);
+  --color-text: var(--rams-text);
+  --color-text-secondary: var(--rams-text-2);
+  --color-border: var(--rams-line);
+}
+
+/* No motion: nothing on this page needs to move to be understood. */
+*,
+*::before,
+*::after {
+  transition: none !important;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body,
+.card-grid-container,
+.card-grid-container *,
+.anchor-card,
+.anchor-card * {
+  font-family: var(--rams-font) !important;
+}
+
+body {
+  background: var(--rams-bg);
+  color: var(--rams-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- One shape everywhere ---------- */
+
+.rounded,
+.rounded-md,
+.rounded-lg,
+.rounded-xl,
+.rounded-full,
+input,
+select,
+button {
+  border-radius: var(--rams-radius) !important;
+}
+
+.shadow,
+.shadow-md,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl {
+  box-shadow: none !important;
+}
+
+.border-2 {
+  border-width: 1px !important;
+}
+
+/* Links: text colour, underlined. The accent is reserved for actions. */
+.text-blue-600,
+.dark .dark\:text-blue-400 {
+  color: var(--rams-text) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rams-line);
+}
+
+/* ---------- Header ---------- */
+
+header {
+  background: var(--rams-bg) !important;
+  border-bottom-color: var(--rams-line) !important;
+}
+
+header .nav-link {
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+header .nav-link.text-\[var\(--color-text\)\],
+header .nav-link[aria-current='page'] {
+  font-weight: 600;
+}
+
+header input,
+header select {
+  background: var(--rams-surface) !important;
+  border: 1px solid var(--rams-line) !important;
+  font-size: 0.9375rem !important;
+}
+
+header input:focus,
+header select:focus {
+  border-color: var(--rams-line-strong) !important;
+  box-shadow: none !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  outline: 2px solid var(--rams-accent) !important;
+  outline-offset: 1px;
+}
+
+/* ---------- Hero ---------- */
+
+#hero h1,
+#hero .text-3xl {
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Prompt comparison: two equal plain panels; the "with anchor" panel is set
+   apart by a single strong rule, not a coloured frame. */
+#hero .border-\[var\(--color-primary\)\] {
+  border: 1px solid var(--rams-line-strong) !important;
+  background: var(--rams-surface) !important;
+}
+
+#hero .bg-\[var\(--color-bg-secondary\)\] {
+  background: transparent !important;
+  border: 1px solid var(--rams-line) !important;
+}
+
+#hero .text-\[var\(--color-primary\)\] {
+  color: var(--rams-text) !important;
+}
+
+/* "How to use" steps: numbers as plain figures, not filled discs. */
+#hero .w-7.h-7.rounded-full {
+  background: transparent !important;
+  color: var(--rams-text) !important;
+  border: 1px solid var(--rams-line-strong);
+  font-weight: 500 !important;
+}
+
+/* ---------- Category quick-nav: names, not icons ---------- */
+
+.category-nav {
+  background: var(--rams-bg);
+  border-bottom: 0;
+}
+
+.category-nav-list {
+  gap: 0.25rem 1.25rem;
+}
+
+.category-nav-link {
+  padding: 0.25rem 0 !important;
+  border: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--rams-text-2) !important;
+  font-size: 0.8125rem;
+}
+
+.category-nav-link:hover,
+.category-nav-link:focus-visible,
+.category-nav-link[aria-current='true'] {
+  color: var(--rams-text) !important;
+  border-bottom-color: var(--rams-text) !important;
+}
+
+.category-nav-icon {
+  display: none;
+}
+
+.category-nav-name {
+  display: inline !important;
+  margin-right: 0.25rem;
+}
+
+.category-nav-count {
+  background: transparent !important;
+  color: var(--rams-text-2) !important;
+  font-weight: 400 !important;
+  font-variant-numeric: tabular-nums;
+  padding: 0 !important;
+}
+
+.category-nav-toggle {
+  border-bottom-style: dashed !important;
+  border-bottom-color: var(--rams-line) !important;
+}
+
+.category-nav-toggle-active {
+  color: var(--rams-accent) !important;
+  border-bottom: 2px solid var(--rams-accent) !important;
+}
+
+.category-nav-toggle-active .category-nav-count {
+  color: var(--rams-accent) !important;
+}
+
+/* ---------- Category sections ---------- */
+
+.category-icon {
+  display: none !important;
+}
+
+.category-heading {
+  font-size: 1.375rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+  color: var(--rams-text) !important;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rams-line-strong);
+}
+
+.category-heading span[data-i18n^='categories.'] {
+  color: var(--rams-text) !important;
+}
+
+.category-intro {
+  color: var(--rams-text-2);
+}
+
+/* ---------- Anchor cards ---------- */
+
+.anchor-cards-grid {
+  gap: 0 !important;
+  border-top: 1px solid var(--rams-line);
+  border-left: 1px solid var(--rams-line);
+}
+
+.anchor-card {
+  background: var(--rams-surface) !important;
+  border: 0 !important;
+  border-right: 1px solid var(--rams-line) !important;
+  border-bottom: 1px solid var(--rams-line) !important;
+  border-radius: 0 !important;
+  padding: 1.125rem 1.25rem !important;
+}
+
+.anchor-card:hover,
+.anchor-card:focus-within {
+  transform: none !important;
+  box-shadow: none !important;
+  background: var(--rams-bg) !important;
+  border-color: var(--rams-line) !important;
+}
+
+.anchor-card:has(.anchor-card-open:focus-visible) {
+  --tw-ring-shadow: 0 0 #0000 !important;
+  outline: 2px solid var(--rams-accent);
+  outline-offset: -2px;
+}
+
+.anchor-card-indicator {
+  display: none !important;
+}
+
+.anchor-card-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: var(--rams-text) !important;
+  line-height: 1.3 !important;
+}
+
+.anchor-card-proponents {
+  font-style: normal !important;
+  font-size: 0.8125rem !important;
+  color: var(--rams-text-2) !important;
+}
+
+.anchor-card-meta {
+  color: var(--rams-text-2) !important;
+}
+
+.meta-badge {
+  background: transparent !important;
+  padding: 0 !important;
+  color: var(--rams-text-2) !important;
+}
+
+/* Copy and edit controls: present for those who need them, quiet otherwise. */
+.anchor-edit-btn,
+.anchor-copy-link-btn,
+.anchor-copy-keyword-btn {
+  color: var(--rams-text-2) !important;
+  background: transparent !important;
+}
+
+.anchor-edit-btn:hover,
+.anchor-copy-link-btn:hover,
+.anchor-copy-keyword-btn:hover,
+.anchor-edit-btn:focus-visible,
+.anchor-copy-link-btn:focus-visible,
+.anchor-copy-keyword-btn:focus-visible {
+  color: var(--rams-accent) !important;
+  transform: none !important;
+}
+
+@media (hover: hover) {
+  .anchor-card-header .flex {
+    opacity: 0;
+  }
+  .anchor-card:hover .anchor-card-header .flex,
+  .anchor-card:focus-within .anchor-card-header .flex {
+    opacity: 1;
+  }
+}
+
+.anchor-new-badge {
+  background: transparent !important;
+  color: var(--rams-accent) !important;
+  padding: 0 !important;
+  letter-spacing: 0.06em;
+}
+
+/* Warnings are information, so they stay — as a rule and a sentence. */
+.anchor-advisory-badge,
+.anchor-advisory-banner {
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 2px solid var(--rams-accent) !important;
+  border-radius: 0 !important;
+  color: var(--rams-text) !important;
+  padding: 0.125rem 0 0.125rem 0.5rem !important;
+}
+
+/* ---------- Modal and document pages ---------- */
+
+[role='dialog'] > div,
+#anchor-modal > div {
+  border-radius: var(--rams-radius) !important;
+}
+
+.asciidoc-content {
+  background: transparent !important;
+  color: var(--rams-text) !important;
+}
+
+.asciidoc-content h1,
+.asciidoc-content h2,
+.asciidoc-content h3,
+.asciidoc-content h4,
+.asciidoc-content h5,
+.asciidoc-content h6 {
+  font-family: var(--rams-font) !important;
+  font-weight: 600 !important;
+  color: var(--rams-text) !important;
+  letter-spacing: -0.01em;
+}
+
+.asciidoc-content h1 {
+  font-size: 1.75em !important;
+}
+
+.asciidoc-content a {
+  color: var(--rams-text) !important;
+  text-decoration-color: var(--rams-line-strong);
+  text-underline-offset: 3px;
+}
+
+.asciidoc-content a:hover,
+.asciidoc-content a:focus {
+  color: var(--rams-accent) !important;
+}
+
+.anchor-answer,
+.anchor-answer-lead {
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 2px solid var(--rams-line-strong) !important;
+  border-radius: 0 !important;
+  padding: 0.25rem 0 0.25rem 1rem !important;
+  font-size: 1.0625rem !important;
+  color: var(--rams-text) !important;
+}
+
+.anchor-tested-on .tested-yes {
+  color: var(--rams-text) !important;
+  font-weight: 600;
+}
+
+/* Primary action: the one place the accent fills a surface. */
+.bg-blue-600,
+.bg-\[var\(--color-primary\)\] {
+  background: var(--rams-accent) !important;
+}
+
+.feedback-btn {
+  border-radius: var(--rams-radius) !important;
+  background: transparent !important;
+  border: 1px solid var(--rams-line) !important;
+  color: var(--rams-text) !important;
+}
+
+.feedback-btn:hover {
+  border-color: var(--rams-line-strong) !important;
+}
+
+footer {
+  background: var(--rams-bg) !important;
+  border-top: 1px solid var(--rams-line) !important;
+}
+
+.asciidoc-content blockquote,
+.asciidoc-content .quoteblock blockquote {
+  background: transparent !important;
+  border-left: 2px solid var(--rams-line-strong) !important;
+  padding: 0.25rem 0 0.25rem 1rem !important;
+}
+
+.asciidoc-content .admonitionblock.note {
+  border-color: var(--rams-line-strong) !important;
+}

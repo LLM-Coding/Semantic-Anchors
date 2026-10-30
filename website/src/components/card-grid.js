@@ -155,6 +155,7 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             data-i18n-aria="categories.${id}"
           >
             <span class="category-nav-icon" aria-hidden="true">${icon}</span>
+            <span class="category-nav-name" aria-hidden="true" data-i18n="categories.${id}">${escapeHtml(name)}</span>
             <span class="category-nav-count">${count}</span>
           </a>
         </li>`
@@ -176,6 +177,7 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             data-i18n-aria="nav.recentlyAdded"
           >
             <span class="category-nav-icon" aria-hidden="true">\u2728</span>
+            <span class="category-nav-name" aria-hidden="true" data-i18n="card.new">${escapeHtml(i18n.t('card.new'))}</span>
             <span class="category-nav-count">${recent.size}</span>
           </button>
         </li>`

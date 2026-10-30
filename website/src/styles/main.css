@@ -188,6 +188,11 @@ body {
   color: #fff;
 }
 
+/* Visible only in themes that label chips with text (rams.css PoC). */
+.category-nav-name {
+  display: none;
+}
+
 .category-nav-icon {
   @apply text-base leading-none;
 }
