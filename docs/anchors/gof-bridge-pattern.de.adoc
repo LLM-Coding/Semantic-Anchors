@@ -3,7 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
-:definition: Das Bridge Pattern ist ein Structural-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es entkoppelt eine Abstraktion von ihrer Implementierung, sodass beide unabhängig voneinander variieren können. Abstraktion und Implementierung liegen in getrennten Klassenhierarchien, die sich jeweils durch Unterklassen erweitern lassen. Das vermeidet eine feste Bindung zwischen beiden, und Änderungen an der Implementierung wirken sich nicht auf Clients aus.
+:definition: Das Bridge Pattern ist ein Strukturmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides, das eine Abstraktion von ihrer Implementierung entkoppelt, sodass beide unabhängig voneinander variieren können. Abstraktion und Implementierung liegen in getrennten Klassenhierarchien, die sich jeweils durch Unterklassen erweitern lassen; das vermeidet eine feste Bindung zwischen beiden, und Änderungen an der Implementierung wirken sich nicht auf Clients aus.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, bridge, abstraction, implementation, decoupling
 :related: gof-design-patterns, gof-adapter-pattern, gof-strategy-pattern

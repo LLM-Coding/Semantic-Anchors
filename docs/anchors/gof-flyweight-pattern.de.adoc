@@ -3,7 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
-:definition: Das Flyweight Pattern ist ein Structural-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es nutzt gemeinsame Verwendung, um große Mengen feingranularer Objekte effizient zu unterstützen. Statt viele getrennte Instanzen zu halten, teilt das System gemeinsame Objekte zwischen ihren Nutzern. Das senkt den Speicherbedarf, wenn eine Anwendung sehr viele kleine Objekte braucht.
+:definition: Das Flyweight Pattern ist ein Strukturmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides, das durch gemeinsame Verwendung große Mengen feingranularer Objekte effizient unterstützt. Statt viele getrennte Instanzen zu halten, teilt das System gemeinsame Objekte zwischen ihren Nutzern; das senkt den Speicherbedarf, wenn eine Anwendung sehr viele kleine Objekte braucht.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, flyweight, memory optimization, sharing
 :related: gof-design-patterns, gof-proxy-pattern, gof-composite-pattern

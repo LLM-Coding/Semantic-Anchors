@@ -5,7 +5,7 @@
 :proponents: Enrico Fermi
 :tags: estimation, order-of-magnitude, back-of-envelope, approximation, decomposition
 :tier: 3
-:definition: Fermi Estimation ist eine mit Enrico Fermi verbundene Technik, eine unbekannte Größe in der richtigen Größenordnung zu schätzen, indem man sie in eine Kette kleinerer, schätzbarer Teilgrößen zerlegt. Jede Teilgröße wird zwischen plausible Grenzen eingegrenzt. Unabhängige Über- und Unterschätzungen heben sich tendenziell auf, sodass das Ergebnis oft innerhalb eines Faktors 2-3 vom wahren Wert liegt. Die Technik dient dazu, Systeme zu dimensionieren und Behauptungen zu plausibilisieren, bevor man in Präzision investiert.
+:definition: Fermi Estimation ist eine mit Enrico Fermi verbundene Technik, eine unbekannte Größe in der richtigen Größenordnung zu schätzen, indem man sie in eine Kette kleinerer, schätzbarer Teilgrößen zerlegt. Jede Teilgröße wird zwischen plausible Grenzen eingegrenzt, und unabhängige Über- und Unterschätzungen heben sich tendenziell auf, sodass das Ergebnis oft innerhalb eines Faktors 2-3 vom wahren Wert liegt. Die Technik dient dazu, Systeme zu dimensionieren und Behauptungen zu plausibilisieren, bevor man in Präzision investiert.
 
 [%collapsible]
 ====

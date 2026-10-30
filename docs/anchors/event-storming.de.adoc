@@ -5,7 +5,7 @@
 :proponents: Alberto Brandolini
 :tags: event-storming, ddd, domain-events, collaborative-workshop, bounded-contexts, aggregates, big-picture, design-level, process-modeling
 :tier: 3
-:definition: Event Storming ist Alberto Brandolinis kollaboratives Workshop-Format, erstmals 2012 durchgeführt, das eine Fachdomäne als Domain Events in der Vergangenheitsform auf einer Zeitachse entlang einer breiten Wand modelliert. Eine feste Farb-Notation ergänzt Commands, Aggregates, Policies, Read Models, External Systems und Hotspots. Der Workshop arbeitet auf drei Ebenen: Big Picture, Process Modeling und Design Level. Pivotal Events markieren mögliche Grenzen von Bounded Contexts, deshalb ist Event Storming oft der Einstieg in Domain-Driven Design.
+:definition: Event Storming ist Alberto Brandolinis kollaboratives Workshop-Format, erstmals 2012 durchgeführt, das eine Fachdomäne als Domain Events in der Vergangenheitsform auf einer Zeitachse entlang einer breiten Wand modelliert. Eine feste Farb-Notation ergänzt Commands, Aggregates, Policies, Read Models, External Systems und Hotspots, und der Workshop arbeitet auf drei Ebenen: Big Picture, Process Modeling und Design Level. Pivotal Events markieren mögliche Grenzen von Bounded Contexts, deshalb ist Event Storming oft der Einstieg in Domain-Driven Design.
 
 [%collapsible]
 ====

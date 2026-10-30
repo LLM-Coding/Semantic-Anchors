@@ -3567,7 +3567,7 @@
     ],
     "filePath": "docs/anchors/first-principles-thinking.adoc",
     "tier": 3,
-    "definition": "First Principles Thinking is a reasoning method, rooted in Aristotle and sharpened by René Descartes' methodical doubt, that breaks a problem down to basic truths which cannot be deduced from anything more fundamental and then reasons upward from them. It contrasts with reasoning by analogy: each inherited constraint is tested as law of nature or mere convention, and the irreducible elements are recombined into a new solution. Being costly, it suits high-stakes or stuck problems.",
+    "definition": "First Principles Thinking is a reasoning method, rooted in Aristotle and sharpened by René Descartes' methodical doubt, that breaks a problem down to basic truths which cannot be deduced from anything more fundamental and then reasons upward from them. It contrasts with reasoning by analogy: each inherited constraint is tested as law of nature or mere convention, and the irreducible elements are recombined into a new solution. The method is costly, so it suits high-stakes or stuck problems.",
     "addedAt": "2026-06-01T21:31:00+02:00"
   },
   {
@@ -4994,7 +4994,7 @@
     "filePath": "docs/anchors/gof-visitor-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
-    "definition": "The Visitor pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that represents an operation to be performed on the elements of an object structure. It lets you define a new operation without changing the classes of the elements on which it operates, because the operation lives in a separate visitor object and is selected through double dispatch.",
+    "definition": "The Visitor pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that represents an operation to be performed on the elements of an object structure. It lets you define a new operation without changing the classes of the elements on which it operates.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {

@@ -3,7 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
-:definition: Das Command Pattern ist ein Behavioral-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es kapselt eine Anfrage als Objekt. Weil jede Aktion zum Objekt wird, lassen sich Clients mit verschiedenen Anfragen parametrisieren, und Anfragen lassen sich in Warteschlangen stellen, protokollieren oder zeitlich planen. Commands unterstützen zudem rückgängig machbare Operationen; das Pattern ist daher eine übliche Grundlage für Undo- und Redo-Systeme.
+:definition: Das Command Pattern ist ein Verhaltensmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides, das eine Anfrage als Objekt kapselt. Weil jede Aktion zum Objekt wird, lassen sich Clients mit verschiedenen Anfragen parametrisieren, und Anfragen lassen sich in Warteschlangen stellen, protokollieren oder zeitlich planen. Commands unterstützen zudem rückgängig machbare Operationen, daher ist das Pattern eine übliche Grundlage für Undo- und Redo-Systeme.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, command, undo, queue, encapsulation, action
 :related: gof-design-patterns, gof-chain-of-responsibility-pattern, gof-memento-pattern

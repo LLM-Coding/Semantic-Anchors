@@ -5,7 +5,7 @@
 :tags: Defensive Programming, defensive Programmierung, Barrikade, Assertions, Eingabevalidierung, Fehlerbehandlung, Fail Fast, Robustheit, Korrektheit, Vertrauensgrenze, Guard Clause
 :related: design-by-contract, defense-in-depth, postels-law, poka-yoke
 :tier: 2
-:definition: Defensive Programming nach McConnell ist die Programmierpraxis aus Kapitel 8 von Steve McConnells Code Complete (2. Auflage, 2004): Das Programm wird vor ungültigen Eingaben geschützt, damit schlechte Daten nie ein stilles falsches Ergebnis liefern. Eine Barrikade teilt den Code. Öffentliche Schnittstellen außerhalb validieren und behandeln Fehler; Code innerhalb gilt als sauber und nutzt Assertions für Zustände, die nie eintreten dürfen. Jedes System wählt zudem zwischen Robustheit und Korrektheit.
+:definition: Defensive Programming nach McConnell ist die Programmierpraxis aus Kapitel 8 von Steve McConnells Code Complete (2. Auflage, 2004), die ein Programm vor ungültigen Eingaben schützt, damit schlechte Daten nie ein stilles falsches Ergebnis liefern. Eine Barrikade teilt den Code: Öffentliche Schnittstellen außerhalb validieren Eingaben und behandeln Fehler, Code innerhalb gilt als sauber und nutzt Assertions für Zustände, die nie eintreten dürfen. Jedes System wählt zudem zwischen Robustheit und Korrektheit.
 :prior-test: 2026-10-09
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

@@ -3,7 +3,7 @@
 :roles: software-architect, software-developer, devops-engineer
 :proponents: Gregor Hohpe, Bobby Woolf, Martin Fowler
 :tier: 3
-:definition: Event-Driven Architecture ist ein Architekturstil, in dem Komponenten durch das Aussenden von und Reagieren auf Events kommunizieren statt durch direkte Aufrufe; Schlüsselvertreter sind Gregor Hohpe und Bobby Woolf (2003) sowie Martin Fowler (2017). Produzenten veröffentlichen Events, ohne ihre Konsumenten zu kennen, und Message Queues entkoppeln beide Seiten zeitlich. Der Preis sind At-least-once Delivery, die idempotente Konsumenten erfordert, und Eventual Consistency. Workflows laufen per Choreographie oder Orchestrierung.
+:definition: Event-Driven Architecture ist ein Architekturstil, in dem Komponenten durch das Aussenden von und Reagieren auf Events kommunizieren statt durch direkte Aufrufe; Schlüsselvertreter sind Gregor Hohpe und Bobby Woolf (2003) sowie Martin Fowler (2017). Produzenten veröffentlichen Events, ohne ihre Konsumenten zu kennen, und Message Queues entkoppeln beide Seiten zeitlich. Der Preis sind At-least-once Delivery, die idempotente Konsumenten erfordert, und Eventual Consistency; Workflows laufen per Choreographie oder Orchestrierung.
 :related: domain-driven-design, hexagonal-architecture, clean-architecture, enterprise-integration-patterns
 :tags: eda, events, async, messaging, publish-subscribe, decoupling, eventual-consistency, feedback, emergence
 
