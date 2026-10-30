@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { renderCardGrid, initCardGrid } from './card-grid.js'
+import { renderCardGrid, initCardGrid, updateCategoryIntros } from './card-grid.js'
 
 // Mock i18n module
 vi.mock('../i18n.js', () => ({
@@ -507,5 +507,44 @@ describe('card structure — one primary control per card (#791)', () => {
     document.addEventListener('anchor-selected', (e) => seen.push(e.detail.anchorId))
     copy.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }))
     expect(seen).toEqual([])
+  })
+})
+
+describe('category intro (#869)', () => {
+  const anchors = [
+    {
+      id: 'swiss-style',
+      title: 'Swiss Style',
+      categories: ['ux-visual-design'],
+      roles: ['ux-designer'],
+      tags: [],
+      proponents: [],
+    },
+  ]
+
+  it('renders the intro under the category heading with its links', () => {
+    const html = renderCardGrid([{ id: 'ux-visual-design', name: 'UX' }], anchors)
+    const section = html.slice(html.indexOf('id="category-ux-visual-design"'))
+    expect(section).toMatch(/<\/h2>\s*<p class="category-intro"/)
+    expect(section).toContain('href="https://component.gallery/design-systems/"')
+  })
+
+  it('renders no intro element for a category without one', () => {
+    const html = renderCardGrid(
+      [{ id: 'no-intro', name: 'None' }],
+      [{ ...anchors[0], categories: ['no-intro'] }]
+    )
+    expect(html).not.toContain('category-intro')
+  })
+})
+
+describe('updateCategoryIntros (#869)', () => {
+  it('re-renders every intro in place, for example after a language switch', () => {
+    document.body.innerHTML =
+      '<p class="category-intro" data-category-intro="ux-visual-design">stale</p>'
+    updateCategoryIntros('de')
+    const p = document.querySelector('[data-category-intro]')
+    expect(p.innerHTML).toContain('Bedienelemente')
+    expect(p.innerHTML).not.toContain('stale')
   })
 })
