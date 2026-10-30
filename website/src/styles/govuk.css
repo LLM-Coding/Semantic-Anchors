@@ -1,0 +1,1614 @@
+/*
+ * GOV.UK-inspired theme (proof of concept, branch poc/govuk).
+ *
+ * Reproduces the look of the GOV.UK Design System in plain CSS: black header
+ * with a blue bar, blue underlined links, the yellow focus state, bold large
+ * headings, heavy borders, square corners, the green primary button, tags and
+ * a phase banner. This is not a UK government service, so it uses no crown,
+ * no GOV.UK wordmark and no GDS Transport: Arial/Helvetica, as GOV.UK
+ * prescribes outside gov.uk domains. No govuk-frontend package.
+ *
+ * Unlayered on purpose: it beats Tailwind utilities (layered) and is imported
+ * after main.css, so equal-specificity rules there lose. It never sets
+ * `display` on an element that is toggled with the `hidden` class.
+ */
+
+/* ------------------------------------------------------------------ tokens */
+
+:root {
+  --g-font: Arial, Helvetica, sans-serif;
+  --g-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --g-text: #0b0c0c;
+  --g-text-secondary: #505a5f;
+  --g-bg: #ffffff;
+  --g-bg-light: #f3f2f1;
+  --g-panel: #ffffff;
+  --g-border: #b1b4b6;
+  --g-border-strong: #0b0c0c;
+  --g-link: #1d70b8;
+  --g-link-hover: #003078;
+  --g-brand: #1d70b8;
+  --g-focus: #ffdd00;
+  --g-focus-text: #0b0c0c;
+  --g-green: #00703c;
+  --g-green-hover: #005a30;
+  --g-green-shadow: #002d18;
+  --g-secondary-btn: #f3f2f1;
+  --g-secondary-btn-hover: #dbdad9;
+  --g-secondary-btn-shadow: #929191;
+  --g-tag-grey-bg: #eeefef;
+  --g-tag-grey-text: #383f43;
+  --g-tag-yellow-bg: #fff7bf;
+  --g-tag-yellow-text: #594d00;
+  --g-header: #0b0c0c;
+
+  /* Re-point the site's own tokens, so every component built on them follows. */
+  --color-primary: var(--g-link);
+  --color-primary-dark: var(--g-link-hover);
+  --color-bg: var(--g-bg);
+  --color-bg-secondary: var(--g-bg-light);
+  --color-text: var(--g-text);
+  --color-text-secondary: var(--g-text-secondary);
+  --color-border: var(--g-border);
+  --color-link: var(--g-link);
+}
+
+/* GOV.UK has no dark mode. This variant keeps the system's logic: near-black
+   ground, light text, a lighter link blue that holds AA, the same yellow focus
+   with black text, the same black header with its blue bar. */
+.dark {
+  --g-text: #f3f2f1;
+  --g-text-secondary: #b1b4b6;
+  --g-bg: #141516;
+  --g-bg-light: #1e2022;
+  --g-panel: #1e2022;
+  --g-border: #505a5f;
+  --g-border-strong: #f3f2f1;
+  --g-link: #8ab9e6;
+  --g-link-hover: #c2dcf5;
+  --g-secondary-btn: #2e3133;
+  --g-secondary-btn-hover: #3d4144;
+  --g-secondary-btn-shadow: #000000;
+  --g-tag-grey-bg: #2e3133;
+  --g-tag-grey-text: #e5e6e7;
+  --g-tag-yellow-bg: #3d3500;
+  --g-tag-yellow-text: #fff3a6;
+  --g-header: #0b0c0c;
+}
+
+/* -------------------------------------------------------------- typography */
+
+:root body,
+:root body * {
+  font-family: var(--g-font) !important;
+}
+
+:root body :is(code, pre, kbd, samp, .font-mono),
+:root body :is(code, pre, kbd, samp, .font-mono) * {
+  font-family: var(--g-mono) !important;
+}
+
+body {
+  background-color: var(--g-bg);
+  color: var(--g-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* GOV.UK width container: 960px of content plus gutters, left-aligned text. */
+.max-w-7xl {
+  max-width: calc(960px + 4rem);
+}
+
+.card-grid-container {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+/* ------------------------------------------------------------------- links */
+
+a {
+  color: var(--g-link);
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+a:hover {
+  color: var(--g-link-hover);
+  text-decoration-thickness: max(3px, 0.1875rem);
+}
+
+/* --------------------------------------------------------------- focus ring */
+
+/* The GOV.UK focus state: yellow fill, black text, black underline bar. */
+a:focus-visible,
+.anchor-card-open:focus-visible {
+  outline: 3px solid transparent;
+  color: var(--g-focus-text) !important;
+  background-color: var(--g-focus) !important;
+  box-shadow:
+    0 -2px var(--g-focus),
+    0 4px var(--g-focus-text) !important;
+  text-decoration: none !important;
+}
+
+a:focus-visible svg {
+  color: var(--g-focus-text);
+}
+
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--g-focus) !important;
+  outline-offset: 0 !important;
+  box-shadow: inset 0 0 0 2px var(--g-focus-text) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--g-focus) !important;
+  outline-offset: 0 !important;
+  box-shadow: inset 0 0 0 2px var(--g-focus-text) !important;
+  --tw-ring-shadow: 0 0 #0000;
+}
+
+/* ------------------------------------------------------------------ header */
+
+.sa-header {
+  /* Local token override: everything inside the bar turns white on black. */
+  --color-text: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-bg: var(--g-header);
+  --color-bg-secondary: #26292b;
+  --color-border: #505a5f;
+  background: var(--g-header) !important;
+  color: #ffffff;
+  border-bottom: 10px solid var(--g-brand) !important;
+}
+
+.sa-header nav {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.sa-header a {
+  color: #ffffff;
+}
+
+.sa-header a:hover {
+  color: #ffffff;
+}
+
+/* Logotype: anchor mark + name, the place where GOV.UK puts its own. */
+.sa-header a:has(> .sa-logotype) {
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.sa-logotype {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.sa-logotype-mark {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.sa-header a:has(> .sa-logotype) > span[data-i18n='header.slogan'] {
+  margin-top: 0.4rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.sa-header a:has(> .sa-logotype):hover .sa-logotype-text {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.1578em;
+}
+
+.sa-header a:has(> .sa-logotype):focus-visible,
+.sa-header a:has(> .sa-logotype):focus-visible * {
+  color: var(--g-focus-text) !important;
+}
+
+/* Primary navigation: bold white links, no underline until hover. */
+.sa-header .nav-link {
+  color: #ffffff !important;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sa-header .text-2xl {
+  font-size: 1.1875rem;
+  gap: 1.5rem;
+}
+
+.sa-header .nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.25em;
+  background: transparent;
+}
+
+.sa-header .nav-link.active,
+.sa-header .nav-link[aria-current='page'] {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.25em;
+}
+
+.sa-header .nav-link:focus-visible {
+  color: var(--g-focus-text) !important;
+}
+
+.sa-header #more-menu-dropdown {
+  border-radius: 0;
+  border: 0;
+  border-top: 5px solid var(--g-brand);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+  background: var(--g-header);
+}
+
+.sa-header #more-menu-dropdown .nav-link {
+  font-size: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.sa-header #mobile-menu {
+  border-top-color: #505a5f;
+}
+
+.sa-header .mobile-nav-link {
+  border-radius: 0;
+  padding-left: 0;
+}
+
+/* Icon buttons in the bar (play, language, theme, menu). */
+.sa-header button:not(.nav-link) {
+  color: #ffffff !important;
+  border-radius: 0 !important;
+  font-weight: 700;
+}
+
+.sa-header button:not(.nav-link):hover {
+  background: transparent !important;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  box-shadow: inset 0 -3px 0 #ffffff;
+}
+
+.sa-header button:focus-visible {
+  color: var(--g-focus-text) !important;
+  background: var(--g-focus) !important;
+  outline: 3px solid var(--g-focus) !important;
+  box-shadow: inset 0 -4px 0 var(--g-focus-text) !important;
+}
+
+/* Search and role filter: GOV.UK search box in the header, white on black. */
+.sa-header input,
+.sa-header select {
+  background: #ffffff !important;
+  color: #0b0c0c !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 0 !important;
+  height: 2.5rem;
+  padding: 0.3rem 0.6rem !important;
+  font-size: 1rem !important;
+}
+
+.sa-header input::placeholder {
+  color: #505a5f !important;
+}
+
+.dark .sa-header input,
+.dark .sa-header select {
+  background: #141516 !important;
+  color: #f3f2f1 !important;
+  border-color: #b1b4b6 !important;
+}
+
+.dark .sa-header input::placeholder {
+  color: #b1b4b6 !important;
+}
+
+.sa-header #anchor-count {
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Mobile: GOV.UK keeps the logotype left; so do we. */
+@media (max-width: 639px) {
+  .sa-header .sm\:hidden > .flex-col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sa-header .sm\:hidden > .flex-col > a {
+    align-items: flex-start;
+  }
+
+  .sa-header .sm\:hidden > .flex-col > div {
+    margin-top: 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .sa-logotype {
+    font-size: 1.375rem;
+  }
+
+  .sa-logotype-mark {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .sa-header a:has(> .sa-logotype) > span[data-i18n='header.slogan'] {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ------------------------------------------------------------ phase banner */
+
+.sa-phase-banner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(960px + 4rem);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .sa-phase-banner {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sa-phase-banner {
+    padding: 0 2rem;
+  }
+}
+
+.sa-phase-banner-content {
+  margin: 0;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--g-border);
+  color: var(--g-text);
+  font-size: 1rem;
+  line-height: 1.25;
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+}
+
+.sa-tag {
+  display: inline-block;
+  padding: 0.3125rem 0.5rem 0.25rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--g-brand);
+  flex-shrink: 0;
+}
+
+/* -------------------------------------------------------------------- hero */
+
+#hero h1 {
+  font-size: 3rem;
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 1.25rem;
+  margin-bottom: 1.875rem;
+  color: var(--g-text);
+  max-width: 40rem;
+}
+
+#hero h1 + p {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: var(--g-text);
+  margin-bottom: 1.25rem;
+  max-width: 40rem;
+}
+
+#hero p[data-i18n='hero.introEmphasis'] {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  margin-bottom: 1.875rem;
+}
+
+/* Without / with: GOV.UK inset text, grey for the long prompt, blue for the
+   anchor. Square, no card chrome. */
+#hero .grid.sm\:grid-cols-2 {
+  gap: 1.875rem;
+  margin-bottom: 0.9375rem;
+}
+
+#hero .grid.sm\:grid-cols-2 > div {
+  border-radius: 0;
+  border: 0;
+  border-left: 10px solid var(--g-border);
+  background: var(--g-bg-light);
+  padding: 0.9375rem 1.25rem;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child {
+  border-left-color: var(--g-brand);
+  background: var(--g-panel);
+  outline: 1px solid var(--g-border);
+  outline-offset: -1px;
+}
+
+#hero .grid.sm\:grid-cols-2 > div > div {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--g-text);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child > div {
+  color: var(--g-link);
+}
+
+#hero .grid.sm\:grid-cols-2 p {
+  font-size: 0.9375rem;
+  color: var(--g-text);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child p {
+  font-size: 1.1875rem;
+}
+
+#hero p[data-i18n^='hero.example.'][data-i18n$='.expansion'] {
+  font-style: normal;
+  color: var(--g-text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Coverage strip: a plain, left-aligned list between two thin rules. */
+#appearances {
+  border-color: var(--g-border);
+  padding: 0.9375rem 0;
+  margin-bottom: 2.5rem;
+}
+
+#appearances > div {
+  justify-content: flex-start;
+}
+
+#appearances .text-xs {
+  font-size: 0.875rem;
+}
+
+#appearances > div > span.text-xs {
+  color: var(--g-text-secondary);
+  font-weight: 700;
+}
+
+#appearances a {
+  border-radius: 0;
+}
+
+#appearances a .text-xs {
+  color: var(--g-link);
+  text-decoration: underline;
+}
+
+#appearances a:focus-visible .text-xs {
+  color: var(--g-focus-text);
+  text-decoration: none;
+}
+
+/* The heise entry sits on its own white pill; keep its label light-mode blue. */
+.dark #appearances a.bg-white .text-xs,
+.dark #app > footer a.bg-white .text-xs {
+  color: #1d70b8;
+}
+
+.dark #appearances img {
+  background: #ffffff;
+  padding: 1px;
+}
+
+/* How to use: GOV.UK step-by-step numbering, black ring around bold digits. */
+#hero h2[data-i18n='hero.howToUseTitle'] {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--g-text);
+}
+
+#hero ol {
+  gap: 1.25rem;
+  margin-bottom: 1.875rem;
+}
+
+#hero ol > li {
+  border-radius: 0;
+  background: transparent;
+  padding: 0.9375rem 0 0;
+  border-top: 1px solid var(--g-border);
+  align-items: center;
+  gap: 0.9375rem;
+}
+
+#hero ol > li > span:first-child {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--g-bg);
+  color: var(--g-text);
+  border: 3px solid var(--g-border-strong);
+  font-size: 1.1875rem;
+  font-weight: 700;
+}
+
+#hero ol > li > span:last-child {
+  font-size: 1.1875rem;
+  line-height: 1.3;
+}
+
+/* The catalog hand-off is the page's call to action: the green start button. */
+talk-it-over {
+  --tio-bg: var(--g-green);
+  --tio-fg: #ffffff;
+  --tio-hover: var(--g-green-hover);
+  --tio-border: var(--g-green);
+  --tio-radius: 0;
+  --tio-menu-bg: var(--g-panel);
+  --tio-menu-fg: var(--g-text);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  box-shadow: 0 2px 0 var(--g-green-shadow);
+}
+
+#hero span[data-i18n='hero.talkCatalogHint'] {
+  font-size: 1rem;
+  color: var(--g-text-secondary);
+  max-width: 34rem;
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm {
+  font-size: 1rem;
+  gap: 0.5rem 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--g-border);
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm > span {
+  color: var(--g-border);
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm a {
+  color: var(--g-link);
+  text-decoration: underline;
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm a:hover {
+  color: var(--g-link-hover);
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm a:focus-visible {
+  color: var(--g-focus-text);
+}
+
+/* Mobile filters (search + role) below the hero. */
+#filters input,
+#filters select {
+  border: 2px solid var(--g-border-strong);
+  border-radius: 0;
+  background: var(--g-bg);
+  color: var(--g-text);
+  font-size: 1rem;
+  height: 2.5rem;
+}
+
+#filters #anchor-count-mobile {
+  color: var(--g-text);
+  font-weight: 700;
+}
+
+/* ----------------------------------------------------- category quick-nav */
+
+.category-nav {
+  background: var(--g-bg);
+  border-bottom: 1px solid var(--g-border);
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  margin-bottom: 2.5rem;
+}
+
+.category-nav-list {
+  gap: 0.3rem 1.25rem;
+}
+
+.category-nav-link {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.125rem 0;
+  gap: 0.3rem;
+  color: var(--g-link);
+  font-size: 1rem;
+}
+
+.category-nav-icon {
+  display: none;
+}
+
+.category-nav-label {
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+.category-nav-link:hover {
+  color: var(--g-link-hover);
+  border-color: transparent;
+}
+
+.category-nav-link:hover .category-nav-label {
+  text-decoration-thickness: 3px;
+}
+
+.category-nav-count {
+  background: transparent;
+  color: var(--g-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0;
+}
+
+.category-nav-count::before {
+  content: '(';
+}
+
+.category-nav-count::after {
+  content: ')';
+}
+
+.category-nav-link:focus-visible .category-nav-label,
+.category-nav-link:focus-visible .category-nav-count {
+  color: var(--g-focus-text);
+  text-decoration: none;
+}
+
+/* The recency filter is a toggle, not a jump: a GOV.UK secondary button. */
+.category-nav-toggle {
+  border: 0;
+  background: var(--g-secondary-btn);
+  color: var(--g-text);
+  padding: 0.25rem 0.625rem;
+  box-shadow: 0 2px 0 var(--g-secondary-btn-shadow);
+  margin-right: 0.25rem;
+  font-weight: 700;
+}
+
+.category-nav-toggle .category-nav-label {
+  text-decoration: none;
+}
+
+.category-nav-toggle:hover {
+  background: var(--g-secondary-btn-hover);
+  color: var(--g-text);
+}
+
+.category-nav-toggle .category-nav-count {
+  color: var(--g-text);
+}
+
+.category-nav-toggle-active,
+.category-nav-toggle-active:hover {
+  background: var(--g-text);
+  color: var(--g-bg);
+  box-shadow: 0 2px 0 var(--g-text-secondary);
+}
+
+.category-nav-toggle-active .category-nav-count {
+  background: transparent;
+  color: var(--g-bg);
+}
+
+.category-nav-toggle:focus-visible {
+  background: var(--g-focus) !important;
+  color: var(--g-focus-text) !important;
+  box-shadow: 0 2px 0 var(--g-focus-text) !important;
+  outline: 3px solid transparent !important;
+}
+
+.category-nav-toggle:focus-visible .category-nav-count {
+  color: var(--g-focus-text);
+}
+
+/* --------------------------------------------------------- category heads */
+
+.category-section {
+  margin-bottom: 3.75rem;
+}
+
+.category-heading {
+  font-size: 2.25rem;
+  line-height: 1.11;
+  font-weight: 700;
+  color: var(--g-text);
+  margin-bottom: 1.25rem;
+  gap: 0.9375rem;
+  align-items: stretch;
+}
+
+.category-heading span[data-i18n^='categories.'] {
+  color: var(--g-text);
+}
+
+/* The category colour survives as a slim brand stripe; the emoji goes. */
+.category-icon {
+  width: 0.5rem;
+  height: auto;
+  min-height: 2.5rem;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0;
+}
+
+.category-heading + .category-intro {
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+
+.category-intro {
+  max-width: 40rem;
+  font-size: 1.1875rem;
+  line-height: 1.32;
+  color: var(--g-text);
+}
+
+.category-intro a {
+  color: var(--g-link);
+}
+
+.category-intro a:hover {
+  color: var(--g-link-hover);
+}
+
+/* ------------------------------------------------------------ anchor cards */
+
+.anchor-cards-grid {
+  gap: 1.25rem 1.875rem;
+}
+
+@media (min-width: 1280px) {
+  .anchor-cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* A card is a link block: blue rule on top, black hairline round, square. */
+.anchor-card {
+  border-radius: 0;
+  border: 0;
+  border-top: 5px solid var(--g-brand);
+  background: var(--g-panel);
+  box-shadow: inset 0 0 0 1px var(--g-border);
+  padding: 0.9375rem 1.25rem 1.25rem;
+  transition: border-color 0.1s ease;
+}
+
+.dark .anchor-card {
+  background: var(--g-panel);
+}
+
+.anchor-card:hover,
+.anchor-card:focus-within {
+  transform: none;
+  border-top-color: var(--g-border-strong);
+  box-shadow: inset 0 0 0 1px var(--g-border-strong);
+}
+
+.anchor-card:has(.anchor-card-open:focus-visible) {
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  outline: 3px solid var(--g-focus);
+  outline-offset: 0;
+  border-top-color: var(--g-focus-text);
+  box-shadow: inset 0 0 0 1px var(--g-border-strong);
+}
+
+.anchor-card-indicator {
+  opacity: 0;
+}
+
+.anchor-card-title {
+  font-size: 1.1875rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--g-link);
+}
+
+.anchor-card-open {
+  color: var(--g-link);
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+.anchor-card:hover .anchor-card-open {
+  color: var(--g-link-hover);
+  text-decoration-thickness: 3px;
+}
+
+.anchor-card-open:focus-visible {
+  outline: 3px solid transparent !important;
+}
+
+.anchor-card-proponents {
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--g-text-secondary);
+  margin-bottom: 0.9375rem;
+}
+
+.anchor-edit-btn,
+.anchor-copy-link-btn,
+.anchor-copy-keyword-btn {
+  color: var(--g-text-secondary);
+  border-radius: 0;
+}
+
+.anchor-edit-btn:hover,
+.anchor-copy-link-btn:hover,
+.anchor-copy-keyword-btn:hover {
+  transform: none;
+  scale: none;
+  color: var(--g-text);
+  background: var(--g-bg-light);
+}
+
+.anchor-edit-btn:focus-visible {
+  box-shadow: none !important;
+}
+
+/* Tags: the GOV.UK tag, square and flat. */
+.meta-badge {
+  border-radius: 0;
+  background: var(--g-tag-grey-bg);
+  color: var(--g-tag-grey-text);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.anchor-card-meta {
+  color: var(--g-tag-grey-text);
+}
+
+.feedback-badge:hover {
+  background: var(--g-secondary-btn-hover);
+}
+
+.anchor-new-badge {
+  border-radius: 0;
+  background: var(--g-brand);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.0625rem;
+  padding: 0.3125rem 0.4rem 0.25rem;
+  vertical-align: 0.15em;
+  margin-left: 0.4rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Advisory: GOV.UK warning text — bold, with a black disc behind the mark. */
+.anchor-advisory-badge,
+.anchor-advisory-banner {
+  border-radius: 0;
+  border: 0;
+  background: var(--g-tag-yellow-bg);
+  color: var(--g-tag-yellow-text);
+  font-weight: 700;
+}
+
+.anchor-advisory-badge {
+  font-size: 0.875rem;
+  line-height: 1.3;
+  padding: 0.4rem 0.6rem;
+}
+
+.anchor-advisory-banner {
+  font-size: 1.1875rem;
+  line-height: 1.3;
+  padding: 0.9375rem 1.25rem;
+  border-left: 10px solid var(--g-tag-yellow-text);
+}
+
+/* ------------------------------------------------------------------ modal */
+
+#anchor-modal {
+  background: rgba(11, 12, 12, 0.7);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+#anchor-modal > div {
+  border-radius: 0;
+  border: 0;
+  border-top: 10px solid var(--g-brand);
+  box-shadow: 0 0 0 1px var(--g-border-strong);
+  background: var(--g-bg);
+}
+
+#anchor-modal > div > div:first-child {
+  border-bottom: 1px solid var(--g-border);
+  padding: 1.25rem 1.875rem;
+}
+
+#modal-title {
+  font-size: 2.25rem;
+  line-height: 1.11;
+  font-weight: 700;
+  color: var(--g-text);
+}
+
+#anchor-modal button {
+  border-radius: 0;
+}
+
+#modal-content {
+  padding: 1.875rem;
+}
+
+.modal-feedback-bar {
+  border-top: 1px solid var(--g-border);
+  padding: 0.9375rem 1.875rem;
+  background: var(--g-bg-light);
+}
+
+.modal-feedback-cta {
+  color: var(--g-text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Buttons: green primary, grey secondary, both with the GOV.UK bottom edge. */
+.feedback-btn {
+  border-radius: 0;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 0.5rem 0.75rem 0.4rem;
+  text-decoration: none;
+}
+
+.feedback-btn-vote,
+.dark .feedback-btn-vote {
+  background: var(--g-green);
+  color: #ffffff;
+  box-shadow: 0 2px 0 var(--g-green-shadow);
+}
+
+.feedback-btn-vote:hover,
+.dark .feedback-btn-vote:hover {
+  background: var(--g-green-hover);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.feedback-btn-discuss,
+.dark .feedback-btn-discuss {
+  background: var(--g-secondary-btn);
+  color: var(--g-text);
+  box-shadow: 0 2px 0 var(--g-secondary-btn-shadow);
+}
+
+.dark .feedback-btn-discuss {
+  outline: 1px solid var(--g-border);
+}
+
+.feedback-btn-discuss:hover,
+.dark .feedback-btn-discuss:hover {
+  background: var(--g-secondary-btn-hover);
+  color: var(--g-text);
+  text-decoration: none;
+}
+
+.feedback-btn:focus-visible {
+  background: var(--g-focus) !important;
+  color: var(--g-focus-text) !important;
+  box-shadow: 0 2px 0 var(--g-focus-text) !important;
+}
+
+.feedback-section {
+  border-radius: 0;
+  border: 0;
+  border-left: 10px solid var(--g-border);
+  background: transparent;
+}
+
+.feedback-heading {
+  color: var(--g-text);
+  font-size: 1.1875rem;
+}
+
+.feedback-text,
+.feedback-hint {
+  color: var(--g-text-secondary);
+}
+
+/* Direct answer: GOV.UK inset text. */
+.anchor-answer,
+.anchor-answer-lead,
+.dark .anchor-answer,
+.dark .anchor-answer-lead {
+  border-radius: 0;
+  background: transparent;
+  border-left: 10px solid var(--g-border);
+  color: var(--g-text);
+  font-size: 1.1875rem;
+  line-height: 1.32;
+  padding: 0.9375rem 1.25rem;
+  margin-bottom: 1.875rem;
+}
+
+.anchor-tested-on {
+  border-color: var(--g-border);
+  color: var(--g-text-secondary);
+  font-size: 1rem;
+}
+
+.anchor-tested-on .tested-yes {
+  color: var(--g-green);
+  font-weight: 700;
+}
+
+.dark .anchor-tested-on .tested-yes {
+  color: #b4e0c8;
+}
+
+.anchor-example-image img {
+  border-radius: 0;
+  border-color: var(--g-border);
+}
+
+.sub-anchor-item.tier-1 {
+  border-left: 5px solid var(--g-brand);
+}
+
+.sub-anchor-link {
+  color: var(--g-link);
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------- AsciiDoc content */
+
+.asciidoc-content,
+.dark .asciidoc-content {
+  background: transparent;
+  color: var(--g-text);
+  font-size: 1.1875rem;
+  line-height: 1.32;
+}
+
+.asciidoc-content p,
+.asciidoc-content li,
+.asciidoc-content dd {
+  line-height: 1.32;
+}
+
+.asciidoc-content h1,
+.asciidoc-content h2,
+.asciidoc-content h3,
+.asciidoc-content h4,
+.asciidoc-content h5,
+.asciidoc-content h6,
+.dark .asciidoc-content h1,
+.dark .asciidoc-content h2,
+.dark .asciidoc-content h3,
+.dark .asciidoc-content h4,
+.dark .asciidoc-content h5,
+.dark .asciidoc-content h6 {
+  font-weight: 700;
+  color: var(--g-text);
+  letter-spacing: -0.005em;
+}
+
+.asciidoc-content h1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+}
+
+.asciidoc-content h2 {
+  font-size: 1.875rem;
+  line-height: 1.15;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.asciidoc-content h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin-top: 1.875rem;
+  margin-bottom: 0.9375rem;
+}
+
+.asciidoc-content h4,
+.asciidoc-content h5,
+.asciidoc-content h6 {
+  font-size: 1.1875rem;
+  line-height: 1.3;
+}
+
+/* In the modal the title is already in the header; keep the body h1 smaller. */
+#modal-content.asciidoc-content h1 {
+  font-size: 1.875rem;
+}
+
+.asciidoc-content a,
+.dark .asciidoc-content a {
+  color: var(--g-link);
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+.asciidoc-content a:hover,
+.dark .asciidoc-content a:hover {
+  color: var(--g-link-hover);
+  text-decoration-thickness: 3px;
+}
+
+.asciidoc-content a:focus-visible,
+.dark .asciidoc-content a:focus-visible {
+  color: var(--g-focus-text) !important;
+}
+
+.asciidoc-content a.anchor,
+.asciidoc-content a.anchor:hover {
+  color: var(--g-text-secondary);
+  text-decoration: none;
+}
+
+.asciidoc-content strong,
+.asciidoc-content dt {
+  color: var(--g-text);
+}
+
+.asciidoc-content dt {
+  font-weight: 700;
+}
+
+.asciidoc-content code,
+.dark .asciidoc-content code {
+  border-radius: 0;
+  background: var(--g-bg-light);
+  color: var(--g-text);
+  font-size: 0.9em;
+}
+
+.asciidoc-content pre,
+.dark .asciidoc-content pre {
+  border-radius: 0;
+  background: var(--g-bg-light);
+  color: var(--g-text);
+  border-left: 5px solid var(--g-border);
+  font-size: 0.95rem;
+}
+
+.asciidoc-content pre code {
+  background: transparent;
+}
+
+.asciidoc-content blockquote,
+.dark .asciidoc-content blockquote {
+  border-radius: 0;
+  background: transparent;
+  border-left: 10px solid var(--g-border);
+  color: var(--g-text);
+  padding: 0.9375rem 1.25rem;
+}
+
+.asciidoc-content table,
+.dark .asciidoc-content table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+.asciidoc-content th,
+.asciidoc-content td,
+.dark .asciidoc-content th,
+.dark .asciidoc-content td {
+  border: 0;
+  border-bottom: 1px solid var(--g-border);
+  padding: 0.625rem 1.25rem 0.625rem 0;
+  text-align: left;
+  background: transparent;
+  color: var(--g-text);
+}
+
+.asciidoc-content th,
+.dark .asciidoc-content th {
+  font-weight: 700;
+}
+
+.asciidoc-content hr,
+.dark .asciidoc-content hr {
+  border: 0;
+  border-top: 1px solid var(--g-border);
+}
+
+/* Admonitions: GOV.UK inset text with a bold label. */
+.asciidoc-content .admonitionblock,
+.dark .asciidoc-content .admonitionblock {
+  background: transparent;
+  border-radius: 0;
+  border-left: 10px solid var(--g-border);
+}
+
+.dark .asciidoc-content .admonitionblock > table td.content,
+.asciidoc-content .admonitionblock > table td.content {
+  color: var(--g-text);
+}
+
+/* Collapsible blocks: the GOV.UK details component — blue underlined summary
+   with a solid triangle. */
+.asciidoc-content details > summary {
+  color: var(--g-link);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 1.5625rem;
+  margin-bottom: 0.9375rem;
+  list-style: none;
+}
+
+.asciidoc-content details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.asciidoc-content details > summary::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 7px 0 7px 12.124px;
+  border-left-color: inherit;
+  color: var(--g-link);
+}
+
+.asciidoc-content details[open] > summary::before {
+  border-width: 12.124px 7px 0 7px;
+  border-left-color: transparent;
+  border-top-color: inherit;
+}
+
+.asciidoc-content details > summary > *,
+.asciidoc-content details > summary {
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+.asciidoc-content details > summary:hover {
+  color: var(--g-link-hover);
+}
+
+.asciidoc-content details > summary:focus-visible {
+  background: var(--g-focus) !important;
+  color: var(--g-focus-text) !important;
+  box-shadow:
+    0 -2px var(--g-focus),
+    0 4px var(--g-focus-text) !important;
+  outline: 3px solid transparent !important;
+  text-decoration: none;
+}
+
+.asciidoc-content details > .content {
+  border-left: 5px solid var(--g-border);
+  padding: 0.9375rem 0 0.9375rem 1.25rem;
+}
+
+/* Style gallery tiles. */
+.asciidoc-content .style-gallery .imageblock,
+.dark .asciidoc-content .style-gallery .imageblock {
+  border-radius: 0;
+  border: 0;
+  border-top: 5px solid var(--g-brand);
+  box-shadow: inset 0 0 0 1px var(--g-border);
+}
+
+.asciidoc-content .style-gallery .imageblock:has(a):hover,
+.asciidoc-content .style-gallery .imageblock:has(a:focus-visible),
+.dark .asciidoc-content .style-gallery .imageblock:has(a):hover {
+  transform: none;
+  border-top-color: var(--g-border-strong);
+  box-shadow: inset 0 0 0 1px var(--g-border-strong);
+}
+
+.asciidoc-content .style-gallery .imageblock:has(a:focus-visible) {
+  outline: 3px solid var(--g-focus);
+  outline-offset: 0;
+}
+
+.youtube-facade,
+.youtube-loaded {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.youtube-facade-play-icon {
+  border-radius: 0;
+  background: #0b0c0c;
+}
+
+.youtube-facade:hover .youtube-facade-play-icon {
+  background: #00703c;
+}
+
+.youtube-facade:focus-visible {
+  outline: 3px solid var(--g-focus);
+  outline-offset: 0;
+  box-shadow: 0 0 0 6px var(--g-focus-text);
+}
+
+/* Contents list on doc pages: GOV.UK contents list with em-dash markers. */
+.doc-toc {
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.doc-toc #toctitle {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--g-text);
+  border-bottom: 0;
+  margin-bottom: 0.625rem;
+}
+
+.doc-toc ul ul {
+  border-left: 0;
+  padding-left: 1.25rem;
+}
+
+.doc-toc li {
+  position: relative;
+  padding-left: 1.5625rem;
+  margin: 0 0 0.3rem;
+}
+
+.doc-toc li::before {
+  content: '\2014';
+  position: absolute;
+  left: 0;
+  top: 0.125rem;
+  color: var(--g-text-secondary);
+}
+
+.doc-toc a {
+  color: var(--g-link);
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+  padding: 0.125rem 0;
+  border-radius: 0;
+  display: inline;
+}
+
+.doc-toc a:hover {
+  background: transparent;
+  color: var(--g-link-hover);
+  text-decoration-thickness: 3px;
+}
+
+.doc-toc a:focus-visible {
+  color: var(--g-focus-text) !important;
+}
+
+/* ----------------------------------------------------------------- footer */
+
+#app > footer {
+  background: var(--g-bg-light);
+  border-top: 1px solid var(--g-border);
+  color: var(--g-text);
+  margin-top: 3.75rem;
+}
+
+#app > footer > div {
+  padding-top: 1.875rem;
+  padding-bottom: 2.5rem;
+}
+
+#app > footer .flex-col {
+  align-items: flex-start;
+  gap: 0.9375rem;
+}
+
+#app > footer .justify-center {
+  justify-content: flex-start;
+}
+
+#app > footer a {
+  color: var(--g-text);
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+#app > footer a:hover {
+  color: var(--g-text);
+  text-decoration-thickness: 3px;
+}
+
+#app > footer a:focus-visible,
+#app > footer a:focus-visible * {
+  color: var(--g-focus-text) !important;
+}
+
+#app > footer .text-xs,
+#app > footer .text-sm {
+  font-size: 0.875rem;
+  color: var(--g-text);
+}
+
+#app > footer span.text-gray-300 {
+  color: var(--g-border);
+}
+
+.dark #app > footer img {
+  background: #ffffff;
+  padding: 1px;
+}
+
+/* --------------------------------------------------------------- mobile */
+
+@media (max-width: 640px) {
+  #hero h1 {
+    font-size: 2rem;
+    line-height: 1.09;
+    margin-top: 0.625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  #hero h1 + p {
+    font-size: 1.1875rem;
+    line-height: 1.32;
+  }
+
+  #hero p[data-i18n='hero.introEmphasis'],
+  #hero ol > li > span:last-child,
+  .category-intro,
+  .asciidoc-content {
+    font-size: 1rem;
+  }
+
+  .category-heading {
+    font-size: 1.5rem;
+  }
+
+  .category-icon {
+    width: 0.375rem;
+    min-height: 1.75rem;
+  }
+
+  .anchor-card {
+    padding: 0.75rem 0.9375rem 0.9375rem;
+  }
+
+  .anchor-card-title {
+    font-size: 1.1875rem;
+  }
+
+  #modal-title {
+    font-size: 1.5rem;
+  }
+
+  #anchor-modal > div > div:first-child,
+  #modal-content,
+  .modal-feedback-bar {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
+
+  .asciidoc-content h1 {
+    font-size: 2rem;
+  }
+
+  .asciidoc-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .asciidoc-content h3 {
+    font-size: 1.1875rem;
+  }
+
+  .sa-phase-banner-content {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anchor-card {
+    transition: none;
+  }
+}
+
+/* ------------------------------------------------------------ refinements */
+
+.youtube-facade-title,
+.youtube-facade-title * {
+  color: #ffffff !important;
+}
+
+.asciidoc-content blockquote > :last-child,
+.asciidoc-content blockquote p:last-child,
+.asciidoc-content .anchor-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* GOV.UK contents lists are one level deep: only the top level gets dashes. */
+.doc-toc ul ul > li {
+  padding-left: 0;
+}
+
+.doc-toc ul ul > li::before {
+  content: none;
+}
+
+.doc-toc ul ul {
+  padding-left: 1.5625rem;
+  margin-top: 0.3rem;
+  font-size: 0.9375rem;
+}
+
+/* Keep the header inside the 960px container: the role list has long names. */
+.sa-header nav > .hidden > .flex-1 {
+  min-width: 0;
+}
+
+.sa-header #header-role-filter {
+  min-width: 0;
+  max-width: 14rem;
+  flex: 1 1 auto;
+}
+
+.sa-header #header-search-input {
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: 16rem;
+}

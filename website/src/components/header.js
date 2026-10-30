@@ -4,14 +4,14 @@ export function renderHeader() {
   const langLabel = i18n.currentLang() === 'en' ? 'DE' : 'EN'
 
   return `
-    <header class="border-b border-[var(--color-border)] bg-[var(--color-bg)] transition-colors duration-300">
+    <header class="sa-header border-b border-[var(--color-border)] bg-[var(--color-bg)] transition-colors duration-300">
       <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
         <!-- Desktop: Logo spanning two rows, right side has nav + search -->
         <div class="hidden sm:flex items-stretch gap-6">
           <!-- Logo left, spanning both rows -->
           <div class="flex items-center">
             <a href="${import.meta.env.BASE_URL}" class="no-underline flex flex-col items-center">
-              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="218" height="96" class="h-24 w-[218px] max-w-none shrink-0" />
+              <span class="sa-logotype"><svg class="sa-logotype-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="16" cy="5.5" r="3" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 8.5v19M10 13h12M5 18c0 6 5 9.5 11 9.5S27 24 27 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/><path d="M2.5 19.5 5 16l2.5 3.5M24.5 19.5 27 16l2.5 3.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><span class="sa-logotype-text">Semantic Anchors</span></span>
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
             <button
@@ -104,7 +104,7 @@ export function renderHeader() {
         <div class="sm:hidden">
           <div class="flex flex-col items-center">
             <a href="${import.meta.env.BASE_URL}" class="no-underline flex flex-col items-center">
-              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="145" height="64" class="h-16 w-[145px] max-w-none shrink-0" />
+              <span class="sa-logotype"><svg class="sa-logotype-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="16" cy="5.5" r="3" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 8.5v19M10 13h12M5 18c0 6 5 9.5 11 9.5S27 24 27 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/><path d="M2.5 19.5 5 16l2.5 3.5M24.5 19.5 27 16l2.5 3.5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><span class="sa-logotype-text">Semantic Anchors</span></span>
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight text-center" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
             <div class="flex items-center gap-3 mt-2">
@@ -171,5 +171,11 @@ export function renderHeader() {
         </div>
       </nav>
     </header>
+    <div class="sa-phase-banner">
+      <p class="sa-phase-banner-content">
+        <strong class="sa-tag sa-phase-tag" data-i18n="poc.tag">${i18n.t('poc.tag')}</strong>
+        <span data-i18n="poc.text">${i18n.t('poc.text')}</span>
+      </p>
+    </div>
   `
 }
