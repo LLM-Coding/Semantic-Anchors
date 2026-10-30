@@ -1,0 +1,1192 @@
+/*
+ * Swiss Style (International Typographic Style) theme — proof of concept.
+ *
+ * Brief: docs/anchors/swiss-style.adoc. The grid comes first; one grotesque
+ * typeface in few sizes and weights; flush left, ragged right; asymmetric
+ * composition; hierarchy from scale, weight and position instead of ornament.
+ * Palette: black, white and one signal red. No rounded corners, no shadows,
+ * no category colours, no emoji: the category numerals carry the wayfinding.
+ *
+ * This file is unlayered and imported after main.css, so it overrides both
+ * Tailwind utilities and the component rules there. Selectors that compete
+ * with main.css `.dark .x` rules are prefixed with :root to match specificity.
+ */
+
+:root {
+  --swiss-font: 'Helvetica Neue', Helvetica, Inter, Arial, sans-serif;
+  --swiss-mono: ui-monospace, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace;
+  --swiss-paper: #ffffff;
+  --swiss-ink: #0a0a0a;
+  --swiss-grey: #5c5c5c; /* 6.7:1 on paper */
+  --swiss-hair: #d4d4d4;
+  --swiss-tint: #f2f2f2;
+  --swiss-red: #da0010; /* 5.6:1 on paper; white on red 5.6:1 */
+  --swiss-on-red: #ffffff;
+  --swiss-yellow: #ffe500;
+
+  --color-primary: var(--swiss-red);
+  --color-primary-dark: var(--swiss-red);
+  --color-bg: var(--swiss-paper);
+  --color-bg-secondary: var(--swiss-tint);
+  --color-text: var(--swiss-ink);
+  --color-text-secondary: var(--swiss-grey);
+  --color-border: var(--swiss-hair);
+  --color-link: var(--swiss-red);
+}
+
+.dark {
+  --swiss-paper: #0e0e0e;
+  --swiss-ink: #f4f4f0;
+  --swiss-grey: #a6a6a6; /* 7.9:1 on paper */
+  --swiss-hair: #333333;
+  --swiss-tint: #1a1a1a;
+  --swiss-red: #ff4d3d; /* 5.9:1 on paper; ink-black on red 5.7:1 */
+  --swiss-on-red: #0e0e0e;
+  --swiss-yellow: #ffe500;
+}
+
+/* ------------------------------------------------------------------ base */
+
+body {
+  font-family: var(--swiss-font);
+  background: var(--swiss-paper);
+  color: var(--swiss-ink);
+  font-feature-settings: 'tnum' 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+#page-content,
+#main-content,
+.anchor-card,
+.anchor-card-title,
+.anchor-card-meta,
+.anchor-card-proponents,
+.category-heading,
+.category-intro,
+.card-grid-container {
+  font-family: var(--swiss-font);
+}
+
+.anchor-card,
+.anchor-card *,
+.card-grid-container,
+.card-grid-container *,
+.anchor-cards-grid,
+.anchor-cards-grid * {
+  font-family: var(--swiss-font) !important;
+}
+
+::selection {
+  background: var(--swiss-red);
+  color: var(--swiss-on-red);
+}
+
+/* Square corners and no drop shadows anywhere: the grid, not the box, holds
+   things together. */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+:root .shadow-sm,
+:root .shadow,
+:root .shadow-md,
+:root .shadow-lg,
+:root .shadow-xl,
+:root .shadow-2xl {
+  box-shadow: none;
+}
+
+/* One focus style for everything: a thick red outline. */
+:focus-visible {
+  outline: 3px solid var(--swiss-red) !important;
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------- header */
+
+header {
+  border-top: 12px solid var(--swiss-red);
+  border-bottom: 2px solid var(--swiss-ink) !important;
+  background: var(--swiss-paper) !important;
+}
+
+header .site-logo {
+  display: none;
+}
+
+header a:has(> .site-wordmark) {
+  align-items: flex-start !important;
+  text-decoration: none;
+}
+
+.site-wordmark {
+  display: block;
+  font-size: 2rem;
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  color: var(--swiss-ink);
+  margin-bottom: 0.5rem;
+}
+
+header a:has(> .site-wordmark) > span[data-i18n='header.slogan'] {
+  text-align: left;
+  font-size: 0.75rem;
+  color: var(--swiss-grey);
+}
+
+header a:has(> .site-wordmark):hover .site-wordmark {
+  color: var(--swiss-red);
+}
+
+/* Desktop: wordmark column is a fixed field, nav starts on the next column. */
+header nav > .sm\:flex {
+  align-items: flex-end;
+  gap: 2.5rem;
+}
+
+header nav > .sm\:flex > div:first-child {
+  align-items: flex-start;
+  min-width: 13rem;
+}
+
+header .text-2xl {
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  gap: 1.75rem;
+}
+
+header .nav-link {
+  color: var(--swiss-ink) !important;
+  font-weight: 500;
+}
+
+header .nav-link:hover {
+  color: var(--swiss-red) !important;
+}
+
+/* updateActiveNavLink() marks the current route with font-semibold. */
+header .nav-link.font-semibold {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--swiss-red);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.45em;
+}
+
+#more-menu-dropdown {
+  border: 2px solid var(--swiss-ink);
+  box-shadow: none;
+  padding: 0;
+}
+
+#more-menu-dropdown a {
+  font-size: 0.9375rem;
+  border-bottom: 1px solid var(--swiss-hair);
+}
+
+#more-menu-dropdown a:last-child {
+  border-bottom: 0;
+}
+
+#more-menu-dropdown a:hover {
+  background: var(--swiss-ink);
+  color: var(--swiss-paper) !important;
+}
+
+#lang-toggle,
+#lang-toggle-mobile {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--swiss-ink);
+}
+
+#header-search-input,
+#header-role-filter,
+#search-input,
+#role-filter {
+  border: 0 !important;
+  border-bottom: 2px solid var(--swiss-ink) !important;
+  background: transparent !important;
+  padding-left: 0;
+  font-size: 0.9375rem;
+  color: var(--swiss-ink);
+  box-shadow: none !important;
+}
+
+#header-search-input::placeholder,
+#search-input::placeholder {
+  color: var(--swiss-grey);
+}
+
+#header-search-input:focus,
+#header-role-filter:focus,
+#search-input:focus,
+#role-filter:focus {
+  border-bottom-color: var(--swiss-red) !important;
+}
+
+#header-role-filter option,
+#role-filter option {
+  background: var(--swiss-paper);
+  color: var(--swiss-ink);
+}
+
+#anchor-count,
+#anchor-count-mobile {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8125rem;
+  color: var(--swiss-grey);
+}
+
+#visible-count,
+#visible-count-mobile {
+  color: var(--swiss-red);
+  font-weight: 700;
+}
+
+/* Mobile header: flush left, wordmark and controls on one line. */
+header nav > .sm\:hidden > .flex-col {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+header nav > .sm\:hidden > .flex-col > div {
+  margin-top: 0;
+  gap: 0.25rem;
+}
+
+header nav > .sm\:hidden .site-wordmark {
+  font-size: 1.625rem;
+}
+
+#mobile-menu {
+  border-top: 2px solid var(--swiss-ink);
+}
+
+#mobile-menu .mobile-nav-link {
+  border-bottom: 1px solid var(--swiss-hair);
+  color: var(--swiss-ink);
+  font-weight: 500;
+}
+
+/* ----------------------------------------------------------------- hero */
+
+#hero {
+  margin-bottom: 1.5rem;
+}
+
+#hero > div {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 1.5rem;
+  align-items: start;
+}
+
+#hero > div > * {
+  grid-column: 1 / -1;
+}
+
+#hero h1 {
+  font-size: clamp(2.75rem, 8.4vw, 7rem);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  max-width: 6.4em;
+  text-wrap: balance;
+  margin: 1rem 0 2.5rem;
+  color: var(--swiss-ink);
+}
+
+#hero h1::before {
+  content: '';
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--swiss-red);
+  margin-bottom: 0.35em;
+}
+
+#hero > div > p[data-i18n='hero.intro'] {
+  font-size: 1.1875rem;
+  line-height: 1.45;
+  color: var(--swiss-ink);
+  margin-bottom: 0.75rem;
+}
+
+#hero > div > p[data-i18n='hero.introEmphasis'] {
+  font-size: 1.1875rem;
+  line-height: 1.45;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* Without / with anchor: a grey field hanging from a rule against a solid
+   red field. The contrast is the argument of the page. */
+#hero .grid.sm\:grid-cols-2 {
+  gap: 0;
+  margin-bottom: 0.75rem;
+}
+
+#hero .grid.sm\:grid-cols-2 > div {
+  border: 0 !important;
+  padding: 1.25rem 1.5rem 1.5rem;
+  min-height: 11rem;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:first-child {
+  background: var(--swiss-tint) !important;
+  border-top: 2px solid var(--swiss-ink) !important;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child {
+  background: var(--swiss-red) !important;
+  color: var(--swiss-on-red);
+  border-top: 2px solid var(--swiss-red) !important;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child * {
+  color: var(--swiss-on-red) !important;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child p {
+  font-family: var(--swiss-font);
+  font-size: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+#hero .grid.sm\:grid-cols-2 > div > div {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:first-child > div {
+  color: var(--swiss-ink);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:first-child p {
+  font-family: var(--swiss-mono);
+  color: var(--swiss-grey);
+  font-size: 0.8125rem;
+}
+
+#hero > div > p.italic {
+  font-style: normal;
+  font-size: 0.8125rem;
+  color: var(--swiss-grey);
+  margin-bottom: 3rem;
+}
+
+/* Press strip: a single flush-left line between two rules. */
+#appearances {
+  border-top: 2px solid var(--swiss-ink) !important;
+  border-bottom: 1px solid var(--swiss-hair) !important;
+  margin-bottom: 3rem;
+}
+
+#appearances > div {
+  justify-content: flex-start;
+}
+
+#appearances > div > span.text-xs {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.625rem;
+  color: var(--swiss-ink);
+}
+
+#appearances a span.text-\[var\(--color-text-secondary\)\] {
+  color: var(--swiss-ink);
+  font-weight: 500;
+}
+
+#appearances a:hover span.text-\[var\(--color-text-secondary\)\] {
+  color: var(--swiss-red);
+}
+
+#appearances img {
+  filter: grayscale(1);
+}
+
+#appearances span[aria-hidden='true'] {
+  background: var(--swiss-hair) !important;
+}
+
+/* How to use: label in the first three columns, three steps in the rest. */
+#hero h2[data-i18n='hero.howToUseTitle'] {
+  grid-column: 1 / span 3;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--swiss-ink);
+}
+
+#hero > div > ol {
+  grid-column: 4 / -1;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+#hero > div > ol > li {
+  display: block;
+  background: transparent !important;
+  border-top: 2px solid var(--swiss-ink);
+  padding: 0.75rem 0 0;
+}
+
+#hero > div > ol > li > span:first-child {
+  display: block;
+  width: auto;
+  height: auto;
+  background: transparent !important;
+  color: var(--swiss-red) !important;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+}
+
+#hero > div > ol > li > span:last-child {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+#hero > div > div.flex.mb-6 {
+  grid-column: 4 / -1;
+}
+
+talk-it-over {
+  --tio-radius: 0;
+  --tio-border: var(--swiss-ink);
+  --tio-hover: var(--swiss-tint);
+  --tio-menu-bg: var(--swiss-paper);
+  --tio-menu-fg: var(--swiss-ink);
+  font-weight: 700;
+}
+
+#hero > div > div.flex.text-sm {
+  border-top: 1px solid var(--swiss-hair);
+  padding-top: 0.75rem;
+}
+
+#hero > div > div.flex.text-sm a {
+  color: var(--swiss-ink) !important;
+  font-weight: 500;
+}
+
+#hero > div > div.flex.text-sm a:hover {
+  color: var(--swiss-red) !important;
+}
+
+#hero > div > div.flex.text-sm a[href='#filters'] {
+  color: var(--swiss-red) !important;
+  font-weight: 700;
+}
+
+#hero > div > div.flex.text-sm > span {
+  color: var(--swiss-hair) !important;
+}
+
+@media (min-width: 1024px) {
+  #hero > div > p[data-i18n='hero.intro'],
+  #hero > div > p[data-i18n='hero.introEmphasis'] {
+    grid-column: 4 / span 6;
+  }
+  #hero > div > p.italic {
+    grid-column: 4 / -1;
+  }
+}
+
+@media (max-width: 1023px) {
+  #hero h2[data-i18n='hero.howToUseTitle'],
+  #hero > div > ol,
+  #hero > div > div.flex.mb-6 {
+    grid-column: 1 / -1;
+  }
+  #hero h2[data-i18n='hero.howToUseTitle'] {
+    margin-bottom: 1rem;
+  }
+}
+
+/* --------------------------------------------------- category quick-nav */
+
+/* An index, not a row of pills: numbered entries on a column grid. The
+   numbers match the large numerals on the sections below. */
+.category-nav {
+  padding: 0.5rem 0 0.625rem;
+  margin-bottom: 3rem;
+  background: var(--swiss-paper);
+  border-top: 2px solid var(--swiss-ink);
+  border-bottom: 1px solid var(--swiss-ink);
+}
+
+.category-nav-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  column-gap: 1.5rem;
+  row-gap: 0;
+  counter-reset: swiss-nav;
+}
+
+.category-nav-list > li:has(> a.category-nav-link) {
+  counter-increment: swiss-nav;
+}
+
+:root .category-nav-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.2rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--swiss-ink);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
+a.category-nav-link::before {
+  content: counter(swiss-nav, decimal-leading-zero);
+  flex: none;
+  width: 1.4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--swiss-red);
+}
+
+.category-nav-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:root .category-nav-count {
+  flex: none;
+  padding: 0;
+  background: transparent;
+  color: var(--swiss-grey);
+  font-weight: 400;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+:root .category-nav-link:hover,
+:root .category-nav-link:focus-visible {
+  color: var(--swiss-red);
+  border-color: transparent;
+}
+
+:root .category-nav-link:hover .category-nav-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* The recency toggle filters rather than jumps, so it looks like a switch:
+   red label, solid red when pressed. */
+:root .category-nav-toggle {
+  border: 0;
+  cursor: pointer;
+}
+
+:root .category-nav-toggle::before {
+  content: '+';
+  flex: none;
+  width: 1.4rem;
+  font-weight: 700;
+  color: var(--swiss-red);
+}
+
+:root .category-nav-toggle .category-nav-name {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  color: var(--swiss-red);
+}
+
+:root .category-nav-toggle-active,
+:root .category-nav-toggle-active:hover {
+  background: var(--swiss-red);
+  color: var(--swiss-on-red);
+}
+
+:root .category-nav-toggle-active::before,
+:root .category-nav-toggle-active .category-nav-name,
+:root .category-nav-toggle-active .category-nav-count {
+  color: var(--swiss-on-red);
+  background: transparent;
+}
+
+/* ----------------------------------------------------- category sections */
+
+.card-grid-container {
+  padding-left: 0;
+  padding-right: 0;
+  counter-reset: swiss-cat;
+}
+
+/* Hidden sections carry an inline display:none and do not count, so the
+   numbering always matches the quick-nav (whose items hide the same way). */
+.category-section {
+  counter-increment: swiss-cat;
+  border-top: 2px solid var(--swiss-ink);
+  padding-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+:root .category-heading {
+  display: block;
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--swiss-ink);
+}
+
+:root .category-heading span[data-i18n^='categories.'] {
+  color: var(--swiss-ink);
+}
+
+.category-heading::before {
+  content: counter(swiss-cat, decimal-leading-zero);
+  display: block;
+  font-size: 5.5rem;
+  line-height: 0.82;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--swiss-red);
+  margin: 0 0 1rem -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.category-icon {
+  display: none !important;
+}
+
+:root .category-heading + .category-intro {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+:root .category-intro {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--swiss-grey);
+  max-width: 40rem;
+}
+
+.category-intro a:hover,
+.category-intro a:focus-visible {
+  color: var(--swiss-red) !important;
+}
+
+/* Desktop: asymmetric 1 : 3 split. Heading and intro hang in the left
+   field, the anchors fill a three-column grid on the right. */
+@media (min-width: 1024px) {
+  .category-section:not([style*='display: none']) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 1.5rem;
+  }
+  .category-section > .category-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .category-section > .category-intro {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    font-size: 0.8125rem;
+  }
+  .category-section > .anchor-cards-grid {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
+/* ------------------------------------------------------------ the cards */
+
+/* Each anchor is a field that hangs from a rule: no box, no shadow. */
+.anchor-cards-grid {
+  column-gap: 1.5rem;
+  row-gap: 0;
+}
+
+@media (min-width: 640px) {
+  .anchor-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .anchor-cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+:root .anchor-card {
+  border: 0;
+  border-top: 1px solid var(--swiss-ink);
+  background: transparent;
+  padding: 0.75rem 0 1.75rem;
+  box-shadow: none;
+  transform: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+:root .anchor-card:hover,
+:root .anchor-card:focus-within {
+  border-color: var(--swiss-red);
+  box-shadow: inset 0 4px 0 var(--swiss-red);
+  transform: none;
+}
+
+:root .anchor-card:has(.anchor-card-open:focus-visible) {
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  outline: 3px solid var(--swiss-red);
+  outline-offset: 4px;
+}
+
+.anchor-card-open:focus-visible {
+  outline: none !important;
+}
+
+:root .anchor-card-title {
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--swiss-ink);
+  padding-top: 0.25rem;
+}
+
+:root .anchor-card:hover .anchor-card-title {
+  color: var(--swiss-red);
+}
+
+:root .anchor-edit-btn,
+:root .anchor-copy-link-btn,
+:root .anchor-copy-keyword-btn {
+  color: var(--swiss-grey);
+  background: transparent;
+}
+
+:root .anchor-edit-btn:hover,
+:root .anchor-copy-link-btn:hover,
+:root .anchor-copy-keyword-btn:hover {
+  color: var(--swiss-red);
+  background: transparent;
+  scale: 1;
+}
+
+:root .anchor-card-proponents {
+  font-style: normal;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--swiss-grey);
+  margin-bottom: 0.75rem;
+}
+
+:root .anchor-card-meta {
+  gap: 0.875rem;
+}
+
+:root .meta-badge {
+  padding: 0;
+  background: transparent;
+  color: var(--swiss-ink);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+:root .meta-badge svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--swiss-grey);
+}
+
+.anchor-card-indicator {
+  display: none;
+}
+
+:root .anchor-new-badge {
+  background: var(--swiss-red);
+  color: var(--swiss-on-red);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.35rem;
+  vertical-align: 0.15em;
+}
+
+/* Advisory: poster yellow, black type — the only second colour, reserved for
+   a warning. */
+:root .anchor-advisory-badge,
+:root .anchor-advisory-banner {
+  background: var(--swiss-yellow);
+  color: #0a0a0a;
+  border: 0;
+  border-left: 4px solid #0a0a0a;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------- anchor modal */
+
+#anchor-modal {
+  background: rgb(10 10 10 / 0.6);
+  backdrop-filter: none;
+}
+
+#anchor-modal > div {
+  border: 0;
+  border-top: 12px solid var(--swiss-red);
+}
+
+#anchor-modal > div > div:first-child {
+  border-bottom: 2px solid var(--swiss-ink);
+}
+
+#modal-title {
+  font-size: 2rem;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--swiss-ink);
+}
+
+#modal-copy-keyword:hover,
+#modal-share:hover,
+#modal-close:hover {
+  color: var(--swiss-red);
+  background: transparent;
+}
+
+#modal-close {
+  color: var(--swiss-ink);
+}
+
+:root .modal-feedback-bar {
+  border-top: 2px solid var(--swiss-ink);
+}
+
+:root .modal-feedback-cta {
+  color: var(--swiss-grey);
+}
+
+:root .feedback-btn {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+:root .feedback-btn-vote {
+  background: var(--swiss-red);
+  color: var(--swiss-on-red);
+}
+
+:root .feedback-btn-vote:hover {
+  background: var(--swiss-ink);
+  color: var(--swiss-paper);
+}
+
+:root .feedback-btn-discuss {
+  background: transparent;
+  color: var(--swiss-ink);
+  box-shadow: inset 0 0 0 2px var(--swiss-ink);
+}
+
+:root .feedback-btn-discuss:hover {
+  background: var(--swiss-ink);
+  color: var(--swiss-paper);
+}
+
+:root .feedback-section {
+  background: transparent;
+  border: 0;
+  border-top: 2px solid var(--swiss-ink);
+  padding: 1rem 0 0;
+}
+
+:root .feedback-avatar {
+  border-radius: 9999px !important;
+}
+
+/* The lead definition: large type behind a red bar. */
+:root .anchor-answer,
+:root .anchor-answer-lead {
+  background: transparent;
+  color: var(--swiss-ink);
+  border-left: 6px solid var(--swiss-red);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  font-size: 1.1875rem;
+  line-height: 1.45;
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------------------- AsciiDoc content (modal/docs) */
+
+:root .asciidoc-content {
+  background: transparent;
+  color: var(--swiss-ink);
+  font-family: var(--swiss-font);
+}
+
+:root .asciidoc-content :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--swiss-font);
+  color: var(--swiss-ink);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+:root .asciidoc-content h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+:root .asciidoc-content h1::before {
+  content: '';
+  display: block;
+  width: 0.45em;
+  height: 0.45em;
+  background: var(--swiss-red);
+  margin-bottom: 0.35em;
+}
+
+:root .asciidoc-content h2 {
+  font-size: 1.625rem;
+  border-top: 2px solid var(--swiss-ink);
+  padding-top: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+:root .asciidoc-content h3 {
+  font-size: 1.25rem;
+}
+
+/* AsciiDoc discrete headings inside anchors ("Core Concepts:") */
+:root .asciidoc-content :is(h2, h3).discrete {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-top: 2px solid var(--swiss-ink);
+  padding-top: 0.6rem;
+  margin-top: 2rem;
+}
+
+:root .asciidoc-content :is(h2, h3).discrete strong {
+  font-weight: 700;
+}
+
+:root .asciidoc-content a {
+  color: var(--swiss-ink);
+  text-decoration-color: var(--swiss-red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+:root .asciidoc-content a:hover,
+:root .asciidoc-content a:focus {
+  color: var(--swiss-red);
+}
+
+:root .asciidoc-content a.anchor:hover {
+  color: var(--swiss-red);
+}
+
+:root .asciidoc-content :is(dt, .dlist dt, .hdlist1) {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--swiss-ink);
+}
+
+:root .asciidoc-content code {
+  background: var(--swiss-tint);
+  color: var(--swiss-ink);
+  font-family: var(--swiss-mono);
+}
+
+:root .asciidoc-content pre {
+  background: var(--swiss-tint);
+  color: var(--swiss-ink);
+  border-left: 4px solid var(--swiss-ink);
+  font-family: var(--swiss-mono);
+}
+
+:root .asciidoc-content blockquote,
+:root .asciidoc-content .quoteblock blockquote {
+  background: transparent;
+  border-left: 6px solid var(--swiss-red);
+  color: var(--swiss-ink);
+  font-size: 1.125rem;
+}
+
+:root .asciidoc-content :is(table, th, td) {
+  border-color: var(--swiss-hair);
+}
+
+:root .asciidoc-content th {
+  background: transparent;
+  color: var(--swiss-ink);
+  border-bottom: 2px solid var(--swiss-ink);
+  text-align: left;
+}
+
+:root .asciidoc-content .admonitionblock {
+  background: var(--swiss-tint);
+}
+
+:root .asciidoc-content .admonitionblock > table td.content {
+  color: var(--swiss-ink);
+}
+
+:root .asciidoc-content hr {
+  border-color: var(--swiss-ink);
+}
+
+:root .asciidoc-content details > summary {
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+:root .asciidoc-content .doc-byline {
+  border-bottom: 1px solid var(--swiss-hair);
+}
+
+/* Doc TOC: flush-left list hanging from a rule. */
+.doc-toc {
+  border-top: 2px solid var(--swiss-ink) !important;
+  padding-top: 0.75rem !important;
+}
+
+.doc-toc a {
+  color: var(--swiss-ink);
+  text-decoration: none;
+}
+
+.doc-toc a:hover {
+  color: var(--swiss-red);
+}
+
+/* Video facade: square, no glow; red play block. */
+.youtube-facade {
+  box-shadow: none;
+}
+
+.youtube-facade-play-icon {
+  background: var(--swiss-red) !important;
+  box-shadow: none;
+  color: #fff;
+}
+
+.youtube-facade-wrapper figcaption {
+  text-align: left;
+}
+
+/* --------------------------------------------------------------- footer */
+
+footer {
+  border-top: 2px solid var(--swiss-ink) !important;
+  background: var(--swiss-paper) !important;
+}
+
+footer a {
+  color: var(--swiss-ink) !important;
+}
+
+footer a:hover {
+  color: var(--swiss-red) !important;
+}
+
+footer .text-gray-300,
+footer .dark\:text-gray-600 {
+  color: var(--swiss-hair) !important;
+}
+
+/* --------------------------------------------------------------- phones */
+
+@media (max-width: 639px) {
+  #hero h1 {
+    font-size: 3.25rem;
+    margin-bottom: 1.75rem;
+  }
+  #hero > div > p[data-i18n='hero.intro'],
+  #hero > div > p[data-i18n='hero.introEmphasis'] {
+    font-size: 1.0625rem;
+  }
+  #hero > div > ol > li {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+  #hero > div > ol > li > span:first-child {
+    font-size: 2.25rem;
+    min-width: 1.5rem;
+  }
+  #hero .grid.sm\:grid-cols-2 > div {
+    min-height: 0;
+  }
+  #hero .grid.sm\:grid-cols-2 > div:last-child p {
+    font-size: 1.375rem;
+  }
+  .category-heading::before {
+    font-size: 4rem;
+  }
+  :root .category-heading {
+    font-size: 1.375rem;
+  }
+  .category-section {
+    margin-bottom: 3.5rem;
+  }
+  #filters {
+    gap: 1rem;
+  }
+  #search-input,
+  #role-filter {
+    flex: 1 1 100%;
+  }
+}
+
+/* In the modal the header already carries the title in large type; the
+   rendered document title repeats it, so it steps down to a section head. */
+#modal-content h1 {
+  font-size: 1.5rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-top: 0.5rem;
+}
+
+#modal-content h1::before {
+  display: none;
+}
+
+.youtube-facade-wrapper {
+  margin-left: 0;
+}

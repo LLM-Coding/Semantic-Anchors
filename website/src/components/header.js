@@ -11,7 +11,8 @@ export function renderHeader() {
           <!-- Logo left, spanning both rows -->
           <div class="flex items-center">
             <a href="${import.meta.env.BASE_URL}" class="no-underline flex flex-col items-center">
-              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="218" height="96" class="h-24 w-[218px] max-w-none shrink-0" />
+              <img src="${import.meta.env.BASE_URL}logo.png" alt="" width="218" height="96" class="site-logo h-24 w-[218px] max-w-none shrink-0" />
+              <span class="site-wordmark">Semantic<br />Anchors</span>
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
             <button
@@ -104,7 +105,8 @@ export function renderHeader() {
         <div class="sm:hidden">
           <div class="flex flex-col items-center">
             <a href="${import.meta.env.BASE_URL}" class="no-underline flex flex-col items-center">
-              <img src="${import.meta.env.BASE_URL}logo.png" alt="Semantic Anchors" width="145" height="64" class="h-16 w-[145px] max-w-none shrink-0" />
+              <img src="${import.meta.env.BASE_URL}logo.png" alt="" width="145" height="64" class="site-logo h-16 w-[145px] max-w-none shrink-0" />
+              <span class="site-wordmark">Semantic<br />Anchors</span>
               <span class="text-xs text-[var(--color-text-secondary)] leading-tight text-center" data-i18n="header.slogan">${i18n.t('header.slogan')}</span>
             </a>
             <div class="flex items-center gap-3 mt-2">

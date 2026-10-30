@@ -540,7 +540,9 @@ test.describe('Category quick-nav', () => {
     })
   }
 
-  test('fits on one line on a desktop screen', async ({ page }) => {
+  // Swiss Style PoC: the chips became a numbered text index on a column grid,
+  // so the claim is a bounded number of rows rather than a single line.
+  test('stays within four index rows on a desktop screen', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto('/')
     await expect(page.locator('.category-nav-list')).toBeVisible()
@@ -549,7 +551,7 @@ test.describe('Category quick-nav', () => {
       .evaluateAll((items) => [
         ...new Set(items.map((li) => Math.round(li.getBoundingClientRect().top))),
       ])
-    expect(tops).toHaveLength(1)
+    expect(tops.length).toBeLessThanOrEqual(4)
   })
 
   test('a jump keeps the category heading below the two-row nav', async ({ page }) => {

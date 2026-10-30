@@ -196,10 +196,10 @@ describe('category quick-nav', () => {
     expect(html).toContain('id="category-design-principles"')
   })
 
-  it('labels each icon-only chip with the category name for accessibility', () => {
+  it('labels each chip with the category name for accessibility', () => {
     const html = renderCardGrid(categories, anchors)
-    // icon is decorative; the name carries the accessible label (aria-label + title)
-    expect(html).toContain('class="category-nav-icon"')
+    // the visible name is aria-hidden; aria-label + title carry the accessible label
+    expect(html).toContain('class="category-nav-name"')
     expect(html).toContain('aria-label="categories.testing-quality"')
     expect(html).toContain('data-i18n-title="categories.testing-quality"')
   })

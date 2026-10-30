@@ -125,9 +125,9 @@ function countCategoryAnchors(category, allAnchors) {
 
 /**
  * Render the sticky category quick-nav: one jump link per non-empty category,
- * shown as a category icon plus a live anchor count. The category name is the
- * accessible label (title + aria-label) since there is no visible text — the
- * icon itself is decorative (aria-hidden). Links are plain in-page anchors
+ * shown as the category name plus a live anchor count. The name is also the
+ * accessible label (title + aria-label); the visible copy is aria-hidden so
+ * screen readers do not announce it twice. Links are plain in-page anchors
  * (`#category-<id>`) so they work without JavaScript; the count badges are kept
  * in sync with the active search/role filter by applyCardFilters().
  */
@@ -142,7 +142,6 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
     .map(({ category, count }) => {
       const id = escapeHtml(category.id)
       const name = i18n.t(`categories.${category.id}`) || category.name
-      const icon = CATEGORY_ICONS[category.id] || '📌'
       return `
         <li>
           <a
@@ -154,7 +153,7 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             aria-label="${escapeHtml(name)}"
             data-i18n-aria="categories.${id}"
           >
-            <span class="category-nav-icon" aria-hidden="true">${icon}</span>
+            <span class="category-nav-name" aria-hidden="true" data-i18n="categories.${id}">${escapeHtml(name)}</span>
             <span class="category-nav-count">${count}</span>
           </a>
         </li>`
@@ -175,7 +174,7 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             aria-label="${escapeHtml(i18n.t('nav.recentlyAdded'))}"
             data-i18n-aria="nav.recentlyAdded"
           >
-            <span class="category-nav-icon" aria-hidden="true">\u2728</span>
+            <span class="category-nav-name" aria-hidden="true" data-i18n="card.new">${escapeHtml(i18n.t('card.new'))}</span>
             <span class="category-nav-count">${recent.size}</span>
           </button>
         </li>`
