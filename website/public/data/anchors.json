@@ -9265,7 +9265,7 @@
     ],
     "filePath": "docs/anchors/ssot-principle.adoc",
     "tier": 1,
-    "definition": "SSOT (Single Source of Truth) is a design principle that gives each piece of data one canonical, authoritative location. All consumers reference that source, other representations are derived from it, and it is the definitive version when conflicts arise. Unlike SPOT, which focuses on the implementation pattern, SSOT applies at the architecture and organizational level.",
+    "definition": "SSOT (Single Source of Truth) is a design principle that gives each piece of data one canonical, authoritative location. All consumers reference that source, other representations are derived from it, and it is the definitive version when conflicts arise. Unlike SPOT (Single Point of Truth), which focuses on the implementation pattern, SSOT applies at the architecture and organizational level.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {

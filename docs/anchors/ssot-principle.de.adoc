@@ -3,7 +3,7 @@
 :roles: software-architect, data-scientist, business-analyst
 :proponents: Community
 :tier: 1
-:definition: SSOT (Single Source of Truth) ist ein Entwurfsprinzip, das jedem Datenstück genau eine kanonische, autoritative Stelle gibt. Alle Konsumenten referenzieren diese Quelle, andere Repräsentationen werden von ihr abgeleitet, und bei Konflikten gilt sie als definitive Version. Anders als SPOT, das sich auf das Implementierungsmuster konzentriert, wirkt SSOT auf Architektur- und Organisationsebene.
+:definition: SSOT (Single Source of Truth) ist ein Entwurfsprinzip, das jedem Datenstück genau eine kanonische, autoritative Stelle gibt. Alle Konsumenten referenzieren diese Quelle, andere Repräsentationen werden von ihr abgeleitet, und bei Konflikten gilt sie als definitive Version. Anders als SPOT (Single Point of Truth), das sich auf das Implementierungsmuster konzentriert, wirkt SSOT auf Architektur- und Organisationsebene.
 :tags: SSOT, single source of truth, data consistency, canonical source, DRY
 :related: dry, single-level-of-abstraction-principle, separation-of-concerns
 
