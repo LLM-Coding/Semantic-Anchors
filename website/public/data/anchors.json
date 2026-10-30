@@ -9776,7 +9776,7 @@
         "works": true
       }
     ],
-    "definition": "The WAI-ARIA Authoring Practices Guide (APG) is the W3C's informative catalogue of 30 UI patterns, such as Accordion, Combobox, Dialog, Disclosure, Menu Button, Listbox and Tabs. For each pattern it fixes one name, the keyboard interaction, the ARIA roles, states and properties, and a working example, so a prompt that names a pattern also specifies how the control behaves.",
+    "definition": "The WAI-ARIA Authoring Practices Guide (APG) is the W3C's informative catalogue of 30 UI patterns, such as Accordion, Combobox, Dialog, Disclosure, Menu Button, Listbox and Tabs. For each pattern it fixes one name, the keyboard interaction and the ARIA roles, states and properties, and nearly every pattern comes with a working example, so a prompt that names a pattern also specifies how the control behaves.",
     "addedAt": "2026-10-30T08:56:08+01:00"
   },
   {
