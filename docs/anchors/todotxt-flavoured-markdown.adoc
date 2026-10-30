@@ -5,7 +5,7 @@
 :tags: todo.txt, task management, markdown, Gina Trapani, plain text, task lists
 :related: gtd, para-method
 :tier: 3
-:definition: todo.txt-flavoured Markdown is a task-list convention that combines GitHub-flavoured Markdown checkboxes with Gina Trapani's todo.txt format. Each task line adds todo.txt priorities such as (A), plus-prefixed project tags, at-prefixed context tags, key-value metadata such as due dates, and ISO creation and completion dates. The result stays readable as plain text, renders in Markdown viewers and can be filtered with todo.txt tools or grep.
+:definition: todo.txt-flavoured Markdown is a task-list convention that combines GitHub-flavoured Markdown checkboxes with Gina Trapani's todo.txt format. Each task line adds todo.txt priorities such as (A), plus-prefixed project tags, at-prefixed context tags, key-value metadata such as due dates, and ISO creation and completion dates. The result stays readable as plain text, renders in Markdown viewers, and its tags can be filtered with todo.txt tools or grep.
 
 [%collapsible]
 ====

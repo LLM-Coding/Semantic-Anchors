@@ -5,7 +5,7 @@
 :proponents: Noriaki Kano
 :tags: customer-satisfaction, feature-prioritization, product-management, requirements
 :tier: 3
-:definition: The Kano Model is Noriaki Kano's customer satisfaction model, first published in 1984 in the Japanese journal Hinshitsu, which treats satisfaction and dissatisfaction as two separate axes. A paired functional and dysfunctional questionnaire sorts each feature into one of five categories: Must-be, One-dimensional, Attractive, Indifferent and Reverse. Categories decay over time, as today's delighter becomes tomorrow's must-be, and the model helps prioritise a backlog beyond raw business value.
+:definition: The Kano Model is Noriaki Kano's customer satisfaction model, first published in 1984 in the Japanese journal Hinshitsu, which plots customer satisfaction against how fully a feature is present instead of treating satisfaction as the simple inverse of dissatisfaction. A paired functional and dysfunctional questionnaire sorts each feature into one of five categories: Must-be, One-dimensional, Attractive, Indifferent and Reverse. Categories decay over time, as today's delighter becomes tomorrow's must-be, and the model helps prioritise a backlog beyond raw business value.
 
 [%collapsible]
 ====

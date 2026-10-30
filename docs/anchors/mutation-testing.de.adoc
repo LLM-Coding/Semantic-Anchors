@@ -3,7 +3,7 @@
 :roles: software-developer, qa-engineer
 :proponents: Richard Lipton (theoretical foundation, 1971), Richard DeMillo, Timothy Budd
 :tier: 3
-:definition: Mutation Testing ist eine Technik zur Bewertung der Testqualität, theoretisch begründet von Richard Lipton 1971 und weiterentwickelt von Richard DeMillo und Timothy Budd, die absichtlich kleine syntaktische Änderungen, Mutanten genannt, in den Quellcode einbringt. Schlägt ein Test fehl, ist der Mutant getötet; überlebende Mutanten zeigen schwache Assertions. Der Mutations-Score, der Anteil getöteter nicht äquivalenter Mutanten, fragt, ob die Tests gut genug sind, nicht nur, ob die Abdeckung hoch genug ist.
+:definition: Mutation Testing ist eine Technik zur Bewertung der Testqualität, theoretisch begründet von Richard Lipton 1971 und weiterentwickelt von Richard DeMillo und Timothy Budd, die absichtlich kleine syntaktische Änderungen, Mutanten genannt, in den Quellcode einbringt. Schlägt ein Test fehl, ist der Mutant getötet; überlebende Mutanten weisen auf schwache Tests hin, es sei denn, es sind äquivalente Mutanten, die das Programmverhalten nicht ändern. Der Mutations-Score, der Anteil getöteter nicht äquivalenter Mutanten, fragt, ob die Tests gut genug sind, nicht nur, ob die Abdeckung hoch genug ist.
 :tags: mutation testing, test quality, fault injection, test effectiveness, coverage
 :related: property-based-testing, testing-pyramid
 
