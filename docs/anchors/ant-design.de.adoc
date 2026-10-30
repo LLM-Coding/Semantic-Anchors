@@ -1,0 +1,52 @@
+= Ant Design
+:categories: ux-visual-design
+:roles: software-developer, ux-designer
+:proponents: Ant Group, afc163
+:tags: Ant Design, antd, React, Enterprise-UI, Admin-Oberfläche, Backoffice, Form.Item, rules, Table, ConfigProvider, Design Tokens, Seed Token, Map Token, Alias Token, CSS-in-JS, CSS-Variablen, Ant Group, Ant Financial, Alibaba, afc163, Ant Design Pro
+:related: design-tokens-dtcg, material-design-3, shadcn-ui
+:tier: 3
+:definition: Ant Design ist die Enterprise-Designsprache und React-Komponentenbibliothek (antd) der Ant Group, des mit Alibaba verbundenen Unternehmens hinter Alipay, seit 2015 öffentlich. Für datenlastige Admin- und Backoffice-Oberflächen gebaut, bietet sie Komponenten wie Form, Table und ConfigProvider und ein Theme-System aus Seed-, Map- und Alias-Tokens.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Ant Design -- „A UI Design Language“ (https://github.com/ant-design[GitHub-Organisation]) und ihre React-Umsetzung `antd`
+
+Auch bekannt als:: antd, AntD
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Vier Designwerte.* Natural, Certain, Meaningful und Growing; „Certain“ zielt auf „high certainty and low cooperative entropy“ (https://ant.design/docs/spec/values[Design Values]).
+* *Formulare per Deklaration.* Ein `Form` hält `Form.Item`-Felder mit `name` und `rules`; `onFinish` erhält die geprüften Werte, `Form.useForm` gibt Zugriff auf die Formularinstanz (https://ant.design/components/form-cn[Form]).
+* *Komponenten für dichte Daten.* `Table` mit Sortierung, Filtern und Paginierung, dazu `Descriptions`, `Tree`, `Transfer` und `Steps` für Backoffice-Masken.
+* *Drei Token-Ebenen.* Seed-Tokens sind „the origin of all design intent“, Map-Tokens leiten sich daraus ab, Alias-Tokens gestalten Gruppen von Komponenten; `ConfigProvider` nimmt `token`, einen `algorithm` für dunkle oder kompakte Themes und Überschreibungen pro Komponente (https://ant.design/docs/react/customize-theme[Customize Theme]).
+* *Eine Familie von Projekten.* Ant Design Pro (eine Admin-Vorlage), Ant Design Mobile, Ant Design Charts und Ant Design X für KI-Oberflächen stehen neben der Kernbibliothek.
+
+Wichtige Vertreter:: Ant Group (früher Ant Financial) mit afc163 als langjährigem Lead Maintainer. Öffentlich seit Juli 2015 (https://dev.to/logrocket/ant-design-adoption-guide-overview-examples-and-alternatives-3003[LogRocket, 2024]); Version 5 im November 2022 (https://ant.design/docs/blog/css-in-js[Ant-Design-Blog]), Version 6 im November 2025
+
+[discrete]
+== *Wann verwenden*:
+
+* Admin-Konsolen, Dashboards und andere Backoffice-Oberflächen in React mit vielen Formularen und Tabellen bauen. In unserem Prior-Test importierte jeder Lauf mit Anker für ein Registrierungsformular aus `antd` und nutzte `Form.Item` mit `rules`, `Input.Password` und `onFinish`.
+* Eine ganze Anwendung aus wenigen Seed-Tokens gestalten
+* Teams, die einen vollständigen, meinungsstarken Komponentensatz wollen statt Primitive zum Zusammensetzen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Designsprache und Bibliothek für dasselbe halten.* „Ant Design“ benennt sowohl die Designspezifikation als auch das Paket `antd`; Pro, Mobile und X sind eigene Projekte.
+* *Die Theming-API von v4 erwarten.* Version 4 gestaltete über Less-Variablen; Version 5 ersetzte sie durch CSS-in-JS-Tokens, und Version 6 nutzt standardmäßig CSS-Variablen.
+
+[discrete]
+== *Kritik*:
+
+* *Das Weihnachts-Easter-Egg.* 2018 ließ ein nicht angekündigter Commit antd 3.9.3 bis 3.11.5 am 25. Dezember in Produktions-Apps Schnee auf Buttons zeigen. Der Maintainer entschuldigte sich in https://www.github.com/ant-design/ant-design/issues/13849[Issue #13849]: „It is a complete stupid decision of my own and very sorry to everyone that get involved.“ Das chinesische Tech-Medium TMTPost fasste die Reaktion zusammen: Ein Easter Egg von Entwicklern an Nutzer ist eine Überraschung, eines von einem Framework an Entwickler ein Schrecken (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
+* *Gewicht.* Elijah Asaolu warnt in https://dev.to/logrocket/ant-design-adoption-guide-overview-examples-and-alternatives-3003[„Ant Design adoption guide“] (LogRocket, 2024): „keep in mind that Ant Design components can be heavy.“
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Version 6 mit CSS-Variablen.* Ant Design 6.0, erschienen im November 2025, nutzt standardmäßig den „pure CSS Variables mode“ mit optionalem Zero-Runtime-Build, braucht React 18 oder neuer, baut das DOM jeder Komponente für semantisches Styling um und entfernt die in Version 4 abgekündigten APIs (https://dev.to/zombiej/ant-design-60-is-released-bfa[Release-Beitrag]). Aktuell ist 6.6.7 vom 20. Oktober 2026 (https://ant.design/components/changelog/[Changelog]). Version 6 ist neuer als die meisten Trainingsdaten; für ihre Details nenne die Version.
+====

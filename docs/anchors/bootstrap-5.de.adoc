@@ -1,0 +1,52 @@
+= Bootstrap 5
+:categories: ux-visual-design
+:roles: software-developer, ux-designer
+:proponents: Mark Otto, Jacob Thornton
+:tags: Bootstrap 5, Bootstrap, Twitter Bootstrap, CSS-Framework, Frontend-Toolkit, 12-Spalten-Raster, Breakpoints, Utility API, Utility-Klassen, Sass, CSS Custom Properties, Farbmodi, Dark Mode, form-control, btn-primary, invalid-feedback, data-bs, Mark Otto, Jacob Thornton
+:related: mobile-first, shadcn-ui, every-layout
+:tier: 3
+:definition: Bootstrap 5 ist die fünfte Hauptversion des Frontend-Toolkits, das Mark Otto und Jacob Thornton 2011 bei Twitter veröffentlichten. Es bietet ein 12-spaltiges Flexbox-Raster mit sechs Breakpoints, eine Utility API, Sass und CSS Custom Properties, seit 5.3 Farbmodi und fertige Komponenten mit Klassennamen wie form-control und btn-primary; jQuery braucht es nicht mehr.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Bootstrap 5 -- die fünfte Hauptversion von Bootstrap, erschienen am 5. Mai 2021
+
+Auch bekannt als:: Bootstrap, Twitter Bootstrap (ursprünglich „Twitter Blueprint“), BS5
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Ein 12-Spalten-Raster auf Flexbox.* Container, Zeilen und Spalten mit sechs Breakpoints: xs unter 576 px, dann sm, md, lg, xl und xxl ab 576, 768, 992, 1200 und 1400 px (https://getbootstrap.com//docs/5.0/layout/grid/[Grid]).
+* *Komponenten über Klassennamen.* `btn btn-primary`, `card`, `navbar`, `modal`; Formulare nutzen `form-label`, `form-control`, `form-check` und die Validierungszustände `is-invalid` mit `invalid-feedback`.
+* *Utilities aus einer Utility API.* Klassen für Abstände, Anzeige und Flex wie `mb-3`, `d-flex` und `gap-2`, erzeugt aus einer Sass-Map, die Projekte erweitern können.
+* *Kein jQuery.* Version 5 strich jQuery und den Internet Explorer; JavaScript-Plugins werden über `data-bs-`-Attribute konfiguriert (https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/[Ankündigung der v5-Alpha]).
+* *Farbmodi.* Seit 5.3 unterstützt der Kern Dark Mode und weitere Farbmodi über CSS Custom Properties (https://blog.getbootstrap.com/2023/05/30/bootstrap-5-3-0[v5.3.0]).
+
+Wichtige Vertreter:: Mark Otto und Jacob Thornton, die es bei Twitter bauten und am 19. August 2011 als Open Source veröffentlichten (https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)[Wikipedia]). Mark Otto leitet das Projekt bis heute und schreibt die Release-Beiträge
+
+[discrete]
+== *Wann verwenden*:
+
+* Schnell eine gewöhnliche, responsive Oberfläche mit vertrauten Komponenten bauen, etwa ein internes Werkzeug, einen Prototyp oder eine serverseitig gerenderte App. In unserem Prior-Test nutzte jeder Lauf mit Anker für ein Registrierungsformular `form-control`, `form-label`, `form-check`, `is-invalid` mit `invalid-feedback` und `btn btn-primary`; keine Baseline nutzte eine Bootstrap-Klasse.
+* Schlichtes HTML und CSS erzeugen, das andere Entwickler auf einen Blick erkennen
+* Über Sass-Variablen oder CSS Custom Properties gestalten, statt ein Design-System von Grund auf zu schreiben
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *„Bootstrap“ ohne Version sagen.* Die Versionen 3, 4 und 5 unterscheiden sich in Raster, Klassennamen und JavaScript; Bootstrap 4 braucht noch jQuery. Die Nummer legt die API fest.
+* *Es mit Bootstrapping verwechseln.* In der Statistik ist der Bootstrap Efrons Resampling-Verfahren (_The Annals of Statistics_, 1979); anderswo heißt es, ein System oder eine Firma zu starten. „Bootstrap 5“ benennt das CSS-Toolkit.
+* *Bootstrap mit seinem Standard-Look gleichsetzen.* Die Voreinstellungen sind ein Ausgangs-Theme. Sass-Variablen und seit 5.3 CSS Custom Properties ändern Farben, Rundungen und Abstände.
+
+[discrete]
+== *Kritik*:
+
+* *Websites, die gleich aussehen.* Owen Williams machte in https://thenextweb.com/news/zzzzzz[„Web design is now completely boring“] (The Next Web, 2015) Frameworks für einheitliches Webdesign verantwortlich: „Everything quickly starts looking the same because nobody can be bothered customizing Bootstrap enough to make it look unique“.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Bootstrap 6 ist in der Alpha.* Das letzte stabile Release ist 5.3.8 (August 2025); sein Beitrag kündigte 5.4.0 als nächstes an. Am 8. Oktober 2026 folgte Bootstrap 6 Alpha mit Sass-Modulen, CSS Layers, responsiven Klassennamen wie `md:d-none` statt `d-md-none` und reinem ESM-JavaScript ohne globales `window.bootstrap`; 5.4.0 soll erscheinen, bevor Version 5 ein End-of-Life-Datum bekommt (https://blog.getbootstrap.com/2026/10/08/bootstrap-6-alpha/[Bootstrap 6 Alpha]). „Bootstrap 5“ legt die stabile API fest; Version 6 muss man ausdrücklich verlangen und verlinken, weil der Prior älter ist.
+====
