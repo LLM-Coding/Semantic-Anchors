@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 305 well-defined terms, methodologies, and frameworks
+> 316 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -374,7 +374,7 @@ Ready to explore? [Browse the catalog →](https://llm-coding.github.io/Semantic
 - [Brownfield Fair Comparison](https://llm-coding.github.io/Semantic-Anchors/brownfield-fair-comparison): Three approaches (Direct, Socratic, Two-Phase) compared with identical team answers. Measures the structural value of the Question Tree, not the answers.
 - [The Harness Inventory](https://llm-coding.github.io/Semantic-Anchors/harness-inventory): Layers of error correction for agentic coding — a categorised inventory of harness checks, sorted by how much project work each one costs to add.
 - [An Anchor Delivers Only as Far as the Prior Reaches](https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice): What a pull request about "use cases" taught us about the limits of anchors: the term fires, the practice behind it does not follow. Includes an experiment you can rerun.
-- [Design Styles Compared](https://llm-coding.github.io/Semantic-Anchors/style-gallery): Screenshots, not text: one homepage redesigned once per design-style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism, Bento Grid, Material Design 3 and others) from the style name alone. Read it to see what a style name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.
+- [Design Styles Compared](https://llm-coding.github.io/Semantic-Anchors/style-gallery): Screenshots, not text: one homepage redesigned once per style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism and others) and one app settings page redesigned once per design-system anchor (Carbon, Fluent 2, Primer, Polaris, Bootstrap 5 and others), each from the name alone. Read it to see what a name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.
 - [Anchor Prior Test Skill](https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test): Installable Claude Code Skill that measures whether naming a term actually triggers the concept in a model you do not control. Clean-room probe battery across model tiers, then a tier rating and a route to anchor, contract or rejection.
 - [Prior-Test Register](https://llm-coding.github.io/Semantic-Anchors/prior-tests): The evidence behind each anchor’s measured tier — resolved model identifiers, procedure version, run counts, criteria matrices and verbatim quotes. An anchor without a prior-test date was not tested; that is a statement about our records, not the term.
 - [arc42 Documentation Authoring Skill](https://llm-coding.github.io/Semantic-Anchors/arc42-documentation-skill): Installable Claude Code Skill carrying the procedure for authoring an arc42 document — the cross-section rules arc42’s own templates do not enforce. The how-to companion to the Architecture Documentation contract.
@@ -13242,6 +13242,87 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 
 ## UX & Visual Design
 
+### Adobe Spectrum
+
+***Full Name***: Adobe Spectrum -- Adobe's design system, in its second generation Spectrum 2
+
+***Also known as***: Spectrum, Spectrum 2, S2, React Spectrum (the React implementation)
+
+[discrete]
+## **Core Concepts**:
+
+* **Three implementations, one set of tokens.** React Spectrum (`@adobe/react-spectrum`, and `@react-spectrum/s2` for Spectrum 2), Spectrum Web Components and Spectrum CSS share the tokens in `@adobe/spectrum-tokens`.
+* **Token names from broad to specific.** "Names communicate information from broad concepts toward more specific details", for example `accent-background-color-hover` or `positive-color-600` (https://spectrum.adobe.com/page/design-tokens[Design tokens]).
+* **Components that guard the design.** React Spectrum v3 refuses ordinary `className` and `style` props and offers `UNSAFE_className` as "a last resort", because "future updates to Spectrum design may cause unintended breaking changes in products" (https://react-spectrum.adobe.com/react-spectrum/styling.html[Styling]). Spectrum 2 replaces style props with a build-time style macro.
+* **Accessibility in the hooks.** Behaviour and keyboard handling come from React Aria; components such as `TableView`, `ActionButton` and `DialogTrigger` carry it.
+* **Adobe Clean.** The signature typeface; Spectrum 2's icons are drawn to match it.
+
+***Key Proponents***: Adobe. Spectrum has been implemented across Adobe products since 2013; Spectrum 2 was unveiled on 12 December 2023 for more than 100 applications (https://blog.adobe.com/en/publish/2023/12/12/adobe-unveils-spectrum-2-design-system-reimagining-user-experience-over-100-adobe-applications[Adobe blog]). The Spectrum 2 core team includes Shawn Cheris, Garth Braithwaite and Patrick Fulton (https://adobe.design/stories/design-for-scale/introducing-spectrum-2[Introducing Spectrum 2])
+
+[discrete]
+## **When to Use**:
+
+* Building plug-ins and web apps for the Adobe ecosystem, or tools that should feel like Adobe's applications. In our prior test, every anchor run of a team-settings page imported `@adobe/react-spectrum` and built a `TableView` with `ActionButton`s and size tokens such as `size-200`.
+* Using accessible components whose behaviour comes from React Aria
+* Studying a token naming scheme that runs from concept to detail
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Saying "Spectrum" alone.** The bare word resolves to physics on every model tier we tested, and it also names a US internet provider and a home computer. "Adobe Spectrum" pins the design system.
+* **Expecting Spectrum 2 code.** The models write React Spectrum v3. Spectrum 2 uses `@react-spectrum/s2` and the style macro; a codemod migrates from v3. Ask for Spectrum 2 explicitly.
+
+[discrete]
+## **Criticism**:
+
+* **Consistency for Adobe, not for the platform.** Jason Snell, https://sixcolors.com/link/2026/04/adobe-out-of-photoshop/["Adobe out of Photoshop"] (Six Colors, 2026), on the Spectrum-based Photoshop interface: cross-platform design systems "are for the benefit of Adobe, which can standardize its interface across platforms and its own apps", at the cost of Mac conventions.
+
+[discrete]
+## **Current Status**:
+
+* **Spectrum 2 is stable in React, in beta for Web Components.** React Spectrum's Spectrum 2 implementation reached version 1.0 on 16 December 2025 (https://react-spectrum.adobe.com/releases/v1-0-0[release notes]); Spectrum Web Components 2.0 with full Spectrum 2 styles entered public beta in July 2026. Photoshop's refreshed interface built on Spectrum is in beta as of October 2026. The prior serves React Spectrum v3; Spectrum 2 may come out thin unless named.
+
+### Ant Design
+
+***Full Name***: Ant Design -- "A UI Design Language" (https://github.com/ant-design[GitHub organisation]) and its React implementation `antd`
+
+***Also known as***: antd, AntD
+
+[discrete]
+## **Core Concepts**:
+
+* **Four design values.** Natural, Certain, Meaningful and Growing; "Certain" aims at "high certainty and low cooperative entropy" (https://ant.design/docs/spec/values[Design Values]).
+* **Forms by declaration.** A `Form` holds `Form.Item` fields with `name` and `rules`; `onFinish` receives the validated values, `Form.useForm` gives access to the form instance (https://ant.design/components/form-cn[Form]).
+* **Components for dense data.** `Table` with sorting, filters and pagination, plus `Descriptions`, `Tree`, `Transfer` and `Steps` for back-office screens.
+* **Three token layers.** Seed tokens are "the origin of all design intent", map tokens derive from them, and alias tokens style groups of components; `ConfigProvider` takes a `theme` object with `token`, an `algorithm` for dark or compact themes, and per-component overrides in `components` (https://ant.design/docs/react/customize-theme[Customize Theme]).
+* **A family of projects.** Ant Design Pro (an admin template), Ant Design Mobile, Ant Design Charts and Ant Design X for AI interfaces sit beside the core library.
+
+***Key Proponents***: Ant Group (formerly Ant Financial), with afc163 as its long-time lead maintainer. Released publicly in July 2015 (https://dev.to/logrocket/ant-design-adoption-guide-overview-examples-and-alternatives-3003[LogRocket, 2024]); version 5 in November 2022 (https://ant.design/docs/blog/css-in-js[Ant Design blog]), version 6 in November 2025
+
+[discrete]
+## **When to Use**:
+
+* Building admin consoles, dashboards and other back-office interfaces in React with many forms and tables. In our prior test, every anchor run of a sign-up form imported from `antd` and used `Form.Item` with `rules`, `Input.Password` and `onFinish`.
+* Theming a whole application from a few seed tokens
+* Teams that want a complete, opinionated component set rather than primitives to assemble
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating the design language and the library as one thing.** "Ant Design" names both the design specification and the `antd` package; Pro, Mobile and X are separate projects.
+* **Expecting the v4 theming API.** Version 4 themed through Less variables; version 5 replaced them with CSS-in-JS tokens, and version 6 defaults to CSS variables.
+
+[discrete]
+## **Criticism**:
+
+* **The Christmas easter egg.** In 2018 an unannounced commit made antd 3.9.3 to 3.11.5 show snow on buttons on 25 December in production apps. The maintainer apologised in https://github.com/ant-design/ant-design/issues/13849[issue #13849]: "It is a complete stupid decision of my own and very sorry to everyone that get involved." The Chinese tech outlet TMTPost summed up the reaction: an easter egg from developers to users is a surprise, one from a framework to developers is a scare (https://www.tmtpost.com/3667624.html[TMTPost, 2018]).
+* **Weight.** Elijah Asaolu, https://dev.to/logrocket/ant-design-adoption-guide-overview-examples-and-alternatives-3003["Ant Design adoption guide"] (LogRocket, 2024), cautions: "keep in mind that Ant Design components can be heavy."
+
+[discrete]
+## **Current Status**:
+
+* **Version 6 with CSS variables.** Ant Design 6.0, released in November 2025, defaults to "pure CSS Variables mode" with an optional zero-runtime build, needs React 18 or later, restructures every component's DOM for semantic styling and removes APIs deprecated in version 4 (https://dev.to/zombiej/ant-design-60-is-released-bfa[release post]). The current release is 6.6.7 of 20 October 2026 (https://ant.design/components/changelog/[Changelog]). Version 6 is newer than most training data; for its specifics, name the version.
+
 ### Apple Human Interface Guidelines
 
 ***Full Name***: Apple Human Interface Guidelines -- Apple's design guidance for apps on its platforms, one document for all of them since 2022
@@ -13286,6 +13367,46 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **Current Status**:
 
 * **Liquid Glass is the current design language.** Apple announced it on 9 June 2025 for iOS 26, iPadOS 26, macOS Tahoe 26, watchOS 26 and tvOS 26: a translucent material that "reflects and refracts its surroundings" (https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/[Apple Newsroom]). Apple's https://developer.apple.com/design/whats-new/[change log] shows refinements in December 2025 and June 2026. At WWDC26 on 8 June 2026 Apple brought back a "Design principles" page and published kits for iOS, iPadOS and macOS 27; the latest entry is dated 13 October 2026. The training-data prior most likely serves the flat iOS look from before 2025. Ask for Liquid Glass by name if you want it.
+
+### Atlassian Design System
+
+***Full Name***: Atlassian Design System -- formerly the Atlassian Design Guidelines (ADG)
+
+***Also known as***: ADS, ADG, Atlaskit (the component library)
+
+[discrete]
+## **Core Concepts**:
+
+* **Design tokens for every value.** Colour, elevation, spacing and typography come from tokens such as `color.background.brand.bold`, `color.text.subtle`, `elevation.surface.raised`, `space.100` and `font.heading.medium` in `@atlaskit/tokens`; they carry light and dark themes.
+* **Atlaskit components.** React packages under `@atlaskit/`, such as `@atlaskit/button`, `@atlaskit/dynamic-table`, `@atlaskit/page-header` and the layout primitives in `@atlaskit/primitives`.
+* **The Lozenge.** A small status label -- "a visual indicator used to highlight an item's status for quick recognition" -- that appears throughout Jira.
+* **Atlassian Sans and Atlassian Mono.** Since 2025 the product typefaces replace the earlier system-font stack (https://atlassian.design/foundations/typography/product-typefaces-and-scale[Typography]).
+* **Foundations for AI patterns.** The site now lists AI patterns for Atlassian's Rovo assistant beside colour, typography, iconography and grid.
+
+***Key Proponents***: Atlassian. Jürgen Spangl, then Head of Design, started the guidelines; the first internal version came in June 2012 (https://www.uxpin.com/studio/blog/atlassian-design-system-creating-design-harmony-scale/[UXPin]), the public ADG in 2013 (https://www.atlassian.com/blog/2013/03/making-atlassian-design-guidelines[Atlassian blog, 2013])
+
+[discrete]
+## **When to Use**:
+
+* Building Jira or Confluence apps, Forge apps or tools that should feel like part of Atlassian's products. In our prior test, every anchor run of a team-settings page imported Atlaskit packages, built a `DynamicTable` and marked roles with a `Lozenge`.
+* Learning a token architecture with semantic names for colour, elevation and space
+* As a reference for dense, task-oriented collaboration interfaces
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Expecting the pre-2024 look.** Atlassian began mapping its visual system in December 2022, later worked with Pentagram on the refresh and showed it at Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); new icons, colours and the type scale followed in 2025. Models trained before that write the older look unless told otherwise.
+* **Treating Charlie as the UI font.** Charlie is Atlassian's brand typeface; the product UI uses Atlassian Sans, formerly system fonts.
+
+[discrete]
+## **Criticism**:
+
+* **Design and code drifted apart.** Atlassian's own designers write that the old typography "lacked parity between design and code" and that their initial time budget for tokenisation was too low (Eva Plaisted and Rachel Radford, https://www.atlassian.com/blog/design/implementing-typography-at-scale-the-journey-behind-the-screens["Implementing typography at scale"], Inside Atlassian, 2025).
+
+[discrete]
+## **Current Status**:
+
+* **New typography is generally available.** The new typography system reached general availability on 9 September 2025; the modernised and legacy systems were deprecated and supported until January 2026 (https://atlassian.design/whats-new/new-typography-in-general-availability[What's new]). `@atlaskit/tokens` is released continuously, version 20.8.2 in October 2026.
 
 ### Atomic Design
 
@@ -13404,6 +13525,87 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **Criticism**:
 
 * **Too much in one screen.** David Jaja warns in https://www.freecodecamp.org/news/bento-grids-in-web-design/["Bento Grids in Web Design"] (freeCodeCamp, 2024) that "there's a risk of cramming too much information into a single screen". He also names weak hierarchy when tiles look alike, choice overload and monotony when the grid is overused.
+
+### Bootstrap 5
+
+***Full Name***: Bootstrap 5 -- the fifth major version of Bootstrap, released on 5 May 2021
+
+***Also known as***: Bootstrap, Twitter Bootstrap (originally "Twitter Blueprint"), BS5
+
+[discrete]
+## **Core Concepts**:
+
+* **A 12-column grid on flexbox.** Containers, rows and columns with six breakpoints: xs below 576 px, then sm, md, lg, xl and xxl from 576, 768, 992, 1200 and 1400 px (https://getbootstrap.com/docs/5.0/layout/grid/[Grid]).
+* **Components by class name.** `btn btn-primary`, `card`, `navbar`, `modal`; forms use `form-label`, `form-control`, `form-check` and the validation states `is-invalid` with `invalid-feedback`.
+* **Utilities from a utility API.** Spacing, display and flex classes such as `mb-3`, `d-flex` and `gap-2`, generated from a Sass map that projects can extend.
+* **No jQuery.** Version 5 dropped jQuery and Internet Explorer; JavaScript plugins are configured through `data-bs-` attributes (https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/[v5 alpha announcement]).
+* **Colour modes.** Since 5.3 the core supports dark mode and further colour modes through CSS custom properties (https://blog.getbootstrap.com/2023/05/30/bootstrap-5-3-0[v5.3.0]).
+
+***Key Proponents***: Mark Otto and Jacob Thornton, who built it at Twitter and open-sourced it on 19 August 2011 (https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)[Wikipedia]). Mark Otto still leads the project and writes its release posts
+
+[discrete]
+## **When to Use**:
+
+* Building a conventional, responsive interface quickly with familiar components, such as an internal tool, a prototype or a server-rendered app. In our prior test, every anchor run of a sign-up form used `form-control`, `form-label`, `form-check`, `is-invalid` with `invalid-feedback` and `btn btn-primary`; no baseline used a Bootstrap class.
+* Generating plain HTML and CSS that other developers recognise at a glance
+* Theming through Sass variables or CSS custom properties instead of writing a design system from scratch
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Saying "Bootstrap" without a version.** Versions 3, 4 and 5 differ in grid, class names and JavaScript; Bootstrap 4 still needs jQuery. The number pins the API.
+* **Confusing it with bootstrapping.** In statistics the bootstrap is Efron's resampling method (_The Annals of Statistics_, 1979); in other contexts it means starting a system or a company. "Bootstrap 5" names the CSS toolkit.
+* **Equating Bootstrap with its default look.** The defaults are a starting theme. Sass variables and, since 5.3, CSS custom properties change colours, radii and spacing.
+
+[discrete]
+## **Criticism**:
+
+* **Sites that look alike.** Owen Williams, https://thenextweb.com/news/zzzzzz["Web design is now completely boring"] (The Next Web, 2015), blamed frameworks for uniform web design: "Everything quickly starts looking the same because nobody can be bothered customizing Bootstrap enough to make it look unique".
+
+[discrete]
+## **Current Status**:
+
+* **Bootstrap 6 is in alpha.** The latest stable release is 5.3.8 (August 2025); its post announced 5.4.0 as next. Bootstrap 6 Alpha followed on 8 October 2026 with Sass modules, CSS layers, responsive class names such as `md:d-none` instead of `d-md-none`, and ESM-only JavaScript without a `window.bootstrap` global; 5.4.0 is to ship before version 5 gets an end-of-life date (https://blog.getbootstrap.com/2026/10/08/bootstrap-6-alpha/[Bootstrap 6 Alpha]). "Bootstrap 5" pins the stable API; ask for version 6 explicitly and give the link, since the prior predates it.
+
+### Carbon Design System
+
+***Full Name***: Carbon Design System -- "the digital manifestation of the IBM Design Language" (https://v9.carbondesignsystem.com/updates/design-language[Carbon])
+
+***Also known as***: Carbon, IBM Carbon
+
+[discrete]
+## **Core Concepts**:
+
+* **IBM Plex in two type sets.** IBM Plex Sans, Serif and Mono; the productive set (suffix -01) for product interfaces and the expressive set (suffix -02) for editorial pages (https://carbondesignsystem.com/elements/typography/overview/[Typography]).
+* **The 2x Grid.** A 16-column grid on which spacing and component sizes are built.
+* **Four themes and layering tokens.** White, Gray 10, Gray 90 and Gray 100; tokens such as `$background`, `$layer-01`, `$text-primary` and `$interactive` stack surfaces by layer rather than by fixed colour (https://www.carbondesignsystem.com/building-blocks/foundations/themes[Themes]).
+* **Flagship code in React and Web Components.** `@carbon/react` and `@carbon/web-components`, with classes prefixed `cds--`; the `DataTable` and the UI Shell header and side navigation are signature pieces.
+* **Carbon for AI.** An extension with the AI label, which opens an explanation of how AI produced the content (https://carbondesignsystem.com/guidelines/carbon-for-ai/[Carbon for AI]).
+
+***Key Proponents***: IBM. Public development began on 10 June 2015 under the Apache 2.0 licence (https://en.wikipedia.org/wiki/Carbon_Design_System[Wikipedia]); version 10 followed in March 2019 and version 11 in 2022 (https://v10.carbondesignsystem.com/whats-happening/releases/[releases])
+
+[discrete]
+## **When to Use**:
+
+* Building enterprise and data-heavy interfaces -- admin consoles, dashboards, developer tools -- with dense data. In our prior test, every anchor run of a team-settings page imported `@carbon/react` and built a `DataTable`; five of six named a Carbon theme.
+* Theming with layered surface tokens and a dark Gray 100 theme
+* Marking AI-generated content with the Carbon for AI patterns
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Saying "Carbon" alone.** The bare word resolves to chemistry on Sonnet and Opus and to Google's Carbon programming language on Haiku in our test. "Carbon Design System" pins it.
+* **Writing version 10 code.** The packages `carbon-components` and `carbon-components-react` are deprecated; version 11 renamed tokens, prefixes classes `cds--` instead of `bx--` and moved to Sass modules. Migration "will be a manual process" (https://carbondesignsystem.com/migrating/faq/[Migration FAQ]).
+
+[discrete]
+## **Criticism**:
+
+* **Gaps left to the app team.** Grace Potma's design-system comparison for OpenMRS (https://openmrs.atlassian.net/wiki/spaces/Archives/pages/25471972/Style+Guide+Design+Systems+Analysis+-+July+Aug+2020["Style Guide & Design Systems Analysis"], 2020) notes an "accessibility gap in React version of dropdown" in the Carbon of that time and that spacing was "mostly left to the app developer".
+
+[discrete]
+## **Current Status**:
+
+* **Version 11, with "Carbon Next" previewed.** Version 11 is current; v10 assets were deprecated on 30 September 2024. A preview of the next major version promises a new visual expression, layouts as a core framework, "industry-standard token naming" and AI readiness with agent skills (https://preview.carbondesignsystem.com/carbon-next[Carbon Next], August 2026). The prior serves version 11.
 
 ### Design Tokens (W3C DTCG)
 
@@ -13603,6 +13805,47 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 ## **Current Status**:
 
 * **Third edition, with a Container layout.** The https://every-layout.dev/[home page] lists the third edition. The https://every-layout.dev/editions/[editions page] records the changes: the second edition moved to the `gap` property (https://every-layout.dev/blog/second-edition/[announced 29 June 2021]); the third uses logical properties and `aspect-ratio` for the Frame; the latest version adds the Container layout as a starting point for container queries. The training-data prior may predate the newer editions; name `gap`, logical properties or container queries if you need them.
+
+### Fluent 2 Design System
+
+***Full Name***: Fluent 2 Design System -- the second generation of Microsoft's Fluent Design System
+
+***Also known as***: Fluent 2, Fluent UI (the code libraries), Fluent UI React v9
+
+[discrete]
+## **Core Concepts**:
+
+* **Two token layers.** Global tokens hold raw values, alias tokens carry meaning (https://fluent2.microsoft.design/design-tokens[Design tokens]); in React they appear as `tokens.colorNeutralForeground1` or `tokens.colorBrandBackground`.
+* **Platform typefaces on one ramp.** Segoe UI on the web, Segoe UI Variable on Windows, San Francisco Pro on Apple platforms and Roboto on Android, with a shared ramp from Caption to Display (https://fluent2.microsoft.design/typography[Typography]).
+* **Fluent UI React v9.** `@fluentui/react-components` with `FluentProvider` and themes such as `webLightTheme`; styles are written with `makeStyles`, which builds on the Griffel CSS-in-JS engine.
+* **Components per platform.** React and Web Components for the web, WinUI for Windows, and native libraries for iOS and Android (https://fluent2.microsoft.design/get-started/develop[Develop]).
+* **Light, depth, motion, material, scale.** The five properties of the original Fluent Design System of 2017, whose materials Acrylic and Mica still shape Windows.
+
+***Key Proponents***: Microsoft. The Fluent Design System was unveiled at Build on 11 May 2017, codename Project Neon (https://thenextweb.com/microsoft/2017/05/11/windows-10-gets-a-ui-refresh-with-the-fluent-design-system-aka-project-neon/[The Next Web]); Fluent 2 followed in May 2023, with Teams already redesigned in it (https://sdtimes.com/msft/microsoft-releases-fluent-2-to-enable-more-creativity-in-design/[SD Times])
+
+[discrete]
+## **When to Use**:
+
+* Building Teams apps, Office add-ins, SharePoint extensions or tools that should look at home in Microsoft 365. In our prior test, every anchor run of a team-settings page imported `@fluentui/react-components` and styled it with `makeStyles` and Fluent tokens.
+* Designing one product across web, Windows and mobile with shared tokens
+* As a contrast to Material Design 3 and Apple's HIG for enterprise software
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Mixing v8 and v9.** Fluent UI React v8 (`@fluentui/react`) is in maintenance; v9 is "a complete revamp of the library that has fundamental and structural changes from v8" (maintainer in https://github.com/microsoft/fluentui/discussions/23183[discussion #23183]). "Fluent 2" points the model at v9.
+* **Equating Fluent 2 with Windows 11 visuals.** Acrylic and Mica are Windows materials from the original Fluent; Fluent 2 is mainly a token and component system across platforms.
+
+[discrete]
+## **Criticism**:
+
+* **A breaking rewrite.** Microsoft's own product manager Paul Gildea on v9: "These improvements couldn't have been accomplished in a simple backwards compatible manner" (https://dev.to/paulgildea/whats-new-with-fluent-ui-react-v9-5h2d["What's new with Fluent UI React v9"], 2022). Users in https://github.com/microsoft/fluentui/discussions/23183[discussion #23183] complained that navigation, date picker and other components were missing from v9 when it shipped.
+* **Unfinished across Windows.** Ross Rubin, https://www.fastcompany.com/90689562/windows-11-interface-problems["Windows 11's melding of the old and new is unfinished business"] (Fast Company, 2021), describes Fluent surfaces layered over dialogs that had barely changed in decades.
+
+[discrete]
+## **Current Status**:
+
+* **Fluent UI React v9 is current; Web Components v3 in release candidate.** `@fluentui/react-components` ships continuously, version 9.75.0 in October 2026; the repository encourages v8 users to migrate. Fluent UI Web Components 3.0 reached a release candidate in November 2025 (https://github.com/microsoft/fluentui/discussions/34080[discussion #34080]).
 
 ### Gestalt Principles
 
@@ -13971,6 +14214,48 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **Oversimplified and rooted in the desktop era.** A. Ballav argues in https://oldmagazine.uxpa.org/?p=11227["Nielsen's Heuristic Evaluation: Limitations in Principles and Practice"] (_User Experience Magazine_ 17(4), 2017) that the heuristics are generic and shaped by desktop software: "heuristic evaluations suffer from oversimplification."
 * **False positives.** Todd Zazelenchuk notes on https://userfocus.co.uk/articles/heuristics.html[Userfocus] that evaluations are often done by a single evaluator and flag problems real users never encounter. The method is "capable of generating a lot of 'false positives'".
 
+### Primer (GitHub Design System)
+
+***Full Name***: Primer -- GitHub's design system (https://primer.style/[primer.style])
+
+***Also known as***: GitHub Primer, Primer React, Primer CSS
+
+[discrete]
+## **Core Concepts**:
+
+* **Primitives as tokens.** Colour, spacing and typography live in `@primer/primitives`. Names are built from blocks -- namespace, pattern, variant, property, scale -- for example `fgColor-default`, `bgColor-inset`, `borderColor-accent-emphasis` and `base-size-4` (https://primer.style/product/primitives/token-names/[Token names]). Light and dark modes span nine themes.
+* **Components in React and Rails.** `@primer/react` (formerly `@primer/components`) and the gem `primer_view_components`; `PageHeader`, `ActionList`, `ActionMenu`, `UnderlineNav`, `Label` and `Blankslate` are signature parts.
+* **Octicons.** "SVG icons built by GitHub for GitHub".
+* **Product UI and Brand UI.** Primer covers the product interface and, separately, GitHub's marketing pages.
+* **The look of GitHub.** Neutral canvas, subtle borders, compact density, blue accents for actions, green for the primary button.
+
+***Key Proponents***: GitHub. Designers began documenting patterns in 2011, and in 2012 the CSS was packaged as a Ruby gem named Primer; the design systems team formed in 2016 with Diana Mounter and Jon Rohan as its first full-time members (Diana Mounter, https://medium.com/@broccolini/design-systems-at-github-c8e5378d2542["Design systems at GitHub"], 2018). Mark Otto contributed in the early years
+
+[discrete]
+## **When to Use**:
+
+* Building GitHub Apps, developer tools or internal dashboards that should feel like GitHub. In our prior test, every anchor run of a team-settings page imported `@primer/react` and Octicons; five of six used `PageHeader`.
+* Studying a token naming scheme built from composable blocks
+* Rails applications through Primer ViewComponents
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Saying "Primer" alone.** On Sonnet the bare word resolves to biology and paint first; "Primer (GitHub)" or "GitHub's Primer" pins it.
+* **Styling with `sx` and styled-components.** Five of six runs in our test used the `sx` prop. Primer React has removed it: all components moved to CSS Modules, and "GitHub has been running on 100% CSS modules as of June 2026" (Josh Black and Marie Lucca, https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/[GitHub Blog, 2026]). Ask for CSS Modules when the code must run on current Primer React.
+* **Taking Mona Sans as Primer's UI font.** Mona Sans and Hubot Sans, released in 2022, are GitHub's brand typefaces; their announcement does not tie them to Primer's product interface (https://github.blog/news-insights/company-news/introducing-mona-sans-and-hubot-sans/[GitHub Blog, 2022]).
+
+[discrete]
+## **Criticism**:
+
+* **Runtime styling did not scale.** GitHub's own engineers write that with CSS-in-JS, "updates to styles grew out of control as component count grew on a page"; the move to CSS Modules cut server-render time by 55 per cent (GitHub Blog, 2026).
+* **Accessibility is uneven.** Marc Alcobé of OpenProject, which adopted Primer, notes that "not all existing components are reviewed for accessibility" (https://www.openproject.org/blog/primer-design-system/[OpenProject blog, 2023]).
+
+[discrete]
+## **Current Status**:
+
+* **CSS Modules everywhere.** Since June 2026 GitHub runs entirely on CSS Modules, the `sx` prop is gone, and `@primer/styled-react` served as a transitional shim; theming variables live in `@primer/css` (GitHub Blog, September 2026). The training-data prior predates this change.
+
 ### Refactoring UI
 
 ***Full Name***: Refactoring UI -- a book of practical visual design tactics for developers by Adam Wathan and Steve Schoger
@@ -14006,6 +14291,130 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **Treating the tactics as universal rules.** They are rules of thumb that help developers get to a decent design quickly.
 * **Using it instead of user research.** The book covers visual polish. It says nothing about whether the feature solves the user's problem.
 * **Expecting the same effect on every tier.** In our prior test on 2026-10-28 (a settings screen for a note-taking app), Sonnet and Opus four of four replaced dividers with spacing and used the grey and indigo palette from the authors' Tailwind. Haiku did so in one of two runs and used its own palette: on the weak tier the bare name is a softer nudge. The models attributed the book to Adam Wathan and Steve Schoger with high confidence; whether naming the authors strengthens the action was not tested.
+
+### Salesforce Lightning Design System (SLDS)
+
+***Full Name***: Salesforce Lightning Design System (SLDS), since 2025 also SLDS 2
+
+***Also known as***: SLDS, Lightning Design System
+
+[discrete]
+## **Core Concepts**:
+
+* **Component blueprints in plain CSS.** Every selector carries the `slds-` prefix and follows BEM: `slds-page-header`, `slds-table`, `slds-button slds-button_brand`, `slds-media` (https://winter-21.lightningdesignsystem.com/resources/faq[FAQ]).
+* **The origin of design tokens.** The Salesforce team chose the term **design tokens** and built the Theo tool to transform them (https://trailhead.salesforce.com/content/learn/modules/lightning-design-system-basics/learn-how-and-why-we-developed-slds[Trailhead]).
+* **Styling hooks in SLDS 2.** SLDS 2 "separates the structure from the visual design using styling hooks" and replaces design tokens with global CSS custom properties, for example `--slds-g-spacing-2` instead of `--lwc-spacingSmall` (https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-design-tokens.html[LWC guide]).
+* **Lightning Web Components.** Salesforce's own component framework implements the blueprints as base components such as `lightning-button` and `lightning-datatable`.
+* **Salesforce Cosmos.** The default theme of SLDS 2.
+
+***Key Proponents***: Salesforce. The work began in 2013; the system launched in 2015 as "the world's first open-source enterprise design system" (Trailhead). Jina Anne: "I showed that to the team at Salesforce and then that kind of is where the concept of design tokens spawned off of" (https://smashingmagazine.com/2019/11/smashing-podcast-episode-3/[Smashing Podcast, 2019])
+
+[discrete]
+## **When to Use**:
+
+* Building Salesforce apps, Lightning pages or external tools that should look native in Salesforce. In our prior test, every anchor run of a team-settings page wrote `slds-` markup with `slds-page-header`, `slds-table` and `slds-button`.
+* As the reference where design tokens began, and for BEM-named enterprise CSS
+* Name Lightning Web Components as well when you want platform components: in our test no run used them unprompted
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Saying "Lightning" alone.** The bare word resolves to weather on every tier we tested; "SLDS" or the full name pins the design system.
+* **Expecting SLDS 2 code.** The models write SLDS 1 classes and design tokens. SLDS 2 uses global styling hooks (`--slds-g-*`), and base components may only be styled through documented hooks.
+* **Equating SLDS with Lightning Web Components.** SLDS is the CSS and the guidelines; LWC is the component framework that uses them.
+
+[discrete]
+## **Criticism**:
+
+* **Migration is manual and coverage is partial.** Andreea Doroftei, https://www.salesforceben.com/slds-2-beta-how-you-can-future-proof-your-salesforce-ui/["SLDS 2: How You Can Future-Proof Your Salesforce UI"] (Salesforce Ben): "If you have an existing SLDS 1 theme you would like to migrate to SLDS 2, you will need to manually recreate it"; Visualforce, Setup and CRM Analytics are not covered.
+* **Little room to style.** Salesforce itself states: "Overriding base component styling isn't supported except when using documented styling hooks" (https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-antipatterns.html[CSS anti-patterns]).
+
+[discrete]
+## **Current Status**:
+
+* **SLDS 2 is generally available.** Introduced in Spring '25 as "the foundation for the agentic design system" with Salesforce Cosmos as its default theme (https://www.salesforce.com/blog/?p=104584[Salesforce blog, 2025]), SLDS 2 became generally available with Winter '26; dark mode remains in beta (https://www.salesforceben.com/salesforce-dark-mode-is-back-what-admins-need-to-know/[Salesforce Ben]). The prior serves SLDS 1; ask for SLDS 2 and styling hooks explicitly.
+
+### shadcn/ui
+
+***Full Name***: shadcn/ui -- "a project by shadcn" (https://ui.shadcn.com/docs/about[About])
+
+***Also known as***: shadcn
+
+[discrete]
+## **Core Concepts**:
+
+* **Open code instead of a dependency.** The documentation opens with: "This is not a component library. It is how you build your component library." (https://ui.shadcn.com/docs[Introduction]). `npx shadcn add button` writes the component's source into the project, usually under `components/ui`, where the team owns and edits it.
+* **Accessible primitives underneath.** Behaviour comes from Radix UI or, since July 2026 by default, Base UI; styling comes from Tailwind CSS.
+* **Semantic colour pairs as CSS variables.** `--background` and `--foreground`, `--primary` and `--primary-foreground`, `--muted` and `--muted-foreground`, `--destructive`, `--border`, `--ring` and `--radius` (https://ui.shadcn.com/docs/theming[Theming]). A theme swaps the variables, not the components.
+* **`components.json` and `cn()`.** The config file holds style, Tailwind settings and import aliases such as `@/lib/utils`; `cn()` merges class names, formerly as `twMerge(clsx(...))`.
+* **A registry, not only a catalogue.** The CLI installs components, blocks and themes from shadcn's registry or any other one that follows the schema, which made it a distribution format for design systems.
+
+***Key Proponents***: shadcn, a design engineer at Vercel (https://shadcn.com[shadcn.com]). First released in March 2023 (https://blog.logrocket.com/shadcn-ui-adoption-guide/[LogRocket, 2026]); the project is MIT-licensed and hosted by Vercel
+
+[discrete]
+## **When to Use**:
+
+* Building a React or Next.js interface on Tailwind CSS that should look finished from the start but stay fully editable. In our prior test, every anchor run of a sign-up form imported from `@/components/ui/` and named the `npx shadcn` CLI; no baseline did.
+* Starting a team's own component library from code you can change rather than a package you cannot
+* Distributing a design system to several apps through a registry that the CLI installs from
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Treating it as an npm library.** There is no `shadcn-ui` package to upgrade. The code is yours, and so are its updates.
+* **Expecting the model to know the current stack.** In our prior test three of six runs built the form with `react-hook-form` and `zod`, the classic setup. Since 2025 the project has moved on: Base UI is the default, the forms page offers React Hook Form, TanStack Form and Formisch, and `cn` is its own package. Name the version or give the docs link when that matters.
+* **Thinking it is a visual style.** The defaults are neutral greys with a slight radius; the look comes from the theme variables you set.
+
+[discrete]
+## **Criticism**:
+
+* **Ownership is also maintenance.** Nefe Emadamerho-Atori, https://blog.logrocket.com/shadcn-ui-adoption-guide/["shadcn/ui adoption guide"] (LogRocket, 2026), notes that copying components "also results in a larger codebase that requires more maintenance". Vercel's own course states the trade-off: stability and control "at the cost of automatic updates" (https://vercel.com/academy/shadcn-ui/updating-and-maintaining-components[Vercel Academy]).
+* **Libraries cannot ship fixes into copied code.** Ayush, https://www.useautumn.com/blog/component-fail["React vs shadcn, and trying to be too clever"] (Autumn, 2025), describes a vendor that distributed its UI through the shadcn registry: "Because shadcn components install as a user file, we cannot fully control it via our SDK."
+
+[discrete]
+## **Current Status**:
+
+* **Base UI by default, CLI v4.** The changelog records CLI 3.0 with an MCP server (August 2025), `npx shadcn create` with a choice between Radix and Base UI (December 2025), CLI v4 (March 2026), Base UI as the default (July 2026, "Radix is not being deprecated") and the separate `cn` package (September 2026) (https://ui.shadcn.com/docs/changelog[Changelog]). The training-data prior serves the Radix era well; Base UI and the newer form options may come out thin unless you name them.
+
+### Shopify Polaris
+
+***Full Name***: Shopify Polaris -- "Shopify's unified UI framework built on web components" (https://shopify.dev/docs/api/polaris[shopify.dev])
+
+***Also known as***: Polaris, Polaris web components, Polaris React (the deprecated library)
+
+[discrete]
+## **Core Concepts**:
+
+* **Pages for merchants.** A page has a title, a primary action and secondary actions; content sits in cards and sections; resource lists and index tables show orders, products and customers.
+* **Web components with the `s-` prefix.** `<s-page>`, `<s-section>`, `<s-stack>` and `<s-button tone="critical" variant="primary">`, loaded from Shopify's CDN and usable with any framework (https://shopify-dev.shopifycloud.com/docs/api/app-home/using-polaris-components[Using Polaris components]).
+* **The React library.** `@shopify/polaris` with `Page`, `Layout`, `Card`, `IndexTable`, `BlockStack`, `InlineStack` and `Badge` -- what most code written before 2025 uses.
+* **Design tokens.** CSS custom properties with the `--p` prefix such as `--p-color-bg-surface`, from `@shopify/polaris-tokens`.
+* **Content guidance.** Polaris has always included rules for voice, tone and wording in merchant-facing interfaces, not only components.
+
+***Key Proponents***: Shopify. Polaris was made available to partners at Shopify Unite 2017 with a style guide, content guidance, CSS, a React component library and a Sketch kit (Liz Couto, https://shopify.com/partners/blog/how-to-get-the-most-out-of-polaris-shopify-s-new-design-system[Shopify Partners blog, 2017]); Polaris web components became stable on 1 October 2025 (https://shopify.dev/changelog/blog/polaris-goes-stable-the-future-of-shopify-app-development-is-here[Shopify changelog])
+
+[discrete]
+## **When to Use**:
+
+* Building Shopify apps, admin extensions or merchant-facing back offices. In our prior test, every anchor run of a team-settings page built a Polaris `Page` with a primary action, an `IndexTable` and `Badge` tones.
+* Designing dense, task-focused admin screens with clear primary actions
+* Writing interface copy for merchants along Polaris's content rules
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Saying "Polaris" alone.** The bare word resolves to the North Star on every tier we tested; "Shopify Polaris" pins it.
+* **Expecting web components from the model.** Every anchor run in our test wrote Polaris React, and none wrote `s-` components. The React library is deprecated, and React-rendered parts "won't follow the updated Shopify admin" (https://shopify.dev/docs/apps/build/app-home/polaris2.md[Polaris 2]). For new apps, ask for Polaris web components and give the link to shopify.dev.
+
+[discrete]
+## **Criticism**:
+
+* **A forced migration.** Daniel Curtis, https://infoq.com/news/2026/10/shopify-web-components["Shopify Upgrades Checkout Blocks to Polaris Web Components"] (InfoQ, 2026), reports for checkout UI extensions that after a year, with the 2026-01 version mandatory, "sentiment has been more mixed": developers called the unversioned CDN script a risk for stability and the components incomplete, while bundles shrank by 40 to 85 per cent.
+
+[discrete]
+## **Current Status**:
+
+* **Web components and Polaris 2.** The Polaris React repository is archived and "will not receive updates or maintenance"; the old documentation sites redirect to shopify.dev. The redesigned admin began rolling out on 15 September 2026, and the Polaris 2.0 release candidate of 24 September 2026 requires apps to move to web components; Built for Shopify apps have until 1 May 2027 (https://shopify.dev/changelog/polaris-2-0-release-candidate[changelog]). The training-data prior is the React era.
 
 ### Swiss Style (International Typographic Style)
 
@@ -14096,6 +14505,48 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **The name is baked into tooling, which is why it holds as an anchor.** `theme_tufte` in R's https://jrnold.github.io/ggthemes/reference/theme_tufte.html[ggthemes] cites the data-ink chapter by name: "No border, no axis lines, no grids." https://edwardtufte.github.io/tufte-css/[Tufte CSS] and the https://ctan.org/pkg/tufte-latex[tufte-latex] classes carry the sidenote layout; https://pypi.org/project/matplotlib-tufte/[matplotlib-tufte] carries the chart rules into Python. A term that ships as an installable default is one a model has seen in code as well as in prose.
 * **The typographic branch is stable to the point of dormancy.** CTAN lists tufte-latex at 3.5.2 with its most recent announcement in 2015. That is not decay -- the layout was finished -- but it means the second meaning of the name lives on in copies rather than in active development.
 * **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](#/prior-tests) for the terms searched.
+
+### U.S. Web Design System (USWDS)
+
+***Full Name***: U.S. Web Design System (USWDS), formerly the U.S. Web Design Standards
+
+***Also known as***: USWDS
+
+[discrete]
+## **Core Concepts**:
+
+* **The official government banner.** "An official website of the United States government", the `usa-banner` at the top of the page; "most government sites should use the banner" (https://designsystem.digital.gov/components/banner/[Banner]).
+* **Components with the `usa-` prefix.** `usa-header`, `usa-button`, `usa-alert`, `usa-accordion`, `usa-step-indicator` and form components, in the npm package `@uswds/uswds`.
+* **Design tokens as Sass settings.** Theme colours and fonts are set by tokens such as `$theme-color-primary: "blue-60v"` and `$theme-font-type-sans`.
+* **Public Sans.** A typeface designed for the system by Dan Williams, based on Libre Franklin, released with USWDS 2.0 in 2019 (https://eyeondesign.aiga.org/the-u-s-governments-public-sans-is-a-typeface-fit-for-civic-duty/[AIGA Eye on Design]); Source Sans Pro and Merriweather ship as alternatives.
+* **Accessibility and plain language as defaults.** Components are built to meet Section 508, and the guidance covers forms, step-by-step services and content.
+
+***Key Proponents***: 18F and the U.S. Digital Service, which created it in 2015; maintained by the Digital Services Division of GSA's Technology Transformation Services (https://designsystem.digital.gov/about/[About]). Version 2.0 came in 2019, version 3.0 in 2022
+
+[discrete]
+## **When to Use**:
+
+* Building US federal, state or city government services. In our prior test, every anchor run of a parking-permit service set the government banner, a step indicator and `usa-` form components. Both Opus baselines used `usa-` classes even without the name, one of them with the banner; the Haiku and Sonnet baselines did not.
+* As the US counterpart to the GOV.UK Design System when a service must look and behave like government
+* Meeting the federal website standards: agencies must follow GSA's standards under the 21st Century IDEA Act, and USWDS is how the standards are met (https://designsystem.digital.gov/website-standards/[Website standards])
+
+[discrete]
+## **Common Misunderstandings**:
+
+* **Thinking the law names USWDS.** The 21st Century IDEA Act requires the website standards; the standards point to USWDS.
+* **Using the banner on every site.** The banner is for official government sites, and the guidance says some sites should not use it.
+* **Expecting the GOV.UK patterns.** USWDS has its own components and fewer service patterns; one question per page is GOV.UK's pattern, not a USWDS rule.
+
+[discrete]
+## **Criticism**:
+
+* **Automated testing instead of people.** In September 2026 a new team proposed automating the system's accessibility testing. Matt Henry, former USWDS engineering lead, objected: "It is about what a human would experience" (Madison Alder, https://fedscoop.com/?p=91632["A Trump team wants to automate U.S. Web Design System accessibility testing. Experts are worried."], FedScoop, 2026).
+* **One defect reaches thousands of sites.** An open letter from a coalition of technologists warns: "One accessibility defect, performance issue, or security vulnerability in USWDS can put thousands of systems at risk" (https://fedscoop.com/websites-jeopardy-amid-us-web-design-system-takeover-coalition-gsa/[FedScoop, 2026]).
+
+[discrete]
+## **Current Status**:
+
+* **Governance in dispute.** In September 2026 GSA put the system's longtime lead on leave and handed the repository to an engineer from the Treasury Department (Christian Robles, https://www.nextgov.com/people/2026/09/gsas-web-design-system-head-replaced-treasury-ai-engineer/416035/[Nextgov/FCW]); nearly 200 technologists announced a hard fork, while GSA said prior administrations had let USWDS deteriorate (https://www.nextgov.com/digital-government/2026/10/technologists-create-trustworthy-copy-gsa-web-design-system-amid-ai-driven-takeover/416368/[Nextgov/FCW, October 2026]). The latest release is 3.14.0 of 18 August 2026. The prior describes the system as it was before the dispute; check which repository and release you build on.
 
 ### WAI-ARIA Authoring Practices Guide (APG)
 

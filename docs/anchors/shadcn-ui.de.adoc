@@ -1,0 +1,55 @@
+= shadcn/ui
+:categories: ux-visual-design
+:roles: software-developer, ux-designer
+:proponents: shadcn
+:tags: shadcn/ui, shadcn, React, Tailwind CSS, Radix UI, Base UI, components.json, cn, Open Code, Copy-Paste-Komponenten, Registry, CLI, npx shadcn, CSS-Variablen, muted-foreground, react-hook-form, Vercel, v0
+:related: design-tokens-dtcg, atomic-design, bootstrap-5
+:tier: 3
+:definition: shadcn/ui ist eine Sammlung von React-Komponenten auf Tailwind CSS, die ein CLI in den eigenen Code des Projekts kopiert, statt sie als Abhängigkeit zu installieren. Der Entwickler shadcn veröffentlichte sie 2023; sie verbindet barrierefreie Primitive aus Radix UI oder Base UI mit semantischen CSS-Variablen, sodass die Komponenten zum Ausgangspunkt der eigenen Komponentenbibliothek werden.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: shadcn-ui.webp
+:example-page: team-settings
+
+[%collapsible]
+====
+Vollständiger Name:: shadcn/ui -- „a project by shadcn“ (https://ui.shadcn.com/docs/about[About])
+
+Auch bekannt als:: shadcn
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Offener Code statt Abhängigkeit.* Die Dokumentation beginnt mit: „This is not a component library. It is how you build your component library.“ (https://ui.shadcn.com/docs[Introduction]). `npx shadcn add button` schreibt den Quelltext der Komponente ins Projekt, meist unter `components/ui`; dort gehört er dem Team, das ihn ändern kann.
+* *Barrierefreie Primitive darunter.* Das Verhalten kommt aus Radix UI oder, seit Juli 2026 standardmäßig, aus Base UI; das Styling aus Tailwind CSS.
+* *Semantische Farbpaare als CSS-Variablen.* `--background` und `--foreground`, `--primary` und `--primary-foreground`, `--muted` und `--muted-foreground`, `--destructive`, `--border`, `--ring` und `--radius` (https://ui.shadcn.com/docs/theming[Theming]). Ein Theme tauscht die Variablen, nicht die Komponenten.
+* *`components.json` und `cn()`.* Die Konfigurationsdatei hält Stil, Tailwind-Einstellungen und Import-Aliase wie `@/lib/utils`; `cn()` führt Klassennamen zusammen, früher als `twMerge(clsx(...))`.
+* *Eine Registry, nicht nur ein Katalog.* Das CLI installiert Komponenten, Blöcke und Themes aus der Registry von shadcn oder aus jeder anderen, die dem Schema folgt; damit wurde es zu einem Verteilformat für Design-Systeme.
+
+Wichtige Vertreter:: shadcn, Design Engineer bei Vercel (https://shadcn.com[shadcn.com]). Erstmals veröffentlicht im März 2023 (https://blog.logrocket.com/shadcn-ui-adoption-guide/[LogRocket, 2026]); das Projekt steht unter MIT-Lizenz und wird von Vercel gehostet
+
+[discrete]
+== *Wann verwenden*:
+
+* Eine Oberfläche in React oder Next.js auf Tailwind CSS bauen, die von Anfang an fertig aussieht und trotzdem voll änderbar bleibt. In unserem Prior-Test importierte jeder Lauf mit Anker für ein Registrierungsformular aus `@/components/ui/` und nannte das CLI `npx shadcn`; keine Baseline tat das.
+* Die eigene Komponentenbibliothek eines Teams aus Code beginnen, den man ändern kann, statt aus einem Paket, das man nicht ändern kann
+* Ein Design-System über eine Registry, aus der das CLI installiert, an mehrere Apps verteilen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Es für eine npm-Bibliothek halten.* Es gibt kein Paket `shadcn-ui`, das man aktualisiert. Der Code gehört dir, und damit auch seine Updates.
+* *Erwarten, dass das Modell den aktuellen Stack kennt.* In unserem Prior-Test bauten drei von sechs Läufen das Formular mit `react-hook-form` und `zod`, dem klassischen Setup. Seit 2025 ist das Projekt weiter: Base UI ist der Standard, die Formularseite bietet React Hook Form, TanStack Form und Formisch an, und `cn` ist ein eigenes Paket. Wenn das wichtig ist, nenne die Version oder gib den Link zur Dokumentation mit.
+* *Es für einen visuellen Stil halten.* Die Voreinstellungen sind neutrale Grautöne mit leichter Rundung; das Aussehen kommt aus den Theme-Variablen, die man setzt.
+
+[discrete]
+== *Kritik*:
+
+* *Eigentum heißt auch Wartung.* Nefe Emadamerho-Atori schreibt in https://blog.logrocket.com/shadcn-ui-adoption-guide/[„shadcn/ui adoption guide“] (LogRocket, 2026), dass das Kopieren der Komponenten zu einer größeren Codebasis führe, die mehr Wartung braucht („a larger codebase that requires more maintenance“). Vercels eigener Kurs benennt den Tausch: Stabilität und Kontrolle „at the cost of automatic updates“ (https://vercel.com/academy/shadcn-ui/updating-and-maintaining-components[Vercel Academy]).
+* *Bibliotheken können keine Fixes in kopierten Code liefern.* Ayush beschreibt in https://www.useautumn.com/blog/component-fail[„React vs shadcn, and trying to be too clever“] (Autumn, 2025) einen Anbieter, der seine UI über die shadcn-Registry verteilte: „Because shadcn components install as a user file, we cannot fully control it via our SDK.“
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Base UI als Standard, CLI v4.* Das Changelog verzeichnet CLI 3.0 mit MCP-Server (August 2025), `npx shadcn create` mit der Wahl zwischen Radix und Base UI (Dezember 2025), CLI v4 (März 2026), Base UI als Standard (Juli 2026, „Radix is not being deprecated“) und das eigene Paket `cn` (September 2026) (https://ui.shadcn.com/docs/changelog[Changelog]). Der Prior aus den Trainingsdaten bedient die Radix-Zeit gut; Base UI und die neueren Formularoptionen können dünn ausfallen, wenn man sie nicht nennt.
+====

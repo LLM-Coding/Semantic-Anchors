@@ -1,9 +1,16 @@
 import { describe, it, expect } from 'vitest'
 import fs from 'fs'
+import os from 'os'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import AsciidoctorFactory from '@asciidoctor/core'
-import { galleryEntries, buildStyleGallery, tile } from './lib/style-gallery.js'
+import {
+  galleryEntries,
+  buildStyleGallery,
+  tile,
+  examplePageFor,
+  PAGES,
+} from './lib/style-gallery.js'
 
 // #872: one homepage, many anchor names — the gallery puts the examples side by side.
 const Asciidoctor = () => AsciidoctorFactory()
@@ -41,13 +48,41 @@ describe('buildStyleGallery', () => {
   const en = buildStyleGallery('en')
   const de = buildStyleGallery('de')
 
-  it('opens with the original homepage, before any style', () => {
-    const original = en.indexOf('examples/original-homepage.webp')
-    const firstStyle = Math.min(
-      ...withScreenshot.map((id) => en.indexOf(`/anchor/${id}`)).filter((i) => i >= 0)
-    )
-    expect(original).toBeGreaterThan(-1)
-    expect(original).toBeLessThan(firstStyle)
+  // Two starting pages (#872 follow-up): styles redesign one homepage, design
+  // systems one app page. Each section opens with its own original.
+  const pageOf = (id) => {
+    const m = fs
+      .readFileSync(path.join(ANCHORS, `${id}.adoc`), 'utf-8')
+      .match(/^:example-page:[ \t]*(.*?)[ \t]*$/m)
+    return m ? m[1] : 'homepage'
+  }
+  const sectionStart = (page, text) => text.indexOf(`examples/original-${page}.webp`)
+
+  it('opens each section with its original, before any of its tiles', () => {
+    for (const page of ['homepage', 'team-settings']) {
+      const ids = withScreenshot.filter((id) => pageOf(id) === page)
+      expect(ids.length).toBeGreaterThan(0)
+      const firstTile = Math.min(...ids.map((id) => en.indexOf(`/anchor/${id}[`)))
+      expect(sectionStart(page, en)).toBeGreaterThan(-1)
+      expect(sectionStart(page, en)).toBeLessThan(firstTile)
+    }
+  })
+
+  it('puts every example in the section of its starting page', () => {
+    const appStart = sectionStart('team-settings', en)
+    expect(appStart).toBeGreaterThan(sectionStart('homepage', en))
+    for (const id of withScreenshot) {
+      const at = en.indexOf(`/anchor/${id}[`)
+      if (pageOf(id) === 'team-settings') expect(at).toBeGreaterThan(appStart)
+      else expect(at).toBeLessThan(appStart)
+    }
+  })
+
+  it('gives each section a heading in the page language', () => {
+    expect(en).toMatch(/^== .+$/m)
+    expect((en.match(/^== /gm) || []).length).toBe(2)
+    expect((de.match(/^== /gm) || []).length).toBe(2)
+    expect(de).toContain('== Design-Systeme')
   })
 
   it('links every tile to its anchor page, German tiles to German pages', () => {
@@ -115,5 +150,29 @@ describe('tile', () => {
     const out = tile('T', 'x.webp', 'say "hi" \\', '')
     const html = Asciidoctor().convert(out)
     expect(html).toContain('alt="say &quot;hi&quot; &#92;" width="720"')
+  })
+})
+
+describe('examplePageFor', () => {
+  it('knows every :example-page: value used by an anchor', () => {
+    for (const f of fs.readdirSync(ANCHORS).filter((n) => n.endsWith('.adoc'))) {
+      const m = fs
+        .readFileSync(path.join(ANCHORS, f), 'utf-8')
+        .match(/^:example-page:[ \t]*(.*?)[ \t]*$/m)
+      if (m) expect(PAGES, f).toContain(m[1])
+    }
+  })
+
+  it('rejects an unknown starting page instead of falling back silently', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'gallery-'))
+    const file = path.join(dir, 'x.adoc')
+    fs.writeFileSync(file, '= X\n:example-page: team-setings\n')
+    expect(() => examplePageFor(file)).toThrow(/team-setings/)
+    fs.writeFileSync(file, '= X\n:example-page: homepage team-settings\n')
+    expect(() => examplePageFor(file)).toThrow(/homepage team-settings/)
+    fs.writeFileSync(file, '= X\n:example-page: team-settings  \n')
+    expect(examplePageFor(file)).toBe('team-settings')
+    fs.writeFileSync(file, '= X\n')
+    expect(examplePageFor(file)).toBe('homepage')
   })
 })

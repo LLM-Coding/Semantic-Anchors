@@ -1,0 +1,53 @@
+= Carbon Design System
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: IBM
+:tags: Carbon Design System, Carbon, IBM, IBM Design Language, IBM Plex, 2x Grid, Gray 10, Gray 90, Gray 100, White Theme, Productive Type, Expressive Type, @carbon/react, @carbon/web-components, DataTable, UI Shell, cds-, Design Tokens, layer-01, Carbon for AI, AI Label
+:related: design-tokens-dtcg, material-design-3, salesforce-lightning-design-system
+:tier: 3
+:definition: Das Carbon Design System ist IBMs Open-Source-Design-System, seit 2015 öffentlich entwickelt als digitale Form der IBM Design Language. Es verbindet die Schrift IBM Plex mit einem produktiven und einem expressiven Schriftsatz, das 16-spaltige 2x Grid, vier Themes von White bis Gray 100, Design Tokens wie layer-01 und Komponenten in @carbon/react und @carbon/web-components.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: carbon-design-system.webp
+:example-page: team-settings
+
+[%collapsible]
+====
+Vollständiger Name:: Carbon Design System -- „the digital manifestation of the IBM Design Language“ (https://v9.carbondesignsystem.com/updates/design-language[Carbon])
+
+Auch bekannt als:: Carbon, IBM Carbon
+
+[discrete]
+== *Kernkonzepte*:
+
+* *IBM Plex in zwei Schriftsätzen.* IBM Plex Sans, Serif und Mono; der produktive Satz (Endung -01) für Produktoberflächen, der expressive (Endung -02) für redaktionelle Seiten (https://carbondesignsystem.com/elements/typography/overview/[Typography]).
+* *Das 2x Grid.* Ein 16-spaltiges Raster, auf dem Abstände und Komponentengrößen aufbauen.
+* *Vier Themes und Ebenen-Tokens.* White, Gray 10, Gray 90 und Gray 100; Tokens wie `$background`, `$layer-01`, `$text-primary` und `$interactive` schichten Flächen nach Ebene statt nach fester Farbe (https://www.carbondesignsystem.com/building-blocks/foundations/themes[Themes]).
+* *Hauptimplementierungen in React und Web Components.* `@carbon/react` und `@carbon/web-components`, Klassen mit dem Präfix `cds--`; die `DataTable` und die UI Shell mit Kopfzeile und Seitennavigation sind typische Bausteine.
+* *Carbon for AI.* Eine Erweiterung mit dem AI Label, das erklärt, wie KI den Inhalt erzeugt hat (https://carbondesignsystem.com/guidelines/carbon-for-ai/[Carbon for AI]).
+
+Wichtige Vertreter:: IBM. Die öffentliche Entwicklung begann am 10. Juni 2015 unter der Apache-2.0-Lizenz (https://en.wikipedia.org/wiki/Carbon_Design_System[Wikipedia]); Version 10 folgte im März 2019, Version 11 im Jahr 2022 (https://v10.carbondesignsystem.com/whats-happening/releases/[Releases])
+
+[discrete]
+== *Wann verwenden*:
+
+* Enterprise- und datenlastige Oberflächen bauen -- Admin-Konsolen, Dashboards, Entwicklerwerkzeuge -- mit dichten Daten. In unserem Prior-Test importierte jeder Lauf mit Anker für eine Team-Einstellungsseite `@carbon/react` und baute eine `DataTable`; fünf von sechs nannten ein Carbon-Theme.
+* Mit geschichteten Flächen-Tokens und dem dunklen Theme Gray 100 gestalten
+* KI-erzeugte Inhalte mit den Mustern von Carbon for AI kennzeichnen
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Nur „Carbon“ sagen.* Das bloße Wort führte in unserem Test auf Sonnet und Opus zur Chemie und auf Haiku zu Googles Programmiersprache Carbon. „Carbon Design System“ legt es fest.
+* *Code für Version 10 schreiben.* Die Pakete `carbon-components` und `carbon-components-react` sind abgekündigt; Version 11 benannte Tokens um, setzt `cds--` statt `bx--` vor die Klassen und nutzt Sass-Module. Die Migration „will be a manual process“ (https://carbondesignsystem.com/migrating/faq/[Migration FAQ]).
+
+[discrete]
+== *Kritik*:
+
+* *Lücken, die beim App-Team bleiben.* Grace Potmas Vergleich von Design-Systemen für OpenMRS (https://openmrs.atlassian.net/wiki/spaces/Archives/pages/25471972/Style+Guide+Design+Systems+Analysis+-+July+Aug+2020[„Style Guide & Design Systems Analysis“], 2020) notiert für das damalige Carbon eine Barrierefreiheitslücke im React-Dropdown („accessibility gap in React version of dropdown“) und dass Abstände weitgehend dem App-Entwickler überlassen blieben („mostly left to the app developer“).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Version 11, „Carbon Next“ angekündigt.* Version 11 ist aktuell; die Assets von v10 wurden am 30. September 2024 abgekündigt. Eine Vorschau auf die nächste Hauptversion verspricht einen neuen visuellen Ausdruck, Layouts als Kern-Framework, „industry-standard token naming“ und KI-Bereitschaft mit Agent Skills (https://preview.carbondesignsystem.com/carbon-next[Carbon Next], August 2026). Der Prior bedient Version 11.
+====

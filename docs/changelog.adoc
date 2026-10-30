@@ -4,6 +4,22 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-10-30
 
+*Eleven new anchors -- design systems from The Component Gallery:*
+
+* *link:#/anchor/carbon-design-system[Carbon Design System]* (IBM) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/874[#874]: a team-settings page imports `@carbon/react` and builds a `DataTable` in six of six runs.
+* *link:#/anchor/fluent-2-design-system[Fluent 2 Design System]* (Microsoft) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/875[#875]: the same page uses `@fluentui/react-components`, `makeStyles` and Fluent tokens in six of six runs.
+* *link:#/anchor/primer-github[Primer (GitHub Design System)]* (GitHub) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/880[#880]: `@primer/react` with Octicons in six of six runs; the entry warns that the models still write the removed `sx` prop.
+* *link:#/anchor/shopify-polaris[Shopify Polaris]* (Shopify) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/881[#881]: a Polaris `Page`, `IndexTable` and `Badge` in six of six runs -- all in the deprecated React library, so the entry says to ask for Polaris web components.
+* *link:#/anchor/atlassian-design-system[Atlassian Design System]* (Atlassian) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/882[#882]: Atlaskit, `DynamicTable` and `Lozenge` in six of six runs.
+* *link:#/anchor/adobe-spectrum[Adobe Spectrum]* (Adobe) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/883[#883]: `@adobe/react-spectrum` with `TableView` in six of six runs; the bare "Spectrum" means physics.
+* *link:#/anchor/salesforce-lightning-design-system[Salesforce Lightning Design System (SLDS)]* (Salesforce) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/884[#884]: `slds-` markup in six of six runs, none with Lightning Web Components.
+* *link:#/anchor/shadcn-ui[shadcn/ui]* (shadcn) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/876[#876]: a sign-up form imports from `@/components/ui/` and names the `npx shadcn` CLI in six of six runs.
+* *link:#/anchor/bootstrap-5[Bootstrap 5]* (Mark Otto, Jacob Thornton) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/877[#877]: the same form uses `form-control`, `is-invalid` and `invalid-feedback` in six of six runs.
+* *link:#/anchor/ant-design[Ant Design]* (Ant Group) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/878[#878]: `Form.Item` with `rules`, `Input.Password` and `onFinish` in six of six runs.
+* *link:#/anchor/uswds[U.S. Web Design System (USWDS)]* (18F, U.S. Digital Service) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/879[#879]: a parking-permit service gets the government banner, a step indicator and `usa-` forms in six of six runs; both Opus baselines already used `usa-` classes without the name.
+
+All eleven passed with tier ★★★, and every anchor run used real packages and components. For these systems a name is enough for a first draft; where the system has moved on since the training data, each entry's Current Status says so. Each entry has an example screenshot in the link:#/style-gallery[style gallery]. Full detail in the link:#/prior-tests[prior-test register], run 2026-10-30, design systems.
+
 *New anchor -- WAI-ARIA Authoring Practices Guide (APG):*
 
 * *link:#/anchor/wai-aria-apg[WAI-ARIA Authoring Practices Guide (APG)]* (W3C Web Accessibility Initiative) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/866[#866]: names of UI controls fix what a control is called; the APG fixes how it behaves. An account menu gains Home, End and type-ahead in six of six runs (baselines: four and one of six); a site navigation uses the disclosure pattern in six of six runs and never menu roles. The entry explains how to prompt with it. Tier ★★★.

@@ -2,8 +2,8 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 19 documentation pages, 22 semantic contracts, and
-> 260 anchors in 15 categories — the anchors both
-> one by one and bundled into 28 files that hold a whole category.
+> 271 anchors in 15 categories — the anchors both
+> one by one and bundled into 29 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
 > question about a workflow, a method or this project is usually answered by a
@@ -26,7 +26,7 @@
 - [Brownfield Fair Comparison](https://llm-coding.github.io/Semantic-Anchors/brownfield-fair-comparison/): Three approaches (Direct, Socratic, Two-Phase) compared with identical team answers. Measures the structural value of the Question Tree, not the answers.
 - [The Harness Inventory](https://llm-coding.github.io/Semantic-Anchors/harness-inventory/): Layers of error correction for agentic coding — a categorised inventory of harness checks, sorted by how much project work each one costs to add.
 - [An Anchor Delivers Only as Far as the Prior Reaches](https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice/): What a pull request about "use cases" taught us about the limits of anchors: the term fires, the practice behind it does not follow. Includes an experiment you can rerun.
-- [Design Styles Compared](https://llm-coding.github.io/Semantic-Anchors/style-gallery/): Screenshots, not text: one homepage redesigned once per design-style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism, Bento Grid, Material Design 3 and others) from the style name alone. Read it to see what a style name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.
+- [Design Styles Compared](https://llm-coding.github.io/Semantic-Anchors/style-gallery/): Screenshots, not text: one homepage redesigned once per style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism and others) and one app settings page redesigned once per design-system anchor (Carbon, Fluent 2, Primer, Polaris, Bootstrap 5 and others), each from the name alone. Read it to see what a name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.
 - [Anchor Prior Test Skill](https://llm-coding.github.io/Semantic-Anchors/anchor-prior-test/): Installable Claude Code Skill that measures whether naming a term actually triggers the concept in a model you do not control. Clean-room probe battery across model tiers, then a tier rating and a route to anchor, contract or rejection.
 - [Prior-Test Register](https://llm-coding.github.io/Semantic-Anchors/prior-tests/): The evidence behind each anchor’s measured tier — resolved model identifiers, procedure version, run counts, criteria matrices and verbatim quotes. An anchor without a prior-test date was not tested; that is a statement about our records, not the term.
 - [arc42 Documentation Authoring Skill](https://llm-coding.github.io/Semantic-Anchors/arc42-documentation-skill/): Installable Claude Code Skill carrying the procedure for authoring an arc42 document — the cross-section rules arc42’s own templates do not enforce. The how-to companion to the Architecture Documentation contract.
@@ -44,7 +44,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 260 terms in full, 28 files
+## Anchor bundles — the same 271 terms in full, 29 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -75,10 +75,11 @@
 - [Testing & Quality Practices (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 - [Testing & Quality Practices (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-3.txt): 2 anchors in full.
-- [UX & Visual Design (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 17 anchors in full.
-- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 6 anchors in full.
+- [UX & Visual Design (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 17 anchors in full.
+- [UX & Visual Design (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 15 anchors in full.
+- [UX & Visual Design (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-3.txt): 2 anchors in full.
 
-## Anchors — 260 named terms, grouped by category
+## Anchors — 271 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -406,15 +407,21 @@
 
 ### UX & Visual Design
 
+- [Adobe Spectrum](https://llm-coding.github.io/Semantic-Anchors/anchors/adobe-spectrum.txt)
+- [Ant Design](https://llm-coding.github.io/Semantic-Anchors/anchors/ant-design.txt)
 - [Apple Human Interface Guidelines](https://llm-coding.github.io/Semantic-Anchors/anchors/apple-human-interface-guidelines.txt)
+- [Atlassian Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/atlassian-design-system.txt)
 - [Atomic Design](https://llm-coding.github.io/Semantic-Anchors/anchors/atomic-design.txt)
 - [Bauhaus](https://llm-coding.github.io/Semantic-Anchors/anchors/bauhaus.txt)
 - [Bento Grid](https://llm-coding.github.io/Semantic-Anchors/anchors/bento-grid.txt)
+- [Bootstrap 5](https://llm-coding.github.io/Semantic-Anchors/anchors/bootstrap-5.txt)
+- [Carbon Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/carbon-design-system.txt)
 - [Design Tokens (W3C DTCG)](https://llm-coding.github.io/Semantic-Anchors/anchors/design-tokens-dtcg.txt)
 - [Dieter Rams' 10 Principles of Good Design](https://llm-coding.github.io/Semantic-Anchors/anchors/dieter-rams-ten-principles.txt)
 - [8-Point Grid](https://llm-coding.github.io/Semantic-Anchors/anchors/eight-point-grid.txt)
 - [The Elements of Typographic Style (Bringhurst)](https://llm-coding.github.io/Semantic-Anchors/anchors/elements-of-typographic-style.txt)
 - [Every Layout](https://llm-coding.github.io/Semantic-Anchors/anchors/every-layout.txt)
+- [Fluent 2 Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/fluent-2-design-system.txt)
 - [Gestalt Principles](https://llm-coding.github.io/Semantic-Anchors/anchors/gestalt-principles.txt)
 - [Glassmorphism](https://llm-coding.github.io/Semantic-Anchors/anchors/glassmorphism.txt)
 - [GOV.UK Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/gov-uk-design-system.txt)
@@ -424,8 +431,13 @@
 - [Modular Scale](https://llm-coding.github.io/Semantic-Anchors/anchors/modular-scale.txt)
 - [Neo-Brutalism](https://llm-coding.github.io/Semantic-Anchors/anchors/neo-brutalism.txt)
 - [Nielsen's 10 Usability Heuristics](https://llm-coding.github.io/Semantic-Anchors/anchors/nielsen-usability-heuristics.txt)
+- [Primer (GitHub Design System)](https://llm-coding.github.io/Semantic-Anchors/anchors/primer-github.txt)
 - [Refactoring UI](https://llm-coding.github.io/Semantic-Anchors/anchors/refactoring-ui.txt)
+- [Salesforce Lightning Design System (SLDS)](https://llm-coding.github.io/Semantic-Anchors/anchors/salesforce-lightning-design-system.txt)
+- [shadcn/ui](https://llm-coding.github.io/Semantic-Anchors/anchors/shadcn-ui.txt)
+- [Shopify Polaris](https://llm-coding.github.io/Semantic-Anchors/anchors/shopify-polaris.txt)
 - [Swiss Style (International Typographic Style)](https://llm-coding.github.io/Semantic-Anchors/anchors/swiss-style.txt)
 - [Tufte Style](https://llm-coding.github.io/Semantic-Anchors/anchors/tufte-style.txt)
+- [U.S. Web Design System (USWDS)](https://llm-coding.github.io/Semantic-Anchors/anchors/uswds.txt)
 - [WAI-ARIA Authoring Practices Guide (APG)](https://llm-coding.github.io/Semantic-Anchors/anchors/wai-aria-apg.txt)
 - [WCAG 2.2 AA](https://llm-coding.github.io/Semantic-Anchors/anchors/wcag-22-aa.txt)

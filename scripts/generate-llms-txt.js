@@ -254,7 +254,7 @@ const DOC_PAGES = [
     title: 'Design Styles Compared',
     url: 'https://llm-coding.github.io/Semantic-Anchors/style-gallery',
     summary:
-      'Screenshots, not text: one homepage redesigned once per design-style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism, Bento Grid, Material Design 3 and others) from the style name alone. Read it to see what a style name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.',
+      'Screenshots, not text: one homepage redesigned once per style anchor (Swiss Style, Bauhaus, Neo-Brutalism, Glassmorphism and others) and one app settings page redesigned once per design-system anchor (Carbon, Fluent 2, Primer, Polaris, Bootstrap 5 and others), each from the name alone. Read it to see what a name changes in a generated page; the prompt is quoted, the anchor entries hold the definitions.',
   },
   {
     title: 'Anchor Prior Test Skill',
