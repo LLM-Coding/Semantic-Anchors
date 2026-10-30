@@ -1,0 +1,205 @@
+= A Design Prompt Works When It Names One Anchor per Layer
+Ralf D. Müller
+2026-10-30
+:toc:
+:toc-placement: preamble
+
+_How to prompt UX and UI design, with evidence from the catalog's prior tests -- and prompts you can copy._
+
+[NOTE]
+====
+*The short version.* Without a name in the prompt, a model designs from its defaults. "Modern" or "clean" give it no rule to follow; a name gives it a whole set. Name one anchor per layer -- a style or design system, layout and type, rules for the details, control behaviour, accessibility -- and check that the layers fit together. Every claim below about what models do comes from a prior-test run in the link:#/prior-tests[prior-test register], each run on Claude Haiku 5.5, Sonnet 5.5 and Opus 5.5 with a baseline prompt that left the anchor out -- or, for two anchors on one layer, against each anchor alone.
+====
+
+== The Model Already Has a Design
+
+You never prompt a blank page. Without a name in the prompt, the model designs the way most of its training data designs, and the baselines of our prior tests show what that looks like:
+
+* *A bakery landing page* comes with photography and hand-drawn or script elements -- six of six baselines (run 2026-10-28).
+* *A features section* becomes a uniform three-by-two grid of identical cards -- five of six baselines (run 2026-10-29).
+* *Responsive CSS* is written desktop first, with `max-width` media queries -- six of six baselines (run 2026-10-28).
+* *Spacing* already leans towards round numbers: 58 per cent of the baselines' pixel values were multiples of eight (run 2026-10-28).
+* *Accessibility* stops at the 4.5:1 contrast ratio: every baseline knew it, none cited a WCAG success criterion by number (run 2026-10-28).
+
+None of these defaults is wrong. They are what you get when the prompt names nothing the model could follow. Words like "modern", "clean" or "professional" add no rule; a name brings a whole body of them -- a grid, a type scale, components, constraints.
+
+== One Anchor per Layer
+
+A design decision has several layers, and each layer has anchors that move the model measurably. The table names one test result per layer; the anchor entries hold the rest.
+
+[cols="1,2,3"]
+|===
+|Layer |Anchors |What the name changed in the prior test
+
+|Style
+|link:#/anchor/swiss-style[Swiss Style], link:#/anchor/bauhaus[Bauhaus], link:#/anchor/neo-brutalism[Neo-Brutalism], link:#/anchor/glassmorphism[Glassmorphism], link:#/anchor/bento-grid[Bento Grid]
+|"Use Bauhaus design." brought circle, square, triangle, a geometric sans and the primary colours in six of six runs, in place of photography and script; one run kept a hand-drawn element (2026-10-28)
+
+|Design system
+|link:#/anchor/material-design-3[Material Design 3], link:#/anchor/apple-human-interface-guidelines[Apple HIG], link:#/anchor/gov-uk-design-system[GOV.UK Design System], link:#/anchor/carbon-design-system[Carbon], link:#/anchor/fluent-2-design-system[Fluent 2], link:#/anchor/shadcn-ui[shadcn/ui] and others
+|Every one of 66 anchor runs across eleven design systems built with the system's real packages and components; no baseline did, except Opus on the US government task (2026-10-30, design systems)
+
+|Layout and type
+|link:#/anchor/eight-point-grid[8-Point Grid], link:#/anchor/modular-scale[Modular Scale], link:#/anchor/every-layout[Every Layout], link:#/anchor/mobile-first[Mobile First], link:#/anchor/elements-of-typographic-style[Bringhurst]
+|"Use an 8-point grid" raised the share of spacing values on multiples of eight from 58 to 88 per cent; "Mobile First" turned six of six `max-width` queries into `min-width` (2026-10-28)
+
+|Rules for the details
+|link:#/anchor/refactoring-ui[Refactoring UI], link:#/anchor/gestalt-principles[Gestalt Principles], link:#/anchor/dieter-rams-ten-principles[Dieter Rams]
+|Refactoring UI replaced dividers with spacing on Sonnet and Opus in four of four runs, on Haiku in one of two -- a softer nudge on the weak tier (2026-10-28)
+
+|Control behaviour
+|link:#/anchor/wai-aria-apg[WAI-ARIA Authoring Practices Guide (APG)]
+|An account menu gained Home, End and type-ahead in six of six runs; a site navigation used the disclosure pattern in six of six (2026-10-30)
+
+|Accessibility
+|link:#/anchor/wcag-22-aa[WCAG 2.2 AA]
+|Six of six runs cited the two 2.2 additions the test form violated, 2.5.8 Target Size and 2.4.11 Focus Not Obscured (2026-10-28)
+|===
+
+You rarely need all six. A landing page needs a style, a grid and accessibility; an admin screen needs a design system, control behaviour and accessibility. Pick the layers the task has, and name one anchor for each.
+
+[source,text]
+----
+Design the pricing page of a SaaS product.
+Use Swiss Style, an 8-point grid and a modular scale.
+Check it against WCAG 2.2 AA.
+----
+
+The link:#/style-gallery[style gallery] shows what a single name does to a whole page: one homepage redesigned per style, one app page per design system.
+
+== Call a Control by Its Name, Fix Its Behaviour with the APG
+
+Names like "burger menu", "date picker" or "accordion" tell the model what to build, not how it behaves. https://component.gallery/[The Component Gallery] lists the common name of 60 controls and their aliases across 95 design systems; the WAI-ARIA Authoring Practices Guide fixes the keyboard interaction and the roles.
+
+The prior test of 2026-10-30 shows why the second step matters. All six baselines of an account menu already used `role="menu"` and arrow keys -- but only one handled type-ahead. With "Follow the WAI-ARIA Authoring Practices Guide (APG).", six of six did. For a site navigation with two dropdowns, one baseline used menu roles where the APG recommends the disclosure pattern; with the anchor, six of six chose the disclosure pattern and named it.
+
+[source,text]
+----
+Main navigation with two dropdowns of links.
+Follow the APG Disclosure Navigation Menu example, not the menu pattern.
+----
+
+== Use the Full Name, Not the Short One
+
+Many design terms have a bare form that means something else. The prior tests asked each model what the bare word means, and the answer was often outside design:
+
+[cols="1,2,1"]
+|===
+|Bare word |Resolved to |Say instead
+
+|brutalism |architecture, on all tiers |Neo-Brutalism
+|bento |Japanese food, on all tiers |Bento Grid
+|Gestalt |psychology, with Gestalt therapy mentioned |Gestalt Principles
+|Carbon |chemistry, or Google's Carbon language on Haiku |Carbon Design System
+|Polaris |the North Star, on all tiers |Shopify Polaris
+|Spectrum |physics, on all tiers |Adobe Spectrum
+|Lightning |weather |Salesforce Lightning Design System (SLDS)
+|===
+
+The sources are the runs of 2026-10-28, 2026-10-29 and 2026-10-30 (design systems). Inside a design prompt the task gives context, but the full name costs two words and removes the doubt.
+
+== Pick a Task the Style Does Not Already Answer
+
+An anchor can only change what the model would not do anyway. When we tested Glassmorphism on the now-playing screen of a music player, all six baselines already blurred the background -- the task itself pulled in the style, and the anchor had nothing left to add. On a neutral task, a pricing section, no baseline used translucent cards, and with "Use glassmorphism." six of six did (run 2026-10-29).
+
+The same holds for design systems. Opus already builds a US government service with USWDS classes, and gives a UK public service a start page and a check-answers page, without being told (runs of 2026-10-30, design systems, and 2026-10-28). The name still helps there: for USWDS it makes Haiku and Sonnet do the same, and for GOV.UK it adds what the default leaves out, one question per page.
+
+== Two Anchors on One Layer: Say How They Divide the Work
+
+What happens when a prompt names two anchors for the same layer? We tested it on the tasks of the 2026-10-28 run, each pair against each anchor alone, two runs per tier (run 2026-10-30, anchor stacking). The models did not produce a muddle. They resolved the conflict, and how they resolved it depends on the kind of anchor.
+
+*Two styles become one hybrid.* With "Use Neo-Brutalism and glassmorphism.", all six bakery pages carried at least two marks of each style, such as black outlines, hard offset shadows, translucent panels and `backdrop-filter`. The models gave each style a job. On Haiku:
+
+[quote]
+____
+Loud, tactile neo-brutalism for the structure, with glassmorphism for the layered surfaces.
+____
+
+*Two design systems become two platforms.* With "Use Material Design 3 and the Apple Human Interface Guidelines.", all six settings screens were split in two: a Jetpack Compose version for Android and a SwiftUI version for iOS. Alone, Material 3 produced Android code in six of six runs, and the HIG produced iOS code in six of six. The pair was read as "both platforms", not as one blended screen.
+
+Either result may be what you want -- or not. The model guesses how the two anchors divide the work, so tell it:
+
+[source,text]
+----
+Use Neo-Brutalism for layout, borders and buttons; use glassmorphism
+only for the navigation bar.
+----
+
+[source,text]
+----
+One cross-platform screen in Flutter. Follow Material Design 3 for the
+components; adopt the Apple HIG's 44-point touch targets.
+----
+
+== Review with Anchors Too
+
+"Make it better" is not a review. Name the yardstick, and the model checks against it. In the prior test of 2026-10-28, a signup form with eight known defects was reviewed four times:
+
+* With *Nielsen's 10 Usability Heuristics*, six of six runs mapped the defects to at least five heuristics by name; no baseline named one.
+* With the *Laws of UX*, six of six runs cited Fitts's and Hick's Law.
+* With *WCAG 2.2 AA*, six of six cited at least ten success criteria.
+* With *Gestalt Principles*, six of six explained the defects through proximity and at least two further laws.
+
+[source,text]
+----
+Review this signup form against Nielsen's 10 Usability Heuristics.
+For each problem, name the heuristic and propose a fix.
+----
+
+== When the Name Is Not Enough, Hand Over the System
+
+A name gives the model what its training data knows, and design systems move faster than training data. In the design-system run of 2026-10-30, the models wrote Polaris React, which Shopify has deprecated in favour of Polaris web components; they styled Primer components with the `sx` prop, which Primer React has removed; and they wrote SLDS classes without Lightning Web Components. Each anchor entry's Current Status section says where the system has moved.
+
+Two ways close the gap:
+
+* *Give the link.* For a system that is not in the catalog, or a version newer than the training data, add a link to the documentation and say which version you build on.
+* *Give the values.* link:#/anchor/design-tokens-dtcg[Design Tokens in the W3C DTCG format] hand over exact colours, spacing and type. With the name, six of six runs wrote `$value` and `$type`, and four of six used alias references (run 2026-10-28). Some design systems also ship an MCP server that gives an agent their components directly: Deutsche Bahn's https://www.npmjs.com/package/@db-ux/mcp-server[`@db-ux/mcp-server`] "gives LLMs access to UI components and code examples" of the DB UX Design System.
+
+== Prompts to Copy
+
+*Landing page:*
+
+[source,text]
+----
+Design the landing page of a neighbourhood bakery: hero, three product
+highlights, opening hours, contact. Use Bauhaus design, an 8-point grid
+and Mobile First. Check it against WCAG 2.2 AA.
+----
+
+*Form in a public service:*
+
+[source,text]
+----
+Build the online application for a residents' parking permit.
+Use the GOV.UK Design System patterns. Check it against WCAG 2.2 AA.
+----
+
+*Admin screen:*
+
+[source,text]
+----
+Build the "Team members" settings page of our admin console in React:
+member list with role, invite button, remove action. Use the Carbon Design
+System (v11, @carbon/react). Follow the WAI-ARIA Authoring Practices Guide
+(APG) for the role menu.
+----
+
+*Dashboard with a component library:*
+
+[source,text]
+----
+Build the analytics dashboard with shadcn/ui on Base UI. Structure the
+components with Atomic Design. Use our tokens from tokens.json (W3C DTCG).
+----
+
+*Review:*
+
+[source,text]
+----
+Review this screen against Nielsen's 10 Usability Heuristics and WCAG 2.2 AA.
+List each problem with the heuristic or success criterion it violates.
+----
+
+== A Name Points the Model to What It Already Knows
+
+A design prompt is short when every word does work. An adjective asks the model to guess; a name points it to a body of knowledge it already holds -- grid, type, components, rules -- and the prior tests show that it follows. The craft is choosing the layers, using the full names, and handing over the documentation where the name ends.
