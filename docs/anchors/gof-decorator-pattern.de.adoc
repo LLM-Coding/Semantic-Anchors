@@ -3,7 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
-:definition: Das Decorator Pattern, auch Wrapper genannt, ist ein Structural-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es fügt einem Objekt dynamisch zusätzliche Verantwortlichkeiten hinzu. Decorators umhüllen das Objekt und ergänzen Verhalten transparent. Das ist eine flexible Alternative zur Unterklassenbildung, wenn Vererbung unpraktisch ist, etwa um einem Logger Formatierung, Timestamp und Filterung hinzuzufügen.
+:definition: Das Decorator Pattern, auch Wrapper genannt, ist ein Strukturmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides, das einem Objekt dynamisch zusätzliche Verantwortlichkeiten hinzufügt. Decorators umhüllen das Objekt und ergänzen Verhalten transparent; das ist eine flexible Alternative zur Unterklassenbildung, wenn Vererbung unpraktisch ist, etwa um einem Logger Formatierung, Timestamp und Filterung hinzuzufügen.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, decorator, wrapper, dynamic behavior, composition
 :related: gof-design-patterns, gof-composite-pattern, gof-proxy-pattern
