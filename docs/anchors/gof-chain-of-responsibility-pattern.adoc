@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Chain of Responsibility pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle it. The receiving objects form a chain, and each handler either processes the request or passes it to the next. The set of handlers can be specified dynamically, as in a middleware pipeline.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, chain of responsibility, handler, pipeline, middleware
 :related: gof-design-patterns, gof-command-pattern, gof-mediator-pattern

@@ -5,6 +5,7 @@
 :tags: FMEA, FMECA, Fehlermöglichkeits- und Einflussanalyse, RPZ, Risikoprioritätszahl, Action Priority, Bedeutung Auftreten Entdeckung, Zuverlässigkeit, DFMEA, PFMEA
 :related: dmaic, ishikawa-diagram, premortem, stride, iec-61508-sil-levels
 :tier: 3
+:definition: FMEA, die Fehlermöglichkeits- und Einflussanalyse, ist eine vorausschauende Risikomethode, die von unten nach oben arbeitet. Sie wurde 1949 im US-Militärdokument MIL-P-1629 beschrieben und fragt für jedes Bauteil und jeden Prozessschritt, wie es ausfallen kann. Zu jeder Fehlermöglichkeit hält sie Wirkung, Ursache und Maßnahmen fest und bewertet Bedeutung, Auftreten und Entdeckung. Die klassische FMEA ordnet nach der Risikoprioritätszahl; das AIAG-VDA-Handbuch von 2019 ersetzte sie durch Action Priority und sieben Schritte.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

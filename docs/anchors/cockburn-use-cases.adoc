@@ -5,6 +5,7 @@
 :proponents: Alistair Cockburn
 :tags: use-cases, requirements, goal-levels, fully-dressed, actor-goal-list
 :tier: 3
+:definition: Cockburn Use Cases are Alistair Cockburn's prose-based format for describing system behavior from an actor's perspective, set out in Writing Effective Use Cases (2001). The fully dressed template covers primary actor, stakeholders and interests, preconditions, trigger, a numbered main success scenario, extensions and postconditions. Goal levels (summary, user goal, subfunction), an explicit scope and an actor-goal list keep each use case at the right granularity, with the user goal as the sweet spot.
 
 [%collapsible]
 ====

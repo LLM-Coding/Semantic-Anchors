@@ -3,6 +3,7 @@
 :roles: software-architect, team-lead, consultant, qa-engineer
 :proponents: Roman Catholic Church (advocatus diaboli / Promotor Fidei)
 :tier: 3
+:definition: Der Advocatus Diaboli (Devil's Advocate) ist die Praxis, gezielt gegen einen Vorschlag zu argumentieren, auch ohne diese Meinung zu teilen, um ihn vor einer Entscheidung unter Stress zu testen. Er geht auf die Rolle des Promotor Fidei im Kanonisierungsprozess der katholischen Kirche zurück, formalisiert 1587, und wurde später in Recht, Philosophie, Geschäftsstrategie und Red Teaming übernommen. Gut gemacht, präsentiert er das stärkste Gegenargument, deckt versteckte Annahmen auf und erkennt Risiken früh.
 :tags: devil's advocate, dissent, critical thinking, challenge assumptions, red team
 :related: socratic-method, five-whys, consent-vs-consensus
 

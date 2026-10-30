@@ -5,6 +5,7 @@
 :tags: CQS, Command-Query-Trennung, Befehl-Abfrage-Trennung, Command, Query, Modifier, Mutator, seiteneffektfrei, referenzielle Transparenz, Eiffel, Meyer
 :related: cqrs, design-by-contract, vertical-slice-architecture, code-smells
 :tier: 3
+:definition: Command-Query Separation (CQS) ist Bertrand Meyers Entwurfsregel aus Object-Oriented Software Construction (1988): Jede Methode ist entweder ein Command, der Zustand ändert und nichts zurückgibt, oder eine Query, die einen Wert zurückgibt und keinen beobachtbaren Zustand ändert, niemals beides. Eine Frage zu stellen ändert dann die Antwort nicht. Queries sind wiederholbar und dürfen aus Contracts und Assertions heraus aufgerufen werden. CQS ist eine Regel je Methode, nicht das Architekturmuster CQRS.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

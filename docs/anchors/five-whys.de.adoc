@@ -3,6 +3,7 @@
 :roles: software-developer, qa-engineer, devops-engineer, team-lead
 :proponents: Sakichi Toyoda, Taiichi Ohno (Toyota)
 :tier: 3
+:definition: Five Whys ist eine Technik der Ursachenanalyse aus dem Toyota-Produktionssystem, verbunden mit Sakichi Toyoda und Taiichi Ohno. Ein Team fragt etwa fünfmal Warum, um vom Symptom zu einer Grundursache zu kommen, auf die es handeln kann. Jede Antwort wird zum Gegenstand der nächsten Frage; so entsteht eine Kausalkette, die in einer Gegenmaßnahme endet. Kritiker wie Alan J. Card und John Allspaw wenden ein, dass eine einzige lineare Kette die zusammenwirkenden Faktoren hinter Vorfällen in komplexen Systemen nicht abbildet.
 :tags: five whys, root cause analysis, Toyota, Ohno, lean, problem solving
 :related: socratic-method, xy-problem, first-principles-thinking, dmaic
 

@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Memento pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that captures and externalizes an object's internal state without violating encapsulation, so that the object can be restored to this state later. Such snapshots are the basis for undo and other forms of state preservation.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, memento, snapshot, undo, state preservation
 :related: gof-design-patterns, gof-command-pattern, gof-state-pattern

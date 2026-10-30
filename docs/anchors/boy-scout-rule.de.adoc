@@ -5,6 +5,7 @@
 :tags: Boy Scout Rule, Pfadfinderregel, Codequalität, Refactoring, technische Schulden, Code-Verfall, Clean Code, Martin
 :related: code-smells, red-green-tdd, conventional-commits, mikado-method, lehmans-classification
 :tier: 3
+:definition: Die Boy Scout Rule ist Robert C. Martins Übertragung der Pfadfinderregel auf Code: Hinterlasse den Zeltplatz sauberer, als du ihn vorgefunden hast, also checke das Modul sauberer ein, als du es ausgecheckt hast. Das Aufräumen bleibt klein und auf Code begrenzt, den die Aufgabe ohnehin berührt, etwa eine unklare Variable umbenennen oder toten Code löschen. Es wirkt dem langsamen Verfall eines Codebestands entgegen und setzt eine grüne Testsuite voraus.
 :prior-test: 2026-09-24
 :tested-on: haiku-4.5=yes, opus-5=yes
 

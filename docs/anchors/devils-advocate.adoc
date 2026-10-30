@@ -5,6 +5,7 @@
 :tags: devil's advocate, dissent, critical thinking, challenge assumptions, red team
 :related: socratic-method, five-whys, consent-vs-consensus
 :tier: 3
+:definition: Devil's Advocate is the practice of deliberately arguing against a proposal, even without holding that view, to stress-test it before a decision. It derives from the Promotor Fidei role in the Catholic Church's canonization process, formalized in 1587, and was later adopted in law, philosophy, business strategy and red teaming. Done well, it presents the strongest opposing argument, surfaces hidden assumptions and identifies risks early.
 
 [%collapsible]
 ====

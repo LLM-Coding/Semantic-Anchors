@@ -5,6 +5,7 @@
 :proponents: Aristotle, René Descartes
 :tags: first-principles, reasoning, decomposition, problem-solving, assumptions
 :tier: 3
+:definition: First Principles Thinking ist eine Denkmethode mit Wurzeln bei Aristoteles, geschärft durch René Descartes' methodischen Zweifel. Sie zerlegt ein Problem in Grundwahrheiten, die sich nicht aus Fundamentalerem ableiten lassen, und argumentiert von dort nach oben. Anders als beim Denken per Analogie wird jede geerbte Randbedingung geprüft: Naturgesetz oder bloß Konvention? Die irreduziblen Elemente werden dann neu kombiniert. Die Methode ist teuer und eignet sich für hochriskante oder festgefahrene Probleme.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: L. Peter Deutsch, James Gosling
 :tags: distributed-systems, networking, reliability, latency, fallacies, resilience
 :tier: 3
+:definition: The Fallacies of Distributed Computing are eight false assumptions about networks; L. Peter Deutsch named the first seven at Sun Microsystems around 1994, and James Gosling added the eighth. They are: the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology doesn't change, there is one administrator, transport cost is zero, and the network is homogeneous. Used as an audit checklist, they expose designs that would fail under real network conditions.
 
 [%collapsible]
 ====

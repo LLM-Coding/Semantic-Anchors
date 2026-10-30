@@ -5,6 +5,7 @@
 :proponents: Eric Brewer, Seth Gilbert, Nancy Lynch
 :tags: cap, distributed-systems, consistency, availability, partition-tolerance, pacelc, resilience
 :tier: 3
+:definition: Das CAP-Theorem, 2000 von Eric Brewer als Vermutung aufgestellt und 2002 von Seth Gilbert und Nancy Lynch formal bewiesen, besagt: Ein verteiltes System kann während einer Netzwerkpartition nicht zugleich Consistency und Availability garantieren. Weil reale Netze partitionieren, ist die eigentliche Designwahl CP- oder AP-Verhalten während der Partition. Daniel Abadis PACELC-Erweiterung von 2012 ergänzt den Trade-off zwischen Latency und Consistency ohne Partition.
 
 [%collapsible]
 ====

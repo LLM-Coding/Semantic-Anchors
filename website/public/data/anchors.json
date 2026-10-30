@@ -321,6 +321,7 @@
         "works": true
       }
     ],
+    "definition": "Andon is the signal system of the Toyota Production System, associated with Taiichi Ohno: a board or lamp that shows the status of every station, plus a cord or button that any operator may pull when something is wrong. A pull is first a call for help; the line stops only at the next fixed position if nobody resolves the problem in time. The authority to signal, not the hardware, is the design, and software borrows it for red builds and halted rollouts.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -572,6 +573,7 @@
     ],
     "filePath": "docs/anchors/atam.adoc",
     "tier": 3,
+    "definition": "ATAM, the Architecture Tradeoff Analysis Method by Rick Kazman, Mark Klein and Paul Clements of the SEI at Carnegie Mellon University, evaluates a software architecture against its quality goals. A utility tree breaks those goals into prioritized quality attribute scenarios, and a nine-step process analyzes the architectural approaches against them. The result names sensitivity points, tradeoff points where one decision affects several quality attributes in conflicting ways, and risks and non-risks.",
     "addedAt": "2026-03-06T17:48:13+00:00"
   },
   {
@@ -776,6 +778,7 @@
     ],
     "filePath": "docs/anchors/bdd-given-when-then.adoc",
     "tier": 3,
+    "definition": "Behavior-Driven Development (BDD) is Dan North's practice, introduced in 2006, of specifying system behavior through concrete examples that double as executable tests. Scenarios follow the Given-When-Then format and are written in Gherkin syntax, in a ubiquitous language that developers, testers and business representatives work out together in Three Amigos sessions. The scenarios serve as executable acceptance criteria and as living documentation that stays current with the system.",
     "addedAt": "2026-03-09T09:49:49+01:00"
   },
   {
@@ -807,6 +810,7 @@
     ],
     "filePath": "docs/anchors/bem-methodology.adoc",
     "tier": 3,
+    "definition": "BEM (Block Element Modifier) is a naming methodology for CSS and SCSS from the Yandex development team. Each class name follows the blockelement--modifier structure: a block is a standalone component, an element is a part of a block with no meaning on its own, and a modifier is a flag that changes appearance or behavior. Flat selectors and explicit names avoid specificity wars and naming conflicts in large codebases.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -985,6 +989,7 @@
     ],
     "filePath": "docs/anchors/blooms-taxonomy.adoc",
     "tier": 3,
+    "definition": "Bloom's Taxonomy is a classification of learning objectives by cognitive level, created by Benjamin Bloom et al. in 1956 and revised by Lorin Anderson and David Krathwohl in 2001. The revised version orders six levels from lower to higher order, Remember, Understand, Apply, Analyze, Evaluate and Create, each with measurable action verbs. It turns vague aims into testable objectives and pushes assessment above mere recall.",
     "addedAt": "2026-06-02T15:41:12+02:00"
   },
   {
@@ -1128,6 +1133,7 @@
         "works": true
       }
     ],
+    "definition": "The Boy Scout Rule is Robert C. Martin's transfer to code of the Boy Scouts' rule to leave the campground cleaner than you found it: check a module in cleaner than you checked it out. The cleanup stays small and limited to code the current task already touches, such as renaming an unclear variable or deleting dead code. It counters the slow decay of a codebase and assumes a green test suite.",
     "addedAt": "2026-09-24T14:26:26+02:00"
   },
   {
@@ -1177,6 +1183,7 @@
         "works": true
       }
     ],
+    "definition": "The Bulkhead pattern is a stability pattern from Michael T. Nygard's Release It! that partitions a finite resource, such as threads, connections or instances, so that each dependency, tenant or workload gets its own slice. Named after the sectioned partitions of a ship's hull, it lets one slow or failing consumer exhaust only its own slice while the rest keep working. It is built as a thread-pool or semaphore bulkhead and combined with timeouts and circuit breakers.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -1244,6 +1251,7 @@
     ],
     "filePath": "docs/anchors/cap-theorem.adoc",
     "tier": 3,
+    "definition": "The CAP theorem, conjectured by Eric Brewer in 2000 and formally proved by Seth Gilbert and Nancy Lynch in 2002, states that a distributed system cannot guarantee both consistency and availability during a network partition. Because real networks partition, the actual design choice is CP or AP behavior while partitioned. Daniel Abadi's PACELC extension of 2012 adds the trade-off between latency and consistency when no partition occurs.",
     "addedAt": "2026-06-01T21:31:00+02:00"
   },
   {
@@ -1391,6 +1399,7 @@
         "works": true
       }
     ],
+    "definition": "Chesterton's Fence is a principle based on G.K. Chesterton's parable in The Thing (1929): do not clear away a fence across a road until you know why it was put up. It moves the burden of proof onto whoever wants to remove something and treats an unexplained artifact as evidence of a past failure. In software it asks for a timeboxed investigation of legacy code before deletion, after which a reversible removal is allowed.",
     "addedAt": "2026-09-30T17:48:53+02:00"
   },
   {
@@ -1489,6 +1498,7 @@
     ],
     "filePath": "docs/anchors/cockburn-use-cases.adoc",
     "tier": 3,
+    "definition": "Cockburn Use Cases are Alistair Cockburn's prose-based format for describing system behavior from an actor's perspective, set out in Writing Effective Use Cases (2001). The fully dressed template covers primary actor, stakeholders and interests, preconditions, trigger, a numbered main success scenario, extensions and postconditions. Goal levels (summary, user goal, subfunction), an explicit scope and an actor-goal list keep each use case at the right granularity, with the user goal as the sweet spot.",
     "addedAt": "2026-05-02T09:48:41+02:00"
   },
   {
@@ -1525,6 +1535,7 @@
     ],
     "filePath": "docs/anchors/code-smells.adoc",
     "tier": 2,
+    "definition": "Code smells are surface indications in code that usually point to a deeper design problem; Kent Beck coined the term, and Martin Fowler's Refactoring (1999, 2nd ed. 2018) made it standard vocabulary. Each smell, such as Long Method, Shotgun Surgery or Feature Envy, is a heuristic that shows where to look and is paired with a refactoring that typically resolves it. Robert C. Martin's Clean Code (2008) extends the catalogue with about 65 heuristics.",
     "addedAt": "2026-04-20T11:43:59+02:00"
   },
   {
@@ -1606,6 +1617,7 @@
         "works": true
       }
     ],
+    "definition": "Command-Query Separation (CQS) is Bertrand Meyer's design rule from Object-Oriented Software Construction (1988): every method is either a command, which changes state and returns nothing, or a query, which returns a value and changes no observable state, never both. Asking a question then does not change the answer, so queries are safe to repeat and to call from contracts and assertions. It is a per-method rule, distinct from the architectural pattern CQRS.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -1753,6 +1765,7 @@
     ],
     "filePath": "docs/anchors/conventional-commits.adoc",
     "tier": 3,
+    "definition": "Conventional Commits is a specification for adding human- and machine-readable meaning to commit messages, with Benjamin E. Coe, James J. Womack and Steve Mao as key proponents. Each message follows a schema of type, optional scope and description, with types such as feat, fix, docs or refactor, and an exclamation mark or BREAKING CHANGE footer for breaking changes. The types determine the semantic version bump and tell teammates and other stakeholders what kind of change landed.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -1786,6 +1799,7 @@
     ],
     "filePath": "docs/anchors/conways-law.adoc",
     "tier": 3,
+    "definition": "Conway's Law is Melvin E. Conway's observation, published in Datamation in 1968, that any organization that designs a system will produce a design whose structure copies the organization's communication structure. Interfaces in the software appear where teams must coordinate, so org design and system design are two sides of the same decision. The Inverse Conway Maneuver applies the law deliberately by shaping teams to match the desired architecture.",
     "addedAt": "2026-06-01T21:31:00+02:00"
   },
   {
@@ -1819,6 +1833,7 @@
     ],
     "filePath": "docs/anchors/cqrs.adoc",
     "tier": 3,
+    "definition": "CQRS (Command Query Responsibility Segregation) is a pattern, coined by Greg Young, that lifts Bertrand Meyer's Command Query Separation from methods to models: writes and reads go through separate models, each optimized for its purpose. Domain events propagate changes from the write side to read-side projections, accepting eventual consistency so that both sides can scale independently. Event sourcing complements CQRS but is not required.",
     "addedAt": "2026-03-07T20:13:29+01:00"
   },
   {
@@ -1907,6 +1922,7 @@
         "works": true
       }
     ],
+    "definition": "Crisis and Emergency Risk Communication (CERC) is a framework for communicating before the facts are in, set out as an integrative model by Barbara Reynolds and Matthew W. Seeger and taught by the US Centers for Disease Control and Prevention. Its six principles are Be First, Be Right, Be Credible, Express Empathy, Promote Action and Show Respect. Messages follow the crisis lifecycle from preparation through initial reaction, maintenance and resolution to evaluation.",
     "addedAt": "2026-09-24T14:26:26+02:00"
   },
   {
@@ -1955,6 +1971,7 @@
         "works": true
       }
     ],
+    "definition": "CUPID is Dan North's set of five properties of joyful code: Composable, Unix philosophy, Predictable, Idiomatic and Domain-based. Unlike principles, which code either follows or breaks, properties are qualities that code has more or less of and that you move toward. North positions the set against SOLID, arguing that pleasant code comes from overlapping qualities that reinforce each other rather than from class-level rules.",
     "addedAt": "2026-09-24T14:26:26+02:00"
   },
   {
@@ -1990,6 +2007,7 @@
     ],
     "filePath": "docs/anchors/curse-of-knowledge.adoc",
     "tier": 2,
+    "definition": "The Curse of Knowledge is a cognitive bias, named by Colin Camerer, George Loewenstein and Martin Weber in 1989 and popularized by Chip Heath and Dan Heath: once you know something, you can hardly reconstruct what it was like not to know it. Experts therefore overestimate shared context, leave jargon undefined and skip steps. The antidote is to make hidden assumptions explicit, define terms and test the text against a representative reader.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -2071,6 +2089,7 @@
         "works": true
       }
     ],
+    "definition": "The Dale Carnegie Principles are the rules for dealing with people from Dale Carnegie's How to Win Friends and Influence People (1936). They include not criticising, condemning or complaining, giving honest and sincere appreciation, arguing from the other person's interest, pointing out mistakes indirectly so the other person can save face, and asking questions instead of giving orders. They govern how a correction is delivered, not whether it is made.",
     "addedAt": "2026-09-24T14:26:26+02:00"
   },
   {
@@ -2233,6 +2252,7 @@
         "works": true
       }
     ],
+    "definition": "Defensive Programming according to McConnell is the coding practice set out in chapter 8 of Steve McConnell's Code Complete (2nd edition, 2004): protect a program from invalid input so that bad data never yields a quiet wrong result. A barricade divides the code; public interfaces outside it validate input and handle errors, while code inside assumes clean data and uses assertions for conditions that must never occur. Each system also chooses between robustness and correctness.",
     "addedAt": "2026-10-09T10:51:36+02:00"
   },
   {
@@ -2268,6 +2288,7 @@
     ],
     "filePath": "docs/anchors/definition-of-done.adoc",
     "tier": 3,
+    "definition": "The Definition of Done is a formal, team-wide checklist of quality criteria that every increment must satisfy before it counts as done, as described by Ken Schwaber and Jeff Sutherland in The Scrum Guide (2020). Typical gates are code reviewed, tests passing, documentation updated and no known defects. It makes the meaning of done transparent to all stakeholders, work that misses it returns to the Product Backlog, and the team tightens it as it matures.",
     "addedAt": "2026-03-13T20:35:53+00:00"
   },
   {
@@ -2389,6 +2410,7 @@
     ],
     "filePath": "docs/anchors/devils-advocate.adoc",
     "tier": 3,
+    "definition": "Devil's Advocate is the practice of deliberately arguing against a proposal, even without holding that view, to stress-test it before a decision. It derives from the Promotor Fidei role in the Catholic Church's canonization process, formalized in 1587, and was later adopted in law, philosophy, business strategy and red teaming. Done well, it presents the strongest opposing argument, surfaces hidden assumptions and identifies risks early.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -2639,6 +2661,7 @@
     ],
     "filePath": "docs/anchors/docs-as-code.adoc",
     "tier": 3,
+    "definition": "Docs-as-Code according to Ralf D. Müller, the creator of docToolchain, treats documentation like code: written in plain-text formats such as AsciiDoc, kept in Git alongside the code, reviewed through pull requests and built by automated toolchains. Diagrams are written as code too, for example in PlantUML, and one source generates multiple output formats such as HTML and PDF. This keeps the documentation synchronized with the code it describes.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -2732,6 +2755,7 @@
         "works": true
       }
     ],
+    "definition": "Domain Storytelling, as described by Stefan Hofer and Henning Schwentner, is a collaborative modeling method in which domain experts tell concrete stories about their work while a moderator draws them in a pictographic language. Actors and work objects appear as icons, activities as arrows labelled with domain verbs, and sequence numbers turn the picture into readable sentences. Each diagram shows one concrete case, and the stories help find bounded contexts and a shared domain language.",
     "addedAt": "2026-10-15T08:05:43+02:00"
   },
   {
@@ -2765,6 +2789,7 @@
     ],
     "filePath": "docs/anchors/double-diamond.adoc",
     "tier": 3,
+    "definition": "The Double Diamond is the UK Design Council's design process model, first published in 2005, with four phases: Discover, Define, Develop and Deliver. Each of its two diamonds is a divergent-convergent cycle; the first explores and frames the problem, the second explores and ships the solution. Its summary is to design the right thing, then design the thing right, and the 2019 Framework for Innovation made iteration between the phases explicit.",
     "addedAt": "2026-05-13T21:12:43+02:00"
   },
   {
@@ -2830,6 +2855,7 @@
     ],
     "filePath": "docs/anchors/dry.adoc",
     "tier": 3,
+    "definition": "DRY (Don't Repeat Yourself) is the principle from Andy Hunt and Dave Thomas's The Pragmatic Programmer (1999) that every piece of knowledge must have a single, unambiguous, authoritative representation within a system. It targets duplicated knowledge and intent, such as a business rule or a schema, not code that merely looks alike. Other artifacts are derived from one source of truth, and abstraction waits for the Rule of Three, because the wrong abstraction costs more than duplication.",
     "addedAt": "2026-06-02T14:49:26+02:00"
   },
   {
@@ -2919,6 +2945,7 @@
     ],
     "filePath": "docs/anchors/effective-java.adoc",
     "tier": 3,
+    "definition": "Effective Java is Joshua Bloch's book of Java best practices, published by Addison-Wesley and organized as a catalog of about 90 short, self-contained Items, each a concrete rule with rationale and trade-offs. The Items cover object creation, the equals and hashCode contracts, minimizing mutability, composition over inheritance, generics with the PECS rule, enums, lambdas and streams, exceptions and concurrency. The 3rd edition of December 2017 is the current one.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -2948,6 +2975,7 @@
     ],
     "filePath": "docs/anchors/effective-python.adoc",
     "tier": 3,
+    "definition": "Effective Python is Brett Slatkin's book of Python best practices, published by Addison-Wesley and organized as a catalog of short, self-contained Items, each a concrete rule with rationale and trade-offs. The Items cover Pythonic style, comprehensions and generators, function arguments, class design with properties, metaclasses, concurrency under the GIL, robustness and testing. The current 3rd edition of 20 November 2024 expands the 2nd edition's 90 Items to 125.",
     "addedAt": "2026-07-14T11:34:13+02:00"
   },
   {
@@ -3036,6 +3064,7 @@
     "filePath": "docs/anchors/eisenhower-matrix.adoc",
     "tier": 2,
     "advisory": "Activates an urgency-first framing its own field cautions against (see Criticism)",
+    "definition": "The Eisenhower Matrix is a prioritization tool that plots every task on two independent axes, urgency and importance. Dwight D. Eisenhower is credited with popularizing the distinction in a 1954 speech, and Stephen Covey turned it into the four-quadrant Time Management Matrix in The 7 Habits of Highly Effective People (1989). The quadrants map to four actions, do, schedule, delegate and delete, and Covey calls important but not urgent work the heart of effective personal management.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -3143,6 +3172,7 @@
         "works": true
       }
     ],
+    "definition": "Enterprise Integration Patterns is the pattern language for messaging solutions by Gregor Hohpe and Bobby Woolf, published by Addison-Wesley in 2003 and maintained as an online catalog of 65 patterns. It first compares four integration styles, File Transfer, Shared Database, Remote Procedure Invocation and Messaging, then sorts the patterns into six categories along a message's journey. Pipes and filters is the base metaphor, so patterns such as Message Channel, Message Router and Message Translator compose.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -3180,6 +3210,7 @@
     ],
     "filePath": "docs/anchors/event-driven-architecture.adoc",
     "tier": 3,
+    "definition": "Event-Driven Architecture is an architectural style in which components communicate by emitting and reacting to events instead of calling each other directly, with Gregor Hohpe and Bobby Woolf (2003) and Martin Fowler (2017) as key proponents. Producers publish events without knowing their consumers, and message queues decouple both sides in time. The price is at-least-once delivery, which requires idempotent consumers, and eventual consistency; workflows run by choreography or orchestration.",
     "addedAt": "2026-03-07T20:24:13+01:00"
   },
   {
@@ -3219,6 +3250,7 @@
     ],
     "filePath": "docs/anchors/event-storming.adoc",
     "tier": 3,
+    "definition": "Event Storming is Alberto Brandolini's collaborative workshop format, first run in 2012, for modeling a business domain as past-tense domain events placed on a timeline along a wide wall. A fixed colour notation adds commands, aggregates, policies, read models, external systems and hotspots, and the workshop works at three levels: Big Picture, Process Modeling and Design Level. Pivotal events mark candidate bounded context boundaries, which makes it a common on-ramp to Domain-Driven Design.",
     "addedAt": "2026-06-02T14:49:26+02:00"
   },
   {
@@ -3316,6 +3348,7 @@
     ],
     "filePath": "docs/anchors/fagan-inspection.adoc",
     "tier": 3,
+    "definition": "Fagan Inspection is the formal review process for software artifacts that Michael Fagan described in the IBM Systems Journal in 1976. A moderator, the author, inspectors and a recorder take defined roles and move through six phases, Planning, Overview, Preparation, Inspection Meeting, Rework and Follow-up, each with entry and exit criteria. Defects are classified by type and severity, and the collected metrics improve both the product and the inspection process.",
     "addedAt": "2026-03-13T20:34:53+00:00"
   },
   {
@@ -3348,6 +3381,7 @@
     ],
     "filePath": "docs/anchors/fallacies-of-distributed-computing.adoc",
     "tier": 3,
+    "definition": "The Fallacies of Distributed Computing are eight false assumptions about networks; L. Peter Deutsch named the first seven at Sun Microsystems around 1994, and James Gosling added the eighth. They are: the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology doesn't change, there is one administrator, transport cost is zero, and the network is homogeneous. Used as an audit checklist, they expose designs that would fail under real network conditions.",
     "addedAt": "2026-06-01T21:31:00+02:00"
   },
   {
@@ -3379,6 +3413,7 @@
     ],
     "filePath": "docs/anchors/fermi-estimation.adoc",
     "tier": 3,
+    "definition": "Fermi Estimation is a technique, associated with Enrico Fermi, for estimating an unknown quantity to the right order of magnitude by breaking it into a chain of smaller quantities that can each be guessed. Each sub-quantity is bracketed between plausible bounds, and independent over- and under-estimates tend to cancel, so the result often lands within a factor of 2-3 of the true value. It serves to size systems and sanity-check claims before investing in precision.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -3410,6 +3445,7 @@
     ],
     "filePath": "docs/anchors/feynman-technique.adoc",
     "tier": 3,
+    "definition": "The Feynman Technique is a learning method named after the physicist Richard Feynman that tests understanding by explaining a concept in simple language, as if to a beginner. Its four steps are to choose a concept, teach it in plain terms, find the gaps where the explanation fails and return to the source material, then simplify with analogies and repeat until the explanation is clear and free of jargon.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -3445,6 +3481,7 @@
     ],
     "filePath": "docs/anchors/fichtean-curve.adoc",
     "tier": 3,
+    "definition": "The Fichtean Curve is a crisis-driven story structure, named after Johann Gottlieb Fichte and popularised by John Gardner and Janet Burroway, that opens in medias res and drives the plot through a series of escalating crises. Each crisis forces a consequential choice that leads to the next, until a climax resolves the central conflict, followed by a brief falling action. Backstory enters only as needed, which keeps short stories and genre fiction fast.",
     "addedAt": "2026-03-29T15:18:24+00:00"
   },
   {
@@ -3530,6 +3567,7 @@
     ],
     "filePath": "docs/anchors/first-principles-thinking.adoc",
     "tier": 3,
+    "definition": "First Principles Thinking is a reasoning method, rooted in Aristotle and sharpened by René Descartes' methodical doubt, that breaks a problem down to basic truths which cannot be deduced from anything more fundamental and then reasons upward from them. It contrasts with reasoning by analogy: each inherited constraint is tested as law of nature or mere convention, and the irreducible elements are recombined into a new solution. Being costly, it suits high-stakes or stuck problems.",
     "addedAt": "2026-06-01T21:31:00+02:00"
   },
   {
@@ -3564,6 +3602,7 @@
     ],
     "filePath": "docs/anchors/five-whys.adoc",
     "tier": 3,
+    "definition": "Five Whys is a root cause analysis technique from the Toyota Production System, associated with Sakichi Toyoda and Taiichi Ohno, in which a team asks why about five times to get from a symptom to an actionable root cause. Each answer feeds the next question, and the chain ends in a countermeasure. Critics such as Alan J. Card and John Allspaw argue that a single linear chain cannot capture the interacting factors behind incidents in complex systems.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -3681,6 +3720,7 @@
         "works": true
       }
     ],
+    "definition": "FMEA, Failure Mode and Effects Analysis, is a bottom-up, forward-looking risk method, first described in 1949 in the US military document MIL-P-1629, that asks for each component or process step how it can fail. For every failure mode it records effect, cause and controls and rates Severity, Occurrence and Detection. Classic FMEA ranks risks by the Risk Priority Number, while the AIAG and VDA handbook of 2019 replaced it with Action Priority and a seven-step process.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -3764,6 +3804,7 @@
     ],
     "filePath": "docs/anchors/four-sides-model.adoc",
     "tier": 3,
+    "definition": "The Four-Sides Model is Friedemann Schulz von Thun's model of communication, published in 1981, which holds that every message carries four sides at once: factual information, self-revelation, relationship and appeal. The receiver decodes them with four matching ears, and misunderstanding arises when the sender stresses one side while the receiver hears another. The model builds on Karl Bühler's Organon model and Paul Watzlawick's content and relationship axiom.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -4016,6 +4057,7 @@
     ],
     "filePath": "docs/anchors/github-flow.adoc",
     "tier": 3,
+    "definition": "GitHub Flow is a lightweight, branch-based Git workflow described by Scott Chacon in 2011, in which main is always deployable. Every change gets a short-lived branch from main, and a Pull Request serves for review, discussion and CI validation before the merge. In Chacon's original formulation each merge is deployed immediately, while GitHub's current official description ends at the merge without a deployment step.",
     "addedAt": "2026-03-13T12:59:50+00:00"
   },
   {
@@ -4103,6 +4145,7 @@
     "filePath": "docs/anchors/gof-abstract-factory-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Abstract Factory pattern, also known as Kit, is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that provides an interface for creating families of related or dependent objects without specifying their concrete classes. A system configured with one factory gets products from one family only, which keeps it independent of how products are created and enforces that related products are used together.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4138,6 +4181,7 @@
     "filePath": "docs/anchors/gof-adapter-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Adapter pattern, also known as Wrapper, is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that converts the interface of a class into another interface clients expect. The adapter sits between client and existing class and translates calls, so a class whose interface does not match can be reused, for example to map a legacy API onto a new interface without changing existing code.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4173,6 +4217,7 @@
     "filePath": "docs/anchors/gof-bridge-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Bridge pattern is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that decouples an abstraction from its implementation so that the two can vary independently. Abstraction and implementation sit in separate class hierarchies, each extensible by subclassing, which avoids a permanent binding between them and keeps changes in the implementation from affecting clients.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4208,6 +4253,7 @@
     "filePath": "docs/anchors/gof-builder-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Builder pattern is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that separates the construction of a complex object from its representation, so that the same construction process can create different representations. The algorithm that assembles the object stays independent of its parts and how they are put together, which suits step-by-step construction such as a fluent API for a query object.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4243,6 +4289,7 @@
     "filePath": "docs/anchors/gof-chain-of-responsibility-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Chain of Responsibility pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that avoids coupling the sender of a request to its receiver by giving more than one object a chance to handle it. The receiving objects form a chain, and each handler either processes the request or passes it to the next. The set of handlers can be specified dynamically, as in a middleware pipeline.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4279,6 +4326,7 @@
     "filePath": "docs/anchors/gof-command-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Command pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that encapsulates a request as an object. Because each action becomes an object, clients can be parameterized with different requests, and requests can be queued, logged or scheduled. Commands also support undoable operations, which makes the pattern a common basis for undo and redo systems.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4314,6 +4362,7 @@
     "filePath": "docs/anchors/gof-composite-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Composite pattern is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that composes objects into tree structures to represent part-whole hierarchies. Individual objects and compositions share one interface, so clients treat them uniformly and can ignore the difference between a single object and a group, as when files and folders in a file system are handled the same way.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4349,6 +4398,7 @@
     "filePath": "docs/anchors/gof-decorator-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Decorator pattern, also known as Wrapper, is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that attaches additional responsibilities to an object dynamically. Decorators wrap the object and add behavior transparently, which offers a flexible alternative to subclassing when extension by inheritance is impractical, for example to add formatting, timestamps and filtering to a logger.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4444,6 +4494,7 @@
     "filePath": "docs/anchors/gof-facade-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Facade pattern is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that provides a unified interface to a set of interfaces in a subsystem. The facade defines a higher-level interface that makes the subsystem easier to use and reduces the many dependencies between clients and implementation classes, for example by hiding validation, authorization and billing behind one simple payment interface.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4478,6 +4529,7 @@
     "filePath": "docs/anchors/gof-factory-method-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Factory Method pattern, also known as Virtual Constructor, is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines an interface for creating an object but lets subclasses decide which class to instantiate. It suits a class that cannot anticipate which objects it must create, and it allows new types to be added without changing existing code.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4512,6 +4564,7 @@
     "filePath": "docs/anchors/gof-flyweight-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Flyweight pattern is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that uses sharing to support large numbers of fine-grained objects efficiently. Instead of holding many separate instances, the system shares common objects among their users, which reduces memory consumption when an application needs very many small objects.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4547,6 +4600,7 @@
     "filePath": "docs/anchors/gof-interpreter-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Interpreter pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that, for a given language, defines a representation of its grammar together with an interpreter that uses this representation to interpret sentences in the language. It suits small grammars and domain-specific languages, where each grammar rule becomes part of the representation the interpreter evaluates.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4582,6 +4636,7 @@
     "filePath": "docs/anchors/gof-iterator-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Iterator pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. The traversal moves into a separate iterator object, which allows several traversals of the same aggregate and a uniform interface across different structures, such as depth-first and breadth-first walks of a tree.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4617,6 +4672,7 @@
     "filePath": "docs/anchors/gof-mediator-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Mediator pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines an object which encapsulates how a set of objects interact. The objects no longer refer to each other explicitly but communicate through the mediator, which promotes loose coupling, makes each object easier to reuse and centralizes complex coordination, for example between form, list and filter components in a UI.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4652,6 +4708,7 @@
     "filePath": "docs/anchors/gof-memento-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Memento pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that captures and externalizes an object's internal state without violating encapsulation, so that the object can be restored to this state later. Such snapshots are the basis for undo and other forms of state preservation.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4688,6 +4745,7 @@
     "filePath": "docs/anchors/gof-observer-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Observer pattern, also known as Publish-Subscribe or Event-Listener, is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines a one-to-many dependency between objects. When one object changes state, all its dependents are notified and updated automatically. The subject does not need to know who its observers are or how many there are, as when a data model updates the UI through events.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4723,6 +4781,7 @@
     "filePath": "docs/anchors/gof-prototype-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Prototype pattern is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that specifies the kinds of objects to create through a prototypical instance and creates new objects by copying it. Cloning a prototype keeps a system independent of how its products are created, lets the classes to instantiate be chosen at runtime and avoids a factory hierarchy that mirrors the product hierarchy.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4759,6 +4818,7 @@
     "filePath": "docs/anchors/gof-proxy-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Proxy pattern is a structural GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that provides a surrogate or placeholder for another object to control access to it. The proxy offers a more versatile reference than a simple pointer and comes in remote, virtual, protection and smart reference variants, for example a caching proxy that answers repeated API requests from its cache.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4792,6 +4852,7 @@
     "filePath": "docs/anchors/gof-singleton-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Singleton pattern is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that ensures a class has only one instance and provides a global point of access to it. It targets cases where exactly one instance must exist. Modern practice widely treats it as an anti-pattern because it introduces global mutable state and hides dependencies, and Erich Gamma himself said in 2009 that he favours dropping it from the catalog.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4828,6 +4889,7 @@
     "filePath": "docs/anchors/gof-state-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The State pattern, also known as Objects for States, is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that lets an object alter its behavior when its internal state changes, so that the object appears to change its class. Each state encapsulates its own behavior in a separate object, which replaces large state-dependent conditional statements and offers one way to implement a finite state machine.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4860,6 +4922,7 @@
     "filePath": "docs/anchors/gof-strategy-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Strategy pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines a family of algorithms, encapsulates each one and makes them interchangeable. The algorithm can then vary independently from the clients that use it. The pattern suits related classes that differ only in behavior, several variants of one algorithm, and algorithms whose data clients should not know about.",
     "addedAt": "2026-03-09T15:03:57+01:00"
   },
   {
@@ -4895,6 +4958,7 @@
     "filePath": "docs/anchors/gof-template-method-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Template Method pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that defines the skeleton of an algorithm in an operation and defers some steps to subclasses. The invariant parts are implemented once in a common class, while subclasses supply the varying steps, as in a report generator whose sequence of loading, transforming and formatting stays fixed.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {
@@ -4930,6 +4994,7 @@
     "filePath": "docs/anchors/gof-visitor-pattern.adoc",
     "umbrella": "gof-design-patterns",
     "tier": 3,
+    "definition": "The Visitor pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that represents an operation to be performed on the elements of an object structure. It lets you define a new operation without changing the classes of the elements on which it operates, because the operation lives in a separate visitor object and is selected through double dispatch.",
     "addedAt": "2026-03-09T15:07:25+01:00"
   },
   {

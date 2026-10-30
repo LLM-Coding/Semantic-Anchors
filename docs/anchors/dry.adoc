@@ -5,6 +5,7 @@
 :proponents: Andy Hunt, Dave Thomas
 :tags: dry, dont-repeat-yourself, duplication, knowledge, abstraction, maintainability
 :tier: 3
+:definition: DRY (Don't Repeat Yourself) is the principle from Andy Hunt and Dave Thomas's The Pragmatic Programmer (1999) that every piece of knowledge must have a single, unambiguous, authoritative representation within a system. It targets duplicated knowledge and intent, such as a business rule or a schema, not code that merely looks alike. Other artifacts are derived from one source of truth, and abstraction waits for the Rule of Three, because the wrong abstraction costs more than duplication.
 
 [%collapsible]
 ====

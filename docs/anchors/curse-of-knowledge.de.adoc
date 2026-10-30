@@ -5,6 +5,7 @@
 :proponents: Colin Camerer, George Loewenstein, Martin Weber, Chip Heath, Dan Heath
 :tags: cognitive-bias, communication, audience, jargon, empathy-gap
 :tier: 2
+:definition: Der Curse of Knowledge ist ein kognitiver Bias, 1989 von Colin Camerer, George Loewenstein und Martin Weber benannt und von Chip Heath und Dan Heath bekannt gemacht: Wer etwas weiß, kann kaum noch rekonstruieren, wie es war, es nicht zu wissen. Experten überschätzen deshalb den geteilten Kontext, lassen Fachbegriffe undefiniert und überspringen Schritte. Das Gegenmittel: verborgene Annahmen explizit machen, Begriffe definieren und den Text an einem repräsentativen Leser testen.
 
 [%collapsible]
 ====

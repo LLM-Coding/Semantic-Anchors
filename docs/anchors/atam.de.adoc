@@ -4,6 +4,7 @@
 :related: arc42, adr-according-to-nygard, quality-attribute-scenario
 :proponents: Rick Kazman, Mark Klein, Paul Clements
 :tier: 3
+:definition: ATAM, die Architecture Tradeoff Analysis Method von Rick Kazman, Mark Klein und Paul Clements (SEI / Carnegie Mellon University), bewertet eine Softwarearchitektur an ihren Qualitätszielen. Ein Utility Tree zerlegt diese Ziele in priorisierte Qualitätsattribut-Szenarien, und ein neunstufiger Prozess analysiert die Architekturansätze daran. Das Ergebnis benennt Sensitivitätspunkte, Tradeoff Points, an denen eine Entscheidung mehrere Qualitätsattribute widersprüchlich beeinflusst, sowie Risiken und Nicht-Risiken.
 :tags: architecture evaluation, quality attributes, tradeoffs, utility tree, SEI, risk analysis
 
 [%collapsible]

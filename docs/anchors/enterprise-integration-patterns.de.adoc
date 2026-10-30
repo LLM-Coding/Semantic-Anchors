@@ -5,6 +5,7 @@
 :tags: EIP, Enterprise Integration Patterns, Messaging, Integrationsstile, Message Channel, Message Router, Message Translator, Competing Consumers, Dead Letter Channel, Canonical Data Model, Pipes and Filters, Mustersprache, Apache Camel, Spring Integration
 :related: event-driven-architecture, circuit-breaker, domain-driven-design, cqrs
 :tier: 3
+:definition: Enterprise Integration Patterns ist die Mustersprache für Messaging-Lösungen von Gregor Hohpe und Bobby Woolf, 2003 bei Addison-Wesley erschienen und als Online-Katalog mit 65 Mustern gepflegt. Sie vergleicht zuerst vier Integrationsstile: File Transfer, Shared Database, Remote Procedure Invocation und Messaging. Dann ordnet sie die Muster in sechs Kategorien entlang des Wegs einer Message. Grundmetapher ist Pipes and Filters, deshalb lassen sich Muster wie Message Channel, Message Router und Message Translator kombinieren.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

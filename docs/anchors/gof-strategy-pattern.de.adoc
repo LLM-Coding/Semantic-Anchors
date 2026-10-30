@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das Strategy Pattern ist ein Behavioral-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es definiert eine Familie von Algorithmen, kapselt jeden einzelnen und macht sie austauschbar. Der Algorithmus kann dann unabhängig von den Clients variieren, die ihn verwenden. Das Pattern passt zu verwandten Klassen, die sich nur im Verhalten unterscheiden, zu mehreren Varianten eines Algorithmus und zu Algorithmen, deren Daten Clients nicht kennen sollen.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, strategy
 :related: gof-design-patterns, gof-state-pattern, gof-template-method-pattern

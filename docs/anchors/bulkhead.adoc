@@ -5,6 +5,7 @@
 :tags: Bulkhead, bulkhead pattern, resource isolation, thread pool isolation, semaphore bulkhead, blast radius, failure containment, cell-based architecture, resource exhaustion, stability pattern, Hystrix, Resilience4j
 :related: circuit-breaker, site-reliability-engineering, fallacies-of-distributed-computing, residuality-theory
 :tier: 3
+:definition: The Bulkhead pattern is a stability pattern from Michael T. Nygard's Release It! that partitions a finite resource, such as threads, connections or instances, so that each dependency, tenant or workload gets its own slice. Named after the sectioned partitions of a ship's hull, it lets one slow or failing consumer exhaust only its own slice while the rest keep working. It is built as a thread-pool or semaphore bulkhead and combined with timeouts and circuit breakers.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

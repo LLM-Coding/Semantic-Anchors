@@ -5,6 +5,7 @@
 :related: domain-driven-design, hexagonal-architecture, fowler-patterns, command-query-separation
 :tags: cqrs, cqs, architecture, commands, queries, read-write-separation
 :tier: 3
+:definition: CQRS (Command Query Responsibility Segregation) is a pattern, coined by Greg Young, that lifts Bertrand Meyer's Command Query Separation from methods to models: writes and reads go through separate models, each optimized for its purpose. Domain events propagate changes from the write side to read-side projections, accepting eventual consistency so that both sides can scale independently. Event sourcing complements CQRS but is not required.
 
 [%collapsible]
 ====

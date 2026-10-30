@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Prototype pattern is a creational GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that specifies the kinds of objects to create through a prototypical instance and creates new objects by copying it. Cloning a prototype keeps a system independent of how its products are created, lets the classes to instantiate be chosen at runtime and avoids a factory hierarchy that mirrors the product hierarchy.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, prototype, cloning, copy, object creation
 :related: gof-design-patterns, gof-abstract-factory-pattern, gof-builder-pattern

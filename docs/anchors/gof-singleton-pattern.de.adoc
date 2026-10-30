@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das Singleton Pattern ist ein Creational-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es stellt sicher, dass eine Klasse nur eine Instanz hat, und bietet einen globalen Zugriffspunkt darauf. Es zielt auf Fälle, in denen es genau eine Instanz geben muss. Die moderne Praxis stuft es verbreitet als Anti-Pattern ein, weil es globalen veränderlichen Zustand schafft und Abhängigkeiten versteckt. Erich Gamma selbst sagte 2009, er würde es aus dem Katalog streichen.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, creational, singleton, global state, instance control
 :related: gof-design-patterns, gof-abstract-factory-pattern

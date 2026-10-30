@@ -5,6 +5,7 @@
 :proponents: Joshua Bloch
 :tags: java, best-practices, idiomatic, api-design, style-guide
 :tier: 3
+:definition: Effective Java ist Joshua Blochs Buch über Java-Best-Practices, erschienen bei Addison-Wesley und aufgebaut als Katalog von rund 90 kurzen, in sich geschlossenen Items, jedes eine konkrete Regel mit Begründung und Trade-offs. Die Items behandeln Objekterzeugung, die Verträge von equals und hashCode, minimale Veränderlichkeit, Komposition statt Vererbung, Generics mit der PECS-Regel, Enums, Lambdas und Streams, Exceptions und Nebenläufigkeit. Aktuell ist die 3. Auflage vom Dezember 2017.
 
 [%collapsible]
 ====

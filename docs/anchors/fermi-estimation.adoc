@@ -5,6 +5,7 @@
 :proponents: Enrico Fermi
 :tags: estimation, order-of-magnitude, back-of-envelope, approximation, decomposition
 :tier: 3
+:definition: Fermi Estimation is a technique, associated with Enrico Fermi, for estimating an unknown quantity to the right order of magnitude by breaking it into a chain of smaller quantities that can each be guessed. Each sub-quantity is bracketed between plausible bounds, and independent over- and under-estimates tend to cancel, so the result often lands within a factor of 2-3 of the true value. It serves to size systems and sanity-check claims before investing in precision.
 
 [%collapsible]
 ====

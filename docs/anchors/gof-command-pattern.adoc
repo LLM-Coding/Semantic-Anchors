@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: The Command pattern is a behavioral GoF design pattern by Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides that encapsulates a request as an object. Because each action becomes an object, clients can be parameterized with different requests, and requests can be queued, logged or scheduled. Commands also support undoable operations, which makes the pattern a common basis for undo and redo systems.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, command, undo, queue, encapsulation, action
 :related: gof-design-patterns, gof-chain-of-responsibility-pattern, gof-memento-pattern

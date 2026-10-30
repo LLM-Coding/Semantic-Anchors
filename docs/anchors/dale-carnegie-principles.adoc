@@ -5,6 +5,7 @@
 :tags: Dale Carnegie, How to Win Friends and Influence People, interpersonal communication, appreciation, criticism, persuasion, feedback, Carnegie
 :related: problem-space-nvc, four-sides-model, sender-receiver-discrepancy, curse-of-knowledge, socratic-method
 :tier: 3
+:definition: The Dale Carnegie Principles are the rules for dealing with people from Dale Carnegie's How to Win Friends and Influence People (1936). They include not criticising, condemning or complaining, giving honest and sincere appreciation, arguing from the other person's interest, pointing out mistakes indirectly so the other person can save face, and asking questions instead of giving orders. They govern how a correction is delivered, not whether it is made.
 :prior-test: 2026-09-24
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das State Pattern, auch Objects for States genannt, ist ein Behavioral-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es erlaubt einem Objekt, sein Verhalten zu ändern, wenn sich sein interner Zustand ändert; das Objekt scheint dann seine Klasse zu wechseln. Jeder Zustand kapselt sein Verhalten in einem eigenen Objekt. Das ersetzt große zustandsabhängige Bedingungen und ist eine Art, eine Finite State Machine zu codieren.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, state, state machine, finite automaton, context
 :related: gof-design-patterns, gof-strategy-pattern, gof-memento-pattern, finite-state-machine

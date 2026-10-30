@@ -3,6 +3,7 @@
 :roles: technical-writer, software-developer, devops-engineer
 :proponents: Ralf D. Müller
 :tier: 3
+:definition: Docs-as-Code nach Ralf D. Müller, dem Ersteller von docToolchain, behandelt Dokumentation wie Code: in Plain-Text-Formaten wie AsciiDoc geschrieben, in Git zusammen mit dem Code verwaltet, über Pull Requests geprüft und von automatisierten Toolchains gebaut. Auch Diagramme entstehen als Code, etwa mit PlantUML, und eine Quelle erzeugt mehrere Ausgabeformate wie HTML und PDF. So bleibt die Dokumentation mit dem Code synchron, den sie beschreibt.
 :tags: docs as code, documentation, AsciiDoc, version control, technical writing, Mueller
 :related: diataxis-framework, arc42, conventional-commits
 

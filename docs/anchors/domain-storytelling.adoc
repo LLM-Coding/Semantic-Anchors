@@ -5,6 +5,7 @@
 :tags: domain storytelling, domain story, pictographic language, actor, work object, activity, sequence number, collaborative modeling, workshop, egon.io, ddd, bounded contexts, as-is, to-be
 :related: event-storming, domain-driven-design, user-story-mapping
 :tier: 3
+:definition: Domain Storytelling, as described by Stefan Hofer and Henning Schwentner, is a collaborative modeling method in which domain experts tell concrete stories about their work while a moderator draws them in a pictographic language. Actors and work objects appear as icons, activities as arrows labelled with domain verbs, and sequence numbers turn the picture into readable sentences. Each diagram shows one concrete case, and the stories help find bounded contexts and a shared domain language.
 :prior-test: 2026-10-15
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

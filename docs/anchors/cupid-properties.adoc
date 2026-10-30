@@ -5,6 +5,7 @@
 :tags: CUPID, composable, Unix philosophy, predictable, idiomatic, domain-based, joyful code, SOLID alternative, North
 :related: solid-principles, unix-philosophy, domain-driven-design, deep-modules, cohesion-criteria
 :tier: 2
+:definition: CUPID is Dan North's set of five properties of joyful code: Composable, Unix philosophy, Predictable, Idiomatic and Domain-based. Unlike principles, which code either follows or breaks, properties are qualities that code has more or less of and that you move toward. North positions the set against SOLID, arguing that pleasant code comes from overlapping qualities that reinforce each other rather than from class-level rules.
 :prior-test: 2026-09-24
 :tested-on: haiku-4.5=yes, opus-5=yes
 

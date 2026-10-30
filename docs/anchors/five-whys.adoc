@@ -5,6 +5,7 @@
 :tags: five whys, root cause analysis, Toyota, Ohno, lean, problem solving
 :related: socratic-method, xy-problem, first-principles-thinking, dmaic
 :tier: 3
+:definition: Five Whys is a root cause analysis technique from the Toyota Production System, associated with Sakichi Toyoda and Taiichi Ohno, in which a team asks why about five times to get from a symptom to an actionable root cause. Each answer feeds the next question, and the chain ends in a countermeasure. Critics such as Alan J. Card and John Allspaw argue that a single linear chain cannot capture the interacting factors behind incidents in complex systems.
 
 [%collapsible]
 ====

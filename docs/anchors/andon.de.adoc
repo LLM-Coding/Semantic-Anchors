@@ -5,6 +5,7 @@
 :tags: Andon, Andon-Leine, Andon-Tafel, Jidoka, Reißleine, Bandstopp, feste Stoppposition, visuelles Management, Hilferuf, Eskalation
 :related: kaizen, genchi-genbutsu, muda-mura-muri, red-green-tdd, site-reliability-engineering
 :tier: 3
+:definition: Andon ist das Signalsystem des Toyota-Produktionssystems, verbunden mit Taiichi Ohno: eine Tafel oder Leuchte, die den Zustand jeder Station zeigt, und eine Leine oder Taste, die jeder Werker ziehen darf, wenn etwas nicht stimmt. Ein Zug ist zuerst ein Hilferuf; das Band hält erst an der nächsten festen Stoppposition, wenn niemand rechtzeitig hilft. Entscheidend ist die Befugnis, nicht die Hardware, und Software übernimmt sie für rote Builds und abgebrochene Rollouts.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

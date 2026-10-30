@@ -5,6 +5,7 @@
 :proponents: Brett Slatkin
 :tags: python, best-practices, idiomatic, pythonic, style-guide
 :tier: 3
+:definition: Effective Python ist Brett Slatkins Buch über Python-Best-Practices, erschienen bei Addison-Wesley und aufgebaut als Katalog kurzer, in sich geschlossener Items, jedes eine konkrete Regel mit Begründung und Trade-offs. Die Items behandeln pythonischen Stil, Comprehensions und Generatoren, Funktionsargumente, Klassendesign mit Properties, Metaklassen, Nebenläufigkeit unter dem GIL, Robustheit und Testen. Die aktuelle 3. Auflage vom 20. November 2024 erweitert die 90 Items der 2. Auflage auf 125.
 
 [%collapsible]
 ====

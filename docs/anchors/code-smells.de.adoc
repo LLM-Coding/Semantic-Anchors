@@ -5,6 +5,7 @@
 :proponents: Kent Beck, Martin Fowler, Robert C. Martin
 :tags: refactoring, code-qualität, clean-code, wartbarkeit, smells
 :tier: 2
+:definition: Code Smells sind oberflächliche Indizien im Code, die üblicherweise auf ein tieferliegendes Designproblem hinweisen. Kent Beck prägte den Begriff, Martin Fowlers Refactoring (1999, 2. Aufl. 2018) machte ihn zum Standardvokabular. Jeder Smell, etwa Long Method, Shotgun Surgery oder Feature Envy, ist eine Heuristik: Er zeigt, wo man hinschauen soll, und ist mit einem Refactoring gepaart, das ihn typischerweise auflöst. Robert C. Martins Clean Code (2008) erweitert den Katalog um rund 65 Heuristiken.
 
 [%collapsible]
 ====

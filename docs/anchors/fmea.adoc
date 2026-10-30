@@ -5,6 +5,7 @@
 :tags: FMEA, FMECA, failure mode and effects analysis, RPN, risk priority number, action priority, severity occurrence detection, reliability, DFMEA, PFMEA
 :related: dmaic, ishikawa-diagram, premortem, stride, iec-61508-sil-levels
 :tier: 3
+:definition: FMEA, Failure Mode and Effects Analysis, is a bottom-up, forward-looking risk method, first described in 1949 in the US military document MIL-P-1629, that asks for each component or process step how it can fail. For every failure mode it records effect, cause and controls and rates Severity, Occurrence and Detection. Classic FMEA ranks risks by the Risk Priority Number, while the AIAG and VDA handbook of 2019 replaced it with Action Priority and a seven-step process.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

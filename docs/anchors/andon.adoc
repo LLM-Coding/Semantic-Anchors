@@ -5,6 +5,7 @@
 :tags: Andon, andon cord, andon board, jidoka, stop the line, fixed-position stop, line stop, visual management, call for help, escalation
 :related: kaizen, genchi-genbutsu, muda-mura-muri, red-green-tdd, site-reliability-engineering
 :tier: 3
+:definition: Andon is the signal system of the Toyota Production System, associated with Taiichi Ohno: a board or lamp that shows the status of every station, plus a cord or button that any operator may pull when something is wrong. A pull is first a call for help; the line stops only at the next fixed position if nobody resolves the problem in time. The authority to signal, not the hardware, is the design, and software borrows it for red builds and halted rollouts.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

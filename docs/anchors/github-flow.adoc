@@ -5,6 +5,7 @@
 :proponents: Scott Chacon
 :tags: git, branching, pull-request, continuous-delivery, workflow, feature-branch, code-review, main-branch
 :tier: 3
+:definition: GitHub Flow is a lightweight, branch-based Git workflow described by Scott Chacon in 2011, in which main is always deployable. Every change gets a short-lived branch from main, and a Pull Request serves for review, discussion and CI validation before the merge. In Chacon's original formulation each merge is deployed immediately, while GitHub's current official description ends at the merge without a deployment step.
 
 [%collapsible]
 ====

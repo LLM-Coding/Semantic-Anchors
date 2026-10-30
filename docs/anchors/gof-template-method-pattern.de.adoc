@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das Template Method Pattern ist ein Behavioral-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es definiert das Skelett eines Algorithmus in einer Operation und delegiert einige Schritte an Unterklassen. Die unveränderlichen Teile stehen einmal in einer gemeinsamen Klasse, die Unterklassen liefern die variierenden Schritte. Ein Beispiel ist eine Report-Generierung, deren Ablauf aus Laden, Transformieren und Formatieren fest bleibt.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, behavioral, template method, algorithm skeleton, hook, inheritance
 :related: gof-design-patterns, gof-strategy-pattern, gof-factory-method-pattern

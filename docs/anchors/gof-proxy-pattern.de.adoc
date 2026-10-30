@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: gof-design-patterns
 :tier: 3
+:definition: Das Proxy Pattern ist ein Structural-Entwurfsmuster der GoF von Erich Gamma, Richard Helm, Ralph Johnson und John Vlissides. Es stellt einen Stellvertreter oder Platzhalter für ein anderes Objekt bereit, um den Zugriff darauf zu kontrollieren. Der Proxy ist eine vielseitigere Referenz als ein einfacher Zeiger und tritt als Remote-, Virtual-, Protection- oder Smart-Reference-Proxy auf, etwa als Caching-Proxy, der wiederholte API-Anfragen aus dem Cache beantwortet.
 :proponents: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
 :tags: GoF, design pattern, structural, proxy, access control, lazy loading, caching, virtual proxy
 :related: gof-design-patterns, gof-decorator-pattern, gof-adapter-pattern
