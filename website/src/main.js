@@ -10,6 +10,7 @@ import {
   applyCardFilters,
   updateAnchorCount,
   setFeedbackData,
+  updateCategoryIntros,
 } from './components/card-grid.js'
 import { fetchData, fetchContractsData, fetchAnchorsData } from './utils/data-loader.js'
 import { buildSearchIndex, isIndexReady, isIndexBuilding } from './utils/search-index.js'
@@ -617,6 +618,9 @@ function handleLanguageChange() {
   document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach((el) => {
     el.textContent = langLabel
   })
+
+  // The intros stay in the DOM under an open anchor modal (#869).
+  updateCategoryIntros(i18n.currentLang())
 
   const currentRoute = getCurrentRouteSync()
 

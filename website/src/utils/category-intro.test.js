@@ -10,7 +10,13 @@ const here = path.dirname(fileURLToPath(import.meta.url))
 describe('renderInlineLinks', () => {
   it('turns [text](https://…) into an external link', () => {
     expect(renderInlineLinks('See [APG](https://www.w3.org/WAI/ARIA/apg/).')).toBe(
-      'See <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener noreferrer">APG</a>.'
+      'See <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" rel="noopener noreferrer">APG<span class="sr-only"> (opens in a new tab)</span></a>.'
+    )
+  })
+
+  it('announces the new tab in the given language', () => {
+    expect(renderInlineLinks('[x](https://e.org/)', 'de')).toContain(
+      '<span class="sr-only"> (öffnet in neuem Tab)</span>'
     )
   })
 

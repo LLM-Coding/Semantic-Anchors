@@ -22,13 +22,17 @@ function escapeHtml(value) {
 
 const LINK = /\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g
 
+// Links open in a new tab; say so to screen-reader users (WCAG G201).
+const NEW_TAB = { en: ' (opens in a new tab)', de: ' (öffnet in neuem Tab)' }
+
 /** Escape text and turn `[text](https://…)` into external links. */
-export function renderInlineLinks(text) {
+export function renderInlineLinks(text, lang = 'en') {
+  const newTab = `<span class="sr-only">${escapeHtml(NEW_TAB[lang] || NEW_TAB.en)}</span>`
   let html = ''
   let last = 0
   for (const match of String(text).matchAll(LINK)) {
     html += escapeHtml(text.slice(last, match.index))
-    html += `<a href="${escapeHtml(match[2])}" target="_blank" rel="noopener noreferrer">${escapeHtml(match[1])}</a>`
+    html += `<a href="${escapeHtml(match[2])}" target="_blank" rel="noopener noreferrer">${escapeHtml(match[1])}${newTab}</a>`
     last = match.index + match[0].length
   }
   return html + escapeHtml(String(text).slice(last))
@@ -38,6 +42,7 @@ export function renderInlineLinks(text) {
 export function getCategoryIntroHtml(intros, categoryId, lang) {
   const entry = intros?.[categoryId]
   if (!entry) return ''
-  const text = entry[lang] || entry.en
-  return text ? renderInlineLinks(text) : ''
+  const useLang = entry[lang] ? lang : 'en'
+  const text = entry[useLang]
+  return text ? renderInlineLinks(text, useLang) : ''
 }

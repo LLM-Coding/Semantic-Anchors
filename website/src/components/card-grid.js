@@ -207,7 +207,9 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
   const categoryName = i18n.t(`categories.${category.id}`) || category.name
   const lang = typeof i18n.currentLang === 'function' ? i18n.currentLang() : 'en'
   const introHtml = getCategoryIntroHtml(categoryIntros, category.id, lang)
-  const intro = introHtml ? `<p class="category-intro">${introHtml}</p>` : ''
+  const intro = introHtml
+    ? `<p class="category-intro" data-category-intro="${escapeHtml(category.id)}">${introHtml}</p>`
+    : ''
 
   return `
     <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">
@@ -222,6 +224,17 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
       </div>
     </section>
   `
+}
+
+/**
+ * Re-render the category intros in place (#869). The intros carry links, so
+ * they cannot use `data-i18n` (textContent); main.js calls this on every
+ * language switch, also when the grid itself is not re-rendered.
+ */
+export function updateCategoryIntros(lang) {
+  document.querySelectorAll('[data-category-intro]').forEach((el) => {
+    el.innerHTML = getCategoryIntroHtml(categoryIntros, el.dataset.categoryIntro, lang)
+  })
 }
 
 /**

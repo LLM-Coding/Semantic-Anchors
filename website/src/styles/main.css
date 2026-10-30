@@ -206,8 +206,14 @@ html {
 
 /* Short intro under each category heading (#869) */
 .category-intro {
-  @apply -mt-3 mb-6 max-w-3xl text-sm leading-relaxed;
+  @apply max-w-3xl text-sm leading-relaxed;
   color: var(--color-text-secondary);
+}
+
+/* In the SPA the heading carries mb-6; pull the intro up to it. The
+   pre-rendered catalog uses a plain h3 and keeps its own spacing. */
+.category-heading + .category-intro {
+  @apply -mt-3 mb-6;
 }
 
 .category-intro a {
