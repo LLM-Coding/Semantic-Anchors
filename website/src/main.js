@@ -1,4 +1,5 @@
 import './styles/main.css'
+import './styles/refactoring-ui.css'
 import { i18n, applyTranslations } from './i18n.js'
 import { initTheme, toggleTheme, currentTheme } from './theme.js'
 import { renderHeader } from './components/header.js'

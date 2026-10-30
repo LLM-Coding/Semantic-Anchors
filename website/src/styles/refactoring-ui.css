@@ -1,0 +1,1374 @@
+/*
+ * Refactoring UI theme (proof of concept)
+ * ---------------------------------------------------------------------------
+ * Design brief: docs/anchors/refactoring-ui.adoc (Adam Wathan & Steve Schoger).
+ *
+ * The tactics this file applies, and where:
+ *   1. A deliberate palette: tinted (slate) greys and ONE strong primary
+ *      (indigo). Tailwind's gray-* and blue-* tokens are remapped below, so
+ *      every existing utility class picks up the new palette without markup
+ *      changes.
+ *   2. Hierarchy through weight and colour, not size alone: titles are dark
+ *      and semibold, secondary text is a lighter tinted grey at normal weight.
+ *   3. Fewer borders: surfaces are separated by background shade (page vs.
+ *      card) and by a shadow scale (--ru-shadow-1..5) that encodes elevation.
+ *   4. Accent borders: a coloured bar on top of each card (category colour),
+ *      on the "with anchor" example, on the modal lead and on callouts.
+ *   5. Labels as a last resort: the role count reads as plain meta text, the
+ *      category quick-nav shows names instead of unexplained emoji.
+ *   6. A fixed spacing scale (4px base) and a constrained type scale.
+ *
+ * This stylesheet is unlayered and loaded after main.css, so it overrides
+ * both Tailwind utilities and main.css component rules of equal specificity.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Tokens
+ * ------------------------------------------------------------------------- */
+:root {
+  /* Tinted greys: Tailwind's gray scale becomes slate (a cool blue tint). */
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+  --color-gray-950: #020617;
+
+  /* One strong primary: blue utilities become indigo. */
+  --color-blue-50: #eef2ff;
+  --color-blue-100: #e0e7ff;
+  --color-blue-200: #c7d2fe;
+  --color-blue-300: #a5b4fc;
+  --color-blue-400: #818cf8;
+  --color-blue-500: #6366f1;
+  --color-blue-600: #4f46e5;
+  --color-blue-700: #4338ca;
+  --color-blue-800: #3730a3;
+  --color-blue-900: #312e81;
+  --color-blue-950: #1e1b4b;
+
+  /* Semantic tokens used by main.css and the components */
+  --color-primary: #4f46e5;
+  --color-primary-dark: #4338ca;
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f1f5f9;
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-border: #e2e8f0;
+
+  /* Theme-only tokens */
+  --ru-page: #f6f8fb; /* page background, one shade below the cards */
+  --ru-surface: #ffffff; /* cards, header, modal */
+  --ru-surface-sunken: #f1f5f9; /* wells: code, "without anchor" example */
+  --ru-heading: #0f172a;
+  --ru-body: #334155; /* long-form text: softer than headings */
+  --ru-muted: #5b6b82; /* >= 4.9:1 on page, surface and sunken */
+  --ru-primary-soft: #eef2ff;
+  --ru-primary-soft-text: #4338ca;
+  --ru-ring: rgb(15 23 42 / 0.06);
+  --ru-focus: #4f46e5;
+
+  /* Elevation scale: 1 resting card, 2 raised control, 3 hover card,
+     4 dropdown, 5 modal. Two layered shadows each (ambient + direct). */
+  --ru-shadow-1: 0 1px 2px rgb(15 23 42 / 0.05), 0 1px 3px rgb(15 23 42 / 0.07);
+  --ru-shadow-2: 0 2px 4px -1px rgb(15 23 42 / 0.06), 0 4px 6px -1px rgb(15 23 42 / 0.08);
+  --ru-shadow-3: 0 4px 6px -2px rgb(15 23 42 / 0.05), 0 12px 20px -4px rgb(15 23 42 / 0.12);
+  --ru-shadow-4: 0 8px 10px -6px rgb(15 23 42 / 0.08), 0 20px 25px -5px rgb(15 23 42 / 0.14);
+  --ru-shadow-5: 0 25px 50px -12px rgb(15 23 42 / 0.3);
+
+  --ru-radius: 0.875rem;
+}
+
+.dark {
+  --color-primary: #818cf8;
+  --color-primary-dark: #6366f1;
+  --color-bg: #121a2b;
+  --color-bg-secondary: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #a3b1c6;
+  --color-border: rgb(148 163 184 / 0.16);
+
+  --ru-page: #0b1222;
+  --ru-surface: #162033;
+  --ru-surface-sunken: #0f1829;
+  --ru-heading: #f8fafc;
+  --ru-body: #cbd5e1;
+  --ru-muted: #94a3b8; /* >= 6.3:1 on page and surface */
+  --ru-primary-soft: rgb(99 102 241 / 0.16);
+  --ru-primary-soft-text: #c7d2fe;
+  --ru-ring: rgb(148 163 184 / 0.12);
+  --ru-focus: #a5b4fc;
+
+  /* On a dark page a black shadow disappears; elevation comes from a
+     lighter surface, a hairline highlight and a deeper drop shadow. */
+  --ru-shadow-1: 0 0 0 1px rgb(148 163 184 / 0.08), 0 1px 2px rgb(0 0 0 / 0.4);
+  --ru-shadow-2: 0 0 0 1px rgb(148 163 184 / 0.1), 0 4px 8px -2px rgb(0 0 0 / 0.5);
+  --ru-shadow-3: 0 0 0 1px rgb(148 163 184 / 0.16), 0 12px 24px -6px rgb(0 0 0 / 0.6);
+  --ru-shadow-4: 0 0 0 1px rgb(148 163 184 / 0.14), 0 20px 30px -8px rgb(0 0 0 / 0.65);
+  --ru-shadow-5: 0 0 0 1px rgb(148 163 184 / 0.12), 0 30px 60px -12px rgb(0 0 0 / 0.75);
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. Base
+ * ------------------------------------------------------------------------- */
+body {
+  background-color: var(--ru-page);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+::selection {
+  background: var(--color-blue-200);
+  color: var(--color-gray-900);
+}
+
+/* One visible focus style for every interactive element. */
+:where(a, button, input, select, summary, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--ru-focus);
+  outline-offset: 2px;
+  border-radius: 0.375rem;
+}
+
+/* The shell placeholders carry borders of their own; spacing and shadow
+   separate header, content and footer instead. */
+#shell-header,
+#shell-footer {
+  border: 0 !important;
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. Header
+ * ------------------------------------------------------------------------- */
+#app header {
+  border-bottom: 0;
+  background: var(--ru-surface);
+  box-shadow:
+    0 1px 0 var(--ru-ring),
+    0 1px 3px rgb(15 23 42 / 0.03);
+  position: relative;
+  z-index: 40;
+}
+
+#app header img[src$='logo.png'] {
+  height: 4.25rem;
+  width: auto;
+}
+
+#app header a > span[data-i18n='header.slogan'] {
+  color: var(--ru-muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.01em;
+  margin-top: 0.125rem;
+}
+
+/* Navigation: smaller and calmer than before; the active page is a soft
+   primary pill (weight + colour) rather than a bigger font. */
+#app header .text-2xl {
+  font-size: 0.9375rem;
+  gap: 0.25rem;
+}
+
+#app header .nav-link {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  border-radius: 0.5rem;
+  padding: 0.4375rem 0.75rem;
+  line-height: 1.25rem;
+}
+
+#app header .nav-link:hover {
+  color: var(--ru-heading);
+  background: var(--color-bg-secondary);
+}
+
+#app header .nav-link.font-semibold {
+  color: var(--ru-primary-soft-text);
+  background: var(--ru-primary-soft);
+  font-weight: 600;
+}
+
+#more-menu-dropdown {
+  border: 0;
+  border-radius: 0.75rem;
+  box-shadow: var(--ru-shadow-4);
+  background: var(--ru-surface);
+  padding: 0.375rem;
+  min-width: 15rem;
+}
+
+#more-menu-dropdown .nav-link {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+#mobile-menu {
+  border-top: 0;
+  background: var(--ru-page);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+}
+
+#lang-toggle,
+#lang-toggle-mobile {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  color: var(--ru-muted);
+}
+
+/* Search and role filter: white field, inset hairline, a magnifier glyph
+   so the placeholder does not have to explain the control. */
+#header-search-input,
+#search-input,
+#header-role-filter,
+#role-filter {
+  border: 0;
+  background-color: var(--ru-surface);
+  box-shadow:
+    inset 0 0 0 1px var(--color-gray-300),
+    0 1px 2px rgb(15 23 42 / 0.04);
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--ru-heading);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#header-search-input,
+#search-input {
+  padding-left: 2.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2364748b'%3E%3Cpath fill-rule='evenodd' d='M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.45 4.39l3.08 3.08a.75.75 0 1 1-1.06 1.06l-3.08-3.08A7 7 0 0 1 2 9Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 0.75rem center;
+}
+
+#header-search-input::placeholder,
+#search-input::placeholder {
+  color: var(--ru-muted);
+}
+
+#header-search-input:focus,
+#search-input:focus,
+#header-role-filter:focus,
+#role-filter:focus {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 1px var(--color-primary),
+    0 0 0 3px rgb(99 102 241 / 0.25);
+}
+
+.dark #header-search-input,
+.dark #search-input,
+.dark #header-role-filter,
+.dark #role-filter {
+  background-color: var(--ru-surface-sunken);
+  box-shadow: inset 0 0 0 1px rgb(148 163 184 / 0.22);
+}
+
+#anchor-count,
+#anchor-count-mobile {
+  color: var(--ru-muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+#visible-count,
+#visible-count-mobile {
+  color: var(--ru-heading);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+ * 4. Hero
+ * ------------------------------------------------------------------------- */
+main > div:first-child {
+  padding-top: 2.5rem;
+}
+
+#hero h1 {
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ru-heading);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  #hero h1 {
+    font-size: 3rem;
+  }
+}
+
+#hero h1 + p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+  margin-bottom: 0.75rem;
+}
+
+#hero h1 + p + p {
+  color: var(--ru-heading);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* The comparison: "without" is a sunken well (it is the problem), "with"
+   is a raised card with a primary accent border (it is the answer). */
+#hero .grid.sm\:grid-cols-2 {
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+#hero .grid.sm\:grid-cols-2 > div {
+  border: 0;
+  border-radius: var(--ru-radius);
+  padding: 1.25rem 1.5rem;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:first-child {
+  background: var(--ru-surface-sunken);
+  box-shadow: inset 0 1px 2px rgb(15 23 42 / 0.05);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:first-child p {
+  color: var(--ru-muted);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child {
+  background: var(--ru-surface);
+  box-shadow: var(--ru-shadow-3);
+  border-left: 4px solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child p {
+  font-size: 1rem;
+  color: var(--ru-heading);
+}
+
+#hero .grid.sm\:grid-cols-2 > div:last-child strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+#hero .grid.sm\:grid-cols-2 > div > div:first-child {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.625rem;
+}
+
+#hero .grid.sm\:grid-cols-2 > div:first-child > div:first-child {
+  color: var(--ru-muted);
+}
+
+#hero .grid.sm\:grid-cols-2 + p {
+  font-style: normal;
+  color: var(--ru-muted);
+  margin-top: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Third-party coverage: no rules above and below, just a quiet band. */
+#appearances {
+  border: 0;
+  padding: 1.25rem 1rem;
+  margin-bottom: 3rem;
+  border-radius: var(--ru-radius);
+  background: var(--ru-surface);
+  box-shadow: var(--ru-shadow-1);
+}
+
+#appearances span.text-xs[data-i18n^='footer.'] {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.625rem;
+  color: var(--ru-muted);
+}
+
+#appearances span[aria-hidden='true'] {
+  background: transparent !important;
+}
+
+#appearances a {
+  color: var(--color-text-secondary);
+}
+
+#appearances a:hover {
+  color: var(--color-primary);
+}
+
+/* How to use: three white steps on the tinted page, soft numbered badges. */
+#hero h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ru-heading);
+  margin-bottom: 1rem;
+}
+
+#hero ol {
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#hero ol > li {
+  background: var(--ru-surface);
+  box-shadow: var(--ru-shadow-1);
+  border-radius: var(--ru-radius);
+  padding: 1rem 1.125rem;
+  align-items: center;
+}
+
+#hero ol > li > span:first-child {
+  background: var(--ru-primary-soft);
+  color: var(--ru-primary-soft-text);
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+#hero ol > li > span:last-child {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+#hero ol > li strong {
+  color: var(--ru-heading);
+  font-weight: 600;
+}
+
+/* Secondary links: spacing instead of pipe separators, grey instead of
+   blue, so the single primary action ("Skip to catalog") stands out. */
+#hero .flex.flex-wrap.gap-3.text-sm {
+  gap: 0.5rem 1.5rem;
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm > span {
+  display: none;
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm > a {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm > a:hover {
+  color: var(--ru-heading);
+  text-decoration: none;
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm > a svg {
+  color: var(--ru-muted);
+}
+
+#hero .flex.flex-wrap.gap-3.text-sm > a[href='#filters'] {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+#hero [data-i18n='hero.talkCatalogHint'] {
+  color: var(--ru-muted);
+}
+
+/* Mobile filter row (search, role, count) */
+#filters {
+  gap: 0.75rem;
+}
+
+@media (max-width: 639px) {
+  #filters > #search-input,
+  #filters > #role-filter {
+    flex: 1 1 100%;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * 5. Category quick-nav
+ * ------------------------------------------------------------------------- */
+.category-nav {
+  background: color-mix(in srgb, var(--ru-page) 88%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 0;
+  box-shadow: 0 1px 0 var(--ru-ring);
+  padding: 0.75rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.category-nav-list {
+  gap: 0.25rem 0.125rem;
+}
+
+.category-nav-link {
+  border: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 0.3125rem 0.625rem;
+  gap: 0.4375rem;
+  border-radius: 9999px;
+}
+
+.category-nav-link:hover,
+.category-nav-link:focus-visible {
+  color: var(--ru-heading);
+  background: var(--ru-surface);
+  box-shadow: var(--ru-shadow-1);
+}
+
+/* The icon is now a dot in the category's colour: it ties the chip to the
+   accent bar on that category's cards. */
+.category-nav-icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--cat, var(--color-primary));
+  font-size: 0;
+  flex-shrink: 0;
+}
+
+.category-nav-count {
+  background: transparent;
+  color: var(--ru-muted);
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The recency chip filters instead of jumping, so it looks like a control:
+   a soft primary pill, solid when pressed. */
+.category-nav-toggle {
+  border-style: none;
+  background: var(--ru-primary-soft);
+  color: var(--ru-primary-soft-text);
+  margin-right: 0.5rem;
+}
+
+.category-nav-toggle .category-nav-count {
+  color: var(--ru-primary-soft-text);
+}
+
+.category-nav-toggle-active,
+.category-nav-toggle-active:hover {
+  background: var(--color-blue-600);
+  color: #fff;
+  box-shadow: var(--ru-shadow-2);
+}
+
+.category-nav-toggle-active .category-nav-count {
+  background: transparent;
+  color: #fff;
+}
+
+.category-nav-toggle-active .category-nav-icon {
+  background: #fff;
+}
+
+/* ---------------------------------------------------------------------------
+ * 6. Category sections
+ * ------------------------------------------------------------------------- */
+.card-grid-container {
+  padding-top: 0;
+}
+
+.category-section {
+  margin-bottom: 4rem;
+}
+
+.category-heading {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  gap: 0.875rem;
+  margin-bottom: 1rem;
+  color: var(--ru-heading);
+}
+
+.category-heading span[data-i18n^='categories.'] {
+  color: var(--ru-heading);
+}
+
+/* Icon tile: a light tint of the category colour instead of a saturated
+   block with a drop shadow. */
+.category-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: none;
+  font-size: 1.25rem;
+  background-color: color-mix(in srgb, var(--cat, #6366f1) 16%, var(--ru-surface)) !important;
+}
+
+.dark .category-icon {
+  background-color: color-mix(in srgb, var(--cat, #6366f1) 22%, var(--ru-surface)) !important;
+}
+
+.category-intro {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.category-heading + .category-intro {
+  margin-top: -0.25rem;
+  margin-bottom: 1.75rem;
+  padding-left: 3.375rem;
+}
+
+.category-intro a:hover,
+.category-intro a:focus-visible {
+  color: var(--ru-heading);
+}
+
+@media (max-width: 640px) {
+  .category-heading + .category-intro {
+    padding-left: 0;
+  }
+
+  .category-icon {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 0.625rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * 7. Anchor cards
+ * ------------------------------------------------------------------------- */
+.anchor-cards-grid {
+  gap: 1.25rem;
+}
+
+.anchor-card {
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  border-radius: var(--ru-radius);
+  background: var(--ru-surface);
+  box-shadow: var(--ru-shadow-1);
+  padding: 1.375rem 1.25rem 0.875rem;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.3s ease;
+}
+
+.anchor-card:hover,
+.anchor-card:focus-within {
+  border: 0;
+  box-shadow: var(--ru-shadow-3);
+  transform: translateY(-2px);
+}
+
+.anchor-card:has(.anchor-card-open:focus-visible) {
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  box-shadow:
+    0 0 0 2px var(--ru-page),
+    0 0 0 4px var(--ru-focus),
+    var(--ru-shadow-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anchor-card:hover,
+  .anchor-card:focus-within {
+    transform: none;
+  }
+}
+
+/* Accent border: the category colour as a bar along the top edge. */
+.anchor-card-indicator {
+  top: 0;
+  bottom: auto;
+  height: 3px;
+}
+
+.anchor-card-header {
+  margin-bottom: 0.375rem;
+}
+
+.anchor-card-title {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.011em;
+  color: var(--ru-heading);
+}
+
+.anchor-card:hover .anchor-card-title {
+  color: var(--color-primary);
+}
+
+.anchor-card-proponents {
+  font-style: normal;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: var(--ru-muted);
+  margin-bottom: 1rem;
+}
+
+/* Footer: meta left, actions right; pushed to the bottom so cards of
+   different heights still line up. */
+.anchor-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 2rem;
+}
+
+.anchor-card-meta {
+  gap: 0.75rem;
+  color: var(--ru-muted);
+}
+
+/* The role count is meta, not a label: plain grey text with a glyph. */
+.meta-badge {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  color: var(--ru-muted);
+  font-weight: 500;
+  font-size: 0.75rem;
+  gap: 0.3125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.meta-badge svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.anchor-card-actions {
+  position: relative;
+  z-index: 10;
+  gap: 0.125rem;
+  margin-right: -0.375rem;
+}
+
+.anchor-edit-btn,
+.anchor-copy-link-btn,
+.anchor-copy-keyword-btn {
+  color: var(--color-gray-500);
+  padding: 0.375rem;
+  border-radius: 0.5rem;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.dark .anchor-edit-btn,
+.dark .anchor-copy-link-btn,
+.dark .anchor-copy-keyword-btn {
+  color: var(--color-gray-400);
+}
+
+.anchor-edit-btn:hover,
+.anchor-copy-link-btn:hover,
+.anchor-copy-keyword-btn:hover {
+  transform: none;
+  color: var(--ru-heading);
+  background: var(--color-bg-secondary);
+}
+
+/* Copy keyword is the one action the catalog exists for (step 2 of
+   "How to use"): it gets the primary colour on hover. */
+.anchor-copy-keyword-btn:hover {
+  color: var(--ru-primary-soft-text);
+  background: var(--ru-primary-soft);
+}
+
+.anchor-new-badge {
+  border-radius: 9999px;
+  padding: 0.0625rem 0.5rem;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  background: #ecfdf5;
+  color: #047857;
+  box-shadow: inset 0 0 0 1px rgb(4 120 87 / 0.15);
+  vertical-align: 0.15em;
+}
+
+.dark .anchor-new-badge {
+  background: rgb(16 185 129 / 0.12);
+  color: #6ee7b7;
+  box-shadow: inset 0 0 0 1px rgb(110 231 183 / 0.2);
+}
+
+/* Advisory: tinted callout with a left accent border instead of a boxed
+   outline. */
+.anchor-advisory-badge,
+.anchor-advisory-banner {
+  border: 0;
+  border-left: 3px solid #f59e0b;
+  border-radius: 0.375rem;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.anchor-advisory-badge {
+  padding: 0.5rem 0.625rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.dark .anchor-advisory-badge,
+.dark .anchor-advisory-banner {
+  background: rgb(245 158 11 / 0.1);
+  color: #fcd34d;
+}
+
+/* Empty state: shown by CSS alone when every section is filtered out. */
+.catalog-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  margin-bottom: 4rem;
+  border-radius: 1rem;
+  background: var(--ru-surface);
+  box-shadow: var(--ru-shadow-1);
+}
+
+.card-grid-container:not(:has(.category-section:not([style*='display: none']))) .catalog-empty {
+  display: flex;
+}
+
+.catalog-empty::before {
+  content: '';
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  background-color: var(--ru-primary-soft);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='1.75' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='m20 20-4.2-4.2M8.5 11h5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5rem;
+}
+
+.catalog-empty-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ru-heading);
+}
+
+.catalog-empty-hint {
+  margin: 0.375rem 0 0;
+  font-size: 0.875rem;
+  color: var(--ru-muted);
+}
+
+/* ---------------------------------------------------------------------------
+ * 8. Anchor modal
+ * ------------------------------------------------------------------------- */
+#anchor-modal {
+  background-color: rgb(15 23 42 / 0.45);
+}
+
+#anchor-modal > div {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: var(--ru-shadow-5);
+  background: var(--ru-surface);
+}
+
+#anchor-modal > div > div:first-child {
+  border-bottom: 0;
+  padding: 1.5rem 2rem 1rem;
+  box-shadow: 0 1px 0 var(--ru-ring);
+}
+
+#modal-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ru-heading);
+}
+
+#modal-content {
+  padding: 1.5rem 2rem 2rem;
+  background: transparent;
+}
+
+/* The modal header already shows the title; the rendered document title
+   underneath repeated it at a larger size. */
+#modal-content h1 {
+  display: none;
+}
+
+.modal-feedback-bar {
+  border-top: 0;
+  background: var(--ru-surface-sunken);
+  padding: 0.875rem 2rem;
+}
+
+.modal-feedback-cta {
+  color: var(--ru-muted);
+}
+
+.feedback-btn {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 0.5rem 0.875rem;
+}
+
+.feedback-btn-vote {
+  background: var(--color-blue-600);
+  color: #fff;
+  box-shadow: var(--ru-shadow-1);
+}
+
+.feedback-btn-vote:hover {
+  background: var(--color-blue-700);
+}
+
+.feedback-btn-discuss {
+  background: var(--ru-surface);
+  color: var(--color-text-secondary);
+  box-shadow:
+    inset 0 0 0 1px var(--color-gray-300),
+    0 1px 2px rgb(15 23 42 / 0.04);
+}
+
+.dark .feedback-btn-discuss {
+  background: transparent;
+  color: var(--ru-body);
+  box-shadow: inset 0 0 0 1px rgb(148 163 184 / 0.25);
+}
+
+.feedback-btn-discuss:hover {
+  color: var(--ru-heading);
+}
+
+.feedback-section {
+  border: 0;
+  border-radius: var(--ru-radius);
+  background: var(--ru-surface-sunken);
+}
+
+.feedback-heading {
+  color: var(--ru-muted);
+}
+
+/* Direct-answer lead: the most important sentence, so it gets a tint and a
+   primary accent border instead of a grey box. */
+.anchor-answer,
+.anchor-answer-lead {
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0.25rem 0.75rem 0.75rem 0.25rem;
+  background: var(--ru-primary-soft);
+  color: var(--ru-heading);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.dark .anchor-answer,
+.dark .anchor-answer-lead {
+  background: rgb(99 102 241 / 0.1);
+  color: var(--ru-heading);
+}
+
+.anchor-tested-on {
+  border-top: 0;
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--ru-surface-sunken);
+  color: var(--ru-muted);
+}
+
+.anchor-example-image img {
+  border: 0;
+  border-radius: 0.75rem;
+  box-shadow: var(--ru-shadow-3);
+}
+
+.sub-anchor-list {
+  border-top: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * 9. Rendered AsciiDoc (modal and documentation pages)
+ * ------------------------------------------------------------------------- */
+.asciidoc-content,
+.dark .asciidoc-content {
+  background: transparent;
+  color: var(--ru-body);
+  line-height: 1.7;
+}
+
+.asciidoc-content h1,
+.asciidoc-content h2,
+.asciidoc-content h3,
+.asciidoc-content h4,
+.asciidoc-content h5,
+.asciidoc-content h6,
+.dark .asciidoc-content h1,
+.dark .asciidoc-content h2,
+.dark .asciidoc-content h3,
+.dark .asciidoc-content h4,
+.dark .asciidoc-content h5,
+.dark .asciidoc-content h6 {
+  font-family: inherit;
+  color: var(--ru-heading);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.asciidoc-content h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.5rem;
+}
+
+.asciidoc-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.75rem;
+  margin-bottom: 0.875rem;
+}
+
+.asciidoc-content h3 {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.asciidoc-content h4,
+.asciidoc-content h5,
+.asciidoc-content h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Discrete headings in the anchor files ("Core Concepts:", "When to Use:")
+   behave like labels for the list below: an eyebrow, not a headline. */
+.asciidoc-content h2.discrete,
+.asciidoc-content h3.discrete,
+.dark .asciidoc-content h2.discrete,
+.dark .asciidoc-content h3.discrete {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-top: 2.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.asciidoc-content h2.discrete strong,
+.asciidoc-content h3.discrete strong {
+  font-weight: inherit;
+}
+
+.asciidoc-content p,
+.asciidoc-content li {
+  color: var(--ru-body);
+}
+
+.asciidoc-content strong,
+.asciidoc-content b {
+  color: var(--ru-heading);
+  font-weight: 600;
+}
+
+.asciidoc-content a,
+.dark .asciidoc-content a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.asciidoc-content a:hover,
+.dark .asciidoc-content a:hover {
+  color: var(--color-primary-dark);
+  text-decoration-color: currentColor;
+}
+
+.dark .asciidoc-content a:hover {
+  color: #a5b4fc;
+}
+
+.asciidoc-content a.anchor,
+.asciidoc-content h1 a,
+.asciidoc-content h2 a,
+.asciidoc-content h3 a {
+  text-decoration: none;
+}
+
+.asciidoc-content summary {
+  color: var(--ru-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Definition lists ("Full Name", "Also known as"): term small and grey,
+   value in body colour, so the value carries the weight. */
+.asciidoc-content dt {
+  color: var(--ru-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.asciidoc-content dd {
+  margin-left: 0;
+  color: var(--ru-body);
+}
+
+.asciidoc-content ul {
+  padding-left: 1.25rem;
+}
+
+.asciidoc-content li::marker {
+  color: var(--color-gray-400);
+}
+
+.asciidoc-content code,
+.dark .asciidoc-content code {
+  font-size: 0.875em;
+  background: var(--ru-surface-sunken);
+  color: var(--ru-heading);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+}
+
+.asciidoc-content pre,
+.dark .asciidoc-content pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.125rem 1.25rem;
+  font-size: 0.875rem;
+  box-shadow: var(--ru-shadow-2);
+}
+
+.dark .asciidoc-content pre {
+  background: #070c18;
+}
+
+.asciidoc-content pre code,
+.dark .asciidoc-content pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+.asciidoc-content blockquote,
+.dark .asciidoc-content blockquote {
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: var(--ru-surface-sunken);
+  color: var(--ru-heading);
+  padding: 0.875rem 1.25rem;
+}
+
+.asciidoc-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.asciidoc-content table,
+.dark .asciidoc-content table {
+  border: 0;
+  border-collapse: collapse;
+}
+
+.asciidoc-content th,
+.dark .asciidoc-content th {
+  background: transparent;
+  color: var(--ru-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.asciidoc-content td,
+.dark .asciidoc-content td {
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.asciidoc-content hr,
+.dark .asciidoc-content hr {
+  border-color: var(--color-border);
+}
+
+.asciidoc-content .admonitionblock,
+.dark .asciidoc-content .admonitionblock {
+  background: var(--ru-surface-sunken);
+  border-left-width: 3px;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.asciidoc-content .admonitionblock > table td.content,
+.dark .asciidoc-content .admonitionblock > table td.content {
+  border-left: 0;
+  color: var(--ru-body);
+}
+
+.asciidoc-content .admonitionblock > table td.icon i {
+  text-shadow: none;
+  font-size: 1.75em;
+}
+
+.asciidoc-content .admonitionblock.note {
+  border-color: var(--color-primary);
+}
+
+/* Documentation pages: the text sits on a raised sheet above the tinted
+   page; the table of contents stays flat beside it. */
+#doc-content {
+  background: var(--ru-surface);
+  border-radius: 1rem;
+  box-shadow: var(--ru-shadow-1);
+  padding: 1.5rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  #doc-content {
+    padding: 2.5rem 3rem 3rem;
+  }
+}
+
+.doc-toc {
+  border: 0;
+  background: transparent;
+}
+
+.doc-toc #toctitle {
+  border-bottom: 0;
+  color: var(--ru-muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  padding: 0 0.5rem;
+}
+
+.doc-toc ul ul {
+  border-left: 0;
+  padding-left: 0.75rem;
+}
+
+.doc-toc a {
+  color: var(--color-text-secondary);
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.doc-toc .sectlevel1 > li > a {
+  color: var(--ru-heading);
+  font-weight: 500;
+}
+
+.doc-toc a:hover {
+  color: var(--color-primary);
+  background: var(--ru-surface);
+}
+
+.youtube-facade {
+  border-radius: 1rem;
+  box-shadow: var(--ru-shadow-4);
+}
+
+/* ---------------------------------------------------------------------------
+ * 10. Footer
+ * ------------------------------------------------------------------------- */
+#app footer {
+  border-top: 0;
+  background: transparent;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+#app footer span.text-gray-300 {
+  display: none;
+}
+
+#app footer .gap-4 {
+  gap: 0.5rem 1.5rem;
+}
+
+#app footer a {
+  color: var(--color-text-secondary);
+}
+
+#app footer a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * 11. Dark-mode specificity fixes
+ * main.css applies `dark:` utilities through @apply, which compile to
+ * `.dark .x` selectors; these rules match that specificity.
+ * ------------------------------------------------------------------------- */
+.dark .meta-badge {
+  background: transparent;
+  color: var(--ru-muted);
+}
+
+.dark .anchor-card {
+  background: var(--ru-surface);
+}
+
+/* White on indigo-500 is 4.47:1; indigo-600 keeps the vote button at 6.3:1. */
+.dark .feedback-btn-vote {
+  background: var(--color-blue-600);
+}
+
+.dark .feedback-btn-vote:hover {
+  background: var(--color-blue-700);
+}
+
+.youtube-facade-title strong,
+.asciidoc-content .youtube-facade-title strong {
+  color: #fff;
+}
+
+.asciidoc-content h2.discrete strong,
+.asciidoc-content h3.discrete strong {
+  color: inherit;
+}
+
+#appearances span.text-gray-300 {
+  display: none;
+}
+
+#appearances > div {
+  column-gap: 1rem;
+}

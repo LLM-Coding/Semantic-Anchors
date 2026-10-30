@@ -108,6 +108,10 @@ export function renderCardGrid(categories, anchors) {
     <div class="card-grid-container">
       ${renderCategoryNav(categories, anchors, recent)}
       ${categories.map((category) => renderCategorySection(category, anchors, recent)).join('')}
+      <div class="catalog-empty" role="status">
+        <p class="catalog-empty-title" data-i18n="catalog.emptyTitle">${escapeHtml(i18n.t('catalog.emptyTitle'))}</p>
+        <p class="catalog-empty-hint" data-i18n="catalog.emptyHint">${escapeHtml(i18n.t('catalog.emptyHint'))}</p>
+      </div>
     </div>
   `
 }
@@ -142,7 +146,8 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
     .map(({ category, count }) => {
       const id = escapeHtml(category.id)
       const name = i18n.t(`categories.${category.id}`) || category.name
-      const icon = CATEGORY_ICONS[category.id] || '📌'
+      const shortName = i18n.t(`categoriesShort.${category.id}`)
+      const color = CATEGORY_COLORS[category.id] || '#5470c6'
       return `
         <li>
           <a
@@ -154,7 +159,8 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             aria-label="${escapeHtml(name)}"
             data-i18n-aria="categories.${id}"
           >
-            <span class="category-nav-icon" aria-hidden="true">${icon}</span>
+            <span class="category-nav-icon" aria-hidden="true" style="--cat: ${color}"></span>
+            <span class="category-nav-label" data-i18n="categoriesShort.${id}">${escapeHtml(shortName)}</span>
             <span class="category-nav-count">${count}</span>
           </a>
         </li>`
@@ -175,7 +181,8 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             aria-label="${escapeHtml(i18n.t('nav.recentlyAdded'))}"
             data-i18n-aria="nav.recentlyAdded"
           >
-            <span class="category-nav-icon" aria-hidden="true">\u2728</span>
+            <span class="category-nav-icon" aria-hidden="true"></span>
+            <span class="category-nav-label" data-i18n="nav.recentShort">${escapeHtml(i18n.t('nav.recentShort'))}</span>
             <span class="category-nav-count">${recent.size}</span>
           </button>
         </li>`
@@ -212,7 +219,7 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
     : ''
 
   return `
-    <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">
+    <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}" style="--cat: ${color}">
       <h2 class="category-heading">
         <span class="category-icon" style="background-color: ${color}">${icon}</span>
         <span data-i18n="categories.${escapeHtml(category.id)}">${escapeHtml(categoryName)}</span>
@@ -273,42 +280,6 @@ function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false) {
             ? ` <span class="anchor-new-badge" title="${escapeHtml(i18n.t('card.new'))}">${escapeHtml(i18n.t('card.new'))}</span>`
             : ''
         }</h3>
-        <div class="flex gap-1">
-          <button
-            class="anchor-copy-keyword-btn"
-            title="${escapeHtml(i18n.t('card.copyKeyword'))}"
-            data-copy-keyword="${escapeHtml(anchor.title)}"
-            data-i18n-title="card.copyKeyword"
-            aria-label="${escapeHtml(i18n.t('card.copyKeyword'))}"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
-            </svg>
-          </button>
-          <button
-            class="anchor-copy-link-btn"
-            title="${escapeHtml(copyLinkTitle)}"
-            data-copy-link="${safeId}"
-            data-i18n-title="card.copyLink"
-            aria-label="${escapeHtml(copyLinkTitle)}"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-            </svg>
-          </button>
-          <a
-            href="${escapeHtml(githubEditUrl)}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="anchor-edit-btn"
-            title="${escapeHtml(editTitle)}"
-            data-i18n-title="card.edit"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-            </svg>
-          </a>
-        </div>
       </div>
 
       ${
@@ -327,6 +298,7 @@ function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false) {
           : ''
       }
 
+      <div class="anchor-card-footer">
       <div class="anchor-card-meta">
         ${
           rolesCount > 0
@@ -381,6 +353,43 @@ function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false) {
         `
             : ''
         }
+      </div>
+          <div class="anchor-card-actions flex gap-1">
+            <button
+              class="anchor-copy-keyword-btn"
+              title="${escapeHtml(i18n.t('card.copyKeyword'))}"
+              data-copy-keyword="${escapeHtml(anchor.title)}"
+              data-i18n-title="card.copyKeyword"
+              aria-label="${escapeHtml(i18n.t('card.copyKeyword'))}"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+              </svg>
+            </button>
+            <button
+              class="anchor-copy-link-btn"
+              title="${escapeHtml(copyLinkTitle)}"
+              data-copy-link="${safeId}"
+              data-i18n-title="card.copyLink"
+              aria-label="${escapeHtml(copyLinkTitle)}"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+              </svg>
+            </button>
+            <a
+              href="${escapeHtml(githubEditUrl)}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="anchor-edit-btn"
+              title="${escapeHtml(editTitle)}"
+              data-i18n-title="card.edit"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+              </svg>
+            </a>
+          </div>
       </div>
 
       <div class="anchor-card-indicator" style="background-color: ${categoryColor}"></div>
