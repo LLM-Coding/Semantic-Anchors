@@ -147,12 +147,13 @@ body {
 }
 
 .category-nav-list {
-  @apply flex flex-nowrap gap-2 list-none p-0 m-0 overflow-x-auto;
-  scrollbar-width: thin;
+  /* Wrap instead of scrolling: with one chip per category the row outgrew
+     the content width; a hidden scrollbar hid categories from the reader. */
+  @apply flex flex-wrap gap-1.5 list-none p-0 m-0;
 }
 
 .category-nav-link {
-  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full no-underline whitespace-nowrap flex-shrink-0;
+  @apply inline-flex items-center gap-1 px-2 py-1 rounded-full no-underline whitespace-nowrap flex-shrink-0;
   @apply transition-colors duration-150;
   border: 1px solid var(--color-border);
   background: var(--color-bg-secondary);
@@ -190,7 +191,7 @@ body {
 }
 
 .category-nav-count {
-  @apply text-xs font-semibold px-1.5 rounded-full;
+  @apply text-xs font-semibold px-1 rounded-full;
   background: var(--color-bg);
   color: var(--color-text-secondary);
 }

@@ -521,3 +521,33 @@ test.describe('Umbrella Anchors', () => {
     }
   })
 })
+
+test.describe('Category quick-nav', () => {
+  // The quick-nav once had one chip per category in a single scrolling row.
+  // With 16 chips it no longer fit even at full width, so the row wraps
+  // instead of scrolling, and fits on one line on a desktop screen.
+  for (const width of [768, 1024, 1280]) {
+    test(`never scrolls horizontally at ${width}px`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 800 })
+      await page.goto('/')
+      const list = page.locator('.category-nav-list')
+      await expect(list).toBeVisible()
+      const { scrollWidth, clientWidth } = await list.evaluate((el) => ({
+        scrollWidth: el.scrollWidth,
+        clientWidth: el.clientWidth,
+      }))
+      expect(scrollWidth).toBeLessThanOrEqual(clientWidth)
+    })
+  }
+
+  test('fits on one line on a desktop screen', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.goto('/')
+    const tops = await page
+      .locator('.category-nav-list > li')
+      .evaluateAll((items) => [
+        ...new Set(items.map((li) => Math.round(li.getBoundingClientRect().top))),
+      ])
+    expect(tops).toHaveLength(1)
+  })
+})
