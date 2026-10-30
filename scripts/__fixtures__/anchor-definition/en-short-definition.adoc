@@ -1,0 +1,11 @@
+= Short Sample Anchor
+:categories: testing-quality
+:roles: software-developer
+:proponents: Community
+:tier: 3
+:definition: Short Sample Anchor is a fixture whose curated definition fits a search result as it is.
+
+[%collapsible]
+====
+Also known as:: Short Sample
+====

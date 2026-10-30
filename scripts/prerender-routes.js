@@ -26,7 +26,7 @@
 
 const fs = require('fs')
 const path = require('path')
-const { extractDescription } = require('./generate-jsonld.js')
+const { getAnchorMetaDescription } = require('./lib/anchor-definition')
 const APPEARANCES = require('../website/src/data/appearances.json')
 const CATEGORY_INTROS = require('../website/src/data/category-intros.json')
 const { pathToFileURL } = require('url')
@@ -587,12 +587,10 @@ function prerenderAnchorPages(shell) {
     const hasDe = fs.existsSync(path.join(DIST, fragmentDe))
     const enUrl = `${SITE}/anchor/${anchor.id}`
     const deUrl = hasDe ? `${SITE}/de/anchor/${anchor.id}` : null
-    // Short Core-Concepts extracts ("Dependencies only point inward") get the
-    // anchor title prefixed so the SERP snippet stands on its own (#601).
-    const withTitle = (extracted) =>
-      extracted && extracted.length < 50 ? `${anchor.title} — ${extracted}` : extracted
+    // The meta description is the curated definition, which names the anchor
+    // in its first sentence, so the SERP snippet stands on its own (#601, #865).
     const description =
-      withTitle(extractDescription(`docs/anchors/${anchor.id}.adoc`)) ||
+      getAnchorMetaDescription(`docs/anchors/${anchor.id}.adoc`) ||
       `${anchor.title} — a semantic anchor: an established term that activates a rich, well-defined concept in any modern LLM.`
 
     // The anchor body sits in a [%collapsible] block; expand it on the
@@ -623,8 +621,7 @@ function prerenderAnchorPages(shell) {
         fragmentDe,
         {
           title: `${anchor.title} — Semantic Anchors`,
-          description:
-            withTitle(extractDescription(`docs/anchors/${anchor.id}.de.adoc`)) || description,
+          description: getAnchorMetaDescription(`docs/anchors/${anchor.id}.de.adoc`) || description,
           canonicalUrl: deUrl,
           enUrl,
           deUrl,

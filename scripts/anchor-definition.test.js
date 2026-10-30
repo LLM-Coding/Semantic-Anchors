@@ -2,11 +2,12 @@ import { describe, it, expect } from 'vitest'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { getAnchorDefinition } from './lib/anchor-definition.js'
+import { getAnchorDefinition, getAnchorMetaDescription } from './lib/anchor-definition.js'
 
 const FIXTURES = 'scripts/__fixtures__/anchor-definition'
 const ANCHORS_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'docs', 'anchors')
-const germanAnchorFiles = () => fs.readdirSync(ANCHORS_DIR).filter((f) => f.endsWith('.de.adoc'))
+const anchorFiles = () =>
+  fs.readdirSync(ANCHORS_DIR).filter((f) => f.endsWith('.adoc') && !f.startsWith('_'))
 
 describe('getAnchorDefinition', () => {
   it('returns a curated :definition: attribute as source=curated', () => {
@@ -17,55 +18,49 @@ describe('getAnchorDefinition', () => {
     expect(def.text).toMatch(/Mutually Exclusive, Collectively Exhaustive/)
   })
 
-  it('falls back to a derived definition as source=derived', () => {
-    // A fixture, not a real anchor: real anchors gain curated definitions (#865).
-    const def = getAnchorDefinition(`${FIXTURES}/en-derived.adoc`)
-    expect(def).toBeTruthy()
-    expect(def.source).toBe('derived')
-    expect(def.text.length).toBeGreaterThan(20)
-  })
-
-  // #861: German files head the section "Kernkonzepte", not "Core Concepts".
-  it('derives a definition from a German "Kernkonzepte" section', () => {
-    const def = getAnchorDefinition(`${FIXTURES}/de-derived.de.adoc`)
-    expect(def).toEqual({
-      text: 'Ein abgeleiteter deutscher Definitionstext, lang genug für den Antwortblock.',
-      source: 'derived',
-    })
-  })
-
-  // #861: bullet-style Core Concepts have no definition-list entry, so the
-  // first `Term::` line after the heading is metadata. No answer beats a wrong one.
-  it.each([
-    'bullets-then-proponents.adoc',
-    'bullets-then-proponent-singular.adoc',
-    'bullets-then-proponents.de.adoc',
-  ])('never derives a definition from a metadata term (%s)', (file) => {
-    expect(getAnchorDefinition(`${FIXTURES}/${file}`)).toBeNull()
-  })
-
-  it('derives a German definition wherever the English twin derives one', () => {
-    // Invariant over the real catalog: a German file derives a definition
-    // whenever its English counterpart does from a definition-list entry.
-    const missing = germanAnchorFiles().filter((de) => {
-      const en = de.replace(/\.de\.adoc$/, '.adoc')
-      const enDef = getAnchorDefinition(`docs/anchors/${en}`)
-      return enDef && enDef.source === 'derived' && !getAnchorDefinition(`docs/anchors/${de}`)
-    })
-    expect(missing).toEqual([])
-  })
-
-  it('gives every German anchor a curated definition when its English twin has one', () => {
-    const missing = germanAnchorFiles().filter((de) => {
-      const en = de.replace(/\.de\.adoc$/, '.adoc')
-      const enDef = getAnchorDefinition(`docs/anchors/${en}`)
-      const deDef = getAnchorDefinition(`docs/anchors/${de}`)
-      return enDef?.source === 'curated' && deDef?.source !== 'curated'
-    })
-    expect(missing).toEqual([])
+  // #865: no fallback. A Core Concepts entry describes a part of the concept,
+  // often not the concept itself; no answer beats a wrong one.
+  it('returns null for a file without :definition:, even with Core Concepts', () => {
+    expect(getAnchorDefinition(`${FIXTURES}/en-no-definition.adoc`)).toBeNull()
   })
 
   it('returns null for a non-existent file', () => {
     expect(getAnchorDefinition('docs/anchors/does-not-exist.adoc')).toBeNull()
+  })
+
+  // #865: the catalog invariant that lets the fallback go. Every anchor file,
+  // English and German, carries its own curated definition.
+  it('finds a curated definition in every anchor file, English and German', () => {
+    const missing = anchorFiles().filter(
+      (f) => getAnchorDefinition(`docs/anchors/${f}`)?.source !== 'curated'
+    )
+    expect(missing).toEqual([])
+  })
+})
+
+describe('getAnchorMetaDescription', () => {
+  it('uses the curated definition unchanged when it fits', () => {
+    expect(getAnchorMetaDescription(`${FIXTURES}/en-short-definition.adoc`)).toBe(
+      'Short Sample Anchor is a fixture whose curated definition fits a search result as it is.'
+    )
+  })
+
+  it('cuts a long definition at a word boundary within 220 characters', () => {
+    const meta = getAnchorMetaDescription(`${FIXTURES}/en-long-definition.adoc`)
+    expect(meta.length).toBeLessThanOrEqual(221)
+    expect(meta.endsWith('…')).toBe(true)
+    expect(meta.startsWith('Long Sample Anchor is a fixture')).toBe(true)
+    expect(meta).not.toMatch(/\s…$/)
+  })
+
+  it('stays within 221 characters for every anchor file', () => {
+    const tooLong = anchorFiles().filter(
+      (f) => (getAnchorMetaDescription(`docs/anchors/${f}`) || '').length > 221
+    )
+    expect(tooLong).toEqual([])
+  })
+
+  it('returns null without a definition', () => {
+    expect(getAnchorMetaDescription(`${FIXTURES}/en-no-definition.adoc`)).toBeNull()
   })
 })

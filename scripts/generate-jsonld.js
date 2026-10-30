@@ -37,10 +37,9 @@ const SET_ID = `${BASE}/#catalog`
 // reference. Both represent the whole set; other routes do not.
 const TARGETS = [path.join(DIST, 'index.html'), path.join(DIST, 'all-anchors', 'index.html')]
 
-// Anchor definitions (curated `:definition:` preferred, else derived from the
-// first "Core Concepts" entry) come from the shared resolver so the JSON-LD
-// DefinedTerm description matches the rendered answer block (#580).
-const { getAnchorDefinition, extractDescription } = require('./lib/anchor-definition')
+// Anchor definitions (the curated `:definition:`) come from the shared resolver
+// so the JSON-LD DefinedTerm description matches the rendered answer block (#580).
+const { getAnchorDefinition } = require('./lib/anchor-definition')
 
 /** Build the DefinedTermSet object from anchors.json. */
 function buildDefinedTermSet() {
@@ -159,4 +158,4 @@ function main() {
 
 if (require.main === module) main()
 
-module.exports = { buildDefinedTermSet, buildScriptTag, extractDescription, injectInto }
+module.exports = { buildDefinedTermSet, buildScriptTag, injectInto }

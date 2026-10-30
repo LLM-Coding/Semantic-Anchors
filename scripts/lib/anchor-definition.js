@@ -1,15 +1,15 @@
 /**
  * Shared resolver for an anchor's "direct answer" definition (#580).
  *
- * Precedence:
- *   1. a curated `:definition:` AsciiDoc attribute (a standalone ~40-60 word
- *      "What is X?" answer), when the anchor author has written one;
- *   2. otherwise the first "Core Concepts" (German: "Kernkonzepte")
- *      definition-list entry, derived. Metadata terms such as "Key
- *      Proponents" end the search: they are metadata, not a definition (#861).
+ * The answer is the curated `:definition:` AsciiDoc attribute, a standalone
+ * "What is X?" paragraph. Every anchor file, English and German, carries one;
+ * scripts/anchor-definition.test.js enforces that. There is no fallback (#865):
+ * the first Core Concepts entry often describes a part of the concept, not the
+ * concept, and no answer beats a wrong one.
  *
  * One source of truth so the rendered answer block (render-docs.js), the
- * DefinedTerm JSON-LD (generate-jsonld.js), and any data consumer agree.
+ * DefinedTerm JSON-LD (generate-jsonld.js), the meta description
+ * (prerender-routes.js) and anchors.json agree.
  */
 
 const fs = require('fs')
@@ -50,58 +50,10 @@ function readDefinitionAttribute(lines) {
   return null
 }
 
-/** Section heading that opens the concept list, in English and German. */
-const CORE_CONCEPTS = /Core Concepts|Kernkonzepte/i
-
-/** Definition-list terms that carry metadata, never a definition (EN + DE). */
-const METADATA_TERM = new RegExp(
-  '^[\\s*_]*(' +
-    [
-      'Key Proponents?',
-      'Wichtige[rn]? Vertreter(in)?',
-      'Schlüsselvertreter(in)?',
-      'Hauptvertreter',
-      'Wichtige Proponenten',
-      'Also known as',
-      'Auch bekannt als',
-      'Full Name',
-      'Vollständiger Name',
-      'Voller Name',
-      'Historical Context',
-      'Historischer Kontext',
-      'Origin',
-      'Ursprung',
-      'Original Work',
-      'Originalwerk',
-    ].join('|') +
-    ')\\b',
-  'i'
-)
-
-/** Derive a description from the first "Core Concepts" definition-list entry. */
-function extractDescription(filePathRel) {
-  const abs = path.join(ROOT, filePathRel)
-  if (!fs.existsSync(abs)) return null
-  const lines = fs.readFileSync(abs, 'utf-8').split('\n')
-
-  const ccIndex = lines.findIndex((l) => CORE_CONCEPTS.test(l))
-  if (ccIndex === -1) return null
-
-  for (let i = ccIndex + 1; i < lines.length && i < ccIndex + 12; i++) {
-    const m = lines[i].match(/^(.+?)::\s+(.+)$/)
-    if (m && METADATA_TERM.test(m[1])) break
-    if (m) {
-      const cleaned = cleanAdoc(m[2])
-      return cleaned.length >= 20 ? capLength(cleaned, 220) : null
-    }
-  }
-  return null
-}
-
 /**
- * Resolve the best available definition for an anchor file (relative to repo
- * root). Returns { text, source: 'curated'|'derived' } or null when neither is
- * available.
+ * Resolve the curated definition of an anchor file (path relative to the repo
+ * root). Returns { text, source: 'curated' }, or null when the file is missing
+ * or carries no `:definition:`.
  */
 function getAnchorDefinition(filePathRel) {
   const abs = path.join(ROOT, filePathRel)
@@ -109,12 +61,19 @@ function getAnchorDefinition(filePathRel) {
   const lines = fs.readFileSync(abs, 'utf-8').split('\n')
 
   const curated = readDefinitionAttribute(lines)
-  if (curated) return { text: curated, source: 'curated' }
-
-  const derived = extractDescription(filePathRel)
-  if (derived) return { text: derived, source: 'derived' }
-
-  return null
+  return curated ? { text: curated, source: 'curated' } : null
 }
 
-module.exports = { getAnchorDefinition, extractDescription, cleanAdoc, capLength }
+/** Longest meta description we emit; search results show less, but cut later. */
+const META_DESCRIPTION_MAX = 220
+
+/**
+ * The anchor's meta description: its curated definition, cut at a word boundary
+ * when longer than META_DESCRIPTION_MAX. Null without a definition.
+ */
+function getAnchorMetaDescription(filePathRel) {
+  const def = getAnchorDefinition(filePathRel)
+  return def ? capLength(def.text, META_DESCRIPTION_MAX) : null
+}
+
+module.exports = { getAnchorDefinition, getAnchorMetaDescription, cleanAdoc, capLength }
