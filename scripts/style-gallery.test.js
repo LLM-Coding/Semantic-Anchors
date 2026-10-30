@@ -103,12 +103,11 @@ describe('tile', () => {
   it('keeps commas, equals signs, carets and markup in a title literal', () => {
     const out = tile('Foo a=b, c *x* _y_^', 'x.webp', 'alt', '/Semantic-Anchors/anchor/x')
     const html = Asciidoctor().convert(out)
-    const link = html.match(/<a [^>]*>.*?<\/a>/)[0]
-    expect(link).toMatch(/^<a href="\/Semantic-Anchors\/anchor\/x">/)
-    expect(link).not.toMatch(/target=|<strong>|<em>/)
-    const text = link
-      .replace(/<[^>]+>/g, '')
-      .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(n))
+    // One plain link, no target, and no tags inside the link text.
+    const [, attrs, inner] = html.match(/<a ([^>]*)>([^<]*)<\/a>/)
+    expect(attrs).toBe('href="/Semantic-Anchors/anchor/x"')
+    expect(html).not.toMatch(/<strong>|<em>/)
+    const text = inner.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(n))
     expect(text).toBe('Foo a=b, c *x* _y_^')
   })
 
