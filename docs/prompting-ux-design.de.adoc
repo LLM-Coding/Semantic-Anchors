@@ -9,7 +9,7 @@ _Wie man UX- und UI-Design promptet -- belegt durch die Prior-Tests des Katalogs
 
 [NOTE]
 ====
-*Kurz gesagt.* Ohne Namen im Prompt gestaltet ein Modell nach seinen Voreinstellungen. „Modern“ oder „clean“ geben ihm keine Regel; ein Name gibt ihm einen ganzen Satz davon. Nenne pro Ebene einen Anker -- Stil oder Design-System, Layout und Schrift, Regeln für die Details, Verhalten der Bedienelemente, Barrierefreiheit -- und prüfe, ob die Ebenen zusammenpassen. Jede Aussage unten darüber, was Modelle tun, stammt aus einem Lauf im link:#/prior-tests[Prior-Test-Register]; jeder Lauf ging über Claude Haiku 5.5, Sonnet 5.5 und Opus 5.5 und verglich mit einer Baseline ohne den Anker.
+*Kurz gesagt.* Ohne Namen im Prompt gestaltet ein Modell nach seinen Voreinstellungen. „Modern“ oder „clean“ geben ihm keine Regel; ein Name gibt ihm einen ganzen Satz davon. Nenne pro Ebene einen Anker -- Stil oder Design-System, Layout und Schrift, Regeln für die Details, Verhalten der Bedienelemente, Barrierefreiheit -- und prüfe, ob die Ebenen zusammenpassen. Jede Aussage unten darüber, was Modelle tun, stammt aus einem Lauf im link:#/prior-tests[Prior-Test-Register]; jeder Lauf ging über Claude Haiku 5.5, Sonnet 5.5 und Opus 5.5 und verglich mit einer Baseline ohne den Anker -- bei zwei Ankern auf einer Ebene mit jedem Anker allein.
 ====
 
 == Das Modell hat schon ein Design
@@ -34,11 +34,11 @@ Eine Design-Entscheidung hat mehrere Ebenen, und jede Ebene hat Anker, die das M
 
 |Stil
 |link:#/anchor/swiss-style[Swiss Style], link:#/anchor/bauhaus[Bauhaus], link:#/anchor/neo-brutalism[Neo-Brutalism], link:#/anchor/glassmorphism[Glassmorphism], link:#/anchor/bento-grid[Bento Grid]
-|„Use Bauhaus design.“ ersetzte Fotos und Schreibschrift in sechs von sechs Läufen durch Kreis, Quadrat, Dreieck, eine geometrische Grotesk und die Primärfarben (28.10.2026)
+|„Use Bauhaus design.“ brachte in sechs von sechs Läufen Kreis, Quadrat, Dreieck, eine geometrische Grotesk und die Primärfarben statt Fotos und Schreibschrift; ein Lauf behielt ein handgezeichnetes Element (28.10.2026)
 
 |Design-System
 |link:#/anchor/material-design-3[Material Design 3], link:#/anchor/apple-human-interface-guidelines[Apple HIG], link:#/anchor/gov-uk-design-system[GOV.UK Design System], link:#/anchor/carbon-design-system[Carbon], link:#/anchor/fluent-2-design-system[Fluent 2], link:#/anchor/shadcn-ui[shadcn/ui] und weitere
-|Jeder der 66 Läufe mit Anker über elf Design-Systeme baute mit den echten Paketen und Komponenten des Systems; keine Baseline tat das (30.10.2026, Design-Systeme)
+|Jeder der 66 Läufe mit Anker über elf Design-Systeme baute mit den echten Paketen und Komponenten des Systems; keine Baseline tat das, außer Opus bei der US-Behördenaufgabe (30.10.2026, Design-Systeme)
 
 |Layout und Schrift
 |link:#/anchor/eight-point-grid[8-Point Grid], link:#/anchor/modular-scale[Modular Scale], link:#/anchor/every-layout[Every Layout], link:#/anchor/mobile-first[Mobile First], link:#/anchor/elements-of-typographic-style[Bringhurst]
@@ -72,7 +72,7 @@ Die link:#/style-gallery[Stil-Galerie] zeigt, was ein einzelner Name mit einer g
 
 Namen wie „Burger Menu“, „Datepicker“ oder „Accordion“ sagen dem Modell, was es bauen soll, nicht wie sich das Element verhält. https://component.gallery/[The Component Gallery] listet den gängigen Namen von 60 Bedienelementen und ihre Synonyme aus 95 Design-Systemen; der WAI-ARIA Authoring Practices Guide legt Tastaturbedienung und Rollen fest.
 
-Der Prior-Test vom 30.10.2026 zeigt, warum der zweite Schritt zählt. Alle sechs Baselines eines Account-Menüs nutzten bereits `role="menu"` und Pfeiltasten -- aber nur eine unterstützte Type-ahead. Mit „Follow the WAI-ARIA Authoring Practices Guide (APG).“ taten es sechs von sechs. Bei einer Website-Navigation mit zwei Dropdowns setzte eine Baseline Menü-Rollen ein, von denen der APG für Website-Navigation abrät; mit dem Anker wählten sechs von sechs das Disclosure-Pattern und nannten es.
+Der Prior-Test vom 30.10.2026 zeigt, warum der zweite Schritt zählt. Alle sechs Baselines eines Account-Menüs nutzten bereits `role="menu"` und Pfeiltasten -- aber nur eine unterstützte Type-ahead. Mit „Follow the WAI-ARIA Authoring Practices Guide (APG).“ taten es sechs von sechs. Bei einer Website-Navigation mit zwei Dropdowns setzte eine Baseline Menü-Rollen ein, wo der APG das Disclosure-Pattern empfiehlt; mit dem Anker wählten sechs von sechs das Disclosure-Pattern und nannten es.
 
 [source,text]
 ----
@@ -94,22 +94,22 @@ Viele Design-Begriffe haben eine Kurzform, die etwas anderes bedeutet. Die Prior
 |Carbon |Chemie, auf Haiku Googles Sprache Carbon |Carbon Design System
 |Polaris |dem Polarstern, auf allen Stufen |Shopify Polaris
 |Spectrum |Physik, auf allen Stufen |Adobe Spectrum
-|Lightning |Wetter, auf allen Stufen |Salesforce Lightning Design System (SLDS)
+|Lightning |Wetter |Salesforce Lightning Design System (SLDS)
 |===
 
-Die Quellen sind die Läufe vom 28.10.2026, 29.10.2026 und 30.10.2026 (Design-Systeme). Ein Name, der woandershin führt, funktioniert in einem Design-Prompt meist trotzdem, weil die Aufgabe Kontext liefert. Aber der volle Name kostet zwei Wörter und räumt den Zweifel aus.
+Die Quellen sind die Läufe vom 28.10.2026, 29.10.2026 und 30.10.2026 (Design-Systeme). In einem Design-Prompt liefert die Aufgabe Kontext, aber der volle Name kostet zwei Wörter und räumt den Zweifel aus.
 
 == Eine Aufgabe wählen, die der Stil nicht schon beantwortet
 
 Ein Anker kann nur ändern, was das Modell ohnehin nicht täte. Als wir Glassmorphism an der Now-Playing-Ansicht eines Musikplayers testeten, machten schon alle sechs Baselines den Hintergrund unscharf -- die Aufgabe zog den Stil selbst herbei, und dem Anker blieb nichts hinzuzufügen. Bei einer neutralen Aufgabe, einem Preisabschnitt, nutzte keine Baseline durchscheinende Karten, und mit „Use glassmorphism.“ taten es sechs von sechs (Lauf vom 29.10.2026).
 
-Für Design-Systeme gilt dasselbe. Opus baut einen US-Behördendienst schon ungefragt mit USWDS-Klassen und gibt einem britischen Behördendienst eine Startseite und eine Check-Answers-Seite (Läufe vom 30.10.2026 und 28.10.2026). Der Name hilft dort trotzdem: Er bringt Haiku und Sonnet dazu, dasselbe zu tun, und er ergänzt, was die Voreinstellung auslässt, etwa eine Frage pro Seite.
+Für Design-Systeme gilt dasselbe. Opus baut einen US-Behördendienst schon ungefragt mit USWDS-Klassen und gibt einem britischen Behördendienst eine Startseite und eine Check-Answers-Seite (Läufe vom 30.10.2026, Design-Systeme, und vom 28.10.2026). Der Name hilft dort trotzdem: Bei USWDS bringt er Haiku und Sonnet dazu, dasselbe zu tun, und bei GOV.UK ergänzt er, was die Voreinstellung auslässt, eine Frage pro Seite.
 
 == Zwei Anker auf einer Ebene: sagen, wie sie sich die Arbeit teilen
 
 Was passiert, wenn ein Prompt zwei Anker für dieselbe Ebene nennt? Wir haben es an den Aufgaben des Laufs vom 28.10.2026 getestet, jedes Paar gegen jeden Anker allein, zwei Läufe je Stufe (Lauf vom 30.10.2026, kombinierte Anker). Die Modelle lieferten keinen Brei. Sie lösten den Konflikt auf, und wie sie ihn auflösten, hängt von der Art der Anker ab.
 
-*Zwei Stile werden zu einer Mischung.* Mit „Use Neo-Brutalism and glassmorphism.“ trugen alle sechs Bäckerei-Seiten die Merkmale beider: schwarze Konturen und harte versetzte Schatten, dazu durchscheinende Flächen mit `backdrop-filter`. Die Modelle gaben jedem Stil eine Aufgabe. Auf Haiku:
+*Zwei Stile werden zu einer Mischung.* Mit „Use Neo-Brutalism and glassmorphism.“ trugen alle sechs Bäckerei-Seiten mindestens zwei Merkmale jedes Stils, etwa schwarze Konturen, harte versetzte Schatten, durchscheinende Flächen und `backdrop-filter`. Die Modelle gaben jedem Stil eine Aufgabe. Auf Haiku:
 
 [quote]
 ____
@@ -149,7 +149,7 @@ For each problem, name the heuristic and propose a fix.
 
 == Wo der Name nicht reicht, das System mitgeben
 
-Ein Name liefert dem Modell, was seine Trainingsdaten kennen, und Design-Systeme bewegen sich schneller als Trainingsdaten. Im Lauf zu den Design-Systemen vom 30.10.2026 schrieben die Modelle Polaris React, das Shopify zugunsten der Polaris Web Components abgekündigt hat; sie gestalteten Primer-Komponenten mit der Prop `sx`, die Primer React entfernt hat; und sie schrieben Klassen von SLDS 1, nicht die Styling Hooks von SLDS 2. Der Abschnitt „Aktueller Stand“ jedes Ankers sagt, wohin sich das System bewegt hat.
+Ein Name liefert dem Modell, was seine Trainingsdaten kennen, und Design-Systeme bewegen sich schneller als Trainingsdaten. Im Lauf zu den Design-Systemen vom 30.10.2026 schrieben die Modelle Polaris React, das Shopify zugunsten der Polaris Web Components abgekündigt hat; sie gestalteten Primer-Komponenten mit der Prop `sx`, die Primer React entfernt hat; und sie schrieben SLDS-Klassen ohne Lightning Web Components. Der Abschnitt „Aktueller Stand“ jedes Ankers sagt, wohin sich das System bewegt hat.
 
 Zwei Wege schließen die Lücke:
 

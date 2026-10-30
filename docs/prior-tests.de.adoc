@@ -830,7 +830,7 @@ Die Einleitung zu UX & Visual Design rät, dem Modell für ein Design-System ohn
 |Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark)
 |Verfahren |Nur Aktionsproben, kein P1, P2 oder P4: Die Anker wurden am 28.10.2026 getestet. Aufgabe A jenes Laufs (Landingpage einer Bäckerei) mit Neo-Brutalism, Glassmorphism und beidem; Aufgabe B (Einstellungsseite einer mobilen Notiz-App) mit Material Design 3, Apple HIG und beidem. Zwei Läufe je Fall und Stufe, 36 Proben, 1,35 USD
 |Reinraum |Wie in den Läufen vom 30.10.2026
-|Auswertung |Drei Merkmale je Anker: bei Neo-Brutalism schwarze Rahmen, harte Schatten ohne Weichzeichner und der Name; bei Glassmorphism `backdrop-filter`, durchscheinende weiße Flächen und der Name; bei Material 3 Surface-Rollen, Surface Container und Tonal oder Dynamic Color; bei der HIG 44-Punkt-Ziele, SF Pro oder SF Symbols sowie Large Titles, Dynamic Type oder Inset-Grouped-Listen. Plattform: Android oder Compose, iOS oder SwiftUI in der Antwort
+|Auswertung |Drei Merkmale je Anker: bei Neo-Brutalism schwarze Rahmen, harte versetzte Schatten ohne Weichzeichner und der Name; bei Glassmorphism `backdrop-filter`, durchscheinende weiße Flächen und der Name; bei Material 3 Surface-Rollen, Surface Container und Tonal oder Dynamic Color; bei der HIG 44-Punkt-Ziele, SF Pro oder SF Symbols sowie Large Titles, Dynamic Type oder Inset-Grouped-Listen. Plattform: Android oder Compose, iOS oder SwiftUI in der Antwort
 |===
 
 [cols="2,4"]
@@ -838,7 +838,7 @@ Die Einleitung zu UX & Visual Design rät, dem Modell für ein Design-System ohn
 |Paar |Ergebnis
 
 |Neo-Brutalism und Glassmorphism |Allein zeigte jeder Stil in sechs von sechs Läufen seine drei Merkmale und keines des anderen. Zusammen zeigten sechs von sechs Läufen beide: mindestens zwei Merkmale von Neo-Brutalism und mindestens zwei von Glassmorphism. Die Modelle gaben jedem Stil eine Rolle; auf Haiku: „Loud, tactile neo-brutalism for the structure, with glassmorphism for the layered surfaces.“
-|Material Design 3 und Apple HIG |Allein erzeugte Material 3 in sechs von sechs Läufen Android-Code, die HIG in sechs von sechs iOS-Code. Zusammen schrieben sechs von sechs Läufe zwei Fassungen, Jetpack Compose für Android und SwiftUI für iOS, jede nach ihrem eigenen System. Das Paar wurde als Auftrag für beide Plattformen gelesen
+|Material Design 3 und Apple HIG |Allein erzeugte Material 3 in sechs von sechs Läufen Android-Code, die HIG in sechs von sechs iOS-Code. Zusammen schrieben sechs von sechs Läufen zwei Fassungen, Jetpack Compose für Android und SwiftUI für iOS, jede nach ihrem eigenen System. Das Paar wurde als Auftrag für beide Plattformen gelesen
 |===
 
 Die erste Gliederung von #867 erwartete Brei. Die Modelle lösten den Konflikt stattdessen auf: bei zwei Stilen nach Rollen, bei zwei Design-Systemen nach Plattformen. Der Artikel rät deshalb, zu sagen, wie sich zwei Anker die Arbeit teilen, weil sonst das Modell entscheidet.
