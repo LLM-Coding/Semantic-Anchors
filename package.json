@@ -12,7 +12,8 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "generate-llms-txt": "node scripts/generate-llms-txt.js",
     "render-docs": "node scripts/render-docs.js",
-    "build": "npm run extract-metadata && npm run generate-llms-txt && npm run render-docs && npm run generate-sitemap"
+    "build": "npm run extract-metadata && npm run generate-llms-txt && npm run generate-style-gallery && npm run render-docs && npm run generate-sitemap",
+    "generate-style-gallery": "node scripts/generate-style-gallery.js"
   },
   "keywords": [],
   "author": "",

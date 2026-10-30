@@ -18,8 +18,8 @@ describe('example image: modal and pre-rendered page agree', () => {
     expect(constant(modal, 'SAFE_EXAMPLE_IMAGE')).toBe(constant(lib, 'SAFE_NAME'))
   })
 
-  it('link to the same blog post', () => {
-    expect(constant(modal, 'EXAMPLE_IMAGES_BLOG_URL')).toBeTruthy()
-    expect(constant(modal, 'EXAMPLE_IMAGES_BLOG_URL')).toBe(constant(lib, 'BLOG_URL'))
+  it('link to the same gallery page (#872)', () => {
+    expect(constant(modal, 'EXAMPLE_GALLERY_PATH')).toBeTruthy()
+    expect(constant(modal, 'EXAMPLE_GALLERY_PATH')).toBe(constant(lib, 'GALLERY_PATH'))
   })
 })

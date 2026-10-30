@@ -20,6 +20,16 @@ describe('renderInlineLinks', () => {
     )
   })
 
+  it('keeps site-internal links in the same tab (#872)', () => {
+    expect(renderInlineLinks('[Gallery](/Semantic-Anchors/style-gallery)')).toBe(
+      '<a href="/Semantic-Anchors/style-gallery">Gallery</a>'
+    )
+  })
+
+  it('does not treat other root-relative paths as links', () => {
+    expect(renderInlineLinks('[x](/etc/passwd) [y](//evil.example)')).not.toContain('<a ')
+  })
+
   it('escapes HTML in the text', () => {
     expect(renderInlineLinks('<b>bold</b> & co')).toBe('&lt;b&gt;bold&lt;/b&gt; &amp; co')
   })
@@ -63,11 +73,22 @@ describe('category intros (#869)', () => {
     expect(missing).toEqual([])
   })
 
-  it('only use https links', () => {
+  it('only use https links or site-internal paths', () => {
     const targets = Object.values(intros)
       .flatMap((i) => Object.values(i))
       .flatMap((text) => [...text.matchAll(/\]\(([^)]+)\)/g)].map((m) => m[1]))
-    expect(targets.filter((t) => !t.startsWith('https://'))).toEqual([])
+    expect(
+      targets.filter((t) => !t.startsWith('https://') && !t.startsWith('/Semantic-Anchors/'))
+    ).toEqual([])
+  })
+
+  it('link the style gallery from UX & Visual Design in the matching language', () => {
+    expect(getCategoryIntroHtml(intros, 'ux-visual-design', 'en')).toContain(
+      'href="/Semantic-Anchors/style-gallery"'
+    )
+    expect(getCategoryIntroHtml(intros, 'ux-visual-design', 'de')).toContain(
+      'href="/Semantic-Anchors/de/style-gallery"'
+    )
   })
 
   it('link the Component Gallery and the APG in UX & Visual Design', () => {

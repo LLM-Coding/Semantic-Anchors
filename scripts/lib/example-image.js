@@ -12,6 +12,8 @@ const path = require('path')
 
 const BASE = '/Semantic-Anchors/'
 const BLOG_URL = 'https://rdmueller.github.io/pages/blog/design-anchors.html'
+// The caption links the style gallery (#872); the gallery links the blog post.
+const GALLERY_PATH = 'style-gallery'
 // A bare file name inside website/public/examples/ — no paths, raster formats only.
 const SAFE_NAME = /^[a-z0-9][a-z0-9-]*\.(webp|jpg|jpeg|png)$/
 
@@ -89,7 +91,7 @@ function exampleImageHtml(name, title, lang) {
     `<figure class="anchor-example-image">` +
     `<img src="${BASE}examples/${name}" alt="${escapeHtml(alt)}" width="720" height="900" loading="lazy" decoding="async">` +
     `<figcaption>${escapeHtml(tr['anchor.exampleImageCaption'])} ` +
-    `<a href="${BLOG_URL}">${escapeHtml(tr['anchor.exampleImageLink'])}</a></figcaption>` +
+    `<a href="${BASE}${lang === 'de' ? 'de/' : ''}${GALLERY_PATH}">${escapeHtml(tr['anchor.exampleImageLink'])}</a></figcaption>` +
     `</figure>\n`
   )
 }
