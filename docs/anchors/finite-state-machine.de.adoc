@@ -5,6 +5,7 @@
 :tags: Finite State Machine, FSM, endlicher Automat, Zustandsautomat, Zustandsmaschine, Zustand, Ereignis, Transition, Zustandsübergangstabelle, Guard, Mealy-Automat, Moore-Automat, Statecharts, UML-Zustandsdiagramm, Zustandsexplosion
 :related: gof-state-pattern, blink-without-delay, ears-requirements
 :tier: 3
+:definition: Eine Finite State Machine (endlicher Automat) ist ein Verhaltensmodell aus einer endlichen, benannten Menge von Zuständen und den Ereignissen, die Übergänge zwischen ihnen auslösen; George H. Mealy (1955) und Edward F. Moore (1956) definierten ihre beiden klassischen Ausgabemodelle. Eine Übergangstabelle listet jede Kombination aus Zustand und Ereignis, sodass jede Zelle zur ausdrücklichen Entscheidung wird. David Harels Statecharts ergänzen Hierarchie und Nebenläufigkeit und liegen den UML-Zustandsautomaten zugrunde.
 :prior-test: 2026-10-09
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

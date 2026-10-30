@@ -5,6 +5,7 @@
 :related: testing-pyramid, mutation-testing
 :tags: safety, functional-safety, SIL, standards, certification, risk-assessment
 :tier: 3
+:definition: IEC 61508 Safety Integrity Levels are four classes of risk reduction, SIL 1 to SIL 4, defined in the IEC standard for the functional safety of electrical, electronic, and programmable electronic safety-related systems. Hazard analysis and risk assessment determine the required level, and each level sets a band for the probability of failure on demand (PFD). The standard also sets hardware and software requirements and a safety lifecycle from concept to decommissioning.
 
 [%collapsible]
 ====

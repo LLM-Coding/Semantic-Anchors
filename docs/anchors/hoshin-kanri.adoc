@@ -5,6 +5,7 @@
 :proponents: Yoji Akao, Thomas L. Jackson
 :tags: strategy-deployment, lean, alignment, x-matrix, catchball
 :tier: 3
+:definition: Hoshin Kanri (“direction management”), also called Policy or Strategy Deployment, is a strategic planning method from Japanese manufacturing that aligns a whole organisation behind a few breakthrough objectives. Long-term True North goals become annual priorities, which a one-page X-Matrix links to improvement priorities, metrics, and owners. Catchball negotiates goals between levels, and regular PDCA reviews keep the strategy adapted to reality.
 
 [%collapsible]
 ====

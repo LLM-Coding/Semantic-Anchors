@@ -5,6 +5,7 @@
 :proponents: Tim Pope
 :tags: git, commit-messages, version-control, conventions, readability
 :tier: 3
+:definition: The 50/72 Rule is a convention for Git commit messages, popularized by Tim Pope and codified by Chris Beams as the Seven Rules. It asks for an imperative subject line of about 50 characters, a blank line, and a body wrapped at 72 characters that explains why the change was made, not how.
 
 [%collapsible]
 ====

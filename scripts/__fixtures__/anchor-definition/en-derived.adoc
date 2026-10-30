@@ -1,0 +1,14 @@
+= Sample Anchor
+:categories: testing-quality
+:roles: software-developer
+:proponents: Jane Doe
+
+[%collapsible]
+====
+Full Name:: Sample Anchor -- an anchor used only in tests
+
+[discrete]
+== *Core Concepts*:
+
+First term:: A derived English definition text, long enough for the answer block.
+====

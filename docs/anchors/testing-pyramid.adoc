@@ -5,6 +5,7 @@
 :tags: testing pyramid, unit tests, integration tests, e2e, test strategy, Mike Cohn
 :related: tdd-london-school, tdd-chicago-school, mutation-testing
 :tier: 3
+:definition: The Testing Pyramid is Mike Cohn’s model, from Succeeding with Agile (2009), for distributing a test suite across three layers. Many fast, isolated unit tests form the base, a moderate number of integration tests the middle, and a few end-to-end tests the top. Because lower layers are cheaper and give faster feedback, nothing should be tested through the UI that can be tested in isolation.
 
 [%collapsible]
 ====

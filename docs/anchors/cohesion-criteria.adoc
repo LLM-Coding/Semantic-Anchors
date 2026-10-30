@@ -5,6 +5,7 @@
 :proponents: Larry Constantine, Edward Yourdon
 :tags: cohesion, coupling, module design, structured design, code quality
 :tier: 2
+:definition: The Cohesion Criteria are a seven-level scale by Larry Constantine and Edward Yourdon for rating how strongly the elements of a module belong together. It runs from coincidental cohesion, the worst, through logical, temporal, procedural, communicational, and sequential cohesion to functional cohesion, the ideal, and lets you judge module quality by concrete criteria instead of gut feeling.
 
 [%collapsible]
 ====

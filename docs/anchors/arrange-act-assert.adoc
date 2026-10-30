@@ -5,6 +5,7 @@
 :tags: Arrange-Act-Assert, 3A, unit test structure, test readability, Four-Phase Test, fixture setup, exercise SUT, result verification, teardown, one assert per test, single condition test, Given-When-Then, Build-Operate-Check
 :related: bdd-given-when-then, gherkin, test-double-meszaros, red-green-tdd, test-data-builder
 :tier: 3
+:definition: Arrange-Act-Assert is a structure for the body of a single unit test, named by Bill Wake: set up the object under test, perform exactly one action on it, then make claims about the result. It matches the first three phases of Gerard Meszaros' Four-Phase Test and leaves teardown implicit; a second action means a second test.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

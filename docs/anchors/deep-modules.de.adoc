@@ -5,6 +5,7 @@
 :proponents: John Ousterhout
 :tags: modularity, abstraction, interface, complexity, information-hiding
 :tier: 2
+:definition: Deep Modules ist John Ousterhouts Entwurfsprinzip aus A Philosophy of Software Design: Ein Modul soll viel Funktionalität hinter einer kleinen, stabilen Schnittstelle bieten. Weil jedes Schnittstellenelement Kosten für den Aufrufer bedeutet, verbergen tiefe Module Entwurfsentscheidungen, die sich wahrscheinlich ändern. Flache Module, deren Schnittstelle fast so komplex ist wie ihre Implementierung, verschieben die Komplexität auf den Aufrufer.
 
 [%collapsible]
 ====

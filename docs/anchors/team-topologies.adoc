@@ -5,6 +5,7 @@
 :proponents: Matthew Skelton, Manuel Pais
 :tags: org-design, team-structure, cognitive-load, conways-law, flow, feedback
 :tier: 2
+:definition: Team Topologies is a model by Matthew Skelton and Manuel Pais (2019) for organizing business and technology teams for fast flow. It defines four team types — stream-aligned, enabling, complicated-subsystem, and platform — and three interaction modes: collaboration, X-as-a-Service, and facilitating. Team boundaries are designed deliberately to limit cognitive load and, following Conway’s Law, to align architecture with organization structure.
 
 [%collapsible]
 ====

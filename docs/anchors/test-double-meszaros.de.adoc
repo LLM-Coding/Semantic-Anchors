@@ -3,6 +3,7 @@
 :roles: software-developer, qa-engineer, educator
 :proponents: Gerard Meszaros
 :tier: 3
+:definition: Test Double ist Gerard Meszaros’ Oberbegriff aus „xUnit Test Patterns“ (2007) für jedes Objekt, das im Test eine echte Abhängigkeit ersetzt. Seine Taxonomie unterscheidet fünf Arten: Der Dummy füllt eine Parameterliste, der Stub liefert vorgefertigte Antworten, der Spy zeichnet Aufrufe auf, der Mock verifiziert erwartete Interaktionen, und der Fake ist eine vereinfachte, funktionierende Implementierung. Das präzise Vokabular verhindert Verwechslungen, etwa einen Stub „Mock“ zu nennen.
 :related: tdd-london-school, tdd-chicago-school, property-based-testing
 :tags: test-double, mock, stub, spy, fake, dummy, xunit, testing, isolation
 

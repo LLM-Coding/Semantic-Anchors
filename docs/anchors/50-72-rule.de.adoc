@@ -5,6 +5,7 @@
 :proponents: Tim Pope
 :tags: git, commit-messages, version-control, conventions, readability
 :tier: 3
+:definition: Die 50/72 Rule ist eine Konvention für Git-Commit-Nachrichten, von Tim Pope geprägt und verbreitet, von Chris Beams als „Seven Rules“ kodifiziert. Sie verlangt eine Betreffzeile im Imperativ mit etwa 50 Zeichen, eine Leerzeile und einen bei 72 Zeichen umbrochenen Textkörper, der erklärt, warum sich etwas geändert hat, nicht wie.
 
 [%collapsible]
 ====

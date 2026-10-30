@@ -5,6 +5,7 @@
 :proponents: Mark Jason Dominus, Eric S. Raymond
 :tags: communication, troubleshooting, requirements, problem-framing, anti-pattern
 :tier: 3
+:definition: Das XY Problem ist ein Kommunikations-Anti-Pattern, das Mark Jason Dominus 2001 benannte: Jemand will Problem X lösen, legt sich auf Lösung Y fest und fragt nur nach Y. Weil X verborgen bleibt, kann der Helfer nicht beurteilen, ob Y X löst oder ob es einen einfacheren Weg gibt. Abhilfe schafft die Frage nach dem eigentlichen Ziel – oder als Fragender: erst X nennen, dann Y, dann den Blocker.
 
 [%collapsible]
 ====

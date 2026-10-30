@@ -5,6 +5,7 @@
 :tags: ADR, architecture decision record, Nygard, decision documentation, architecture decisions
 :related: madr, arc42, c4-diagrams
 :tier: 3
+:definition: An Architecture Decision Record according to Michael Nygard is a short, lightweight record of an architecture decision with a fixed structure: Title, Status, Context, Decision, and Consequences. ADRs are stored with the code and never deleted, only superseded, so a team can later understand why past decisions were made.
 
 [%collapsible]
 ====

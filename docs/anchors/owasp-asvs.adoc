@@ -5,6 +5,7 @@
 :tags: OWASP ASVS, Application Security Verification Standard, ASVS L1, ASVS L2, ASVS L3, verification level, security requirements, requirement ID, application security, security review, pass/fail checklist
 :related: owasp-top-10, stride, linddun, regulated-environment
 :tier: 2
+:definition: The OWASP Application Security Verification Standard (ASVS) is the OWASP Foundation's catalogue of individually numbered, testable application security requirements, phrased as "Verify that…". It defines three levels — L1 as minimum baseline, L2 for applications handling sensitive data, L3 for high-assurance systems — and chapters from authentication to APIs. A review thus gets a defined scope and pass/fail results; citations must name level and version.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

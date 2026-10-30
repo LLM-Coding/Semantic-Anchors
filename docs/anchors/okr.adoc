@@ -5,6 +5,7 @@
 :proponents: Andy Grove, John Doerr
 :tags: goal-setting, objectives, key-results, alignment, okr
 :tier: 2
+:definition: OKR (Objectives and Key Results) is a goal-setting framework that Andy Grove originated at Intel as iMBO and John Doerr introduced to Google in 1999 and popularized in "Measure What Matters" (2018). Each qualitative, inspirational Objective is paired with typically three to five measurable Key Results. OKRs are usually set quarterly, kept public for alignment, graded from 0 to 1, and decoupled from compensation.
 
 [%collapsible]
 ====

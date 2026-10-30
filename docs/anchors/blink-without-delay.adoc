@@ -5,6 +5,7 @@
 :tags: BlinkWithoutDelay, Arduino, millis, non-blocking, delay, superloop, cooperative multitasking, timing, embedded, unsigned overflow, rollover, microcontroller
 :related: finite-state-machine, misra-c
 :tier: 3
+:definition: BlinkWithoutDelay is the built-in Arduino example sketch, created by David A. Mellis, that blinks an LED by comparing millis() timestamps instead of calling delay(). It stands for non-blocking timing in a superloop: each task keeps its own timestamp and interval, checks the elapsed time with overflow-safe subtraction on every pass, and nothing ever waits.
 :prior-test: 2026-10-09
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

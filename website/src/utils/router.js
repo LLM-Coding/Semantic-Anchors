@@ -49,6 +49,8 @@ const ROUTE_TITLES = {
   '/training-data-vs-practice':
     'An Anchor Delivers Only as Far as the Prior Reaches — Semantic Anchors',
   '/style-gallery': 'Design Styles Compared — Semantic Anchors',
+  '/prompting-ux-design':
+    'A Design Prompt Works When It Names One Anchor per Layer — Semantic Anchors',
   '/evaluations': 'Evaluations — Semantic Anchors',
   '/contributing': 'Contributing — Semantic Anchors',
   '/changelog': 'Changelog — Semantic Anchors',

@@ -5,6 +5,7 @@
 :proponents: Bill Wake
 :tags: user-stories, agile, scrum, acceptance-criteria, story-quality
 :tier: 3
+:definition: INVEST is a mnemonic checklist for the quality of user stories, from Bill Wake’s “INVEST in Good Stories, and SMART Tasks” (2003). A good story is Independent, Negotiable, Valuable, Estimable, Small, and Testable. Teams use it to judge whether a story is ready for a sprint or must first be split or refined.
 
 [%collapsible]
 ====

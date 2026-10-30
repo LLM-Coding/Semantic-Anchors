@@ -5,6 +5,7 @@
 :tags: DMADV, DFSS, Design for Six Sigma, define measure analyze design verify, Produktentwicklung, CTQ, QFD, House of Quality, Designverifikation, Tollgate
 :related: dmaic, fmea, sipoc, pugh-matrix, kano-model, qfd
 :tier: 3
+:definition: DMADV – Define, Measure, Analyze, Design, Verify – ist die Six-Sigma-Roadmap für den Entwurf eines neuen Produkts, einer Dienstleistung oder eines Prozesses, auch Design for Six Sigma (DFSS) genannt. Sie übersetzt die Voice of the Customer in messbare CTQs, vergleicht Entwurfskonzepte, sagt die Fähigkeit je CTQ aus Modellen voraus und prüft diese Vorhersage an Pilotmaterial. So entsteht Qualität schon im Entwurf, statt wie bei DMAIC einen bestehenden Prozess zu verbessern.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

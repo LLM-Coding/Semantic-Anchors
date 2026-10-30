@@ -28,6 +28,7 @@
     ],
     "filePath": "docs/anchors/4mat.adoc",
     "tier": 3,
+    "definition": "4MAT is an instructional design system by Bernice McCarthy that structures teaching as a four-quadrant learning cycle: Why, What, How, and What If. It moves learners from relevance and motivation through facts and concepts to practical application and transfer, so that one session serves innovative, analytic, common-sense, and dynamic learners alike.",
     "addedAt": "2026-04-12T13:39:43+02:00"
   },
   {
@@ -57,6 +58,7 @@
     ],
     "filePath": "docs/anchors/50-72-rule.adoc",
     "tier": 3,
+    "definition": "The 50/72 Rule is a convention for Git commit messages, popularized by Tim Pope and codified by Chris Beams as the Seven Rules. It asks for an imperative subject line of about 50 characters, a blank line, and a body wrapped at 72 characters that explains why the change was made, not how.",
     "addedAt": "2026-07-01T09:57:48+02:00"
   },
   {
@@ -111,6 +113,7 @@
         "works": true
       }
     ],
+    "definition": "A3 Problem Solving is a problem-solving method from Toyota, set out by John Shook in Managing to Learn, that tells the story of one problem on a single sheet in a fixed sequence. It runs from background and current condition through goal, root cause analysis, and countermeasures to an implementation plan and follow-up: PDCA on one page, rewritten in dialogue with a mentor.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -142,6 +145,7 @@
     ],
     "filePath": "docs/anchors/addie-model.adoc",
     "tier": 3,
+    "definition": "The ADDIE Model is a generic process for instructional design, originating at Florida State University and codified by Robert Maribe Branch, named after its five phases: Analysis, Design, Development, Implementation, and Evaluation. It leads from clarifying the learning need to delivering and assessing the instruction; modern versions draw it as a cycle in which Evaluation feeds back into every phase.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -232,6 +236,7 @@
     ],
     "filePath": "docs/anchors/adr-according-to-nygard.adoc",
     "tier": 3,
+    "definition": "An Architecture Decision Record according to Michael Nygard is a short, lightweight record of an architecture decision with a fixed structure: Title, Status, Context, Decision, and Consequences. ADRs are stored with the code and never deleted, only superseded, so a team can later understand why past decisions were made.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -264,6 +269,7 @@
       "attention-interest-desire-action"
     ],
     "filePath": "docs/anchors/aida-model.adoc",
+    "definition": "The AIDA Model — Attention, Interest, Desire, Action — is a persuasion sequence for copywriting and sales, commonly attributed to E. St. Elmo Lewis. It leads the audience through four ordered, narrowing stages, from capturing awareness to a single, clear call to action. It is a heuristic, not a measured model of buyer psychology.",
     "addedAt": "2026-06-03T22:41:27+02:00"
   },
   {
@@ -532,6 +538,7 @@
         "works": true
       }
     ],
+    "definition": "Arrange-Act-Assert is a structure for the body of a single unit test, named by Bill Wake: set up the object under test, perform exactly one action on it, then make claims about the result. It matches the first three phases of Gerard Meszaros' Four-Phase Test and leaves teardown implicit; a second action means a second test.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -893,6 +900,7 @@
     ],
     "filePath": "docs/anchors/big-five.adoc",
     "tier": 2,
+    "definition": "The Big Five, or Five-Factor Model, is a trait model of personality that goes back to Lewis R. Goldberg and to Paul T. Costa and Robert R. McCrae. It describes people along five continuous dimensions — Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism (OCEAN) — instead of sorting them into types. The model is descriptive and predictive, not causal.",
     "addedAt": "2026-07-06T23:02:34+02:00"
   },
   {
@@ -940,6 +948,7 @@
         "works": true
       }
     ],
+    "definition": "BlinkWithoutDelay is the built-in Arduino example sketch, created by David A. Mellis, that blinks an LED by comparing millis() timestamps instead of calling delay(). It stands for non-blocking timing in a superloop: each task keeps its own timestamp and interval, checks the elapsed time with overflow-safe subtraction on every pass, and nothing ever waits.",
     "addedAt": "2026-10-09T10:51:36+02:00"
   },
   {
@@ -1201,6 +1210,7 @@
     ],
     "filePath": "docs/anchors/c4-diagrams.adoc",
     "tier": 3,
+    "definition": "The C4 model is Simon Brown's approach to software architecture diagrams at four levels of abstraction: Context, Container, Component, and Code. Readers zoom from a system in its environment down to its classes, with a simple boxes-and-arrows notation and different diagrams for different stakeholders.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -1415,6 +1425,7 @@
     ],
     "filePath": "docs/anchors/circuit-breaker.adoc",
     "tier": 2,
+    "definition": "The Circuit Breaker is a stability pattern introduced by Michael Nygard in Release It! and popularized further by Martin Fowler. It guards calls to a protected resource and trips once failures cross a threshold, so further calls fail fast instead of blocking; after a reset timeout it lets a trial call through to test recovery. This prevents resource exhaustion and cascading failure.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -1547,6 +1558,7 @@
     ],
     "filePath": "docs/anchors/cohesion-criteria.adoc",
     "tier": 2,
+    "definition": "The Cohesion Criteria are a seven-level scale by Larry Constantine and Edward Yourdon for rating how strongly the elements of a module belong together. It runs from coincidental cohesion, the worst, through logical, temporal, procedural, communicational, and sequential cohesion to functional cohesion, the ideal, and lets you judge module quality by concrete criteria instead of gut feeling.",
     "addedAt": "2026-04-07T16:00:53+02:00"
   },
   {
@@ -1645,6 +1657,7 @@
         "works": true
       }
     ],
+    "definition": "The Connextra user story format is the three-part user story template devised at Connextra in London and popularised by Mike Cohn: “As a …, I want …, so that …”. Its three slots name who, what, and why. It fixes the shape of the sentence, not the quality of the story, and the card stands for a conversation rather than the requirement itself.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -1676,6 +1689,7 @@
     ],
     "filePath": "docs/anchors/consent-vs-consensus.adoc",
     "tier": 3,
+    "definition": "Consent vs. Consensus is the distinction between two group decision rules; consent was formalized in Gerard Endenburg's sociocracy and Brian Robertson's Holacracy. Consensus needs everyone to actively agree, consent only the absence of a paramount, reasoned objection — good enough for now, safe enough to try. Valid objections are integrated into an amended proposal instead of acting as a veto.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -1707,6 +1721,7 @@
     ],
     "filePath": "docs/anchors/control-chart-shewhart.adoc",
     "tier": 3,
+    "definition": "The Shewhart Control Chart is a time-series diagram developed by Walter A. Shewhart at Bell Labs and Western Electric, and the central tool of Statistical Process Control. It plots a measured value around a centerline with upper and lower control limits, typically at ±3σ, to separate the common-cause variation of a stable process from assignable special causes.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -1837,6 +1852,7 @@
     ],
     "filePath": "docs/anchors/crc-cards.adoc",
     "tier": 3,
+    "definition": "CRC Cards — Class-Responsibility-Collaboration Cards — are a low-tech object-oriented design technique by Ward Cunningham and Kent Beck that puts one class on each index card, with its responsibilities on the left and its collaborators on the right. Teams walk through scenarios by role-playing the cards and so discover and refine classes before writing code.",
     "addedAt": "2026-03-29T15:12:41+00:00"
   },
   {
@@ -2087,6 +2103,7 @@
     ],
     "filePath": "docs/anchors/decisional-balance-sheet.adoc",
     "tier": 3,
+    "definition": "The Decisional Balance Sheet is a decision aid formalized by Irving Janis and Leon Mann that lists, for each alternative, gains and losses for self and for significant others, self-approval or disapproval, and approval or disapproval from others. Its everyday ancestor is Benjamin Franklin's two-column pros-and-cons list. Its main purpose is to surface unspoken concerns and resolve ambivalence, not to mechanise the choice.",
     "addedAt": "2026-05-13T21:12:43+02:00"
   },
   {
@@ -2117,6 +2134,7 @@
     ],
     "filePath": "docs/anchors/deep-modules.adoc",
     "tier": 2,
+    "definition": "Deep Modules is John Ousterhout's design principle from A Philosophy of Software Design: a module should offer a lot of functionality behind a small, stable interface. Because every interface element is a cost callers must pay, deep modules hide design decisions likely to change, while shallow modules, whose interface is nearly as complex as their implementation, push complexity onto callers.",
     "addedAt": "2026-07-01T09:57:48+02:00"
   },
   {
@@ -2166,6 +2184,7 @@
         "works": true
       }
     ],
+    "definition": "Defense in Depth is a security strategy, adapted from military doctrine and set out for information assurance in an NSA paper, that protects a system with several layers of controls across people, technology, and operations. The layers count only if they are independent and diverse and each assumes the one before it has already been breached; detection and recovery are layers too.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -2280,6 +2299,7 @@
     ],
     "filePath": "docs/anchors/design-by-contract.adoc",
     "tier": 2,
+    "definition": "Design by Contract is a design approach by Bertrand Meyer, coined for the Eiffel language, that treats each routine as a contract between caller and implementation. Preconditions state the caller's obligations, postconditions the routine's guarantees, and class invariants the conditions every instance keeps; a violated clause shows which side holds the bug.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -2400,6 +2420,7 @@
     ],
     "filePath": "docs/anchors/diataxis-framework.adoc",
     "tier": 3,
+    "definition": "Diátaxis is Daniele Procida's framework for organizing technical documentation into four types: tutorials, how-to guides, reference, and explanation. The types follow two dimensions, practical versus theoretical and learning versus working, so each serves a distinct user need and has its own quality criteria.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -2494,6 +2515,7 @@
     "filePath": "docs/anchors/disc-model.adoc",
     "tier": 1,
     "advisory": "Classified as pseudoscience with no demonstrated predictive validity — use for reflection and dialogue, not selection (see Criticism)",
+    "definition": "The DISC Model is a theory of behavioural styles that William Moulton Marston proposed in 1928. In its modern form it sorts behaviour into four quadrants — Dominance, Influence, Steadiness, and Conscientiousness — which arise from two axes: how a person perceives the environment and how much control they feel within it. It describes communication style, not ability, and its scientific validity has not been demonstrated.",
     "addedAt": "2026-07-07T06:48:54+02:00"
   },
   {
@@ -2547,6 +2569,7 @@
         "works": true
       }
     ],
+    "definition": "DMADV — Define, Measure, Analyze, Design, Verify — is the Six Sigma roadmap for designing a new product, service, or process, also known as Design for Six Sigma (DFSS). It turns the Voice of the Customer into measurable CTQs, compares design concepts, predicts each CTQ’s capability from models, and verifies that prediction on pilot output. It builds quality in at the design stage instead of improving an existing process, as DMAIC does.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -2584,6 +2607,7 @@
     ],
     "filePath": "docs/anchors/dmaic.adoc",
     "tier": 3,
+    "definition": "DMAIC — Define, Measure, Analyze, Improve, Control — is the Six Sigma improvement cycle for existing processes, standardised in ISO 13053-1:2011. Its five phases run in fixed order behind formal tollgates: define the problem, establish a measured baseline, validate root causes against the data, pilot solutions, and hold the gain with a control plan. Its distinguishing trait is that sustaining the improvement is a phase of its own.",
     "addedAt": "2026-07-24T20:50:56+02:00"
   },
   {
@@ -2772,6 +2796,7 @@
     ],
     "filePath": "docs/anchors/dreyfus-skill-acquisition.adoc",
     "tier": 3,
+    "definition": "The Dreyfus Model of Skill Acquisition is a five-stage model of how adults acquire skill, published by Stuart E. and Hubert L. Dreyfus in 1980. Learners move from Novice through Advanced Beginner, Competent, and Proficient to Expert, shifting from rigid, context-free rule-following to fluid, intuitive pattern recognition. Each stage needs a different kind of guidance: novices want rules, experts want holistic context.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -2835,6 +2860,7 @@
     ],
     "filePath": "docs/anchors/ears-requirements.adoc",
     "tier": 3,
+    "definition": "EARS — the Easy Approach to Requirements Syntax — is a set of sentence templates for writing requirements, with Alistair Mavin (Rolls-Royce) as its key proponent. It offers five patterns: ubiquitous (“The system shall …”), event-driven (WHEN), unwanted behaviour (IF … THEN), state-driven (WHILE), and optional feature (WHERE). The consistent structure makes each requirement clear and verifiable.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -2863,6 +2889,7 @@
     ],
     "filePath": "docs/anchors/effective-go.adoc",
     "tier": 3,
+    "definition": "Effective Go is the Go Authors’ guide to writing idiomatic Go, written for the language’s release in 2009. It covers gofmt formatting, package names, defer, goroutines and channels (“share memory by communicating”), implicitly satisfied interfaces, errors as values, and composition through embedding. It remains a guide to the core language but is not actively updated and does not cover modules or generics.",
     "addedAt": "2026-03-31T16:15:17+00:00"
   },
   {
@@ -3470,6 +3497,7 @@
         "works": true
       }
     ],
+    "definition": "A finite state machine is a model of behaviour built from a finite, named set of states and the events that trigger transitions between them; George H. Mealy (1955) and Edward F. Moore (1956) defined its two classic output models. A transition table lists every combination of state and event, so each cell becomes an explicit decision. David Harel’s statecharts add hierarchy and concurrency and underlie UML state machines.",
     "addedAt": "2026-10-09T10:51:36+02:00"
   },
   {
@@ -3705,6 +3733,7 @@
         "works": true
       }
     ],
+    "definition": "The 4+1 View Model is Philippe Kruchten’s scheme for describing software architecture, published in IEEE Software in 1995. It describes a system through four views — logical, development, process, and physical — each answering the question of a named audience, plus a small set of key scenarios. The scenarios help discover architectural elements and then cross-check the four views for consistency.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -3765,6 +3794,7 @@
     ],
     "filePath": "docs/anchors/fowler-patterns.adoc",
     "tier": 3,
+    "definition": "Patterns of Enterprise Application Architecture (PEAA) is Martin Fowler’s 2002 catalog of patterns for building enterprise applications. It groups them into domain logic, data source, object-relational, web presentation, distribution, offline concurrency, session state, and base patterns — among them Transaction Script, Domain Model, Active Record, Data Mapper, Unit of Work, and Repository. Many of these patterns are now implemented by common frameworks.",
     "addedAt": "2026-02-16T07:35:37+00:00"
   },
   {
@@ -3805,6 +3835,7 @@
     ],
     "filePath": "docs/anchors/freytags-pyramid.adoc",
     "tier": 3,
+    "definition": "Freytag’s Pyramid is a model of dramatic structure from Gustav Freytag’s “Die Technik des Dramas” (1863), derived from five-act stage tragedy. It divides a story into exposition, rising action, climax, falling action, and dénouement: tension builds to a turning point and then releases into a final equilibrium — restoration in comedy, collapse in tragedy.",
     "addedAt": "2026-03-29T15:18:24+00:00"
   },
   {
@@ -3857,6 +3888,7 @@
         "works": true
       }
     ],
+    "definition": "Genchi Genbutsu (現地現物, “the actual place, the actual thing”) is the Toyota principle of going to see for yourself, one of the five principles of the Toyota Way 2001. The person who decides must observe the work where it happens and look at the thing itself, not at reports about it. It is the observation step that cause-hunting methods such as Five Whys depend on.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -4376,6 +4408,7 @@
       "gof-visitor-pattern"
     ],
     "tier": 3,
+    "definition": "The GoF Design Patterns are the 23 object-oriented design patterns that Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides — the “Gang of Four” — catalogued in “Design Patterns: Elements of Reusable Object-Oriented Software” (1994). They fall into creational, structural, and behavioral patterns and give developers a shared vocabulary for recurring design problems and proven solutions. Underlying principles include composition over inheritance and programming to an interface.",
     "addedAt": "2026-03-07T20:17:32+01:00"
   },
   {
@@ -4931,6 +4964,7 @@
     ],
     "filePath": "docs/anchors/gom.adoc",
     "tier": 2,
+    "definition": "GoM — Grundsätze ordnungsmäßiger Modellierung, the Principles of Proper Modeling — is a set of quality principles for models, published by Jörg Becker, Michael Rosemann, and Rolf Schütte in 1995. Its six principles are correctness, relevance, economic efficiency, clarity, comparability, and systematic design. They help assess whether a model, such as a business process model, is fit for its intended purpose.",
     "addedAt": "2026-03-01T22:49:28+00:00"
   },
   {
@@ -5055,6 +5089,7 @@
     ],
     "filePath": "docs/anchors/grasp.adoc",
     "tier": 3,
+    "definition": "GRASP — General Responsibility Assignment Software Patterns — is a set of nine principles, described by Craig Larman in “Applying UML and Patterns”, for deciding which class takes which responsibility in object-oriented design. They are Information Expert, Creator, Controller, Low Coupling, High Cohesion, Polymorphism, Pure Fabrication, Indirection, and Protected Variations. Applied together, they keep classes focused and loosely coupled.",
     "addedAt": "2026-03-26T09:40:28+00:00"
   },
   {
@@ -5185,6 +5220,7 @@
     ],
     "filePath": "docs/anchors/heros-journey.adoc",
     "tier": 3,
+    "definition": "The Hero’s Journey, or monomyth, is a narrative pattern that Joseph Campbell described in “The Hero with a Thousand Faces” (1949) and Christopher Vogler adapted for writers in “The Writer’s Journey” (1992). A hero leaves the ordinary world at a call to adventure, crosses a threshold, survives a central ordeal, and returns transformed with something of value. It structures stories around the protagonist’s fundamental change.",
     "addedAt": "2026-03-29T15:18:24+00:00"
   },
   {
@@ -5220,6 +5256,7 @@
     ],
     "filePath": "docs/anchors/hexaco.adoc",
     "tier": 2,
+    "definition": "HEXACO is a six-factor model of personality structure by Kibeom Lee and Michael C. Ashton. It describes personality along six continuous dimensions — Honesty-Humility, Emotionality, eXtraversion, Agreeableness, Conscientiousness, and Openness to Experience — that recurred in lexical studies across many languages. Its distinctive addition to the Big Five is Honesty-Humility, which predicts unethical, exploitative, and manipulative behaviour.",
     "addedAt": "2026-07-06T23:15:11+02:00"
   },
   {
@@ -5249,6 +5286,7 @@
     ],
     "filePath": "docs/anchors/hexagonal-architecture.adoc",
     "tier": 3,
+    "definition": "Hexagonal Architecture, also called Ports and Adapters, is an architectural style described by Alistair Cockburn in 2005. It places the core domain at the center, isolated from external concerns: ports are interfaces that define how the application communicates, and adapters connect them to user interfaces, APIs, databases, and message queues. Dependencies point inward, so core logic stays independent of frameworks and easy to test in isolation.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -5280,6 +5318,7 @@
     ],
     "filePath": "docs/anchors/hoshin-kanri.adoc",
     "tier": 3,
+    "definition": "Hoshin Kanri (“direction management”), also called Policy or Strategy Deployment, is a strategic planning method from Japanese manufacturing that aligns a whole organisation behind a few breakthrough objectives. Long-term True North goals become annual priorities, which a one-page X-Matrix links to improvement priorities, metrics, and owners. Catchball negotiates goals between levels, and regular PDCA reviews keep the strategy adapted to reality.",
     "addedAt": "2026-05-13T21:12:43+02:00"
   },
   {
@@ -5314,6 +5353,7 @@
     ],
     "filePath": "docs/anchors/iec-61508-sil-levels.adoc",
     "tier": 3,
+    "definition": "IEC 61508 Safety Integrity Levels are four classes of risk reduction, SIL 1 to SIL 4, defined in the IEC standard for the functional safety of electrical, electronic, and programmable electronic safety-related systems. Hazard analysis and risk assessment determine the required level, and each level sets a band for the probability of failure on demand (PFD). The standard also sets hardware and software requirements and a safety lifecycle from concept to decommissioning.",
     "addedAt": "2026-02-13T15:45:20+00:00"
   },
   {
@@ -5406,6 +5446,7 @@
     ],
     "filePath": "docs/anchors/invest.adoc",
     "tier": 3,
+    "definition": "INVEST is a mnemonic checklist for the quality of user stories, from Bill Wake’s “INVEST in Good Stories, and SMART Tasks” (2003). A good story is Independent, Negotiable, Valuable, Estimable, Small, and Testable. Teams use it to judge whether a story is ready for a sprint or must first be split or refined.",
     "addedAt": "2026-03-13T20:36:17+00:00"
   },
   {
@@ -5445,6 +5486,7 @@
     ],
     "filePath": "docs/anchors/iosp.adoc",
     "tier": 2,
+    "definition": "The Integration Operation Segregation Principle (IOSP) is a function-design rule from the Clean Code Developer school of Ralf Westphal and Stefan Lieser: a function either contains logic or calls other functions, never both. Operations hold the logic and form the leaves of the function tree; integrations only compose other functions and form its branches. Operations thus become unit-testable without mocks, and the Single Level of Abstraction Principle follows automatically.",
     "addedAt": "2026-06-03T09:46:39+02:00"
   },
   {
@@ -5615,6 +5657,7 @@
     ],
     "filePath": "docs/anchors/jobs-to-be-done.adoc",
     "tier": 3,
+    "definition": "Jobs To Be Done (JTBD), in Clayton Christensen’s interpretation, is a framework that explains customer choices by the progress people want to make in a particular context. Customers “hire” a product to do a job — functional, emotional, or social — and “fire” it when it falls short. Anything that solves the same job counts as competition, and unmet or poorly served jobs mark innovation opportunities.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -5847,6 +5890,7 @@
     ],
     "filePath": "docs/anchors/kishotenketsu.adoc",
     "tier": 3,
+    "definition": "Kishōtenketsu (起承転結) is a four-part narrative structure from the classical Chinese and Japanese poetic and narrative tradition. Ki introduces, Shō develops, Ten adds an unexpected element that recontextualises everything before it, and Ketsu reconciles all parts into a harmonious resolution. Unlike Western three-act structure, it needs no protagonist-antagonist conflict: tension comes from juxtaposition, not opposition.",
     "addedAt": "2026-03-29T15:18:24+00:00"
   },
   {
@@ -5909,6 +5953,7 @@
     ],
     "filePath": "docs/anchors/kotter-8-step-change-model.adoc",
     "tier": 3,
+    "definition": "Kotter's 8-Step Change Model is a framework for leading organisational change, introduced by John P. Kotter of Harvard Business School in 1995 and expanded in his 1996 book Leading Change. It sequences eight steps — from establishing urgency and forming a guiding coalition through communicating a vision and generating short-term wins to anchoring the change in corporate culture. Each step inverts a common error of failed transformations.",
     "addedAt": "2026-05-08T10:21:31+02:00"
   },
   {
@@ -6117,6 +6162,7 @@
         "works": true
       }
     ],
+    "definition": "The Principle of Least Privilege is one of eight design principles in Jerome H. Saltzer and Michael D. Schroeder's 1975 paper \"The Protection of Information in Computer Systems\": every program and every user should operate with the least set of privileges necessary to complete the job. Its first stated purpose is to limit damage from accident or error. Because the minimum is relative to the job, the grant should expire with the job.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -6186,6 +6232,7 @@
     ],
     "filePath": "docs/anchors/linddun.adoc",
     "tier": 3,
+    "definition": "LINDDUN is a privacy threat modeling framework by Kim Wuyts, Riccardo Scandariato and Wouter Joosen of KU Leuven's DistriNet Research Group, published in 2014. Its name lists seven privacy threat categories — Linkability, Identifiability, Non-repudiation, Detectability, Disclosure of information, Unawareness and Non-compliance. Teams use them to find privacy risks in systems that handle personal data, for example in the design phase.",
     "addedAt": "2026-03-17T19:17:27+00:00"
   },
   {
@@ -6221,6 +6268,7 @@
     ],
     "filePath": "docs/anchors/llm-evaluations.adoc",
     "tier": 3,
+    "definition": "LLM Evaluations (Large Language Model Evaluations) are the methods for measuring and comparing the capabilities of language models. They combine standardized benchmark suites, quantitative metrics, automatic and human judgment, holistic frameworks such as Stanford's HELM, human-preference rankings such as Chatbot Arena, and red-teaming for safety. They also guard against benchmark contamination, which inflates apparent performance.",
     "addedAt": "2026-03-18T09:46:17+00:00"
   },
   {
@@ -6334,6 +6382,7 @@
     ],
     "filePath": "docs/anchors/madr.adoc",
     "tier": 3,
+    "definition": "MADR (Markdown Architectural Decision Records) is a structured Markdown template for architecture decision records by Oliver Kopp, Olaf Zimmermann and the MADR community. More detailed than basic ADRs, it records the context and problem statement, decision drivers, considered options, the decision outcome with its justification, and the pros and cons of each option. Alternatives and trade-offs are thus documented explicitly and stored with the code.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -6536,6 +6585,7 @@
       "reversible steps"
     ],
     "filePath": "docs/anchors/mikado-method.adoc",
+    "definition": "The Mikado Method is a technique for large refactorings in legacy or complex code, described by Ola Ellnestam and Daniel Brolund in \"The Mikado Method\" (2012). You attempt the goal naively, record what breaks as prerequisites in a Mikado Graph, revert to the last working state, and resolve the leaf prerequisites first. This keeps the code healthy, and every commit is a coherent, working change.",
     "addedAt": "2026-03-11T15:45:43+00:00"
   },
   {
@@ -6755,6 +6805,7 @@
     ],
     "filePath": "docs/anchors/moscow.adoc",
     "tier": 3,
+    "definition": "MoSCoW is a prioritization method by Dai Clegg from the Dynamic Systems Development Method (DSDM). It sorts requirements into Must have, Should have, Could have and Won't have (this time), always relative to a fixed timebox. Stakeholders thus agree on scope together, and the explicit \"Won't have\" category curbs scope creep.",
     "addedAt": "2026-02-22T07:45:12+00:00"
   },
   {
@@ -6809,6 +6860,7 @@
         "works": true
       }
     ],
+    "definition": "Muda, Mura, Muri — waste, unevenness and overburden — are the \"three Ms\" of the Toyota Production System; muda covers Taiichi Ohno's seven wastes. The anchor names the triple, not waste alone. Following James P. Womack, the causal chain runs mura → muri → muda: unevenness created by the system itself leads to overburden, which regenerates the waste that earlier clean-ups removed.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -6908,6 +6960,7 @@
     "filePath": "docs/anchors/myers-briggs-type-indicator.adoc",
     "tier": 1,
     "advisory": "Widely regarded as pseudoscience with low test-retest reliability — use for reflection and dialogue, not selection (see Criticism)",
+    "definition": "The Myers-Briggs Type Indicator (MBTI) is a personality type instrument by Isabel Briggs Myers and Katharine Cook Briggs, built on Carl Gustav Jung's theory of psychological types and published as an instrument in 1962. Four preference dichotomies — E/I, S/N, T/F, J/P — combine into 16 types that describe preferences, not abilities. It is widely regarded as pseudoscience and suits reflection and dialogue, not selection.",
     "addedAt": "2026-03-09T15:17:08+00:00"
   },
   {
@@ -6937,6 +6990,7 @@
     ],
     "filePath": "docs/anchors/nelson-rules.adoc",
     "tier": 3,
+    "definition": "The Nelson Rules are eight tests for special causes in control charts, published by Lloyd S. Nelson in 1984 in the Journal of Quality Technology as an extension of the Western Electric Rules. Each rule flags a non-random pattern — such as one point beyond 3σ or nine points on one side of the mean — to separate assignable from inherent variation. More active rules mean higher sensitivity but more false alarms.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -7112,6 +7166,7 @@
     ],
     "filePath": "docs/anchors/okr.adoc",
     "tier": 2,
+    "definition": "OKR (Objectives and Key Results) is a goal-setting framework that Andy Grove originated at Intel as iMBO and John Doerr introduced to Google in 1999 and popularized in \"Measure What Matters\" (2018). Each qualitative, inspirational Objective is paired with typically three to five measurable Key Results. OKRs are usually set quarterly, kept public for alignment, graded from 0 to 1, and decoupled from compensation.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -7161,6 +7216,7 @@
         "works": true
       }
     ],
+    "definition": "The OWASP Application Security Verification Standard (ASVS) is the OWASP Foundation's catalogue of individually numbered, testable application security requirements, phrased as \"Verify that…\". It defines three levels — L1 as minimum baseline, L2 for applications handling sensitive data, L3 for high-assurance systems — and chapters from authentication to APIs. A review thus gets a defined scope and pass/fail results; citations must name level and version.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -7195,6 +7251,7 @@
     ],
     "filePath": "docs/anchors/owasp-top-10.adoc",
     "tier": 3,
+    "definition": "The OWASP Top 10 is the OWASP Foundation's ranked list of ten web application security risk categories, first published in 2003 and reissued in editions such as 2021 and 2025. The 2021 edition runs from A01 Broken Access Control through Injection and Insecure Design to A10 Server-Side Request Forgery. Teams use it for risk assessments, secure-coding training and security reviews, and should name the edition, because category IDs change between editions.",
     "addedAt": "2026-03-04T13:00:35+00:00"
   },
   {
@@ -7226,6 +7283,7 @@
     ],
     "filePath": "docs/anchors/para-method.adoc",
     "tier": 3,
+    "definition": "The P.A.R.A. Method is Tiago Forte's system for organizing notes and files, from \"Building a Second Brain\". It sorts every item into exactly one of four categories by how actionable it is, not by topic: Projects with a goal and deadline, Areas of ongoing responsibility, Resources of future interest, and an Archive for inactive items. It works with any note-taking or file management tool.",
     "addedAt": "2026-03-26T09:24:39+00:00"
   },
   {
@@ -7277,6 +7335,7 @@
         "works": true
       }
     ],
+    "definition": "PDCA (Plan-Do-Check-Act) is a four-step improvement loop descended from Walter A. Shewhart's 1939 cycle and known as the Deming cycle; Deming himself preferred PDSA, Plan-Do-Study-Act. You plan a hypothesis and how to judge the result, test the change on a small scale, compare the result with the prediction, then standardise the change or loop back. Repeated endlessly, it is the engine under kaizen.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -7315,6 +7374,7 @@
     ],
     "filePath": "docs/anchors/pert.adoc",
     "tier": 2,
+    "definition": "PERT (Program Evaluation and Review Technique) is a probabilistic project scheduling method developed in 1958 by D.G. Malcolm, J.H. Roseboom, C.E. Clark and W. Fazar at Booz Allen Hamilton for the US Navy's Polaris programme. Each activity gets optimistic, most likely and pessimistic estimates, combined as E = (O + 4M + P) / 6. A network diagram of dependencies then reveals the critical path and confidence ranges for the completion date.",
     "addedAt": "2026-03-26T09:25:15+00:00"
   },
   {
@@ -7465,6 +7525,7 @@
         "works": true
       }
     ],
+    "definition": "Poka-Yoke (mistake-proofing) is a quality technique named and systematised by Shigeo Shingo and set out in his book Zero Quality Control. It accepts that human errors are inevitable and changes the process or artefact so that an error cannot become a defect. Prevention, which makes the mistake impossible, beats warning, which only signals it; the devices are cheap, simple and installed at the source.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -7527,6 +7588,7 @@
     ],
     "filePath": "docs/anchors/prd.adoc",
     "tier": 3,
+    "definition": "A PRD (Product Requirements Document) describes what a new product or major feature must achieve before design and development begin; Marty Cagan and Roman Pichler are its key proponents. It covers the problem statement, goals and success metrics, personas and use cases, functional and non-functional requirements, scope and out-of-scope, constraints and assumptions, and open questions. Cross-functional teams thus share one reference.",
     "addedAt": "2026-03-13T20:35:23+00:00"
   },
   {
@@ -7675,6 +7737,7 @@
     ],
     "filePath": "docs/anchors/problem-space-nvc.adoc",
     "tier": 3,
+    "definition": "Nonviolent Communication (NVC) is Marshall Rosenberg's communication method: it separates concrete observations from judgment and expresses feelings, the universal human needs beneath them, and specific requests rather than demands. Applied to the problem space, it uncovers the real needs behind complaints and feature requests, which supports requirements elicitation and conflict resolution in teams.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -7737,6 +7800,7 @@
     ],
     "filePath": "docs/anchors/property-based-testing.adoc",
     "tier": 3,
+    "definition": "Property-Based Testing is a testing approach rooted in Koen Claessen and John Hughes's QuickCheck: you state invariants that should hold for all inputs and let generators create the test data automatically. When a property fails, shrinking reduces the failing case to its simplest form. The approach finds edge cases nobody thought of and complements example-based unit tests.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -7767,6 +7831,7 @@
     ],
     "filePath": "docs/anchors/pugh-matrix.adoc",
     "tier": 2,
+    "definition": "The Pugh Matrix is a decision matrix from Stuart Pugh's \"Total Design\" (1991) for comparing alternatives against criteria. Criteria form the rows and alternatives the columns; one alternative serves as the reference, every other is rated better (+), same (S) or worse (−) against it per criterion, and summary rows total the scores. Teams use it to reach consensus and to iterate toward hybrid solutions.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -7798,6 +7863,7 @@
     ],
     "filePath": "docs/anchors/pyramid-principle.adoc",
     "tier": 3,
+    "definition": "The Pyramid Principle is Barbara Minto's method for structuring communication top-down, set out in \"The Minto Pyramid Principle\" (1987). A single governing thought sits at the top, supported by MECE groups of arguments, and each level answers the \"why?\" of the level above. The conclusion comes first, and the SCQ framework (Situation, Complication, Question) sets the context.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -8025,6 +8091,7 @@
         "works": true
       }
     ],
+    "definition": "The Refactoring Catalog is the set of named, behaviour-preserving code transformations in Martin Fowler's \"Refactoring: Improving the Design of Existing Code\" (1999, 2nd edition 2018), maintained online at refactoring.com. Each entry — such as Extract Function or Replace Conditional with Polymorphism — has a name, a before-and-after sketch, a motivation, and numbered mechanics that keep the code working between steps. The names give developers a shared vocabulary for restructuring.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -8222,6 +8289,7 @@
     ],
     "filePath": "docs/anchors/residuality-theory.adoc",
     "tier": 2,
+    "definition": "Residuality Theory is a software architecture method by Barry M. O'Reilly, rooted in complexity science. You start from a deliberately naive architecture, apply stressors — technical failures, but also business and organisational shocks — and identify the residue: what remains of the system when a stressor hits. You then redesign so failure happens in a controlled way, and use contagion analysis to expose hidden coupling.",
     "addedAt": "2026-07-24T20:57:14+02:00"
   },
   {
@@ -8273,6 +8341,7 @@
         "works": true
       }
     ],
+    "definition": "The Richardson Maturity Model is a four-level classification of REST maturity for HTTP APIs, presented by Leonard Richardson in 2008 and named and popularised by Martin Fowler in 2010. Level 0 tunnels everything through one endpoint, Level 1 gives each resource its own URI, Level 2 uses HTTP verbs and status codes with their defined meaning, and Level 3 adds hypermedia controls. It is meant as a design target, not an assessment score.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -8368,6 +8437,7 @@
     ],
     "filePath": "docs/anchors/save-the-cat.adoc",
     "tier": 3,
+    "definition": "Save the Cat! is Blake Snyder’s 15-beat sheet for story structure, from his 2005 screenwriting book of the same name. It names fifteen beats, from Opening Image through Catalyst, Midpoint, and All Is Lost to Final Image, and pins each to a target page of the screenplay. Writers use it to pace a story and to audit it beat by beat for gaps.",
     "addedAt": "2026-03-29T15:18:24+00:00"
   },
   {
@@ -8451,6 +8521,7 @@
     ],
     "filePath": "docs/anchors/semantic-versioning.adoc",
     "tier": 3,
+    "definition": "Semantic Versioning (SemVer) is a specification by Tom Preston-Werner for numbering software versions as MAJOR.MINOR.PATCH. MAJOR changes for incompatible API changes, MINOR for backward-compatible features, and PATCH for backward-compatible bug fixes; pre-release identifiers, build metadata, and precedence rules complete the scheme. A version number thus tells consumers how a change affects them.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -8519,6 +8590,7 @@
     ],
     "filePath": "docs/anchors/separation-of-concerns.adoc",
     "tier": 1,
+    "definition": "Separation of Concerns is a design principle, coined by Edsger W. Dijkstra in 1974, that divides a system into distinct aspects so each can be studied, designed, and changed in isolation. It is the structural basis of modular software — high cohesion within a unit, low coupling between units — and shows up as layering, MVC, and microservice boundaries.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -8673,6 +8745,7 @@
     ],
     "filePath": "docs/anchors/simon-constructivism.adoc",
     "tier": 3,
+    "definition": "Simon’s Constructivism is Fritz B. Simon’s introduction to system theory and constructivism, set out in his book Einführung in Systemtheorie und Konstruktivismus. It describes systems as operationally closed — they can be perturbed, not instructed — and social systems as non-trivial, history-dependent machines; knowledge counts as viable rather than true, and the observer is part of the observed system. It is the theoretical foundation for Systemic Consulting.",
     "addedAt": "2026-05-21T07:45:07+02:00"
   },
   {
@@ -9163,6 +9236,7 @@
     ],
     "filePath": "docs/anchors/spike-solution.adoc",
     "tier": 3,
+    "definition": "A Spike Solution is a time-boxed, throwaway experiment that answers one specific technical question, a practice from Extreme Programming associated with Kent Beck. Its output is a decision, not a deliverable — a short writeup, a benchmark number, or a yes/no answer — and the code is then deleted. Teams use spikes to reduce uncertainty, for example when a story cannot be estimated.",
     "addedAt": "2026-04-12T13:39:43+02:00"
   },
   {
@@ -9193,6 +9267,7 @@
     ],
     "filePath": "docs/anchors/ssot-principle.adoc",
     "tier": 1,
+    "definition": "SSOT (Single Source of Truth) is a design principle that gives each piece of data one canonical, authoritative location. All consumers reference that source, other representations are derived from it, and it is the definitive version when conflicts arise. Unlike SPOT (Single Point of Truth), which focuses on the implementation pattern, SSOT applies at the architecture and organizational level.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -9229,6 +9304,7 @@
     ],
     "filePath": "docs/anchors/story-circle-dan-harmon.adoc",
     "tier": 3,
+    "definition": "The Story Circle is Dan Harmon’s eight-step narrative structure, adapted from Joseph Campbell’s Monomyth. A protagonist in a comfort zone wants something, enters an unfamiliar situation, adapts, gets what they wanted, pays a price, returns, and is changed. It works at any scale — an episode, a season, a film — and requires the protagonist to transform.",
     "addedAt": "2026-03-29T15:18:24+00:00"
   },
   {
@@ -9296,6 +9372,7 @@
     ],
     "filePath": "docs/anchors/stride.adoc",
     "tier": 3,
+    "definition": "STRIDE is a threat modeling framework created by Loren Kohnfelder and Praerit Garg at Microsoft in 1999 and popularized by Adam Shostack. Its name lists six threat categories: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege. Each category pairs with typical mitigations, so teams can find and classify threats systematically during design and share a vocabulary for discussing them.",
     "addedAt": "2026-03-17T19:16:00+00:00"
   },
   {
@@ -9391,6 +9468,7 @@
     ],
     "filePath": "docs/anchors/swot.adoc",
     "tier": 3,
+    "definition": "SWOT analysis is a strategic planning technique associated with Albert Humphrey of the Stanford Research Institute. It sorts factors into four quadrants: internal Strengths and Weaknesses, which describe the current state, and external Opportunities and Threats, which look toward the future. The TOWS variant cross-references the quadrants to derive strategies.",
     "addedAt": "2026-03-11T08:44:49+00:00"
   },
   {
@@ -9428,6 +9506,7 @@
     ],
     "filePath": "docs/anchors/systemic-consulting.adoc",
     "tier": 3,
+    "definition": "Systemic Consulting according to the Heidelberg School is an approach to consulting, associated with Fritz B. Simon, Helm Stierlin, and Gunthard Weber, that analyses consulting as a form of communication. The consultant stays neutral and all-partial, works with circular questions and provisional hypotheses, and treats problems as emergent relational patterns rather than individual deficiencies. Because systems are operationally closed, the consultant cannot instruct change, only offer perturbations.",
     "addedAt": "2026-05-21T07:45:07+02:00"
   },
   {
@@ -9460,6 +9539,7 @@
     ],
     "filePath": "docs/anchors/tdd-chicago-school.adoc",
     "tier": 3,
+    "definition": "TDD, Chicago School — also called Classicist TDD or the Detroit School — is a style of test-driven development associated with Kent Beck and Martin Fowler. It verifies the state of objects after operations, uses real objects wherever possible and mocks only external dependencies, and builds inside-out from the core domain logic. Design emerges through refactoring within the Red-Green-Refactor cycle.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -9528,6 +9608,7 @@
     ],
     "filePath": "docs/anchors/team-topologies.adoc",
     "tier": 2,
+    "definition": "Team Topologies is a model by Matthew Skelton and Manuel Pais (2019) for organizing business and technology teams for fast flow. It defines four team types — stream-aligned, enabling, complicated-subsystem, and platform — and three interaction modes: collaboration, X-as-a-Service, and facilitating. Team boundaries are designed deliberately to limit cognitive load and, following Conway’s Law, to align architecture with organization structure.",
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
@@ -9579,6 +9660,7 @@
         "works": true
       }
     ],
+    "definition": "A Test Data Builder is the Builder pattern applied to the Arrange phase of a test, named by Nat Pryce in 2007 as an alternative to the Object Mother. Each builder starts from safe default values, offers chainable with-methods to override them, and creates the object with a build method. Tests therefore name only the values they depend on, instead of long constructor calls or one factory method per variant.",
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
@@ -9675,6 +9757,7 @@
       "test-double-fake"
     ],
     "tier": 3,
+    "definition": "Test Double is Gerard Meszaros’s umbrella term, from xUnit Test Patterns (2007), for any object that stands in for a real dependency during a test. His taxonomy distinguishes five kinds: the Dummy fills a parameter list, the Stub returns canned responses, the Spy records calls, the Mock verifies expected interactions, and the Fake is a simplified working implementation. The precise vocabulary prevents mix-ups such as calling a stub a mock.",
     "addedAt": "2026-03-07T20:23:25+01:00"
   },
   {
@@ -9825,6 +9908,7 @@
     ],
     "filePath": "docs/anchors/testing-pyramid.adoc",
     "tier": 3,
+    "definition": "The Testing Pyramid is Mike Cohn’s model, from Succeeding with Agile (2009), for distributing a test suite across three layers. Many fast, isolated unit tests form the base, a moderate number of integration tests the middle, and a few end-to-end tests the top. Because lower layers are cheaper and give faster feedback, nothing should be tested through the UI that can be tested in isolation.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -9896,6 +9980,7 @@
     ],
     "filePath": "docs/anchors/three-act-structure.adoc",
     "tier": 3,
+    "definition": "The Three-Act Structure is the classical dramatic model that divides a story into Setup, Confrontation, and Resolution, with proponents from Aristotle’s Poetics to Syd Field and Robert McKee. Act 1 (about a quarter) ends with the Inciting Incident, Act 2 (about half) escalates through the Midpoint Reversal to the All-Is-Lost moment, and Act 3 (about a quarter) brings the Climax and a new equilibrium.",
     "addedAt": "2026-03-29T15:18:24+00:00"
   },
   {
@@ -10243,6 +10328,7 @@
     ],
     "filePath": "docs/anchors/user-story-mapping.adoc",
     "tier": 3,
+    "definition": "User Story Mapping is Jeff Patton’s technique, described in his 2014 book, for arranging user stories along the user’s journey. User activities and their tasks run horizontally as a narrative flow; stories are ordered vertically by value, and horizontal slices define releases, starting with a minimal end-to-end walking skeleton. Mapping together builds shared understanding and shows the big picture instead of isolated backlog items.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -10509,6 +10595,7 @@
     ],
     "filePath": "docs/anchors/wardley-mapping.adoc",
     "tier": 3,
+    "definition": "Wardley Mapping is Simon Wardley’s visual approach to strategy. A map places components on a value chain that runs down from user needs and along an evolution axis from Genesis through Custom and Product to Commodity. Reading how components move, together with climatic patterns, gameplay patterns, and doctrine, builds situational awareness and informs decisions such as build, buy, or partner.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -10663,6 +10750,7 @@
     ],
     "filePath": "docs/anchors/xy-problem.adoc",
     "tier": 3,
+    "definition": "The XY Problem is a communication anti-pattern, named by Mark Jason Dominus in 2001: someone wants to solve problem X, settles on solution Y, and asks only about Y. Because X stays hidden, helpers cannot judge whether Y solves it or whether a simpler approach exists. The remedy is to ask for the underlying goal — or, as the asker, to state X first, then Y, then the blocker.",
     "addedAt": "2026-05-08T09:30:59+02:00"
   },
   {

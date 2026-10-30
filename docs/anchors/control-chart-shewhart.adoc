@@ -5,6 +5,7 @@
 :tags: control chart, Shewhart, SPC, statistical process control, quality, variation
 :related: spc, nelson-rules, dmaic
 :tier: 3
+:definition: The Shewhart Control Chart is a time-series diagram developed by Walter A. Shewhart at Bell Labs and Western Electric, and the central tool of Statistical Process Control. It plots a measured value around a centerline with upper and lower control limits, typically at ±3σ, to separate the common-cause variation of a stable process from assignable special causes.
 :parent-anchor: spc
 
 [%collapsible]

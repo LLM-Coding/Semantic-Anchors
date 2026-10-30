@@ -3,6 +3,7 @@
 :roles: business-analyst, qa-engineer, technical-writer
 :proponents: Alistair Mavin
 :tier: 3
+:definition: EARS – Easy Approach to Requirements Syntax – ist eine Sammlung von Satzschablonen zum Formulieren von Anforderungen; ihr Schlüsselvertreter ist Alistair Mavin (Rolls-Royce). Sie bietet fünf Muster: ubiquitär („Das System muss …“), ereignisgesteuert (WENN), unerwünschtes Verhalten (FALLS … DANN), zustandsgesteuert (WÄHREND) und optionales Feature (WO). Die einheitliche Struktur macht jede Anforderung klar und überprüfbar.
 :tags: EARS, requirements syntax, requirements engineering, Mavin, easy approach to requirements syntax
 :related: cockburn-use-cases, invest, req42
 

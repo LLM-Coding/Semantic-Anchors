@@ -3,6 +3,7 @@
 :roles: software-developer, devops-engineer, product-owner
 :proponents: Tom Preston-Werner
 :tier: 3
+:definition: Semantic Versioning (SemVer) ist eine Spezifikation von Tom Preston-Werner, die Softwareversionen als MAJOR.MINOR.PATCH nummeriert. MAJOR ändert sich bei inkompatiblen API-Änderungen, MINOR bei rückwärtskompatiblen Funktionserweiterungen, PATCH bei rückwärtskompatiblen Fehlerbehebungen; Pre-Release-Kennungen, Build-Metadaten und Regeln für den Versionsvergleich ergänzen das Schema. So zeigt die Versionsnummer Konsumenten, wie eine Änderung sie betrifft.
 :tags: semantic versioning, SemVer, versioning, major minor patch, Tom Preston-Werner
 :related: conventional-commits, twelve-factor-app
 

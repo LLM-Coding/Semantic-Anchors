@@ -5,6 +5,7 @@
 :proponents: Gerard Endenburg, Brian Robertson
 :tags: decision-making, sociocracy, holacracy, governance, facilitation
 :tier: 3
+:definition: Consent vs. Consensus unterscheidet zwei Entscheidungsregeln für Gruppen; den Konsent haben Gerard Endenburgs Soziokratie und Brian Robertsons Holacracy formalisiert. Konsens verlangt die aktive Zustimmung aller, Konsent nur das Fehlen eines schwerwiegenden, begründeten Einwands — gut genug für jetzt, sicher genug zum Ausprobieren. Gültige Einwände fließen in einen überarbeiteten Vorschlag ein, statt als Veto zu wirken.
 
 [%collapsible]
 ====

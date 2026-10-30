@@ -5,6 +5,7 @@
 :tags: Test Data Builder, Testdaten-Builder, Object Mother, Fixture, Testfixture, sichere Defaults, Fluent Interface, with-Methoden, but-Methode, verschachtelte Builder, Arrange-Phase, GOOS, brüchige Tests, Make It Easy
 :related: gof-builder-pattern, test-double-meszaros, tdd-london-school, arrange-act-assert, code-smells
 :tier: 3
+:definition: Ein Test Data Builder ist das Builder-Pattern, angewandt auf die Arrange-Phase eines Tests; Nat Pryce benannte es 2007 als Alternative zur Object Mother. Jeder Builder startet mit sicheren Defaults, bietet verkettbare with-Methoden, um sie zu überschreiben, und erzeugt das Objekt mit einer build-Methode. Tests nennen so nur die Werte, auf die sie bauen, statt langer Konstruktoraufrufe oder einer Factory-Methode pro Variante.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

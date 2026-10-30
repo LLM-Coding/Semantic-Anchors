@@ -4,6 +4,7 @@
 :related: chain-of-thought, sota, mutation-testing
 :proponents: Percy Liang (Stanford HELM), EleutherAI (Open LLM Leaderboard), LMSYS (Chatbot Arena)
 :tier: 3
+:definition: LLM-Evaluations (Large Language Model Evaluations) sind die Methoden, mit denen man die Fähigkeiten von Sprachmodellen misst und vergleicht. Sie verbinden standardisierte Benchmark-Suiten, quantitative Metriken, automatische und menschliche Bewertung, holistische Frameworks wie Stanfords HELM, präferenzbasierte Rankings wie Chatbot Arena und Red-Teaming für die Sicherheit. Zudem schützen sie vor Datenkontamination, die die scheinbare Leistung aufbläht.
 :tags: llm, evaluation, benchmarks, metrics, leaderboard, nlp, ai
 
 [%collapsible]

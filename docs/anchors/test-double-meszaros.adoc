@@ -5,6 +5,7 @@
 :related: tdd-london-school, tdd-chicago-school, property-based-testing
 :tags: test-double, mock, stub, spy, fake, dummy, xunit, testing, isolation
 :tier: 3
+:definition: Test Double is Gerard Meszaros’s umbrella term, from xUnit Test Patterns (2007), for any object that stands in for a real dependency during a test. His taxonomy distinguishes five kinds: the Dummy fills a parameter list, the Stub returns canned responses, the Spy records calls, the Mock verifies expected interactions, and the Fake is a simplified working implementation. The precise vocabulary prevents mix-ups such as calling a stub a mock.
 :sub-anchors: test-double-dummy, test-double-stub, test-double-spy, test-double-mock, test-double-fake
 
 [%collapsible]

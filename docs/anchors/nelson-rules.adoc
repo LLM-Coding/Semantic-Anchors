@@ -5,6 +5,7 @@
 :tags: Nelson rules, control chart, SPC, statistical process control, out of control
 :related: control-chart-shewhart, spc, dmaic
 :tier: 3
+:definition: The Nelson Rules are eight tests for special causes in control charts, published by Lloyd S. Nelson in 1984 in the Journal of Quality Technology as an extension of the Western Electric Rules. Each rule flags a non-random pattern — such as one point beyond 3σ or nine points on one side of the mean — to separate assignable from inherent variation. More active rules mean higher sensitivity but more false alarms.
 :parent-anchor: spc
 
 [%collapsible]

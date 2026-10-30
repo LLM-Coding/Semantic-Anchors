@@ -5,6 +5,7 @@
 :tags: defense in depth, defence in depth, layered security, layered defense, independent layers, diversity of defense, assume breach, Swiss cheese model, blast radius, compartmentalization, people technology operations
 :related: stride, owasp-top-10, fmea, poka-yoke, least-privilege
 :tier: 2
+:definition: Defense in Depth is a security strategy, adapted from military doctrine and set out for information assurance in an NSA paper, that protects a system with several layers of controls across people, technology, and operations. The layers count only if they are independent and diverse and each assumes the one before it has already been breached; detection and recovery are layers too.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 
