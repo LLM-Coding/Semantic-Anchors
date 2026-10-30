@@ -15,7 +15,7 @@ Keine Beschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholung
 
 Ein Lauf zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.
 
-== Stile: eine Homepage
+== Stile und Regelwerke: eine Homepage
 
 Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026. Wie diese Beispiele entstanden sind und was jeweils auffiel: https://rdmueller.github.io/pages/blog/design-anchors.html[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Material Design 3, Apples Human Interface Guidelines und das GOV.UK Design System sind Design-Systeme, ihre Beispiele stammen aber aus diesem Lauf und bleiben hier.
 

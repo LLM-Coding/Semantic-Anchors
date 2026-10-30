@@ -15,11 +15,11 @@ The sessions got the German original: "Gestalte diese Website im Stil von {ANKER
 
 One run shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.
 
-== Styles: one homepage
+== Styles and rule sets: one homepage
 
 The first tile is the original, https://rdmueller.github.io/[rdmueller.github.io] as of 28 October 2026. How these examples came about, and what stood out in each: https://rdmueller.github.io/pages/blog/design-anchors.html[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Material Design 3, Apple's Human Interface Guidelines and the GOV.UK Design System are design systems, but their examples come from that run and stay here.
 
-Refactoring UI and Bringhurst's The Elements of Typographic Style are rule sets, not styles. Their tiles were added on 30 October 2026 with the same prompt, one run each, and show what the rules change on the same homepage: Bringhurst's in the type at first glance, Refactoring UI's more quietly, in hierarchy, spacing and colour. The Refactoring UI session checked its result in a browser; the Bringhurst session compared the text of every page with the original but does not say it looked at the result.
+Refactoring UI and Bringhurst's The Elements of Typographic Style are rule sets, not styles. Their tiles were added on 30 October 2026 with the same prompt, one run each, and show what the rules change on the same homepage: Bringhurst's rules show in the type at first glance; Refactoring UI's show more quietly, in hierarchy, spacing and colour. The Refactoring UI session checked its result in a browser; the Bringhurst session compared the text of every page with the original but does not say it looked at the result.
 
 [.style-gallery]
 --
