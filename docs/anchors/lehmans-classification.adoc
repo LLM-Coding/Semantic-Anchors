@@ -5,6 +5,7 @@
 :proponents: Meir M. Lehman
 :tags: classification, software-evolution, requirements, maintenance, s-type, p-type, e-type
 :tier: 2
+:definition: Lehman's Software Classification is Meir M. Lehman's taxonomy, published in 1980, that sorts software by its relationship to the real world: S-type software is fully specifiable, P-type approximates a real-world problem, and E-type becomes part of the world it changes. Because using an E-type system changes its own requirements, Lehman derived eight laws of software evolution, such as Continuing Change and Increasing Complexity. It explains why finished business software still needs ongoing investment.
 
 [%collapsible]
 ====

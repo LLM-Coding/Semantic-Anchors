@@ -5,6 +5,7 @@
 :proponents: Adam Wiggins
 :tags: cloud-native, saas, config, stateless, deployment, heroku
 :tier: 2
+:definition: Die Twelve-Factor App ist eine Methodik für Cloud-Native- und SaaS-Anwendungen, die Adam Wiggins von Heroku 2011 auf 12factor.net veröffentlichte. Zu ihren Faktoren gehören eine Codebase mit vielen Deploys, explizit deklarierte Abhängigkeiten, Konfiguration in Umgebungsvariablen, Backing Services als angehängte Ressourcen, strikt getrenntes Build, Release, Run, zustandslose wegwerfbare Prozesse, Dev/Prod-Parität und Logs als Event-Streams. Das Ziel sind portable, horizontal skalierbare Dienste.
 
 [%collapsible]
 ====

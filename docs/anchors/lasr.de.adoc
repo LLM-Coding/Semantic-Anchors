@@ -4,6 +4,7 @@
 :related: atam, arc42, quality-attribute-scenario
 :proponents: Stefan Toth, Stefan Zörner
 :tier: 3
+:definition: LASR, der Lightweight Approach for Software Reviews von Stefan Toth und Stefan Zörner, ist eine strukturierte Methode für Software-Reviews: schlanker als ATAM, aber weiter auf die wichtigsten Qualitätsattribute fokussiert. Das Team verdichtet die Vision des Systems zu einem Lean Mission Statement, legt quantifizierte Evaluation Criteria fest, identifiziert die bedeutendsten Risiken und analysiert die Lücken vertieft. LASR läuft als moderierter, spielerischer Workshop und liefert erste Ergebnisse in Stunden.
 :tags: software-reviews, architecture-review, quality-attributes, risks, lightweight, atam-alternative
 
 [%collapsible]

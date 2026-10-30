@@ -5,6 +5,7 @@
 :tags: Jidoka, autonomation, automation with a human touch, Toyota Production System, andon, stop the line, Sakichi Toyoda, automatic loom, fail fast, built-in quality
 :related: poka-yoke, andon, circuit-breaker, site-reliability-engineering, five-whys
 :tier: 3
+:definition: Jidoka, or autonomation, is the Toyota Production System principle of automation with a human touch: a machine or operator stops the line as soon as an abnormality appears, instead of passing defects downstream. It goes back to Sakichi Toyoda's self-stopping looms, and Taiichi Ohno made it one of the two pillars of TPS beside Just-in-Time. Every stop follows four steps: detect, stop, fix or contain, and investigate the root cause.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -5,6 +5,7 @@
 :proponents: Peter Hruschka, Markus Meuten
 :tags: requirements, framework, agile, docs-as-code, arc42, PAM, purpose advantage metric, business goals, vision, epics, features, user stories
 :tier: 2
+:definition: req42 is Peter Hruschka and Markus Meuten's framework for pragmatic, agile requirements: a template of twelve sections that mirrors arc42, from business goals and stakeholders to quality requirements, roadmap and risks. Business goals are written in PAM form, Purpose, Advantage and Metric, and the product backlog runs top-down from epics through features to user stories. It is distributed as a free AsciiDoc template under CC BY-SA 4.0 and pairs with arc42.
 :prior-test: 2026-10-15
 :tested-on: haiku-5-5=no, sonnet-5-5=yes, opus-5-5=yes
 

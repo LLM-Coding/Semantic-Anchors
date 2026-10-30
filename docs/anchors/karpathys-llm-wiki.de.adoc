@@ -5,6 +5,7 @@
 :tags: LLM Wiki, LLM-Wissensbasis, Karpathy, Idea File, Rohquellen, kompiliertes Wissen, verlinktes Markdown, index.md, log.md, Ingest, Query, Lint, Schema, CLAUDE.md, AGENTS.md, Obsidian, RAG-Alternative, Second Brain, Memex
 :related: para-method, docs-as-code, diataxis-framework, arc42, req42
 :tier: 2
+:definition: Karpathy's LLM Wiki ist ein Muster für Wissensbasen, das Andrej Karpathy im April 2026 veröffentlichte: Ein LLM liest jede Quelle einmal und kompiliert das Gelernte in eine dauerhafte Sammlung verlinkter Markdown-Seiten, statt für jede Frage rohe Chunks abzurufen. Es hat drei Schichten: unveränderliche Rohquellen, das vom LLM verantwortete Wiki und eine Schema-Datei wie CLAUDE.md. Ingest, Abfragen mit Zurückschreiben und regelmäßige Lint-Läufe lassen das Wiki wachsen; index.md und log.md dienen der Orientierung.
 :prior-test: 2026-10-15
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 

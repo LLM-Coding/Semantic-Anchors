@@ -5,6 +5,7 @@
 :proponents: Eric Ries, Frank Robinson
 :tags: lean-startup, validated-learning, hypothesis-testing, product, mvp
 :tier: 3
+:definition: Ein Minimum Viable Product ist das kleinste Produkt, mit dem ein Team lernt, ob eine bestimmte Hypothese über Benutzerbedürfnisse stimmt. Frank Robinson prägte den Begriff 2001, Eric Ries machte ihn mit „The Lean Startup“ (2011) bekannt. Sein Ergebnis ist validiertes Lernen, nicht Features oder Umsatz; auch ein Mockup, eine Landing Page oder ein Concierge-Service kann ein MVP sein. Es eröffnet den Build-Measure-Learn-Zyklus, der in die Entscheidung zwischen Pivot und Persevere mündet.
 
 [%collapsible]
 ====

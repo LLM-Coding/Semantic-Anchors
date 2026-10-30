@@ -5,6 +5,7 @@
 :proponents: Lev Vygotsky
 :tags: learning, pedagogy, scaffolding, education, zpd
 :tier: 2
+:definition: The Zone of Proximal Development (ZPD) is Lev Vygotsky's concept of the gap between what a learner can do independently and what they can achieve with guidance from a More-Knowledgeable Other. Instruction is productive only inside this gap: above it the task is out of reach, below it nothing new is learned. Support within the zone is called scaffolding, a term introduced by Wood, Bruner and Ross in 1976, not by Vygotsky, and it fades as competence grows.
 
 [%collapsible]
 ====

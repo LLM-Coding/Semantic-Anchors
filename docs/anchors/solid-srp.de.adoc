@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: solid-principles
 :tier: 3
+:definition: Das Single Responsibility Principle (SRP) ist das SOLID-Prinzip von Robert C. Martin, nach dem eine Klasse nur einen Grund haben soll, sich zu ändern. Jedes Modul und jede Klasse verantwortet einen einzelnen Teil der Funktionalität. Wer nicht zusammenhängende Verantwortlichkeiten in eigene Klassen trennt, verhindert, dass die Änderung an einem Feature fremden Code berührt, und hält das Setup von Unit-Tests einfach.
 :proponents: Robert C. Martin
 :tags: SOLID, design principle, SRP, single responsibility
 :related: solid-principles, separation-of-concerns, single-level-of-abstraction-principle

@@ -5,6 +5,7 @@
 :tags: Ishikawa diagram, fishbone diagram, cause and effect diagram, 6M, seven basic tools of quality, root cause analysis, kaizen, Kawasaki, quality
 :related: five-whys, dmaic, fmea, sipoc, mece
 :tier: 3
+:definition: The Ishikawa diagram, or fishbone diagram, is a cause-and-effect diagram that Kaoru Ishikawa popularised in the 1960s at the Kawasaki shipyards, and one of the seven basic tools of quality. The effect sits at the head of the fish, and labelled bones such as the 5 Ms hold parallel causes and their sub-causes. It is structured brainstorming: it produces a list of suspects that data must then confirm or rule out.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -5,6 +5,7 @@
 :roles: team-lead, consultant, qa-engineer, product-owner
 :related: muda-mura-muri, toyota-kata, andon, dmaic, boy-scout-rule
 :tier: 3
+:definition: Kaizen is the Japanese management philosophy of continuous improvement, popularised in the West by Masaaki Imai: small changes made by the people doing the work, by everyone, everywhere, every day. Each gain is written into the standard, which becomes the floor for the next improvement. Kaikaku, radical change, is its deliberate contrast, and critics note that the Western week-long kaizen event often replaced the daily habit.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

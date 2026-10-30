@@ -5,6 +5,7 @@
 :proponents: David Allen
 :tags: personal-productivity, task-management, organization, stress-free, inbox-zero
 :tier: 3
+:definition: Getting Things Done (GTD) is David Allen's personal productivity method that moves every commitment out of the head into a trusted external system. It runs in five steps, Capture, Clarify, Organize, Reflect and Engage: items are collected in inboxes, turned into concrete next actions, sorted into lists such as Projects, Waiting For and Someday/Maybe, and checked in a Weekly Review. The two-minute rule handles small tasks at once.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: Len Bass, Paul Clements, Rick Kazman
 :tags: quality attributes, quality requirements, scenarios, SEI, testable requirements, response measure
 :tier: 3
+:definition: Ein Quality Attribute Scenario, beschrieben von Len Bass, Paul Clements und Rick Kazman in „Software Architecture in Practice“, überführt ein vages Qualitätsziel in eine konkrete, testbare Aussage aus sechs Teilen: Source, Stimulus, Artifact, Environment, Response und Response Measure. Entscheidend ist das Response Measure, denn ohne Maß lässt sich das Szenario nicht testen. Allgemeine Szenarien dienen als Schablonen; konkrete setzen literale Werte für ein System ein und machen ISO/IEC-25010-Merkmale operationalisierbar.
 
 [%collapsible]
 ====

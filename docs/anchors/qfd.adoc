@@ -5,6 +5,7 @@
 :tags: QFD, Quality Function Deployment, House of Quality, voice of the customer, Akao, Mizuno, correlation roof, technical characteristics, requirements prioritisation, ISO 16355
 :related: pugh-matrix, kano-model, morphological-box, quality-attribute-scenario, dmaic
 :tier: 3
+:definition: Quality Function Deployment (QFD) is a requirements method developed in Japan by Yoji Akao and Shigeru Mizuno that carries customer needs through a chain of matrices into technical, part and process characteristics, with priorities propagating at each step. Its best-known matrix, the House of Quality, maps customer needs to measurable technical characteristics, and its correlation roof exposes conflicts between them. The output is a ranked set of technical characteristics with numeric target values.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

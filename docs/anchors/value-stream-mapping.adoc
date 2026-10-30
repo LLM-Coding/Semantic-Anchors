@@ -5,6 +5,7 @@
 :tags: Value Stream Mapping, VSM, lean, current state map, future state map, flow efficiency, lead time, muda, material and information flow, Learning to See
 :related: muda-mura-muri, dmaic, a3-problem-solving, jidoka, five-whys
 :tier: 3
+:definition: Value Stream Mapping is a lean diagnostic method from Toyota, introduced to English-speaking readers by Mike Rother and John Shook in Learning to See (1999). For one product family, a current-state map records material and information flow plus a timeline that separates process time from waiting time. A future-state map and a value-stream plan then turn the revealed waste and low flow efficiency into scheduled improvement.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -4,6 +4,7 @@
 :related: mece, pugh-matrix
 :proponents: Fritz Zwicky
 :tier: 3
+:definition: Der Morphologische Kasten ist Fritz Zwickys Methode der morphologischen Analyse, entwickelt am California Institute of Technology für Probleme der Luft- und Raumfahrt. Er zerlegt ein komplexes Problem in unabhängige Parameter und listet für jeden die möglichen Varianten in einer Matrix. Wer Varianten systematisch kombiniert und nicht realisierbare Kombinationen herausfiltert, kartiert den vollständigen Lösungsraum und findet nicht offensichtliche Lösungen. Die Alternativen werden danach bewertet, etwa mit einer Pugh-Matrix.
 :tags: innovation, creativity, problem-solving, systematic-design, combinatorial-analysis
 
 [%collapsible]

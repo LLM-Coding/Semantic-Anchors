@@ -3,6 +3,7 @@
 :roles: product-owner, business-analyst, team-lead, consultant
 :proponents: Gojko Adzic
 :tier: 3
+:definition: Impact Mapping ist eine kollaborative Planungstechnik von Gojko Adzic, beschrieben in seinem Buch von 2012. Sie verknüpft über vier Ebenen, was ein Team baut, mit einem Geschäftsziel: Ziel, Akteure, Auswirkungen und Liefergegenstände beantworten Warum, Wer, Wie und Was. Als Mind Map gezeichnet, macht sie Annahmen explizit, verhindert Scope Creep durch die Bindung jedes Liefergegenstands an ein Ziel und dient als zielorientierte Alternative zur Feature-Roadmap.
 :tags: impact mapping, Gojko Adzic, strategic planning, goals, deliverables, product
 :related: user-story-mapping, wardley-mapping, okr
 

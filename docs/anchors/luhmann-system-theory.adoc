@@ -5,6 +5,7 @@
 :proponents: Niklas Luhmann, Dirk Baecker
 :tags: systems-theory, autopoiesis, operational-closure, structural-coupling, system-environment, double-contingency
 :tier: 3
+:definition: Luhmann's System Theory is Niklas Luhmann's sociological theory of autopoietic social systems, set out in works such as Soziale Systeme (1984), in which a system defines itself through the difference between itself and its environment. Systems are operationally closed and reproduce themselves through their own operations, and social systems consist of communication, not of people. Systems can only perturb one another through structural coupling, never instruct each other, which explains why direct control often fails.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: Fritz Zwicky
 :tags: innovation, creativity, problem-solving, systematic-design, combinatorial-analysis
 :tier: 3
+:definition: The Morphological Box is Fritz Zwicky's method of morphological analysis, developed at the California Institute of Technology for aerospace problems, that decomposes a complex problem into independent parameters and lists the possible variants of each in a matrix. Systematically combining variants and filtering out infeasible combinations maps the complete solution space and surfaces non-obvious designs. The resulting alternatives are then evaluated, for example with a Pugh Matrix.
 
 [%collapsible]
 ====

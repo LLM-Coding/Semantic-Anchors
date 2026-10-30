@@ -5,6 +5,7 @@
 :proponents: John M. Carroll, Mary Rosson, Jakob Nielsen
 :tags: ux, information-architecture, documentation, cognitive-load, layering
 :tier: 2
+:definition: Progressive Disclosure is an interaction design technique, grounded in John M. Carroll's training-wheels research at IBM and formalised by Jakob Nielsen, that shows only the essential options first and reveals advanced features on demand. Limiting the visible options improves learnability, efficiency of use and error rate at once. Nielsen recommends at most two disclosure levels; needing a third signals that the feature set needs simplification, not another layer.
 
 [%collapsible]
 ====

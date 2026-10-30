@@ -5,6 +5,7 @@
 :related: test-double-meszaros, test-double-stub
 :tags: test-double, dummy, testing, isolation
 :tier: 3
+:definition: A Dummy is the simplest test double in Gerard Meszaros' taxonomy from xUnit Test Patterns (2007): an object passed only to fill a required parameter and never actually used in the test. It has no behaviour, and any call to it signals a fault in the test setup. Dummies satisfy constructor or method signatures whose parameters are irrelevant to the scenario under test.
 :parent-anchor: test-double-meszaros
 
 [%collapsible]

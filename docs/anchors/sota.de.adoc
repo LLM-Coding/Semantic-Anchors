@@ -3,6 +3,7 @@
 :roles: software-developer, data-scientist, consultant
 :proponents: Community
 :tier: 3
+:definition: SOTA (State-of-the-Art) ist ein Begriff aus der ML/AI-Forschungsgemeinschaft für die aktuellsten, leistungsstärksten Methoden eines Feldes, belegt durch neue Forschung, Benchmarks und empirische Ergebnisse. Im Prompt löst er Rechercheverhalten aus: neue Ansätze mit früheren vergleichen und Aussagen mit Evidenz stützen. Jede SOTA-Aussage ist ein Zeitstempel und braucht daher Datum und Quelle, am besten ein lebendes Leaderboard statt des Modellgedächtnisses.
 :tags: SOTA, state of the art, benchmark, current best, research
 :related: llm-evaluations, first-principles-thinking
 

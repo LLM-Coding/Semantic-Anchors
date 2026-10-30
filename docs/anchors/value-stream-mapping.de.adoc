@@ -5,6 +5,7 @@
 :tags: Value Stream Mapping, Wertstromanalyse, Wertstromdesign, VSM, Lean, Ist-Zustand, Soll-Zustand, Flusseffizienz, Durchlaufzeit, Verschwendung
 :related: muda-mura-muri, dmaic, a3-problem-solving, jidoka, five-whys
 :tier: 3
+:definition: Value Stream Mapping ist eine Lean-Diagnosemethode von Toyota, die Mike Rother und John Shook mit Learning to See (1999) im englischen Sprachraum bekannt machten. Für eine Produktfamilie hält eine Ist-Karte Material- und Informationsfluss fest, dazu eine Zeitleiste, die Bearbeitungszeit von Wartezeit trennt. Eine Soll-Karte und ein Wertstromplan machen aus der sichtbar gewordenen Verschwendung und geringen Flusseffizienz dann eine terminierte Verbesserung.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

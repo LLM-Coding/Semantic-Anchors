@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect
 :umbrella: solid-principles
 :tier: 3
+:definition: The Liskov Substitution Principle (LSP) is the SOLID design principle, associated with Barbara Liskov and Robert C. Martin, that subtypes must be substitutable for their base types without altering the correctness of the program. Derived classes must honour the contracts of their base classes. Violations show up as subclass overrides that break expected behaviour, as type checks in client code, or as hierarchies that break the is-a relationship.
 :proponents: Robert C. Martin, Barbara Liskov
 :tags: SOLID, design principle, LSP, liskov, substitution
 :related: solid-principles, solid-ocp, solid-dip

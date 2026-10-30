@@ -5,6 +5,7 @@
 :proponents: Andy Hunt, David Thomas
 :tags: architecture, validation, end-to-end, iterative, direction-finding
 :tier: 3
+:definition: Tracer Bullet development, from Andrew Hunt and David Thomas's The Pragmatic Programmer (1999), builds a thin, deliberately incomplete slice that touches every part of the final system on real infrastructure. It shows early whether the architecture, tech stack and service boundaries actually work together. Unlike a spike or prototype, tracer code is kept and refined, and each later tracer adjusts the aim.
 
 [%collapsible]
 ====

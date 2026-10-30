@@ -3,6 +3,7 @@
 :roles: data-scientist, devops-engineer, team-lead, qa-engineer
 :proponents: Walter A. Shewhart (founder), W. Edwards Deming (dissemination), Western Electric Company
 :tier: 3
+:definition: Statistical Process Control (SPC) ist eine Qualitätsmethode zur systematischen statistischen Überwachung laufender Prozesse; Walter A. Shewhart begründete sie, W. Edwards Deming verbreitete sie. Mit Regelkarten und Erkennungsregeln wie den Nelson Rules trennt sie inhärente, vorhersagbare Variation durch allgemeine Ursachen von zuordenbarer Variation durch spezielle Ursachen, die ein Eingreifen verlangt. Zeigt ein Prozess nur allgemeine Ursachen, ist er unter Kontrolle; in der Control-Phase von DMAIC sichert SPC Verbesserungen ab.
 :tags: SPC, statistical process control, control charts, Shewhart, quality, variation
 :related: control-chart-shewhart, nelson-rules, dmaic
 

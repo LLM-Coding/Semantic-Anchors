@@ -5,6 +5,7 @@
 :tags: ROP, railway oriented programming, two-track, success track, failure track, Result, Either, errors as values, bind, flatMap, map, mapError, short-circuiting, F#, Rust, Wlaschin
 :related: design-by-contract, domain-driven-design, postels-law, code-smells
 :tier: 3
+:definition: Railway Oriented Programming is Scott Wlaschin's metaphor, introduced in 2013 and 2014, for composing functions that can fail: a success track and a failure track, with each step acting as a switch between them. Errors become values in a Result-style return type, combinators such as bind, map and mapError connect the steps, and the first failure short-circuits the rest. Wlaschin himself limits the style to expected failures at boundaries, not every error.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 
