@@ -390,6 +390,7 @@
       "refactoring-ui",
       "swiss-style",
       "tufte-style",
+      "wai-aria-apg",
       "wcag-22-aa"
     ]
   }

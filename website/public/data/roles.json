@@ -451,6 +451,7 @@
       "test-seam",
       "testing-pyramid",
       "toyota-kata",
+      "wai-aria-apg",
       "wcag-22-aa"
     ]
   },
@@ -772,6 +773,7 @@
       "twelve-factor-app",
       "unix-philosophy",
       "vertical-slice-architecture",
+      "wai-aria-apg",
       "walking-skeleton",
       "wcag-22-aa",
       "what-would-chuck-norris-do",
@@ -999,6 +1001,7 @@
       "swiss-style",
       "tufte-style",
       "user-story-mapping",
+      "wai-aria-apg",
       "wcag-22-aa"
     ]
   }

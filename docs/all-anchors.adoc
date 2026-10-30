@@ -930,6 +930,9 @@ include::anchors/swiss-style.adoc[leveloffset=+2]
 
 include::anchors/tufte-style.adoc[leveloffset=+2]
 
+[[wai-aria-apg]]
+include::anchors/wai-aria-apg.adoc[leveloffset=+2]
+
 include::anchors/wcag-22-aa.adoc[leveloffset=+2]
 
 <<<
