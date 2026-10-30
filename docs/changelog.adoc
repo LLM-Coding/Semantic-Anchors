@@ -4,6 +4,12 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 == 2026-10-30
 
+*Every anchor now has a curated definition (https://github.com/LLM-Coding/Semantic-Anchors/issues/865[#865]):*
+
+* All 271 anchors carry a `:definition:` in English and German: two or three sentences that say what the whole concept is, who it comes from, and what it is for, using only facts from the anchor's own file. Before https://github.com/LLM-Coding/Semantic-Anchors/pull/886[#886], 225 anchors showed the first Core Concepts entry instead, which often described one part of the concept, not the concept.
+* The derived fallback is gone. A unit test fails for any anchor file without a definition, and `CONTRIBUTING` and the template list the attribute as required.
+* The meta description of each anchor page now comes from the definition too: it ends after the last full sentence within 160 characters, or at a word boundary with an ellipsis when the first sentence is longer.
+
 *Eleven new anchors -- design systems from The Component Gallery:*
 
 * *link:#/anchor/carbon-design-system[Carbon Design System]* (IBM) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/874[#874]: a team-settings page imports `@carbon/react` and builds a `DataTable` in six of six runs.

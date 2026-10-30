@@ -1,6 +1,12 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { JSDOM } from 'jsdom'
-import { createModal, openModal, closeModal, showAnchorDetails } from './anchor-modal.js'
+import {
+  createModal,
+  openModal,
+  closeModal,
+  showAnchorDetails,
+  definitionOf,
+} from './anchor-modal.js'
 
 vi.mock('../utils/data-loader.js', () => ({
   fetchAnchorsData: vi.fn(),
@@ -322,6 +328,81 @@ describe('anchor-modal', () => {
       await showAnchorDetails('dated-only-anchor')
 
       expect(document.querySelector('.anchor-tested-on')).toBeNull()
+    })
+  })
+
+  // #865: the lead is the :definition: of the file the modal loaded, so it is
+  // in the language of the content below it, also when German falls back.
+  describe('definition lead', () => {
+    const EN = '= Defined\n:definition: Defined is an English definition.\n\nContent'
+    const DE = '= Defined\n:definition: Defined ist eine deutsche Definition.\n\nInhalt'
+
+    beforeEach(async () => {
+      createModal()
+      const { fetchAnchorsData } = await import('../utils/data-loader.js')
+      fetchAnchorsData.mockResolvedValue([{ id: 'defined', title: 'Defined' }])
+    })
+
+    afterEach(() => {
+      delete global.fetch
+    })
+
+    const lead = () => document.querySelector('#modal-content .anchor-answer-lead')
+
+    it('shows the English definition in English', async () => {
+      global.fetch = vi.fn().mockResolvedValue({ ok: true, text: async () => EN })
+      await showAnchorDetails('defined')
+      expect(lead().textContent).toBe('Defined is an English definition.')
+    })
+
+    it('shows the German definition in German', async () => {
+      const { i18n } = await import('../i18n.js')
+      global.localStorage = window.localStorage
+      i18n.setLang('de')
+      global.fetch = vi.fn().mockResolvedValue({ ok: true, text: async () => DE })
+      try {
+        await showAnchorDetails('defined')
+        expect(lead().textContent).toBe('Defined ist eine deutsche Definition.')
+      } finally {
+        i18n.setLang('en')
+      }
+    })
+
+    it('shows the English definition when German falls back to English content', async () => {
+      const { i18n } = await import('../i18n.js')
+      global.localStorage = window.localStorage
+      i18n.setLang('de')
+      global.fetch = vi
+        .fn()
+        .mockResolvedValueOnce({ ok: false, status: 404 })
+        .mockResolvedValue({ ok: true, text: async () => EN })
+      try {
+        await showAnchorDetails('defined')
+        expect(lead().textContent).toBe('Defined is an English definition.')
+      } finally {
+        i18n.setLang('en')
+      }
+    })
+
+    it('shows no lead for a file without :definition:', async () => {
+      global.fetch = vi.fn().mockResolvedValue({ ok: true, text: async () => '= T\n\nContent' })
+      await showAnchorDetails('defined')
+      expect(lead()).toBeNull()
+    })
+  })
+
+  describe('definitionOf', () => {
+    it('reads the attribute from the header only', () => {
+      expect(definitionOf('= T\n:tier: 3\n:definition: A text.\n\n:definition: Body.')).toBe(
+        'A text.'
+      )
+      expect(definitionOf('= T\n\n:definition: Body only.')).toBeNull()
+    })
+
+    it('keeps identifier underscores', () => {
+      expect(definitionOf('= T\n:definition: The block__element--modifier structure.\n')).toBe(
+        'The block__element--modifier structure.'
+      )
     })
   })
 

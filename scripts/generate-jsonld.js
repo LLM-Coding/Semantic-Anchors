@@ -11,10 +11,8 @@
  * structured-data half of issue #579 (the human-readable definitions already
  * ship in crawlable HTML).
  *
- * Per-term `description` is extracted from the first "Core Concepts" definition
- * in each anchor's .adoc when it is cleanly available, and omitted otherwise —
- * crisp 40-60 word answer blocks are issue #580's job, and will later supersede
- * these as the DefinedTerm descriptions.
+ * Per-term `description` is the anchor's curated `:definition:` (#580, #865),
+ * the same text as the answer block on the anchor page.
  *
  * Runs AFTER prerender-routes.js so it only touches the home page and
  * /all-anchors (the canonical locations for the set), not every route shell.
@@ -37,10 +35,9 @@ const SET_ID = `${BASE}/#catalog`
 // reference. Both represent the whole set; other routes do not.
 const TARGETS = [path.join(DIST, 'index.html'), path.join(DIST, 'all-anchors', 'index.html')]
 
-// Anchor definitions (curated `:definition:` preferred, else derived from the
-// first "Core Concepts" entry) come from the shared resolver so the JSON-LD
-// DefinedTerm description matches the rendered answer block (#580).
-const { getAnchorDefinition, extractDescription } = require('./lib/anchor-definition')
+// Anchor definitions (the curated `:definition:`) come from the shared resolver
+// so the JSON-LD DefinedTerm description matches the rendered answer block (#580).
+const { getAnchorDefinition } = require('./lib/anchor-definition')
 
 /** Build the DefinedTermSet object from anchors.json. */
 function buildDefinedTermSet() {
@@ -159,4 +156,4 @@ function main() {
 
 if (require.main === module) main()
 
-module.exports = { buildDefinedTermSet, buildScriptTag, extractDescription, injectInto }
+module.exports = { buildDefinedTermSet, buildScriptTag, injectInto }

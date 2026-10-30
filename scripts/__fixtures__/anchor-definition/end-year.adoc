@@ -1,0 +1,11 @@
+= end-year
+:categories: testing-quality
+:roles: software-developer
+:proponents: Community
+:tier: 3
+:definition: End Year Anchor is a fixture whose first sentence runs on for a good while and only ends after the year of its revision, which was published in 2001. Then a second sentence follows that pushes the whole text past the limit of the description.
+
+[%collapsible]
+====
+Also known as:: end-year
+====

@@ -1,0 +1,11 @@
+= end-quote
+:categories: testing-quality
+:roles: software-developer
+:proponents: Community
+:tier: 3
+:definition: End Quote Anchor endet mit einem Zitat: „Sei streng in dem, was du sendest, und großzügig in dem, was du annimmst.“ Danach folgt ein zweiter Satz, der den Text über die Grenze schiebt.
+
+[%collapsible]
+====
+Also known as:: end-quote
+====
