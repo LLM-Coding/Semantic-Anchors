@@ -211,16 +211,25 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
     ? `<p class="category-intro" data-category-intro="${escapeHtml(category.id)}">${introHtml}</p>`
     : ''
 
+  // Bento PoC: the category heading and intro are the first, largest tile of
+  // the category's grid, so size carries the hierarchy. The first anchor and
+  // anchors carrying an advisory or "new" badge get a double-width tile.
   return `
-    <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">
-      <h2 class="category-heading">
-        <span class="category-icon" style="background-color: ${color}">${icon}</span>
-        <span data-i18n="categories.${escapeHtml(category.id)}">${escapeHtml(categoryName)}</span>
-      </h2>
-      ${intro}
-
+    <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}" style="--cat: ${color}">
       <div class="anchor-cards-grid">
-        ${categoryAnchors.map((anchor) => renderAnchorCard(anchor, color, category.id, recent.has(anchor.id))).join('')}
+        <div class="category-tile">
+          <span class="category-icon" aria-hidden="true">${icon}</span>
+          <h2 class="category-heading">
+            <span data-i18n="categories.${escapeHtml(category.id)}">${escapeHtml(categoryName)}</span>
+          </h2>
+          ${intro}
+          <p class="category-tile-count" aria-hidden="true"><span class="category-tile-figure">${categoryAnchors.length}</span></p>
+        </div>
+        ${categoryAnchors
+          .map((anchor, index) =>
+            renderAnchorCard(anchor, color, category.id, recent.has(anchor.id), index === 0)
+          )
+          .join('')}
       </div>
     </section>
   `
@@ -245,9 +254,11 @@ export function updateCategoryIntros(lang) {
  * category sections (anchors can belong to more than one category) and
  * the DOM must not contain duplicate ids.
  */
-function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false) {
+function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false, isFirst = false) {
   const isUmbrella = anchor.subAnchors && anchor.subAnchors.length > 0
   const umbrellaClass = isUmbrella ? ' anchor-card-umbrella' : ''
+  const isFeature = isFirst || !!anchor.advisory || isRecentlyAdded(anchor)
+  const featureClass = isFeature ? ' anchor-card-feature' : ''
   const rolesCount = anchor.roles ? anchor.roles.length : 0
   const githubEditUrl = `https://github.com/LLM-Coding/Semantic-Anchors/edit/main/docs/anchors/${anchor.id}.adoc`
   const roleText = rolesCount === 1 ? i18n.t('card.roles') : i18n.t('card.rolesPlural')
@@ -261,7 +272,7 @@ function renderAnchorCard(anchor, categoryColor, categoryId, isRecent = false) {
 
   return `
     <div
-      class="anchor-card${umbrellaClass}"
+      class="anchor-card${umbrellaClass}${featureClass}"
       data-anchor="${safeId}"
       ${isRecent ? 'data-recent="true"' : ''}
       data-roles="${escapeHtml(anchor.roles ? anchor.roles.join(',') : '')}"
@@ -640,6 +651,9 @@ function syncCategoryNav() {
 
     const countEl = link.querySelector('.category-nav-count')
     if (countEl) countEl.textContent = visible
+
+    const tileFigure = section.querySelector('.category-tile-figure')
+    if (tileFigure) tileFigure.textContent = visible
   })
 }
 
@@ -650,7 +664,9 @@ export function updateAnchorCount(visible, total) {
   document.querySelectorAll('#visible-count, #visible-count-mobile').forEach((el) => {
     el.textContent = visible
   })
-  document.querySelectorAll('#total-count, #total-count-mobile').forEach((el) => {
-    el.textContent = total
-  })
+  document
+    .querySelectorAll('#total-count, #total-count-mobile, .hero-total-count')
+    .forEach((el) => {
+      el.textContent = total
+    })
 }
