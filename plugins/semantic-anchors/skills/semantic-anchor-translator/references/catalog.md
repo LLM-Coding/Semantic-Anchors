@@ -1206,7 +1206,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### WAI-ARIA Authoring Practices Guide (APG)
 - **Also known as:** ARIA Authoring Practices, WAI-ARIA Authoring Practices (formerly W3C Notes 1.1/1.2)
 - **Proponents:** W3C Web Accessibility Initiative, ARIA Authoring Practices Task Force (living guide since 2022)
-- **Core:** 30 named UI patterns (Accordion, Combobox, Dialog, Disclosure, Menu Button, Listbox, Tabs, Tree View, …), each fixing keyboard interaction, ARIA roles/states/properties and focus management with a working example; composite widgets take one Tab stop, arrows/Home/End inside (roving tabindex); informative, not normative, not production-ready code; native HTML first; pair with a style anchor and WCAG 2.2 AA — the APG fixes behaviour, not look; for site navigation choose the Disclosure Navigation Menu over menu roles
+- **Core:** 30 named UI patterns (Accordion, Combobox, Dialog, Disclosure, Menu Button, Listbox, Tabs, Tree View, …), each fixing keyboard interaction, ARIA roles/states/properties and focus management with a working example; composite widgets are one Tab stop with arrow keys inside (roving tabindex), a popup menu takes focus on open, Home/End depend on the pattern; informative, not normative, not production-ready code; native HTML first; pair with a style anchor and WCAG 2.2 AA — the APG fixes behaviour, not look; for typical site navigation the APG itself recommends the Disclosure Navigation Menu over menu roles, without forbidding them
 
 ### Mobile First
 - **Also known as:** Mobile-first design
