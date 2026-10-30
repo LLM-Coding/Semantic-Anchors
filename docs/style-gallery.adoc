@@ -60,7 +60,7 @@ image::/Semantic-Anchors/examples/tufte-style.webp["The homepage redesigned in t
 
 Design systems are made for product interfaces. Their differences show in tables, status labels, page headers and density, and a homepage has little of that. So the design systems redesign an app page instead: the "Team members" settings page of a fictional admin console, written for this gallery in a deliberately plain style. The first tile is that page.
 
-These sessions ran on 30 October 2026 in a cloud workspace without web access. Fonts from Google Fonts were served from npm copies for the screenshots; licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.
+These sessions ran on 30 October 2026 in a cloud workspace without web access. For the screenshots, fonts from Google Fonts and stylesheets from jsDelivr were served from the same npm packages; licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.
 
 [.style-gallery]
 --

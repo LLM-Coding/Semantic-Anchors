@@ -50,7 +50,7 @@ const TEXT = {
         heading: 'Design systems: one app page',
         intro: [
           'Design systems are made for product interfaces. Their differences show in tables, status labels, page headers and density, and a homepage has little of that. So the design systems redesign an app page instead: the "Team members" settings page of a fictional admin console, written for this gallery in a deliberately plain style. The first tile is that page.',
-          'These sessions ran on 30 October 2026 in a cloud workspace without web access. Fonts from Google Fonts were served from npm copies for the screenshots; licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.',
+          'These sessions ran on 30 October 2026 in a cloud workspace without web access. For the screenshots, fonts from Google Fonts and stylesheets from jsDelivr were served from the same npm packages; licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.',
         ],
         originalAlt: 'The neutral starting page, a team-members settings page, before any redesign',
         alt: (t) => `The settings page redesigned in the style of ${t}`,
@@ -78,7 +78,7 @@ const TEXT = {
         heading: 'Design-Systeme: eine App-Seite',
         intro: [
           'Design-Systeme sind für Produktoberflächen gemacht. Ihre Unterschiede zeigen sich in Tabellen, Status-Labels, Seitenköpfen und Dichte, und davon hat eine Homepage wenig. Deshalb gestalten die Design-Systeme stattdessen eine App-Seite neu: die Einstellungsseite „Team members“ einer erfundenen Admin-Konsole, für diese Galerie bewusst schlicht geschrieben. Die erste Kachel ist diese Seite.',
-          'Diese Sessions liefen am 30. Oktober 2026 in einer Cloud-Umgebung ohne Webzugriff. Schriften von Google Fonts kamen für die Screenshots aus npm-Kopien; lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.',
+          'Diese Sessions liefen am 30. Oktober 2026 in einer Cloud-Umgebung ohne Webzugriff. Für die Screenshots kamen Schriften von Google Fonts und Stylesheets von jsDelivr aus denselben npm-Paketen; lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.',
         ],
         originalAlt:
           'Die neutrale Ausgangsseite, eine Einstellungsseite für Teammitglieder, vor der Neugestaltung',
