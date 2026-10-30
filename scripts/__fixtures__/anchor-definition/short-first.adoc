@@ -1,0 +1,11 @@
+= short-first
+:categories: testing-quality
+:roles: software-developer
+:proponents: Community
+:tier: 3
+:definition: Short First Anchor is a fixture. Its second sentence runs on and on with clause after clause and never reaches its end before the limit of two hundred and twenty characters, because it keeps adding one more item and another one after that. End.
+
+[%collapsible]
+====
+Also known as:: short-first
+====

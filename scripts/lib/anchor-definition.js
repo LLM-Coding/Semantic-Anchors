@@ -67,33 +67,39 @@ function getAnchorDefinition(filePathRel) {
 /** Longest meta description we emit; search results show less, but cut later. */
 const META_DESCRIPTION_MAX = 220
 
-/** A sentence that a full sentence after it may follow, if it is not this short. */
+/** Shortest first sentence we end on; a shorter one falls back to a word cut. */
 const MIN_SENTENCE = 80
 
 /**
- * Sentence ends: `.`, `!` or `?` before a space and a capital letter, but not
- * after an initial ("E. St. Elmo"), a common abbreviation ("e.g.", "St.") or a
- * digit (German ordinals: "2. Auflage"). The capital keeps titles such as
- * "Release It! and" whole.
+ * Sentence ends: `.`, `!` or `?`, optionally followed by a closing quotation
+ * mark, then a space and a capital letter. Not a sentence end: after a single
+ * letter (initials such as "E. St. Elmo", German "z. B."), after a common
+ * abbreviation ("e.g.", "Dr."), or after a one- or two-digit number (German
+ * ordinals: "2. Auflage"). Years and versions ("2001.", "4.0.") do end one.
+ * The capital keeps titles such as "Release It! and" whole.
  */
 const SENTENCE_END =
-  /(?<!\b[A-Z])(?<!\d)(?<!\b(?:e\.g|i\.e|vs|St|Dr|Mr|Ms|Mrs|No|etc|ca|bzw|z\.B|d\.h|u\.a))[.!?](?=\s+[A-ZÄÖÜ„"“])/g
+  /(?<!\b[A-Za-z])(?<!(?:^|[\s(])\d{1,2})(?<!\b(?:e\.g|i\.e|vs|St|Dr|Mr|Ms|Mrs|No|Nr|Prof|Inc|al|etc|ca|bzw|Aufl))[.!?]["“”»]?(?=\s+[A-ZÄÖÜ„"“])/g
 
-/** Cut text to max: after the last full sentence that fits, else at a word boundary. */
+/**
+ * Cut text to max characters: after the last full sentence that fits, or at a
+ * word boundary with an ellipsis when no sentence of at least MIN_SENTENCE fits.
+ */
 function cutAtSentence(text, max) {
   if (text.length <= max) return text
   let end = -1
   for (const m of text.matchAll(SENTENCE_END)) {
-    if (m.index + 1 > max) break
-    end = m.index + 1
+    const stop = m.index + m[0].length
+    if (stop > max) break
+    end = stop
   }
   return end >= MIN_SENTENCE ? text.slice(0, end) : capLength(text, max)
 }
 
 /**
- * The anchor's meta description: its curated definition, cut to at most
- * META_DESCRIPTION_MAX characters (plus an ellipsis when cut mid-sentence).
- * Null without a definition.
+ * The anchor's meta description: its curated definition, shortened by
+ * cutAtSentence to at most META_DESCRIPTION_MAX characters (plus an ellipsis
+ * when cut mid-sentence). Null without a definition.
  */
 function getAnchorMetaDescription(filePathRel) {
   const def = getAnchorDefinition(filePathRel)

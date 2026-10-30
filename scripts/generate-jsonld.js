@@ -11,10 +11,8 @@
  * structured-data half of issue #579 (the human-readable definitions already
  * ship in crawlable HTML).
  *
- * Per-term `description` is extracted from the first "Core Concepts" definition
- * in each anchor's .adoc when it is cleanly available, and omitted otherwise —
- * crisp 40-60 word answer blocks are issue #580's job, and will later supersede
- * these as the DefinedTerm descriptions.
+ * Per-term `description` is the anchor's curated `:definition:` (#580, #865),
+ * the same text as the answer block on the anchor page.
  *
  * Runs AFTER prerender-routes.js so it only touches the home page and
  * /all-anchors (the canonical locations for the set), not every route shell.

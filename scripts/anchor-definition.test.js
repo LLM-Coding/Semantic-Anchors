@@ -51,25 +51,35 @@ describe('getAnchorMetaDescription', () => {
     )
   })
 
+  // Each trap below is the last candidate between MIN_SENTENCE and the limit,
+  // so a missing guard would end the description there instead of cutting at a
+  // word boundary.
   it.each([
-    ['a title with an exclamation mark', 'Release It! and'],
-    ['a German ordinal', '(2. Auflage'],
-  ])('does not end a sentence at %s', (_, phrase) => {
-    const meta = getAnchorMetaDescription(`${FIXTURES}/en-title-and-ordinal.adoc`)
+    ['an initial', 'trap-initial', 'E. St. Elmo Lewis'],
+    ['an abbreviation', 'trap-abbrev', 'e.g. Sample work by Dr. Jane'],
+    ['a German ordinal', 'trap-ordinal', '2. Auflage'],
+    ['a title with an exclamation mark', 'trap-title', 'Release It! and'],
+    ['"z. B."', 'trap-zb', 'z. B. Kanban'],
+  ])('does not end a sentence at %s', (_, fixture, phrase) => {
+    const meta = getAnchorMetaDescription(`${FIXTURES}/${fixture}.adoc`)
     expect(meta).toContain(phrase)
-  })
-
-  it('does not end a sentence at an initial or an abbreviation', () => {
-    const meta = getAnchorMetaDescription(`${FIXTURES}/en-initials.adoc`)
     expect(meta.endsWith('…')).toBe(true)
-    expect(meta).not.toMatch(/ (E|St|e\.g)\.$/)
+    expect(meta.length).toBeLessThanOrEqual(221)
+    expect(meta).not.toMatch(/\s…$/)
   })
 
-  it('cuts at a word boundary when no sentence ends within 220 characters', () => {
-    const meta = getAnchorMetaDescription(`${FIXTURES}/en-initials.adoc`)
-    expect(meta.length).toBeLessThanOrEqual(221)
-    expect(meta.startsWith('Initials Sample Anchor is a fixture')).toBe(true)
-    expect(meta).not.toMatch(/\s…$/)
+  it('cuts at a word boundary rather than end on a first sentence under 80 characters', () => {
+    const meta = getAnchorMetaDescription(`${FIXTURES}/short-first.adoc`)
+    expect(meta.startsWith('Short First Anchor is a fixture. Its second sentence')).toBe(true)
+    expect(meta.endsWith('…')).toBe(true)
+  })
+
+  it('ends a sentence after a year', () => {
+    expect(getAnchorMetaDescription(`${FIXTURES}/end-year.adoc`)).toMatch(/published in 2001\.$/)
+  })
+
+  it('ends a sentence after a closing quotation mark', () => {
+    expect(getAnchorMetaDescription(`${FIXTURES}/end-quote.adoc`)).toMatch(/annimmst\.“$/)
   })
 
   it('stays within 221 characters for every anchor file', () => {

@@ -1,0 +1,11 @@
+= trap-abbrev
+:categories: testing-quality
+:roles: software-developer
+:proponents: Community
+:tier: 3
+:definition: Trap Abbreviation Anchor is a fixture whose first sentence runs on for a good while before it gives an example, e.g. Sample work by Dr. Jane Doe and the sentence keeps going with clause after clause so that it cannot end anywhere before the limit of two hundred and twenty characters is passed. End.
+
+[%collapsible]
+====
+Also known as:: trap-abbrev
+====
