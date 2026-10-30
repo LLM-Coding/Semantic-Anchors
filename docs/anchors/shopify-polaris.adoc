@@ -1,0 +1,52 @@
+= Shopify Polaris
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Shopify
+:tags: Shopify Polaris, Polaris, Shopify admin, Shopify apps, Polaris web components, s-page, s-section, Polaris React, @shopify/polaris, @shopify/polaris-tokens, design tokens, --p-color-bg-surface, Page, Card, IndexTable, BlockStack, Badge, App Bridge, content guidelines, merchant UX
+:related: design-tokens-dtcg, material-design-3, atlassian-design-system
+:tier: 3
+:definition: Shopify Polaris is the design system of the Shopify admin and of the apps that run inside it, published in 2017 with a style guide, content guidance, design tokens and a React component library. Since 2025 it ships as framework-independent web components with the s- prefix, and the React library is deprecated.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: shopify-polaris.webp
+
+[%collapsible]
+====
+Full Name:: Shopify Polaris -- "Shopify's unified UI framework built on web components" (https://shopify.dev/docs/api/polaris[shopify.dev])
+
+Also known as:: Polaris, Polaris web components, Polaris React (the deprecated library)
+
+[discrete]
+== *Core Concepts*:
+
+* *Pages for merchants.* A page has a title, a primary action and secondary actions; content sits in cards and sections; resource lists and index tables show orders, products and customers.
+* *Web components with the `s-` prefix.* `<s-page>`, `<s-section>`, `<s-stack>` and `<s-button tone="critical" variant="primary">`, loaded from Shopify's CDN and usable with any framework (https://shopify-dev.shopifycloud.com/docs/api/app-home/using-polaris-components[Using Polaris components]).
+* *The React library.* `@shopify/polaris` with `Page`, `Layout`, `Card`, `IndexTable`, `BlockStack`, `InlineStack` and `Badge` -- what most code written before 2025 uses.
+* *Design tokens.* CSS custom properties with the `--p` prefix such as `--p-color-bg-surface`, from `@shopify/polaris-tokens`.
+* *Content guidance.* Polaris has always included rules for voice, tone and wording in merchant-facing interfaces, not only components.
+
+Key Proponents:: Shopify. Polaris was made available to partners at Shopify Unite 2017 with a style guide, content guidance, CSS, a React component library and a Sketch kit (Liz Couto, https://shopify.com/partners/blog/how-to-get-the-most-out-of-polaris-shopify-s-new-design-system[Shopify Partners blog, 2017]); Polaris web components became stable on 1 October 2025 (https://shopify.dev/changelog/blog/polaris-goes-stable-the-future-of-shopify-app-development-is-here[Shopify changelog])
+
+[discrete]
+== *When to Use*:
+
+* Building Shopify apps, admin extensions or merchant-facing back offices. In our prior test, every anchor run of a team-settings page built a Polaris `Page` with a primary action, an `IndexTable` and `Badge` tones.
+* Designing dense, task-focused admin screens with clear primary actions
+* Writing interface copy for merchants along Polaris's content rules
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Saying "Polaris" alone.* The bare word resolves to the North Star on every tier we tested; "Shopify Polaris" pins it.
+* *Expecting web components from the model.* Every anchor run in our test wrote Polaris React, and none wrote `s-` components. The React library is deprecated, and React-rendered parts "won't follow the updated Shopify admin" (https://shopify.dev/docs/apps/build/app-home/polaris2.md[Polaris 2]). For new apps, ask for Polaris web components and give the link to shopify.dev.
+
+[discrete]
+== *Criticism*:
+
+* *A forced migration.* Daniel Curtis, https://infoq.com/news/2026/10/shopify-web-components["Shopify Upgrades Checkout Blocks to Polaris Web Components"] (InfoQ, 2026), reports that after a year, with the 2026-01 version mandatory, "sentiment has been more mixed": developers called the unversioned CDN script a risk for stability and the components incomplete, while bundles shrank by 40 to 85 per cent.
+
+[discrete]
+== *Current Status*:
+
+* *Web components and Polaris 2.* The Polaris React repository is archived and "will not receive updates or maintenance"; the old documentation sites redirect to shopify.dev. The redesigned admin began rolling out on 15 September 2026, and the Polaris 2.0 release candidate of 24 September 2026 requires apps to move to web components; Built for Shopify apps have until 1 May 2027 (https://shopify.dev/changelog/polaris-2-0-release-candidate[changelog]). The training-data prior is the React era.
+====

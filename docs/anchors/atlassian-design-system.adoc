@@ -1,0 +1,52 @@
+= Atlassian Design System
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Atlassian
+:tags: Atlassian Design System, ADS, Atlassian Design Guidelines, ADG, Atlaskit, @atlaskit, design tokens, color.text.subtle, elevation.surface, space.100, Lozenge, DynamicTable, Atlassian Sans, Jira, Confluence, Jürgen Spangl
+:related: design-tokens-dtcg, primer-github, material-design-3
+:tier: 3
+:definition: The Atlassian Design System is the design system behind Jira, Confluence and Trello, first published as the Atlassian Design Guidelines (ADG) in 2013. It provides the Atlaskit React components, design tokens for colour, elevation, spacing and typography such as color.text.subtle and space.100, and the Atlassian Sans typeface.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: atlassian-design-system.webp
+
+[%collapsible]
+====
+Full Name:: Atlassian Design System -- formerly the Atlassian Design Guidelines (ADG)
+
+Also known as:: ADS, ADG, Atlaskit (the component library)
+
+[discrete]
+== *Core Concepts*:
+
+* *Design tokens for every value.* Colour, elevation, spacing and typography come from tokens such as `color.background.brand.bold`, `color.text.subtle`, `elevation.surface.raised`, `space.100` and `font.heading.medium` in `@atlaskit/tokens`; they carry light and dark themes.
+* *Atlaskit components.* React packages under `@atlaskit/`, such as `@atlaskit/button`, `@atlaskit/dynamic-table`, `@atlaskit/page-header` and the layout primitives in `@atlaskit/primitives`.
+* *The Lozenge.* A small status label -- "a visual indicator used to highlight an item's status for quick recognition" -- that appears throughout Jira.
+* *Atlassian Sans and Atlassian Mono.* Since 2025 the product typefaces replace the earlier system-font stack (https://atlassian.design/foundations/typography/product-typefaces-and-scale[Typography]).
+* *Foundations for AI patterns.* The site now lists AI patterns for Atlassian's Rovo assistant beside colour, typography, iconography and grid.
+
+Key Proponents:: Atlassian. Jürgen Spangl, then Head of Design, started the guidelines; the first internal version came in June 2012 (https://www.uxpin.com/studio/blog/atlassian-design-system-creating-design-harmony-scale/[UXPin]), the public ADG in 2013 (https://www.atlassian.com/blog/2013/03/making-atlassian-design-guidelines[Atlassian blog, 2013])
+
+[discrete]
+== *When to Use*:
+
+* Building Jira or Confluence apps, Forge apps or tools that should feel like part of Atlassian's products. In our prior test, every anchor run of a team-settings page imported Atlaskit packages, built a `DynamicTable` and marked roles with a `Lozenge`.
+* Learning a mature token architecture with semantic names for colour, elevation and space
+* As a reference for dense, task-oriented collaboration interfaces
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Expecting the pre-2024 look.* Atlassian refreshed its visual system with Pentagram from December 2022 and showed it at Team '24 (https://www.atlassian.com/blog/announcements/our-journey-to-a-reimagined-visual-system[Atlassian, 2024]); new icons, colours and the type scale followed in 2025. Models trained before that write the older look unless told otherwise.
+* *Treating Charlie as the UI font.* Charlie is Atlassian's brand typeface; the product UI uses Atlassian Sans, formerly system fonts.
+
+[discrete]
+== *Criticism*:
+
+* *Design and code drifted apart.* Atlassian's own designers write that the old typography "lacked parity between design and code" and that their initial time budget for tokenisation was too low (Eva Plaisted and Rachel Radford, https://www.atlassian.com/blog/design/implementing-typography-at-scale-the-journey-behind-the-screens["Implementing typography at scale"], Inside Atlassian, 2025).
+
+[discrete]
+== *Current Status*:
+
+* *New typography is generally available.* The new typography system reached general availability on 9 September 2025; the modernised and legacy systems were deprecated and supported until January 2026 (https://atlassian.design/whats-new/new-typography-in-general-availability[What's new]). `@atlaskit/tokens` is released continuously, version 20.8.2 in October 2026.
+====

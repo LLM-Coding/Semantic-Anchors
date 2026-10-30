@@ -1,0 +1,53 @@
+= Fluent 2 Design System
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Microsoft
+:tags: Fluent 2, Fluent 2 Design System, Fluent Design System, Fluent UI, Fluent UI React v9, @fluentui/react-components, @fluentui/web-components, makeStyles, Griffel, FluentProvider, webLightTheme, design tokens, colorNeutralForeground1, global tokens, alias tokens, Segoe UI, Segoe UI Variable, Microsoft 365, Teams, Windows, WinUI, Project Neon
+:related: material-design-3, apple-human-interface-guidelines, design-tokens-dtcg
+:tier: 3
+:definition: Fluent 2 is Microsoft's design system for Microsoft 365, Teams and Windows, released in 2023 as the successor of the Fluent Design System of 2017. It defines global and alias design tokens, a type ramp in Segoe UI and platform typefaces, and components for web, Windows, iOS and Android, on the web through Fluent UI React v9.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: fluent-2-design-system.webp
+
+[%collapsible]
+====
+Full Name:: Fluent 2 Design System -- the second generation of Microsoft's Fluent Design System
+
+Also known as:: Fluent 2, Fluent UI (the code libraries), Fluent UI React v9
+
+[discrete]
+== *Core Concepts*:
+
+* *Two token layers.* Global tokens hold raw values, alias tokens carry meaning (https://fluent2.microsoft.design/design-tokens[Design tokens]); in React they appear as `tokens.colorNeutralForeground1` or `tokens.colorBrandBackground`.
+* *Platform typefaces on one ramp.* Segoe UI on the web, Segoe UI Variable on Windows, San Francisco Pro on Apple platforms and Roboto on Android, with a shared ramp from Caption to Display (https://fluent2.microsoft.design/typography[Typography]).
+* *Fluent UI React v9.* `@fluentui/react-components` with `FluentProvider` and themes such as `webLightTheme`; styles are written with `makeStyles`, which builds on the Griffel CSS-in-JS engine.
+* *Components per platform.* React and Web Components for the web, WinUI for Windows, and native libraries for iOS and Android (https://fluent2.microsoft.design/get-started/develop[Develop]).
+* *Light, depth, motion, material, scale.* The five properties of the original Fluent Design System of 2017, whose materials Acrylic and Mica still shape Windows.
+
+Key Proponents:: Microsoft. The Fluent Design System was unveiled at Build on 11 May 2017, codename Project Neon (https://thenextweb.com/microsoft/2017/05/11/windows-10-gets-a-ui-refresh-with-the-fluent-design-system-aka-project-neon/[The Next Web]); Fluent 2 followed in May 2023 with Teams as its first adopter (https://sdtimes.com/msft/microsoft-releases-fluent-2-to-enable-more-creativity-in-design/[SD Times])
+
+[discrete]
+== *When to Use*:
+
+* Building Teams apps, Office add-ins, SharePoint extensions or tools that should look at home in Microsoft 365. In our prior test, every anchor run of a team-settings page imported `@fluentui/react-components` and styled it with `makeStyles` and Fluent tokens.
+* Designing one product across web, Windows and mobile with shared tokens
+* As a contrast to <<material-design-3,Material Design 3>> and <<apple-human-interface-guidelines,Apple's HIG>> for enterprise software
+
+[discrete]
+== *Common Misunderstandings*:
+
+* *Mixing v8 and v9.* Fluent UI React v8 (`@fluentui/react`) is in maintenance; v9 is "a complete revamp of the library that has fundamental and structural changes from v8" (maintainer in https://github.com/microsoft/fluentui/discussions/23183[discussion #23183]). "Fluent 2" points the model at v9.
+* *Equating Fluent 2 with Windows 11 visuals.* Acrylic and Mica are Windows materials from the original Fluent; Fluent 2 is mainly a token and component system across platforms.
+
+[discrete]
+== *Criticism*:
+
+* *A breaking rewrite.* Microsoft's own product manager Paul Gildea on v9: "These improvements couldn't have been accomplished in a simple backwards compatible manner" (https://dev.to/paulgildea/whats-new-with-fluent-ui-react-v9-5h2d["What's new with Fluent UI React v9"], 2022). Users in https://github.com/microsoft/fluentui/discussions/23183[discussion #23183] complained that navigation, date picker and other components were missing from v9 when it shipped.
+* *Unfinished across Windows.* Ross Rubin, https://www.fastcompany.com/90689562/windows-11-interface-problems["Windows 11's melding of the old and new is unfinished business"] (Fast Company, 2021), describes Fluent surfaces layered over dialogs that had barely changed in decades.
+
+[discrete]
+== *Current Status*:
+
+* *Fluent UI React v9 is current; Web Components v3 in release candidate.* `@fluentui/react-components` ships continuously, version 9.75.0 in October 2026; the repository encourages v8 users to migrate. Fluent UI Web Components 3.0 reached a release candidate in November 2025 (https://github.com/microsoft/fluentui/discussions/34080[discussion #34080]).
+====

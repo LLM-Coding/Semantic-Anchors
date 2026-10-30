@@ -145,6 +145,64 @@
     "addedAt": "2026-06-26T20:19:59+00:00"
   },
   {
+    "id": "adobe-spectrum",
+    "title": "Adobe Spectrum",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "material-design-3",
+      "wai-aria-apg"
+    ],
+    "proponents": [
+      "Adobe"
+    ],
+    "tags": [
+      "Adobe Spectrum",
+      "Spectrum",
+      "Spectrum 2",
+      "S2",
+      "React Spectrum",
+      "@adobe/react-spectrum",
+      "@react-spectrum/s2",
+      "Spectrum Web Components",
+      "Spectrum CSS",
+      "React Aria",
+      "design tokens",
+      "Adobe Clean",
+      "TableView",
+      "ActionButton",
+      "style macro",
+      "UNSAFE_className",
+      "Photoshop",
+      "Garth Braithwaite"
+    ],
+    "filePath": "docs/anchors/adobe-spectrum.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "adobe-spectrum.webp",
+    "definition": "Adobe Spectrum is Adobe's design system for its desktop, web and mobile applications, in use since 2013 and redesigned as Spectrum 2 from 2023. It ships as React Spectrum, Spectrum Web Components and Spectrum CSS with shared design tokens and the Adobe Clean typeface, and its React implementation builds on the accessible hooks of React Aria."
+  },
+  {
     "id": "adr-according-to-nygard",
     "title": "ADR according to Nygard",
     "categories": [
@@ -257,6 +315,68 @@
       }
     ],
     "addedAt": "2026-09-30T16:32:07+02:00"
+  },
+  {
+    "id": "ant-design",
+    "title": "Ant Design",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "software-developer",
+      "ux-designer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "material-design-3",
+      "shadcn-ui"
+    ],
+    "proponents": [
+      "Ant Group",
+      "afc163"
+    ],
+    "tags": [
+      "Ant Design",
+      "antd",
+      "React",
+      "enterprise UI",
+      "admin interface",
+      "back office",
+      "Form.Item",
+      "rules",
+      "Table",
+      "ConfigProvider",
+      "design tokens",
+      "seed token",
+      "map token",
+      "alias token",
+      "CSS-in-JS",
+      "CSS variables",
+      "Ant Group",
+      "Ant Financial",
+      "Alibaba",
+      "afc163",
+      "Ant Design Pro"
+    ],
+    "filePath": "docs/anchors/ant-design.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Ant Design is the enterprise design language and React component library (antd) from Ant Group, the Alibaba affiliate behind Alipay, released publicly in 2015. Built for data-heavy admin and back-office interfaces, it offers components such as Form, Table and ConfigProvider, and a theme system of seed, map and alias tokens.",
+    "addedAt": "2026-10-30T12:52:00+01:00"
   },
   {
     "id": "apple-human-interface-guidelines",
@@ -444,6 +564,62 @@
     "filePath": "docs/anchors/atam.adoc",
     "tier": 3,
     "addedAt": "2026-03-06T17:48:13+00:00"
+  },
+  {
+    "id": "atlassian-design-system",
+    "title": "Atlassian Design System",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "primer-github",
+      "material-design-3"
+    ],
+    "proponents": [
+      "Atlassian"
+    ],
+    "tags": [
+      "Atlassian Design System",
+      "ADS",
+      "Atlassian Design Guidelines",
+      "ADG",
+      "Atlaskit",
+      "@atlaskit",
+      "design tokens",
+      "color.text.subtle",
+      "elevation.surface",
+      "space.100",
+      "Lozenge",
+      "DynamicTable",
+      "Atlassian Sans",
+      "Jira",
+      "Confluence",
+      "Jürgen Spangl"
+    ],
+    "filePath": "docs/anchors/atlassian-design-system.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "atlassian-design-system.webp",
+    "definition": "The Atlassian Design System is the design system behind Jira, Confluence and Trello, first published as the Atlassian Design Guidelines (ADG) in 2013. It provides the Atlaskit React components, design tokens for colour, elevation, spacing and typography such as color.text.subtle and space.100, and the Atlassian Sans typeface."
   },
   {
     "id": "atomic-design",
@@ -834,6 +1010,66 @@
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
+    "id": "bootstrap-5",
+    "title": "Bootstrap 5",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "software-developer",
+      "ux-designer"
+    ],
+    "related": [
+      "mobile-first",
+      "shadcn-ui",
+      "every-layout"
+    ],
+    "proponents": [
+      "Mark Otto",
+      "Jacob Thornton"
+    ],
+    "tags": [
+      "Bootstrap 5",
+      "Bootstrap",
+      "Twitter Bootstrap",
+      "CSS framework",
+      "front-end toolkit",
+      "12-column grid",
+      "breakpoints",
+      "utility API",
+      "utility classes",
+      "Sass",
+      "CSS custom properties",
+      "color modes",
+      "dark mode",
+      "form-control",
+      "btn-primary",
+      "invalid-feedback",
+      "data-bs",
+      "Mark Otto",
+      "Jacob Thornton"
+    ],
+    "filePath": "docs/anchors/bootstrap-5.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Bootstrap 5 is the fifth major version of the front-end toolkit that Mark Otto and Jacob Thornton released at Twitter in 2011. It provides a 12-column flexbox grid with six breakpoints, a utility API, Sass and CSS custom properties, colour modes since 5.3 and ready-made components with class names such as form-control and btn-primary, and it no longer depends on jQuery.",
+    "addedAt": "2026-10-30T12:52:00+01:00"
+  },
+  {
     "id": "boy-scout-rule",
     "title": "Boy Scout Rule",
     "categories": [
@@ -995,6 +1231,67 @@
     "filePath": "docs/anchors/cap-theorem.adoc",
     "tier": 3,
     "addedAt": "2026-06-01T21:31:00+02:00"
+  },
+  {
+    "id": "carbon-design-system",
+    "title": "Carbon Design System",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "material-design-3",
+      "salesforce-lightning-design-system"
+    ],
+    "proponents": [
+      "IBM"
+    ],
+    "tags": [
+      "Carbon Design System",
+      "Carbon",
+      "IBM",
+      "IBM Design Language",
+      "IBM Plex",
+      "2x Grid",
+      "Gray 10",
+      "Gray 90",
+      "Gray 100",
+      "White theme",
+      "productive type",
+      "expressive type",
+      "@carbon/react",
+      "@carbon/web-components",
+      "DataTable",
+      "UI Shell",
+      "cds-",
+      "design tokens",
+      "layer-01",
+      "Carbon for AI",
+      "AI label"
+    ],
+    "filePath": "docs/anchors/carbon-design-system.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "carbon-design-system.webp",
+    "definition": "The Carbon Design System is IBM's open-source design system, developed in public since 2015 as the digital form of the IBM Design Language. It combines IBM Plex type with productive and expressive type sets, the 16-column 2x Grid, four themes from White to Gray 100, design tokens such as layer-01, and components in @carbon/react and @carbon/web-components."
   },
   {
     "id": "chain-of-thought",
@@ -3234,6 +3531,68 @@
     "filePath": "docs/anchors/five-whys.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "fluent-2-design-system",
+    "title": "Fluent 2 Design System",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "material-design-3",
+      "apple-human-interface-guidelines",
+      "design-tokens-dtcg"
+    ],
+    "proponents": [
+      "Microsoft"
+    ],
+    "tags": [
+      "Fluent 2",
+      "Fluent 2 Design System",
+      "Fluent Design System",
+      "Fluent UI",
+      "Fluent UI React v9",
+      "@fluentui/react-components",
+      "@fluentui/web-components",
+      "makeStyles",
+      "Griffel",
+      "FluentProvider",
+      "webLightTheme",
+      "design tokens",
+      "colorNeutralForeground1",
+      "global tokens",
+      "alias tokens",
+      "Segoe UI",
+      "Segoe UI Variable",
+      "Microsoft 365",
+      "Teams",
+      "Windows",
+      "WinUI",
+      "Project Neon"
+    ],
+    "filePath": "docs/anchors/fluent-2-design-system.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "fluent-2-design-system.webp",
+    "definition": "Fluent 2 is Microsoft's design system for Microsoft 365, Teams and Windows, released in 2023 as the successor of the Fluent Design System of 2017. It defines global and alias design tokens, a type ramp in Segoe UI and platform typefaces, and components for web, Windows, iOS and Android, on the web through Fluent UI React v9."
   },
   {
     "id": "fmea",
@@ -7216,6 +7575,68 @@
     "addedAt": "2026-08-14T08:31:54+02:00"
   },
   {
+    "id": "primer-github",
+    "title": "Primer (GitHub Design System)",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "atlassian-design-system",
+      "atomic-design"
+    ],
+    "proponents": [
+      "GitHub",
+      "Diana Mounter",
+      "Jon Rohan"
+    ],
+    "tags": [
+      "Primer",
+      "GitHub Primer",
+      "GitHub design system",
+      "Primer React",
+      "@primer/react",
+      "Primer Primitives",
+      "@primer/primitives",
+      "Primer CSS",
+      "Primer ViewComponents",
+      "Octicons",
+      "design tokens",
+      "fgColor-default",
+      "bgColor-default",
+      "borderColor-default",
+      "PageHeader",
+      "ActionList",
+      "UnderlineNav",
+      "CSS Modules",
+      "Diana Mounter",
+      "Jon Rohan"
+    ],
+    "filePath": "docs/anchors/primer-github.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "primer-github.webp",
+    "definition": "Primer is GitHub's design system: the colour, spacing and typography tokens of Primer Primitives, the components of Primer React and Primer ViewComponents for Rails, Primer CSS and the Octicons icon set. It began as a CSS gem in 2012, and since 2026 it is styled with CSS Modules instead of CSS-in-JS."
+  },
+  {
     "id": "problem-space-nvc",
     "title": "Nonviolent Communication (Rosenberg)",
     "categories": [
@@ -7846,6 +8267,65 @@
     "addedAt": "2026-10-03T14:33:13+02:00"
   },
   {
+    "id": "salesforce-lightning-design-system",
+    "title": "Salesforce Lightning Design System (SLDS)",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "atomic-design",
+      "carbon-design-system"
+    ],
+    "proponents": [
+      "Salesforce",
+      "Jina Anne"
+    ],
+    "tags": [
+      "Salesforce Lightning Design System",
+      "SLDS",
+      "SLDS 2",
+      "Salesforce Cosmos",
+      "Lightning",
+      "Lightning Web Components",
+      "LWC",
+      "slds-",
+      "BEM",
+      "design tokens",
+      "styling hooks",
+      "--slds-g",
+      "page header",
+      "data table",
+      "Salesforce Sans",
+      "Jina Anne",
+      "Theo",
+      "enterprise design system"
+    ],
+    "filePath": "docs/anchors/salesforce-lightning-design-system.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "salesforce-lightning-design-system.webp",
+    "definition": "The Salesforce Lightning Design System (SLDS) is Salesforce's open-source enterprise design system, launched in 2015: CSS with the slds- prefix and BEM naming, component blueprints and guidelines for the Salesforce platform. The term design tokens comes from its team, and SLDS 2 of 2025 replaces the tokens with CSS custom properties called styling hooks."
+  },
+  {
     "id": "save-the-cat",
     "title": "Save the Cat! (15-Beat Sheet)",
     "categories": [
@@ -8030,6 +8510,124 @@
     "filePath": "docs/anchors/separation-of-concerns.adoc",
     "tier": 1,
     "addedAt": "2026-06-26T20:19:59+00:00"
+  },
+  {
+    "id": "shadcn-ui",
+    "title": "shadcn/ui",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "software-developer",
+      "ux-designer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "atomic-design",
+      "bootstrap-5"
+    ],
+    "proponents": [
+      "shadcn"
+    ],
+    "tags": [
+      "shadcn/ui",
+      "shadcn",
+      "React",
+      "Tailwind CSS",
+      "Radix UI",
+      "Base UI",
+      "components.json",
+      "cn",
+      "open code",
+      "copy-paste components",
+      "registry",
+      "CLI",
+      "npx shadcn",
+      "CSS variables",
+      "muted-foreground",
+      "react-hook-form",
+      "Vercel",
+      "v0"
+    ],
+    "filePath": "docs/anchors/shadcn-ui.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "shadcn/ui is a collection of React components on Tailwind CSS that a CLI copies into the project's own code instead of installing them as a dependency. Released by the developer shadcn in 2023, it pairs accessible primitives from Radix UI or Base UI with semantic CSS variables, so the components become the starting point of the team's own component library.",
+    "addedAt": "2026-10-30T12:52:00+01:00"
+  },
+  {
+    "id": "shopify-polaris",
+    "title": "Shopify Polaris",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "design-tokens-dtcg",
+      "material-design-3",
+      "atlassian-design-system"
+    ],
+    "proponents": [
+      "Shopify"
+    ],
+    "tags": [
+      "Shopify Polaris",
+      "Polaris",
+      "Shopify admin",
+      "Shopify apps",
+      "Polaris web components",
+      "s-page",
+      "s-section",
+      "Polaris React",
+      "@shopify/polaris",
+      "@shopify/polaris-tokens",
+      "design tokens",
+      "--p-color-bg-surface",
+      "Page",
+      "Card",
+      "IndexTable",
+      "BlockStack",
+      "Badge",
+      "App Bridge",
+      "content guidelines",
+      "merchant UX"
+    ],
+    "filePath": "docs/anchors/shopify-polaris.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "shopify-polaris.webp",
+    "definition": "Shopify Polaris is the design system of the Shopify admin and of the apps that run inside it, published in 2017 with a style guide, content guidance, design tokens and a React component library. Since 2025 it ships as framework-independent web components with the s- prefix, and the React library is deprecated."
   },
   {
     "id": "simon-constructivism",
@@ -9634,6 +10232,65 @@
     "filePath": "docs/anchors/user-story-mapping.adoc",
     "tier": 3,
     "addedAt": "2026-02-13T11:15:38+01:00"
+  },
+  {
+    "id": "uswds",
+    "title": "U.S. Web Design System (USWDS)",
+    "categories": [
+      "ux-visual-design"
+    ],
+    "roles": [
+      "ux-designer",
+      "software-developer"
+    ],
+    "related": [
+      "gov-uk-design-system",
+      "wcag-22-aa",
+      "design-tokens-dtcg"
+    ],
+    "proponents": [
+      "18F",
+      "U.S. Digital Service",
+      "GSA Technology Transformation Services"
+    ],
+    "tags": [
+      "USWDS",
+      "U.S. Web Design System",
+      "U.S. Web Design Standards",
+      "18F",
+      "USDS",
+      "GSA",
+      "TTS",
+      "government banner",
+      "usa-banner",
+      "usa- classes",
+      "Public Sans",
+      "Source Sans Pro",
+      "design tokens",
+      "step indicator",
+      "21st Century IDEA",
+      "federal websites",
+      "digital.gov"
+    ],
+    "filePath": "docs/anchors/uswds.adoc",
+    "tier": 3,
+    "priorTest": "2026-10-30",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "exampleImage": "uswds.webp",
+    "definition": "The U.S. Web Design System (USWDS) is the design system of the US federal government, created by 18F and the U.S. Digital Service in 2015 and maintained by GSA's Technology Transformation Services. It provides usa- components such as the official government banner, design tokens and the Public Sans typeface, and it is the way agencies meet the website standards the 21st Century IDEA Act requires."
   },
   {
     "id": "value-stream-mapping",

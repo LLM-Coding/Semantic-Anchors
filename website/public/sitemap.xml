@@ -249,6 +249,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Adobe Spectrum -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/adobe-spectrum</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/adobe-spectrum</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: ADR according to Nygard -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/adr-according-to-nygard</loc>
@@ -289,6 +304,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/andon</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Ant Design -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/ant-design</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/ant-design</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -349,6 +379,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/atam</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Atlassian Design System -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/atlassian-design-system</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/atlassian-design-system</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -489,6 +534,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Bootstrap 5 -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/bootstrap-5</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/bootstrap-5</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Boy Scout Rule -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/boy-scout-rule</loc>
@@ -544,6 +604,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/cap-theorem</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Carbon Design System -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/carbon-design-system</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/carbon-design-system</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -1414,6 +1489,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/five-whys</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Fluent 2 Design System -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/fluent-2-design-system</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/fluent-2-design-system</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2949,6 +3039,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Primer (GitHub Design System) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/primer-github</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/primer-github</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Nonviolent Communication (Rosenberg) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/problem-space-nvc</loc>
@@ -3174,6 +3279,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Salesforce Lightning Design System (SLDS) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/salesforce-lightning-design-system</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/salesforce-lightning-design-system</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: Save the Cat! (15-Beat Sheet) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/save-the-cat</loc>
@@ -3244,6 +3364,36 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/separation-of-concerns</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: shadcn/ui -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/shadcn-ui</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/shadcn-ui</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: Shopify Polaris -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/shopify-polaris</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/shopify-polaris</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3919,6 +4069,21 @@
 
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/user-story-mapping</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Anchor: U.S. Web Design System (USWDS) -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/uswds</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/uswds</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

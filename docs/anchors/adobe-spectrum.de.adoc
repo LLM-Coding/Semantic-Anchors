@@ -1,0 +1,52 @@
+= Adobe Spectrum
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Adobe
+:tags: Adobe Spectrum, Spectrum, Spectrum 2, S2, React Spectrum, @adobe/react-spectrum, @react-spectrum/s2, Spectrum Web Components, Spectrum CSS, React Aria, Design Tokens, Adobe Clean, TableView, ActionButton, Style-Makro, UNSAFE_className, Photoshop, Garth Braithwaite
+:related: design-tokens-dtcg, material-design-3, wai-aria-apg
+:tier: 3
+:definition: Adobe Spectrum ist Adobes Design-System für seine Desktop-, Web- und Mobilanwendungen, seit 2013 im Einsatz und ab 2023 als Spectrum 2 neu gestaltet. Es erscheint als React Spectrum, Spectrum Web Components und Spectrum CSS mit gemeinsamen Design Tokens und der Schrift Adobe Clean; die React-Umsetzung baut auf den barrierefreien Hooks von React Aria auf.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: adobe-spectrum.webp
+
+[%collapsible]
+====
+Vollständiger Name:: Adobe Spectrum -- Adobes Design-System, in der zweiten Generation Spectrum 2
+
+Auch bekannt als:: Spectrum, Spectrum 2, S2, React Spectrum (die React-Umsetzung)
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Drei Umsetzungen, ein Satz Tokens.* React Spectrum (`@adobe/react-spectrum` und `@react-spectrum/s2` für Spectrum 2), Spectrum Web Components und Spectrum CSS teilen die Tokens in `@adobe/spectrum-tokens`.
+* *Token-Namen vom Allgemeinen zum Besonderen.* „Names communicate information from broad concepts toward more specific details“, etwa `accent-background-color-hover` oder `positive-color-600` (https://spectrum.adobe.com/page/design-tokens[Design tokens]).
+* *Komponenten, die das Design schützen.* React Spectrum v3 verweigert gewöhnliche Props `className` und `style` und bietet `UNSAFE_className` als „a last resort“ an, weil „future updates to Spectrum design may cause unintended breaking changes in products“ (https://react-spectrum.adobe.com/react-spectrum/styling.html[Styling]). Spectrum 2 ersetzt Style-Props durch ein Style-Makro zur Build-Zeit.
+* *Barrierefreiheit in den Hooks.* Verhalten und Tastaturbedienung kommen aus React Aria; Komponenten wie `TableView`, `ActionButton` und `DialogTrigger` bringen sie mit.
+* *Adobe Clean.* Die typische Schrift; die Icons von Spectrum 2 sind passend zu ihr gezeichnet.
+
+Wichtige Vertreter:: Adobe. Spectrum ist seit 2013 in Adobes Produkten umgesetzt; Spectrum 2 wurde am 12. Dezember 2023 für mehr als 100 Anwendungen vorgestellt (https://blog.adobe.com/en/publish/2023/12/12/adobe-unveils-spectrum-2-design-system-reimagining-user-experience-over-100-adobe-applications[Adobe-Blog]). Zum Kernteam von Spectrum 2 gehören Shawn Cheris, Garth Braithwaite und Patrick Fulton (https://adobe.design/stories/design-for-scale/introducing-spectrum-2[Introducing Spectrum 2])
+
+[discrete]
+== *Wann verwenden*:
+
+* Plug-ins und Web-Apps für das Adobe-Ökosystem bauen oder Werkzeuge, die sich wie Adobes Anwendungen anfühlen sollen. In unserem Prior-Test importierte jeder Lauf mit Anker für eine Team-Einstellungsseite `@adobe/react-spectrum` und baute eine `TableView` mit `ActionButton`s und Größen-Tokens wie `size-200`.
+* Barrierefreie Komponenten nutzen, deren Verhalten aus React Aria kommt
+* Ein Schema für Token-Namen studieren, das vom Begriff zum Detail läuft
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Nur „Spectrum“ sagen.* Das bloße Wort führte auf allen getesteten Stufen zur Physik, und es benennt auch einen US-Internetanbieter und einen Heimcomputer. „Adobe Spectrum“ legt das Design-System fest.
+* *Code für Spectrum 2 erwarten.* Die Modelle schreiben React Spectrum v3. Spectrum 2 nutzt `@react-spectrum/s2` und das Style-Makro; ein Codemod migriert von v3. Verlange Spectrum 2 ausdrücklich.
+
+[discrete]
+== *Kritik*:
+
+* *Einheitlichkeit für Adobe, nicht für die Plattform.* Jason Snell schreibt in https://sixcolors.com/link/2026/04/adobe-out-of-photoshop/[„Adobe out of Photoshop“] (Six Colors, 2026) über die Spectrum-basierte Photoshop-Oberfläche, plattformübergreifende Design-Systeme „are for the benefit of Adobe, which can standardize its interface across platforms and its own apps“ -- auf Kosten der Mac-Konventionen.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Spectrum 2 ist in React stabil, bei den Web Components in der Beta.* Die Spectrum-2-Umsetzung von React Spectrum erreichte am 16. Dezember 2025 Version 1.0 (https://react-spectrum.adobe.com/releases/v1-0-0[Release Notes]); Spectrum Web Components 2.0 mit vollständigen Spectrum-2-Styles ging im Juli 2026 in die öffentliche Beta. Photoshops erneuerte Oberfläche auf Basis von Spectrum ist im Oktober 2026 in der Beta. Der Prior bedient React Spectrum v3; Spectrum 2 kann dünn ausfallen, wenn man es nicht nennt.
+====

@@ -1,0 +1,54 @@
+= Salesforce Lightning Design System (SLDS)
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: Salesforce, Jina Anne
+:tags: Salesforce Lightning Design System, SLDS, SLDS 2, Salesforce Cosmos, Lightning, Lightning Web Components, LWC, slds-, BEM, Design Tokens, Styling Hooks, --slds-g, Page Header, Data Table, Salesforce Sans, Jina Anne, Theo, Enterprise-Design-System
+:related: design-tokens-dtcg, atomic-design, carbon-design-system
+:tier: 3
+:definition: Das Salesforce Lightning Design System (SLDS) ist Salesforces Open-Source-Enterprise-Design-System, 2015 gestartet: CSS mit dem Präfix slds- und BEM-Benennung, Komponenten-Blueprints und Richtlinien für die Salesforce-Plattform. Der Begriff Design Tokens stammt aus seinem Team, und SLDS 2 von 2025 ersetzt die Tokens durch CSS Custom Properties namens Styling Hooks.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: salesforce-lightning-design-system.webp
+
+[%collapsible]
+====
+Vollständiger Name:: Salesforce Lightning Design System (SLDS), seit 2025 auch SLDS 2
+
+Auch bekannt als:: SLDS, Lightning Design System
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Komponenten-Blueprints in reinem CSS.* Jeder Selektor trägt das Präfix `slds-` und folgt BEM: `slds-page-header`, `slds-table`, `slds-button slds-button_brand`, `slds-media` (https://winter-21.lightningdesignsystem.com/resources/faq[FAQ]).
+* *Der Ursprung der Design Tokens.* Das Salesforce-Team wählte den Begriff *design tokens* und baute das Werkzeug Theo, um sie umzuwandeln (https://trailhead.salesforce.com/content/learn/modules/lightning-design-system-basics/learn-how-and-why-we-developed-slds[Trailhead]).
+* *Styling Hooks in SLDS 2.* SLDS 2 „separates the structure from the visual design using styling hooks“ und ersetzt Design Tokens durch globale CSS Custom Properties, etwa `--slds-g-spacing-2` statt `--lwc-spacingSmall` (https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-design-tokens.html[LWC-Leitfaden]).
+* *Lightning Web Components.* Salesforces eigenes Komponenten-Framework setzt die Blueprints als Basiskomponenten um, etwa `lightning-button` und `lightning-datatable`.
+* *Salesforce Cosmos.* Das Standard-Theme von SLDS 2.
+
+Wichtige Vertreter:: Salesforce. Die Arbeit begann 2013; das System startete 2015 als „the world's first open-source enterprise design system“ (Trailhead). Jina Anne: „I showed that to the team at Salesforce and then that kind of is where the concept of design tokens spawned off of“ (https://smashingmagazine.com/2019/11/smashing-podcast-episode-3/[Smashing Podcast, 2019])
+
+[discrete]
+== *Wann verwenden*:
+
+* Salesforce-Apps, Lightning-Seiten oder externe Werkzeuge bauen, die in Salesforce nativ aussehen sollen. In unserem Prior-Test schrieb jeder Lauf mit Anker für eine Team-Einstellungsseite `slds-`-Markup mit `slds-page-header`, `slds-table` und `slds-button`.
+* Als klassische Referenz für Design Tokens und BEM-benanntes Enterprise-CSS
+* Lightning Web Components zusätzlich nennen, wenn du Plattform-Komponenten willst: In unserem Test nutzte sie kein Lauf ungefragt
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Nur „Lightning“ sagen.* Das bloße Wort führte auf allen getesteten Stufen zum Wetter; „SLDS“ oder der volle Name legt das Design-System fest.
+* *Code für SLDS 2 erwarten.* Die Modelle schreiben Klassen und Design Tokens von SLDS 1. SLDS 2 nutzt globale Styling Hooks (`--slds-g-*`), und Basiskomponenten dürfen nur über dokumentierte Hooks gestaltet werden.
+* *SLDS mit Lightning Web Components gleichsetzen.* SLDS ist das CSS mit den Richtlinien; LWC ist das Komponenten-Framework, das sie nutzt.
+
+[discrete]
+== *Kritik*:
+
+* *Die Migration ist Handarbeit, die Abdeckung lückenhaft.* Andreea Doroftei schreibt in https://www.salesforceben.com/slds-2-beta-how-you-can-future-proof-your-salesforce-ui/[„SLDS 2: How You Can Future-Proof Your Salesforce UI“] (Salesforce Ben): „If you have an existing SLDS 1 theme you would like to migrate to SLDS 2, you will need to manually recreate it“; Visualforce, Setup und CRM Analytics sind nicht abgedeckt.
+* *Wenig Spielraum beim Gestalten.* Salesforce selbst stellt fest: „Overriding base component styling isn't supported except when using documented styling hooks“ (https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-antipatterns.html[CSS-Anti-Patterns]).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *SLDS 2 ist allgemein verfügbar.* Im Spring '25 als „the foundation for the agentic design system“ mit Salesforce Cosmos als Standard-Theme eingeführt (https://www.salesforce.com/blog/?p=104584[Salesforce-Blog, 2025]), ist SLDS 2 seit Winter '26 allgemein verfügbar; der Dark Mode bleibt in der Beta (https://www.salesforceben.com/salesforce-dark-mode-is-back-what-admins-need-to-know/[Salesforce Ben]). Der Prior bedient SLDS 1; verlange SLDS 2 und Styling Hooks ausdrücklich.
+====

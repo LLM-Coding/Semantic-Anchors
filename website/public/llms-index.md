@@ -2,8 +2,8 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 19 documentation pages, 22 semantic contracts, and
-> 260 anchors in 15 categories — the anchors both
-> one by one and bundled into 28 files that hold a whole category.
+> 271 anchors in 15 categories — the anchors both
+> one by one and bundled into 29 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
 > question about a workflow, a method or this project is usually answered by a
@@ -44,7 +44,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 260 terms in full, 28 files
+## Anchor bundles — the same 271 terms in full, 29 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -75,10 +75,11 @@
 - [Testing & Quality Practices (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 - [Testing & Quality Practices (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-3.txt): 2 anchors in full.
-- [UX & Visual Design (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 17 anchors in full.
-- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 6 anchors in full.
+- [UX & Visual Design (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 17 anchors in full.
+- [UX & Visual Design (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 15 anchors in full.
+- [UX & Visual Design (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-3.txt): 2 anchors in full.
 
-## Anchors — 260 named terms, grouped by category
+## Anchors — 271 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -406,15 +407,21 @@
 
 ### UX & Visual Design
 
+- [Adobe Spectrum](https://llm-coding.github.io/Semantic-Anchors/anchors/adobe-spectrum.txt)
+- [Ant Design](https://llm-coding.github.io/Semantic-Anchors/anchors/ant-design.txt)
 - [Apple Human Interface Guidelines](https://llm-coding.github.io/Semantic-Anchors/anchors/apple-human-interface-guidelines.txt)
+- [Atlassian Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/atlassian-design-system.txt)
 - [Atomic Design](https://llm-coding.github.io/Semantic-Anchors/anchors/atomic-design.txt)
 - [Bauhaus](https://llm-coding.github.io/Semantic-Anchors/anchors/bauhaus.txt)
 - [Bento Grid](https://llm-coding.github.io/Semantic-Anchors/anchors/bento-grid.txt)
+- [Bootstrap 5](https://llm-coding.github.io/Semantic-Anchors/anchors/bootstrap-5.txt)
+- [Carbon Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/carbon-design-system.txt)
 - [Design Tokens (W3C DTCG)](https://llm-coding.github.io/Semantic-Anchors/anchors/design-tokens-dtcg.txt)
 - [Dieter Rams' 10 Principles of Good Design](https://llm-coding.github.io/Semantic-Anchors/anchors/dieter-rams-ten-principles.txt)
 - [8-Point Grid](https://llm-coding.github.io/Semantic-Anchors/anchors/eight-point-grid.txt)
 - [The Elements of Typographic Style (Bringhurst)](https://llm-coding.github.io/Semantic-Anchors/anchors/elements-of-typographic-style.txt)
 - [Every Layout](https://llm-coding.github.io/Semantic-Anchors/anchors/every-layout.txt)
+- [Fluent 2 Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/fluent-2-design-system.txt)
 - [Gestalt Principles](https://llm-coding.github.io/Semantic-Anchors/anchors/gestalt-principles.txt)
 - [Glassmorphism](https://llm-coding.github.io/Semantic-Anchors/anchors/glassmorphism.txt)
 - [GOV.UK Design System](https://llm-coding.github.io/Semantic-Anchors/anchors/gov-uk-design-system.txt)
@@ -424,8 +431,13 @@
 - [Modular Scale](https://llm-coding.github.io/Semantic-Anchors/anchors/modular-scale.txt)
 - [Neo-Brutalism](https://llm-coding.github.io/Semantic-Anchors/anchors/neo-brutalism.txt)
 - [Nielsen's 10 Usability Heuristics](https://llm-coding.github.io/Semantic-Anchors/anchors/nielsen-usability-heuristics.txt)
+- [Primer (GitHub Design System)](https://llm-coding.github.io/Semantic-Anchors/anchors/primer-github.txt)
 - [Refactoring UI](https://llm-coding.github.io/Semantic-Anchors/anchors/refactoring-ui.txt)
+- [Salesforce Lightning Design System (SLDS)](https://llm-coding.github.io/Semantic-Anchors/anchors/salesforce-lightning-design-system.txt)
+- [shadcn/ui](https://llm-coding.github.io/Semantic-Anchors/anchors/shadcn-ui.txt)
+- [Shopify Polaris](https://llm-coding.github.io/Semantic-Anchors/anchors/shopify-polaris.txt)
 - [Swiss Style (International Typographic Style)](https://llm-coding.github.io/Semantic-Anchors/anchors/swiss-style.txt)
 - [Tufte Style](https://llm-coding.github.io/Semantic-Anchors/anchors/tufte-style.txt)
+- [U.S. Web Design System (USWDS)](https://llm-coding.github.io/Semantic-Anchors/anchors/uswds.txt)
 - [WAI-ARIA Authoring Practices Guide (APG)](https://llm-coding.github.io/Semantic-Anchors/anchors/wai-aria-apg.txt)
 - [WCAG 2.2 AA](https://llm-coding.github.io/Semantic-Anchors/anchors/wcag-22-aa.txt)

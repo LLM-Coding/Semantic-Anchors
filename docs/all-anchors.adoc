@@ -869,8 +869,17 @@ include::anchors/wcag-22-aa.adoc[leveloffset=+2]
 
 == UX & Visual Design
 
+[[adobe-spectrum]]
+include::anchors/adobe-spectrum.adoc[leveloffset=+2]
+
+[[ant-design]]
+include::anchors/ant-design.adoc[leveloffset=+2]
+
 [[apple-human-interface-guidelines]]
 include::anchors/apple-human-interface-guidelines.adoc[leveloffset=+2]
+
+[[atlassian-design-system]]
+include::anchors/atlassian-design-system.adoc[leveloffset=+2]
 
 [[atomic-design]]
 include::anchors/atomic-design.adoc[leveloffset=+2]
@@ -880,6 +889,12 @@ include::anchors/bauhaus.adoc[leveloffset=+2]
 
 [[bento-grid]]
 include::anchors/bento-grid.adoc[leveloffset=+2]
+
+[[bootstrap-5]]
+include::anchors/bootstrap-5.adoc[leveloffset=+2]
+
+[[carbon-design-system]]
+include::anchors/carbon-design-system.adoc[leveloffset=+2]
 
 [[design-tokens-dtcg]]
 include::anchors/design-tokens-dtcg.adoc[leveloffset=+2]
@@ -895,6 +910,9 @@ include::anchors/elements-of-typographic-style.adoc[leveloffset=+2]
 
 [[every-layout]]
 include::anchors/every-layout.adoc[leveloffset=+2]
+
+[[fluent-2-design-system]]
+include::anchors/fluent-2-design-system.adoc[leveloffset=+2]
 
 [[gestalt-principles]]
 include::anchors/gestalt-principles.adoc[leveloffset=+2]
@@ -922,13 +940,28 @@ include::anchors/neo-brutalism.adoc[leveloffset=+2]
 
 include::anchors/nielsen-usability-heuristics.adoc[leveloffset=+2]
 
+[[primer-github]]
+include::anchors/primer-github.adoc[leveloffset=+2]
+
 [[refactoring-ui]]
 include::anchors/refactoring-ui.adoc[leveloffset=+2]
+
+[[salesforce-lightning-design-system]]
+include::anchors/salesforce-lightning-design-system.adoc[leveloffset=+2]
+
+[[shadcn-ui]]
+include::anchors/shadcn-ui.adoc[leveloffset=+2]
+
+[[shopify-polaris]]
+include::anchors/shopify-polaris.adoc[leveloffset=+2]
 
 [[swiss-style]]
 include::anchors/swiss-style.adoc[leveloffset=+2]
 
 include::anchors/tufte-style.adoc[leveloffset=+2]
+
+[[uswds]]
+include::anchors/uswds.adoc[leveloffset=+2]
 
 [[wai-aria-apg]]
 include::anchors/wai-aria-apg.adoc[leveloffset=+2]

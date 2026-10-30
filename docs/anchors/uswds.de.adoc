@@ -1,0 +1,54 @@
+= U.S. Web Design System (USWDS)
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: 18F, U.S. Digital Service, GSA Technology Transformation Services
+:tags: USWDS, U.S. Web Design System, U.S. Web Design Standards, 18F, USDS, GSA, TTS, Government Banner, usa-banner, usa-Klassen, Public Sans, Source Sans Pro, Design Tokens, Step Indicator, 21st Century IDEA, Bundes-Websites, digital.gov
+:related: gov-uk-design-system, wcag-22-aa, design-tokens-dtcg
+:tier: 3
+:definition: Das U.S. Web Design System (USWDS) ist das Design-System der US-Bundesregierung, 2015 von 18F und dem U.S. Digital Service geschaffen und von den Technology Transformation Services der GSA gepflegt. Es bietet usa-Komponenten wie den offiziellen Regierungs-Banner, Design Tokens und die Schrift Public Sans und ist der Weg, auf dem Behörden die Website-Standards erfüllen, die der 21st Century IDEA Act verlangt.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: uswds.webp
+
+[%collapsible]
+====
+Vollständiger Name:: U.S. Web Design System (USWDS), früher U.S. Web Design Standards
+
+Auch bekannt als:: USWDS
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Der offizielle Regierungs-Banner.* „An official website of the United States government“, der `usa-banner` oben auf der Seite; „most government sites should use the banner“ (https://designsystem.digital.gov/components/banner/[Banner]).
+* *Komponenten mit dem Präfix `usa-`.* `usa-header`, `usa-button`, `usa-alert`, `usa-accordion`, `usa-step-indicator` und Formular-Komponenten im npm-Paket `@uswds/uswds`.
+* *Design Tokens als Sass-Einstellungen.* Theme-Farben und Schriften werden über Tokens wie `$theme-color-primary: "blue-60v"` und `$theme-font-type-sans` gesetzt.
+* *Public Sans.* Eine Schrift, die Dan Williams für das System entwarf, auf Basis von Libre Franklin, erschienen mit USWDS 2.0 im Jahr 2019 (https://eyeondesign.aiga.org/the-u-s-governments-public-sans-is-a-typeface-fit-for-civic-duty/[AIGA Eye on Design]); Source Sans Pro und Merriweather liegen als Alternativen bei.
+* *Barrierefreiheit und einfache Sprache als Standard.* Die Komponenten sind auf Section 508 ausgelegt, und die Richtlinien behandeln Formulare, schrittweise Dienste und Inhalte.
+
+Wichtige Vertreter:: 18F und der U.S. Digital Service, die es 2015 schufen; gepflegt von der Digital Services Division der Technology Transformation Services der GSA (https://designsystem.digital.gov/about/[About]). Version 2.0 erschien 2019, Version 3.0 im Jahr 2022
+
+[discrete]
+== *Wann verwenden*:
+
+* Dienste von US-Bundes-, Landes- oder Stadtverwaltungen bauen. In unserem Prior-Test setzte jeder Lauf mit Anker für einen Anwohnerparkausweis den Regierungs-Banner, einen Step Indicator und `usa-`-Formularkomponenten; Opus tat das in zwei von zwei Baselines auch ohne den Namen, Haiku und Sonnet nicht.
+* Als US-Gegenstück zum <<gov-uk-design-system,GOV.UK Design System>>, wenn ein Dienst wie eine Behörde aussehen und sich so verhalten muss
+* Die Website-Standards des Bundes erfüllen: Behörden müssen nach dem 21st Century IDEA Act den Standards der GSA folgen, und USWDS ist der Weg dorthin (https://designsystem.digital.gov/website-standards/[Website standards])
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Glauben, das Gesetz nenne USWDS.* Der 21st Century IDEA Act verlangt die Website-Standards; die Standards verweisen auf USWDS.
+* *Den Banner auf jede Website setzen.* Der Banner gehört auf offizielle Regierungs-Websites, und laut Richtlinie sollen manche Websites ihn nicht nutzen.
+* *Die Muster von GOV.UK erwarten.* USWDS hat eigene Komponenten und weniger Dienstmuster; eine Frage pro Seite ist ein Muster von GOV.UK, keine Regel von USWDS.
+
+[discrete]
+== *Kritik*:
+
+* *Automatisierte Tests statt Menschen.* Im September 2026 schlug ein neues Team vor, die Barrierefreiheitstests des Systems zu automatisieren. Matt Henry, früherer Engineering Lead von USWDS, widersprach: „It is about what a human would experience“ (Madison Alder, https://fedscoop.com/?p=91632[„A Trump team wants to automate U.S. Web Design System accessibility testing. Experts are worried.“], FedScoop, 2026).
+* *Ein Fehler erreicht Tausende Websites.* Ein offener Brief einer Koalition von Technologen warnt: „One accessibility defect, performance issue, or security vulnerability in USWDS can put thousands of systems at risk“ (https://fedscoop.com/websites-jeopardy-amid-us-web-design-system-takeover-coalition-gsa/[FedScoop, 2026]).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Streit um die Steuerung.* Im September 2026 stellte die GSA die langjährige Leiterin des Systems frei und übergab das Repository einem Ingenieur aus dem Finanzministerium (Christian Robles, https://www.nextgov.com/people/2026/09/gsas-web-design-system-head-replaced-treasury-ai-engineer/416035/[Nextgov/FCW]); fast 200 Technologen kündigten einen Hard Fork an, während die GSA erklärte, frühere Regierungen hätten USWDS verfallen lassen (https://www.nextgov.com/digital-government/2026/10/technologists-create-trustworthy-copy-gsa-web-design-system-amid-ai-driven-takeover/416368/[Nextgov/FCW, Oktober 2026]). Aktuell ist Release 3.14.0 vom 18. August 2026. Der Prior beschreibt das System vor dem Streit; prüfe, auf welchem Repository und Release du aufbaust.
+====

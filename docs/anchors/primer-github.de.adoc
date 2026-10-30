@@ -1,0 +1,54 @@
+= Primer (GitHub Design System)
+:categories: ux-visual-design
+:roles: ux-designer, software-developer
+:proponents: GitHub, Diana Mounter, Jon Rohan
+:tags: Primer, GitHub Primer, GitHub-Design-System, Primer React, @primer/react, Primer Primitives, @primer/primitives, Primer CSS, Primer ViewComponents, Octicons, Design Tokens, fgColor-default, bgColor-default, borderColor-default, PageHeader, ActionList, UnderlineNav, CSS Modules, Diana Mounter, Jon Rohan
+:related: design-tokens-dtcg, atlassian-design-system, atomic-design
+:tier: 3
+:definition: Primer ist GitHubs Design-System: die Farb-, Abstands- und Schrift-Tokens von Primer Primitives, die Komponenten von Primer React und Primer ViewComponents für Rails, Primer CSS und der Icon-Satz Octicons. Es begann 2012 als CSS-Gem und wird seit 2026 mit CSS Modules statt CSS-in-JS gestaltet.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: primer-github.webp
+
+[%collapsible]
+====
+Vollständiger Name:: Primer -- GitHubs Design-System (https://primer.style/[primer.style])
+
+Auch bekannt als:: GitHub Primer, Primer React, Primer CSS
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Primitives als Tokens.* Farbe, Abstand und Schrift liegen in `@primer/primitives`. Die Namen setzen sich aus Bausteinen zusammen -- Namespace, Muster, Variante, Eigenschaft, Skala --, etwa `fgColor-default`, `bgColor-inset`, `borderColor-accent-emphasis` und `base-size-4` (https://primer.style/product/primitives/token-names/[Token names]). Heller und dunkler Modus umfassen neun Themes.
+* *Komponenten in React und Rails.* `@primer/react` (früher `@primer/components`) und das Gem `primer_view_components`; `PageHeader`, `ActionList`, `ActionMenu`, `UnderlineNav`, `Label` und `Blankslate` sind typische Bausteine.
+* *Octicons.* „SVG icons built by GitHub for GitHub“.
+* *Product UI und Brand UI.* Primer deckt die Produktoberfläche ab und getrennt davon GitHubs Marketingseiten.
+* *Das Aussehen von GitHub.* Neutrale Fläche, zurückhaltende Rahmen, kompakte Dichte, blaue Akzente für Aktionen, Grün für den primären Button.
+
+Wichtige Vertreter:: GitHub. Designer begannen 2011, Muster zu dokumentieren, und 2012 wurde das CSS als Ruby-Gem namens Primer verpackt; das Design-System-Team entstand 2016 mit Diana Mounter und Jon Rohan als ersten Vollzeitmitgliedern (Diana Mounter, https://medium.com/@broccolini/design-systems-at-github-c8e5378d2542[„Design systems at GitHub“], 2018). Mark Otto wirkte in den frühen Jahren mit
+
+[discrete]
+== *Wann verwenden*:
+
+* GitHub Apps, Entwicklerwerkzeuge oder interne Dashboards bauen, die sich wie GitHub anfühlen sollen. In unserem Prior-Test importierte jeder Lauf mit Anker für eine Team-Einstellungsseite `@primer/react` und Octicons; fünf von sechs nutzten `PageHeader`.
+* Ein Schema für Token-Namen aus kombinierbaren Bausteinen studieren
+* Rails-Anwendungen über Primer ViewComponents
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Nur „Primer“ sagen.* Auf Sonnet führte das bloße Wort zuerst zu Biologie und Farbe; „Primer (GitHub)“ oder „GitHub's Primer“ legt es fest.
+* *Mit `sx` und styled-components gestalten.* Fünf von sechs Läufen in unserem Test nutzten die Prop `sx`. Primer React hat sie entfernt: Alle Komponenten wechselten zu CSS Modules, und „GitHub has been running on 100% CSS modules as of June 2026“ (Josh Black und Marie Lucca, https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/[GitHub Blog, 2026]). Verlange CSS Modules, wenn der Code auf aktuellem Primer React laufen muss.
+* *Mona Sans für Primers UI-Schrift halten.* Mona Sans und Hubot Sans, 2022 erschienen, sind GitHubs Markenschriften; ihre Ankündigung verbindet sie nicht mit Primers Produktoberfläche (https://github.blog/news-insights/company-news/introducing-mona-sans-and-hubot-sans/[GitHub Blog, 2022]).
+
+[discrete]
+== *Kritik*:
+
+* *Laufzeit-Styling skalierte nicht.* GitHubs eigene Entwickler schreiben, dass mit CSS-in-JS „updates to styles grew out of control as component count grew on a page“; der Wechsel zu CSS Modules senkte die Server-Renderzeit um 55 Prozent (GitHub Blog, 2026).
+* *Barrierefreiheit ist ungleich verteilt.* Marc Alcobé von OpenProject, das Primer übernommen hat, merkt an, dass „not all existing components are reviewed for accessibility“ (https://www.openproject.org/blog/primer-design-system/[OpenProject-Blog, 2023]).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Überall CSS Modules.* Seit Juni 2026 läuft GitHub vollständig auf CSS Modules, die Prop `sx` ist entfernt, und `@primer/styled-react` diente als Übergangslösung; die Theming-Variablen liegen in `@primer/css` (GitHub Blog, September 2026). Der Prior aus den Trainingsdaten ist älter als diese Änderung.
+====

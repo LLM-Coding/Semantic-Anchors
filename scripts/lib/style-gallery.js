@@ -28,7 +28,8 @@ const TEXT = {
     intro: [
       'One homepage, redesigned once per anchor name. Each version comes from a separate Claude Opus 5.5 session that got the same prompt with only the style name changed:',
       'The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No style description, no reference images, one run per anchor, no rerolls; each session checked its own screenshots. The first tile is the original, https://rdmueller.github.io/[rdmueller.github.io] as of 28 October 2026.',
-      `How the examples came about, and what stood out in each: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Each style tile links to its anchor.`,
+      `How the first ten examples came about, and what stood out in each: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Each style tile links to its anchor.`,
+      'The design-system examples, from Adobe Spectrum to USWDS, were added on 30 October 2026 in the same way and checked by their sessions in a browser. They ran in a cloud workspace without web access: fonts from Google Fonts were served from npm copies for the screenshots, and licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.',
       'One run per style shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.',
     ],
     originalTitle: 'Original',
@@ -40,7 +41,8 @@ const TEXT = {
     intro: [
       'Eine Homepage, einmal pro Ankername neu gestaltet. Jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam; nur der Stilname änderte sich:',
       'Keine Stilbeschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihre eigenen Screenshots. Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026.',
-      `Wie die Beispiele entstanden sind und was jeweils auffiel: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Jede Stil-Kachel verlinkt ihren Anker.`,
+      `Wie die ersten zehn Beispiele entstanden sind und was jeweils auffiel: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Jede Stil-Kachel verlinkt ihren Anker.`,
+      'Die Beispiele zu den Design-Systemen, von Adobe Spectrum bis USWDS, kamen am 30. Oktober 2026 auf dieselbe Weise hinzu; ihre Sessions prüften sie im Browser. Sie liefen in einer Cloud-Umgebung ohne Webzugriff: Schriften von Google Fonts kamen für die Screenshots aus npm-Kopien, lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.',
       'Ein Lauf pro Stil zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.',
     ],
     originalTitle: 'Original',
@@ -125,6 +127,8 @@ function buildStyleGallery(lang) {
     t.intro[2],
     '',
     t.intro[3],
+    '',
+    t.intro[4],
     '',
     '[.style-gallery]',
     '--',

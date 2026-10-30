@@ -1227,3 +1227,58 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** Frosted glass UI, glass UI
 - **Proponents:** Michał Malewicz (named it, UX Collective, 2020)
 - **Core:** Translucent panels with background blur (`backdrop-filter`), floating layers, a vivid background to show through, a subtle light border, soft shadows and rounded corners; check text contrast against the busiest area behind the glass; Apple's Liquid Glass (2025) is a later, distinct variant
+
+### Carbon Design System
+- **Also known as:** Carbon, IBM Carbon
+- **Proponents:** IBM (public since 2015)
+- **Core:** IBM's design system — IBM Plex with productive (-01) and expressive (-02) type sets, the 16-column 2x Grid, themes White, Gray 10, Gray 90, Gray 100, layering tokens (`$layer-01`, `$text-primary`), `@carbon/react` and `@carbon/web-components` with `cds--` classes, DataTable and UI Shell, Carbon for AI with the AI label; say "Carbon Design System" — bare "Carbon" means chemistry or Google's language
+
+### Fluent 2 Design System
+- **Also known as:** Fluent 2, Fluent UI, Fluent UI React v9
+- **Proponents:** Microsoft (Fluent 2017, Fluent 2 in 2023)
+- **Core:** Microsoft 365, Teams and Windows design system — global and alias tokens (`tokens.colorNeutralForeground1`), Segoe UI and platform typefaces on one ramp, `@fluentui/react-components` with `FluentProvider` and `makeStyles` (Griffel), WinUI and native mobile libraries; v9 replaced v8 (`@fluentui/react`) as a breaking rewrite
+
+### Primer (GitHub Design System)
+- **Also known as:** GitHub Primer, Primer React, Primer CSS
+- **Proponents:** GitHub (Diana Mounter, Jon Rohan; gem since 2012)
+- **Core:** GitHub's design system — Primer Primitives tokens built from blocks (`fgColor-default`, `bgColor-inset`, `base-size-4`), `@primer/react` and Primer ViewComponents, Octicons, PageHeader, ActionList, UnderlineNav; since 2026 styled with CSS Modules — the `sx` prop is removed, though models still write it
+
+### Shopify Polaris
+- **Also known as:** Polaris, Polaris web components
+- **Proponents:** Shopify (2017; web components stable 2025)
+- **Core:** Design system of the Shopify admin and its apps — pages with a primary action, cards, index tables, Badge tones, content guidelines for merchants, `--p-` tokens; now `<s-page>`/`<s-section>` web components from Shopify's CDN; the React library (`@shopify/polaris`) is deprecated, but models write it — ask for web components; say "Shopify Polaris" — bare "Polaris" means the star
+
+### Atlassian Design System
+- **Also known as:** ADS, Atlassian Design Guidelines (ADG), Atlaskit
+- **Proponents:** Atlassian (Jürgen Spangl; ADG 2013)
+- **Core:** Design system of Jira and Confluence — design tokens for colour, elevation, space and type (`color.text.subtle`, `elevation.surface.raised`, `space.100`), Atlaskit React packages (`@atlaskit/dynamic-table`, `@atlaskit/page-header`), the Lozenge status label, Atlassian Sans; visual refresh 2024–2025
+
+### Adobe Spectrum
+- **Also known as:** Spectrum, Spectrum 2, React Spectrum
+- **Proponents:** Adobe (since 2013; Spectrum 2 from 2023)
+- **Core:** Adobe's design system — React Spectrum (`@adobe/react-spectrum`; S2 in `@react-spectrum/s2`), Spectrum Web Components, Spectrum CSS, shared tokens named broad-to-specific, Adobe Clean, React Aria accessibility, TableView, ActionButton, `UNSAFE_className` as escape hatch; say "Adobe Spectrum" — bare "Spectrum" means physics
+
+### Salesforce Lightning Design System (SLDS)
+- **Also known as:** SLDS, SLDS 2, Lightning Design System
+- **Proponents:** Salesforce (2015; Jina Anne coined design tokens there)
+- **Core:** Salesforce's enterprise design system — BEM CSS with the `slds-` prefix (`slds-page-header`, `slds-table`, `slds-button_brand`), component blueprints, design tokens (origin of the term), Lightning Web Components; SLDS 2 (GA Winter '26) replaces tokens with styling hooks (`--slds-g-*`) and the Cosmos theme — models write SLDS 1
+
+### shadcn/ui
+- **Also known as:** shadcn
+- **Proponents:** shadcn (2023)
+- **Core:** React components on Tailwind CSS copied into your code by a CLI (`npx shadcn add`), "not a component library"; `components/ui`, `components.json`, `cn()`, semantic CSS variables (`--primary`/`--primary-foreground`, `--muted-foreground`), Radix UI or (default since 2026) Base UI primitives, registries for distributing design systems
+
+### Bootstrap 5
+- **Also known as:** Bootstrap, Twitter Bootstrap, BS5
+- **Proponents:** Mark Otto, Jacob Thornton (Twitter, 2011; v5 in 2021)
+- **Core:** Front-end toolkit — 12-column flexbox grid with six breakpoints, utility API (`mb-3`, `d-flex`), components by class (`btn btn-primary`, `form-control`, `is-invalid` + `invalid-feedback`), no jQuery, `data-bs-` attributes, colour modes since 5.3; v6 alpha October 2026; the version number pins the API
+
+### Ant Design
+- **Also known as:** antd
+- **Proponents:** Ant Group (2015; maintainer afc163)
+- **Core:** Enterprise design language and React library for admin and back-office UIs — `Form`/`Form.Item` with `rules` and `onFinish`, `Table`, `ConfigProvider` with seed, map and alias tokens, design values Natural, Certain, Meaningful, Growing; v5 CSS-in-JS tokens, v6 (2025) CSS variables
+
+### U.S. Web Design System (USWDS)
+- **Also known as:** USWDS, U.S. Web Design Standards
+- **Proponents:** 18F and U.S. Digital Service (2015), GSA TTS
+- **Core:** US federal design system — the official government banner (`usa-banner`), `usa-` components (header, button, alert, step indicator, forms), Sass design tokens, Public Sans; the way agencies meet the website standards required by the 21st Century IDEA Act; US counterpart to the GOV.UK Design System; governance disputed since September 2026
