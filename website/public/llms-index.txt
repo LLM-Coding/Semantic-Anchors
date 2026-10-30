@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 18 documentation pages, 22 semantic contracts, and
-> 259 anchors in 15 categories — the anchors both
+> 260 anchors in 15 categories — the anchors both
 > one by one and bundled into 28 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -43,7 +43,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 259 terms in full, 28 files
+## Anchor bundles — the same 260 terms in full, 28 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -75,9 +75,9 @@
 - [Testing & Quality Practices (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 - [Testing & Quality Practices (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-3.txt): 2 anchors in full.
 - [UX & Visual Design (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-1.txt): 17 anchors in full.
-- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 5 anchors in full.
+- [UX & Visual Design (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 6 anchors in full.
 
-## Anchors — 259 named terms, grouped by category
+## Anchors — 260 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -426,4 +426,5 @@
 - [Refactoring UI](https://llm-coding.github.io/Semantic-Anchors/anchors/refactoring-ui.txt)
 - [Swiss Style (International Typographic Style)](https://llm-coding.github.io/Semantic-Anchors/anchors/swiss-style.txt)
 - [Tufte Style](https://llm-coding.github.io/Semantic-Anchors/anchors/tufte-style.txt)
+- [WAI-ARIA Authoring Practices Guide (APG)](https://llm-coding.github.io/Semantic-Anchors/anchors/wai-aria-apg.txt)
 - [WCAG 2.2 AA](https://llm-coding.github.io/Semantic-Anchors/anchors/wcag-22-aa.txt)

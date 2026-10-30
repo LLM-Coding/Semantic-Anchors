@@ -2,6 +2,14 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-10-30
+
+*New anchor -- WAI-ARIA Authoring Practices Guide (APG):*
+
+* *link:#/anchor/wai-aria-apg[WAI-ARIA Authoring Practices Guide (APG)]* (W3C Web Accessibility Initiative) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/866[#866]: names of UI controls fix what a control is called; the APG fixes how it behaves. An account menu gains Home, End and type-ahead in six of six runs (baselines: four and one of six); a site navigation uses the disclosure pattern in six of six runs and never menu roles. The entry explains how to prompt with it. Tier ★★★.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-10-30.
+
 == 2026-10-29
 
 *Two new anchors -- Bento Grid and Glassmorphism:*

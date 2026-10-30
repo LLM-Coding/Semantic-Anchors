@@ -1,0 +1,69 @@
+= WAI-ARIA Authoring Practices Guide (APG)
+:categories: ux-visual-design
+:roles: ux-designer, software-developer, qa-engineer
+:proponents: W3C Web Accessibility Initiative, ARIA Authoring Practices Task Force
+:tags: APG, ARIA Authoring Practices, WAI-ARIA, ARIA-Patterns, barrierefreie Komponenten, Bedienelemente, Widgets, Tastaturbedienung, Roving Tabindex, aria-expanded, Menu Button, Disclosure, Combobox, Listbox, Tabs, Dialog, Accordion, Tree View, Component Gallery
+:related: wcag-22-aa, gov-uk-design-system, atomic-design
+:tier: 3
+:definition: Der WAI-ARIA Authoring Practices Guide (APG) ist der informative Katalog des W3C mit 30 UI-Patterns wie Accordion, Combobox, Dialog, Disclosure, Menu Button, Listbox und Tabs. Zu jedem Pattern legt er einen Namen, die Tastaturbedienung und die ARIA-Rollen, -Zustände und -Eigenschaften fest, und fast jedes Pattern hat ein lauffähiges Beispiel; ein Prompt, der ein Pattern nennt, legt damit auch fest, wie sich das Bedienelement verhält.
+:prior-test: 2026-10-30
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: ARIA Authoring Practices Guide (APG), herausgegeben von der W3C Web Accessibility Initiative
+
+Auch bekannt als:: WAI-ARIA Authoring Practices, ARIA Authoring Practices; früher als W3C Notes „WAI-ARIA Authoring Practices 1.1“ und „1.2“ veröffentlicht
+
+[discrete]
+== *Kernkonzepte*:
+
+* *Ein Name pro Bedienelement.* Der Guide benennt 30 Patterns: Accordion, Alert, Alert and Message Dialogs, Breadcrumb, Button, Carousel, Checkbox, Combobox, Dialog (Modal), Disclosure, Feed, Grid, Landmarks, Link, Listbox, Menu and Menubar, Menu Button, Meter, Radio Group, Slider, Slider (Multi-Thumb), Spinbutton, Switch, Table, Tabs, Toolbar, Tooltip, Tree View, Treegrid und Window Splitter. Wo Design-Systeme dasselbe Element „Collapse“, „Expander“ oder „Accordion“ nennen, ist der APG-Name ein fester Bezugspunkt.
+* *Jedes Pattern legt das Verhalten fest, nicht das Aussehen.* Eine Pattern-Seite beschreibt die Tastaturbedienung (welche Taste was tut), die Rollen, Zustände und Eigenschaften (`role="menu"`, `aria-expanded`, `aria-controls`) und das Fokus-Management (wohin der Fokus beim Öffnen und Schließen springt).
+* *Zusammengesetzte Widgets sind ein Tab-Stopp; innen bewegen die Pfeiltasten.* Eine Menüleiste, eine Tab-Liste, Listbox, Toolbar oder ein Baum wird per Tab erreicht; ein Pop-up-Menü nicht, es erhält beim Öffnen den Fokus. Innen wechseln die Pfeiltasten zwischen den Einträgen, oft über einen Roving `tabindex` oder `aria-activedescendant`. Pos1 und Ende hängen vom Pattern ab: optional bei Tabs, Listboxen und Toolbars, Pflicht in Menüs, deren Pfeiltasten nicht umlaufen.
+* *Lauffähige Beispiele.* Fast jedes Pattern verlinkt Beispielimplementierungen in HTML, CSS und JavaScript (der Window Splitter ist die Ausnahme), etwa das Disclosure Navigation Menu oder den Action Menu Button.
+* *Informativ, nicht normativ.* Der APG stellt keine normativen Anforderungen und hat kein Konformitätsmodell. Er zeigt, wie man die Anforderungen von WCAG und der ARIA-Spezifikation erfüllt.
+* *Natives HTML zuerst.* Wo ein natives Element das Pattern abdeckt -- `<button>`, `<details>`, `<dialog>`, `<select>` --, schlägt es ein selbst gebautes ARIA-Widget. ARIA ergänzt Semantik und verspricht Verhalten; das Verhalten selbst liefert es nicht.
+
+Wichtige Vertreter:: W3C Web Accessibility Initiative; entwickelt wird der Guide von der ARIA Authoring Practices Task Force der ARIA Working Group (https://www.w3.org/WAI/ARIA/apg/about/introduction[„Introduction to the APG“]). Im Mai 2022 wurde er als mehrseitige Ressource unter w3.org/WAI/ARIA/apg neu gestaltet (https://www.w3.org/WAI/news/2022-05-19/ARIA-APG-redesign[W3C-Meldung, 19.05.2022])
+
+[discrete]
+== *Wann verwenden*:
+
+* Ein interaktives Bedienelement spezifizieren oder generieren lassen -- Menü, Combobox, Tabs, Dialog, Baum --, sodass Tastatur- und Screenreader-Verhalten mitkommen
+* Akzeptanzkriterien für eine Komponente schreiben: Die Tastaturtabelle des Patterns ist eine fertige Checkliste
+* Eine Komponentenbibliothek oder generierten UI-Code auf falsche Rollen und fehlende Tasten prüfen
+* Namensstreit im Design-System klären: Welches Element ist ein „Menu“, welches eine „Disclosure“?
+
+[discrete]
+== *So promptest du damit*:
+
+* *Den Guide nennen und das Modell das Pattern wählen lassen -- oder das Pattern selbst nennen.* „Follow the WAI-ARIA Authoring Practices Guide (APG).“ genügt, damit das Modell ein passendes Pattern wählt. Wer es nennt („Use the APG Menu Button pattern.“), nimmt ihm die Wahl ab.
+* *Das Bedienelement beim gängigen Namen nennen, das Verhalten über den APG festlegen.* Der gängige Name sagt dem Modell, was es bauen soll; das Pattern sagt, wie sich das Element verhält. https://component.gallery/[The Component Gallery] listet den gängigen Namen und die Synonyme von 60 Bedienelementen aus 95 Design-Systemen.
+* *Mit einem Stil- oder System-Anker kombinieren, nicht statt eines solchen.* Zum Aussehen sagt der APG nichts. „Swiss Style, WCAG 2.2 AA, APG patterns“ deckt Aussehen, Barrierefreiheitsanforderung und Verhalten der Bedienelemente ab.
+* *Den vollen Namen verwenden.* „WAI-ARIA Authoring Practices Guide (APG)“ oder „ARIA Authoring Practices“. Das bloße „APG“ hat außerhalb der Webentwicklung andere Bedeutungen.
+* *Beispiel-Prompts:*
+** „Build the account menu in the top bar: an avatar button that opens Profile, Settings and Sign out. Follow the WAI-ARIA Authoring Practices Guide (APG).“
+** „Main navigation with two dropdowns of links. Follow the APG Disclosure Navigation Menu example, not the menu pattern.“
+** „Review this combobox against the APG Combobox pattern. List every key from the pattern's keyboard table that the code does not handle.“
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* *Barrierefreies Verhalten erwarten, ohne danach zu fragen.* Teilweise richtig: In unserem Prior-Test am 30.10.2026 nutzten alle sechs Baselines eines Account-Menüs bereits `role="menu"`, `aria-expanded` und Pfeiltasten. Nur eine von sechs unterstützte Type-ahead und vier von sechs Pos1 und Ende. Mit „Follow the WAI-ARIA Authoring Practices Guide (APG).“ taten sechs von sechs Läufen beides. Beides ist in der Tastaturtabelle des Patterns optional oder an Bedingungen geknüpft (Type-ahead ist optional; Pos1 und Ende sind Pflicht, wenn die Pfeiltasten nicht umlaufen), die Baselines können also trotzdem konform sein; der Anker bringt das Modell dazu, sie zu ergänzen.
+* *Die Website-Navigation zum Anwendungsmenü machen.* Der APG empfiehlt selbst das Disclosure-Pattern für typische Website-Navigation: Sein Navigation-Menubar-Beispiel beginnt mit dem Hinweis, die Funktionalität einer Menüleiste sei für typische Website-Navigation unnötig („unnecessary for typical site navigation“). Praktikerinnen und Praktiker sagen dasselbe, weil Screenreader-Nutzer von einem Menü Pfeiltasten-Verhalten erwarten (siehe Kritik). In unserem Prior-Test nutzte eine von sechs Baselines für die Navigation einer Universitäts-Website `role="menu"`; mit Anker wählten sechs von sechs das Disclosure-Pattern und nannten es.
+* *Die Empfehlung als Verbot lesen.* Der APG verbietet Menü-Rollen nicht: Neben dem Disclosure Navigation Menu zeigt er einen Navigation Menu Button und eine Navigation Menubar für Websites, die Menüs wie in einer Anwendung brauchen. Im selben Test schrieben zwei Opus-Läufe, der APG sage, man solle `role="menu"` für Website-Navigation nicht verwenden; damit wird aus der Empfehlung des Guides eine Regel.
+* *Die Beispiele in Produktion übernehmen.* Zu den Zielen des Guides gehört nach eigener Aussage kein umfassendes Design-System und kein produktionsreifer Code („do not include providing a comprehensive design system or production-ready code“). Die Beispiele lehren das Pattern; vor dem Einsatz müssen sie mit echter Assistenztechnik getestet werden.
+* *ARIA verwenden, wo HTML genügt.* Ein `<div role="button">` braucht Fokus, Enter und Leertaste, die ein `<button>` von Haus aus mitbringt.
+
+[discrete]
+== *Kritik*:
+
+* *Kaputte Patterns in echten Projekten.* Adrian Roselli schreibt in https://adrianroselli.com/2023/04/no-apgs-support-charts-are-not-can-i-use-for-aria.html[„No, APG's Support Charts Are Not 'Can I Use' for ARIA“] (2023), er habe jahrelang kaputte APG-Patterns aus Kundenprojekten entfernt („Yet I have spent years tearing broken APG patterns out of client projects“). Er warnt davor, die Support-Tabellen des APG als allgemeine ARIA-Unterstützungsdaten zu lesen; sie decken nur die eigenen Beispiele mit wenigen Screenreadern und Browsern ab.
+* *Menü-Rollen gehören nicht in die Website-Navigation.* Elle Smith argumentiert in https://blog.pope.tech/2026/02/10/does-your-navigation-need-an-aria-menu-probably-not/[„Does your navigation need an ARIA menu? Probably not“] (Pope Tech, 2026), ARIA-Menü-Rollen seien für echte Menüs gedacht („ARIA menu roles are meant for true menus“): Website-Navigation solle Landmarks und Links verwenden.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Ein lebender Guide statt einer nummerierten Note.* Seit Mai 2022 ist der APG eine mehrseitige Ressource unter https://www.w3.org/WAI/ARIA/apg/[w3.org/WAI/ARIA/apg], die laufend aktualisiert wird; die nummerierten Notes 1.1 und 1.2 sind seine Vorgänger. Der Prior bedient den aktuellen Guide gut: In unserem Prior-Test nannten alle Stufen ungefragt die Patterns, die Tastaturmodelle und den Roving `tabindex`.
+====
