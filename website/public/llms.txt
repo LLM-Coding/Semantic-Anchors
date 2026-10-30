@@ -4524,7 +4524,7 @@ A class should have only one reason to change. Each module or class should be re
 
 ***Communication is key***: Theory must be shared through collaboration, conversation, and documentation that captures intent, not just structure.
 
-***Key Proponent***: Peter Naur (Turing Award winner, 1978)
+***Key Proponent***: Peter Naur (Turing Award winner, 2005)
 
 ***Original Work***: "Programming as Theory Building" (1985)
 

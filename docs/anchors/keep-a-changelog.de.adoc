@@ -5,7 +5,7 @@
 :tags: Keep a Changelog, keepachangelog, CHANGELOG.md, Changelog, Änderungsprotokoll, Release Notes, Unreleased, Added Changed Deprecated Removed Fixed Security, ISO 8601, umgekehrt chronologisch, kuratierter Changelog
 :related: semantic-versioning, conventional-commits, inverted-pyramid-style
 :tier: 3
-:definition: Keep a Changelog ist Olivier Lacans Konvention für eine von Menschen kuratierte CHANGELOG.md, veröffentlicht auf keepachangelog.com. Ihr Grundsatz: Changelogs sind für Menschen, nicht für Maschinen. Einträge stehen unter sechs festen Änderungstypen, Added, Changed, Deprecated, Removed, Fixed und Security; die neueste Version kommt zuerst, Daten folgen dem Format YYYY-MM-DD, und oben sammelt ein Unreleased-Abschnitt kommende Änderungen. Commit-Log-Abzüge lehnt sie ausdrücklich ab: Maschinen entwerfen, Menschen kuratieren.
+:definition: Keep a Changelog ist Olivier Lacans auf keepachangelog.com veröffentlichte Konvention für eine von Menschen kuratierte CHANGELOG.md, die auf dem Grundsatz beruht, dass Changelogs für Menschen da sind, nicht für Maschinen. Einträge stehen unter sechs festen Änderungstypen, Added, Changed, Deprecated, Removed, Fixed und Security, mit der neuesten Version zuerst, Daten im Format YYYY-MM-DD und einem Unreleased-Abschnitt ganz oben. Commit-Log-Abzüge lehnt sie ausdrücklich ab: Maschinen dürfen entwerfen, aber Menschen kuratieren.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 
