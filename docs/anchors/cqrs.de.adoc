@@ -3,7 +3,7 @@
 :roles: software-architect, software-developer
 :proponents: Greg Young, Bertrand Meyer, Udi Dahan
 :tier: 3
-:definition: CQRS (Command Query Responsibility Segregation) ist ein von Greg Young geprägtes Muster, das Bertrand Meyers Command Query Separation von Methoden auf Modelle überträgt: Schreiben und Lesen laufen über getrennte Modelle, jedes für seinen Zweck optimiert. Domain Events propagieren Änderungen von der Schreibseite zu Lesemodell-Projektionen, wobei Eventual Consistency in Kauf genommen wird, damit beide Seiten unabhängig skalieren. Event Sourcing ergänzt CQRS, ist aber nicht erforderlich.
+:definition: CQRS (Command Query Responsibility Segregation) ist ein von Greg Young geprägtes Muster, das Bertrand Meyers Command Query Separation von Methoden auf Modelle überträgt: Schreiben und Lesen laufen über getrennte Modelle, jedes für seinen Zweck optimiert. Domain Events können Änderungen von der Schreibseite zu Lesemodell-Projektionen tragen; das Lesemodell darf dabei nachhinken, damit beide Seiten unabhängig skalieren. Event Sourcing ergänzt CQRS, ist aber nicht erforderlich.
 :related: domain-driven-design, hexagonal-architecture, fowler-patterns, command-query-separation
 :tags: cqrs, cqs, architecture, commands, queries, read-write-separation
 

@@ -5,7 +5,7 @@
 :tags: conventional commits, commit messages, semantic commits, changelog, git
 :related: semantic-versioning, github-flow, definition-of-done
 :tier: 3
-:definition: Conventional Commits is a specification for adding human- and machine-readable meaning to commit messages, with Benjamin E. Coe, James J. Womack and Steve Mao as key proponents. Each message follows a schema of type, optional scope and description, with types such as feat, fix, docs or refactor, and an exclamation mark or BREAKING CHANGE footer for breaking changes. The types determine the semantic version bump and tell teammates and other stakeholders what kind of change landed.
+:definition: Conventional Commits is a specification for adding human- and machine-readable meaning to commit messages, with Benjamin E. Coe, James J. Womack and Steve Mao as key proponents. Each message follows a schema of type, optional scope and description, with types such as feat, fix, docs or refactor, and an exclamation mark or BREAKING CHANGE footer for breaking changes. The messages determine the semantic version bump, feat a minor, fix a patch and a breaking change a major one, and tell teammates and other stakeholders what kind of change landed.
 
 [%collapsible]
 ====

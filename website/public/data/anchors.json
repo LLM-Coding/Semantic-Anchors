@@ -778,7 +778,7 @@
     ],
     "filePath": "docs/anchors/bdd-given-when-then.adoc",
     "tier": 3,
-    "definition": "Behavior-Driven Development (BDD) is Dan North's practice, introduced in 2006, of specifying system behavior through concrete examples that double as executable tests. Scenarios follow the Given-When-Then format and are written in Gherkin syntax, in a ubiquitous language that developers, testers and business representatives work out together in Three Amigos sessions. The scenarios serve as executable acceptance criteria and as living documentation that stays current with the system.",
+    "definition": "Behavior-Driven Development (BDD) is Dan North's practice, introduced in 2006, of specifying system behavior through concrete examples that double as executable tests. Scenarios follow the Given-When-Then format, often written in Gherkin syntax, in a ubiquitous language that developers, testers and business representatives can work out together, for example in Three Amigos sessions. The scenarios serve as executable acceptance criteria and as living documentation that stays current with the system.",
     "addedAt": "2026-03-09T09:49:49+01:00"
   },
   {
@@ -810,7 +810,7 @@
     ],
     "filePath": "docs/anchors/bem-methodology.adoc",
     "tier": 3,
-    "definition": "BEM (Block Element Modifier) is a naming methodology for CSS and SCSS from the Yandex development team. Each class name follows the blockelement--modifier structure: a block is a standalone component, an element is a part of a block with no meaning on its own, and a modifier is a flag that changes appearance or behavior. Flat selectors and explicit names avoid specificity wars and naming conflicts in large codebases.",
+    "definition": "BEM (Block Element Modifier) is a naming methodology for CSS and SCSS from the Yandex development team. Class names follow the blockelement--modifier structure, where element and modifier are optional: a block is a standalone component, an element is a part of a block with no meaning on its own, and a modifier is a flag that changes appearance or behavior. Flat selectors and explicit names avoid specificity wars and naming conflicts in large codebases.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -1765,7 +1765,7 @@
     ],
     "filePath": "docs/anchors/conventional-commits.adoc",
     "tier": 3,
-    "definition": "Conventional Commits is a specification for adding human- and machine-readable meaning to commit messages, with Benjamin E. Coe, James J. Womack and Steve Mao as key proponents. Each message follows a schema of type, optional scope and description, with types such as feat, fix, docs or refactor, and an exclamation mark or BREAKING CHANGE footer for breaking changes. The types determine the semantic version bump and tell teammates and other stakeholders what kind of change landed.",
+    "definition": "Conventional Commits is a specification for adding human- and machine-readable meaning to commit messages, with Benjamin E. Coe, James J. Womack and Steve Mao as key proponents. Each message follows a schema of type, optional scope and description, with types such as feat, fix, docs or refactor, and an exclamation mark or BREAKING CHANGE footer for breaking changes. The messages determine the semantic version bump, feat a minor, fix a patch and a breaking change a major one, and tell teammates and other stakeholders what kind of change landed.",
     "addedAt": "2026-02-13T11:15:38+01:00"
   },
   {
@@ -1833,7 +1833,7 @@
     ],
     "filePath": "docs/anchors/cqrs.adoc",
     "tier": 3,
-    "definition": "CQRS (Command Query Responsibility Segregation) is a pattern, coined by Greg Young, that lifts Bertrand Meyer's Command Query Separation from methods to models: writes and reads go through separate models, each optimized for its purpose. Domain events propagate changes from the write side to read-side projections, accepting eventual consistency so that both sides can scale independently. Event sourcing complements CQRS but is not required.",
+    "definition": "CQRS (Command Query Responsibility Segregation) is a pattern, coined by Greg Young, that lifts Bertrand Meyer's Command Query Separation from methods to models: writes and reads go through separate models, each optimized for its purpose. Domain events can propagate changes from the write side to read-side projections, with the read model allowed to lag behind so that both sides can scale independently. Event sourcing complements CQRS but is not required.",
     "addedAt": "2026-03-07T20:13:29+01:00"
   },
   {
@@ -3210,7 +3210,7 @@
     ],
     "filePath": "docs/anchors/event-driven-architecture.adoc",
     "tier": 3,
-    "definition": "Event-Driven Architecture is an architectural style in which components communicate by emitting and reacting to events instead of calling each other directly, with Gregor Hohpe and Bobby Woolf (2003) and Martin Fowler (2017) as key proponents. Producers publish events without knowing their consumers, and message queues decouple both sides in time. The price is at-least-once delivery, which requires idempotent consumers, and eventual consistency; workflows run by choreography or orchestration.",
+    "definition": "Event-Driven Architecture is an architectural style in which components communicate by emitting and reacting to events instead of calling each other directly, with Gregor Hohpe and Bobby Woolf (2003) and Martin Fowler (2017) as key proponents. Producers publish events without knowing their consumers, and message queues decouple both sides in time. Most messaging systems deliver at least once, which requires idempotent consumers, and state becomes eventually consistent; workflows run by choreography or orchestration.",
     "addedAt": "2026-03-07T20:24:13+01:00"
   },
   {
@@ -3720,7 +3720,7 @@
         "works": true
       }
     ],
-    "definition": "FMEA, Failure Mode and Effects Analysis, is a bottom-up, forward-looking risk method, first described in 1949 in the US military document MIL-P-1629, that asks for each component or process step how it can fail. For every failure mode it records effect, cause and controls and rates Severity, Occurrence and Detection. Classic FMEA ranks risks by the Risk Priority Number, while the AIAG and VDA handbook of 2019 replaced it with Action Priority and a seven-step process.",
+    "definition": "FMEA, Failure Mode and Effects Analysis, is a bottom-up, forward-looking risk method, first described in 1949 in the US military document MIL-P-1629, that asks for each component or process step how it can fail. For every failure mode it records effect, cause and controls and rates Severity, Occurrence and Detection. Classic FMEA ranks risks by the Risk Priority Number, while the AIAG and VDA handbook of 2019 replaced the Risk Priority Number with Action Priority and structures FMEA in seven steps.",
     "addedAt": "2026-09-30T16:32:07+02:00"
   },
   {
@@ -4057,7 +4057,7 @@
     ],
     "filePath": "docs/anchors/github-flow.adoc",
     "tier": 3,
-    "definition": "GitHub Flow is a lightweight, branch-based Git workflow described by Scott Chacon in 2011, in which main is always deployable. Every change gets a short-lived branch from main, and a Pull Request serves for review, discussion and CI validation before the merge. In Chacon's original formulation each merge is deployed immediately, while GitHub's current official description ends at the merge without a deployment step.",
+    "definition": "GitHub Flow is a lightweight, branch-based Git workflow described by Scott Chacon in 2011, in which main is always deployable. Every change gets a short-lived branch from main, and a Pull Request serves for review, discussion and CI validation before the merge. In Chacon's original formulation each merge is deployed immediately, while GitHub's current official description has no deployment step after the merge.",
     "addedAt": "2026-03-13T12:59:50+00:00"
   },
   {
