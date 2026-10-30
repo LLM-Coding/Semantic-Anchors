@@ -5,6 +5,7 @@
 :proponents: Ralf Westphal, Stefan Lieser
 :tags: iosp, integration, operation, testbarkeit, flow-design, funktionsdesign, clean-code, funktionale-abhaengigkeit
 :tier: 2
+:definition: Das Integration Operation Segregation Principle (IOSP) ist eine Regel für den Funktionsentwurf aus der Clean-Code-Developer-Schule von Ralf Westphal und Stefan Lieser: Eine Funktion enthält entweder Logik oder ruft andere Funktionen auf, niemals beides. Operationen tragen die Logik und bilden die Blätter des Funktionsbaums; Integrationen komponieren nur andere Funktionen und bilden seine Verzweigungen. So werden Operationen ohne Mocks unit-testbar, und das Single Level of Abstraction Principle ergibt sich von selbst.
 
 [%collapsible]
 ====

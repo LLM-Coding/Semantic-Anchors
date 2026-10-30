@@ -3,6 +3,7 @@
 :roles: product-owner, business-analyst, team-lead, ux-designer
 :proponents: Jeff Patton
 :tier: 3
+:definition: User Story Mapping ist Jeff Pattons Technik, beschrieben in seinem Buch von 2014, die User Stories entlang der Journey der Nutzer anordnet. Nutzeraktivitäten und ihre Aufgaben verlaufen horizontal als narrativer Fluss; Stories werden vertikal nach Wert geordnet, und horizontale Scheiben bilden Releases, beginnend mit einem minimalen End-to-End-Walking-Skeleton. Gemeinsames Mapping schafft geteiltes Verständnis und zeigt das Gesamtbild statt einzelner Backlog-Items.
 :tags: user story mapping, Jeff Patton, backlog, product, user journey, stories
 :related: impact-mapping, invest, mvp
 

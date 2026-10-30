@@ -5,6 +5,7 @@
 :tags: PDCA, PDSA, Deming-Kreis, Shewhart-Zyklus, plan do check act, plan do study act, Kaizen, kontinuierliche Verbesserung, Qualität
 :related: dmaic, dmadv, spc, five-whys, ishikawa-diagram
 :tier: 3
+:definition: PDCA (Plan-Do-Check-Act) ist eine Verbesserungsschleife aus vier Schritten. Sie stammt von Walter A. Shewharts Zyklus von 1939 ab und heißt auch Deming-Kreis; Deming selbst bevorzugte PDSA, Plan-Do-Study-Act. Man plant eine Hypothese und legt fest, woran das Ergebnis gemessen wird, testet die Änderung im kleinen Maßstab, vergleicht das Ergebnis mit der Vorhersage und macht die Änderung zum Standard oder beginnt von vorn. Endlos wiederholt, ist sie der Motor unter Kaizen.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

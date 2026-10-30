@@ -4,6 +4,7 @@
 :related: regulated-environment, iec-61508-sil-levels
 :proponents: OWASP Foundation
 :tier: 3
+:definition: Die OWASP Top 10 ist die Rangliste der OWASP Foundation mit zehn Kategorien von Sicherheitsrisiken für Webanwendungen, erstmals 2003 veröffentlicht und in Ausgaben wie 2021 und 2025 neu aufgelegt. Die Ausgabe 2021 reicht von A01 Fehlerhafte Zugriffskontrolle über Injection und Unsicheres Design bis A10 Server-Side Request Forgery. Teams nutzen sie für Risikobewertungen, Schulungen zu sicherem Programmieren und Security-Reviews und sollten die Ausgabe nennen, weil sich Kategorie-IDs zwischen Ausgaben ändern.
 :tags: security, web-security, vulnerabilities, risk, appsec, owasp
 
 [%collapsible]

@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer
 :proponents: Alistair Cockburn
 :tier: 3
+:definition: Hexagonal Architecture, auch Ports and Adapters genannt, ist ein Architekturstil, den Alistair Cockburn 2005 beschrieb. Er stellt die Kerndomäne ins Zentrum, isoliert von externen Belangen: Ports sind Schnittstellen, die festlegen, wie die Anwendung kommuniziert, und Adapter verbinden sie mit Benutzeroberflächen, APIs, Datenbanken und Message Queues. Abhängigkeiten zeigen nach innen, sodass die Kernlogik unabhängig von Frameworks bleibt und sich isoliert testen lässt.
 :tags: hexagonal architecture, ports and adapters, Cockburn, isolation, boundaries
 :related: clean-architecture, domain-driven-design, separation-of-concerns
 

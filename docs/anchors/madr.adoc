@@ -5,6 +5,7 @@
 :tags: MADR, markdown ADR, architecture decision record, decision documentation
 :related: adr-according-to-nygard, arc42
 :tier: 3
+:definition: MADR (Markdown Architectural Decision Records) is a structured Markdown template for architecture decision records by Oliver Kopp, Olaf Zimmermann and the MADR community. More detailed than basic ADRs, it records the context and problem statement, decision drivers, considered options, the decision outcome with its justification, and the pros and cons of each option. Alternatives and trade-offs are thus documented explicitly and stored with the code.
 
 [%collapsible]
 ====

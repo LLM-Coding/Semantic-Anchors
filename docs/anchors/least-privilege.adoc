@@ -5,6 +5,7 @@
 :tags: least privilege, PoLP, principle of least authority, POLA, need-to-know, default deny, fail-safe defaults, separation of duties, capabilities, just-in-time access, Zero Trust, blast radius, Saltzer, Schroeder
 :related: stride, owasp-top-10, meaningful-human-control, twelve-factor-app
 :tier: 3
+:definition: The Principle of Least Privilege is one of eight design principles in Jerome H. Saltzer and Michael D. Schroeder's 1975 paper "The Protection of Information in Computer Systems": every program and every user should operate with the least set of privileges necessary to complete the job. Its first stated purpose is to limit damage from accident or error. Because the minimum is relative to the job, the grant should expire with the job.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

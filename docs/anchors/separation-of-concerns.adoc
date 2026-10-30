@@ -5,6 +5,7 @@
 :proponents: Edsger W. Dijkstra
 :tags: modularity, cohesion, coupling, srp, information-hiding
 :tier: 1
+:definition: Separation of Concerns is a design principle, coined by Edsger W. Dijkstra in 1974, that divides a system into distinct aspects so each can be studied, designed, and changed in isolation. It is the structural basis of modular software — high cohesion within a unit, low coupling between units — and shows up as layering, MVC, and microservice boundaries.
 
 [%collapsible]
 ====

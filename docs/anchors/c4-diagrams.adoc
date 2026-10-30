@@ -5,6 +5,7 @@
 :tags: C4, C4 model, architecture diagrams, context container component code, Simon Brown, visualization
 :related: arc42, adr-according-to-nygard, domain-driven-design
 :tier: 3
+:definition: The C4 model is Simon Brown's approach to software architecture diagrams at four levels of abstraction: Context, Container, Component, and Code. Readers zoom from a system in its environment down to its classes, with a simple boxes-and-arrows notation and different diagrams for different stakeholders.
 
 [%collapsible]
 ====

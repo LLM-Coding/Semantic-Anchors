@@ -5,6 +5,7 @@
 :tags: Residuality, Residues, Stressoren, Contagion-Analyse, Komplexitätswissenschaft, Unsicherheit, Softwarearchitektur, naive Architektur
 :related: strangler-fig, cynefin-framework, domain-driven-design, circuit-breaker
 :tier: 2
+:definition: Residuality Theory ist eine Methode der Softwarearchitektur von Barry M. O'Reilly mit Wurzeln in der Komplexitätswissenschaft. Man beginnt mit einer bewusst naiven Architektur, wendet Stressoren an — technische Ausfälle, aber auch geschäftliche und organisatorische Schocks — und bestimmt das Residue: was vom System übrig bleibt, wenn ein Stressor eintritt. Dann baut man so um, dass das Versagen kontrolliert geschieht, und macht mit der Contagion-Analyse verborgene Kopplung sichtbar.
 
 [%collapsible]
 ====

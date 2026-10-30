@@ -5,6 +5,7 @@
 :tags: Genchi Genbutsu, gemba, go and see, Ohno Circle, chalk circle, direct observation, gemba walk, Toyota Way, actual place actual thing, go to the source
 :related: five-whys, kaizen, andon, xy-problem, socratic-method
 :tier: 3
+:definition: Genchi Genbutsu (現地現物, “the actual place, the actual thing”) is the Toyota principle of going to see for yourself, one of the five principles of the Toyota Way 2001. The person who decides must observe the work where it happens and look at the thing itself, not at reports about it. It is the observation step that cause-hunting methods such as Five Whys depend on.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

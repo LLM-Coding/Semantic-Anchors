@@ -5,6 +5,7 @@
 :tags: 4+1, 4+1-Sichtenmodell, Kruchten, logische Sicht, Prozesssicht, Entwicklungssicht, physische Sicht, Szenarien, Sichten und Viewpoints, Architektursichten, RUP, ISO 42010, IEEE 1471, Architekturbeschreibung
 :related: arc42, c4-diagrams, cockburn-use-cases, domain-driven-design
 :tier: 3
+:definition: Das 4+1-Sichtenmodell ist Philippe Kruchtens Schema zur Beschreibung von Softwarearchitektur, 1995 in IEEE Software veröffentlicht. Es beschreibt ein System über vier Sichten – logische Sicht, Entwicklungssicht, Prozesssicht und physische Sicht –, von denen jede die Frage eines benannten Publikums beantwortet, dazu eine kleine Auswahl zentraler Szenarien. Die Szenarien helfen, Architekturelemente zu finden, und prüfen danach die vier Sichten gegeneinander auf Konsistenz.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

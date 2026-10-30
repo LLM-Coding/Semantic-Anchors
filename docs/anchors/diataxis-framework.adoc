@@ -5,6 +5,7 @@
 :tags: Diataxis, documentation, tutorials, how-to, reference, explanation, Procida
 :related: docs-as-code, arc42, inverted-pyramid-style
 :tier: 3
+:definition: Diátaxis is Daniele Procida's framework for organizing technical documentation into four types: tutorials, how-to guides, reference, and explanation. The types follow two dimensions, practical versus theoretical and learning versus working, so each serves a distinct user need and has its own quality criteria.
 
 [%collapsible]
 ====

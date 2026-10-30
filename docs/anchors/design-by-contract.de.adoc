@@ -5,6 +5,7 @@
 :proponents: Bertrand Meyer
 :tags: preconditions, postconditions, invariants, correctness, eiffel
 :tier: 2
+:definition: Design by Contract ist ein Entwurfsansatz von Bertrand Meyer, geprägt für die Sprache Eiffel, der jede Routine als Vertrag zwischen Aufrufer und Implementierung behandelt. Vorbedingungen nennen die Pflichten des Aufrufers, Nachbedingungen die Zusicherungen der Routine, Klasseninvarianten die Bedingungen, die jede Instanz stets erfüllt. Eine verletzte Klausel zeigt, auf welcher Seite der Fehler liegt.
 
 [%collapsible]
 ====

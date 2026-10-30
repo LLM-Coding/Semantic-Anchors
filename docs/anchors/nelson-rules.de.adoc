@@ -3,6 +3,7 @@
 :roles: data-scientist, devops-engineer
 :proponents: Lloyd S. Nelson
 :tier: 3
+:definition: Die Nelson Rules sind acht Tests auf spezielle Ursachen in Regelkarten. Lloyd S. Nelson veröffentlichte sie 1984 im Journal of Quality Technology als Erweiterung der Western Electric Rules. Jede Regel markiert ein nicht-zufälliges Muster — etwa einen Punkt jenseits von 3σ oder neun Punkte auf einer Seite des Mittelwerts — und trennt so zuordenbare von inhärenter Variation. Mehr aktive Regeln bedeuten höhere Sensitivität, aber mehr Fehlalarme.
 :tags: Nelson rules, control chart, SPC, statistical process control, out of control
 :related: control-chart-shewhart, spc, dmaic
 

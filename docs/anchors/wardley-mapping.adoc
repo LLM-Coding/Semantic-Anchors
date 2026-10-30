@@ -5,6 +5,7 @@
 :tags: Wardley mapping, value chain, strategy, evolution, Simon Wardley
 :related: cynefin-framework, impact-mapping, swot
 :tier: 3
+:definition: Wardley Mapping is Simon Wardley’s visual approach to strategy. A map places components on a value chain that runs down from user needs and along an evolution axis from Genesis through Custom and Product to Commodity. Reading how components move, together with climatic patterns, gameplay patterns, and doctrine, builds situational awareness and informs decisions such as build, buy, or partner.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :proponents: OWASP Foundation
 :tags: security, web-security, vulnerabilities, risk, appsec, owasp
 :tier: 3
+:definition: The OWASP Top 10 is the OWASP Foundation's ranked list of ten web application security risk categories, first published in 2003 and reissued in editions such as 2021 and 2025. The 2021 edition runs from A01 Broken Access Control through Injection and Insecure Design to A10 Server-Side Request Forgery. Teams use it for risk assessments, secure-coding training and security reviews, and should name the edition, because category IDs change between editions.
 
 [%collapsible]
 ====

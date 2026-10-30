@@ -5,6 +5,7 @@
 :proponents: Kim Wuyts, Riccardo Scandariato, Wouter Joosen
 :tags: privacy, threat-modeling, privacy-engineering, GDPR, data-protection, threat-analysis, privacy-by-design
 :tier: 3
+:definition: LINDDUN is a privacy threat modeling framework by Kim Wuyts, Riccardo Scandariato and Wouter Joosen of KU Leuven's DistriNet Research Group, published in 2014. Its name lists seven privacy threat categories — Linkability, Identifiability, Non-repudiation, Detectability, Disclosure of information, Unawareness and Non-compliance. Teams use them to find privacy risks in systems that handle personal data, for example in the design phase.
 
 [%collapsible]
 ====

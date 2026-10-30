@@ -5,6 +5,7 @@
 :tags: refactoring, refactoring catalog, named refactorings, Extract Function, Extract Method, Replace Conditional with Polymorphism, Introduce Parameter Object, Separate Query from Modifier, behaviour-preserving transformation, mechanics, Two Hats, preparatory refactoring
 :related: code-smells, mikado-method, boy-scout-rule, red-green-tdd, test-seam
 :tier: 2
+:definition: The Refactoring Catalog is the set of named, behaviour-preserving code transformations in Martin Fowler's "Refactoring: Improving the Design of Existing Code" (1999, 2nd edition 2018), maintained online at refactoring.com. Each entry — such as Extract Function or Replace Conditional with Polymorphism — has a name, a before-and-after sketch, a motivation, and numbered mechanics that keep the code working between steps. The names give developers a shared vocabulary for restructuring.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

@@ -3,6 +3,7 @@
 :roles: business-analyst, product-owner, consultant, ux-designer, team-lead
 :proponents: Marshall Rosenberg
 :tier: 3
+:definition: Nonviolent Communication (NVC, Gewaltfreie Kommunikation) ist Marshall Rosenbergs Kommunikationsmethode: Sie trennt konkrete Beobachtungen von Bewertungen und drückt Gefühle aus, die universellen menschlichen Bedürfnisse dahinter sowie spezifische Bitten statt Forderungen. Im Problem Space angewandt, deckt sie die echten Bedürfnisse hinter Beschwerden und Feature-Wünschen auf. Das stützt die Requirements-Ermittlung und die Konfliktlösung im Team.
 :tags: nvc, communication, empathy, conflict-resolution, requirements
 :related: jobs-to-be-done, impact-mapping, user-story-mapping
 

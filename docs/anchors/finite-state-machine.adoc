@@ -5,6 +5,7 @@
 :tags: finite state machine, FSM, state machine, finite automaton, state, event, transition, transition table, guard, Mealy machine, Moore machine, statecharts, UML state machine, state explosion
 :related: gof-state-pattern, blink-without-delay, ears-requirements
 :tier: 3
+:definition: A finite state machine is a model of behaviour built from a finite, named set of states and the events that trigger transitions between them; George H. Mealy (1955) and Edward F. Moore (1956) defined its two classic output models. A transition table lists every combination of state and event, so each cell becomes an explicit decision. David Harel’s statecharts add hierarchy and concurrency and underlie UML state machines.
 :prior-test: 2026-10-09
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

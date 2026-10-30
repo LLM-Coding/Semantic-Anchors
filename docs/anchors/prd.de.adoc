@@ -5,6 +5,7 @@
 :proponents: Marty Cagan, Roman Pichler
 :tags: product, requirements, specification, planning, stakeholders
 :tier: 3
+:definition: Ein PRD (Product Requirements Document) beschreibt, was ein neues Produkt oder größeres Feature leisten soll, bevor Design und Entwicklung beginnen; Schlüsselvertreter sind Marty Cagan und Roman Pichler. Es umfasst Problembeschreibung, Ziele und Erfolgskennzahlen, Personas und Anwendungsfälle, funktionale und nicht-funktionale Anforderungen, Scope und Out-of-Scope, Einschränkungen und Annahmen sowie offene Fragen. So teilen funktionsübergreifende Teams eine gemeinsame Referenz.
 
 [%collapsible]
 ====

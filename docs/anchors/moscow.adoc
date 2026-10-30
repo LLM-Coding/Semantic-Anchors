@@ -5,6 +5,7 @@
 :proponents: Dai Clegg
 :tags: prioritization, requirements, agile, dsdm
 :tier: 3
+:definition: MoSCoW is a prioritization method by Dai Clegg from the Dynamic Systems Development Method (DSDM). It sorts requirements into Must have, Should have, Could have and Won't have (this time), always relative to a fixed timebox. Stakeholders thus agree on scope together, and the explicit "Won't have" category curbs scope creep.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :tags: defense in depth, Verteidigung in der Tiefe, mehrschichtige Sicherheit, gestaffelte Verteidigung, unabhängige Schichten, Diversität der Abwehr, Assume Breach, Schweizer-Käse-Modell, Blast Radius, Kompartimentierung, People Technology Operations
 :related: stride, owasp-top-10, fmea, poka-yoke, least-privilege
 :tier: 2
+:definition: Defense in Depth ist eine Sicherheitsstrategie, übertragen aus der Militärdoktrin und für Information Assurance in einem NSA-Papier beschrieben. Sie schützt ein System mit mehreren Schichten von Controls über People, Technology und Operations hinweg. Die Schichten zählen nur, wenn sie unabhängig und divers sind und jede annimmt, dass die davor schon überwunden ist; auch Erkennung und Wiederherstellung sind Schichten.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

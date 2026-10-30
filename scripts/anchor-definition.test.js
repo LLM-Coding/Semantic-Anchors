@@ -18,8 +18,8 @@ describe('getAnchorDefinition', () => {
   })
 
   it('falls back to a derived definition as source=derived', () => {
-    // circuit-breaker has no curated :definition:, so it derives from Core Concepts.
-    const def = getAnchorDefinition('docs/anchors/circuit-breaker.adoc')
+    // A fixture, not a real anchor: real anchors gain curated definitions (#865).
+    const def = getAnchorDefinition(`${FIXTURES}/en-derived.adoc`)
     expect(def).toBeTruthy()
     expect(def.source).toBe('derived')
     expect(def.text.length).toBeGreaterThan(20)

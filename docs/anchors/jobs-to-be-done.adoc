@@ -5,6 +5,7 @@
 :tags: jobs to be done, JTBD, Christensen, customer needs, product, innovation
 :related: user-story-mapping, kano-model, mvp
 :tier: 3
+:definition: Jobs To Be Done (JTBD), in Clayton Christensen’s interpretation, is a framework that explains customer choices by the progress people want to make in a particular context. Customers “hire” a product to do a job — functional, emotional, or social — and “fire” it when it falls short. Anything that solves the same job counts as competition, and unmet or poorly served jobs mark innovation opportunities.
 
 [%collapsible]
 ====

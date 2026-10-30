@@ -5,6 +5,7 @@
 :proponents: John Ousterhout
 :tags: modularity, abstraction, interface, complexity, information-hiding
 :tier: 2
+:definition: Deep Modules is John Ousterhout's design principle from A Philosophy of Software Design: a module should offer a lot of functionality behind a small, stable interface. Because every interface element is a cost callers must pay, deep modules hide design decisions likely to change, while shallow modules, whose interface is nearly as complex as their implementation, push complexity onto callers.
 
 [%collapsible]
 ====

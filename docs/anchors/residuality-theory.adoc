@@ -5,6 +5,7 @@
 :tags: residuality, residues, stressors, contagion analysis, complexity science, uncertainty, software architecture, naive architecture
 :related: strangler-fig, cynefin-framework, domain-driven-design, circuit-breaker
 :tier: 2
+:definition: Residuality Theory is a software architecture method by Barry M. O'Reilly, rooted in complexity science. You start from a deliberately naive architecture, apply stressors — technical failures, but also business and organisational shocks — and identify the residue: what remains of the system when a stressor hits. You then redesign so failure happens in a controlled way, and use contagion analysis to expose hidden coupling.
 
 [%collapsible]
 ====

@@ -5,6 +5,7 @@
 :tags: least privilege, PoLP, Prinzip der minimalen Rechte, principle of least authority, POLA, Need-to-know, Default Deny, Fail-safe Defaults, Funktionstrennung, Capabilities, Just-in-time-Zugriff, Zero Trust, Blast Radius, Saltzer, Schroeder
 :related: stride, owasp-top-10, meaningful-human-control, twelve-factor-app
 :tier: 3
+:definition: Das Principle of Least Privilege ist eines von acht Entwurfsprinzipien in Jerome H. Saltzers und Michael D. Schroeders Aufsatz „The Protection of Information in Computer Systems“ von 1975: Jedes Programm und jeder Nutzer soll mit der kleinsten Menge an Rechten arbeiten, die für die Aufgabe nötig ist. Sein zuerst genannter Zweck ist, den Schaden durch Unfall oder Fehler zu begrenzen. Weil das Minimum relativ zur Aufgabe gilt, soll die Rechtevergabe mit der Aufgabe ablaufen.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

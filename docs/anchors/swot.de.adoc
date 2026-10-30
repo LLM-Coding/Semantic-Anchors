@@ -4,6 +4,7 @@
 :related: pugh-matrix, wardley-mapping, moscow
 :proponents: Albert Humphrey
 :tier: 3
+:definition: Die SWOT-Analyse ist eine Technik der strategischen Planung, verbunden mit Albert Humphrey vom Stanford Research Institute. Sie ordnet Faktoren in vier Quadranten: interne Stärken und Schwächen, die den aktuellen Zustand beschreiben, und externe Chancen und Risiken, die auf die Zukunft blicken. Die TOWS-Variante leitet durch Kreuzvergleich der Quadranten Strategien ab.
 :tags: swot, strategic-planning, analysis, strengths, weaknesses, opportunities, threats, business-analysis
 
 [%collapsible]

@@ -5,6 +5,7 @@
 :tags: Muda, Mura, Muri, the seven wastes, TIMWOOD, TIMWOODS, waste, unevenness, overburden, eighth waste, the three Ms, type one muda
 :related: kaizen, andon, genchi-genbutsu, dmaic, spc
 :tier: 3
+:definition: Muda, Mura, Muri — waste, unevenness and overburden — are the "three Ms" of the Toyota Production System; muda covers Taiichi Ohno's seven wastes. The anchor names the triple, not waste alone. Following James P. Womack, the causal chain runs mura → muri → muda: unevenness created by the system itself leads to overburden, which regenerates the waste that earlier clean-ups removed.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

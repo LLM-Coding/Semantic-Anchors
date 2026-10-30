@@ -5,6 +5,7 @@
 :tags: property-based testing, QuickCheck, invariants, generative testing, Hypothesis
 :related: mutation-testing, testing-pyramid
 :tier: 3
+:definition: Property-Based Testing is a testing approach rooted in Koen Claessen and John Hughes's QuickCheck: you state invariants that should hold for all inputs and let generators create the test data automatically. When a property fails, shrinking reduces the failing case to its simplest form. The approach finds edge cases nobody thought of and complements example-based unit tests.
 
 [%collapsible]
 ====

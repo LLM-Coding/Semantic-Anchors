@@ -3,6 +3,7 @@
 :roles: software-developer, software-architect, qa-engineer, devops-engineer, consultant, legal-compliance, ethics-officer
 :proponents: International Electrotechnical Commission (IEC)
 :tier: 3
+:definition: Die Safety Integrity Levels der IEC 61508 sind vier Stufen der Risikominderung, SIL 1 bis SIL 4, festgelegt in der IEC-Norm zur funktionalen Sicherheit sicherheitsbezogener elektrischer, elektronischer und programmierbarer elektronischer Systeme. Gefährdungsanalyse und Risikobewertung bestimmen die nötige Stufe, und jede Stufe legt einen Bereich für die Probability of Failure on Demand (PFD) fest. Dazu stellt die Norm Hardware- und Softwareanforderungen sowie einen Sicherheitslebenszyklus vom Konzept bis zur Stilllegung auf.
 :related: testing-pyramid, mutation-testing
 :tags: safety, functional-safety, SIL, standards, certification, risk-assessment
 

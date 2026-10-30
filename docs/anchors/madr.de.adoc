@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer, team-lead
 :proponents: Oliver Kopp, Olaf Zimmermann (and MADR community)
 :tier: 3
+:definition: MADR (Markdown Architectural Decision Records) ist ein strukturiertes Markdown-Template für Architekturentscheidungen von Oliver Kopp, Olaf Zimmermann und der MADR-Community. Detaillierter als einfache ADRs, hält es Kontext und Problemstellung, Entscheidungstreiber, betrachtete Optionen, das Entscheidungsergebnis mit Begründung sowie Vor- und Nachteile jeder Option fest. So sind Alternativen und Trade-offs explizit dokumentiert und liegen beim Code.
 :tags: MADR, markdown ADR, architecture decision record, decision documentation
 :related: adr-according-to-nygard, arc42
 

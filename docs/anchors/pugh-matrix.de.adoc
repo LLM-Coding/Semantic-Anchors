@@ -3,6 +3,7 @@
 :roles: software-architect, team-lead, product-owner
 :proponents: Stuart Pugh
 :tier: 2
+:definition: Die Pugh-Matrix ist eine Entscheidungsmatrix aus Stuart Pughs „Total Design“ (1991), mit der man Alternativen anhand von Kriterien vergleicht. Kriterien bilden die Zeilen, Alternativen die Spalten; eine Alternative dient als Referenz, jede andere wird je Kriterium als besser (+), gleich (S) oder schlechter (−) bewertet, und Summenzeilen fassen die Werte zusammen. Teams nutzen sie, um Konsens zu finden und iterativ zu Hybridlösungen zu gelangen.
 :tags: Pugh matrix, decision matrix, Stuart Pugh, trade-off analysis, weighted criteria
 :related: morphological-box, swot, decisional-balance-sheet
 

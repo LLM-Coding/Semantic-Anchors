@@ -3,6 +3,7 @@
 :roles: software-architect, technical-writer, team-lead, consultant, legal-compliance
 :proponents: Simon Brown
 :tier: 3
+:definition: Das C4-Modell ist Simon Browns Ansatz für Software-Architektur-Diagramme auf vier Abstraktionsebenen: Kontext, Container, Komponente und Code. Leser zoomen vom System in seiner Umgebung bis hinunter zu den Klassen, mit einer einfachen Notation aus Kästen und Pfeilen und verschiedenen Diagrammen für verschiedene Stakeholder.
 :tags: C4, C4 model, architecture diagrams, context container component code, Simon Brown, visualization
 :related: arc42, adr-according-to-nygard, domain-driven-design
 

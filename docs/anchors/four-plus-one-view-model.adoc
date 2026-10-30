@@ -5,6 +5,7 @@
 :tags: 4+1, 4+1 view model, Kruchten, logical view, process view, development view, physical view, scenarios, use case view, views and viewpoints, RUP, ISO 42010, IEEE 1471, architecture description
 :related: arc42, c4-diagrams, cockburn-use-cases, domain-driven-design
 :tier: 3
+:definition: The 4+1 View Model is Philippe Kruchten’s scheme for describing software architecture, published in IEEE Software in 1995. It describes a system through four views — logical, development, process, and physical — each answering the question of a named audience, plus a small set of key scenarios. The scenarios help discover architectural elements and then cross-check the four views for consistency.
 :prior-test: 2026-10-03
 :tested-on: haiku-4.5=yes, opus-5-5=yes
 

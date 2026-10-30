@@ -5,6 +5,7 @@
 :proponents: Kent Beck
 :tags: xp, experiment, research, time-boxed, risk-reduction, throwaway
 :tier: 3
+:definition: Eine Spike Solution ist ein zeitlich begrenztes Wegwerf-Experiment, das genau eine technische Frage beantwortet – eine Praxis aus Extreme Programming, verbunden mit Kent Beck. Ihr Ergebnis ist eine Entscheidung, kein Produkt – ein kurzer Bericht, eine Benchmark-Zahl oder ein Ja/Nein –, danach wird der Code gelöscht. Teams reduzieren damit Unsicherheit, etwa wenn eine Story nicht schätzbar ist.
 
 [%collapsible]
 ====

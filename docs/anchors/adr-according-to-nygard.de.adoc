@@ -3,6 +3,7 @@
 :roles: software-architect, software-developer, team-lead, legal-compliance
 :proponents: Michael Nygard
 :tier: 3
+:definition: Ein Architecture Decision Record nach Michael Nygard ist eine kurze, leichtgewichtige Aufzeichnung einer Architekturentscheidung mit fester Struktur: Titel, Status, Kontext, Entscheidung und Konsequenzen. ADRs werden mit dem Code gespeichert und nie gelöscht, nur ersetzt; so versteht ein Team später, warum vergangene Entscheidungen getroffen wurden.
 :tags: ADR, architecture decision record, Nygard, decision documentation, architecture decisions
 :related: madr, arc42, c4-diagrams
 

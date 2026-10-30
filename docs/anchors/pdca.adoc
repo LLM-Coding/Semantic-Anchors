@@ -5,6 +5,7 @@
 :tags: PDCA, PDSA, Deming cycle, Shewhart cycle, plan do check act, plan do study act, kaizen, continuous improvement, quality
 :related: dmaic, dmadv, spc, five-whys, ishikawa-diagram
 :tier: 3
+:definition: PDCA (Plan-Do-Check-Act) is a four-step improvement loop descended from Walter A. Shewhart's 1939 cycle and known as the Deming cycle; Deming himself preferred PDSA, Plan-Do-Study-Act. You plan a hypothesis and how to judge the result, test the change on a small scale, compare the result with the prediction, then standardise the change or loop back. Repeated endlessly, it is the engine under kaizen.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

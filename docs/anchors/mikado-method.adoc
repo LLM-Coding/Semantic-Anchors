@@ -4,6 +4,7 @@
 :related: tdd-chicago-school, tdd-london-school
 :proponents: Ola Ellnestam, Daniel Brolund
 :tags: refactoring, legacy code, incremental change, dependency graph, reversible steps
+:definition: The Mikado Method is a technique for large refactorings in legacy or complex code, described by Ola Ellnestam and Daniel Brolund in "The Mikado Method" (2012). You attempt the goal naively, record what breaks as prerequisites in a Mikado Graph, revert to the last working state, and resolve the leaf prerequisites first. This keeps the code healthy, and every commit is a coherent, working change.
 
 [%collapsible]
 ====

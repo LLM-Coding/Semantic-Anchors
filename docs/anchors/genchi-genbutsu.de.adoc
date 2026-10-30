@@ -5,6 +5,7 @@
 :tags: Genchi Genbutsu, Gemba, hingehen und schauen, Ohno-Kreis, Kreidekreis, direkte Beobachtung, Gemba Walk, Toyota Way, tatsächlicher Ort, an die Quelle gehen
 :related: five-whys, kaizen, andon, xy-problem, socratic-method
 :tier: 3
+:definition: Genchi Genbutsu (現地現物, „der tatsächliche Ort, das tatsächliche Ding“) ist das Toyota-Prinzip, selbst hinzugehen und anzuschauen, eines der fünf Prinzipien des Toyota Way 2001. Wer entscheidet, muss die Arbeit dort beobachten, wo sie geschieht, und die Sache selbst ansehen, nicht Berichte darüber. Es ist der Beobachtungsschritt, auf dem Methoden der Ursachensuche wie Five Whys aufsetzen.
 :prior-test: 2026-09-30
 :tested-on: haiku-4.5=yes, opus-5=yes
 

@@ -5,6 +5,7 @@
 :tags: Pugh matrix, decision matrix, Stuart Pugh, trade-off analysis, weighted criteria
 :related: morphological-box, swot, decisional-balance-sheet
 :tier: 2
+:definition: The Pugh Matrix is a decision matrix from Stuart Pugh's "Total Design" (1991) for comparing alternatives against criteria. Criteria form the rows and alternatives the columns; one alternative serves as the reference, every other is rated better (+), same (S) or worse (−) against it per criterion, and summary rows total the scores. Teams use it to reach consensus and to iterate toward hybrid solutions.
 
 [%collapsible]
 ====
