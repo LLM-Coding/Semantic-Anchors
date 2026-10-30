@@ -41,13 +41,41 @@ describe('buildStyleGallery', () => {
   const en = buildStyleGallery('en')
   const de = buildStyleGallery('de')
 
-  it('opens with the original homepage, before any style', () => {
-    const original = en.indexOf('examples/original-homepage.webp')
-    const firstStyle = Math.min(
-      ...withScreenshot.map((id) => en.indexOf(`/anchor/${id}`)).filter((i) => i >= 0)
-    )
-    expect(original).toBeGreaterThan(-1)
-    expect(original).toBeLessThan(firstStyle)
+  // Two starting pages (#872 follow-up): styles redesign one homepage, design
+  // systems one app page. Each section opens with its own original.
+  const pageOf = (id) => {
+    const m = fs
+      .readFileSync(path.join(ANCHORS, `${id}.adoc`), 'utf-8')
+      .match(/^:example-page:[ \t]*(\S+)/m)
+    return m ? m[1] : 'homepage'
+  }
+  const sectionStart = (page, text) => text.indexOf(`examples/original-${page}.webp`)
+
+  it('opens each section with its original, before any of its tiles', () => {
+    for (const page of ['homepage', 'team-settings']) {
+      const ids = withScreenshot.filter((id) => pageOf(id) === page)
+      expect(ids.length).toBeGreaterThan(0)
+      const firstTile = Math.min(...ids.map((id) => en.indexOf(`/anchor/${id}[`)))
+      expect(sectionStart(page, en)).toBeGreaterThan(-1)
+      expect(sectionStart(page, en)).toBeLessThan(firstTile)
+    }
+  })
+
+  it('puts every example in the section of its starting page', () => {
+    const appStart = sectionStart('team-settings', en)
+    expect(appStart).toBeGreaterThan(sectionStart('homepage', en))
+    for (const id of withScreenshot) {
+      const at = en.indexOf(`/anchor/${id}[`)
+      if (pageOf(id) === 'team-settings') expect(at).toBeGreaterThan(appStart)
+      else expect(at).toBeLessThan(appStart)
+    }
+  })
+
+  it('gives each section a heading in the page language', () => {
+    expect(en).toMatch(/^== .+$/m)
+    expect((en.match(/^== /gm) || []).length).toBe(2)
+    expect((de.match(/^== /gm) || []).length).toBe(2)
+    expect(de).toContain('== Design-Systeme')
   })
 
   it('links every tile to its anchor page, German tiles to German pages', () => {

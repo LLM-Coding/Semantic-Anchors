@@ -9,6 +9,7 @@
 :prior-test: 2026-10-30
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
 :example-screenshot: shopify-polaris.webp
+:example-page: team-settings
 
 [%collapsible]
 ====

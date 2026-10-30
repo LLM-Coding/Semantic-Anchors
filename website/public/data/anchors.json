@@ -200,7 +200,8 @@
       }
     ],
     "exampleImage": "adobe-spectrum.webp",
-    "definition": "Adobe Spectrum is Adobe's design system for its desktop, web and mobile applications, in use since 2013 and redesigned as Spectrum 2 from 2023. It ships as React Spectrum, Spectrum Web Components and Spectrum CSS with shared design tokens and the Adobe Clean typeface, and its React implementation builds on the accessible hooks of React Aria."
+    "definition": "Adobe Spectrum is Adobe's design system for its desktop, web and mobile applications, in use since 2013 and redesigned as Spectrum 2 from 2023. It ships as React Spectrum, Spectrum Web Components and Spectrum CSS with shared design tokens and the Adobe Clean typeface, and its React implementation builds on the accessible hooks of React Aria.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "adr-according-to-nygard",
@@ -375,6 +376,7 @@
         "works": true
       }
     ],
+    "exampleImage": "ant-design.webp",
     "definition": "Ant Design is the enterprise design language and React component library (antd) from Ant Group, the Alibaba affiliate behind Alipay, released publicly in 2015. Built for data-heavy admin and back-office interfaces, it offers components such as Form, Table and ConfigProvider, and a theme system of seed, map and alias tokens.",
     "addedAt": "2026-10-30T12:52:00+01:00"
   },
@@ -619,7 +621,8 @@
       }
     ],
     "exampleImage": "atlassian-design-system.webp",
-    "definition": "The Atlassian Design System is the design system behind Jira, Confluence and Trello, first published as the Atlassian Design Guidelines (ADG) in 2013. It provides the Atlaskit React components, design tokens for colour, elevation, spacing and typography such as color.text.subtle and space.100, and the Atlassian Sans typeface."
+    "definition": "The Atlassian Design System is the design system behind Jira, Confluence and Trello, first published as the Atlassian Design Guidelines (ADG) in 2013. It provides the Atlaskit React components, design tokens for colour, elevation, spacing and typography such as color.text.subtle and space.100, and the Atlassian Sans typeface.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "atomic-design",
@@ -1066,6 +1069,7 @@
         "works": true
       }
     ],
+    "exampleImage": "bootstrap-5.webp",
     "definition": "Bootstrap 5 is the fifth major version of the front-end toolkit that Mark Otto and Jacob Thornton released at Twitter in 2011. It provides a 12-column flexbox grid with six breakpoints, a utility API, Sass and CSS custom properties, colour modes since 5.3 and ready-made components with class names such as form-control and btn-primary, and it no longer depends on jQuery.",
     "addedAt": "2026-10-30T12:52:00+01:00"
   },
@@ -1291,7 +1295,8 @@
       }
     ],
     "exampleImage": "carbon-design-system.webp",
-    "definition": "The Carbon Design System is IBM's open-source design system, developed in public since 2015 as the digital form of the IBM Design Language. It combines IBM Plex type with productive and expressive type sets, the 16-column 2x Grid, four themes from White to Gray 100, design tokens such as layer-01, and components in @carbon/react and @carbon/web-components."
+    "definition": "The Carbon Design System is IBM's open-source design system, developed in public since 2015 as the digital form of the IBM Design Language. It combines IBM Plex type with productive and expressive type sets, the 16-column 2x Grid, four themes from White to Gray 100, design tokens such as layer-01, and components in @carbon/react and @carbon/web-components.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "chain-of-thought",
@@ -3592,7 +3597,8 @@
       }
     ],
     "exampleImage": "fluent-2-design-system.webp",
-    "definition": "Fluent 2 is Microsoft's design system for Microsoft 365, Teams and Windows, released in 2023 as the successor of the Fluent Design System of 2017. It defines global and alias design tokens, a type ramp in Segoe UI and platform typefaces, and components for web, Windows, iOS and Android, on the web through Fluent UI React v9."
+    "definition": "Fluent 2 is Microsoft's design system for Microsoft 365, Teams and Windows, released in 2023 as the successor of the Fluent Design System of 2017. It defines global and alias design tokens, a type ramp in Segoe UI and platform typefaces, and components for web, Windows, iOS and Android, on the web through Fluent UI React v9.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "fmea",
@@ -7634,7 +7640,8 @@
       }
     ],
     "exampleImage": "primer-github.webp",
-    "definition": "Primer is GitHub's design system: the colour, spacing and typography tokens of Primer Primitives, the components of Primer React and Primer ViewComponents for Rails, Primer CSS and the Octicons icon set. It began as a CSS gem in 2012, and since 2026 it is styled with CSS Modules instead of CSS-in-JS."
+    "definition": "Primer is GitHub's design system: the colour, spacing and typography tokens of Primer Primitives, the components of Primer React and Primer ViewComponents for Rails, Primer CSS and the Octicons icon set. It began as a CSS gem in 2012, and since 2026 it is styled with CSS Modules instead of CSS-in-JS.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "problem-space-nvc",
@@ -8323,7 +8330,8 @@
       }
     ],
     "exampleImage": "salesforce-lightning-design-system.webp",
-    "definition": "The Salesforce Lightning Design System (SLDS) is Salesforce's open-source enterprise design system, launched in 2015: CSS with the slds- prefix and BEM naming, component blueprints and guidelines for the Salesforce platform. The term design tokens comes from its team, and SLDS 2 of 2025 replaces the tokens with CSS custom properties called styling hooks."
+    "definition": "The Salesforce Lightning Design System (SLDS) is Salesforce's open-source enterprise design system, launched in 2015: CSS with the slds- prefix and BEM naming, component blueprints and guidelines for the Salesforce platform. The term design tokens comes from its team, and SLDS 2 of 2025 replaces the tokens with CSS custom properties called styling hooks.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "save-the-cat",
@@ -8566,6 +8574,7 @@
         "works": true
       }
     ],
+    "exampleImage": "shadcn-ui.webp",
     "definition": "shadcn/ui is a collection of React components on Tailwind CSS that a CLI copies into the project's own code instead of installing them as a dependency. Released by the developer shadcn in 2023, it pairs accessible primitives from Radix UI or Base UI with semantic CSS variables, so the components become the starting point of the team's own component library.",
     "addedAt": "2026-10-30T12:52:00+01:00"
   },
@@ -8627,7 +8636,8 @@
       }
     ],
     "exampleImage": "shopify-polaris.webp",
-    "definition": "Shopify Polaris is the design system of the Shopify admin and of the apps that run inside it, published in 2017 with a style guide, content guidance, design tokens and a React component library. Since 2025 it ships as framework-independent web components with the s- prefix, and the React library is deprecated."
+    "definition": "Shopify Polaris is the design system of the Shopify admin and of the apps that run inside it, published in 2017 with a style guide, content guidance, design tokens and a React component library. Since 2025 it ships as framework-independent web components with the s- prefix, and the React library is deprecated.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "simon-constructivism",
@@ -10290,7 +10300,8 @@
       }
     ],
     "exampleImage": "uswds.webp",
-    "definition": "The U.S. Web Design System (USWDS) is the design system of the US federal government, created by 18F and the U.S. Digital Service in 2015 and maintained by GSA's Technology Transformation Services. It provides usa- components such as the official government banner, design tokens and the Public Sans typeface, and it is the way agencies meet the website standards the 21st Century IDEA Act requires."
+    "definition": "The U.S. Web Design System (USWDS) is the design system of the US federal government, created by 18F and the U.S. Digital Service in 2015 and maintained by GSA's Technology Transformation Services. It provides usa- components such as the official government banner, design tokens and the Public Sans typeface, and it is the way agencies meet the website standards the 21st Century IDEA Act requires.",
+    "addedAt": "2026-10-30T13:00:40+01:00"
   },
   {
     "id": "value-stream-mapping",

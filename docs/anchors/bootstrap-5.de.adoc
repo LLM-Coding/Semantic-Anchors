@@ -8,6 +8,8 @@
 :definition: Bootstrap 5 ist die fünfte Hauptversion des Frontend-Toolkits, das Mark Otto und Jacob Thornton 2011 bei Twitter veröffentlichten. Es bietet ein 12-spaltiges Flexbox-Raster mit sechs Breakpoints, eine Utility API, Sass und CSS Custom Properties, seit 5.3 Farbmodi und fertige Komponenten mit Klassennamen wie form-control und btn-primary; jQuery braucht es nicht mehr.
 :prior-test: 2026-10-30
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: bootstrap-5.webp
+:example-page: team-settings
 
 [%collapsible]
 ====

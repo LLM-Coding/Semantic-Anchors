@@ -8,6 +8,8 @@
 :definition: shadcn/ui ist eine Sammlung von React-Komponenten auf Tailwind CSS, die ein CLI in den eigenen Code des Projekts kopiert, statt sie als Abhängigkeit zu installieren. Der Entwickler shadcn veröffentlichte sie 2023; sie verbindet barrierefreie Primitive aus Radix UI oder Base UI mit semantischen CSS-Variablen, sodass die Komponenten zum Ausgangspunkt der eigenen Komponentenbibliothek werden.
 :prior-test: 2026-10-30
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: shadcn-ui.webp
+:example-page: team-settings
 
 [%collapsible]
 ====

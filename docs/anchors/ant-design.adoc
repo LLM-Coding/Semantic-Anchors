@@ -8,6 +8,8 @@
 :definition: Ant Design is the enterprise design language and React component library (antd) from Ant Group, the Alibaba affiliate behind Alipay, released publicly in 2015. Built for data-heavy admin and back-office interfaces, it offers components such as Form, Table and ConfigProvider, and a theme system of seed, map and alias tokens.
 :prior-test: 2026-10-30
 :tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+:example-screenshot: ant-design.webp
+:example-page: team-settings
 
 [%collapsible]
 ====

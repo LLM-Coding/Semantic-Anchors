@@ -14,7 +14,14 @@ const { exampleImageFor, isSafeExampleImage, BLOG_URL } = require('./example-ima
 const ROOT = path.join(__dirname, '..', '..')
 const ANCHORS = path.join(ROOT, 'docs', 'anchors')
 const BASE = '/Semantic-Anchors/'
-const ORIGINAL = 'original-homepage.webp'
+// Each example redesigns one of two starting pages; each section opens with its
+// original. Styles redesign a homepage. Design systems are built for product
+// interfaces, so they redesign an app page, where tables, status labels and
+// density show the system (#872 follow-up). An anchor names its starting page
+// with `:example-page:`; without it, the example is a homepage.
+const PAGES = ['homepage', 'team-settings']
+const DEFAULT_PAGE = 'homepage'
+const originalImage = (page) => `original-${page}.webp`
 // The sessions got the German prompt; the English page shows the translation
 // from the blog post and names the original.
 const PROMPT = {
@@ -26,29 +33,66 @@ const TEXT = {
   en: {
     title: 'Design Styles Compared',
     intro: [
-      'One homepage, redesigned once per anchor name. Each version comes from a separate Claude Opus 5.5 session that got the same prompt with only the style name changed:',
-      'The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No style description, no reference images, one run per anchor, no rerolls; each session checked its own screenshots. The first tile is the original, https://rdmueller.github.io/[rdmueller.github.io] as of 28 October 2026.',
-      `How the first ten examples came about, and what stood out in each: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Each style tile links to its anchor.`,
-      'The design-system examples, from Adobe Spectrum to USWDS, were added on 30 October 2026 in the same way and checked by their sessions in a browser. They ran in a cloud workspace without web access: fonts from Google Fonts were served from npm copies for the screenshots, and licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.',
-      'One run per style shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.',
+      'One starting page, redesigned once per anchor name. Each version comes from a separate Claude Opus 5.5 session that got the same prompt with only the name changed:',
+      'The sessions got the German original: "Gestalte diese Website im Stil von {ANKER} neu. Die Inhalte bleiben unverändert." No description, no reference images, one run per anchor, no rerolls; each session checked its own result in a browser. Each style tile links to its anchor.',
+      'One run shows what the name sets off, not the only possible result. Another run, or another model, will differ in the details.',
     ],
+    sections: {
+      homepage: {
+        heading: 'Styles: one homepage',
+        intro: [
+          `The first tile is the original, https://rdmueller.github.io/[rdmueller.github.io] as of 28 October 2026. How these examples came about, and what stood out in each: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29 October 2026). Material Design 3, Apple's Human Interface Guidelines and the GOV.UK Design System are design systems, but their examples come from that run and stay here.`,
+        ],
+        originalAlt: 'The original homepage before any redesign',
+        alt: (t) => `The homepage redesigned in the style of ${t}`,
+      },
+      'team-settings': {
+        heading: 'Design systems: one app page',
+        intro: [
+          'Design systems are made for product interfaces. Their differences show in tables, status labels, page headers and density, and a homepage has little of that. So the design systems redesign an app page instead: the "Team members" settings page of a fictional admin console, written for this gallery in a deliberately plain style. The first tile is that page.',
+          'These sessions ran on 30 October 2026 in a cloud workspace without web access. Fonts from Google Fonts were served from npm copies for the screenshots; licensed fonts such as Segoe UI or Adobe Clean appear in their fallback.',
+        ],
+        originalAlt: 'The neutral starting page, a team-members settings page, before any redesign',
+        alt: (t) => `The settings page redesigned in the style of ${t}`,
+      },
+    },
     originalTitle: 'Original',
-    originalAlt: 'The original homepage before any redesign',
-    alt: (t) => `The homepage redesigned in the style of ${t}`,
   },
   de: {
     title: 'Design-Stile im Vergleich',
     intro: [
-      'Eine Homepage, einmal pro Ankername neu gestaltet. Jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam; nur der Stilname änderte sich:',
-      'Keine Stilbeschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihre eigenen Screenshots. Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026.',
-      `Wie die ersten zehn Beispiele entstanden sind und was jeweils auffiel: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Jede Stil-Kachel verlinkt ihren Anker.`,
-      'Die Beispiele zu den Design-Systemen, von Adobe Spectrum bis USWDS, kamen am 30. Oktober 2026 auf dieselbe Weise hinzu; ihre Sessions prüften sie im Browser. Sie liefen in einer Cloud-Umgebung ohne Webzugriff: Schriften von Google Fonts kamen für die Screenshots aus npm-Kopien, lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.',
+      'Eine Ausgangsseite, einmal pro Ankername neu gestaltet. Jede Fassung stammt aus einer eigenen Session mit Claude Opus 5.5, die denselben Prompt bekam; nur der Name änderte sich:',
+      'Keine Beschreibung, keine Referenzbilder, ein Lauf pro Anker, keine Wiederholungen; jede Session prüfte ihr Ergebnis im Browser. Jede Stil-Kachel verlinkt ihren Anker.',
       'Ein Lauf pro Stil zeigt, was der Name auslöst, nicht das einzig mögliche Ergebnis. Ein weiterer Lauf oder ein anderes Modell weicht in Details ab.',
     ],
+    sections: {
+      homepage: {
+        heading: 'Stile: eine Homepage',
+        intro: [
+          `Die erste Kachel ist das Original, https://rdmueller.github.io/[rdmueller.github.io] mit Stand vom 28. Oktober 2026. Wie diese Beispiele entstanden sind und was jeweils auffiel: ${BLOG_URL}[A Design Style Is a Name Your LLM Already Knows] (Ralf D. Müller, 29. Oktober 2026). Material Design 3, Apples Human Interface Guidelines und das GOV.UK Design System sind Design-Systeme, ihre Beispiele stammen aber aus diesem Lauf und bleiben hier.`,
+        ],
+        originalAlt: 'Die ursprüngliche Homepage vor der Neugestaltung',
+        alt: (t) => `Die Homepage, neu gestaltet im Stil von ${t}`,
+      },
+      'team-settings': {
+        heading: 'Design-Systeme: eine App-Seite',
+        intro: [
+          'Design-Systeme sind für Produktoberflächen gemacht. Ihre Unterschiede zeigen sich in Tabellen, Status-Labels, Seitenköpfen und Dichte, und davon hat eine Homepage wenig. Deshalb gestalten die Design-Systeme stattdessen eine App-Seite neu: die Einstellungsseite „Team members“ einer erfundenen Admin-Konsole, für diese Galerie bewusst schlicht geschrieben. Die erste Kachel ist diese Seite.',
+          'Diese Sessions liefen am 30. Oktober 2026 in einer Cloud-Umgebung ohne Webzugriff. Schriften von Google Fonts kamen für die Screenshots aus npm-Kopien; lizenzierte Schriften wie Segoe UI oder Adobe Clean erscheinen in ihrer Ersatzschrift.',
+        ],
+        originalAlt:
+          'Die neutrale Ausgangsseite, eine Einstellungsseite für Teammitglieder, vor der Neugestaltung',
+        alt: (t) => `Die Einstellungsseite, neu gestaltet im Stil von ${t}`,
+      },
+    },
     originalTitle: 'Original',
-    originalAlt: 'Die ursprüngliche Homepage vor der Neugestaltung',
-    alt: (t) => `Die Homepage, neu gestaltet im Stil von ${t}`,
   },
+}
+
+/** The starting page an anchor's example redesigns (`:example-page:`). */
+function examplePageFor(file) {
+  const m = fs.readFileSync(file, 'utf-8').match(/^:example-page:[ \t]*(\S+)/m)
+  return m && PAGES.includes(m[1]) ? m[1] : DEFAULT_PAGE
 }
 
 /** The anchor title from the first line (`= Title`) of an anchor file. */
@@ -72,7 +116,7 @@ function galleryEntries(lang) {
       if (!isSafeExampleImage(image)) return null
       const de = path.join(ANCHORS, `${id}.de.adoc`)
       const title = titleOf(lang === 'de' && fs.existsSync(de) ? de : path.join(ANCHORS, f))
-      return { id, image, title }
+      return { id, image, title, page: examplePageFor(path.join(ANCHORS, f)) }
     })
     .filter(Boolean)
     .sort((a, b) => a.title.localeCompare(b.title, lang))
@@ -107,16 +151,32 @@ function tile(title, image, alt, link) {
 function buildStyleGallery(lang) {
   const t = TEXT[lang === 'de' ? 'de' : 'en']
   const anchorBase = lang === 'de' ? `${BASE}de/anchor/` : `${BASE}anchor/`
-  const tiles = [
-    tile(t.originalTitle, ORIGINAL, t.originalAlt, ''),
-    ...galleryEntries(lang).map((e) => tile(e.title, e.image, t.alt(e.title), anchorBase + e.id)),
-  ]
+  const entries = galleryEntries(lang)
+  const sections = PAGES.map((page) => {
+    const sec = t.sections[page]
+    const tiles = [
+      tile(t.originalTitle, originalImage(page), sec.originalAlt, ''),
+      ...entries
+        .filter((e) => e.page === page)
+        .map((e) => tile(e.title, e.image, sec.alt(e.title), anchorBase + e.id)),
+    ]
+    return [
+      `== ${sec.heading}`,
+      '',
+      ...sec.intro.flatMap((p) => [p, '']),
+      '[.style-gallery]',
+      '--',
+      tiles.join('\n'),
+      '--',
+      '',
+    ].join('\n')
+  })
   return [
     `= ${t.title}`,
     ':figure-caption!:',
     '',
     "// Generated by scripts/generate-style-gallery.js from the anchors' :example-screenshot:",
-    '// attribute. Do not edit by hand.',
+    '// and :example-page: attributes. Do not edit by hand.',
     '',
     t.intro[0],
     '',
@@ -126,16 +186,8 @@ function buildStyleGallery(lang) {
     '',
     t.intro[2],
     '',
-    t.intro[3],
-    '',
-    t.intro[4],
-    '',
-    '[.style-gallery]',
-    '--',
-    tiles.join('\n'),
-    '--',
-    '',
+    sections.join('\n'),
   ].join('\n')
 }
 
-module.exports = { galleryEntries, buildStyleGallery, tile, ORIGINAL }
+module.exports = { galleryEntries, buildStyleGallery, tile, PAGES, originalImage }
