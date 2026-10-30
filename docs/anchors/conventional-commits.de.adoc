@@ -3,7 +3,7 @@
 :roles: software-developer, devops-engineer
 :proponents: Benjamin E. Coe, James J. Womack, Steve Mao
 :tier: 3
-:definition: Conventional Commits ist eine Spezifikation, die Commit-Nachrichten menschen- und maschinenlesbare Bedeutung gibt; Schlüsselvertreter sind Benjamin E. Coe, James J. Womack und Steve Mao. Jede Nachricht folgt dem Schema Typ, optionaler Scope und Beschreibung, mit Typen wie feat, fix, docs oder refactor sowie einem Ausrufezeichen oder BREAKING CHANGE für Breaking Changes. Die Nachrichten bestimmen den semantischen Versions-Bump, feat einen Minor-, fix einen Patch- und ein Breaking Change einen Major-Bump, und teilen Teamkollegen und anderen Stakeholdern mit, welche Art von Änderung gelandet ist.
+:definition: Conventional Commits ist eine Spezifikation, die Commit-Nachrichten menschen- und maschinenlesbare Bedeutung gibt; Schlüsselvertreter sind Benjamin E. Coe, James J. Womack und Steve Mao. Jede Nachricht folgt dem Schema Typ, optionaler Scope und Beschreibung, mit Typen wie feat, fix, docs oder refactor sowie einem Ausrufezeichen oder einem BREAKING-CHANGE-Footer für Breaking Changes. Die Nachrichten bestimmen den semantischen Versions-Bump, feat einen Minor-, fix einen Patch- und ein Breaking Change einen Major-Bump, und teilen Teamkollegen und anderen Stakeholdern mit, welche Art von Änderung gelandet ist.
 :tags: conventional commits, commit messages, semantic commits, changelog, git
 :related: semantic-versioning, github-flow, definition-of-done
 
