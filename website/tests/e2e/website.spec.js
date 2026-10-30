@@ -570,5 +570,7 @@ test.describe('Category quick-nav', () => {
         return Math.round(heading.top - nav.bottom)
       })
     await expect.poll(gap).toBeGreaterThanOrEqual(0)
+    // A missing jump would also leave a positive gap; the heading must be on screen.
+    await expect(page.locator('#category-ux-visual-design .category-heading')).toBeInViewport()
   })
 })
