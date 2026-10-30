@@ -53,7 +53,7 @@ describe('buildStyleGallery', () => {
   const pageOf = (id) => {
     const m = fs
       .readFileSync(path.join(ANCHORS, `${id}.adoc`), 'utf-8')
-      .match(/^:example-page:[ \t]*(\S+)/m)
+      .match(/^:example-page:[ \t]*(.*?)[ \t]*$/m)
     return m ? m[1] : 'homepage'
   }
   const sectionStart = (page, text) => text.indexOf(`examples/original-${page}.webp`)
@@ -156,7 +156,7 @@ describe('tile', () => {
 describe('examplePageFor', () => {
   it('knows every :example-page: value used by an anchor', () => {
     for (const f of fs.readdirSync(ANCHORS).filter((n) => n.endsWith('.adoc'))) {
-      const m = fs.readFileSync(path.join(ANCHORS, f), 'utf-8').match(/^:example-page:[ \t]*(\S+)/m)
+      const m = fs.readFileSync(path.join(ANCHORS, f), 'utf-8').match(/^:example-page:[ \t]*(.*?)[ \t]*$/m)
       if (m) expect(PAGES, f).toContain(m[1])
     }
   })
@@ -166,6 +166,10 @@ describe('examplePageFor', () => {
     const file = path.join(dir, 'x.adoc')
     fs.writeFileSync(file, '= X\n:example-page: team-setings\n')
     expect(() => examplePageFor(file)).toThrow(/team-setings/)
+    fs.writeFileSync(file, '= X\n:example-page: homepage team-settings\n')
+    expect(() => examplePageFor(file)).toThrow(/homepage team-settings/)
+    fs.writeFileSync(file, '= X\n:example-page: team-settings  \n')
+    expect(examplePageFor(file)).toBe('team-settings')
     fs.writeFileSync(file, '= X\n')
     expect(examplePageFor(file)).toBe('homepage')
   })

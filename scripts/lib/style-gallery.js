@@ -94,7 +94,8 @@ const TEXT = {
  * value throws: a typo would otherwise move the tile into the wrong section.
  */
 function examplePageFor(file) {
-  const m = fs.readFileSync(file, 'utf-8').match(/^:example-page:[ \t]*(\S+)/m)
+  // The whole value up to the end of the line, so "homepage team-settings" fails.
+  const m = fs.readFileSync(file, 'utf-8').match(/^:example-page:[ \t]*(.*?)[ \t]*$/m)
   if (!m) return DEFAULT_PAGE
   if (!PAGES.includes(m[1])) {
     throw new Error(`${file}: unknown :example-page: "${m[1]}" (expected ${PAGES.join(' or ')})`)
