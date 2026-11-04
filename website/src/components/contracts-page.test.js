@@ -53,7 +53,7 @@ describe('renderContractCard', () => {
         title: 'Second Brain Maintenance',
         description: 'd',
         template:
-          "The personal brain follows Building a Second Brain (Tiago Forte): the P.A.R.A. Method is the folder structure, Karpathy's LLM Wiki is the engine inside Resources.\n- End every session with a Hemingway Bridge in my personal brain's notes for that project.",
+          "The personal brain follows Building a Second Brain (Tiago Forte): the P.A.R.A. Method is the folder structure, Karpathy's LLM Wiki is the engine inside Resources.\n- In sessions where I asked you to use my personal brain, end with a Hemingway Bridge in its notes for that project.",
         anchors: [
           'building-a-second-brain',
           'para-method',
