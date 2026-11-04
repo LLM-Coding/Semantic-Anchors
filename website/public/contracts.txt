@@ -1,6 +1,6 @@
 # Semantic Contracts
 
-> 22 composable contracts that define what terms mean in your project —
+> 23 composable contracts that define what terms mean in your project —
 > by composing established Semantic Anchors or by providing custom team definitions.
 > Add them to your AGENTS.md or CLAUDE.md.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
@@ -221,6 +221,24 @@ _Karpathy's LLM Wiki as project documentation: arc42 pages, cited statements, ch
 Maintain the documentation as Karpathy's LLM Wiki, with three changes: the arc42 chapters, ADRs and glossary are the wiki's pages, written in AsciiDoc and built by docToolchain; every statement cites its source (`file:line`, ADR, issue, or raw file with timestamp), and what no source supports becomes an issue naming the role that can answer it; the agent maintains the wiki, but changes reach the documentation only through pull-request review.
 
 *Referenced anchors: karpathys-llm-wiki, arc42, docs-as-code*
+
+## Second Brain Maintenance
+
+_A personal second brain (BASB, PARA, LLM Wiki) kept apart from project knowledge, with rules where the methods disagree_
+
+Maintain knowledge in two kinds of brain, separated by trust, not by topic. The personal brain follows Building a Second Brain (Tiago Forte): the P.A.R.A. Method is the folder structure, Karpathy's LLM Wiki is the engine inside Resources. Each project's brain is its own documentation, maintained under the LLM-Wiki Documentation contract. Where the methods disagree, these rules decide:
+- The personal brain is one repository outside every project. Its path lives in my user-level agent configuration, never in a project repository. Read it only when I ask you to.
+- Project → personal: link to project knowledge, never copy it. My private notes about a project live under the personal brain's Projects.
+- Personal → project: only on my explicit instruction, and only as a pull request I see first. Never carry personal-brain content into project files, commits, issues or pull-request texts on your own.
+- Capture on request only. Keep raw sources unchanged in `raw/`. Capture only what connects to an active Project, an Area or one of my 12 Favorite Problems; when unsure, ask instead of filing.
+- Organize: file by actionability, never by topic. Topic pages exist only under Resources, compiled as an LLM Wiki with `index.md` and `log.md`.
+- Distill: compile Resources pages at ingest. Distill project notes just in time with Progressive Summarization layers; never overwrite my own wording.
+- Express: when I start a deliverable, gather an Archipelago of Ideas into the project folder before drafting. File my finished output back as Intermediate Packets.
+- Move, never delete: when a project ends, propose what goes to Resources and what goes to Archive, and wait for my confirmation.
+- End every session with a Hemingway Bridge in the project's notes.
+- Lint weekly: contradictions, stale claims, orphan pages, projects without activity.
+
+*Referenced anchors: building-a-second-brain, para-method, karpathys-llm-wiki, hemingway-bridge, ssot-principle*
 
 ## Concise Response (TLDR)
 
