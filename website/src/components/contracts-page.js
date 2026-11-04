@@ -49,6 +49,7 @@ const ANCHOR_ALIASES = {
   'blooms-taxonomy': ["Bloom's", 'Blooms'],
   'karpathys-llm-wiki': ["Karpathy's LLM Wiki"], // rendered title in anchors.json uses a typographic apostrophe
   'docs-as-code': ['docToolchain'],
+  'building-a-second-brain': ['Building a Second Brain'],
 }
 
 // Highlight mentions of a contract's declared anchors, linked to the anchor.

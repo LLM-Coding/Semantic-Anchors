@@ -45,4 +45,27 @@ describe('renderContractCard', () => {
     expect(html).toMatch(/<a href="#\/anchor\/karpathys-llm-wiki"[^>]*>Karpathy's LLM Wiki<\/a>/)
     expect(html).toMatch(/<a href="#\/anchor\/docs-as-code"[^>]*>docToolchain<\/a>/)
   })
+
+  it('links the Building a Second Brain and LLM Wiki mentions in the Second Brain Maintenance contract', () => {
+    const html = renderContractCard(
+      {
+        id: 'second-brain-maintenance',
+        title: 'Second Brain Maintenance',
+        description: 'd',
+        template:
+          "The personal brain follows Building a Second Brain (Tiago Forte): the P.A.R.A. Method is the folder structure, Karpathy's LLM Wiki is the engine inside Resources.\n- End every session with a Hemingway Bridge in the project's notes.",
+        anchors: [
+          'building-a-second-brain',
+          'para-method',
+          'karpathys-llm-wiki',
+          'hemingway-bridge',
+        ],
+      },
+      false
+    )
+    expect(html).toMatch(
+      /<a href="#\/anchor\/building-a-second-brain"[^>]*>Building a Second Brain<\/a>/
+    )
+    expect(html).toMatch(/<a href="#\/anchor\/karpathys-llm-wiki"[^>]*>Karpathy's LLM Wiki<\/a>/)
+  })
 })
