@@ -1137,6 +1137,66 @@
     "addedAt": "2026-09-24T14:26:26+02:00"
   },
   {
+    "id": "building-a-second-brain",
+    "title": "Building a Second Brain (BASB)",
+    "categories": [
+      "knowledge-management"
+    ],
+    "roles": [
+      "software-developer",
+      "technical-writer",
+      "team-lead",
+      "consultant",
+      "educator"
+    ],
+    "related": [
+      "para-method",
+      "hemingway-bridge",
+      "gtd",
+      "karpathys-llm-wiki"
+    ],
+    "proponents": [
+      "Tiago Forte"
+    ],
+    "tags": [
+      "Building a Second Brain",
+      "BASB",
+      "second brain",
+      "CODE",
+      "CODE Method",
+      "Capture Organize Distill Express",
+      "progressive summarization",
+      "intermediate packets",
+      "PARA",
+      "Archipelago of Ideas",
+      "Hemingway Bridge",
+      "12 favorite problems",
+      "PKM",
+      "personal knowledge management",
+      "note-taking",
+      "Forte"
+    ],
+    "filePath": "docs/anchors/building-a-second-brain.adoc",
+    "tier": 3,
+    "priorTest": "2026-11-04",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Building a Second Brain (BASB) is Tiago Forte's method for personal knowledge management, taught as a course by 2017 and published as a book in 2022. Its core is the CODE cycle: Capture what resonates, Organize it by actionability with PARA, Distill it through Progressive Summarization, and Express it as Intermediate Packets that feed real output. The aim is to turn collected notes into finished work rather than an archive.",
+    "addedAt": "2026-11-04T11:06:17+01:00"
+  },
+  {
     "id": "bulkhead",
     "title": "Bulkhead Pattern",
     "categories": [
@@ -5172,6 +5232,7 @@
     ],
     "related": [
       "para-method",
+      "building-a-second-brain",
       "todotxt-flavoured-markdown",
       "definition-of-done"
     ],
@@ -5236,7 +5297,8 @@
     ],
     "related": [
       "gtd",
-      "para-method"
+      "para-method",
+      "building-a-second-brain"
     ],
     "proponents": [
       "Tiago Forte",
@@ -5836,6 +5898,7 @@
     ],
     "related": [
       "para-method",
+      "building-a-second-brain",
       "docs-as-code",
       "diataxis-framework",
       "arc42",
@@ -7359,6 +7422,7 @@
       "educator"
     ],
     "related": [
+      "building-a-second-brain",
       "diataxis-framework",
       "todotxt-flavoured-markdown",
       "karpathys-llm-wiki"

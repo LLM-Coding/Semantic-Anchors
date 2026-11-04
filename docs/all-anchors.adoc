@@ -412,6 +412,9 @@ include::anchors/simplified-technical-english.adoc[leveloffset=+2]
 [[addie-model]]
 include::anchors/addie-model.adoc[leveloffset=+2]
 
+[[building-a-second-brain]]
+include::anchors/building-a-second-brain.adoc[leveloffset=+2]
+
 [[dreyfus-skill-acquisition]]
 include::anchors/dreyfus-skill-acquisition.adoc[leveloffset=+2]
 

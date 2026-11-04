@@ -873,9 +873,9 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Core:** A curated, human-readable release history: an `[Unreleased]` section, latest version first, ISO 8601 dates, and six change types — Added, Changed, Deprecated, Removed, Fixed, Security. Deliberately not generated from the commit log, which is the tension with Conventional Commits
 
 ### P.A.R.A. Method
-- **Also known as:** PARA Framework, Second Brain Organization System
+- **Also known as:** PARA Framework
 - **Proponents:** Tiago Forte
-- **Core:** Organize all information into four categories by actionability — Projects (specific goal + deadline), Areas (ongoing responsibilities), Resources (reference topics), Archive (inactive items)
+- **Core:** Organize all information into four categories by actionability — Projects (specific goal + deadline), Areas (ongoing responsibilities), Resources (reference topics), Archive (inactive items). The Organize step of Building a Second Brain; naming PARA alone yields the folders, not the rest of the method
 
 ### Diátaxis Framework
 - **Core:** 4 quadrants: Tutorials, How-to guides, Explanations, Reference
@@ -1073,6 +1073,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Also known as:** LLM Knowledge Base, the LLM Wiki pattern
 - **Proponents:** Andrej Karpathy (X post and gist `llm-wiki.md`, April 2026)
 - **Core:** The LLM compiles immutable raw sources once into a persistent wiki of interlinked markdown pages instead of retrieving raw chunks per question; a schema file (`CLAUDE.md`/`AGENTS.md`) fixes the conventions; ingest updates the touched pages, `index.md` (catalog the model reads first) and `log.md` (append-only record); good answers are filed back as pages; a periodic lint pass looks for contradictions, stale claims, orphans and gaps. Use the qualified name -- the bare "LLM Wiki" is weaker on small models
+
+### Building a Second Brain (BASB)
+- **Also known as:** BASB, CODE Method (Capture, Organize, Distill, Express)
+- **Proponents:** Tiago Forte (course by 2017; book, Atria Books, 2022)
+- **Core:** The CODE cycle turns collected notes into output — Capture what resonates, Organize by actionability with PARA, Distill through Progressive Summarization (bold, highlight, summarise in layers), Express through Intermediate Packets (small reusable pieces shared early); Archipelago of Ideas, divergence/convergence, Hemingway Bridge, 12 Favorite Problems, just-in-time over just-in-case. Use the full name: the bare "second brain" is generic, and "CODE method" alone names the four steps but, on small models, omits their techniques (Progressive Summarization, PARA, Intermediate Packets)
 
 ## Creative Writing & Storytelling
 
