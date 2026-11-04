@@ -17,7 +17,6 @@ const COPIES = [
 ]
 const readJson = (rel) => JSON.parse(readFileSync(path.join(root, rel), 'utf-8'))
 const catalog = readJson(COPIES[0])
-const byId = (id) => catalog.find((c) => c.id === id)
 
 /*
  * Issue #896: a contract may require other contracts. An unknown id or a
@@ -34,11 +33,6 @@ describe('contract catalog requires (#896)', () => {
     expect(readJson(rel)).toEqual(catalog)
   })
 
-  it('Second Brain Maintenance requires LLM-Wiki Documentation', () => {
-    expect(byId('llm-wiki-documentation')).toBeTruthy()
-    expect(byId('second-brain-maintenance').requires).toEqual(['llm-wiki-documentation'])
-  })
-
   it('loadContractCatalog rejects a catalog with an unknown id', async () => {
     const dir = mkdtempSync(path.join(tmpdir(), 'contracts-'))
     const file = path.join(dir, 'contracts.json')
@@ -47,49 +41,67 @@ describe('contract catalog requires (#896)', () => {
   })
 
   it('loadContractCatalog lists what a contract requires, localized', async () => {
-    const { required } = await loadContractCatalog(path.join(root, COPIES[0]))
-    expect(required('second-brain-maintenance')).toEqual([
-      { id: 'llm-wiki-documentation', title: 'LLM-Wiki Documentation' },
-    ])
-    expect(required('second-brain-maintenance', 'de')).toEqual([
-      { id: 'llm-wiki-documentation', title: 'LLM-Wiki-Dokumentation' },
-    ])
-    expect(required('specification')).toEqual([])
+    const dir = mkdtempSync(path.join(tmpdir(), 'contracts-'))
+    const file = path.join(dir, 'contracts.json')
+    writeFileSync(
+      file,
+      JSON.stringify([
+        { id: 'base', title: 'Base', titleDe: 'Basis' },
+        { id: 'top', title: 'Top', requires: ['base'] },
+        { id: 'solo', title: 'Solo' },
+      ])
+    )
+    const { required } = await loadContractCatalog(file)
+    expect(required('top')).toEqual([{ id: 'base', title: 'Base' }])
+    expect(required('top', 'de')).toEqual([{ id: 'base', title: 'Basis' }])
+    expect(required('solo')).toEqual([])
   })
 })
 
-describe('generated outputs mention the dependency (#896)', () => {
-  const section = (text, title) => {
-    const start = text.indexOf(`## ${title}\n`)
-    expect(start, `no section "${title}"`).toBeGreaterThanOrEqual(0)
-    const next = text.indexOf('\n## ', start + 1)
-    return text.slice(start, next < 0 ? undefined : next)
+describe('generated outputs mention a dependency only where one exists (#896)', () => {
+  // A synthetic pair, so these tests do not depend on which real contract,
+  // if any, currently uses requires.
+  const base = {
+    id: 'base',
+    title: 'Base',
+    titleDe: 'Basis',
+    description: 'b',
+    template: 'B',
+    anchors: [],
   }
-
-  it.each(['website/public/contracts.txt', 'website/public/llms.txt'])('%s', (rel) => {
-    const text = readFileSync(path.join(root, rel), 'utf-8')
-    expect(section(text, 'Second Brain Maintenance')).toContain(
-      '*Requires: LLM-Wiki Documentation*'
-    )
-    expect(section(text, 'Specification')).not.toContain('*Requires:')
-  })
-
-  const WIKI_EN = [{ id: 'llm-wiki-documentation', title: 'LLM-Wiki Documentation' }]
-  const WIKI_DE = [{ id: 'llm-wiki-documentation', title: 'LLM-Wiki-Dokumentation' }]
+  const top = {
+    id: 'top',
+    title: 'Top',
+    description: 't',
+    template: 'T',
+    anchors: [],
+    requires: ['base'],
+  }
+  const BASE_EN = [{ id: 'base', title: 'Base' }]
+  const BASE_DE = [{ id: 'base', title: 'Basis' }]
 
   it('the pre-rendered contract page names the required contract (EN + DE)', () => {
-    const brain = byId('second-brain-maintenance')
-    const en = renderContractDetail(brain, 'en', WIKI_EN)
-    const de = renderContractDetail(brain, 'de', WIKI_DE)
-    expect(en).toMatch(/Includes:.*contract\/llm-wiki-documentation"[^>]*>LLM-Wiki Documentation</s)
-    expect(de).toMatch(/Enthält:.*contract\/llm-wiki-documentation"[^>]*>LLM-Wiki-Dokumentation</s)
-    expect(renderContractDetail(byId('specification'), 'en', [])).not.toContain('Includes:')
+    const en = renderContractDetail(top, 'en', BASE_EN)
+    const de = renderContractDetail(top, 'de', BASE_DE)
+    expect(en).toMatch(/Includes:.*contract\/base"[^>]*>Base</s)
+    expect(de).toMatch(/Enthält:.*contract\/base"[^>]*>Basis</s)
+    expect(renderContractDetail(base, 'en', [])).not.toContain('Includes:')
   })
 
   it('the pre-rendered overview card names the required contract', () => {
-    const html = renderContract(byId('second-brain-maintenance'), WIKI_EN)
-    expect(html).toMatch(/Includes:.*LLM-Wiki Documentation/s)
+    expect(renderContract(top, BASE_EN)).toMatch(/Includes:.*Base/s)
+    expect(renderContract(base, [])).not.toContain('Includes:')
   })
+
+  it.each(['website/public/contracts.txt', 'website/public/llms.txt'])(
+    '%s has a Requires line exactly when the catalog declares one',
+    (rel) => {
+      const text = readFileSync(path.join(root, rel), 'utf-8')
+      const declared = catalog.filter((c) => (c.requires || []).length > 0).length
+      const lines = (text.match(/^\*Requires: /gm) || []).length
+      expect(lines).toBe(declared)
+    }
+  )
 })
 
 /*
@@ -169,8 +181,8 @@ describe('installer resolver agrees with the website resolver (#896)', () => {
     )
   })
 
-  it('resolves the bundled snapshot by default', () => {
-    const out = execFileSync('python3', [script, 'second-brain-maintenance'], { encoding: 'utf-8' })
-    expect(out.trim().split('\n')).toEqual(['llm-wiki-documentation', 'second-brain-maintenance'])
+  it('reads the bundled snapshot by default', () => {
+    const out = execFileSync('python3', [script, 'specification'], { encoding: 'utf-8' })
+    expect(out.trim().split('\n')).toEqual(['specification'])
   })
 })

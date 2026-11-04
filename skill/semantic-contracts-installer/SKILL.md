@@ -22,7 +22,7 @@ This is the Anchor / Contract / Skill taxonomy (ADR-007) in practice: the instal
 
 1. **Decide scope and portability.** Prefer project-local onboarding for "works across as many agents as possible"; use user-level memory only for agents that support it natively. Read [references/agent-support.md](references/agent-support.md) before writing files.
 
-2. **Present the contract catalog.** Read [data/contracts.json](data/contracts.json) (a bundled snapshot of the published catalog) and show the user the available contracts by `title` + `description`. Keep the installed set small — usually 2 to 6 contracts that match the project's actual practice. A contract with a `requires` list builds on other contracts; tell the user that selecting it also installs those (e.g. *Second Brain Maintenance* brings *LLM-Wiki Documentation*).
+2. **Present the contract catalog.** Read [data/contracts.json](data/contracts.json) (a bundled snapshot of the published catalog) and show the user the available contracts by `title` + `description`. Keep the installed set small — usually 2 to 6 contracts that match the project's actual practice. A contract with a `requires` list builds on other contracts; tell the user that selecting it also installs those. No contract in the current catalog uses `requires`.
 
 3. **Resolve requirements.** Run `scripts/resolve-contracts.py <id> [<id> ...]` with the selected ids. It prints the full install list, one id per line: required contracts first (transitively), each contract once. Render exactly that list, in that order. It exits with an error on an unknown id or a cycle; do not install a partial list then.
 
