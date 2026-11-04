@@ -145,6 +145,30 @@ describe('installer resolver agrees with the website resolver (#896)', () => {
     expect(result.message).toMatch(pattern)
   })
 
+  it.each([
+    ['a string', { id: 'odd', requires: 'base' }],
+    ['a list with a non-string', { id: 'odd', requires: ['base', 7] }],
+    ['an object', { id: 'odd', requires: { base: true } }],
+  ])('rejects a catalog whose requires is %s', (_label, entry) => {
+    const badDir = mkdtempSync(path.join(tmpdir(), 'resolve-bad-'))
+    const badFile = path.join(badDir, 'contracts.json')
+    writeFileSync(badFile, JSON.stringify([{ id: 'base' }, entry]))
+    let failure = null
+    try {
+      execFileSync('python3', [script, '--catalog', badFile, 'base'], {
+        encoding: 'utf-8',
+        stdio: ['ignore', 'pipe', 'pipe'],
+      })
+    } catch (err) {
+      failure = err
+    }
+    expect(failure, 'resolve-contracts.py accepted a malformed requires').not.toBeNull()
+    expect(failure.status).toBe(1)
+    expect(String(failure.stderr)).toMatch(
+      /^Error: contract "odd": requires must be a list of contract ids/
+    )
+  })
+
   it('resolves the bundled snapshot by default', () => {
     const out = execFileSync('python3', [script, 'second-brain-maintenance'], { encoding: 'utf-8' })
     expect(out.trim().split('\n')).toEqual(['llm-wiki-documentation', 'second-brain-maintenance'])

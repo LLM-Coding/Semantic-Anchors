@@ -7,7 +7,8 @@ rules the agent never receives, so the installer renders the resolved list:
 required contracts first (transitively), each contract once, otherwise in the
 order given.
 
-Prints one id per line. Exits 1 with a message on an unknown id or a cycle.
+Prints one id per line. Exits 1 with a message on an unknown id, a cycle, or
+a ``requires`` that is not a list of contract ids.
 
 Usage:
   resolve-contracts.py [--catalog PATH] ID [ID ...]
@@ -52,6 +53,18 @@ def resolve_contracts(catalog, ids):
     return result
 
 
+def validate_catalog(catalog):
+    """Raise ContractError unless every `requires` is absent or a list of ids."""
+    for contract in catalog:
+        requires = contract.get("requires")
+        if requires is None and "requires" not in contract:
+            continue
+        if not (isinstance(requires, list) and all(isinstance(r, str) for r in requires)):
+            raise ContractError(
+                f'contract "{contract.get("id")}": requires must be a list of contract ids'
+            )
+
+
 def main(argv):
     args = list(argv)
     catalog_path = DEFAULT_CATALOG
@@ -67,6 +80,7 @@ def main(argv):
     with open(catalog_path, encoding="utf-8") as fh:
         catalog = json.load(fh)
     try:
+        validate_catalog(catalog)
         ids = resolve_contracts(catalog, args)
     except ContractError as err:
         print(f"Error: {err}", file=sys.stderr)
