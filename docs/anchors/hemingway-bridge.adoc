@@ -1,7 +1,7 @@
 = Hemingway Bridge
 :categories: knowledge-management
 :roles: software-developer, technical-writer, educator, consultant
-:related: gtd, para-method
+:related: gtd, para-method, building-a-second-brain
 :proponents: Tiago Forte, Ernest Hemingway
 :tags: productivity, session-management, creative-flow, re-entry, momentum, writer-block
 :tier: 3
@@ -45,5 +45,6 @@ Key Proponent:: Ernest Hemingway (interviewed in George Plimpton (ed.), "The Par
 
 * <<gtd,GTD — Getting Things Done>>
 * <<para-method,P.A.R.A. Method>>
+* <<building-a-second-brain,Building a Second Brain (BASB)>>
 * <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
 ====

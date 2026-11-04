@@ -3,7 +3,7 @@
 :roles: software-developer, technical-writer, educator, consultant
 :proponents: Tiago Forte, Ernest Hemingway
 :tags: productivity, session-management, creative-flow, re-entry, momentum, writer-block
-:related: gtd, para-method
+:related: gtd, para-method, building-a-second-brain
 :tier: 3
 :definition: Die Hemingway Bridge ist eine Technik für Arbeitssessions, die auf Ernest Hemingway zurückgeht: Du beendest jede Session bewusst vor einem natürlichen Haltepunkt, solange du noch genau weißt, was als Nächstes kommt. Dabei hinterlässt du eine Brücke für den Wiedereinstieg, etwa einen unvollendeten Satz, eine TODO-Notiz oder eine kurze Zusammenfassung der nächsten Schritte. So bleibt der Schwung über Unterbrechungen erhalten, und der lähmende Moment vor der leeren Seite entfällt.
 
@@ -45,5 +45,6 @@ Schlüsselvertreter:: Ernest Hemingway (Interview in George Plimpton (Hrsg.), �
 
 * <<gtd,GTD — Getting Things Done>>
 * <<para-method,P.A.R.A. Method>>
+* <<building-a-second-brain,Building a Second Brain (BASB)>>
 * <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
 ====

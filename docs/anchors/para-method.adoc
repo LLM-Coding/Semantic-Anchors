@@ -1,7 +1,7 @@
 = P.A.R.A. Method
 :categories: knowledge-management
 :roles: software-developer, team-lead, technical-writer, educator
-:related: diataxis-framework, todotxt-flavoured-markdown, karpathys-llm-wiki
+:related: building-a-second-brain, diataxis-framework, todotxt-flavoured-markdown, karpathys-llm-wiki
 :proponents: Tiago Forte
 :tags: knowledge-management, personal-productivity, note-taking, organization, second-brain
 :tier: 3
@@ -11,7 +11,9 @@
 ====
 Full Name:: P.A.R.A. Method (Projects, Areas, Resources, Archive)
 
-Also known as:: PARA Framework, Second Brain Organization System
+Also known as:: PARA Framework
+
+Part of:: link:#/anchor/building-a-second-brain[Building a Second Brain (BASB)]: PARA is the Organize step of Forte's CODE cycle. Name BASB when you also want capture, distillation and output; name PARA for the folder structure alone
 
 [discrete]
 == *Core Concepts*:
@@ -37,7 +39,7 @@ Key Proponent:: Tiago Forte ("Building a Second Brain")
 
 * Organizing notes, documents, or files across tools
 * Managing knowledge work with multiple concurrent projects
-* Setting up a "Second Brain" personal knowledge management system
+* Setting up the folder structure of a personal knowledge management system (for the whole method, see Building a Second Brain)
 * Reducing time spent searching for information
 * Separating actionable work from reference material
 * Onboarding teams to a shared information architecture
@@ -46,6 +48,7 @@ Key Proponent:: Tiago Forte ("Building a Second Brain")
 [discrete]
 == *Related Anchors*:
 
+* <<building-a-second-brain,Building a Second Brain (BASB)>>
 * <<diataxis-framework,Diátaxis Framework>>
 * <<todotxt-flavoured-markdown,todo.txt-flavoured Markdown>>
 * <<karpathys-llm-wiki,Karpathy's LLM Wiki>>
