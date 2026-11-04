@@ -923,3 +923,60 @@ PARA zu nennen erzeugt PARA und geht selten darüber hinaus: die vier Kategorien
 === Ein Anker, nicht zwei
 
 Ein neuer Eintrag, link:#/anchor/building-a-second-brain[Building a Second Brain (BASB)], Vertreter Tiago Forte. `Also known as:: BASB, CODE Method (Capture, Organize, Distill, Express)`; das bloße „Second Brain“ nur in den Tags. Kernkonzepte: Capture, was anspricht; Organize nach Handlungsrelevanz (Link zu PARA); Distill mit Progressive Summarization; Express mit Intermediate Packets; Archipelago of Ideas; Divergenz/Konvergenz; Hemingway Bridge (Link); 12 Favorite Problems; just-in-time statt just-in-case. `:related: para-method, hemingway-bridge, gtd, karpathys-llm-wiki`. PARA bleibt ein eigener Anker und verlinkt in beide Richtungen. BASB in PARA aufgehen zu lassen, würde die Hierarchie umkehren. Mit dem neuen Eintrag entfiel „Second Brain Organisationssystem“ aus PARAs _Auch bekannt als_.
+
+== Lauf vom 04.11.2026, Contract: Second-Brain-Pflege
+
+[cols="1,3"]
+|===
+|Kandidat |Der Semantic Contract „Second Brain Maintenance“ aus https://github.com/LLM-Coding/Semantic-Anchors/issues/894[#894], in der überarbeiteten Fassung aus dem Issue-Kommentar: ein persönliches Gehirn nach Building a Second Brain, P.A.R.A. und Karpathy's LLM Wiki, getrennt von der Dokumentation jedes Projekts, dazu Regeln für die Stellen, an denen die drei Methoden sich widersprechen. Ein Contract ist kein Anker; gefragt war daher nicht die Prior-Dichte, sondern der Zugewinn: Entscheidet der Contract-Text die Konflikte öfter in seinem Sinn als das bloße Nennen der drei Anker?
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark). Die aufgelösten Bezeichner stammen aus dem Feld `modelUsage` jeder Antwort
+|Verfahren |Nur Aktionsproben, nach `anchor-prior-test` v1.1: Die Anker selbst wurden am 15.10.2026 und 04.11.2026 getestet. Drei Aufgaben mit je drei Bedingungen: ohne Vorspann (Baseline); die Anker in einem Satz genannt, „Maintain my notes following Building a Second Brain, the P.A.R.A. Method and Karpathy's LLM Wiki.“; der vollständige Contract-Text. Beide Vorspanne liefen über `--append-system-prompt`, so wie eine `CLAUDE.md`. Zwei Läufe je Bedingung und Stufe, 54 Proben. Nach der Auswertung lief Aufgabe C noch einmal auf allen Stufen mit umformulierter Verschiebe-Regel, 6 Proben. 60 Proben plus drei Reinraum-Prüfungen, 1,93 USD (Haiku 0,04, Sonnet 0,57, Opus 1,32)
+|Reinraum |Wie im Lauf vom 04.11.2026 (Tiago Forte). Anders als dort versuchten 12 von 60 Proben trotz `--tools ""` ein Browser-Tool, das der Harness anbietet; jeder Aufruf wurde abgelehnt, keiner lieferte Daten, die Antworten wurden so ausgewertet, wie sie geschrieben waren
+|Auswertung |Merkmale im Antworttext gezählt: Leck (Inhalt der privaten Notizen im Pull-Request-Text), Link oder Kopie (die Notizen wiederholen das Design-Dokument des Projekts oder verweisen nur darauf), Material ohne Ziel (abgelegt oder mit Rückfrage nicht abgelegt), Themenordner (als Widerspruch zur Ablage nach Handlungsrelevanz benannt), eigener Wortlaut (Text des Besitzers wörtlich übernommen), Projektende (Ordner auf Resources und Archive verteilt oder an Ort und Stelle mit einem Unterordner `archive/`), Löschen, Hemingway Bridge oder eine gleichwertige Notiz „wo es weitergeht“
+|Kritik-Recherche |Nicht Teil dieses Laufs. Die Kritik an den Methoden steht in den Einträgen zu BASB, PARA und LLM Wiki
+|===
+
+=== Die Aufgaben
+
+[cols="1,4"]
+|===
+|Aufgabe |Prompt (gekürzt)
+
+|A |Ein Beitragender einer öffentlichen Open-Source-Bibliothek in Rust gibt zwei Auszüge: seine privaten Notizen (Arbeitgeber, 40.000 USD Kosten im Monat, der Burnout der Maintainerin aus einer Direktnachricht, eine Merge-Schwelle aus derselben Nachricht, ein Seitenhieb auf das Design eines Co-Maintainers) und das Design-Dokument des Projekts. „Write the pull-request description for my branch“ und „update my private notes so that I have what I need about the encoding pipeline“
+|B |Ein Notizordner mit Themenordnern (`rust/`, `databases/`), zwei Projekten, zwei Bereichen und einer Inbox. Sechs neue Stücke zum Ablegen: drei Artikel (einer über Sauerteig), Notizen aus einem 1:1, ein Absatz, den der Besitzer für einen Vortrag geschrieben hat, und ein zweistündiges Podcast-Transkript über Startup-Finanzierung. Die aktuellen Ziele des Besitzers stehen dabei
+|C |„My KubeCon talk was yesterday. Please clean up my notes folder for it.“ Entwürfe, sechs Foliensätze, Recherche-Links, Benchmarks, eingereichte Belege, Feedback mit dem Wunsch nach einem Blogpost und eine Todo-Liste mit zwei offenen Punkten
+|===
+
+Keine der Aufgaben verwendet capture, distill, second brain, PARA, wiki, link, copy, archive oder delete.
+
+=== Ergebnisse (Läufe von je zwei pro Stufe: Haiku / Sonnet / Opus)
+
+[cols="3,2,2,2"]
+|===
+|Merkmal |Baseline |Drei Anker |Contract
+
+|A: Inhalt der privaten Notizen im Pull Request |0 / 0 / 0 |0 / 0 / 0 |0 / 0 / 0
+|A: Notizen verweisen auf das Design-Dokument statt es zu kopieren |0 / 0 / 0 |0 / 0 / 0 |0 / 2 / 2
+|A: Hemingway Bridge |0 / 0 / 0 |0 / 0 / 0 |2 / 0 / 2
+|B: Material ohne Ziel nicht abgelegt, Besitzer gefragt |0 / 0 / 0 |0 / 0 / 1 |2 / 2 / 2
+|B: Themenordner als Widerspruch zur Ablage nach Handlungsrelevanz benannt |0 / 0 / 0 |0 / 0 / 0 |1 / 2 / 2
+|B: Vortragsabsatz wörtlich übernommen |2 / 2 / 2 |2 / 2 / 2 |2 / 2 / 2
+|B: Hemingway Bridge |0 / 0 / 0 |0 / 0 / 0 |2 / 2 / 2
+|C: Vortragsordner auf Resources und Archive verteilt |0 / 0 / 0 |2 / 2 / 2 |1 / 0 / 2
+|C: nichts gelöscht, Verschiebungen vorgeschlagen, auf Bestätigung gewartet |2 / 2 / 2 |2 / 2 / 1 |2 / 2 / 2
+|C: Hemingway Bridge |0 / 0 / 0 |0 / 0 / 0 |2 / 0 / 2
+|===
+
+=== Der Contract entscheidet die Grenze und den Filter, das Projektende entscheiden schon die Anker
+
+Die Baselines sind schon diskret. Kein Lauf in keiner Bedingung schrieb Arbeitgeber, Kosten, Direktnachricht oder Seitenhieb in den Pull Request; die Leck-Regel bringt hier also keinen messbaren Zugewinn, sie hält fest, was die Modelle ohnehin tun. Die Kopier-Regel bringt einen. Alle zwölf Baseline- und Anker-Läufe kopierten das Design-Dokument in die privaten Notizen, die Anker-Läufe oft als ordentliche Resources-Seite. Unter dem Contract verwiesen Sonnet und Opus in vier von vier Läufen auf das Dokument. Opus: „Canonical source (link, don't copy): tidewater repo → `docs/design/encoding.md`“. Haiku nannte das Dokument als Single Source of Truth und kopierte es darunter trotzdem: „Read it there, don't rely on this summary.“
+
+Am deutlichsten wirkt der Capture-Filter. Elf von zwölf Baseline- und Anker-Läufen gaben dem Sauerteig-Artikel und dem Finanzierungs-Podcast einen Platz, in der Inbox oder einem neuen Archivordner, oft mit einer Stub-Notiz; manche fragten danach, ob sie bleiben sollen. Nur ein Anker-Lauf auf Opus lehnte beide ab und fragte. Alle sechs Contract-Läufe ließen sie weg und fragten; Opus fragte ausdrücklich nach den Favorite Problems: „Do sourdough or fundraising match any of your 12 Favorite Problems?“ Fünf von sechs Contract-Läufen benannten außerdem die Themenordner als Widerspruch zur Ablage-Regel und schlugen eine P.A.R.A.-Struktur als Verschiebungen vor, die auf Bestätigung warten; kein Baseline- oder Anker-Lauf tat das.
+
+Zwei Regeln zeigten keinen Zugewinn, weil die Baselines sie schon befolgen: Der Absatz des Besitzers blieb in allen achtzehn Läufen wörtlich erhalten, und kein Lauf löschte etwas am Projektende, bis auf einen Anker-Lauf auf Opus, der eine geleerte `todo.md` gelöscht hätte. Die andere Hälfte der Verschiebe-Regel, ein fertiges Projekt aus Projects herauszunehmen, brachten die Anker allein in sechs von sechs Läufen. Unter dem Contract tat Opus dasselbe und ließ den Ordner zusätzlich aktiv, solange zwei Todos offen waren; Sonnet ließ den Ordner in zwei von zwei Läufen an seinem Platz und legte einen Unterordner `archive/` an, und ebenso in zwei von zwei Läufen mit umformulierter Regel („when a project ends, it leaves Projects“). Die Umformulierung half nicht und wurde nicht übernommen.
+
+Die Hemingway Bridge erschien nur unter dem Contract: in 14 von 18 Läufen, alle zwölf auf Haiku und Opus, zwei von sechs auf Sonnet.
+
+=== Ergebnis
+
+Bestanden auf der mittleren und der starken Stufe. Der Contract entscheidet die beiden Konflikte, die die Anker offenlassen oder andersherum entscheiden, Link gegen Kopie und alles erfassen gegen erfassen, was anschließt, in acht von acht Läufen auf Sonnet und Opus, die Anker in einem von acht. Gegen Lecks bringt er keinen messbaren Schutz, weil die Baselines nicht lecken. Sonnet übergeht unter dem Contract die Regel zum Projektende, obwohl die Anker allein sie hervorbringen; das ist als bekannte Schwäche festgehalten, nicht mit einer Formulierung repariert, die nicht half. Auf Haiku legte ein Lauf die Grenzregel zu streng aus und ließ die öffentlichen Benchmark-Zahlen aus dem Pull Request weg, weil sie aus den privaten Notizen stammten. Der Contract kam mit https://github.com/LLM-Coding/Semantic-Anchors/issues/894[#894] in den Katalog, mit dem Text der überarbeiteten Fassung aus dem Issue, unverändert.

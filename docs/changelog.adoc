@@ -13,6 +13,13 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 Full detail in the link:#/prior-tests[prior-test register], run 2026-11-04.
 
+*New contract -- Second Brain Maintenance:*
+
+* The *link:#/contracts[Second Brain Maintenance]* contract (category Knowledge Management, EN + DE) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/894[#894] -- composes *link:#/anchor/building-a-second-brain[Building a Second Brain (BASB)]*, *link:#/anchor/para-method[P.A.R.A. Method]* and *link:#/anchor/karpathys-llm-wiki[Karpathy's LLM Wiki]* into one personal brain and keeps it apart from each project's documentation, which stays under the LLM-Wiki Documentation contract. Project knowledge is linked, never copied (*link:#/anchor/ssot-principle[SSOT]*); personal notes reach a project only on instruction and as a pull request. Where the methods disagree, the contract decides: file by actionability, topic pages only under Resources; capture only what connects to a Project, an Area or one of the 12 Favorite Problems, and ask otherwise; never overwrite the owner's wording; move, never delete; end each session with a *link:#/anchor/hemingway-bridge[Hemingway Bridge]*.
+* *Tested before merge.* Against the three anchors named in one sentence, the contract text made Sonnet and Opus 5.5 link the project's design doc instead of copying it in four of four runs (anchors: none) and leave off-goal material out with a question in four of four (anchors: one). The Hemingway Bridge appeared only under the contract. No condition leaked private notes into a pull request, the baselines included. Sonnet does not apply the project-end rule under the contract, although the anchors alone produce it; recorded as a known weakness.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-11-04, contract: Second Brain Maintenance.
+
 == 2026-10-30
 
 *Every anchor now has a curated definition (https://github.com/LLM-Coding/Semantic-Anchors/issues/865[#865]):*
