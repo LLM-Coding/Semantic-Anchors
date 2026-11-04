@@ -1077,7 +1077,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Building a Second Brain (BASB)
 - **Also known as:** BASB, CODE Method (Capture, Organize, Distill, Express)
 - **Proponents:** Tiago Forte (course by 2017; book, Atria Books, 2022)
-- **Core:** The CODE cycle turns collected notes into output — Capture what resonates, Organize by actionability with PARA, Distill through Progressive Summarization (bold, highlight, summarise in layers), Express through Intermediate Packets (small reusable pieces shared early); Archipelago of Ideas, divergence/convergence, Hemingway Bridge, 12 Favorite Problems, just-in-time over just-in-case. Use the full name: the bare "second brain" is generic, and "CODE method" alone drops Distill and Express on small models
+- **Core:** The CODE cycle turns collected notes into output — Capture what resonates, Organize by actionability with PARA, Distill through Progressive Summarization (bold, highlight, summarise in layers), Express through Intermediate Packets (small reusable pieces shared early); Archipelago of Ideas, divergence/convergence, Hemingway Bridge, 12 Favorite Problems, just-in-time over just-in-case. Use the full name: the bare "second brain" is generic, and "CODE method" alone names the four steps but, on small models, omits their techniques (Progressive Summarization, PARA, Intermediate Packets)
 
 ## Creative Writing & Storytelling
 
