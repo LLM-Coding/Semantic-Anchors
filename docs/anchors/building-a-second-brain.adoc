@@ -1,0 +1,75 @@
+= Building a Second Brain (BASB)
+:categories: knowledge-management
+:roles: software-developer, technical-writer, team-lead, consultant, educator
+:related: para-method, hemingway-bridge, gtd, karpathys-llm-wiki
+:proponents: Tiago Forte
+:tags: Building a Second Brain, BASB, second brain, CODE, CODE Method, Capture Organize Distill Express, progressive summarization, intermediate packets, PARA, Archipelago of Ideas, Hemingway Bridge, 12 favorite problems, PKM, personal knowledge management, note-taking, Forte
+:tier: 3
+:definition: Building a Second Brain (BASB) is Tiago Forte's method for personal knowledge management, taught as a course by 2017 and published as a book in 2022. Its core is the CODE cycle: Capture what resonates, Organize it by actionability with PARA, Distill it through Progressive Summarization, and Express it as Intermediate Packets that feed real output. The aim is to turn collected notes into finished work rather than an archive.
+:prior-test: 2026-11-04
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Building a Second Brain, by Tiago Forte. The book "Building a Second Brain" was published by Atria Books on 14 June 2022; the online course existed by 2017.
+
+Also known as:: BASB, CODE Method (Capture, Organize, Distill, Express)
+
+[discrete]
+== *Core Concepts*:
+
+CODE:: The four steps of the method, which together turn consumed information into produced work. CODE is the core of BASB, not a separate method.
+
+Capture -- keep what resonates:: Save what resonates with you, not everything that might be relevant some day. Captures go into one trusted, digital place.
+
+Organize -- for actionability:: Sort by the project or responsibility the note will serve, not by topic or source type. The structure is the link:#/anchor/para-method[P.A.R.A. Method]: Projects, Areas, Resources, Archive.
+
+Distill -- Progressive Summarization:: Compress notes in layers, each time you touch them: bold the key passages, highlight the best of the bolded parts, then write a short summary in your own words at the top. A note becomes faster to reuse without losing its source.
+
+Express -- Intermediate Packets:: Build work from small, reusable pieces -- a distilled note, an outline, a draft section, a diagram -- and share them early. Output is assembled from packets instead of started from a blank page.
+
+Archipelago of Ideas:: Before writing, gather the relevant notes into an outline of "islands" of ideas, then bridge them. Drafting becomes connecting rather than inventing.
+
+Divergence and Convergence:: Capture and Organize open up options (divergence); Distill and Express narrow them down to a result (convergence). Knowing which phase you are in tells you whether to collect more or to finish.
+
+Hemingway Bridge:: End a session with a note on what comes next, so the next session starts without warm-up. See link:#/anchor/hemingway-bridge[Hemingway Bridge].
+
+12 Favorite Problems:: A short list of open questions you keep coming back to. It acts as the filter for what is worth capturing.
+
+Just-in-time over just-in-case:: Organize and distill a note when a project needs it, not in advance. Effort follows use.
+
+Key Proponent:: Tiago Forte, "Building a Second Brain" (Atria Books, 2022)
+
+[discrete]
+== *When to Use*:
+
+* Scattered material -- bookmarks, meeting notes, highlights, screenshots -- should feed a concrete deliverable such as a talk, an article or a design document
+* Reading notes and highlights pile up and are never used again
+* Setting up or reviewing a personal note system in any tool (Obsidian, Notion, plain folders)
+* As the method around PARA: when you want not only the folders, but also how notes are captured, compressed and reused
+* Helping a team member turn research into a first draft instead of more research
+
+[discrete]
+== *How to Prompt*:
+
+* *Use the full name.* "Follow Building a Second Brain (Tiago Forte)." produced the whole method on every tier in our prior test of 2026-11-04: CODE in 12 of 12 runs, Progressive Summarization in 12 of 12, Intermediate Packets in 11 of 12. "BASB" resolves to the method on all tiers.
+* *The bare "second brain" is generic.* Every tier recognised it as Forte's, but as an instruction ("Set up a second brain.") only the strong tier produced CODE; the mid tier built a PARA-style folder system without CODE in two of two runs.
+* *"CODE method" alone loses the second half on weak models.* On the weak tier it produced the four step names but never Progressive Summarization, PARA or Intermediate Packets in the talk-preparation task, and once advised "Sort by topic, not by source type." -- the opposite of Forte's rule.
+* *Naming PARA is not naming BASB.* "Use the PARA method." produced the four buckets in 12 of 12 runs and Intermediate Packets in none. Name BASB when you want distillation and output, PARA when you only want the folder structure.
+* Details in the link:#/prior-tests[prior-test register], run 2026-11-04.
+
+[discrete]
+== *Related Anchors*:
+
+* <<para-method,P.A.R.A. Method>>
+* <<hemingway-bridge,Hemingway Bridge>>
+* <<gtd,GTD — Getting Things Done>>
+* <<karpathys-llm-wiki,Karpathy's LLM Wiki>>
+
+[discrete]
+== *Criticism*:
+
+* *Collecting feels like knowing.* Christian Tietze's https://zettelkasten.de/posts/collectors-fallacy/["The Collector's Fallacy"] (zettelkasten.de, 20 January 2014) argues that gathering sources is not learning them: "'to know about something' isn't the same as 'knowing something'". Tietze does not name Forte; the essay is the general critique of capture-heavy note systems. A review on https://curtismchale.ca/2022/07/30/building-a-second-brain-gives-you-permission-to-fall-into-collectors-fallacy[curtismchale.ca] (30 July 2022; the page names no author) applies the label to the book: it finds the capture advice vague and easy enough to encourage endless collecting, and does not recommend the book, though it calls the CODE and PARA summaries useful.
+* *Progressive Summarization can replace thinking with highlighting.* Nick Milo, https://medium.com/@nickmilo22/why-progressive-summarization-must-die-c2635d1f79f1["The Potential Side Effects of Progressive Summarization"] (13 August 2020), argues that repeated highlighting encourages saving more than one processes and creates a false sense of mastery -- "We mistake familiarity with ability." He proposes "Active Ideation" instead: write notes in your own words and link them to existing notes, in the manner of the Zettelkasten method.
+* *It manages resources, not ideas.* Sascha Fast, https://zettelkasten.de/posts/building-a-second-brain-and-zettelkasten/["How to Increase Knowledge Productivity: Combine the Zettelkasten Method and Building a Second Brain"] (zettelkasten.de, 26 June 2023), describes BASB as "a system for resource management" and the Zettelkasten method as one "for working with ideas themselves". His conclusion is to combine the two, since they overlap little.
+====

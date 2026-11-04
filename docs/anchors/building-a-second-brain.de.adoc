@@ -1,0 +1,75 @@
+= Building a Second Brain (BASB)
+:categories: knowledge-management
+:roles: software-developer, technical-writer, team-lead, consultant, educator
+:related: para-method, hemingway-bridge, gtd, karpathys-llm-wiki
+:proponents: Tiago Forte
+:tags: Building a Second Brain, BASB, Second Brain, zweites Gehirn, CODE, CODE Method, Capture Organize Distill Express, Progressive Summarization, Intermediate Packets, PARA, Archipelago of Ideas, Hemingway Bridge, 12 favorite problems, PKM, persönliches Wissensmanagement, Notizen, Forte
+:tier: 3
+:definition: Building a Second Brain (BASB) ist Tiago Fortes Methode für persönliches Wissensmanagement, spätestens 2017 als Kurs angeboten und 2022 als Buch erschienen. Ihr Kern ist der CODE-Zyklus: festhalten, was anspricht (Capture), nach Handlungsrelevanz mit PARA ordnen (Organize), über Progressive Summarization verdichten (Distill) und als Intermediate Packets in echte Ergebnisse überführen (Express). Ziel ist, dass aus gesammelten Notizen fertige Arbeit wird statt ein Archiv.
+:prior-test: 2026-11-04
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Building a Second Brain, von Tiago Forte. Das Buch „Building a Second Brain“ erschien am 14. Juni 2022 bei Atria Books; den Online-Kurs gab es spätestens 2017.
+
+Auch bekannt als:: BASB, CODE Method (Capture, Organize, Distill, Express)
+
+[discrete]
+== *Kernkonzepte*:
+
+CODE:: Die vier Schritte der Methode, die zusammen aufgenommene Information in eigene Arbeit verwandeln. CODE ist der Kern von BASB, keine eigene Methode.
+
+Capture -- festhalten, was anspricht:: Speichere, was bei dir Resonanz auslöst, nicht alles, was irgendwann relevant sein könnte. Alles landet an einem vertrauenswürdigen, digitalen Ort.
+
+Organize -- nach Handlungsrelevanz:: Ordne nach dem Projekt oder Verantwortungsbereich, dem die Notiz dienen wird, nicht nach Thema oder Quellenart. Die Struktur ist die link:#/anchor/para-method[P.A.R.A. Method]: Projects, Areas, Resources, Archive.
+
+Distill -- Progressive Summarization:: Verdichte Notizen in Schichten, jedes Mal, wenn du sie anfasst: die Kernpassagen fett setzen, das Beste davon hervorheben, dann oben eine kurze Zusammenfassung in eigenen Worten schreiben. Die Notiz wird schneller wiederverwendbar, ohne ihre Quelle zu verlieren.
+
+Express -- Intermediate Packets:: Baue Arbeit aus kleinen, wiederverwendbaren Stücken -- eine verdichtete Notiz, eine Gliederung, ein Abschnittsentwurf, ein Diagramm -- und teile sie früh. Ergebnisse werden aus Paketen zusammengesetzt, statt auf einer leeren Seite zu beginnen.
+
+Archipelago of Ideas:: Vor dem Schreiben die passenden Notizen zu einer Gliederung aus „Inseln“ von Ideen zusammenstellen und diese dann verbinden. Entwerfen wird zum Verbinden statt zum Erfinden.
+
+Divergenz und Konvergenz:: Capture und Organize öffnen Optionen (Divergenz); Distill und Express verengen sie auf ein Ergebnis (Konvergenz). Wer weiß, in welcher Phase er ist, weiß, ob er weiter sammeln oder fertig werden soll.
+
+Hemingway Bridge:: Eine Sitzung mit einer Notiz zum nächsten Schritt beenden, damit die nächste ohne Anlauf beginnt. Siehe link:#/anchor/hemingway-bridge[Hemingway Bridge].
+
+12 Favorite Problems:: Eine kurze Liste offener Fragen, zu denen du immer wieder zurückkehrst. Sie ist der Filter dafür, was festhaltenswert ist.
+
+Just-in-time statt just-in-case:: Eine Notiz ordnen und verdichten, wenn ein Projekt sie braucht, nicht auf Vorrat. Der Aufwand folgt der Nutzung.
+
+Schlüsselvertreter:: Tiago Forte, „Building a Second Brain“ (Atria Books, 2022)
+
+[discrete]
+== *Wann verwenden*:
+
+* Verstreutes Material -- Lesezeichen, Meeting-Notizen, Markierungen, Screenshots -- soll in ein konkretes Ergebnis fließen, etwa einen Vortrag, einen Artikel oder ein Designdokument
+* Lesenotizen und Markierungen stapeln sich und werden nie wieder benutzt
+* Aufbau oder Überprüfung eines persönlichen Notizsystems in beliebigen Werkzeugen (Obsidian, Notion, einfache Ordner)
+* Als Methode rund um PARA: wenn nicht nur die Ordner gefragt sind, sondern auch, wie Notizen festgehalten, verdichtet und wiederverwendet werden
+* Um einem Teammitglied zu helfen, aus Recherche einen ersten Entwurf zu machen statt noch mehr Recherche
+
+[discrete]
+== *So promptest du damit*:
+
+* *Nutze den vollen Namen.* „Follow Building a Second Brain (Tiago Forte).“ lieferte in unserem Prior-Test vom 04.11.2026 auf jeder Stufe die ganze Methode: CODE in 12 von 12 Läufen, Progressive Summarization in 12 von 12, Intermediate Packets in 11 von 12. „BASB“ führt auf allen Stufen zur Methode.
+* *Das bloße „Second Brain“ ist generisch.* Jede Stufe erkannte es als Fortes Begriff, aber als Anweisung („Set up a second brain.“) lieferte nur die starke Stufe CODE; die mittlere Stufe baute in zwei von zwei Läufen ein Ordnersystem nach PARA-Art ohne CODE.
+* *„CODE method“ allein verliert auf schwachen Modellen die zweite Hälfte.* Auf der schwachen Stufe lieferte es in der Vortragsaufgabe die vier Schrittnamen, aber nie Progressive Summarization, PARA oder Intermediate Packets, und riet einmal „Sort by topic, not by source type.“ -- das Gegenteil von Fortes Regel.
+* *PARA zu nennen heißt nicht, BASB zu nennen.* „Use the PARA method.“ lieferte die vier Kategorien in 12 von 12 Läufen und Intermediate Packets in keinem. Nenne BASB, wenn du Verdichtung und Ergebnisse willst, PARA, wenn du nur die Ordnerstruktur willst.
+* Details im link:#/prior-tests[Prior-Test-Register], Lauf vom 04.11.2026.
+
+[discrete]
+== *Verwandte Anker*:
+
+* <<para-method,P.A.R.A. Method>>
+* <<hemingway-bridge,Hemingway Bridge>>
+* <<gtd,GTD — Getting Things Done>>
+* <<karpathys-llm-wiki,Karpathy's LLM Wiki>>
+
+[discrete]
+== *Kritik*:
+
+* *Sammeln fühlt sich an wie Wissen.* Christian Tietzes https://zettelkasten.de/posts/collectors-fallacy/[„The Collector's Fallacy“] (zettelkasten.de, 20. Januar 2014) argumentiert, dass Quellen zu sammeln nicht heißt, sie zu lernen: „'to know about something' isn't the same as 'knowing something'“. Tietze nennt Forte nicht; der Essay ist die allgemeine Kritik an sammellastigen Notizsystemen. Eine Rezension auf https://curtismchale.ca/2022/07/30/building-a-second-brain-gives-you-permission-to-fall-into-collectors-fallacy[curtismchale.ca] (30. Juli 2022; die Seite nennt keinen Autor) wendet den Begriff auf das Buch an: Sie hält die Ratschläge zum Festhalten für vage und so leicht, dass sie endloses Sammeln fördern, und empfiehlt das Buch nicht, nennt die Zusammenfassungen von CODE und PARA aber nützlich.
+* *Progressive Summarization kann Denken durch Markieren ersetzen.* Nick Milo, https://medium.com/@nickmilo22/why-progressive-summarization-must-die-c2635d1f79f1[„The Potential Side Effects of Progressive Summarization“] (13. August 2020), argumentiert, dass wiederholtes Markieren dazu verleitet, mehr zu speichern als zu verarbeiten, und ein falsches Gefühl von Beherrschung erzeugt -- „We mistake familiarity with ability.“ Er schlägt stattdessen „Active Ideation“ vor: Notizen in eigenen Worten schreiben und mit bestehenden Notizen verknüpfen, nach Art der Zettelkasten-Methode.
+* *Es verwaltet Ressourcen, nicht Ideen.* Sascha Fast, https://zettelkasten.de/posts/building-a-second-brain-and-zettelkasten/[„How to Increase Knowledge Productivity: Combine the Zettelkasten Method and Building a Second Brain“] (zettelkasten.de, 26. Juni 2023), beschreibt BASB als „a system for resource management“ und die Zettelkasten-Methode als eine „for working with ideas themselves“. Sein Schluss: beide kombinieren, weil sie sich kaum überschneiden.
+====
