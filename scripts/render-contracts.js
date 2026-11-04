@@ -19,6 +19,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const { loadContractCatalog } = require('./lib/contract-requires.js')
 
 const ROOT = path.join(__dirname, '..')
 const CONTRACTS_JSON = path.join(ROOT, 'website/public/data/contracts.json')
@@ -71,11 +72,36 @@ function renderAnchorChips(contract, lang) {
     .join(' ')
 }
 
-function renderContract(contract) {
+/**
+ * "Includes: <contract>, …" — the contracts this one pulls in through
+ * `requires` (#896). Every copy/install path ships them too, so the page says so.
+ * @param {{id: string, title: string}[]} required - in export order
+ * @param {('en'|'de')} lang
+ */
+function renderRequires(required, lang) {
+  if (!required || required.length === 0) return ''
+  const label = lang === 'de' ? 'Enthält:' : 'Includes:'
+  const prefix = lang === 'de' ? `${BASE}/de` : BASE
+  const links = required
+    .map(
+      (r) =>
+        `<a href="${prefix}/contract/${escapeHtml(r.id)}" class="font-medium hover:underline">${escapeHtml(r.title)}</a>`
+    )
+    .join(', ')
+  return `<p class="contract-requires text-sm text-[var(--color-text-secondary)] mb-3">${label} ${links}</p>`
+}
+
+/**
+ * Overview card for one contract.
+ * @param {object} contract - entry from contracts.json
+ * @param {{id: string, title: string}[]} [required] - contracts it requires
+ */
+function renderContract(contract, required = []) {
   return `
     <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-5 mb-4">
       <h3 class="text-lg font-semibold mb-1"><a href="${BASE}/contract/${escapeHtml(contract.id)}" class="hover:underline">${escapeHtml(contract.title)}</a> <a href="${BASE}/contract/${escapeHtml(contract.id)}" class="inline-flex items-center align-middle text-[var(--color-text-secondary)] hover:text-blue-600 transition-colors" aria-label="Link to this contract"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.5-1.5M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.5 1.5"/></svg></a></h3>
       <p class="text-sm text-[var(--color-text-secondary)] mb-3">${escapeHtml(contract.description)}</p>
+      ${renderRequires(required, 'en')}
       <div class="rounded-md bg-[var(--color-bg-secondary)] p-3 mb-3 text-sm leading-relaxed">
         <ul class="list-disc list-inside space-y-1">
           ${renderTemplate(contract.template)}
@@ -89,8 +115,10 @@ function renderContract(contract) {
  * Detail-page fragment for one contract (the /contract/<id> body).
  * @param {object} contract - entry from contracts.json
  * @param {('en'|'de')} lang
+ * @param {{id: string, title: string}[]} [required] - contracts it requires,
+ *   titles already localized for lang
  */
-function renderContractDetail(contract, lang) {
+function renderContractDetail(contract, lang, required = []) {
   const de = lang === 'de'
   const title = de ? contract.titleDe || contract.title : contract.title
   const description = de ? contract.descriptionDe || contract.description : contract.description
@@ -106,6 +134,7 @@ function renderContractDetail(contract, lang) {
 <h1>${escapeHtml(title)}</h1>
 <p class="text-[var(--color-text-secondary)] mb-2">${escapeHtml(description)}</p>
 <p class="text-sm text-[var(--color-text-secondary)] mb-4">${intro}</p>
+${renderRequires(required, lang)}
 <div class="rounded-md bg-[var(--color-bg-secondary)] p-4 mb-4 text-sm leading-relaxed">
   <ul class="list-disc list-inside space-y-1">
     ${renderTemplate(template)}
@@ -115,13 +144,14 @@ function renderContractDetail(contract, lang) {
 <div class="flex flex-wrap gap-1.5">${renderAnchorChips(contract, lang)}</div>`
 }
 
-function main() {
+async function main() {
   if (!fs.existsSync(CONTRACTS_JSON)) {
     console.error(`ERROR: ${CONTRACTS_JSON} not found`)
     process.exit(1)
   }
 
-  const contracts = JSON.parse(fs.readFileSync(CONTRACTS_JSON, 'utf-8'))
+  // Fails on an unknown required id or a cycle (#896).
+  const { contracts, required } = await loadContractCatalog(CONTRACTS_JSON)
 
   const html = `
 <h1>Semantic Contracts</h1>
@@ -132,7 +162,7 @@ function main() {
   established anchors or by providing custom definitions that only exist within your team.
 </p>
 <div class="grid gap-4 md:grid-cols-2">
-  ${contracts.map(renderContract).join('\n')}
+  ${contracts.map((c) => renderContract(c, required(c.id, 'en'))).join('\n')}
 </div>`
 
   fs.mkdirSync(path.dirname(OUTPUT), { recursive: true })
@@ -147,12 +177,12 @@ function main() {
     }
     fs.writeFileSync(
       path.join(DETAIL_DIR, `${contract.id}.html`),
-      renderContractDetail(contract, 'en'),
+      renderContractDetail(contract, 'en', required(contract.id, 'en')),
       'utf-8'
     )
     fs.writeFileSync(
       path.join(DETAIL_DIR, `${contract.id}.de.html`),
-      renderContractDetail(contract, 'de'),
+      renderContractDetail(contract, 'de', required(contract.id, 'de')),
       'utf-8'
     )
   }
@@ -161,4 +191,11 @@ function main() {
   )
 }
 
-main()
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(`ERROR: ${err.message}`)
+    process.exit(1)
+  })
+}
+
+module.exports = { renderContract, renderContractDetail, renderRequires }

@@ -13,7 +13,9 @@ _Anchors: {{CONTRACT_ANCHORS_1}}_
 _Anchors: {{CONTRACT_ANCHORS_2}}_
 
 <!--
-  One "## Title / template / _Anchors:_" group per selected contract.
+  One "## Title / template / _Anchors:_" group per contract in the list that
+  scripts/resolve-contracts.py prints for the selection: required contracts
+  first, each once, in that order.
   Fill each CONTRACT_TEMPLATE from the contract's `template` (or `templateDe`)
   field in data/contracts.json; fill CONTRACT_ANCHORS from its `anchors[]`.
   Keep only the groups for the contracts the project actually uses.

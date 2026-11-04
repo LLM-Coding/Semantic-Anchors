@@ -14933,6 +14933,8 @@ Maintain knowledge in two kinds of brain, separated by trust, not by topic. The 
 - End every session with a Hemingway Bridge in the project's notes.
 - Lint weekly: contradictions, stale claims, orphan pages, projects without activity.
 
+*Requires: LLM-Wiki Documentation*
+
 *Referenced anchors: building-a-second-brain, para-method, karpathys-llm-wiki, hemingway-bridge, ssot-principle*
 
 ## Concise Response (TLDR)
