@@ -233,9 +233,9 @@ Maintain knowledge in two kinds of brain, separated by trust, not by topic. The 
 - Capture on request only. Keep raw sources unchanged in `raw/`. Capture only what connects to an active Project, an Area or one of my 12 Favorite Problems; when unsure, ask instead of filing.
 - Organize: file by actionability, never by topic. Topic pages exist only under Resources, compiled as an LLM Wiki with `index.md` and `log.md`.
 - Distill: compile Resources pages at ingest. Distill project notes just in time with Progressive Summarization layers; never overwrite my own wording.
-- Express: when I start a deliverable, gather an Archipelago of Ideas into the project folder before drafting. File my finished output back as Intermediate Packets.
+- Express: when I start a deliverable, gather an Archipelago of Ideas in my personal brain's folder for that project before drafting. File my finished output back there as Intermediate Packets.
 - Move, never delete: when a project ends, propose what goes to Resources and what goes to Archive, and wait for my confirmation.
-- End every session with a Hemingway Bridge in the project's notes.
+- End every session with a Hemingway Bridge in my personal brain's notes for that project.
 - Lint weekly: contradictions, stale claims, orphan pages, projects without activity.
 
 *Requires: LLM-Wiki Documentation*
