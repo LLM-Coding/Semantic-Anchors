@@ -20,6 +20,10 @@ Full detail in the link:#/prior-tests[prior-test register], run 2026-11-04.
 
 Full detail in the link:#/prior-tests[prior-test register], run 2026-11-04, contract: Second Brain Maintenance.
 
+*Contracts can require other contracts (https://github.com/LLM-Coding/Semantic-Anchors/issues/896[#896]):*
+
+* A contract may now list other contracts under `requires`. Every export path ships them too, required contracts first and each once: the per-card copy and the multi-select copy and download on the link:#/contracts[contracts page], and the `semantic-contracts-installer` skill (new `scripts/resolve-contracts.py`). The card says "Includes: …", and `contracts.txt`, `llms.txt` and the contract pages add a "Requires" line. An unknown id or a cycle fails the build and the tests. First user: Second Brain Maintenance requires LLM-Wiki Documentation, so copying it alone no longer ships a reference to rules the agent never receives.
+
 == 2026-10-30
 
 *Every anchor now has a curated definition (https://github.com/LLM-Coding/Semantic-Anchors/issues/865[#865]):*
