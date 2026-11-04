@@ -27,6 +27,7 @@
   "contracts.permalink": "Link to this contract",
   "contracts.copied": "Copied!",
   "contracts.copyOne": "Copy this contract",
+  "contracts.includes": "Includes:",
   "contracts.plainText": "Plain-text version of all contracts (contracts.txt) →",
   "contracts.selected": "selected",
   "contracts.selectAll": "Select all",

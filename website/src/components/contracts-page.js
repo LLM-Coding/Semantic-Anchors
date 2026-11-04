@@ -1,4 +1,5 @@
 import { i18n } from '../i18n.js'
+import { resolveContracts, requiredContracts } from '../utils/contract-requires.js'
 
 const STORAGE_KEY = 'selected-contracts'
 
@@ -49,6 +50,7 @@ const ANCHOR_ALIASES = {
   'blooms-taxonomy': ["Bloom's", 'Blooms'],
   'karpathys-llm-wiki': ["Karpathy's LLM Wiki"], // rendered title in anchors.json uses a typographic apostrophe
   'docs-as-code': ['docToolchain'],
+  'building-a-second-brain': ['Building a Second Brain'],
 }
 
 // Highlight mentions of a contract's declared anchors, linked to the anchor.
@@ -177,7 +179,40 @@ export function renderContractsPage() {
   `
 }
 
-export function renderContractCard(contract, isSelected) {
+// What a contract pulls in through `requires` (#896). A broken catalog is
+// caught at build time (validate-contracts); at runtime the card just omits
+// the line instead of failing the whole page.
+function safeRequired(catalog, id) {
+  try {
+    return requiredContracts(catalog, id)
+  } catch {
+    return []
+  }
+}
+
+// Export order for the given ids: required contracts first, each once. Falls
+// back to the ids alone if the catalog is broken, so copy still works.
+function safeResolve(catalog, ids) {
+  try {
+    return resolveContracts(catalog, ids)
+  } catch {
+    return catalog.filter((c) => ids.includes(c.id))
+  }
+}
+
+function renderRequires(contract, catalog) {
+  const required = safeRequired(catalog, contract.id)
+  if (!required.length) return ''
+  const links = required
+    .map(
+      (r) =>
+        `<a href="${import.meta.env.BASE_URL}contract/${esc(r.id)}" class="font-medium text-blue-700 dark:text-blue-300 hover:underline">${esc(getLocalizedField(r, 'title'))}</a>`
+    )
+    .join(', ')
+  return `<p class="contract-requires text-sm text-[var(--color-text-secondary)] mb-3"><span data-i18n="contracts.includes">${esc(i18n.t('contracts.includes'))}</span> ${links}</p>`
+}
+
+export function renderContractCard(contract, isSelected, catalog = []) {
   const title = getLocalizedField(contract, 'title')
   const description = getLocalizedField(contract, 'description')
   const template = getLocalizedField(contract, 'template')
@@ -241,6 +276,7 @@ export function renderContractCard(contract, isSelected) {
               </div>
             </div>
             <p class="text-sm text-[var(--color-text-secondary)] mb-3">${esc(description)}</p>
+            ${renderRequires(contract, catalog)}
             <div class="rounded-md bg-[var(--color-bg-secondary)] p-3 mb-3 text-sm leading-relaxed max-h-64 overflow-y-auto">
               ${templateHtml}
             </div>
@@ -265,7 +301,9 @@ export function initContractsPage(contracts, anchorTitles) {
 
   const selected = getSelectedContracts()
 
-  grid.innerHTML = contracts.map((c) => renderContractCard(c, selected.includes(c.id))).join('')
+  grid.innerHTML = contracts
+    .map((c) => renderContractCard(c, selected.includes(c.id), contracts))
+    .join('')
 
   // Checkbox toggle
   grid.addEventListener('change', (e) => {
@@ -289,8 +327,7 @@ export function initContractsPage(contracts, anchorTitles) {
     if (!copyBtn) return
     e.stopPropagation()
     const id = copyBtn.dataset.contractId
-    const contract = contracts.find((c) => c.id === id)
-    if (contract) copyOneContract(contract, copyBtn)
+    if (contracts.some((c) => c.id === id)) copyOneContract(contracts, id, copyBtn)
   })
 
   // Card click toggles checkbox
@@ -363,18 +400,24 @@ function contractToMarkdown(contract) {
   return `## ${title}\n\n${template}`
 }
 
-function buildContractsMarkdown(contracts) {
-  const selected = getSelectedContracts()
-  const filtered = contracts.filter((c) => selected.includes(c.id))
-
-  if (filtered.length === 0) return null
-
-  return filtered.map(contractToMarkdown).join('\n\n') + '\n'
+// The given contracts plus everything they require, dependencies first (#896).
+function contractsToMarkdown(contracts, ids) {
+  return safeResolve(contracts, ids).map(contractToMarkdown).join('\n\n') + '\n'
 }
 
-async function copyOneContract(contract, btn) {
+function buildContractsMarkdown(contracts) {
+  const selected = getSelectedContracts()
+  // Catalog order for the selection, as before; requires are added by the resolver.
+  const ids = contracts.filter((c) => selected.includes(c.id)).map((c) => c.id)
+
+  if (ids.length === 0) return null
+
+  return contractsToMarkdown(contracts, ids)
+}
+
+async function copyOneContract(contracts, id, btn) {
   try {
-    await navigator.clipboard.writeText(contractToMarkdown(contract) + '\n')
+    await navigator.clipboard.writeText(contractsToMarkdown(contracts, [id]))
     if (!btn) return
     const original = btn.innerHTML
     btn.innerHTML =

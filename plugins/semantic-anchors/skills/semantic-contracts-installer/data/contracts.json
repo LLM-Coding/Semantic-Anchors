@@ -187,6 +187,17 @@
     "category": "documentation"
   },
   {
+    "id": "second-brain-maintenance",
+    "title": "Second Brain Maintenance",
+    "titleDe": "Second-Brain-Pflege",
+    "description": "A second brain in the current folder after BASB, PARA and the LLM Wiki, with rules where the methods disagree",
+    "descriptionDe": "Ein Second Brain im aktuellen Ordner nach BASB, PARA und LLM Wiki, mit Regeln, wo die Methoden sich widersprechen",
+    "anchors": ["building-a-second-brain", "para-method", "karpathys-llm-wiki", "hemingway-bridge"],
+    "template": "Maintain a second brain in the current working folder as Building a Second Brain (Tiago Forte): the P.A.R.A. Method is the folder structure, Karpathy's LLM Wiki is the engine inside Resources. Never read or write a second brain outside this folder. Where the methods disagree, these rules decide:\n- Capture on request only. Keep raw sources unchanged in `raw/`. Capture only what connects to an active Project, an Area or one of my 12 Favorite Problems; when unsure, ask instead of filing.\n- Organize: file by actionability, never by topic. Topic pages exist only under Resources, compiled as an LLM Wiki with `index.md` and `log.md`.\n- Distill: compile Resources pages at ingest. Distill project notes just in time with Progressive Summarization layers; never overwrite my own wording.\n- Express: when I start a deliverable, gather an Archipelago of Ideas in its project folder before drafting. File my finished output back there as Intermediate Packets.\n- Move, never delete: when a project ends, propose what goes to Resources and what goes to Archive, and wait for my confirmation.\n- End every session with a Hemingway Bridge in the project's notes.\n- Lint weekly: contradictions, stale claims, orphan pages, projects without activity.",
+    "templateDe": "Ein Second Brain im aktuellen Arbeitsordner pflegen, nach Building a Second Brain (Tiago Forte): Die P.A.R.A. Method ist die Ordnerstruktur, Karpathy's LLM Wiki ist der Motor in Resources. Nie ein Second Brain außerhalb dieses Ordners lesen oder schreiben. Wo die Methoden sich widersprechen, entscheiden diese Regeln:\n- Capture nur auf Anfrage. Rohquellen bleiben unverändert in `raw/`. Erfasse nur, was zu einem aktiven Project, einer Area oder einem meiner 12 Favorite Problems passt; im Zweifel fragen statt ablegen.\n- Organize: nach Handlungsrelevanz ablegen, nie nach Thema. Themenseiten gibt es nur unter Resources, kompiliert als LLM Wiki mit `index.md` und `log.md`.\n- Distill: Resources-Seiten beim Ingest kompilieren. Projektnotizen just in time mit den Ebenen der Progressive Summarization verdichten; meinen eigenen Wortlaut nie überschreiben.\n- Express: Wenn ich ein Ergebnis beginne, vor dem Entwurf ein Archipelago of Ideas in dessen Projektordner sammeln. Meine fertigen Ergebnisse dort als Intermediate Packets zurück ablegen.\n- Verschieben, nie löschen: Wenn ein Projekt endet, vorschlagen, was nach Resources und was ins Archive geht, und auf meine Bestätigung warten.\n- Jede Sitzung mit einer Hemingway Bridge in den Notizen des Projekts beenden.\n- Wöchentlich linten: Widersprüche, veraltete Aussagen, verwaiste Seiten, Projekte ohne Aktivität.",
+    "category": "knowledge-management"
+  },
+  {
     "id": "concise-response",
     "title": "Concise Response (TLDR)",
     "titleDe": "Knappe Antwort (TLDR)",

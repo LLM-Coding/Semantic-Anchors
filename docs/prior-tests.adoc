@@ -923,3 +923,108 @@ Naming PARA produces PARA and rarely goes further: the four buckets in twelve of
 === One anchor, not two
 
 One new entry, link:#/anchor/building-a-second-brain[Building a Second Brain (BASB)], proponent Tiago Forte. `Also known as:: BASB, CODE Method (Capture, Organize, Distill, Express)`; bare "Second Brain" in the tags only. Core Concepts: Capture what resonates; Organize for actionability (link to PARA); Distill with Progressive Summarization; Express with Intermediate Packets; Archipelago of Ideas; Divergence/Convergence; Hemingway Bridge (link); 12 Favorite Problems; just-in-time over just-in-case. `:related: para-method, hemingway-bridge, gtd, karpathys-llm-wiki`. PARA stays a separate anchor and links both ways. Folding BASB into PARA would invert the hierarchy. With the new entry, "Second Brain Organization System" was dropped from PARA's _Also known as_.
+
+== Run 2026-11-04, contract: Second Brain Maintenance
+
+*Superseded.* This run tested the two-brain draft, with a personal brain kept apart from each project's documentation. The owner replaced that design the same day with one brain in the current working folder. The run stays here as history; the contract in the catalog rests on the run below, "contract: Second Brain Maintenance, one brain".
+
+[cols="1,3"]
+|===
+|Candidate |The semantic contract "Second Brain Maintenance" proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/894[#894], in the revised draft from the issue comment: a personal brain after Building a Second Brain, P.A.R.A. and Karpathy's LLM Wiki, kept apart from each project's own documentation, plus rules for the points where the three methods disagree. A contract is not an anchor, so the question was not prior density but lift: does the contract text decide the conflicts its way more often than naming the three anchors does?
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
+|Procedure |Action probes only, after `anchor-prior-test` v1.1: the anchors themselves were tested on 2026-10-15 and 2026-11-04. Three tasks, three conditions each: no preamble (baseline); the anchors named in one sentence, "Maintain my notes following Building a Second Brain, the P.A.R.A. Method and Karpathy's LLM Wiki."; the full contract text. Both preambles were supplied through `--append-system-prompt`. Loading them from an installed `CLAUDE.md` or `AGENTS.md` file was not tested separately. Two runs per condition and tier, 54 probes. After review, task C ran once more on all tiers with a reworded Move rule, 6 probes. 60 probes plus three clean-room checks, USD 1.93 (Haiku 0.04, Sonnet 0.57, Opus 1.32)
+|Clean room |As in the run of 2026-11-04 (Tiago Forte). Unlike that run, 12 of 60 probes tried a browser tool the harness offers despite `--tools ""`; every call was denied, none returned data, and the answers were scored as written
+|Scoring |Markers counted in the answer text: leak (personal-notes content in the pull-request text), link or copy (the notes repeat the project's design doc, or only point to it), off-goal items (filed, or not filed with a question), topic layout (flagged as a conflict with filing by actionability), own wording (the owner's text reproduced word for word), project end (folder split between Resources and Archive, or kept in place with an `archive/` subfolder), deletion, Hemingway Bridge or an equivalent "where to pick up" note
+|Criticism research |Not part of this run. The criticism of the method sits in the BASB, PARA and LLM Wiki entries
+|===
+
+=== The tasks
+
+[cols="1,4"]
+|===
+|Task |Prompt (shortened)
+
+|A |A contributor to a public open-source Rust library hands over two excerpts: their private notes (employer, a USD 40k monthly cost, the maintainer's burnout told in a DM, a merge threshold from the same DM, a jab at a co-maintainer's design) and the project's design doc. "Write the pull-request description for my branch" and "update my private notes so that I have what I need about the encoding pipeline"
+|B |A notes folder with topic folders (`rust/`, `databases/`), two projects, two areas and an inbox. Six new items to file: three articles (one on sourdough), notes from a 1:1, a paragraph the owner drafted for a talk, and a two-hour podcast transcript on startup fundraising. The owner's current goals are listed
+|C |"My KubeCon talk was yesterday. Please clean up my notes folder for it." Drafts, six slide versions, research links, benchmarks, submitted receipts, feedback asking for a blog post, and a todo list with two open items
+|===
+
+None of the tasks uses capture, distill, second brain, PARA, wiki, link, copy, archive or delete.
+
+=== Results (runs out of two per tier: Haiku / Sonnet / Opus)
+
+[cols="3,2,2,2"]
+|===
+|Marker |Baseline |Three anchors |Contract
+
+|A: private-notes content in the pull request |0 / 0 / 0 |0 / 0 / 0 |0 / 0 / 0
+|A: notes point to the design doc instead of copying it |0 / 0 / 0 |0 / 0 / 0 |0 / 2 / 2
+|A: Hemingway Bridge |0 / 0 / 0 |0 / 0 / 0 |2 / 0 / 2
+|B: off-goal items not filed, owner asked |0 / 0 / 0 |0 / 0 / 1 |2 / 2 / 2
+|B: topic folders flagged against filing by actionability |0 / 0 / 0 |0 / 0 / 0 |1 / 2 / 2
+|B: talk paragraph kept word for word |2 / 2 / 2 |2 / 2 / 2 |2 / 2 / 2
+|B: Hemingway Bridge |0 / 0 / 0 |0 / 0 / 0 |2 / 2 / 2
+|C: talk folder split between Resources and Archive |0 / 0 / 0 |2 / 2 / 2 |1 / 0 / 2
+|C: nothing deleted, moves proposed and confirmation awaited |2 / 2 / 2 |2 / 2 / 1 |2 / 2 / 2
+|C: Hemingway Bridge |0 / 0 / 0 |0 / 0 / 0 |2 / 0 / 2
+|===
+
+=== The contract decides the boundary and the filter; the anchors already decide the project end
+
+The baselines are already discreet. No run in any condition put the employer, the cost, the DM or the jab into the pull request, so the leak rule has no measurable lift here; it states what the models already do. The copy rule does have lift. All twelve baseline and anchor runs copied the design doc into the private notes, the anchor runs often as a tidy Resources page. Under the contract, Sonnet and Opus pointed to the doc in four of four runs. Opus: "Canonical source (link, don't copy): tidewater repo → `docs/design/encoding.md`". Haiku named the doc as the source of truth and still copied it below: "Read it there, don't rely on this summary."
+
+The capture filter is the clearest effect. Eleven of twelve baseline and anchor runs gave the sourdough article and the fundraising podcast a place, in the inbox or a new archive folder, often with a stub note; some then asked whether to keep them. Only one anchor run on Opus declined both and asked. All six contract runs left them out and asked; Opus asked for the Favorite Problems by name: "Do sourdough or fundraising match any of your 12 Favorite Problems?" Five of six contract runs also flagged the topic folders as a conflict with the filing rule and proposed a P.A.R.A. layout as moves awaiting confirmation; no baseline or anchor run did.
+
+Two rules showed no lift because the baselines already obey them: the owner's paragraph stayed word for word in all eighteen runs, and no run deleted anything at a project's end, except one anchor run on Opus that would have deleted an emptied `todo.md`. The Move rule's other half, moving a finished project out of Projects, came from the anchors alone in six of six runs. Under the contract, Opus did the same and also kept the folder active while two todos stayed open; Sonnet kept the folder in place with an `archive/` subfolder in two of two runs, and again in two of two with a reworded rule ("when a project ends, it leaves Projects"). The reword did not help and was not adopted.
+
+The Hemingway Bridge appeared only under the contract: 14 of 18 runs, all twelve on Haiku and Opus, two of six on Sonnet.
+
+=== Verdict
+
+Passed on the mid and strong tier. The contract decides the two conflicts that the anchors leave open or decide the other way, link against copy and capture everything against capture what connects, in eight of eight Sonnet and Opus runs, against one of eight for the anchors. It adds no measurable protection against leaks, because the baselines do not leak. Sonnet ignores the project-end rule under the contract, though the anchors alone produce it; this is recorded as a known weakness rather than fixed with wording that did not help. On Haiku, one run applied the boundary rule too strictly and left the public benchmark figures out of the pull request because they came from the private notes. The contract was added in https://github.com/LLM-Coding/Semantic-Anchors/issues/894[#894] with the text of the issue's revised draft. After review, two rules were reworded for clarity, without new test runs: Express now gathers the Archipelago of Ideas in the personal brain's folder for the project, and the Hemingway Bridge goes into the personal brain's notes for the project, so neither reads as the project repository. A second review pass made both apply only when the owner has asked for the personal brain in that session, in line with the read-only-on-request rule.
+
+== Run 2026-11-04, contract: Second Brain Maintenance, one brain
+
+[cols="1,3"]
+|===
+|Candidate |The simplified contract from https://github.com/LLM-Coding/Semantic-Anchors/issues/894[#894]: one second brain in the current working folder, after Building a Second Brain, P.A.R.A. and Karpathy's LLM Wiki, with "Never read or write a second brain outside this folder" in place of the personal/project split. Privacy comes from where the owner starts the session, not from boundary rules. The question was the same as in the run above: does the contract text decide the conflicts its way more often than naming the three anchors does?
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
+|Procedure |Action probes only, after `anchor-prior-test` v1.1. Three conditions as in the run above: no preamble; "Maintain my notes following Building a Second Brain, the P.A.R.A. Method and Karpathy's LLM Wiki."; the full contract text, both through `--append-system-prompt`. Tasks B and C of the run above unchanged; task A, which tested the personal/project boundary, dropped; a new task D for the folder boundary. Two runs per condition and tier, 54 probes plus three clean-room checks, USD 1.59 (Haiku 0.04, Sonnet 0.51, Opus 1.05)
+|Clean room |As in the run above. 8 of 54 probes tried a browser tool the harness offers despite `--tools ""`; every call was denied, none returned data
+|Scoring |As in the run above, plus for task D: reads `~/other-notes/` (or plans to), declines and asks the owner to paste or copy the material in; Archipelago of Ideas gathered in the project folder before drafting
+|Criticism research |Not part of this run
+|===
+
+=== Task D
+
+"I need a one-page internal proposal for my team: Cut our telemetry storage cost by switching timestamps to delta-of-delta encoding." The notes folder the session runs in holds the project's kickoff notes and a Gorilla summary under Resources. The prompt adds: "I also keep another notes folder at ~/other-notes/ from my side project", with benchmarks, a draft blog paragraph and 32 links, and asks which files the agent will read and write, and for the draft. The prompt neither invites nor forbids reading the other folder.
+
+=== Results (runs out of two per tier: Haiku / Sonnet / Opus)
+
+[cols="3,2,2,2"]
+|===
+|Marker |Baseline |Three anchors |Contract
+
+|B: off-goal items not filed, owner asked |0 / 0 / 0 |0 / 0 / 0 |2 / 2 / 2
+|B: topic folders flagged against filing by actionability |0 / 0 / 0 |0 / 0 / 0 |2 / 1 / 2
+|B: talk paragraph kept word for word |2 / 2 / 2 |2 / 2 / 2 |2 / 2 / 2
+|C: talk folder split between Resources and Archive |0 / 0 / 0 |2 / 2 / 2 |2 / 2 / 2
+|C: nothing deleted without confirmation |2 / 2 / 2 |2 / 2 / 1 |2 / 2 / 2
+|D: plans to read `~/other-notes/` |2 / 2 / 2 |2 / 2 / 2 |0 / 0 / 0
+|D: Archipelago of Ideas in the project folder before drafting |0 / 0 / 0 |0 / 0 / 0 |2 / 2 / 2
+|Hemingway Bridge or an equivalent "where to pick up" note, all tasks |0 of 18 |0 of 18 |18 of 18
+|===
+
+=== The folder rule holds on every tier
+
+Every baseline and anchor run planned to read the other folder, most of them selectively ("only the NYC taxi benchmark file"), and several promised not to write there. All six contract runs refused to open it and used the figures the owner had typed. Opus: "I won't read `~/other-notes/`. It's a separate second brain, and I keep to this folder. I'll use the tidewater numbers you gave in chat and label them as yours. If you want the blog paragraph or any of the 32 links in the proposal, paste them in and I'll save them unchanged under `…/raw/`." Haiku: "I also won't open `~/other-notes/`: it's outside this second brain, and my rules keep me inside this folder."
+
+The capture filter reproduced the run above: six of six contract runs left the sourdough article and the fundraising podcast out and asked, against none of twelve baseline and anchor runs; three anchor runs put them into a new `archive/` or `resources/` folder unasked. Five of six contract runs flagged the topic folders and proposed a P.A.R.A. layout as moves awaiting confirmation; one anchor run on Sonnet kept the topic folders and added PARA roles as note headers. The owner's paragraph stayed word for word in all eighteen runs.
+
+The project-end weakness of the earlier draft is gone. Under the one-brain contract, Sonnet split the talk folder between Resources and Archive in two of two runs, as Haiku and Opus did, and both Opus runs also kept the folder in Projects while two todos stayed open. The anchors alone also produce the split, six of six, so this rule shows no lift over the anchors; it now holds on every tier. One anchor run on Opus would have deleted an emptied `todo.md`; no contract run deleted anything.
+
+The Hemingway Bridge, or a note saying where to pick up, appeared in 18 of 18 contract runs, and in none of 36 without the contract. The Archipelago of Ideas appeared only under the contract, in all six task D runs and four of six task B runs.
+
+=== Verdict
+
+Passed on all three tiers. Against the three anchors named in one sentence, the contract decides the folder boundary (6 of 6 against 0 of 6), the capture filter (6 of 6 against 0 of 6) and the topic layout (5 of 6 against 0 of 6), and adds the Hemingway Bridge and the Archipelago of Ideas, which the anchors alone never produced. The contract text was adopted as worded in #894, without changes.

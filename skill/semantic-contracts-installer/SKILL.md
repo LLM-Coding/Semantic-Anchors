@@ -3,7 +3,7 @@ name: semantic-contracts-installer
 description: Install Semantic Contracts (and, as a sub-mode, individual semantic anchors) into a coding agent's persistent context for Claude Code, Codex, Gemini CLI, Cursor, GitHub Copilot, and similar agents. Use when setting up project-level or user-level onboarding, generating or updating AGENTS.md / CLAUDE.md / GEMINI.md / Copilot instruction files, or choosing which contracts a project should run. A contract is the part the LLM cannot guess — a named composition of anchors plus the project's own rendered template — so installing contracts is the high-value path; installing a bare anchor list is the lightweight fallback.
 metadata:
   author: LLM-Coding
-  version: "0.2"
+  version: "0.3"
   source: https://github.com/LLM-Coding/Semantic-Anchors
 license: MIT
 ---
@@ -22,21 +22,23 @@ This is the Anchor / Contract / Skill taxonomy (ADR-007) in practice: the instal
 
 1. **Decide scope and portability.** Prefer project-local onboarding for "works across as many agents as possible"; use user-level memory only for agents that support it natively. Read [references/agent-support.md](references/agent-support.md) before writing files.
 
-2. **Present the contract catalog.** Read [data/contracts.json](data/contracts.json) (a bundled snapshot of the published catalog) and show the user the available contracts by `title` + `description`. Keep the installed set small — usually 2 to 6 contracts that match the project's actual practice.
+2. **Present the contract catalog.** Read [data/contracts.json](data/contracts.json) (a bundled snapshot of the published catalog) and show the user the available contracts by `title` + `description`. Keep the installed set small — usually 2 to 6 contracts that match the project's actual practice. A contract with a `requires` list builds on other contracts; tell the user that selecting it also installs those. No contract in the current catalog uses `requires`.
 
-3. **Render the selected contracts into a block.** For each chosen contract, emit its `template` (or `templateDe` when the project works in German) under a clear heading, followed by its resolved `anchors[]` as a one-line supporting-vocabulary list. Start from `assets/templates/contracts-block.md`. Do not add the markers — the installer adds them.
+3. **Resolve requirements.** Run `scripts/resolve-contracts.py <id> [<id> ...]` with the selected ids. It prints the full install list, one id per line: required contracts first (transitively), each contract once. Render exactly that list, in that order. It exits with an error on an unknown id or a cycle; do not install a partial list then.
 
-4. **Run the installer instead of editing by hand.**
+4. **Render the resolved contracts into a block.** For each contract in the resolved list, emit its `template` (or `templateDe` when the project works in German) under a clear heading, followed by its resolved `anchors[]` as a one-line supporting-vocabulary list. Start from `assets/templates/contracts-block.md`. Do not add the markers — the installer adds them.
+
+5. **Run the installer instead of editing by hand.**
    - `scripts/install.sh --source /path/to/contracts-block.md --target-dir <repo> --scope project` for repository onboarding.
    - `scripts/install.sh --source /path/to/contracts-block.md --scope home` for personal onboarding.
    - It injects into the first suitable existing markdown file, else creates a minimal `AGENTS.md`, and writes an idempotent marker block (`<!-- semantic-anchors:start/end -->`) so updates replace the previous installation — including any block left by the former `semantic-anchor-onboarding` skill.
 
-5. **Add native behavior only where needed.**
+6. **Add native behavior only where needed.**
    - The marker block lives in `AGENTS.md` / `CLAUDE.md`, which Claude Code loads natively — so **do not install a SessionStart hook for `CLAUDE.md`**; it would double-load the block.
    - Only use `--claude-hook` when the block lives in a file Claude Code does *not* auto-load. The hook is registered with `matcher: "startup"` (not `resume`), so it does not re-inject on every resume.
    - For Gemini CLI / Copilot / Cursor, rely on the shared file the installer chose; mirror into the native file only when that tool's workflow needs it.
 
-6. **Validate on a fresh session.** Start a new session and ask the agent to list the active contracts and how they will shape the next answer. If it misses them, shorten the file and make the active list more explicit.
+7. **Validate on a fresh session.** Start a new session and ask the agent to list the active contracts and how they will shape the next answer. If it misses them, shorten the file and make the active list more explicit.
 
 ## Sub-mode: `--anchors-only`
 
@@ -60,12 +62,13 @@ For projects that want only a bare anchor list (the former onboarding behavior):
 - `references/agent-support.md` — agent loading rules and portability.
 - `references/anchor-selection.md` — category prompts and conflict groups (for `--anchors-only`).
 - `scripts/install.sh` — idempotent block injection with multi-agent file detection.
+- `scripts/resolve-contracts.py` — expands the selection with each contract's `requires`, dependencies first.
 - `scripts/refresh-contracts.sh` — refresh the bundled snapshot.
 - `scripts/claude-session-start.sh` — SessionStart hook for non-native targets only.
 
 ## Requirements
 
-- **Runtime:** python3 (used by `install.sh` for settings/JSON manipulation and path resolution); `curl` for `refresh-contracts.sh`.
+- **Runtime:** python3 (used by `install.sh` for settings/JSON manipulation and path resolution, and by `resolve-contracts.py`); `curl` for `refresh-contracts.sh`.
 - **Platform:** Unix/macOS (WSL on Windows).
 
 ## Maintenance

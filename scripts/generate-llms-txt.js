@@ -12,6 +12,7 @@ const crypto = require('crypto')
 const fs = require('fs')
 const path = require('path')
 const { packBundles, withPageLink } = require('./anchor-bundles.js')
+const { loadContractCatalog } = require('./lib/contract-requires.js')
 
 const ROOT = path.join(__dirname, '..')
 
@@ -644,7 +645,14 @@ function generateLlmsIndexTxt(bundles) {
 
 // ─── Generate website/public/llms.txt ───────────────────────────────────────
 
-function generateLlmsTxt() {
+// "*Requires: …*" under a contract that builds on others (#896), or nothing.
+function contractRequiresLines(contractCatalog, contract) {
+  const required = contractCatalog.required(contract.id)
+  if (required.length === 0) return []
+  return [`*Requires: ${required.map((r) => r.title).join(', ')}*`, '']
+}
+
+function generateLlmsTxt(contractCatalog) {
   const totalAnchors = categories.reduce((n, c) => n + c.anchors.length, 0)
   const lines = [
     '# Semantic Anchors — Complete Reference',
@@ -705,9 +713,8 @@ function generateLlmsTxt() {
 
   // ─── Append Semantic Contracts ──────────────────────────────────────────────
 
-  const contractsPath = path.join(ROOT, 'website/public/data/contracts.json')
-  try {
-    const contracts = JSON.parse(fs.readFileSync(contractsPath, 'utf-8'))
+  if (contractCatalog) {
+    const { contracts } = contractCatalog
     if (contracts.length > 0) {
       lines.push('')
       lines.push('# Semantic Contracts')
@@ -727,6 +734,7 @@ function generateLlmsTxt() {
         lines.push('')
         lines.push(contract.template)
         lines.push('')
+        lines.push(...contractRequiresLines(contractCatalog, contract))
         if (contract.anchors && contract.anchors.length > 0) {
           lines.push(`*Referenced anchors: ${contract.anchors.join(', ')}*`)
           lines.push('')
@@ -736,8 +744,6 @@ function generateLlmsTxt() {
       lines.push('---')
       console.warn(`  Including ${contracts.length} Semantic Contracts in llms.txt`)
     }
-  } catch {
-    // contracts.json not found — skip
   }
 
   const output = lines.join('\n')
@@ -748,15 +754,12 @@ function generateLlmsTxt() {
 
 // ─── Generate website/public/contracts.txt (contracts-only, LLM-readable) ────
 
-function generateContractsTxt() {
-  const contractsPath = path.join(ROOT, 'website/public/data/contracts.json')
-  let contracts
-  try {
-    contracts = JSON.parse(fs.readFileSync(contractsPath, 'utf-8'))
-  } catch {
+function generateContractsTxt(contractCatalog) {
+  if (!contractCatalog) {
     console.warn('  contracts.json not found — skipping contracts.txt')
     return
   }
+  const { contracts } = contractCatalog
   if (!Array.isArray(contracts) || contracts.length === 0) return
 
   const lines = [
@@ -781,6 +784,7 @@ function generateContractsTxt() {
     }
     lines.push(contract.template)
     lines.push('')
+    lines.push(...contractRequiresLines(contractCatalog, contract))
     if (contract.anchors && contract.anchors.length > 0) {
       lines.push(`*Referenced anchors: ${contract.anchors.join(', ')}*`)
       lines.push('')
@@ -864,9 +868,25 @@ function generateAllAnchorsWebAdoc() {
 
 // ─── Main ────────────────────────────────────────────────────────────────────
 
-generateAllAnchorsAdoc()
-generateAllAnchorsWebAdoc()
-generateLlmsTxt()
-generateAnchorMarkdown()
-generateLlmsIndexTxt(generateAnchorBundles())
-generateContractsTxt()
+// The contract catalog is validated once (unknown required id or cycle fails
+// the build, #896); a missing contracts.json only skips the contract parts.
+async function loadContracts() {
+  const contractsPath = path.join(ROOT, 'website/public/data/contracts.json')
+  if (!fs.existsSync(contractsPath)) return null
+  return loadContractCatalog(contractsPath)
+}
+
+async function main() {
+  const contractCatalog = await loadContracts()
+  generateAllAnchorsAdoc()
+  generateAllAnchorsWebAdoc()
+  generateLlmsTxt(contractCatalog)
+  generateAnchorMarkdown()
+  generateLlmsIndexTxt(generateAnchorBundles())
+  generateContractsTxt(contractCatalog)
+}
+
+main().catch((err) => {
+  console.error(`ERROR: ${err.message}`)
+  process.exit(1)
+})

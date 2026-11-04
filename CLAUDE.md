@@ -661,6 +661,17 @@ Verify the documentation against the code, in both directions.
 
 Maintain the documentation as Karpathy's LLM Wiki, with three changes: the arc42 chapters, ADRs and glossary are the wiki's pages, written in AsciiDoc and built by docToolchain; every statement cites its source (`file:line`, ADR, issue, or raw file with timestamp), and what no source supports becomes an issue naming the role that can answer it; the agent maintains the wiki, but changes reach the documentation only through pull-request review.
 
+## Second Brain Maintenance
+
+Maintain a second brain in the current working folder as Building a Second Brain (Tiago Forte): the P.A.R.A. Method is the folder structure, Karpathy's LLM Wiki is the engine inside Resources. Never read or write a second brain outside this folder. Where the methods disagree, these rules decide:
+- Capture on request only. Keep raw sources unchanged in `raw/`. Capture only what connects to an active Project, an Area or one of my 12 Favorite Problems; when unsure, ask instead of filing.
+- Organize: file by actionability, never by topic. Topic pages exist only under Resources, compiled as an LLM Wiki with `index.md` and `log.md`.
+- Distill: compile Resources pages at ingest. Distill project notes just in time with Progressive Summarization layers; never overwrite my own wording.
+- Express: when I start a deliverable, gather an Archipelago of Ideas in its project folder before drafting. File my finished output back there as Intermediate Packets.
+- Move, never delete: when a project ends, propose what goes to Resources and what goes to Archive, and wait for my confirmation.
+- End every session with a Hemingway Bridge in the project's notes.
+- Lint weekly: contradictions, stale claims, orphan pages, projects without activity.
+
 ## Concise Response (TLDR)
 
 Responses lead with the conclusion first (BLUF). Keep to essential points. No filler, no preamble. Use short sentences, active voice, and no unnecessary words (Strunk & White).
