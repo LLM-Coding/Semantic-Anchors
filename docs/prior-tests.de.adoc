@@ -842,3 +842,84 @@ Die Einleitung zu UX & Visual Design rät, dem Modell für ein Design-System ohn
 |===
 
 Die erste Gliederung von #867 erwartete Brei. Die Modelle lösten den Konflikt stattdessen auf: bei zwei Stilen nach Rollen, bei zwei Design-Systemen nach Plattformen. Der Artikel rät deshalb, zu sagen, wie sich zwei Anker die Arbeit teilen, weil sonst das Modell entscheidet.
+
+== Lauf vom 04.11.2026, Tiago Forte: CODE und Building a Second Brain
+
+[cols="1,3"]
+|===
+|Kandidaten |CODE Method (Capture, Organize, Distill, Express) und Building a Second Brain (BASB), beide von Tiago Forte (https://github.com/LLM-Coding/Semantic-Anchors/issues/892[#892]). Der Katalog enthält bereits P.A.R.A. Method (Forte), Hemingway Bridge, GTD und Karpathy's LLM Wiki; die entscheidende Frage war daher die Redundanz: Ändert das Nennen von CODE oder BASB die Ausgabe über das hinaus, was das Nennen von PARA schon bewirkt?
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark). Die aufgelösten Bezeichner stammen aus dem Feld `modelUsage` jeder Antwort
+|Verfahren |`anchor-prior-test` v1.1
+|Läufe |P1 zweimal je Begriff und Stufe für „the CODE method by Tiago Forte“, „Capture, Organize, Distill, Express (CODE)“ und „Building a Second Brain (Tiago Forte)“. P2 einmal je Stufe für das bloße „CODE method“, „Second Brain“ und „BASB“. P4 einmal je Stufe für CODE und BASB. Zwei Aktionsaufgaben, jede Bedingung zweimal je Stufe. Aufgabe A lief mit sechs Bedingungen: ohne Anker (Baseline), „Use the PARA method.“, „Use the CODE method by Tiago Forte.“, „Follow Building a Second Brain (Tiago Forte).“ sowie die bloßen Formen „Use the CODE method.“ und „Set up a second brain.“ Aufgabe B lief mit den ersten vier. 93 Proben plus drei Reinraum-Prüfungen, 1,49 USD (Haiku 0,03, Sonnet 0,45, Opus 1,00)
+|Reinraum |`claude -p --strict-mcp-config --setting-sources "" --tools "" --output-format json` mit `env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN -u CLAUDE_ADDITIONAL_DIRECTORIES -u CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` und `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1`. Jede Probe lief in einem eigenen, neu angelegten, leeren Git-Repository im Session-Scratchpad, außerhalb des Repositorys; das Verzeichnis wurde nach der Probe gelöscht. Wie in den Läufen vom 30.10.2026 fand die Probe nach eigenen Anweisungen nur Harness-Hinweise (Commit-Attribution, Konto, Umgebungsblock). Alle drei Stufen bestätigten, dass weder `CLAUDE.md` noch Projektdateien noch Memory geladen waren. Jede Probe endete nach einem Durchgang ohne Tool-Aufruf
+|Auswertung |Merkmale im Antworttext gezählt, ohne die `SELF:`-Zeile: PARA (alle vier Kategorien genannt), CODE (Capture, Distill und Express alle genannt), Progressive Summarization (beim Namen), schichtweises Markieren, Intermediate Packets, „resonance“, Hemingway Bridge, Archipelago of Ideas, „12 favorite problems“, Forte oder „second brain“ genannt
+|Kritik-Recherche |04.11.2026, Englisch. Gefunden und abgerufen: Christian Tietze, „The Collector's Fallacy“ (zettelkasten.de, 20.01.2014; nennt Forte nicht, es ist die allgemeine Kritik); Nick Milo, „The Potential Side Effects of Progressive Summarization“ (Medium, 13.08.2020); „Building a Second Brain Gives You Permission to Fall Into Collector's Fallacy“ (curtismchale.ca, 30.07.2022; die abgerufene Seite nennt keinen Autor); Sascha Fast, „How to Increase Knowledge Productivity: Combine the Zettelkasten Method and Building a Second Brain“ (zettelkasten.de, 26.06.2023). Publikationsdaten: Bookshop.org führt das Buch als Atria Books, 14. Juni 2022, ISBN 9781982167387. Das Imprint „Simon Element“ ließ sich nicht bestätigen. Kurs: Fortes „Building a Second Brain: Frequently Asked Questions“ (Praxis-Blog auf Medium) ist auf den 1. April 2017 datiert, den Kurs gab es also spätestens da; keine abgerufene Seite nennt das Startjahr. Nicht erreichbar: fortelabs.com (nicht auf der Allowlist)
+|===
+
+=== Die Aufgaben
+
+[cols="1,4"]
+|===
+|Aufgabe |Prompt (gekürzt)
+
+|A |Eine Backend-Entwicklerin hat 400 Lesezeichen, Meeting-Notizen in Google Docs, lose Ideendateien, Kindle-Markierungen, markierte Slack-Nachrichten und Screenshots von Architekturdiagrammen. In sechs Wochen hält sie einen internen 30-Minuten-Vortrag über den Umstieg ihres Teams auf eine ereignisgetriebene Architektur, und das Material steckt irgendwo im Stapel. „Tell me concretely what to do with all this, both for the talk and from now on.“ Unter 400 Wörtern
+|B |„I just finished a long technical book on distributed systems and have about 120 Kindle highlights. I want them to be useful to me later. What should I do with them?“ Unter 300 Wörtern
+|===
+
+Keine der Aufgaben nutzt capture, organize, distill, express, second brain, PARA, Notizsystem oder Wissensmanagement. Beide liegen in Fortes Domäne: Aufgabe A ist sein eigenes Vorzeigeszenario (verstreutes Material fließt in ein Ergebnis), Aufgabe B der Fall der Lesemarkierungen, aus dem Progressive Summarization stammt.
+
+=== Erkennung, Name und Zuschreibung
+
+[cols="2,1,1,1"]
+|===
+|Probe |Haiku |Sonnet |Opus
+
+|P1 „the CODE method by Tiago Forte“ |reichhaltig ×2 (`reaching=yes` ×2) |reichhaltig ×2 |reichhaltig ×2
+|P1 „Capture, Organize, Distill, Express (CODE)“ |reichhaltig ×2 (`reaching=yes` ×2) |reichhaltig ×2 |reichhaltig ×2
+|P1 „Building a Second Brain (Tiago Forte)“ |reichhaltig ×2 (`reaching=yes` ×1) |reichhaltig ×2 |reichhaltig ×2
+|P2 bloßes „CODE method“ |PKM, Forte |PKM, Forte; nennt andere Akronyme |PKM, Forte
+|P2 bloßes „Second Brain“ |PKM, Forte |PKM; listet Fortes Frameworks |PKM, Forte
+|P2 bloßes „BASB“ |Building a Second Brain |Building a Second Brain |Building a Second Brain
+|P4 CODE |Forte, hoch |Forte, hoch |Forte, hoch
+|P4 BASB |Forte, hoch; Buch „March 2022“ (falsch) |Forte, hoch; Juni 2022, Atria „less sure“ |Forte, hoch; Juni 2022, Atria; Kurs ca. 2017
+|===
+
+Alle 18 P1-Läufe nennen PARA, Progressive Summarization und Intermediate Packets. Sonnet und Opus nennen zusätzlich Resonanz, Divergenz und Konvergenz sowie Evernote. Opus ergänzt in allen sechs Läufen Hemingway Bridge, Archipelago of Ideas und „12 favorite problems“. Haiku meldete in fünf von sechs Läufen `reaching=yes` über korrekten, konkreten Antworten; die Urteile werden daher aus dem Text gewertet. Die Erkennungsantworten zu CODE und BASB schöpfen aus einem Cluster: Jede CODE-Antwort erklärt sich über BASB; Opus nennt CODE „the core framework of his 'Building a Second Brain' (BASB) approach“. Das bloße „CODE method“ führt auf allen Stufen zu Forte; Sonnet ergänzt: „The acronym is also used in other fields, so the meaning depends on context.“
+
+=== Aktionsergebnisse (Läufe von sechs, zwei je Stufe)
+
+[cols="2,1,1,1,1,1,1,1,1"]
+|===
+|Bedingung |PARA |CODE |Prog. Summ. |Schichten |Interm. Packets |Resonanz |Hemingway / Archipelago |Forte genannt
+
+|A Baseline |2 (Opus) |0 |0 |1 (Opus) |0 |0 |0 / 0 |0
+|A „Use the PARA method.“ |6 |1 (Opus) |1 (Opus) |1 |0 |0 |0 / 0 |0
+|A „CODE method by Tiago Forte“ |4 (ohne Haiku) |6 |4 (ohne Haiku) |5 |3 |3 |0 / 0 |4
+|A bloßes „CODE method“ |4 (ohne Haiku) |6 |4 (ohne Haiku) |5 |3 |3 |0 / 0 |6
+|A „Building a Second Brain (Tiago Forte)“ |6 |6 |6 |6 |6 |5 |2 / 2 (Opus) |6
+|A bloßes „set up a second brain“ |4 |2 (Opus) |3 |2 |2 (Opus) |2 (Opus) |0 / 0 |4
+|B Baseline |0 |0 |0 |0 |0 |0 |0 / 0 |0
+|B „Use the PARA method.“ |6 |0 |1 (Opus) |1 |0 |0 |0 / 0 |1
+|B „CODE method by Tiago Forte“ |4 (ohne Haiku) |6 |5 |5 |2 (Sonnet) |2 (Opus) |0 / 0 |5
+|B „Building a Second Brain (Tiago Forte)“ |5 |6 |6 |6 |5 |3 |0 / 0 |6
+|===
+
+Was die Baselines schon tun: Alle sechs Baselines von Aufgabe A bauten zuerst eine Gliederung und durchsuchten den Stapel danach -- der Geist der Methode ohne ihre Schritte. Beide Opus-Baselines sortierten nach Handlungsrelevanz in die vier PARA-Kategorien; eine verdichtete in Schichten („Distill in layers. Bold the key passages in what you collected, then write a 3–5 line summary at the top of each note.“). „Building a Second Brain“ nannten sie nur in der `SELF:`-Zeile, nie in der Antwort. Die Baselines von Haiku und Sonnet taten nichts davon. Keine Baseline von Aufgabe B zeigte ein Forte-Merkmal; sie griffen zu atomaren Notizen und Spaced Repetition (sechs von sechs).
+
+=== Redundanz gegenüber PARA
+
+PARA zu nennen erzeugt PARA und hört dort auf: die vier Kategorien in zwölf von zwölf Läufen, CODE einmal, Progressive Summarization zweimal, Intermediate Packets und Resonanz nie; jede Ausnahme ist ein Opus-Lauf. BASB zu nennen erzeugt die ganze Methode: CODE 12 von 12, Progressive Summarization mit Schichten 12 von 12, Intermediate Packets 11 von 12, Resonanz 8 von 12, PARA 11 von 12. Auf Haiku: „Progressive summarization: bold the key sentence in each highlight and each note“ und „Build intermediate packets: short, self-contained notes on single ideas“. Die Hälfte der Methode, die verdichtet und Ergebnisse liefert, trägt der PARA-Anker also nicht; BASB ist durch keinen bestehenden Anker abgedeckt. CODE allein ist auf der schwachen Stufe schwächer: Haiku lieferte in Aufgabe A die vier Schritte, aber nie Progressive Summarization, PARA oder Intermediate Packets, und widersprach einmal der Methode: „Sort by topic, not by source type.“ Auf Sonnet und Opus erreicht CODE den Großteil von BASB.
+
+=== Die zwei Begriffe
+
+[cols="2,1,4"]
+|===
+|Begriff |Urteil |Anmerkung
+
+|Building a Second Brain (Tiago Forte) |★★★ |Auf allen Stufen erkannt und reichhaltig. Als Anweisung lieferte es auf jeder Stufe in beiden Aufgaben den ganzen Stapel. Opus ergänzte die Schicht, die keine andere Bedingung erreichte: „Use the 'Archipelago of Ideas' approach“ und „leave a 'Hemingway bridge': a note on what comes next“. Zuschreibung: Forte, hohe Sicherheit, auf allen Stufen; Buch Juni 2022 auf Sonnet und Opus (bestätigt: Atria Books, 14. Juni 2022); Haiku sagt März 2022. „BASB“ führt auf allen Stufen zur Methode. Das bloße „second brain“ lieferte als Anweisung nur auf Opus die ganze Methode; Sonnet baute ein System nach PARA-Art ohne CODE (2 von 2). Deshalb heißt der Katalogeintrag „Building a Second Brain“, nicht „Second Brain“. Durch P.A.R.A. Method nicht abgedeckt
+|CODE Method (Tiago Forte) |★★★ als Name; kein eigener Eintrag |Bloße und qualifizierte Formen führen auf allen Stufen zu Forte und liefern die vier Schritte in 12 von 12 Läufen. Kein eigener Cluster: Jede Erkennungsantwort erklärt CODE über BASB. Als Anweisung eine echte Teilmenge von BASB, auf Haiku ohne Progressive Summarization, PARA oder Intermediate Packets. Ein eigener Eintrag würde BASB doppeln und schwächer aktivieren. Weg: Kernkonzept und Alias des BASB-Eintrags
+|===
+
+=== Ein Anker, nicht zwei
+
+Ein neuer Eintrag, link:#/anchor/building-a-second-brain[Building a Second Brain (BASB)], Vertreter Tiago Forte. `Also known as:: BASB, CODE Method (Capture, Organize, Distill, Express)`; das bloße „Second Brain“ nur in den Tags. Kernkonzepte: Capture, was anspricht; Organize nach Handlungsrelevanz (Link zu PARA); Distill mit Progressive Summarization; Express mit Intermediate Packets; Archipelago of Ideas; Divergenz/Konvergenz; Hemingway Bridge (Link); 12 Favorite Problems; just-in-time statt just-in-case. `:related: para-method, hemingway-bridge, gtd, karpathys-llm-wiki`. PARA bleibt ein eigener Anker und verlinkt in beide Richtungen. BASB in PARA aufgehen zu lassen, würde die Hierarchie umkehren. Mit dem neuen Eintrag entfiel „Second Brain Organisationssystem“ aus PARAs _Auch bekannt als_.
