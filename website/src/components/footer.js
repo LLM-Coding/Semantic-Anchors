@@ -8,7 +8,7 @@ export function renderFooter(version) {
         <div class="flex flex-col items-center gap-2">
           <div class="flex flex-wrap items-center justify-center gap-4">
             <a
-              href="https://github.com/LLM-Coding/Semantic-Anchors/stargazers"
+              href="https://github.com/LLM-Coding/Semantic-Anchors"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-1 text-sm text-blue-600 dark:text-blue-400 hover:underline transition-colors"
