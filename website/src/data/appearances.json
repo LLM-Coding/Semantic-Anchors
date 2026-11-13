@@ -66,7 +66,7 @@
   {
     "id": "speq",
     "kind": "adoption",
-    "href": "https://github.com/marconae/speq-skill/blob/main/docs/semantic-anchors.md",
+    "href": "https://github.com/exasol-labs/speq-skill/blob/main/docs/semantic-anchors.md",
     "alt": "speq-skill",
     "label": "speq-skill (EN)",
     "titleKey": "footer.speqAlt"
