@@ -1028,3 +1028,115 @@ The Hemingway Bridge, or a note saying where to pick up, appeared in 18 of 18 co
 === Verdict
 
 Passed on all three tiers. Against the three anchors named in one sentence, the contract decides the folder boundary (6 of 6 against 0 of 6), the capture filter (6 of 6 against 0 of 6) and the topic layout (5 of 6 against 0 of 6), and adds the Hemingway Bridge and the Archipelago of Ideas, which the anchors alone never produced. The contract text was adopted as worded in #894, without changes.
+
+== Run 2026-11-14, VOFI (Vollständiger Finanzplan, Grob): rejected
+
+[cols="1,3"]
+|===
+|Candidate |"VOFI – Vollständiger Finanzplan (Heinz Lothar Grob)", proposed in https://github.com/LLM-Coding/Semantic-Anchors/issues/897[#897] for TCO analyses: a complete financial plan with explicit financing and reinvestment that ends in a final value, not a present value. The proposer's source is Grob, _Investitionsrechnung mit vollständigen Finanzplänen_ (Vahlen, 1989)
+|Models |`claude-haiku-5-5`, `claude-sonnet-5-5`, `claude-opus-5-5`, `gpt-4o-mini-2024-07-18`, `gpt-6.1-sol`. Claude identifiers taken from the `modelUsage` field of every response, OpenAI identifiers from the `model` field the API returned. Below, Haiku 5.5 and gpt-4o-mini are "the two small models", the other three "the three larger models"
+|Procedure |`anchor-prior-test` v1.1, with two deviations. The Claude probes ran with `/` as working directory, not `/tmp/anchor-probe`: `/tmp` was off limits for this task, and `/` has no `CLAUDE.md` above it either. The bare-name probe (P2) ran four times per model with a self-report line that leaves out the skill's field `mentioned_investment_appraisal`, so the prompt does not leak the answer, and once as the skill words it
+|Runs |25 probes per model, 125 in total, plus one clean-room check on Haiku. P1 (recognition) twice for the proposed title in English and twice for "Vollständiger Finanzplan nach Grob" in German. P2 five times for the bare "VOFI". P4 (attribution) twice in English and twice in German. P3 (action): two tasks, each twice per model in three conditions: no term, "a VOFI (Vollständiger Finanzplan nach Grob)", and the bare "VOFI". The contract measurement added 16 runs, see below. The 76 Claude runs of the main battery cost USD 1.70 (Haiku 0.04, Sonnet 0.49, Opus 1.16); the OpenAI files record token usage, not cost
+|Clean room |Claude: `claude -p --model <alias> --strict-mcp-config --setting-sources "" --output-format json`, working directory `/`, one turn in all 76 runs, so no tool call. The clean-room check on Haiku reported no `CLAUDE.md` and no contract; it listed harness reminders (commit attribution, environment) and the instructions of the memory system, whose index it had not read. OpenAI: one stateless chat-completions call per probe, no system prompt, default parameters
+|Scoring |By reading the answers. For the TCO task a run counts when it makes the funding explicit and compares final values. For the machine task a run counts when it reaches the correct final value. For the contract a run passes when all four hold: funding explicit, period table balanced, final values compared, nothing discounted
+|Criticism research |Not done for this term. Only the source was checked, on 2026-11-14: the German National Library lists Heinz Lothar Grob, _Investitionsrechnung mit vollständigen Finanzplänen_, München: Vahlen, 1989, 222 pages, a Münster habilitation thesis (https://d-nb.info/891062149); a query for ISBN 3800613530 returns this record. It also holds a 1982 paper by Grob, _Investitionsrechnung auf der Grundlage vollständiger Finanzpläne_, published by a Münster University chair. The book's text was not read
+|===
+
+=== The two tasks
+
+[cols="1,4"]
+|===
+|Task |Prompt (shortened)
+
+|Machine purchase |A machine for EUR 100,000 with a useful life of four years and net inflows of EUR 30,000, 35,000, 40,000 and 30,000. EUR 40,000 of own funds, the rest from a bank loan at 8% that can be repaid at any time; surplus cash earns 3%, which is also the alternative use of the own funds. "Assess this investment and give a recommendation." Correct final value: EUR 68,326, against EUR 45,020 for leaving the own funds at 3%
+|TCO, buy against cloud |"A company needs compute capacity for the next 5 years. Option A: buy servers for EUR 120,000 today, plus EUR 15,000 operating cost per year. Option B: a cloud subscription at EUR 45,000 per year." No interest rate is given. "Compare the total cost of ownership of both options and give a recommendation." This is the proposer's use case
+|===
+
+The machine task states both rates and the funding, so its data already imply the method. The TCO task states none of them: a model produces a financial plan there only if the term makes it do so.
+
+=== Results
+
+Each cell: runs that did what the row says, out of runs made.
+
+[cols="4,1,1,1,1,1"]
+|===
+|Probe |Haiku 5.5 |Sonnet 5.5 |Opus 5.5 |gpt-4o-mini |gpt-6.1-sol
+
+|P2: bare "VOFI" read as investment appraisal |0/5 |5/5 |5/5 |0/5 |5/5
+|P1: long form answered with Grob's method (2 English, 2 German) |0/4, one partial |4/4 |4/4 |0/4 |4/4
+|P4: attributed to Grob |1/4 |4/4 |4/4 |0/4 |3/4
+|Machine task, no term: correct final value |2/2 |2/2 |2/2 |0/2 |2/2
+|Machine task, with term: correct final value |4/4 |4/4 |4/4 |0/4 |4/4
+|TCO, no term: funding explicit, final values compared |0/2 |0/2 |0/2 |0/2 |0/2
+|TCO, with term: funding explicit, final values compared |0/4 |4/4 |4/4 |0/4 |3/4, at 0%
+|TCO, contract block prepended: pass |4/4 |not run |not run |0/4 |not run
+|===
+
+=== Criteria
+
+[cols="2,1,3"]
+|===
+|Criterion |Verdict |Evidence
+
+|Precise |met |One bounded method: a period table with explicit financing and reinvestment that ends in a final value. The three larger models describe it this way in 12 of 12 long-form runs
+|Rich |met on the three larger models |Self-reports on P1: gpt-6.1-sol `rich` in 4 of 4, Sonnet and Opus `rich` in 2 of 4 each and `moderate` in the others. Haiku reports `reaching=yes` in 4 of 4 and describes other things
+|Consistent |not met |The two small models keep the name and deliver a different method in 8 of 8 TCO runs with the term
+|Attributable |met |Grob, Vahlen, 1989, confirmed in the catalogue of the German National Library
+|Prior density |present on the three larger models; the two small ones put another method in its place |Without the term no model built a financial plan for the TCO task (0 of 10). With it, the larger models did in 11 of 12 runs and the small ones in 0 of 8
+|===
+
+*Route: rejected as an anchor.* Recorded under link:#/rejected-proposals[Rejected Proposals], category "Insufficient training-data density".
+
+=== On the three larger models the name produces the financial plan
+
+Without the term, every model sums or discounts the TCO costs. With it, Sonnet and Opus assume a financing rate of 5% or 6%, say so, build a year-by-year table and compare final values, in both forms of the name. Opus: "The task gives no interest rates, and a VOFI needs them." Its target figure is "the final value (Endwert) of the accumulated debt at the end of year 5". At 6% the final debt is EUR 245,143 for buying and EUR 253,669 for the cloud.
+
+gpt-6.1-sol says in all four runs that rates and tax assumptions are missing, and it does not invent a rate: "Because financing rates, taxes and residual values are not specified, the information given does not determine a unique VOFI result." Three runs then build a period plan at 0% that shows the borrowing or equity and each period's balance. The fourth sets every rate to zero and gives totals with a final-value formula: "Under these assumptions, VOFI reduces to the following cash-flow totals". That run has no funding and no period plan, so the cell reads 3/4. With this model the user has to supply the rates.
+
+=== Both small models keep the name and change the method
+
+Haiku shows no financing and computes no final value in any of its four TCO runs with the term. Its two bare-name runs discount to a present value: "VOFI discounts every payment to today, so payments in different years become comparable." And: "VOFI (Vollständiger Finanzplan) compares the payment streams of both options by their present value." That is the present-value calculation the proposer uses VOFI to avoid. Its two long-form runs list and sum the payments and add a present value at 5%: "The VOFI method lists the payments for each year, totals them, and then discounts them to a present value." So the long form changed the answer without producing the method.
+
+gpt-4o-mini sums the nominal costs in three runs, two of them under the VOFI name; the third calls its method total cost of ownership. In the fourth run it sets out to compare the options "using the Present Value of Future Investments (VOFI)" and discounts at an assumed 5%.
+
+This is the silent substitution that the category on the Rejected Proposals page names. It is worse than a term that changes nothing: the reader gets a different method under the right name, and on Haiku the very one that VOFI is set against.
+
+=== On the machine task the term makes no difference
+
+Every model except gpt-4o-mini reached EUR 68,326 with and without the term, because the task's data already imply the method. Sonnet and Opus each named VOFI unprompted in one baseline run. Opus once expanded the acronym as "Visualisierung von Finanzplänen", with the right method and result. gpt-4o-mini never reached the final value in six runs; it reported NPV as its method in four of them.
+
+=== Recognition and attribution
+
+Haiku says it does not recognise the bare term: “I don't recognize "VOFI" with enough confidence to define it.” It does not know the German long form either and reads the surname as the adjective _grob_ (rough): its lists open with "Grobplanung als erster Schritt" and "Grob- vs. Feinplanung". On the proposed title it reports `recognized=yes` and `reaching=yes` in both runs. One run describes "a comprehensive personal financial plan covering income, expenses, savings, assets, and liabilities over time", the other a planning method and software tool associated with Grob, which the table counts as partial.
+
+gpt-4o-mini gives a different expansion in each of its five bare-name runs, without hedging: "Voice Over Financial Infrastructure", "Voice of Fandom Initiative", "Verband der Orts- und Betriebsgemeinschaften für Fische und Fischerei", "Vereinigung für Forderungsmanagement und Inkasso" and "VoteFi". No bare-name run on any model read VOFI as Voice over WiFi, the name collision the scoring had looked for. gpt-6.1-sol added a second meaning in two of its three English runs: "In computational fluid dynamics, VOFI also names a numerical integration library".
+
+Attribution was asked for "the VOFI method (Vollständiger Finanzplan)", so it tests the long form only. Opus names Heinz Lothar Grob and 1989 in four of four runs. Sonnet names "Heinz Grob" in four of four and dates the method 1980 in both German runs. gpt-6.1-sol names Grob in three runs and Karl-Werner Schulte, 1974, in one. Haiku names Grob once and Lutz Kruschwitz three times. gpt-4o-mini gives four different names, each with `confidence=high`: Hermann Simon, Hans-Günter Krampe, Klaus J. Müller and Günter F. H. Lesch.
+
+=== The contract block repairs Haiku and not gpt-4o-mini
+
+The catalog gets no contract for VOFI. A catalog contract composes anchors that are already in the catalog; the contract-proposal template (`.github/ISSUE_TEMPLATE/contract-proposal.yml`) requires that "the constituent anchors already exist in the catalog", and VOFI is not one. A contract in the proposer's own `CLAUDE.md` or `AGENTS.md` has no such limit, because it supplies its own meaning, and the issue carries a block for that purpose. The block spells the method out: one table with a column per period, separate stated rates for borrowing and reinvestment, every period balanced to zero, the final value as the result and no discounting. Where rates are missing, the model is to ask for them, or to state each assumption before the table.
+
+The block was measured on the TCO task, prepended to the unchanged prompt, with four runs per model: two with the bare name and two with the long form.
+
+[cols="2,1,4"]
+|===
+|Model |Pass |What the runs do
+
+|Haiku 5.5 |4/4, up from 0/4 |Every run states a 6% borrowing rate and no equity, so all payments are loan-financed; it builds the year table with interest and borrowing rows and compares final debt: "Final debt at t=5: A = EUR 245,143; B = EUR 253,669."
+|gpt-4o-mini |0/4 |No run discounts, and the result is now labelled "final value". Three runs assume 0% interest and sum the payments without showing any funding; the fourth compounds incorrectly
+|===
+
+A longer second version with numbered steps, the loan-balance formula written out and "never assume 0%" changed neither score in another four runs per model. Haiku passed four of four again. gpt-4o-mini now stated rates and printed every row, but no table balanced, all four final values were wrong and two runs recommended the cloud. The issue therefore carries the first version. The eight Haiku runs cost USD 0.03.
+
+=== What was not tested
+
+* Two model families only. Gemini, Mistral and open-weight models were not measured. Two local Ollama models were tried: `llama3.1` was killed by the runtime, `qwen3:4b` did not answer within four minutes. OpenAI's current small tier was not measured; `gpt-4o-mini` dates from 2024.
+* The contract block ran on the TCO task only, on the two small models, prepended to the prompt. It was not loaded as a system prompt or a `CLAUDE.md`, and it did not run on the three larger models or on the machine task. Every run was one turn, so the block's rule to ask for missing rates was never exercised.
+* Two runs per cell in the action tasks, four per model and version for the contract.
+* The block's content matches what the three larger models say about the method. It was not checked against the book's text.
+* Criticism research was not done.
+
+=== What would reopen the proposal
+
+A current small model that builds the financing and compares final values from the name alone: a later Haiku, or a small model from another vendor.
