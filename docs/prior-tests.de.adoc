@@ -1035,11 +1035,11 @@ Bestanden auf allen drei Stufen. Gegenüber den drei in einem Satz genannten Ank
 |===
 |Kandidat |„VOFI – Vollständiger Finanzplan (Heinz Lothar Grob)“, vorgeschlagen in https://github.com/LLM-Coding/Semantic-Anchors/issues/897[#897] für TCO-Analysen: ein vollständiger Finanzplan mit ausdrücklicher Finanzierung und Wiederanlage, der in einem Endwert mündet statt in einem Barwert. Als Quelle nennt der Vorschlag Grob, _Investitionsrechnung mit vollständigen Finanzplänen_ (Vahlen, 1989)
 |Modelle |`claude-haiku-5-5`, `claude-sonnet-5-5`, `claude-opus-5-5`, `gpt-4o-mini-2024-07-18`, `gpt-6.1-sol`. Die Claude-Bezeichner stammen aus dem Feld `modelUsage` jeder Antwort, die OpenAI-Bezeichner aus dem Feld `model`, das die API zurückgab. Im Folgenden heißen Haiku 5.5 und gpt-4o-mini „die beiden kleinen Modelle“, die übrigen „die drei größeren Modelle“
-|Verfahren |`anchor-prior-test` v1.1, mit zwei Abweichungen. Die Claude-Proben liefen im Arbeitsverzeichnis `/` statt in `/tmp/anchor-probe`. Die Probe auf den bloßen Namen (P2) lief je Modell viermal mit einer Selbstauskunftszeile ohne das erwartete Feld, damit der Prompt die Antwort nicht verrät, und einmal im Wortlaut des Skills
-|Läufe |25 Proben je Modell, zusammen 125, dazu eine Reinraum-Prüfung auf Haiku. P1 (Erkennung) zweimal für den vorgeschlagenen Titel auf Englisch und zweimal für „Vollständiger Finanzplan nach Grob“ auf Deutsch. P2 fünfmal für das bloße „VOFI“. P4 (Zuschreibung) zweimal auf Englisch und zweimal auf Deutsch. Zwei Aktionsaufgaben, jede zweimal je Modell in drei Bedingungen: ohne Begriff, mit „a VOFI (Vollständiger Finanzplan nach Grob)“ und mit dem bloßen „VOFI“. Die Contract-Messung brachte 16 weitere Läufe, siehe unten. Die 76 Claude-Läufe der Hauptbatterie kosteten 1,70 USD (Haiku 0,04, Sonnet 0,49, Opus 1,16); die OpenAI-Dateien halten den Token-Verbrauch fest, nicht die Kosten
+|Verfahren |`anchor-prior-test` v1.1, mit zwei Abweichungen. Die Claude-Proben liefen im Arbeitsverzeichnis `/` statt in `/tmp/anchor-probe`: `/tmp` war für diese Aufgabe gesperrt, und auch über `/` liegt keine `CLAUDE.md`. Die Probe auf den bloßen Namen (P2) lief je Modell viermal mit einer Selbstauskunftszeile ohne das Feld `mentioned_investment_appraisal` des Skills, damit der Prompt die Antwort nicht verrät, und einmal im Wortlaut des Skills
+|Läufe |25 Proben je Modell, zusammen 125, dazu eine Reinraum-Prüfung auf Haiku. P1 (Erkennung) zweimal für den vorgeschlagenen Titel auf Englisch und zweimal für „Vollständiger Finanzplan nach Grob“ auf Deutsch. P2 fünfmal für das bloße „VOFI“. P4 (Zuschreibung) zweimal auf Englisch und zweimal auf Deutsch. P3 (Aktion): zwei Aufgaben, jede zweimal je Modell in drei Bedingungen: ohne Begriff, mit „a VOFI (Vollständiger Finanzplan nach Grob)“ und mit dem bloßen „VOFI“. Die Contract-Messung brachte 16 weitere Läufe, siehe unten. Die 76 Claude-Läufe der Hauptbatterie kosteten 1,70 USD (Haiku 0,04, Sonnet 0,49, Opus 1,16); die OpenAI-Dateien halten den Token-Verbrauch fest, nicht die Kosten
 |Reinraum |Claude: `claude -p --model <alias> --strict-mcp-config --setting-sources "" --output-format json`, Arbeitsverzeichnis `/`, in allen 76 Läufen ein Durchgang, also kein Tool-Aufruf. Die Reinraum-Prüfung auf Haiku meldete weder eine `CLAUDE.md` noch einen Contract; sie nannte Harness-Hinweise (Commit-Attribution, Umgebung) und die Anweisungen des Memory-Systems, dessen Index sie nicht gelesen hatte. OpenAI: je Probe ein zustandsloser Chat-Completions-Aufruf, ohne System-Prompt, mit Standardparametern
 |Auswertung |Durch Lesen der Antworten. Bei der TCO-Aufgabe zählt ein Lauf, wenn er die Finanzierung ausweist und Endwerte vergleicht. Bei der Maschinenaufgabe zählt ein Lauf, wenn er den richtigen Endwert erreicht. Beim Contract besteht ein Lauf, wenn vier Dinge zutreffen: Finanzierung ausgewiesen, Periodentabelle ausgeglichen, Endwerte verglichen, nichts abgezinst
-|Kritik-Recherche |Für diesen Begriff nicht durchgeführt. Geprüft wurde nur die Quelle: Die Deutsche Nationalbibliothek führt Heinz Lothar Grob, _Investitionsrechnung mit vollständigen Finanzplänen_, München: Vahlen, 1989, 222 Seiten, eine Münsteraner Habilitationsschrift (https://d-nb.info/891062149); die Abfrage nach der ISBN 3800613530 liefert diesen Datensatz. Sie führt außerdem einen Aufsatz von Grob aus dem Jahr 1982, _Investitionsrechnung auf der Grundlage vollständiger Finanzpläne_, herausgegeben von einem Lehrstuhl der Universität Münster. Der Text des Buches wurde nicht gelesen. Sekundärquellen schreiben den Grundgedanken Heister (1962) zu; das wurde nicht geprüft
+|Kritik-Recherche |Für diesen Begriff nicht durchgeführt. Geprüft wurde nur die Quelle, am 14.11.2026: Die Deutsche Nationalbibliothek führt Heinz Lothar Grob, _Investitionsrechnung mit vollständigen Finanzplänen_, München: Vahlen, 1989, 222 Seiten, eine Münsteraner Habilitationsschrift (https://d-nb.info/891062149); die Abfrage nach der ISBN 3800613530 liefert diesen Datensatz. Sie führt außerdem einen Aufsatz von Grob aus dem Jahr 1982, _Investitionsrechnung auf der Grundlage vollständiger Finanzpläne_, herausgegeben von einem Lehrstuhl der Universität Münster. Der Text des Buches wurde nicht gelesen
 |===
 
 === Die zwei Aufgaben
@@ -1056,7 +1056,7 @@ Die Maschinenaufgabe nennt beide Zinssätze und die Finanzierung; ihre Daten leg
 
 === Ergebnisse
 
-Jede Zelle: Läufe, die taten, was die Zeile sagt, von allen Läufen.
+Jede Zelle nennt, wie viele der Läufe erfüllten, was die Zeile beschreibt.
 
 [cols="4,1,1,1,1,1"]
 |===
@@ -1082,24 +1082,24 @@ Jede Zelle: Läufe, die taten, was die Zeile sagt, von allen Läufen.
 |Reich |auf den drei größeren Modellen erfüllt |Selbstauskunft in P1: gpt-6.1-sol `rich` in 4 von 4, Sonnet und Opus je `rich` in 2 von 4 und sonst `moderate`. Haiku meldet `reaching=yes` in 4 von 4 und beschreibt anderes
 |Konsistent |nicht erfüllt |Die beiden kleinen Modelle behalten den Namen und liefern in 8 von 8 TCO-Läufen mit Begriff eine andere Methode
 |Zuschreibbar |erfüllt |Grob, Vahlen, 1989, im Katalog der Deutschen Nationalbibliothek bestätigt
-|Prior-Dichte |auf den drei größeren Modellen vorhanden, auf den beiden kleinen ersetzt |Ohne den Begriff baute kein Modell für die TCO-Aufgabe einen Finanzplan (0 von 10). Mit ihm taten es die größeren in 11 von 12 Läufen, die kleinen in 0 von 8
+|Prior-Dichte |auf den drei größeren Modellen vorhanden; die beiden kleinen setzen eine andere Methode an seine Stelle |Ohne den Begriff baute kein Modell für die TCO-Aufgabe einen Finanzplan (0 von 10). Mit ihm taten es die größeren in 11 von 12 Läufen, die kleinen in 0 von 8
 |===
 
-*Route: Ablehnung als Anker.* Vermerkt unter link:#/rejected-proposals[Rejected Proposals], Kategorie „Insufficient training-data density“.
+*Route: Ablehnung als Anker.* Vermerkt unter link:#/rejected-proposals[Rejected Proposals], Kategorie „Unzureichende Trainingsdaten-Dichte“.
 
-=== Auf den drei größeren Modellen genügt der Name
+=== Auf den drei größeren Modellen bringt der Name den Finanzplan hervor
 
-Ohne den Begriff summieren alle Modelle die TCO-Kosten oder zinsen sie ab. Mit ihm nehmen Sonnet und Opus einen Finanzierungszins von 5 % oder 6 % an, sagen das, bauen eine Tabelle Jahr für Jahr und vergleichen Endwerte, und zwar in beiden Namensformen. Opus: „The task gives no interest rates, and a VOFI needs them.“ Als Zielgröße nennt es „the final value (Endwert) of the accumulated debt at the end of year 5“. Bei 6 % beträgt die Endschuld 245.143 EUR für den Kauf und 253.669 EUR für die Cloud.
+Ohne den Begriff summieren alle Modelle die TCO-Kosten oder zinsen sie ab. Mit ihm nehmen Sonnet und Opus einen Finanzierungszins von 5 % oder 6 % an, nennen ihn, stellen eine Jahrestabelle auf und vergleichen Endwerte, und zwar in beiden Namensformen. Opus: „The task gives no interest rates, and a VOFI needs them.“ Als Zielgröße nennt es „the final value (Endwert) of the accumulated debt at the end of year 5“. Bei 6 % beträgt die Endschuld 245.143 EUR für den Kauf und 253.669 EUR für die Cloud.
 
 gpt-6.1-sol stellt in allen vier Läufen fest, dass Zinssätze und Steuerannahmen fehlen, und erfindet keinen Zins: „Because financing rates, taxes and residual values are not specified, the information given does not determine a unique VOFI result.“ Drei Läufe bauen dann einen Periodenplan mit 0 %, der Kredit oder Eigenmittel und den Saldo jeder Periode zeigt. Der vierte setzt alle Zinssätze auf null und liefert Summen samt einer Endwertformel: „Under these assumptions, VOFI reduces to the following cash-flow totals“. Diesem Lauf fehlen Finanzierung und Periodenplan, deshalb steht in der Zelle 3/4. Bei diesem Modell muss der Nutzer die Zinssätze selbst mitgeben.
 
 === Beide kleinen Modelle behalten den Namen und tauschen die Methode
 
-Haiku baut in keinem seiner vier TCO-Läufe mit Begriff eine Finanzierung oder einen Endwert. Die beiden Läufe mit dem bloßen Namen zinsen auf einen Barwert ab: „VOFI discounts every payment to today, so payments in different years become comparable.“ Und: „VOFI (Vollständiger Finanzplan) compares the payment streams of both options by their present value.“ Genau diese Rechnung sollte der VOFI ablösen. Die beiden Läufe mit der Langform listen die Zahlungen auf, summieren sie und hängen einen Barwert zu 5 % an: „The VOFI method lists the payments for each year, totals them, and then discounts them to a present value.“ Die Langform hat also die Antwort verändert, die Methode aber nicht hervorgebracht.
+Haiku weist in keinem seiner vier TCO-Läufe mit Begriff eine Finanzierung aus und berechnet auch keinen Endwert. Die beiden Läufe mit dem bloßen Namen zinsen auf einen Barwert ab: „VOFI discounts every payment to today, so payments in different years become comparable.“ Und: „VOFI (Vollständiger Finanzplan) compares the payment streams of both options by their present value.“ Genau diese Barwertrechnung will der Einreicher mit dem VOFI vermeiden. Die beiden Läufe mit der Langform listen die Zahlungen auf, summieren sie und hängen einen Barwert zu 5 % an: „The VOFI method lists the payments for each year, totals them, and then discounts them to a present value.“ Die Langform hat also die Antwort verändert, die Methode aber nicht hervorgebracht.
 
 gpt-4o-mini summiert in drei Läufen die nominalen Kosten, in zweien davon unter dem Namen VOFI; der dritte nennt seine Methode Total Cost of Ownership. Im vierten Lauf will es die Optionen „using the Present Value of Future Investments (VOFI)“ vergleichen und zinst mit angenommenen 5 % ab.
 
-`CONTRIBUTING.adoc` beschreibt das als stille Substitution. Sie ist schlimmer als ein Begriff, der nichts bewirkt: Der Leser bekommt unter dem richtigen Namen die entgegengesetzte Methode.
+Das ist die stille Ersetzung, die die Kategorie auf der Seite Rejected Proposals nennt. Sie ist schlimmer als ein Begriff, der nichts bewirkt: Der Leser bekommt unter dem richtigen Namen eine andere Methode, bei Haiku ausgerechnet die, von der sich der VOFI absetzt.
 
 === Bei der Maschinenaufgabe ändert der Begriff nichts
 
@@ -1109,13 +1109,13 @@ Alle Modelle außer gpt-4o-mini erreichten 68.326 EUR mit und ohne Begriff, weil
 
 Haiku sagt, dass es den bloßen Begriff nicht kennt: „I don't recognize "VOFI" with enough confidence to define it.“ Auch die deutsche Langform kennt es nicht und liest den Nachnamen als Adjektiv: Seine Listen beginnen mit „Grobplanung als erster Schritt“ und „Grob- vs. Feinplanung“. Beim vorgeschlagenen Titel meldet es in beiden Läufen `recognized=yes` und `reaching=yes`. Ein Lauf beschreibt „a comprehensive personal financial plan covering income, expenses, savings, assets, and liabilities over time“, der andere eine Planungsmethode samt Software-Werkzeug, die er Grob zuordnet; ihn zählt die Tabelle als „teilweise“.
 
-gpt-4o-mini löst das Akronym in jedem seiner fünf Läufe mit dem bloßen Namen anders auf, ohne Vorbehalt: „Voice Over Financial Infrastructure“, „Voice of Fandom Initiative“, „Verband der Orts- und Betriebsgemeinschaften für Fische und Fischerei“, „Vereinigung für Forderungsmanagement und Inkasso“ und „VoteFi“. Kein Lauf mit dem bloßen Namen las VOFI als Voice over WiFi, auf keinem Modell. gpt-6.1-sol nannte in beiden englischen Läufen eine zweite Bedeutung: „In computational fluid dynamics, VOFI also names a numerical integration library“.
+gpt-4o-mini löst das Akronym in jedem seiner fünf Läufe mit dem bloßen Namen anders auf, ohne Vorbehalt: „Voice Over Financial Infrastructure“, „Voice of Fandom Initiative“, „Verband der Orts- und Betriebsgemeinschaften für Fische und Fischerei“, „Vereinigung für Forderungsmanagement und Inkasso“ und „VoteFi“. Kein Lauf mit dem bloßen Namen las VOFI als Voice over WiFi, auf keinem Modell; nach dieser Namenskollision hatte die Auswertung gesucht. gpt-6.1-sol nannte in zwei seiner drei englischen Läufe eine zweite Bedeutung: „In computational fluid dynamics, VOFI also names a numerical integration library“.
 
 Die Zuschreibung fragte nach „the VOFI method (Vollständiger Finanzplan)“, sie prüft also nur die Langform. Opus nennt in vier von vier Läufen Heinz Lothar Grob und 1989. Sonnet nennt in vier von vier „Heinz Grob“ und datiert die Methode in beiden deutschen Läufen auf 1980. gpt-6.1-sol nennt Grob in drei Läufen und einmal Karl-Werner Schulte, 1974. Haiku nennt Grob einmal und Lutz Kruschwitz dreimal. gpt-4o-mini liefert vier verschiedene Namen, jeden mit `confidence=high`: Hermann Simon, Hans-Günter Krampe, Klaus J. Müller und Günter F. H. Lesch.
 
-=== Der Contract-Block repariert Haiku, gpt-4o-mini nicht
+=== Der Contract-Block hilft Haiku, gpt-4o-mini nicht
 
-Der Katalog bekommt keinen Contract für VOFI, denn ein Katalog-Contract setzt Anker zusammen, die schon im Katalog stehen. Stattdessen steht im Issue ein Contract-Block für die eigene `CLAUDE.md` oder `AGENTS.md` des Einreichers. Er schreibt die Methode aus: eine Tabelle mit einer Spalte je Periode, getrennte, genannte Zinssätze für Kredit und Wiederanlage, jede Periode auf null ausgeglichen, der Endwert als Ergebnis, kein Abzinsen, und genannte Annahmen, wo Zinssätze fehlen.
+Der Katalog bekommt keinen Contract für VOFI. Ein Katalog-Contract setzt Anker zusammen, die schon im Katalog stehen; die Vorlage für Contract-Vorschläge (`.github/ISSUE_TEMPLATE/contract-proposal.yml`) verlangt: „The constituent anchors already exist in the catalog“. VOFI ist kein solcher Anker. Für einen Contract in der eigenen `CLAUDE.md` oder `AGENTS.md` des Einreichers gilt diese Grenze nicht, denn er bringt seine Bedeutung selbst mit; dafür steht im Issue ein Block. Er legt die Methode Schritt für Schritt fest: eine Tabelle mit einer Spalte je Periode, getrennt ausgewiesene Zinssätze für Kredit und Wiederanlage, jede Periode auf null ausgeglichen, der Endwert als Ergebnis, kein Abzinsen. Fehlen Zinssätze, soll das Modell nach ihnen fragen oder jede Annahme vor der Tabelle ausweisen.
 
 Gemessen wurde der Block an der TCO-Aufgabe, dem unveränderten Prompt vorangestellt, mit vier Läufen je Modell: zwei mit dem bloßen Namen, zwei mit der Langform.
 
@@ -1123,7 +1123,7 @@ Gemessen wurde der Block an der TCO-Aufgabe, dem unveränderten Prompt vorangest
 |===
 |Modell |Bestanden |Was die Läufe tun
 
-|Haiku 5.5 |4/4, vorher 0/4 |Jeder Lauf nennt 6 % Kreditzins und 0 % Eigenmittel, baut die Jahrestabelle mit Zeilen für Zinsen und Kreditaufnahme und vergleicht die Endschuld: „Final debt at t=5: A = EUR 245,143; B = EUR 253,669.“
+|Haiku 5.5 |4/4, vorher 0/4 |Jeder Lauf nennt 6 % Kreditzins und keine Eigenmittel, finanziert also alles über Kredit; er baut die Jahrestabelle mit Zeilen für Zinsen und Kreditaufnahme und vergleicht die Endschuld: „Final debt at t=5: A = EUR 245,143; B = EUR 253,669.“
 |gpt-4o-mini |0/4 |Kein Lauf zinst ab, und das Ergebnis heißt jetzt „final value“. Drei Läufe nehmen 0 % Zins an und summieren die Zahlungen, ohne eine Finanzierung zu zeigen; der vierte zinst falsch auf
 |===
 
@@ -1137,6 +1137,6 @@ Eine längere zweite Fassung mit nummerierten Schritten, ausgeschriebener Formel
 * Der Inhalt des Blocks deckt sich mit dem, was die drei größeren Modelle über die Methode sagen. Am Text des Buches wurde er nicht geprüft.
 * Eine Kritik-Recherche fand nicht statt.
 
-=== Was den Vorschlag wieder öffnet
+=== Wann der Vorschlag neu geprüft wird
 
 Ein aktuelles kleines Modell, das allein aus dem Namen die Finanzierung aufbaut und Endwerte vergleicht: ein späteres Haiku oder ein kleines Modell eines anderen Anbieters.
