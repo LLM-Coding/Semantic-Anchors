@@ -1140,3 +1140,43 @@ Eine längere zweite Fassung mit nummerierten Schritten, ausgeschriebener Formel
 === Wann der Vorschlag neu geprüft wird
 
 Ein aktuelles kleines Modell, das allein aus dem Namen die Finanzierung aufbaut und Endwerte vergleicht: ein späteres Haiku oder ein kleines Modell eines anderen Anbieters.
+
+== Lauf vom 23.11.2026, One-Way Door / Two-Way Door Decisions
+
+[cols="1,3"]
+|===
+|Kandidat |One-Way Door / Two-Way Door Decisions, Jeff Bezos zugeschrieben (https://github.com/LLM-Coding/Semantic-Anchors/issues/906[#906]). Vorgeschlagener Gebrauch: im Pull Request angeben, ob sich eine Änderung zurücknehmen lässt
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark)
+|Verfahren |`anchor-prior-test` v1.1; P2 wiederholt mit v1.2, das nach Varianten fragt
+|Läufe |P1 und P3 zweimal je Stufe, P2 und P4 einmal je Stufe. P3 wurde mit neutralem System-Prompt (`You are a helpful assistant.`) wiederholt, weil der Standard-System-Prompt von Claude Code selbst von Umkehrbarkeit spricht und im ersten Durchgang geladen war. P2 mit v1.2: neutraler System-Prompt, zwei Läufe je Stufe. Aktionstest: 12 Läufe mit dem Begriff und 12 ohne, über beide Durchgänge
+|Nachweis |Den Lauf hat der Maintainer durchgeführt und im Issue berichtet; dieser Eintrag ist aus https://github.com/LLM-Coding/Semantic-Anchors/issues/906[den beiden Ergebnis-Kommentaren zu #906] übertragen. Die Rohantworten liegen nicht im Repository
+|Kritik-Recherche |23.11.2026, Englisch. Gefunden und abgerufen: Bezos, Aktionärsbriefe 2015 und 2016 (sec.gov, EX-99.1); Daniel Slater, „Elements of Amazon's Day 1 Culture“ (AWS Executive Insights); AWS Well-Architected Framework, „The review process“; Saeed Habibi, „Reversibility Decays“ (DEV Community, 3. Februar, kein Jahr auf der Seite); Ozan Varol (21.05.2019); Shane Parrish, Farnam Street (23.04.2018); Trésor Bireke, thoughtbot (10.05.2024); Chris Kennelly, Abseil-Tipp #87 (16.10.2024); Martin Fowler, „Who Needs an Architect?“ (IEEE Software, 2003). Die Seiten wurden über ein Abruf-Werkzeug gelesen, das Zitate in kurzen Abschnitten liefert; die längeren Bezos-Zitate sind zusammengefügte Abschnitte. Nicht gefunden: eine wissenschaftliche Kritik der Zweiteilung; eine Verwendung der Tür-Metapher vor dem Brief 2015. Nicht abgerufen: die Fassungen der Briefe auf aboutamazon.com
+|===
+
+=== Ergebnis: ★★★, Weg: Anchor
+
+[cols="1,1,3"]
+|===
+|Kriterium |Ergebnis |Beleg
+
+|Precise |erfüllt |P2: Das bloße „one-way door“ meint auf allen drei Stufen unternehmerisches Entscheiden
+|Rich |erfüllt |P1: `richness=rich` in sechs von sechs Läufen; Haiku nennt Type 1 und Type 2, Realoptionen und gestufte Festlegung
+|Consistent |erfüllt |P1 und P3 stimmen über die Stufen überein
+|Attributable |erfüllt |P4: Jeff Bezos, Aktionärsbrief 2015, auf allen drei Stufen; Konfidenz hoch, bei Sonnet mittel
+|===
+
+P2 mit v1.2 ergab in sechs von sechs Läufen weiter unternehmerisches Entscheiden als vorherrschendes Feld. Die genannten Varianten sind Synonyme (Type 1 / Type 2), Anwendungen (Softwarearchitektur, Migrationen) oder die wörtliche Tür. Keine verlangt ein anderes Ergebnis; der Name braucht daher keinen Zusatz.
+
+=== Der Aktionstest: Der Begriff bringt das API-Feld und nimmt die Kontrastprüfung
+
+Die Aufgabe nannte vier Änderungen an einem Online-Shop: eine Hilfsfunktion umbenennen, eine Produktionsspalte löschen, ein öffentliches API-Feld hinzufügen, eine Button-Farbe ändern.
+
+* Mit dem Begriff hielten 12 von 12 Läufen fest, dass das API-Feld nach der Veröffentlichung schwer zurückzunehmen ist. Ohne ihn: Opus vier von vier, Haiku und Sonnet keiner von acht. Haiku mit dem Begriff: „Once clients depend on it, its name and type are effectively locked.“
+* Alle Läufe hielten die gelöschte Spalte für die riskante Änderung, mit und ohne Begriff.
+* Der Begriff verengt zugleich den Blick. Bei der Button-Farbe nannten Haiku und Sonnet Kontrast oder Barrierefreiheit in acht von acht Läufen ohne den Begriff und in keinem von acht mit ihm. Der Anchor sagt das in seinem Abschnitt „Aktueller Stand“.
+
+=== Was nicht getestet wurde
+
+* Eine Aufgabe. Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.
+* Haiku meldete `reaching=yes` in zwei von zwei P1-Läufen; seine Listen waren konkret, das ist daher festgehalten, nicht geklärt.
+* Die Zuschreibung stammt von den Modellen. Der Brief 2015 wurde am 23.11.2026 für den Anchor abgerufen und enthält die Passage; siehe Kritik-Recherche oben.
