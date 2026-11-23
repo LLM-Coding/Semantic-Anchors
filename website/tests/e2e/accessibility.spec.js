@@ -132,7 +132,7 @@ test.describe('Accessibility (axe)', () => {
     await expect(page.locator('#doc-content h1')).toBeVisible()
     await expect(page.locator('#lang-toggle')).toHaveText('EN')
     await expect(page.locator('#lang-toggle')).toHaveAttribute('aria-label', /^EN/)
-    await expect(page.locator('#theme-toggle')).not.toHaveAttribute('aria-label', /^Switch/)
+    await expect(page.locator('#theme-toggle')).toHaveAttribute('aria-label', /modus wechseln$/)
   })
 
   test('German catalog', async ({ page }) => {
