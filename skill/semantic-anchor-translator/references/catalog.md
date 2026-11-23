@@ -666,7 +666,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### The Spectrum of Semantic Anchors
 - **Also known as:** What Qualifies as a Semantic Anchor, anchor quality criteria
 - **Proponents:** Ralf D. Müller (Semantic Anchors project)
-- **Core:** The four criteria a term must meet to work as an anchor — precise, rich, consistent, attributable — with definition depth, not subject matter, as the differentiator; use it to judge whether a candidate term will activate a framework or merely instruct
+- **Core:** The criteria a term must meet to work as an anchor — precise, rich, consistent; attributable if the bare term is ambiguous — with definition depth, not subject matter, as the differentiator; use it to judge whether a candidate term will activate a framework or merely instruct
 
 ### Systemic Consulting (Heidelberg School)
 - **Also known as:** Systemische Beratung, Heidelberg Model

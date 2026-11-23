@@ -82,7 +82,7 @@ Different people using the same semantic anchor will get **similar, predictable 
 
 ## Quality Criteria
 
-Not every term makes a good semantic anchor. We maintain high quality standards:
+Not every term makes a good semantic anchor. Precise, Rich and Consistent are mandatory; Attributable qualifies an ambiguous term:
 
 **Inclusion means precision, not endorsement.** The catalog is a lexicon: an anchor's presence means the term works as a precise pointer to a dense, well-documented concept — not that we recommend the practice. Where a method is contested or its current edition has drifted away from the training-data prior, the anchor says so in a _Criticism_ or _Current Status_ section with named, linked sources.
 
@@ -107,12 +107,12 @@ Different users invoking it get **similar conceptual activation**.
 
 ❌ "Modern testing" (different interpretations)
 
-### Attributable
-Can be **traced to key proponents, publications, or documented standards**.
+### Attributable (qualifier)
+Needed when the bare term is **ambiguous**: a person, publication or standard then pins the meaning. A term that is unambiguous on its own does not need one.
 
-✅ "arc42" (Gernot Starke, Peter Hruschka)
+✅ "ADR according to Nygard" - the name selects one of several ADR formats
 
-❌ "Best practices" (no specific source)
+❌ "ADR" alone, when you mean one specific format
 
 ## What is NOT a Semantic Anchor?
 
@@ -127,7 +127,7 @@ These terms are frequently used but **lack the depth and definition** required f
 | **"TLDR"** | Underspecified instruction with no defined structure or methodology. Just means "be brief" without any framework for how. |
 | **"ELI5"** (Explain Like I'm 5) | Vague target level with no pedagogical framework. What does "5-year-old level" mean technically? No consistent interpretation. |
 | **"Keep it short"** | Pure directive with no conceptual depth. It's an instruction, not a methodology. |
-| **"Best practices"** | Too vague and not attributable. Whose best practices? Based on what research or authority? |
+| **"Best practices"** | Too vague: it names no bounded body of knowledge. Whose best practices, and which ones? |
 | **"Modern approach"** | Ambiguous and inconsistent. "Modern" means different things to different people and changes over time. |
 | **"Make it simple"** | No reference to specific simplification frameworks (unlike KISS principle or Occam's Razor which **are** semantic anchors). |
 
@@ -167,7 +167,7 @@ These terms are frequently used but **lack the depth and definition** required f
 
 ❌ **Bad**: "Best practices"
 
-***Problem***: Not attributable, no specific practices
+***Problem***: No specific practices
 ***Result***: Everyone has different "best practices"
 
 ✅ **Good**: "SOLID Principles"
@@ -6334,7 +6334,7 @@ A good semantic anchor is:
 
 ***Consistent***: Different users invoking it will get similar conceptual activation across contexts
 
-***Attributable***: It can be traced to key proponents, publications, established practices, or documented standards
+***Attributable (if the bare term is ambiguous)***: A person, publication or standard pins the meaning, as in "ADR according to Nygard". An unambiguous term does not need one
 
 Semantic anchors exist on a spectrum from domain-heavy to interaction-heavy:
 

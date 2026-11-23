@@ -20,7 +20,7 @@ reviews:
         - Präzise: Referenziert spezifisches, etabliertes Wissen mit klaren Grenzen
         - Reichhaltig: Aktiviert mehrere verknüpfte Konzepte, nicht nur eine Anweisung
         - Konsistent: Verschiedene Nutzer erhalten ähnliche konzeptuelle Aktivierung
-        - Zuordenbar: Rückverfolgbar zu Proponenten, Publikationen oder Standards
+        - Zuordenbar (nur bei mehrdeutigem Begriff): Person, Publikation oder Standard legt die Bedeutung fest; sonst ist `Community` zulässig
         Pflichtfelder: :categories:, :roles:, :proponents:
         Format: AsciiDoc mit [%collapsible] Block
         Die erste Zeile (`= Titel`) ist der AsciiDoc Level-0-Dokumenttitel

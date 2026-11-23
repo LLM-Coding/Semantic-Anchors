@@ -37,7 +37,7 @@ Der Katalog kennt drei Artefakttypen. Welchen Sie vorschlagen, entscheidet, wohi
 
 == Qualitätskriterien
 
-Wir prüfen jeden Vorschlag anhand dieser vier Kriterien. Sie müssen sie vor dem Vorschlag nicht selbst prüfen:
+Wir prüfen jeden Vorschlag anhand dieser Kriterien. Präzise, Reichhaltig und Konsistent sind Pflicht; Zuordenbar schärft einen mehrdeutigen Begriff. Sie müssen sie vor dem Vorschlag nicht selbst prüfen:
 
 [%collapsible]
 ====
@@ -62,12 +62,12 @@ Verschiedene Benutzer, die den Anker verwenden, sollten *ähnliche konzeptionell
 
 *Schlecht:* "Modernes Testen" - unterschiedliche Interpretationen durch verschiedene Personen
 
-=== ✓ Zuordenbar
-Der Anker kann *zu Schlüsselvertretern, Publikationen oder dokumentierten Standards zurückverfolgt* werden.
+=== ✓ Zuordenbar (schärfend)
+Nötig, wenn der nackte Begriff *mehrdeutig* ist: Eine Person, Publikation oder ein Standard legt dann die Bedeutung fest. Ein Begriff, der für sich eindeutig ist, braucht das nicht.
 
-*Gut:* "Hexagonal Architecture" (Alistair Cockburn, 2005)
+*Gut:* "ADR nach Nygard" - der Name wählt eines von mehreren ADR-Formaten
 
-*Schlecht:* "Best Practices" - keine spezifische Quelle oder Autorität
+*Schlecht:* "ADR" allein, wenn ein bestimmtes Format gemeint ist
 ====
 
 [[testing-anchor]]
@@ -175,7 +175,7 @@ Jeder Anker wird als AsciiDoc-Datei mit Metadaten-Attributen gespeichert:
 
 * `:categories:` - Eine oder mehrere Kategorie-IDs (siehe Website für Liste)
 * `:roles:` - Eine oder mehrere berufliche Rollen, die diesen Anker verwenden
-* `:proponents:` - Schlüsselpersonen, Publikationen oder Standards
+* `:proponents:` - Schlüsselpersonen, Publikationen oder Standards. Hat ein etablierter Fachbegriff keinen einzelnen Urheber (z. B. `sota`, `ssot-principle`), steht hier `Community`. Das ist kein Mangel, solange der nackte Begriff eindeutig ist; ein mehrdeutiger Begriff braucht eine Präzisierung im Namen
 * `:tags:` - Schlüsselwörter für die Suche (optional, aber empfohlen)
 * `:related:` - Verwandte Anker-IDs (optional)
 * `:definition:` - Zwei oder drei Sätze, die „Was ist X?“ für sich allein beantworten, in einer Zeile: was das ganze Konzept ist und von wem es stammt, dann sein Kernmechanismus und Zweck. Nur Fakten, die die Anker-Datei selbst nennt; die deutsche Datei trägt ihre eigene Übersetzung. Sie ist der Antwortblock auf der Anker-Seite, die Quelle der Meta-Description (gekürzt auf 160 Zeichen), die JSON-LD-Beschreibung und das Feld `definition` in `anchors.json`. Pflicht: Die Unit-Tests schlagen für eine Anker-Datei ohne sie fehl
@@ -194,7 +194,7 @@ Dies sind *KEINE* semantischen Anker:
 "TLDR":: Unterspezifizierte Anweisung, keine definierte Struktur
 "ELI5":: Vages Zielniveau, kein pädagogisches Framework
 "Halte es kurz":: Reine Anweisung, keine konzeptionelle Tiefe
-"Best Practices":: Kein spezifischer Wissensbereich, nicht zuordenbar
+"Best Practices":: Kein spezifischer Wissensbereich
 "Moderner Ansatz":: Zu vage, nicht konsistent über Benutzer hinweg
 
 == Kategorien
@@ -338,7 +338,7 @@ Jeder PR muss vor dem Merge alle folgenden Checks bestehen:
 
 Für *neue semantische Anker*:
 
-. Qualitätskriterien erfüllt (Präzise, Reichhaltig, Konsistent, Zuordenbar)
+. Qualitätskriterien erfüllt (Präzise, Reichhaltig, Konsistent; Zuordenbar, falls der nackte Begriff mehrdeutig ist)
 . Alle erforderlichen Metadaten-Attribute vorhanden (`:categories:`, `:roles:`, `:proponents:`, `:tier:`, `:definition:` in EN und DE)
 . AsciiDoc-Format korrekt (`[%collapsible]`-Block, korrekte Attribut-Syntax)
 . Anker mit LLM-Prompt getestet (siehe <<testing-anchor,So testen wir einen Vorschlag>>)

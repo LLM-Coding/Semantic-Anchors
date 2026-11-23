@@ -1,9 +1,9 @@
 ---
 name: anchor-prior-test
-description: Empirically test whether a candidate term qualifies as a semantic anchor by probing how densely it sits in LLM training data — across several model tiers in a clean room — before proposing it. Use when triaging an anchor proposal, deciding anchor vs contract, or vetting a rename. Produces a verdict against the four criteria (Precise, Rich, Consistent, Attributable), a tier rating, and a ready-to-paste proposal or rejection.
+description: Empirically test whether a candidate term qualifies as a semantic anchor by probing how densely it sits in LLM training data — across several model tiers in a clean room — before proposing it. Use when triaging an anchor proposal, deciding anchor vs contract, or vetting a rename. Produces a verdict against the criteria (Precise, Rich, Consistent; Attributable if the bare term is ambiguous), a tier rating, and a ready-to-paste proposal or rejection.
 metadata:
   author: LLM-Coding
-  version: "1.1"
+  version: "1.2"
   source: https://github.com/LLM-Coding/Semantic-Anchors
 license: MIT
 ---

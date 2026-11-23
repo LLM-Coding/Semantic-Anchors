@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-11-23
+
+*Quality criteria -- Attributable is a qualifier:*
+
+* Precise, Rich and Consistent stay mandatory. Attributable is now needed only when the bare term is ambiguous, as in "ADR according to Nygard" -- https://github.com/LLM-Coding/Semantic-Anchors/issues/908[#908]. `:proponents:` stays required; an unambiguous term without a single originator uses `Community`.
+
 == 2026-11-04
 
 *New anchor -- Building a Second Brain (BASB):*

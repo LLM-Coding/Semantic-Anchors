@@ -30,7 +30,7 @@ Tests the term as an *instruction*, not as a quiz. This is what an anchor is act
 > Who created `<term>`, and roughly when?
 > End with a line: `SELF: creator=<name>; confidence=<high/med/low>`
 
-Confirms the *Attributable* criterion and surfaces misattribution (a common failure: the popular name differs from the inventor).
+Run it for every term: it surfaces misattribution. It decides the *Attributable* criterion only when P2 shows that the bare term is ambiguous (a common failure: the popular name differs from the inventor).
 
 ## Optional — Substitution check
 

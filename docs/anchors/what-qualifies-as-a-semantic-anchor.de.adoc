@@ -3,7 +3,7 @@
 :roles: educator, consultant
 :proponents: Ralf D. Müller (Semantic Anchors project)
 :tier: 3
-:definition: Das Spektrum semantischer Anker ist die Definition des Semantic-Anchors-Projekts von Ralf D. Müller, was als semantischer Anker gilt: ein Begriff, der ein reichhaltiges, wohldefiniertes konzeptionelles Framework in den Trainingsdaten eines LLM aktiviert. Ein guter Anker ist präzise, reichhaltig, konsistent und zuordenbar, und Anker reichen von domänenlastig wie arc42 bis interaktionslastig wie der Socratic Method. Begriffe wie TLDR oder ELI5 fallen durch, weil ihnen Definitionstiefe fehlt.
+:definition: Das Spektrum semantischer Anker ist die Definition des Semantic-Anchors-Projekts von Ralf D. Müller, was als semantischer Anker gilt: ein Begriff, der ein reichhaltiges, wohldefiniertes konzeptionelles Framework in den Trainingsdaten eines LLM aktiviert. Ein guter Anker ist präzise, reichhaltig und konsistent, ein mehrdeutiger auch zuordenbar, und Anker reichen von domänenlastig wie arc42 bis interaktionslastig wie der Socratic Method. Begriffe wie TLDR oder ELI5 fallen durch, weil ihnen Definitionstiefe fehlt.
 :tags: semantic anchor, meta, criteria, quality, anchor definition, activation
 
 == Was qualifiziert als semantischer Anker
@@ -18,7 +18,7 @@ Reichhaltig:: Er aktiviert mehrere miteinander verbundene Konzepte, nicht nur ei
 
 Konsistent:: Verschiedene Benutzer, die ihn aufrufen, erhalten ähnliche konzeptionelle Aktivierung über Kontexte hinweg
 
-Zuordenbar:: Er kann auf Schlüsselvertreter, Publikationen, etablierte Praktiken oder dokumentierte Standards zurückgeführt werden
+Zuordenbar (bei mehrdeutigem Begriff):: Eine Person, Publikation oder ein Standard legt die Bedeutung fest, wie in "ADR nach Nygard". Ein eindeutiger Begriff braucht das nicht
 
 Semantische Anker existieren auf einem Spektrum von domänenlastig bis interaktionslastig:
 
