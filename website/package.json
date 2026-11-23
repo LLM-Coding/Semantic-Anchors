@@ -36,7 +36,7 @@
     "vitest": "^4.1.12"
   },
   "dependencies": {
-    "@asciidoctor/core": "^3.0.4",
+    "@asciidoctor/core": "^4.2.1",
     "@tailwindcss/typography": "^0.5.19",
     "echarts": "^6.0.0"
   },
