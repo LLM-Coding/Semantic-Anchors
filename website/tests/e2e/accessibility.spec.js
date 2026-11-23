@@ -57,7 +57,7 @@ async function expectNoViolations(page) {
   return KNOWN_VIOLATIONS.filter((_, idx) => !matched.has(idx))
 }
 
-async function openCatalog(page, path = '/') {
+async function openCatalog(page, path = './') {
   await page.goto(path)
   await page.waitForSelector('.anchor-card', { timeout: 10000 })
 }
