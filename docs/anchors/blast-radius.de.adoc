@@ -1,0 +1,71 @@
+= Blast Radius
+:categories: software-architecture, development-workflow
+:roles: software-architect, devops-engineer, software-developer, qa-engineer, team-lead
+:related: bulkhead, least-privilege, defense-in-depth, circuit-breaker, site-reliability-engineering, one-way-two-way-door-decisions
+:proponents: Community
+:tags: Blast Radius, Explosionsradius, Schadensradius, Scope of Impact, Reichweite des Schadens, Failure Domain, Fehlerisolation, Eindämmung, zellbasierte Architektur, Shuffle Sharding, Canary Release, schrittweises Rollout, Chaos Engineering, Zero Trust, Assume Breach, Pull Request, Merge-Risiko, Änderungsrisiko
+:tier: 2
+:definition: Blast Radius ist ein etablierter Begriff der Software-Zuverlässigkeit und -Sicherheit für das Ausmaß dessen, was betroffen ist, wenn etwas schiefgeht: ein Ausfall, eine Kompromittierung oder eine fehlerhafte Änderung. Der Begriff stammt aus der Sprengtechnik und hat keinen einzelnen Urheber. Er fragt, wer und was dem Schaden ausgesetzt ist, und führt zu Maßnahmen, die ihn eindämmen: Zellen, Bulkheads, getrennte Accounts, Least Privilege und schrittweise Rollouts. Im Pull Request nennt er, wen oder was es trifft, wenn die Änderung falsch ist.
+:prior-test: 2026-11-23
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Blast Radius, das Ausmaß der Auswirkung eines Ausfalls, einer Kompromittierung oder einer Änderung
+
+Auch bekannt als:: Scope of Impact, Impact Radius; die Obergrenze setzt die Failure Domain, also die Grenze der Fehlerisolation
+
+[discrete]
+== *Kernkonzepte*:
+
+Ausmaß, nicht Wahrscheinlichkeit:: Blast Radius beantwortet „Wie weit reicht es, wenn es schiefgeht?", nicht „Wie wahrscheinlich geht es schief?". Eine Änderung kann selten fehlschlagen und trotzdem einen großen Blast Radius haben. Googles _Building Secure and Reliable Systems_ liefert die Arbeitsdefinition: „Controlling the blast radius means compartmentalizing the impact of an event, similar to the way compartments on a ship grant resilience against the whole ship sinking."
+
+Ein Gedanke, mehrere Ursachen:: Dieselbe Frage gilt einem Ausfall (welche Kunden verlieren den Dienst), einer Kompromittierung (was erreicht ein Angreifer mit einem gestohlenen Zugang), einem Deployment (wie viele Hosts bekommen den fehlerhaften Build) und einer Code-Änderung (welche Aufrufer, Dienste und Daten berührt sie).
+
+Failure Domains setzen die Obergrenze:: Eine Failure Domain ist das, was ein Ereignis höchstens erreichen kann, nicht das, was es erreicht: ein Prozess, eine Zelle, eine Availability Zone, ein Account, ein Mandant. Ein Fehler, der auf einen Mandanten beschränkt bleibt, trifft nicht die ganze Zelle um ihn herum. Die kleinste Grenze, die tatsächlich hält, deckelt den Blast Radius. AWS rechnet es für Zellen vor: „If a workload uses 10 cells to service 100 requests, when a failure occurs, 90% of the overall requests would be unaffected by the failure."
+
+Eindämmung in der Architektur:: Bulkheads und zellbasierte Architekturen, Shuffle Sharding und getrennte Accounts je Workload oder Datenbereich halten ein Ereignis in einer Kammer.
+
+Eindämmung in der Sicherheit:: Least Privilege und Segmentierung begrenzen, was eine kompromittierte Identität erreicht. Microsofts Zero-Trust-Leitfaden sagt: Least Privilege „limits the blast radius of a potential breach so that if an account is compromised, the potential damage is limited."
+
+Eindämmung bei Änderungen:: Canary Releases, schrittweise Rollouts und Feature Flags zeigen eine Änderung erst wenigen, dann allen. Microsoft: „You can minimize the potential blast radius of deployment-caused issues by adopting a progressive exposure deployment model." HashiCorp begründet so das Aufteilen des Terraform-State: „it is best to keep the potential blast radius of your operations small."
+
+Eindämmung bei Experimenten:: „Minimize Blast Radius" ist eines der Principles of Chaos Engineering: Wer experimentiert, muss „ensure the fallout from experiments are minimized and contained."
+
+[discrete]
+== *Wann einsetzen*:
+
+* Im Pull Request angeben, wen oder was es trifft, wenn die Änderung falsch ist: welche Dienste, Mandanten, Abnehmer und Daten
+* Eine Änderung an einer gemeinsamen Bibliothek, einer gemeinsamen Konfiguration oder einem Schema mit vielen Abhängigen prüfen
+* Ein Rollout planen: Wie viele Nutzer oder Hosts sehen die Änderung zuerst, und was hält sie auf?
+* Isolation entwerfen: Accounts, Zellen, Mandanten, Queues, Berechtigungen
+* Die Rechte eines Service-Accounts, eines Tokens oder eines KI-Agenten zuschneiden
+* Ein Chaos-Experiment oder eine riskante Migration dimensionieren
+* Festlegen, wie viel Untersuchung oder Review eine Änderung verdient; `chestertons-fence` bemisst seinen Aufwand genauso
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Ein kleiner Diff hat einen kleinen Blast Radius" -- eine einzeilige Änderung an einem gemeinsamen Default kann jeden Abnehmer treffen
+* ❌ „Blast Radius ist dasselbe wie Risiko" -- er ist die Ausmaß-Hälfte des Risikos; die Wahrscheinlichkeit ist eine eigene Frage
+* ❌ „Isolation beseitigt den Blast Radius" -- sie begrenzt ihn, und gemeinsame Komponenten wie Router, Control Planes und globale Konfiguration liegen außerhalb der Grenze
+* ❌ „Kleiner ist immer besser" -- jede weitere Kammer kostet Kapazität und Betrieb
+* ✓ „Er benennt, wer betroffen ist, wenn das schiefgeht" -- zutreffend, und genau diesen Gewinn hat der Prior-Test gemessen
+====
+
+== *Kritik*:
+
+* *Die Metapher ist militärisch, und eine Namensinitiative empfiehlt, sie zu ersetzen.* Die Inclusive Naming Initiative führt „blast-radius" in ihrer Tier-3-Wortliste: „Recommended to replace." Ihre Gründe sind Herkunft und Verständlichkeit: „The term _blast radius_ comes from warcraft. It refers to the extent of damage caused by an explosion." Der Begriff sei zudem „not universally known within the IT community"; vorgeschlagen werden „extent" oder „affected components". https://inclusivenaming.org/word-lists/tier-3/blast-radius/[Inclusive Naming Initiative, „blast-radius"] (Seite ohne Datum).
+* *Ihn zu verkleinern hat einen Preis.* Linhua Tangs Vortrag auf der SREcon24 EMEA trägt den Folientitel „The art of balancing blast radius and cost" und sagt über zellbasierte Architektur: „Definitely NOT for small scale systems". Genannt werden Kosten der Infrastruktur („can you split 100GB cache into 1GB per cell?") und des Betriebs („how to manage one hundred clusters instead of one"). https://usenix.org/system/files/srecon24emea_slides-tang.pdf[Tang, „Blast Radius Reduction for large-scale distributed systems", Folien der SREcon24 EMEA] (2024).
+* *Gemeinsame Komponenten hebeln die Grenze aus.* AWS sagt es in der eigenen Best Practice: „The router layer is a shared component between cells, and therefore cannot follow the same compartmentalization strategy as with cells." https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_fault_isolation_use_bulkhead.html[AWS Well-Architected, REL10-BP03].
+* *Für zwei naheliegende Einwände wurde keine benannte Quelle gefunden:* dass sich der Blast Radius vorab schwer bestimmen lässt und dass der Begriff Ausmaß und Wahrscheinlichkeit vermischt. Das ist eine Lücke unserer Suche, nicht des Diskurses.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Kein Urheber und keine belegte erste Verwendung in der Informatik.* https://en.wikipedia.org/wiki/Blast_radius[Wikipedia] definiert den physikalischen Sinn als „the distance from the source that will be affected when an explosion occurs" und ergänzt: „The term also has usages in computer programming." Weder Wikipedia noch Wiktionary nennt einen Urheber oder datiert den Übergang in die Informatik. Der Katalog führt deshalb `Community` als Proponent und behauptet keine Prägung.
+* *Die Anbieter, die den Begriff verbreitet haben, schreiben im eigenen Text oft „scope of impact".* Die AWS-Best-Practice heißt „Use bulkhead architectures to limit scope of impact", und der Artikel der Amazon Builders' Library über Shuffle Sharding sagt im Text „the scope of impact is reduced by the number of shards", während die Seitenbeschreibung angibt, die Technik diene dazu, „to limit blast radius". https://builder.aws.com/content/3F06NpJ8YeoIGP8VHTw4n81pFn8/workload-isolation-using-shuffle-sharding[„Workload isolation using shuffle-sharding", Amazon Builders' Library] (5. Dezember 2019). Rechne mit beiden Begriffen für denselben Gedanken.
+* *Microsofts Zero-Trust-Wortlaut hat sich verschoben.* Das Adoption Framework führt weiter das Prinzip „Assume breach" und beschreibt es mit „Minimize blast radius and segment access." https://learn.microsoft.com/security/zero-trust/adopt/zero-trust-adoption-overview[Microsoft, „Zero Trust adoption framework overview"] (aktualisiert am 5. Mai 2025). Die aktuelle Übersicht benennt es um in „Assume compromise (previously referred to as assume breach)" und ordnet den Begriff Least Privilege zu: „reducing unnecessary exposure and potential blast radius." https://learn.microsoft.com/security/zero-trust/zero-trust-overview[Microsoft, „Zero Trust overview"] (aktualisiert am 15. November 2026). Der Prior eines Modells enthält am ehesten den älteren Wortlaut.
+* *Code-Review-Werkzeuge verwenden ihn inzwischen für Pull Requests.* CodeRabbit dokumentiert eine Funktion dieses Namens: „Security Blast Radius helps you investigate what a pull request could affect beyond its changed lines." https://docs.coderabbit.ai/security/blast-radius[CodeRabbit, „Blast Radius"]. Qodos Variante „Estimates how broadly a failure caused by the change could affect the codebase or product functionality." https://docs.qodo.ai/code-review/assess-risk-with-blast-radius[Qodo, „Assess risk with blast radius"]; dieselbe Seite sagt, dass eine breitere Funktion „Merge Risk" sie inzwischen ersetzt hat, mit dem Blast Radius als einem ihrer Faktoren. Beides ist Herstellerdokumentation, und keine der Seiten zeigt ein Datum.
+* *Sicherheit und Zuverlässigkeit teilen sich den Begriff, und kleine Modelle neigen zur Sicherheit.* Im Prior-Test vom 23.11.2026 meinte der bloße Begriff auf jeder Stufe Softwarebetrieb oder Sicherheit, und die Sprengtechnik herrschte nicht vor; das schwache Modell neigte zur Cybersicherheit, das mittlere und das starke zu Zuverlässigkeit und Sicherheit. Sag, welches Ereignis du meinst: einen Ausfall, eine Kompromittierung oder eine Änderung.
+* *Der Gewinn ist mäßig, daher Tier 2.* Bei einer Aufgabe über eine gemeinsame Bibliothek, die ihre Standard-Zeitzone für 14 Dienste ändert, waren die Antworten mit dem Begriff nach Reichweite gegliedert und nannten häufiger, wer betroffen ist. Die Risiken selbst wurden auch ohne den Begriff gefunden. Siehe das link:#/prior-tests[Prior-Test-Register].
