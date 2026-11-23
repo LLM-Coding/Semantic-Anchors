@@ -34,7 +34,7 @@ Vier Probentypen, jeder endet auf einer maschinenlesbaren `SELF:`-Zeile, damit s
 
 P1 -- Wiedererkennung und Reichhaltigkeit (entscheidend):: Welche Konzepte verbindest du mit dem Begriff? Misst, ob der Prior existiert und wie vernetzt er ist.
 Das Modell meldet drei Felder selbst, und auf das dritte kommt es an. `recognized` sagt, ob es den Begriff überhaupt kennt. `richness` sagt, wie viele vernetzte Konzepte es hervorgebracht hat. *`reaching` sagt, ob das Modell gegriffen hat* -- ob es aus den Wörtern des Begriffs eine plausible Antwort rekonstruiert, statt ein Konzept abzurufen, das es besitzt. Eine solche Antwort sieht oft gut aus; erkennbar wird sie an generischem Inhalt und fehlenden Einzelheiten, etwa daran, dass weder Urheber noch Fachgebiet genannt werden. Greift die schwache Stufe reproduzierbar ins Ungefähre, ist das der früheste klare Hinweis auf einen dünnen Prior.
-P2 -- Namensambiguität:: Was ist der *nackte*, unqualifizierte Begriff? Landet die Antwort im falschen Fachgebiet, braucht der Katalogname einen Zusatz.
+P2 -- Namensambiguität:: Was ist der *nackte*, unqualifizierte Begriff? Landet die Antwort im falschen Fachgebiet, braucht der Katalogname einen Zusatz. Das gilt auch, wenn mehrere Varianten im selben Fachgebiet unterschiedliche Ergebnisse verlangen ("ADR": Nygard, MADR).
 P3 -- Anker-Aktion (entscheidend):: Löse mit dem Begriff eine kleine konkrete Aufgabe. Das prüft den Begriff als *Anweisung* -- wofür ein Anker eigentlich da ist. Ein Modell kann eine Methode nicht definieren können und ihren Kern trotzdem ausführen.
 P4 -- Attribution:: Wer hat den Begriff geprägt, und wann? Legt Fehlzuschreibungen offen. Über das Kriterium der Zuschreibbarkeit entscheidet P4 nur, wenn P2 den nackten Begriff als mehrdeutig zeigt.
 

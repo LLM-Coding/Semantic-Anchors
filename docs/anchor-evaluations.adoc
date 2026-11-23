@@ -63,7 +63,7 @@ The evaluation translates these into four measurable dimensions.
 |Model treats it as a generic phrase or confuses it with something else.
 
 |*Accuracy*
-|Attributable
+|Precise; Attributable if ambiguous
 |Does the model associate the correct core concepts, proponents, and practices?
 |Model attributes wrong proponents, mixes up related concepts, or hallucinates details.
 

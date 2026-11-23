@@ -9,7 +9,7 @@ Map the probe results to the catalog's four quality criteria, a prior-density ju
 | **Precise** | the term names one bounded body of knowledge | P1 (focused, not scattered) + P2 (unambiguous, or qualified) |
 | **Rich** | it activates many interconnected concepts | P1 (`richness=rich`, long list) |
 | **Consistent** | different users/models get the same activation | P1 + P3 agree across tiers; P2 not split across fields |
-| **Attributable** (qualifier) | only if P2 shows ambiguity: a person, publication or standard pins the meaning; otherwise *not required* | P2 + P4 (`creator` named, `confidence=high`) |
+| **Attributable** (qualifier) | only if P2 shows ambiguity: a person, publication or standard pins the meaning; otherwise *not required* | P2 (`dominant_domain`, `variants`) + P4 (`creator` named, `confidence=high`) or a cited publication / standard |
 
 Add a fifth, decisive judgement:
 

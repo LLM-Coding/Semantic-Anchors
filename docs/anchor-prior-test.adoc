@@ -34,7 +34,7 @@ Four probe types, each ending in a machine-readable `SELF:` line so results can 
 
 P1 — Recognition and richness (decisive):: What concepts do you associate with the term? Measures whether the prior exists and how interconnected it is.
 The model self-reports three fields, and the third is the one to watch. `recognized` says whether it knows the term at all. `richness` says how many interconnected concepts it produced. *`reaching` says whether the model was straining* -- reconstructing a plausible answer from the words in the term rather than recalling a concept it holds. A reaching answer often looks fine; it is recognisable by generic content and missing specifics, such as naming neither the originator nor the field the term comes from. Reaching on the weak tier, reproduced across runs, is the clearest early sign of a thin prior.
-P2 — Name ambiguity:: What is the *bare*, unqualified term? If the dominant domain is the wrong field, the catalog name needs a disambiguator.
+P2 — Name ambiguity:: What is the *bare*, unqualified term? If the dominant domain is the wrong field, or several variants within the field demand different results ("ADR": Nygard, MADR), the catalog name needs a disambiguator.
 P3 — Anchor action (decisive):: Use the term to do a small concrete task. This tests the term as an *instruction*, which is what an anchor is actually for. A model can fail to define a method and still perform its core move.
 P4 — Attribution:: Who created it, and when? Surfaces misattribution. Decides the Attributable criterion only when P2 shows that the bare term is ambiguous.
 
