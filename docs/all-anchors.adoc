@@ -300,6 +300,9 @@ include::anchors/andon.adoc[leveloffset=+2]
 [[bem-methodology]]
 include::anchors/bem-methodology.adoc[leveloffset=+2]
 
+[[blast-radius]]
+include::anchors/blast-radius.adoc[leveloffset=+2]
+
 include::anchors/boy-scout-rule.adoc[leveloffset=+2]
 
 [[chestertons-fence]]
@@ -601,6 +604,8 @@ include::anchors/arc42.adoc[leveloffset=+2]
 
 [[atam]]
 include::anchors/atam.adoc[leveloffset=+2]
+
+include::anchors/blast-radius.adoc[leveloffset=+2]
 
 [[bulkhead]]
 include::anchors/bulkhead.adoc[leveloffset=+2]
