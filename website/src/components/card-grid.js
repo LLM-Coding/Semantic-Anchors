@@ -1,7 +1,8 @@
 import { i18n } from '../i18n.js'
 import { search as performFullTextSearch, isIndexReady } from '../utils/search-index.js'
-import { getCategoryIntroHtml } from '../utils/category-intro.js'
+import { getCategoryIntroHtml, getCategoryGuideHtml } from '../utils/category-intro.js'
 import categoryIntros from '../data/category-intros.json'
+import categoryGuides from '../data/category-guides.json'
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -207,9 +208,14 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
   const categoryName = i18n.t(`categories.${category.id}`) || category.name
   const lang = typeof i18n.currentLang === 'function' ? i18n.currentLang() : 'en'
   const introHtml = getCategoryIntroHtml(categoryIntros, category.id, lang)
-  const intro = introHtml
+  const introP = introHtml
     ? `<p class="category-intro" data-category-intro="${escapeHtml(category.id)}">${introHtml}</p>`
     : ''
+  // A category with a guide shows it next to the intro (#904).
+  const guide = getCategoryGuideHtml(categoryGuides, category.id, lang)
+  const intro = guide
+    ? `<div class="category-intro-row" style="--category-color: ${color}">${introP}${guide}</div>`
+    : introP
 
   return `
     <section class="category-section" id="category-${escapeHtml(category.id)}" data-category="${escapeHtml(category.id)}">
@@ -234,6 +240,10 @@ function renderCategorySection(category, allAnchors, recent = new Set()) {
 export function updateCategoryIntros(lang) {
   document.querySelectorAll('[data-category-intro]').forEach((el) => {
     el.innerHTML = getCategoryIntroHtml(categoryIntros, el.dataset.categoryIntro, lang)
+  })
+  document.querySelectorAll('[data-category-guide]').forEach((el) => {
+    const html = getCategoryGuideHtml(categoryGuides, el.dataset.categoryGuide, lang)
+    if (html) el.outerHTML = html
   })
 }
 

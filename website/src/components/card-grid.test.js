@@ -530,8 +530,28 @@ describe('category intro (#869)', () => {
   it('renders the intro under the category heading with its links', () => {
     const html = renderCardGrid([{ id: 'ux-visual-design', name: 'UX' }], anchors)
     const section = html.slice(html.indexOf('id="category-ux-visual-design"'))
-    expect(section).toMatch(/<\/h2>\s*<p class="category-intro"/)
+    expect(section).toMatch(
+      /<\/h2>\s*<div class="category-intro-row"[^>]*>\s*<p class="category-intro"/
+    )
     expect(section).toContain('href="https://component.gallery/design-systems/"')
+  })
+
+  it('shows the category guide next to the intro, in the category colour (#904)', () => {
+    const html = renderCardGrid([{ id: 'ux-visual-design', name: 'UX' }], anchors)
+    const row = html.slice(html.indexOf('category-intro-row'), html.indexOf('anchor-cards-grid'))
+    expect(row).toContain('style="--category-color: #e8684a"')
+    expect(row).toMatch(
+      /<\/p><a class="category-guide" href="\/Semantic-Anchors\/prompting-ux-design"/
+    )
+  })
+
+  it('renders a plain intro without a row for a category without a guide', () => {
+    const html = renderCardGrid(
+      [{ id: 'testing-quality', name: 'Testing' }],
+      [{ ...anchors[0], categories: ['testing-quality'] }]
+    )
+    expect(html).toMatch(/<\/h2>\s*<p class="category-intro"/)
+    expect(html).not.toContain('category-guide')
   })
 
   it('renders no intro element for a category without one', () => {
@@ -551,6 +571,15 @@ describe('updateCategoryIntros (#869)', () => {
     const p = document.querySelector('[data-category-intro]')
     expect(p.innerHTML).toContain('Bedienelemente')
     expect(p.innerHTML).not.toContain('stale')
+  })
+
+  it('switches the guide callout to the new language (#904)', () => {
+    document.body.innerHTML =
+      '<a class="category-guide" href="/Semantic-Anchors/prompting-ux-design" data-category-guide="ux-visual-design">old</a>'
+    updateCategoryIntros('de')
+    const a = document.querySelector('[data-category-guide]')
+    expect(a.getAttribute('href')).toBe('/Semantic-Anchors/de/prompting-ux-design')
+    expect(a.textContent).toContain('Leitfaden')
   })
 })
 

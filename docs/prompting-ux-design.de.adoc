@@ -72,7 +72,7 @@ Die link:#/style-gallery[Stil-Galerie] zeigt, was ein einzelner Name mit einer g
 
 „Mach den oberen Bereich größer“ kann den Header meinen, die Navigation oder die erste Sektion darunter; der Prompt überlässt die Wahl dem Modell. Seitenbereiche haben feste Namen: das HTML-Element und die Landmark-Rolle, die es trägt. Das https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/[Landmarks-Pattern des APG] nennt acht Rollen, und seine https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/[Seite Landmark Regions] ordnet ihnen die HTML-Elemente zu:
 
-image::/Semantic-Anchors/docs/landmark-regions.svg["Wireframe einer Seite: Header als banner mit Navigation und Suche, main mit einer benannten Sektion als region und einem div ohne Landmark, aside als complementary, Footer als contentinfo mit einer zweiten benannten Navigation",760,640]
+image::/Semantic-Anchors/docs/landmark-regions.de.svg["Wireframe einer Seite: Header als banner mit Navigation und Suche, main mit einer benannten Sektion als region und einem div ohne Landmark, aside als complementary, Footer als contentinfo mit einer zweiten benannten Navigation",760,640]
 
 [cols="1,1,3"]
 |===

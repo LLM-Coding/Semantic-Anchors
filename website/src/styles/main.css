@@ -215,8 +215,36 @@ html {
 
 /* In the SPA the heading carries mb-6; pull the intro up to it. The
    pre-rendered catalog uses a plain h3 and keeps its own spacing. */
-.category-heading + .category-intro {
+.category-heading + .category-intro,
+.category-heading + .category-intro-row {
   @apply -mt-3 mb-6;
+}
+
+/* Intro plus guide callout (#904). The intro keeps its max-w-3xl line
+   length; on wide screens the guide fills the space to its right. */
+.category-intro-row {
+  @apply flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-8;
+}
+
+.category-guide {
+  @apply flex flex-col gap-1 rounded-lg border-l-4 px-4 py-3 no-underline transition-colors lg:max-w-sm lg:shrink-0;
+  border-color: var(--category-color, var(--color-primary));
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+}
+
+.category-guide:hover,
+.category-guide:focus-visible {
+  background-color: var(--color-border);
+}
+
+.category-guide-label {
+  @apply text-xs font-semibold uppercase tracking-wide;
+  color: var(--color-text-secondary);
+}
+
+.category-guide-title {
+  @apply text-sm font-semibold leading-snug;
 }
 
 .category-intro a {

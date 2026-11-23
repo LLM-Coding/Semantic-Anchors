@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Homepage - Card Grid', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
   })
 
   test('should load homepage successfully', async ({ page }) => {
@@ -199,7 +199,7 @@ test.describe('Search away from the home grid (#615)', () => {
 
 test.describe('Theme and Language', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
   })
 
   test('should toggle theme', async ({ page }) => {
@@ -250,7 +250,7 @@ test.describe('Theme and Language', () => {
 
 test.describe('Routing - Documentation Pages', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
   })
 
   test('should navigate to About page', async ({ page }) => {
@@ -342,7 +342,7 @@ test.describe('Routing - Documentation Pages', () => {
 
 test.describe('Responsive Design', () => {
   test('should work on mobile viewport', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
     await page.setViewportSize({ width: 375, height: 667 })
 
     // Page should still be visible (heading is h2 in current layout)
@@ -357,7 +357,7 @@ test.describe('Responsive Design', () => {
   })
 
   test('should work on tablet viewport', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
     await page.setViewportSize({ width: 768, height: 1024 })
 
     await expect(page.locator('h2').first()).toBeVisible()
@@ -369,7 +369,7 @@ test.describe('Responsive Design', () => {
   })
 
   test('should work on desktop viewport', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
     await page.setViewportSize({ width: 1920, height: 1080 })
 
     await expect(page.locator('h2').first()).toBeVisible()
@@ -380,7 +380,7 @@ test.describe('Responsive Design', () => {
 
 test.describe('Accessibility', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
   })
 
   test('should have accessible navigation', async ({ page }) => {
@@ -431,7 +431,7 @@ test.describe('Accessibility', () => {
 
 test.describe('Performance', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
   })
 
   test('should load all required assets', async ({ page }) => {
@@ -466,7 +466,7 @@ test.describe('Performance', () => {
 
 test.describe('Umbrella Anchors', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
   })
 
   test('should show umbrella card with stacked visual', async ({ page }) => {
@@ -529,7 +529,7 @@ test.describe('Category quick-nav', () => {
   for (const width of [768, 1024, 1280]) {
     test(`never scrolls horizontally at ${width}px`, async ({ page }) => {
       await page.setViewportSize({ width, height: 800 })
-      await page.goto('/')
+      await page.goto('./')
       const list = page.locator('.category-nav-list')
       await expect(list).toBeVisible()
       const { scrollWidth, clientWidth } = await list.evaluate((el) => ({
@@ -542,7 +542,7 @@ test.describe('Category quick-nav', () => {
 
   test('fits on one line on a desktop screen', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
-    await page.goto('/')
+    await page.goto('./')
     await expect(page.locator('.category-nav-list')).toBeVisible()
     const tops = await page
       .locator('.category-nav-list > li')
@@ -555,7 +555,7 @@ test.describe('Category quick-nav', () => {
   test('a jump keeps the category heading below the two-row nav', async ({ page }) => {
     // At 900px the chips wrap to two rows, taller than a fixed scroll margin.
     await page.setViewportSize({ width: 900, height: 800 })
-    await page.goto('/')
+    await page.goto('./')
     await expect(page.locator('.category-nav-list')).toBeVisible()
     // Jump instantly, so the check sees the final position, not a frame of
     // the smooth-scroll animation.
@@ -602,9 +602,16 @@ test.describe('Style gallery (#872)', () => {
   })
 
   test('the UX category intro links the gallery in the same tab', async ({ page }) => {
-    await page.goto('/')
+    await page.goto('./')
     const link = page.locator('.category-intro a[href="/Semantic-Anchors/style-gallery"]').first()
     await expect(link).toHaveCount(1)
     await expect(link).not.toHaveAttribute('target', /.+/)
+  })
+
+  test('the UX category shows its prompting guide next to the intro (#904)', async ({ page }) => {
+    await page.goto('./')
+    const guide = page.locator('#category-ux-visual-design .category-guide')
+    await expect(guide).toHaveAttribute('href', '/Semantic-Anchors/prompting-ux-design')
+    await expect(guide).toBeVisible()
   })
 })
