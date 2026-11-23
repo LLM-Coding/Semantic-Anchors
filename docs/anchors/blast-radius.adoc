@@ -1,7 +1,7 @@
 = Blast Radius
 :categories: software-architecture, development-workflow
 :roles: software-architect, devops-engineer, software-developer, qa-engineer, team-lead
-:related: bulkhead, least-privilege, defense-in-depth, circuit-breaker, site-reliability-engineering
+:related: bulkhead, least-privilege, defense-in-depth, circuit-breaker, site-reliability-engineering, one-way-two-way-door-decisions
 :proponents: Community
 :tags: blast radius, scope of impact, failure domain, fault isolation, containment, cell-based architecture, shuffle sharding, canary release, progressive rollout, chaos engineering, zero trust, assume breach, pull request, merge risk, change risk
 :tier: 2

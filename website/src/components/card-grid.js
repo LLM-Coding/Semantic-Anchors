@@ -126,9 +126,9 @@ function countCategoryAnchors(category, allAnchors) {
 
 /**
  * Render the sticky category quick-nav: one jump link per non-empty category,
- * shown as a category icon plus a live anchor count. The category name is the
- * accessible label (title + aria-label) since there is no visible text — the
- * icon itself is decorative (aria-hidden). Links are plain in-page anchors
+ * shown as a category icon plus a live anchor count. The category name is
+ * visually hidden text, so the accessible name is name plus count and contains
+ * the visible text (WCAG 2.5.3); the icon is decorative (aria-hidden). Links are plain in-page anchors
  * (`#category-<id>`) so they work without JavaScript; the count badges are kept
  * in sync with the active search/role filter by applyCardFilters().
  */
@@ -152,10 +152,9 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             data-category-link="${id}"
             title="${escapeHtml(name)}"
             data-i18n-title="categories.${id}"
-            aria-label="${escapeHtml(name)}"
-            data-i18n-aria="categories.${id}"
           >
             <span class="category-nav-icon" aria-hidden="true">${icon}</span>
+            <span class="sr-only" data-i18n="categories.${id}">${escapeHtml(name)}</span>
             <span class="category-nav-count">${count}</span>
           </a>
         </li>`
@@ -173,10 +172,9 @@ function renderCategoryNav(categories, allAnchors, recent = new Set()) {
             aria-pressed="false"
             title="${escapeHtml(i18n.t('nav.recentlyAdded'))}"
             data-i18n-title="nav.recentlyAdded"
-            aria-label="${escapeHtml(i18n.t('nav.recentlyAdded'))}"
-            data-i18n-aria="nav.recentlyAdded"
           >
             <span class="category-nav-icon" aria-hidden="true">\u2728</span>
+            <span class="sr-only" data-i18n="nav.recentlyAdded">${escapeHtml(i18n.t('nav.recentlyAdded'))}</span>
             <span class="category-nav-count">${recent.size}</span>
           </button>
         </li>`

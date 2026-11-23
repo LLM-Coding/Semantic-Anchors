@@ -1141,6 +1141,46 @@ A longer second version with numbered steps, the loan-balance formula written ou
 
 A current small model that builds the financing and compares final values from the name alone: a later Haiku, or a small model from another vendor.
 
+== Run 2026-11-23, One-Way Door / Two-Way Door Decisions
+
+[cols="1,3"]
+|===
+|Candidate |One-Way Door / Two-Way Door Decisions, credited to Jeff Bezos (https://github.com/LLM-Coding/Semantic-Anchors/issues/906[#906]). Proposed use: state in a pull request whether a change can be undone
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong)
+|Procedure |`anchor-prior-test` v1.1; P2 repeated with v1.2, which asks for variants
+|Runs |P1 and P3 twice per tier, P2 and P4 once per tier. P3 was repeated with a neutral system prompt (`You are a helpful assistant.`), because the default Claude Code system prompt itself talks about reversibility and was present in the first pass. P2 with v1.2: neutral system prompt, two runs per tier. Action test: 12 runs with the term and 12 without, across both passes
+|Record |The run was carried out by the maintainer and reported in the issue; this entry is transcribed from https://github.com/LLM-Coding/Semantic-Anchors/issues/906[the two result comments on #906]. The raw answers are not in the repository
+|Criticism research |2026-11-23, English. Found and fetched: Bezos, 2015 and 2016 Letters to Shareholders (sec.gov, EX-99.1); Daniel Slater, "Elements of Amazon's Day 1 Culture" (AWS Executive Insights); AWS Well-Architected Framework, "The review process"; Saeed Habibi, "Reversibility Decays" (DEV Community, 3 February, no year on the page); Ozan Varol (2019-05-21); Shane Parrish, Farnam Street (2018-04-23); Trésor Bireke, thoughtbot (2024-05-10); Chris Kennelly, Abseil tip #87 (2024-10-16); Martin Fowler, "Who Needs an Architect?" (IEEE Software, 2003). The pages were read through a fetch tool that returns quotes in short segments. Every quote in the anchor was checked in a second, independent fetch on 2026-11-23 and found word for word. Not found: an academic critique of the binary; a use of the door metaphor before the 2015 letter. Not fetched: the aboutamazon.com copies of the letters
+|===
+
+=== Result: ★★★, route: anchor
+
+[cols="1,1,3"]
+|===
+|Criterion |Result |Evidence
+
+|Precise |met |P2: the bare "one-way door" is about business decision-making on all three tiers
+|Rich |met |P1: `richness=rich` in six of six runs; Haiku lists Type 1 and Type 2, real options and staged commitment
+|Consistent |met |P1 and P3 agree across tiers
+|Attributable |met |P4: Jeff Bezos, 2015 shareholder letter, on all three tiers; confidence high, medium on Sonnet
+|===
+
+P2 with v1.2 kept business decision-making as the dominant domain in six of six runs. The variants named are synonyms (Type 1 / Type 2), applications (software architecture, migrations) or the literal door. None demands a different result, so the name needs no qualifier.
+
+=== The action test: the term adds the API field and removes the contrast check
+
+The task listed four changes to an online shop: rename a helper, drop a production column, add a public API field, change a button colour.
+
+* With the term, 12 of 12 runs noted that the API field becomes hard to take back once it is published. Without it: Opus four of four, Haiku and Sonnet none of eight. Haiku with the term: "Once clients depend on it, its name and type are effectively locked."
+* All runs treated the dropped column as the risky change, with or without the term.
+* The term also narrows the view. For the button colour, Haiku and Sonnet mentioned contrast or accessibility in eight of eight runs without the term and in none of eight with it. The anchor says so in its Current Status.
+
+=== What was not tested
+
+* One task. Older model generations and other model families were not measured.
+* Haiku reported `reaching=yes` in two of two P1 runs; its lists were specific, so this is recorded, not resolved.
+* The attribution came from the models. The 2015 letter was fetched for the anchor on 2026-11-23 and carries the passage; see Criticism research above.
+
 == Run 2026-11-23, Blast Radius
 
 [cols="1,3"]

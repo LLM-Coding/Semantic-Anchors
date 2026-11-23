@@ -926,7 +926,8 @@
       "least-privilege",
       "defense-in-depth",
       "circuit-breaker",
-      "site-reliability-engineering"
+      "site-reliability-engineering",
+      "one-way-two-way-door-decisions"
     ],
     "proponents": [
       "Community"
@@ -7385,6 +7386,65 @@
     "tier": 2,
     "definition": "OKR (Objectives and Key Results) is a goal-setting framework that Andy Grove originated at Intel as iMBO and John Doerr introduced to Google in 1999 and popularized in \"Measure What Matters\" (2018). Each qualitative, inspirational Objective is paired with typically three to five measurable Key Results. OKRs are usually set quarterly, kept public for alignment, graded from 0 to 1, and decoupled from compensation.",
     "addedAt": "2026-06-26T20:19:59+00:00"
+  },
+  {
+    "id": "one-way-two-way-door-decisions",
+    "title": "One-Way Door / Two-Way Door Decisions",
+    "categories": [
+      "strategic-planning",
+      "development-workflow"
+    ],
+    "roles": [
+      "software-architect",
+      "software-developer",
+      "team-lead",
+      "product-owner",
+      "consultant"
+    ],
+    "related": [
+      "chestertons-fence",
+      "second-order-thinking",
+      "premortem",
+      "adr-according-to-nygard",
+      "blast-radius"
+    ],
+    "proponents": [
+      "Jeff Bezos"
+    ],
+    "tags": [
+      "one-way door",
+      "two-way door",
+      "Type 1 decision",
+      "Type 2 decision",
+      "reversible decision",
+      "irreversible decision",
+      "reversibility",
+      "Bezos",
+      "Amazon",
+      "shareholder letter",
+      "decision velocity",
+      "disagree and commit",
+      "pull request",
+      "merge risk"
+    ],
+    "filePath": "docs/anchors/one-way-two-way-door-decisions.adoc",
+    "tier": 3,
+    "priorTest": "2026-11-23",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "One-Way Door / Two-Way Door Decisions is a distinction from Jeff Bezos's 2015 letter to Amazon shareholders: a one-way door (Type 1) decision is irreversible or nearly so and deserves slow, careful deliberation, while a two-way door (Type 2) decision can be undone and should be made quickly by individuals or small groups. Its purpose is to match the weight of the decision process to how hard the decision is to reverse. In software it is used to mark which changes can be rolled back and which cannot, such as a dropped column or a published API."
   },
   {
     "id": "owasp-asvs",

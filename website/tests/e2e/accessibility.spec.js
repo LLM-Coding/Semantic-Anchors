@@ -127,6 +127,14 @@ test.describe('Accessibility (axe)', () => {
     })
   }
 
+  test('header is German on a first visit to a German URL', async ({ page }) => {
+    await page.goto('/Semantic-Anchors/de/about/')
+    await expect(page.locator('#doc-content h1')).toBeVisible()
+    await expect(page.locator('#lang-toggle')).toHaveText('EN')
+    await expect(page.locator('#lang-toggle')).toHaveAttribute('aria-label', /^EN/)
+    await expect(page.locator('#theme-toggle')).toHaveAttribute('aria-label', /modus wechseln$/)
+  })
+
   test('German catalog', async ({ page }) => {
     await openCatalog(page, '/Semantic-Anchors/de/')
     await expect(page.locator('html')).toHaveAttribute('lang', 'de')

@@ -338,6 +338,9 @@ include::anchors/mental-model-according-to-naur.adoc[leveloffset=+2]
 [[mikado-method]]
 include::anchors/mikado-method.adoc[leveloffset=+2]
 
+[[one-way-two-way-door-decisions]]
+include::anchors/one-way-two-way-door-decisions.adoc[leveloffset=+2]
+
 [[pdca]]
 include::anchors/pdca.adoc[leveloffset=+2]
 
@@ -755,6 +758,8 @@ include::anchors/mvp.adoc[leveloffset=+2]
 
 [[okr]]
 include::anchors/okr.adoc[leveloffset=+2]
+
+include::anchors/one-way-two-way-door-decisions.adoc[leveloffset=+2]
 
 [[pert]]
 include::anchors/pert.adoc[leveloffset=+2]

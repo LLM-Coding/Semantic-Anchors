@@ -1063,6 +1063,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Gerard Endenburg (Sociocracy), Brian Robertson (Holacracy)
 - **Core:** Consensus requires everyone's active "yes"; consent requires only the absence of a paramount, reasoned objection ("good enough for now, safe enough to try"), so objections are argued and integrated rather than vetoed — speeding decisions and avoiding lowest-common-denominator outcomes and groupthink
 
+### One-Way Door / Two-Way Door Decisions
+- **Also known as:** Type 1 / Type 2 decisions, reversible vs. irreversible decisions
+- **Proponents:** Jeff Bezos (2015 Letter to Amazon Shareholders)
+- **Core:** Match the decision process to reversibility — one-way doors (Type 1: irreversible or nearly so) get slow, careful deliberation; two-way doors (Type 2: reversible) are decided quickly by individuals or small groups. In a pull request it marks what cannot be rolled back: dropped data, published APIs, sent messages. Door type is not fixed — reversal cost grows as data and dependants accumulate. A reversibility lens only; it narrows review if used as the sole lens
+
 ## Knowledge Management
 
 ### Dreyfus Model of Skill Acquisition

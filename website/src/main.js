@@ -623,8 +623,6 @@ function bindLanguageToggle() {
       document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach((el) => {
         el.textContent = label
       })
-      applyTranslations()
-      updateThemeIcon()
     })
   })
 
@@ -632,6 +630,10 @@ function bindLanguageToggle() {
 }
 
 function handleLanguageChange() {
+  // The router switches the language on /de/ URLs without the toggle (#922).
+  applyTranslations()
+  updateThemeIcon()
+
   // Keep the toggle label correct for programmatic language switches too
   // (e.g. the router switching to German on a /de/<route> URL).
   const langLabel = i18n.currentLang() === 'en' ? 'DE' : 'EN'

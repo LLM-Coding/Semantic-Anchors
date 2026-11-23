@@ -2918,6 +2918,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: One-Way Door / Two-Way Door Decisions -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/one-way-two-way-door-decisions</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/one-way-two-way-door-decisions</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: OWASP ASVS (Application Security Verification Standard) -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/owasp-asvs</loc>
