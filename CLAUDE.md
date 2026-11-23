@@ -611,6 +611,17 @@ Quality assurance follows three layers:
 - Architecture review using ATAM (scenario-based tradeoff analysis against quality goals)
 - Use a different AI model or fresh session for reviews to avoid blind spots
 
+## Retro
+
+Run a retro after every pull request: look back at the session, the review comments and the failed checks. Improve in small steps (Kaizen).
+
+- For every correction, find the cause with Five Whys, not just the fix
+- Turn each recurring cause into the strongest guard available, in this order (Poka-Yoke): a type or API design that rules the error out, a lint rule or test, a coding standard, a prompt instruction
+- Prove each automated guard: it fails on the old code and passes on the new
+- Remove guards that no longer catch anything or that slow the loop down
+- Propose changes to rules and checks; a human approves them
+- If nothing recurs, change nothing
+
 ## Docs-as-Code
 
 Documentation follows Docs-as-Code according to Ralf D. Müller:
