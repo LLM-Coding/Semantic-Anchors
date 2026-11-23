@@ -153,3 +153,10 @@ jobs:
       - name: Run security audit
         working-directory: ./website
         run: npm audit --audit-level=high
+
+      - name: Run security audit (scripts)
+        working-directory: ./scripts
+        run: npm audit --audit-level=high
+
+      - name: Run security audit (root)
+        run: npm audit --audit-level=high

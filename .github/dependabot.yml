@@ -1,0 +1,32 @@
+# Version updates: grouped, monthly, and not before a release is seven days old,
+# because compromised npm versions are often found within days.
+# Security updates are switched on in the repository settings. They ignore schedule and cooldown.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directories:
+      - /
+      - /scripts
+      - /website
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    groups:
+      npm-minor-patch:
+        applies-to: version-updates
+        update-types: [minor, patch]
+      npm-security:
+        applies-to: security-updates
+        patterns: ["*"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ["*"]
