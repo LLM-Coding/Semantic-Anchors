@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 317 well-defined terms, methodologies, and frameworks
+> 321 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -4054,6 +4054,66 @@ A class should have only one reason to change. Each module or class should be re
 * The definition at https://getbem.com/[getbem.com] and https://bem.info/en/methodology/[bem.info] is stable and still accurate — BEM itself is a finished methodology
 * Mainstream practice has shifted: https://2024.stateofcss.com/en-US/tools/[State of CSS 2024] shows Tailwind CSS "far ahead of other, more traditional competitors", and the survey no longer even tracks naming methodologies as it did in https://2020.stateofcss.com/en-US/technologies/methodologies/[2020]; CSS Modules, CSS-in-JS, and native scoping/nesting/cascade layers solve by platform the global-namespace problem BEM solved by convention
 
+### Blast Radius
+
+***Full Name***: Blast Radius, the extent of impact of a failure, a compromise or a change
+
+***Also known as***: scope of impact, impact radius; its upper bound is set by the failure domain or fault-isolation boundary
+
+[discrete]
+## **Core Concepts**:
+
+***Extent, Not Likelihood***: Blast radius answers "how far does it reach if it goes wrong?", not "how likely is it to go wrong?". A change can be unlikely to fail and still have a large blast radius. Google's _Building Secure and Reliable Systems_ gives the working definition: "Controlling the blast radius means compartmentalizing the impact of an event, similar to the way compartments on a ship grant resilience against the whole ship sinking."
+
+***One Idea, Several Causes***: The same question is asked of a failure (which customers lose service), of a compromise (what an attacker reaches from one stolen credential), of a deployment (how many hosts get the bad build) and of a code change (which callers, services and data it touches).
+
+***Failure Domains Set the Upper Bound***: A failure domain is the most an event can reach, not what it does reach: a process, a cell, an availability zone, an account, a tenant. A fault confined to one tenant does not affect the whole cell around it. The smallest boundary that actually holds caps the blast radius. AWS states the arithmetic for cells: "If a workload uses 10 cells to service 100 requests, when a failure occurs, 90% of the overall requests would be unaffected by the failure."
+
+***Containment in Architecture***: Bulkheads and cell-based architectures, shuffle sharding and separate accounts per workload or data domain keep an event inside one compartment.
+
+***Containment in Security***: Least privilege and segmentation limit what one compromised identity can reach. Microsoft's Zero Trust guidance puts it this way: least privilege "limits the blast radius of a potential breach so that if an account is compromised, the potential damage is limited."
+
+***Containment in Change***: Canary releases, progressive rollouts and feature flags expose a change to a few before all. Microsoft: "You can minimize the potential blast radius of deployment-caused issues by adopting a progressive exposure deployment model." HashiCorp gives the same reason for splitting Terraform state: "it is best to keep the potential blast radius of your operations small."
+
+***Containment in Experiments***: "Minimize Blast Radius" is one of the Principles of Chaos Engineering: the experimenter must "ensure the fallout from experiments are minimized and contained."
+
+[discrete]
+## **When to Use**:
+
+* Stating in a pull request who or what is affected if the change is wrong: which services, tenants, consumers and data
+* Reviewing a change to a shared library, a shared configuration or a schema with many dependants
+* Planning a rollout: how many users or hosts see the change first, and what stops it from spreading
+* Designing isolation: accounts, cells, tenants, queues, permissions
+* Scoping the permissions of a service account, a token or an AI agent
+* Sizing a chaos experiment or a risky migration
+* Setting how much investigation or review a change deserves; `chestertons-fence` scales its effort the same way
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "A small diff has a small blast radius" -- a one-line change to a shared default can reach every consumer
+* ❌ "Blast radius is the same as risk" -- it is the extent half of risk; likelihood is a separate question
+* ❌ "Isolation removes the blast radius" -- it bounds it, and shared components such as routers, control planes and global configuration sit outside the boundary
+* ❌ "Smaller is always better" -- every further compartment costs capacity and operations
+* ✓ "It names who is exposed if this goes wrong" -- accurate, and that is the lift the prior test measured
+
+## **Criticism**:
+
+* **The metaphor is military, and a naming body recommends replacing it.** The Inclusive Naming Initiative lists "blast-radius" in its Tier 3 word list: "Recommended to replace." Its reasons are origin and clarity: "The term _blast radius_ comes from warcraft. It refers to the extent of damage caused by an explosion." It adds that the term "is not universally known within the IT community" and suggests "extent" or "affected components". https://inclusivenaming.org/word-lists/tier-3/blast-radius/[Inclusive Naming Initiative, "blast-radius"] (page undated).
+* **Reducing it has a price.** Linhua Tang's SREcon24 EMEA talk carries the slide title "The art of balancing blast radius and cost" and says of cell-based architecture: "Definitely NOT for small scale systems". The costs named are infrastructure ("can you split 100GB cache into 1GB per cell?") and operations ("how to manage one hundred clusters instead of one"). https://usenix.org/system/files/srecon24emea_slides-tang.pdf[Tang, "Blast Radius Reduction for large-scale distributed systems", SREcon24 EMEA slides] (2024).
+* **Shared components defeat the boundary.** AWS says so in its own best practice: "The router layer is a shared component between cells, and therefore cannot follow the same compartmentalization strategy as with cells." https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_fault_isolation_use_bulkhead.html[AWS Well-Architected, REL10-BP03].
+* **No named source was found for two expected objections:** that the blast radius is hard to know in advance, and that the term blurs extent and likelihood. That is a gap in our search, not in the discourse.
+
+[discrete]
+## **Current Status**:
+
+* **No originator, and no documented first use in computing.** https://en.wikipedia.org/wiki/Blast_radius[Wikipedia] defines the physical sense as "the distance from the source that will be affected when an explosion occurs" and adds: "The term also has usages in computer programming." Neither it nor Wiktionary names a coiner or dates the move into computing. The catalog therefore lists `Community` as proponent and claims no coinage.
+* **The vendors that spread the term often write "scope of impact" in their own text.** The AWS best practice is titled "Use bulkhead architectures to limit scope of impact", and the body of the Amazon Builders' Library article on shuffle sharding says "the scope of impact is reduced by the number of shards", while its page description says the technique serves "to limit blast radius". https://builder.aws.com/content/3F06NpJ8YeoIGP8VHTw4n81pFn8/workload-isolation-using-shuffle-sharding["Workload isolation using shuffle-sharding", Amazon Builders' Library] (5 December 2019). Expect both terms for one idea.
+* **Microsoft's Zero Trust wording has moved.** The adoption framework still lists the principle "Assume breach" and describes it with "Minimize blast radius and segment access." https://learn.microsoft.com/security/zero-trust/adopt/zero-trust-adoption-overview[Microsoft, "Zero Trust adoption framework overview"] (updated 5 May 2025). The current overview renames it "Assume compromise (previously referred to as assume breach)" and places the term under least privilege: "reducing unnecessary exposure and potential blast radius." https://learn.microsoft.com/security/zero-trust/zero-trust-overview[Microsoft, "Zero Trust overview"] (updated 15 November 2026). A model's prior most likely holds the older wording.
+* **Code-review tools now use it for pull requests.** CodeRabbit documents a feature of that name: "Security Blast Radius helps you investigate what a pull request could affect beyond its changed lines." https://docs.coderabbit.ai/security/blast-radius[CodeRabbit, "Blast Radius"]. Qodo's version "Estimates how broadly a failure caused by the change could affect the codebase or product functionality." https://docs.qodo.ai/code-review/assess-risk-with-blast-radius[Qodo, "Assess risk with blast radius"]; the same page says that a broader "Merge Risk" feature has since replaced it, with blast radius as one of its factors. Both are vendor documentation, and neither page shows a date.
+* **Security and reliability share the term, and small models lean to security.** In the prior test of 2026-11-23 the bare term meant software operations or security on every tier, and explosives did not dominate; the weak tier leaned to cybersecurity, the mid and strong tiers to reliability and security. Say which event you mean: a failure, a compromise or a change.
+* **The lift is moderate, hence tier 2.** On a task about a shared library that changes its default time zone for 14 services, answers with the term were organised by reach and more often said who is exposed. The risks themselves were found without the term as well. See the [prior-test register](#/prior-tests).
+
 ### Boy Scout Rule
 
 ***Full Name***: The Boy Scout Rule
@@ -4616,6 +4676,63 @@ A class should have only one reason to change. Each module or class should be re
 
 * TDD, Chicago School
 * TDD, London School
+
+### One-Way Door / Two-Way Door Decisions
+
+***Full Name***: One-way door and two-way door decisions, from Jeff Bezos's 2015 Letter to Shareholders of Amazon.com, Inc.
+
+***Also known as***: Type 1 / Type 2 decisions; reversible and irreversible decisions; one-way and two-way doors
+
+[discrete]
+## **Core Concepts**:
+
+***One-Way Door (Type 1)***: A decision you cannot walk back. Bezos: "Some decisions are consequential and irreversible or nearly irreversible – one-way doors – and these decisions must be made methodically, carefully, slowly, with great deliberation and consultation."
+
+***Two-Way Door (Type 2)***: A decision you can undo. Bezos: "But most decisions aren't like that – they are changeable, reversible – they're two-way doors." If the result is poor, "You can reopen the door and go back through."
+
+***Match the Process to the Door***: The letter argues against "one-size-fits-all" decision making. Type 2 decisions "can and should be made quickly by high judgment individuals or small groups". The heavy process is reserved for Type 1.
+
+***The Named Failure Is Slowness***: Bezos's target is the large organisation that uses "the heavy-weight Type 1 decision-making process on most decisions, including many Type 2 decisions", which ends in "slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention".
+
+***The Opposite Failure Is Fatal***: The letter's footnote covers the reverse error: "Any companies that habitually use the light-weight Type 2 decision-making process to make Type 1 decisions go extinct before they get large."
+
+***Classify First, Then Decide***: The working question comes before the decision itself: can this be undone, by whom, and at what cost? In a code change the usual one-way doors are deleted or migrated data, a published API or event schema, a sent message, and anything a third party starts to depend on.
+
+[discrete]
+## **When to Use**:
+
+* Stating in a pull request whether the change can be undone, so a reviewer can tell reversible changes from irreversible ones
+* Deciding how much review, sign-off and rollout care a change deserves
+* Architecture decisions: record in the ADR which consequences are hard to reverse
+* Delegating: two-way doors go to the person closest to the work, one-way doors get consultation
+* Unblocking a team that deliberates at length over a choice it could simply try and revert
+* Next to the question of who is affected if the change is wrong: reversibility and reach are two separate facts about a change
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Two-way door means the decision needs no thought" -- it means a lighter process, not none
+* ❌ "A decision is one kind of door forever" -- a schema is cheap to change with an empty table and expensive with a full one; reclassify as dependants and data accumulate
+* ❌ "A possible bug makes it a one-way door" -- what counts is whether the effect can be undone, not whether the change can fail
+* ❌ "It is a complete review checklist" -- it sorts changes by reversibility and says nothing about correctness, accessibility or security
+* ✓ "It decides how much process a decision gets" -- accurate, and that is the use Bezos describes
+
+## **Criticism**:
+
+* **Reversibility decays.** Saeed Habibi argues that the door type is not a fixed property: "Two-way doors can become one-way doors while you're not paying attention." His example is a schema decision that "became effectively permanent" once the table had grown, and his replacement question is about cost: "The question isn't whether you can reverse a decision. It's what reversal actually costs." https://dev.to/saeedhbi/reversibility-decays-what-bezoss-framework-misses-about-technical-decisions-4kna[Habibi, "Reversibility Decays: What Bezos's Framework Misses About Technical Decisions", DEV Community] (posted 3 February; the page shows no year).
+* **People misclassify in both directions.** Habibi: "Engineers treat irreversible decisions as reversible, and reversible decisions as irreversible." Ozan Varol names the cautious half of the error: "Most decisions that initially appear to be irreversible are actually two-way doors masquerading as one-way doors." https://ozanvarol.com/what-most-people-miss-about-making-decisions/[Varol, "Most people miss this step when making a decision"] (21 May 2019).
+* **It is not a licence for haste.** Shane Parrish restates the limit that the short form loses: "Reversible decisions are not an excuse to act recklessly or be ill-informed". https://fs.blog/reversible-irreversible-decisions/[Parrish, "Reversible and Irreversible Decisions", Farnam Street] (23 April 2018).
+* **No academic or journal critique of the binary was found.** The named critiques are practitioner articles in English. That is a gap in our search, not in the discourse.
+
+[discrete]
+## **Current Status**:
+
+* **The source is the 2015 shareholder letter, and it says "doors" in the plural.** The passage stands in the section "Invention Machine" of https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm[Bezos's 2015 Letter to Shareholders] as filed with the SEC. The letter speaks of "one-way doors", "two-way doors", "Type 1" and "Type 2" decisions. We found no citable earlier use of the door metaphor by Bezos or Amazon.
+* **Bezos repeated it a year later, tied to decision speed.** The https://www.sec.gov/Archives/edgar/data/1018724/000119312517120198/d373368dex991.htm[2016 letter] says: "Many decisions are reversible, two-way doors. Those decisions can use a light-weight process." The same passage adds the advice to decide with "somewhere around 70% of the information you wish you had" and the phrase "disagree and commit".
+* **Amazon now teaches it as a mental model and applies it to architecture.** AWS calls it "a mental model we call one-way and two-way doors" in https://aws.amazon.com/de/executive-insights/content/how-amazon-defines-and-operationalizes-a-day-1-culture/[Daniel Slater's "Elements of Amazon's Day 1 Culture"]. The https://docs.aws.amazon.com/wellarchitected/latest/framework/the-review-process.html[AWS Well-Architected Framework] asks for reviews "early on in the design phase to avoid one-way doors that are difficult to change".
+* **In software the criterion drifted from "irreversible" to "costly to reverse".** thoughtbot defines it by cost: "If the cost (financial, time, resources) of reversing a decision is high, it falls into the One-way door category". https://thoughtbot.com/blog/one-way-vs-two-way-door-decisions[Bireke, "One-way vs Two-way door decisions"] (10 May 2024). Google's Abseil performance tips apply it to technical properties: "Broadly speaking, fine-grained flag changes are easy to undo and thus two-way doors", and "The possibility of a bug does not make the door one-way." https://abseil.io/fast/87[Kennelly, "Performance Tip of the Week #87: Two-way doors"] (16 October 2024, updated 17 November 2025).
+* **Reversibility as an architecture concern is older than the door.** Martin Fowler wrote in 2003 that an architect's task includes "finding ways to eliminate irreversibility in software designs". https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf[Fowler, "Who Needs an Architect?", IEEE Software] (July/August 2003). The door metaphor names the idea; it did not introduce it.
+* **A prior test on 2026-11-23 measured what naming it changes, and what it hides.** Asked to assess four changes to an online shop, 12 of 12 runs with the term noted that a new public API field is hard to take back once published; without the term only the strong tier did. The term also narrowed the view: for a button-colour change, the weak and mid tiers mentioned contrast or accessibility in 8 of 8 runs without the term and in 0 of 8 with it. Use it next to other review lenses, not instead of them. See the [prior-test register](#/prior-tests).
 
 ### PDCA
 
@@ -8985,6 +9102,66 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * ADR according to Nygard
 * Quality Attribute Scenario
 
+### Blast Radius
+
+***Full Name***: Blast Radius, the extent of impact of a failure, a compromise or a change
+
+***Also known as***: scope of impact, impact radius; its upper bound is set by the failure domain or fault-isolation boundary
+
+[discrete]
+## **Core Concepts**:
+
+***Extent, Not Likelihood***: Blast radius answers "how far does it reach if it goes wrong?", not "how likely is it to go wrong?". A change can be unlikely to fail and still have a large blast radius. Google's _Building Secure and Reliable Systems_ gives the working definition: "Controlling the blast radius means compartmentalizing the impact of an event, similar to the way compartments on a ship grant resilience against the whole ship sinking."
+
+***One Idea, Several Causes***: The same question is asked of a failure (which customers lose service), of a compromise (what an attacker reaches from one stolen credential), of a deployment (how many hosts get the bad build) and of a code change (which callers, services and data it touches).
+
+***Failure Domains Set the Upper Bound***: A failure domain is the most an event can reach, not what it does reach: a process, a cell, an availability zone, an account, a tenant. A fault confined to one tenant does not affect the whole cell around it. The smallest boundary that actually holds caps the blast radius. AWS states the arithmetic for cells: "If a workload uses 10 cells to service 100 requests, when a failure occurs, 90% of the overall requests would be unaffected by the failure."
+
+***Containment in Architecture***: Bulkheads and cell-based architectures, shuffle sharding and separate accounts per workload or data domain keep an event inside one compartment.
+
+***Containment in Security***: Least privilege and segmentation limit what one compromised identity can reach. Microsoft's Zero Trust guidance puts it this way: least privilege "limits the blast radius of a potential breach so that if an account is compromised, the potential damage is limited."
+
+***Containment in Change***: Canary releases, progressive rollouts and feature flags expose a change to a few before all. Microsoft: "You can minimize the potential blast radius of deployment-caused issues by adopting a progressive exposure deployment model." HashiCorp gives the same reason for splitting Terraform state: "it is best to keep the potential blast radius of your operations small."
+
+***Containment in Experiments***: "Minimize Blast Radius" is one of the Principles of Chaos Engineering: the experimenter must "ensure the fallout from experiments are minimized and contained."
+
+[discrete]
+## **When to Use**:
+
+* Stating in a pull request who or what is affected if the change is wrong: which services, tenants, consumers and data
+* Reviewing a change to a shared library, a shared configuration or a schema with many dependants
+* Planning a rollout: how many users or hosts see the change first, and what stops it from spreading
+* Designing isolation: accounts, cells, tenants, queues, permissions
+* Scoping the permissions of a service account, a token or an AI agent
+* Sizing a chaos experiment or a risky migration
+* Setting how much investigation or review a change deserves; `chestertons-fence` scales its effort the same way
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "A small diff has a small blast radius" -- a one-line change to a shared default can reach every consumer
+* ❌ "Blast radius is the same as risk" -- it is the extent half of risk; likelihood is a separate question
+* ❌ "Isolation removes the blast radius" -- it bounds it, and shared components such as routers, control planes and global configuration sit outside the boundary
+* ❌ "Smaller is always better" -- every further compartment costs capacity and operations
+* ✓ "It names who is exposed if this goes wrong" -- accurate, and that is the lift the prior test measured
+
+## **Criticism**:
+
+* **The metaphor is military, and a naming body recommends replacing it.** The Inclusive Naming Initiative lists "blast-radius" in its Tier 3 word list: "Recommended to replace." Its reasons are origin and clarity: "The term _blast radius_ comes from warcraft. It refers to the extent of damage caused by an explosion." It adds that the term "is not universally known within the IT community" and suggests "extent" or "affected components". https://inclusivenaming.org/word-lists/tier-3/blast-radius/[Inclusive Naming Initiative, "blast-radius"] (page undated).
+* **Reducing it has a price.** Linhua Tang's SREcon24 EMEA talk carries the slide title "The art of balancing blast radius and cost" and says of cell-based architecture: "Definitely NOT for small scale systems". The costs named are infrastructure ("can you split 100GB cache into 1GB per cell?") and operations ("how to manage one hundred clusters instead of one"). https://usenix.org/system/files/srecon24emea_slides-tang.pdf[Tang, "Blast Radius Reduction for large-scale distributed systems", SREcon24 EMEA slides] (2024).
+* **Shared components defeat the boundary.** AWS says so in its own best practice: "The router layer is a shared component between cells, and therefore cannot follow the same compartmentalization strategy as with cells." https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_fault_isolation_use_bulkhead.html[AWS Well-Architected, REL10-BP03].
+* **No named source was found for two expected objections:** that the blast radius is hard to know in advance, and that the term blurs extent and likelihood. That is a gap in our search, not in the discourse.
+
+[discrete]
+## **Current Status**:
+
+* **No originator, and no documented first use in computing.** https://en.wikipedia.org/wiki/Blast_radius[Wikipedia] defines the physical sense as "the distance from the source that will be affected when an explosion occurs" and adds: "The term also has usages in computer programming." Neither it nor Wiktionary names a coiner or dates the move into computing. The catalog therefore lists `Community` as proponent and claims no coinage.
+* **The vendors that spread the term often write "scope of impact" in their own text.** The AWS best practice is titled "Use bulkhead architectures to limit scope of impact", and the body of the Amazon Builders' Library article on shuffle sharding says "the scope of impact is reduced by the number of shards", while its page description says the technique serves "to limit blast radius". https://builder.aws.com/content/3F06NpJ8YeoIGP8VHTw4n81pFn8/workload-isolation-using-shuffle-sharding["Workload isolation using shuffle-sharding", Amazon Builders' Library] (5 December 2019). Expect both terms for one idea.
+* **Microsoft's Zero Trust wording has moved.** The adoption framework still lists the principle "Assume breach" and describes it with "Minimize blast radius and segment access." https://learn.microsoft.com/security/zero-trust/adopt/zero-trust-adoption-overview[Microsoft, "Zero Trust adoption framework overview"] (updated 5 May 2025). The current overview renames it "Assume compromise (previously referred to as assume breach)" and places the term under least privilege: "reducing unnecessary exposure and potential blast radius." https://learn.microsoft.com/security/zero-trust/zero-trust-overview[Microsoft, "Zero Trust overview"] (updated 15 November 2026). A model's prior most likely holds the older wording.
+* **Code-review tools now use it for pull requests.** CodeRabbit documents a feature of that name: "Security Blast Radius helps you investigate what a pull request could affect beyond its changed lines." https://docs.coderabbit.ai/security/blast-radius[CodeRabbit, "Blast Radius"]. Qodo's version "Estimates how broadly a failure caused by the change could affect the codebase or product functionality." https://docs.qodo.ai/code-review/assess-risk-with-blast-radius[Qodo, "Assess risk with blast radius"]; the same page says that a broader "Merge Risk" feature has since replaced it, with blast radius as one of its factors. Both are vendor documentation, and neither page shows a date.
+* **Security and reliability share the term, and small models lean to security.** In the prior test of 2026-11-23 the bare term meant software operations or security on every tier, and explosives did not dominate; the weak tier leaned to cybersecurity, the mid and strong tiers to reliability and security. Say which event you mean: a failure, a compromise or a change.
+* **The lift is moderate, hence tier 2.** On a task about a shared library that changes its default time zone for 14 services, answers with the term were organised by reach and more often said who is exposed. The risks themselves were found without the term as well. See the [prior-test register](#/prior-tests).
+
 ### Bulkhead Pattern
 
 ***Full Name***: Bulkhead, a stability pattern from Michael T. Nygard's _Release It!_
@@ -11436,6 +11613,63 @@ This anchor is classified as **Tier 2 — Needs qualification**. It is not self-
 
 * The framework remains widely adopted but reportedly hard to sustain: per https://en.wikipedia.org/wiki/Objectives_and_key_results[Wikipedia's OKR article], Google's Rick Klau later advised skipping **individual** OKRs to avoid a waterfall/cascade trap — a shift from the individual-level usage many training-data examples assume
 * The canonical modern reference is Doerr's "Measure What Matters" (2018) and https://www.whatmatters.com/[whatmatters.com]; the original Grove formulation predates the term "OKR" and lives in "High Output Management" (1983)
+
+### One-Way Door / Two-Way Door Decisions
+
+***Full Name***: One-way door and two-way door decisions, from Jeff Bezos's 2015 Letter to Shareholders of Amazon.com, Inc.
+
+***Also known as***: Type 1 / Type 2 decisions; reversible and irreversible decisions; one-way and two-way doors
+
+[discrete]
+## **Core Concepts**:
+
+***One-Way Door (Type 1)***: A decision you cannot walk back. Bezos: "Some decisions are consequential and irreversible or nearly irreversible – one-way doors – and these decisions must be made methodically, carefully, slowly, with great deliberation and consultation."
+
+***Two-Way Door (Type 2)***: A decision you can undo. Bezos: "But most decisions aren't like that – they are changeable, reversible – they're two-way doors." If the result is poor, "You can reopen the door and go back through."
+
+***Match the Process to the Door***: The letter argues against "one-size-fits-all" decision making. Type 2 decisions "can and should be made quickly by high judgment individuals or small groups". The heavy process is reserved for Type 1.
+
+***The Named Failure Is Slowness***: Bezos's target is the large organisation that uses "the heavy-weight Type 1 decision-making process on most decisions, including many Type 2 decisions", which ends in "slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention".
+
+***The Opposite Failure Is Fatal***: The letter's footnote covers the reverse error: "Any companies that habitually use the light-weight Type 2 decision-making process to make Type 1 decisions go extinct before they get large."
+
+***Classify First, Then Decide***: The working question comes before the decision itself: can this be undone, by whom, and at what cost? In a code change the usual one-way doors are deleted or migrated data, a published API or event schema, a sent message, and anything a third party starts to depend on.
+
+[discrete]
+## **When to Use**:
+
+* Stating in a pull request whether the change can be undone, so a reviewer can tell reversible changes from irreversible ones
+* Deciding how much review, sign-off and rollout care a change deserves
+* Architecture decisions: record in the ADR which consequences are hard to reverse
+* Delegating: two-way doors go to the person closest to the work, one-way doors get consultation
+* Unblocking a team that deliberates at length over a choice it could simply try and revert
+* Next to the question of who is affected if the change is wrong: reversibility and reach are two separate facts about a change
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Two-way door means the decision needs no thought" -- it means a lighter process, not none
+* ❌ "A decision is one kind of door forever" -- a schema is cheap to change with an empty table and expensive with a full one; reclassify as dependants and data accumulate
+* ❌ "A possible bug makes it a one-way door" -- what counts is whether the effect can be undone, not whether the change can fail
+* ❌ "It is a complete review checklist" -- it sorts changes by reversibility and says nothing about correctness, accessibility or security
+* ✓ "It decides how much process a decision gets" -- accurate, and that is the use Bezos describes
+
+## **Criticism**:
+
+* **Reversibility decays.** Saeed Habibi argues that the door type is not a fixed property: "Two-way doors can become one-way doors while you're not paying attention." His example is a schema decision that "became effectively permanent" once the table had grown, and his replacement question is about cost: "The question isn't whether you can reverse a decision. It's what reversal actually costs." https://dev.to/saeedhbi/reversibility-decays-what-bezoss-framework-misses-about-technical-decisions-4kna[Habibi, "Reversibility Decays: What Bezos's Framework Misses About Technical Decisions", DEV Community] (posted 3 February; the page shows no year).
+* **People misclassify in both directions.** Habibi: "Engineers treat irreversible decisions as reversible, and reversible decisions as irreversible." Ozan Varol names the cautious half of the error: "Most decisions that initially appear to be irreversible are actually two-way doors masquerading as one-way doors." https://ozanvarol.com/what-most-people-miss-about-making-decisions/[Varol, "Most people miss this step when making a decision"] (21 May 2019).
+* **It is not a licence for haste.** Shane Parrish restates the limit that the short form loses: "Reversible decisions are not an excuse to act recklessly or be ill-informed". https://fs.blog/reversible-irreversible-decisions/[Parrish, "Reversible and Irreversible Decisions", Farnam Street] (23 April 2018).
+* **No academic or journal critique of the binary was found.** The named critiques are practitioner articles in English. That is a gap in our search, not in the discourse.
+
+[discrete]
+## **Current Status**:
+
+* **The source is the 2015 shareholder letter, and it says "doors" in the plural.** The passage stands in the section "Invention Machine" of https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm[Bezos's 2015 Letter to Shareholders] as filed with the SEC. The letter speaks of "one-way doors", "two-way doors", "Type 1" and "Type 2" decisions. We found no citable earlier use of the door metaphor by Bezos or Amazon.
+* **Bezos repeated it a year later, tied to decision speed.** The https://www.sec.gov/Archives/edgar/data/1018724/000119312517120198/d373368dex991.htm[2016 letter] says: "Many decisions are reversible, two-way doors. Those decisions can use a light-weight process." The same passage adds the advice to decide with "somewhere around 70% of the information you wish you had" and the phrase "disagree and commit".
+* **Amazon now teaches it as a mental model and applies it to architecture.** AWS calls it "a mental model we call one-way and two-way doors" in https://aws.amazon.com/de/executive-insights/content/how-amazon-defines-and-operationalizes-a-day-1-culture/[Daniel Slater's "Elements of Amazon's Day 1 Culture"]. The https://docs.aws.amazon.com/wellarchitected/latest/framework/the-review-process.html[AWS Well-Architected Framework] asks for reviews "early on in the design phase to avoid one-way doors that are difficult to change".
+* **In software the criterion drifted from "irreversible" to "costly to reverse".** thoughtbot defines it by cost: "If the cost (financial, time, resources) of reversing a decision is high, it falls into the One-way door category". https://thoughtbot.com/blog/one-way-vs-two-way-door-decisions[Bireke, "One-way vs Two-way door decisions"] (10 May 2024). Google's Abseil performance tips apply it to technical properties: "Broadly speaking, fine-grained flag changes are easy to undo and thus two-way doors", and "The possibility of a bug does not make the door one-way." https://abseil.io/fast/87[Kennelly, "Performance Tip of the Week #87: Two-way doors"] (16 October 2024, updated 17 November 2025).
+* **Reversibility as an architecture concern is older than the door.** Martin Fowler wrote in 2003 that an architect's task includes "finding ways to eliminate irreversibility in software designs". https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf[Fowler, "Who Needs an Architect?", IEEE Software] (July/August 2003). The door metaphor names the idea; it did not introduce it.
+* **A prior test on 2026-11-23 measured what naming it changes, and what it hides.** Asked to assess four changes to an online shop, 12 of 12 runs with the term noted that a new public API field is hard to take back once published; without the term only the strong tier did. The term also narrowed the view: for a button-colour change, the weak and mid tiers mentioned contrast or accessibility in 8 of 8 runs without the term and in 0 of 8 with it. Use it next to other review lenses, not instead of them. See the [prior-test register](#/prior-tests).
 
 ### PERT
 

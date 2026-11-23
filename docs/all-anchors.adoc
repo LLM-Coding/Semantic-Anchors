@@ -300,6 +300,9 @@ include::anchors/andon.adoc[leveloffset=+2]
 [[bem-methodology]]
 include::anchors/bem-methodology.adoc[leveloffset=+2]
 
+[[blast-radius]]
+include::anchors/blast-radius.adoc[leveloffset=+2]
+
 include::anchors/boy-scout-rule.adoc[leveloffset=+2]
 
 [[chestertons-fence]]
@@ -334,6 +337,9 @@ include::anchors/mental-model-according-to-naur.adoc[leveloffset=+2]
 
 [[mikado-method]]
 include::anchors/mikado-method.adoc[leveloffset=+2]
+
+[[one-way-two-way-door-decisions]]
+include::anchors/one-way-two-way-door-decisions.adoc[leveloffset=+2]
 
 [[pdca]]
 include::anchors/pdca.adoc[leveloffset=+2]
@@ -602,6 +608,8 @@ include::anchors/arc42.adoc[leveloffset=+2]
 [[atam]]
 include::anchors/atam.adoc[leveloffset=+2]
 
+include::anchors/blast-radius.adoc[leveloffset=+2]
+
 [[bulkhead]]
 include::anchors/bulkhead.adoc[leveloffset=+2]
 
@@ -750,6 +758,8 @@ include::anchors/mvp.adoc[leveloffset=+2]
 
 [[okr]]
 include::anchors/okr.adoc[leveloffset=+2]
+
+include::anchors/one-way-two-way-door-decisions.adoc[leveloffset=+2]
 
 [[pert]]
 include::anchors/pert.adoc[leveloffset=+2]

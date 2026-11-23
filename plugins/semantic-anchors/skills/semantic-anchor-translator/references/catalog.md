@@ -153,6 +153,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Michael T. Nygard
 - **Core:** Cap how much of the system any one dependency can consume, so a slow partner cannot exhaust the shared pool. A circuit breaker stops calls to a failing dependency; a bulkhead limits the damage while they still run
 
+### Blast Radius
+- **Also known as:** scope of impact, impact radius; bounded by failure domains
+- **Proponents:** Community (term of art from reliability and security engineering; borrowed from explosives, no single originator)
+- **Core:** The extent of what is affected when a failure, a compromise or a bad change happens — extent, not likelihood. Failure domains set its upper bound, not its actual reach; contained by cells and bulkheads, shuffle sharding, separate accounts, least privilege, canary and progressive rollouts. In a pull request it states who or what is affected if the change is wrong. Say which event you mean: small models lean to the security sense
+
 ### Defense in Depth
 - **Also known as:** layered security, defence in depth; Swiss cheese model in safety engineering
 - **Proponents:** US National Security Agency
@@ -1057,6 +1062,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Consent vs. Consensus
 - **Proponents:** Gerard Endenburg (Sociocracy), Brian Robertson (Holacracy)
 - **Core:** Consensus requires everyone's active "yes"; consent requires only the absence of a paramount, reasoned objection ("good enough for now, safe enough to try"), so objections are argued and integrated rather than vetoed — speeding decisions and avoiding lowest-common-denominator outcomes and groupthink
+
+### One-Way Door / Two-Way Door Decisions
+- **Also known as:** Type 1 / Type 2 decisions, reversible vs. irreversible decisions
+- **Proponents:** Jeff Bezos (2015 Letter to Amazon Shareholders)
+- **Core:** Match the decision process to reversibility — one-way doors (Type 1: irreversible or nearly so) get slow, careful deliberation; two-way doors (Type 2: reversible) are decided quickly by individuals or small groups. In a pull request it marks what cannot be rolled back: dropped data, published APIs, sent messages. Door type is not fixed — reversal cost grows as data and dependants accumulate. A reversibility lens only; it narrows review if used as the sole lens
 
 ## Knowledge Management
 
