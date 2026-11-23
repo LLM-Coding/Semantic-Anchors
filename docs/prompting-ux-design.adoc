@@ -71,6 +71,8 @@ The link:#/style-gallery[style gallery] shows what a single name does to a whole
 
 "Make the top area bigger" can mean the header, the navigation or the first section below it; the prompt leaves the choice to the model. Page regions have fixed names: the HTML element and the landmark role it carries. The https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/[Landmarks pattern of the APG] names eight roles, and its https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/[Landmark Regions page] maps the HTML elements to them:
 
+image::/Semantic-Anchors/docs/landmark-regions.svg["Wireframe of a page: header as banner with navigation and search, main with a labelled section as region and a div without a landmark, aside as complementary, footer as contentinfo with a second labelled navigation",760,640]
+
 [cols="1,1,3"]
 |===
 |Region |Element |Landmark role
