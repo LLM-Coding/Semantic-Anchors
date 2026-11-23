@@ -19,14 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Full history so extract-metadata can read each anchor's first-commit
           # date for the "new" badge (#652); the default shallow clone has none.
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '20'
           cache: 'npm'
@@ -58,7 +58,7 @@ jobs:
         run: cp website/dist/index.html website/dist/404.html
           
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./website/dist
 
@@ -71,7 +71,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   # Lighthouse runs here rather than in test.yml because it measures the
   # deployed site: `needs: deploy` is the whole point. In test.yml the job
@@ -107,7 +107,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Keeps the token out of .git/config, where any later step --
           # including the action's own code -- could read and reuse it.
