@@ -33,7 +33,7 @@
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.1",
     "vite": "^7.3.7",
-    "vitest": "^4.1.12"
+    "vitest": "^5.1.0"
   },
   "dependencies": {
     "@asciidoctor/core": "^3.0.4",
