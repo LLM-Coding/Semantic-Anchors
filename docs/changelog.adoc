@@ -8,6 +8,13 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 * Precise, Rich and Consistent stay mandatory. Attributable is now needed only when the bare term is ambiguous, as in "ADR according to Nygard" -- https://github.com/LLM-Coding/Semantic-Anchors/issues/908[#908]. `:proponents:` stays required; an unambiguous term without a single originator uses `Community`.
 
+*New anchor -- Blast Radius:*
+
+* *link:#/anchor/blast-radius[Blast Radius]* (Community) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/907[#907]: the extent of what is affected when a failure, a compromise or a bad change happens. The term has no single originator, so it carries `Community` as proponent under the rule of https://github.com/LLM-Coding/Semantic-Anchors/issues/908[#908]: the bare term meant software operations or security on every tier. Asked to assess a shared library that changes its default time zone for 14 services, answers with the term were organised by reach and more often said who is exposed. The risks were found without it as well, so the tier is ★★☆.
+* *Say which event you mean.* Haiku leans to the security sense, Sonnet and Opus to reliability and security.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-11-23, Blast Radius.
+
 == 2026-11-04
 
 *New anchor -- Building a Second Brain (BASB):*

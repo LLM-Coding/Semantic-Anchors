@@ -1140,3 +1140,41 @@ A longer second version with numbered steps, the loan-balance formula written ou
 === What would reopen the proposal
 
 A current small model that builds the financing and compares final values from the name alone: a later Haiku, or a small model from another vendor.
+
+== Run 2026-11-23, Blast Radius
+
+[cols="1,3"]
+|===
+|Candidate |Blast Radius (https://github.com/LLM-Coding/Semantic-Anchors/issues/907[#907]). Proposed use: state in a pull request who or what is affected if the change is wrong. Risk flagged in the proposal: the bare term comes from explosives, and no single originator of the software meaning is known
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong)
+|Procedure |`anchor-prior-test` v1.1; P2 repeated with v1.2, which asks for variants
+|Runs |P1 and P3 twice per tier, P2 and P4 once per tier. P3 was repeated with a neutral system prompt (`You are a helpful assistant.`), to rule out priming by the default Claude Code system prompt. P2 with v1.2: neutral system prompt, two runs per tier. Action test: 12 runs with the term and 12 without, across both passes
+|Record |The run was carried out by the maintainer and reported in the issue; this entry is transcribed from https://github.com/LLM-Coding/Semantic-Anchors/issues/907[the two result comments on #907]. The raw answers are not in the repository
+|Criticism research |2026-11-23, English. Found and fetched: Principles of Chaos Engineering (principlesofchaos.org, last update March 2019); AWS Well-Architected REL10-BP03; Amazon Builders' Library, "Workload isolation using shuffle-sharding" (2019-12-05); Google, _Building Secure and Reliable Systems_, chapter 8; Microsoft, Azure Well-Architected "Recommendations for safe deployment practices"; Microsoft, "Zero Trust adoption framework overview" (updated 2025-05-05) and "Zero Trust overview" (updated 2026-11-15); HashiCorp, "Workspace Best Practices"; CodeRabbit and Qodo documentation; Wikipedia, "Blast radius"; a Wiktionary mirror (kaikki.org); Inclusive Naming Initiative, "blast-radius"; Linhua Tang, SREcon24 EMEA slides. The pages were read through a fetch tool that returns quotes in short segments; some quotes are rejoined segments. Not found: a coiner or a dated first use in computing; a named source saying that blast radius is hard to know in advance or that the term blurs extent and likelihood. The term does not occur in the part of NIST SP 800-207 that was read (the first 100,000 of about 157,000 characters), so it is not attributed to NIST. Not reachable: Lorin Hochstein, "The hidden trade-offs of fine-grained progressive rollouts" (surfingcomplexity.blog), so it is not cited
+|===
+
+=== Result: ★★☆, proponent `Community`
+
+[cols="1,1,3"]
+|===
+|Criterion |Result |Evidence
+
+|Precise |met |P2: the bare term is about software operations or security on all three tiers; explosives did not dominate
+|Rich |met |P1: `richness=rich` in six of six runs (failure domains, cells, bulkheads, canary, least privilege)
+|Consistent |met, with a split |P2: Haiku leans to cybersecurity, Sonnet and Opus to reliability and security
+|Attributable |not required |P4 finds no creator: Haiku "unknown", Sonnet a Terraform tool, Opus a 1998 video game, all `confidence=low`. The bare term is not ambiguous in P2, see https://github.com/LLM-Coding/Semantic-Anchors/issues/908[#908]
+|===
+
+P2 with v1.2 gave software reliability and security as the dominant domain in six of six runs, with explosives named as the origin. The variants (failure, compromise, code change, infrastructure change) apply one idea, the scope of damage, to different causes. That was read as not ambiguous, so Attributable is not required and `Community` stands.
+
+=== The action test: the term organises the answer by reach
+
+The task: assess a shared library that changes its default time zone and is used by 14 services.
+
+* With the term, the answers are organised by reach, and they more often say who is exposed: downstream consumers, partner data, or hosts that already run in UTC and are not affected.
+* The risks themselves (silent change, dates near midnight, staggered rollout) were found without the term as well. The lift is moderate, hence ★★☆ and tier 2.
+
+=== What was not tested
+
+* One task. Older model generations and other model families were not measured.
+* Haiku reported `reaching=yes` in two of two P1 runs; its lists were specific.

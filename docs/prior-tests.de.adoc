@@ -1140,3 +1140,41 @@ Eine längere zweite Fassung mit nummerierten Schritten, ausgeschriebener Formel
 === Wann der Vorschlag neu geprüft wird
 
 Ein aktuelles kleines Modell, das allein aus dem Namen die Finanzierung aufbaut und Endwerte vergleicht: ein späteres Haiku oder ein kleines Modell eines anderen Anbieters.
+
+== Lauf vom 23.11.2026, Blast Radius
+
+[cols="1,3"]
+|===
+|Kandidat |Blast Radius (https://github.com/LLM-Coding/Semantic-Anchors/issues/907[#907]). Vorgeschlagener Gebrauch: im Pull Request angeben, wen oder was es trifft, wenn die Änderung falsch ist. Im Vorschlag genanntes Risiko: Der bloße Begriff stammt aus der Sprengtechnik, und ein einzelner Urheber der Software-Bedeutung ist nicht bekannt
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark)
+|Verfahren |`anchor-prior-test` v1.1; P2 wiederholt mit v1.2, das nach Varianten fragt
+|Läufe |P1 und P3 zweimal je Stufe, P2 und P4 einmal je Stufe. P3 wurde mit neutralem System-Prompt (`You are a helpful assistant.`) wiederholt, um eine Vorprägung durch den Standard-System-Prompt von Claude Code auszuschließen. P2 mit v1.2: neutraler System-Prompt, zwei Läufe je Stufe. Aktionstest: 12 Läufe mit dem Begriff und 12 ohne, über beide Durchgänge
+|Nachweis |Den Lauf hat der Maintainer durchgeführt und im Issue berichtet; dieser Eintrag ist aus https://github.com/LLM-Coding/Semantic-Anchors/issues/907[den beiden Ergebnis-Kommentaren zu #907] übertragen. Die Rohantworten liegen nicht im Repository
+|Kritik-Recherche |23.11.2026, Englisch. Gefunden und abgerufen: Principles of Chaos Engineering (principlesofchaos.org, letzte Änderung März 2019); AWS Well-Architected REL10-BP03; Amazon Builders' Library, „Workload isolation using shuffle-sharding“ (05.12.2019); Google, _Building Secure and Reliable Systems_, Kapitel 8; Microsoft, Azure Well-Architected „Recommendations for safe deployment practices“; Microsoft, „Zero Trust adoption framework overview“ (aktualisiert am 05.05.2025) und „Zero Trust overview“ (aktualisiert am 15.11.2026); HashiCorp, „Workspace Best Practices“; Dokumentation von CodeRabbit und Qodo; Wikipedia, „Blast radius“; ein Wiktionary-Spiegel (kaikki.org); Inclusive Naming Initiative, „blast-radius“; Linhua Tang, Folien der SREcon24 EMEA. Die Seiten wurden über ein Abruf-Werkzeug gelesen, das Zitate in kurzen Abschnitten liefert; einige Zitate sind zusammengefügte Abschnitte. Nicht gefunden: ein Urheber oder eine datierte erste Verwendung in der Informatik; eine benannte Quelle dafür, dass sich der Blast Radius vorab schwer bestimmen lässt oder dass der Begriff Ausmaß und Wahrscheinlichkeit vermischt. Im gelesenen Teil von NIST SP 800-207 (die ersten 100.000 von rund 157.000 Zeichen) kommt der Begriff nicht vor; er wird NIST daher nicht zugeschrieben. Nicht erreichbar: Lorin Hochstein, „The hidden trade-offs of fine-grained progressive rollouts“ (surfingcomplexity.blog); der Artikel wird daher nicht zitiert
+|===
+
+=== Ergebnis: ★★☆, Proponent `Community`
+
+[cols="1,1,3"]
+|===
+|Kriterium |Ergebnis |Beleg
+
+|Precise |erfüllt |P2: Der bloße Begriff meint auf allen drei Stufen Softwarebetrieb oder Sicherheit; die Sprengtechnik herrschte nicht vor
+|Rich |erfüllt |P1: `richness=rich` in sechs von sechs Läufen (Failure Domains, Zellen, Bulkheads, Canary, Least Privilege)
+|Consistent |erfüllt, mit einer Spaltung |P2: Haiku neigt zur Cybersicherheit, Sonnet und Opus zu Zuverlässigkeit und Sicherheit
+|Attributable |nicht erforderlich |P4 findet keinen Urheber: Haiku „unknown“, Sonnet ein Terraform-Werkzeug, Opus ein Videospiel von 1998, alle mit `confidence=low`. Der bloße Begriff ist in P2 nicht mehrdeutig, siehe https://github.com/LLM-Coding/Semantic-Anchors/issues/908[#908]
+|===
+
+P2 mit v1.2 ergab in sechs von sechs Läufen Software-Zuverlässigkeit und -Sicherheit als vorherrschendes Feld, mit der Sprengtechnik als Herkunft. Die Varianten (Ausfall, Kompromittierung, Code-Änderung, Infrastruktur-Änderung) wenden einen Gedanken, das Ausmaß des Schadens, auf verschiedene Ursachen an. Das wurde als nicht mehrdeutig gelesen; Attributable ist daher nicht erforderlich, und `Community` bleibt.
+
+=== Der Aktionstest: Der Begriff gliedert die Antwort nach Reichweite
+
+Die Aufgabe: eine gemeinsame Bibliothek bewerten, die ihre Standard-Zeitzone ändert und von 14 Diensten genutzt wird.
+
+* Mit dem Begriff sind die Antworten nach Reichweite gegliedert und nennen häufiger, wer betroffen ist: nachgelagerte Abnehmer, Partnerdaten oder Hosts, die schon in UTC laufen und nicht betroffen sind.
+* Die Risiken selbst (stille Änderung, Datumsangaben um Mitternacht, gestaffeltes Rollout) wurden auch ohne den Begriff gefunden. Der Gewinn ist mäßig, daher ★★☆ und Tier 2.
+
+=== Was nicht getestet wurde
+
+* Eine Aufgabe. Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.
+* Haiku meldete `reaching=yes` in zwei von zwei P1-Läufen; seine Listen waren konkret.
