@@ -68,6 +68,34 @@ Check it against WCAG 2.2 AA.
 
 Die link:#/style-gallery[Stil-Galerie] zeigt, was ein einzelner Name mit einer ganzen Seite macht: eine Homepage pro Stil neu gestaltet, eine App-Seite pro Design-System.
 
+== Erst den Seitenbereich benennen, dann das Bedienelement
+
+„Mach den oberen Bereich größer“ kann den Header meinen, die Navigation oder die erste Sektion darunter; der Prompt überlässt die Wahl dem Modell. Seitenbereiche haben feste Namen: das HTML-Element und die Landmark-Rolle, die es trägt. Das https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/[Landmarks-Pattern des APG] nennt acht Rollen, und seine https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/[Seite Landmark Regions] ordnet ihnen die HTML-Elemente zu:
+
+[cols="1,1,3"]
+|===
+|Bereich |Element |Landmark-Rolle
+
+|Header |`<header>` |banner -- nur als Kind von `body`, nicht innerhalb von `article`, `aside`, `main`, `nav` oder `section`
+|Navigation |`<nav>` |navigation
+|Hauptinhalt |`<main>` |main
+|Sidebar |`<aside>` |complementary
+|Footer |`<footer>` |contentinfo -- mit derselben Einschränkung wie der Header
+|Sektion |`<section>` |region -- nur mit zugänglichem Namen (`aria-label` oder `aria-labelledby`)
+|Formular, Suche |`<form>`, `<search>` |form (mit zugänglichem Namen), search
+|===
+
+Dieselben Seiten legen Regeln fest, die ein Review prüfen kann: ein `main` pro Seite, höchstens ein banner und ein contentinfo, ein eindeutiges Label für jede Rolle, die mehrfach vorkommt, und als Faustregel höchstens sieben Landmark-Bereiche. Ein `<div>` trägt keine Rolle; es gruppiert nur.
+
+[source,text]
+----
+Make the banner taller and move the search into it.
+Leave the main navigation as it is.
+Mark up the regions as APG landmarks; label both nav elements.
+----
+
+Diese Namen stammen aus der Dokumentation des APG, nicht aus einem Prior-Test-Lauf: Noch kein Lauf hat gemessen, was sie an der Ausgabe eines Modells ändern.
+
 == Ein Bedienelement beim Namen nennen, sein Verhalten über den APG festlegen
 
 Namen wie „Burger Menu“, „Datepicker“ oder „Accordion“ sagen dem Modell, was es bauen soll, nicht wie sich das Element verhält. https://component.gallery/[The Component Gallery] listet den gängigen Namen von 60 Bedienelementen und ihre Synonyme aus 95 Design-Systemen; der WAI-ARIA Authoring Practices Guide legt Tastaturbedienung und Rollen fest.

@@ -67,6 +67,34 @@ Check it against WCAG 2.2 AA.
 
 The link:#/style-gallery[style gallery] shows what a single name does to a whole page: one homepage redesigned per style, one app page per design system.
 
+== Name the Page Region Before the Control
+
+"Make the top area bigger" can mean the header, the navigation or the first section below it; the prompt leaves the choice to the model. Page regions have fixed names: the HTML element and the landmark role it carries. The https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/[Landmarks pattern of the APG] names eight roles, and its https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/[Landmark Regions page] maps the HTML elements to them:
+
+[cols="1,1,3"]
+|===
+|Region |Element |Landmark role
+
+|Header |`<header>` |banner -- only as a child of `body`, not inside `article`, `aside`, `main`, `nav` or `section`
+|Navigation |`<nav>` |navigation
+|Main content |`<main>` |main
+|Sidebar |`<aside>` |complementary
+|Footer |`<footer>` |contentinfo -- with the same restriction as the header
+|Section |`<section>` |region -- only with an accessible name (`aria-label` or `aria-labelledby`)
+|Form, Search |`<form>`, `<search>` |form (with an accessible name), search
+|===
+
+The same pages set the rules a reviewer can check: one `main` per page, at most one banner and one contentinfo, a unique label for each role used more than once, and as a rule of thumb seven landmark regions or fewer. A `<div>` carries no role; it only groups.
+
+[source,text]
+----
+Make the banner taller and move the search into it.
+Leave the main navigation as it is.
+Mark up the regions as APG landmarks; label both nav elements.
+----
+
+These names come from the APG's documentation, not from a prior-test run: no run has yet measured what they change in a model's output.
+
 == Call a Control by Its Name, Fix Its Behaviour with the APG
 
 Names like "burger menu", "date picker" or "accordion" tell the model what to build, not how it behaves. https://component.gallery/[The Component Gallery] lists the common name of 60 controls and their aliases across 95 design systems; the WAI-ARIA Authoring Practices Guide fixes the keyboard interaction and the roles.
