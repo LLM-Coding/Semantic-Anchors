@@ -75,7 +75,7 @@ The link:#/style-gallery[style gallery] shows what a single name does to a whole
 |===
 |Region |Element |Landmark role
 
-|Header |`<header>` |banner -- only as a child of `body`, not inside `article`, `aside`, `main`, `nav` or `section`
+|Header |`<header>` |banner -- only in the context of `body`, not as a descendant of `article`, `aside`, `main`, `nav` or `section`
 |Navigation |`<nav>` |navigation
 |Main content |`<main>` |main
 |Sidebar |`<aside>` |complementary
@@ -84,7 +84,7 @@ The link:#/style-gallery[style gallery] shows what a single name does to a whole
 |Form, Search |`<form>`, `<search>` |form (with an accessible name), search
 |===
 
-The same pages set the rules a reviewer can check: one `main` per page, at most one banner and one contentinfo, a unique label for each role used more than once, and as a rule of thumb seven landmark regions or fewer. A `<div>` carries no role; it only groups.
+The same pages set the rules a reviewer can check: one `main` per page, at most one banner and one contentinfo, a unique label for each role used more than once -- except two navigation landmarks with identical links, which share one label -- and as a rule of thumb seven landmark regions or fewer. A `<div>` without an explicit `role` creates no landmark; it only groups.
 
 [source,text]
 ----

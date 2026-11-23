@@ -76,7 +76,7 @@ Die link:#/style-gallery[Stil-Galerie] zeigt, was ein einzelner Name mit einer g
 |===
 |Bereich |Element |Landmark-Rolle
 
-|Header |`<header>` |banner -- nur als Kind von `body`, nicht innerhalb von `article`, `aside`, `main`, `nav` oder `section`
+|Header |`<header>` |banner -- nur im Kontext von `body`, nicht als Nachfahre von `article`, `aside`, `main`, `nav` oder `section`
 |Navigation |`<nav>` |navigation
 |Hauptinhalt |`<main>` |main
 |Sidebar |`<aside>` |complementary
@@ -85,7 +85,7 @@ Die link:#/style-gallery[Stil-Galerie] zeigt, was ein einzelner Name mit einer g
 |Formular, Suche |`<form>`, `<search>` |form (mit zugänglichem Namen), search
 |===
 
-Dieselben Seiten legen Regeln fest, die ein Review prüfen kann: ein `main` pro Seite, höchstens ein banner und ein contentinfo, ein eindeutiges Label für jede Rolle, die mehrfach vorkommt, und als Faustregel höchstens sieben Landmark-Bereiche. Ein `<div>` trägt keine Rolle; es gruppiert nur.
+Dieselben Seiten legen Regeln fest, die ein Review prüfen kann: ein `main` pro Seite, höchstens ein banner und ein contentinfo, ein eindeutiges Label für jede Rolle, die mehrfach vorkommt -- außer bei zwei Navigationen mit identischen Links, die sich ein Label teilen -- und als Faustregel höchstens sieben Landmark-Bereiche. Ein `<div>` ohne explizite `role` erzeugt keine Landmark; es gruppiert nur.
 
 [source,text]
 ----
