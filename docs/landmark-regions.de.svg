@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="640" viewBox="0 0 760 640" role="img" aria-labelledby="t d">
+  <title id="t">Seitenbereiche und ihre Landmark-Rollen</title>
+  <desc id="d">Wireframe einer Webseite. Der Header ist ein banner und enthält die Hauptnavigation und eine Suche. Darunter enthält main eine benannte Sektion, die eine region ist, und ein div, das drei Cards gruppiert, ohne eine Landmark zu erzeugen. Neben main ist ein aside complementary. Der Footer ist contentinfo und enthält eine zweite, benannte Navigation.</desc>
+  <style>
+    .lbl { font: 600 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .box { fill: none; stroke-width: 2; }
+    .ph  { fill: #e5e7eb; }
+    .ph2 { fill: #d1d5db; }
+  </style>
+  <rect x="1" y="1" width="758" height="638" rx="12" fill="#ffffff" stroke="#d0d5dd" stroke-width="2"/>
+
+  <!-- header / banner -->
+  <rect class="box" x="40" y="36" width="680" height="88" rx="6" stroke="#4338ca"/>
+  <text class="lbl" x="52" y="54" fill="#4338ca">&lt;header&gt; · banner</text>
+  <rect class="ph2" x="56" y="74" width="60" height="30" rx="4"/>
+  <rect class="box" x="136" y="64" width="310" height="48" rx="4" stroke="#0f766e"/>
+  <text class="lbl" x="146" y="81" fill="#0f766e">&lt;nav aria-label="Haupt"&gt; · navigation</text>
+  <rect class="ph" x="146" y="92" width="52" height="8" rx="4"/>
+  <rect class="ph" x="210" y="92" width="52" height="8" rx="4"/>
+  <rect class="ph" x="274" y="92" width="52" height="8" rx="4"/>
+  <rect class="ph" x="338" y="92" width="52" height="8" rx="4"/>
+  <rect class="box" x="466" y="64" width="238" height="48" rx="4" stroke="#b45309"/>
+  <text class="lbl" x="476" y="81" fill="#b45309">&lt;search&gt; · search</text>
+  <rect x="476" y="89" width="218" height="14" rx="3" fill="#ffffff" stroke="#d1d5db"/>
+
+  <!-- main / main -->
+  <rect class="box" x="40" y="140" width="460" height="344" rx="6" stroke="#1d4ed8"/>
+  <text class="lbl" x="52" y="158" fill="#1d4ed8">&lt;main&gt; · main</text>
+
+  <rect class="box" x="56" y="170" width="428" height="140" rx="4" stroke="#6d28d9"/>
+  <text class="lbl" x="68" y="188" fill="#6d28d9">&lt;section aria-label="…"&gt; · region</text>
+  <rect class="ph2" x="68" y="204" width="240" height="18" rx="4"/>
+  <rect class="ph" x="68" y="234" width="392" height="8" rx="4"/>
+  <rect class="ph" x="68" y="252" width="360" height="8" rx="4"/>
+  <rect class="ph" x="68" y="270" width="300" height="8" rx="4"/>
+  <rect class="ph2" x="68" y="286" width="96" height="16" rx="4"/>
+
+  <rect class="box" x="56" y="326" width="428" height="142" rx="4" stroke="#6b7280" stroke-dasharray="6 4"/>
+  <text class="lbl" x="68" y="344" fill="#4b5563">&lt;div&gt; · keine Landmark, gruppiert nur</text>
+  <rect x="72" y="358" width="122" height="96" rx="4" fill="#f9fafb" stroke="#d1d5db"/>
+  <rect x="211" y="358" width="122" height="96" rx="4" fill="#f9fafb" stroke="#d1d5db"/>
+  <rect x="350" y="358" width="122" height="96" rx="4" fill="#f9fafb" stroke="#d1d5db"/>
+  <rect class="ph" x="80" y="366" width="106" height="44" rx="3"/>
+  <rect class="ph" x="219" y="366" width="106" height="44" rx="3"/>
+  <rect class="ph" x="358" y="366" width="106" height="44" rx="3"/>
+  <rect class="ph2" x="80" y="420" width="80" height="8" rx="4"/>
+  <rect class="ph2" x="219" y="420" width="80" height="8" rx="4"/>
+  <rect class="ph2" x="358" y="420" width="80" height="8" rx="4"/>
+  <rect class="ph" x="80" y="436" width="100" height="6" rx="3"/>
+  <rect class="ph" x="219" y="436" width="100" height="6" rx="3"/>
+  <rect class="ph" x="358" y="436" width="100" height="6" rx="3"/>
+
+  <!-- aside / complementary -->
+  <rect class="box" x="520" y="140" width="200" height="344" rx="6" stroke="#15803d"/>
+  <text class="lbl" x="532" y="158" fill="#15803d">&lt;aside&gt; · complementary</text>
+  <rect class="ph2" x="532" y="174" width="120" height="14" rx="4"/>
+  <rect class="ph" x="532" y="200" width="172" height="8" rx="4"/>
+  <rect class="ph" x="532" y="218" width="150" height="8" rx="4"/>
+  <rect class="ph" x="532" y="236" width="164" height="8" rx="4"/>
+  <rect class="ph" x="532" y="254" width="130" height="8" rx="4"/>
+
+  <!-- footer / contentinfo -->
+  <rect class="box" x="40" y="500" width="680" height="104" rx="6" stroke="#334155"/>
+  <text class="lbl" x="52" y="518" fill="#334155">&lt;footer&gt; · contentinfo</text>
+  <rect class="box" x="56" y="530" width="330" height="58" rx="4" stroke="#0f766e"/>
+  <text class="lbl" x="66" y="547" fill="#0f766e">&lt;nav aria-label="Footer"&gt; · navigation</text>
+  <rect class="ph" x="66" y="560" width="60" height="8" rx="4"/>
+  <rect class="ph" x="138" y="560" width="60" height="8" rx="4"/>
+  <rect class="ph" x="210" y="560" width="60" height="8" rx="4"/>
+  <rect class="ph" x="410" y="540" width="200" height="8" rx="4"/>
+  <rect class="ph" x="410" y="558" width="160" height="8" rx="4"/>
+  <rect class="ph" x="410" y="576" width="120" height="8" rx="4"/>
+</svg>

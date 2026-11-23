@@ -2,8 +2,9 @@ import { describe, it, expect } from 'vitest'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { renderInlineLinks, getCategoryIntroHtml } from './category-intro.js'
+import { renderInlineLinks, getCategoryIntroHtml, getCategoryGuideHtml } from './category-intro.js'
 import intros from '../data/category-intros.json'
+import guides from '../data/category-guides.json'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 
@@ -97,5 +98,56 @@ describe('category intros (#869)', () => {
       expect(html).toContain('href="https://component.gallery/design-systems/"')
       expect(html).toContain('href="https://www.w3.org/WAI/ARIA/apg/patterns/"')
     }
+  })
+})
+
+describe('getCategoryGuideHtml (#904)', () => {
+  const sample = {
+    cat: {
+      en: { href: '/Semantic-Anchors/guide', title: 'A <b>guide</b>' },
+      de: { href: '/Semantic-Anchors/de/guide', title: 'Ein Leitfaden' },
+    },
+    evil: { en: { href: 'https://evil.example/', title: 'x' } },
+  }
+
+  it('renders a same-tab link with label and escaped title', () => {
+    expect(getCategoryGuideHtml(sample, 'cat', 'en')).toBe(
+      '<a class="category-guide" href="/Semantic-Anchors/guide" data-category-guide="cat">' +
+        '<span class="category-guide-label">Guide</span>' +
+        '<span class="category-guide-title">A &lt;b&gt;guide&lt;/b&gt;<span aria-hidden="true"> →</span></span></a>'
+    )
+  })
+
+  it('uses the requested language and falls back to English', () => {
+    expect(getCategoryGuideHtml(sample, 'cat', 'de')).toContain('href="/Semantic-Anchors/de/guide"')
+    expect(getCategoryGuideHtml(sample, 'cat', 'de')).toContain('Leitfaden')
+    expect(getCategoryGuideHtml(sample, 'cat', 'fr')).toBe(
+      getCategoryGuideHtml(sample, 'cat', 'en')
+    )
+  })
+
+  it('renders nothing for an unknown category or a target outside the site', () => {
+    expect(getCategoryGuideHtml(sample, 'none', 'en')).toBe('')
+    expect(getCategoryGuideHtml(sample, 'evil', 'en')).toBe('')
+  })
+})
+
+describe('category guides (#904)', () => {
+  const mainJs = fs.readFileSync(path.join(here, '..', 'main.js'), 'utf-8')
+
+  // Invariant: every guide exists in both languages and points to a route the
+  // SPA registers, with the /de prefix exactly on the German link.
+  it('point to a registered route in English and German', () => {
+    for (const [id, entry] of Object.entries(guides)) {
+      expect(entry.en?.title?.trim(), `${id}:en`).toBeTruthy()
+      expect(entry.de?.title?.trim(), `${id}:de`).toBeTruthy()
+      const route = entry.en.href.replace('/Semantic-Anchors', '')
+      expect(entry.de.href).toBe(`/Semantic-Anchors/de${route}`)
+      expect(mainJs).toContain(`addRoute('${route}'`)
+    }
+  })
+
+  it('belong to categories that have an intro', () => {
+    expect(Object.keys(guides).filter((id) => !intros[id])).toEqual([])
   })
 })

@@ -53,3 +53,24 @@ export function getCategoryIntroHtml(intros, categoryId, lang) {
   const text = entry[useLang]
   return text ? renderInlineLinks(text, useLang) : ''
 }
+
+const GUIDE_LABEL = { en: 'Guide', de: 'Leitfaden' }
+
+/**
+ * The guide callout for a category (#904): a link to the long-form guide that
+ * belongs to the category, or '' when it has none. Guides live in
+ * src/data/category-guides.json; only site-internal targets are rendered.
+ */
+export function getCategoryGuideHtml(guides, categoryId, lang) {
+  const entry = guides?.[categoryId]
+  if (!entry) return ''
+  const useLang = entry[lang] ? lang : 'en'
+  const guide = entry[useLang]
+  if (!guide?.title || !String(guide.href || '').startsWith('/Semantic-Anchors/')) return ''
+  return (
+    `<a class="category-guide" href="${escapeHtml(guide.href)}" data-category-guide="${escapeHtml(categoryId)}">` +
+    `<span class="category-guide-label">${escapeHtml(GUIDE_LABEL[useLang] || GUIDE_LABEL.en)}</span>` +
+    `<span class="category-guide-title">${escapeHtml(guide.title)}<span aria-hidden="true"> →</span></span>` +
+    `</a>`
+  )
+}

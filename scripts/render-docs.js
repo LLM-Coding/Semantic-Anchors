@@ -332,7 +332,7 @@ if (fs.existsSync(evalReport)) {
 }
 
 // Copy diagrams referenced by the docs
-for (const diagram of ['workflow-diagram.svg', 'landmark-regions.svg']) {
+for (const diagram of ['workflow-diagram.svg', 'landmark-regions.svg', 'landmark-regions.de.svg']) {
   const source = path.join(ROOT, 'docs', diagram)
   if (fs.existsSync(source)) {
     fs.copyFileSync(source, path.join(WEB_DOCS, diagram))

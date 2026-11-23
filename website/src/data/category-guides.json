@@ -1,0 +1,12 @@
+{
+  "ux-visual-design": {
+    "en": {
+      "href": "/Semantic-Anchors/prompting-ux-design",
+      "title": "A Design Prompt Works When It Names One Anchor per Layer"
+    },
+    "de": {
+      "href": "/Semantic-Anchors/de/prompting-ux-design",
+      "title": "Ein Design-Prompt wirkt, wenn er pro Ebene einen Anker nennt"
+    }
+  }
+}

@@ -607,4 +607,11 @@ test.describe('Style gallery (#872)', () => {
     await expect(link).toHaveCount(1)
     await expect(link).not.toHaveAttribute('target', /.+/)
   })
+
+  test('the UX category shows its prompting guide next to the intro (#904)', async ({ page }) => {
+    await page.goto('/')
+    const guide = page.locator('#category-ux-visual-design .category-guide')
+    await expect(guide).toHaveAttribute('href', '/Semantic-Anchors/prompting-ux-design')
+    await expect(guide).toBeVisible()
+  })
 })

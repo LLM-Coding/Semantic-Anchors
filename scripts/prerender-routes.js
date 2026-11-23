@@ -29,10 +29,12 @@ const path = require('path')
 const { getAnchorMetaDescription } = require('./lib/anchor-definition')
 const APPEARANCES = require('../website/src/data/appearances.json')
 const CATEGORY_INTROS = require('../website/src/data/category-intros.json')
+const CATEGORY_GUIDES = require('../website/src/data/category-guides.json')
 const { pathToFileURL } = require('url')
 
 // Shared with the SPA (#869); an ES module, so main() imports it before rendering.
 let getCategoryIntroHtml = () => ''
+let getCategoryGuideHtml = () => ''
 
 const DIST = path.join(__dirname, '..', 'website', 'dist')
 const SHELL = path.join(DIST, 'index.html')
@@ -549,9 +551,11 @@ function buildCatalogMarkup(lang, translations) {
       const intro = introHtml
         ? `\n          <p class="category-intro text-sm mb-2 max-w-3xl">${introHtml}</p>`
         : ''
+      const guideHtml = getCategoryGuideHtml(CATEGORY_GUIDES, category.id, lang)
+      const guide = guideHtml ? `\n          <p class="text-sm mb-2">${guideHtml}</p>` : ''
       return `
         <section class="mb-3">
-          <h3 class="text-lg font-semibold mb-2">${escapeHtml(name)}</h3>${intro}
+          <h3 class="text-lg font-semibold mb-2">${escapeHtml(name)}</h3>${intro}${guide}
           <ul class="flex flex-wrap gap-2">${items}</ul>
         </section>`
     })
@@ -800,7 +804,7 @@ function prerenderContractPages(shell) {
 }
 
 async function main() {
-  ;({ getCategoryIntroHtml } = await import(
+  ;({ getCategoryIntroHtml, getCategoryGuideHtml } = await import(
     pathToFileURL(path.join(__dirname, '..', 'website', 'src', 'utils', 'category-intro.js')).href
   ))
   const shell = readShell()
