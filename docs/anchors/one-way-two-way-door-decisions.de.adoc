@@ -1,0 +1,68 @@
+= One-Way Door / Two-Way Door Decisions
+:categories: strategic-planning, development-workflow
+:roles: software-architect, software-developer, team-lead, product-owner, consultant
+:related: chestertons-fence, second-order-thinking, premortem, adr-according-to-nygard
+:proponents: Jeff Bezos
+:tags: One-Way Door, Two-Way Door, Einbahntür, Typ-1-Entscheidung, Typ-2-Entscheidung, umkehrbare Entscheidung, unumkehrbare Entscheidung, Reversibilität, Bezos, Amazon, Aktionärsbrief, Entscheidungsgeschwindigkeit, disagree and commit, Pull Request, Merge-Risiko
+:tier: 3
+:definition: One-Way Door / Two-Way Door Decisions ist eine Unterscheidung aus Jeff Bezos' Aktionärsbrief 2015 an die Amazon-Aktionäre: Eine One-Way-Door-Entscheidung (Typ 1) ist unumkehrbar oder fast unumkehrbar und verdient langsame, sorgfältige Abwägung; eine Two-Way-Door-Entscheidung (Typ 2) lässt sich zurücknehmen und soll schnell von Einzelnen oder kleinen Gruppen getroffen werden. Der Zweck: Das Gewicht des Entscheidungsprozesses richtet sich danach, wie schwer die Entscheidung umzukehren ist. In der Software markiert die Unterscheidung, welche Änderungen sich zurückrollen lassen und welche nicht, etwa eine gelöschte Spalte oder eine veröffentlichte API.
+:prior-test: 2026-11-23
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: One-Way-Door- und Two-Way-Door-Entscheidungen, aus Jeff Bezos' Aktionärsbrief 2015 der Amazon.com, Inc.
+
+Auch bekannt als:: Typ-1- / Typ-2-Entscheidungen; umkehrbare und unumkehrbare Entscheidungen; One-Way und Two-Way Doors
+
+[discrete]
+== *Kernkonzepte*:
+
+One-Way Door (Typ 1):: Eine Entscheidung, hinter die du nicht zurückkannst. Bezos: „Some decisions are consequential and irreversible or nearly irreversible – one-way doors – and these decisions must be made methodically, carefully, slowly, with great deliberation and consultation."
+
+Two-Way Door (Typ 2):: Eine Entscheidung, die du zurücknehmen kannst. Bezos: „But most decisions aren't like that – they are changeable, reversible – they're two-way doors." Ist das Ergebnis schlecht, gilt: „You can reopen the door and go back through."
+
+Der Prozess richtet sich nach der Tür:: Der Brief wendet sich gegen Entscheiden nach Einheitsmaß („one-size-fits-all"). Typ-2-Entscheidungen „can and should be made quickly by high judgment individuals or small groups". Der schwere Prozess bleibt Typ 1 vorbehalten.
+
+Der benannte Fehler ist Langsamkeit:: Bezos zielt auf die große Organisation, die „the heavy-weight Type 1 decision-making process on most decisions, including many Type 2 decisions" anwendet. Das Ergebnis: „slowness, unthoughtful risk aversion, failure to experiment sufficiently, and consequently diminished invention".
+
+Der umgekehrte Fehler ist tödlich:: Die Fußnote des Briefs behandelt den Gegenfall: „Any companies that habitually use the light-weight Type 2 decision-making process to make Type 1 decisions go extinct before they get large."
+
+Erst einordnen, dann entscheiden:: Die Arbeitsfrage kommt vor der Entscheidung selbst: Lässt sich das zurücknehmen, von wem und zu welchem Preis? In einer Code-Änderung sind die üblichen One-Way Doors gelöschte oder migrierte Daten, eine veröffentlichte API oder ein Event-Schema, eine versendete Nachricht und alles, wovon ein Dritter abhängig wird.
+
+[discrete]
+== *Wann einsetzen*:
+
+* Im Pull Request angeben, ob sich die Änderung zurücknehmen lässt, damit der Reviewer umkehrbare von unumkehrbaren Änderungen unterscheidet
+* Festlegen, wie viel Review, Freigabe und Rollout-Sorgfalt eine Änderung verdient
+* Architekturentscheidungen: im ADR festhalten, welche Konsequenzen schwer umkehrbar sind
+* Delegieren: Two-Way Doors gehen an den, der der Arbeit am nächsten ist; One-Way Doors bekommen Beratung
+* Ein Team entblocken, das lange über eine Wahl berät, die es einfach ausprobieren und zurücknehmen könnte
+* Neben der Frage, wen es trifft, wenn die Änderung falsch ist: Umkehrbarkeit und Reichweite sind zwei getrennte Tatsachen über eine Änderung
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Two-Way Door heißt, die Entscheidung braucht kein Nachdenken" -- sie braucht einen leichteren Prozess, nicht keinen
+* ❌ „Eine Entscheidung bleibt für immer dieselbe Tür" -- ein Schema ist bei leerer Tabelle billig zu ändern und bei voller teuer; ordne neu ein, wenn Abhängige und Daten hinzukommen
+* ❌ „Ein möglicher Bug macht daraus eine One-Way Door" -- es zählt, ob sich die Wirkung zurücknehmen lässt, nicht ob die Änderung fehlschlagen kann
+* ❌ „Das ist eine vollständige Review-Checkliste" -- die Unterscheidung sortiert Änderungen nach Umkehrbarkeit und sagt nichts über Korrektheit, Barrierefreiheit oder Sicherheit
+* ✓ „Sie legt fest, wie viel Prozess eine Entscheidung bekommt" -- zutreffend, und genau diesen Gebrauch beschreibt Bezos
+====
+
+== *Kritik*:
+
+* *Umkehrbarkeit verfällt.* Saeed Habibi hält die Art der Tür für keine feste Eigenschaft: „Two-way doors can become one-way doors while you're not paying attention." Sein Beispiel ist eine Schema-Entscheidung, die „became effectively permanent", sobald die Tabelle gewachsen war. Seine Ersatzfrage zielt auf die Kosten: „The question isn't whether you can reverse a decision. It's what reversal actually costs." https://dev.to/saeedhbi/reversibility-decays-what-bezoss-framework-misses-about-technical-decisions-4kna[Habibi, „Reversibility Decays: What Bezos's Framework Misses About Technical Decisions", DEV Community] (veröffentlicht am 3. Februar; die Seite nennt kein Jahr).
+* *Menschen ordnen in beide Richtungen falsch ein.* Habibi: „Engineers treat irreversible decisions as reversible, and reversible decisions as irreversible." Ozan Varol benennt die vorsichtige Hälfte des Fehlers: „Most decisions that initially appear to be irreversible are actually two-way doors masquerading as one-way doors." https://ozanvarol.com/what-most-people-miss-about-making-decisions/[Varol, „Most people miss this step when making a decision"] (21. Mai 2019).
+* *Kein Freibrief für Eile.* Shane Parrish nennt die Grenze, die in der Kurzform verloren geht: „Reversible decisions are not an excuse to act recklessly or be ill-informed". https://fs.blog/reversible-irreversible-decisions/[Parrish, „Reversible and Irreversible Decisions", Farnam Street] (23. April 2018).
+* *Eine wissenschaftliche Kritik der Zweiteilung wurde nicht gefunden.* Die benannten Kritiken sind englische Praktikerartikel. Das ist eine Lücke unserer Suche, nicht des Diskurses.
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Die Quelle ist der Aktionärsbrief 2015, und dort stehen die „Doors" im Plural.* Die Passage steht im Abschnitt „Invention Machine" von https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm[Bezos' Aktionärsbrief 2015] in der bei der SEC eingereichten Fassung. Der Brief spricht von „one-way doors", „two-way doors", „Type 1"- und „Type 2"-Entscheidungen. Eine zitierfähige frühere Verwendung der Tür-Metapher durch Bezos oder Amazon haben wir nicht gefunden.
+* *Bezos wiederholte sie ein Jahr später, verknüpft mit Entscheidungstempo.* Im https://www.sec.gov/Archives/edgar/data/1018724/000119312517120198/d373368dex991.htm[Brief 2016] steht: „Many decisions are reversible, two-way doors. Those decisions can use a light-weight process." Dieselbe Passage ergänzt den Rat, mit „somewhere around 70% of the information you wish you had" zu entscheiden, und die Formel „disagree and commit".
+* *Amazon lehrt sie heute als Denkmodell und wendet sie auf Architektur an.* AWS nennt sie „a mental model we call one-way and two-way doors" in https://aws.amazon.com/de/executive-insights/content/how-amazon-defines-and-operationalizes-a-day-1-culture/[Daniel Slaters „Elements of Amazon's Day 1 Culture"]. Das https://docs.aws.amazon.com/wellarchitected/latest/framework/the-review-process.html[AWS Well-Architected Framework] verlangt Reviews „early on in the design phase to avoid one-way doors that are difficult to change".
+* *In der Software verschob sich das Kriterium von „unumkehrbar" zu „teuer umzukehren".* thoughtbot definiert über die Kosten: „If the cost (financial, time, resources) of reversing a decision is high, it falls into the One-way door category". https://thoughtbot.com/blog/one-way-vs-two-way-door-decisions[Bireke, „One-way vs Two-way door decisions"] (10. Mai 2024). Googles Abseil-Performance-Tipps wenden sie auf technische Eigenschaften an: „Broadly speaking, fine-grained flag changes are easy to undo and thus two-way doors" und „The possibility of a bug does not make the door one-way." https://abseil.io/fast/87[Kennelly, „Performance Tip of the Week #87: Two-way doors"] (16. Oktober 2024, aktualisiert am 17. November 2025).
+* *Umkehrbarkeit als Architekturthema ist älter als die Tür.* Martin Fowler schrieb 2003, zur Aufgabe eines Architekten gehöre „finding ways to eliminate irreversibility in software designs". https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf[Fowler, „Who Needs an Architect?", IEEE Software] (Juli/August 2003). Die Tür-Metapher benennt den Gedanken; eingeführt hat sie ihn nicht.
+* *Ein Prior-Test am 23.11.2026 hat gemessen, was der Name ändert und was er verdeckt.* Bei der Bewertung von vier Änderungen an einem Online-Shop hielten 12 von 12 Läufen mit dem Begriff fest, dass ein neues öffentliches API-Feld nach der Veröffentlichung schwer zurückzunehmen ist; ohne den Begriff tat das nur das starke Modell. Der Begriff verengte zugleich den Blick: Bei einer geänderten Button-Farbe nannten das schwache und das mittlere Modell Kontrast oder Barrierefreiheit in 8 von 8 Läufen ohne den Begriff und in 0 von 8 mit ihm. Nutze ihn neben anderen Review-Perspektiven, nicht statt ihrer. Siehe das link:#/prior-tests[Prior-Test-Register].

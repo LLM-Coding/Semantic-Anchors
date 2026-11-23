@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 20 documentation pages, 23 semantic contracts, and
-> 272 anchors in 15 categories — the anchors both
+> 273 anchors in 15 categories — the anchors both
 > one by one and bundled into 29 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -45,7 +45,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 272 terms in full, 29 files
+## Anchor bundles — the same 273 terms in full, 29 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -57,7 +57,7 @@
 - [Design Principles & Patterns (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-2.txt): 26 anchors in full.
 - [Design Principles & Patterns (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/design-principles-3.txt): 13 anchors in full.
 - [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 15 anchors in full.
-- [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 10 anchors in full.
+- [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 11 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
 - [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 8 anchors in full.
 - [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 9 anchors in full.
@@ -71,8 +71,8 @@
 - [Software Architecture (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 17 anchors in full.
 - [Software Architecture (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-3.txt): 1 anchors in full.
 - [Statistical Methods & Process Monitoring](https://llm-coding.github.io/Semantic-Anchors/bundles/statistical-methods.txt): 5 anchors in full.
-- [Strategic Planning (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-1.txt): 17 anchors in full.
-- [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 5 anchors in full.
+- [Strategic Planning (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-1.txt): 16 anchors in full.
+- [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 7 anchors in full.
 - [Testing & Quality Practices (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 - [Testing & Quality Practices (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-3.txt): 2 anchors in full.
@@ -80,7 +80,7 @@
 - [UX & Visual Design (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 15 anchors in full.
 - [UX & Visual Design (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-3.txt): 2 anchors in full.
 
-## Anchors — 272 named terms, grouped by category
+## Anchors — 273 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -198,6 +198,7 @@
 - [Keep a Changelog](https://llm-coding.github.io/Semantic-Anchors/anchors/keep-a-changelog.txt)
 - [Programming as Theory Building (Naur)](https://llm-coding.github.io/Semantic-Anchors/anchors/mental-model-according-to-naur.txt)
 - [Mikado Method](https://llm-coding.github.io/Semantic-Anchors/anchors/mikado-method.txt)
+- [One-Way Door / Two-Way Door Decisions](https://llm-coding.github.io/Semantic-Anchors/anchors/one-way-two-way-door-decisions.txt)
 - [PDCA](https://llm-coding.github.io/Semantic-Anchors/anchors/pdca.txt)
 - [Refactoring Catalog according to Fowler](https://llm-coding.github.io/Semantic-Anchors/anchors/refactoring-catalog.txt)
 - [Regulated Environment](https://llm-coding.github.io/Semantic-Anchors/anchors/regulated-environment.txt)
@@ -362,6 +363,7 @@
 - [Muda, Mura, Muri](https://llm-coding.github.io/Semantic-Anchors/anchors/muda-mura-muri.txt)
 - [Minimum Viable Product (MVP)](https://llm-coding.github.io/Semantic-Anchors/anchors/mvp.txt)
 - [OKR (Objectives and Key Results)](https://llm-coding.github.io/Semantic-Anchors/anchors/okr.txt)
+- [One-Way Door / Two-Way Door Decisions](https://llm-coding.github.io/Semantic-Anchors/anchors/one-way-two-way-door-decisions.txt)
 - [PERT](https://llm-coding.github.io/Semantic-Anchors/anchors/pert.txt)
 - [Premortem](https://llm-coding.github.io/Semantic-Anchors/anchors/premortem.txt)
 - [Pugh-Matrix](https://llm-coding.github.io/Semantic-Anchors/anchors/pugh-matrix.txt)

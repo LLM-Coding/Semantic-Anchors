@@ -8,6 +8,13 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 * Precise, Rich and Consistent stay mandatory. Attributable is now needed only when the bare term is ambiguous, as in "ADR according to Nygard" -- https://github.com/LLM-Coding/Semantic-Anchors/issues/908[#908]. `:proponents:` stays required; an unambiguous term without a single originator uses `Community`.
 
+*New anchor -- One-Way Door / Two-Way Door Decisions:*
+
+* *link:#/anchor/one-way-two-way-door-decisions[One-Way Door / Two-Way Door Decisions]* (Jeff Bezos) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/906[#906]: the distinction between irreversible (Type 1) and reversible (Type 2) decisions from the 2015 Amazon shareholder letter. Asked to assess four changes to an online shop, 12 of 12 runs with the term noted that a new public API field is hard to take back once published; without it only Opus did. Tier ★★★.
+* *It is one lens, not the review.* For a button-colour change, Haiku and Sonnet mentioned contrast or accessibility in eight of eight runs without the term and in none of eight with it. The entry says so.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-11-23, One-Way Door / Two-Way Door Decisions.
+
 == 2026-11-04
 
 *New anchor -- Building a Second Brain (BASB):*
