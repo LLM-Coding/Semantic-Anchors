@@ -1,6 +1,6 @@
 # Semantic Contracts
 
-> 24 composable contracts that define what terms mean in your project —
+> 25 composable contracts that define what terms mean in your project —
 > by composing established Semantic Anchors or by providing custom team definitions.
 > Add them to your AGENTS.md or CLAUDE.md.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
@@ -156,6 +156,18 @@ Quality assurance follows three layers:
 - Use a different AI model or fresh session for reviews to avoid blind spots
 
 *Referenced anchors: fagan-inspection, owasp-top-10, atam*
+
+## Merge Risk
+
+_What every pull request states about its risk, before anyone reviews it_
+
+Every pull request states its merge risk:
+- Evidence: what was executed and what was observed. A claim is not evidence
+- Reversibility: one-way door or two-way door, and why
+- Blast radius: who or what is affected if the change is wrong
+- State what is unclear instead of guessing
+
+*Referenced anchors: one-way-two-way-door-decisions, blast-radius*
 
 ## Retro
 

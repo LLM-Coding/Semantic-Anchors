@@ -8,6 +8,10 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 * The *link:#/contracts[Retro]* contract (category Quality, EN + DE) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/926[#926] -- turns recurring corrections into guards after each pull request, strongest guard first (*link:#/anchor/poka-yoke[Poka-Yoke]*). Each automated guard is proven on the old code, a human approves rule changes, and if nothing recurs, nothing changes. In the lift test the guard was proven in 6 of 6 runs, against 2 of 6 with the anchors alone.
 
+*New contract -- Merge Risk:*
+
+* The *link:#/contracts[Merge Risk]* contract (category Quality, EN + DE) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/927[#927] -- has every pull request state evidence, reversibility, blast radius and what is unclear. It leaves the review depth to the reviewer on purpose. The lift is uniformity, not consistent classification: the same change was called one-way and two-way in different runs.
+
 *Quality criteria -- Attributable is a qualifier:*
 
 * Precise, Rich and Consistent stay mandatory. Attributable is now needed only when the bare term is ambiguous, as in "ADR according to Nygard" -- https://github.com/LLM-Coding/Semantic-Anchors/issues/908[#908]. `:proponents:` stays required; an unambiguous term without a single originator uses `Community`.

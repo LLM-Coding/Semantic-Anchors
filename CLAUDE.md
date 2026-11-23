@@ -611,6 +611,15 @@ Quality assurance follows three layers:
 - Architecture review using ATAM (scenario-based tradeoff analysis against quality goals)
 - Use a different AI model or fresh session for reviews to avoid blind spots
 
+## Merge Risk
+
+Every pull request states its merge risk:
+
+- Evidence: what was executed and what was observed. A claim is not evidence
+- Reversibility: one-way door or two-way door, and why
+- Blast radius: who or what is affected if the change is wrong
+- State what is unclear instead of guessing
+
 ## Retro
 
 Run a retro after every pull request: look back at the session, the review comments and the failed checks. Improve in small steps (Kaizen).

@@ -133,6 +133,20 @@
     "category": "quality"
   },
   {
+    "id": "merge-risk",
+    "title": "Merge Risk",
+    "titleDe": "Merge-Risiko",
+    "description": "What every pull request states about its risk, before anyone reviews it",
+    "descriptionDe": "Was jeder Pull Request über sein Risiko aussagt, bevor jemand ihn prüft",
+    "anchors": [
+      "one-way-two-way-door-decisions",
+      "blast-radius"
+    ],
+    "template": "Every pull request states its merge risk:\n- Evidence: what was executed and what was observed. A claim is not evidence\n- Reversibility: one-way door or two-way door, and why\n- Blast radius: who or what is affected if the change is wrong\n- State what is unclear instead of guessing",
+    "templateDe": "Jeder Pull Request benennt sein Merge-Risiko:\n- Nachweis: was ausgeführt und was beobachtet wurde. Eine Behauptung ist kein Nachweis\n- Umkehrbarkeit: One-Way Door oder Two-Way Door, und warum\n- Blast Radius: wer oder was betroffen ist, wenn die Änderung falsch ist\n- Unklares benennen, statt zu raten",
+    "category": "quality"
+  },
+  {
     "id": "retro",
     "title": "Retro",
     "titleDe": "Retro",
