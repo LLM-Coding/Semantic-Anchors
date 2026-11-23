@@ -7444,7 +7444,8 @@
         "works": true
       }
     ],
-    "definition": "One-Way Door / Two-Way Door Decisions is a distinction from Jeff Bezos's 2015 letter to Amazon shareholders: a one-way door (Type 1) decision is irreversible or nearly so and deserves slow, careful deliberation, while a two-way door (Type 2) decision can be undone and should be made quickly by individuals or small groups. Its purpose is to match the weight of the decision process to how hard the decision is to reverse. In software it is used to mark which changes can be rolled back and which cannot, such as a dropped column or a published API."
+    "definition": "One-Way Door / Two-Way Door Decisions is a distinction from Jeff Bezos's 2015 letter to Amazon shareholders: a one-way door (Type 1) decision is irreversible or nearly so and deserves slow, careful deliberation, while a two-way door (Type 2) decision can be undone and should be made quickly by individuals or small groups. Its purpose is to match the weight of the decision process to how hard the decision is to reverse. In software it is used to mark which changes can be rolled back and which cannot, such as a dropped column or a published API.",
+    "addedAt": "2026-11-23T20:08:25+01:00"
   },
   {
     "id": "owasp-asvs",
