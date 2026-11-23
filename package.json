@@ -21,6 +21,6 @@
   "type": "commonjs",
   "dependencies": {
     "@asciidoctor/core": "^3.0.4",
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^5.5.0"
   }
 }
