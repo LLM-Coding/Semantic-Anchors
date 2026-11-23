@@ -196,11 +196,16 @@ describe('category quick-nav', () => {
     expect(html).toContain('id="category-design-principles"')
   })
 
-  it('labels each icon-only chip with the category name for accessibility', () => {
-    const html = renderCardGrid(categories, anchors)
-    // icon is decorative; the name carries the accessible label (aria-label + title)
-    expect(html).toContain('class="category-nav-icon"')
-    expect(html).toContain('aria-label="categories.testing-quality"')
+  it('names each chip with the category name plus its visible count', () => {
+    document.body.innerHTML = renderCardGrid(categories, anchors)
+    const html = document.body.innerHTML
+    // The icon is decorative. The name comes from the content, so it contains
+    // the visible count (WCAG 2.5.3); an aria-label would replace the content.
+    const chip = document.querySelector('[data-category-link="testing-quality"]')
+    expect(chip.hasAttribute('aria-label')).toBe(false)
+    expect(chip.querySelector('.sr-only').dataset.i18n).toBe('categories.testing-quality')
+    expect(chip.textContent.replace(/\s+/g, ' ')).toContain('categories.testing-quality 2')
+    expect(chip.querySelector('.category-nav-icon').getAttribute('aria-hidden')).toBe('true')
     expect(html).toContain('data-i18n-title="categories.testing-quality"')
   })
 })
