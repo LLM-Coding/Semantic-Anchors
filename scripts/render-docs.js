@@ -331,9 +331,11 @@ if (fs.existsSync(evalReport)) {
   console.log(`Copied: ${path.relative(ROOT, path.join(WEB_PUBLIC, 'evaluation-report.html'))}`)
 }
 
-// Copy assets referenced by workflow docs
-const workflowDiagram = path.join(ROOT, 'docs/workflow-diagram.svg')
-if (fs.existsSync(workflowDiagram)) {
-  fs.copyFileSync(workflowDiagram, path.join(WEB_DOCS, 'workflow-diagram.svg'))
-  console.log(`Copied: ${path.relative(ROOT, path.join(WEB_DOCS, 'workflow-diagram.svg'))}`)
+// Copy diagrams referenced by the docs
+for (const diagram of ['workflow-diagram.svg', 'landmark-regions.svg']) {
+  const source = path.join(ROOT, 'docs', diagram)
+  if (fs.existsSync(source)) {
+    fs.copyFileSync(source, path.join(WEB_DOCS, diagram))
+    console.log(`Copied: ${path.relative(ROOT, path.join(WEB_DOCS, diagram))}`)
+  }
 }
