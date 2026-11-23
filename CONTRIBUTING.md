@@ -51,7 +51,7 @@ The catalog ships three artifact types. Knowing which one you are proposing deci
 
 ## Quality Criteria
 
-We check every proposal against these four criteria. You don't have to check them yourself before you propose a term:
+We check every proposal against these criteria. Precise, Rich and Consistent are mandatory; Attributable qualifies an ambiguous term. You don't have to check them yourself before you propose a term:
 
 ### ✅ Precise
 
@@ -74,12 +74,12 @@ Different users invoking the anchor should get *similar conceptual activation* f
 - ✓ "Test-Driven Development" - widely documented methodology with consistent understanding
 - ✗ "Modern testing" - different interpretations by different people
 
-### ✅ Attributable
+### ✅ Attributable (qualifier)
 
-The anchor can be *traced to key proponents, publications, or documented standards*.
+Needed when the bare term is *ambiguous*: a person, publication or standard then pins the meaning. A term that is unambiguous on its own does not need one.
 
-- ✓ "Hexagonal Architecture" (Alistair Cockburn, 2005)
-- ✗ "Best practices" - no specific source or authority
+- ✓ "ADR according to Nygard" - the name selects one of several ADR formats
+- ✗ "ADR" alone, when you mean one specific format
 
 > **Tip:** Not sure if your proposal qualifies? Check our [Rejected Proposals](https://llm-coding.github.io/Semantic-Anchors/rejected-proposals/) page to see previously evaluated terms that didn't meet the criteria — and why.
 
@@ -224,7 +224,7 @@ Each anchor is stored as an AsciiDoc file with metadata attributes:
 
 - `:categories:` — One or more category IDs (see website for list)
 - `:roles:` — One or more professional role IDs (see [Professional Roles](#professional-roles) for valid IDs)
-- `:proponents:` — Key people, publications, or standards. If the anchor is an established term of art with no single originator (e.g. `sota`, `ssot-principle`), use the sentinel `Community` rather than omitting the required field or inventing an attribution. A missing proponent is a signal worth checking: a term traceable to no person, publication, or standard is weakly _attributable_ and may be general vocabulary rather than a semantic anchor.
+- `:proponents:` — Key people, publications, or standards. If the anchor is an established term of art with no single originator (e.g. `sota`, `ssot-principle`), use the sentinel `Community` rather than omitting the required field or inventing an attribution. `Community` is not a weakness if the bare term is unambiguous; an ambiguous term needs a qualifier in its name.
 - `:tags:` — Keywords for search (optional but recommended)
 - `:related:` — Related anchor IDs (optional)
 - `:tier:` — Activation tier: `1` (frontier-only), `2` (needs qualification), `3` (broadly recognized)
@@ -250,7 +250,7 @@ These are **NOT** semantic anchors:
 | "TLDR" | Underspecified instruction, no defined structure |
 | "ELI5" | Vague target level, no pedagogical framework |
 | "Keep it short" | Pure instruction, no conceptual depth |
-| "Best practices" | No specific body of knowledge, not attributable |
+| "Best practices" | No specific body of knowledge |
 | "Modern approach" | Too vague, not consistent across users |
 
 ## Categories
@@ -334,7 +334,7 @@ Every PR must pass all of the following before merge:
 
 For **new semantic anchors**:
 
-1. Quality criteria met (Precise, Rich, Consistent, Attributable)
+1. Quality criteria met (Precise, Rich, Consistent; Attributable if the bare term is ambiguous)
 2. All required metadata attributes present (`:categories:`, `:roles:`, `:proponents:`, `:tier:`)
 3. AsciiDoc format correct (`[%collapsible]` block, proper attribute syntax)
 4. Anchor tested with LLM prompt (see [How We Test a Proposal](#how-we-test-a-proposal))

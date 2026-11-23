@@ -87,7 +87,7 @@ Every proposal is tested against our four quality criteria:
 . *Precise* — Does it reference a specific, established body of knowledge?
 . *Rich* — Does it activate multiple interconnected concepts?
 . *Consistent* — Do different LLMs reliably understand it the same way?
-. *Attributable* — Can it be traced to key proponents or publications?
+. *Attributable* — Only if the bare term is ambiguous: does a person, publication or standard pin the meaning?
 
 We test by prompting an LLM with:
 

@@ -78,7 +78,7 @@ Jeder Vorschlag wird gegen unsere vier Qualitätskriterien getestet:
 . *Precise* — Referenziert er ein spezifisches, etabliertes Wissensgebiet?
 . *Rich* — Aktiviert er mehrere zusammenhängende Konzepte?
 . *Consistent* — Verstehen verschiedene LLMs ihn zuverlässig gleich?
-. *Attributable* — Lässt er sich auf Schlüsselvertreter oder Publikationen zurückführen?
+. *Attributable* — Nur bei mehrdeutigem Begriff: Legt eine Person, Publikation oder ein Standard die Bedeutung fest?
 
 Wir testen, indem wir ein LLM fragen:
 

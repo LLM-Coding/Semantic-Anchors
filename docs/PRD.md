@@ -23,7 +23,7 @@ The Semantic Anchors repository has grown from a simple README to a comprehensiv
 ### Primary Goals
 1. **Improve Discoverability**: Make semantic anchors easier to find through visualization and role-based filtering
 2. **Lower Contribution Barrier**: Enable non-technical users to propose new anchors via structured issues
-3. **Ensure Quality**: Automate validation that proposed terms meet semantic anchor criteria (precise, rich, consistent, attributable)
+3. **Ensure Quality**: Automate validation that proposed terms meet semantic anchor criteria (precise, rich, consistent; attributable if the bare term is ambiguous)
 4. **Scale Content**: Support growth beyond 100+ anchors through modular structure
 
 ### Success Metrics

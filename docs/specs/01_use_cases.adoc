@@ -385,7 +385,7 @@ stop
 * Bei Approval: PR ist erstellt mit generiertem Content
 
 === Geschäftsregeln
-* **BR-07-001**: Jeder vorgeschlagene Anker muss die vier Qualitätskriterien erfüllen: Precise, Rich, Consistent, Attributable.
+* **BR-07-001**: Jeder vorgeschlagene Anker muss die Qualitätskriterien Precise, Rich und Consistent erfüllen. Ist der nackte Begriff mehrdeutig, muss er zusätzlich Attributable sein.
 * **BR-07-002**: Vorschläge, die reine Instruktionen ohne konzeptuelle Tiefe sind (z.B. "TLDR", "ELI5"), werden abgelehnt.
 * **BR-07-003**: Duplikate bestehender Anker werden abgelehnt mit Verweis auf den existierenden Eintrag.
 
@@ -427,7 +427,7 @@ note right
   - Precise
   - Rich
   - Consistent
-  - Attributable"
+  - Attributable (if ambiguous)"
 end note
 :Copilot analysiert und antwortet;
 if (Copilot Score > 7/10?) then (ja)
@@ -449,7 +449,7 @@ stop
 
 === Geschäftsregeln
 * **BR-08-001**: Validierungs-Score basiert auf einer 10-Punkt-Skala. Score > 7 gilt als "validated".
-* **BR-08-002**: Die vier Bewertungskriterien sind: Precise, Rich, Consistent, Attributable — gleichgewichtet.
+* **BR-08-002**: Die Bewertungskriterien sind Precise, Rich und Consistent, gleichgewichtet. Attributable zählt nur, wenn der nackte Begriff mehrdeutig ist.
 
 === Fehlerszenarien
 * **F1**: Copilot API Timeout → Workflow posted "Validation failed, manual review required"

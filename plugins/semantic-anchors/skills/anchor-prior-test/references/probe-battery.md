@@ -13,10 +13,10 @@ Measures whether the prior exists and how rich it is. A strong anchor: `recogniz
 
 ## P2 — Name ambiguity
 
-> What is `<bare term>`?
-> End with a line: `SELF: dominant_domain=<the field your answer is mainly about>; mentioned_<expected>=<yes/no>`
+> What is `<bare term>`? If it has several established meanings or variants, name them.
+> End with a line: `SELF: dominant_domain=<the field your answer is mainly about>; mentioned_<expected>=<yes/no>; variants=<none or list>`
 
-Run the *bare*, unqualified term. If the dominant domain is the wrong field (e.g. "morphological analysis" → linguistics), the catalog must use the qualified name. This sets the recommended anchor string.
+Run the *bare*, unqualified term. If the dominant domain is the wrong field (e.g. "morphological analysis" → linguistics), the catalog must use the qualified name. A term is also ambiguous when its variants share one field and demand different results ("ADR": Nygard, MADR). This sets the recommended anchor string.
 
 ## P3 — Anchor action (decisive)
 
@@ -30,7 +30,7 @@ Tests the term as an *instruction*, not as a quiz. This is what an anchor is act
 > Who created `<term>`, and roughly when?
 > End with a line: `SELF: creator=<name>; confidence=<high/med/low>`
 
-Confirms the *Attributable* criterion and surfaces misattribution (a common failure: the popular name differs from the inventor).
+Run it for every term: it surfaces misattribution. It decides the *Attributable* criterion only when P2 shows that the bare term is ambiguous (a common failure: the popular name differs from the inventor).
 
 ## Optional — Substitution check
 

@@ -44,7 +44,7 @@ A good semantic anchor is:
 * *Precise*: References a specific, established body of knowledge
 * *Rich*: Activates multiple interconnected concepts
 * *Consistent*: Different users get similar conceptual activation
-* *Attributable*: Can be traced to key proponents or publications
+* *Attributable* (only if the bare term is ambiguous): A person, publication or standard pins the meaning
 
 Learn more in our link:https://llm-coding.github.io/Semantic-Anchors/about/[About page].
 

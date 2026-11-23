@@ -193,7 +193,7 @@ Before adding a new anchor, verify it meets these criteria:
 - **Precise**: References a specific, established body of knowledge with clear boundaries
 - **Rich**: Activates multiple interconnected concepts, not just a single instruction
 - **Consistent**: Different users invoking it get similar conceptual activation
-- **Attributable**: Can be traced to key proponents, publications, or documented standards
+- **Attributable** (qualifier, not a gate): needed only when the bare term is ambiguous; a person, publication or standard then pins the meaning ("ADR according to Nygard")
 
 **Counter-examples** (NOT semantic anchors):
 - "TLDR" - underspecified, no defined structure

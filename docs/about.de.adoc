@@ -110,7 +110,7 @@ Verschiedene Personen, die denselben semantischen Anker verwenden, erhalten *äh
 
 == Qualitätskriterien
 
-Nicht jeder Begriff eignet sich als semantischer Anker. Wir pflegen hohe Qualitätsstandards:
+Nicht jeder Begriff eignet sich als semantischer Anker. Präzise, Reichhaltig und Konsistent sind Pflicht; Zuordenbar schärft einen mehrdeutigen Begriff:
 
 *Aufnahme bedeutet Präzision, nicht Empfehlung.* Der Katalog ist ein Begriffslexikon: Dass ein Anker enthalten ist, heißt, der Begriff funktioniert als präziser Pointer auf ein dichtes, gut dokumentiertes Konzept — nicht, dass wir die Praxis empfehlen. Wo eine Methode umstritten ist oder ihre aktuelle Edition vom Trainingsdaten-Prior abgedriftet ist, sagt der Anker das in einer _Kritik_- oder _Aktueller-Stand_-Sektion mit benannten, verlinkten Quellen.
 
@@ -135,12 +135,12 @@ Verschiedene Benutzer erhalten *ähnliche konzeptionelle Aktivierung*.
 
 ❌ "Modernes Testen" (verschiedene Interpretationen)
 
-=== Zuordenbar
-Kann *zu Schlüsselvertretern, Publikationen oder dokumentierten Standards zurückverfolgt* werden.
+=== Zuordenbar (schärfend)
+Nötig, wenn der nackte Begriff *mehrdeutig* ist: Eine Person, Publikation oder ein Standard legt dann die Bedeutung fest. Ein Begriff, der für sich eindeutig ist, braucht das nicht.
 
-✅ "arc42" (Gernot Starke, Peter Hruschka)
+✅ "ADR nach Nygard" - der Name wählt eines von mehreren ADR-Formaten
 
-❌ "Best Practices" (keine spezifische Quelle)
+❌ "ADR" allein, wenn ein bestimmtes Format gemeint ist
 
 == Wie man diesen Katalog verwendet
 
