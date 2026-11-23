@@ -503,6 +503,21 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Anchor: Blast Radius -->
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/blast-radius</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://llm-coding.github.io/Semantic-Anchors/de/anchor/blast-radius</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Anchor: BlinkWithoutDelay -->
   <url>
     <loc>https://llm-coding.github.io/Semantic-Anchors/anchor/blink-without-delay</loc>

@@ -908,6 +908,68 @@
     "addedAt": "2026-07-06T23:02:34+02:00"
   },
   {
+    "id": "blast-radius",
+    "title": "Blast Radius",
+    "categories": [
+      "software-architecture",
+      "development-workflow"
+    ],
+    "roles": [
+      "software-architect",
+      "devops-engineer",
+      "software-developer",
+      "qa-engineer",
+      "team-lead"
+    ],
+    "related": [
+      "bulkhead",
+      "least-privilege",
+      "defense-in-depth",
+      "circuit-breaker",
+      "site-reliability-engineering",
+      "one-way-two-way-door-decisions"
+    ],
+    "proponents": [
+      "Community"
+    ],
+    "tags": [
+      "blast radius",
+      "scope of impact",
+      "failure domain",
+      "fault isolation",
+      "containment",
+      "cell-based architecture",
+      "shuffle sharding",
+      "canary release",
+      "progressive rollout",
+      "chaos engineering",
+      "zero trust",
+      "assume breach",
+      "pull request",
+      "merge risk",
+      "change risk"
+    ],
+    "filePath": "docs/anchors/blast-radius.adoc",
+    "tier": 2,
+    "priorTest": "2026-11-23",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Blast Radius is an established term of software reliability and security for the extent of what is affected when something goes wrong: a failure, a compromise or a bad change. Borrowed from explosives and without a single originator, it asks who and what is exposed, and it leads to measures that contain the damage, such as cells, bulkheads, separate accounts, least privilege and progressive rollouts. In a pull request it states who or what is affected if the change is wrong.",
+    "addedAt": "2026-11-23T20:11:31+01:00"
+  },
+  {
     "id": "blink-without-delay",
     "title": "BlinkWithoutDelay",
     "categories": [
@@ -1211,7 +1273,8 @@
       "circuit-breaker",
       "site-reliability-engineering",
       "fallacies-of-distributed-computing",
-      "residuality-theory"
+      "residuality-theory",
+      "blast-radius"
     ],
     "proponents": [
       "Michael T. Nygard"
@@ -7342,7 +7405,8 @@
       "chestertons-fence",
       "second-order-thinking",
       "premortem",
-      "adr-according-to-nygard"
+      "adr-according-to-nygard",
+      "blast-radius"
     ],
     "proponents": [
       "Jeff Bezos"

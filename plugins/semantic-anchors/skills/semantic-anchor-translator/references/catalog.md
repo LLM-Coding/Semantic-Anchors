@@ -153,6 +153,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Michael T. Nygard
 - **Core:** Cap how much of the system any one dependency can consume, so a slow partner cannot exhaust the shared pool. A circuit breaker stops calls to a failing dependency; a bulkhead limits the damage while they still run
 
+### Blast Radius
+- **Also known as:** scope of impact, impact radius; bounded by failure domains
+- **Proponents:** Community (term of art from reliability and security engineering; borrowed from explosives, no single originator)
+- **Core:** The extent of what is affected when a failure, a compromise or a bad change happens — extent, not likelihood. Failure domains set its upper bound, not its actual reach; contained by cells and bulkheads, shuffle sharding, separate accounts, least privilege, canary and progressive rollouts. In a pull request it states who or what is affected if the change is wrong. Say which event you mean: small models lean to the security sense
+
 ### Defense in Depth
 - **Also known as:** layered security, defence in depth; Swiss cheese model in safety engineering
 - **Proponents:** US National Security Agency
