@@ -13,6 +13,11 @@ updates:
     cooldown:
       default-days: 7
     open-pull-requests-limit: 5
+    # Major versions are planned work, not routine. update-types limits this rule to
+    # version updates; security updates still come through.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       npm-minor-patch:
         applies-to: version-updates
