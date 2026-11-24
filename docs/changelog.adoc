@@ -2,6 +2,12 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-11-24
+
+*Contract Implement Next -- merge risk in every pull request:*
+
+* The *link:#/contracts[Implement Next]* contract now has every pull request state, for each effect, *link:#/anchor/one-way-two-way-door-decisions[one-way or two-way door]*, what a revert would leave behind and the *link:#/anchor/blast-radius[blast radius]*, and list what nobody has checked -- https://github.com/LLM-Coding/Semantic-Anchors/issues/927[#927]. It replaces the proposed Merge Risk contract. In the test, unchecked points got their own list in 67 of 72 runs. Borderline cases still get varying labels.
+
 == 2026-11-23
 
 *New contract -- Retro:*
