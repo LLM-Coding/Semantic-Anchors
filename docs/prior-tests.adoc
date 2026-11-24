@@ -1218,3 +1218,56 @@ The task: assess a shared library that changes its default time zone and is used
 
 * One task. Older model generations and other model families were not measured.
 * Haiku reported `reaching=yes` in two of two P1 runs; its lists were specific.
+
+== Run 2026-11-23, contracts: Retro and Merge Risk
+
+[cols="1,3"]
+|===
+|Candidates |Two semantic contracts: Retro (https://github.com/LLM-Coding/Semantic-Anchors/issues/926[#926]) after Five Whys, Poka-Yoke and Kaizen, and Merge Risk (https://github.com/LLM-Coding/Semantic-Anchors/issues/927[#927]) after One-Way Door / Two-Way Door Decisions and Blast Radius. The question was lift: does the contract text change the answer against naming the anchors in one sentence?
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
+|Procedure |Action probes only. One task per contract, three conditions: no preamble; the anchors in one sentence, "Run the retro following Kaizen, Five Whys and Poka-Yoke." and "Describe the merge risk with one-way door / two-way door decisions and blast radius."; the full contract text. Two runs per condition and tier, 36 probes
+|Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with a neutral system prompt (`You are a helpful assistant.`), auto-memory off, from a neutral temporary directory. The preamble was part of the system prompt
+|Scoring |Markers read by the author of the contract texts. The raw answers are not in the repository
+|Criticism research |Not part of this run
+|===
+
+=== Tasks
+
+Retro: the retro for a pull request with a review comment that also stood in two earlier ones (`fetchUser` returns `any`), a first-time typo, one CI failure after a lost network, and a rule about a package removed a year ago.
+
+Merge Risk: the description of a pull request that renames a production column and an API field. Unit tests pass locally, nobody has run the migration on staging, and it is not known whether a partner reads the field.
+
+=== Results, Retro (runs out of six)
+
+[cols="3,1,1,1"]
+|===
+|Marker |Baseline |Anchors |Contract
+
+|Automatic retry added for a single network failure |0 |4 |0
+|New step added for a first-time typo |2 |0 |0
+|Guard proven on the faulty code, by test or CI |1 |2 |6
+|Explicitly asks for approval |2 |1 |6
+|Dead rule removed, or its removal proposed |6 |6 |6
+|===
+
+The lift is proof and approval. Haiku under the contract: "a fixture returning `any` should fail lint on the current config and pass after the change." Named alone, the anchors led four of six runs to add a retry after one failure, for example Haiku: "Label e2e network failures as infrastructure and add a retry." Removing the dead rule shows no lift, and the task named that rule.
+
+=== Results, Merge Risk (runs out of six)
+
+[cols="3,1,1,1"]
+|===
+|Marker |Baseline |Anchors |Contract
+
+|States that the migration was not run on staging |6 |6 |6
+|Names the door, with a reason |0 |6 |6
+|Says what was not executed, in a section of its own |6 |6 |6
+|Separate section for what is unclear |0 |0 |6
+|===
+
+Over the anchors alone the lift is small: a uniform structure and the section for what is unclear. The classification did not become consistent. For the column rename, the anchors alone gave the same label in both runs of each tier; under the contract, Haiku wrote "Treat as a one-way door" in one run and "Two-way door, with caveats" in the other, and Opus split in the same way. Haiku also stated a fact the task did not give, about integration tests, in one anchor run and in one contract run.
+
+The table first posted in #927 counted the heading "Evidence" instead of the content and gave 0 for baseline and anchors in the third row. It was corrected on 2026-11-24.
+
+=== Verdict
+
+Retro: passed, and added in #926. One rule was reworded after the run without a new test: "Remove guards that no longer catch anything or that slow the loop down" became "Remove guards that no longer catch anything; speed up slow ones instead of removing them". Merge Risk: small lift over its anchors. This run alone does not settle whether it earns an entry.
