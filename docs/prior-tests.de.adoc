@@ -1324,5 +1324,5 @@ Die Regel wurde als eigener Punkt in Implement Next aufgenommen, der vorgeschlag
 * Die Einstufung ist nicht stabil. Grenzfälle (ein zusätzliches Webhook-Feld, ein geänderter Standardwert, eine neue Spalte) schwanken über Läufe und Stufen, ebenso die Änderung des Cache-Schlüssels, die als klarer Fall zählte.
 * „Getrennt“ war bei den klaren Fällen etwas schlechter als „Angehängt“, überwiegend wegen der Cache-Aufgabe.
 * Der Lift bei „was ein Revert zurücklässt“ ist dünn: In Reihe 2 kam er aus der Cache-Aufgabe, deren erwartete Antwort eng gefasst war. Ohne sie nannten es die Anker in 36 von 45 Läufen, der eigene Contract in 35, die angehängte Regel in 32.
-* Weniger erfundene Fakten haben sich nicht bestätigt: niedriger bei v3 und v5 in Reihe 1, kein Unterschied beim eigenen Contract und der angehängten Regel in Reihe 2. Der niedrigere Wert bei „Getrennt“ ist eine einzelne Messung.
+* Weniger erfundene Fakten haben sich nicht bestätigt: niedriger bei v3, v4 und v5 in Reihe 1, kein Unterschied beim eigenen Contract und der angehängten Regel in Reihe 2. Der niedrigere Wert bei „Getrennt“ ist eine einzelne Messung.
 * Formulierungen und Tests stammen vom selben Autor, ebenso die Einteilung in „klar“ und „Grenzfall“.

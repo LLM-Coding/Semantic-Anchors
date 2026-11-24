@@ -1324,5 +1324,5 @@ The rule was added to Implement Next as a bullet of its own; the proposed contra
 * The classification is not stable. Borderline cases (an added webhook field, a changed default, a new column) vary across runs and tiers, and so does the cache key change, which counted as a clear case.
 * "Split" was slightly worse than "Added" on the clear cases, mostly on the cache task.
 * The lift for what a revert leaves behind is thin: in series 2 it came from the cache task, where the expected answer was narrow. Without that task the anchors named it in 36 of 45 runs, the own contract in 35, the added rule in 32.
-* Fewer invented facts did not hold up: lower for v3 and v5 in series 1, no difference for the own contract and the added rule in series 2. The lower figure for Split is a single measurement.
+* Fewer invented facts did not hold up: lower for v3, v4 and v5 in series 1, no difference for the own contract and the added rule in series 2. The lower figure for Split is a single measurement.
 * The wordings were written and tested by the same author; the labels "clear" and "borderline" are theirs, too.
