@@ -166,6 +166,12 @@ The channel capacity is higher.
 |===
 | Layer | Def | Error Class Caught | Stage | Closed-Loop
 
+| Test integrity (CODEOWNERS with branch protection, Danger)
+| 🟢
+| Weakened, deleted or skipped tests; loosened check configuration
+| Pre-Merge / CI
+| yes (deliberate changes need human approval)
+
 | Unit tests
 | 🔴
 | Logic errors in single functions
@@ -225,9 +231,15 @@ The channel capacity is higher.
 | Basic functionality after deployment
 | Post-deploy
 | yes
+
+| Agent evals (promptfoo, Inspect)
+| 🔴
+| Changes to AGENTS.md, skills, prompts or the model that make the agent solve fewer tasks
+| On agent-setup change
+| partial (a human judges whether the difference is noise)
 |===
 
-The entire testing category is 🔴 -- tests define the project-internal "correct".
+Apart from test integrity, the testing category is 🔴 -- tests define the project-internal "correct".
 That is unavoidable: the cost-heaviest part of the harness is the test layer.
 
 === Why the Ordering Matters
@@ -803,6 +815,7 @@ A detailed stack-per-language inventory belongs in a separate document (planned)
 When someone asks "where do I start with a harness?", the 🟢 list in one block:
 
 * *Language*: compiler, type checker, formatter, import sorter
+* *Testing*: test integrity
 * *Security*: secret scan, SCA, container scan, IaC scan, supply chain, compliance scan, license scan
 * *Architecture*: complexity metrics
 * *UX / a11y*: automated a11y, contrast checker, cross-browser, prose lint
@@ -833,11 +846,11 @@ The Vibe-Coding Risk Radar (Tier 1-4) handles the dosing:
 
 | *Tier 2* — Business logic, internal app
 | CRM extension, reporting service
-| + Unit, integration, BDD (🔴)
+| + Unit, integration, BDD (🔴), test integrity (🟢) once those tests exist
 
 | *Tier 3* — Customer-facing app, public API
 | E-commerce frontend, public API
-| + Property-based, contract tests, visual regression, performance gate, a11y audit per release
+| + Property-based, contract tests, visual regression, performance gate, agent evals, a11y audit per release
 
 | *Tier 4* — Safety-critical / regulated
 | Fintech core, medical device, avionics
@@ -870,6 +883,7 @@ Each of these deserves its own sub-matrix when the time comes.
 * ISO/IEC 25010 quality characteristics.
 * OpenAI Codex Team: _The Agent Is Not the Hard Part — the Harness Is_ (2026).
 * Avraham Poupko: the modifier insight (`private`, `static`, `final` as error correction).
+* https://ewatch.github.io/learning-how-to-verify/en/[_Learning how to verify_] -- 56 verification practices with simulators and evidence ratings; the Coverage Wheel links to them layer by layer.
 * Peter Naur, _Programming as Theory Building_, 1985.
 
 == Related Pages

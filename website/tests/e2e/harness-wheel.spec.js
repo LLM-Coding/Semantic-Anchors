@@ -176,3 +176,73 @@ test.describe('harness wheel — not applicable is not a gap', () => {
     await fresh.close()
   })
 })
+
+/*
+ * The wheel says which layers a harness has; it does not teach them. Layers
+ * with a matching practice on "Learning how to verify" link there instead of
+ * repeating its explanations and simulators.
+ */
+test.describe('harness wheel — learning links', () => {
+  const BASE = 'https://ewatch.github.io/learning-how-to-verify/en/practices/'
+  const MAPPING = {
+    compiler: ['type-systems'],
+    'type-checker': ['type-systems'],
+    linter: ['lint'],
+    'unit-tests': ['unit-tests'],
+    'property-based-fuzz': ['property-based-tests', 'fuzz-tests'],
+    'mutation-testing': ['mutation-tests'],
+    'integration-tests': ['integration-tests'],
+    'contract-tests': ['contract-tests'],
+    'bdd-acceptance-tests': ['acceptance-tests'],
+    'end-to-end-ui': ['e2e-tests'],
+    'snapshot-visual-regression': ['snapshot-tests'],
+    'performance-benchmark': ['performance-tests', 'benchmark-tests'],
+    'smoke-tests': ['smoke-tests'],
+    'test-integrity': ['test-integrity'],
+    'agent-evals': ['evals'],
+    'secret-scanning': ['security-scanning'],
+    sca: ['security-scanning'],
+    sast: ['security-scanning'],
+    'threat-modeling': ['threat-modeling'],
+    'code-review': ['code-review'],
+    'archunit-dependency-cruiser': ['architecture'],
+    'config-validation': ['config-tests'],
+    'runtime-assertions-invariants': ['contracts'],
+    'distributed-tracing': ['tracing'],
+    'canary-progressive-delivery': ['canarying'],
+    'observability-gates': ['monitoring'],
+    'chaos-engineering': ['chaos-testing'],
+    'feature-flags': ['feature-flags'],
+    'formal-verification': ['formal-verification'],
+    'model-checker': ['formal-verification'],
+  }
+
+  test('each mapped layer links to its practices, and no other layer does', async ({ page }) => {
+    await page.goto(WHEEL)
+    const actual = await page.evaluate(() => {
+      const out = {}
+      document.querySelectorAll('#inv li .learn a').forEach((a) => {
+        const id = a.closest('li').dataset.id
+        ;(out[id] ||= []).push(a.getAttribute('href'))
+      })
+      return out
+    })
+    const expected = Object.fromEntries(
+      Object.entries(MAPPING).map(([id, slugs]) => [id, slugs.map((s) => `${BASE}${s}/`)])
+    )
+    expect(actual).toEqual(expected)
+  })
+
+  test('the link is visible in the layer dialog', async ({ page }) => {
+    await page.goto(WHEEL)
+    await page.locator('li[data-id="mutation-testing"] .name').click()
+    await expect(page.locator('#mBody .learn a')).toBeVisible()
+  })
+
+  test('test integrity is part of the pragmatic minimum, agent evals are not', async ({ page }) => {
+    await page.goto(WHEEL)
+    await page.locator('#btnMin').click()
+    await expect(checkbox(page, 'test-integrity')).toBeChecked()
+    await expect(checkbox(page, 'agent-evals')).not.toBeChecked()
+  })
+})
