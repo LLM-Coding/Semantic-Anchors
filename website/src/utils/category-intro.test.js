@@ -49,8 +49,8 @@ describe('renderInlineLinks', () => {
 
 describe('getCategoryIntroHtml', () => {
   it('returns the intro in the requested language', () => {
-    expect(getCategoryIntroHtml(intros, 'ux-visual-design', 'de')).toContain('Bedienelemente')
-    expect(getCategoryIntroHtml(intros, 'ux-visual-design', 'en')).toContain('controls')
+    expect(getCategoryIntroHtml(intros, 'ux-visual-design', 'de')).toContain('pro Ebene')
+    expect(getCategoryIntroHtml(intros, 'ux-visual-design', 'en')).toContain('per layer')
   })
 
   it('falls back to English for an unknown language and to empty for an unknown category', () => {
@@ -92,11 +92,26 @@ describe('category intros (#869)', () => {
     )
   })
 
-  it('link the Component Gallery and the APG in UX & Visual Design', () => {
-    for (const lang of ['en', 'de']) {
-      const html = getCategoryIntroHtml(intros, 'ux-visual-design', lang)
-      expect(html).toContain('href="https://component.gallery/design-systems/"')
-      expect(html).toContain('href="https://www.w3.org/WAI/ARIA/apg/patterns/"')
+  // #932: the UX intro is a short pointer; the how-to lives in the guide.
+  // Invariant: every reference the intro used to carry is still in the guide,
+  // in both languages, so shortening the intro lost nothing.
+  it('leave the Component Gallery and APG references to the UX guide (#932)', () => {
+    const docs = path.join(here, '..', '..', '..', 'docs')
+    for (const [lang, file] of [
+      ['en', 'prompting-ux-design.adoc'],
+      ['de', 'prompting-ux-design.de.adoc'],
+    ]) {
+      const intro = getCategoryIntroHtml(intros, 'ux-visual-design', lang)
+      expect(intro).not.toContain('component.gallery')
+      expect(intro).not.toContain('w3.org/WAI/ARIA/apg')
+      const guide = fs.readFileSync(path.join(docs, file), 'utf-8')
+      for (const url of [
+        'https://component.gallery/',
+        'https://component.gallery/design-systems/',
+        'https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/',
+      ]) {
+        expect(guide, `${file}: ${url}`).toContain(url)
+      }
     }
   })
 })

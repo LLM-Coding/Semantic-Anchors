@@ -538,7 +538,7 @@ describe('category intro (#869)', () => {
     expect(section).toMatch(
       /<\/h2>\s*<div class="category-intro-row"[^>]*>\s*<p class="category-intro"/
     )
-    expect(section).toContain('href="https://component.gallery/design-systems/"')
+    expect(section).toContain('href="/Semantic-Anchors/style-gallery"')
   })
 
   it('shows the category guide next to the intro, in the category colour (#904)', () => {
@@ -574,7 +574,7 @@ describe('updateCategoryIntros (#869)', () => {
       '<p class="category-intro" data-category-intro="ux-visual-design">stale</p>'
     updateCategoryIntros('de')
     const p = document.querySelector('[data-category-intro]')
-    expect(p.innerHTML).toContain('Bedienelemente')
+    expect(p.innerHTML).toContain('pro Ebene')
     expect(p.innerHTML).not.toContain('stale')
   })
 

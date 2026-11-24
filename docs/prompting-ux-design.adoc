@@ -182,7 +182,7 @@ A name gives the model what its training data knows, and design systems move fas
 
 Two ways close the gap:
 
-* *Give the link.* For a system that is not in the catalog, or a version newer than the training data, add a link to the documentation and say which version you build on.
+* *Give the link.* For a system that is not in the catalog, or a version newer than the training data, add a link to the documentation and say which version you build on. The Component Gallery lists https://component.gallery/design-systems/[95 design systems]; only a few of them are anchors in this catalog.
 * *Give the values.* link:#/anchor/design-tokens-dtcg[Design Tokens in the W3C DTCG format] hand over exact colours, spacing and type. With the name, six of six runs wrote `$value` and `$type`, and four of six used alias references (run 2026-10-28). Some design systems also ship an MCP server that gives an agent their components directly: Deutsche Bahn's https://www.npmjs.com/package/@db-ux/mcp-server[`@db-ux/mcp-server`] "gives LLMs access to UI components and code examples" of the DB UX Design System.
 
 == Prompts to Copy
