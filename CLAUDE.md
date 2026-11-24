@@ -627,7 +627,7 @@ Run a retro after every pull request: look back at the session, the review comme
 - For every correction, find the cause with Five Whys, not just the fix
 - Turn each recurring cause into the strongest guard available, in this order (Poka-Yoke): a type or API design that rules the error out, a lint rule or test, a coding standard, a prompt instruction
 - Prove each automated guard: it fails on the old code and passes on the new
-- Remove guards that no longer catch anything or that slow the loop down
+- Remove guards that no longer catch anything; speed up slow ones instead of removing them
 - Propose changes to rules and checks; a human approves them
 - If nothing recurs, change nothing
 
