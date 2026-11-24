@@ -1271,3 +1271,58 @@ The table first posted in #927 counted the heading "Evidence" instead of the con
 === Verdict
 
 Retro: passed, and added in #926. One rule was reworded after the run without a new test: "Remove guards that no longer catch anything or that slow the loop down" became "Remove guards that no longer catch anything; speed up slow ones instead of removing them". Merge Risk: small lift over its anchors. This run alone does not settle whether it earns an entry.
+
+== Run 2026-11-24, merge risk: rewording the proposed contract and extending Implement Next
+
+[cols="1,3"]
+|===
+|Candidates |Reworded versions of the proposed contract Merge Risk (https://github.com/LLM-Coding/Semantic-Anchors/issues/927[#927]) and, in the last two series, the same rule as part of the existing contract Implement Next. The question was lift: does a better wording make the classification consistent, and does the rule need a contract of its own?
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
+|Procedure |Action probes only, pull request descriptions, three runs per tier, task and condition. Series 1: six tasks, six conditions, 270 probes. Series 2: six new tasks (three clear, three borderline), four conditions, 216 probes. Series 3: the split wording on those six tasks, and all Implement Next conditions on two bug fixes outside an EPIC, 108 probes. The texts are in https://github.com/LLM-Coding/Semantic-Anchors/issues/927[#927]
+|Clean room |As in the run of 2026-11-23: no tools, no settings, neutral system prompt, auto-memory off
+|Scoring |Graded by Opus against the facts of the task, without the condition being named; only a few answers were read by hand. "Invented" is strict: "not tested" counts if the task didn't say so. The raw answers are not in the repository
+|Criticism research |Not part of this run
+|===
+
+=== Series 1: the wording
+
+"v1" is the contract as proposed, "v2" to "v5" are rewordings. v1 ran on three tasks, v4 on the other three. v4 was written after the first results, v5 after all of them.
+
+[cols="3,1,1,1,1,1,1"]
+|===
+|Marker |Anchors |v1 |v2 |v3 |v4 |v5
+
+|Runs with invented facts |28/54 |15/27 |24/54 |12/54 |6/27 |19/54
+|Separate section for what is unclear |10/54 |25/27 |52/54 |51/54 |24/27 |53/54
+|Effects given the same label in all three runs |30/36 |15/18 |30/36 |30/36 |15/18 |25/36
+|===
+
+* A strict definition of the two-way door ("reverting the merge commit alone undoes completely", v3) labelled the column rename one-way in nine of nine runs, but called switching on a feature flag one-way or mixed in nine of nine, where the anchors said two-way in nine of nine.
+* The run of 2026-11-23 found the anchors alone stable on the column rename. This did not repeat: here they varied on all three tiers.
+
+=== Series 2 and 3: a contract of its own, or Implement Next
+
+"Own" is the reworded contract; "Added" appends the rule to the EPIC bullet; "Split" makes it a bullet of its own and is the adopted text.
+
+[cols="3,1,1,1,1,1"]
+|===
+|Marker, six tasks of series 2 |Implement Next |Anchors |Own |Added |Split
+
+|Clear cases labelled as expected |6/27 |22/27 |25/27 |23/27 |20/27
+|Second, harmless effect labelled two-way |0/54 |32/54 |46/54 |46/54 |49/54
+|Separate section for what is unclear |16/54 |7/54 |54/54 |51/54 |52/54
+|Names what a revert leaves behind |17/54 |38/54 |44/54 |41/54 |46/54
+|Runs with invented facts |22/54 |24/54 |23/54 |22/54 |13/54
+|===
+
+On the two bug fixes outside an EPIC, the destructive migration was labelled one-way in nine of nine runs with the rule, added or split, and in one of nine without it.
+
+=== Verdict
+
+The rule was added to Implement Next as a bullet of its own; the proposed contract Merge Risk was dropped. What the rule reliably adds over the anchors is the list of what nobody has checked and a label for small effects.
+
+* The classification is not stable. Borderline cases (an added webhook field, a changed default, a new column) vary across runs and tiers, and so does the cache key change, which counted as a clear case.
+* "Split" was slightly worse than "Added" on the clear cases, mostly on the cache task.
+* The lift for what a revert leaves behind is thin: in series 2 it came from the cache task, where the expected answer was narrow. Without that task the anchors named it in 36 of 45 runs, the own contract in 35, the added rule in 32.
+* Fewer invented facts did not hold up: lower for v3 and v5 in series 1, no difference for the own contract and the added rule in series 2. The lower figure for Split is a single measurement.
+* The wordings were written and tested by the same author; the labels "clear" and "borderline" are theirs, too.

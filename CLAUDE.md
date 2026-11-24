@@ -587,6 +587,7 @@ For each issue:
 - Commit with Conventional Commits, reference issue number
 - Verify the spec and architecture docs against the code: for each structural claim, confirm it still holds. Correct the document, never the code
 - When EPIC is complete, create a Pull Request
+- Every Pull Request states its merge risk for each separate effect: one-way or two-way door and what a revert would leave behind, and the blast radius. State only facts that were given or observed, and list what nobody has checked
 
 ## Refactoring
 
