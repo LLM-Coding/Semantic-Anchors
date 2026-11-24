@@ -183,7 +183,7 @@ Ein Name liefert dem Modell, was seine Trainingsdaten kennen, und Design-Systeme
 
 Zwei Wege schließen die Lücke:
 
-* *Den Link mitgeben.* Für ein System, das nicht im Katalog steht, oder eine Version, die neuer ist als die Trainingsdaten, gib einen Link zur Dokumentation mit und sag, auf welcher Version du aufbaust.
+* *Den Link mitgeben.* Für ein System, das nicht im Katalog steht, oder eine Version, die neuer ist als die Trainingsdaten, gib einen Link zur Dokumentation mit und sag, auf welcher Version du aufbaust. Die Component Gallery listet https://component.gallery/design-systems/[95 Design-Systeme]; nur wenige davon sind Anker in diesem Katalog.
 * *Die Werte mitgeben.* link:#/anchor/design-tokens-dtcg[Design Tokens im Format des W3C DTCG] übergeben genaue Farben, Abstände und Schriften. Mit dem Namen schrieben sechs von sechs Läufen `$value` und `$type`, vier von sechs nutzten Alias-Referenzen (Lauf vom 28.10.2026). Manche Design-Systeme liefern zusätzlich einen MCP-Server, der einem Agenten ihre Komponenten direkt gibt: Der https://www.npmjs.com/package/@db-ux/mcp-server[`@db-ux/mcp-server`] der Deutschen Bahn „gives LLMs access to UI components and code examples“ des DB UX Design System.
 
 == Prompts zum Kopieren
