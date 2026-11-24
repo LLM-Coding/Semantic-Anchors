@@ -1218,3 +1218,56 @@ Die Aufgabe: eine gemeinsame Bibliothek bewerten, die ihre Standard-Zeitzone än
 
 * Eine Aufgabe. Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.
 * Haiku meldete `reaching=yes` in zwei von zwei P1-Läufen; seine Listen waren konkret.
+
+== Lauf vom 23.11.2026, Contracts: Retro und Merge-Risiko
+
+[cols="1,3"]
+|===
+|Kandidaten |Zwei Semantic Contracts: Retro (https://github.com/LLM-Coding/Semantic-Anchors/issues/926[#926]) nach Five Whys, Poka-Yoke und Kaizen sowie Merge-Risiko (https://github.com/LLM-Coding/Semantic-Anchors/issues/927[#927]) nach One-Way Door / Two-Way Door Decisions und Blast Radius. Die Frage war der Lift: Ändert der Contract-Text die Antwort gegenüber einem Satz, der die Anker nennt?
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark). Die aufgelösten Bezeichner stammen aus dem Feld `modelUsage` jeder Antwort
+|Verfahren |Nur Aktionsproben. Eine Aufgabe je Contract, drei Bedingungen: ohne Vorspann; die Anker in einem Satz, „Run the retro following Kaizen, Five Whys and Poka-Yoke.“ und „Describe the merge risk with one-way door / two-way door decisions and blast radius.“; der vollständige Contract-Text, festgehalten unter „Tested text“ im jeweiligen Issue. Zwei Läufe je Bedingung und Stufe, 36 Proben
+|Reinraum |`claude -p --strict-mcp-config --setting-sources "" --tools ""` mit neutralem System-Prompt (`You are a helpful assistant.`), Auto-Memory aus, aus einem neutralen temporären Verzeichnis. Der Vorspann war Teil des System-Prompts
+|Auswertung |Die Merkmale hat der Autor der Contract-Texte ausgewertet. Die Rohantworten liegen nicht im Repository
+|Kritik-Recherche |Nicht Teil dieses Laufs
+|===
+
+=== Aufgaben
+
+Retro: die Retro zu einem Pull Request mit einem Review-Kommentar, der schon in zwei früheren stand (`fetchUser` liefert `any`), einem erstmaligen Tippfehler, einem CI-Fehler nach Netzausfall und einer Regel zu einem vor einem Jahr entfernten Paket.
+
+Merge-Risiko: die Beschreibung eines Pull Requests, der eine Spalte in der Produktionsdatenbank und ein API-Feld umbenennt. Die Unit-Tests laufen lokal durch, niemand hat die Migration auf Staging ausgeführt, und es ist unbekannt, ob ein Partner das Feld liest.
+
+=== Ergebnisse, Retro (Läufe von sechs)
+
+[cols="3,1,1,1"]
+|===
+|Merkmal |Baseline |Anker |Contract
+
+|Automatischer Retry wegen eines einzigen Netzausfalls |0 |4 |0
+|Neuer Schritt wegen eines erstmaligen Tippfehlers |2 |0 |0
+|Sicherung am fehlerhaften Code belegt, per Test oder CI |1 |2 |6
+|Bittet ausdrücklich um Freigabe |2 |1 |6
+|Tote Regel entfernt oder ihre Entfernung vorgeschlagen |6 |6 |6
+|===
+
+Der Lift liegt in Beleg und Freigabe. Haiku unter dem Contract: „a fixture returning `any` should fail lint on the current config and pass after the change.“ Nur genannt, brachten die Anker vier von sechs Läufen dazu, nach einem einzigen Fehler einen Retry einzubauen, etwa Haiku: „Label e2e network failures as infrastructure and add a retry.“ Beim Entfernen der toten Regel gibt es keinen Lift, und die Aufgabe nannte diese Regel.
+
+=== Ergebnisse, Merge-Risiko (Läufe von sechs)
+
+[cols="3,1,1,1"]
+|===
+|Merkmal |Baseline |Anker |Contract
+
+|Sagt, dass die Migration nicht auf Staging lief |6 |6 |6
+|Nennt die Tür mit Begründung |0 |6 |6
+|Sagt in einem eigenen Abschnitt, was nicht ausgeführt wurde |6 |6 |6
+|Eigener Abschnitt für Unklares |0 |0 |6
+|===
+
+Gegenüber den Ankern allein ist der Lift klein: ein einheitlicher Aufbau und der Abschnitt für Unklares. Die Einstufung wurde nicht einheitlich. Bei der Spaltenumbenennung gaben die Anker allein in beiden Läufen jeder Stufe dasselbe Etikett; unter dem Contract schrieb Haiku in einem Lauf „Treat as a one-way door“ und im anderen „Two-way door, with caveats“, und Opus schwankte ebenso. Haiku nannte außerdem in einem Anker- und einem Contract-Lauf eine Tatsache über Integrationstests, die nicht in der Aufgabe stand.
+
+Die zuerst in #927 veröffentlichte Tabelle zählte die Überschrift „Evidence“ statt des Inhalts und gab in der dritten Zeile 0 für Baseline und Anker an. Sie wurde am 24.11.2026 korrigiert.
+
+=== Urteil
+
+Retro: bestanden und in #926 aufgenommen. Eine Regel wurde nach dem Lauf ohne neuen Test umformuliert: Aus „Remove guards that no longer catch anything or that slow the loop down“ wurde „Remove guards that no longer catch anything; speed up slow ones instead of removing them“. Merge-Risiko: kleiner Lift gegenüber den Ankern. Dieser Lauf allein entscheidet nicht, ob der Contract einen Eintrag verdient.
