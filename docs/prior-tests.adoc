@@ -1225,7 +1225,7 @@ The task: assess a shared library that changes its default time zone and is used
 |===
 |Candidates |Two semantic contracts: Retro (https://github.com/LLM-Coding/Semantic-Anchors/issues/926[#926]) after Five Whys, Poka-Yoke and Kaizen, and Merge Risk (https://github.com/LLM-Coding/Semantic-Anchors/issues/927[#927]) after One-Way Door / Two-Way Door Decisions and Blast Radius. The question was lift: does the contract text change the answer against naming the anchors in one sentence?
 |Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong). Resolved identifiers taken from the `modelUsage` field of every response
-|Procedure |Action probes only. One task per contract, three conditions: no preamble; the anchors in one sentence, "Run the retro following Kaizen, Five Whys and Poka-Yoke." and "Describe the merge risk with one-way door / two-way door decisions and blast radius."; the full contract text. Two runs per condition and tier, 36 probes
+|Procedure |Action probes only. One task per contract, three conditions: no preamble; the anchors in one sentence, "Run the retro following Kaizen, Five Whys and Poka-Yoke." and "Describe the merge risk with one-way door / two-way door decisions and blast radius."; the full contract text, kept under "Tested text" in each issue. Two runs per condition and tier, 36 probes
 |Clean room |`claude -p --strict-mcp-config --setting-sources "" --tools ""` with a neutral system prompt (`You are a helpful assistant.`), auto-memory off, from a neutral temporary directory. The preamble was part of the system prompt
 |Scoring |Markers read by the author of the contract texts. The raw answers are not in the repository
 |Criticism research |Not part of this run
