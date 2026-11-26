@@ -1326,3 +1326,45 @@ Die Regel wurde als eigener Punkt in Implement Next aufgenommen, der vorgeschlag
 * Der Lift bei „was ein Revert zurücklässt“ ist dünn: In Reihe 2 kam er aus der Cache-Aufgabe, deren erwartete Antwort eng gefasst war. Ohne sie nannten es die Anker in 36 von 45 Läufen, der eigene Contract in 35, die angehängte Regel in 32.
 * Weniger erfundene Fakten haben sich nicht bestätigt: niedriger bei v3, v4 und v5 in Reihe 1, kein Unterschied beim eigenen Contract und der angehängten Regel in Reihe 2. Der niedrigere Wert bei „Getrennt“ ist eine einzelne Messung.
 * Formulierungen und Tests stammen vom selben Autor, ebenso die Einteilung in „klar“ und „Grenzfall“.
+
+== Lauf vom 26.11.2026, Rolling Wave Planning
+
+[cols="1,3"]
+|===
+|Kandidat |Rolling Wave Planning (https://github.com/LLM-Coding/Semantic-Anchors/issues/936[#936]). Der Vorschlag nennt nur den Begriff, ohne Kontext
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark), aufgerufen über die Aliase `haiku`, `sonnet`, `opus`
+|Verfahren |`anchor-prior-test` v1.2, Clean Room: `claude -p` aus einem neutralen Verzeichnis mit `--strict-mcp-config --setting-sources ""` und dem neutralen System-Prompt `You are a helpful assistant.` für jede Probe
+|Läufe |P1, P2 und beide Aktionsaufgaben zweimal je Stufe, mit und ohne Begriff; P4 einmal je Stufe. Insgesamt 39 Aufrufe
+|Nachweis |Den Lauf hat Claude im geplanten täglichen Check auf Anchor-Vorschläge durchgeführt, nicht der Maintainer. Die Rohantworten liegen nicht im Repository
+|Kritik-Recherche |26.11.2026, Englisch. Gefunden und abgerufen: GAO Schedule Assessment Guide, „Rolling Wave Planning“ (gaoinnovations.gov, undatiert); Mosaic Projects, White Paper WP1060 „Rolling Wave Planning“ (undatiert, ohne Autorenangabe); Humphreys & Associates, Kategorie-Archiv „Rolling Wave Planning“ mit dem Beitrag „Common Problems Found in EVM Systems... Part 3“ (10.05.2014); Timothy J. Pasko, „Using planning packages to achieve earned-value goals“, PMI Global Congress 2006; Wikipedia, „Rolling-wave planning“; projectmanagement.com-Wiki, „Rolling Wave Planning“. Jede Seite wurde einmal über ein Abruf-Werkzeug gelesen; einige Zitate sind aus PDF- oder umbrochenem Text zusammengesetzte Sätze. Den Humphreys-Beitrag „Rolling Wave Planning for Earned Value Management Systems“ (23.01.2013) gab es nur als Modell-Zusammenfassung; er wird daher nicht zitiert. Nicht gefunden: ein Urheber, eine datierte erste Verwendung des Begriffs oder die PMBOK-Ausgabe, die ihn einführte. Wikipedia und projectmanagement.com nennen verschiedene PMBOK-Abschnitte
+|===
+
+=== Ergebnis: ★★☆, Proponent PMI (PMBOK Guide)
+
+[cols="1,1,3"]
+|===
+|Kriterium |Ergebnis |Beleg
+
+|Precise |erfüllt |P2: Der bloße Begriff „rolling wave“ hat in sechs von sechs Läufen das Projektmanagement als vorherrschendes Feld; Strömungslehre, Meereswellen und Finanzen erscheinen nur als Varianten
+|Rich |erfüllt |P1: `recognized=yes`, `richness=rich` in sechs von sechs Läufen (Planungshorizont, Planning Packages, Work Packages, PSP, Earned Value, Re-Baselining, Progressive Elaboration)
+|Consistent |erfüllt |P1 und die Aktionstests stimmen über die Stufen überein; P2 ist nicht auf mehrere Felder verteilt
+|Attributable |nicht erforderlich |P4 findet auf keiner Stufe einen Urheber (`confidence=low`); Sonnet und Opus verweisen auf den PMBOK Guide des PMI. Der bloße Begriff ist in P2 nicht mehrdeutig
+|===
+
+Haiku meldete `reaching=yes` in zwei von zwei P1-Läufen, seine Listen waren aber konkret: Planning Packages, die unter Earned Value Management Budget tragen, ein Planungshorizont von zwei bis drei Monaten, Change Control.
+
+=== Der Aktionstest: Die Modelle verjüngen das Detail ohnehin, der Begriff fügt den Neuplanungszyklus hinzu
+
+Aufgabe A beschrieb eine ERP-Ablösung über 18 Monate mit unklaren späteren Phasen und quartalsweiser Budgetfreigabe. Aufgabe B, bewusst neutral formuliert, verlangte einen 12-Monats-Plan für das Kundenportal eines Versorgers mit acht Personen.
+
+* *Ein Plan, der nah feiner ist als fern, entsteht mit und ohne Begriff.* In Aufgabe B bewerteten alle Läufe, mit und ohne Begriff, das Detail für die Monate 1 bis 3 als hoch; die Monate 7 bis 12 waren in allen Läufen mit Begriff und in fünf von sechs ohne ihn niedrig. Vier von sechs Plänen ohne Begriff nannten sich in jeder Aufgabe selbst rolling-wave.
+* *Der Begriff fügt den ausdrücklichen Neuplanungszyklus hinzu.* In Aufgabe B erschienen benannte Zeitpunkte, an denen die nächste Welle detailliert und der Plan überarbeitet wird, in sechs von sechs Läufen mit Begriff und in zwei von sechs ohne (Haiku und Opus, je ein Lauf).
+* *Planning Packages erscheinen vor allem bei Opus mit dem Begriff.* In Aufgabe A verwendete Opus mit dem Begriff 10- und 8-mal „planning package“, ohne ihn nie; Haiku einmal, Sonnet gar nicht.
+* Der Gewinn ist mäßig, daher ★★☆ und Tier 2.
+
+Typische Antworten aus Aufgabe B, Sonnet. Mit dem Begriff: „Re-planning gates: end of Months 3, 6 and 9. Each gate reviews actuals and velocity, risks, scope and budget. Each gate also decomposes the next wave to detailed level and updates the roadmap.“ Ohne den Begriff war der Plan nach Funktionen in Phasen gegliedert, ohne einen Zeitpunkt, an dem spätere Arbeit neu geplant wird: „Delivery is phased: foundation, then billing, then meter readings, then outages, then hardening and launch.“
+
+=== Was nicht getestet wurde
+
+* Zwei Aufgaben, beide aus der Projektplanung. Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.
+* Der Prompt von Aufgabe A beschreibt selbst die Lage, für die Rolling Wave gedacht ist; das erklärt einen Teil des Verhaltens ohne Begriff. Aufgabe B kam deshalb hinzu.

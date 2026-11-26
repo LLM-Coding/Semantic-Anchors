@@ -1,0 +1,64 @@
+= Rolling Wave Planning
+:categories: strategic-planning
+:roles: team-lead, product-owner, business-analyst, consultant, software-architect
+:related: pert, spike-solution, cynefin-framework, user-story-mapping
+:proponents: Project Management Institute (PMBOK Guide); Earned-Value-Management-Praxis im US-Verteidigungsbereich (Planning Packages)
+:tags: Rolling Wave Planning, rollierende Planung, rollierende Wellenplanung, Progressive Elaboration, schrittweise Verfeinerung, Planungshorizont, Planning Package, Planungspaket, Work Package, Arbeitspaket, Projektstrukturplan, PSP, WBS, Earned Value Management, EVM, Neuplanung, Block Planning, Projektplanung, Terminplan
+:tier: 2
+:definition: Rolling Wave Planning ist eine Technik der Projektplanung, beschrieben im PMBOK Guide des PMI und in der Praxis des Earned Value Management: Kurzfristige Arbeit wird im Detail geplant, langfristige Arbeit bleibt grob, im Earned Value Management als budgetiertes Planning Package. Rückt eine Welle näher, wird der nächste Abschnitt in detaillierte Vorgänge oder Arbeitspakete zerlegt und der Plan überarbeitet. So folgt das Detail dem Wissen, statt ihm vorauszulaufen.
+:prior-test: 2026-11-26
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Rolling Wave Planning (auch Rolling-Wave-Planung, rollierende Planung)
+
+Auch bekannt als:: Block Planning (GAO); eine Form der Progressive Elaboration, also der schrittweisen Verfeinerung
+
+[discrete]
+== *Kernkonzepte*:
+
+Das Detail folgt dem Wissen:: Im Detail plant man nur, was man heute weiß. Das White Paper von Mosaic Projects fasst den Grundsatz in eine Zeile: „you cannot plan in detail what you do not know."
+
+Planungshorizont:: Die Grenze zwischen dem detaillierten Nahbereich und dem groben Fernbereich. Arbeit innerhalb des Horizonts wird in Vorgänge und Arbeitspakete zerlegt; Arbeit dahinter, die noch nicht klar definiert ist, bleibt auf Ebene von Phasen oder Meilensteinen. Spätere Arbeit, die schon bekannt ist, darf früh im Detail geplant werden.
+
+Planning Packages und Work Packages:: Im Earned Value Management steht langfristige Arbeit als Planning Package im Plan, mit Budget, aber ohne Zerlegung. Außerhalb von EVM erfüllen grobe Sammelvorgänge denselben Zweck. GAO: „This incremental conversion of work from planning packages to work packages is commonly known as 'rolling wave' planning."
+
+Die Wellen rollen weiter:: Der Plan wird in festen Abständen oder an Meilensteinen überprüft, und der nächste Abschnitt wird zerlegt. GAO empfiehlt, jede Welle „to a design review, test, or other major milestone" zu planen, nicht auf einen willkürlichen Zeitraum. „Rolling wave planning continues for the life of the program until all work has been planned in detail."
+
+Baseline-Disziplin im Earned Value Management:: Unter EVM muss ein Planning Package zum Work Package werden, bevor Kosten darauf gebucht werden. Pasko (PMI Global Congress 2006): „Planning Packages must be converted to Work Packages prior to any charges being incurred for the effort."
+
+[discrete]
+== *Wann verwenden*:
+
+* Lange Projekte, deren spätere Phasen von Entscheidungen oder Erkenntnissen abhängen, die es noch nicht gibt
+* Finanzierung oder Freigabe je Stufe oder je Quartal
+* Eine feste Zusage für die nächste Zeit, verbunden mit einem unverbindlichen Ausblick für die Stakeholder
+* Programme unter Earned Value Management, die eine Baseline für den vollen Umfang brauchen, ohne jedes Jahr im Detail zu planen
+* Als Brücke zwischen einem festen Projektrahmen und iterativer Lieferung darin
+
+[discrete]
+== *Wie prompten*:
+
+Im Prior Test vom 26.11.2026 fügte der Begriff einen ausdrücklichen Neuplanungszyklus hinzu: Benannte Zeitpunkte, an denen die nächste Welle detailliert und der Plan überarbeitet wird, erschienen in sechs von sechs Läufen mit dem Begriff und in zwei von sechs ohne ihn. Einen Plan, der in der Nähe feiner ist als in der Ferne, lieferten beide Varianten, und vier von sechs Plänen ohne den Begriff nannten sich von selbst „rolling-wave". Für die volle Struktur nennt man Wellen und Gate, etwa: „Plane mit Rolling Wave Planning: Detailliere das erste Quartal, halte den Rest als Planning Packages und sage, wann jede Welle neu geplant wird".
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Rolling Wave heißt, wir müssen die späteren Phasen nicht planen" -- auch der Fernbereich wird geplant, geschätzt und budgetiert, nur gröber
+* ❌ „Das ist dasselbe wie agile Iterationen" -- der Gedanke ist verwandt, aber Rolling Wave hält eine Baseline auf Projektebene und detailliert grobe langfristige Arbeit, wenn sie näher rückt (unter EVM, indem Planning Packages in Work Packages umgewandelt werden); Iterationen oder ein Backlog schreibt es nicht vor
+* ❌ „Mehr Detail jetzt macht den Plan genauer" -- GAO: „More detail does not necessarily mean greater accuracy"
+* ✓ „Die nächste Welle zusagen, den Rest skizzieren und an jedem Gate neu planen" -- zutreffend
+====
+
+== *Kritik*:
+
+* *Planning Packages werden verschoben statt detailliert.* Earned-Value-Praktiker beschreiben Planning Packages, die in die laufende Periode rollen, ohne je zerlegt zu werden. Humphreys & Associates: „It is important that planning packages are not allowed to exist in the current or past periods", und „Cumulative BCWS is the most noticeable evidence that a planning package was not converted". https://blog.humphreys-assoc.com/category/evm-terminology/rolling-wave-planning[Humphreys & Associates, „Common Problems Found in EVM Systems... Part 3"] (10.05.2014). Pasko, der Planning Packages als gute Praxis darstellt, stellt dieselbe Bedingung: „Planning Packages must be reviewed routinely to ensure conversion to Work Packages or retimephased to avoid rolling into the current period schedule." https://www.pmi.org/learning/library/planning-packages-achieve-earned-value-goals-8002[Pasko, „Using planning packages to achieve earned-value goals", PMI Global Congress 2006].
+* *Die Technik achtet auf Arbeitspakete und vernachlässigt die Logik dazwischen.* Mosaic Projects: „The major weakness in Rolling Wave planning is that the technique tends to focus on work packages", und „Most texts on 'rolling wave' omit reconsideration of the logic that may be needed to achieve the overall objectives of the project." https://mail.mosaicprojects.com.au/WhitePapers/WP1060_Rolling_Wave.pdf[Mosaic Projects, White Paper WP1060 „Rolling Wave Planning"] (undatiert).
+* *Zu frühes Detaillieren ist der umgekehrte Fehler.* GAO warnt, „care should be taken not to detail ill-defined far-term effort so soon as to require constant revision as time progresses", und „pursuing too much detail too early may be detrimental to the schedule's quality." https://gaoinnovations.gov/schedule-guide/rolling-wave-planning.html[GAO Schedule Assessment Guide, „Rolling Wave Planning"].
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Kein Urheber, und eine unklare Herkunft.* Mosaic Projects führt das Konzept von Planning und Work Packages auf die frühen 1960er-Jahre zurück und nennt das PERT/COST-System „'rolling wave' in everything but name"; es fügt an: „the precise origin of the term 'Rolling Wave' remains obscure." Im Prior Test nannte kein Modell einen Urheber; Sonnet und Opus verwiesen auf den PMBOK Guide des PMI. https://en.wikipedia.org/wiki/Rolling-wave_planning[Wikipedia] belegt die Technik mit dem PMBOK Guide, Fifth Edition. Welche PMBOK-Ausgabe den Begriff einführte, hat die Recherche nicht bestätigt.
+* *Das Modell greift auch ohne den Namen zur Idee, daher ist der Gewinn mäßig und das Tier 2.* Ohne den Begriff nach einem Projektplan gefragt, verjüngten die Modelle das Detail bereits über die Zeit, und in zwei Aufgaben nannten sich vier von sechs solcher Pläne selbst rolling-wave. Der Begriff fügt den ausdrücklichen Neuplanungszyklus hinzu und, bei Opus, Planning Packages. Siehe das link:#/prior-tests[Prior-Test-Register].

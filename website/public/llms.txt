@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 321 well-defined terms, methodologies, and frameworks
+> 322 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -11842,6 +11842,59 @@ This anchor is classified as **Tier 2 — Needs qualification**. It is not self-
 * **QFD is standardised, and the standard demotes the House.** The nine-part ISO 16355 series covers QFD; Part 1 is https://www.sis.se/en/produkter/sociology-services-company-organization/quality/application-of-statistical-methods/iso-16355-12021/[ISO 16355-1:2021, "Application of statistical and related methods to new technology and product development process — Part 1: General principles and perspectives of quality function deployment (QFD)"], edition 2, approved 31 May 2021, superseding the 2015 first edition. Mazur summarises the shift: "The House of Quality and other time- and resource-intensive matrices are now optional and more efficient effect-to-cause diagrams are recommended for most projects."
 * **Blitz QFD is the lean answer to the complexity complaint.** The QFD Institute created it "to address the trend towards Lean Thinking and Agile Development"; in Blitz QFD "the House of Quality may be completely unnecessary", replaced by a Maximum Value Table and an effect-to-cause wishbone that deploy only the top-priority needs.
 * **Note the split between name and artifact.** The strong prior in most models is the House of Quality picture, not the full deployment chain or the ISO process. When you name QFD, say which you mean.
+
+### Rolling Wave Planning
+
+***Full Name***: Rolling Wave Planning (also written rolling-wave planning)
+
+***Also known as***: block planning (GAO); a form of progressive elaboration
+
+[discrete]
+## **Core Concepts**:
+
+***Detail Follows Knowledge***: Plan in detail only what you know now. The Mosaic Projects white paper puts the principle in one line: "you cannot plan in detail what you do not know."
+
+***Planning Horizon***: The boundary between the detailed near term and the coarse far term. Work inside the horizon is broken into activities and work packages; work beyond it that is not yet well defined stays at phase or milestone level. Far-term work that is already known can be planned in detail early.
+
+***Planning Packages and Work Packages***: Under earned value management, far-term work is held as planning packages with a budget but no detailed breakdown. Outside EVM, coarse summary activities serve the same purpose. GAO: "This incremental conversion of work from planning packages to work packages is commonly known as 'rolling wave' planning."
+
+***Waves Roll Forward***: The plan is revisited at fixed intervals or at milestones, and the next stretch is decomposed. GAO recommends planning each wave "to a design review, test, or other major milestone" rather than to an arbitrary period. "Rolling wave planning continues for the life of the program until all work has been planned in detail."
+
+***Baseline Discipline in Earned Value Management***: Under EVM, a planning package must become a work package before any cost is booked against it. Pasko (PMI Global Congress 2006): "Planning Packages must be converted to Work Packages prior to any charges being incurred for the effort."
+
+[discrete]
+## **When to Use**:
+
+* Long projects whose later phases depend on decisions or findings that do not exist yet
+* Funding or approval granted per stage or per quarter
+* A firm near-term commitment combined with an indicative long-term outlook for stakeholders
+* Programmes under earned value management that must keep a full-scope baseline without detailing every year
+* As the bridge between a fixed project frame and iterative delivery inside it
+
+[discrete]
+## **How to Prompt**:
+
+In the prior test of 2026-11-26, naming the term added an explicit re-planning cycle: named points at which the next wave is detailed and the plan revised appeared in six of six runs with the term and two of six without. A plan whose near term is more detailed than its far term appeared in both, and four of six plans without the term used the word "rolling-wave" on their own. To get the full structure, name the waves and the gate, for example "plan with Rolling Wave Planning: detail the first quarter, keep the rest as planning packages, and say when each wave is re-planned".
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Rolling wave means we don't have to plan the later phases" -- the far term is still planned, estimated and budgeted, only at a coarser level
+* ❌ "It is the same as agile iterations" -- the idea is related, but rolling wave keeps a project-level baseline and details coarse far-term work as it approaches (under EVM, by converting planning packages into work packages); it does not prescribe iterations or a backlog
+* ❌ "More detail now makes the plan more accurate" -- GAO: "More detail does not necessarily mean greater accuracy"
+* ✓ "Commit to the next wave, outline the rest, and re-plan at each gate" -- accurate
+
+## **Criticism**:
+
+* **Planning packages can be deferred instead of detailed.** Earned value practitioners describe planning packages that roll into the current period without ever being broken down. Humphreys & Associates: "It is important that planning packages are not allowed to exist in the current or past periods", and "Cumulative BCWS is the most noticeable evidence that a planning package was not converted". https://blog.humphreys-assoc.com/category/evm-terminology/rolling-wave-planning[Humphreys & Associates, "Common Problems Found in EVM Systems... Part 3"] (10 May 2014). Pasko, who presents planning packages as good practice, sets the same condition: "Planning Packages must be reviewed routinely to ensure conversion to Work Packages or retimephased to avoid rolling into the current period schedule." https://www.pmi.org/learning/library/planning-packages-achieve-earned-value-goals-8002[Pasko, "Using planning packages to achieve earned-value goals", PMI Global Congress 2006].
+* **The technique attends to work packages and neglects the logic between them.** Mosaic Projects: "The major weakness in Rolling Wave planning is that the technique tends to focus on work packages", and "Most texts on 'rolling wave' omit reconsideration of the logic that may be needed to achieve the overall objectives of the project." https://mail.mosaicprojects.com.au/WhitePapers/WP1060_Rolling_Wave.pdf[Mosaic Projects, White Paper WP1060 "Rolling Wave Planning"] (undated).
+* **Detailing too early is the opposite failure.** GAO warns that "care should be taken not to detail ill-defined far-term effort so soon as to require constant revision as time progresses", and that "pursuing too much detail too early may be detrimental to the schedule's quality." https://gaoinnovations.gov/schedule-guide/rolling-wave-planning.html[GAO Schedule Assessment Guide, "Rolling Wave Planning"].
+
+[discrete]
+## **Current Status**:
+
+* **No coiner, and an obscure origin.** Mosaic Projects traces the concept of planning and work packages back to the early 1960s and calls the PERT/COST system "'rolling wave' in everything but name"; it adds that "the precise origin of the term 'Rolling Wave' remains obscure." In the prior test no model named a creator; Sonnet and Opus pointed to PMI's PMBOK Guide. https://en.wikipedia.org/wiki/Rolling-wave_planning[Wikipedia] cites the PMBOK Guide, Fifth Edition, for the technique. Which PMBOK edition introduced the term was not confirmed in the research.
+* **The model reaches for the idea without the name, so the lift is moderate, hence tier 2.** Asked for a project plan without the term, models already tapered the detail over time, and on two tasks four of six such plans called themselves rolling-wave. The term adds the explicit re-planning cycle and, on Opus, planning packages. See the [prior-test register](#/prior-tests).
 
 ### Second-Order Thinking
 

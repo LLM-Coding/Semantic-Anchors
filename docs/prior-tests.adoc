@@ -1326,3 +1326,45 @@ The rule was added to Implement Next as a bullet of its own; the proposed contra
 * The lift for what a revert leaves behind is thin: in series 2 it came from the cache task, where the expected answer was narrow. Without that task the anchors named it in 36 of 45 runs, the own contract in 35, the added rule in 32.
 * Fewer invented facts did not hold up: lower for v3, v4 and v5 in series 1, no difference for the own contract and the added rule in series 2. The lower figure for Split is a single measurement.
 * The wordings were written and tested by the same author; the labels "clear" and "borderline" are theirs, too.
+
+== Run 2026-11-26, Rolling Wave Planning
+
+[cols="1,3"]
+|===
+|Candidate |Rolling Wave Planning (https://github.com/LLM-Coding/Semantic-Anchors/issues/936[#936]). The proposal names the term only, without context
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong), called through the aliases `haiku`, `sonnet`, `opus`
+|Procedure |`anchor-prior-test` v1.2, clean room: `claude -p` from a neutral directory with `--strict-mcp-config --setting-sources ""` and the neutral system prompt `You are a helpful assistant.` for every probe
+|Runs |P1, P2 and both action tasks twice per tier, with and without the term; P4 once per tier. 39 calls in all
+|Record |The run was carried out by Claude in the scheduled daily check for anchor proposals, not by the maintainer. The raw answers are not in the repository
+|Criticism research |2026-11-26, English. Found and fetched: GAO Schedule Assessment Guide, "Rolling Wave Planning" (gaoinnovations.gov, undated); Mosaic Projects, White Paper WP1060 "Rolling Wave Planning" (undated, no author shown); Humphreys & Associates, category archive "Rolling Wave Planning" with the post "Common Problems Found in EVM Systems... Part 3" (2014-05-10); Timothy J. Pasko, "Using planning packages to achieve earned-value goals", PMI Global Congress 2006; Wikipedia, "Rolling-wave planning"; projectmanagement.com wiki, "Rolling Wave Planning". Each page was read once through a fetch tool; some quotes are sentences rejoined from PDF or line-broken text. The Humphreys post "Rolling Wave Planning for Earned Value Management Systems" (2013-01-23) was seen only as a model summary, so it is not quoted. Not found: a coiner, a dated first use of the term, or which PMBOK edition introduced it. Wikipedia and projectmanagement.com cite different PMBOK sections
+|===
+
+=== Result: ★★☆, proponent PMI (PMBOK Guide)
+
+[cols="1,1,3"]
+|===
+|Criterion |Result |Evidence
+
+|Precise |met |P2: the bare term "rolling wave" has project management as the dominant domain in six of six runs; fluid dynamics, ocean waves and finance appear only as variants
+|Rich |met |P1: `recognized=yes`, `richness=rich` in six of six runs (planning horizon, planning packages, work packages, WBS, earned value, re-baselining, progressive elaboration)
+|Consistent |met |P1 and the action tests agree across tiers; P2 is not split across fields
+|Attributable |not required |P4 finds no creator on any tier (`confidence=low`); Sonnet and Opus point to PMI's PMBOK Guide. The bare term is not ambiguous in P2
+|===
+
+Haiku reported `reaching=yes` in two of two P1 runs, but its lists were specific: planning packages that carry budget under earned value management, a planning horizon of two to three months, change control.
+
+=== The action test: models taper the detail anyway, the term adds the re-planning cycle
+
+Task A described an 18-month ERP replacement with unclear later phases and quarterly budget approval. Task B, written to be neutral, asked for a 12-month plan for a utility's customer portal with a team of eight.
+
+* *A plan with more detail near than far appears with and without the term.* In task B every run, with and without the term, rated the detail for months 1 to 3 high; months 7 to 12 were low in all runs with the term and in five of six without. Four of six plans without the term called themselves rolling-wave in each task.
+* *The term adds the explicit re-planning cycle.* In task B, named points at which the next wave is detailed and the plan revised appeared in six of six runs with the term and two of six without (Haiku and Opus, one run each).
+* *Planning packages appear mainly on Opus with the term.* In task A, Opus used the term "planning package" 10 and 8 times with the term and never without it; Haiku once, Sonnet not at all.
+* The lift is moderate, hence ★★☆ and tier 2.
+
+Representative answers from task B, Sonnet. With the term: "Re-planning gates: end of Months 3, 6 and 9. Each gate reviews actuals and velocity, risks, scope and budget. Each gate also decomposes the next wave to detailed level and updates the roadmap." Without the term, the plan was phased by feature, with no point at which later work is re-planned: "Delivery is phased: foundation, then billing, then meter readings, then outages, then hardening and launch."
+
+=== What was not tested
+
+* Two tasks, both in project planning. Older model generations and other model families were not measured.
+* The task A prompt itself describes the situation rolling wave is made for, which explains part of the baseline's behaviour; task B was added for that reason.

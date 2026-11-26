@@ -771,6 +771,9 @@ include::anchors/pugh-matrix.adoc[leveloffset=+2]
 
 include::anchors/qfd.adoc[leveloffset=+2]
 
+[[rolling-wave-planning]]
+include::anchors/rolling-wave-planning.adoc[leveloffset=+2]
+
 include::anchors/second-order-thinking.adoc[leveloffset=+2]
 
 [[swot]]
