@@ -8689,7 +8689,7 @@
         "works": true
       }
     ],
-    "definition": "Rolling Wave Planning is a project-planning technique, described in PMI's PMBOK Guide and in earned value management practice, in which near-term work is planned in detail and far-term work is held as coarse planning packages. As each wave approaches, the next stretch is decomposed into work packages and the plan is revised, so detail follows knowledge instead of running ahead of it.",
+    "definition": "Rolling Wave Planning is a project-planning technique, described in PMI's PMBOK Guide and in earned value management practice, in which near-term work is planned in detail and far-term work is held at a coarse level, under earned value management as budgeted planning packages. As each wave approaches, the next stretch is decomposed into detailed activities or work packages and the plan is revised, so detail follows knowledge instead of running ahead of it.",
     "addedAt": "2026-11-26T18:44:29+01:00"
   },
   {
