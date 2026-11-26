@@ -11880,7 +11880,7 @@ In the prior test of 2026-11-26, naming the term added an explicit re-planning c
 ## **Common Misunderstandings**:
 
 * ❌ "Rolling wave means we don't have to plan the later phases" -- the far term is still planned, estimated and budgeted, only at a coarser level
-* ❌ "It is the same as agile iterations" -- the idea is related, but rolling wave keeps a project-level baseline and converts planning packages into work packages; it does not prescribe iterations or a backlog
+* ❌ "It is the same as agile iterations" -- the idea is related, but rolling wave keeps a project-level baseline and details coarse far-term work as it approaches (under EVM, by converting planning packages into work packages); it does not prescribe iterations or a backlog
 * ❌ "More detail now makes the plan more accurate" -- GAO: "More detail does not necessarily mean greater accuracy"
 * ✓ "Commit to the next wave, outline the rest, and re-plan at each gate" -- accurate
 
