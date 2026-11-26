@@ -7633,7 +7633,8 @@
     "related": [
       "moscow",
       "user-story-mapping",
-      "impact-mapping"
+      "impact-mapping",
+      "rolling-wave-planning"
     ],
     "proponents": [
       "D.G. Malcolm",
@@ -8632,6 +8633,64 @@
     ],
     "definition": "The Richardson Maturity Model is a four-level classification of REST maturity for HTTP APIs, presented by Leonard Richardson in 2008 and named and popularised by Martin Fowler in 2010. Level 0 tunnels everything through one endpoint, Level 1 gives each resource its own URI, Level 2 uses HTTP verbs and status codes with their defined meaning, and Level 3 adds hypermedia controls. It is meant as a design target, not an assessment score.",
     "addedAt": "2026-10-03T14:33:13+02:00"
+  },
+  {
+    "id": "rolling-wave-planning",
+    "title": "Rolling Wave Planning",
+    "categories": [
+      "strategic-planning"
+    ],
+    "roles": [
+      "team-lead",
+      "product-owner",
+      "business-analyst",
+      "consultant",
+      "software-architect"
+    ],
+    "related": [
+      "pert",
+      "spike-solution",
+      "cynefin-framework",
+      "user-story-mapping"
+    ],
+    "proponents": [
+      "Project Management Institute (PMBOK Guide); US defense earned value management practice (planning packages)"
+    ],
+    "tags": [
+      "rolling wave planning",
+      "rolling-wave",
+      "progressive elaboration",
+      "planning horizon",
+      "planning package",
+      "work package",
+      "work breakdown structure",
+      "wbs",
+      "earned value management",
+      "evm",
+      "re-planning",
+      "block planning",
+      "project planning",
+      "schedule"
+    ],
+    "filePath": "docs/anchors/rolling-wave-planning.adoc",
+    "tier": 2,
+    "priorTest": "2026-11-26",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Rolling Wave Planning is a project-planning technique, described in PMI's PMBOK Guide and in earned value management practice, in which near-term work is planned in detail and far-term work is held as coarse planning packages. As each wave approaches, the next stretch is decomposed into work packages and the plan is revised, so detail follows knowledge instead of running ahead of it.",
+    "addedAt": "2026-11-26T18:44:29+01:00"
   },
   {
     "id": "salesforce-lightning-design-system",
