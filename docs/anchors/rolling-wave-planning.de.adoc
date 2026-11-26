@@ -46,7 +46,7 @@ Im Prior Test vom 26.11.2026 fügte der Begriff einen ausdrücklichen Neuplanung
 == *Häufige Missverständnisse*:
 
 * ❌ „Rolling Wave heißt, wir müssen die späteren Phasen nicht planen" -- auch der Fernbereich wird geplant, geschätzt und budgetiert, nur gröber
-* ❌ „Das ist dasselbe wie agile Iterationen" -- der Gedanke ist verwandt, aber Rolling Wave hält eine Baseline auf Projektebene und wandelt Planning Packages in Work Packages um; Iterationen oder ein Backlog schreibt es nicht vor
+* ❌ „Das ist dasselbe wie agile Iterationen" -- der Gedanke ist verwandt, aber Rolling Wave hält eine Baseline auf Projektebene und detailliert grobe langfristige Arbeit, wenn sie näher rückt (unter EVM, indem Planning Packages in Work Packages umgewandelt werden); Iterationen oder ein Backlog schreibt es nicht vor
 * ❌ „Mehr Detail jetzt macht den Plan genauer" -- GAO: „More detail does not necessarily mean greater accuracy"
 * ✓ „Die nächste Welle zusagen, den Rest skizzieren und an jedem Gate neu planen" -- zutreffend
 ====
