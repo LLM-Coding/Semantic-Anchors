@@ -1033,7 +1033,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### Rolling Wave Planning
 - **Also known as:** rolling-wave planning, block planning (GAO); a form of progressive elaboration
 - **Proponents:** Project Management Institute (PMBOK Guide); US defense earned value management practice (planning packages). No coiner; origin of the term obscure
-- **Core:** Plan the near term in detail and hold the far term as budgeted planning packages; a planning horizon separates the two; as each wave approaches, convert planning packages into work packages and revise the plan, ideally at milestones rather than arbitrary periods. Under EVM no cost may be booked on a planning package. Failure modes: planning packages pushed right instead of detailed, logic between packages not reconsidered, far-term detail added too early. Name the re-planning gate explicitly: models taper detail on their own, the term adds the re-planning cycle
+- **Core:** Plan the near term in detail and hold the far term at a coarse level (under EVM as budgeted planning packages); a planning horizon separates the two, and far-term work that is already well defined may be detailed early; as each wave approaches, decompose the next stretch into activities or work packages and revise the plan, ideally at milestones rather than arbitrary periods. Under EVM no cost may be booked on a planning package. Failure modes: planning packages pushed right instead of detailed, logic between packages not reconsidered, far-term detail added too early. Name the re-planning gate explicitly: models taper detail on their own, the term adds the re-planning cycle
 
 ### Minimum Viable Product (MVP)
 - **Also known as:** MVP, Lean Startup MVP

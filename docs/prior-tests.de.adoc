@@ -1362,6 +1362,8 @@ Aufgabe A beschrieb eine ERP-Ablösung über 18 Monate mit unklaren späteren Ph
 * *Planning Packages erscheinen vor allem bei Opus mit dem Begriff.* In Aufgabe A verwendete Opus mit dem Begriff 10- und 8-mal „planning package“, ohne ihn nie; Haiku einmal, Sonnet gar nicht.
 * Der Gewinn ist mäßig, daher ★★☆ und Tier 2.
 
+Typische Antworten aus Aufgabe B, Sonnet. Mit dem Begriff: „Re-planning gates: end of Months 3, 6 and 9. Each gate reviews actuals and velocity, risks, scope and budget. Each gate also decomposes the next wave to detailed level and updates the roadmap.“ Ohne den Begriff war der Plan nach Funktionen in Phasen gegliedert, ohne einen Zeitpunkt, an dem spätere Arbeit neu geplant wird: „Delivery is phased: foundation, then billing, then meter readings, then outages, then hardening and launch.“
+
 === Was nicht getestet wurde
 
 * Zwei Aufgaben, beide aus der Projektplanung. Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.

@@ -1362,6 +1362,8 @@ Task A described an 18-month ERP replacement with unclear later phases and quart
 * *Planning packages appear mainly on Opus with the term.* In task A, Opus used the term "planning package" 10 and 8 times with the term and never without it; Haiku once, Sonnet not at all.
 * The lift is moderate, hence ★★☆ and tier 2.
 
+Representative answers from task B, Sonnet. With the term: "Re-planning gates: end of Months 3, 6 and 9. Each gate reviews actuals and velocity, risks, scope and budget. Each gate also decomposes the next wave to detailed level and updates the roadmap." Without the term, the plan was phased by feature, with no point at which later work is re-planned: "Delivery is phased: foundation, then billing, then meter readings, then outages, then hardening and launch."
+
 === What was not tested
 
 * Two tasks, both in project planning. Older model generations and other model families were not measured.
