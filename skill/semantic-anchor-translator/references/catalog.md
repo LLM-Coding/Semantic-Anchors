@@ -1030,6 +1030,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** D.G. Malcolm, J.H. Roseboom, C.E. Clark, W. Fazar
 - **Core:** Stochastic project scheduling using three-point estimates per activity (Optimistic, Most Likely, Pessimistic); weighted average formula E = (O + 4M + P) / 6; standard deviation σ = (P − O) / 6; critical path analysis; probabilistic milestone confidence intervals
 
+### Rolling Wave Planning
+- **Also known as:** rolling-wave planning, block planning (GAO); a form of progressive elaboration
+- **Proponents:** Project Management Institute (PMBOK Guide); US defense earned value management practice (planning packages). No coiner; origin of the term obscure
+- **Core:** Plan the near term in detail and hold the far term as budgeted planning packages; a planning horizon separates the two; as each wave approaches, convert planning packages into work packages and revise the plan, ideally at milestones rather than arbitrary periods. Under EVM no cost may be booked on a planning package. Failure modes: planning packages pushed right instead of detailed, logic between packages not reconsidered, far-term detail added too early. Name the re-planning gate explicitly: models taper detail on their own, the term adds the re-planning cycle
+
 ### Minimum Viable Product (MVP)
 - **Also known as:** MVP, Lean Startup MVP
 - **Proponents:** Eric Ries, Frank Robinson

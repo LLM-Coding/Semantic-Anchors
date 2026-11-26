@@ -2,6 +2,14 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-11-26
+
+*New anchor -- Rolling Wave Planning:*
+
+* *link:#/anchor/rolling-wave-planning[Rolling Wave Planning]* (PMI, PMBOK Guide) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/936[#936]: plan the near term in detail, hold the far term as planning packages, and detail each wave as it approaches. Asked for a 12-month project plan, models tapered the detail over time with and without the term, and four of six plans without it called themselves rolling-wave. The term added named re-planning points in six of six runs, against two of six without. Tier ★★☆. Proposed by https://github.com/rweisleder[@rweisleder] in https://github.com/LLM-Coding/Semantic-Anchors/issues/936[#936] -- thank you.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-11-26, Rolling Wave Planning.
+
 == 2026-11-24
 
 *Contract Implement Next -- merge risk in every pull request:*
