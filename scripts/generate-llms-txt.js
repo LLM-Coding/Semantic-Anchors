@@ -13,6 +13,7 @@ const fs = require('fs')
 const path = require('path')
 const { packBundles, withPageLink } = require('./anchor-bundles.js')
 const { loadContractCatalog } = require('./lib/contract-requires.js')
+const { standaloneUrl, countDistinctAnchors } = require('./lib/llms-standalone.js')
 
 const ROOT = path.join(__dirname, '..')
 
@@ -119,14 +120,7 @@ function adocToMarkdown(adoc) {
   md = md.replace(/^\+\s*$/gm, '')
 
   // Links: link:url[text] → [text](url), resolve special URLs for standalone context
-  md = md.replace(/link:([^[]+)\[([^\]]*)\]/g, (_, url, text) => {
-    if (/^\.\.\/.*\.adoc$/.test(url)) {
-      url = 'https://github.com/LLM-Coding/Semantic-Anchors/blob/main/' + url.slice(3)
-    } else if (url === '#/') {
-      url = 'https://llm-coding.github.io/Semantic-Anchors/'
-    }
-    return `[${text}](${url})`
-  })
+  md = md.replace(/link:([^[]+)\[([^\]]*)\]/g, (_, url, text) => `[${text}](${standaloneUrl(url)})`)
 
   // Cross-references: <<id,text>> → text, <<id>> → `id`
   // Must run before def-list conversion so terms like <<spc,SPC>>:: are resolved first
@@ -653,7 +647,7 @@ function contractRequiresLines(contractCatalog, contract) {
 }
 
 function generateLlmsTxt(contractCatalog) {
-  const totalAnchors = categories.reduce((n, c) => n + c.anchors.length, 0)
+  const totalAnchors = countDistinctAnchors(categories)
   const lines = [
     '# Semantic Anchors — Complete Reference',
     '',
