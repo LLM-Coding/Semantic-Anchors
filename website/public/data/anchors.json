@@ -3502,7 +3502,8 @@
         "works": true
       }
     ],
-    "definition": "Every Page is Page One is Mark Baker's approach to topic-based writing for technical communication and the web, set out in his 2013 book of the same name: because readers arrive from search or a link in the middle of a task, every page must work as their first page. Each topic is self-contained, serves one specific purpose, establishes its own context and links richly to its neighbours, so that the information architecture grows bottom-up through links rather than top-down through a table of contents."
+    "definition": "Every Page is Page One is Mark Baker's approach to topic-based writing for technical communication and the web, set out in his 2013 book of the same name: because readers arrive from search or a link in the middle of a task, every page must work as their first page. Each topic is self-contained, serves one specific purpose, establishes its own context and links richly to its neighbours, so that the information architecture grows bottom-up through links rather than top-down through a table of contents.",
+    "addedAt": "2026-11-27T18:52:03+01:00"
   },
   {
     "id": "fagan-inspection",
