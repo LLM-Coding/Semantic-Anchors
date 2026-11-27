@@ -39,7 +39,7 @@ Three Formats, One Model:: The same models are bound to XML, JSON and YAML. NIST
 [discrete]
 == *How to Prompt*:
 
-In the prior test of 2026-11-27, asked for the security-plan entry for account management, models writing "using OSCAL" produced an SSP fragment in JSON with an `implemented-requirement` for control `ac-2`, statements, `by-components` and UUIDs in five of six runs; Haiku wrote prose structured by the AC-2 sub-controls once. Without the term, every run wrote prose, and only Opus named the control. When the prompt already mentions automated audit or machine-readable compliance, models reach for OSCAL on their own. Name the model and the format, for example "write the OSCAL SSP `implemented-requirement` for AC-2 in JSON, with one `by-component` entry per component".
+In the prior test of 2026-11-27, asked for the security-plan entry for account management, models writing "using OSCAL" produced an SSP fragment in JSON for control `ac-2`, with statements, `by-components` and UUIDs, in five of six runs; Haiku wrote prose structured by the AC-2 sub-controls once. Without the term, every run wrote prose, and only Opus named the control. When the prompt already mentions automated audit or machine-readable compliance, models reach for OSCAL on their own. Name the model and the format, for example "write the OSCAL SSP entry in `control-implementation.implemented-requirements` for AC-2 in JSON, with one `by-components` entry per component". Check the result against the schema of the version you use: in the test, models wrote the singular XML element name `implemented-requirement` as a JSON object, where the JSON format expects the array `implemented-requirements`.
 
 [discrete]
 == *Common Misunderstandings*:

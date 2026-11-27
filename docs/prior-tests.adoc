@@ -1400,10 +1400,10 @@ Haiku reported `reaching=yes` in two of two P1 runs, but its lists named every O
 Task A asked how to record the implementation of control AC-2 so that an auditor's tool can check it. Task B asked for a compliance workflow in which several customers tailor the control baseline. Task C, written to be neutral, asked for the security-plan entry on account management, with no mention of tools or formats.
 
 * *Tasks A and B lead the models to OSCAL on their own.* Every run without the term named OSCAL in its answer. In task B all runs, with and without the term, used profile tailoring, a POA&M and component definitions. The tasks therefore show no lift.
-* *Task C shows the term's effect.* With the term, five of six runs wrote an SSP fragment in JSON with an `implemented-requirement` for `ac-2`; Haiku wrote prose structured by the AC-2 sub-controls once. Without the term, all six runs wrote prose, and only Opus named the control (two of two).
+* *Task C shows the term's effect.* With the term, five of six runs wrote an SSP fragment in JSON for `ac-2`; Haiku wrote prose structured by the AC-2 sub-controls once. Without the term, all six runs wrote prose, and only Opus named the control (two of two).
 * The lift is strong on Sonnet and Opus and holds in one of two Haiku runs, hence ★★☆ and tier 2.
 
-Representative answers from task C. Sonnet with the term opened with JSON: `"implemented-requirement": { "uuid": …, "control-id": "ac-2", … "by-components": [ … ] }`. Haiku without the term wrote a prose policy section with no control reference.
+Representative answers from task C. Sonnet with the term opened with JSON: `"implemented-requirement": { "uuid": …, "control-id": "ac-2", … "by-components": [ … ] }`. The key is not schema-valid as quoted: OSCAL's JSON format (v1.2.1 reference) expects the array `implemented-requirements` inside `control-implementation`; the singular is the XML element name. The answer is quoted unchanged as test evidence. Haiku without the term wrote a prose policy section with no control reference.
 
 === What was not tested
 

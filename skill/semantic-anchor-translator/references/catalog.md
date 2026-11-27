@@ -22,7 +22,7 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 ### OSCAL (Open Security Controls Assessment Language)
 - **Also known as:** NIST OSCAL
 - **Proponents:** NIST
-- **Core:** Machine-readable models for compliance information in XML, JSON and YAML (lossless between formats). Control layer: Catalog, Profile (tailored baseline). Implementation layer: Component Definition, System Security Plan (SSP). Assessment layer: Assessment Plan, Assessment Results, POA&M. Layers import each other and carry UUIDs. Control Mapping and Shared Responsibility models in development (CSWP 53 draft, Dec 2025). Name the model and format ("OSCAL SSP implemented-requirement in JSON"); without the term models write prose
+- **Core:** Machine-readable models for compliance information in XML, JSON and YAML (lossless between formats). Control layer: Catalog, Profile (tailored baseline). Implementation layer: Component Definition, System Security Plan (SSP). Assessment layer: Assessment Plan, Assessment Results, POA&M. Layers import each other and carry UUIDs. Control Mapping and Shared Responsibility models in development (CSWP 53 draft, Dec 2025). Name the model and format ("OSCAL SSP control-implementation.implemented-requirements entry in JSON"); without the term models write prose. Models tend to emit the singular XML name `implemented-requirement` as a JSON object — validate against the schema
 
 ### FMEA
 - **Also known as:** Failure Mode and Effects Analysis; FMECA with criticality analysis

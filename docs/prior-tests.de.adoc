@@ -1400,10 +1400,10 @@ Haiku meldete `reaching=yes` in zwei von zwei P1-Läufen, seine Listen nannten a
 Aufgabe A fragte, wie man die Umsetzung der Kontrolle AC-2 so festhält, dass das Werkzeug eines Prüfers sie kontrollieren kann. Aufgabe B verlangte einen Compliance-Ablauf, bei dem mehrere Kunden die Kontroll-Baseline zuschneiden. Aufgabe C, bewusst neutral formuliert, verlangte den Eintrag des Sicherheitskonzepts zur Kontoverwaltung, ohne Werkzeuge oder Formate zu erwähnen.
 
 * *Aufgaben A und B führen die Modelle von selbst zu OSCAL.* Jeder Lauf ohne Begriff nannte OSCAL in seiner Antwort. In Aufgabe B nutzten alle Läufe, mit und ohne Begriff, Profile Tailoring, einen POA&M und Component Definitions. Diese Aufgaben zeigen daher keinen Gewinn.
-* *Aufgabe C zeigt die Wirkung des Begriffs.* Mit Begriff schrieben fünf von sechs Läufen ein SSP-Fragment in JSON mit einem `implemented-requirement` für `ac-2`; Haiku schrieb einmal Fließtext, gegliedert nach den Teilkontrollen von AC-2. Ohne Begriff schrieben alle sechs Läufe Fließtext, und nur Opus nannte die Kontrolle (zwei von zwei).
+* *Aufgabe C zeigt die Wirkung des Begriffs.* Mit Begriff schrieben fünf von sechs Läufen ein SSP-Fragment in JSON für `ac-2`; Haiku schrieb einmal Fließtext, gegliedert nach den Teilkontrollen von AC-2. Ohne Begriff schrieben alle sechs Läufe Fließtext, und nur Opus nannte die Kontrolle (zwei von zwei).
 * Der Gewinn ist bei Sonnet und Opus stark und hält in einem von zwei Haiku-Läufen, daher ★★☆ und Tier 2.
 
-Typische Antworten aus Aufgabe C. Sonnet mit dem Begriff begann mit JSON: `"implemented-requirement": { "uuid": …, "control-id": "ac-2", … "by-components": [ … ] }`. Haiku ohne den Begriff schrieb einen Richtlinienabschnitt in Prosa ohne Verweis auf eine Kontrolle.
+Typische Antworten aus Aufgabe C. Sonnet mit dem Begriff begann mit JSON: `"implemented-requirement": { "uuid": …, "control-id": "ac-2", … "by-components": [ … ] }`. Der Schlüssel ist so nicht schemakonform: Das JSON-Format von OSCAL (Referenz v1.2.1) erwartet das Array `implemented-requirements` innerhalb von `control-implementation`; der Singular ist der XML-Elementname. Die Antwort ist als Testbeleg unverändert zitiert. Haiku ohne den Begriff schrieb einen Richtlinienabschnitt in Prosa ohne Verweis auf eine Kontrolle.
 
 === Was nicht getestet wurde
 
