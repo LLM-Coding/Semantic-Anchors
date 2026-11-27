@@ -595,6 +595,9 @@ include::anchors/twin-peaks-model.adoc[leveloffset=+2]
 [[user-story-mapping]]
 include::anchors/user-story-mapping.adoc[leveloffset=+2]
 
+[[working-backwards]]
+include::anchors/working-backwards.adoc[leveloffset=+2]
+
 <<<
 
 == Software Architecture
@@ -783,6 +786,8 @@ include::anchors/toyota-kata.adoc[leveloffset=+2]
 
 [[wardley-mapping]]
 include::anchors/wardley-mapping.adoc[leveloffset=+2]
+
+include::anchors/working-backwards.adoc[leveloffset=+2]
 
 <<<
 

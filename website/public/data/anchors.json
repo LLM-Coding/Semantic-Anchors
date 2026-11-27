@@ -7406,7 +7406,8 @@
       "second-order-thinking",
       "premortem",
       "adr-according-to-nygard",
-      "blast-radius"
+      "blast-radius",
+      "working-backwards"
     ],
     "proponents": [
       "Jeff Bezos"
@@ -11099,6 +11100,68 @@
     "tier": 3,
     "definition": "What Would Chuck Norris Do? (WWCND) is a qualified Tier 3 meme anchor, drawn from the Chuck Norris facts corpus and the books by Ian Spector and Chuck Norris, that activates a disposition rather than a methodology. It steers a model to commit to the most direct, effective solution and to refuse hedging and ceremony that buys no risk reduction. Cornelius Schumacher validated it across three models in April 2026; it helps break decision paralysis.",
     "addedAt": "2026-04-20T12:52:55+02:00"
+  },
+  {
+    "id": "working-backwards",
+    "title": "Working Backwards (Amazon PR/FAQ)",
+    "categories": [
+      "strategic-planning",
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "team-lead",
+      "business-analyst",
+      "consultant",
+      "software-architect"
+    ],
+    "related": [
+      "one-way-two-way-door-decisions",
+      "jobs-to-be-done",
+      "impact-mapping",
+      "mvp",
+      "premortem"
+    ],
+    "proponents": [
+      "Colin Bryar",
+      "Bill Carr (\"Working Backwards\"",
+      "2021); Amazon"
+    ],
+    "tags": [
+      "working backwards",
+      "pr/faq",
+      "prfaq",
+      "pr faq",
+      "press release",
+      "external faq",
+      "internal faq",
+      "customer faq",
+      "amazon",
+      "product discovery",
+      "product proposal",
+      "narrative",
+      "six-pager",
+      "customer obsession",
+      "product management"
+    ],
+    "filePath": "docs/anchors/working-backwards.adoc",
+    "tier": 3,
+    "priorTest": "2026-11-27",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Working Backwards is Amazon's product-development method, described by Colin Bryar and Bill Carr in \"Working Backwards\" (2021), in which a team starts from the customer and writes a PR/FAQ before it builds anything: a press release for the finished product and a set of frequently asked questions. The document is reviewed and revised in meetings, so that the customer benefit, the open questions and the cost are settled on paper while changing course is still cheap."
   },
   {
     "id": "xy-problem",
