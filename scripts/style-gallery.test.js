@@ -118,11 +118,6 @@ describe('buildStyleGallery', () => {
   it('switches off the "Figure n." prefix', () => {
     expect(en).toContain(':figure-caption!:')
   })
-
-  it('matches the committed files, so the build output never drifts', () => {
-    expect(fs.readFileSync(path.join(ROOT, 'docs', 'style-gallery.adoc'), 'utf-8')).toBe(en)
-    expect(fs.readFileSync(path.join(ROOT, 'docs', 'style-gallery.de.adoc'), 'utf-8')).toBe(de)
-  })
 })
 
 describe('tile', () => {
