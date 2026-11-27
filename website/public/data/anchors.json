@@ -7510,7 +7510,8 @@
         "works": true
       }
     ],
-    "definition": "OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents."
+    "definition": "OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents.",
+    "addedAt": "2026-11-27T18:54:35+01:00"
   },
   {
     "id": "owasp-asvs",
