@@ -1368,3 +1368,42 @@ Representative answers from task B, Sonnet. With the term: "Re-planning gates: e
 
 * Two tasks, both in project planning. Older model generations and other model families were not measured.
 * The task A prompt itself describes the situation rolling wave is made for, which explains part of the baseline's behaviour; task B was added for that reason.
+
+== Run 2026-11-27, Every Page is Page One (Mark Baker)
+
+[cols="1,3"]
+|===
+|Candidate |Every Page is Page One (Mark Baker) (https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939]). The proposal names the book (XML Press, 2013), the use (documentation reached from search or links mid-task) and the core ideas
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong), called through the aliases `haiku`, `sonnet`, `opus`
+|Procedure |`anchor-prior-test` v1.2, clean room: `claude -p` from a neutral directory with `--strict-mcp-config --setting-sources ""` and the neutral system prompt `You are a helpful assistant.` for every probe
+|Runs |P1, P2 and three action tasks twice per tier, with and without the term; P4 once per tier. 51 calls in all
+|Record |The run was carried out by Claude in the scheduled daily check for anchor proposals, not by the maintainer. The raw answers are not in the repository
+|Criticism research |2026-11-27, English. Found and fetched: Mark Baker, "Every Page Is Page One" (guest post on I'd Rather Be Writing, 2011-05-16); Mark Baker, "What is a topic? What does standalone mean?" (everypageispageone.com, 2011-06-08, with reader comments); Tom Johnson, "Every page is page one" (I'd Rather Be Writing, 2022-03-16). Each page was read once through a fetch tool. The book's outline page (everypageispageone.com/the-book/) could not be fetched; the seven characteristics are taken from the book as summarised in the proposal and in every model answer, not from a fetched page. Not found: a published critique beyond the reader comment and Johnson's assessment
+|===
+
+=== Result: ★★☆, proponent Mark Baker
+
+[cols="1,1,3"]
+|===
+|Criterion |Result |Evidence
+
+|Precise |met |P2: technical communication is the dominant domain in six of six runs; the only variant named is the web/SEO phrase "every page is a landing page"
+|Rich |met |P1: `recognized=yes`, `richness=rich` in six of six runs (information foraging, seven characteristics, bottom-up architecture, linking, minimalism, structured writing)
+|Consistent |met |P1 and the action tasks agree across tiers
+|Attributable |not required |P4 names Mark Baker on every tier with high confidence. The bare term is not ambiguous
+|===
+
+=== The action test: the reader situation does most of the work, the term adds topics and links
+
+Task A asked for a help page that readers reach from a web search mid-task. Task B asked for the information architecture of a 120-feature product whose readers arrive from search and in-app links. Task C, written to be neutral, asked for the documentation of a feature with no hint about how readers arrive.
+
+* *Tasks A and B describe the EPPO situation, so the lift is small.* Every run in task A, with and without the term, established its context and stayed self-contained. Runs with the term linked to three to five related topics; without it, zero to four (Sonnet zero twice). In task B, linked hubs were the primary navigation in six of six runs with the term and five of six without.
+* *Task C shows the term's own effect.* With the term, every run split the documentation into three to five topics, and five of six linked to related topics. Without it, two of six added links, and Sonnet wrote one long page in both runs.
+* The lift is moderate and appears only when the prompt does not already describe the reader, hence ★★☆ and tier 2.
+
+Representative answers from task C, Sonnet. With the term, each page ended with links such as "Related topics: Create a recurring invoice · Pause a recurring invoice · Change the template of a recurring invoice". Without the term, the answer was a single page with sections in reading order, beginning "Recurring Invoices in Ledgerly".
+
+=== What was not tested
+
+* Three tasks, all user documentation for one invented SaaS product. Older model generations and other model families were not measured.
+* Topic types and the "assumes the reader is qualified" characteristic were not measured separately.

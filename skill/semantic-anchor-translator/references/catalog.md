@@ -889,6 +889,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Ralf D. Müller
 - **Core:** Docs in version control, CI/CD, same workflow as code
 
+### Every Page is Page One (Mark Baker)
+- **Also known as:** EPPO, EPPO topics
+- **Proponents:** Mark Baker ("Every Page is Page One", XML Press, 2013)
+- **Core:** Readers arrive from search or links mid-task, so every page must work as page one. Seven characteristics of an EPPO topic: self-contained, specific and limited purpose, conforms to a type, establishes its context, assumes the reader is qualified, stays on one level, links richly. Bottom-up information architecture through links instead of a table of contents; subject-specific topic types instead of generic concept/task/reference; reuse by linking. Roots in Carroll's minimalism and information foraging. Tier 2: models already write self-contained pages when told readers come from search; the term adds topic splitting and related-topic links — name those explicitly
+
 ### Simplified Technical English (ASD-STE100)
 - **Also known as:** STE; formerly AECMA Simplified English
 - **Proponents:** ASD (AeroSpace and Defence Industries Association of Europe), maintained by the STEMG

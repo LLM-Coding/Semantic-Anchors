@@ -1,0 +1,64 @@
+= Every Page is Page One (Mark Baker)
+:categories: documentation
+:roles: technical-writer, ux-designer, software-developer, product-owner, educator
+:related: diataxis-framework, progressive-disclosure, docs-as-code, inverted-pyramid-style, plain-language-iso-24495
+:proponents: Mark Baker („Every Page is Page One: Topic-Based Writing for Technical Communication and the Web", XML Press, 2013)
+:tags: Every Page is Page One, EPPO, Topic-basiertes Schreiben, Topic-Based Writing, Topic-Based Authoring, Information Foraging, Information Scent, Informationsarchitektur von unten, Verlinkung, Hypertext, eigenständiges Topic, technisches Schreiben, Benutzerdokumentation, Hilfeseiten, Minimalismus, strukturiertes Schreiben, Mark Baker
+:tier: 2
+:definition: Every Page is Page One ist Mark Bakers Ansatz für Topic-basiertes Schreiben in technischer Kommunikation und im Web, dargelegt in seinem gleichnamigen Buch von 2013: Weil Leser über die Suche oder einen Link mitten in einer Aufgabe ankommen, muss jede Seite als ihre erste Seite funktionieren. Jedes Topic ist eigenständig, dient einem bestimmten Zweck, stellt seinen Kontext selbst her und verlinkt reichlich auf seine Nachbarn, sodass die Informationsarchitektur von unten über Links wächst statt von oben über ein Inhaltsverzeichnis.
+:prior-test: 2026-11-27
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Every Page is Page One: Topic-Based Writing for Technical Communication and the Web
+
+Auch bekannt als:: EPPO, EPPO-Topics
+
+[discrete]
+== *Kernkonzepte*:
+
+Leser landen auf Seiten, nicht auf Websites:: Suche und Links setzen Leser irgendwo ab. Baker: „There is no first, last, previous, next, up, or back. There is only page one." Leser verhalten sich wie Informationssammler, die der Fährte des nächsten Links folgen (Information Foraging Theory von Pirolli und Card). Baker zur Folge: „Every page is page one -- this is a fact, not a choice. Making every page we write a good page one -- that is a choice."
+
+Sieben Merkmale eines EPPO-Topics:: Im Buch ist ein EPPO-Topic eigenständig, hat einen bestimmten und begrenzten Zweck, folgt einem Typ, stellt seinen Kontext her, setzt einen qualifizierten Leser voraus, bleibt auf einer Ebene und verlinkt reichlich.
+
+Eigenständig heißt nicht isoliert:: Ein EPPO-Topic wiederholt nicht alles, was ein Leser brauchen könnte; es verlinkt darauf. Baker: „It stands alone not because it depends on nothing, but because it depends on everything."
+
+Informationsarchitektur von unten:: Jede Seite ist ein Knoten. Topics verlinken entlang der Zusammenhänge des Themas selbst (die nächste Aufgabe, das Konzept dahinter, die Einstellung, von der sie abhängt), statt sich auf ein Inhaltsverzeichnis zu stützen, das nicht skaliert. Überblicks-, Wegweiser- und Workflow-Topics machen das große Bild ausdrücklich, statt es der Reihenfolge eines Buchs zu überlassen.
+
+Themenspezifische Topic-Typen:: Die Typen folgen dem Thema (ein Rezept, ein Eintrag einer API-Referenz, eine Konfigurationseinstellung) statt der generischen Aufteilung in Konzept, Aufgabe und Referenz. Wiederverwendung geschieht durch Verlinken statt durch Kopieren von Text.
+
+Wurzeln:: John Carrolls Minimalismus (Leser wollen handeln, nicht ein Handbuch lesen) und strukturiertes Schreiben mit Metadaten.
+
+[discrete]
+== *Wann verwenden*:
+
+* Benutzerdokumentation und Hilfeseiten, die Leser über die Suche oder über Hilfe-Links in der Anwendung erreichen
+* Wissensdatenbanken, API-Referenzen und Support-Artikel
+* Ein Handbuch, das für das Lesen von vorn nach hinten geschrieben wurde, in Topics für das Web umbauen
+* Eine Seite prüfen: Nennt sie ihren Kontext, hat sie einen Zweck, verlinkt sie weiter?
+
+[discrete]
+== *Wie prompten*:
+
+Im Prior Test vom 27.11.2026 sollten die Modelle die Dokumentation eines Features schreiben, ohne Hinweis darauf, wie Leser ankommen. Mit „Every Page is Page One" teilten sie sie in drei bis fünf Topics und fügten in fünf von sechs Läufen Links auf verwandte Topics hinzu. Ohne den Begriff fügten zwei von sechs Läufen Links hinzu, und Sonnet schrieb in beiden Läufen eine einzige lange Seite. Sagt der Prompt selbst, dass Leser über die Suche kommen, schreiben die Modelle schon eigenständige Seiten mit Kontext; der Begriff fügt dann wenig hinzu. Nenne die Merkmale, auf die es ankommt, etwa: „Schreibe das als Every-Page-is-Page-One-Topics: ein Zweck pro Seite, der Kontext oben, und Links auf die verwandten Aufgaben und Konzepte".
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Jede Seite muss alles wiederholen, was der Leser braucht" -- ein EPPO-Topic stellt seinen Kontext her und verlinkt auf den Rest; es ist nicht selbstgenügsam
+* ❌ „Das ist dasselbe wie DITA-Topics" -- Baker plädiert für präsentationsfertige Topics mit themenspezifischen Typen, nicht für wiederverwendbare Bausteine vom Typ Konzept, Aufgabe und Referenz
+* ❌ „Keine Seite darf Vorwissen voraussetzen" -- ein EPPO-Topic setzt einen qualifizierten Leser voraus und verlinkt auf das, was ein weniger qualifizierter Leser braucht
+* ✓ „Jede Seite so schreiben, als käme der Leser von der Suche, und sie in das Netz verwandter Topics einbinden" -- zutreffend
+====
+
+== *Kritik*:
+
+* *Nicht jede Seite taugt als Einstieg.* In den Kommentaren zu Bakers eigenem Beitrag über eigenständige Topics wandte der Leser Jeff Coatsworth ein: „I find that very little of what I’m writing these days could function very well as a page 1 entry point." und „That’s one of the downsides to trying to make every page a page 1." Baker antwortete im selben Thread, dass die meisten Leser nicht der Reihe nach lesen: „My contention in Every Page is Page One is that most readers simply aren’t that patient." https://everypageispageone.com/2011/06/08/what-is-a-topic-what-does-standalone-mean/[Mark Baker, „What is a topic? What does standalone mean?", mit Kommentaren] (08.06.2011).
+* *Der Slogan wird verschieden gelesen.* Tom Johnson stellt fest, dass das Mantra „usually resonates with people without argument", aber: „I imagine people might interpret it differently." https://idratherbewriting.com/trends/trends-to-follow-or-forget-every-page-is-page-one.html[Tom Johnson, „Every page is page one", I'd Rather Be Writing] (16.03.2022).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Die Praktiken sind Web-Normen geworden.* Johnson meint, „many of the EPPO practices became more second nature just as the web became second nature", und erwartet, dass „calling out this mantra as a core principle for writing will fade in importance." Im Prior Test schrieben die Modelle auch ohne den Begriff eigenständige Seiten mit Kontext, was zu dieser Beobachtung passt; der Begriff fügte vor allem die Aufteilung in Topics und die Links hinzu.
+* *Die Erkennung ist stark und zugeordnet.* Jede Stufe erkannte den Begriff und nannte Mark Baker als Autor. Das Buch (2013) ging aus Bakers Blog everypageispageone.com und einem Gastbeitrag in Johnsons Blog von 2011 hervor. Siehe das link:#/prior-tests[Prior-Test-Register].
