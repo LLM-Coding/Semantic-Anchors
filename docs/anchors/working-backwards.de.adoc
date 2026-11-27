@@ -2,7 +2,7 @@
 :categories: strategic-planning, requirements-engineering
 :roles: product-owner, team-lead, business-analyst, consultant, software-architect
 :related: one-way-two-way-door-decisions, jobs-to-be-done, impact-mapping, mvp, premortem
-:proponents: Colin Bryar, Bill Carr („Working Backwards", 2021); Amazon
+:proponents: Colin Bryar, Bill Carr, Amazon
 :tags: Working Backwards, PR/FAQ, PRFAQ, PR FAQ, Pressemitteilung, Press Release, externe FAQ, interne FAQ, Kunden-FAQ, Amazon, Product Discovery, Produktvorschlag, Narrativ, Six-Pager, Kundenorientierung, Produktmanagement
 :tier: 3
 :definition: Working Backwards ist Amazons Methode der Produktentwicklung, beschrieben von Colin Bryar und Bill Carr in „Working Backwards" (2021): Ein Team beginnt beim Kunden und schreibt ein PR/FAQ, bevor es etwas baut, also eine Pressemitteilung für das fertige Produkt und eine Liste häufig gestellter Fragen. Das Dokument wird in Meetings geprüft und überarbeitet, sodass Kundennutzen, offene Fragen und Kosten auf dem Papier geklärt sind, solange ein Kurswechsel noch billig ist.
@@ -39,7 +39,7 @@ Ein billiger Filter:: Die meisten PR/FAQs werden nie zu Produkten, und genau das
 [discrete]
 == *Wie prompten*:
 
-Im Prior Test vom 27.11.2026 begann ein Produktvorschlag, geschrieben „using Working Backwards (Amazon PR/FAQ)", in sechs von sechs Läufen mit einer Pressemitteilung und enthielt eine externe und eine interne FAQ. Ohne den Begriff schrieb kein Lauf eine Pressemitteilung oder eine externe FAQ; Opus fügte in zwei von sechs Läufen eine interne FAQ an. Mit dem bloßen Begriff „Working Backwards" erschien in einer zweiten Aufgabe die Pressemitteilung in sechs von sechs Läufen, die externe FAQ aber nur in drei. Für beide FAQs nennt man das PR/FAQ, etwa: „Schreibe ein PR/FAQ für dieses Feature im Stil von Working Backwards: eine einseitige Pressemitteilung, dann eine externe FAQ für Kunden und eine interne FAQ für das Team".
+Im Prior Test vom 27.11.2026 begann ein Produktvorschlag, geschrieben „using Working Backwards (Amazon PR/FAQ)", in sechs von sechs Läufen mit einer Pressemitteilung und enthielt eine externe und eine interne FAQ. Ohne den Begriff schrieb kein Lauf eine Pressemitteilung oder eine externe FAQ; Opus fügte in zwei von sechs Läufen eine interne FAQ an. Mit dem bloßen Begriff „Working Backwards" erschien in einer zweiten Aufgabe die Pressemitteilung in sechs von sechs Läufen, die externe FAQ aber nur in drei. Die beiden Aufgaben unterschieden sich; der Test zeigt daher nicht, ob der Zusatz allein den Unterschied machte. Für beide FAQs fordert man sie ausdrücklich an, etwa: „Schreibe ein PR/FAQ für dieses Feature im Stil von Working Backwards: eine einseitige Pressemitteilung, dann eine externe FAQ für Kunden und eine interne FAQ für das Team".
 
 [discrete]
 == *Häufige Missverständnisse*:
