@@ -10,6 +10,12 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 Full detail in the link:#/prior-tests[prior-test register], run 2026-11-27, OSCAL.
 
+*New anchor -- Every Page is Page One (Mark Baker):*
+
+* *link:#/anchor/every-page-is-page-one[Every Page is Page One (Mark Baker)]* (Mark Baker, 2013) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939]: readers arrive from search, so every page must work as their first page, establish its context and link onward. Asked to document a feature, every run with the term split it into topics, and five of six added related-topic links; without the term, two of six added links. When the prompt already says that readers come from search, models write self-contained pages anyway. Tier ★★☆. Proposed by https://github.com/ahus1[@ahus1] in https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939] -- thank you.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-11-27, Every Page is Page One.
+
 *New anchor -- Working Backwards (Amazon PR/FAQ):*
 
 * *link:#/anchor/working-backwards[Working Backwards (Amazon PR/FAQ)]* (Colin Bryar, Bill Carr) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/938[#938]: start from the customer and write a one-page press release and an FAQ before building. Asked for a product proposal, models wrote a press release with an external and an internal FAQ in six of six runs with the term and never without it. Tier ★★★. Proposed by https://github.com/ahus1[@ahus1] in https://github.com/LLM-Coding/Semantic-Anchors/issues/938[#938] -- thank you.

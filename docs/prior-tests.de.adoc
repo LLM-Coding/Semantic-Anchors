@@ -1410,6 +1410,45 @@ Typische Antworten aus Aufgabe C. Sonnet mit dem Begriff begann mit JSON: `"impl
 * Drei Aufgaben, alle zur Dokumentation von Sicherheitskontrollen. Ob das erzeugte JSON gegen das OSCAL-Schema gültig ist, wurde nicht geprüft.
 * Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.
 
+== Lauf vom 27.11.2026, Every Page is Page One (Mark Baker)
+
+[cols="1,3"]
+|===
+|Kandidat |Every Page is Page One (Mark Baker) (https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939]). Der Vorschlag nennt das Buch (XML Press, 2013), den Einsatz (Dokumentation, die Leser über die Suche oder Links mitten in einer Aufgabe erreichen) und die Kernideen
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark), aufgerufen über die Aliase `haiku`, `sonnet`, `opus`
+|Verfahren |`anchor-prior-test` v1.2, Clean Room: `claude -p` aus einem neutralen Verzeichnis mit `--strict-mcp-config --setting-sources ""` und dem neutralen System-Prompt `You are a helpful assistant.` für jede Probe
+|Läufe |P1, P2 und drei Aktionsaufgaben zweimal je Stufe, mit und ohne Begriff; P4 einmal je Stufe. Insgesamt 51 Aufrufe
+|Nachweis |Den Lauf hat Claude im geplanten täglichen Check auf Anchor-Vorschläge durchgeführt, nicht der Maintainer. Die Rohantworten liegen nicht im Repository
+|Kritik-Recherche |27.11.2026, Englisch. Gefunden und abgerufen: Mark Baker, „Every Page Is Page One“ (Gastbeitrag in I'd Rather Be Writing, 16.05.2011); Mark Baker, „What is a topic? What does standalone mean?“ (everypageispageone.com, 08.06.2011, mit Leserkommentaren); Tom Johnson, „Every page is page one“ (I'd Rather Be Writing, 16.03.2022). Jede Seite wurde einmal über ein Abruf-Werkzeug gelesen. Die Übersichtsseite zum Buch (everypageispageone.com/the-book/) ließ sich nicht abrufen; die sieben Merkmale stammen aus dem Buch, wie es der Vorschlag und jede Modellantwort zusammenfassen, nicht aus einer abgerufenen Seite. Nicht gefunden: eine veröffentlichte Kritik über den Leserkommentar und Johnsons Einschätzung hinaus
+|===
+
+=== Ergebnis: ★★☆, Proponent Mark Baker
+
+[cols="1,1,3"]
+|===
+|Kriterium |Ergebnis |Beleg
+
+|Precise |erfüllt |P2: Technische Kommunikation ist in sechs von sechs Läufen das vorherrschende Feld; als einzige Variante erscheint die Web-/SEO-Wendung „every page is a landing page“
+|Rich |erfüllt |P1: `recognized=yes`, `richness=rich` in sechs von sechs Läufen (Information Foraging, sieben Merkmale, Architektur von unten, Verlinkung, Minimalismus, strukturiertes Schreiben)
+|Consistent |erfüllt |P1 und die Aktionsaufgaben stimmen über die Stufen überein
+|Attributable |nicht erforderlich |P4 nennt auf jeder Stufe Mark Baker mit hoher Sicherheit. Der bloße Begriff ist nicht mehrdeutig
+|===
+
+=== Der Aktionstest: Die Lesersituation leistet das meiste, der Begriff fügt Topics und Links hinzu
+
+Aufgabe A verlangte eine Hilfeseite, die Leser über eine Websuche mitten in einer Aufgabe erreichen. Aufgabe B verlangte die Informationsarchitektur eines Produkts mit 120 Features, dessen Leser über die Suche und über Links in der Anwendung kommen. Aufgabe C, bewusst neutral formuliert, verlangte die Dokumentation eines Features ohne Hinweis darauf, wie Leser ankommen.
+
+* *Aufgaben A und B beschreiben die EPPO-Situation, daher ist der Gewinn klein.* In Aufgabe A stellte jeder Lauf, mit und ohne Begriff, seinen Kontext her und blieb eigenständig. Läufe mit Begriff verlinkten auf drei bis fünf verwandte Topics, ohne ihn auf null bis vier (Sonnet zweimal null). In Aufgabe B waren verlinkte Knotenseiten in sechs von sechs Läufen mit Begriff die Hauptnavigation, ohne ihn in fünf von sechs.
+* *Aufgabe C zeigt die eigene Wirkung des Begriffs.* Mit Begriff teilte jeder Lauf die Dokumentation in drei bis fünf Topics, und fünf von sechs verlinkten auf verwandte Topics. Ohne ihn fügten zwei von sechs Links hinzu, und Sonnet schrieb in beiden Läufen eine lange Seite.
+* Der Gewinn ist mäßig: deutlich in Aufgabe C, kleiner in den Aufgaben A und B, deren Prompt den Leser schon beschreibt. Daher ★★☆ und Tier 2.
+
+Typische Antworten aus Aufgabe C, Sonnet. Mit dem Begriff endete jede Seite mit Links wie „Related topics: Create a recurring invoice · Pause a recurring invoice · Change the template of a recurring invoice“. Ohne den Begriff war die Antwort eine einzige Seite mit Abschnitten in Lesereihenfolge, beginnend mit „Recurring Invoices in Ledgerly“.
+
+=== Was nicht getestet wurde
+
+* Drei Aufgaben, alle zur Benutzerdokumentation eines erfundenen SaaS-Produkts. Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.
+* Topic-Typen und das Merkmal „setzt einen qualifizierten Leser voraus“ wurden nicht eigens gemessen.
+
 == Lauf vom 27.11.2026, Working Backwards (Amazon PR/FAQ)
 
 [cols="1,3"]
