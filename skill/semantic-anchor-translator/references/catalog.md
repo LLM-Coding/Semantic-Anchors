@@ -19,6 +19,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** OWASP Foundation
 - **Core:** Numbered, verifiable security requirements at three assurance levels — the testable counterpart to the Top 10's awareness list. Always name the level and the version: v5.0 (May 2025) renumbered requirements, so v4 IDs no longer match
 
+### OSCAL (Open Security Controls Assessment Language)
+- **Also known as:** NIST OSCAL
+- **Proponents:** NIST
+- **Core:** Machine-readable models for compliance information in XML, JSON and YAML (lossless between formats). Control layer: Catalog, Profile (tailored baseline). Implementation layer: Component Definition, System Security Plan (SSP). Assessment layer: Assessment Plan, Assessment Results, POA&M. Layers import each other and carry UUIDs. Control Mapping and Shared Responsibility models in development (CSWP 53 draft, Dec 2025). Name the model and format ("OSCAL SSP implemented-requirement in JSON"); without the term models write prose
+
 ### FMEA
 - **Also known as:** Failure Mode and Effects Analysis; FMECA with criticality analysis
 - **Proponents:** US Armed Forces (MIL-P-1629, 1949), NASA, AIAG, VDA
