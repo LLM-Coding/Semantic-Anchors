@@ -1078,6 +1078,11 @@ Source: https://github.com/LLM-Coding/Semantic-Anchors
 - **Proponents:** Gerard Endenburg (Sociocracy), Brian Robertson (Holacracy)
 - **Core:** Consensus requires everyone's active "yes"; consent requires only the absence of a paramount, reasoned objection ("good enough for now, safe enough to try"), so objections are argued and integrated rather than vetoed — speeding decisions and avoiding lowest-common-denominator outcomes and groupthink
 
+### Working Backwards (Amazon PR/FAQ)
+- **Also known as:** PR/FAQ, PRFAQ, the Amazon press-release method
+- **Proponents:** Colin Bryar, Bill Carr ("Working Backwards", 2021); Amazon
+- **Core:** Start from the customer and write the PR/FAQ before building: a press release for the launched product (under one page) and an FAQ of at most five pages, with an external FAQ for customers and an internal FAQ for team, finance and leadership (cost, risks, dependencies, scope). Reviewed and revised in stakeholder meetings; most PR/FAQs never become products, which is the point. The bare term "working backwards" is ambiguous (Pólya, backward design, backward chaining), so say "PR/FAQ" and ask for the external and internal FAQ explicitly; with the bare term on a different task, only 3/6 runs wrote the external FAQ
+
 ### One-Way Door / Two-Way Door Decisions
 - **Also known as:** Type 1 / Type 2 decisions, reversible vs. irreversible decisions
 - **Proponents:** Jeff Bezos (2015 Letter to Amazon Shareholders)

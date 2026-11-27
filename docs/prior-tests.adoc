@@ -1448,3 +1448,42 @@ Representative answers from task C, Sonnet. With the term, each page ended with 
 
 * Three tasks, all user documentation for one invented SaaS product. Older model generations and other model families were not measured.
 * Topic types and the "assumes the reader is qualified" characteristic were not measured separately.
+
+== Run 2026-11-27, Working Backwards (Amazon PR/FAQ)
+
+[cols="1,3"]
+|===
+|Candidate |Working Backwards (Amazon PR/FAQ) (https://github.com/LLM-Coding/Semantic-Anchors/issues/938[#938]). The proposal names Bryar and Carr's book (2021) and the use: writing and reviewing a PR/FAQ
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong), called through the aliases `haiku`, `sonnet`, `opus`
+|Procedure |`anchor-prior-test` v1.2, clean room: `claude -p` from a neutral directory with `--strict-mcp-config --setting-sources ""` and the neutral system prompt `You are a helpful assistant.` for every probe
+|Runs |P1 with the qualified term, P2 with the bare term "Working Backwards", and both action tasks twice per tier, with and without the term; P4 once per tier. 39 calls in all
+|Record |The run was carried out by Claude in the scheduled daily check for anchor proposals, not by the maintainer. The raw answers are not in the repository
+|Criticism research |2026-11-27, English. Found and fetched: Cedric Chin, "Product Development as Iterated Taste" (Commoncog, 2021-03-23); Cedric Chin, "Book Summary: Working Backwards" (Commoncog, 2021-04-06); Amazon, "An insider look at Amazon's culture and processes" (aboutamazon.com, 2021-02-09, a book excerpt). Each page was read once through a fetch tool. A HackerNoon article on why the framework fails outside Amazon could not be fetched, so it is not cited. Not found: a dated first use of the method, or a named inventor
+|===
+
+=== Result: ★★★, proponents Bryar and Carr
+
+[cols="1,1,3"]
+|===
+|Criterion |Result |Evidence
+
+|Precise |met with the qualifier |P2: the bare term "Working Backwards" has business and product management as the dominant domain in six of six runs, but every run lists other meanings (Pólya's heuristic, backward design in education, backward chaining, backward induction, backcasting). The catalog name keeps "(Amazon PR/FAQ)"
+|Rich |met |P1: `recognized=yes`, `richness=rich` in six of six runs (press release, external and internal FAQ, customer obsession, narrative memos, review meetings, length limits)
+|Consistent |met |P1 and both action tasks agree across tiers
+|Attributable |met through the qualifier |P4 names Jeff Bezos or Amazon leadership, c. 2004, with medium or low confidence. "Amazon PR/FAQ" pins the meaning; the book by Bryar and Carr is the public source
+|===
+
+=== The action test: the term turns a proposal into a press release and FAQ
+
+Task A asked for a proposal for a recurring seasonal grocery basket that a team of six must decide on. The prompt with the term said "Using Working Backwards (Amazon PR/FAQ)". Task B asked for a kick-off document for an internal on-call rota tool; the prompt with the term said only "Using Working Backwards".
+
+* *Task A, qualified term:* press release, external FAQ and internal FAQ in six of six runs. Without the term: no press release and no external FAQ in any run; Opus wrote an internal FAQ in two of two runs.
+* *Task B, bare term:* press release and internal FAQ in six of six runs, external FAQ in three of six (Opus twice, Sonnet once). Without the term: no press release, no external FAQ; Opus again wrote an internal FAQ in two of two runs. Every run, with and without the term, started from the users.
+* The lift holds on all three tiers, hence ★★★ and tier 3.
+
+Representative answers from task A, Sonnet. With the term, the document opened: "PR/FAQ: Seasonal Weekly Basket. Press Release. FreshCart launches "Seasonal Basket": a weekly grocery order that plans itself around what's in season". Without the term it opened with a decision request: "Decision requested: Approve a build next quarter by our team of six (about 10 to 12 weeks), or defer."
+
+=== What was not tested
+
+* Two tasks, both product proposals. Task A used the qualified term and task B the bare term, so the difference in external FAQs may come from the task as well as from the qualifier.
+* Older model generations and other model families were not measured.

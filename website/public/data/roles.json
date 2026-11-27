@@ -49,6 +49,7 @@
       "twin-peaks-model",
       "user-story-mapping",
       "value-stream-mapping",
+      "working-backwards",
       "xy-problem"
     ]
   },
@@ -158,6 +159,7 @@
       "wardley-mapping",
       "what-qualifies-as-a-semantic-anchor",
       "what-would-chuck-norris-do",
+      "working-backwards",
       "xy-problem",
       "yagni",
       "zone-of-proximal-development"
@@ -408,7 +410,8 @@
       "thin-vertical-slice",
       "twin-peaks-model",
       "user-story-mapping",
-      "wardley-mapping"
+      "wardley-mapping",
+      "working-backwards"
     ]
   },
   {
@@ -622,6 +625,7 @@
       "walking-skeleton",
       "wardley-mapping",
       "what-would-chuck-norris-do",
+      "working-backwards",
       "yagni"
     ]
   },
@@ -946,6 +950,7 @@
       "walking-skeleton",
       "wardley-mapping",
       "what-would-chuck-norris-do",
+      "working-backwards",
       "xy-problem"
     ]
   },

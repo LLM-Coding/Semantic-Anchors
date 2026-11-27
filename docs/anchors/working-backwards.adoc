@@ -1,0 +1,63 @@
+= Working Backwards (Amazon PR/FAQ)
+:categories: strategic-planning, requirements-engineering
+:roles: product-owner, team-lead, business-analyst, consultant, software-architect
+:related: one-way-two-way-door-decisions, jobs-to-be-done, impact-mapping, mvp, premortem
+:proponents: Colin Bryar, Bill Carr, Amazon
+:tags: working backwards, pr/faq, prfaq, pr faq, press release, external faq, internal faq, customer faq, amazon, product discovery, product proposal, narrative, six-pager, customer obsession, product management
+:tier: 3
+:definition: Working Backwards is Amazon's product-development method, described by Colin Bryar and Bill Carr in "Working Backwards" (2021), in which a team starts from the customer and writes a PR/FAQ before it builds anything: a press release for the finished product and a set of frequently asked questions. The document is reviewed and revised in meetings, so that the customer benefit, the open questions and the cost are settled on paper while changing course is still cheap.
+:prior-test: 2026-11-27
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Working Backwards, written up as a PR/FAQ (press release / frequently asked questions)
+
+Also known as:: PR/FAQ, PRFAQ, the Amazon press-release method
+
+[discrete]
+== *Core Concepts*:
+
+Start from the Customer:: The team begins with the customer and the benefit they will get, and works backwards to what has to be built. The design comes after the customer case, not before it.
+
+Press Release:: A press release written as if the product had already launched: headline, the customer problem, the solution, a quote, and how to get started. Bryar and Carr: "The press release (PR) portion is a few paragraphs, always less than one page."
+
+Frequently Asked Questions:: The FAQ answers the questions that customers will ask (external FAQ) and the questions that the team, finance and leadership will ask (internal FAQ): cost, risks, dependencies, what is out of scope. Bryar and Carr: "The frequently asked questions (FAQ) should be five pages or less."
+
+Review Meeting:: The PR/FAQ is read and discussed in a meeting with the relevant stakeholders. Cedric Chin, summarising the book: "Once submitted, your PR/FAQ is reviewed in a one-hour meeting with the relevant stakeholders present." The document goes through several rounds of review.
+
+A Cheap Filter:: Most PR/FAQs never become products, and that is the point: a weak idea fails on paper. Bryar and Carr: "most PR/FAQs never made it to a stage where they were launched as actual products".
+
+[discrete]
+== *When to Use*:
+
+* Deciding whether a new product or feature is worth building
+* A project kick-off where the goal and the customer benefit are not yet agreed
+* Internal tools and platforms, with colleagues as the customers
+* Before a decision that is hard to reverse (see link:#/anchor/one-way-two-way-door-decisions[One-Way Door / Two-Way Door Decisions])
+
+[discrete]
+== *How to Prompt*:
+
+In the prior test of 2026-11-27, a product proposal written "using Working Backwards (Amazon PR/FAQ)" opened with a press release and carried an external and an internal FAQ in six of six runs. Without the term, no run wrote a press release or an external FAQ; Opus added an internal FAQ in two of six. With the bare term "Working Backwards", on a second task, the press release appeared in six of six runs, but the external FAQ in only three. The two tasks differed, so the test does not show whether the qualifier alone made the difference. To get both FAQs, ask for them explicitly, for example "write a PR/FAQ for this feature, Working Backwards style: a one-page press release, then an external FAQ for customers and an internal FAQ for the team".
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "The press release is marketing copy" -- it is a thinking tool for the team; it describes the customer problem and the benefit, and it is never published as written
+* ❌ "More pages mean a better PR/FAQ" -- Bryar and Carr: "In the early days of the PR/ FAQ, a common mistake people made was to assume that more means better."
+* ❌ "Working backwards means any form of backward planning" -- the bare term also names a problem-solving heuristic, backward design in education and backward chaining; the Amazon method is the press release and FAQ
+* ✓ "Write the launch press release and the FAQ first, then decide whether to build" -- accurate
+====
+
+== *Criticism*:
+
+* *The method depends on Amazon's culture.* Cedric Chin, who otherwise praises the method: "I am under no delusions that the PR/FAQ process is universally applicable — in fact, I think it is _highly_ dependent on cultural values that exist in Amazon." He adds that "org processes can rarely ever be copied wholesale, and may only be used with some adaptation to your specific context." https://commoncog.com/product-development-iterated-taste/[Cedric Chin, "Product Development as Iterated Taste", Commoncog] (23 March 2021).
+* *A PR/FAQ does not guarantee success.* Chin: "The PR/FAQ process merely increases the odds that your product would succeed; it doesn't guarantee it". In the same article he names the Fire phone as a product that went through the process and still failed.
+* *Reviews are demanding.* Bryar and Carr themselves: "The PR/FAQ review process can be stressful, no matter how constructive and unbiased the feedback." https://www.aboutamazon.com/news/workplace/an-insider-look-at-amazons-culture-and-processes[Amazon, "An insider look at Amazon's culture and processes"] (9 February 2021, an excerpt from the book).
+
+[discrete]
+== *Current Status*:
+
+* *The bare term is ambiguous.* In the prior test, the business meaning dominated on every tier, but every answer also listed other meanings: Pólya's problem-solving heuristic, backward design in education, backward chaining, backward induction, backcasting. The catalog therefore names the anchor with the qualifier "(Amazon PR/FAQ)".
+* *The origin is told by insiders.* The public account is Bryar and Carr's book (2021); both authors write that they "witnessed its birth" at Amazon. In the prior test, the models named Jeff Bezos or Amazon leadership as the creator, with medium or low confidence. A dated first use was not confirmed in the research. See the link:#/prior-tests[prior-test register].

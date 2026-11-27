@@ -3502,8 +3502,7 @@
         "works": true
       }
     ],
-    "definition": "Every Page is Page One is Mark Baker's approach to topic-based writing for technical communication and the web, set out in his 2013 book of the same name: because readers arrive from search or a link in the middle of a task, every page must work as their first page. Each topic is self-contained, serves one specific purpose, establishes its own context and links richly to its neighbours, so that the information architecture grows bottom-up through links rather than top-down through a table of contents.",
-    "addedAt": "2026-11-27T18:52:03+01:00"
+    "definition": "Every Page is Page One is Mark Baker's approach to topic-based writing for technical communication and the web, set out in his 2013 book of the same name: because readers arrive from search or a link in the middle of a task, every page must work as their first page. Each topic is self-contained, serves one specific purpose, establishes its own context and links richly to its neighbours, so that the information architecture grows bottom-up through links rather than top-down through a table of contents."
   },
   {
     "id": "fagan-inspection",
@@ -7468,7 +7467,8 @@
       "second-order-thinking",
       "premortem",
       "adr-according-to-nygard",
-      "blast-radius"
+      "blast-radius",
+      "working-backwards"
     ],
     "proponents": [
       "Jeff Bezos"
@@ -7572,7 +7572,8 @@
         "works": true
       }
     ],
-    "definition": "OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents."
+    "definition": "OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents.",
+    "addedAt": "2026-11-27T18:54:35+01:00"
   },
   {
     "id": "owasp-asvs",
@@ -11227,6 +11228,69 @@
     "tier": 3,
     "definition": "What Would Chuck Norris Do? (WWCND) is a qualified Tier 3 meme anchor, drawn from the Chuck Norris facts corpus and the books by Ian Spector and Chuck Norris, that activates a disposition rather than a methodology. It steers a model to commit to the most direct, effective solution and to refuse hedging and ceremony that buys no risk reduction. Cornelius Schumacher validated it across three models in April 2026; it helps break decision paralysis.",
     "addedAt": "2026-04-20T12:52:55+02:00"
+  },
+  {
+    "id": "working-backwards",
+    "title": "Working Backwards (Amazon PR/FAQ)",
+    "categories": [
+      "strategic-planning",
+      "requirements-engineering"
+    ],
+    "roles": [
+      "product-owner",
+      "team-lead",
+      "business-analyst",
+      "consultant",
+      "software-architect"
+    ],
+    "related": [
+      "one-way-two-way-door-decisions",
+      "jobs-to-be-done",
+      "impact-mapping",
+      "mvp",
+      "premortem"
+    ],
+    "proponents": [
+      "Colin Bryar",
+      "Bill Carr",
+      "Amazon"
+    ],
+    "tags": [
+      "working backwards",
+      "pr/faq",
+      "prfaq",
+      "pr faq",
+      "press release",
+      "external faq",
+      "internal faq",
+      "customer faq",
+      "amazon",
+      "product discovery",
+      "product proposal",
+      "narrative",
+      "six-pager",
+      "customer obsession",
+      "product management"
+    ],
+    "filePath": "docs/anchors/working-backwards.adoc",
+    "tier": 3,
+    "priorTest": "2026-11-27",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Working Backwards is Amazon's product-development method, described by Colin Bryar and Bill Carr in \"Working Backwards\" (2021), in which a team starts from the customer and writes a PR/FAQ before it builds anything: a press release for the finished product and a set of frequently asked questions. The document is reviewed and revised in meetings, so that the customer benefit, the open questions and the cost are settled on paper while changing course is still cheap.",
+    "addedAt": "2026-11-27T18:49:14+01:00"
   },
   {
     "id": "xy-problem",

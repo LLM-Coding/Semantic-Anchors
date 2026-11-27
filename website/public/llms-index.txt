@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 20 documentation pages, 24 semantic contracts, and
-> 277 anchors in 15 categories — the anchors both
+> 278 anchors in 15 categories — the anchors both
 > one by one and bundled into 29 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -45,7 +45,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 277 terms in full, 29 files
+## Anchor bundles — the same 278 terms in full, 29 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -66,13 +66,13 @@
 - [Problem Solving (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-2.txt): 10 anchors in full.
 - [Problem Solving (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-3.txt): 8 anchors in full.
 - [Requirements Engineering (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering-1.txt): 16 anchors in full.
-- [Requirements Engineering (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering-2.txt): 2 anchors in full.
+- [Requirements Engineering (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/requirements-engineering-2.txt): 3 anchors in full.
 - [Software Architecture (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-1.txt): 15 anchors in full.
 - [Software Architecture (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-2.txt): 15 anchors in full.
 - [Software Architecture (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/software-architecture-3.txt): 6 anchors in full.
 - [Statistical Methods & Process Monitoring](https://llm-coding.github.io/Semantic-Anchors/bundles/statistical-methods.txt): 5 anchors in full.
 - [Strategic Planning (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-1.txt): 16 anchors in full.
-- [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 8 anchors in full.
+- [Strategic Planning (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/strategic-planning-2.txt): 9 anchors in full.
 - [Testing & Quality Practices (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-1.txt): 11 anchors in full.
 - [Testing & Quality Practices (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-2.txt): 20 anchors in full.
 - [Testing & Quality Practices (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/testing-quality-3.txt): 3 anchors in full.
@@ -80,7 +80,7 @@
 - [UX & Visual Design (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 15 anchors in full.
 - [UX & Visual Design (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-3.txt): 2 anchors in full.
 
-## Anchors — 277 named terms, grouped by category
+## Anchors — 278 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -302,6 +302,7 @@
 - [SIPOC](https://llm-coding.github.io/Semantic-Anchors/anchors/sipoc.txt)
 - [Twin Peaks Model according to Nuseibeh](https://llm-coding.github.io/Semantic-Anchors/anchors/twin-peaks-model.txt)
 - [User Story Mapping](https://llm-coding.github.io/Semantic-Anchors/anchors/user-story-mapping.txt)
+- [Working Backwards (Amazon PR/FAQ)](https://llm-coding.github.io/Semantic-Anchors/anchors/working-backwards.txt)
 
 ### Software Architecture
 
@@ -376,6 +377,7 @@
 - [SWOT](https://llm-coding.github.io/Semantic-Anchors/anchors/swot.txt)
 - [Toyota Kata](https://llm-coding.github.io/Semantic-Anchors/anchors/toyota-kata.txt)
 - [Wardley Mapping](https://llm-coding.github.io/Semantic-Anchors/anchors/wardley-mapping.txt)
+- [Working Backwards (Amazon PR/FAQ)](https://llm-coding.github.io/Semantic-Anchors/anchors/working-backwards.txt)
 
 ### Testing & Quality Practices
 
