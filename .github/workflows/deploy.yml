@@ -36,14 +36,11 @@ jobs:
         working-directory: ./website
         run: npm ci
 
-      - name: Extract metadata and generate sitemap
+      # The website's prebuild runs `npm run generate` in scripts/ (site data,
+      # sitemap, llms.txt, style gallery); it needs these dependencies.
+      - name: Install scripts dependencies
         working-directory: ./scripts
-        run: |
-          npm ci
-          node extract-metadata.js
-          node generate-sitemap.js
-          node generate-llms-txt.js
-          node generate-style-gallery.js
+        run: npm ci
 
       - name: Copy anchor files to public directory
         run: |

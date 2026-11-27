@@ -52,6 +52,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          # Full history so extract-metadata can date each anchor (#652); a
+          # shallow clone makes every anchor look newly added.
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
@@ -64,20 +68,16 @@ jobs:
         working-directory: ./website
         run: npm ci
 
-      - name: Run unit tests (website)
-        working-directory: ./website
-        run: npm test
-
+      # Generated files (site data, llms.txt, all-anchors.adoc, ...) are not in
+      # git. `npm test` in both packages regenerates them first (pretest), which
+      # needs the scripts dependencies.
       - name: Install dependencies (scripts)
         working-directory: ./scripts
         run: npm ci
 
-      # The bundle tests read generated files: they check the wiring between
-      # packing and writing, which the packer's own unit test cannot see.
-      # Without this step they crash on a missing directory.
-      - name: Generate llms.txt artefacts (scripts)
-        working-directory: ./scripts
-        run: npm run generate-llms-txt
+      - name: Run unit tests (website)
+        working-directory: ./website
+        run: npm test
 
       - name: Run unit tests (scripts)
         working-directory: ./scripts
@@ -89,6 +89,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
@@ -105,11 +107,11 @@ jobs:
         working-directory: ./website
         run: npx playwright install --with-deps chromium
 
-      - name: Generate llms.txt and all-anchors.adoc
+      - name: Generate site data, llms.txt and all-anchors.adoc
         working-directory: ./scripts
         run: |
           npm ci
-          node generate-llms-txt.js
+          npm run generate
 
       - name: Copy anchor files to public directory
         run: |
