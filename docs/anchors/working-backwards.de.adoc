@@ -1,0 +1,63 @@
+= Working Backwards (Amazon PR/FAQ)
+:categories: strategic-planning, requirements-engineering
+:roles: product-owner, team-lead, business-analyst, consultant, software-architect
+:related: one-way-two-way-door-decisions, jobs-to-be-done, impact-mapping, mvp, premortem
+:proponents: Colin Bryar, Bill Carr („Working Backwards", 2021); Amazon
+:tags: Working Backwards, PR/FAQ, PRFAQ, PR FAQ, Pressemitteilung, Press Release, externe FAQ, interne FAQ, Kunden-FAQ, Amazon, Product Discovery, Produktvorschlag, Narrativ, Six-Pager, Kundenorientierung, Produktmanagement
+:tier: 3
+:definition: Working Backwards ist Amazons Methode der Produktentwicklung, beschrieben von Colin Bryar und Bill Carr in „Working Backwards" (2021): Ein Team beginnt beim Kunden und schreibt ein PR/FAQ, bevor es etwas baut, also eine Pressemitteilung für das fertige Produkt und eine Liste häufig gestellter Fragen. Das Dokument wird in Meetings geprüft und überarbeitet, sodass Kundennutzen, offene Fragen und Kosten auf dem Papier geklärt sind, solange ein Kurswechsel noch billig ist.
+:prior-test: 2026-11-27
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Vollständiger Name:: Working Backwards, niedergeschrieben als PR/FAQ (Press Release / Frequently Asked Questions)
+
+Auch bekannt als:: PR/FAQ, PRFAQ, Amazons Pressemitteilungs-Methode
+
+[discrete]
+== *Kernkonzepte*:
+
+Beim Kunden beginnen:: Das Team beginnt beim Kunden und dem Nutzen, den er bekommt, und arbeitet sich rückwärts zu dem vor, was gebaut werden muss. Der Entwurf kommt nach dem Kundenfall, nicht davor.
+
+Pressemitteilung:: Eine Pressemitteilung, geschrieben, als wäre das Produkt schon auf dem Markt: Schlagzeile, Kundenproblem, Lösung, ein Zitat und wie man anfängt. Bryar und Carr: „The press release (PR) portion is a few paragraphs, always less than one page."
+
+Häufig gestellte Fragen:: Die FAQ beantwortet die Fragen, die Kunden stellen werden (externe FAQ), und die Fragen von Team, Finanzabteilung und Führung (interne FAQ): Kosten, Risiken, Abhängigkeiten, was nicht dazugehört. Bryar und Carr: „The frequently asked questions (FAQ) should be five pages or less."
+
+Review-Meeting:: Das PR/FAQ wird in einem Meeting mit den relevanten Stakeholdern gelesen und besprochen. Cedric Chin fasst das Buch so zusammen: „Once submitted, your PR/FAQ is reviewed in a one-hour meeting with the relevant stakeholders present." Das Dokument durchläuft mehrere Review-Runden.
+
+Ein billiger Filter:: Die meisten PR/FAQs werden nie zu Produkten, und genau das ist der Zweck: Eine schwache Idee scheitert auf dem Papier. Bryar und Carr: „most PR/FAQs never made it to a stage where they were launched as actual products".
+
+[discrete]
+== *Wann verwenden*:
+
+* Entscheiden, ob ein neues Produkt oder Feature es wert ist, gebaut zu werden
+* Ein Projekt-Kick-off, bei dem Ziel und Kundennutzen noch nicht vereinbart sind
+* Interne Werkzeuge und Plattformen, mit Kollegen als Kunden
+* Vor einer Entscheidung, die schwer umkehrbar ist (siehe link:#/anchor/one-way-two-way-door-decisions[One-Way Door / Two-Way Door Decisions])
+
+[discrete]
+== *Wie prompten*:
+
+Im Prior Test vom 27.11.2026 begann ein Produktvorschlag, geschrieben „using Working Backwards (Amazon PR/FAQ)", in sechs von sechs Läufen mit einer Pressemitteilung und enthielt eine externe und eine interne FAQ. Ohne den Begriff schrieb kein Lauf eine Pressemitteilung oder eine externe FAQ; Opus fügte in zwei von sechs Läufen eine interne FAQ an. Mit dem bloßen Begriff „Working Backwards" erschien in einer zweiten Aufgabe die Pressemitteilung in sechs von sechs Läufen, die externe FAQ aber nur in drei. Für beide FAQs nennt man das PR/FAQ, etwa: „Schreibe ein PR/FAQ für dieses Feature im Stil von Working Backwards: eine einseitige Pressemitteilung, dann eine externe FAQ für Kunden und eine interne FAQ für das Team".
+
+[discrete]
+== *Häufige Missverständnisse*:
+
+* ❌ „Die Pressemitteilung ist Marketingtext" -- sie ist ein Denkwerkzeug für das Team; sie beschreibt Kundenproblem und Nutzen und wird nie so veröffentlicht
+* ❌ „Mehr Seiten machen ein besseres PR/FAQ" -- Bryar und Carr: „In the early days of the PR/ FAQ, a common mistake people made was to assume that more means better."
+* ❌ „Working Backwards heißt jede Art von Rückwärtsplanung" -- der bloße Begriff bezeichnet auch eine Heuristik des Problemlösens, Backward Design in der Didaktik und Backward Chaining; die Amazon-Methode ist Pressemitteilung plus FAQ
+* ✓ „Erst die Pressemitteilung zum Launch und die FAQ schreiben, dann entscheiden, ob gebaut wird" -- zutreffend
+====
+
+== *Kritik*:
+
+* *Die Methode hängt an Amazons Kultur.* Cedric Chin, der die Methode sonst lobt: „I am under no delusions that the PR/FAQ process is universally applicable — in fact, I think it is _highly_ dependent on cultural values that exist in Amazon." Er fügt an, dass „org processes can rarely ever be copied wholesale, and may only be used with some adaptation to your specific context." https://commoncog.com/product-development-iterated-taste/[Cedric Chin, „Product Development as Iterated Taste", Commoncog] (23.03.2021).
+* *Ein PR/FAQ garantiert keinen Erfolg.* Chin: „The PR/FAQ process merely increases the odds that your product would succeed; it doesn't guarantee it". Im selben Artikel nennt er das Fire Phone als Produkt, das den Prozess durchlief und trotzdem scheiterte.
+* *Die Reviews sind anstrengend.* Bryar und Carr selbst: „The PR/FAQ review process can be stressful, no matter how constructive and unbiased the feedback." https://www.aboutamazon.com/news/workplace/an-insider-look-at-amazons-culture-and-processes[Amazon, „An insider look at Amazon's culture and processes"] (09.02.2021, ein Auszug aus dem Buch).
+
+[discrete]
+== *Aktueller Stand*:
+
+* *Der bloße Begriff ist mehrdeutig.* Im Prior Test überwog auf jeder Stufe die betriebswirtschaftliche Bedeutung, doch jede Antwort nannte auch andere: Pólyas Heuristik des Problemlösens, Backward Design in der Didaktik, Backward Chaining, Backward Induction, Backcasting. Der Katalog führt den Anchor deshalb mit dem Zusatz „(Amazon PR/FAQ)".
+* *Die Herkunft erzählen Insider.* Die öffentliche Darstellung ist das Buch von Bryar und Carr (2021); beide schreiben, sie hätten die Entstehung bei Amazon miterlebt („witnessed its birth"). Im Prior Test nannten die Modelle Jeff Bezos oder die Amazon-Führung als Urheber, mit mittlerer oder geringer Sicherheit. Eine datierte erste Verwendung hat die Recherche nicht bestätigt. Siehe das link:#/prior-tests[Prior-Test-Register].

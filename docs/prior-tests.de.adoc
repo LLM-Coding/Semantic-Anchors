@@ -1368,3 +1368,42 @@ Typische Antworten aus Aufgabe B, Sonnet. Mit dem Begriff: „Re-planning gates:
 
 * Zwei Aufgaben, beide aus der Projektplanung. Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.
 * Der Prompt von Aufgabe A beschreibt selbst die Lage, für die Rolling Wave gedacht ist; das erklärt einen Teil des Verhaltens ohne Begriff. Aufgabe B kam deshalb hinzu.
+
+== Lauf vom 27.11.2026, Working Backwards (Amazon PR/FAQ)
+
+[cols="1,3"]
+|===
+|Kandidat |Working Backwards (Amazon PR/FAQ) (https://github.com/LLM-Coding/Semantic-Anchors/issues/938[#938]). Der Vorschlag nennt das Buch von Bryar und Carr (2021) und den Einsatz: ein PR/FAQ schreiben und prüfen
+|Modelle |`claude-haiku-5-5` (schwach), `claude-sonnet-5-5` (mittel), `claude-opus-5-5` (stark), aufgerufen über die Aliase `haiku`, `sonnet`, `opus`
+|Verfahren |`anchor-prior-test` v1.2, Clean Room: `claude -p` aus einem neutralen Verzeichnis mit `--strict-mcp-config --setting-sources ""` und dem neutralen System-Prompt `You are a helpful assistant.` für jede Probe
+|Läufe |P1 mit dem qualifizierten Begriff, P2 mit dem bloßen Begriff „Working Backwards“ und beide Aktionsaufgaben zweimal je Stufe, mit und ohne Begriff; P4 einmal je Stufe. Insgesamt 39 Aufrufe
+|Nachweis |Den Lauf hat Claude im geplanten täglichen Check auf Anchor-Vorschläge durchgeführt, nicht der Maintainer. Die Rohantworten liegen nicht im Repository
+|Kritik-Recherche |27.11.2026, Englisch. Gefunden und abgerufen: Cedric Chin, „Product Development as Iterated Taste“ (Commoncog, 23.03.2021); Cedric Chin, „Book Summary: Working Backwards“ (Commoncog, 06.04.2021); Amazon, „An insider look at Amazon's culture and processes“ (aboutamazon.com, 09.02.2021, ein Buchauszug). Jede Seite wurde einmal über ein Abruf-Werkzeug gelesen. Ein HackerNoon-Artikel darüber, warum die Methode außerhalb von Amazon scheitert, ließ sich nicht abrufen und wird daher nicht zitiert. Nicht gefunden: eine datierte erste Verwendung der Methode oder ein namentlicher Erfinder
+|===
+
+=== Ergebnis: ★★★, Proponenten Bryar und Carr
+
+[cols="1,1,3"]
+|===
+|Kriterium |Ergebnis |Beleg
+
+|Precise |erfüllt mit Zusatz |P2: Der bloße Begriff „Working Backwards“ hat in sechs von sechs Läufen Betriebswirtschaft und Produktmanagement als vorherrschendes Feld, doch jeder Lauf nennt weitere Bedeutungen (Pólyas Heuristik, Backward Design in der Didaktik, Backward Chaining, Backward Induction, Backcasting). Der Katalogname behält „(Amazon PR/FAQ)“
+|Rich |erfüllt |P1: `recognized=yes`, `richness=rich` in sechs von sechs Läufen (Pressemitteilung, externe und interne FAQ, Kundenorientierung, Narrative Memos, Review-Meetings, Längengrenzen)
+|Consistent |erfüllt |P1 und beide Aktionsaufgaben stimmen über die Stufen überein
+|Attributable |erfüllt durch den Zusatz |P4 nennt Jeff Bezos oder die Amazon-Führung, um 2004, mit mittlerer oder geringer Sicherheit. „Amazon PR/FAQ“ legt die Bedeutung fest; das Buch von Bryar und Carr ist die öffentliche Quelle
+|===
+
+=== Der Aktionstest: Der Begriff macht aus einem Vorschlag Pressemitteilung und FAQ
+
+Aufgabe A verlangte einen Vorschlag für einen wiederkehrenden saisonalen Lebensmittelkorb, über den ein Team von sechs Personen entscheiden muss. Der Prompt mit Begriff lautete „Using Working Backwards (Amazon PR/FAQ)“. Aufgabe B verlangte ein Kick-off-Dokument für ein internes Werkzeug zur Rufbereitschaftsplanung; der Prompt mit Begriff lautete nur „Using Working Backwards“.
+
+* *Aufgabe A, qualifizierter Begriff:* Pressemitteilung, externe FAQ und interne FAQ in sechs von sechs Läufen. Ohne Begriff: in keinem Lauf eine Pressemitteilung oder eine externe FAQ; Opus schrieb in zwei von zwei Läufen eine interne FAQ.
+* *Aufgabe B, bloßer Begriff:* Pressemitteilung und interne FAQ in sechs von sechs Läufen, externe FAQ in drei von sechs (Opus zweimal, Sonnet einmal). Ohne Begriff: keine Pressemitteilung, keine externe FAQ; Opus schrieb wieder in zwei von zwei Läufen eine interne FAQ. Jeder Lauf, mit und ohne Begriff, ging von den Nutzern aus.
+* Der Gewinn hält auf allen drei Stufen, daher ★★★ und Tier 3.
+
+Typische Antworten aus Aufgabe A, Sonnet. Mit dem Begriff begann das Dokument: „PR/FAQ: Seasonal Weekly Basket. Press Release. FreshCart launches "Seasonal Basket": a weekly grocery order that plans itself around what's in season“. Ohne den Begriff begann es mit einer Entscheidungsbitte: „Decision requested: Approve a build next quarter by our team of six (about 10 to 12 weeks), or defer.“
+
+=== Was nicht getestet wurde
+
+* Zwei Aufgaben, beide Produktvorschläge. Aufgabe A nutzte den qualifizierten, Aufgabe B den bloßen Begriff; der Unterschied bei den externen FAQs kann daher von der Aufgabe wie vom Zusatz kommen.
+* Ältere Modellgenerationen und andere Modellfamilien wurden nicht gemessen.

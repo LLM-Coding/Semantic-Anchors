@@ -2,6 +2,14 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-11-27
+
+*New anchor -- Working Backwards (Amazon PR/FAQ):*
+
+* *link:#/anchor/working-backwards[Working Backwards (Amazon PR/FAQ)]* (Colin Bryar, Bill Carr) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/938[#938]: start from the customer and write a one-page press release and an FAQ before building. Asked for a product proposal, models wrote a press release with an external and an internal FAQ in six of six runs with the term and never without it. Tier ★★★. Proposed by https://github.com/ahus1[@ahus1] in https://github.com/LLM-Coding/Semantic-Anchors/issues/938[#938] -- thank you.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-11-27, Working Backwards (Amazon PR/FAQ).
+
 == 2026-11-26
 
 *New anchor -- Rolling Wave Planning:*

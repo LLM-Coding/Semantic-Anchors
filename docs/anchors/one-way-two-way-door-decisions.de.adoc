@@ -1,7 +1,7 @@
 = One-Way Door / Two-Way Door Decisions
 :categories: strategic-planning, development-workflow
 :roles: software-architect, software-developer, team-lead, product-owner, consultant
-:related: chestertons-fence, second-order-thinking, premortem, adr-according-to-nygard, blast-radius
+:related: chestertons-fence, second-order-thinking, premortem, adr-according-to-nygard, blast-radius, working-backwards
 :proponents: Jeff Bezos
 :tags: One-Way Door, Two-Way Door, Einbahntür, Typ-1-Entscheidung, Typ-2-Entscheidung, umkehrbare Entscheidung, unumkehrbare Entscheidung, Reversibilität, Bezos, Amazon, Aktionärsbrief, Entscheidungsgeschwindigkeit, disagree and commit, Pull Request, Merge-Risiko
 :tier: 3
