@@ -2,7 +2,7 @@
 :categories: documentation
 :roles: technical-writer, ux-designer, software-developer, product-owner, educator
 :related: diataxis-framework, progressive-disclosure, docs-as-code, inverted-pyramid-style, plain-language-iso-24495
-:proponents: Mark Baker ("Every Page is Page One: Topic-Based Writing for Technical Communication and the Web", XML Press, 2013)
+:proponents: Mark Baker
 :tags: every page is page one, eppo, topic-based writing, topic based authoring, information foraging, information scent, bottom-up information architecture, linking, hypertext, self-contained topic, technical writing, user documentation, help pages, minimalism, structured writing, mark baker
 :tier: 2
 :definition: Every Page is Page One is Mark Baker's approach to topic-based writing for technical communication and the web, set out in his 2013 book of the same name: because readers arrive from search or a link in the middle of a task, every page must work as their first page. Each topic is self-contained, serves one specific purpose, establishes its own context and links richly to its neighbours, so that the information architecture grows bottom-up through links rather than top-down through a table of contents.
@@ -12,6 +12,8 @@
 [%collapsible]
 ====
 Full Name:: Every Page is Page One: Topic-Based Writing for Technical Communication and the Web
+
+Key Proponents:: Mark Baker, "Every Page is Page One: Topic-Based Writing for Technical Communication and the Web" (XML Press, 2013)
 
 Also known as:: EPPO, EPPO topics
 

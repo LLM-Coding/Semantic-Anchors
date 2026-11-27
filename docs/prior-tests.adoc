@@ -1399,7 +1399,7 @@ Task A asked for a help page that readers reach from a web search mid-task. Task
 
 * *Tasks A and B describe the EPPO situation, so the lift is small.* Every run in task A, with and without the term, established its context and stayed self-contained. Runs with the term linked to three to five related topics; without it, zero to four (Sonnet zero twice). In task B, linked hubs were the primary navigation in six of six runs with the term and five of six without.
 * *Task C shows the term's own effect.* With the term, every run split the documentation into three to five topics, and five of six linked to related topics. Without it, two of six added links, and Sonnet wrote one long page in both runs.
-* The lift is moderate and appears only when the prompt does not already describe the reader, hence ★★☆ and tier 2.
+* The lift is moderate: clear in task C, smaller in tasks A and B, where the prompt already describes the reader. Hence ★★☆ and tier 2.
 
 Representative answers from task C, Sonnet. With the term, each page ended with links such as "Related topics: Create a recurring invoice · Pause a recurring invoice · Change the template of a recurring invoice". Without the term, the answer was a single page with sections in reading order, beginning "Recurring Invoices in Ledgerly".
 

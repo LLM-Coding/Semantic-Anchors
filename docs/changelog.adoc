@@ -6,7 +6,7 @@ A chronological record of all semantic anchors added to the catalog. Community c
 
 *New anchor -- Every Page is Page One (Mark Baker):*
 
-* *link:#/anchor/every-page-is-page-one[Every Page is Page One (Mark Baker)]* (Mark Baker, 2013) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939]: readers arrive from search, so every page must work as their first page, establish its context and link onward. Asked to document a feature, models split it into topics and added related-topic links in five of six runs with the term, against two of six without. When the prompt already says that readers come from search, models write self-contained pages anyway. Tier ★★☆. Proposed by https://github.com/ahus1[@ahus1] in https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939] -- thank you.
+* *link:#/anchor/every-page-is-page-one[Every Page is Page One (Mark Baker)]* (Mark Baker, 2013) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939]: readers arrive from search, so every page must work as their first page, establish its context and link onward. Asked to document a feature, every run with the term split it into topics, and five of six added related-topic links; without the term, two of six added links. When the prompt already says that readers come from search, models write self-contained pages anyway. Tier ★★☆. Proposed by https://github.com/ahus1[@ahus1] in https://github.com/LLM-Coding/Semantic-Anchors/issues/939[#939] -- thank you.
 
 Full detail in the link:#/prior-tests[prior-test register], run 2026-11-27, Every Page is Page One.
 

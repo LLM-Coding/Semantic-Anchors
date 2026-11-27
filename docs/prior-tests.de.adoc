@@ -1399,7 +1399,7 @@ Aufgabe A verlangte eine Hilfeseite, die Leser über eine Websuche mitten in ein
 
 * *Aufgaben A und B beschreiben die EPPO-Situation, daher ist der Gewinn klein.* In Aufgabe A stellte jeder Lauf, mit und ohne Begriff, seinen Kontext her und blieb eigenständig. Läufe mit Begriff verlinkten auf drei bis fünf verwandte Topics, ohne ihn auf null bis vier (Sonnet zweimal null). In Aufgabe B waren verlinkte Knotenseiten in sechs von sechs Läufen mit Begriff die Hauptnavigation, ohne ihn in fünf von sechs.
 * *Aufgabe C zeigt die eigene Wirkung des Begriffs.* Mit Begriff teilte jeder Lauf die Dokumentation in drei bis fünf Topics, und fünf von sechs verlinkten auf verwandte Topics. Ohne ihn fügten zwei von sechs Links hinzu, und Sonnet schrieb in beiden Läufen eine lange Seite.
-* Der Gewinn ist mäßig und zeigt sich nur, wenn der Prompt den Leser nicht schon beschreibt, daher ★★☆ und Tier 2.
+* Der Gewinn ist mäßig: deutlich in Aufgabe C, kleiner in den Aufgaben A und B, deren Prompt den Leser schon beschreibt. Daher ★★☆ und Tier 2.
 
 Typische Antworten aus Aufgabe C, Sonnet. Mit dem Begriff endete jede Seite mit Links wie „Related topics: Create a recurring invoice · Pause a recurring invoice · Change the template of a recurring invoice“. Ohne den Begriff war die Antwort eine einzige Seite mit Abschnitten in Lesereihenfolge, beginnend mit „Recurring Invoices in Ledgerly“.
 
