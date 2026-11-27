@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 326 well-defined terms, methodologies, and frameworks
+> 278 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -1428,7 +1428,7 @@ Herbert H. Clark & Susan E. Brennan (https://en.wikipedia.org/wiki/Grounding_in_
 * **The four books, as the publisher lists them.** https://www.edwardtufte.com/books/[Graphics Press] gives _The Visual Display of Quantitative Information_ as "1983 / 2nd Edition 2001" -- the same book under two years, and the second edition is the one in print. Then _Envisioning Information_ (1990), _Visual Explanations_ (1996, widely miscited as 1997) and _Beautiful Evidence_ (2006). A fifth, _Seeing with Fresh Eyes_, followed in 2020, so "his four books" is no longer accurate.
 * **The name is baked into tooling, which is why it holds as an anchor.** `theme_tufte` in R's https://jrnold.github.io/ggthemes/reference/theme_tufte.html[ggthemes] cites the data-ink chapter by name: "No border, no axis lines, no grids." https://edwardtufte.github.io/tufte-css/[Tufte CSS] and the https://ctan.org/pkg/tufte-latex[tufte-latex] classes carry the sidenote layout; https://pypi.org/project/matplotlib-tufte/[matplotlib-tufte] carries the chart rules into Python. A term that ships as an installable default is one a model has seen in code as well as in prose.
 * **The typographic branch is stable to the point of dormancy.** CTAN lists tufte-latex at 3.5.2 with its most recent announcement in 2015. That is not decay -- the layout was finished -- but it means the second meaning of the name lives on in copies rather than in active development.
-* **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](#/prior-tests) for the terms searched.
+* **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests) for the terms searched.
 
 ### Zone of Proximal Development
 
@@ -3261,7 +3261,7 @@ Ralf Westphal ("Integration Operation Segregation Principle (IOSP)", 2022 — su
 ## **Current Status**:
 
 * **Named in 2020, still the current formulation.** Carson Gross, https://htmx.org/essays/locality-of-behaviour/["Locality of Behaviour (LoB)"], 29 May 2020. The essay does not claim the idea is new; it credits Richard P. Gabriel's _Patterns of Software_ (Oxford University Press, 1996) for the underlying notion of locality -- a quotation we verified in the essay but not in Gabriel's book itself.
-* **Two spellings, one author.** The essay uses the British "Behaviour"; the book https://hypermedia.systems/client-side-scripting/[_Hypermedia Systems_] (2023) uses the American "Behavior". Both are primary. This entry follows the essay, which is also the spelling that measured stronger on weak models -- see the [prior-test register](#/prior-tests).
+* **Two spellings, one author.** The essay uses the British "Behaviour"; the book https://hypermedia.systems/client-side-scripting/[_Hypermedia Systems_] (2023) uses the American "Behavior". Both are primary. This entry follows the essay, which is also the spelling that measured stronger on weak models -- see the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 * **Adopted beyond htmx, but within one family.** Django (Carlton Gibson, https://buttondown.com/carlton/archive/locality-of-behaviour/[2024], calling it "a starting point, not a destination") and Laravel (https://freek.dev/2513-locality-of-behaviour[Freek Van der Herten, 2023]) have taken it up. These are server-rendered ecosystems adjacent to htmx; adoption into independent textbooks, standards or framework documentation is not established.
 
 ### Poka-Yoke
@@ -4112,7 +4112,7 @@ A class should have only one reason to change. Each module or class should be re
 * **Microsoft's Zero Trust wording has moved.** The adoption framework still lists the principle "Assume breach" and describes it with "Minimize blast radius and segment access." https://learn.microsoft.com/security/zero-trust/adopt/zero-trust-adoption-overview[Microsoft, "Zero Trust adoption framework overview"] (updated 5 May 2025). The current overview renames it "Assume compromise (previously referred to as assume breach)" and places the term under least privilege: "reducing unnecessary exposure and potential blast radius." https://learn.microsoft.com/security/zero-trust/zero-trust-overview[Microsoft, "Zero Trust overview"] (updated 15 November 2026). A model's prior most likely holds the older wording.
 * **Code-review tools now use it for pull requests.** CodeRabbit documents a feature of that name: "Security Blast Radius helps you investigate what a pull request could affect beyond its changed lines." https://docs.coderabbit.ai/security/blast-radius[CodeRabbit, "Blast Radius"]. Qodo's version "Estimates how broadly a failure caused by the change could affect the codebase or product functionality." https://docs.qodo.ai/code-review/assess-risk-with-blast-radius[Qodo, "Assess risk with blast radius"]; the same page says that a broader "Merge Risk" feature has since replaced it, with blast radius as one of its factors. Both are vendor documentation, and neither page shows a date.
 * **Security and reliability share the term, and small models lean to security.** In the prior test of 2026-11-23 the bare term meant software operations or security on every tier, and explosives did not dominate; the weak tier leaned to cybersecurity, the mid and strong tiers to reliability and security. Say which event you mean: a failure, a compromise or a change.
-* **The lift is moderate, hence tier 2.** On a task about a shared library that changes its default time zone for 14 services, answers with the term were organised by reach and more often said who is exposed. The risks themselves were found without the term as well. See the [prior-test register](#/prior-tests).
+* **The lift is moderate, hence tier 2.** On a task about a shared library that changes its default time zone for 14 services, answers with the term were organised by reach and more often said who is exposed. The risks themselves were found without the term as well. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### Boy Scout Rule
 
@@ -4211,7 +4211,7 @@ A class should have only one reason to change. Each module or class should be re
 * **The compressed version that circulates is also not his.** https://fs.blog/chestertons-fence/[Farnam Street] states it as "Do not remove a fence until you know why it was put up in the first place" -- shorter, sharper and not a sentence in the essay. The same page carries the caveat the short form loses: "The point is not that the status quo is always right, that every fence should remain standing." The https://www.lesswrong.com/w/chesterton-s-fence[LessWrong wiki entry] is the other main route by which the label spread, and it collects the counter-arguments alongside it.
 * **Software adopted it as a rule about legacy code, not about institutions.** Oskar Dudycz's https://event-driven.io/en/chesterton_fence_and_software_architecture/[essay on Chesterton's Fence and software architecture] (17 August 2022) is representative of the genre: the fence becomes the line of code whose purpose is lost, and the reform becomes a refactoring. This is a genuine shift of subject -- Chesterton was defending the household, not a retry delay -- and it is the sense in which the anchor is used today.
 * **The drift is worth naming in one direction only.** Nothing in the software reading contradicts the original argument; it narrows it. Where Chesterton's critics attack the essay's politics, the engineering use inherits none of it, because a payment service has no opponents to exclude.
-* **A prior test on 2026-09-30 measured what naming it changes.** On a legacy-modernisation scenario that did not imply the principle, no baseline named it unprompted. A weak-tier model without the anchor called removing always-on feature flags a "safe, high-confidence win"; with the anchor it inserted an "Understand the fence" phase and asked whether the flags were finished rollouts or kill switches for a known bad vendor path. A strong-tier baseline was already cautious, and what the anchor added there was method -- read the runbook and the alert definitions before the code -- plus an explicit rule for when removal is earned. See the [prior-test register](#/prior-tests).
+* **A prior test on 2026-09-30 measured what naming it changes.** On a legacy-modernisation scenario that did not imply the principle, no baseline named it unprompted. A weak-tier model without the anchor called removing always-on feature flags a "safe, high-confidence win"; with the anchor it inserted an "Understand the fence" phase and asked whether the flags were finished rollouts or kill switches for a known bad vendor path. A strong-tier baseline was already cautious, and what the anchor added there was method -- read the runbook and the alert definitions before the code -- plus an explicit rule for when removal is earned. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### Conventional Commits
 
@@ -4732,7 +4732,7 @@ A class should have only one reason to change. Each module or class should be re
 * **Amazon now teaches it as a mental model and applies it to architecture.** AWS calls it "a mental model we call one-way and two-way doors" in https://aws.amazon.com/de/executive-insights/content/how-amazon-defines-and-operationalizes-a-day-1-culture/[Daniel Slater's "Elements of Amazon's Day 1 Culture"]. The https://docs.aws.amazon.com/wellarchitected/latest/framework/the-review-process.html[AWS Well-Architected Framework] asks for reviews "early on in the design phase to avoid one-way doors that are difficult to change".
 * **In software the criterion drifted from "irreversible" to "costly to reverse".** thoughtbot defines it by cost: "If the cost (financial, time, resources) of reversing a decision is high, it falls into the One-way door category". https://thoughtbot.com/blog/one-way-vs-two-way-door-decisions[Bireke, "One-way vs Two-way door decisions"] (10 May 2024). Google's Abseil performance tips apply it to technical properties: "Broadly speaking, fine-grained flag changes are easy to undo and thus two-way doors", and "The possibility of a bug does not make the door one-way." https://abseil.io/fast/87[Kennelly, "Performance Tip of the Week #87: Two-way doors"] (16 October 2024, updated 17 November 2025).
 * **Reversibility as an architecture concern is older than the door.** Martin Fowler wrote in 2003 that an architect's task includes "finding ways to eliminate irreversibility in software designs". https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf[Fowler, "Who Needs an Architect?", IEEE Software] (July/August 2003). The door metaphor names the idea; it did not introduce it.
-* **A prior test on 2026-11-23 measured what naming it changes, and what it hides.** Asked to assess four changes to an online shop, 12 of 12 runs with the term noted that a new public API field is hard to take back once published; without the term only the strong tier did. The term also narrowed the view: for a button-colour change, the weak and mid tiers mentioned contrast or accessibility in 8 of 8 runs without the term and in 0 of 8 with it. Use it next to other review lenses, not instead of them. See the [prior-test register](#/prior-tests).
+* **A prior test on 2026-11-23 measured what naming it changes, and what it hides.** Asked to assess four changes to an online shop, 12 of 12 runs with the term noted that a new public API field is hard to take back once published; without the term only the strong tier did. The term also narrowed the view: for a button-colour change, the weak and mid tiers mentioned contrast or accessibility in 8 of 8 runs without the term and in 0 of 8 with it. Use it next to other review lenses, not instead of them. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### PDCA
 
@@ -5620,7 +5620,7 @@ In the prior test of 2026-11-27, asked for the documentation of a feature with n
 ## **Current Status**:
 
 * **The practices have become web norms.** Johnson argues that "many of the EPPO practices became more second nature just as the web became second nature" and expects that "calling out this mantra as a core principle for writing will fade in importance." In the prior test, models wrote self-contained pages with context even without the term, which fits this observation; the term mainly added topic splitting and links.
-* **Recognition is strong and attributed.** Every tier recognised the term and named Mark Baker as its author. The book (2013) grew out of Baker's blog everypageispageone.com and a guest post on Johnson's blog in 2011. See the [prior-test register](#/prior-tests).
+* **Recognition is strong and attributed.** Every tier recognised the term and named Mark Baker as its author. The book (2013) grew out of Baker's blog everypageispageone.com and a guest post on Johnson's blog in 2011. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### 4+1 View Model according to Kruchten
 
@@ -5735,7 +5735,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 [discrete]
 ## **Current Status**:
 
-* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
+* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 * **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers. The weak tier hedges and drops the log or the filing-back; asked directly who created the pattern, it declined to name anyone, though it named Karpathy when asked what an LLM Wiki is.
 
 ### Keep a Changelog
@@ -5863,14 +5863,14 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 ## **Common Misunderstandings**:
 
 * **Reading it as "write simply".** The specific content is the closed word list and the 53 rules; a general instruction to simplify is not STE and does not need the name.
-* **Using the bare abbreviation.** "STE" is unambiguous in this field, but the qualified form is what the measurement covers -- see the [prior-test register](#/prior-tests) for which models were tested and with what result.
+* **Using the bare abbreviation.** "STE" is unambiguous in this field, but the qualified form is what the measurement covers -- see the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests) for which models were tested and with what result.
 * **Assuming it is an ISO standard.** ASD describes the move "from specification to international standard" as its own ambition; no formal ISO status is documented.
 * **Confusing it with Plain Language.** https://www.sis.se/en/produkter/standardization/information-sciences-publishing/writing-and-transliteration/iso-24495-12023/[ISO 24495-1:2023] is principle-based and audience-oriented; STE is rule- and wordlist-based. The ISO scope names controlled languages as a neighbouring field, not the same one.
 
 ## **Criticism**:
 
 * **The efficacy evidence is thinner than the reputation, and its own authors say so.** Heather Holmback (Boeing) with Serena Shubert and Jan Spyridakis (University of Washington), who conducted the Boeing-funded evaluations, name the limits in https://mt-archive.net/90/CLAW-1996-Holmback.pdf["Issues in Conducting Empirical Evaluations of Controlled Languages"] (CLAW '96): there is "no compliance standard for SE", so "there is no universal agreement as to what counts as 'good,' 'typical' or even acceptable SE"; the measured benefit appeared only for the more complex of two procedures; and "we did not find any significant differences for time between the SE and non-SE documents". Translatability results were "less clear-cut", with no significant difference for Chinese.
-* **The open question is whether the standard beats good writing at all.** The same paper asks "whether SE is any more beneficial than good quality, professional technical writing that does not conform to the SE standard". That question is still open, and our own measurement reproduced it: on a weak model the anchored rewrite was not distinguishable from an unanchored one. The entry therefore records Haiku as tested with no measurable effect, and Sonnet and Opus as tested and working. See the [prior-test register](#/prior-tests).
+* **The open question is whether the standard beats good writing at all.** The same paper asks "whether SE is any more beneficial than good quality, professional technical writing that does not conform to the SE standard". That question is still open, and our own measurement reproduced it: on a weak model the anchored rewrite was not distinguishable from an unanchored one. The entry therefore records Haiku as tested with no measurable effect, and Sonnet and Opus as tested and working. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 * **Adoption costs are real.** Karin Disborg's https://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A16816[2007 thesis at Linköping University] names the "extensive learning time" and reports, from her literature base, roughly 20 percent more writing time in a controlled language. The study is qualitative with a small sample and was commissioned by a documentation service provider; its readability results favoured STE.
 * **Strict compliance can work against other goals.** TechScribe notes that following STE strictly harms findability in search engines, because synonyms are what readers actually search for, and cites Barry Rosenberg's argument that synonyms improve readability for non-technical verbs.
 
@@ -5952,7 +5952,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 ***Capture -- keep what resonates***: Save what resonates with you, not everything that might be relevant some day. Captures go into one trusted, digital place.
 
-***Organize -- for actionability***: Sort by the project or responsibility the note will serve, not by topic or source type. The structure is the [P.A.R.A. Method](#/anchor/para-method): Projects, Areas, Resources, Archive.
+***Organize -- for actionability***: Sort by the project or responsibility the note will serve, not by topic or source type. The structure is the [P.A.R.A. Method](https://llm-coding.github.io/Semantic-Anchors/anchor/para-method): Projects, Areas, Resources, Archive.
 
 ***Distill -- Progressive Summarization***: Compress notes in layers, each time you touch them: bold the key passages, highlight the best of the bolded parts, then write a short summary in your own words at the top. A note becomes faster to reuse without losing its source.
 
@@ -5962,7 +5962,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 ***Divergence and Convergence***: Capture and Organize open up options (divergence); Distill and Express narrow them down to a result (convergence). Knowing which phase you are in tells you whether to collect more or to finish.
 
-***Hemingway Bridge***: End a session with a note on what comes next, so the next session starts without warm-up. See [Hemingway Bridge](#/anchor/hemingway-bridge).
+***Hemingway Bridge***: End a session with a note on what comes next, so the next session starts without warm-up. See [Hemingway Bridge](https://llm-coding.github.io/Semantic-Anchors/anchor/hemingway-bridge).
 
 ***12 Favorite Problems***: A short list of open questions you keep coming back to. It acts as the filter for what is worth capturing.
 
@@ -5986,7 +5986,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 * **The bare "second brain" is generic.** Every tier recognised it as Forte's, but as an instruction ("Set up a second brain.") only the strong tier produced CODE; the mid tier built a PARA-style folder system without CODE in two of two runs.
 * **"CODE method" alone loses the second half on weak models.** On the weak tier it produced the four step names but never Progressive Summarization, PARA or Intermediate Packets in the talk-preparation task, and once advised "Sort by topic, not by source type." -- the opposite of Forte's rule.
 * **Naming PARA is not naming BASB.** "Use the PARA method." produced the four buckets in 12 of 12 runs and Intermediate Packets in none. Name BASB when you want distillation and output, PARA when you only want the folder structure.
-* Details in the [prior-test register](#/prior-tests), run 2026-11-04.
+* Details in the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests), run 2026-11-04.
 
 [discrete]
 ## **Related Anchors**:
@@ -6256,7 +6256,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 [discrete]
 ## **Current Status**:
 
-* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](#/prior-tests).
+* **The pattern is recent, and so is the prior.** It was published in April 2026. A prior test on 2026-10-15 found it on all three Claude 5.5 tiers: asked to design a support assistant over 400 documents, every baseline built retrieval with chunks and a vector index, and every run that named "Karpathy's LLM Wiki" built the raw layer, the wiki, `index.md`, `log.md` and a lint pass, and filed good answers back. Models trained before April 2026 cannot know it. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 * **Use the qualified name.** The bare "LLM Wiki" works on the mid and strong tiers. The weak tier hedges and drops the log or the filing-back; asked directly who created the pattern, it declined to name anyone, though it named Karpathy when asked what an LLM Wiki is.
 
 ### P.A.R.A. Method
@@ -6265,7 +6265,7 @@ What Separates It From `arc42` and `c4-diagrams`:: All three describe a system t
 
 ***Also known as***: PARA Framework
 
-***Part of***: [Building a Second Brain (BASB)](#/anchor/building-a-second-brain): PARA is the Organize step of Forte's CODE cycle. Name BASB when you also want capture, distillation and output; name PARA for the folder structure alone
+***Part of***: [Building a Second Brain (BASB)](https://llm-coding.github.io/Semantic-Anchors/anchor/building-a-second-brain): PARA is the Organize step of Forte's CODE cycle. Name BASB when you also want capture, distillation and output; name PARA for the folder structure alone
 
 [discrete]
 ## **Core Concepts**:
@@ -6540,7 +6540,7 @@ Well-known terms that are **not** semantic anchors because they lack definition 
 
 These terms may be useful in conversation, but they don't activate rich conceptual frameworks the way true semantic anchors do.
 
-The catalog itself is the list. Browse it on the [catalog home page](https://llm-coding.github.io/Semantic-Anchors/), filter it by category or role there, or read the [quality criteria](#/about) and the [rejected proposals](#/rejected-proposals) to see where the line is drawn in practice. Every measurement behind a tier rating is recorded in the [prior-test register](#/prior-tests).
+The catalog itself is the list. Browse it on the [catalog home page](https://llm-coding.github.io/Semantic-Anchors/), filter it by category or role there, or read the [quality criteria](https://llm-coding.github.io/Semantic-Anchors/about) and the [rejected proposals](https://llm-coding.github.io/Semantic-Anchors/rejected-proposals) to see where the line is drawn in practice. Every measurement behind a tier rating is recorded in the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ---
 
@@ -6709,7 +6709,7 @@ Therefore: [Conclusion]
 * **The compressed version that circulates is also not his.** https://fs.blog/chestertons-fence/[Farnam Street] states it as "Do not remove a fence until you know why it was put up in the first place" -- shorter, sharper and not a sentence in the essay. The same page carries the caveat the short form loses: "The point is not that the status quo is always right, that every fence should remain standing." The https://www.lesswrong.com/w/chesterton-s-fence[LessWrong wiki entry] is the other main route by which the label spread, and it collects the counter-arguments alongside it.
 * **Software adopted it as a rule about legacy code, not about institutions.** Oskar Dudycz's https://event-driven.io/en/chesterton_fence_and_software_architecture/[essay on Chesterton's Fence and software architecture] (17 August 2022) is representative of the genre: the fence becomes the line of code whose purpose is lost, and the reform becomes a refactoring. This is a genuine shift of subject -- Chesterton was defending the household, not a retry delay -- and it is the sense in which the anchor is used today.
 * **The drift is worth naming in one direction only.** Nothing in the software reading contradicts the original argument; it narrows it. Where Chesterton's critics attack the essay's politics, the engineering use inherits none of it, because a payment service has no opponents to exclude.
-* **A prior test on 2026-09-30 measured what naming it changes.** On a legacy-modernisation scenario that did not imply the principle, no baseline named it unprompted. A weak-tier model without the anchor called removing always-on feature flags a "safe, high-confidence win"; with the anchor it inserted an "Understand the fence" phase and asked whether the flags were finished rollouts or kill switches for a known bad vendor path. A strong-tier baseline was already cautious, and what the anchor added there was method -- read the runbook and the alert definitions before the code -- plus an explicit rule for when removal is earned. See the [prior-test register](#/prior-tests).
+* **A prior test on 2026-09-30 measured what naming it changes.** On a legacy-modernisation scenario that did not imply the principle, no baseline named it unprompted. A weak-tier model without the anchor called removing always-on feature flags a "safe, high-confidence win"; with the anchor it inserted an "Understand the fence" phase and asked whether the flags were finished rollouts or kill switches for a known bad vendor path. A strong-tier baseline was already cautious, and what the anchor added there was method -- read the runbook and the alert definitions before the code -- plus an explicit rule for when removal is earned. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### Crisis and Emergency Risk Communication (CERC)
 
@@ -7816,7 +7816,7 @@ The razor is a **prior**, not a verdict. Reality is frequently non-parsimonious,
 [discrete]
 ## **Current Status**:
 
-* **The name that works is not the name in the sources.** Howard Marks contrasts "first-level" with "second-**level** thinking" in https://cup.columbia.edu/book/the-most-important-thing/9780231153683/[_The Most Important Thing_] (Columbia University Press, 2011). Ray Dalio's principle reads https://www.principles.com/principles/7658aec7-c3f6-4248-8cc6-57aa84b0a955/["Consider second- and third-order consequences, not just first-order ones"]. Neither writes "second-order thinking". That phrasing belongs to the popularisers, chiefly https://fs.blog/second-order-thinking/[Farnam Street], which adopts it as its own heading while stating plainly that Marks "calls it second-level thinking" and quoting Dalio on "second- and third-order consequences" -- the rename is deliberate and documented on the page that performs it. The entry is named for the string that reliably triggers the concept, not for the string with the better provenance -- and those diverge here. See the [prior-test register](#/prior-tests) for the measurement behind that choice.
+* **The name that works is not the name in the sources.** Howard Marks contrasts "first-level" with "second-**level** thinking" in https://cup.columbia.edu/book/the-most-important-thing/9780231153683/[_The Most Important Thing_] (Columbia University Press, 2011). Ray Dalio's principle reads https://www.principles.com/principles/7658aec7-c3f6-4248-8cc6-57aa84b0a955/["Consider second- and third-order consequences, not just first-order ones"]. Neither writes "second-order thinking". That phrasing belongs to the popularisers, chiefly https://fs.blog/second-order-thinking/[Farnam Street], which adopts it as its own heading while stating plainly that Marks "calls it second-level thinking" and quoting Dalio on "second- and third-order consequences" -- the rename is deliberate and documented on the page that performs it. The entry is named for the string that reliably triggers the concept, not for the string with the better provenance -- and those diverge here. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests) for the measurement behind that choice.
 * **The idea is much older than the label.** Frédéric Bastiat's "Ce qu'on voit et ce qu'on ne voit pas" states the core move for economics: judge a measure by its unseen later effects, not only by its visible immediate one. https://fr.wikisource.org/wiki/Ce_qu%E2%80%99on_voit_et_ce_qu%E2%80%99on_ne_voit_pas[French Wikisource] carries the text and dates the pamphlet to July 1850, Bastiat's last. Robert K. Merton formalised a close relative in "The Unanticipated Consequences of Purposive Social Action", _American Sociological Review_ 1(6), December 1936, 894–904.
 
 ### Simon's Constructivism
@@ -8242,7 +8242,7 @@ Cockburn's format is deliberately **prose-based and notation-agnostic**. It does
 [discrete]
 ## **Further Reading**:
 
-* [Anchors and Training Data](#/training-data-vs-practice) - why this anchor reflects Cockburn's craft rather than Jacobson's later Use-Case 2.0/3.0, and what that reveals about how anchors depend on training data.
+* [Anchors and Training Data](https://llm-coding.github.io/Semantic-Anchors/training-data-vs-practice) - why this anchor reflects Cockburn's craft rather than Jacobson's later Use-Case 2.0/3.0, and what that reveals about how anchors depend on training data.
 
 [discrete]
 ## **Current Status**:
@@ -8892,7 +8892,7 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 
 * Far less widely known than its sibling arc42. An LLM recognizes "req42" mainly **because** of arc42's name and structure; the training-data prior on req42's own twelve-section content is thin, so the model may extrapolate from arc42 rather than recall req42 accurately. Verify section names against the source (https://docs.req42.de, https://github.com/Hruschka/req42-framework) rather than trusting recall.
 * Actively maintained as a free, open-source template (CC BY-SA 4.0) on https://github.com/Hruschka/req42-framework[GitHub], with section-level guidance at https://docs.req42.de — the same docs-as-code model as arc42.
-* **A prior test on 2026-10-15 confirmed the thin prior and lowered the tier to ★★☆.** The weak tier does not recognise "req42" and names no creator; a mid-tier model credits Hruschka and Gernot Starke, the arc42 pair. Only the strong tier turned "use req42" into goals in PAM form. The bare acronym "PAM" returns Privileged Access Management on every tier. Naming both works on every tier, the weak one included: "write them as PAM goals, as req42 recommends". In prompts, write Purpose / Advantage / Metric out or name PAM together with req42. See the [prior-test register](#/prior-tests).
+* **A prior test on 2026-10-15 confirmed the thin prior and lowered the tier to ★★☆.** The weak tier does not recognise "req42" and names no creator; a mid-tier model credits Hruschka and Gernot Starke, the arc42 pair. Only the strong tier turned "use req42" into goals in PAM form. The bare acronym "PAM" returns Privileged Access Management on every tier. Naming both works on every tier, the weak one included: "write them as PAM goals, as req42 recommends". In prompts, write Purpose / Advantage / Metric out or name PAM together with req42. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### SIPOC
 
@@ -9052,7 +9052,7 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 * Deciding whether a new product or feature is worth building
 * A project kick-off where the goal and the customer benefit are not yet agreed
 * Internal tools and platforms, with colleagues as the customers
-* Before a decision that is hard to reverse (see [One-Way Door / Two-Way Door Decisions](#/anchor/one-way-two-way-door-decisions))
+* Before a decision that is hard to reverse (see [One-Way Door / Two-Way Door Decisions](https://llm-coding.github.io/Semantic-Anchors/anchor/one-way-two-way-door-decisions))
 
 [discrete]
 ## **How to Prompt**:
@@ -9077,7 +9077,7 @@ In the prior test of 2026-11-27, a product proposal written "using Working Backw
 ## **Current Status**:
 
 * **The bare term is ambiguous.** In the prior test, the business meaning dominated on every tier, but every answer also listed other meanings: Pólya's problem-solving heuristic, backward design in education, backward chaining, backward induction, backcasting. The catalog therefore names the anchor with the qualifier "(Amazon PR/FAQ)".
-* **The origin is told by insiders.** The public account is Bryar and Carr's book (2021); both authors write that they "witnessed its birth" at Amazon. In the prior test, the models named Jeff Bezos or Amazon leadership as the creator, with medium or low confidence. A dated first use was not confirmed in the research. See the [prior-test register](#/prior-tests).
+* **The origin is told by insiders.** The public account is Bryar and Carr's book (2021); both authors write that they "witnessed its birth" at Amazon. In the prior test, the models named Jeff Bezos or Amazon leadership as the creator, with medium or low confidence. A dated first use was not confirmed in the research. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ---
 
@@ -9267,7 +9267,7 @@ In the prior test of 2026-11-27, a product proposal written "using Working Backw
 * **Microsoft's Zero Trust wording has moved.** The adoption framework still lists the principle "Assume breach" and describes it with "Minimize blast radius and segment access." https://learn.microsoft.com/security/zero-trust/adopt/zero-trust-adoption-overview[Microsoft, "Zero Trust adoption framework overview"] (updated 5 May 2025). The current overview renames it "Assume compromise (previously referred to as assume breach)" and places the term under least privilege: "reducing unnecessary exposure and potential blast radius." https://learn.microsoft.com/security/zero-trust/zero-trust-overview[Microsoft, "Zero Trust overview"] (updated 15 November 2026). A model's prior most likely holds the older wording.
 * **Code-review tools now use it for pull requests.** CodeRabbit documents a feature of that name: "Security Blast Radius helps you investigate what a pull request could affect beyond its changed lines." https://docs.coderabbit.ai/security/blast-radius[CodeRabbit, "Blast Radius"]. Qodo's version "Estimates how broadly a failure caused by the change could affect the codebase or product functionality." https://docs.qodo.ai/code-review/assess-risk-with-blast-radius[Qodo, "Assess risk with blast radius"]; the same page says that a broader "Merge Risk" feature has since replaced it, with blast radius as one of its factors. Both are vendor documentation, and neither page shows a date.
 * **Security and reliability share the term, and small models lean to security.** In the prior test of 2026-11-23 the bare term meant software operations or security on every tier, and explosives did not dominate; the weak tier leaned to cybersecurity, the mid and strong tiers to reliability and security. Say which event you mean: a failure, a compromise or a change.
-* **The lift is moderate, hence tier 2.** On a task about a shared library that changes its default time zone for 14 services, answers with the term were organised by reach and more often said who is exposed. The risks themselves were found without the term as well. See the [prior-test register](#/prior-tests).
+* **The lift is moderate, hence tier 2.** On a task about a shared library that changes its default time zone for 14 services, answers with the term were organised by reach and more often said who is exposed. The risks themselves were found without the term as well. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### Bulkhead Pattern
 
@@ -11776,7 +11776,7 @@ This anchor is classified as **Tier 2 — Needs qualification**. It is not self-
 * **Amazon now teaches it as a mental model and applies it to architecture.** AWS calls it "a mental model we call one-way and two-way doors" in https://aws.amazon.com/de/executive-insights/content/how-amazon-defines-and-operationalizes-a-day-1-culture/[Daniel Slater's "Elements of Amazon's Day 1 Culture"]. The https://docs.aws.amazon.com/wellarchitected/latest/framework/the-review-process.html[AWS Well-Architected Framework] asks for reviews "early on in the design phase to avoid one-way doors that are difficult to change".
 * **In software the criterion drifted from "irreversible" to "costly to reverse".** thoughtbot defines it by cost: "If the cost (financial, time, resources) of reversing a decision is high, it falls into the One-way door category". https://thoughtbot.com/blog/one-way-vs-two-way-door-decisions[Bireke, "One-way vs Two-way door decisions"] (10 May 2024). Google's Abseil performance tips apply it to technical properties: "Broadly speaking, fine-grained flag changes are easy to undo and thus two-way doors", and "The possibility of a bug does not make the door one-way." https://abseil.io/fast/87[Kennelly, "Performance Tip of the Week #87: Two-way doors"] (16 October 2024, updated 17 November 2025).
 * **Reversibility as an architecture concern is older than the door.** Martin Fowler wrote in 2003 that an architect's task includes "finding ways to eliminate irreversibility in software designs". https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf[Fowler, "Who Needs an Architect?", IEEE Software] (July/August 2003). The door metaphor names the idea; it did not introduce it.
-* **A prior test on 2026-11-23 measured what naming it changes, and what it hides.** Asked to assess four changes to an online shop, 12 of 12 runs with the term noted that a new public API field is hard to take back once published; without the term only the strong tier did. The term also narrowed the view: for a button-colour change, the weak and mid tiers mentioned contrast or accessibility in 8 of 8 runs without the term and in 0 of 8 with it. Use it next to other review lenses, not instead of them. See the [prior-test register](#/prior-tests).
+* **A prior test on 2026-11-23 measured what naming it changes, and what it hides.** Asked to assess four changes to an online shop, 12 of 12 runs with the term noted that a new public API field is hard to take back once published; without the term only the strong tier did. The term also narrowed the view: for a button-colour change, the weak and mid tiers mentioned contrast or accessibility in 8 of 8 runs without the term and in 0 of 8 with it. Use it next to other review lenses, not instead of them. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### PERT
 
@@ -12001,7 +12001,7 @@ In the prior test of 2026-11-26, naming the term added an explicit re-planning c
 ## **Current Status**:
 
 * **No coiner, and an obscure origin.** Mosaic Projects traces the concept of planning and work packages back to the early 1960s and calls the PERT/COST system "'rolling wave' in everything but name"; it adds that "the precise origin of the term 'Rolling Wave' remains obscure." In the prior test no model named a creator; Sonnet and Opus pointed to PMI's PMBOK Guide. https://en.wikipedia.org/wiki/Rolling-wave_planning[Wikipedia] cites the PMBOK Guide, Fifth Edition, for the technique. Which PMBOK edition introduced the term was not confirmed in the research.
-* **The model reaches for the idea without the name, so the lift is moderate, hence tier 2.** Asked for a project plan without the term, models already tapered the detail over time, and on two tasks four of six such plans called themselves rolling-wave. The term adds the explicit re-planning cycle and, on Opus, planning packages. See the [prior-test register](#/prior-tests).
+* **The model reaches for the idea without the name, so the lift is moderate, hence tier 2.** Asked for a project plan without the term, models already tapered the detail over time, and on two tasks four of six such plans called themselves rolling-wave. The term adds the explicit re-planning cycle and, on Opus, planning packages. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### Second-Order Thinking
 
@@ -12042,7 +12042,7 @@ In the prior test of 2026-11-26, naming the term added an explicit re-planning c
 [discrete]
 ## **Current Status**:
 
-* **The name that works is not the name in the sources.** Howard Marks contrasts "first-level" with "second-**level** thinking" in https://cup.columbia.edu/book/the-most-important-thing/9780231153683/[_The Most Important Thing_] (Columbia University Press, 2011). Ray Dalio's principle reads https://www.principles.com/principles/7658aec7-c3f6-4248-8cc6-57aa84b0a955/["Consider second- and third-order consequences, not just first-order ones"]. Neither writes "second-order thinking". That phrasing belongs to the popularisers, chiefly https://fs.blog/second-order-thinking/[Farnam Street], which adopts it as its own heading while stating plainly that Marks "calls it second-level thinking" and quoting Dalio on "second- and third-order consequences" -- the rename is deliberate and documented on the page that performs it. The entry is named for the string that reliably triggers the concept, not for the string with the better provenance -- and those diverge here. See the [prior-test register](#/prior-tests) for the measurement behind that choice.
+* **The name that works is not the name in the sources.** Howard Marks contrasts "first-level" with "second-**level** thinking" in https://cup.columbia.edu/book/the-most-important-thing/9780231153683/[_The Most Important Thing_] (Columbia University Press, 2011). Ray Dalio's principle reads https://www.principles.com/principles/7658aec7-c3f6-4248-8cc6-57aa84b0a955/["Consider second- and third-order consequences, not just first-order ones"]. Neither writes "second-order thinking". That phrasing belongs to the popularisers, chiefly https://fs.blog/second-order-thinking/[Farnam Street], which adopts it as its own heading while stating plainly that Marks "calls it second-level thinking" and quoting Dalio on "second- and third-order consequences" -- the rename is deliberate and documented on the page that performs it. The entry is named for the string that reliably triggers the concept, not for the string with the better provenance -- and those diverge here. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests) for the measurement behind that choice.
 * **The idea is much older than the label.** Frédéric Bastiat's "Ce qu'on voit et ce qu'on ne voit pas" states the core move for economics: judge a measure by its unseen later effects, not only by its visible immediate one. https://fr.wikisource.org/wiki/Ce_qu%E2%80%99on_voit_et_ce_qu%E2%80%99on_ne_voit_pas[French Wikisource] carries the text and dates the pamphlet to July 1850, Bastiat's last. Robert K. Merton formalised a close relative in "The Unanticipated Consequences of Purposive Social Action", _American Sociological Review_ 1(6), December 1936, 894–904.
 
 ### SWOT
@@ -12212,7 +12212,7 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 * Deciding whether a new product or feature is worth building
 * A project kick-off where the goal and the customer benefit are not yet agreed
 * Internal tools and platforms, with colleagues as the customers
-* Before a decision that is hard to reverse (see [One-Way Door / Two-Way Door Decisions](#/anchor/one-way-two-way-door-decisions))
+* Before a decision that is hard to reverse (see [One-Way Door / Two-Way Door Decisions](https://llm-coding.github.io/Semantic-Anchors/anchor/one-way-two-way-door-decisions))
 
 [discrete]
 ## **How to Prompt**:
@@ -12237,7 +12237,7 @@ In the prior test of 2026-11-27, a product proposal written "using Working Backw
 ## **Current Status**:
 
 * **The bare term is ambiguous.** In the prior test, the business meaning dominated on every tier, but every answer also listed other meanings: Pólya's problem-solving heuristic, backward design in education, backward chaining, backward induction, backcasting. The catalog therefore names the anchor with the qualifier "(Amazon PR/FAQ)".
-* **The origin is told by insiders.** The public account is Bryar and Carr's book (2021); both authors write that they "witnessed its birth" at Amazon. In the prior test, the models named Jeff Bezos or Amazon leadership as the creator, with medium or low confidence. A dated first use was not confirmed in the research. See the [prior-test register](#/prior-tests).
+* **The origin is told by insiders.** The public account is Bryar and Carr's book (2021); both authors write that they "witnessed its birth" at Amazon. In the prior test, the models named Jeff Bezos or Amazon leadership as the creator, with medium or low confidence. A dated first use was not confirmed in the research. See the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ---
 
@@ -13059,7 +13059,7 @@ In the prior test of 2026-11-27, asked for the security-plan entry for account m
 
 * **The model set is growing.** NIST's white paper "Charting the Course for NIST OSCAL" (CSWP 53, initial public draft, 2 December 2025) lists a Control Mapping model and a Shared Responsibility model as in development, and an OSCAL Foundation established in January 2025. Models trained before then may not know these additions. https://csrc.nist.gov/pubs/cswp/53/charting-the-course-for-nist-oscal/ipd[NIST CSWP 53 ipd].
 * **Versions matter for tools.** NIST maintains the specification "in a live versioned format"; validators and converters check against a specific version. Name the version when exact field names matter.
-* **Adoption beyond the US is beginning.** The white paper states: "OSCAL has gained support from federal agencies, the governments in Australia and Singapore". The NIST FAQ calls it "heavily used within the U.S. federal government". https://csrc.nist.gov/Projects/open-security-controls-assessment-language/faqs[NIST OSCAL FAQ]. No named critique of OSCAL was found in the research; see the [prior-test register](#/prior-tests).
+* **Adoption beyond the US is beginning.** The white paper states: "OSCAL has gained support from federal agencies, the governments in Australia and Singapore". The NIST FAQ calls it "heavily used within the U.S. federal government". https://csrc.nist.gov/Projects/open-security-controls-assessment-language/faqs[NIST OSCAL FAQ]. No named critique of OSCAL was found in the research; see the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests).
 
 ### OWASP ASVS (Application Security Verification Standard)
 
@@ -15069,7 +15069,7 @@ The `with…()` Names Are the Named Arguments the Language Did Not Give You:: Pr
 * **The four books, as the publisher lists them.** https://www.edwardtufte.com/books/[Graphics Press] gives _The Visual Display of Quantitative Information_ as "1983 / 2nd Edition 2001" -- the same book under two years, and the second edition is the one in print. Then _Envisioning Information_ (1990), _Visual Explanations_ (1996, widely miscited as 1997) and _Beautiful Evidence_ (2006). A fifth, _Seeing with Fresh Eyes_, followed in 2020, so "his four books" is no longer accurate.
 * **The name is baked into tooling, which is why it holds as an anchor.** `theme_tufte` in R's https://jrnold.github.io/ggthemes/reference/theme_tufte.html[ggthemes] cites the data-ink chapter by name: "No border, no axis lines, no grids." https://edwardtufte.github.io/tufte-css/[Tufte CSS] and the https://ctan.org/pkg/tufte-latex[tufte-latex] classes carry the sidenote layout; https://pypi.org/project/matplotlib-tufte/[matplotlib-tufte] carries the chart rules into Python. A term that ships as an installable default is one a model has seen in code as well as in prose.
 * **The typographic branch is stable to the point of dormancy.** CTAN lists tufte-latex at 3.5.2 with its most recent announcement in 2015. That is not decay -- the layout was finished -- but it means the second meaning of the name lives on in copies rather than in active development.
-* **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](#/prior-tests) for the terms searched.
+* **There is no German-language critical tier to cite.** A search on 2026-08-25 across six German query forms returned method descriptions, university slides and translations of English originals; the German Wikipedia article has no Kritik section. What criticism exists from German-speaking practitioners is published in English -- the https://www.datawrapper.de/blog/bookclub-tufte-review/[Datawrapper book club], run from Berlin, is the clearest case. This is a language-frame result, not an absence of opinion: see the [prior-test register](https://llm-coding.github.io/Semantic-Anchors/prior-tests) for the terms searched.
 
 ### U.S. Web Design System (USWDS)
 
