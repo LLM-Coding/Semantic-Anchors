@@ -2,6 +2,14 @@
 
 A chronological record of all semantic anchors added to the catalog. Community contributors are credited with thanks.
 
+== 2026-11-27
+
+*New anchor -- OSCAL (Open Security Controls Assessment Language):*
+
+* *link:#/anchor/oscal[OSCAL]* (NIST) -- https://github.com/LLM-Coding/Semantic-Anchors/issues/940[#940]: machine-readable models for control catalogs, profiles, system security plans and assessment results. Asked for the security-plan entry on account management, models wrote an OSCAL SSP fragment in JSON in five of six runs with the term; without it, every run wrote prose. Tier ★★☆. Proposed by https://github.com/rdmueller[@rdmueller] in https://github.com/LLM-Coding/Semantic-Anchors/issues/940[#940] -- thank you.
+
+Full detail in the link:#/prior-tests[prior-test register], run 2026-11-27, OSCAL.
+
 == 2026-11-26
 
 *New anchor -- Rolling Wave Planning:*
