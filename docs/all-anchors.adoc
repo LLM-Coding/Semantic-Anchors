@@ -833,6 +833,9 @@ include::anchors/mutation-testing.adoc[leveloffset=+2]
 [[nielsen-usability-heuristics]]
 include::anchors/nielsen-usability-heuristics.adoc[leveloffset=+2]
 
+[[oscal]]
+include::anchors/oscal.adoc[leveloffset=+2]
+
 [[owasp-asvs]]
 include::anchors/owasp-asvs.adoc[leveloffset=+2]
 

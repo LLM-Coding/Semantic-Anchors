@@ -7449,6 +7449,71 @@
     "addedAt": "2026-11-23T20:08:25+01:00"
   },
   {
+    "id": "oscal",
+    "title": "OSCAL (Open Security Controls Assessment Language)",
+    "categories": [
+      "testing-quality"
+    ],
+    "roles": [
+      "legal-compliance",
+      "software-architect",
+      "devops-engineer",
+      "qa-engineer",
+      "consultant"
+    ],
+    "related": [
+      "owasp-asvs",
+      "regulated-environment",
+      "stride",
+      "defense-in-depth",
+      "docs-as-code"
+    ],
+    "proponents": [
+      "NIST (National Institute of Standards and Technology)"
+    ],
+    "tags": [
+      "oscal",
+      "open security controls assessment language",
+      "nist",
+      "compliance as code",
+      "compliance automation",
+      "security controls",
+      "sp 800-53",
+      "catalog",
+      "profile",
+      "component definition",
+      "system security plan",
+      "ssp",
+      "assessment plan",
+      "assessment results",
+      "poa&amp;m",
+      "plan of action and milestones",
+      "fedramp",
+      "grc",
+      "json",
+      "xml",
+      "yaml"
+    ],
+    "filePath": "docs/anchors/oscal.adoc",
+    "tier": 2,
+    "priorTest": "2026-11-27",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents."
+  },
+  {
     "id": "owasp-asvs",
     "title": "OWASP ASVS (Application Security Verification Standard)",
     "categories": [
@@ -7464,7 +7529,8 @@
       "owasp-top-10",
       "stride",
       "linddun",
-      "regulated-environment"
+      "regulated-environment",
+      "oscal"
     ],
     "proponents": [
       "OWASP Foundation"
