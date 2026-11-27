@@ -352,6 +352,7 @@
       "misra-c",
       "mutation-testing",
       "nielsen-usability-heuristics",
+      "oscal",
       "owasp-asvs",
       "owasp-top-10",
       "poka-yoke",

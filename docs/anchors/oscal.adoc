@@ -1,0 +1,58 @@
+= OSCAL (Open Security Controls Assessment Language)
+:categories: testing-quality
+:roles: legal-compliance, software-architect, devops-engineer, qa-engineer, consultant
+:related: owasp-asvs, regulated-environment, stride, defense-in-depth, docs-as-code
+:proponents: NIST (National Institute of Standards and Technology)
+:tags: oscal, open security controls assessment language, nist, compliance as code, compliance automation, security controls, sp 800-53, catalog, profile, component definition, system security plan, ssp, assessment plan, assessment results, poa&m, plan of action and milestones, fedramp, grc, json, xml, yaml
+:tier: 2
+:definition: OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents.
+:prior-test: 2026-11-27
+:tested-on: haiku-5-5=yes, sonnet-5-5=yes, opus-5-5=yes
+
+[%collapsible]
+====
+Full Name:: Open Security Controls Assessment Language
+
+Also known as:: NIST OSCAL
+
+[discrete]
+== *Core Concepts*:
+
+Control Layer:: The Catalog model holds a set of controls, such as NIST SP 800-53. The Profile model selects and tailors controls from one or more catalogs into a baseline; FedRAMP baselines are published as OSCAL content.
+
+Implementation Layer:: The Component Definition model describes how a product or service implements controls. The System Security Plan (SSP) model describes how a whole system implements the controls of a profile, control by control.
+
+Assessment Layer:: The Assessment Plan, Assessment Results and Plan of Action and Milestones (POA&M) models record what will be assessed, what was found and what will be fixed. NIST: "The OSCAL Assessment Results model is composed of (among other things): observations, risks, and findings."
+
+Layers Reference Each Other:: An SSP imports a profile, a profile imports catalogs, assessment results refer to the plan and the SSP. Most objects carry a UUID, so tools can follow the chain from a finding back to the control.
+
+Three Formats, One Model:: The same models are bound to XML, JSON and YAML. NIST's white paper: they can be "translated into any of the other formats without data loss".
+
+[discrete]
+== *When to Use*:
+
+* Writing or reviewing a system security plan that tools must read
+* FedRAMP and other authorisations that accept machine-readable packages
+* Mapping the controls of several frameworks onto one system
+* Compliance as code: control documentation in version control, validated in CI
+
+[discrete]
+== *How to Prompt*:
+
+In the prior test of 2026-11-27, asked for the security-plan entry for account management, models writing "using OSCAL" produced an SSP fragment in JSON for control `ac-2`, with statements, `by-components` and UUIDs, in five of six runs; Haiku wrote prose structured by the AC-2 sub-controls once. Without the term, every run wrote prose, and only Opus named the control. When the prompt already mentions automated audit or machine-readable compliance, models reach for OSCAL on their own. Name the model and the format, for example "write the OSCAL SSP entry in `control-implementation.implemented-requirements` for AC-2 in JSON, with one `by-components` entry per component". Check the result against the schema of the version you use: in the test, models wrote the singular XML element name `implemented-requirement` as a JSON object, where the JSON format expects the array `implemented-requirements`.
+
+[discrete]
+== *Common Misunderstandings*:
+
+* ❌ "OSCAL is a set of security controls" -- it is a format for controls and compliance documents; the controls come from catalogs such as SP 800-53
+* ❌ "OSCAL only works with NIST frameworks" -- any control catalog can be expressed as an OSCAL catalog
+* ❌ "NIST provides ready-made component definitions" -- NIST: "NIST team is not maintaining any repository of Component Definitions"
+* ✓ "Catalogs and profiles say what is required, SSPs and components say how it is met, and assessment models say whether it was" -- accurate
+====
+
+[discrete]
+== *Current Status*:
+
+* *The model set is growing.* NIST's white paper "Charting the Course for NIST OSCAL" (CSWP 53, initial public draft, 2 December 2025) lists a Control Mapping model and a Shared Responsibility model as in development, and an OSCAL Foundation established in January 2025. Models trained before then may not know these additions. https://csrc.nist.gov/pubs/cswp/53/charting-the-course-for-nist-oscal/ipd[NIST CSWP 53 ipd].
+* *Versions matter for tools.* NIST maintains the specification "in a live versioned format"; validators and converters check against a specific version. Name the version when exact field names matter.
+* *Adoption beyond the US is beginning.* The white paper states: "OSCAL has gained support from federal agencies, the governments in Australia and Singapore". The NIST FAQ calls it "heavily used within the U.S. federal government". https://csrc.nist.gov/Projects/open-security-controls-assessment-language/faqs[NIST OSCAL FAQ]. No named critique of OSCAL was found in the research; see the link:#/prior-tests[prior-test register].

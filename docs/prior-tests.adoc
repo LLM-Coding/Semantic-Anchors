@@ -1369,6 +1369,47 @@ Representative answers from task B, Sonnet. With the term: "Re-planning gates: e
 * Two tasks, both in project planning. Older model generations and other model families were not measured.
 * The task A prompt itself describes the situation rolling wave is made for, which explains part of the baseline's behaviour; task B was added for that reason.
 
+== Run 2026-11-27, OSCAL
+
+[cols="1,3"]
+|===
+|Candidate |OSCAL (https://github.com/LLM-Coding/Semantic-Anchors/issues/940[#940]). The proposal names the term only, without context
+|Models |`claude-haiku-5-5` (weak), `claude-sonnet-5-5` (mid), `claude-opus-5-5` (strong), called through the aliases `haiku`, `sonnet`, `opus`
+|Procedure |`anchor-prior-test` v1.2, clean room: `claude -p` from a neutral directory with `--strict-mcp-config --setting-sources ""` and the neutral system prompt `You are a helpful assistant.` for every probe
+|Runs |P1, P2 and three action tasks twice per tier, with and without the term; P4 once per tier. 51 calls in all
+|Record |The run was carried out by Claude in the scheduled daily check for anchor proposals, not by the maintainer. The raw answers are not in the repository
+|Criticism research |2026-11-27, English. Found and fetched: NIST CSWP 53 ipd, "Charting the Course for NIST OSCAL" (Iorga, Nguyen, 2025-12-02, landing page and PDF); NIST, "More about OSCAL" (pages.nist.gov, last updated 2023-11-08); NIST OSCAL FAQ (csrc.nist.gov). Each page was read once through a fetch tool. Not found: a named, citable critique of OSCAL. All fetched sources are NIST's own and describe the problems OSCAL is meant to solve, not its limits. Industry blogs and adoption reports were not searched in depth, so this is not evidence that no critique exists. The models' claim that version 1.0.0 was released in 2021 was not verified
+|===
+
+=== Result: ★★☆, proponent NIST
+
+[cols="1,1,3"]
+|===
+|Criterion |Result |Evidence
+
+|Precise |met |P2: cybersecurity compliance (NIST) is the dominant domain in six of six runs, with no variants
+|Rich |met |P1: `recognized=yes`, `richness=rich` in six of six runs (catalog, profile, component definition, SSP, assessment plan and results, POA&M, XML/JSON/YAML, FedRAMP, UUID references)
+|Consistent |met |P1 and the action tasks agree across tiers
+|Attributable |not required |P4 names NIST on every tier (Haiku with medium confidence). The bare term is not ambiguous
+|===
+
+Haiku reported `reaching=yes` in two of two P1 runs, but its lists named every OSCAL model and the layers.
+
+=== The action test: the term turns a prose plan into an OSCAL document
+
+Task A asked how to record the implementation of control AC-2 so that an auditor's tool can check it. Task B asked for a compliance workflow in which several customers tailor the control baseline. Task C, written to be neutral, asked for the security-plan entry on account management, with no mention of tools or formats.
+
+* *Tasks A and B lead the models to OSCAL on their own.* Every run without the term named OSCAL in its answer. In task B all runs, with and without the term, used profile tailoring, a POA&M and component definitions. The tasks therefore show no lift.
+* *Task C shows the term's effect.* With the term, five of six runs wrote an SSP fragment in JSON for `ac-2`; Haiku wrote prose structured by the AC-2 sub-controls once. Without the term, all six runs wrote prose, and only Opus named the control (two of two).
+* The lift is strong on Sonnet and Opus and holds in one of two Haiku runs, hence ★★☆ and tier 2.
+
+Representative answers from task C. Sonnet with the term opened with JSON: `"implemented-requirement": { "uuid": …, "control-id": "ac-2", … "by-components": [ … ] }`. The key is not schema-valid as quoted: OSCAL's JSON format (v1.2.1 reference) expects the array `implemented-requirements` inside `control-implementation`; the singular is the XML element name. The answer is quoted unchanged as test evidence. Haiku without the term wrote a prose policy section with no control reference.
+
+=== What was not tested
+
+* Three tasks, all in documenting security controls. The validity of the generated JSON against the OSCAL schema was not checked.
+* Older model generations and other model families were not measured.
+
 == Run 2026-11-27, Every Page is Page One (Mark Baker)
 
 [cols="1,3"]
