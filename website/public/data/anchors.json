@@ -2549,7 +2549,8 @@
     "related": [
       "docs-as-code",
       "arc42",
-      "inverted-pyramid-style"
+      "inverted-pyramid-style",
+      "every-page-is-page-one"
     ],
     "proponents": [
       "Daniele Procida"
@@ -3442,6 +3443,67 @@
     ],
     "definition": "Every Layout is a book and website by Heydon Pickering and Andy Bell that builds responsive CSS layouts from small primitives such as Stack, Cluster, Sidebar, Switcher and Grid. The primitives adapt to their content and container, so most layouts need no media queries and no magic numbers.",
     "addedAt": "2026-10-28T23:45:33+01:00"
+  },
+  {
+    "id": "every-page-is-page-one",
+    "title": "Every Page is Page One (Mark Baker)",
+    "categories": [
+      "documentation"
+    ],
+    "roles": [
+      "technical-writer",
+      "ux-designer",
+      "software-developer",
+      "product-owner",
+      "educator"
+    ],
+    "related": [
+      "diataxis-framework",
+      "progressive-disclosure",
+      "docs-as-code",
+      "inverted-pyramid-style",
+      "plain-language-iso-24495"
+    ],
+    "proponents": [
+      "Mark Baker"
+    ],
+    "tags": [
+      "every page is page one",
+      "eppo",
+      "topic-based writing",
+      "topic based authoring",
+      "information foraging",
+      "information scent",
+      "bottom-up information architecture",
+      "linking",
+      "hypertext",
+      "self-contained topic",
+      "technical writing",
+      "user documentation",
+      "help pages",
+      "minimalism",
+      "structured writing",
+      "mark baker"
+    ],
+    "filePath": "docs/anchors/every-page-is-page-one.adoc",
+    "tier": 2,
+    "priorTest": "2026-11-27",
+    "testedOn": [
+      {
+        "model": "haiku-5-5",
+        "works": true
+      },
+      {
+        "model": "sonnet-5-5",
+        "works": true
+      },
+      {
+        "model": "opus-5-5",
+        "works": true
+      }
+    ],
+    "definition": "Every Page is Page One is Mark Baker's approach to topic-based writing for technical communication and the web, set out in his 2013 book of the same name: because readers arrive from search or a link in the middle of a task, every page must work as their first page. Each topic is self-contained, serves one specific purpose, establishes its own context and links richly to its neighbours, so that the information architecture grows bottom-up through links rather than top-down through a table of contents.",
+    "addedAt": "2026-11-27T18:52:03+01:00"
   },
   {
     "id": "fagan-inspection",
@@ -7510,8 +7572,7 @@
         "works": true
       }
     ],
-    "definition": "OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents.",
-    "addedAt": "2026-11-27T18:54:35+01:00"
+    "definition": "OSCAL, the Open Security Controls Assessment Language, is NIST's set of machine-readable models for security compliance information, available in XML, JSON and YAML. Its layers carry control catalogs and tailored baselines (profiles), the implementation of controls in components and system security plans, and assessment plans, results and plans of action and milestones, so that compliance documentation can be validated and exchanged by tools instead of written as static documents."
   },
   {
     "id": "owasp-asvs",

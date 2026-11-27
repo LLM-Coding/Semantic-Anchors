@@ -398,6 +398,9 @@ include::anchors/diataxis-framework.adoc[leveloffset=+2]
 [[docs-as-code]]
 include::anchors/docs-as-code.adoc[leveloffset=+2]
 
+[[every-page-is-page-one]]
+include::anchors/every-page-is-page-one.adoc[leveloffset=+2]
+
 [[four-plus-one-view-model]]
 include::anchors/four-plus-one-view-model.adoc[leveloffset=+2]
 
