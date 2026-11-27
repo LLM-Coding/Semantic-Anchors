@@ -1,6 +1,6 @@
 # Semantic Anchors — Complete Reference
 
-> 322 well-defined terms, methodologies, and frameworks
+> 323 well-defined terms, methodologies, and frameworks
 > that serve as precision reference points when communicating with LLMs.
 > Source: https://github.com/LLM-Coding/Semantic-Anchors
 > Website: https://llm-coding.github.io/Semantic-Anchors/
@@ -5566,6 +5566,59 @@ A class should have only one reason to change. Each module or class should be re
 * When documentation needs to stay synchronized with code
 * Distributed teams collaborating on documentation
 * Projects requiring multiple output formats (HTML, PDF, etc.)
+
+### Every Page is Page One (Mark Baker)
+
+***Full Name***: Every Page is Page One: Topic-Based Writing for Technical Communication and the Web
+
+***Also known as***: EPPO, EPPO topics
+
+[discrete]
+## **Core Concepts**:
+
+***Readers Arrive at Pages, Not Sites***: Search and links drop readers anywhere. Baker: "There is no first, last, previous, next, up, or back. There is only page one." Readers behave as information foragers who follow the scent of the next link (Pirolli and Card's information foraging theory). Baker on the consequence: "Every page is page one -- this is a fact, not a choice. Making every page we write a good page one -- that is a choice."
+
+***Seven Characteristics of an EPPO Topic***: In the book, an EPPO topic is self-contained, has a specific and limited purpose, conforms to a type, establishes its context, assumes the reader is qualified, stays on one level, and links richly.
+
+***Standalone Is Not Isolated***: An EPPO topic does not repeat everything a reader might need; it links to it. Baker: "It stands alone not because it depends on nothing, but because it depends on everything."
+
+***Bottom-Up Information Architecture***: Every page is a hub. Topics link along the subject's own affinities (the next task, the concept behind it, the setting it depends on) instead of relying on a table of contents, which does not scale. Overview, pathfinder and workflow topics make the big picture explicit instead of leaving it to the order of a book.
+
+***Subject-Specific Topic Types***: Types follow the subject (a recipe, an API reference entry, a configuration setting) rather than the generic concept, task and reference split. Reuse happens by linking rather than by copying text.
+
+***Roots***: John Carroll's minimalism (readers want to act, not read a manual) and structured writing with metadata.
+
+[discrete]
+## **When to Use**:
+
+* User documentation and help pages that readers reach from search or from in-app help links
+* Knowledge bases, API references and support articles
+* Restructuring a manual written for front-to-back reading into topics for the web
+* Reviewing a page: does it state its context, have one purpose and link onward?
+
+[discrete]
+## **How to Prompt**:
+
+In the prior test of 2026-11-27, asked for the documentation of a feature with no hint about how readers arrive, models following "Every Page is Page One" split it into three to five topics and added links to related topics in five of six runs. Without the term, two of six runs added links, and Sonnet wrote a single long page in both of its runs. When the prompt itself says that readers come from search, models already write self-contained pages with context; the term then adds little. Name the characteristics you care about, for example "write this as Every Page is Page One topics: one purpose per page, state the context at the top, and link to the related tasks and concepts".
+
+[discrete]
+## **Common Misunderstandings**:
+
+* ❌ "Every page must repeat everything the reader needs" -- an EPPO topic establishes its context and links to the rest; it is not self-sufficient
+* ❌ "It is the same as DITA topics" -- Baker argues for presentational topics with subject-specific types, not reusable building blocks typed as concept, task and reference
+* ❌ "No page may assume prior knowledge" -- an EPPO topic assumes the reader is qualified and links to what a less qualified reader needs
+* ✓ "Write every page as if the reader arrived from search, and link it into the web of related topics" -- accurate
+
+## **Criticism**:
+
+* **Not every page can be an entry point.** In the comments on Baker's own post about standalone topics, the reader Jeff Coatsworth objected: "I find that very little of what I’m writing these days could function very well as a page 1 entry point." and "That’s one of the downsides to trying to make every page a page 1." Baker replied in the same thread that most readers do not read in order: "My contention in Every Page is Page One is that most readers simply aren’t that patient." https://everypageispageone.com/2011/06/08/what-is-a-topic-what-does-standalone-mean/[Mark Baker, "What is a topic? What does standalone mean?", with comments] (8 June 2011).
+* **The slogan is read in different ways.** Tom Johnson notes that the mantra "usually resonates with people without argument", but "I imagine people might interpret it differently." https://idratherbewriting.com/trends/trends-to-follow-or-forget-every-page-is-page-one.html[Tom Johnson, "Every page is page one", I'd Rather Be Writing] (16 March 2022).
+
+[discrete]
+## **Current Status**:
+
+* **The practices have become web norms.** Johnson argues that "many of the EPPO practices became more second nature just as the web became second nature" and expects that "calling out this mantra as a core principle for writing will fade in importance." In the prior test, models wrote self-contained pages with context even without the term, which fits this observation; the term mainly added topic splitting and links.
+* **Recognition is strong and attributed.** Every tier recognised the term and named Mark Baker as its author. The book (2013) grew out of Baker's blog everypageispageone.com and a guest post on Johnson's blog in 2011. See the [prior-test register](#/prior-tests).
 
 ### 4+1 View Model according to Kruchten
 

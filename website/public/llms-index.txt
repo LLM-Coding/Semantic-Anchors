@@ -2,7 +2,7 @@
 
 > This site publishes three kinds of thing, and all of them are listed below:
 > 20 documentation pages, 24 semantic contracts, and
-> 275 anchors in 15 categories — the anchors both
+> 276 anchors in 15 categories — the anchors both
 > one by one and bundled into 29 files that hold a whole category.
 >
 > The anchor list is the longest section but not the most important one: a
@@ -45,7 +45,7 @@
 - [All contracts as one text](https://llm-coding.github.io/Semantic-Anchors/contracts.txt): what terms mean in a project, composed from anchors or defined by a team.
 - [Contracts overview](https://llm-coding.github.io/Semantic-Anchors/contracts/): the same contracts as pages.
 
-## Anchor bundles — the same 275 terms in full, 29 files
+## Anchor bundles — the same 276 terms in full, 29 files
 
 > One file per category, or per part of a large one. Fetch a bundle instead
 > of the single anchors below when you want a whole category at once.
@@ -59,7 +59,7 @@
 - [Development Workflow (1/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-1.txt): 13 anchors in full.
 - [Development Workflow (2/2)](https://llm-coding.github.io/Semantic-Anchors/bundles/development-workflow-2.txt): 14 anchors in full.
 - [Dialogue Interaction](https://llm-coding.github.io/Semantic-Anchors/bundles/dialogue-interaction.txt): 4 anchors in full.
-- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 8 anchors in full.
+- [Documentation](https://llm-coding.github.io/Semantic-Anchors/bundles/documentation.txt): 9 anchors in full.
 - [Knowledge Management](https://llm-coding.github.io/Semantic-Anchors/bundles/knowledge-management.txt): 9 anchors in full.
 - [Meta](https://llm-coding.github.io/Semantic-Anchors/bundles/meta.txt): 3 anchors in full.
 - [Problem Solving (1/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/problem-solving-1.txt): 13 anchors in full.
@@ -80,7 +80,7 @@
 - [UX & Visual Design (2/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-2.txt): 15 anchors in full.
 - [UX & Visual Design (3/3)](https://llm-coding.github.io/Semantic-Anchors/bundles/ux-visual-design-3.txt): 2 anchors in full.
 
-## Anchors — 275 named terms, grouped by category
+## Anchors — 276 named terms, grouped by category
 
 ### Communication & Presentation
 
@@ -223,6 +223,7 @@
 - [A3 Problem Solving](https://llm-coding.github.io/Semantic-Anchors/anchors/a3-problem-solving.txt)
 - [Diátaxis Framework](https://llm-coding.github.io/Semantic-Anchors/anchors/diataxis-framework.txt)
 - [Docs-as-Code according to Ralf D. Müller](https://llm-coding.github.io/Semantic-Anchors/anchors/docs-as-code.txt)
+- [Every Page is Page One (Mark Baker)](https://llm-coding.github.io/Semantic-Anchors/anchors/every-page-is-page-one.txt)
 - [4+1 View Model according to Kruchten](https://llm-coding.github.io/Semantic-Anchors/anchors/four-plus-one-view-model.txt)
 - [Karpathy's LLM Wiki](https://llm-coding.github.io/Semantic-Anchors/anchors/karpathys-llm-wiki.txt)
 - [Keep a Changelog](https://llm-coding.github.io/Semantic-Anchors/anchors/keep-a-changelog.txt)
