@@ -297,7 +297,7 @@ Spezifischen Hook ausführen:
 pre-commit run asciidoc-linter --all-files
 ----
 
-NOTE: Lokale Build-Artefakte (z.B. `website/dist/`, generierte Dateien in `website/public/docs/`) dürfen nicht committed werden. Diese werden durch die CI/CD-Pipeline erzeugt.
+NOTE: Generierte Dateien werden nicht committet; `.gitignore` führt sie auf. `npm run generate` in `scripts/` erzeugt die Site-Daten in `website/public/data/` (außer `contracts.json`, das von Hand gepflegt wird), `llms.txt` und verwandte Dateien, `sitemap.xml`, `docs/all-anchors.adoc` und die Seiten der Style-Galerie. `npm run dev`, `npm run build` und `npm test` der Website führen es vorher aus. `npm run build` erzeugt außerdem `website/public/docs/` und `website/dist/`. Ein neuer Anchor braucht daher keinen Commit mit neu generierten Daten.
 
 == Criticism und Current Status (Recherche erforderlich, aufnehmen wenn gefunden)
 

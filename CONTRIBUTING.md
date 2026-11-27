@@ -150,7 +150,7 @@ Run specific hook:
 pre-commit run asciidoc-linter --all-files
 ```
 
-> **Note:** Local build artifacts (e.g. `website/dist/`, generated files in `website/public/docs/`) must not be committed. These are produced by the CI/CD pipeline.
+> **Note:** Generated files are not committed; `.gitignore` lists them. `npm run generate` in `scripts/` creates the site data in `website/public/data/` (except `contracts.json`, which is maintained by hand), `llms.txt` and its siblings, `sitemap.xml`, `docs/all-anchors.adoc` and the style-gallery pages. The website's `npm run dev`, `npm run build` and `npm test` run it first. `npm run build` also produces `website/public/docs/` and `website/dist/`. A new anchor therefore needs no regeneration commit.
 
 ## How to Propose a New Anchor
 

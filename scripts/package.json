@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Build scripts for Semantic Anchors project",
   "scripts": {
+    "generate": "node extract-metadata.js && node generate-llms-txt.js && node generate-sitemap.js && node generate-style-gallery.js",
+    "pretest": "npm run generate --silent",
     "extract-metadata": "node extract-metadata.js",
     "split-readme": "node split-readme.js",
     "generate-llms-txt": "node generate-llms-txt.js",
