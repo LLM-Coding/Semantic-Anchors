@@ -144,7 +144,7 @@ Run specific hook:
 pre-commit run asciidoc-linter --all-files
 ----
 
-NOTE: Generated files are not committed: `website/dist/`, `website/public/docs/`, the site data in `website/public/data/` (except `contracts.json`), `llms.txt` and its siblings, `sitemap.xml`, `docs/all-anchors.adoc` and the style-gallery pages. `.gitignore` lists them. `npm run generate` in `scripts/` creates them, and the website's `npm run dev`, `npm run build` and `npm test` run it first. A new anchor therefore needs no regeneration commit.
+NOTE: Generated files are not committed; `.gitignore` lists them. `npm run generate` in `scripts/` creates the site data in `website/public/data/` (except `contracts.json`, which is maintained by hand), `llms.txt` and its siblings, `sitemap.xml`, `docs/all-anchors.adoc` and the style-gallery pages. The website's `npm run dev`, `npm run build` and `npm test` run it first. `npm run build` also produces `website/public/docs/` and `website/dist/`. A new anchor therefore needs no regeneration commit.
 
 == How to Propose a New Anchor
 

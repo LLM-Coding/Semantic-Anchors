@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "pretest": "npm run generate",
     "test": "vitest run",
+    "pretest:watch": "npm run generate",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:prod": "PLAYWRIGHT_BASE_URL=https://raifdmueller.github.io/Semantic-Anchors/ playwright test",
