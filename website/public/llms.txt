@@ -9002,7 +9002,7 @@ MoSCoW = **M**ust have / **S**hould have / **C**ould have / **W**on't have
 [discrete]
 ## **How to Prompt**:
 
-In the prior test of 2026-11-27, a product proposal written "using Working Backwards (Amazon PR/FAQ)" opened with a press release and carried an external and an internal FAQ in six of six runs. Without the term, no run wrote a press release or an external FAQ; Opus added an internal FAQ in two of six. With the bare term "Working Backwards", on a second task, the press release appeared in six of six runs, but the external FAQ in only three. Name the PR/FAQ to get both FAQs, for example "write a PR/FAQ for this feature, Working Backwards style: a one-page press release, then an external FAQ for customers and an internal FAQ for the team".
+In the prior test of 2026-11-27, a product proposal written "using Working Backwards (Amazon PR/FAQ)" opened with a press release and carried an external and an internal FAQ in six of six runs. Without the term, no run wrote a press release or an external FAQ; Opus added an internal FAQ in two of six. With the bare term "Working Backwards", on a second task, the press release appeared in six of six runs, but the external FAQ in only three. The two tasks differed, so the test does not show whether the qualifier alone made the difference. To get both FAQs, ask for them explicitly, for example "write a PR/FAQ for this feature, Working Backwards style: a one-page press release, then an external FAQ for customers and an internal FAQ for the team".
 
 [discrete]
 ## **Common Misunderstandings**:
@@ -12162,7 +12162,7 @@ SWOT = **S**trengths / **W**eaknesses / **O**pportunities / **T**hreats
 [discrete]
 ## **How to Prompt**:
 
-In the prior test of 2026-11-27, a product proposal written "using Working Backwards (Amazon PR/FAQ)" opened with a press release and carried an external and an internal FAQ in six of six runs. Without the term, no run wrote a press release or an external FAQ; Opus added an internal FAQ in two of six. With the bare term "Working Backwards", on a second task, the press release appeared in six of six runs, but the external FAQ in only three. Name the PR/FAQ to get both FAQs, for example "write a PR/FAQ for this feature, Working Backwards style: a one-page press release, then an external FAQ for customers and an internal FAQ for the team".
+In the prior test of 2026-11-27, a product proposal written "using Working Backwards (Amazon PR/FAQ)" opened with a press release and carried an external and an internal FAQ in six of six runs. Without the term, no run wrote a press release or an external FAQ; Opus added an internal FAQ in two of six. With the bare term "Working Backwards", on a second task, the press release appeared in six of six runs, but the external FAQ in only three. The two tasks differed, so the test does not show whether the qualifier alone made the difference. To get both FAQs, ask for them explicitly, for example "write a PR/FAQ for this feature, Working Backwards style: a one-page press release, then an external FAQ for customers and an internal FAQ for the team".
 
 [discrete]
 ## **Common Misunderstandings**:

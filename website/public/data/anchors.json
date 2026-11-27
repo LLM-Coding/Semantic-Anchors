@@ -11124,8 +11124,8 @@
     ],
     "proponents": [
       "Colin Bryar",
-      "Bill Carr (\"Working Backwards\"",
-      "2021); Amazon"
+      "Bill Carr",
+      "Amazon"
     ],
     "tags": [
       "working backwards",
@@ -11161,7 +11161,8 @@
         "works": true
       }
     ],
-    "definition": "Working Backwards is Amazon's product-development method, described by Colin Bryar and Bill Carr in \"Working Backwards\" (2021), in which a team starts from the customer and writes a PR/FAQ before it builds anything: a press release for the finished product and a set of frequently asked questions. The document is reviewed and revised in meetings, so that the customer benefit, the open questions and the cost are settled on paper while changing course is still cheap."
+    "definition": "Working Backwards is Amazon's product-development method, described by Colin Bryar and Bill Carr in \"Working Backwards\" (2021), in which a team starts from the customer and writes a PR/FAQ before it builds anything: a press release for the finished product and a set of frequently asked questions. The document is reviewed and revised in meetings, so that the customer benefit, the open questions and the cost are settled on paper while changing course is still cheap.",
+    "addedAt": "2026-11-27T18:49:14+01:00"
   },
   {
     "id": "xy-problem",
